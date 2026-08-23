@@ -46,7 +46,7 @@
   "objective": "Create exactly one artifact: BOOK_OF_GPT.md at the repository root, the control contract for OTHRYS V2. Verify it exists, create or modify no other functional V2 block, record the mission through the existing Control Feedback block, commit the Book and its receipt artifacts, and do not claim remote sync that this environment cannot prove.",
   "receipt_id": "V2-000A.1--20260823T201711Z",
   "remote_sha": null,
-  "repo_sha": null,
+  "repo_sha": "448b691ebda28c9de033b550bc047248fd54a65f",
   "result_claimed": "COMPLETE",
   "schema_version": "1.0.0",
   "sync_status": "NOT_SYNCED",
