@@ -65,3 +65,15 @@ The Jarvis control files and OTHRYS Core `.claude` control estate were inspected
 These mechanisms are now indexed for reuse rather than being rediscovered piecemeal.
 
 Lesson: **inventory is an active control mechanism, not documentation.**
+
+## CH-0008 — GPT becomes a detachable intelligence controller
+
+The controller doctrine was refined from Jarvis's strongest memory practices, OTHRYS North Star material and current agent-control guidance.
+
+GPT now runs two distinct loops: a strict control loop for action and an intelligence loop for conversation-derived signals. Workflow state, episodic history, semantic knowledge and transient context are explicitly separate. Raw ideas are captured without promotion; important old knowledge is contradiction-checked before reuse; context is retrieved narrowly rather than dumped wholesale.
+
+A temporary `GPT_INBOX.md` holds unpromoted signals until the canonical Garden/Mnemosyne path is available.
+
+North Star: OTHRYS is a trustworthy operating system for autonomous work, able over time to compose proven capabilities for a new world without depending on any one controller model.
+
+Lesson: **the controller should help OTHRYS remember, connect and compound while remaining fully replaceable.**
