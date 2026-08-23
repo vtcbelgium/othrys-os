@@ -1,9 +1,9 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 5,
+  "sequence": 6,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "4657e9b5a0e1dfa565336d3f18b09c6d87754fd5",
+  "remote_head_at_last_verified_read": "f0a2e206eed12830ba8219be985e7e4b6b28e798",
   "control_gate": "WAIT_DELEGATE_RECEIPT",
   "active_mission": {
     "mission_id": "V2-000C",
@@ -12,8 +12,8 @@
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
   "last_verified_receipt_mission": "V2-000A",
-  "last_log_sequence": 5,
-  "last_log_hash": "9c66bddf1ea446070cceafd4f7b18222aece29e82ed43a2ce41c7c3b0c5018d3",
+  "last_log_sequence": 6,
+  "last_log_hash": "0b93c02dbe26abb73c6502653be830082568de55c799386c29e4cdf0e4d3ea92",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incident": "sequence 3 stored entry_hash mismatch",
@@ -50,6 +50,6 @@
     "receipts/LATEST.json is older than GPT-maintained control state and therefore is not the current control pointer",
     "GPT_LOG historical integrity is DEGRADED_RECOVERED because sequence 3 stored hash was invalid"
   ],
-  "last_control_decision": "GPT is a detachable controller, not a Jarvis replacement. State, memory, raw ideas and mission evidence are separate; conversation intelligence is captured without automatic promotion.",
+  "last_control_decision": "GPT controller doctrine and Obsidian control projection are aligned: GPT is detachable, conversation intelligence is staged without authority, and OTHRYS remains the memory owner.",
   "next_legal_action": "Continue GPT-owned read-only inventory/intelligence maintenance while waiting. When V2-000C becomes remotely observable, review its receipt and reconcile state before any build instruction."
 }
