@@ -70,7 +70,7 @@ def cmd_emit(args):
 
 def cmd_stamp_sync(args):
     stamp, stamp_path = receipt_module.stamp_sync(
-        args.root, args.remote, args.repo_sha, args.remote_sha, args.verified_at
+        args.root, args.remote, args.repo_sha, args.remote_sha, args.verified_at, args.blocker
     )
     _emit(
         {
@@ -78,6 +78,7 @@ def cmd_stamp_sync(args):
             "remote": stamp["remote"],
             "repo_sha": stamp["repo_sha"],
             "remote_sha": stamp["remote_sha"],
+            "blocker": stamp["blocker"],
             "sync_status": stamp["sync_status"],
             "next_state": stamp["next_state"],
         }
@@ -107,6 +108,7 @@ def build_parser():
     p_stamp.add_argument("--repo-sha", required=True)
     p_stamp.add_argument("--remote-sha", default=None)
     p_stamp.add_argument("--verified-at", required=True)
+    p_stamp.add_argument("--blocker", default=None)
     p_stamp.set_defaults(func=cmd_stamp_sync)
 
     return parser

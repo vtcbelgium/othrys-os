@@ -145,7 +145,7 @@ def read_latest(root):
     return latest
 
 
-def stamp_sync(root, remote, repo_sha, remote_sha, verified_at):
+def stamp_sync(root, remote, repo_sha, remote_sha, verified_at, blocker=None):
     """Record remote-sync evidence for the current LATEST receipt.
 
     SYNCED is recorded only when both SHAs are present and identical. The block
@@ -168,6 +168,7 @@ def stamp_sync(root, remote, repo_sha, remote_sha, verified_at):
         "remote": remote,
         "repo_sha": repo_sha,
         "remote_sha": remote_sha,
+        "blocker": blocker,
         "sync_status": "SYNCED" if synced else "NOT_SYNCED",
         "verified_at": verified_at,
         "next_state": NEXT_STATE,

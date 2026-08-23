@@ -158,6 +158,16 @@ class SyncProof(unittest.TestCase):
             self.assertEqual(stamp["sync_status"], "NOT_SYNCED")
             self.assertIsNone(stamp["remote_sha"])
 
+    def test_blocker_is_recorded_on_the_stamp(self):
+        with TemporaryDirectory() as root:
+            self._seed(root)
+            stamp, _ = receipt_module.stamp_sync(
+                root, "https://example.invalid/r.git", SHA_A, None,
+                "2026-08-23T00:00:02Z", "no egress to the remote",
+            )
+            self.assertEqual(stamp["blocker"], "no egress to the remote")
+            self.assertEqual(validate(stamp, load_schema("sync_stamp")), [])
+
     def test_run_receipt_is_not_rewritten_by_stamping(self):
         with TemporaryDirectory() as root:
             built = build()

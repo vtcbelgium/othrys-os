@@ -1,5 +1,5 @@
 {
-  "blocker": null,
+  "blocker": "remote sync not achieved: the execution environment has no network egress to github.com (git push -> HTTP 403 from proxy after CONNECT) and holds no credentials for the private repository vtcbelgium/othrys-v2. Proof steps 1-5 (envelope, receipt, LATEST.json, immutable run receipt, local commit) are complete; steps 6-7 (push, remote SHA) are not. STOPPED, no retry.",
   "commands_run": [
     {
       "cmd": "python3 -m unittest discover -s blocks/control_feedback/tests -t .",
@@ -10,19 +10,35 @@
       "exit_code": 0
     },
     {
+      "cmd": "python3 -m blocks.control_feedback.cli validate --kind receipt --file receipts/LATEST.json",
+      "exit_code": 0
+    },
+    {
+      "cmd": "git init -b main && git add -A && git commit",
+      "exit_code": 0
+    },
+    {
+      "cmd": "git push -u origin main",
+      "exit_code": 128
+    },
+    {
       "cmd": "git ls-remote https://github.com/vtcbelgium/othrys-v2.git",
       "exit_code": 128
+    },
+    {
+      "cmd": "python3 -m blocks.control_feedback.cli stamp-sync --repo-sha bf8ee4a2920f0046c7569daaac651322826af684 (no --remote-sha)",
+      "exit_code": 3
     }
   ],
-  "created_at": "2026-08-23T19:56:06Z",
+  "created_at": "2026-08-23T19:58:52Z",
   "evidence": [
     "missions/V2-000A.json",
     "missions/V2-000A.result.json",
+    "receipts/runs/V2-000A/20260823T195606Z.json (superseded: emitted before the sync stamp gained its blocker field)",
+    "receipts/sync/bf8ee4a2920f0046c7569daaac651322826af684.json",
     "receipts/LATEST.json",
-    "blocks/control_feedback/schemas/mission_envelope.schema.json",
-    "blocks/control_feedback/schemas/receipt.schema.json",
-    "blocks/control_feedback/schemas/sync_stamp.schema.json",
-    "unittest: Ran 21 tests OK",
+    "local commit bf8ee4a2920f0046c7569daaac651322826af684 on branch main",
+    "unittest: Ran 22 tests OK",
     "control_feedback contains no network call, no clock read, no environment read, no AI, no retry loop, no scheduler"
   ],
   "files_changed": [
@@ -49,12 +65,12 @@
     {
       "change": "added",
       "path": "blocks/control_feedback/cli.py",
-      "sha256": "0a96112adb0560aca2ca44497c457c520baf93566a2f9a1fa806cb96933adf04"
+      "sha256": "e46bbca05f6d9cf9e9fc2b10ac74ea90d2a8521f78647514fe857ed2ba7a8fc7"
     },
     {
       "change": "added",
       "path": "blocks/control_feedback/receipt.py",
-      "sha256": "d0aa89e36081e50be9c762f31215cc1dcaafeab99e9715e379f34993aa1a3451"
+      "sha256": "1b70b809606a96eacfc74cee229c4282c153b295e4ebc6a302da0fecc676dbd4"
     },
     {
       "change": "added",
@@ -69,7 +85,7 @@
     {
       "change": "added",
       "path": "blocks/control_feedback/schemas/sync_stamp.schema.json",
-      "sha256": "4b13f5918059012e5cf5aecef58a94941e086d86eb3fe96bdf62ca259cd1ede9"
+      "sha256": "53092502d5910f5ffe2db5d1cadcf0ea9affc4ad13122210c9bbb34ac714be05"
     },
     {
       "change": "added",
@@ -84,7 +100,7 @@
     {
       "change": "added",
       "path": "blocks/control_feedback/tests/test_control_feedback.py",
-      "sha256": "8673d87d78ab7111ac2f10e946a9708185a280520057d49e05f6dd17e041f049"
+      "sha256": "41305121116314b7a3ba9504ce390f9687935a1f4823b27f51b9258653bfb7a4"
     },
     {
       "change": "added",
@@ -97,10 +113,10 @@
       "sha256": "ed4d9fca668c6abfd1b23d78182bc4cf0df80c0c5a87e73da6ffb0d6a7095c23"
     }
   ],
-  "result_claimed": "COMPLETE",
+  "result_claimed": "PARTIAL",
   "tests": [
     {
-      "detail": "21 tests, 0 failures, 0 errors",
+      "detail": "22 tests, 0 failures, 0 errors",
       "name": "blocks.control_feedback.tests.test_control_feedback",
       "result": "pass"
     },
@@ -115,8 +131,8 @@
       "result": "pass"
     },
     {
-      "detail": "1 case",
-      "name": "run receipt immutability (second write to same path refused)",
+      "detail": "2 cases",
+      "name": "run receipt immutability (second write to same path refused; stamping does not rewrite it)",
       "result": "pass"
     },
     {
@@ -125,9 +141,14 @@
       "result": "pass"
     },
     {
-      "detail": "4 cases",
-      "name": "sync proof (match SYNCED, mismatch NOT_SYNCED, missing remote_sha NOT_SYNCED, CLI exit 3)",
+      "detail": "5 cases",
+      "name": "sync proof (match SYNCED, mismatch NOT_SYNCED, missing remote_sha NOT_SYNCED, blocker recorded, CLI exit 3)",
       "result": "pass"
+    },
+    {
+      "detail": "git push -> HTTP 403 from proxy after CONNECT; no egress and no credentials for vtcbelgium/othrys-v2",
+      "name": "remote push to canonical repository",
+      "result": "fail"
     }
   ]
 }
