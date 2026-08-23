@@ -1,0 +1,40 @@
+{
+  "schema": "othrys.v2.gpt-state.v1",
+  "sequence": 1,
+  "state_owner": "GPT_CONTROL",
+  "remote_repo": "vtcbelgium/othrys-v2",
+  "remote_head_at_last_verified_read": "f6bf5445966589635a5b11dedae336cf8bdf9296",
+  "control_gate": "WAIT_DELEGATE_RECEIPT",
+  "active_mission": {
+    "mission_id": "V2-000C",
+    "status": "UNVERIFIED_IN_PROGRESS",
+    "source": "operator_current_conversation"
+  },
+  "last_verified_remote_receipt": "receipts/LATEST.json",
+  "last_verified_receipt_mission": "V2-000A",
+  "inventory": {
+    "root": "LEGACY_INVENTORY.md",
+    "coverage": "PARTIAL",
+    "supplements": [
+      "inventory/JARVIS.md"
+    ]
+  },
+  "control_files": {
+    "law": "BOOK_OF_GPT.md",
+    "rails": "GPT_RAILS.md",
+    "log": "GPT_LOG.jsonl",
+    "chronicle": "V2_CHRONICLE.md",
+    "research": "GPT_RAILS_RESEARCH.md"
+  },
+  "memory_boundary": {
+    "othrys_v2_repo": "MACHINE_CONTROL_TRUTH",
+    "othrys_memory": "ACCEPTED_KNOWLEDGE_PROJECTION",
+    "chat_memory": "NON_AUTHORITATIVE"
+  },
+  "known_blockers": [
+    "LEGACY_INVENTORY coverage is not yet exhaustive for local/unpushed/worktree-only code",
+    "delegate GitHub egress may differ from Windows host GitHub capability"
+  ],
+  "last_control_decision": "Establish state-first, append-only log and Chronicle rails before expanding V2 autonomy.",
+  "next_legal_action": "Read and verify the next remote delegate receipt; do not issue a new build mission before that review."
+}
