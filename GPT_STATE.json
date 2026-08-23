@@ -1,9 +1,9 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 4,
+  "sequence": 5,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "96e8caf0b21e9702894cd185a9e13ceb1ca99656",
+  "remote_head_at_last_verified_read": "4657e9b5a0e1dfa565336d3f18b09c6d87754fd5",
   "control_gate": "WAIT_DELEGATE_RECEIPT",
   "active_mission": {
     "mission_id": "V2-000C",
@@ -12,8 +12,8 @@
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
   "last_verified_receipt_mission": "V2-000A",
-  "last_log_sequence": 4,
-  "last_log_hash": "6394e20048945c35b4d5539aa3b4e17be81c762fce35953d0387f3b3f9cc566f",
+  "last_log_sequence": 5,
+  "last_log_hash": "9c66bddf1ea446070cceafd4f7b18222aece29e82ed43a2ce41c7c3b0c5018d3",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incident": "sequence 3 stored entry_hash mismatch",
@@ -34,13 +34,15 @@
     "rails": "GPT_RAILS.md",
     "log": "GPT_LOG.jsonl",
     "chronicle": "V2_CHRONICLE.md",
-    "research": "GPT_RAILS_RESEARCH.md"
+    "research": "GPT_RAILS_RESEARCH.md",
+    "intake": "GPT_INBOX.md"
   },
   "memory_boundary": {
     "othrys_v2_repo": "MACHINE_CONTROL_TRUTH",
     "othrys_memory": "ACCEPTED_KNOWLEDGE_PROJECTION",
     "memory_pointer": "02 Projects/Othrys/V2/CONTROL-INDEX.md",
-    "chat_memory": "NON_AUTHORITATIVE"
+    "chat_memory": "NON_AUTHORITATIVE",
+    "gpt_inbox": "UNPROMOTED_INTELLIGENCE_ONLY"
   },
   "known_blockers": [
     "LEGACY_INVENTORY coverage is not yet exhaustive for local/unpushed/worktree-only code",
@@ -48,6 +50,6 @@
     "receipts/LATEST.json is older than GPT-maintained control state and therefore is not the current control pointer",
     "GPT_LOG historical integrity is DEGRADED_RECOVERED because sequence 3 stored hash was invalid"
   ],
-  "last_control_decision": "Freeze and prove anti-drift rails before expanding V2; legacy Jarvis/Core control stock is inventory-first quarry, not automatic runtime inheritance.",
-  "next_legal_action": "Continue GPT-owned read-only legacy inventory while waiting. The moment V2-000C becomes remotely observable, stop inventory mutation, review its receipt and reconcile state before any build instruction."
+  "last_control_decision": "GPT is a detachable controller, not a Jarvis replacement. State, memory, raw ideas and mission evidence are separate; conversation intelligence is captured without automatic promotion.",
+  "next_legal_action": "Continue GPT-owned read-only inventory/intelligence maintenance while waiting. When V2-000C becomes remotely observable, review its receipt and reconcile state before any build instruction."
 }
