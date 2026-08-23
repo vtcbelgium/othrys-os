@@ -63,7 +63,7 @@
   "objective": "Recover the canonical Block/Oros law from the legacy repositories, reconcile it by authority and status, and implement only the smallest executable foundation giving Control Feedback canonical Block anatomy (Contract, Socket(s), Capsule, Manifest) inside a minimal Oros Zero, so that Block #2 can attach without inventing another structure.",
   "receipt_id": "V2-000C--20260823T204629Z",
   "remote_sha": null,
-  "repo_sha": null,
+  "repo_sha": "684e6391a126760361dd029221210323c99f9137",
   "result_claimed": "PARTIAL",
   "schema_version": "1.0.0",
   "sync_status": "NOT_SYNCED",
