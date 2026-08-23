@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-000B",
+  "objective": "Build exactly one block: Host Sync Gate. Make the trusted host own remote synchronization and sync attestation: read local HEAD, push main, read origin/main, require equality, stamp LATEST.json as SYNCED with remote_sha, create an immutable sync proof, commit/push only that attestation, verify the resulting remote HEAD, stop in WAIT_GPT.",
+  "delegate": "claude-opus-5",
+  "issued_by": "GPT",
+  "issued_at": "2026-08-23T20:00:00Z",
+  "constraints": [
+    "read BOOK_OF_GPT.md first",
+    "no AI",
+    "no scheduler",
+    "no fallback",
+    "no retries",
+    "no force push",
+    "no reset/clean/stash",
+    "no secret output",
+    "fail closed",
+    "V2 only",
+    "do not change Control Feedback semantics",
+    "do not build Kronos"
+  ],
+  "expected_proof": [
+    "close the stale NOT_SYNCED state of the current V2-000A receipt from the Legion host",
+    "final receipt is remotely readable",
+    "final receipt is internally consistent",
+    "stop in WAIT_GPT"
+  ]
+}

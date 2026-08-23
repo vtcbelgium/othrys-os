@@ -37,7 +37,7 @@
   "objective": "Build exactly one block: Host Sync Gate. Make the trusted host own remote synchronization and sync attestation: read local HEAD, push main, read origin/main, require equality, stamp LATEST.json as SYNCED with remote_sha, create an immutable sync proof, commit/push only that attestation, verify the resulting remote HEAD, stop in WAIT_GPT.",
   "receipt_id": "V2-000B--20260823T201013Z",
   "remote_sha": null,
-  "repo_sha": "66c45631781dfce93a4c8628f2a3de70a6bad09c",
+  "repo_sha": null,
   "result_claimed": "FAILED",
   "schema_version": "1.0.0",
   "sync_status": "NOT_SYNCED",
