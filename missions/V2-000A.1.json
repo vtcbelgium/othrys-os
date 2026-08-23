@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-000A.1",
+  "objective": "Create exactly one artifact: BOOK_OF_GPT.md at the repository root, the control contract for OTHRYS V2. Verify it exists, create or modify no other functional V2 block, record the mission through the existing Control Feedback block, commit the Book and its receipt artifacts, and do not claim remote sync that this environment cannot prove.",
+  "delegate": "claude-opus-5",
+  "issued_by": "GPT",
+  "issued_at": "2026-08-23T20:15:00Z",
+  "constraints": [
+    "one mission, one artifact, stop",
+    "keep it short: hard laws, not documentation",
+    "do not create or modify any other functional V2 block",
+    "do not build Host Sync Gate",
+    "do not repair anything else",
+    "do not pretend remote sync succeeded if this environment cannot prove it",
+    "if remote push cannot be performed, record NOT_SYNCED and WAIT_GPT"
+  ],
+  "expected_proof": [
+    "BOOK_OF_GPT.md exists at the repository root",
+    "no other functional V2 block was created or modified",
+    "V2-000A.1 recorded through the existing Control Feedback block",
+    "Book and required receipt artifacts committed",
+    "remote sync state recorded honestly",
+    "stop in WAIT_GPT"
+  ]
+}
