@@ -92,6 +92,17 @@ Events include at minimum:
 
 Each event records actor, mission, target, evidence reference, verdict, and previous event hash. The log is append-only and hash-chained. A correction is a new event, never an edit to history.
 
+### Log hash algorithm — frozen
+
+For each JSONL event:
+
+1. remove `entry_hash` from the event;
+2. serialise the remaining object as UTF-8 JSON with keys sorted, no whitespace (`separators=(",", ":")` semantics);
+3. `entry_hash = SHA-256(canonical_bytes)`;
+4. next event's `prev_hash` equals the **recomputed canonical hash** of the previous event.
+
+A stored `entry_hash` mismatch is a control incident. Do not rewrite the bad historical event. Append `LOG_CHAIN_INTEGRITY_REPAIR`, name stored vs recomputed hashes, resume from the recomputed content hash, and mark historical integrity as degraded.
+
 ## State law
 
 `GPT_STATE.json` contains only current control state and pointers. It is deliberately small.
@@ -113,6 +124,42 @@ Chronicle is written only after evidence is accepted.
 Prefer deterministic verification. If judgement is required, use an evaluator that did not author the mutation where practical.
 
 The actor's self-report is evidence input, not acceptance.
+
+### Proof-quality rule
+
+A green test suite is insufficient by itself. Ask: **if the claimed behaviour were wrong, would this evidence fail?**
+
+For every guard, validator, default-deny policy or authority boundary, require both:
+
+- a positive control that proves legitimate work is allowed; and
+- a negative control that proves the forbidden/bad case is rejected.
+
+A rail that only proves it can block is also defective if it blocks normal work so noisily that operators disable it. Guard suites therefore test ALLOW as well as DENY.
+
+### Reality-audit vocabulary
+
+Never collapse these states:
+
+- `PROVEN_PRESENT` — implementation observed and evidenced;
+- `PROVEN_ABSENT` — relevant search was performed and nothing exists;
+- `NOT_OBSERVED` — the required search was not performed;
+- `DOCUMENTED_ONLY` — prose/contract exists, runtime not proven;
+- `IMPLEMENTED_UNPROVEN` — code exists, behavioural proof absent;
+- `PROVEN` — implementation plus evidence at a named revision.
+
+Documentation is an audit target, not proof of its own claims.
+
+A claimed capability should resolve to both an executable implementation and a proving test/evidence seam. If either is missing, say so.
+
+## Guard design
+
+High-confidence rails should be silent on the happy path. Noise trains operators and agents to ignore control output.
+
+A guard is not a sandbox. State exactly what it can and cannot prevent.
+
+Destructive operations, secret access, authority expansion and production/push boundaries should be blocked or explicitly gated by deterministic code wherever possible rather than prompt instructions alone.
+
+Any guard change requires its own negative-control and normal-work regression suite.
 
 ## Memory boundary
 
