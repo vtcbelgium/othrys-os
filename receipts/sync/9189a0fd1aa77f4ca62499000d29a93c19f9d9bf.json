@@ -1,0 +1,12 @@
+{
+  "blocker": "not pushed: delegate environment has no egress to github.com (HTTP 403 from proxy after CONNECT). Supersedes the stamp keyed 66c4563, which was written against the pre-commit HEAD after an index.lock collision. STOPPED, no retry.",
+  "mission_id": "V2-000B",
+  "next_state": "WAIT_GPT",
+  "receipt_ref": "receipts/runs/V2-000B/20260823T201013Z.json",
+  "remote": "https://github.com/vtcbelgium/othrys-v2.git",
+  "remote_sha": null,
+  "repo_sha": "9189a0fd1aa77f4ca62499000d29a93c19f9d9bf",
+  "schema_version": "1.0.0",
+  "sync_status": "NOT_SYNCED",
+  "verified_at": "2026-08-23T20:10:56Z"
+}
