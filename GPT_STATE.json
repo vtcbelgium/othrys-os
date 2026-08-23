@@ -1,9 +1,9 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 3,
+  "sequence": 4,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "6f8e21284305a889bab8b88ad872d440d4c0fee9",
+  "remote_head_at_last_verified_read": "96e8caf0b21e9702894cd185a9e13ceb1ca99656",
   "control_gate": "WAIT_DELEGATE_RECEIPT",
   "active_mission": {
     "mission_id": "V2-000C",
@@ -12,12 +12,22 @@
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
   "last_verified_receipt_mission": "V2-000A",
-  "last_log_sequence": 3,
-  "last_log_hash": "53b04f30217ef4d6411ddd30e40be257ba70bb95946dfdd5f106892a3bb89b35",
+  "last_log_sequence": 4,
+  "last_log_hash": "6394e20048945c35b4d5539aa3b4e17be81c762fce35953d0387f3b3f9cc566f",
+  "log_integrity": {
+    "status": "DEGRADED_RECOVERED",
+    "incident": "sequence 3 stored entry_hash mismatch",
+    "stored_hash": "53b04f30217ef4d6411ddd30e40be257ba70bb95946dfdd5f106892a3bb89b35",
+    "recomputed_hash": "9fc65a6543e139e829647087b76f6bba849f3702596b6683d2164b81e16951f0",
+    "recovery_event": 4
+  },
   "inventory": {
     "root": "LEGACY_INVENTORY.md",
     "coverage": "PARTIAL",
-    "supplements": ["inventory/JARVIS.md"]
+    "supplements": [
+      "inventory/JARVIS.md",
+      "inventory/OTHRYS_CORE_CONTROL.md"
+    ]
   },
   "control_files": {
     "law": "BOOK_OF_GPT.md",
@@ -35,8 +45,9 @@
   "known_blockers": [
     "LEGACY_INVENTORY coverage is not yet exhaustive for local/unpushed/worktree-only code",
     "delegate GitHub egress may differ from Windows host GitHub capability",
-    "receipts/LATEST.json is older than GPT-maintained control state and therefore is not the current control pointer"
+    "receipts/LATEST.json is older than GPT-maintained control state and therefore is not the current control pointer",
+    "GPT_LOG historical integrity is DEGRADED_RECOVERED because sequence 3 stored hash was invalid"
   ],
-  "last_control_decision": "Remote state reconciled before inventory expansion; latest delegate receipt remains stale and no new build mission is authorised until V2-000C is reviewed.",
-  "next_legal_action": "Continue GPT-owned read-only legacy inventory work while waiting; when V2-000C appears remotely, stop inventory mutation and review that receipt first."
+  "last_control_decision": "Freeze and prove anti-drift rails before expanding V2; legacy Jarvis/Core control stock is inventory-first quarry, not automatic runtime inheritance.",
+  "next_legal_action": "Continue GPT-owned read-only legacy inventory while waiting. The moment V2-000C becomes remotely observable, stop inventory mutation, review its receipt and reconcile state before any build instruction."
 }
