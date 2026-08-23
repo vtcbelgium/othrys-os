@@ -27,8 +27,6 @@
     }
   ],
   "created_at": "2026-08-23T20:46:29Z",
-  "delegate": "claude-opus-5",
-  "envelope_ref": "missions/V2-000C.json",
   "evidence": [
     "docs/V2-000C/SOURCE_MAP.md",
     "docs/V2-000C/CONTRADICTIONS.md",
@@ -58,15 +56,7 @@
       "sha256": "355577e74c12940b5c35266b82fa2a4a610b33225a56e2c0599636059f6ee9d0"
     }
   ],
-  "mission_id": "V2-000C",
-  "next_state": "WAIT_GPT",
-  "objective": "Recover the canonical Block/Oros law from the legacy repositories, reconcile it by authority and status, and implement only the smallest executable foundation giving Control Feedback canonical Block anatomy (Contract, Socket(s), Capsule, Manifest) inside a minimal Oros Zero, so that Block #2 can attach without inventing another structure.",
-  "receipt_id": "V2-000C--20260823T204629Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "PARTIAL",
-  "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
   "tests": [
     {
       "detail": "22 tests, 0 failures, 0 errors; blocks/ byte-identical to V2-000A.1",

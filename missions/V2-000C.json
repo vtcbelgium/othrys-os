@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-000C",
+  "objective": "Recover the canonical Block/Oros law from the legacy repositories, reconcile it by authority and status, and implement only the smallest executable foundation giving Control Feedback canonical Block anatomy (Contract, Socket(s), Capsule, Manifest) inside a minimal Oros Zero, so that Block #2 can attach without inventing another structure.",
+  "delegate": "claude-opus-5",
+  "issued_by": "GPT",
+  "issued_at": "2026-08-23T20:20:00Z",
+  "constraints": [
+    "read BOOK_OF_GPT.md first, then search the actual legacy repositories",
+    "no architecture invention",
+    "no speculative framework",
+    "no broad migration from legacy OTHRYS",
+    "existing language wins; do not create synonyms",
+    "do not build a registry, resolver, package manager, marketplace, runtime or Constellation",
+    "do not build Host Sync Gate",
+    "STOP and record if authoritative sources materially contradict in a way that changes implementation",
+    "do not mutate any legacy repository",
+    "do not claim GitHub synchronization unless proven"
+  ],
+  "expected_proof": [
+    "compact SOURCE MAP with status and authority per source",
+    "authority/drift gate passed or contradiction recorded",
+    "Block anatomy implemented only if the gate passes",
+    "Control Feedback tests remain green",
+    "receipt emitted through the existing Control Feedback block",
+    "stop in WAIT_GPT"
+  ]
+}
