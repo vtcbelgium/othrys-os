@@ -1,0 +1,143 @@
+{
+  "blocker": null,
+  "commands_run": [
+    {
+      "cmd": "python3 -m unittest discover -s blocks/control_feedback/tests -t .",
+      "exit_code": 0
+    },
+    {
+      "cmd": "python3 -m blocks.control_feedback.cli validate --kind envelope --file missions/V2-000A.json",
+      "exit_code": 0
+    },
+    {
+      "cmd": "git ls-remote https://github.com/vtcbelgium/othrys-v2.git",
+      "exit_code": 128
+    }
+  ],
+  "created_at": "2026-08-23T19:56:06Z",
+  "delegate": "claude-opus-5",
+  "envelope_ref": "missions/V2-000A.json",
+  "evidence": [
+    "missions/V2-000A.json",
+    "missions/V2-000A.result.json",
+    "receipts/LATEST.json",
+    "blocks/control_feedback/schemas/mission_envelope.schema.json",
+    "blocks/control_feedback/schemas/receipt.schema.json",
+    "blocks/control_feedback/schemas/sync_stamp.schema.json",
+    "unittest: Ran 21 tests OK",
+    "control_feedback contains no network call, no clock read, no environment read, no AI, no retry loop, no scheduler"
+  ],
+  "files_changed": [
+    {
+      "change": "added",
+      "path": ".gitignore",
+      "sha256": "72bc223e93fff7c5044e8b8bd65437e57441662d696c0a469bd8e9e1c26516d1"
+    },
+    {
+      "change": "added",
+      "path": "README.md",
+      "sha256": "b99a9764b42dec72f5b1b1035c88bd979c0f706d4461372d52efae217ff5ccab"
+    },
+    {
+      "change": "added",
+      "path": "blocks/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "change": "added",
+      "path": "blocks/control_feedback/__init__.py",
+      "sha256": "cc5418466d1977425a2b119aa35b7b1c9958741d11449fca394062f220f43058"
+    },
+    {
+      "change": "added",
+      "path": "blocks/control_feedback/cli.py",
+      "sha256": "0a96112adb0560aca2ca44497c457c520baf93566a2f9a1fa806cb96933adf04"
+    },
+    {
+      "change": "added",
+      "path": "blocks/control_feedback/receipt.py",
+      "sha256": "d0aa89e36081e50be9c762f31215cc1dcaafeab99e9715e379f34993aa1a3451"
+    },
+    {
+      "change": "added",
+      "path": "blocks/control_feedback/schemas/mission_envelope.schema.json",
+      "sha256": "4def7f6f79d37692f0d6ec05d2d0cba5ed9e19d322edda454bc38d0cceb3a0c9"
+    },
+    {
+      "change": "added",
+      "path": "blocks/control_feedback/schemas/receipt.schema.json",
+      "sha256": "d3f99eeab86cb62e6ca05177d73ec72ceb4b790a425f517b81cb7da09d348275"
+    },
+    {
+      "change": "added",
+      "path": "blocks/control_feedback/schemas/sync_stamp.schema.json",
+      "sha256": "4b13f5918059012e5cf5aecef58a94941e086d86eb3fe96bdf62ca259cd1ede9"
+    },
+    {
+      "change": "added",
+      "path": "blocks/control_feedback/secrets.py",
+      "sha256": "e1605e262ee2c53ccafadfa3d3d366addff705faabc29a5a902a3ffe10fa9756"
+    },
+    {
+      "change": "added",
+      "path": "blocks/control_feedback/tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "change": "added",
+      "path": "blocks/control_feedback/tests/test_control_feedback.py",
+      "sha256": "8673d87d78ab7111ac2f10e946a9708185a280520057d49e05f6dd17e041f049"
+    },
+    {
+      "change": "added",
+      "path": "blocks/control_feedback/validate.py",
+      "sha256": "8da790e278f46180efb1d3d6404c729702da34c4c0588e61e6510ca2bf73e2be"
+    },
+    {
+      "change": "added",
+      "path": "missions/V2-000A.json",
+      "sha256": "ed4d9fca668c6abfd1b23d78182bc4cf0df80c0c5a87e73da6ffb0d6a7095c23"
+    }
+  ],
+  "mission_id": "V2-000A",
+  "next_state": "WAIT_GPT",
+  "objective": "Build exactly one block: Control Feedback. Mission envelope schema, receipt schema, atomic receipt writer, canonical LATEST.json, immutable run receipt, remote sync proof. Record evidence only; never decide mission success.",
+  "receipt_id": "V2-000A--20260823T195606Z",
+  "remote_sha": null,
+  "repo_sha": null,
+  "result_claimed": "COMPLETE",
+  "schema_version": "1.0.0",
+  "sync_status": "NOT_SYNCED",
+  "tests": [
+    {
+      "detail": "21 tests, 0 failures, 0 errors",
+      "name": "blocks.control_feedback.tests.test_control_feedback",
+      "result": "pass"
+    },
+    {
+      "detail": "4 cases",
+      "name": "envelope contract (valid, unknown property, bad mission_id, invalid issued_at)",
+      "result": "pass"
+    },
+    {
+      "detail": "2 cases, root dir empty after refusal",
+      "name": "receipt fail-closed (invalid receipt and credential-shaped receipt write nothing)",
+      "result": "pass"
+    },
+    {
+      "detail": "1 case",
+      "name": "run receipt immutability (second write to same path refused)",
+      "result": "pass"
+    },
+    {
+      "detail": "1 case",
+      "name": "atomic write (no .tmp- residue)",
+      "result": "pass"
+    },
+    {
+      "detail": "4 cases",
+      "name": "sync proof (match SYNCED, mismatch NOT_SYNCED, missing remote_sha NOT_SYNCED, CLI exit 3)",
+      "result": "pass"
+    }
+  ]
+}

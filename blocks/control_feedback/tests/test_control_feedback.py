@@ -1,0 +1,219 @@
+"""Deterministic proof suite for the control_feedback block."""
+
+import json
+import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
+
+from blocks.control_feedback import cli, receipt as receipt_module
+from blocks.control_feedback.secrets import SecretDetected, scan
+from blocks.control_feedback.validate import load_schema, validate
+
+ENVELOPE = {
+    "schema_version": "1.0.0",
+    "mission_id": "V2-TEST",
+    "objective": "test objective",
+    "delegate": "unit-test",
+    "issued_by": "GPT",
+    "issued_at": "2026-08-23T00:00:00Z",
+    "expected_proof": ["receipt exists"],
+}
+
+RESULT = {
+    "created_at": "2026-08-23T00:00:01Z",
+    "files_changed": [{"path": "a.py", "change": "added", "sha256": "0" * 64}],
+    "commands_run": [{"cmd": "python3 -m unittest", "exit_code": 0}],
+    "tests": [{"name": "suite", "result": "pass", "detail": "10 tests"}],
+    "evidence": ["receipts/LATEST.json"],
+    "result_claimed": "COMPLETE",
+    "blocker": None,
+}
+
+SHA_A = "a" * 40
+SHA_B = "b" * 40
+
+
+def build():
+    return receipt_module.build_receipt(ENVELOPE, dict(RESULT), "missions/x.json")
+
+
+class EnvelopeContract(unittest.TestCase):
+    def test_valid_envelope_passes(self):
+        self.assertEqual(validate(ENVELOPE, load_schema("mission_envelope")), [])
+
+    def test_unknown_property_is_refused(self):
+        bad = dict(ENVELOPE, surprise="x")
+        self.assertTrue(validate(bad, load_schema("mission_envelope")))
+
+    def test_bad_mission_id_is_refused(self):
+        bad = dict(ENVELOPE, mission_id="lowercase")
+        self.assertTrue(validate(bad, load_schema("mission_envelope")))
+
+    def test_build_refuses_invalid_envelope(self):
+        with self.assertRaises(receipt_module.ReceiptError):
+            receipt_module.build_receipt(dict(ENVELOPE, issued_at="yesterday"), dict(RESULT), "r")
+
+
+class ReceiptContract(unittest.TestCase):
+    def test_receipt_is_schema_valid_and_waits_for_gpt(self):
+        built = build()
+        self.assertEqual(validate(built, load_schema("receipt")), [])
+        self.assertEqual(built["next_state"], "WAIT_GPT")
+        self.assertEqual(built["sync_status"], "NOT_SYNCED")
+        self.assertIsNone(built["repo_sha"])
+        self.assertIsNone(built["remote_sha"])
+
+    def test_result_keys_are_exact(self):
+        short = dict(RESULT)
+        short.pop("blocker")
+        with self.assertRaises(receipt_module.ReceiptError):
+            receipt_module.build_receipt(ENVELOPE, short, "r")
+        with self.assertRaises(receipt_module.ReceiptError):
+            receipt_module.build_receipt(ENVELOPE, dict(RESULT, extra=1), "r")
+
+    def test_block_never_upgrades_a_claim(self):
+        built = receipt_module.build_receipt(
+            ENVELOPE, dict(RESULT, result_claimed="FAILED", blocker="x"), "r"
+        )
+        self.assertEqual(built["result_claimed"], "FAILED")
+        self.assertEqual(built["next_state"], "WAIT_GPT")
+
+
+class WriterBehaviour(unittest.TestCase):
+    def test_writes_run_receipt_and_latest_identically(self):
+        with TemporaryDirectory() as root:
+            built = build()
+            run_path, latest_path = receipt_module.write_receipt(root, built)
+            self.assertTrue(run_path.is_file())
+            self.assertEqual(
+                run_path.read_text(encoding="utf-8"),
+                latest_path.read_text(encoding="utf-8"),
+            )
+            self.assertEqual(json.loads(latest_path.read_text(encoding="utf-8")), built)
+
+    def test_run_receipt_is_immutable(self):
+        with TemporaryDirectory() as root:
+            built = build()
+            receipt_module.write_receipt(root, built)
+            with self.assertRaises(receipt_module.ReceiptError):
+                receipt_module.write_receipt(root, built)
+
+    def test_invalid_receipt_writes_nothing(self):
+        with TemporaryDirectory() as root:
+            broken = dict(build(), next_state="GO")
+            with self.assertRaises(receipt_module.ReceiptError):
+                receipt_module.write_receipt(root, broken)
+            self.assertEqual(sorted(Path(root).iterdir()), [])
+
+    def test_secret_shaped_receipt_writes_nothing(self):
+        with TemporaryDirectory() as root:
+            leaky = dict(build())
+            leaky["evidence"] = ["gh" + "p_" + "A" * 32]
+            with self.assertRaises(SecretDetected):
+                receipt_module.write_receipt(root, leaky)
+            self.assertEqual(sorted(Path(root).iterdir()), [])
+
+    def test_atomic_write_leaves_no_temp_files(self):
+        with TemporaryDirectory() as root:
+            receipt_module.write_receipt(root, build())
+            leftovers = [p.name for p in Path(root).rglob(".tmp-*")]
+            self.assertEqual(leftovers, [])
+
+    def test_secret_scanner_is_quiet_on_clean_text(self):
+        self.assertEqual(scan("receipts/LATEST.json sha 0123abcd"), [])
+
+
+class SyncProof(unittest.TestCase):
+    def _seed(self, root):
+        receipt_module.write_receipt(root, build())
+
+    def test_matching_shas_are_synced(self):
+        with TemporaryDirectory() as root:
+            self._seed(root)
+            stamp, path = receipt_module.stamp_sync(
+                root, "https://example.invalid/r.git", SHA_A, SHA_A, "2026-08-23T00:00:02Z"
+            )
+            self.assertEqual(stamp["sync_status"], "SYNCED")
+            self.assertEqual(validate(stamp, load_schema("sync_stamp")), [])
+            self.assertTrue(path.is_file())
+            latest = receipt_module.read_latest(root)
+            self.assertEqual(latest["sync_status"], "SYNCED")
+            self.assertEqual(latest["remote_sha"], SHA_A)
+
+    def test_mismatched_shas_are_not_synced(self):
+        with TemporaryDirectory() as root:
+            self._seed(root)
+            stamp, _ = receipt_module.stamp_sync(
+                root, "https://example.invalid/r.git", SHA_A, SHA_B, "2026-08-23T00:00:02Z"
+            )
+            self.assertEqual(stamp["sync_status"], "NOT_SYNCED")
+            self.assertEqual(receipt_module.read_latest(root)["sync_status"], "NOT_SYNCED")
+
+    def test_missing_remote_sha_is_not_synced(self):
+        with TemporaryDirectory() as root:
+            self._seed(root)
+            stamp, _ = receipt_module.stamp_sync(
+                root, "https://example.invalid/r.git", SHA_A, None, "2026-08-23T00:00:02Z"
+            )
+            self.assertEqual(stamp["sync_status"], "NOT_SYNCED")
+            self.assertIsNone(stamp["remote_sha"])
+
+    def test_run_receipt_is_not_rewritten_by_stamping(self):
+        with TemporaryDirectory() as root:
+            built = build()
+            run_path, _ = receipt_module.write_receipt(root, built)
+            before = run_path.read_text(encoding="utf-8")
+            receipt_module.stamp_sync(
+                root, "https://example.invalid/r.git", SHA_A, SHA_A, "2026-08-23T00:00:02Z"
+            )
+            self.assertEqual(run_path.read_text(encoding="utf-8"), before)
+
+    def test_stamp_requires_latest(self):
+        with TemporaryDirectory() as root:
+            with self.assertRaises(receipt_module.ReceiptError):
+                receipt_module.stamp_sync(
+                    root, "r", SHA_A, SHA_A, "2026-08-23T00:00:02Z"
+                )
+
+
+class CliExitCodes(unittest.TestCase):
+    def _files(self, root):
+        envelope_path = Path(root) / "envelope.json"
+        result_path = Path(root) / "result.json"
+        envelope_path.write_text(json.dumps(ENVELOPE), encoding="utf-8")
+        result_path.write_text(json.dumps(RESULT), encoding="utf-8")
+        return str(envelope_path), str(result_path)
+
+    def test_emit_then_stamp_exit_codes(self):
+        with TemporaryDirectory() as root:
+            envelope_path, result_path = self._files(root)
+            self.assertEqual(
+                cli.main(["emit", "--root", root, "--envelope", envelope_path, "--result", result_path]),
+                0,
+            )
+            self.assertEqual(
+                cli.main(
+                    ["stamp-sync", "--root", root, "--remote", "https://example.invalid/r.git",
+                     "--repo-sha", SHA_A, "--remote-sha", SHA_B, "--verified-at", "2026-08-23T00:00:02Z"]
+                ),
+                3,
+            )
+
+    def test_validate_refuses_bad_document(self):
+        with TemporaryDirectory() as root:
+            bad = Path(root) / "bad.json"
+            bad.write_text(json.dumps(dict(ENVELOPE, mission_id="nope")), encoding="utf-8")
+            self.assertEqual(cli.main(["validate", "--kind", "envelope", "--file", str(bad)]), 2)
+
+    def test_emit_refuses_bad_envelope(self):
+        with TemporaryDirectory() as root:
+            envelope_path, result_path = self._files(root)
+            Path(envelope_path).write_text(json.dumps(dict(ENVELOPE, delegate="")), encoding="utf-8")
+            self.assertEqual(
+                cli.main(["emit", "--root", root, "--envelope", envelope_path, "--result", result_path]),
+                2,
+            )
+
+
+if __name__ == "__main__":
+    unittest.main()

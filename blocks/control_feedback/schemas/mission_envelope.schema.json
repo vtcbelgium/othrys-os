@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "othrys/v2/control_feedback/mission_envelope/1.0.0",
+  "title": "OTHRYS V2 mission envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "mission_id",
+    "objective",
+    "delegate",
+    "issued_by",
+    "issued_at",
+    "expected_proof"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "mission_id": { "type": "string", "pattern": "^[A-Z0-9][A-Z0-9._-]{2,63}$" },
+    "objective": { "type": "string", "minLength": 1 },
+    "delegate": { "type": "string", "minLength": 1 },
+    "issued_by": { "type": "string", "minLength": 1 },
+    "issued_at": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$" },
+    "constraints": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "expected_proof": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+  }
+}

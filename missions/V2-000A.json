@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-000A",
+  "objective": "Build exactly one block: Control Feedback. Mission envelope schema, receipt schema, atomic receipt writer, canonical LATEST.json, immutable run receipt, remote sync proof. Record evidence only; never decide mission success.",
+  "delegate": "claude-opus-5",
+  "issued_by": "GPT",
+  "issued_at": "2026-08-23T00:00:00Z",
+  "constraints": [
+    "no hidden state",
+    "no autonomous next mission",
+    "no fallback",
+    "no retries",
+    "no scheduler",
+    "no AI inside the block",
+    "atomic writes",
+    "fail closed on invalid receipt",
+    "no secrets",
+    "push verified state online",
+    "stop after receipt is available remotely"
+  ],
+  "expected_proof": [
+    "one synthetic mission envelope exists",
+    "one valid receipt exists",
+    "receipts/LATEST.json written",
+    "immutable run receipt written",
+    "commit and push completed",
+    "remote SHA proven",
+    "stop in WAIT_GPT"
+  ]
+}
