@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-000C.R",
+  "objective": "Doctrine reconciliation only. Resolve the five contradictions raised by V2-000C: classify Control Feedback as SHARED_SERVICE / PLATFORM_ONLY, keep SOCKET and CAPSULE out of V2 architecture, reference the existing oros/oros-zero without recreating or modifying it, record that othrys-v2 is not an Oros, and correct BOOK_OF_GPT.md so that Block is reserved for canonical product-capability Blocks. Record canon drift without repairing it.",
+  "delegate": "claude-opus-5",
+  "issued_by": "GPT",
+  "issued_at": "2026-08-23T21:00:00Z",
+  "constraints": [
+    "reconcile only: no feature build, no architecture expansion",
+    "do not continue V2-000C implementation",
+    "do not create Block #2",
+    "do not create an Oros",
+    "do not modify legacy repositories",
+    "do not redesign working Control Feedback code",
+    "senior recovered doctrine wins over newer informal V2 terminology",
+    "keep BOOK_OF_GPT.md short",
+    "do not create duplicate logging systems",
+    "record canon drift, do not repair it",
+    "do not loop on network failure"
+  ],
+  "expected_proof": [
+    "C1 through C5 explicitly resolved",
+    "BOOK_OF_GPT.md no longer conflicts with senior Block doctrine",
+    "Control Feedback implementation functionally unchanged and tests green",
+    "SOCKET and CAPSULE not introduced as V2 architecture",
+    "existing oros/oros-zero referenced, not recreated or modified",
+    "no legacy repository mutated",
+    "canon drift recorded",
+    "receipt valid and sync state reported truthfully",
+    "stop in WAIT_GPT"
+  ]
+}

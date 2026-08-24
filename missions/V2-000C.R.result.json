@@ -27,8 +27,6 @@
     }
   ],
   "created_at": "2026-08-24T16:22:00Z",
-  "delegate": "claude-opus-5",
-  "envelope_ref": "missions/V2-000C.R.json",
   "evidence": [
     "BOOK_OF_GPT.md law 12 COMPONENTS and law 16 BEFORE NEW CODE",
     "docs/V2-000C.R/DECISIONS.md",
@@ -60,15 +58,7 @@
       "sha256": "5e2660d08c0a1f5cc296a0b0993647aedeb820beea83cc3ce7982f461095a30a"
     }
   ],
-  "mission_id": "V2-000C.R",
-  "next_state": "WAIT_GPT",
-  "objective": "Doctrine reconciliation only. Resolve the five contradictions raised by V2-000C: classify Control Feedback as SHARED_SERVICE / PLATFORM_ONLY, keep SOCKET and CAPSULE out of V2 architecture, reference the existing oros/oros-zero without recreating or modifying it, record that othrys-v2 is not an Oros, and correct BOOK_OF_GPT.md so that Block is reserved for canonical product-capability Blocks. Record canon drift without repairing it.",
-  "receipt_id": "V2-000C.R--20260824T162200Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "COMPLETE",
-  "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
   "tests": [
     {
       "detail": "git diff HEAD -- blocks/ is empty; blocks/ byte-identical to V2-000A.1 commit 448b691; only BOOK_OF_GPT.md plus two new docs changed",

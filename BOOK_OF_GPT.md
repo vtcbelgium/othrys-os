@@ -64,10 +64,11 @@ Tests, files, commits, pushes, and remote state are facts only
 when directly proven.
 Never report intended state as achieved state.
 
-## 12. BLOCKS
+## 12. COMPONENTS
 
-Build V2 from isolated, replaceable, independently testable blocks.
-A block has an explicit input, output, contract, proof, and failure state.
+Build V2 from isolated, replaceable, independently testable components.
+A component has an explicit input, output, contract, proof, and failure state.
+Component, service, module, control, adapter are V2 words. Block is not.
 
 ## 13. IMMUTABILITY
 
@@ -83,3 +84,13 @@ logs, prompts, commits, or tracked files.
 
 When the mission's acceptance proof is complete or a blocker is
 reached, stop execution and return control to GPT.
+
+## 16. BEFORE NEW CODE
+
+Check the Legacy Inventory and senior canon first. Reuse before build.
+BLOCK is reserved for canonical OTHRYS product-capability Blocks.
+Control-plane machinery is not a Block unless senior Block law
+classifies it as one.
+othrys-v2 is control plane. It is not an Oros and has no Blueprint.
+Use canonical vocabulary: Block, Contract, Port, Bridge, Blueprint,
+Oros, oros.lock. Do not invent synonyms for them.
