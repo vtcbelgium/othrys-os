@@ -1,0 +1,16 @@
+{
+  "blocker": "PUSH_PENDING: git push origin main and git ls-remote origin main both refused with 'Received HTTP code 403 from proxy after CONNECT' (exit 128). The delegate has never had GitHub egress; the Windows host owns pushing. One bounded attempt each, no retry loop, no fallback transport. PUSH_PENDING is not a runtime failure and does not weaken the RUNTIME_PROVEN verdict recorded by this mission.",
+  "host_command": "cd C:\\Users\\othry\\Projects\\othrys-v2; git push origin main; git ls-remote origin main",
+  "mission_id": "V2-001B.T",
+  "next_state": "WAIT_GPT",
+  "receipt_ref": "receipts/runs/V2-001B.T/20260824T190245Z.json",
+  "remote": "https://github.com/vtcbelgium/othrys-v2.git",
+  "remote_sha": null,
+  "repo_sha": "4ce6fa4d67af5e8710c73a605b3b7d679552d54a",
+  "runtime_status": "RUNTIME_PROVEN",
+  "schema_version": "1.0.0",
+  "sync_status": "PUSH_PENDING",
+  "unpushed_commits": ["28f7374 V2-001B.S", "74d44df V2-001B.S sync stamp", "4ce6fa4 V2-001B.T", "this sync stamp"],
+  "fast_forward": "origin/main a6d75aada1b381b7a8f848fcb972f45dbc40ce7f is an ancestor of local HEAD; the host push is a clean fast-forward",
+  "verified_at": "2026-08-24T19:07:00Z"
+}
