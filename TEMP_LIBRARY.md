@@ -67,11 +67,18 @@ Books and Laws are deliberately different artifact classes. Do not call a mechan
 ## ROOM 04 — BLOCKS & OROS
 
 ### Shelf: Block Stock — ADMITTED INTO V2 (exactly one)
-- `block.media.image-prep` `0.1.0` — digest `32b34548…d363d7b`. Admitted by V2-001A.R.
-  Record: `admissions/block.media.image-prep@0.1.0.json`. Implementation stays in
-  `othrys-blocks/blocks/media/image-prep`; V2 holds the admission truth, not the code.
-  Candidates are not stock: the other nine directories in `othrys-blocks/blocks` remain
-  available legacy stock and are **not** admitted.
+- `block.media.image-prep` — **one Block, two admission records, one active specimen.**
+  - **ACTIVE:** `0.1.1` — digest `48afa7ac…7b3b55bd`, `RUNTIME_PROVEN` on LEGION
+    (node 10/10, browser 29/29, aggressive 18/18). Promoted by V2-001D.
+    Record: `admissions/block.media.image-prep@0.1.1.json`.
+  - **HISTORICAL / SUPERSEDED:** `0.1.0` — digest `32b34548…d363d7b`. Admitted by
+    V2-001A.R, runtime-proven by V2-001B.T, superseded after V2-001C repaired two
+    defects the aggressive QA suite proved. Record unmodified and still valid evidence.
+  - Ledger: `admissions/SUPERSESSION.md`. It is a ledger, not a registry or resolver.
+  - Implementation stays in `othrys-blocks/blocks/media/image-prep`; V2 holds the
+    admission truth, not the code.
+  - Candidates are not stock: the other nine directories in `othrys-blocks/blocks` remain
+    available legacy stock and are **not** admitted.
 
 ### Shelf: Platform / Control Services
 - `blocks/control_feedback/` — **Control Feedback**, classification `SHARED_SERVICE` / `PLATFORM_ONLY` (V2-000C.R). Not a Capability Block, not Block #1. Its `blocks/` path is recorded technical debt; relocation is a separate mission.
@@ -86,6 +93,12 @@ Books and Laws are deliberately different artifact classes. Do not call a mechan
 
 ### Shelf: Receipts
 - `receipts/`
+
+### Shelf: QA / Adversarial evidence
+- `qa/block.media.image-prep/` — the aggressive suite that proved two real defects in a
+  Block already passing 24/24. `AGGRESSIVE_TEST_EVIDENCE.md`, `adversarial.spec.js` (18),
+  `digest.test.mjs` (0.1.0-era proof, deliberately unedited), `digest-0.1.1.test.mjs`
+  (active proof, added by V2-001D).
 
 Receipts are evidence/runtime control artifacts, not knowledge notes. The Library indexes them but does not reinterpret them.
 

@@ -359,3 +359,54 @@ while it was a read-only quarry. It is a blocker now.
 
 Lesson: **a suite that only passes is not evidence of correctness — it is evidence of
 what you thought to ask.**
+
+## CH-0017 — The repaired specimen becomes the real one
+
+`0.1.1` is now the active admitted Block #1. Node **10/10**, canonical browser
+**29/29**, aggressive **18/18** on LEGION — Node 24.18.1, Playwright 1.62.1,
+Chromium 151.0.7922.34, no failures.
+
+The number that matters is the aggressive suite: **16/18 on `0.1.0`, 18/18 on
+`0.1.1`.** The two that used to fail were the defect proofs. They pass now. A promotion
+rarely gets a confirmation that clean — the same unmodified suite, the same harness,
+one changed specimen, and exactly the two expected verdicts flipping.
+
+The digest was checked before a single record was written, and matched. Beyond that the
+delegate re-ran nothing, which is what a promotion mission should look like. It did
+check what it could: the canonical suite enumerates exactly 29 tests and the aggressive
+suite exactly 18, matching the reported totals, and the harness staged under
+`node_modules/.othrys-aggressive` is byte-identical to the V2 sources — so the run used
+V2's suite against V2's specimen. The browser runs themselves were witnessed by the
+operator, not by the delegate, and the record is stamped `HOST_SUPPLIED_TRUSTED` so
+nobody later reads it as first-hand.
+
+`0.1.0` did not get erased for having been wrong. Its record is byte-unmodified, its
+receipts unrewritten, its `RUNTIME_PROVEN` result from V2-001B.T still true *of
+`0.1.0`*, and it stays reconstructible from `09efbc70`. **Superseded means "not the
+specimen to mount" — not "wrong", not "gone".** Its status had to be written somewhere
+other than inside the file it describes, since §1 forbade touching that file, so
+`admissions/SUPERSESSION.md` holds two rows and an explanation. Two rows is not a
+registry.
+
+Two things were kept deliberately un-promoted. **Maturity stays `REUSABLE`** — a PATCH
+repair is evidence of a fixed bug, not of broader reuse, and Book of Blocks §7 is
+explicit that maturity is evidence rather than branding. And the **contract is recorded
+as unchanged**, because both fixes made the implementation conform to what `BLOCK.md`
+already declared. That is exactly what made the bump a PATCH, and writing it into the
+record stops a future reader mistaking a bug fix for a contract revision.
+
+`digest.test.mjs` was left alone, still failing two of three tests by design. The active
+proof is a new file beside it. Both histories stand, which was the instruction and would
+have been the right call anyway.
+
+What is now uncomfortable, and should be said plainly: V2 records an **ACTIVE
+admission whose canonical source exists on exactly one machine.** `othrys-blocks` still
+has no remote. That was a footnote when the repository was a read-only quarry. It is
+now the single point of failure under the only Block V2 has.
+
+Foundation state: **`BLOCK_1_RUNTIME_PROVEN_NOT_MOUNTED`**, active specimen `0.1.1`.
+Question 4 is answered. Question 5 — *where is it mounted in the Oros?* — is untouched,
+and remains the only gate on Block #2. **Block #2 stays FORBIDDEN.**
+
+Lesson: **the point of a repair is not that the bug is gone — it is that the same
+adversary now returns a different verdict.**

@@ -1,0 +1,348 @@
+{
+  "schema": "othrys.v2.block_admission.v0",
+  "note": "V2-owned admission record for exactly one Capability Block. Field names are borrowed from the ACCEPTED documentary shape oros.lock@v0 (othrys-hub-oros-composition-law-001/docs/OROS-COMPOSITION-LAW-001/SCHEMAS.md) so a future Factory-produced lock can consume them without renaming. This is NOT an oros.lock instance, NOT a registry, NOT a resolver, and covers no Block but this one. othrys-v2 is control plane, not an Oros (ADR-0050).",
+  "admission_status": "ACTIVE_ADMITTED",
+  "supersedes": {
+    "block_version": "0.1.0",
+    "package_tree_digest": "32b34548ad2dcd31c81d6efc5b569e0f19f33943e621f910f2f07b15ad363d7b",
+    "record": "admissions/block.media.image-prep@0.1.0.json",
+    "status_of_superseded": "HISTORICAL / SUPERSEDED",
+    "rule": "FOUNDATION_LAWS 20 - updates are new admissions. The 0.1.0 record is NOT modified, NOT deleted and remains valid historical evidence. A different digest is a different specimen.",
+    "why": "0.1.0 carried two defects proven by the V2 aggressive QA suite: parameterized SVG MIME bypassed rejection, and an extreme aspect downscale could round a raster dimension to zero. Repaired by V2-001C as a PATCH."
+  },
+  "admitted_by": {
+    "mission": "V2-001D",
+    "base_sha": "ca39219ce92e4a3c10cc2d9d3e38562e6217d2ff",
+    "admitted_at": "2026-08-24",
+    "authority": "GPT Control"
+  },
+  "block_id": "block.media.image-prep",
+  "block_version": "0.1.1",
+  "package": "@othrys-blocks/media-image-prep",
+  "capability_id": "capability.media.image-prep",
+  "classification": "CAPABILITY",
+  "maturity_at_admission": "REUSABLE",
+  "maturity_note": "Unchanged from 0.1.0. A PATCH repair is not a maturity promotion (Book of Blocks 7: maturity is evidence, not branding). Not CERTIFIED, not GOLDEN.",
+  "source": {
+    "canonical_repo": "othrys-blocks",
+    "canonical_path": "blocks/media/image-prep",
+    "absolute_path_on_legion": "C:\\Users\\othry\\Projects\\othrys-blocks\\blocks\\media\\image-prep",
+    "repo_head_at_admission": "b4171d3eb3a28acd30a707892dc7db9c73444a82",
+    "last_commit_touching_block": "b4171d3eb3a28acd30a707892dc7db9c73444a82",
+    "branch": "mission/block-003-extract-001",
+    "repo_remote": null,
+    "distribution": "REMOTE_PENDING - othrys-blocks still has no configured remote. This is now more serious than at 0.1.0: the repair commit b4171d3 holds real work and CANNOT BE PUSHED BY ANYONE. Recorded as a standing blocker.",
+    "ownership": "legacy owns the implementation; V2 owns only this admission record. No implementation was copied into othrys-v2."
+  },
+  "package_tree_digest": {
+    "value": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+    "algorithm": "sha256-of-manifest",
+    "procedure": [
+      "1. Walk the Block directory recursively.",
+      "2. Exclude any path containing a node_modules, test-results or .git segment. Include everything else.",
+      "3. Path form: POSIX-relative to the Block directory root.",
+      "4. Order: bytewise ascending on the relative path (LC_ALL=C).",
+      "5. Per file: lowercase hex SHA-256 of the raw bytes.",
+      "6. Manifest line: '<sha256>' + two spaces + '<relpath>' + '\\n', UTF-8.",
+      "7. Digest = lowercase hex SHA-256 of the concatenated manifest bytes."
+    ],
+    "reproduce": "cd <block dir> && find . -type f -not -path './node_modules/*' -not -path './test-results/*' -printf '%P\\n' | LC_ALL=C sort | while read -r f; do printf '%s  %s\\n' \"$(sha256sum \"$f\" | cut -d' ' -f1)\" \"$f\"; done | sha256sum",
+    "file_count": 14,
+    "known_limitation": "DIGEST_CANONICALIZATION_PENDING - the procedure hashes WORKING-TREE bytes, so it reproduces only on a checkout that materialises line endings identically (CRLF on Windows). This applies equally to 0.1.0. Not solved in V2-001D by explicit instruction; recorded as technical debt.",
+    "manifest": [
+      {
+        "path": "BLOCK.md",
+        "sha256": "0e06852e1a88527ad3ba74a36450c9a63078c3e2f59dd3602bfd81517d3e5129"
+      },
+      {
+        "path": "README.md",
+        "sha256": "b53e4e88da2db0a612ef161292c9c55bab0af7e18b3e933a2373b08c7c680d25"
+      },
+      {
+        "path": "package.json",
+        "sha256": "71ffa20b5ac6aa6d3f2e125ea5e85c7c3e65d740e581de1041a7c09bca96d999"
+      },
+      {
+        "path": "playwright.config.js",
+        "sha256": "26c577c2027f56764c0e975a73423c6b50eb2bdeb820697526820391deb578c9"
+      },
+      {
+        "path": "src/config.js",
+        "sha256": "f18777fff69dfe5f14fae5b724e52e13905d479f492dd05f69305f7e5b6f261c"
+      },
+      {
+        "path": "src/errors.js",
+        "sha256": "846c525f0a35264b97bd8e572d3038f8435fe1620fe6a85a7f16b47f8a7c9ece"
+      },
+      {
+        "path": "src/index.js",
+        "sha256": "c584ea2a7ab6d90689b6c6ad387a1b9d55596b3748f14568b4c04cef61ccca75"
+      },
+      {
+        "path": "src/prepareImage.js",
+        "sha256": "22cdf7e52ae8de816cb99d8257673071b1de8073d19606b126d77084623cd228"
+      },
+      {
+        "path": "tests/browser/harness/bgRemove.js",
+        "sha256": "f13fce8e52c9df7dc8aa1fc83a4079f9f6766c6a9cb4345c44ef645496cdcb2f"
+      },
+      {
+        "path": "tests/browser/harness/index.html",
+        "sha256": "1f68d0a8531e48bc662ba8e6947b9f10475586a7b4af7c4bc7286daec83c43bc"
+      },
+      {
+        "path": "tests/browser/image-prep.spec.js",
+        "sha256": "76201f8f4f2c97e31fb0164c097c4a7b8ad26d7a4ecbe8a3ef995ebb8701b2cb"
+      },
+      {
+        "path": "tests/browser/origin-oracle.js",
+        "sha256": "d52600ad49c62b8729de857bdc34217d86140d70e06c5d3bfc6491ff10288590"
+      },
+      {
+        "path": "tests/browser/serve.mjs",
+        "sha256": "3512a0f9a1c5d1a640106436e9d473e660e665b5d55742b0ca954154a8535d8e"
+      },
+      {
+        "path": "tests/node/contract.test.js",
+        "sha256": "b1a456842bb3d4a6e552cf1fb602818eb249b441c9c7368796b8b89b1acc1060"
+      }
+    ],
+    "delta_from_0_1_0": {
+      "changed": [
+        "BLOCK.md",
+        "package.json",
+        "src/config.js",
+        "src/prepareImage.js",
+        "tests/browser/image-prep.spec.js",
+        "tests/node/contract.test.js"
+      ],
+      "unchanged": [
+        "README.md",
+        "playwright.config.js",
+        "src/errors.js",
+        "src/index.js",
+        "tests/browser/harness/bgRemove.js",
+        "tests/browser/harness/index.html",
+        "tests/browser/origin-oracle.js",
+        "tests/browser/serve.mjs"
+      ],
+      "note": "Six files changed, eight are byte-identical to the 0.1.0 manifest. Only src/prepareImage.js carries an implementation change."
+    }
+  },
+  "provenance": {
+    "origin_product": "vtc-platform",
+    "origin_commit": "032a47ca0fa0731febdf47f45607983ac9b721b4",
+    "origin_commit_date": "2026-07-24T19:08:21+02:00",
+    "origin_file": "src/whiteSquare.js",
+    "origin_blob": "b3f9bbe63864daa075e8b430bd40df2d27d66080",
+    "verification": "PROVEN_PRESENT - the commit and blob both exist in C:\\Users\\othry\\Projects\\vtc-platform, and 'git rev-parse 032a47ca:src/whiteSquare.js' returns exactly b3f9bbe6, matching the claim in BLOCK.md.",
+    "extraction_mission": "VTC-BLOCK-EXTRACT-001R",
+    "transplant_mission": "VTC-BLOCK-TRANSPLANT-001",
+    "excluded_from_core": "background removal (src/bgRemove.js, whiten-photo) stayed in VTC",
+    "repair_lineage": {
+      "repaired_by": "V2-001C",
+      "bump_class": "PATCH",
+      "bump_authority": "Book of Blocks 9 - 'PATCH: compatible correction; no declared contract change', read at othrys-hub/docs/governance/BOOK_OF_BLOCKS.md",
+      "continuity": "Same canonical directory, same package, same capability id, same origin lineage (vtc-platform 032a47ca / blob b3f9bbe6). 0.1.1 is a descendant of 0.1.0 in the same repository, commit b4171d3, parent 09efbc70 - the 0.1.0 specimen commit.",
+      "implementation_delta": [
+        "src/prepareImage.js composeDownscale: Math.round(...) -> Math.max(1, Math.round(...)) on both axes",
+        "src/prepareImage.js prepareImage: exact-string SVG MIME check -> WHATWG MIME essence (split on first ';', trim, lowercase)"
+      ],
+      "non_implementation_delta": [
+        "src/config.js BLOCK_VERSION 0.1.0 -> 0.1.1",
+        "package.json version 0.1.0 -> 0.1.1",
+        "BLOCK.md VERSION, version history, two KNOWN LIMITATIONS entries",
+        "tests/node/contract.test.js +6 regression tests (4 -> 10)",
+        "tests/browser/image-prep.spec.js +9 regression tests (20 -> 29)"
+      ]
+    }
+  },
+  "capability": "Prepare a user-supplied raster image for consistent product/catalog display: optional long-edge downscale, JPEG normalisation, and optional square compose onto an opaque background. It does not upload, consent or publish.",
+  "contract": {
+    "reference": "othrys-blocks/blocks/media/image-prep/BLOCK.md (the Block's own Passport)",
+    "entry_point": "ESM: prepareImage(source, options) -> Promise<PrepareResult>",
+    "provides": [
+      "prepare.downscale",
+      "prepare.normalize.jpeg",
+      "prepare.square"
+    ],
+    "requires": [
+      "browser CanvasRenderingContext2D",
+      "Image",
+      "FileReader",
+      "canvas.toBlob",
+      "getImageData",
+      "host supplies a Blob or File"
+    ],
+    "optional": [
+      {
+        "name": "host-side background removal before prepareImage",
+        "absence_behaviour": "core never calls @imgly or remove.bg; backgroundRemoved is always false"
+      },
+      {
+        "name": "named profiles (catalog-tile, catalog-quick, upload-1200, avatar-reencode)",
+        "absence_behaviour": "convenience only, not a registry; callers pass explicit knobs"
+      },
+      {
+        "name": "prepare.square",
+        "absence_behaviour": "valid to omit; downscale/normalise still apply"
+      }
+    ],
+    "output": "PrepareResult with width, height, format, bboxTrimmed, backgroundRemoved, durationMs, operationsApplied, blockId",
+    "unchanged_from": "0.1.0 - both repairs make the implementation CONFORM to this contract; neither alters it. That is what makes the bump a PATCH."
+  },
+  "ports": {
+    "status": "NONE DECLARED AS RUNTIME PORTS",
+    "evidence": "BLOCK.md INTEGRATION EDGE names 'media.image.prepared@1' explicitly as a documentation name only, with no graph system. Book of Blocks 0.2 forbids building a universal Port registry now. No Port is invented here.",
+    "documentary_name_only": "media.image.prepared@1"
+  },
+  "runtime": {
+    "proven": "Chromium page with real Canvas 2D (Playwright) on LEGION Windows",
+    "proven_versions": {
+      "node": "24.18.1",
+      "playwright": "1.62.1",
+      "chromium": "151.0.7922.34"
+    },
+    "unsupported": [
+      "Node without Canvas",
+      "jsdom without real toBlob/getImageData"
+    ],
+    "engines": "node >=20 for the package's own tooling"
+  },
+  "dependencies": {
+    "runtime": [],
+    "dev": [
+      "@playwright/test ^1.55.1"
+    ],
+    "note": "zero runtime dependencies; the only dependency is the browser test harness"
+  },
+  "network": "NONE on the core path",
+  "secrets": "NONE",
+  "permissions": "NONE - the host owns file pickers and storage writes",
+  "side_effects": {
+    "filesystem": "none",
+    "process": "none",
+    "network": "none",
+    "state": "none - stateless transform, no localStorage, no database, no identity",
+    "observability": "return-value metadata only; no event bus, no pixel logs"
+  },
+  "failure_behaviour": {
+    "style": "typed ImagePrepError; the host adapter maps it as it chooses",
+    "cases": [
+      "decode_failed (image decode or FileReader failure, missing source)",
+      "encode_failed (canvas.toBlob returns null)",
+      "unsupported_type (SVG; HEIC surfaces as unsupported_type or decode_failed)",
+      "canvas_unavailable (no canvas)"
+    ],
+    "no_fake_success": "errors are raised, never swallowed into a null result inside the Block",
+    "corrections_in_0_1_1": [
+      "unsupported_type now triggers on MIME essence, so image/svg+xml;charset=utf-8 is refused instead of decoded",
+      "encode_failed can no longer be caused by a zero-sized canvas from an extreme aspect downscale; every output dimension is floored at 1 px"
+    ]
+  },
+  "test_evidence": {
+    "evidence_class": "HOST_SUPPLIED_TRUSTED",
+    "delegate_observed_the_browser_runs": false,
+    "host": "LEGION Windows",
+    "node_contract_suite": {
+      "command": "npm.cmd run test:node",
+      "tests": 10,
+      "passed": 10,
+      "failed": 0,
+      "status": "PASS",
+      "delegate_corroboration": "the delegate re-ran this suite in its Linux VM: 10 tests, 10 pass, 0 fail"
+    },
+    "canonical_browser_suite": {
+      "command": "npm.cmd run test:browser",
+      "runner": "Playwright",
+      "browser": "Chromium 151.0.7922.34",
+      "tests": 29,
+      "passed": 29,
+      "failed": 0,
+      "status": "PASS",
+      "delegate_corroboration": "playwright test --list enumerates exactly 29 tests against this specimen"
+    },
+    "aggressive_browser_suite": {
+      "command": "playwright test --config node_modules/.othrys-aggressive/playwright.config.js",
+      "tests": 18,
+      "passed": 18,
+      "failed": 0,
+      "status": "PASS",
+      "prior_result_on_0_1_0": "16 passed / 2 failed - the two defect proofs",
+      "delegate_corroboration": "playwright test --list enumerates exactly 18 tests, and the staged copy under node_modules/.othrys-aggressive is byte-identical (CRLF-normalised) to the V2 sources in qa/block.media.image-prep/"
+    },
+    "second_consumer_suite": {
+      "status": "NOT_OBSERVED",
+      "note": "unchanged from 0.1.0; the transplant Oros suite was not re-run against 0.1.1"
+    },
+    "specimen_unchanged_by_testing": "digest recomputed at the start of this mission: 48afa7ac..., exact match",
+    "honesty_note": "The delegate has no Windows shell and did not witness the browser runs. This record is exactly as strong as the host attestation (Book of GPT law 29). What the delegate verified independently: the digest, the suite cardinalities, and the identity of the staged aggressive copy."
+  },
+  "repair_evidence": {
+    "mission": "V2-001C",
+    "document": "docs/V2-001C/DEFECT_REPAIR.md",
+    "receipt": "receipts/runs/V2-001C/20260824T194044Z.json",
+    "defects_repaired": [
+      {
+        "id": "A",
+        "name": "parameterized SVG MIME bypassed rejection",
+        "proven_by": "V2 aggressive QA suite on LEGION",
+        "proof_of_fix": "test-first: 3 regressions failed on 0.1.0, all pass on 0.1.1; negative controls green on both sides so parameterized raster MIME is not over-rejected"
+      },
+      {
+        "id": "B",
+        "name": "extreme aspect downscale rounded a raster dimension to zero",
+        "proven_by": "V2 aggressive QA suite on LEGION (4096x1 -> encode_failed)",
+        "proof_of_fix": "arithmetic proof plus the aggressive suite now passing 18/18 on LEGION",
+        "additional": "1x4096 was a second zero-dimension case the aggressive suite had not proven; the same fix covers it and it has its own regression"
+      }
+    ],
+    "defect_evidence_preserved": "qa/block.media.image-prep/AGGRESSIVE_TEST_EVIDENCE.md and qa/block.media.image-prep/digest.test.mjs are unmodified. The defects are recorded, not erased."
+  },
+  "consumer_evidence": {
+    "proven_consumers": 2,
+    "origin": "vtc-platform via file:../othrys-blocks/blocks/media/image-prep",
+    "second": {
+      "name": "oros-image-prep-transplant",
+      "path": "C:\\Users\\othry\\Projects\\oros\\oros-image-prep-transplant",
+      "dependency": "@othrys-blocks/media-image-prep -> file:../../othrys-blocks/blocks/media/image-prep",
+      "same_source_proof": "tests/same-source.mjs present; the consumer resolves the canonical source, it does not copy it",
+      "verification": "PROVEN_PRESENT by reading the consumer's package.json and test directory"
+    },
+    "maturity_basis": "REUSABLE under Book of Blocks 7: same canonical source consumed by the origin Oros and by an independent second Oros without fork or copy. Inherited from the legacy record and corroborated here by the file: dependency and the same-source test; the transplant's own suite was not re-run by V2.",
+    "note_for_0_1_1": "Consumers resolve the canonical directory by file: path, so they pick up 0.1.1 automatically. The origin and transplant suites were NOT re-run against 0.1.1 by V2; the REUSABLE basis is inherited from 0.1.0 and is not re-proven here."
+  },
+  "reconstruction": {
+    "sufficient_to_reconstruct": [
+      "canonical repo othrys-blocks at commit b4171d3eb3a28acd30a707892dc7db9c73444a82, path blocks/media/image-prep",
+      "block_version 0.1.1",
+      "package_tree_digest 48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+      "the 14-entry per-file manifest in this record"
+    ],
+    "procedure": "Check out othrys-blocks at the recorded commit, take blocks/media/image-prep, recompute the digest with the documented procedure, and compare against package_tree_digest and the per-file manifest. Any single-byte difference changes the digest.",
+    "line_ending_caveat": "Reproduce on a checkout that materialises CRLF (Windows, or WSL reading the Windows filesystem), as both 0.1.0 and 0.1.1 digests were computed that way. See DIGEST_CANONICALIZATION_PENDING.",
+    "if_unavailable": "If the canonical source is missing, or the recomputed digest does not equal package_tree_digest, the admitted specimen is NOT present. V2 must treat Block #1 as unavailable and fail explicitly. There is no fallback, no substitute version, no repair path and no silent re-admission: a different digest is a different specimen and requires a new admission mission.",
+    "rollback": "0.1.0 remains fully reconstructible from its own admission record and othrys-blocks commit 09efbc7088c320a8bb0ae6de0566a764e502115c, which this mission did not touch."
+  },
+  "authority_references": [
+    "othrys-hub/docs/governance/BOOK_OF_BLOCKS.md - species 0.1, contract 5, maturity 7, promotion 8, naming 16, Passport 22",
+    "othrys-blocks/docs/CONVENTION.md - physical path and identity law",
+    "othrys-hub-oros-composition-law-001/docs/OROS-COMPOSITION-LAW-001/SCHEMAS.md - oros.lock@v0 field names",
+    "othrys-core-windows/titan/adr/ADR-0050-oros-constellation-ratification.md - othrys-v2 is not an Oros",
+    "othrys-v2/FOUNDATION_LAWS.md - identity content-bound 4, provenance 5, admission 7, maturity 9",
+    "oros/oros-zero/blueprint.json - capability/Talos/Block three-name mapping (legacy, untouched)"
+  ],
+  "not_this_record": [
+    "registry",
+    "resolver",
+    "package manager",
+    "plugin host",
+    "orchestrator",
+    "oros.lock instance",
+    "Blueprint",
+    "Oros",
+    "runtime",
+    "promotion engine",
+    "version resolver"
+  ]
+}

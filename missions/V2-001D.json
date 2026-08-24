@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001D",
+  "issued_label": "V2-001D — PROMOTE BLOCK #1 0.1.1",
+  "issued_by": "GPT_CONTROL",
+  "issued_via": "operator_current_conversation",
+  "received_at": "2026-08-24T19:55:00Z",
+  "objective": "Promote the repaired and runtime-proven block.media.image-prep@0.1.1 to the active admitted Block #1 specimen.",
+  "explicit_prohibitions": [
+    "NO NEW BLOCK CODE", "NO NEW TESTS", "NO OROS", "NO MOUNTING", "NO BLOCK #2",
+    "NO REGISTRY", "NO RESOLVER", "NO ARCHITECTURE CHANGES",
+    "do not modify the 0.1.0 admission record",
+    "do not rewrite old receipts",
+    "do not reinterpret old evidence",
+    "do not rerun anything unless required to verify the digest",
+    "do not edit the 0.1.0 digest/tamper proof to match 0.1.1",
+    "do not solve line-ending canonicalization in this mission",
+    "do not delete anything"
+  ],
+  "supplied_runtime_proof": {
+    "environment": "LEGION Windows host",
+    "evidence_class": "HOST_SUPPLIED_TRUSTED",
+    "node": { "tests": 10, "passed": 10, "failed": 0 },
+    "canonical_browser": { "tests": 29, "passed": 29, "failed": 0 },
+    "aggressive_browser": { "tests": 18, "passed": 18, "failed": 0 },
+    "runtime": { "node": "24.18.1", "playwright": "1.62.1", "chromium": "151.0.7922.34" },
+    "failures": 0
+  },
+  "required_records": {
+    "0.1.0": "HISTORICAL / SUPERSEDED",
+    "0.1.1": "ACTIVE_ADMITTED",
+    "capability_blocks_admitted": 1,
+    "active_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+    "runtime_status": "RUNTIME_PROVEN",
+    "block_2": "FORBIDDEN",
+    "technical_debt": "DIGEST_CANONICALIZATION_PENDING"
+  },
+  "next_state_on_completion": "WAIT_GPT"
+}

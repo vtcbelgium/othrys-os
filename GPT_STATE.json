@@ -1,18 +1,18 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 17,
+  "sequence": 18,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "f5bef348407f299dd80caef336c3952d7d3981dc",
   "control_gate": "WAIT_GPT",
   "active_mission": {
-    "mission_id": "V2-001C",
-    "status": "REPAIRED_NOT_BROWSER_VERIFIED / PUSH_PENDING",
-    "issued_label": "V2-001C - REPAIR BLOCK #1 DEFECTS ONLY",
+    "mission_id": "V2-001D",
+    "status": "PROMOTED / PUSH_PENDING",
+    "issued_label": "V2-001D - PROMOTE BLOCK #1 0.1.1",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
-  "last_verified_receipt_mission": "V2-001C",
+  "last_verified_receipt_mission": "V2-001D",
   "last_log_sequence": 9,
   "last_log_hash": "f7978b807fb617c32b6f559691f413fe9a40589fecab4137db54168b774a3d24",
   "log_integrity": {
@@ -55,17 +55,17 @@
     "gpt_inbox": "UNPROMOTED_INTELLIGENCE_ONLY"
   },
   "known_blockers": [
-    "the delegate has no Windows shell and cannot install Chromium (cdn.playwright.dev 403, network allowlist). STILL TRUE - the 0.1.1 repair is NOT browser-verified and the aggressive suite has not been re-run",
+    "othrys-blocks has NO configured remote. V2 now records an ACTIVE admission whose canonical source (commit b4171d3) exists on exactly one machine and cannot be pushed by anyone. Most serious open blocker",
+    "DIGEST_CANONICALIZATION_PENDING - the admitted digest procedure hashes working-tree bytes, so both the 0.1.0 and 0.1.1 digests reproduce only on a checkout that materialises line endings identically (CRLF on Windows). Deliberately not solved in V2-001D",
+    "qa/block.media.image-prep/digest.test.mjs pins the live tree to the 0.1.0 admission, so 2 of its 3 tests now fail BY DESIGN. Not edited (V2-001D section 7). The active proof is the separate digest-0.1.1.test.mjs",
+    "the delegate has no Windows shell and cannot install Chromium (cdn.playwright.dev 403, network allowlist). All browser evidence is HOST_SUPPLIED_TRUSTED",
     "the delegate has no GitHub egress; only the Windows host can push othrys-v2",
-    "othrys-blocks has NO configured remote at all - the 0.1.1 repair commit b4171d3 cannot be pushed by anyone until one is configured. This now holds real work, not just a reference specimen",
-    "qa/block.media.image-prep/digest.test.mjs pins the live tree to the 0.1.0 admission; tests 1 and 2 must now fail by design. Needs a GPT decision (re-point at the admitted version, or re-scope to a 0.1.0 checkout)",
-    "the admitted digest procedure hashes working-tree bytes, so it reproduces only on a checkout with the same line-ending materialisation (CRLF on Windows). True of 0.1.0 as well",
     "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
     "othrys-blocks is not a session-connected folder by default; read access must be requested on the operator's device",
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
-  "last_control_decision": "V2-001C repaired both proven defects with two hunks in one file and produced candidate 0.1.1 (PATCH, verified against Book of Blocks section 9, not assumed). Defect A was proven test-first: the three parameterized SVG regressions failed on 0.1.0 and pass after the fix, with negative controls green on both sides so nothing over-rejects. Defect B rests on the prior LEGION aggressive-suite failure plus a direct arithmetic proof; it is NOT browser-verified, and a second zero-dimension case (1x4096) was found that the aggressive suite had not proven. 0.1.0 is untouched: its admission record is byte-identical and eight of the fourteen specimen files still hash exactly to its manifest. No admission record was created for 0.1.1 - FOUNDATION_LAWS 7 and 20 make that an explicit gated decision, and the browser evidence does not exist yet. Two things were reported rather than smoothed over: the aggressive digest test now necessarily fails, which is section 0 and section 5 contradicting each other; and an intermediate digest existed before line endings were normalised.",
-  "next_legal_action": "Operator runs on LEGION: cd C:\\Users\\othry\\Projects\\othrys-blocks\\blocks\\media\\image-prep; npm.cmd run test:node (expect 10/10); npm.cmd run test:browser (expect 29/29); then the aggressive config - expecting 18/18 now that both defect proofs should pass. Then cd C:\\Users\\othry\\Projects\\othrys-v2; git push origin main; git ls-remote origin main. GPT then decides three things: whether to admit 0.1.1, what to do with qa/.../digest.test.mjs, and whether othrys-blocks gets a remote.",
+  "last_control_decision": "V2-001D promoted 0.1.1 to the active admitted specimen and did nothing else. The digest was verified BEFORE any record was written and matched exactly. The host runtime proof - node 10/10, canonical browser 29/29, aggressive 18/18 on Node 24.18.1 / Playwright 1.62.1 / Chromium 151.0.7922.34 - is recorded as HOST_SUPPLIED_TRUSTED; the delegate did not witness the browser runs and says so. What it did verify: the digest, that all three reported totals match the real suite cardinalities (29 and 18 enumerated, node re-run 10/10 locally), and that the staged aggressive harness is byte-identical to the V2 sources. The aggressive suite scored 16/18 on 0.1.0 and 18/18 on 0.1.1, which is the cleanest confirmation the promotion fixed what it claimed. The 0.1.0 record is byte-unmodified and supersession is recorded in a separate ledger, because section 1 forbids writing the status inside the file it describes. Maturity stays REUSABLE - a PATCH repair is not a maturity promotion - and the contract is recorded as unchanged, which is what makes it a PATCH. Nothing was mounted, no Oros, no Block #2, no registry or resolver.",
+  "next_legal_action": "Operator runs: cd C:\\Users\\othry\\Projects\\othrys-v2; git push origin main; git ls-remote origin main - and returns the remote SHA. Then GPT decides the two open structural questions: (1) give othrys-blocks a remote, since the active admitted specimen now exists on one machine only; (2) foundation question 5 - where Block #1 mounts in an Oros - which is the sole remaining gate on Block #2.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -141,6 +141,11 @@
       "mission_id": "V2-001C",
       "status": "REPAIRED_NOT_BROWSER_VERIFIED",
       "note": "both defects repaired in 2 hunks; candidate 0.1.1 (PATCH); old digest 32b34548 -> new 48afa7ac; node 10/10 on the delegate; browser and aggressive suites NOT RUN; 0.1.0 admission untouched; no 0.1.1 admission record created"
+    },
+    {
+      "mission_id": "V2-001D",
+      "status": "PROMOTED",
+      "note": "0.1.1 promoted to ACTIVE_ADMITTED, digest 48afa7ac verified before writing; RUNTIME_PROVEN from host proof (10/10, 29/29, 18/18); 0.1.0 marked HISTORICAL/SUPERSEDED in a separate ledger with its record byte-unmodified; separate 0.1.1 digest proof added, 0.1.0 proof left untouched; nothing mounted"
     }
   ],
   "git": {
@@ -153,14 +158,44 @@
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
     "sync_status": "PUSH_PENDING",
     "push_owner": "Windows host; the delegate environment has no GitHub egress",
-    "base_sha_verified_this_mission": "f5bef348407f299dd80caef336c3952d7d3981dc",
+    "base_sha_verified_this_mission": "ca39219ce92e4a3c10cc2d9d3e38562e6217d2ff",
     "base_sha_verification": "V2-001B.S: working tree clean and HEAD == refs/remotes/origin/main == a6d75aad. The host's push of V2-001B and V2-001B.R landed. The delegate still has no GitHub egress, so origin/main is the ref the host's push updated, not an independent read of github.com.",
     "closeout_law": "BOOK_OF_GPT law 30 plus the V2-001B.R hard law: no mission is complete until push and remote verify succeed. The delegate has never had GitHub egress, so under a literal reading no delegate mission can reach PASS. Recorded as evidence for GPT; not resolved by the delegate.",
     "unpushed_commits": "the V2-001C commits only; the host pushed everything through f5bef34 (which added the qa/ suite)"
   },
   "block_state": {
     "capability_blocks_admitted": 1,
-    "block_1": {
+    "block_2": "FORBIDDEN - foundation question 4 (real runtime evidence) is ANSWERED for the active 0.1.1 specimen, but question 5 (exact Oros mount) is still unresolved. Block #1 is admitted, repaired, runtime-proven and NOT mounted.",
+    "control_feedback": {
+      "path": "blocks/control_feedback/",
+      "classification": "SHARED_SERVICE / PLATFORM_ONLY",
+      "is_capability_block": false,
+      "technical_debt": "lives under blocks/; relocation is a separate mission",
+      "status": "FROZEN_AND_AUDITED (V2-000F), unchanged by V2-001A.R"
+    },
+    "oros": "othrys-v2 is control plane, not an Oros. The Oros Zero specimen is oros/oros-zero (PENTA-001), referenced and untouched.",
+    "foundation_state": "BLOCK_1_RUNTIME_PROVEN_NOT_MOUNTED (active specimen 0.1.1)",
+    "oros_zero": "oros/oros-zero inspected read-only and unmodified: 7 files, never executed, blueprint binds block_id, version range, package, path, maturity and runtime but NOT the digest or the V2 admission reference. Binding those is the V2-001B section 5 correction and was deliberately not made while section 4 is blocked.",
+    "capability_blocks_note": "One Block. Two admission records describing two specimens of it. One active.",
+    "active_block_1": {
+      "block_id": "block.media.image-prep",
+      "block_version": "0.1.1",
+      "package_tree_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+      "admission_status": "ACTIVE_ADMITTED",
+      "runtime_status": "RUNTIME_PROVEN",
+      "admitted_by": "V2-001D",
+      "admission_record": "admissions/block.media.image-prep@0.1.1.json",
+      "supersession_ledger": "admissions/SUPERSESSION.md",
+      "maturity": "REUSABLE - unchanged; a PATCH repair is not a maturity promotion (Book of Blocks 7)",
+      "canonical_source": "othrys-blocks/blocks/media/image-prep @ b4171d3eb3a28acd30a707892dc7db9c73444a82 (branch mission/block-003-extract-001)",
+      "runtime_proof": "LEGION Windows, HOST_SUPPLIED_TRUSTED: node 10/10, canonical browser 29/29, aggressive 18/18; Node 24.18.1 / Playwright 1.62.1 / Chromium 151.0.7922.34; zero failures. The delegate did NOT witness the browser runs",
+      "delegate_corroboration": "digest exact match; playwright --list enumerates 29 and 18, matching the reported totals; node suite re-run locally 10/10; staged aggressive harness byte-identical to qa/ sources",
+      "repair_evidence": "V2-001C - docs/V2-001C/DEFECT_REPAIR.md",
+      "digest_proof": "qa/block.media.image-prep/digest-0.1.1.test.mjs (5 tests, Windows-host by construction)",
+      "implementation_in_v2": false,
+      "mounted": false
+    },
+    "block_1_historical_0_1_0": {
       "block_id": "block.media.image-prep",
       "block_version": "0.1.0",
       "package": "@othrys-blocks/media-image-prep",
@@ -176,35 +211,14 @@
       "runtime_status": "RUNTIME_PROVEN for 0.1.0 only (V2-001B.T). NOT inherited by candidate 0.1.1.",
       "runtime_evidence": "docs/V2-001B.T/RUNTIME_PROOF.md; receipts/runs/V2-001B.T/20260824T190245Z.json",
       "previous_blocker_resolution": "RESOLVED_BY_HOST_PROOF - for this proof only; the delegate's inability to reach Windows runtime is unchanged",
-      "candidate_version": {
-        "version": "0.1.1",
-        "digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
-        "bump_class": "PATCH (Book of Blocks section 9: compatible correction, no declared contract change)",
-        "produced_by": "V2-001C",
-        "legacy_commit": "b4171d3eb3a28acd30a707892dc7db9c73444a82 (othrys-blocks, unpushable - no remote)",
-        "status": "CANDIDATE - not admitted, not mounted, not composed",
-        "evidence": "docs/V2-001C/DEFECT_REPAIR.md",
-        "node_tests": "10/10 pass, observed on the delegate Linux VM",
-        "browser_tests": "NOT RUN - 29 enumerated, 0 executed. The repair is NOT browser-verified",
-        "aggressive_tests": "NOT RUN",
-        "repairs": [
-          "defect A: parameterized SVG MIME now rejected by WHATWG MIME essence",
-          "defect B: every downscale dimension floored at 1px; also fixes 1x4096, which the aggressive suite had not proven"
-        ]
-      },
-      "admitted_version": "0.1.0 (unchanged; admission record byte-identical)"
+      "admitted_version": "0.1.0 (unchanged; admission record byte-identical)",
+      "admission_status": "HISTORICAL / SUPERSEDED",
+      "superseded_by": "0.1.1 (V2-001D)",
+      "note": "Retained as historical evidence. Record byte-unmodified; RUNTIME_PROVEN (V2-001B.T) remains true OF 0.1.0; reconstructible from othrys-blocks 09efbc7088c320a8bb0ae6de0566a764e502115c. Superseded means 'not the specimen to mount', not 'wrong'."
     },
-    "block_2": "FORBIDDEN - foundation question 4 (real runtime evidence) is now ANSWERED by V2-001B.T, but question 5 (exact Oros mount) is still unresolved. Block #1 is admitted, verified, frozen and runtime-proven, but not mounted.",
-    "control_feedback": {
-      "path": "blocks/control_feedback/",
-      "classification": "SHARED_SERVICE / PLATFORM_ONLY",
-      "is_capability_block": false,
-      "technical_debt": "lives under blocks/; relocation is a separate mission",
-      "status": "FROZEN_AND_AUDITED (V2-000F), unchanged by V2-001A.R"
-    },
-    "oros": "othrys-v2 is control plane, not an Oros. The Oros Zero specimen is oros/oros-zero (PENTA-001), referenced and untouched.",
-    "foundation_state": "BLOCK_1_RUNTIME_PROVEN_NOT_MOUNTED; candidate 0.1.1 awaiting browser proof and an admission decision",
-    "oros_zero": "oros/oros-zero inspected read-only and unmodified: 7 files, never executed, blueprint binds block_id, version range, package, path, maturity and runtime but NOT the digest or the V2 admission reference. Binding those is the V2-001B section 5 correction and was deliberately not made while section 4 is blocked."
+    "technical_debt": [
+      "DIGEST_CANONICALIZATION_PENDING - see known_blockers"
+    ]
   },
   "control_feedback": {
     "classification": "SHARED_SERVICE / PLATFORM_ONLY",

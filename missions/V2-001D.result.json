@@ -51,9 +51,7 @@
     }
   ],
   "created_at": "2026-08-24T19:59:11Z",
-  "delegate": "claude-opus-5",
   "delegate_observed_the_browser_runs": false,
-  "envelope_ref": "missions/V2-001D.json",
   "evidence": [
     "docs/V2-001D/PROMOTION.md",
     "admissions/block.media.image-prep@0.1.1.json (new, separate record)",
@@ -162,9 +160,6 @@
     "old_status": "HISTORICAL / SUPERSEDED",
     "runtime_status": "RUNTIME_PROVEN"
   },
-  "receipt_id": "V2-001D--20260824T195911Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "PASS",
   "runtime_proof": {
     "aggressive_browser": {
