@@ -303,3 +303,59 @@ verdict and the sync verdict are separate, and this one is a pass.
 
 Lesson: **evidence you did not witness is still evidence — provided you record who
 witnessed it, and never launder it into something you saw yourself.**
+
+## CH-0016 — Two defects, two hunks, and a test that now has to fail
+
+The aggressive suite the operator built did what aggressive suites are for: it found
+two real defects in a Block that had passed 24 of 24 tests and been declared
+runtime-proven the same day. Parameterized SVG MIME walked straight past an exact
+string comparison. A `4096x1` source rounded its short edge to zero and died on
+`encode_failed`. Neither was exotic input.
+
+The repair is two hunks in one file. `mime.split(";", 1)[0].trim().toLowerCase()`,
+and `Math.max(1, Math.round(…))` on both axes. Six lines of implementation, fifteen
+new tests, one PATCH bump to **`0.1.1`** — verified against Book of Blocks §9 rather
+than assumed from the mission's expectation, because both fixes make the code conform
+to the contract `BLOCK.md` already declares instead of changing it.
+
+Defect A was proven properly test-first: three parameterized SVG regressions written
+first, run against untouched `0.1.0`, three failures, then the fix, then ten of ten.
+Negative controls on both sides of the change prove `image/png;charset=binary` is
+still accepted — a rejection fix that over-rejects is a worse defect than the one it
+replaces. Defect B could not be proven that way here, because it needs a canvas; it
+rests on the operator's own LEGION failure plus direct arithmetic, and the record says
+so. **The repair is not browser-verified.** Chasing the arithmetic also turned up
+`1x4096`, a second zero-dimension case the aggressive suite had not caught. Same
+one-line floor, now with its own regression.
+
+`0.1.0` survives intact, and provably: eight of the fourteen specimen files still hash
+byte-identically to entries in its admission record, which is a better scope proof
+than any diff. No admission record was written for `0.1.1`. Admission is a gated
+decision under FOUNDATION_LAWS §7 and an explicit act under §20 — not something that
+happens as a side effect of fixing a bug, least of all before the browser evidence
+exists.
+
+Two things this mission had to report rather than tidy away.
+
+`qa/…/digest.test.mjs` pins the live canonical tree to the `0.1.0` admission. Two of
+its three tests must now fail, because §0 of this very mission required the digest to
+change. That is the tamper detector working, not a regression — but §0 and §5 ("all
+aggressive tests green") cannot both be satisfied while that file pins a version.
+Nothing in `qa/` was edited: a test rewritten to match new behaviour stops being
+evidence. GPT decides.
+
+And an intermediate digest existed. Appending tests with a shell heredoc wrote LF
+lines into a CRLF working tree, and the mixed file produced `db22a401…` before
+normalisation settled it at `48afa7ac…`. The wrong value is in the record next to the
+right one. It exposed something worth knowing: the admitted digest procedure hashes
+working-tree bytes, so it only reproduces on a checkout that materialises line endings
+the same way — as true of `0.1.0` as of `0.1.1`.
+
+A first commit attempt was also thrown away for swallowing a repo-wide CRLF change:
+fourteen files touched to express six. The redone commit says exactly what changed.
+
+`othrys-blocks` now holds real work and still has **no remote**. That was a footnote
+while it was a read-only quarry. It is a blocker now.
+
+Lesson: **a suite that only passes is not evidence of correctness — it is evidence of
+what you thought to ask.**

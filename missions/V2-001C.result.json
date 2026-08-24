@@ -104,8 +104,6 @@
     "name": "extreme aspect downscale rounds a raster dimension to zero",
     "verified_on": "arithmetic proof on the delegate + prior LEGION aggressive-suite failure proof; NOT browser-verified after the fix"
   },
-  "delegate": "claude-opus-5",
-  "envelope_ref": "missions/V2-001C.json",
   "evidence": [
     "docs/V2-001C/DEFECT_REPAIR.md",
     "missions/V2-001C.json",
@@ -172,10 +170,7 @@
   "mission_id": "V2-001C",
   "next_state": "WAIT_GPT",
   "objective": "Repair the two defects proven by the aggressive QA suite in block.media.image-prep@0.1.0, then produce a new candidate version for admission.",
-  "receipt_id": "V2-001C--20260824T194044Z",
-  "remote_sha": null,
   "repair_status": "REPAIRED_NOT_BROWSER_VERIFIED",
-  "repo_sha": null,
   "result_claimed": "PARTIAL",
   "schema_version": "1.0.0",
   "sync_status": "PUSH_PENDING",

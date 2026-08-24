@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001C",
+  "issued_label": "V2-001C — REPAIR BLOCK #1 DEFECTS ONLY",
+  "issued_by": "GPT_CONTROL",
+  "issued_via": "operator_current_conversation",
+  "received_at": "2026-08-24T19:30:00Z",
+  "objective": "Repair the two defects proven by the aggressive QA suite in block.media.image-prep@0.1.0, then produce a new candidate version for admission.",
+  "explicit_prohibitions": [
+    "NO OROS", "NO MOUNTING", "NO BLOCK #2", "NO REGISTRY", "NO RESOLVER",
+    "NO ARCHITECTURE WORK", "NO CONTROL FEEDBACK CHANGES", "no unrelated cleanup",
+    "do not rewrite the 0.1.0 admission record",
+    "do not pretend the defects never existed",
+    "no dependency added", "no weakening of rejection behaviour",
+    "no refactor unless strictly necessary",
+    "do not invent a general version registry"
+  ],
+  "defects": {
+    "A": "Blob type image/svg+xml;charset=utf-8 bypasses rejection because the implementation compares only the exact string image/svg+xml. SVG must reject as unsupported_type even with valid MIME parameters.",
+    "B": "A 4096x1 raster with longEdge 1200 rounds the short dimension to 0. Every output raster dimension must be >= 1 pixel."
+  },
+  "sections": {
+    "0": "PRESERVE 0.1.0 — immutable historical evidence; any repair produces a new version/digest; verify the actual versioning convention before bumping",
+    "1": "Read only required evidence; do not broaden scope",
+    "2": "Defect A — smallest standards-correct MIME essence fix + regression coverage for three SVG forms; do not over-reject parameterized raster MIME",
+    "3": "Defect B — smallest safe dimension floor + boundary coverage for 4096x1, 1x4096, 1x1, exact longEdge, just over longEdge",
+    "4": "Test-first: prove the new regression tests fail against 0.1.0, then apply the smallest patch; report exact lines changed",
+    "5": "Run all suites on real LEGION Windows: node, browser, aggressive, new regressions",
+    "6": "Recompute the digest by the admitted procedure; require new != old; record old/new version and digest; candidate record only if existing V2 law supports it",
+    "7": "Scope check — prove nothing outside Block #1 changed",
+    "8": "Commit; push when available; PUSH_PENDING acceptable"
+  },
+  "next_state_on_completion": "WAIT_GPT"
+}
