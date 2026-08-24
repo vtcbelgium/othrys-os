@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001B.S",
+  "issued_label": "V2-001B — BLOCK #1 RUNTIME SMOKE",
+  "id_disambiguation": "GPT issued this mission labelled V2-001B. That id and V2-001B.R are already recorded with different objectives and their receipts are append-only, so this narrower re-issue is recorded as V2-001B.S (Smoke). No prior record was altered.",
+  "issued_by": "GPT_CONTROL",
+  "issued_via": "operator_current_conversation",
+  "received_at": "2026-08-24T18:45:00Z",
+  "objective": "Answer one question: can the already-admitted block.media.image-prep@0.1.0 run its existing real runtime tests on LEGION?",
+  "explicit_prohibitions": [
+    "NO OROS", "NO BLOCK #2", "NO MOUNTING", "NO COMPOSITION", "NO RECONSTRUCTION",
+    "NO NEW ARCHITECTURE", "NO BLOCK CODE CHANGES", "NO CONTROL FEEDBACK CHANGES",
+    "no repair of the Block", "no test changes", "no scope expansion",
+    "no substitute runtime: no cloud Chromium, no Linux VM substitution, no Node canvas, no mock browser, no different image library"
+  ],
+  "sections": {
+    "0": "BASE GATE: clean tree, HEAD == origin/main, else STOP",
+    "1": "Read BOOK_OF_GPT.md, GPT_STATE.json, FOUNDATION_LAWS.md, LOOP_LAWS.md, admissions/block.media.image-prep@0.1.0.json; inspect the canonical Block",
+    "2": "Recompute the admitted digest; require exact match to 32b34548ad2dcd31c81d6efc5b569e0f19f33943e621f910f2f07b15ad363d7b",
+    "3": "Run the Block's existing tests on the real Windows LEGION environment: node --test tests/node/*.test.js, then the existing Playwright suite via the package's own script",
+    "4": "If Chromium is missing, install it once via the existing Playwright setup and retry once; if install fails for network/permission/policy/environment reasons STOP RUNTIME_BLOCKED",
+    "5": "PASS only if digest matches, node tests pass, real Playwright/Chromium runs on LEGION, browser tests pass, legacy Block unchanged",
+    "6": "On browser-suite failure record the FIRST causal blocker only and STOP",
+    "7": "Record RUNTIME_PROVEN | RUNTIME_BLOCKED | RUNTIME_FAILED; do not change Block admission status",
+    "8": "Commit; push if possible, else PUSH_PENDING (not a mission failure)",
+    "9": "Runtime verdict and sync verdict are separate"
+  },
+  "next_state_on_completion": "WAIT_GPT"
+}

@@ -215,3 +215,47 @@ Foundation state: **`BLOCK_1_NOT_READY`**. Block #2 remains FORBIDDEN.
 
 Lesson: **a recovery's first duty is to find out what actually happened, not to
 tidy it away.**
+
+## CH-0014 — The runtime question, asked alone, and still unanswerable here
+
+GPT narrowed the mission to a single question — can admitted Block #1 run its own
+existing tests on LEGION? — and stripped every downstream ambition from it. That
+narrowing was the right instinct, and it did buy something: with nothing else in
+the way, the boundary is now described precisely enough to be acted on.
+
+One thing had changed. The base gate **passed** — `HEAD == origin/main ==
+`a6d75aad``. The host had pushed V2-001B and V2-001B.R. This is the first mission
+in the family to start from a synced base, and it is the proof that the
+host-push protocol works when it is actually run.
+
+The specimen held. Recomputed by the admission record's own procedure, the tree
+digest is still `32b34548…d363d7b`, with all fourteen per-file hashes matching the
+manifest one for one, at mission start and again at mission end. Block #1 remains
+admitted, unchanged, frozen.
+
+The node contract suite passed **4/4**. But it passed in the delegate's Linux VM,
+and section 3 asked for Windows. So it is filed as an observation, not as the
+proof — the distinction the whole mission turns on.
+
+The browser suite **never ran**, and that is the exact word for it. Not failed:
+NOT_OBSERVED. There is no Windows shell here — no `/mnt/c`, no `powershell.exe`,
+no WSL interop — which is the first causal blocker, and the only shell that does
+exist cannot fetch Chromium: one bounded `playwright install chromium` returned
+`403 'Connection blocked by network allowlist'`. That wording is new. The earlier
+missions saw `403 from proxy after CONNECT` and could still read it as a network
+condition; this one names it as policy, which means no amount of retrying is the
+answer. The cloud container has Chromium and was deliberately not used.
+
+`othrys-blocks` was not even mounted this session and had to be granted on
+request — worth recording, because it means the specimen is not automatically in
+view and a future mission must ask for it before it can verify anything.
+
+Runtime verdict `RUNTIME_BLOCKED`; sync verdict `PUSH_PENDING`. GPT was right to
+split those: one of them is a real gap in the proof, the other is just a machine
+that cannot reach GitHub, and conflating them made earlier missions look worse
+than they were.
+
+Foundation state: **`BLOCK_1_NOT_READY`**. Block #2 remains FORBIDDEN.
+
+Lesson: **"it did not run" and "it ran and failed" are different findings, and a
+receipt that blurs them is worse than no receipt.**

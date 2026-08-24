@@ -1,17 +1,18 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 14,
+  "sequence": 15,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "53ef6b19616aadfcf1f898b26b8a8a21352d334d",
+  "remote_head_at_last_verified_read": "a6d75aada1b381b7a8f848fcb972f45dbc40ce7f",
   "control_gate": "WAIT_GPT",
   "active_mission": {
-    "mission_id": "V2-001B.R",
-    "status": "BLOCKED_RUNTIME_AND_SYNC",
+    "mission_id": "V2-001B.S",
+    "status": "RUNTIME_BLOCKED / PUSH_PENDING",
+    "issued_label": "V2-001B - BLOCK #1 RUNTIME SMOKE",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
-  "last_verified_receipt_mission": "V2-001B.R",
+  "last_verified_receipt_mission": "V2-001B.S",
   "last_log_sequence": 9,
   "last_log_hash": "f7978b807fb617c32b6f559691f413fe9a40589fecab4137db54168b774a3d24",
   "log_integrity": {
@@ -54,15 +55,16 @@
     "gpt_inbox": "UNPROMOTED_INTELLIGENCE_ONLY"
   },
   "known_blockers": [
-    "the delegate has no Windows shell: uname reports Ubuntu, /mnt/c is absent, powershell.exe is not on PATH, WSL interop is absent",
-    "the delegate's Linux VM cannot install the Chromium binary: cdn.playwright.dev and npm both return 403 by policy. @playwright/test 1.62.1 IS already present in othrys-blocks/node_modules",
-    "the delegate has no GitHub egress; only the Windows host can push. V2-001B and V2-001B.R are committed locally and NOT pushed",
+    "the delegate has no Windows shell: uname reports Ubuntu 22.04.5, /mnt/c is absent, cmd.exe/powershell.exe/pwsh.exe/wsl.exe are not on PATH, binfmt_misc is empty. Reconfirmed a third time in V2-001B.S",
+    "the delegate's Linux VM cannot install the Chromium binary: cdn.playwright.dev returns 403 'Connection blocked by network allowlist'. @playwright/test 1.62.1 IS present and platform-neutral in othrys-blocks/node_modules; only the browser binary is missing",
+    "the delegate has no GitHub egress; only the Windows host can push. V2-001B.S is committed locally and NOT pushed",
     "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
     "othrys-blocks has no configured remote; the admitted Block is REMOTE_PENDING",
+    "othrys-blocks is not a session-connected folder by default; V2-001B.S had to request read access on the operator's device before it could see the specimen",
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
-  "last_control_decision": "V2-001B.R recovered the interrupted mission truthfully - the failed bridge call had written nothing - preserved the valid V2-001B receipt, and rechecked the frozen digest. The Windows LEGION runtime proof and the closeout push both remain impossible from the delegate. Nothing was mounted, no substitute environment used, no legacy artifact modified.",
-  "next_legal_action": "Operator runs on LEGION: npx playwright install chromium; the Block's node and Playwright suites; node core\\bin\\oros-zero.mjs --correlation-id oros-zero-green-001 --json; then git push origin main and git ls-remote origin main. Return that evidence and the remote SHA, then reissue V2-001B to record the mount from proof.",
+  "last_control_decision": "V2-001B.S answered the single runtime-smoke question and nothing else. The base gate passed for the first time in this family - the host had pushed, HEAD == origin/main == a6d75aad. The specimen digest was recomputed by the admission record's own procedure and matched exactly, twice. The node contract suite passed 4/4, but in the delegate's Linux VM, which is not the Windows environment section 3 required, so it is recorded as an observation and not as the proof. The Playwright suite never ran: no Windows shell exists (first causal blocker), and the one bounded Chromium install attempt returned 403 'Connection blocked by network allowlist'. No substitute runtime was used, no Block code or test was changed, nothing was mounted, and the browser outcome is recorded as NOT_OBSERVED rather than failed. Runtime verdict RUNTIME_BLOCKED; sync verdict PUSH_PENDING; the two are separate and PUSH_PENDING is not a mission failure.",
+  "next_legal_action": "Operator runs on LEGION in PowerShell: cd C:\\Users\\othry\\Projects\\othrys-blocks\\blocks\\media\\image-prep; npx playwright install chromium; npm run test:node; npm run test:browser - and returns both outputs plus the Playwright and Chromium versions. Then: cd C:\\Users\\othry\\Projects\\othrys-v2; git push origin main; git ls-remote origin main - and returns the remote SHA. With that evidence GPT can flip Block #1 runtime status to RUNTIME_PROVEN and issue the next mission.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -123,6 +125,11 @@
       "mission_id": "V2-001B.R",
       "status": "BLOCKED_RUNTIME_AND_SYNC",
       "note": "recovery complete, digest unchanged; no Windows shell and no network, so no runtime proof and no push"
+    },
+    {
+      "mission_id": "V2-001B.S",
+      "status": "RUNTIME_BLOCKED",
+      "note": "runtime smoke only: digest MATCH, node 4/4 (Linux VM, not Windows), Playwright suite NOT_OBSERVED - no Windows shell and Chromium download blocked by network allowlist. Nothing mounted, nothing changed in the Block. Issued as 'V2-001B'; recorded as V2-001B.S because V2-001B and V2-001B.R already exist"
     }
   ],
   "git": {
@@ -133,10 +140,10 @@
     "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
     "base_sha_for_next_mission": "recorded in the V2-000E receipt and sync stamp; verify origin/main equals it before any GPT write",
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
-    "sync_status": "NOT_SYNCED",
+    "sync_status": "PUSH_PENDING",
     "push_owner": "Windows host; the delegate environment has no GitHub egress",
-    "base_sha_verified_this_mission": "53ef6b19616aadfcf1f898b26b8a8a21352d334d",
-    "base_sha_verification": "local: working tree clean and HEAD == refs/remotes/origin/main. The delegate has no GitHub egress, so origin/main is the ref the host's push updated, not an independent read of github.com.",
+    "base_sha_verified_this_mission": "a6d75aada1b381b7a8f848fcb972f45dbc40ce7f",
+    "base_sha_verification": "V2-001B.S: working tree clean and HEAD == refs/remotes/origin/main == a6d75aad. The host's push of V2-001B and V2-001B.R landed. The delegate still has no GitHub egress, so origin/main is the ref the host's push updated, not an independent read of github.com.",
     "closeout_law": "BOOK_OF_GPT law 30 plus the V2-001B.R hard law: no mission is complete until push and remote verify succeed. The delegate has never had GitHub egress, so under a literal reading no delegate mission can reach PASS. Recorded as evidence for GPT; not resolved by the delegate."
   },
   "block_state": {
@@ -152,8 +159,9 @@
       "admitted_by": "V2-001A.R",
       "implementation_in_v2": false,
       "mounted": false,
-      "digest_rechecked_at": "2026-08-24 (V2-001B and V2-001B.R) - unchanged both times",
-      "runtime_proof": "node contract suite PROVEN_PRESENT (4/4, two negative controls). Playwright/Chromium suite NOT_OBSERVED: no Windows shell reachable from the delegate, and the Linux VM cannot install the Chromium binary (cdn.playwright.dev and npm both 403). Not claimed, not faked."
+      "digest_rechecked_at": "2026-08-24 (V2-001B, V2-001B.R and V2-001B.S) - unchanged all three times",
+      "runtime_proof": "RUNTIME_BLOCKED. node contract suite 4/4 pass, but observed in the delegate's Linux VM on LEGION, not in the Windows environment the mission required - recorded as observation, not proof. Playwright/Chromium suite NOT_OBSERVED: it never executed. First causal blocker: no Windows shell reachable from the delegate. Dependent blocker: the Linux VM cannot install the Chromium binary (cdn.playwright.dev 403 'Connection blocked by network allowlist'). Nothing claimed, nothing faked, no substitute runtime used.",
+      "runtime_status": "RUNTIME_BLOCKED"
     },
     "block_2": "FORBIDDEN - foundation questions 4 (real runtime evidence) and 5 (exact Oros mount) are unresolved. Block #1 is admitted, verified and frozen but not mounted.",
     "control_feedback": {

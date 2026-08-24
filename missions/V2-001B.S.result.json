@@ -1,20 +1,4 @@
 {
-  "base_sha": "a6d75aada1b381b7a8f848fcb972f45dbc40ce7f",
-  "block": {
-    "admission_status": "ADMITTED (unchanged, V2-001A.R)",
-    "block_id": "block.media.image-prep",
-    "block_version": "0.1.0",
-    "browser_tests": "NOT_OBSERVED - the suite never executed; no outcome claimed",
-    "chromium_version": "NOT_INSTALLED (target Chrome for Testing 151.0.7922.34, download 403 by network allowlist)",
-    "digest_recheck": "MATCH (start and end of mission)",
-    "expected_digest": "32b34548ad2dcd31c81d6efc5b569e0f19f33943e621f910f2f07b15ad363d7b",
-    "legacy_mutation": "NONE",
-    "node_tests": "4/4 pass in the delegate Linux VM on LEGION - observation only, not the Windows proof",
-    "package": "@othrys-blocks/media-image-prep",
-    "playwright_version": "1.62.1",
-    "runtime_status": "RUNTIME_BLOCKED",
-    "windows_runtime": "NOT_REACHABLE"
-  },
   "block_admission_status": "ADMITTED (unchanged from V2-001A.R; digest verified identical)",
   "blocker": "FIRST CAUSAL BLOCKER: the delegate has no Windows shell, so the Block's existing tests cannot be run in the real Windows LEGION environment the mission requires. uname reports Ubuntu 22.04.5, /mnt/c does not exist, cmd.exe / powershell.exe / pwsh.exe / wsl.exe are all absent from PATH and /proc/sys/fs/binfmt_misc is empty (no WSL interop). SECOND, DEPENDENT BLOCKER: the only shell that does exist - the desktop Linux VM on LEGION - cannot obtain Chromium. @playwright/test 1.62.1 is installed and platform-neutral, but the single bounded 'npx playwright install chromium' returned 403 with body 'Connection blocked by network allowlist' from cdn.playwright.dev, and 'Failed to install browsers'. That is the mission's own STOP RUNTIME_BLOCKED condition (network/policy), and section 4 forbids substituting cloud Chromium, a Linux VM, Node canvas, a mock browser or a different image library - none was used. The browser suite therefore NEVER RAN: its outcome is NOT_OBSERVED, not failed, and nothing is claimed about it. What IS proven: the specimen digest still equals the admitted 32b34548...d363d7b exactly, at mission start and end, and the Block's node contract suite passes 4/4 - though in the Linux VM, which is not the Windows environment section 3 asked for, so it is recorded as an observation and not as the proof. Block #1 remains ADMITTED from V2-001A.R, unchanged, frozen, not mounted. Block #2 stays FORBIDDEN. Unblock: operator runs on LEGION - cd C:\\Users\\othry\\Projects\\othrys-blocks\\blocks\\media\\image-prep; npx playwright install chromium; npm run test:node; npm run test:browser - and returns both outputs plus the Playwright and Chromium versions.",
   "commands_run": [
@@ -64,8 +48,6 @@
     }
   ],
   "created_at": "2026-08-24T18:50:12Z",
-  "delegate": "claude-opus-5",
-  "envelope_ref": "missions/V2-001B.S.json",
   "evidence": [
     "docs/V2-001B.S/RUNTIME_SMOKE.md",
     "missions/V2-001B.S.json",
@@ -122,9 +104,6 @@
   "mission_id": "V2-001B.S",
   "next_state": "WAIT_GPT",
   "objective": "Answer one question: can the already-admitted block.media.image-prep@0.1.0 run its existing real runtime tests on LEGION?",
-  "receipt_id": "V2-001B.S--20260824T185012Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "BLOCKED",
   "runtime_status": "RUNTIME_BLOCKED",
   "schema_version": "1.0.0",
