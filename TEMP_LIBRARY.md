@@ -66,8 +66,12 @@ Books and Laws are deliberately different artifact classes. Do not call a mechan
 
 ## ROOM 04 — BLOCKS & OROS
 
-### Shelf: Block Stock
-- *(empty)* — no canonical Capability Block is admitted into V2 yet.
+### Shelf: Block Stock — ADMITTED INTO V2 (exactly one)
+- `block.media.image-prep` `0.1.0` — digest `32b34548…d363d7b`. Admitted by V2-001A.R.
+  Record: `admissions/block.media.image-prep@0.1.0.json`. Implementation stays in
+  `othrys-blocks/blocks/media/image-prep`; V2 holds the admission truth, not the code.
+  Candidates are not stock: the other nine directories in `othrys-blocks/blocks` remain
+  available legacy stock and are **not** admitted.
 
 ### Shelf: Platform / Control Services
 - `blocks/control_feedback/` — **Control Feedback**, classification `SHARED_SERVICE` / `PLATFORM_ONLY` (V2-000C.R). Not a Capability Block, not Block #1. Its `blocks/` path is recorded technical debt; relocation is a separate mission.

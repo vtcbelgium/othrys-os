@@ -1,17 +1,17 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 12,
+  "sequence": 13,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "e9e8b33decb9484cce71c7bfa19c1b491962a124",
+  "remote_head_at_last_verified_read": "75098688a4ab72ec29ac352862a7afa7dd85206f",
   "control_gate": "WAIT_GPT",
   "active_mission": {
-    "mission_id": "V2-001A",
-    "status": "BLOCKED_AT_BASE_GATE",
+    "mission_id": "V2-001A.R",
+    "status": "ADMISSION_COMPLETE_LOCALLY",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
-  "last_verified_receipt_mission": "V2-001A",
+  "last_verified_receipt_mission": "V2-001A.R",
   "last_log_sequence": 9,
   "last_log_hash": "f7978b807fb617c32b6f559691f413fe9a40589fecab4137db54168b774a3d24",
   "log_integrity": {
@@ -54,15 +54,15 @@
     "gpt_inbox": "UNPROMOTED_INTELLIGENCE_ONLY"
   },
   "known_blockers": [
-    "LEGACY_INVENTORY coverage is not yet exhaustive for local/unpushed/worktree-only code",
     "the delegate environment has no GitHub egress; only the Windows host can push",
-    "V2-000F is committed locally and NOT pushed; origin/main is behind until the host pushes",
+    "V2-001A.R is committed locally and NOT pushed; origin/main is behind until the host pushes",
     "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
-    "no canonical Capability Block is admitted, so the FOUNDATION_LAWS exit test cannot yet be answered",
-    "System32/cmd popup: no V2 cause found; Windows Task Scheduler, registry Run keys, Startup folder and the live process list are NOT_OBSERVED from the delegate's Linux VM and need a host-side check"
+    "Block #1's Playwright Chromium suite and the second consumer's suite are NOT_OBSERVED by V2: the dev dependency is absent and there is no egress to install it. Maturity REUSABLE is inherited from legacy evidence and corroborated, not re-proven end to end",
+    "othrys-blocks has no configured remote; the admitted Block is REMOTE_PENDING and reconstructible only from the local canonical estate",
+    "System32/cmd popup: no V2 cause found; Task Scheduler, registry Run keys, Startup folder and the process list are NOT_OBSERVED from the delegate's Linux VM"
   ],
-  "last_control_decision": "V2-001A stopped at its base gate: HEAD 4040e38 != origin/main e9e8b33. Not a divergence - the push is a clean fast-forward - but the control-component freeze V2-001A builds on has never been remotely observable. No Capability Block was selected, inspected or admitted.",
-  "next_legal_action": "Windows host runs 'git push origin main' and verifies with 'git ls-remote origin main'. That SHA becomes the write base. Then reissue V2-001A to admit canonical Capability Block #1 from inspected legacy stock.",
+  "last_control_decision": "Capability Block #1 admitted: block.media.image-prep 0.1.0, package_tree_digest 32b34548, provenance verified against vtc-platform commit 032a47ca and blob b3f9bbe6, second consumer verified from source, its own node contract suite green 4/4. No implementation entered V2; legacy source unchanged. Block #2 remains FORBIDDEN.",
+  "next_legal_action": "Host pushes and verifies origin/main; that SHA becomes GPT's write base. Then GPT decides the next bounded mission. Block #2 is not it until V2 law defines a composition boundary, which it does not today.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -108,6 +108,11 @@
       "mission_id": "V2-001A",
       "status": "BLOCKED_AT_BASE_GATE",
       "note": "HEAD != origin/main; the two V2-000F commits are unpushed. Nothing selected or admitted."
+    },
+    {
+      "mission_id": "V2-001A.R",
+      "status": "ADMISSION_COMPLETE_LOCALLY",
+      "note": "Capability Block #1 admitted: block.media.image-prep 0.1.0, digest 32b34548"
     }
   ],
   "git": {
@@ -120,25 +125,31 @@
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
     "sync_status": "NOT_SYNCED",
     "push_owner": "Windows host; the delegate environment has no GitHub egress",
-    "base_sha_verified_this_mission": "e9e8b33decb9484cce71c7bfa19c1b491962a124",
-    "base_sha_verification": "local: working tree clean and HEAD == refs/remotes/origin/main. The delegate has no GitHub egress, so origin/main is the ref the host's push updated, not an independent read of github.com.",
-    "unpushed_commits": [
-      "d7284d1 V2-000F audit and freeze",
-      "4040e38 V2-000F sync stamp",
-      "plus this V2-001A blocker receipt"
-    ]
+    "base_sha_verified_this_mission": "75098688a4ab72ec29ac352862a7afa7dd85206f",
+    "base_sha_verification": "local: working tree clean and HEAD == refs/remotes/origin/main. The delegate has no GitHub egress, so origin/main is the ref the host's push updated, not an independent read of github.com."
   },
   "block_state": {
-    "capability_blocks_admitted": 0,
-    "block_1": null,
-    "block_2": "FORBIDDEN until a canonical Block #1 is admitted",
+    "capability_blocks_admitted": 1,
+    "block_1": {
+      "block_id": "block.media.image-prep",
+      "block_version": "0.1.0",
+      "package": "@othrys-blocks/media-image-prep",
+      "package_tree_digest": "32b34548ad2dcd31c81d6efc5b569e0f19f33943e621f910f2f07b15ad363d7b",
+      "maturity_at_admission": "REUSABLE",
+      "canonical_source": "othrys-blocks/blocks/media/image-prep @ 09efbc7088c320a8bb0ae6de0566a764e502115c",
+      "admission_record": "admissions/block.media.image-prep@0.1.0.json",
+      "admitted_by": "V2-001A.R",
+      "implementation_in_v2": false
+    },
+    "block_2": "FORBIDDEN - admission is not composition; othrys-v2 is not an Oros (ADR-0050), so the FOUNDATION_LAWS exit question 'Where is it mounted in the Oros?' has no answer. Unchanged by V2-001A.R and not to be invented.",
     "control_feedback": {
       "path": "blocks/control_feedback/",
       "classification": "SHARED_SERVICE / PLATFORM_ONLY",
       "is_capability_block": false,
-      "technical_debt": "lives under blocks/; relocation is a separate mission"
+      "technical_debt": "lives under blocks/; relocation is a separate mission",
+      "status": "FROZEN_AND_AUDITED (V2-000F), unchanged by V2-001A.R"
     },
-    "oros": "othrys-v2 is control plane, not an Oros. The Oros Zero specimen is oros/oros-zero (PENTA-001) and is referenced, never recreated."
+    "oros": "othrys-v2 is control plane, not an Oros. The Oros Zero specimen is oros/oros-zero (PENTA-001), referenced and untouched."
   },
   "control_feedback": {
     "classification": "SHARED_SERVICE / PLATFORM_ONLY",

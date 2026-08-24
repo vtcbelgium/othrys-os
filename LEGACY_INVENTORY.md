@@ -861,7 +861,7 @@ pointer to this one. Paths are under `C:\Users\othry\Projects\`.
 | Hephaestus Block Forge | `othrys-hub-oros-composition-law-001/docs/OROS-COMPOSITION-LAW-001/HEPHAESTUS-BLOCK-FORGE.md` | ACCEPTED packet, worktree only |
 | ADR-0050 Oros & Constellation Ratification | `othrys-core-windows/titan/adr/ADR-0050-oros-constellation-ratification.md` | **Accepted Constitutional Law** (L4, 2026-07-19) |
 | othrys-blocks conventions | `othrys-blocks/docs/CONVENTION.md` | ACTIVE physical/identity law |
-| Specimen Block | `othrys-blocks/blocks/media/image-prep/` | IMPLEMENTED; `BLOCK.md` records `0.1.0`, PRODUCT, maturity REUSABLE |
+| Specimen Block | `othrys-blocks/blocks/media/image-prep/` | **ADMITTED INTO V2** as Block #1 by V2-001A.R — `0.1.0`, digest `32b34548…d363d7b`, record `admissions/block.media.image-prep@0.1.0.json`. Implementation stays here; V2 copied nothing |
 | Provisional Block Passport | `othrys-hub/docs/VTC-BLOCK-CONTRACT-001/PROVISIONAL-BLOCK-PASSPORT.md` | Documentation checklist only |
 | Oros Zero specimen | `oros/oros-zero/` | IMPLEMENTED (PENTA-001, 2026-08-23). Referenced, never recreated or modified |
 
@@ -878,3 +878,23 @@ to the Hub owner:
    `product_capabilities@v0` and `oros.lock@v0` shapes — sits outside canonical HEAD.
 
 When V2 quotes this law, quote the worktree copy and say so.
+
+## 9.2 Capability Block stock — available vs admitted (V2-001A.R)
+
+`othrys-blocks/blocks` holds ten directories. Exactly one is admitted into V2.
+
+| Directory | Passport | State |
+|---|---|---|
+| `media/image-prep` | `BLOCK.md` | **ADMITTED INTO V2** — Block #1, `0.1.0` |
+| `monetization/affiliate-offer` | `BLOCK.md` | AVAILABLE STOCK — REUSABLE, not admitted (network-facing; Book of Blocks §17) |
+| `ai/provider-router` | none | AVAILABLE STOCK — no Passport, not admissible today |
+| `analytics/event-log` | none | AVAILABLE STOCK — no Passport |
+| `analytics/visit-tracking` | none | AVAILABLE STOCK — no Passport |
+| `auth/supabase-session` | none | AVAILABLE STOCK — no Passport |
+| `knowledge/grounded-retrieval` | none | AVAILABLE STOCK — no Passport |
+| `knowledge/source-extraction` | none | AVAILABLE STOCK — no Passport |
+| `learning/gap-engine` | none | AVAILABLE STOCK — no Passport |
+| `learning/mastery-ledger` | none | AVAILABLE STOCK — no Passport |
+
+Available stock is not admitted stock. Nothing above was promoted, demoted,
+modified or consumed by this mission.

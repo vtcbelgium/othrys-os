@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001A.R",
+  "objective": "Admit exactly one existing legacy Capability Block into OTHRYS V2 as canonical Block #1 by reuse: select from inspected legacy stock on evidence, verify identity, version, content digest, provenance, maturity, contract, runtime, network, secrets, side effects and failure behaviour, run the Block's own focused tests unmodified, and create the smallest machine-readable admission record sufficient to reconstruct exactly what was admitted and to detect a mismatched specimen.",
+  "delegate": "claude-opus-5",
+  "issued_by": "GPT",
+  "issued_at": "2026-08-24T17:30:00Z",
+  "constraints": [
+    "exact base gate 75098688a4ab72ec29ac352862a7afa7dd85206f, clean tree, HEAD == origin/main",
+    "reuse only: no new Block code, no extraction, no adaptation",
+    "no Block #2, no Oros, no registry, no resolver, no orchestrator, no package manager, no plugin system, no UI",
+    "no legacy mutation: do not copy, move, rename, edit, normalise, refactor, upgrade or repair the Block",
+    "do not choose block.media.image-prep merely because the mission names it",
+    "no invented Socket/Capsule vocabulary; Ports only if evidence-backed",
+    "Control Feedback remains SHARED_SERVICE / PLATFORM_ONLY and out of scope",
+    "leave Block #2 FORBIDDEN unless existing V2 law defines the next state",
+    "attempt remote proof once; never claim SYNCED without matching verified SHAs"
+  ],
+  "expected_proof": [
+    "exactly one Capability Block admitted from inspected legacy stock",
+    "exact identity, version and reproducible digest recorded",
+    "provenance and maturity evidence-backed",
+    "the Block's own focused tests pass unmodified",
+    "admission rejects a mismatched specimen",
+    "exact specimen reconstructible from files alone",
+    "legacy source unchanged and no implementation copied into V2",
+    "no Block #2, no Oros, no registry or resolver created",
+    "stop in WAIT_GPT"
+  ]
+}

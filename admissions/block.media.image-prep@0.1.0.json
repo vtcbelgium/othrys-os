@@ -1,0 +1,251 @@
+{
+  "schema": "othrys.v2.block_admission.v0",
+  "note": "V2-owned admission record for exactly one Capability Block. Field names are borrowed from the ACCEPTED documentary shape oros.lock@v0 (othrys-hub-oros-composition-law-001/docs/OROS-COMPOSITION-LAW-001/SCHEMAS.md) so a future Factory-produced lock can consume them without renaming. This is NOT an oros.lock instance, NOT a registry, NOT a resolver, and covers no Block but this one. othrys-v2 is control plane, not an Oros (ADR-0050).",
+  "admitted_by": {
+    "mission": "V2-001A.R",
+    "base_sha": "75098688a4ab72ec29ac352862a7afa7dd85206f",
+    "admitted_at": "2026-08-24",
+    "authority": "GPT Control"
+  },
+  "block_id": "block.media.image-prep",
+  "block_version": "0.1.0",
+  "package": "@othrys-blocks/media-image-prep",
+  "capability_id": "capability.media.image-prep",
+  "classification": "CAPABILITY",
+  "maturity_at_admission": "REUSABLE",
+  "source": {
+    "canonical_repo": "othrys-blocks",
+    "canonical_path": "blocks/media/image-prep",
+    "absolute_path_on_legion": "C:\\Users\\othry\\Projects\\othrys-blocks\\blocks\\media\\image-prep",
+    "repo_head_at_admission": "09efbc7088c320a8bb0ae6de0566a764e502115c",
+    "last_commit_touching_block": "b7d161f8458bd9fd28fce3694abacfc76b2db7c2",
+    "repo_remote": null,
+    "distribution": "REMOTE_PENDING - othrys-blocks has no configured remote; local file: consumption is proof-only; publishing is not authorised",
+    "ownership": "legacy owns the implementation; V2 owns only this admission record. No implementation was copied into othrys-v2."
+  },
+  "package_tree_digest": {
+    "value": "32b34548ad2dcd31c81d6efc5b569e0f19f33943e621f910f2f07b15ad363d7b",
+    "algorithm": "sha256-of-manifest",
+    "procedure": [
+      "1. Walk the Block directory recursively.",
+      "2. Exclude any path containing a node_modules, test-results or .git segment. Include everything else.",
+      "3. Path form: POSIX-relative to the Block directory root.",
+      "4. Order: bytewise ascending on the relative path (LC_ALL=C).",
+      "5. Per file: lowercase hex SHA-256 of the raw bytes.",
+      "6. Manifest line: '<sha256>' + two spaces + '<relpath>' + '\\n', UTF-8.",
+      "7. Digest = lowercase hex SHA-256 of the concatenated manifest bytes."
+    ],
+    "reproduce": "cd <block dir> && find . -type f -not -path './node_modules/*' -not -path './test-results/*' -printf '%P\\n' | LC_ALL=C sort | while read -r f; do printf '%s  %s\\n' \"$(sha256sum \"$f\" | cut -d' ' -f1)\" \"$f\"; done | sha256sum",
+    "file_count": 14,
+    "manifest": [
+      {
+        "path": "BLOCK.md",
+        "sha256": "d702fa0dee5434f25006f890811382a95b3c9643d969c294b1db7768349b30fb"
+      },
+      {
+        "path": "README.md",
+        "sha256": "b53e4e88da2db0a612ef161292c9c55bab0af7e18b3e933a2373b08c7c680d25"
+      },
+      {
+        "path": "package.json",
+        "sha256": "8db79db92a0b5496c41a5fbcba43e0e065da55d47050b1ea946b292e3a7a3a91"
+      },
+      {
+        "path": "playwright.config.js",
+        "sha256": "26c577c2027f56764c0e975a73423c6b50eb2bdeb820697526820391deb578c9"
+      },
+      {
+        "path": "src/config.js",
+        "sha256": "e6f3b2d710d8199419fff4896e1a00d8375f78f27d7cc6dd19bdd7d5759b58b6"
+      },
+      {
+        "path": "src/errors.js",
+        "sha256": "846c525f0a35264b97bd8e572d3038f8435fe1620fe6a85a7f16b47f8a7c9ece"
+      },
+      {
+        "path": "src/index.js",
+        "sha256": "c584ea2a7ab6d90689b6c6ad387a1b9d55596b3748f14568b4c04cef61ccca75"
+      },
+      {
+        "path": "src/prepareImage.js",
+        "sha256": "bd2654e952a37969e985ce61d5246a29d509c9a90bba01a47fac75113bb797bc"
+      },
+      {
+        "path": "tests/browser/harness/bgRemove.js",
+        "sha256": "f13fce8e52c9df7dc8aa1fc83a4079f9f6766c6a9cb4345c44ef645496cdcb2f"
+      },
+      {
+        "path": "tests/browser/harness/index.html",
+        "sha256": "1f68d0a8531e48bc662ba8e6947b9f10475586a7b4af7c4bc7286daec83c43bc"
+      },
+      {
+        "path": "tests/browser/image-prep.spec.js",
+        "sha256": "788955de06f7a1834b005943f08b5cfc12e9cd8864163f3fb00d0e9327171664"
+      },
+      {
+        "path": "tests/browser/origin-oracle.js",
+        "sha256": "d52600ad49c62b8729de857bdc34217d86140d70e06c5d3bfc6491ff10288590"
+      },
+      {
+        "path": "tests/browser/serve.mjs",
+        "sha256": "3512a0f9a1c5d1a640106436e9d473e660e665b5d55742b0ca954154a8535d8e"
+      },
+      {
+        "path": "tests/node/contract.test.js",
+        "sha256": "f7c7b7227dc0e609a93c565041f1726f809a58548ae0c1d77b40f2eaedfd2aec"
+      }
+    ],
+    "why_defined_here": "No canonical digest algorithm exists in recovered doctrine. SCHEMAS.md names the field 'package_tree_digest' and calls it a reproducible SHA-256 tree digest but defines no procedure, and no implementation exists in the estate. This is the smallest deterministic procedure sufficient for one admission. It is not a package manager and creates no tooling."
+  },
+  "provenance": {
+    "origin_product": "vtc-platform",
+    "origin_commit": "032a47ca0fa0731febdf47f45607983ac9b721b4",
+    "origin_commit_date": "2026-07-24T19:08:21+02:00",
+    "origin_file": "src/whiteSquare.js",
+    "origin_blob": "b3f9bbe63864daa075e8b430bd40df2d27d66080",
+    "verification": "PROVEN_PRESENT - the commit and blob both exist in C:\\Users\\othry\\Projects\\vtc-platform, and 'git rev-parse 032a47ca:src/whiteSquare.js' returns exactly b3f9bbe6, matching the claim in BLOCK.md.",
+    "extraction_mission": "VTC-BLOCK-EXTRACT-001R",
+    "transplant_mission": "VTC-BLOCK-TRANSPLANT-001",
+    "excluded_from_core": "background removal (src/bgRemove.js, whiten-photo) stayed in VTC"
+  },
+  "capability": "Prepare a user-supplied raster image for consistent product/catalog display: optional long-edge downscale, JPEG normalisation, and optional square compose onto an opaque background. It does not upload, consent or publish.",
+  "contract": {
+    "reference": "othrys-blocks/blocks/media/image-prep/BLOCK.md (the Block's own Passport)",
+    "entry_point": "ESM: prepareImage(source, options) -> Promise<PrepareResult>",
+    "provides": [
+      "prepare.downscale",
+      "prepare.normalize.jpeg",
+      "prepare.square"
+    ],
+    "requires": [
+      "browser CanvasRenderingContext2D",
+      "Image",
+      "FileReader",
+      "canvas.toBlob",
+      "getImageData",
+      "host supplies a Blob or File"
+    ],
+    "optional": [
+      {
+        "name": "host-side background removal before prepareImage",
+        "absence_behaviour": "core never calls @imgly or remove.bg; backgroundRemoved is always false"
+      },
+      {
+        "name": "named profiles (catalog-tile, catalog-quick, upload-1200, avatar-reencode)",
+        "absence_behaviour": "convenience only, not a registry; callers pass explicit knobs"
+      },
+      {
+        "name": "prepare.square",
+        "absence_behaviour": "valid to omit; downscale/normalise still apply"
+      }
+    ],
+    "output": "PrepareResult with width, height, format, bboxTrimmed, backgroundRemoved, durationMs, operationsApplied, blockId"
+  },
+  "ports": {
+    "status": "NONE DECLARED AS RUNTIME PORTS",
+    "evidence": "BLOCK.md INTEGRATION EDGE names 'media.image.prepared@1' explicitly as a documentation name only, with no graph system. Book of Blocks 0.2 forbids building a universal Port registry now. No Port is invented here.",
+    "documentary_name_only": "media.image.prepared@1"
+  },
+  "runtime": {
+    "proven": "Chromium page with real Canvas 2D (Playwright)",
+    "unsupported": [
+      "Node without Canvas",
+      "jsdom without real toBlob/getImageData"
+    ],
+    "engines": "node >=20 for the package's own tooling"
+  },
+  "dependencies": {
+    "runtime": [],
+    "dev": [
+      "@playwright/test ^1.55.1"
+    ],
+    "note": "zero runtime dependencies; the only dependency is the browser test harness"
+  },
+  "network": "NONE on the core path",
+  "secrets": "NONE",
+  "permissions": "NONE - the host owns file pickers and storage writes",
+  "side_effects": {
+    "filesystem": "none",
+    "process": "none",
+    "network": "none",
+    "state": "none - stateless transform, no localStorage, no database, no identity",
+    "observability": "return-value metadata only; no event bus, no pixel logs"
+  },
+  "failure_behaviour": {
+    "style": "typed ImagePrepError; the host adapter maps it as it chooses",
+    "cases": [
+      "decode_failed (image decode or FileReader failure, missing source)",
+      "encode_failed (canvas.toBlob returns null)",
+      "unsupported_type (SVG; HEIC surfaces as unsupported_type or decode_failed)",
+      "canvas_unavailable (no canvas)"
+    ],
+    "no_fake_success": "errors are raised, never swallowed into a null result inside the Block"
+  },
+  "test_evidence": {
+    "node_contract_suite": {
+      "command": "node --test tests/node/*.test.js",
+      "run_at": "2026-08-24",
+      "result": "PASS",
+      "tests": 4,
+      "failures": 0,
+      "includes_negative_controls": [
+        "SVG MIME is unsupported_type before any canvas work",
+        "missing source is decode_failed"
+      ],
+      "status": "PROVEN_PRESENT"
+    },
+    "browser_suite": {
+      "command": "playwright test",
+      "expected": "Chromium, 20 cases",
+      "status": "NOT_OBSERVED",
+      "reason": "@playwright/test is not installed in the Block directory and the delegate environment has no network egress to install it. Not run, therefore not claimed.",
+      "documented_only": "BLOCK.md records node contract 4 + Playwright Chromium 20 PASS, re-run 2026-08-21"
+    },
+    "second_consumer_suite": {
+      "status": "NOT_OBSERVED",
+      "documented_only": "BLOCK.md records oros-image-prep-transplant npm test (same-source + Playwright Chromium 9) PASS 2026-08-21"
+    },
+    "specimen_unchanged_by_testing": "digest recomputed after the test run: identical"
+  },
+  "consumer_evidence": {
+    "proven_consumers": 2,
+    "origin": "vtc-platform via file:../othrys-blocks/blocks/media/image-prep",
+    "second": {
+      "name": "oros-image-prep-transplant",
+      "path": "C:\\Users\\othry\\Projects\\oros\\oros-image-prep-transplant",
+      "dependency": "@othrys-blocks/media-image-prep -> file:../../othrys-blocks/blocks/media/image-prep",
+      "same_source_proof": "tests/same-source.mjs present; the consumer resolves the canonical source, it does not copy it",
+      "verification": "PROVEN_PRESENT by reading the consumer's package.json and test directory"
+    },
+    "maturity_basis": "REUSABLE under Book of Blocks 7: same canonical source consumed by the origin Oros and by an independent second Oros without fork or copy. Inherited from the legacy record and corroborated here by the file: dependency and the same-source test; the transplant's own suite was not re-run by V2."
+  },
+  "reconstruction": {
+    "sufficient_to_reconstruct": [
+      "canonical repo othrys-blocks at commit 09efbc7088c320a8bb0ae6de0566a764e502115c, path blocks/media/image-prep",
+      "block_version 0.1.0",
+      "package_tree_digest 32b34548ad2dcd31c81d6efc5b569e0f19f33943e621f910f2f07b15ad363d7b",
+      "the 14-entry per-file manifest in this record"
+    ],
+    "procedure": "Check out othrys-blocks at the recorded commit, take blocks/media/image-prep, recompute the digest with the documented procedure, and compare against package_tree_digest and the per-file manifest. Any single-byte difference changes the digest.",
+    "if_unavailable": "If the canonical source is missing, or the recomputed digest does not equal package_tree_digest, the admitted specimen is NOT present. V2 must treat Block #1 as unavailable and fail explicitly. There is no fallback, no substitute version, no repair path and no silent re-admission: a different digest is a different specimen and requires a new admission mission."
+  },
+  "authority_references": [
+    "othrys-hub/docs/governance/BOOK_OF_BLOCKS.md - species 0.1, contract 5, maturity 7, promotion 8, naming 16, Passport 22",
+    "othrys-blocks/docs/CONVENTION.md - physical path and identity law",
+    "othrys-hub-oros-composition-law-001/docs/OROS-COMPOSITION-LAW-001/SCHEMAS.md - oros.lock@v0 field names",
+    "othrys-core-windows/titan/adr/ADR-0050-oros-constellation-ratification.md - othrys-v2 is not an Oros",
+    "othrys-v2/FOUNDATION_LAWS.md - identity content-bound 4, provenance 5, admission 7, maturity 9",
+    "oros/oros-zero/blueprint.json - capability/Talos/Block three-name mapping (legacy, untouched)"
+  ],
+  "not_this_record": [
+    "registry",
+    "resolver",
+    "package manager",
+    "plugin host",
+    "orchestrator",
+    "oros.lock instance",
+    "Blueprint",
+    "Oros",
+    "runtime"
+  ]
+}

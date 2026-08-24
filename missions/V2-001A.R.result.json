@@ -43,8 +43,6 @@
     }
   ],
   "created_at": "2026-08-24T18:03:47Z",
-  "delegate": "claude-opus-5",
-  "envelope_ref": "missions/V2-001A.R.json",
   "evidence": [
     "admissions/block.media.image-prep@0.1.0.json",
     "docs/V2-001A.R/BLOCK_1_SURVEY.md",
@@ -98,15 +96,7 @@
       "sha256": "a8ae08280fd3df0090eeb9b4808275663af6da4c73881becea64944d022f6b57"
     }
   ],
-  "mission_id": "V2-001A.R",
-  "next_state": "WAIT_GPT",
-  "objective": "Admit exactly one existing legacy Capability Block into OTHRYS V2 as canonical Block #1 by reuse: select from inspected legacy stock on evidence, verify identity, version, content digest, provenance, maturity, contract, runtime, network, secrets, side effects and failure behaviour, run the Block's own focused tests unmodified, and create the smallest machine-readable admission record sufficient to reconstruct exactly what was admitted and to detect a mismatched specimen.",
-  "receipt_id": "V2-001A.R--20260824T180347Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "COMPLETE",
-  "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
   "tests": [
     {
       "detail": "clean tree; HEAD == origin/main == 75098688a4ab72ec29ac352862a7afa7dd85206f",

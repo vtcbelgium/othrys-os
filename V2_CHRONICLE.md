@@ -137,3 +137,41 @@ Neither can fabricate success.
 
 Lesson: **the control loop earns trust by being boring, and by proving what it
 refuses — not only what it accepts.**
+
+## CH-0012 — Canonical Capability Block #1 admitted
+
+Base `75098688a4ab72ec29ac352862a7afa7dd85206f`, gate exact.
+
+Ten candidate directories were surveyed in `othrys-blocks/blocks`. Eight carry no
+`BLOCK.md` Passport at all — no canonical id, no maturity, no provenance — so
+none is admissible today. Two were real candidates. `block.monetization.affiliate-offer`
+lost on risk rather than quality: it is network-facing, and Book of Blocks §17
+calls high-risk capabilities poor first-block candidates.
+
+**Admitted: `block.media.image-prep` `0.1.0`**, tree digest
+`32b34548ad2dcd31c81d6efc5b569e0f19f33943e621f910f2f07b15ad363d7b` over 14 files.
+
+The selection was evidence-driven, not taken from the prompt's hint. Provenance
+was verified against the origin repository rather than believed: commit
+`032a47ca` and blob `b3f9bbe6` both exist in `vtc-platform`, and
+`git rev-parse 032a47ca:src/whiteSquare.js` returns exactly that blob. The second
+consumer was verified from source — `oros-image-prep-transplant` depends on the
+canonical `file:` path and ships a same-source test, so REUSABLE rests on shared
+source, not on a copy.
+
+The Block's own node contract suite ran unmodified and passed 4/4, two of them
+negative controls. The Playwright Chromium suite was **not run** — the dev
+dependency is absent and the delegate has no egress — so it is recorded
+`NOT_OBSERVED` rather than claimed. Recorded maturity is inherited from the legacy
+evidence and corroborated, not re-proven end to end by V2.
+
+No implementation entered V2. The Block stays in `othrys-blocks`; V2 owns one
+admission record. The digest was identical before and after the test run, and a
+single added newline in a throwaway copy changed it — the record binds.
+
+Block #2 stays **FORBIDDEN**, and not by invention: admission is not composition,
+V2 is not an Oros, and FOUNDATION_LAWS' exit question "Where is it mounted in the
+Oros?" still has no answer.
+
+Lesson: **admission is identity plus evidence plus reconstructibility — not
+possession of the code.**
