@@ -1,9 +1,9 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 7,
+  "sequence": 9,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "011777339aea6eefc6155c2a2ced107a5bf029b3",
+  "remote_head_at_last_verified_read": "0d943dd3b089099dd237d292759e497a0eb39e2c",
   "control_gate": "WAIT_DELEGATE_RECEIPT",
   "active_mission": {
     "mission_id": "V2-000C",
@@ -12,14 +12,15 @@
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
   "last_verified_receipt_mission": "V2-000A",
-  "last_log_sequence": 7,
-  "last_log_hash": "33bac570a63961fdbe02008991e45771152fb2e25bed873fecf68200690fd75a",
+  "last_log_sequence": 9,
+  "last_log_hash": "f7978b807fb617c32b6f559691f413fe9a40589fecab4137db54168b774a3d24",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
-    "incident": "sequence 3 stored entry_hash mismatch",
-    "stored_hash": "53b04f30217ef4d6411ddd30e40be257ba70bb95946dfdd5f106892a3bb89b35",
-    "recomputed_hash": "9fc65a6543e139e829647087b76f6bba849f3702596b6683d2164b81e16951f0",
-    "recovery_event": 4
+    "incidents": [
+      "sequence 3 stored entry_hash mismatch",
+      "sequence 8 append commit accidentally altered historical sequence 4 text; restored and recorded as sequence 9"
+    ],
+    "recovery_events": [4, 9]
   },
   "inventory": {
     "root": "LEGACY_INVENTORY.md",
@@ -50,8 +51,8 @@
     "LEGACY_INVENTORY coverage is not yet exhaustive for local/unpushed/worktree-only code",
     "delegate GitHub egress may differ from Windows host GitHub capability",
     "receipts/LATEST.json is older than GPT-maintained control state and therefore is not the current control pointer",
-    "GPT_LOG historical integrity is DEGRADED_RECOVERED because sequence 3 stored hash was invalid"
+    "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents"
   ],
   "last_control_decision": "Empty-house foundation law is frozen: exact Block identity/version/digest/provenance, deterministic admission, existing OTHRYS maturity, declared boundaries, explicit composition truth, removal/replacement proof and reconstructibility are mandatory; no universal registry/resolver yet.",
-  "next_legal_action": "Continue GPT-owned read-only inventory/intelligence maintenance while waiting. When V2-000C becomes remotely observable, review its receipt and reconcile it against FOUNDATION_LAWS.md before any Block #2 instruction."
+  "next_legal_action": "Wait for V2-000C to become remotely observable, then review its receipt and reconcile it against FOUNDATION_LAWS.md before any Block #2 instruction."
 }
