@@ -23,8 +23,6 @@
     }
   ],
   "created_at": "2026-08-24T17:18:27Z",
-  "delegate": "claude-opus-5",
-  "envelope_ref": "missions/V2-001A.json",
   "evidence": [
     "docs/V2-001A/BASE_GATE_BLOCK.md",
     "missions/V2-001A.json",
@@ -45,15 +43,7 @@
       "sha256": "f61ede9984b410bbc27c63c8326918e1997354471c84d3bd9aaaa5f9f982dd92"
     }
   ],
-  "mission_id": "V2-001A",
-  "next_state": "WAIT_GPT",
-  "objective": "Admit exactly one existing legacy Capability Block into the V2 foundation as canonical Block #1: select by evidence from inspected legacy stock, record exact identity, version, content digest, provenance, honest maturity, contract, runtime, network, secrets, side effects and failure behaviour, and create the smallest machine-readable admission record sufficient to reconstruct exactly what was admitted.",
-  "receipt_id": "V2-001A--20260824T171827Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "FAILED",
-  "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
   "tests": [
     {
       "detail": "git status --short is empty",

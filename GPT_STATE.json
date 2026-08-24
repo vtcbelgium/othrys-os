@@ -1,17 +1,17 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 11,
+  "sequence": 12,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "e9e8b33decb9484cce71c7bfa19c1b491962a124",
   "control_gate": "WAIT_GPT",
   "active_mission": {
-    "mission_id": "V2-000F",
-    "status": "AUDIT_COMPLETE_LOCALLY",
+    "mission_id": "V2-001A",
+    "status": "BLOCKED_AT_BASE_GATE",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
-  "last_verified_receipt_mission": "V2-000F",
+  "last_verified_receipt_mission": "V2-001A",
   "last_log_sequence": 9,
   "last_log_hash": "f7978b807fb617c32b6f559691f413fe9a40589fecab4137db54168b774a3d24",
   "log_integrity": {
@@ -61,8 +61,8 @@
     "no canonical Capability Block is admitted, so the FOUNDATION_LAWS exit test cannot yet be answered",
     "System32/cmd popup: no V2 cause found; Windows Task Scheduler, registry Run keys, Startup folder and the live process list are NOT_OBSERVED from the delegate's Linux VM and need a host-side check"
   ],
-  "last_control_decision": "Control Feedback is frozen as the first V2 control component: audited file by file at base e9e8b33, 15 of 15 hard laws verdicted with evidence, 30 tests including 8 new negative controls and an ALLOW suite, two small fail-closed defects fixed, one piece of accidental complexity removed, nothing added.",
-  "next_legal_action": "Host pushes and verifies origin/main; that SHA becomes GPT's write base. Then either close the popup investigation with a host-side scheduler/registry check, or inspect legacy Capability Block stock and admit a real canonical Block #1.",
+  "last_control_decision": "V2-001A stopped at its base gate: HEAD 4040e38 != origin/main e9e8b33. Not a divergence - the push is a clean fast-forward - but the control-component freeze V2-001A builds on has never been remotely observable. No Capability Block was selected, inspected or admitted.",
+  "next_legal_action": "Windows host runs 'git push origin main' and verifies with 'git ls-remote origin main'. That SHA becomes the write base. Then reissue V2-001A to admit canonical Capability Block #1 from inspected legacy stock.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -103,6 +103,11 @@
       "mission_id": "V2-000F",
       "status": "AUDIT_COMPLETE_LOCALLY",
       "note": "Control Feedback audited and frozen; 30 tests; 2 small defects fixed; no new architecture"
+    },
+    {
+      "mission_id": "V2-001A",
+      "status": "BLOCKED_AT_BASE_GATE",
+      "note": "HEAD != origin/main; the two V2-000F commits are unpushed. Nothing selected or admitted."
     }
   ],
   "git": {
@@ -116,7 +121,12 @@
     "sync_status": "NOT_SYNCED",
     "push_owner": "Windows host; the delegate environment has no GitHub egress",
     "base_sha_verified_this_mission": "e9e8b33decb9484cce71c7bfa19c1b491962a124",
-    "base_sha_verification": "local: working tree clean and HEAD == refs/remotes/origin/main. The delegate has no GitHub egress, so origin/main is the ref the host's push updated, not an independent read of github.com."
+    "base_sha_verification": "local: working tree clean and HEAD == refs/remotes/origin/main. The delegate has no GitHub egress, so origin/main is the ref the host's push updated, not an independent read of github.com.",
+    "unpushed_commits": [
+      "d7284d1 V2-000F audit and freeze",
+      "4040e38 V2-000F sync stamp",
+      "plus this V2-001A blocker receipt"
+    ]
   },
   "block_state": {
     "capability_blocks_admitted": 0,
