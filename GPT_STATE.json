@@ -1,0 +1,125 @@
+{
+  "schema": "othrys.v2.gpt-state.v1",
+  "sequence": 10,
+  "state_owner": "GPT_CONTROL",
+  "remote_repo": "vtcbelgium/othrys-v2",
+  "remote_head_at_last_verified_read": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
+  "control_gate": "WAIT_GPT",
+  "active_mission": {
+    "mission_id": "V2-000E",
+    "status": "RECONCILIATION_COMPLETE_LOCALLY",
+    "source": "operator_current_conversation"
+  },
+  "last_verified_remote_receipt": "receipts/LATEST.json",
+  "last_verified_receipt_mission": "V2-000E",
+  "last_log_sequence": 9,
+  "last_log_hash": "f7978b807fb617c32b6f559691f413fe9a40589fecab4137db54168b774a3d24",
+  "log_integrity": {
+    "status": "DEGRADED_RECOVERED",
+    "incidents": [
+      "sequence 3 stored entry_hash mismatch",
+      "sequence 8 append commit accidentally altered historical sequence 4 text; restored and recorded as sequence 9"
+    ],
+    "recovery_events": [
+      4,
+      9
+    ]
+  },
+  "inventory": {
+    "root": "LEGACY_INVENTORY.md",
+    "coverage": "PARTIAL",
+    "supplements": [
+      "inventory/JARVIS.md",
+      "inventory/OTHRYS_CORE_CONTROL.md"
+    ],
+    "senior_canon_pointers": "LEGACY_INVENTORY.md section 9 (recovered by V2-000C)"
+  },
+  "control_files": {
+    "law": "BOOK_OF_GPT.md",
+    "foundation_law": "FOUNDATION_LAWS.md",
+    "foundation_research": "FOUNDATION_LAWS_RESEARCH.md",
+    "rails": "GPT_RAILS.md",
+    "log": "GPT_LOG.jsonl",
+    "chronicle": "V2_CHRONICLE.md",
+    "research": "GPT_RAILS_RESEARCH.md",
+    "intake": "GPT_INBOX.md",
+    "library": "TEMP_LIBRARY.md",
+    "inventory": "LEGACY_INVENTORY.md"
+  },
+  "memory_boundary": {
+    "othrys_v2_repo": "MACHINE_CONTROL_TRUTH",
+    "othrys_memory": "ACCEPTED_KNOWLEDGE_PROJECTION",
+    "memory_pointer": "02 Projects/Othrys/V2/CONTROL-INDEX.md",
+    "chat_memory": "NON_AUTHORITATIVE",
+    "gpt_inbox": "UNPROMOTED_INTELLIGENCE_ONLY"
+  },
+  "known_blockers": [
+    "LEGACY_INVENTORY coverage is not yet exhaustive for local/unpushed/worktree-only code",
+    "the delegate environment has no GitHub egress; only the Windows host can push",
+    "V2-000E is committed locally and NOT pushed; origin/main is behind until the host pushes",
+    "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
+    "no canonical Capability Block is admitted, so the FOUNDATION_LAWS exit test cannot yet be answered"
+  ],
+  "last_control_decision": "V2-000E reconciled the two V2 histories into one by ordinary merge (base 66c4563, parents b65ebba and 92d29d5). All immutable receipts preserved. Control Feedback is SHARED_SERVICE / PLATFORM_ONLY and is no longer indexed as Block #1. Socket/Capsule wording corrected to Port and Block directory in FOUNDATION_LAWS, LEGACY_INVENTORY and the research record. Law 30 ONE V2 HISTORY added to BOOK_OF_GPT.md.",
+  "next_legal_action": "Host pushes the reconciled history and independently verifies origin/main. That exact SHA becomes GPT's write base. Then the next legal mission is to inspect legacy Capability Block stock and admit a real canonical Block #1. No GPT write against origin/main until the push is verified.",
+  "mission_history": [
+    {
+      "mission_id": "V2-000A",
+      "status": "PARTIAL",
+      "note": "Control Feedback built; 22 tests green; never pushed"
+    },
+    {
+      "mission_id": "V2-000A.1",
+      "status": "COMPLETE",
+      "note": "BOOK_OF_GPT.md created locally"
+    },
+    {
+      "mission_id": "V2-000B",
+      "status": "FAILED",
+      "note": "Host Sync Gate not built; BOOK_OF_GPT.md absent at the time"
+    },
+    {
+      "mission_id": "V2-000C",
+      "status": "PARTIAL",
+      "note": "STOPPED at authority gate; five contradictions recorded"
+    },
+    {
+      "mission_id": "V2-000C.R",
+      "status": "COMPLETE",
+      "note": "C1-C5 ratified and applied"
+    },
+    {
+      "mission_id": "V2-000D",
+      "status": "FAILED",
+      "note": "histories had diverged; the control files it was told to correct were not in the delegate history"
+    },
+    {
+      "mission_id": "V2-000E",
+      "status": "RECONCILIATION_COMPLETE_LOCALLY",
+      "note": "one history; unpushed"
+    }
+  ],
+  "git": {
+    "canonical_history": "single",
+    "law": "BOOK_OF_GPT.md law 30 (ONE V2 HISTORY)",
+    "merge_base": "66c45631781dfce93a4c8628f2a3de70a6bad09c",
+    "local_parent": "b65ebba9f13a5e852bb778b33b2eaff6fcfa966b",
+    "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
+    "base_sha_for_next_mission": "recorded in the V2-000E receipt and sync stamp; verify origin/main equals it before any GPT write",
+    "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
+    "sync_status": "NOT_SYNCED",
+    "push_owner": "Windows host; the delegate environment has no GitHub egress"
+  },
+  "block_state": {
+    "capability_blocks_admitted": 0,
+    "block_1": null,
+    "block_2": "FORBIDDEN until a canonical Block #1 is admitted",
+    "control_feedback": {
+      "path": "blocks/control_feedback/",
+      "classification": "SHARED_SERVICE / PLATFORM_ONLY",
+      "is_capability_block": false,
+      "technical_debt": "lives under blocks/; relocation is a separate mission"
+    },
+    "oros": "othrys-v2 is control plane, not an Oros. The Oros Zero specimen is oros/oros-zero (PENTA-001) and is referenced, never recreated."
+  }
+}
