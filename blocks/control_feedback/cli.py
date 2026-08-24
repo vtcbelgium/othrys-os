@@ -121,6 +121,10 @@ def main(argv=None):
     except (receipt_module.ReceiptError, SecretDetected, SchemaError) as error:
         _emit({"refused": type(error).__name__, "detail": str(error)})
         return EXIT_REFUSED
+    except (ValueError, OSError) as error:
+        # Malformed or unreadable input JSON. Refuse; never continue on a guess.
+        _emit({"refused": type(error).__name__, "detail": str(error)})
+        return EXIT_REFUSED
 
 
 if __name__ == "__main__":

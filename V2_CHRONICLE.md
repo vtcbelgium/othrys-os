@@ -111,3 +111,29 @@ premature — it has nothing to attach to.
 
 Lesson: **two truthful histories are still a divergence.** One canonical history,
 reconciled before new work, is now law 30 of the Book of GPT.
+
+## CH-0011 — The first control component is frozen
+
+Before any Capability Block is admitted, Control Feedback was audited file by
+file at base `e9e8b33`: eleven tracked files, stdlib only, no network, clock,
+environment, subprocess, thread or timer anywhere in the service.
+
+The fifteen hard control laws were each given a verdict with evidence rather than
+a claim. Eight negative controls were added — corrupt and schema-invalid
+`LATEST.json`, duplicate sync stamp, secret-shaped sync blocker, equal-but-
+malformed SHAs, malformed input file, and a simulated `os.replace` failure — plus
+an ALLOW suite proving the secret guard does not block ordinary control prose. A
+guard that blocks normal work gets switched off. Thirty tests, all green.
+
+Two real defects were fixed, both small: a corrupt `LATEST.json` or a malformed
+input file used to escape as an unhandled `JSONDecodeError` instead of a clean
+refusal, so both now exit 2. One piece of accidental complexity was deleted, and
+nothing was added — no dependency, no abstraction, no subsystem.
+
+Two limits are now stated rather than hidden: a crash between writing the
+immutable run receipt and updating the pointer leaves evidence intact and the
+pointer lagging, and the same holds between a sync stamp and its pointer update.
+Neither can fabricate success.
+
+Lesson: **the control loop earns trust by being boring, and by proving what it
+refuses — not only what it accepts.**

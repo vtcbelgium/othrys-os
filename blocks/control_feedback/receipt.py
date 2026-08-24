@@ -138,7 +138,10 @@ def read_latest(root):
     latest_path = Path(root) / "receipts" / LATEST_NAME
     if not latest_path.is_file():
         raise ReceiptError("no LATEST.json at %s" % latest_path)
-    latest = json.loads(latest_path.read_text(encoding="utf-8"))
+    try:
+        latest = json.loads(latest_path.read_text(encoding="utf-8"))
+    except (ValueError, OSError) as error:
+        raise ReceiptError("LATEST.json is unreadable: %s" % error)
     errors = validate(latest, load_schema("receipt"))
     if errors:
         raise ReceiptError("LATEST.json is invalid: %s" % "; ".join(errors))
@@ -162,9 +165,7 @@ def stamp_sync(root, remote, repo_sha, remote_sha, verified_at, blocker=None):
     stamp = {
         "schema_version": SCHEMA_VERSION,
         "mission_id": latest["mission_id"],
-        "receipt_ref": str(
-            run_receipt_path(".", latest).as_posix()
-        ).lstrip("./"),
+        "receipt_ref": run_receipt_path(".", latest).as_posix(),
         "remote": remote,
         "repo_sha": repo_sha,
         "remote_sha": remote_sha,

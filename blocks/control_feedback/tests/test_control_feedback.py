@@ -225,5 +225,102 @@ class CliExitCodes(unittest.TestCase):
             )
 
 
+class NegativeControls(unittest.TestCase):
+    """V2-000F: every rejection must fail closed, write nothing, mutate nothing."""
+
+    def _seeded(self, root):
+        receipt_module.write_receipt(root, build())
+
+    def test_corrupt_latest_is_refused_not_parsed(self):
+        with TemporaryDirectory() as root:
+            self._seeded(root)
+            (Path(root) / "receipts" / "LATEST.json").write_text("{not json", encoding="utf-8")
+            with self.assertRaises(receipt_module.ReceiptError):
+                receipt_module.read_latest(root)
+            self.assertEqual(
+                cli.main(["stamp-sync", "--root", root, "--remote", "r",
+                          "--repo-sha", SHA_A, "--verified-at", "2026-08-24T00:00:00Z"]), 2)
+            self.assertEqual(list((Path(root) / "receipts").glob("sync/*")), [])
+
+    def test_schema_invalid_latest_is_refused(self):
+        with TemporaryDirectory() as root:
+            self._seeded(root)
+            broken = dict(build(), next_state="GO")
+            (Path(root) / "receipts" / "LATEST.json").write_text(
+                json.dumps(broken), encoding="utf-8")
+            with self.assertRaises(receipt_module.ReceiptError):
+                receipt_module.read_latest(root)
+
+    def test_duplicate_sync_stamp_is_refused(self):
+        with TemporaryDirectory() as root:
+            self._seeded(root)
+            args = (root, "https://example.invalid/r.git", SHA_A, SHA_A, "2026-08-24T00:00:00Z")
+            receipt_module.stamp_sync(*args)
+            with self.assertRaises(receipt_module.ReceiptError):
+                receipt_module.stamp_sync(*args)
+
+    def test_secret_shaped_blocker_never_reaches_a_stamp(self):
+        with TemporaryDirectory() as root:
+            self._seeded(root)
+            with self.assertRaises(SecretDetected):
+                receipt_module.stamp_sync(
+                    root, "r", SHA_A, None, "2026-08-24T00:00:00Z",
+                    "push failed using gh" + "p_" + "B" * 32)
+            self.assertEqual(list((Path(root) / "receipts").glob("sync/*")), [])
+            self.assertEqual(receipt_module.read_latest(root)["sync_status"], "NOT_SYNCED")
+
+    def test_equal_but_malformed_shas_cannot_claim_synced(self):
+        with TemporaryDirectory() as root:
+            self._seeded(root)
+            with self.assertRaises(receipt_module.ReceiptError):
+                receipt_module.stamp_sync(
+                    root, "r", "not-a-sha", "not-a-sha", "2026-08-24T00:00:00Z")
+            self.assertEqual(list((Path(root) / "receipts").glob("sync/*")), [])
+            self.assertEqual(receipt_module.read_latest(root)["sync_status"], "NOT_SYNCED")
+
+    def test_failed_atomic_replace_leaves_no_residue_and_no_target(self):
+        with TemporaryDirectory() as root:
+            original = receipt_module.os.replace
+
+            def exploding_replace(src, dst):
+                raise OSError("simulated replace failure")
+
+            receipt_module.os.replace = exploding_replace
+            try:
+                with self.assertRaises(OSError):
+                    receipt_module.write_receipt(root, build())
+            finally:
+                receipt_module.os.replace = original
+            leftovers = [p.name for p in Path(root).rglob(".tmp-*")]
+            written = [p for p in Path(root).rglob("*.json")]
+            self.assertEqual(leftovers, [])
+            self.assertEqual(written, [])
+
+    def test_malformed_input_file_refuses_without_traceback(self):
+        with TemporaryDirectory() as root:
+            bad = Path(root) / "envelope.json"
+            bad.write_text("{ broken", encoding="utf-8")
+            self.assertEqual(
+                cli.main(["validate", "--kind", "envelope", "--file", str(bad)]), 2)
+
+    def test_guard_allows_ordinary_control_prose(self):
+        """A guard that blocks normal work gets disabled. Prove ALLOW, not only DENY."""
+        allowed = [
+            "no secret value entered this receipt",
+            "secrets are referenced by name only",
+            "credentials for the private repository are not attached to this session",
+            "authorization: pending operator review",
+            "config_refs recorded as names, values withheld",
+        ]
+        for text in allowed:
+            with self.subTest(text=text):
+                self.assertEqual(scan(text), [])
+        with TemporaryDirectory() as root:
+            wordy = dict(build())
+            wordy["evidence"] = allowed
+            run_path, latest_path = receipt_module.write_receipt(root, wordy)
+            self.assertTrue(run_path.is_file() and latest_path.is_file())
+
+
 if __name__ == "__main__":
     unittest.main()

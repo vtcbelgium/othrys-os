@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-000F",
+  "objective": "Audit and harden the existing Control Feedback service so the V2 control loop is boring, deterministic and fully understood before any Capability Block is admitted: full file inventory, the fifteen hard control laws verdicted with evidence, negative controls for every rejection path, a read-only investigation of the two-minute Windows popup, and confirmation that the repository still agrees with today's doctrine.",
+  "delegate": "claude-opus-5",
+  "issued_by": "GPT",
+  "issued_at": "2026-08-24T17:10:00Z",
+  "constraints": [
+    "base must be e9e8b33 with a clean tree and HEAD == origin/main, else STOP",
+    "no Block #1 admission, no Block #2, no Oros, no Titan, no UI, no new architecture",
+    "remove nothing merely because it looks unused; report it first",
+    "prefer deleting accidental complexity over adding abstraction",
+    "no database, event bus, registry, daemon, scheduler, framework, dependency, plugin system or workflow engine",
+    "popup investigation is read-only; do not modify or disable anything on the host",
+    "fix only the smallest control-document inconsistency; do not rewrite historical evidence",
+    "keep changes minimal"
+  ],
+  "expected_proof": [
+    "same canonical base and history proven",
+    "Control Feedback purpose explicit and full file inventory recorded",
+    "positive path passes and negative controls pass",
+    "immutable evidence semantics, secret guard, atomicity and WAIT_GPT terminal behaviour proven",
+    "no hidden retry, fallback or scheduler",
+    "today's V2 doctrine internally consistent",
+    "popup investigation recorded honestly",
+    "working tree clean, no Capability Block admitted, no Block #2",
+    "stop in WAIT_GPT"
+  ]
+}
