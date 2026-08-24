@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001B",
+  "objective": "Turn the admitted Block #1 record into one proven mounted Oros capability: recheck the frozen digest, close the NOT_OBSERVED Playwright/Chromium runtime gap using the Block's own harness, reuse the existing oros/oros-zero, bind the exact specimen into its composition, run a real fixture-to-output end-to-end proof, prove tamper and removal fail loudly, prove reconstruction from files, and re-evaluate the foundation exit test.",
+  "delegate": "claude-opus-5",
+  "issued_by": "GPT",
+  "issued_at": "2026-08-24T18:10:00Z",
+  "constraints": [
+    "base gate 53ef6b19616aadfcf1f898b26b8a8a21352d334d, clean tree, HEAD == origin/main",
+    "no Block #2, no new Block code, no new Oros, no registry, no resolver, no architecture expansion",
+    "digest must match exactly; on mismatch STOP as SPECIMEN_CHANGED without re-admitting or repairing",
+    "use the Block's existing tests and dependencies; do not add Node canvas, rewrite the Block, replace Playwright, invent another harness or weaken tests",
+    "if network, payment or authority is required, STOP and report BLOCKED; never substitute a fake runtime proof",
+    "reuse the existing oros/oros-zero; do not create another and do not redesign it",
+    "do not copy the Block implementation into the Oros or into V2",
+    "do not modify Control Feedback or the Block implementation",
+    "do not create Block #2 even if every proof passes"
+  ],
+  "expected_proof": [
+    "admitted digest unchanged",
+    "the Block's real Playwright/Chromium suite executed and green",
+    "existing Oros Zero reused with the exact specimen mounted explicitly",
+    "real input to output execution through the declared boundary",
+    "tamper and removal fail loudly with no silent fallback",
+    "reconstruction determinable from canonical records alone",
+    "foundation exit question 5 resolved or Block #2 left FORBIDDEN",
+    "stop in WAIT_GPT"
+  ]
+}

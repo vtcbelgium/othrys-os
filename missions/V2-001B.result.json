@@ -1,0 +1,123 @@
+{
+  "blocker": "Section 3 is the first causal blocker: the Block's own Playwright/Chromium suite cannot be executed by the delegate. The Windows host is unreachable from this session, and the delegate's Linux VM has no Playwright, no Chromium, and no route to install them - npm ping returns 403 forbidden by security policy. The mission's own rule applies: network is required, therefore STOP and report BLOCKED rather than substitute a fake runtime proof. Section 6 is independently blocked because the Oros Zero runner bundles Windows-installed Hub node_modules. Nothing downstream was attempted. Block #1 stays admitted, verified and frozen but NOT mounted; foundation exit question 5 is unresolved and Block #2 remains FORBIDDEN. Unblock by running the RUNBOOK commands on LEGION, or by authorising Option B or C in docs/V2-001B/RUNTIME_BLOCK.md.",
+  "commands_run": [
+    {
+      "cmd": "git status --short; git rev-parse HEAD; git rev-parse origin/main",
+      "exit_code": 0
+    },
+    {
+      "cmd": "recompute package_tree_digest over othrys-blocks/blocks/media/image-prep",
+      "exit_code": 0
+    },
+    {
+      "cmd": "node -v; npm -v; npx --no-install playwright --version; which chromium chromium-browser google-chrome",
+      "exit_code": 0
+    },
+    {
+      "cmd": "npm ping",
+      "exit_code": 1
+    },
+    {
+      "cmd": "inspect oros/oros-zero: oros.json, blueprint.json, flow/, input/, var/, out/, evidence/",
+      "exit_code": 0
+    },
+    {
+      "cmd": "read othrys-hub/core/bin/oros-zero.mjs and docs/PENTA-001/RUNBOOK.md",
+      "exit_code": 0
+    },
+    {
+      "cmd": "python3 -m unittest discover -s blocks/control_feedback/tests -t .",
+      "exit_code": 0
+    },
+    {
+      "cmd": "git ls-remote origin main",
+      "exit_code": 128
+    }
+  ],
+  "created_at": "2026-08-24T18:14:49Z",
+  "evidence": [
+    "docs/V2-001B/RUNTIME_BLOCK.md",
+    "missions/V2-001B.json",
+    "missions/V2-001B.result.json",
+    "digest recheck matched the admitted value exactly",
+    "npm ping 403 forbidden by security policy on the delegate VM",
+    "othrys-hub/docs/PENTA-001/RUNBOOK.md sections 0 and 3 carry the exact operator commands that unblock this",
+    "oros/oros-zero contains only README.md, oros.json, blueprint.json, flow/ and input/ - it has never been executed",
+    "nothing was mounted; foundation exit question 5 remains unresolved"
+  ],
+  "files_changed": [
+    {
+      "change": "added",
+      "path": "docs/V2-001B/RUNTIME_BLOCK.md",
+      "sha256": "b324c75bae858369fa2bd146b3cafff69337ecfda522011e9c52d9fe1e1d5a39"
+    },
+    {
+      "change": "added",
+      "path": "missions/V2-001B.json",
+      "sha256": "076063b413c721740c2ca2fce1dbf418abba702b9c20d6a295b519570a4e0f77"
+    }
+  ],
+  "result_claimed": "PARTIAL",
+  "tests": [
+    {
+      "detail": "clean tree; HEAD == origin/main == 53ef6b19616aadfcf1f898b26b8a8a21352d334d",
+      "name": "base gate exact",
+      "result": "pass"
+    },
+    {
+      "detail": "recomputed 32b34548ad2dcd31c81d6efc5b569e0f19f33943e621f910f2f07b15ad363d7b, identical to the admitted value; nothing re-admitted, repaired or updated",
+      "name": "section 2 digest recheck: specimen frozen",
+      "result": "pass"
+    },
+    {
+      "detail": "NOT_OBSERVED: the delegate has no shell on Windows. The only shell on LEGION is the desktop Linux VM",
+      "name": "section 3 browser runtime on the Windows host",
+      "result": "fail"
+    },
+    {
+      "detail": "PROVEN_ABSENT: @playwright/test not installed, no Chromium, no ~/.cache/ms-playwright. npm ping returns 403 forbidden by security policy, so npm install and npx playwright install chromium cannot run. Network is required and denied - the mission's own stop condition",
+      "name": "section 3 browser runtime in the delegate's Linux VM",
+      "result": "fail"
+    },
+    {
+      "detail": "othrys-hub/docs/PENTA-001/RUNBOOK.md lines 44-52 record the same boundary: the green and failure runs need Chromium/Playwright and are the operator's to run on LEGION; the VM has no network and the Hub node_modules are Windows-installed (@esbuild/win32-x64)",
+      "name": "corroboration from prior canonical evidence",
+      "result": "pass"
+    },
+    {
+      "detail": "othrys-hub/core/bin/oros-zero.mjs bundles the Hub Talos engine with esbuild against Windows-installed node_modules, so it cannot run in the Linux VM regardless of Chromium. oros/oros-zero has never been run: var/, out/ and evidence/ do not exist",
+      "name": "section 6 Oros execution path availability",
+      "result": "fail"
+    },
+    {
+      "detail": "not attempted; LOOP_LAWS 7 forbids repairing downstream symptoms while the first causal blocker stands",
+      "name": "sections 5-9 mount, end-to-end, negative mount, reconstruction, exit test",
+      "result": "skipped"
+    },
+    {
+      "detail": "the cloud container has Chromium and network and could run the unmodified suite, but that answers a different question than 'can LEGION run it' (Book of GPT law 29) and would be a silent change of machine (law 8). It is offered as Option B for GPT to authorise, not taken",
+      "name": "no fake runtime proof substituted",
+      "result": "pass"
+    },
+    {
+      "detail": "Block digest identical at mission end; oros/oros-zero not modified - its blueprint still binds block_id, a version range, package, path and maturity, and still lacks the digest and the V2 admission reference",
+      "name": "no legacy mutation",
+      "result": "pass"
+    },
+    {
+      "detail": "git diff HEAD -- blocks/ empty; 30 tests pass",
+      "name": "Control Feedback untouched and green",
+      "result": "pass"
+    },
+    {
+      "detail": "no Block #2, no Oros, no Blueprint, no registry, resolver, orchestrator or scheduler created; zero new executable files",
+      "name": "no drift",
+      "result": "pass"
+    },
+    {
+      "detail": "git ls-remote origin main -> HTTP 403 from proxy after CONNECT; probed once, no retry loop",
+      "name": "remote sync",
+      "result": "fail"
+    }
+  ]
+}

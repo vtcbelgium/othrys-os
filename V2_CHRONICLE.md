@@ -175,3 +175,43 @@ Oros?" still has no answer.
 
 Lesson: **admission is identity plus evidence plus reconstructibility — not
 possession of the code.**
+
+## CH-0013 — Block #1 admitted but not mounted; the runtime boundary holds twice
+
+V2-001B set out to mount canonical Block #1 into Oros Zero and prove it end to
+end. It stopped at its own §3, and the bridge to LEGION dropped before its
+evidence could be committed. V2-001B.R recovered that state.
+
+The recovery found the interruption had been atomic in effect: the failed call
+wrote nothing — `GPT_STATE.json` was still at sequence 13 and no Chronicle entry
+existed — while the mission envelope, result and run receipt were complete and
+the receipt validated. It is preserved unmodified. Nothing was rewritten to
+pretend the failure had not happened.
+
+The specimen was rechecked twice across both missions and is frozen: the tree
+digest still equals the admitted `32b34548…d363d7b`.
+
+The runtime boundary then held a second time, and more precisely than before. The
+delegate has **no Windows shell at all** — `uname` reports Ubuntu, `/mnt/c` does
+not exist, `powershell.exe` is not on `PATH`, WSL interop is absent. Its Linux VM
+turns out to be one download away: `@playwright/test 1.62.1` is already installed
+in `othrys-blocks/node_modules` and the CLI runs, with zero Windows-only packages.
+Only the Chromium binary is missing, and `cdn.playwright.dev` answers `403`, as
+does npm. Installation requires network; network is denied. The mission's own rule
+says stop rather than substitute another environment, so the cloud container —
+which does have Chromium — was deliberately not used.
+
+The closeout push is blocked by the same wall. Under the new hard law that makes
+this `SYNC_BLOCK` rather than PASS, and it exposes something GPT should decide:
+the delegate has never had GitHub egress, so read literally, no delegate mission
+can ever reach PASS. Either the host push becomes the explicit final step of the
+protocol, or the delegate gets egress to the one repository.
+
+`oros/oros-zero` was inspected and left untouched. Its blueprint still binds a
+version *range* and neither the digest nor the admission reference; binding those
+was not done, because a mount recorded but never executed is a claim, not a proof.
+
+Foundation state: **`BLOCK_1_NOT_READY`**. Block #2 remains FORBIDDEN.
+
+Lesson: **a recovery's first duty is to find out what actually happened, not to
+tidy it away.**

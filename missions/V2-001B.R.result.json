@@ -43,8 +43,6 @@
     }
   ],
   "created_at": "2026-08-24T18:30:36Z",
-  "delegate": "claude-opus-5",
-  "envelope_ref": "missions/V2-001B.R.json",
   "evidence": [
     "docs/V2-001B.R/RECOVERY_AND_BLOCK.md",
     "missions/V2-001B.R.json",
@@ -77,15 +75,7 @@
       "sha256": "d161c08701f0db5234ebc7dda902b9da91a08759f60b83dfe07a9b39f8d719aa"
     }
   ],
-  "mission_id": "V2-001B.R",
-  "next_state": "WAIT_GPT",
-  "objective": "Recover the interrupted V2-001B mission truthfully, recheck the frozen Block #1 specimen, run the real Windows/Chromium proof on LEGION, complete the Block #1 mount proof in the existing Oros Zero, then commit, push and independently verify that remote HEAD equals local HEAD before stopping at WAIT_GPT.",
-  "receipt_id": "V2-001B.R--20260824T183036Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "PARTIAL",
-  "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
   "tests": [
     {
       "detail": "HEAD == origin/main == 53ef6b19; working tree held only V2-001B interruption artifacts, no unrelated mutation. docs/V2-001B/RUNTIME_BLOCK.md, missions/V2-001B.json, missions/V2-001B.result.json, receipts/runs/V2-001B/20260824T181449Z.json and receipts/LATEST.json are PRESENT_COMPLETE; the GPT_STATE and V2_CHRONICLE updates are ABSENT - the failed bridge call wrote nothing",

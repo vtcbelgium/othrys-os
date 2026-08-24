@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001B.R",
+  "objective": "Recover the interrupted V2-001B mission truthfully, recheck the frozen Block #1 specimen, run the real Windows/Chromium proof on LEGION, complete the Block #1 mount proof in the existing Oros Zero, then commit, push and independently verify that remote HEAD equals local HEAD before stopping at WAIT_GPT.",
+  "delegate": "claude-opus-5",
+  "issued_by": "GPT",
+  "issued_at": "2026-08-24T18:20:00Z",
+  "constraints": [
+    "recover from base 53ef6b19616aadfcf1f898b26b8a8a21352d334d; do not assume the failed bridge call completed",
+    "do not rewrite history to pretend V2-001B never failed; do not mutate an immutable receipt",
+    "the proof must run on the real Windows LEGION environment; no cloud container, Linux VM, other Chromium, fake harness, Node canvas or mock runtime",
+    "digest must match exactly or STOP as SPECIMEN_CHANGED",
+    "install only what the existing Block requires; if installation needs network and network fails, report BLOCKED",
+    "reuse the existing oros/oros-zero; do not create another and do not redesign it",
+    "no Block #2, no new Block code, no new Oros, no registry, no resolver, no architecture expansion",
+    "do not modify Control Feedback unless a new defect is proven",
+    "no mission is complete until push and remote verify succeed; one bounded retry only; no fallback transport"
+  ],
+  "expected_proof": [
+    "interruption state recovered and classified truthfully",
+    "specimen digest unchanged",
+    "real Playwright/Chromium suite executed on Windows LEGION and green",
+    "exact admitted Block mounted in the existing Oros Zero and proven end to end",
+    "mismatch or removal fails closed",
+    "reconstruction proven from canonical records",
+    "commit created, push succeeded, remote HEAD equals local HEAD",
+    "stop in WAIT_GPT"
+  ]
+}
