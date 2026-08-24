@@ -1,0 +1,20 @@
+{
+  "blocker": "PUSH_PENDING: git push origin main and git ls-remote origin main both refused with 'Received HTTP code 403 from proxy after CONNECT' (exit 128). One bounded attempt each, no retry loop, no fallback transport. Section 8 accepts PUSH_PENDING. SEPARATE AND MORE SERIOUS: othrys-blocks has no configured remote at all, so the 0.1.1 repair commit b4171d3eb3a28acd30a707892dc7db9c73444a82 cannot be pushed by the host either. That repository now holds real work, not just a read-only specimen.",
+  "host_command": "cd C:\\Users\\othry\\Projects\\othrys-v2; git push origin main; git ls-remote origin main",
+  "mission_id": "V2-001C",
+  "next_state": "WAIT_GPT",
+  "receipt_ref": "receipts/runs/V2-001C/20260824T194044Z.json",
+  "remote": "https://github.com/vtcbelgium/othrys-v2.git",
+  "remote_sha": null,
+  "repo_sha": "251c0fbb42950ab6a46716e260f798ab0060c4f2",
+  "base_sha": "f5bef348407f299dd80caef336c3952d7d3981dc",
+  "legacy_repair_commit": "b4171d3eb3a28acd30a707892dc7db9c73444a82",
+  "legacy_remote": "NONE CONFIGURED - unpushable by anyone",
+  "repair_status": "REPAIRED_NOT_BROWSER_VERIFIED",
+  "candidate_version": "0.1.1",
+  "candidate_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+  "schema_version": "1.0.0",
+  "sync_status": "PUSH_PENDING",
+  "fast_forward": "origin/main f5bef348 is an ancestor of local HEAD; the host push is a clean fast-forward",
+  "verified_at": "2026-08-24T19:52:00Z"
+}
