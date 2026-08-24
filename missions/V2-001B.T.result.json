@@ -59,9 +59,7 @@
     }
   ],
   "created_at": "2026-08-24T19:02:45Z",
-  "delegate": "claude-opus-5",
   "delegate_observed_the_runs": false,
-  "envelope_ref": "missions/V2-001B.T.json",
   "evidence": [
     "docs/V2-001B.T/RUNTIME_PROOF.md",
     "missions/V2-001B.T.json",
@@ -135,9 +133,6 @@
   },
   "objective": "Record the successful LEGION runtime proof supplied by GPT/operator for the already-admitted block.media.image-prep@0.1.0. Recording only.",
   "previous_blocker": "no Windows shell reachable from the delegate; its Linux VM could not obtain Chromium (cdn.playwright.dev 403 'Connection blocked by network allowlist')",
-  "receipt_id": "V2-001B.T--20260824T190245Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "PASS",
   "schema_version": "1.0.0",
   "sync_status": "PUSH_PENDING",

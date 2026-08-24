@@ -259,3 +259,47 @@ Foundation state: **`BLOCK_1_NOT_READY`**. Block #2 remains FORBIDDEN.
 
 Lesson: **"it did not run" and "it ran and failed" are different findings, and a
 receipt that blurs them is worse than no receipt.**
+
+## CH-0015 — The host ran it, and Block #1 is runtime-proven
+
+The operator ran the two suites on LEGION and returned the numbers. Node: 4 of 4.
+Playwright against real Chromium: **20 of 20**, one worker, about 4.8 seconds. Not
+mocked, not cloud Chromium, no repair needed. Foundation question 4 — *is there
+real runtime evidence?* — is answered.
+
+CH-0014 said the difference between "it did not run" and "it ran and failed"
+matters. This entry is the third case: **it ran, elsewhere, and someone else
+watched.** The delegate observed none of it and does not pretend otherwise. The
+evidence is filed as `HOST_SUPPLIED_TRUSTED`, and the record says on its face that
+this proof is exactly as strong as the host's attestation — which, under law 29, is
+the competent authority for host runtime. Recording it any other way would have
+been the same sin as faking it, one step removed.
+
+What the delegate could check, it checked, and both checks are worth having. The
+specimen digest matched exactly for the **fourth** consecutive time, so the suites
+that ran are the suites that were admitted. And the frozen spec file declares
+exactly twenty `test(` cases, the contract file exactly four, against exactly one
+`chromium` project — the reported 20/20, 4/4 and single worker are the numbers this
+Block would produce and not some other tree's. Neither check proves the runs
+happened; together they close off the ways the numbers could have been wrong.
+
+`V2-001B.S` was not touched. Its `RUNTIME_BLOCKED` verdict was correct when it was
+written and it stays on the record, verified byte-identical against the hashes it
+recorded for itself. A history that edits its own failures is not a history.
+
+One thing deserves saying plainly, because it will otherwise be misread later:
+`RESOLVED_BY_HOST_PROOF` does not mean the blocker went away. The delegate still
+has no Windows shell and still cannot install Chromium. The blocker was never a
+defect in the Block — it was a fact about who can reach the machine — and it will
+recur on the next mission that needs host runtime. Route those to the operator.
+
+Block #1 is now **admitted, frozen, runtime-proven — and still not mounted.**
+Foundation question 5, *where is it mounted in the Oros?*, is untouched. Nothing
+was mounted here, no composition was attempted, no architecture invented.
+**Block #2 remains FORBIDDEN.**
+
+Push is still pending; three delegate commits now wait on the host. The runtime
+verdict and the sync verdict are separate, and this one is a pass.
+
+Lesson: **evidence you did not witness is still evidence — provided you record who
+witnessed it, and never launder it into something you saw yourself.**

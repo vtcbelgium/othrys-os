@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001B.T",
+  "issued_label": "V2-001B.T — RECORD BLOCK #1 RUNTIME PROOF",
+  "issued_by": "GPT_CONTROL",
+  "issued_via": "operator_current_conversation",
+  "received_at": "2026-08-24T19:00:00Z",
+  "objective": "Record the successful LEGION runtime proof supplied by GPT/operator for the already-admitted block.media.image-prep@0.1.0. Recording only.",
+  "evidence_class": "HOST_SUPPLIED_TRUSTED",
+  "explicit_prohibitions": [
+    "do not rerun the Block",
+    "do not modify the Block",
+    "do not modify its tests",
+    "do not install anything",
+    "do not begin Oros mounting",
+    "do not begin Block #2",
+    "do not invent architecture",
+    "do not touch othrys-blocks",
+    "do not rewrite V2-001B, V2-001B.R or V2-001B.S"
+  ],
+  "supplied_evidence": {
+    "environment": "LEGION Windows host",
+    "working_directory": "C:\\Users\\othry\\Projects\\othrys-blocks\\blocks\\media\\image-prep",
+    "node_suite": {
+      "command": "npm.cmd run test:node",
+      "tests": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "cancelled": 0
+    },
+    "browser_suite": {
+      "command": "npm.cmd run test:browser",
+      "runner": "Playwright",
+      "browser": "Chromium",
+      "tests": 20,
+      "passed": 20,
+      "failed": 0,
+      "workers": 1,
+      "duration_approx_seconds": 4.8
+    },
+    "attestations": [
+      "real Windows/LEGION browser runtime evidence",
+      "the browser suite executed successfully",
+      "not mocked",
+      "not substituted with cloud Chromium",
+      "no Block repair was required"
+    ]
+  },
+  "required_records": {
+    "admission_status": "ADMITTED",
+    "runtime_status": "RUNTIME_PROVEN",
+    "previous_blocker": "RESOLVED_BY_HOST_PROOF"
+  },
+  "next_state_on_completion": "WAIT_GPT"
+}
