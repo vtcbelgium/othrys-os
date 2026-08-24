@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-000D",
+  "objective": "Reconcile stale V2-000C-era control state (FOUNDATION_LAWS.md, TEMP_LIBRARY.md, GPT_STATE.json, Legacy Inventory) so every control artifact agrees with V2-000C.R, then inspect legacy stock and admit exactly ONE existing canonical Capability Block as the first V2 Block specimen by reuse or extraction, with exact identity, version, digest, provenance, contract, maturity and evidence recorded.",
+  "delegate": "claude-opus-5",
+  "issued_by": "GPT",
+  "issued_at": "2026-08-24T16:40:00Z",
+  "constraints": [
+    "state first: read actual files, do not use model memory",
+    "no Block #2",
+    "no new Block architecture",
+    "no speculative code",
+    "no registry, resolver, orchestrator or runtime",
+    "do not classify platform/control machinery as a Block",
+    "othrys-v2 is not an Oros; do not create one; do not modify legacy oros/oros-zero",
+    "do not modify legacy repositories unnecessarily",
+    "STOP if no candidate clearly qualifies, if doctrine conflicts, or if identity/version/digest cannot be proven",
+    "report remote sync state honestly"
+  ],
+  "expected_proof": [
+    "stale V2-000C-era state reconciled",
+    "Control Feedback classified SHARED_SERVICE / PLATFORM_ONLY everywhere",
+    "exactly one canonical Capability Block admitted with identity, version, digest, provenance and evidence",
+    "foundation exit questions answerable from files, not from memory",
+    "no Block #2, no new resolver or registry",
+    "receipt valid and sync state truthful",
+    "stop in WAIT_GPT"
+  ]
+}

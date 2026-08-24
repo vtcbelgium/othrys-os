@@ -31,8 +31,6 @@
     }
   ],
   "created_at": "2026-08-24T16:42:59Z",
-  "delegate": "claude-opus-5",
-  "envelope_ref": "missions/V2-000D.json",
   "evidence": [
     "docs/V2-000D/STATE_DIVERGENCE.md",
     "missions/V2-000D.json",
@@ -55,15 +53,7 @@
       "sha256": "c049c1dac842bc475ee929c8895efc245f6c80bb08060406a439c11c41bbe85e"
     }
   ],
-  "mission_id": "V2-000D",
-  "next_state": "WAIT_GPT",
-  "objective": "Reconcile stale V2-000C-era control state (FOUNDATION_LAWS.md, TEMP_LIBRARY.md, GPT_STATE.json, Legacy Inventory) so every control artifact agrees with V2-000C.R, then inspect legacy stock and admit exactly ONE existing canonical Capability Block as the first V2 Block specimen by reuse or extraction, with exact identity, version, digest, provenance, contract, maturity and evidence recorded.",
-  "receipt_id": "V2-000D--20260824T164259Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "FAILED",
-  "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
   "tests": [
     {
       "detail": "GPT_STATE.json, FOUNDATION_LAWS.md, LOOP_LAWS.md, TEMP_LIBRARY.md, root LEGACY_INVENTORY.md and inventory/ are all ABSENT; searched the repo and every reachable folder under C:\\Users\\othry\\Projects to depth 3; only othrys-v2/docs/LEGACY_INVENTORY.md matches",
