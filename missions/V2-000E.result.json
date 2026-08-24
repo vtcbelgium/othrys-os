@@ -35,8 +35,6 @@
     }
   ],
   "created_at": "2026-08-24T17:01:05Z",
-  "delegate": "claude-opus-5",
-  "envelope_ref": "missions/V2-000E.json",
   "evidence": [
     "merge commit 4919f083ecbe37564aeebf8817bced4b4a335a60, parents b65ebba (delegate) and 92d29d5 (origin/main), merge base 66c4563",
     "10 local commits and 30 remote commits reconciled; exactly one overlapping file, BOOK_OF_GPT.md",
@@ -93,15 +91,7 @@
       "sha256": "81077c6c35b7ffc5d45445ca2f51350e655cae18372412c83e3da09b40b92ffa"
     }
   ],
-  "mission_id": "V2-000E",
-  "next_state": "WAIT_GPT",
-  "objective": "Reconcile the two independently developed V2 histories into one truthful local history: all immutable mission evidence from the delegate branch, all GPT control, foundation, inventory and library material from origin/main, no lost evidence, no duplicated competing control files, and doctrine corrected by V2-000C.R. Record the SINGLE-HISTORY LAW in V2 control law. No feature build, no Block admission, no architecture invention.",
-  "receipt_id": "V2-000E--20260824T170105Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "COMPLETE",
-  "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
   "tests": [
     {
       "detail": "all 14 origin/main control files and all four local docs/V2-000C, V2-000C.R, V2-000D evidence sets present; merge commit 4919f08 has parents b65ebba and 92d29d5; both are ancestors of HEAD",

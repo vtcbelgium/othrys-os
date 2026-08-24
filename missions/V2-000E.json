@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-000E",
+  "objective": "Reconcile the two independently developed V2 histories into one truthful local history: all immutable mission evidence from the delegate branch, all GPT control, foundation, inventory and library material from origin/main, no lost evidence, no duplicated competing control files, and doctrine corrected by V2-000C.R. Record the SINGLE-HISTORY LAW in V2 control law. No feature build, no Block admission, no architecture invention.",
+  "delegate": "claude-opus-5",
+  "issued_by": "GPT",
+  "issued_at": "2026-08-24T16:55:00Z",
+  "constraints": [
+    "immutable evidence wins: never delete or rewrite historical receipts or results",
+    "senior doctrine wins: correct any remote control document contradicting V2-000C.R",
+    "keep today's GPT control work; do not discard it",
+    "no duplicated competing control files",
+    "ordinary git ancestry only: no reset --hard, no force push, no squash, no deleted history",
+    "no registry, resolver, Oros, Block #1, Block #2, scheduler, UI, Titan or sync service",
+    "do not create another Git-management subsystem",
+    "do not push if the delegate environment still lacks network"
+  ],
+  "expected_proof": [
+    "one working tree contains both histories' required artifacts",
+    "no immutable receipt lost",
+    "Control Feedback is SHARED_SERVICE / PLATFORM_ONLY everywhere current doctrine speaks",
+    "FOUNDATION_LAWS no longer contradict V2-000C.R",
+    "TEMP_LIBRARY no longer calls Control Feedback Block #1",
+    "GPT_STATE reflects current real state",
+    "Control Feedback 22-test suite green",
+    "no Capability Block #1 or Block #2 created",
+    "working tree clean after the reconciliation commit",
+    "SINGLE-HISTORY LAW recorded in V2 control law",
+    "stop in WAIT_GPT"
+  ]
+}
