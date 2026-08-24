@@ -1,0 +1,12 @@
+{
+  "blocker": "not pushed: probed once, git ls-remote origin main -> HTTP 403 from proxy after CONNECT. Delegate has no GitHub egress; the Windows host owns the push. origin/main was last verified at 92d29d5 and is an ancestor of this history, so the push is a fast-forward. NOT_SYNCED, no retry.",
+  "mission_id": "V2-000E",
+  "next_state": "WAIT_GPT",
+  "receipt_ref": "receipts/runs/V2-000E/20260824T170105Z.json",
+  "remote": "https://github.com/vtcbelgium/othrys-v2.git",
+  "remote_sha": null,
+  "repo_sha": "56f7baceacfda926235ca723fd4d1c54b2e80c34",
+  "schema_version": "1.0.0",
+  "sync_status": "NOT_SYNCED",
+  "verified_at": "2026-08-24T17:01:20Z"
+}

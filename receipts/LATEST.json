@@ -98,7 +98,7 @@
   "objective": "Reconcile the two independently developed V2 histories into one truthful local history: all immutable mission evidence from the delegate branch, all GPT control, foundation, inventory and library material from origin/main, no lost evidence, no duplicated competing control files, and doctrine corrected by V2-000C.R. Record the SINGLE-HISTORY LAW in V2 control law. No feature build, no Block admission, no architecture invention.",
   "receipt_id": "V2-000E--20260824T170105Z",
   "remote_sha": null,
-  "repo_sha": null,
+  "repo_sha": "56f7baceacfda926235ca723fd4d1c54b2e80c34",
   "result_claimed": "COMPLETE",
   "schema_version": "1.0.0",
   "sync_status": "NOT_SYNCED",
