@@ -1,20 +1,20 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 21,
+  "sequence": 22,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "0955087f82ea74329a1927786b4714e4ace823bb",
+  "remote_head_at_last_verified_read": "c19a9043895d365612344bcf06d9d6c5b1687e75",
   "control_gate": "WAIT_GPT",
   "active_mission": {
-    "mission_id": "GPT-MAINT-006",
+    "mission_id": "GPT-MAINT-007",
     "status": "COMPLETE / WAIT_GPT",
-    "issued_label": "CONTROLLER STATE RECONCILIATION",
-    "source": "GPT_CONTROL"
+    "issued_label": "DIRECTIVE 0 - CONTROL LIFELINE",
+    "source": "operator_current_conversation / GPT_CONTROL"
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
   "last_verified_receipt_mission": "V2-001E.R",
-  "last_log_sequence": 10,
-  "last_log_hash": "ab60a15bf4c81870a8646ca39c11b7e3ef39610bdb89aa64d0dd4f04095c004f",
+  "last_log_sequence": 11,
+  "last_log_hash": "50279a3534f1af36b6a76e8b9e18226c64640318d86697143ec0be41576a9862",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -65,8 +65,8 @@
     "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
-  "last_control_decision": "GPT-MAINT-006 controller audit independently verified the V2 working tree clean and local HEAD == local origin/main == git ls-remote origin refs/heads/main == 0955087f82ea74329a1927786b4714e4ace823bb. The V2-001E.R PUSH_PENDING/base-gate blocker is resolved by the host-side push. No Block, admission, foundation law, architecture, or legacy repository was changed.",
-  "next_legal_action": "GPT-MAINT-007 ONLY: controller-owned Directive 0 - Control Lifeline codification in BOOK_OF_GPT.md, with required GPT_LOG/GPT_STATE bookkeeping. No delegate architecture decision; no Block/Oros work.",
+  "last_control_decision": "GPT-MAINT-007 installed Directive 0 - Control Lifeline. The proven primary route is operator phone -> GPT Control -> Remote Desktop Commander Remote MCP -> authorized Legion -> Hub engineering_platform -> explicit local Ollama builder -> deterministic proof -> GPT Control -> operator. Private GitHub relay is designated but NOT ACTIVE until implemented and round-trip proven. Operator direct Legion control is manual break-glass. No hidden fallback or second AI controller is authorized.",
+  "next_legal_action": "LIFELINE-001 ONLY: implement and prove the designated private GitHub relay fallback as a transport, not a second controller. Primary route remains ACTIVE_PROVEN. No Block/Oros/architecture work inside this fallback mission.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -246,5 +246,24 @@
       "a crash between the run-receipt write and the LATEST.json write leaves evidence intact and the pointer lagging",
       "the same applies between a sync stamp and its LATEST.json update"
     ]
+  },
+  "control_lifeline": {
+    "directive": "BOOK_OF_GPT.md -> DIRECTIVE 0 - CONTROL LIFELINE",
+    "primary": {
+      "transport": "ChatGPT / GPT Control -> Remote Desktop Commander Remote MCP -> authorized Legion -> OTHRYS Hub -> explicit local Ollama builder -> deterministic proof",
+      "status": "ACTIVE_PROVEN",
+      "proof": "2026-08-24 GPT-LOCAL-BUILDER-CERT-001: remote Legion reached; Hub engineering_platform invoked qwen3-builder -> Ollama qwen3:8b; one-file scratch mutation exact; independent Git diff verified; temp repo deleted"
+    },
+    "fallback_a": {
+      "transport": "private GitHub command relay -> Legion watcher -> Hub -> local builder -> proof relay",
+      "status": "DESIGNATED_NOT_ACTIVE",
+      "activation_gate": "watcher implemented plus full round-trip proof"
+    },
+    "break_glass": {
+      "transport": "operator direct Legion control executing an exact frozen GPT Control instruction",
+      "status": "MANUAL_ONLY"
+    },
+    "failure_state": "CONTROL_LINK_DOWN -> STOP ALL NON-LIFELINE WORK",
+    "fallback_policy": "NO_HIDDEN_FALLBACK; transport changes are operator-visible and logged"
   }
 }
