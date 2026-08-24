@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001E",
+  "issued_label": "V2-001E — BRING BLOCK #1 HOME",
+  "issued_by": "GPT_CONTROL",
+  "issued_via": "operator_current_conversation",
+  "received_at": "2026-08-24T20:20:00Z",
+  "controller_decision_binding": [
+    "OTHRYS V2 IS THE CANONICAL REPOSITORY",
+    "do NOT create a separate GitHub repository for othrys-blocks",
+    "do NOT configure a remote for the legacy othrys-blocks repository",
+    "do NOT treat othrys-blocks as permanent canonical ownership",
+    "the legacy repository is SOURCE STOCK / QUARRY",
+    "once a Capability Block is admitted into V2, its reconstructible canonical implementation must live inside othrys-v2"
+  ],
+  "objective": "Relocate the exact active Block #1 specimen (block.media.image-prep 0.1.1, digest 48afa7ac...) into othrys-v2 as canonical V2-owned Block source without changing its behaviour.",
+  "gate": {
+    "section": "0",
+    "rule": "Determine whether current law already defines where canonical Block implementation belongs inside V2. If it does, use that exact structure. If it does not, STOP and report BLOCK_CANONICAL_PATH_UNDEFINED. Do not invent a blocks library, packages hierarchy, registry, resolver, store, plugin system, namespace or new architecture noun.",
+    "outcome": "STOP — BLOCK_CANONICAL_PATH_UNDEFINED"
+  },
+  "explicit_prohibitions": [
+    "no new GitHub repository", "no othrys-blocks remote", "no Block architecture redesign",
+    "no registry", "no resolver", "no package manager", "no plugin host",
+    "no new Block terminology", "no Block #2", "no Oros mount", "no Oros Zero change",
+    "no Control Feedback change", "no Block #1 refactor/improvement/contract/maturity/version/implementation change",
+    "no digest canonicalization by invention", "no other Block migrated", "no bulk quarry copy",
+    "no legacy stock deleted", "no immutable history rewritten"
+  ],
+  "next_state_on_completion": "WAIT_GPT"
+}

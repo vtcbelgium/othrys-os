@@ -1,18 +1,18 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 18,
+  "sequence": 19,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "f5bef348407f299dd80caef336c3952d7d3981dc",
+  "remote_head_at_last_verified_read": "c6c125cc707adf8e771209cdd84b48722694fb86",
   "control_gate": "WAIT_GPT",
   "active_mission": {
-    "mission_id": "V2-001D",
-    "status": "PROMOTED / PUSH_PENDING",
-    "issued_label": "V2-001D - PROMOTE BLOCK #1 0.1.1",
+    "mission_id": "V2-001E",
+    "status": "STOPPED_AT_GATE / BLOCK_CANONICAL_PATH_UNDEFINED",
+    "issued_label": "V2-001E - BRING BLOCK #1 HOME",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
-  "last_verified_receipt_mission": "V2-001D",
+  "last_verified_receipt_mission": "V2-001E",
   "last_log_sequence": 9,
   "last_log_hash": "f7978b807fb617c32b6f559691f413fe9a40589fecab4137db54168b774a3d24",
   "log_integrity": {
@@ -55,6 +55,8 @@
     "gpt_inbox": "UNPROMOTED_INTELLIGENCE_ONLY"
   },
   "known_blockers": [
+    "BLOCK_CANONICAL_PATH_UNDEFINED (V2-001E) - no law defines a canonical Capability Block implementation path inside othrys-v2, and senior law places that ownership in othrys-blocks (BOOK_OF_BLOCKS BLOCKS-HOME-001) while forbidding copies (same section; CONVENTION.md consumption law; Book of Blocks 7 REUSABLE 'without source fork or copy'; 14 Copy-and-crown / Fork-per-Oros; HEPHAESTUS-BLOCK-FORGE 'no fork/copy/patch'). The controller decision that V2 must own the implementation therefore requires a Book amendment via the logged, evidenced governance mission line 709 names - above a delegate's authority. NOTHING WAS COPIED AND NO PATH WAS INVENTED",
+    "V2 CANNOT RECONSTRUCT BLOCK #1 (verified V2-001E). The active admission manifest is {path, sha256} only - zero source bytes - and names othrys-blocks b4171d3 as its first reconstruction dependency. Combined with othrys-blocks having no remote, the active admitted Block exists in one place on one machine. The controller's diagnosis is correct; only the prescribed remedy collides with law",
     "othrys-blocks has NO configured remote. V2 now records an ACTIVE admission whose canonical source (commit b4171d3) exists on exactly one machine and cannot be pushed by anyone. Most serious open blocker",
     "DIGEST_CANONICALIZATION_PENDING - the admitted digest procedure hashes working-tree bytes, so both the 0.1.0 and 0.1.1 digests reproduce only on a checkout that materialises line endings identically (CRLF on Windows). Deliberately not solved in V2-001D",
     "qa/block.media.image-prep/digest.test.mjs pins the live tree to the 0.1.0 admission, so 2 of its 3 tests now fail BY DESIGN. Not edited (V2-001D section 7). The active proof is the separate digest-0.1.1.test.mjs",
@@ -64,8 +66,8 @@
     "othrys-blocks is not a session-connected folder by default; read access must be requested on the operator's device",
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
-  "last_control_decision": "V2-001D promoted 0.1.1 to the active admitted specimen and did nothing else. The digest was verified BEFORE any record was written and matched exactly. The host runtime proof - node 10/10, canonical browser 29/29, aggressive 18/18 on Node 24.18.1 / Playwright 1.62.1 / Chromium 151.0.7922.34 - is recorded as HOST_SUPPLIED_TRUSTED; the delegate did not witness the browser runs and says so. What it did verify: the digest, that all three reported totals match the real suite cardinalities (29 and 18 enumerated, node re-run 10/10 locally), and that the staged aggressive harness is byte-identical to the V2 sources. The aggressive suite scored 16/18 on 0.1.0 and 18/18 on 0.1.1, which is the cleanest confirmation the promotion fixed what it claimed. The 0.1.0 record is byte-unmodified and supersession is recorded in a separate ledger, because section 1 forbids writing the status inside the file it describes. Maturity stays REUSABLE - a PATCH repair is not a maturity promotion - and the contract is recorded as unchanged, which is what makes it a PATCH. Nothing was mounted, no Oros, no Block #2, no registry or resolver.",
-  "next_legal_action": "Operator runs: cd C:\\Users\\othry\\Projects\\othrys-v2; git push origin main; git ls-remote origin main - and returns the remote SHA. Then GPT decides the two open structural questions: (1) give othrys-blocks a remote, since the active admitted specimen now exists on one machine only; (2) foundation question 5 - where Block #1 mounts in an Oros - which is the sole remaining gate on Block #2.",
+  "last_control_decision": "V2-001E stopped at its own section 0 gate and did exactly that: nothing was copied, no V2 Block path was created, no architecture noun was invented, and no ownership or inventory document was touched (sections 6 and 8 permit those only after success). The base gate passed and the source specimen was verified first - digest 48afa7ac exact match - so the stop is about law, not about a bad specimen. Law is not silent on where Capability Block implementation belongs: BOOK_OF_BLOCKS BLOCKS-HOME-001 gives it to othrys-blocks by name and path and forbids copying it out, every V2 pointer routes to othrys-blocks/docs/CONVENTION.md, and both admission records state 'No implementation was copied into othrys-v2'. Copying would also collide with the REUSABLE maturity the ACTIVE record claims, which Book of Blocks 7 defines as requiring the same canonical source WITHOUT fork or copy. The controller's underlying diagnosis was independently confirmed and is correct: V2 holds hashes, not bytes, and cannot rebuild Block #1. Three legal routes are set out for GPT; the delegate chose none of them. Precedent: VTC-BLOCK-EXTRACT-001 correctly stopped at BLOCK_CANONICAL_HOME_UNRESOLVED (Book of Blocks line 588).",
+  "next_legal_action": "GPT decides which legal instrument applies, per docs/V2-001E/CANONICAL_PATH_BLOCK.md: (1) amend BOOK_OF_BLOCKS through the logged, evidenced governance mission its line 709 requires, moving canonical Block ownership to othrys-v2; (2) leave ownership where law puts it and close the reconstruction gap another way; or (3) override senior law explicitly and record the override, accepting the consequences for the REUSABLE maturity basis. Whichever route is chosen, reissue V2-001E with the canonical V2 path stated by that authority - the delegate must not choose it. Separately, the operator runs: cd C:\\Users\\othry\\Projects\\othrys-v2; git push origin main; git ls-remote origin main.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -146,6 +148,11 @@
       "mission_id": "V2-001D",
       "status": "PROMOTED",
       "note": "0.1.1 promoted to ACTIVE_ADMITTED, digest 48afa7ac verified before writing; RUNTIME_PROVEN from host proof (10/10, 29/29, 18/18); 0.1.0 marked HISTORICAL/SUPERSEDED in a separate ledger with its record byte-unmodified; separate 0.1.1 digest proof added, 0.1.0 proof left untouched; nothing mounted"
+    },
+    {
+      "mission_id": "V2-001E",
+      "status": "STOPPED_AT_GATE",
+      "note": "BLOCK_CANONICAL_PATH_UNDEFINED. Base gate passed and the 0.1.1 specimen was verified (digest exact match) before stopping. No law defines a V2-internal Capability Block implementation path; senior law places it in othrys-blocks and forbids copies. Nothing copied, no path invented, no ownership or inventory document changed, no legacy mutation. Confirmed the controller's premise: V2 holds hashes, not bytes, and cannot reconstruct Block #1"
     }
   ],
   "git": {
@@ -158,10 +165,10 @@
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
     "sync_status": "PUSH_PENDING",
     "push_owner": "Windows host; the delegate environment has no GitHub egress",
-    "base_sha_verified_this_mission": "ca39219ce92e4a3c10cc2d9d3e38562e6217d2ff",
+    "base_sha_verified_this_mission": "c6c125cc707adf8e771209cdd84b48722694fb86",
     "base_sha_verification": "V2-001B.S: working tree clean and HEAD == refs/remotes/origin/main == a6d75aad. The host's push of V2-001B and V2-001B.R landed. The delegate still has no GitHub egress, so origin/main is the ref the host's push updated, not an independent read of github.com.",
     "closeout_law": "BOOK_OF_GPT law 30 plus the V2-001B.R hard law: no mission is complete until push and remote verify succeed. The delegate has never had GitHub egress, so under a literal reading no delegate mission can reach PASS. Recorded as evidence for GPT; not resolved by the delegate.",
-    "unpushed_commits": "the V2-001C commits only; the host pushed everything through f5bef34 (which added the qa/ suite)"
+    "unpushed_commits": "the V2-001E stop record only; the host pushed everything through c6c125c (base gate confirmed HEAD == origin/main)"
   },
   "block_state": {
     "capability_blocks_admitted": 1,
@@ -193,7 +200,9 @@
       "repair_evidence": "V2-001C - docs/V2-001C/DEFECT_REPAIR.md",
       "digest_proof": "qa/block.media.image-prep/digest-0.1.1.test.mjs (5 tests, Windows-host by construction)",
       "implementation_in_v2": false,
-      "mounted": false
+      "mounted": false,
+      "relocation_status": "NOT RELOCATED - V2-001E stopped at the canonical-path gate. Canonical implementation remains in othrys-blocks; V2 still holds the admission record only (implementation_in_v2 = false).",
+      "reconstructible_from_v2_alone": false
     },
     "block_1_historical_0_1_0": {
       "block_id": "block.media.image-prep",

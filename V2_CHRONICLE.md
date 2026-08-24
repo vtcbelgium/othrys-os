@@ -410,3 +410,52 @@ and remains the only gate on Block #2. **Block #2 stays FORBIDDEN.**
 
 Lesson: **the point of a repair is not that the bug is gone — it is that the same
 adversary now returns a different verdict.**
+
+## CH-0018 — A gate closes: where does a Block actually live?
+
+V2-001E was told to bring Block #1's implementation into `othrys-v2`, and it stopped at
+its own §0 gate without copying a byte. The gate asked one factual question — does law
+already say where Capability Block implementation belongs inside V2? — and the answer is
+no. Not "no, the law is silent." **No, the law says somewhere else.**
+
+Book of Blocks, BLOCKS-HOME-001: reusable Capability Block *implementation* is owned by
+`othrys-blocks`, named by repository and absolute path, followed immediately by *"Do not
+copy Block source into VTC, Hub, Core, Studio, or `oros/*`."* Every V2 route to the
+question — `FOUNDATION_LAWS` line 15, `BOOK_OF_GPT` law 24, the V2-000C.R decisions, the
+inventory, the source map — terminates at `othrys-blocks/docs/CONVENTION.md`. And both
+admission records say it in V2's own words: *"No implementation was copied into
+othrys-v2."*
+
+There is a sharper edge. Block #1 is admitted at maturity `REUSABLE`, which Book of
+Blocks §7 defines as the same canonical source consumed by two Oros **without source fork
+or copy**, and §14 lists *Copy-and-crown* and *Fork-per-Oros* as anti-patterns. Executing
+the relocation as written would put the Block's recorded maturity in question. A mission
+that quietly did it anyway would have traded a documentation defect for a doctrinal one.
+
+None of which makes the controller wrong. The premise was checked before the law was, and
+it is **correct**: the active admission's manifest is `{path, sha256}` — hashes, zero
+bytes — and V2 contains no Block source at all. Its own record names `othrys-blocks`
+`b4171d3` as the first thing needed to rebuild. V2 can *recognise* Block #1 and cannot
+*rebuild* it, and with `othrys-blocks` still lacking a remote, the only admitted Block in
+the estate exists in one directory on one machine. That is a real defect and it deserves
+the mission it got.
+
+So the disagreement is not about the problem. It is about the remedy colliding with law
+that V2's own foundation cites as authority — and amending that law has exactly one route
+(Book of Blocks line 709: a logged, evidenced governance mission), which sits above a
+delegate. Three legal routes are written down for GPT. **The delegate chose none of
+them**, which is the whole point of the gate.
+
+There is precedent, and it is honourable: `VTC-BLOCK-EXTRACT-001` *"correctly stopped at
+`BLOCK_CANONICAL_HOME_UNRESOLVED`"* (Book of Blocks line 588) and extraction resumed only
+under separate authorisation. This is the second time the estate has halted on the
+canonical-home question rather than guess at it.
+
+The base gate passed and the specimen was verified first — digest `48afa7ac…` exact, at
+start and end — so nothing here is a story about a bad specimen or a broken repository.
+`othrys-blocks` was read and not written. `LEGACY_INVENTORY.md` and `TEMP_LIBRARY.md`
+were deliberately left alone, because §6 and §8 permit ownership and inventory updates
+only after success, and this was not success.
+
+Lesson: **when an instruction and the law disagree, the delegate's job is to make the
+disagreement legible — not to pick a winner.**

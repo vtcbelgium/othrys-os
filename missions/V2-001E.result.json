@@ -55,8 +55,6 @@
     "verdict": "CONFIRMED TRUE"
   },
   "created_at": "2026-08-24T20:24:52Z",
-  "delegate": "claude-opus-5",
-  "envelope_ref": "missions/V2-001E.json",
   "evidence": [
     "docs/V2-001E/CANONICAL_PATH_BLOCK.md",
     "missions/V2-001E.json",
@@ -123,9 +121,6 @@
   "mission_id": "V2-001E",
   "next_state": "WAIT_GPT",
   "objective": "Relocate the active Block #1 specimen into othrys-v2 as canonical V2-owned Block source.",
-  "receipt_id": "V2-001E--20260824T202452Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "STOPPED_AT_GATE",
   "routes_chosen": null,
   "schema_version": "1.0.0",
