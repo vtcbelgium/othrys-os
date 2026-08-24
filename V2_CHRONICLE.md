@@ -77,3 +77,13 @@ A temporary `GPT_INBOX.md` holds unpromoted signals until the canonical Garden/M
 North Star: OTHRYS is a trustworthy operating system for autonomous work, able over time to compose proven capabilities for a new world without depending on any one controller model.
 
 Lesson: **the controller should help OTHRYS remember, connect and compound while remaining fully replaceable.**
+
+## CH-0009 — Empty-house foundation laws frozen before Block #2
+
+Before adding a second Block, GPT reconciled the recovered OTHRYS Block/Oros canon with external standards for admission, immutable versioning, content identity, provenance and secure updates.
+
+`FOUNDATION_LAWS.md` now requires exact Block version+digest+provenance, deterministic admission, the existing OTHRYS maturity ladder, default-deny authority, declared Socket/Port communication, explicit Oros composition truth, loud failure on unmount, replacement proof and reconstructibility.
+
+The earlier idea of immediately building a universal Block Registry was corrected: V2 may keep a readable index, but no resolver/registry/package-manager authority is created without repeated composition evidence.
+
+Lesson: **Block #2 is an architectural test, not merely another feature. If it cannot plug in without changing the house rules, the first foundation was wrong.**
