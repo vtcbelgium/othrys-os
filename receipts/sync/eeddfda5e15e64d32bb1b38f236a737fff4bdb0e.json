@@ -1,0 +1,20 @@
+{
+  "blocker": "PUSH_PENDING: git push origin main and git ls-remote origin main both refused with 'Received HTTP code 403 from proxy after CONNECT' (exit 128). The failure is a standing network-allowlist policy, not transient, so section 10's single retry allowance was deliberately not spent. Note the base gate passed with HEAD == origin/main at c6c125c, so the host's pushes are working - only the delegate has no GitHub egress. SYNCED is NOT claimed: there is no remote proof.",
+  "host_command": "cd C:\\Users\\othry\\Projects\\othrys-v2; git push origin main; git ls-remote origin main",
+  "mission_id": "V2-001E",
+  "mission_outcome": "STOPPED_AT_GATE / BLOCK_CANONICAL_PATH_UNDEFINED",
+  "next_state": "WAIT_GPT",
+  "receipt_ref": "receipts/runs/V2-001E/20260824T202452Z.json",
+  "remote": "https://github.com/vtcbelgium/othrys-v2.git",
+  "remote_sha": null,
+  "repo_sha": "eeddfda5e15e64d32bb1b38f236a737fff4bdb0e",
+  "base_sha": "c6c125cc707adf8e771209cdd84b48722694fb86",
+  "active_block": "block.media.image-prep@0.1.1 (unchanged, ACTIVE_ADMITTED, RUNTIME_PROVEN)",
+  "active_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+  "relocated": false,
+  "canonical_source": "othrys-blocks/blocks/media/image-prep @ b4171d3 (unchanged; legacy read-only this mission)",
+  "schema_version": "1.0.0",
+  "sync_status": "PUSH_PENDING",
+  "fast_forward": "origin/main c6c125cc is the parent of this commit; the host push is a clean fast-forward",
+  "verified_at": "2026-08-24T20:30:00Z"
+}
