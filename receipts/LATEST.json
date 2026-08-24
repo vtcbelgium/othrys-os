@@ -65,7 +65,7 @@
   "objective": "Doctrine reconciliation only. Resolve the five contradictions raised by V2-000C: classify Control Feedback as SHARED_SERVICE / PLATFORM_ONLY, keep SOCKET and CAPSULE out of V2 architecture, reference the existing oros/oros-zero without recreating or modifying it, record that othrys-v2 is not an Oros, and correct BOOK_OF_GPT.md so that Block is reserved for canonical product-capability Blocks. Record canon drift without repairing it.",
   "receipt_id": "V2-000C.R--20260824T162200Z",
   "remote_sha": null,
-  "repo_sha": null,
+  "repo_sha": "650d1a959d85f6ec2acfda4f61dedd5e4eb6bc9d",
   "result_claimed": "COMPLETE",
   "schema_version": "1.0.0",
   "sync_status": "NOT_SYNCED",
