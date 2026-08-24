@@ -89,7 +89,7 @@
   "objective": "Audit and harden the existing Control Feedback service so the V2 control loop is boring, deterministic and fully understood before any Capability Block is admitted: full file inventory, the fifteen hard control laws verdicted with evidence, negative controls for every rejection path, a read-only investigation of the two-minute Windows popup, and confirmation that the repository still agrees with today's doctrine.",
   "receipt_id": "V2-000F--20260824T171242Z",
   "remote_sha": null,
-  "repo_sha": null,
+  "repo_sha": "d7284d152276cd65845e3559308afa188e1ed453",
   "result_claimed": "COMPLETE",
   "schema_version": "1.0.0",
   "sync_status": "NOT_SYNCED",
