@@ -34,7 +34,7 @@ Any missing proof means `CONTROL_LINK_UNPROVEN -> STOP`.
 
 **Fallback order - explicit, never hidden**
 
-1. **Private GitHub relay - DESIGNATED / NOT ACTIVE YET.** Intended route: `PHONE -> GPT CONTROL -> private GitHub command artifact -> Legion watcher -> Hub -> local builder -> proof artifact -> GitHub -> GPT CONTROL`. It is not a legal automatic fallback until the watcher and a full round-trip proof exist.
+1. **Private GitHub relay - ACTIVE / PROVEN TRANSPORT; LIVE-REPO MUTATION DISABLED.** Route: `PHONE -> GPT CONTROL -> private GitHub command artifact -> Legion watcher -> Hub -> local builder -> proof artifact -> GitHub -> GPT CONTROL`. LIFELINE-001 proved the complete round trip through private issue #1. The Windows watcher is configured to start at user logon. The relay currently accepts only the exact fail-closed `scratch_builder_probe` schema; arbitrary tasks, other builders, extra fields, and live-repo mutation are rejected. Expanding it to live-repo proposal/apply requires a separate controller mission with base-SHA and exact-patch gates.
 2. **Operator break-glass - MANUAL.** The operator reaches the Legion directly and executes an exact frozen GPT Control instruction. This restores transport only; it grants no architecture or interpretation authority to another agent.
 3. If no verified route exists: `CONTROL_LINK_DOWN -> STOP ALL NON-LIFELINE WORK`.
 

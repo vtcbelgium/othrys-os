@@ -1,20 +1,20 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 22,
+  "sequence": 23,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "c19a9043895d365612344bcf06d9d6c5b1687e75",
   "control_gate": "WAIT_GPT",
   "active_mission": {
-    "mission_id": "GPT-MAINT-007",
+    "mission_id": "LIFELINE-001",
     "status": "COMPLETE / WAIT_GPT",
-    "issued_label": "DIRECTIVE 0 - CONTROL LIFELINE",
-    "source": "operator_current_conversation / GPT_CONTROL"
+    "issued_label": "PRIVATE GITHUB RELAY FALLBACK PROOF",
+    "source": "GPT_CONTROL"
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
   "last_verified_receipt_mission": "V2-001E.R",
-  "last_log_sequence": 11,
-  "last_log_hash": "50279a3534f1af36b6a76e8b9e18226c64640318d86697143ec0be41576a9862",
+  "last_log_sequence": 12,
+  "last_log_hash": "69182f2ff208dcdb87b50c14311ed40417ef09f495956de160a177103eced9ed",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -65,8 +65,8 @@
     "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
-  "last_control_decision": "GPT-MAINT-007 installed Directive 0 - Control Lifeline. The proven primary route is operator phone -> GPT Control -> Remote Desktop Commander Remote MCP -> authorized Legion -> Hub engineering_platform -> explicit local Ollama builder -> deterministic proof -> GPT Control -> operator. Private GitHub relay is designated but NOT ACTIVE until implemented and round-trip proven. Operator direct Legion control is manual break-glass. No hidden fallback or second AI controller is authorized.",
-  "next_legal_action": "LIFELINE-001 ONLY: implement and prove the designated private GitHub relay fallback as a transport, not a second controller. Primary route remains ACTIVE_PROVEN. No Block/Oros/architecture work inside this fallback mission.",
+  "last_control_decision": "LIFELINE-001 proved the designated private GitHub relay transport end-to-end: ChatGPT created private GitHub issue #1; the independent Windows scheduled watcher consumed it; Hub engineering_platform invoked explicit qwen3-builder -> Ollama; the exact scratch diff was verified; the watcher posted PASS back to GitHub and closed the issue; ChatGPT retrieved that proof. No live V2 or Hub file was mutated by the relay command. The fallback is transport-proven but intentionally probe-only/fail-closed.",
+  "next_legal_action": "WAIT_GPT. Directive 0 primary route is ACTIVE_PROVEN and private GitHub fallback transport is ACTIVE_PROVEN_TRANSPORT_PROBE_ONLY. Any expansion to live-repo proposal/apply is a separate controller mission; do not silently widen the relay.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -157,6 +157,11 @@
       "mission_id": "V2-001E.R",
       "status": "STOPPED_AT_GATE",
       "note": "BASE_GATE_FAILED - HEAD != origin/main; the two V2-001E commits are unpushed and the delegate cannot push. Nothing executed downstream: no law recorded, no copy, no path created, no legacy read. The operator's binding V2-monorepo decision and the exact canonical path blocks/media/image-prep are preserved verbatim in the envelope for the next run"
+    },
+    {
+      "mission_id": "LIFELINE-001",
+      "status": "COMPLETE",
+      "note": "Private GitHub relay transport proven end-to-end with issue #1; scheduled watcher running; qwen3-builder/Ollama exact scratch diff; result returned through GitHub; live repo mutation disabled."
     }
   ],
   "git": {
@@ -256,8 +261,12 @@
     },
     "fallback_a": {
       "transport": "private GitHub command relay -> Legion watcher -> Hub -> local builder -> proof relay",
-      "status": "DESIGNATED_NOT_ACTIVE",
-      "activation_gate": "watcher implemented plus full round-trip proof"
+      "status": "ACTIVE_PROVEN_TRANSPORT_PROBE_ONLY",
+      "activation_gate": "PASSED by LIFELINE-001 private issue #1 full round-trip proof",
+      "watcher": "Windows Scheduled Task: OTHRYS-Lifeline-GitHub-Relay; state RUNNING during proof; starts at user logon",
+      "proof": "LIFELINE-001-PROBE-001: ChatGPT-created private issue #1 -> watcher -> Hub -> qwen3-builder/Ollama -> exact PROBE.txt diff -> PASS comment -> issue closed -> ChatGPT retrieved proof",
+      "scope": "scratch_builder_probe only; live repo mutation disabled; arbitrary task text absent from command schema",
+      "reboot_persistence": "CONFIGURED_AT_LOGON_NOT_REBOOT_PROVEN"
     },
     "break_glass": {
       "transport": "operator direct Legion control executing an exact frozen GPT Control instruction",
