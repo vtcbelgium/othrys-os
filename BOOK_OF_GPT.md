@@ -116,6 +116,15 @@ Capabilities belong to a specific execution environment. Never assume a delegate
 30. **ONE V2 HISTORY**  
 There is exactly one canonical V2 history. The Legion working copy and `origin/main` are reconciled before new work begins. Every mission records `BASE_SHA` before mutation, and a delegate works only from that verified `BASE_SHA` or a descendant. GPT does not commit to `origin/main` while a delegate holds unpushed local work; GPT writes only after the delegate mission is finished, the host has pushed, `origin/main` is independently verified, and that exact SHA becomes GPT's write base. If remote HEAD no longer equals the expected `BASE_SHA`: STOP, re-read state, never overwrite. All GPT Git writes are fast-forward only; never force push. No worker keeps a private competing canonical history. If local and remote diverge, reconciliation is the only legal mission. *(V2-000E)*
 
+31. **ARCHITECTURE IS CONTROLLER-ONLY**
+Delegates never choose architecture, repository layout, new abstractions, ownership or the next mission. They STOP and ask the controller.
+
+32. **DELEGATE CONTRACT IS MECHANICAL**
+Every delegate mission names exact files, the exact allowed operation, exact proof and STOP. Anything else is forbidden.
+
+33. **MINIMAL EVIDENCE**
+A failed or stopped mission creates only the required result, receipt and state update. No extra design documents or speculative records unless explicitly requested.
+
 ## TEMPORARY MEMORY MAP
 
 Until the canonical Garden and Mnemosyne are wired into V2:
