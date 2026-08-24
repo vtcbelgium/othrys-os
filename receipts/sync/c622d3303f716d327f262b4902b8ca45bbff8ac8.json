@@ -1,0 +1,23 @@
+{
+  "blocker": "PUSH_PENDING: git push origin main and git ls-remote origin main both refused with 'Received HTTP code 403 from proxy after CONNECT' (exit 128). One bounded attempt each, no retry loop, no fallback transport. Section 9 accepts PUSH_PENDING; the host will push. SEPARATE AND MORE SERIOUS: othrys-blocks has no configured remote at all, so the canonical source of the newly ACTIVE 0.1.1 specimen (commit b4171d3) exists on exactly one machine and cannot be pushed by anyone.",
+  "host_command": "cd C:\\Users\\othry\\Projects\\othrys-v2; git push origin main; git ls-remote origin main",
+  "mission_id": "V2-001D",
+  "next_state": "WAIT_GPT",
+  "receipt_ref": "receipts/runs/V2-001D/20260824T195911Z.json",
+  "remote": "https://github.com/vtcbelgium/othrys-v2.git",
+  "remote_sha": null,
+  "repo_sha": "c622d3303f716d327f262b4902b8ca45bbff8ac8",
+  "base_sha": "ca39219ce92e4a3c10cc2d9d3e38562e6217d2ff",
+  "active_block": "block.media.image-prep@0.1.1",
+  "active_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+  "admission_status": "ACTIVE_ADMITTED",
+  "runtime_status": "RUNTIME_PROVEN",
+  "superseded": "block.media.image-prep@0.1.0 (32b34548...) - HISTORICAL / SUPERSEDED, record byte-unmodified",
+  "legacy_repo_head": "b4171d3eb3a28acd30a707892dc7db9c73444a82",
+  "legacy_remote": "NONE CONFIGURED - unpushable by anyone",
+  "unpushed_v2_commits": ["251c0fb V2-001C", "ca39219 V2-001C sync stamp", "c622d33 V2-001D", "this sync stamp"],
+  "schema_version": "1.0.0",
+  "sync_status": "PUSH_PENDING",
+  "fast_forward": "origin/main f5bef348 is an ancestor of local HEAD; the host push is a clean fast-forward",
+  "verified_at": "2026-08-24T20:08:00Z"
+}
