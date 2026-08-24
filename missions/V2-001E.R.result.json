@@ -39,8 +39,6 @@
     }
   ],
   "created_at": "2026-08-24T20:34:52Z",
-  "delegate": "claude-opus-5",
-  "envelope_ref": "missions/V2-001E.R.json",
   "evidence": [
     "missions/V2-001E.R.json - the operator decision recorded verbatim, explicitly not applied",
     "HEAD 4139482 != origin/main c6c125c; two unpushed V2-001E commits",
@@ -79,9 +77,6 @@
   "next_state": "WAIT_GPT",
   "node_tests": "not run",
   "objective": "Record the V2 ownership law and ingest block.media.image-prep@0.1.1 into othrys-v2/blocks/media/image-prep.",
-  "receipt_id": "V2-001E.R--20260824T203452Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "STOPPED_AT_GATE",
   "schema_version": "1.0.0",
   "stop_code": "BASE_GATE_FAILED",

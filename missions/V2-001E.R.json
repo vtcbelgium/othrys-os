@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001E.R",
+  "issued_label": "V2-001E.R — V2 BLOCK HOME LAW + INGEST BLOCK #1",
+  "issued_by": "GPT_CONTROL",
+  "issued_via": "operator_current_conversation",
+  "received_at": "2026-08-24T20:40:00Z",
+  "note": "Recorded verbatim so the decision survives the base-gate stop and the next run can execute it without re-deriving it. This envelope is the mission as received; it is NOT a claim that the law below has been applied. Nothing in it was executed.",
+  "operator_decision_binding": {
+    "premise": "OTHRYS V2 IS A MONOREPO.",
+    "rule": "For V2: ALL ACTIVE CANONICAL CAPABILITY BLOCK IMPLEMENTATION LIVES INSIDE othrys-v2.",
+    "legacy_status": "Legacy repositories are quarry / provenance / historical source only.",
+    "supersession": "The legacy BLOCKS-HOME-001 rule assigning permanent implementation ownership to C:\\Users\\othry\\Projects\\othrys-blocks is SUPERSEDED FOR V2 ONLY.",
+    "legacy_law_handling": "Do not rewrite or mutate legacy law. Record the V2 supersession explicitly.",
+    "canonical_v2_block_path_law": "blocks/<domain>/<slug>",
+    "block_1_canonical_v2_path": "blocks/media/image-prep",
+    "path_authority": "stated by the operator; the delegate does not choose another path",
+    "invariants_to_preserve": [
+      "V2 is the canonical repository",
+      "active V2 Capability Blocks live under blocks/<domain>/<slug>",
+      "legacy Block repositories are quarry/provenance",
+      "do not fork a Block per Oros",
+      "an Oros still consumes one canonical V2 Block source",
+      "same-source REUSABLE semantics remain intact",
+      "no source copy is made per Oros"
+    ],
+    "law_home": "FOUNDATION_LAWS.md if it is the correct existing home; do not invent another architecture document"
+  },
+  "objective": "Record the V2 ownership law and ingest the exact active admitted block.media.image-prep@0.1.1 specimen into othrys-v2/blocks/media/image-prep.",
+  "explicit_prohibitions": [
+    "NO BLOCK #2", "NO OROS", "NO MOUNTING", "NO REGISTRY", "NO RESOLVER", "NO REFACTOR",
+    "NO OTHER BLOCKS", "NO CONTROL FEEDBACK REPAIR", "no another repo", "no othrys-blocks remote",
+    "no package manager", "no plugin system", "no moving other Blocks", "no refactoring Block #1",
+    "no changing 0.1.1", "no fixing digest canonicalization", "no cleaning unrelated technical debt",
+    "do not copy node_modules, test-results, .git, the temporary aggressive harness, unrelated quarry files"
+  ],
+  "gate": {
+    "section": "1",
+    "rule": "Require clean tree and HEAD == origin/main. If not: STOP.",
+    "outcome": "STOP — BASE_GATE_FAILED (HEAD != origin/main; the two V2-001E commits are unpushed)"
+  },
+  "next_state_on_completion": "WAIT_GPT"
+}
