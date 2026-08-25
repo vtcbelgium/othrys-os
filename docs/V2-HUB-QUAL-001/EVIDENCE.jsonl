@@ -1,0 +1,6 @@
+{"step":"Q0","ts":"2026-08-25T06:15:31Z","target":"v2_base_truth","result":"PASS","evidence":{"head":"5e35cdefc74905e76e888182884d7619b4ed2ee4","remote":"5e35cdefc74905e76e888182884d7619b4ed2ee4","dirty_count":0},"class":"REMOTELY_USEFUL_NOW"}
+{"step":"Q1","ts":"2026-08-25T06:12:00Z","target":"python_compile_and_json_parse","result":"PASS","evidence":{"python_compile":"PASS","json_files":80,"json_parse":"PASS"},"class":"REMOTELY_USEFUL_NOW"}
+{"step":"Q1","ts":"2026-08-25T06:12:00Z","target":"control_feedback","result":"PASS","evidence":{"tests_passed":30,"tests_failed":0},"class":"REMOTELY_USEFUL_NOW"}
+{"step":"Q1","ts":"2026-08-25T06:12:00Z","target":"github_lifeline_validator","result":"PASS","evidence":{"tests_passed":4,"tests_failed":0},"class":"REMOTELY_USEFUL_NOW"}
+{"step":"Q1","ts":"2026-08-25T06:14:00Z","target":"block_1_active_digest_0.1.1","result":"PASS","evidence":{"tests_passed":5,"tests_failed":0,"digest":"48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd","dependency":"legacy othrys-blocks working tree"},"class":"USEFUL_WITH_GUARDRAIL"}
+{"step":"Q1","ts":"2026-08-25T06:14:00Z","target":"block_1_historical_digest_0.1.0","result":"EXPECTED_NEGATIVE","evidence":{"tests_passed":1,"tests_failed":2,"reason":"historical tamper proof intentionally detects active specimen is no longer 0.1.0"},"class":"READ_ONLY_ONLY"}

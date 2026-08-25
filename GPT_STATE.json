@@ -1,20 +1,20 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 24,
+  "sequence": 25,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "48d80ca1415a834a6e414d21a699bcca62ffb229",
   "control_gate": "WAIT_GPT",
   "active_mission": {
-    "mission_id": "GPT-MAINT-008",
-    "status": "COMPLETE / WAIT_GPT",
-    "issued_label": "POST-LIFELINE STATE RECONCILIATION",
-    "source": "GPT_CONTROL"
+    "mission_id": "V2-HUB-QUAL-001",
+    "status": "RUNNING / QUALIFICATION_ONLY",
+    "issued_label": "HUB QUALIFICATION FOR V2 - TEST ONLY",
+    "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
   "last_verified_receipt_mission": "V2-001E.R",
-  "last_log_sequence": 13,
-  "last_log_hash": "c6d68804bcee784d46addc2e289a1fe89a439246c6b706b8a7c99a01c52628b7",
+  "last_log_sequence": 14,
+  "last_log_hash": "18a1d3006357131485b2d6ba48748635245380dfb00e917e59846202d5f4fc4a",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -65,8 +65,8 @@
     "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
-  "last_control_decision": "GPT-MAINT-008 verified V2 clean and local HEAD == git ls-remote origin/main == 48d80ca1415a834a6e414d21a699bcca62ffb229 after LIFELINE-001. Control state is reconciled; no capability, Block, Oros, architecture, or Hub code was changed.",
-  "next_legal_action": "V2-HUB-QUAL-001 ONLY: qualify the existing Hub as a bounded execution/inspection surface for V2 using read-only V2 tests and disposable V2 clones. No V2 capability implementation or architecture changes.",
+  "last_control_decision": "V2-HUB-QUAL-001 opened as a qualification-only campaign. Live V2 capability code is read-only; Hub execution probes must use disposable V2 clones/temp repositories.",
+  "next_legal_action": "V2-HUB-QUAL-001 Q1->Q2: finish exhaustive native V2 classification, then prove Hub read-only repository intelligence against live V2. No capability build.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

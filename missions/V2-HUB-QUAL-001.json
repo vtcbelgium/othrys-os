@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-HUB-QUAL-001",
+  "objective": "Qualify the existing OTHRYS Hub as a bounded inspection, testing and execution surface for V2 before any V2 capability implementation is authorized.",
+  "delegate": "GPT_CONTROL_WITH_EXPLICIT_LOCAL_BUILDER_ONLY",
+  "issued_by": "GPT_CONTROL",
+  "issued_at": "2026-08-25T06:15:31Z",
+  "constraints": [
+    "QUALIFICATION ONLY - no V2 capability build",
+    "live V2 capability code is read-only",
+    "controller-owned mission/state/log/evidence records may be written",
+    "all Hub mutation probes use disposable V2 clones or temp repositories",
+    "qwen3-builder is explicit-only; one bounded attempt per builder probe",
+    "no Claude, Auto Frugal, multi-agent delegation or hidden fallback",
+    "do not clean or reinterpret unrelated dirty Hub work",
+    "classify red tests before considering any repair authority"
+  ],
+  "expected_proof": [
+    "native V2 executable and test surfaces are classified",
+    "Hub read-only repository intelligence against V2 is directly proven",
+    "Hub context/recipe/capability selection against V2 is directly proven",
+    "one bounded Hub proposal succeeds only in a disposable V2 clone",
+    "negative guardrail tests prove touch limits and fail-closed behavior",
+    "a final remote-use matrix records what is safe now and what remains blocked"
+  ]
+}
