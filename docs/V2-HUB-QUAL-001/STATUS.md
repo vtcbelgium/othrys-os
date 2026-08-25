@@ -40,3 +40,24 @@ Live V2 is evidence-only. Hub execution probes use disposable clones/temp repos.
 ### First V2-specific Hub constraint
 
 A red test is not automatically a defect. Hub must receive test semantics/status before any repair authority. Block #1 QA also proves V2 still depends on the external `othrys-blocks` specimen for this evidence, so dependency provenance must be visible to Hub.
+
+## Admitted Loop Contract
+
+OWNER: GPT Control; operator retains root authority and continuation authority.
+TRIGGER: one unresolved qualification gate from Q0-Q7.
+INPUT: current canonical V2 state, one frozen hypothesis, exact Hub surface, explicit builder only when required.
+STATE: GPT_STATE + this STATUS/EVIDENCE ledger; worker narrative is non-authoritative.
+BUDGET: one atomic attempt per causal hypothesis; zero hidden retries; zero live V2 capability mutations; local builder cost only.
+EXIT: PASS, FAIL, BLOCKED, or STALL with external evidence.
+EVIDENCE: strongest available deterministic proof, then independent verifier, never model assertion alone.
+
+Selection ladder: deterministic check -> one bounded tool/model attempt -> external critic -> controller decision. First causal blocker only. Green tests are not rerun unless a different failure mode is being tested.
+
+## Q2-Q4 evidence
+
+- Q2 Hub repo_intel read live V2 correctly: main, clean, exact HEAD, remote, zero diff. Repository context compressed to a 51-token pack. PASS.
+- Q3 verification task resolved to recipe `verification`, `touch_allow=[]`, `apply_required=false`, mutation scope `none`. Explicit qwen3-builder was ready; its capability record says verification=false, so deterministic Hub verification remains preferred. PASS WITH CONSTRAINT.
+- Q4 raw engineering_platform against a disposable V2 clone changed only the allowed probe file and stopped at pending_apply_reject. PASS, but raw platform is not certified for live V2 because it mutates the workspace it receives.
+- Q4B buildloop.run_mission cloned live V2 into scratch, explicit qwen3-builder changed one allowed probe file, Core/Hephaestus reached APPROVAL_REQUIRED, and live V2 remained clean. PASS.
+- Q4B first attempt with uppercase V2 mission ID failed closed before builder execution; lowercase Hub execution correlation ID passed. V2 canonical IDs and Hub execution IDs must remain explicitly mapped.
+- Open Q5 blocker: current buildloop constructs PlatformRequest with allow_engine_fallback=True. Hidden fallback is incompatible with Directive 0 and must be proven disabled or repaired before live V2 qualification.

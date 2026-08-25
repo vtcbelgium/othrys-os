@@ -1,9 +1,9 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 25,
+  "sequence": 26,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "48d80ca1415a834a6e414d21a699bcca62ffb229",
+  "remote_head_at_last_verified_read": "c11e26ea3f9d4dc1ac3474419c957705d9931374",
   "control_gate": "WAIT_GPT",
   "active_mission": {
     "mission_id": "V2-HUB-QUAL-001",
@@ -13,8 +13,8 @@
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
   "last_verified_receipt_mission": "V2-001E.R",
-  "last_log_sequence": 14,
-  "last_log_hash": "18a1d3006357131485b2d6ba48748635245380dfb00e917e59846202d5f4fc4a",
+  "last_log_sequence": 15,
+  "last_log_hash": "fc16174447e035f74758939aee3d7204dff640bb1b807efa41423006731c8e4f",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -65,8 +65,8 @@
     "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
-  "last_control_decision": "V2-HUB-QUAL-001 opened as a qualification-only campaign. Live V2 capability code is read-only; Hub execution probes must use disposable V2 clones/temp repositories.",
-  "next_legal_action": "V2-HUB-QUAL-001 Q1->Q2: finish exhaustive native V2 classification, then prove Hub read-only repository intelligence against live V2. No capability build.",
+  "last_control_decision": "V2-HUB-QUAL-001 is now governed by the existing LOOP_LAWS contract. Q2-Q4 are checkpointed. No live V2 capability mutation is authorized.",
+  "next_legal_action": "V2-HUB-QUAL-001 Q5 ONLY: execute the frozen negative safety matrix against Hub/V2 scratch paths. First causal blocker: hidden engine fallback in buildloop. No live V2 apply.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
