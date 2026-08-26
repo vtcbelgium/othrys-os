@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001J",
+  "objective": "Reconcile stale post-V2-001I control truth without mutating either admitted Capability Block.",
+  "delegate": "GPT_CONTROL_DIRECT_HOST_EXECUTION",
+  "issued_by": "GPT_CONTROL",
+  "issued_at": "2026-08-26T19:00:00Z",
+  "constraints": [
+    "no mutation of either admitted Block",
+    "no new architecture",
+    "Foundation Law edits may only convert stale historical gates into satisfied historical wording",
+    "GPT_STATE must reflect two admitted Blocks and completed V2-001I composition truth",
+    "exact Block digests must verify before closeout"
+  ],
+  "expected_proof": [
+    "block.media.image-prep@0.1.1 mount verifier PASS at digest 48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+    "block.monetization.affiliate-offer@0.1.0 mount verifier PASS at digest f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e",
+    "GPT_STATE reports two admitted Capability Blocks and V2-001I complete",
+    "Foundation Laws preserve constraints while recording Block #2 gate as satisfied",
+    "clean commit, push and remote SHA verification"
+  ]
+}

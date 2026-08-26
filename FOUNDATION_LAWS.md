@@ -1,7 +1,7 @@
 # OTHRYS V2 FOUNDATION LAWS
 
 **Status:** ACTIVE FOUNDATION LAW  
-**Scope:** Block #1 is canonical in V2 and its first composition/removal boundary is proven. **Block #2 may now be selected only by a separate bounded mission; no Block #2 implementation is authorised by this proof.**
+**Scope:** Two canonical Capability Blocks are now admitted in V2 and their coexistence/removal boundaries are proven. The rules below remain the frozen foundation constraints that Block #2 successfully passed.
 **Authority:** subordinate to accepted OTHRYS constitutional canon and `BOOK_OF_GPT.md`; binding on V2 foundation work.
 
 These laws do not invent a new Block architecture. They make the recovered OTHRYS Block/Oros law operationally strict enough that the second Block cannot force a redesign.
@@ -79,7 +79,7 @@ If a required Block is unmounted, the dependent capability must become explicitl
 ## 17. BLOCK #2 IS THE COMPOSITION TEST
 The second Block is not primarily a feature. It is the proof that Block #1 did not hard-code the house around itself. Block #2 must attach using the same anatomy and declared boundaries without changing the foundation rules.
 
-**Block #2 remains forbidden until a real canonical Block #1 is admitted.** No Block #1 exists today: Control Feedback is `SHARED_SERVICE` / `PLATFORM_ONLY`, not a Capability Block (V2-000C.R).
+**Historical gate (satisfied):** Block #2 was forbidden until a real canonical Block #1 was admitted and composition-proven. V2-001F/V2-001G satisfied that gate; V2-001I then admitted and composed Block #2 without changing these foundation rules.
 
 ## 18. REPLACEMENT IS A FIRST-CLASS TEST
 For interchangeable implementations, prove: unmount old -> admit replacement -> mount replacement -> run the same contract test -> preserve only explicitly owned compatible state. If replacement requires hidden surgery, the boundary is not clean enough.
@@ -97,7 +97,7 @@ A Block must define how it refuses invalid input, missing dependencies, denied a
 At this stage do **not** add a universal resolver, marketplace, package manager, daemon, multi-agent orchestrator, general plugin host or automatic promotion engine. Repeated real composition must prove the need first.
 
 ## FOUNDATION EXIT TEST
-The empty house is ready for Block #2 only when OTHRYS can truthfully answer the questions below **about an admitted Capability Block**. As of V2-000E none is admitted, so the exit test is unmet by definition, not by omission.
+The empty-house exit test below was the gate for Block #2. It is retained as historical acceptance law. V2-001G satisfied it for Block #1, and V2-001I subsequently proved Block #2 can use the same house rules.
 
 1. What is Block #1, exactly?
 2. What contract/version/digest is admitted?
