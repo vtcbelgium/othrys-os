@@ -1,18 +1,18 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 38,
+  "sequence": 39,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "092607f8bb3e9c8c74141d15bf22d551c03f567d",
+  "remote_head_at_last_verified_read": "fbb46d75645bd5c5ceef7e0a1e551c6e2400a99e",
   "control_gate": "WAIT_GPT",
   "active_mission": {
     "mission_id": "V2-001J",
-    "status": "LOCAL_COMPLETE / SYNC_PENDING",
+    "status": "COMPLETE",
     "issued_label": "V2-001J - TWO-BLOCK STATE RECONCILIATION",
     "source": "operator_current_conversation"
   },
-  "last_verified_remote_receipt": "6b495c954eb8da6ff8b37a22c7fb5150d81f08d4",
-  "last_verified_receipt_mission": "V2-001I",
+  "last_verified_remote_receipt": "fbb46d75645bd5c5ceef7e0a1e551c6e2400a99e",
+  "last_verified_receipt_mission": "V2-001J",
   "last_log_sequence": 32,
   "last_log_hash": "08ac960ea0a090ed6d8e6ae5105a3127db22aa0e2105c1f12e3fdb7bd876460c",
   "log_integrity": {
@@ -67,7 +67,7 @@
     "decision": "RECONCILE_TWO_BLOCK_FOUNDATION",
     "authority": "documentary/control truth only"
   },
-  "next_legal_action": "Commit, push and remote-verify V2-001J; then GPT Control may open the Talos qualification/extraction phase.",
+  "next_legal_action": "Open the Talos qualification/extraction phase from the clean two-Block foundation.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -191,8 +191,8 @@
     },
     {
       "mission_id": "V2-001J",
-      "status": "LOCAL_COMPLETE_SYNC_PENDING",
-      "note": "Reconciled post-V2-001I control truth; two admitted Blocks; Foundation historical gates updated; both exact mount verifiers PASS; no Block mutation."
+      "status": "COMPLETE",
+      "note": "Two-Block state/documentary truth reconciled; both exact mount verifiers PASS; synced at fbb46d7."
     }
   ],
   "git": {
@@ -201,9 +201,9 @@
     "merge_base": "66c45631781dfce93a4c8628f2a3de70a6bad09c",
     "local_parent": "b65ebba9f13a5e852bb778b33b2eaff6fcfa966b",
     "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
-    "base_sha_for_next_mission": "092607f8bb3e9c8c74141d15bf22d551c03f567d",
+    "base_sha_for_next_mission": "fbb46d75645bd5c5ceef7e0a1e551c6e2400a99e",
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
-    "sync_status": "PUSH_PENDING",
+    "sync_status": "SYNCED",
     "push_owner": "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
     "base_sha_verified_this_mission": "092607f8bb3e9c8c74141d15bf22d551c03f567d",
     "base_sha_verification": "V2-001J start gate: local HEAD == origin/main == 092607f8bb3e9c8c74141d15bf22d551c03f567d",

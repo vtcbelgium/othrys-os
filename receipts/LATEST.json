@@ -52,11 +52,11 @@
   "next_state": "WAIT_GPT",
   "objective": "Reconcile stale post-V2-001I control truth without mutating either admitted Capability Block.",
   "receipt_id": "V2-001J--20260826T183000Z",
-  "remote_sha": null,
-  "repo_sha": null,
+  "remote_sha": "fbb46d75645bd5c5ceef7e0a1e551c6e2400a99e",
+  "repo_sha": "fbb46d75645bd5c5ceef7e0a1e551c6e2400a99e",
   "result_claimed": "COMPLETE",
   "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
+  "sync_status": "SYNCED",
   "tests": [
     {
       "detail": "MOUNT_VERIFIED 0.1.1 digest exact",
