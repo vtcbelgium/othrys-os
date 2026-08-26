@@ -1,4 +1,4 @@
-# OTHRYS V2 BUILD BACKLOG
+﻿# OTHRYS V2 BUILD BACKLOG
 
 **Authority:** GPT Control execution order after V2-001J.
 **Rule:** one bounded mission at a time; prove, receipt, sync, continue.
@@ -6,8 +6,8 @@
 | Order | Mission | Goal | Status |
 |---|---|---|---|
 | 0 | V2-001J | Reconcile two-Block foundation truth | COMPLETE |
-| 1 | V2-002A | Qualify old Core Talos and freeze the minimum V2 extraction boundary | RUNNING |
-| 2 | V2-002B | Extract minimum Talos kernel and prove deterministic retry/dead-letter/replay | TODO |
+| 1 | V2-002A | Qualify old Core Talos and freeze the minimum V2 extraction boundary | COMPLETE |
+| 2 | V2-002B | Extract minimum Talos kernel and prove deterministic retry/dead-letter/replay | LOCAL COMPLETE / SYNC PENDING |
 | 3 | V2-002C | Attach Legion Hub/Qwen as first bounded Talos Worker | TODO |
 | 4 | V2-002D | Prove real local engineering repair loop, max 5 attempts | TODO |
 | 5 | V2-002E | Extract minimum Trust Canal admission/binding boundary ahead of Talos | TODO |

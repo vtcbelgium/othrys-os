@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-002B",
+  "objective": "Extract the minimum Talos kernel into V2 and prove deterministic retry, dead-letter, evidence-gated success, and replay on Legion.",
+  "delegate": "GPT_CONTROL_DIRECT_HOST_EXECUTION",
+  "issued_by": "GPT_CONTROL",
+  "issued_at": "2026-08-26T19:55:00Z",
+  "constraints": [
+    "copy only the three V2-002A-qualified Talos domain files exactly",
+    "add only a tiny V2 loop seam; no provider registry, scheduler, Garden, Mission Control, or new framework",
+    "builder success must pass an independent verifier before SUCCEEDED",
+    "retry budget must terminate in DEAD_LETTERED",
+    "event replay must reconstruct the same final mission state"
+  ],
+  "expected_proof": [
+    "three copied source hashes exactly match V2-002A",
+    "Node 24 tests prove success-after-retry, verifier rejection, semantic failure, exhausted retry, and deterministic replay",
+    "old Core, Hub, and admitted Blocks remain untouched"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-08-26T19:58:00Z",
+  "files_changed": [
+    {"change":"added","path":"runtime/talos-kernel/lifecycle.ts","sha256":"4b61ae5ea351be835f75d72fea7459b016d82c0f3d7d6eaeed95917504051551"},
+    {"change":"added","path":"runtime/talos-kernel/retry.ts","sha256":"d9f8a434d79c3eacb5049539b223497ea363a4299eff8104d82cef4462276ae5"},
+    {"change":"added","path":"runtime/talos-kernel/events.ts","sha256":"00f0023f0ccdfabc0ed485a33aeeafe4024b35c72cc255ff20052d51090d6ec9"},
+    {"change":"added","path":"runtime/talos-kernel/loop.ts","sha256":"161d55f651d3253155cdfce409c78bac80e0c5d720d375c299893d3aac11712b"},
+    {"change":"added","path":"runtime/talos-kernel/loop.test.ts","sha256":"03d92b8bce5e57f6962abd25f19999ef470eefccb9dae03d50f828da672d5a2d"},
+    {"change":"added","path":"missions/V2-002B.json","sha256":"ead8e4ba9e6aebbbb0a0fe2d77c3304d14b18669a90e682cf3eee773c8fe0aed"}
+  ],
+  "commands_run": [
+    {"cmd":"copy exact qualified Talos lifecycle/retry/events into V2","exit_code":0},
+    {"cmd":"node --test runtime/talos-kernel/loop.test.ts","exit_code":0},
+    {"cmd":"git diff --check","exit_code":0}
+  ],
+  "tests": [
+    {"name":"talos_loop","result":"pass","detail":"5/5 Node 24 tests"},
+    {"name":"quarry_hashes","result":"pass","detail":"all three exact source hashes match V2-002A"},
+    {"name":"independent_verifier","result":"pass","detail":"builder success cannot reach SUCCEEDED until verifier passes"},
+    {"name":"bounded_extinction","result":"pass","detail":"retry exhaustion reaches DEAD_LETTERED"},
+    {"name":"replay","result":"pass","detail":"event replay reconstructs terminal state"}
+  ],
+  "evidence": ["runtime/talos-kernel/loop.test.ts","docs/V2-002A/TALOS_EXTRACTION_BOUNDARY.md"],
+  "result_claimed": "COMPLETE",
+  "blocker": null
+}
