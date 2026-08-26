@@ -7,14 +7,14 @@
   "control_gate": "RUNNING",
   "active_mission": {
     "mission_id": "V2-001I",
-    "status": "RUNNING",
-    "issued_label": "V2-001I — BLOCK #2 EXACT INGEST / ADMISSION / COMPOSITION",
+    "status": "LOCAL_COMPLETE / SYNC_PENDING",
+    "issued_label": "V2-001I â€” BLOCK #2 EXACT INGEST / ADMISSION / COMPOSITION",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "0172d486963c46f1140e18b00d0efbb4a22e6c62",
   "last_verified_receipt_mission": "V2-001H",
-  "last_log_sequence": 29,
-  "last_log_hash": "35cecbd5160b16108a6a63d24f13757d7268961ba73ef4bdffe00adece1dcedb",
+  "last_log_sequence": 30,
+  "last_log_hash": "c77ecfe9d4cede1afcaa21cecd667df9f0b97a6c839075a42344f390deea8825",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -69,7 +69,7 @@
     "tree_digest": "f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e",
     "authority": "selection only"
   },
-  "next_legal_action": "Execute only V2-001I bounded gates.",
+  "next_legal_action": "Close V2-001I by commit, push and remote SHA verification.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -190,7 +190,7 @@
     "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
     "base_sha_for_next_mission": "0172d486963c46f1140e18b00d0efbb4a22e6c62",
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
-    "sync_status": "SYNCED",
+    "sync_status": "PUSH_PENDING",
     "push_owner": "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
     "base_sha_verified_this_mission": "52d4ff1c31e39a35272f924a6f35b0c2ae612a9e",
     "base_sha_verification": "V2-001H start/close gate: local HEAD == origin/main == 52d4ff1c31e39a35272f924a6f35b0c2ae612a9e.",
@@ -199,7 +199,7 @@
   },
   "block_state": {
     "capability_blocks_admitted": 1,
-    "block_2": "SELECTED_CANDIDATE_NOT_INGESTED - block.monetization.affiliate-offer@0.1.0, digest f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e. Separate mission required for ingest/admission/composition.",
+    "block_2": "ADMITTED_COMPOSED - block.monetization.affiliate-offer@0.1.0",
     "control_feedback": {
       "path": "blocks/control_feedback/",
       "classification": "SHARED_SERVICE / PLATFORM_ONLY",

@@ -1,0 +1,57 @@
+{
+  "schema": "othrys.v2.block_admission.v0",
+  "admission_status": "ACTIVE_ADMITTED",
+  "admitted_by": {
+    "mission": "V2-001I",
+    "authority": "GPT Control"
+  },
+  "block_id": "block.monetization.affiliate-offer",
+  "block_version": "0.1.0",
+  "package": "@othrys-blocks/monetization-affiliate-offer",
+  "capability_id": "capability.monetization.affiliate-offer",
+  "classification": "CAPABILITY",
+  "maturity_at_admission": "REUSABLE",
+  "package_tree_digest": {
+    "value": "f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e",
+    "algorithm": "sha256-of-manifest",
+    "file_count": 18
+  },
+  "source": {
+    "canonical_repo": "othrys-v2",
+    "canonical_path": "blocks/monetization/affiliate-offer",
+    "source_commit": "fb36c73fb6a7b805c89c4c0bfe22550671667874",
+    "legacy_quarry": "othrys-blocks/blocks/monetization/affiliate-offer",
+    "legacy_role": "PROVENANCE / QUARRY ONLY"
+  },
+  "contract": {
+    "provides": [
+      "monetization.affiliate.offer@1 construct"
+    ],
+    "requires": [
+      "explicit provider Bridge",
+      "host attribution config",
+      "host disclosure render"
+    ],
+    "state_ownership": "NONE",
+    "network_during_construct": "NONE",
+    "secrets": "NONE",
+    "failure": "typed fail-closed errors"
+  },
+  "runtime_proof": {
+    "node": "27/27 PASS from V2 canonical home",
+    "chromium": "8/8 PASS from V2 canonical home",
+    "composition": "PASS: two-Block lock + Block #1 mount + affiliate mount/runtime + negative controls"
+  },
+  "reconstruction": {
+    "path": "blocks/monetization/affiliate-offer",
+    "version": "0.1.0",
+    "digest": "f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e",
+    "if_missing": "UNAVAILABLE; no legacy fallback"
+  },
+  "not_this_record": [
+    "registry",
+    "resolver",
+    "package manager",
+    "plugin host"
+  ]
+}

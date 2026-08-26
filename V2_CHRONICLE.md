@@ -487,3 +487,7 @@ V2-001H inventoried the real Block quarry and froze `block.monetization.affiliat
 Affiliate-offer has two independent consumers, Node and Chromium proof, same-source/copy-hunt evidence, no generic portability defect, no Block-owned state/secrets/network construction, and explicit fail-closed provider/config boundaries. `visit-tracking` remains RAW because scoped storage authority is unresolved; the seven Study Buddy harvest Blocks remain RAW transition stock.
 
 Selection does not admit or ingest the Block. The exact 18-file quarry specimen is frozen at digest `f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e`; a separate mission must bring it home and prove it beside Block #1 without changing Foundation Laws.
+
+## CH-0022 — Block #2 proves the house composes
+
+V2-001I ingested and admitted the exact affiliate-offer specimen and proved it beside Block #1 with one two-Block lock. Removal, tamper and wrong-lock controls fail loudly, including with the legacy quarry still present; no fallback fired.

@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-08-26T17:02:24Z",
+  "files_changed": [],
+  "commands_run": [
+    {
+      "cmd": "verify frozen quarry digest and exact ingest",
+      "exit_code": 0
+    },
+    {
+      "cmd": "V2 affiliate Node + Chromium suites",
+      "exit_code": 0
+    },
+    {
+      "cmd": "two-Block mount/runtime matrix",
+      "exit_code": 0
+    },
+    {
+      "cmd": "absence/tamper/wrong-lock/no-fallback controls",
+      "exit_code": 0
+    }
+  ],
+  "tests": [
+    {
+      "name": "v2_node",
+      "result": "pass",
+      "detail": "27/27 PASS"
+    },
+    {
+      "name": "v2_chromium",
+      "result": "pass",
+      "detail": "8/8 PASS"
+    },
+    {
+      "name": "block1_mount",
+      "result": "pass",
+      "detail": "PASS"
+    },
+    {
+      "name": "block1_node",
+      "result": "pass",
+      "detail": "10/10 PASS"
+    },
+    {
+      "name": "block2_mount_runtime",
+      "result": "pass",
+      "detail": "PASS"
+    },
+    {
+      "name": "tamper",
+      "result": "pass",
+      "detail": "DIGEST_MISMATCH"
+    },
+    {
+      "name": "wrong_version",
+      "result": "pass",
+      "detail": "LOCK_MISMATCH"
+    },
+    {
+      "name": "wrong_digest",
+      "result": "pass",
+      "detail": "LOCK_MISMATCH"
+    },
+    {
+      "name": "absence_with_legacy_present",
+      "result": "pass",
+      "detail": "BLOCK_MISSING"
+    },
+    {
+      "name": "restored_digest",
+      "result": "pass",
+      "detail": "PASS"
+    }
+  ],
+  "evidence": [
+    "qa/block2-composition/V2-001I.report.json",
+    "qa/block2-composition/oros-zero-two-block.lock.json",
+    "admissions/block.monetization.affiliate-offer@0.1.0.json"
+  ],
+  "result_claimed": "COMPLETE",
+  "blocker": null
+}

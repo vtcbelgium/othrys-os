@@ -1,0 +1,24 @@
+{
+  "schema": "othrys.v2.block2-composition-report.v1",
+  "mission_id": "V2-001I",
+  "created_at": "2026-08-26T17:02:24Z",
+  "verdict": "PASS",
+  "block2": {
+    "id": "block.monetization.affiliate-offer",
+    "version": "0.1.0",
+    "digest": "f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e",
+    "source_commit": "fb36c73fb6a7b805c89c4c0bfe22550671667874"
+  },
+  "proof": {
+    "v2_node": "27/27 PASS",
+    "v2_chromium": "8/8 PASS",
+    "block1_mount": "PASS",
+    "block1_node": "10/10 PASS",
+    "block2_mount_runtime": "PASS",
+    "tamper": "DIGEST_MISMATCH",
+    "wrong_version": "LOCK_MISMATCH",
+    "wrong_digest": "LOCK_MISMATCH",
+    "absence_with_legacy_present": "BLOCK_MISSING",
+    "restored_digest": "PASS"
+  }
+}
