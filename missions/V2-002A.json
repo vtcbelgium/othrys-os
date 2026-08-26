@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-002A",
+  "objective": "Qualify the old Core Talos stock and freeze the minimum V2 extraction boundary without implementing a new loop engine.",
+  "delegate": "GPT_CONTROL_DIRECT_HOST_EXECUTION",
+  "issued_by": "GPT_CONTROL",
+  "issued_at": "2026-08-26T19:48:00Z",
+  "constraints": [
+    "repo-first; old Core is quarry/provenance only",
+    "do not copy the 854-line engine or its provider/orchestration stack",
+    "do not modify old Core, Hub, or either admitted Capability Block",
+    "prefer pure frozen Talos modules and zero new framework dependencies",
+    "Legion local Node runtime must prove the candidate boundary runs independently"
+  ],
+  "expected_proof": [
+    "exact source commit and SHA-256 for selected Talos files",
+    "dirty-tree check proves selected files are unmodified quarry stock",
+    "independent Node 24 probe passes from a disposable directory",
+    "explicit KEEP/DEFER extraction boundary recorded in V2"
+  ]
+}

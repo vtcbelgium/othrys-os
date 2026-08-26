@@ -1,20 +1,20 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 39,
+  "sequence": 40,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "fbb46d75645bd5c5ceef7e0a1e551c6e2400a99e",
-  "control_gate": "WAIT_GPT",
+  "control_gate": "RUNNING",
   "active_mission": {
-    "mission_id": "V2-001J",
-    "status": "COMPLETE",
-    "issued_label": "V2-001J - TWO-BLOCK STATE RECONCILIATION",
+    "mission_id": "V2-002A",
+    "status": "LOCAL_COMPLETE / SYNC_PENDING",
+    "issued_label": "V2-002A - TALOS QUARRY QUALIFICATION",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "fbb46d75645bd5c5ceef7e0a1e551c6e2400a99e",
   "last_verified_receipt_mission": "V2-001J",
-  "last_log_sequence": 32,
-  "last_log_hash": "08ac960ea0a090ed6d8e6ae5105a3127db22aa0e2105c1f12e3fdb7bd876460c",
+  "last_log_sequence": 33,
+  "last_log_hash": "6ac4b9cef04c7ed0dbaa957a838c778a2f3082dc833d3f446a7da8b4cc98cb98",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -67,7 +67,7 @@
     "decision": "RECONCILE_TWO_BLOCK_FOUNDATION",
     "authority": "documentary/control truth only"
   },
-  "next_legal_action": "Open the Talos qualification/extraction phase from the clean two-Block foundation.",
+  "next_legal_action": "Commit, push and remote-verify V2-002A; then open V2-002B Talos kernel extraction.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -193,6 +193,11 @@
       "mission_id": "V2-001J",
       "status": "COMPLETE",
       "note": "Two-Block state/documentary truth reconciled; both exact mount verifiers PASS; synced at fbb46d7."
+    },
+    {
+      "mission_id": "V2-002A",
+      "status": "LOCAL_COMPLETE_SYNC_PENDING",
+      "note": "Talos minimum extraction boundary qualified; disposable Node probe PASS."
     }
   ],
   "git": {
@@ -203,12 +208,12 @@
     "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
     "base_sha_for_next_mission": "fbb46d75645bd5c5ceef7e0a1e551c6e2400a99e",
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
-    "sync_status": "SYNCED",
+    "sync_status": "PUSH_PENDING",
     "push_owner": "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
     "base_sha_verified_this_mission": "092607f8bb3e9c8c74141d15bf22d551c03f567d",
     "base_sha_verification": "V2-001J start gate: local HEAD == origin/main == 092607f8bb3e9c8c74141d15bf22d551c03f567d",
     "closeout_law": "BOOK_OF_GPT law 30 plus the V2-001B.R hard law: no mission is complete until push and remote verify succeed. The delegate has never had GitHub egress, so under a literal reading no delegate mission can reach PASS. Recorded as evidence for GPT; not resolved by the delegate.",
-    "unpushed_commits": "NONE"
+    "unpushed_commits": "PENDING"
   },
   "block_state": {
     "capability_blocks_admitted": 2,

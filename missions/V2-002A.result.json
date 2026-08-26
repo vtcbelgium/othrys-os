@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-08-26T19:52:00Z",
+  "files_changed": [
+    {"change":"added","path":"V2_BUILD_BACKLOG.md","sha256":"56af1f0ff8e1f8f0dc2e00246b7a072aed835d175020803016c7c214b84b4134"},
+    {"change":"added","path":"missions/V2-002A.json","sha256":"3f92f3051ca7af0cf7badeb49499db6eed1d85dbdc48e3344da4ba96c9a4e238"},
+    {"change":"added","path":"docs/V2-002A/TALOS_EXTRACTION_BOUNDARY.md","sha256":"dc015e6f58277d4792b06fa96b1063acb543a92a7aeae6d5c9e63f410a155c75"}
+  ],
+  "commands_run": [
+    {"cmd":"inspect Core Talos source hashes/imports/dirty state","exit_code":0},
+    {"cmd":"Node 24 disposable exact-file Talos probe","exit_code":0}
+  ],
+  "tests": [
+    {"name":"selected_quarry_clean","result":"pass","detail":"lifecycle.ts, retry.ts, events.ts have no working-tree edits"},
+    {"name":"disposable_node_probe","result":"pass","detail":"1/1 Node test: lifecycle, dead-letter and deterministic replay"},
+    {"name":"scope_boundary","result":"pass","detail":"engine/provider/Garden/Mission Control/adapters explicitly deferred"}
+  ],
+  "evidence": ["docs/V2-002A/TALOS_EXTRACTION_BOUNDARY.md","source commit 5f4d6d014a15ecf8db2ff60ac7647a13e789df52"],
+  "result_claimed": "COMPLETE",
+  "blocker": null
+}
