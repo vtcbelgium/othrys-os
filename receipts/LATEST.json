@@ -153,11 +153,11 @@
   "next_state": "WAIT_GPT",
   "objective": "Apply the already-recorded V2 monorepo Block-home decision and ingest the exact active block.media.image-prep@0.1.1 specimen into othrys-v2/blocks/media/image-prep without behaviour change.",
   "receipt_id": "V2-001F--20260826T105833Z",
-  "remote_sha": null,
-  "repo_sha": null,
+  "remote_sha": "819b99e9aa81f8b9e234ca239c134b9635e26dd1",
+  "repo_sha": "819b99e9aa81f8b9e234ca239c134b9635e26dd1",
   "result_claimed": "COMPLETE",
   "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
+  "sync_status": "SYNCED",
   "tests": [
     {
       "detail": "strict Control Feedback envelope schema valid",
