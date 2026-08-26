@@ -1,0 +1,12 @@
+{
+  "blocker": null,
+  "mission_id": "V2-001H",
+  "next_state": "WAIT_GPT",
+  "receipt_ref": "receipts/runs/V2-001H/20260826T163023Z.json",
+  "remote": "https://github.com/vtcbelgium/othrys-v2.git",
+  "remote_sha": "0172d486963c46f1140e18b00d0efbb4a22e6c62",
+  "repo_sha": "0172d486963c46f1140e18b00d0efbb4a22e6c62",
+  "schema_version": "1.0.0",
+  "sync_status": "SYNCED",
+  "verified_at": "2026-08-26T16:37:18Z"
+}

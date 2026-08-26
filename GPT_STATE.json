@@ -1,20 +1,20 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 35,
+  "sequence": 36,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "9819524b8298d52c1f87ea4655885edd7be311ec",
-  "control_gate": "RUNNING",
+  "remote_head_at_last_verified_read": "0172d486963c46f1140e18b00d0efbb4a22e6c62",
+  "control_gate": "WAIT_GPT",
   "active_mission": {
     "mission_id": "V2-001H",
-    "status": "LOCAL_COMPLETE / SYNC_PENDING",
+    "status": "COMPLETE",
     "issued_label": "V2-001H — BLOCK #2 QUARRY / SELECTION",
     "source": "operator_current_conversation"
   },
-  "last_verified_remote_receipt": "receipts/LATEST.json",
-  "last_verified_receipt_mission": "V2-001G",
-  "last_log_sequence": 26,
-  "last_log_hash": "c2bfceadcafa8820c464ca57427ae5158ddc5bb3f2b3ea4f622af5306b8d8304",
+  "last_verified_remote_receipt": "0172d486963c46f1140e18b00d0efbb4a22e6c62",
+  "last_verified_receipt_mission": "V2-001H",
+  "last_log_sequence": 28,
+  "last_log_hash": "c4304805df9b34f2bebcea5e868225323d2543c393c6ae8e61be285b90d84aee",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -69,7 +69,7 @@
     "tree_digest": "f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e",
     "authority": "selection only"
   },
-  "next_legal_action": "Open V2-001I: independently verify the frozen affiliate-offer specimen, ingest the exact Block into V2, prove the V2-owned copy, then admit/compose only if the bounded mission gates pass.",
+  "next_legal_action": "Open V2-001I: independently verify frozen affiliate-offer@0.1.0 digest, ingest exact bytes into V2, prove V2-owned copy, then admit/compose only if all gates pass.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -188,14 +188,14 @@
     "merge_base": "66c45631781dfce93a4c8628f2a3de70a6bad09c",
     "local_parent": "b65ebba9f13a5e852bb778b33b2eaff6fcfa966b",
     "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
-    "base_sha_for_next_mission": "52d4ff1c31e39a35272f924a6f35b0c2ae612a9e",
+    "base_sha_for_next_mission": "0172d486963c46f1140e18b00d0efbb4a22e6c62",
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
-    "sync_status": "PUSH_PENDING",
+    "sync_status": "SYNCED",
     "push_owner": "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
     "base_sha_verified_this_mission": "52d4ff1c31e39a35272f924a6f35b0c2ae612a9e",
     "base_sha_verification": "V2-001H start/close gate: local HEAD == origin/main == 52d4ff1c31e39a35272f924a6f35b0c2ae612a9e.",
     "closeout_law": "BOOK_OF_GPT law 30 plus the V2-001B.R hard law: no mission is complete until push and remote verify succeed. The delegate has never had GitHub egress, so under a literal reading no delegate mission can reach PASS. Recorded as evidence for GPT; not resolved by the delegate.",
-    "unpushed_commits": "V2-001H local commit not created yet"
+    "unpushed_commits": "NONE"
   },
   "block_state": {
     "capability_blocks_admitted": 1,

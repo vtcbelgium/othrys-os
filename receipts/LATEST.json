@@ -67,11 +67,11 @@
   "next_state": "WAIT_GPT",
   "objective": "Quarry, compare and select the best candidate for Capability Block #2 from the real legacy estate, proving the choice can compose beside Block #1 without redesigning the V2 foundation.",
   "receipt_id": "V2-001H--20260826T163023Z",
-  "remote_sha": null,
-  "repo_sha": null,
+  "remote_sha": "0172d486963c46f1140e18b00d0efbb4a22e6c62",
+  "repo_sha": "0172d486963c46f1140e18b00d0efbb4a22e6c62",
   "result_claimed": "COMPLETE",
   "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
+  "sync_status": "SYNCED",
   "tests": [
     {
       "detail": "9 non-Block-1 candidates inventoried from committed othrys-blocks stock",
