@@ -84,11 +84,11 @@
   "next_state": "WAIT_GPT",
   "objective": "Prove Block #1 composition/mount using the exact V2-canonical block.media.image-prep@0.1.1 specimen in a disposable Oros execution, with an exact lock and removal/absence proof.",
   "receipt_id": "V2-001G--20260826T142845Z",
-  "remote_sha": null,
-  "repo_sha": null,
+  "remote_sha": "9819524b8298d52c1f87ea4655885edd7be311ec",
+  "repo_sha": "9819524b8298d52c1f87ea4655885edd7be311ec",
   "result_claimed": "COMPLETE",
   "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
+  "sync_status": "SYNCED",
   "tests": [
     {
       "detail": "lock + executable identity + 14-file digest exact before runtime",
