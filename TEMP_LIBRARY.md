@@ -75,8 +75,8 @@ Books and Laws are deliberately different artifact classes. Do not call a mechan
     V2-001A.R, runtime-proven by V2-001B.T, superseded after V2-001C repaired two
     defects the aggressive QA suite proved. Record unmodified and still valid evidence.
   - Ledger: `admissions/SUPERSESSION.md`. It is a ledger, not a registry or resolver.
-  - Implementation stays in `othrys-blocks/blocks/media/image-prep`; V2 holds the
-    admission truth, not the code.
+  - Canonical implementation is now `blocks/media/image-prep` inside `othrys-v2` (V2-001F).
+    `othrys-blocks/blocks/media/image-prep` remains provenance/quarry history, not V2 ownership.
   - Candidates are not stock: the other nine directories in `othrys-blocks/blocks` remain
     available legacy stock and are **not** admitted.
 

@@ -1,20 +1,20 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 27,
+  "sequence": 29,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "3f255b116697b02b5d35b692aeac03ad4ae61335",
-  "control_gate": "WAIT_GPT",
+  "remote_head_at_last_verified_read": "6304cebf767eadec14f8201eec95fcbf35c3f74d",
+  "control_gate": "RUNNING",
   "active_mission": {
-    "mission_id": "V2-HUB-QUAL-001",
-    "status": "RUNNING / QUALIFICATION_ONLY",
-    "issued_label": "HUB QUALIFICATION FOR V2 - TEST ONLY",
+    "mission_id": "V2-001F",
+    "status": "LOCAL_COMPLETE / SYNC_PENDING",
+    "issued_label": "V2-001F — APPLY V2 BLOCK HOME + INGEST BLOCK #1",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
-  "last_verified_receipt_mission": "V2-001E.R",
-  "last_log_sequence": 16,
-  "last_log_hash": "54765407be3297a8ea2485e3e8bda802b723c2b8051eaf806a50c0c210467918",
+  "last_verified_receipt_mission": "V2-001F",
+  "last_log_sequence": 18,
+  "last_log_hash": "0b5a24ae2c3c60ae0fe0cbb4dbcd0d9a6dce9e888fa64045c31204895098e587",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -55,9 +55,6 @@
     "gpt_inbox": "UNPROMOTED_INTELLIGENCE_ONLY"
   },
   "known_blockers": [
-    "CANONICAL PATH ANSWERED BY OPERATOR, NOT YET APPLIED (V2-001E.R): the operator ruled V2 a monorepo, active Capability Block implementation under blocks/<domain>/<slug> inside othrys-v2, BLOCKS-HOME-001 superseded FOR V2 ONLY without mutating legacy law, and Block #1's canonical V2 path exactly blocks/media/image-prep. Recorded verbatim in missions/V2-001E.R.json. NOT applied - the mission stopped at the base gate before section 3. V2 law still says what it said",
-    "V2 CANNOT RECONSTRUCT BLOCK #1 (verified V2-001E). The active admission manifest is {path, sha256} only - zero source bytes - and names othrys-blocks b4171d3 as its first reconstruction dependency. Combined with othrys-blocks having no remote, the active admitted Block exists in one place on one machine. The controller's diagnosis is correct; only the prescribed remedy collides with law",
-    "othrys-blocks has NO configured remote. V2 now records an ACTIVE admission whose canonical source (commit b4171d3) exists on exactly one machine and cannot be pushed by anyone. Most serious open blocker",
     "DIGEST_CANONICALIZATION_PENDING - the admitted digest procedure hashes working-tree bytes, so both the 0.1.0 and 0.1.1 digests reproduce only on a checkout that materialises line endings identically (CRLF on Windows). Deliberately not solved in V2-001D",
     "qa/block.media.image-prep/digest.test.mjs pins the live tree to the 0.1.0 admission, so 2 of its 3 tests now fail BY DESIGN. Not edited (V2-001D section 7). The active proof is the separate digest-0.1.1.test.mjs",
     "the delegate has no Windows shell and cannot install Chromium (cdn.playwright.dev 403, network allowlist). All browser evidence is HOST_SUPPLIED_TRUSTED",
@@ -65,8 +62,8 @@
     "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
-  "last_control_decision": "V2-HUB-QUAL-001 Q5 state reconciled: live V2 clean and local HEAD == remote main at 3f255b1. Hub safety repairs remain scratch-only because owning Hub files are dirty.",
-  "next_legal_action": "V2-HUB-QUAL-001 Q5: reproduce current Hub dirty target files in an isolated qualification clone, repair the frozen safety blockers there, rerun negative controls, and record evidence. No live V2 apply.",
+  "last_control_decision": "V2-001F local construction proof accepted: Block #1 is canonical inside othrys-v2 and independently runtime-proven there. Sync remains pending.",
+  "next_legal_action": "Commit and push V2-001F, verify remote equality, stamp the receipt SYNCED, then close to WAIT_GPT. Block #2 remains forbidden until Block #1 composition/mount is proven.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -162,6 +159,16 @@
       "mission_id": "LIFELINE-001",
       "status": "COMPLETE",
       "note": "Private GitHub relay transport proven end-to-end with issue #1; scheduled watcher running; qwen3-builder/Ollama exact scratch diff; result returned through GitHub; live repo mutation disabled."
+    },
+    {
+      "mission_id": "V2-HUB-QUAL-001",
+      "status": "COMPLETE",
+      "note": "Hub qualified as bounded V2 construction/inspection surface; live V2 write remained locked during qualification. Final proof recorded at 6304cebf."
+    },
+    {
+      "mission_id": "V2-001F",
+      "status": "LOCAL_COMPLETE_SYNC_PENDING",
+      "note": "V2 Block-home law applied; exact image-prep 0.1.1 copied into blocks/media/image-prep; digest exact; V2-owned copy passed Node 10/10, browser 29/29, aggressive 18/18. Awaiting commit/push/sync stamp."
     }
   ],
   "git": {
@@ -172,16 +179,16 @@
     "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
     "base_sha_for_next_mission": "48d80ca1415a834a6e414d21a699bcca62ffb229",
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
-    "sync_status": "SYNCED",
+    "sync_status": "PUSH_PENDING",
     "push_owner": "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
-    "base_sha_verified_this_mission": "48d80ca1415a834a6e414d21a699bcca62ffb229",
-    "base_sha_verification": "GPT-MAINT-008: V2 tree clean; local HEAD == git ls-remote origin/main == 48d80ca1415a834a6e414d21a699bcca62ffb229.",
+    "base_sha_verified_this_mission": "6304cebf767eadec14f8201eec95fcbf35c3f74d",
+    "base_sha_verification": "V2-001F start gate: clean tree; local HEAD == git ls-remote origin/main == 6304cebf767eadec14f8201eec95fcbf35c3f74d.",
     "closeout_law": "BOOK_OF_GPT law 30 plus the V2-001B.R hard law: no mission is complete until push and remote verify succeed. The delegate has never had GitHub egress, so under a literal reading no delegate mission can reach PASS. Recorded as evidence for GPT; not resolved by the delegate.",
-    "unpushed_commits": "NONE"
+    "unpushed_commits": "V2-001F local commit not created yet"
   },
   "block_state": {
     "capability_blocks_admitted": 1,
-    "block_2": "FORBIDDEN - foundation question 4 (real runtime evidence) is ANSWERED for the active 0.1.1 specimen, but question 5 (exact Oros mount) is still unresolved. Block #1 is admitted, repaired, runtime-proven and NOT mounted.",
+    "block_2": "FORBIDDEN - Block #1 is canonical in V2 and runtime-proven, but exact Oros composition/mount and absence/removal proof are still unresolved.",
     "control_feedback": {
       "path": "blocks/control_feedback/",
       "classification": "SHARED_SERVICE / PLATFORM_ONLY",
@@ -190,8 +197,8 @@
       "status": "FROZEN_AND_AUDITED (V2-000F), unchanged by V2-001A.R"
     },
     "oros": "othrys-v2 is control plane, not an Oros. The Oros Zero specimen is oros/oros-zero (PENTA-001), referenced and untouched.",
-    "foundation_state": "BLOCK_1_RUNTIME_PROVEN_NOT_MOUNTED (active specimen 0.1.1)",
-    "oros_zero": "oros/oros-zero inspected read-only and unmodified: 7 files, never executed, blueprint binds block_id, version range, package, path, maturity and runtime but NOT the digest or the V2 admission reference. Binding those is the V2-001B section 5 correction and was deliberately not made while section 4 is blocked.",
+    "foundation_state": "BLOCK_1_CANONICAL_IN_V2_RUNTIME_PROVEN_NOT_MOUNTED",
+    "oros_zero": "oros/oros-zero remains a legacy specimen and is untouched. V2-001F closes the source-home/runtime gate only; the next foundation mission must prove an explicit composition/mount before Block #2.",
     "capability_blocks_note": "One Block. Two admission records describing two specimens of it. One active.",
     "active_block_1": {
       "block_id": "block.media.image-prep",
@@ -203,15 +210,16 @@
       "admission_record": "admissions/block.media.image-prep@0.1.1.json",
       "supersession_ledger": "admissions/SUPERSESSION.md",
       "maturity": "REUSABLE - unchanged; a PATCH repair is not a maturity promotion (Book of Blocks 7)",
-      "canonical_source": "othrys-blocks/blocks/media/image-prep @ b4171d3eb3a28acd30a707892dc7db9c73444a82 (branch mission/block-003-extract-001)",
-      "runtime_proof": "LEGION Windows, HOST_SUPPLIED_TRUSTED: node 10/10, canonical browser 29/29, aggressive 18/18; Node 24.18.1 / Playwright 1.62.1 / Chromium 151.0.7922.34; zero failures. The delegate did NOT witness the browser runs",
+      "canonical_source": "othrys-v2/blocks/media/image-prep (canonical since V2-001F); legacy othrys-blocks source retained as provenance",
+      "runtime_proof": "V2-owned copy on LEGION, directly observed by GPT Control: node 10/10, canonical browser 29/29 with real Chromium, aggressive 18/18 with byte-identical canonical QA harness.",
       "delegate_corroboration": "digest exact match; playwright --list enumerates 29 and 18, matching the reported totals; node suite re-run locally 10/10; staged aggressive harness byte-identical to qa/ sources",
       "repair_evidence": "V2-001C - docs/V2-001C/DEFECT_REPAIR.md",
       "digest_proof": "qa/block.media.image-prep/digest-0.1.1.test.mjs (5 tests, Windows-host by construction)",
-      "implementation_in_v2": false,
+      "implementation_in_v2": true,
       "mounted": false,
-      "relocation_status": "NOT RELOCATED - V2-001E stopped at the canonical-path gate. Canonical implementation remains in othrys-blocks; V2 still holds the admission record only (implementation_in_v2 = false).",
-      "reconstructible_from_v2_alone": false
+      "relocation_status": "HOME - exact active 0.1.1 specimen ingested by V2-001F at blocks/media/image-prep; no refactor; legacy source is quarry/provenance.",
+      "reconstructible_from_v2_alone": true,
+      "current_canonical_home": "blocks/media/image-prep"
     },
     "block_1_historical_0_1_0": {
       "block_id": "block.media.image-prep",

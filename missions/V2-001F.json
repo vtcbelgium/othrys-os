@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001F",
+  "objective": "Apply the already-recorded V2 monorepo Block-home decision and ingest the exact active block.media.image-prep@0.1.1 specimen into othrys-v2/blocks/media/image-prep without behaviour change.",
+  "delegate": "GPT_CONTROL_HOST_MECHANICAL_COPY",
+  "issued_by": "GPT_CONTROL",
+  "issued_at": "2026-08-26T09:29:00Z",
+  "constraints": [
+    "base must be clean and local HEAD must equal origin/main before mutation",
+    "source must match the active 0.1.1 admission manifest and digest exactly",
+    "copy only the 14 admitted Block files; no node_modules, test-results, .git or unrelated quarry files",
+    "no Block #2, no Oros mount, no registry, no resolver, no refactor, no other Block",
+    "do not mutate legacy repositories",
+    "temporary test dependencies must not enter canonical V2 source",
+    "record V2-only supersession of legacy Block-home ownership without mutating legacy law"
+  ],
+  "expected_proof": [
+    "source 14-file manifest matches active admission exactly",
+    "V2 destination digest equals 48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+    "node contract suite passes 10/10",
+    "canonical Chromium suite passes 29/29",
+    "existing aggressive V2 suite passes 18/18 unchanged",
+    "Git diff contains only V2-001F-authorized files",
+    "canonical commit is pushed and remote SHA independently matches"
+  ]
+}

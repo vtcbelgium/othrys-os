@@ -344,5 +344,25 @@
     "runtime",
     "promotion engine",
     "version resolver"
-  ]
+  ],
+  "current_canonical_home": {
+    "status": "CANONICAL_V2_SOURCE",
+    "established_by": "V2-001F",
+    "repository": "vtcbelgium/othrys-v2",
+    "path": "blocks/media/image-prep",
+    "absolute_path_on_legion": "C:\\Users\\othry\\Projects\\othrys-v2\\blocks\\media\\image-prep",
+    "package_tree_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+    "file_count": 14,
+    "reconstructible_from_v2_alone": true,
+    "runtime_proof": {
+      "environment": "LEGION Windows host via GPT Control / Remote Desktop Commander",
+      "node_contract": "10/10 PASS",
+      "canonical_browser": "29/29 PASS with real Chromium",
+      "aggressive_qa": "18/18 PASS; staged harness byte-identical to canonical V2 QA",
+      "evidence_class": "HOST_DIRECTLY_OBSERVED_BY_GPT_CONTROL"
+    },
+    "legacy_source_role": "PROVENANCE / QUARRY / HISTORICAL SOURCE ONLY",
+    "legacy_source": "othrys-blocks/blocks/media/image-prep @ b4171d3eb3a28acd30a707892dc7db9c73444a82",
+    "legacy_mutation": "NONE"
+  }
 }

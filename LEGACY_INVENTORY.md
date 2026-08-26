@@ -656,7 +656,7 @@ Canonical V2 repo: `vtcbelgium/othrys-v2`.
 
 ## 22.1 `block.media.image-prep` — active `v0.1.1`, superseded `v0.1.0`
 
-- [ ] family/path: `othrys-blocks/blocks/media/image-prep`.
+- [x] canonical V2 path: `othrys-v2/blocks/media/image-prep`; legacy source/provenance: `othrys-blocks/blocks/media/image-prep`.
 - [ ] stateless image preparation capability.
 - [ ] operations: downscale, JPEG normalize, square compose; optional background removal Bridge per doctrine.
 - [ ] browser/Chromium Canvas runtime requirement.
@@ -665,7 +665,7 @@ Canonical V2 repo: `vtcbelgium/othrys-v2`.
 - [ ] provenance from VTC extraction.
 - [ ] second consumer `oros-image-prep-transplant` proved reuse; historical classification REUSABLE.
 - [x] **ACTIVE ADMITTED SPECIMEN: `0.1.1`**, digest `48afa7ac…7b3b55bd`, promoted by V2-001D.
-  `RUNTIME_PROVEN` on LEGION: node 10/10, canonical browser 29/29, aggressive 18/18.
+  `RUNTIME_PROVEN` on the V2-owned copy by V2-001F: node 10/10, canonical browser 29/29, aggressive 18/18.
 - [x] `0.1.0` (digest `32b34548…d363d7b`) is **HISTORICAL / SUPERSEDED** — still valid
   evidence, record unmodified, reconstructible from `othrys-blocks` `09efbc70`.
   Ledger: `admissions/SUPERSESSION.md`.
@@ -869,7 +869,7 @@ pointer to this one. Paths are under `C:\Users\othry\Projects\`.
 | Hephaestus Block Forge | `othrys-hub-oros-composition-law-001/docs/OROS-COMPOSITION-LAW-001/HEPHAESTUS-BLOCK-FORGE.md` | ACCEPTED packet, worktree only |
 | ADR-0050 Oros & Constellation Ratification | `othrys-core-windows/titan/adr/ADR-0050-oros-constellation-ratification.md` | **Accepted Constitutional Law** (L4, 2026-07-19) |
 | othrys-blocks conventions | `othrys-blocks/docs/CONVENTION.md` | ACTIVE physical/identity law |
-| Specimen Block | `othrys-blocks/blocks/media/image-prep/` | **ADMITTED INTO V2** as Block #1. **Active `0.1.1`**, digest `48afa7ac…7b3b55bd`, record `admissions/block.media.image-prep@0.1.1.json` (V2-001D). `0.1.0` (`32b34548…d363d7b`, V2-001A.R) is HISTORICAL / SUPERSEDED; both records kept. Implementation stays here; V2 copied nothing |
+| Specimen Block | `othrys-v2/blocks/media/image-prep/` | **CANONICAL V2 Block #1 source** since V2-001F. Active `0.1.1`, digest `48afa7ac…7b3b55bd`; legacy `othrys-blocks` source retained as provenance/quarry. `0.1.0` remains HISTORICAL / SUPERSEDED |
 | Provisional Block Passport | `othrys-hub/docs/VTC-BLOCK-CONTRACT-001/PROVISIONAL-BLOCK-PASSPORT.md` | Documentation checklist only |
 | Oros Zero specimen | `oros/oros-zero/` | IMPLEMENTED (PENTA-001, 2026-08-23). Referenced, never recreated or modified |
 

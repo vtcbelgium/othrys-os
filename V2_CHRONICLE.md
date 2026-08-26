@@ -459,3 +459,13 @@ only after success, and this was not success.
 
 Lesson: **when an instruction and the law disagree, the delegate's job is to make the
 disagreement legible — not to pick a winner.**
+
+## CH-0019 — Block #1 comes home
+
+V2-001F applied the operator-ratified V2 monorepo Block-home rule and copied exactly the active admitted `block.media.image-prep@0.1.1` specimen into `blocks/media/image-prep`. The source was not trusted by directory name: all fourteen per-file hashes matched the active admission manifest and the bytewise manifest digest recomputed to `48afa7ac…7b3b55bd` before copy and again after testing.
+
+The V2-owned copy then earned its own runtime evidence on LEGION: Node contract **10/10**, canonical Playwright/real Chromium **29/29**, and the existing aggressive V2 harness **18/18**. The aggressive harness was staged temporarily under excluded `node_modules` and verified byte-identical to the canonical QA source; temporary dependencies/results were removed before the final digest check.
+
+The V2-001D admission's original legacy source record remains historical provenance. V2-001F adds current canonical-home truth instead of rewriting where the specimen came from. `othrys-blocks` is now quarry/provenance for this Block, not a reconstruction dependency for active V2. Block #1 is still **not mounted in an Oros**, so Block #2 remains forbidden.
+
+Lesson: **migration is complete only when the new canonical copy survives the same adversary and can reconstruct itself without the quarry.**

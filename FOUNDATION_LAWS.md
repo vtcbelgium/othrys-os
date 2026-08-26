@@ -1,10 +1,13 @@
 # OTHRYS V2 FOUNDATION LAWS
 
 **Status:** ACTIVE FOUNDATION LAW  
-**Scope:** empty-house stage: **no canonical Block is admitted yet**, before Block #1  
+**Scope:** Block #1 is admitted; its canonical V2 implementation/home and first composition proof are the active foundation work. **Block #2 remains forbidden until composition is proven.**
 **Authority:** subordinate to accepted OTHRYS constitutional canon and `BOOK_OF_GPT.md`; binding on V2 foundation work.
 
 These laws do not invent a new Block architecture. They make the recovered OTHRYS Block/Oros law operationally strict enough that the second Block cannot force a redesign.
+
+### V2 CANONICAL BLOCK HOME — OPERATOR-RATIFIED
+For V2 only, `othrys-v2` is the canonical monorepo. Active canonical Capability Block implementation lives under `blocks/<domain>/<slug>`. Legacy repositories remain quarry, provenance and historical source; this V2 ownership rule supersedes legacy `BLOCKS-HOME-001` **for V2 only** and does not rewrite legacy law. An Oros consumes the one canonical V2 Block source; no per-Oros copy or fork is permitted.
 
 ## 1. CANON BEFORE MECHANISM
 Before adding foundation code, inspect `LEGACY_INVENTORY.md` and the cited Block/Oros sources. Reuse or extract existing law and code before inventing a parallel mechanism.

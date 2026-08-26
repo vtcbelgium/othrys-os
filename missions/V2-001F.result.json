@@ -1,5 +1,117 @@
 {
-  "blocker": null,
+  "created_at": "2026-08-26T10:58:33Z",
+  "files_changed": [
+    {
+      "path": "blocks/media/image-prep/BLOCK.md",
+      "change": "added",
+      "sha256": "0e06852e1a88527ad3ba74a36450c9a63078c3e2f59dd3602bfd81517d3e5129"
+    },
+    {
+      "path": "blocks/media/image-prep/README.md",
+      "change": "added",
+      "sha256": "b53e4e88da2db0a612ef161292c9c55bab0af7e18b3e933a2373b08c7c680d25"
+    },
+    {
+      "path": "blocks/media/image-prep/package.json",
+      "change": "added",
+      "sha256": "71ffa20b5ac6aa6d3f2e125ea5e85c7c3e65d740e581de1041a7c09bca96d999"
+    },
+    {
+      "path": "blocks/media/image-prep/playwright.config.js",
+      "change": "added",
+      "sha256": "26c577c2027f56764c0e975a73423c6b50eb2bdeb820697526820391deb578c9"
+    },
+    {
+      "path": "blocks/media/image-prep/src/config.js",
+      "change": "added",
+      "sha256": "f18777fff69dfe5f14fae5b724e52e13905d479f492dd05f69305f7e5b6f261c"
+    },
+    {
+      "path": "blocks/media/image-prep/src/errors.js",
+      "change": "added",
+      "sha256": "846c525f0a35264b97bd8e572d3038f8435fe1620fe6a85a7f16b47f8a7c9ece"
+    },
+    {
+      "path": "blocks/media/image-prep/src/index.js",
+      "change": "added",
+      "sha256": "c584ea2a7ab6d90689b6c6ad387a1b9d55596b3748f14568b4c04cef61ccca75"
+    },
+    {
+      "path": "blocks/media/image-prep/src/prepareImage.js",
+      "change": "added",
+      "sha256": "22cdf7e52ae8de816cb99d8257673071b1de8073d19606b126d77084623cd228"
+    },
+    {
+      "path": "blocks/media/image-prep/tests/browser/harness/bgRemove.js",
+      "change": "added",
+      "sha256": "f13fce8e52c9df7dc8aa1fc83a4079f9f6766c6a9cb4345c44ef645496cdcb2f"
+    },
+    {
+      "path": "blocks/media/image-prep/tests/browser/harness/index.html",
+      "change": "added",
+      "sha256": "1f68d0a8531e48bc662ba8e6947b9f10475586a7b4af7c4bc7286daec83c43bc"
+    },
+    {
+      "path": "blocks/media/image-prep/tests/browser/image-prep.spec.js",
+      "change": "added",
+      "sha256": "76201f8f4f2c97e31fb0164c097c4a7b8ad26d7a4ecbe8a3ef995ebb8701b2cb"
+    },
+    {
+      "path": "blocks/media/image-prep/tests/browser/origin-oracle.js",
+      "change": "added",
+      "sha256": "d52600ad49c62b8729de857bdc34217d86140d70e06c5d3bfc6491ff10288590"
+    },
+    {
+      "path": "blocks/media/image-prep/tests/browser/serve.mjs",
+      "change": "added",
+      "sha256": "3512a0f9a1c5d1a640106436e9d473e660e665b5d55742b0ca954154a8535d8e"
+    },
+    {
+      "path": "blocks/media/image-prep/tests/node/contract.test.js",
+      "change": "added",
+      "sha256": "b1a456842bb3d4a6e552cf1fb602818eb249b441c9c7368796b8b89b1acc1060"
+    },
+    {
+      "path": "FOUNDATION_LAWS.md",
+      "change": "modified",
+      "sha256": "6fe6750cb617a1aec3646999879051c9c020a5cabcc80df7d909e18e710235e1"
+    },
+    {
+      "path": "admissions/block.media.image-prep@0.1.1.json",
+      "change": "modified",
+      "sha256": "be23597085e51a1ac3e3ee12bbe152ccfc9e449ff1b03c0929636c252e6c28dc"
+    },
+    {
+      "path": "LEGACY_INVENTORY.md",
+      "change": "modified",
+      "sha256": "590994d0503857afd7bc8b4eff18b9e76b0988ac154f3d3fc2932a2bee4e5bd0"
+    },
+    {
+      "path": "TEMP_LIBRARY.md",
+      "change": "modified",
+      "sha256": "18c00f3e83bcaf4ec713bdb0d8082deda9eff30148fa53e58a8bb80b6613a72d"
+    },
+    {
+      "path": "V2_CHRONICLE.md",
+      "change": "modified",
+      "sha256": "b800319360ea57d1265f6f05f19e733096ab5b6d1f91327f1a86438fca9b560a"
+    },
+    {
+      "path": "GPT_LOG.jsonl",
+      "change": "modified",
+      "sha256": "0e474b533bf38abdb3d34057613d8f5bbd47059c7bfb94f9eb823074b26ac8d5"
+    },
+    {
+      "path": "GPT_STATE.json",
+      "change": "modified",
+      "sha256": "d0262ccd9501e0cff3045ca1d5a749ca8b2bf7559b599288cbd678f5b5e7b410"
+    },
+    {
+      "path": "missions/V2-001F.json",
+      "change": "added",
+      "sha256": "861b523a1b73185b5767c3dbdf214fa30ef32d234d230af63486d607e593c125"
+    }
+  ],
   "commands_run": [
     {
       "cmd": "base gate: git status + local HEAD + git ls-remote origin/main",
@@ -26,9 +138,33 @@
       "exit_code": 0
     }
   ],
-  "created_at": "2026-08-26T10:58:33Z",
-  "delegate": "GPT_CONTROL_HOST_MECHANICAL_COPY",
-  "envelope_ref": "missions/V2-001F.json",
+  "tests": [
+    {
+      "name": "mission envelope",
+      "result": "pass",
+      "detail": "strict Control Feedback envelope schema valid"
+    },
+    {
+      "name": "specimen identity",
+      "result": "pass",
+      "detail": "14 files; digest exact 48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd before copy and after tests"
+    },
+    {
+      "name": "node contract",
+      "result": "pass",
+      "detail": "10/10 on V2-owned copy"
+    },
+    {
+      "name": "canonical browser",
+      "result": "pass",
+      "detail": "29/29 with real Chromium on V2-owned copy"
+    },
+    {
+      "name": "aggressive QA",
+      "result": "pass",
+      "detail": "18/18; staged harness byte-identical to canonical V2 QA source"
+    }
+  ],
   "evidence": [
     "V2 start base local HEAD == origin/main == 6304cebf767eadec14f8201eec95fcbf35c3f74d and tree clean",
     "active admission manifest matched source specimen exactly before copy",
@@ -37,152 +173,6 @@
     "legacy othrys-blocks specimen was not mutated",
     "Block #1 remains not mounted; Block #2 remains forbidden"
   ],
-  "files_changed": [
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/BLOCK.md",
-      "sha256": "0e06852e1a88527ad3ba74a36450c9a63078c3e2f59dd3602bfd81517d3e5129"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/README.md",
-      "sha256": "b53e4e88da2db0a612ef161292c9c55bab0af7e18b3e933a2373b08c7c680d25"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/package.json",
-      "sha256": "71ffa20b5ac6aa6d3f2e125ea5e85c7c3e65d740e581de1041a7c09bca96d999"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/playwright.config.js",
-      "sha256": "26c577c2027f56764c0e975a73423c6b50eb2bdeb820697526820391deb578c9"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/src/config.js",
-      "sha256": "f18777fff69dfe5f14fae5b724e52e13905d479f492dd05f69305f7e5b6f261c"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/src/errors.js",
-      "sha256": "846c525f0a35264b97bd8e572d3038f8435fe1620fe6a85a7f16b47f8a7c9ece"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/src/index.js",
-      "sha256": "c584ea2a7ab6d90689b6c6ad387a1b9d55596b3748f14568b4c04cef61ccca75"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/src/prepareImage.js",
-      "sha256": "22cdf7e52ae8de816cb99d8257673071b1de8073d19606b126d77084623cd228"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/tests/browser/harness/bgRemove.js",
-      "sha256": "f13fce8e52c9df7dc8aa1fc83a4079f9f6766c6a9cb4345c44ef645496cdcb2f"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/tests/browser/harness/index.html",
-      "sha256": "1f68d0a8531e48bc662ba8e6947b9f10475586a7b4af7c4bc7286daec83c43bc"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/tests/browser/image-prep.spec.js",
-      "sha256": "76201f8f4f2c97e31fb0164c097c4a7b8ad26d7a4ecbe8a3ef995ebb8701b2cb"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/tests/browser/origin-oracle.js",
-      "sha256": "d52600ad49c62b8729de857bdc34217d86140d70e06c5d3bfc6491ff10288590"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/tests/browser/serve.mjs",
-      "sha256": "3512a0f9a1c5d1a640106436e9d473e660e665b5d55742b0ca954154a8535d8e"
-    },
-    {
-      "change": "added",
-      "path": "blocks/media/image-prep/tests/node/contract.test.js",
-      "sha256": "b1a456842bb3d4a6e552cf1fb602818eb249b441c9c7368796b8b89b1acc1060"
-    },
-    {
-      "change": "modified",
-      "path": "FOUNDATION_LAWS.md",
-      "sha256": "6fe6750cb617a1aec3646999879051c9c020a5cabcc80df7d909e18e710235e1"
-    },
-    {
-      "change": "modified",
-      "path": "admissions/block.media.image-prep@0.1.1.json",
-      "sha256": "be23597085e51a1ac3e3ee12bbe152ccfc9e449ff1b03c0929636c252e6c28dc"
-    },
-    {
-      "change": "modified",
-      "path": "LEGACY_INVENTORY.md",
-      "sha256": "590994d0503857afd7bc8b4eff18b9e76b0988ac154f3d3fc2932a2bee4e5bd0"
-    },
-    {
-      "change": "modified",
-      "path": "TEMP_LIBRARY.md",
-      "sha256": "18c00f3e83bcaf4ec713bdb0d8082deda9eff30148fa53e58a8bb80b6613a72d"
-    },
-    {
-      "change": "modified",
-      "path": "V2_CHRONICLE.md",
-      "sha256": "b800319360ea57d1265f6f05f19e733096ab5b6d1f91327f1a86438fca9b560a"
-    },
-    {
-      "change": "modified",
-      "path": "GPT_LOG.jsonl",
-      "sha256": "0e474b533bf38abdb3d34057613d8f5bbd47059c7bfb94f9eb823074b26ac8d5"
-    },
-    {
-      "change": "modified",
-      "path": "GPT_STATE.json",
-      "sha256": "d0262ccd9501e0cff3045ca1d5a749ca8b2bf7559b599288cbd678f5b5e7b410"
-    },
-    {
-      "change": "added",
-      "path": "missions/V2-001F.json",
-      "sha256": "861b523a1b73185b5767c3dbdf214fa30ef32d234d230af63486d607e593c125"
-    }
-  ],
-  "mission_id": "V2-001F",
-  "next_state": "WAIT_GPT",
-  "objective": "Apply the already-recorded V2 monorepo Block-home decision and ingest the exact active block.media.image-prep@0.1.1 specimen into othrys-v2/blocks/media/image-prep without behaviour change.",
-  "receipt_id": "V2-001F--20260826T105833Z",
-  "remote_sha": null,
-  "repo_sha": null,
   "result_claimed": "COMPLETE",
-  "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
-  "tests": [
-    {
-      "detail": "strict Control Feedback envelope schema valid",
-      "name": "mission envelope",
-      "result": "pass"
-    },
-    {
-      "detail": "14 files; digest exact 48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd before copy and after tests",
-      "name": "specimen identity",
-      "result": "pass"
-    },
-    {
-      "detail": "10/10 on V2-owned copy",
-      "name": "node contract",
-      "result": "pass"
-    },
-    {
-      "detail": "29/29 with real Chromium on V2-owned copy",
-      "name": "canonical browser",
-      "result": "pass"
-    },
-    {
-      "detail": "18/18; staged harness byte-identical to canonical V2 QA source",
-      "name": "aggressive QA",
-      "result": "pass"
-    }
-  ]
+  "blocker": null
 }
