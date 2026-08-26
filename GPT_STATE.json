@@ -1,20 +1,20 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 33,
+  "sequence": 35,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "9819524b8298d52c1f87ea4655885edd7be311ec",
-  "control_gate": "WAIT_GPT",
+  "control_gate": "RUNNING",
   "active_mission": {
-    "mission_id": "V2-001G",
-    "status": "COMPLETE",
-    "issued_label": "V2-001G — BLOCK #1 COMPOSITION / MOUNT PROOF",
+    "mission_id": "V2-001H",
+    "status": "LOCAL_COMPLETE / SYNC_PENDING",
+    "issued_label": "V2-001H — BLOCK #2 QUARRY / SELECTION",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
   "last_verified_receipt_mission": "V2-001G",
-  "last_log_sequence": 24,
-  "last_log_hash": "39ec82110d1e84df224e396c3c9cee9691dd831801a8241adc4db0ff8f67458e",
+  "last_log_sequence": 26,
+  "last_log_hash": "c2bfceadcafa8820c464ca57427ae5158ddc5bb3f2b3ea4f622af5306b8d8304",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -62,8 +62,14 @@
     "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
-  "last_control_decision": "V2-001G composition proof accepted locally: exact Block #1 mount, real Talos/Chromium success, removal/tamper/lock/fallback negative controls all PASS.",
-  "next_legal_action": "Open a separate bounded Block #2 selection/quarry mission. Selection only first; no Block #2 implementation or admission until its candidate/specimen is explicitly frozen and proven.",
+  "last_control_decision": {
+    "mission_id": "V2-001H",
+    "decision": "SELECT_BLOCK_2_CANDIDATE",
+    "candidate": "block.monetization.affiliate-offer@0.1.0",
+    "tree_digest": "f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e",
+    "authority": "selection only"
+  },
+  "next_legal_action": "Open V2-001I: independently verify the frozen affiliate-offer specimen, ingest the exact Block into V2, prove the V2-owned copy, then admit/compose only if the bounded mission gates pass.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -182,18 +188,18 @@
     "merge_base": "66c45631781dfce93a4c8628f2a3de70a6bad09c",
     "local_parent": "b65ebba9f13a5e852bb778b33b2eaff6fcfa966b",
     "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
-    "base_sha_for_next_mission": "9819524b8298d52c1f87ea4655885edd7be311ec",
+    "base_sha_for_next_mission": "52d4ff1c31e39a35272f924a6f35b0c2ae612a9e",
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
-    "sync_status": "SYNCED",
+    "sync_status": "PUSH_PENDING",
     "push_owner": "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
-    "base_sha_verified_this_mission": "10ae616f3b5b2a98a151c629ce453bfaf8b73d88",
-    "base_sha_verification": "V2-001G start gate: clean at open; local HEAD == origin/main == 10ae616f3b5b2a98a151c629ce453bfaf8b73d88.",
+    "base_sha_verified_this_mission": "52d4ff1c31e39a35272f924a6f35b0c2ae612a9e",
+    "base_sha_verification": "V2-001H start/close gate: local HEAD == origin/main == 52d4ff1c31e39a35272f924a6f35b0c2ae612a9e.",
     "closeout_law": "BOOK_OF_GPT law 30 plus the V2-001B.R hard law: no mission is complete until push and remote verify succeed. The delegate has never had GitHub egress, so under a literal reading no delegate mission can reach PASS. Recorded as evidence for GPT; not resolved by the delegate.",
-    "unpushed_commits": "controller closeout commit pending after this state write"
+    "unpushed_commits": "V2-001H local commit not created yet"
   },
   "block_state": {
     "capability_blocks_admitted": 1,
-    "block_2": "ELIGIBLE_FOR_SELECTION_ONLY - V2-001G proved Block #1 composition/removal boundary. Separate mission required before any Block #2 admission or implementation.",
+    "block_2": "SELECTED_CANDIDATE_NOT_INGESTED - block.monetization.affiliate-offer@0.1.0, digest f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e. Separate mission required for ingest/admission/composition.",
     "control_feedback": {
       "path": "blocks/control_feedback/",
       "classification": "SHARED_SERVICE / PLATFORM_ONLY",
@@ -252,7 +258,18 @@
     },
     "technical_debt": [
       "DIGEST_CANONICALIZATION_PENDING - see known_blockers"
-    ]
+    ],
+    "block_2_candidate": {
+      "block_id": "block.monetization.affiliate-offer",
+      "block_version": "0.1.0",
+      "package_tree_digest": "f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e",
+      "quarry_path": "othrys-blocks/blocks/monetization/affiliate-offer",
+      "maturity": "REUSABLE",
+      "selected_by": "V2-001H",
+      "implementation_in_v2": false,
+      "admitted": false,
+      "mounted": false
+    }
   },
   "control_feedback": {
     "classification": "SHARED_SERVICE / PLATFORM_ONLY",

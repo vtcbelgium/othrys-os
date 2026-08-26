@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001H",
+  "objective": "Quarry, compare and select the best candidate for Capability Block #2 from the real legacy estate, proving the choice can compose beside Block #1 without redesigning the V2 foundation.",
+  "delegate": "GPT_CONTROL_READ_ONLY_QUARRY_WITH_OPTIONAL_EXPLICIT_LOCAL_BUILDER_PROBES",
+  "issued_by": "GPT_CONTROL",
+  "issued_at": "2026-08-26T15:21:46Z",
+  "constraints": [
+    "SELECTION/QUARRY ONLY; no Block #2 implementation, ingest, admission or canonical source mutation",
+    "legacy repos are read-only quarry; do not repair the old Hub unless a read-only probe is impossible without it",
+    "inventory competing implementations before ranking; do not pick from memory",
+    "candidate must be a coherent PRODUCT Capability Block, not platform/control/service machinery",
+    "prefer reuse/extraction of proven stock over invention",
+    "score value to clean V2 Hub, isolation, dependency count, authority risk, portability, existing proof quality and composition value",
+    "candidate must plausibly compose beside Block #1 without changing Foundation Laws",
+    "no resolver, registry, package manager, marketplace, new Titan or broad architecture"
+  ],
+  "expected_proof": [
+    "estate-backed candidate inventory with source paths and competing implementations",
+    "shortlist with explicit scoring and disqualifications",
+    "one frozen Block #2 candidate or an honest NO_SELECTION verdict if evidence is insufficient",
+    "no implementation mutation and clean/synced V2 closeout"
+  ]
+}

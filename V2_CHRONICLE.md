@@ -479,3 +479,11 @@ Removal and tamper controls failed closed before runtime; wrong lock version/dig
 The local builder contributed one bounded repair but did not earn trust by assertion: its first claim was rejected, its second proposal fixed the package-root error, and deterministic review then corrected a CommonJS interop defect before the full matrix passed.
 
 Foundation consequence: Block #2 is no longer forbidden by the composition gate, but selection/ingest remains a separate mission.
+
+## CH-0021 — Block #2 selected from evidence, not appetite
+
+V2-001H inventoried the real Block quarry and froze `block.monetization.affiliate-offer@0.1.0` as the Block #2 candidate. The choice is foundation-weighted: the second Block exists to test composition, so REUSABLE portability evidence outranks feature novelty.
+
+Affiliate-offer has two independent consumers, Node and Chromium proof, same-source/copy-hunt evidence, no generic portability defect, no Block-owned state/secrets/network construction, and explicit fail-closed provider/config boundaries. `visit-tracking` remains RAW because scoped storage authority is unresolved; the seven Study Buddy harvest Blocks remain RAW transition stock.
+
+Selection does not admit or ingest the Block. The exact 18-file quarry specimen is frozen at digest `f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e`; a separate mission must bring it home and prove it beside Block #1 without changing Foundation Laws.

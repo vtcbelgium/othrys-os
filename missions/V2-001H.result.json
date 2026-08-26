@@ -1,0 +1,87 @@
+{
+  "created_at": "2026-08-26T16:30:23Z",
+  "files_changed": [
+    {
+      "path": "GPT_LOG.jsonl",
+      "change": "modified",
+      "sha256": "a15c9284920f6862a426f5b75ee53fd4b7fa9f90d71c5e46ddc8d54348c360f2"
+    },
+    {
+      "path": "GPT_STATE.json",
+      "change": "modified",
+      "sha256": "803d3181ef710d819684fd3caabe78e3bf0f637e8469d9233607cf0beaabb57a"
+    },
+    {
+      "path": "V2_CHRONICLE.md",
+      "change": "modified",
+      "sha256": "5567928f3354ffd37f5f5b4f047042a554e6b311833434f4d13e0a63a9e87bc3"
+    },
+    {
+      "path": "missions/V2-001H.json",
+      "change": "added",
+      "sha256": "1250bf8122ecf86884658533bd5eca22e6032775ca1bff5cf381a7210972d5e6"
+    },
+    {
+      "path": "docs/V2-001H/BLOCK2_SELECTION.md",
+      "change": "added",
+      "sha256": "f6bf1bd78d7693a5a884126ba187987ab6d919b6975c05820ee8d57c8ad6970b"
+    },
+    {
+      "path": "docs/V2-001H/EVIDENCE.json",
+      "change": "added",
+      "sha256": "f2689b79096e1d78f5d48cdb9995513dde3c8b031256aa25cf17717dc1184d20"
+    }
+  ],
+  "commands_run": [
+    {
+      "cmd": "V2-001H base gate and mission envelope validation",
+      "exit_code": 0
+    },
+    {
+      "cmd": "quarry inventory and evidence review",
+      "exit_code": 0
+    },
+    {
+      "cmd": "all legacy Block Node suites",
+      "exit_code": 0
+    },
+    {
+      "cmd": "affiliate second-consumer full npm test with Chromium",
+      "exit_code": 0
+    },
+    {
+      "cmd": "freeze 18-file affiliate-offer specimen digest",
+      "exit_code": 0
+    }
+  ],
+  "tests": [
+    {
+      "name": "candidate inventory",
+      "result": "pass",
+      "detail": "9 non-Block-1 candidates inventoried from committed othrys-blocks stock"
+    },
+    {
+      "name": "all quarry Node suites",
+      "result": "pass",
+      "detail": "provider-router 4/4; event-log 2/2; visit-tracking 18/18; supabase-session 3/3; grounded-retrieval 2/2; source-extraction 3/3; gap-engine 2/2; mastery-ledger 2/2; affiliate-offer 27/27"
+    },
+    {
+      "name": "affiliate second consumer",
+      "result": "pass",
+      "detail": "same-source + copy-hunt + 8/8 Node + 10/10 Chromium; repo clean at 79062a11dcc9333382746cc1c912cba56ef3492a"
+    },
+    {
+      "name": "quarry integrity",
+      "result": "pass",
+      "detail": "candidate verification introduced no quarry mutations; pre-existing image-prep working specimen unchanged"
+    }
+  ],
+  "evidence": [
+    "docs/V2-001H/BLOCK2_SELECTION.md",
+    "docs/V2-001H/EVIDENCE.json",
+    "Foundation Law section 17: Block #2 is the composition test",
+    "selection authorises no ingest/admission/implementation"
+  ],
+  "result_claimed": "COMPLETE",
+  "blocker": null
+}

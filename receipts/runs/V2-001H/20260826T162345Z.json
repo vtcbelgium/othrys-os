@@ -22,7 +22,7 @@
       "exit_code": 0
     }
   ],
-  "created_at": "2026-08-26T16:30:23Z",
+  "created_at": "2026-08-26T16:23:45Z",
   "delegate": "GPT_CONTROL_READ_ONLY_QUARRY_WITH_OPTIONAL_EXPLICIT_LOCAL_BUILDER_PROBES",
   "envelope_ref": "missions/V2-001H.json",
   "evidence": [
@@ -55,7 +55,7 @@
     {
       "change": "added",
       "path": "docs/V2-001H/BLOCK2_SELECTION.md",
-      "sha256": "f6bf1bd78d7693a5a884126ba187987ab6d919b6975c05820ee8d57c8ad6970b"
+      "sha256": "1b6266c604522895b9cb8f1535954414a595e4d58b99247a9b4abb5757191379"
     },
     {
       "change": "added",
@@ -66,7 +66,7 @@
   "mission_id": "V2-001H",
   "next_state": "WAIT_GPT",
   "objective": "Quarry, compare and select the best candidate for Capability Block #2 from the real legacy estate, proving the choice can compose beside Block #1 without redesigning the V2 foundation.",
-  "receipt_id": "V2-001H--20260826T163023Z",
+  "receipt_id": "V2-001H--20260826T162345Z",
   "remote_sha": null,
   "repo_sha": null,
   "result_claimed": "COMPLETE",

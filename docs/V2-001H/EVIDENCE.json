@@ -1,0 +1,32 @@
+{
+  "schema": "othrys.v2.block2-selection-evidence.v1",
+  "mission_id": "V2-001H",
+  "created_at": "2026-08-26T16:23:45Z",
+  "selection": {
+    "block_id": "block.monetization.affiliate-offer",
+    "block_version": "0.1.0",
+    "package": "@othrys-blocks/monetization-affiliate-offer",
+    "quarry_path": "othrys-blocks/blocks/monetization/affiliate-offer",
+    "file_count": 18,
+    "tree_digest": "f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e",
+    "maturity": "REUSABLE",
+    "extraction_commit": "b79da66293acdb816004c555e1f4f4e4bbbfba3f",
+    "transplant_commit": "37edc9ffb64e679d5ccec7ebbefeacb1d37e4f4d"
+  },
+  "proof": {
+    "origin_node": "27/27 PASS",
+    "origin_chromium": "8/8 PASS",
+    "origin_vtc_targeted": "17 PASS",
+    "second_consumer_node": "8/8 PASS",
+    "second_consumer_chromium": "10/10 PASS",
+    "same_source": "PASS",
+    "copy_hunt": "PASS",
+    "current_second_consumer_rerun": "PASS",
+    "quarry_status_unchanged": true
+  },
+  "deferred": {
+    "block.analytics.visit-tracking": "RAW; scoped INSERT authority/retention truth unresolved",
+    "study_buddy_harvest": "seven RAW transition Blocks; origin cutover and independent transplant pending"
+  },
+  "authority": "SELECTION_ONLY_NO_INGEST_NO_ADMISSION_NO_IMPLEMENTATION"
+}
