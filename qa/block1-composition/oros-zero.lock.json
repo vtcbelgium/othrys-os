@@ -1,0 +1,56 @@
+{
+  "schema": "oros.lock@v0",
+  "blueprint_id": "oros-zero",
+  "blueprint_revision": "1.0.0",
+  "producing_mission": "V2-001G",
+  "producing_report": "qa/block1-composition/V2-001G.report.json",
+  "checks": {
+    "mount_preflight": "PASS",
+    "runtime": "PASS",
+    "mount_postflight": "PASS",
+    "absence": "PASS",
+    "tamper": "PASS",
+    "lock_binding": "PASS",
+    "legacy_fallback": "PASS"
+  },
+  "resolved_blocks": [
+    {
+      "block_id": "block.media.image-prep",
+      "block_version": "0.1.1",
+      "package": "@othrys-blocks/media-image-prep",
+      "package_tree_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+      "provenance": {
+        "repository": "vtcbelgium/othrys-v2",
+        "path": "blocks/media/image-prep",
+        "source_commit": "819b99e9aa81f8b9e234ca239c134b9635e26dd1",
+        "resolved_at_repo_head": "10ae616f3b5b2a98a151c629ce453bfaf8b73d88"
+      },
+      "maturity_at_resolution": "REUSABLE",
+      "provides": [
+        "prepareImage",
+        "prepare.downscale",
+        "prepare.normalize.jpeg",
+        "prepare.square"
+      ],
+      "requires": [
+        {
+          "edge": "browser.canvas2d",
+          "provider": "Chromium Canvas 2D"
+        }
+      ],
+      "optional_selected": [],
+      "bridges": [],
+      "adapters": [
+        "qa/block1-composition/image-prep-runner.mjs"
+      ],
+      "config_refs": [
+        "flow/oros-zero.flow.json#/config"
+      ],
+      "evidence_ids": [
+        "admissions/block.media.image-prep@0.1.1.json",
+        "receipts/runs/V2-001F/20260826T105833Z.json",
+        "qa/block1-composition/V2-001G.report.json"
+      ]
+    }
+  ]
+}

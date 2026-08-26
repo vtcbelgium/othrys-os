@@ -1,0 +1,134 @@
+{
+  "created_at": "2026-08-26T14:28:45Z",
+  "files_changed": [
+    {
+      "path": "FOUNDATION_LAWS.md",
+      "change": "modified",
+      "sha256": "9207296e87dab695e8534083ff4e35743bc441393c4b5aed0f84a581e0a58e47"
+    },
+    {
+      "path": "GPT_LOG.jsonl",
+      "change": "modified",
+      "sha256": "9876be19df5b18c2d0cf88e1224ebadfcb26718428bc566d39576f2fc96d7003"
+    },
+    {
+      "path": "GPT_STATE.json",
+      "change": "modified",
+      "sha256": "4c4e87d36fc2afc6b4815ab2eed037128abdde033bd86f79a84bcc72c9c05730"
+    },
+    {
+      "path": "V2_CHRONICLE.md",
+      "change": "modified",
+      "sha256": "88e80c0d0f291ad2e6940d21d8d90016c2a693ae7e49118a769d4762200428a5"
+    },
+    {
+      "path": "missions/V2-001G.json",
+      "change": "added",
+      "sha256": "1652496027082fa244db7c7a7580a97779c4732ca0174a3f9bba709b38a2e94e"
+    },
+    {
+      "path": "qa/block1-composition/image-prep-runner.mjs",
+      "change": "added",
+      "sha256": "5b255b59a87805bf66588332b283b64afb2b7f5a97feee6e608ba2c42cf8a62d"
+    },
+    {
+      "path": "qa/block1-composition/verify-mount.mjs",
+      "change": "added",
+      "sha256": "0cc83e2860cef92f254e771f0e1d751601e76964345e0a46a50182d4d7592266"
+    },
+    {
+      "path": "qa/block1-composition/oros-zero.lock.json",
+      "change": "added",
+      "sha256": "2acc17da74ede91d09ed01280948f5de2794521d7910151d550788c85e3e82fc"
+    },
+    {
+      "path": "qa/block1-composition/V2-001G.report.json",
+      "change": "added",
+      "sha256": "03c4d541b6248fbe081a027ff63e1fc5b2b8d1f54ba7ea247e89c95930c95643"
+    }
+  ],
+  "commands_run": [
+    {
+      "cmd": "V2-001G base gate: local HEAD == origin/main; mission envelope frozen",
+      "exit_code": 0
+    },
+    {
+      "cmd": "qwen3-builder bounded runner proposal + external review",
+      "exit_code": 0
+    },
+    {
+      "cmd": "fresh disposable V2/Oros composition matrix with real Talos and Chromium",
+      "exit_code": 0
+    },
+    {
+      "cmd": "live canonical verify-mount with final oros-zero.lock.json",
+      "exit_code": 0
+    }
+  ],
+  "tests": [
+    {
+      "name": "exact mount preflight",
+      "result": "pass",
+      "detail": "lock + executable identity + 14-file digest exact before runtime"
+    },
+    {
+      "name": "real Talos composition",
+      "result": "pass",
+      "detail": "disposable Oros Zero mission SUCCEEDED through legacy Talos with real Chromium and V2-canonical Block"
+    },
+    {
+      "name": "mount postflight",
+      "result": "pass",
+      "detail": "same exact 14-file digest and identity reverified after runtime"
+    },
+    {
+      "name": "runtime output",
+      "result": "pass",
+      "detail": "prepared JPEG produced; mission state SUCCEEDED"
+    },
+    {
+      "name": "Block absent",
+      "result": "pass",
+      "detail": "BLOCK_MISSING before mount"
+    },
+    {
+      "name": "Block tamper",
+      "result": "pass",
+      "detail": "DIGEST_MISMATCH on altered canonical bytes"
+    },
+    {
+      "name": "wrong lock version",
+      "result": "pass",
+      "detail": "LOCK_MISMATCH for 0.1.0"
+    },
+    {
+      "name": "wrong lock digest",
+      "result": "pass",
+      "detail": "LOCK_MISMATCH for forged digest"
+    },
+    {
+      "name": "no legacy fallback",
+      "result": "pass",
+      "detail": "with V2 Block removed and othrys-blocks still present, direct Talos invocation failed instead of falling back"
+    },
+    {
+      "name": "quarry integrity",
+      "result": "pass",
+      "detail": "hashed quarry files and Git status unchanged across matrix"
+    }
+  ],
+  "evidence": [
+    "Block #1 exact identity: block.media.image-prep@0.1.1, package @othrys-blocks/media-image-prep, V2 path blocks/media/image-prep",
+    "Block tree digest 48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd before and after execution",
+    "qwen3-builder attempt 1 rejected: model claimed done but only deleted comments",
+    "qwen3-builder attempt 2 partially accepted: correctly moved Playwright resolution to exact Block package directory",
+    "deterministic review found CJS/ESM interop defect; mechanical createRequire(block package.json).require('playwright').chromium correction applied",
+    "direct corrected runner probe produced a 7829-byte JPEG before the full fresh matrix rerun",
+    "final QA runner SHA-256 5b255b59a87805bf66588332b283b64afb2b7f5a97feee6e608ba2c42cf8a62d",
+    "fresh full matrix rerun passed every positive and negative control",
+    "Block #2 selection becomes eligible only after V2-001G sync closeout; no Block #2 implementation is part of this mission",
+    "pre-commit receipt V2-001G--20260826T141907Z is superseded audit evidence because truth-only QA-runner comments were corrected before canonical commit; no runtime behavior changed"
+  ],
+  "result_claimed": "COMPLETE",
+  "blocker": null
+}

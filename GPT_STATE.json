@@ -1,20 +1,20 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 30,
+  "sequence": 32,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "819b99e9aa81f8b9e234ca239c134b9635e26dd1",
-  "control_gate": "WAIT_GPT",
+  "remote_head_at_last_verified_read": "10ae616f3b5b2a98a151c629ce453bfaf8b73d88",
+  "control_gate": "RUNNING",
   "active_mission": {
-    "mission_id": "V2-001F",
-    "status": "COMPLETE",
-    "issued_label": "V2-001F — APPLY V2 BLOCK HOME + INGEST BLOCK #1",
+    "mission_id": "V2-001G",
+    "status": "LOCAL_COMPLETE / SYNC_PENDING",
+    "issued_label": "V2-001G — BLOCK #1 COMPOSITION / MOUNT PROOF",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "receipts/LATEST.json",
   "last_verified_receipt_mission": "V2-001F",
-  "last_log_sequence": 20,
-  "last_log_hash": "2b9f1cb8b08a617b3dcd1e582d43a6b2ca8bda20ebf45ab8b668aaf9c732305c",
+  "last_log_sequence": 22,
+  "last_log_hash": "d16b0e0c1414d1f58930f411cc5d7fefcb1c7d6f130d0660cc2bdf838aeeeae6",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -62,8 +62,8 @@
     "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
-  "last_control_decision": "V2-001F complete: Block #1 is canonical inside othrys-v2, runtime-proven there, and the mission commit is remotely synced.",
-  "next_legal_action": "Freeze one bounded composition mission for Block #1: prove exact Oros mount/lock, declared Ports, and absence/removal behaviour. Block #2 remains forbidden until that proof passes.",
+  "last_control_decision": "V2-001G composition proof accepted locally: exact Block #1 mount, real Talos/Chromium success, removal/tamper/lock/fallback negative controls all PASS.",
+  "next_legal_action": "Commit and push V2-001G, verify remote equality and stamp receipt SYNCED. After closeout, Block #2 may be selected in a separate bounded mission.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -169,6 +169,11 @@
       "mission_id": "V2-001F",
       "status": "COMPLETE",
       "note": "Canonical V2 Block #1 source established at blocks/media/image-prep; digest exact; Node 10/10, Chromium 29/29, aggressive 18/18; mission commit synced at 819b99e. Not mounted; Block #2 forbidden."
+    },
+    {
+      "mission_id": "V2-001G",
+      "status": "LOCAL_COMPLETE_SYNC_PENDING",
+      "note": "Block #1 exact composition/removal proof PASS; real Talos/Chromium SUCCEEDED; all hostile composition controls PASS."
     }
   ],
   "git": {
@@ -179,16 +184,16 @@
     "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
     "base_sha_for_next_mission": "819b99e9aa81f8b9e234ca239c134b9635e26dd1",
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
-    "sync_status": "MISSION_COMMIT_SYNCED",
+    "sync_status": "PUSH_PENDING",
     "push_owner": "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
-    "base_sha_verified_this_mission": "6304cebf767eadec14f8201eec95fcbf35c3f74d",
-    "base_sha_verification": "V2-001F start gate: clean tree; local HEAD == git ls-remote origin/main == 6304cebf767eadec14f8201eec95fcbf35c3f74d.",
+    "base_sha_verified_this_mission": "10ae616f3b5b2a98a151c629ce453bfaf8b73d88",
+    "base_sha_verification": "V2-001G start gate: clean at open; local HEAD == origin/main == 10ae616f3b5b2a98a151c629ce453bfaf8b73d88.",
     "closeout_law": "BOOK_OF_GPT law 30 plus the V2-001B.R hard law: no mission is complete until push and remote verify succeed. The delegate has never had GitHub egress, so under a literal reading no delegate mission can reach PASS. Recorded as evidence for GPT; not resolved by the delegate.",
-    "unpushed_commits": "Closeout record not yet committed at state-write time; verify after its commit/push without recursive state chasing."
+    "unpushed_commits": "V2-001G local commit not created yet"
   },
   "block_state": {
     "capability_blocks_admitted": 1,
-    "block_2": "FORBIDDEN - Block #1 is canonical in V2 and runtime-proven, but exact Oros composition/mount and absence/removal proof are still unresolved.",
+    "block_2": "ELIGIBLE_FOR_SELECTION_ONLY - V2-001G proved Block #1 composition/removal boundary. Separate mission required before any Block #2 admission or implementation.",
     "control_feedback": {
       "path": "blocks/control_feedback/",
       "classification": "SHARED_SERVICE / PLATFORM_ONLY",
@@ -197,8 +202,8 @@
       "status": "FROZEN_AND_AUDITED (V2-000F), unchanged by V2-001A.R"
     },
     "oros": "othrys-v2 is control plane, not an Oros. The Oros Zero specimen is oros/oros-zero (PENTA-001), referenced and untouched.",
-    "foundation_state": "BLOCK_1_CANONICAL_IN_V2_RUNTIME_PROVEN_NOT_MOUNTED",
-    "oros_zero": "oros/oros-zero remains a legacy specimen and is untouched. V2-001F closes the source-home/runtime gate only; the next foundation mission must prove an explicit composition/mount before Block #2.",
+    "foundation_state": "BLOCK_1_COMPOSITION_PROVEN_BLOCK_2_SELECTION_UNLOCKED",
+    "oros_zero": "Composition proof fixture only. V2-001G proved Block #1 can be mounted through the existing Talos/Oros Zero path without making legacy Oros Zero canonical V2 product code.",
     "capability_blocks_note": "One Block. Two admission records describing two specimens of it. One active.",
     "active_block_1": {
       "block_id": "block.media.image-prep",
@@ -219,7 +224,10 @@
       "mounted": false,
       "relocation_status": "HOME - exact active 0.1.1 specimen ingested by V2-001F at blocks/media/image-prep; no refactor; legacy source is quarry/provenance.",
       "reconstructible_from_v2_alone": true,
-      "current_canonical_home": "blocks/media/image-prep"
+      "current_canonical_home": "blocks/media/image-prep",
+      "composition_proven": true,
+      "composition_proof": "V2-001G: exact 0.1.1/digest lock; disposable Oros Zero via legacy Talos; real Chromium SUCCEEDED; absence/tamper/wrong-lock/no-legacy-fallback all PASS.",
+      "mount_status": "PROVEN_IN_DISPOSABLE_OROS_ZERO; no production Oros mount claimed"
     },
     "block_1_historical_0_1_0": {
       "block_id": "block.media.image-prep",

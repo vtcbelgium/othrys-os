@@ -1,7 +1,7 @@
 # OTHRYS V2 FOUNDATION LAWS
 
 **Status:** ACTIVE FOUNDATION LAW  
-**Scope:** Block #1 is admitted; its canonical V2 implementation/home and first composition proof are the active foundation work. **Block #2 remains forbidden until composition is proven.**
+**Scope:** Block #1 is canonical in V2 and its first composition/removal boundary is proven. **Block #2 may now be selected only by a separate bounded mission; no Block #2 implementation is authorised by this proof.**
 **Authority:** subordinate to accepted OTHRYS constitutional canon and `BOOK_OF_GPT.md`; binding on V2 foundation work.
 
 These laws do not invent a new Block architecture. They make the recovered OTHRYS Block/Oros law operationally strict enough that the second Block cannot force a redesign.

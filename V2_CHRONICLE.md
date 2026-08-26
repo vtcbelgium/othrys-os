@@ -469,3 +469,13 @@ The V2-owned copy then earned its own runtime evidence on LEGION: Node contract 
 The V2-001D admission's original legacy source record remains historical provenance. V2-001F adds current canonical-home truth instead of rewriting where the specimen came from. `othrys-blocks` is now quarry/provenance for this Block, not a reconstruction dependency for active V2. Block #1 is still **not mounted in an Oros**, so Block #2 remains forbidden.
 
 Lesson: **migration is complete only when the new canonical copy survives the same adversary and can reconstruct itself without the quarry.**
+
+## CH-0020 — The first Block actually composes
+
+V2-001G proved the composition boundary rather than adding a second capability. A disposable Oros Zero ran the existing Talos engine against the V2-canonical `block.media.image-prep@0.1.1`, bound by exact path and digest through a proof `oros.lock`. The real Chromium run reached `SUCCEEDED` and produced the prepared JPEG.
+
+Removal and tamper controls failed closed before runtime; wrong lock version/digest were refused; and a deliberate Talos bypass with the V2 Block absent still failed while the legacy `othrys-blocks` quarry remained present. There is no ghost fallback. The Block bytes were reverified after the real run.
+
+The local builder contributed one bounded repair but did not earn trust by assertion: its first claim was rejected, its second proposal fixed the package-root error, and deterministic review then corrected a CommonJS interop defect before the full matrix passed.
+
+Foundation consequence: Block #2 is no longer forbidden by the composition gate, but selection/ingest remains a separate mission.

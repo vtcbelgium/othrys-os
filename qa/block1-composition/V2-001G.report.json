@@ -1,0 +1,163 @@
+{
+  "schema": "othrys.v2.block1-composition-proof.v1",
+  "mission_id": "V2-001G",
+  "base_sha": "10ae616f3b5b2a98a151c629ce453bfaf8b73d88",
+  "block_id": "block.media.image-prep",
+  "block_version": "0.1.1",
+  "package_tree_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+  "canonical_path": "blocks/media/image-prep",
+  "started_at": "2026-08-26T13:47:30Z",
+  "finished_at": "2026-08-26T13:47:34Z",
+  "builder_evidence": {
+    "builder": "qwen3-builder",
+    "attempt_1": "REJECTED - model reported done but only removed comments; causal Playwright-resolution defect remained",
+    "attempt_2": "PARTIAL_ACCEPT - correctly moved Playwright resolution from monorepo root to exact Block package directory",
+    "attempt_2_diff_digest": "c8c03c6698eb678a4182b2b7",
+    "deterministic_review": "FOUND CJS/ESM interop defect: resolve()+dynamic import returned chromium undefined",
+    "deterministic_correction": "Use createRequire(block package.json) and require('playwright').chromium; no model turn required",
+    "direct_runner_probe": "PASS - real Chromium runner produced 7829-byte JPEG before full matrix rerun",
+    "final_runner_sha256": "5b255b59a87805bf66588332b283b64afb2b7f5a97feee6e608ba2c42cf8a62d",
+    "model_claim_is_evidence": false
+  },
+  "results": {
+    "green_preflight": {
+      "pass": true,
+      "rc": 0,
+      "payload": {
+        "ok": true,
+        "code": "MOUNT_VERIFIED",
+        "v2_root": "C:\\Users\\othry\\AppData\\Local\\Temp\\v2_001g_matrix_htd7d8uc\\green-v2",
+        "block_dir": "C:\\Users\\othry\\AppData\\Local\\Temp\\v2_001g_matrix_htd7d8uc\\green-v2\\blocks\\media\\image-prep",
+        "identity": {
+          "block_id": "block.media.image-prep",
+          "block_version": "0.1.1",
+          "package": "@othrys-blocks/media-image-prep"
+        },
+        "package_tree_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+        "file_count": 14,
+        "lock_checked": true,
+        "legacy_fallback": false
+      },
+      "stderr": ""
+    },
+    "green_runtime": {
+      "pass": true,
+      "rc": 0,
+      "verdict": "PASS",
+      "stderr_tail": "v2-001g: intake: submitted=1 idempotent=0 refused=0 missionId=m-87ef60c3-c7d1-4753-96d1-56f2fc93cb52\nv2-001g: report: C:\\Users\\othry\\AppData\\Local\\Temp\\v2_001g_matrix_htd7d8uc\\green-oros\\evidence\\v2-001g-green.report.json\nv2-001g: verdict: PASS (SUCCEEDED)\n"
+    },
+    "green_postflight": {
+      "pass": true,
+      "rc": 0,
+      "payload": {
+        "ok": true,
+        "code": "MOUNT_VERIFIED",
+        "v2_root": "C:\\Users\\othry\\AppData\\Local\\Temp\\v2_001g_matrix_htd7d8uc\\green-v2",
+        "block_dir": "C:\\Users\\othry\\AppData\\Local\\Temp\\v2_001g_matrix_htd7d8uc\\green-v2\\blocks\\media\\image-prep",
+        "identity": {
+          "block_id": "block.media.image-prep",
+          "block_version": "0.1.1",
+          "package": "@othrys-blocks/media-image-prep"
+        },
+        "package_tree_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+        "file_count": 14,
+        "lock_checked": true,
+        "legacy_fallback": false
+      },
+      "stderr": ""
+    },
+    "missing_block": {
+      "pass": true,
+      "rc": 2,
+      "expected": "BLOCK_MISSING",
+      "payload": {
+        "ok": false,
+        "code": "BLOCK_MISSING",
+        "message": "canonical V2 Block is absent: C:\\Users\\othry\\AppData\\Local\\Temp\\v2_001g_matrix_htd7d8uc\\missing-v2\\blocks\\media\\image-prep",
+        "v2Root": "C:\\Users\\othry\\AppData\\Local\\Temp\\v2_001g_matrix_htd7d8uc\\missing-v2",
+        "blockDir": "C:\\Users\\othry\\AppData\\Local\\Temp\\v2_001g_matrix_htd7d8uc\\missing-v2\\blocks\\media\\image-prep"
+      },
+      "stderr": ""
+    },
+    "tampered_block": {
+      "pass": true,
+      "rc": 2,
+      "expected": "DIGEST_MISMATCH",
+      "payload": {
+        "ok": false,
+        "code": "DIGEST_MISMATCH",
+        "message": "canonical V2 Block bytes do not match the admitted specimen",
+        "expected_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+        "actual_digest": "736dd589bf5fde2ba7e7a6b240bcdeef839acfe0cb66fc2e222aa1c55d446794",
+        "file_count": 14
+      },
+      "stderr": ""
+    },
+    "wrong_lock_version": {
+      "pass": true,
+      "rc": 2,
+      "expected": "LOCK_MISMATCH",
+      "payload": {
+        "ok": false,
+        "code": "LOCK_MISMATCH",
+        "message": "oros.lock record disagrees with the frozen/observed composition",
+        "mismatches": [
+          "block_version:0.1.0"
+        ]
+      },
+      "stderr": ""
+    },
+    "wrong_lock_digest": {
+      "pass": true,
+      "rc": 2,
+      "expected": "LOCK_MISMATCH",
+      "payload": {
+        "ok": false,
+        "code": "LOCK_MISMATCH",
+        "message": "oros.lock record disagrees with the frozen/observed composition",
+        "mismatches": [
+          "package_tree_digest:0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      },
+      "stderr": ""
+    },
+    "no_legacy_fallback_runtime": {
+      "pass": true,
+      "rc": 1,
+      "legacy_quarry_present": true,
+      "verdict": "FAIL",
+      "stderr_tail": "v2-001g: intake: submitted=1 idempotent=0 refused=0 missionId=m-531e7db9-f7f7-45a2-8bff-21a8226868a0\nv2-001g: report: C:\\Users\\othry\\AppData\\Local\\Temp\\v2_001g_matrix_htd7d8uc\\missing-oros\\evidence\\v2-001g-missing.report.json\nv2-001g: verdict: FAIL (RETRY_SCHEDULED)\n"
+    },
+    "quarry_unchanged": {
+      "pass": true
+    },
+    "green_output": {
+      "pass": true,
+      "talos_report": "C:\\Users\\othry\\AppData\\Local\\Temp\\v2_001g_matrix_htd7d8uc\\green-oros\\evidence\\v2-001g-green.report.json",
+      "output_exists": true,
+      "mission_state": "SUCCEEDED"
+    },
+    "canonical_live_lock_prewrite": {
+      "pass": true,
+      "rc": 0,
+      "payload": {
+        "ok": true,
+        "code": "MOUNT_VERIFIED",
+        "v2_root": "C:\\Users\\othry\\Projects\\othrys-v2",
+        "block_dir": "C:\\Users\\othry\\Projects\\othrys-v2\\blocks\\media\\image-prep",
+        "identity": {
+          "block_id": "block.media.image-prep",
+          "block_version": "0.1.1",
+          "package": "@othrys-blocks/media-image-prep"
+        },
+        "package_tree_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+        "file_count": 14,
+        "lock_checked": true,
+        "legacy_fallback": false
+      },
+      "stderr": ""
+    }
+  },
+  "verdict": "PASS",
+  "block_2_gate": "UNLOCKABLE_AFTER_MISSION_CLOSEOUT"
+}

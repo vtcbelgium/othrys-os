@@ -18,7 +18,7 @@
       "exit_code": 0
     }
   ],
-  "created_at": "2026-08-26T14:28:45Z",
+  "created_at": "2026-08-26T14:19:07Z",
   "delegate": "GPT_CONTROL_WITH_EXPLICIT_LOCAL_BUILDER_ONLY",
   "envelope_ref": "missions/V2-001G.json",
   "evidence": [
@@ -28,10 +28,9 @@
     "qwen3-builder attempt 2 partially accepted: correctly moved Playwright resolution to exact Block package directory",
     "deterministic review found CJS/ESM interop defect; mechanical createRequire(block package.json).require('playwright').chromium correction applied",
     "direct corrected runner probe produced a 7829-byte JPEG before the full fresh matrix rerun",
-    "final QA runner SHA-256 5b255b59a87805bf66588332b283b64afb2b7f5a97feee6e608ba2c42cf8a62d",
+    "final QA runner SHA-256 cd47feb3e2223287bb2772c0da4f6acda9462191b880d549f211c970f77f7380",
     "fresh full matrix rerun passed every positive and negative control",
-    "Block #2 selection becomes eligible only after V2-001G sync closeout; no Block #2 implementation is part of this mission",
-    "pre-commit receipt V2-001G--20260826T141907Z is superseded audit evidence because truth-only QA-runner comments were corrected before canonical commit; no runtime behavior changed"
+    "Block #2 selection becomes eligible only after V2-001G sync closeout; no Block #2 implementation is part of this mission"
   ],
   "files_changed": [
     {
@@ -62,7 +61,7 @@
     {
       "change": "added",
       "path": "qa/block1-composition/image-prep-runner.mjs",
-      "sha256": "5b255b59a87805bf66588332b283b64afb2b7f5a97feee6e608ba2c42cf8a62d"
+      "sha256": "cd47feb3e2223287bb2772c0da4f6acda9462191b880d549f211c970f77f7380"
     },
     {
       "change": "added",
@@ -77,13 +76,13 @@
     {
       "change": "added",
       "path": "qa/block1-composition/V2-001G.report.json",
-      "sha256": "03c4d541b6248fbe081a027ff63e1fc5b2b8d1f54ba7ea247e89c95930c95643"
+      "sha256": "13d69d3bb8487227fb8abf25ac63027a8b9cf3e455133a4bc081472f4747bf3c"
     }
   ],
   "mission_id": "V2-001G",
   "next_state": "WAIT_GPT",
   "objective": "Prove Block #1 composition/mount using the exact V2-canonical block.media.image-prep@0.1.1 specimen in a disposable Oros execution, with an exact lock and removal/absence proof.",
-  "receipt_id": "V2-001G--20260826T142845Z",
+  "receipt_id": "V2-001G--20260826T141907Z",
   "remote_sha": null,
   "repo_sha": null,
   "result_claimed": "COMPLETE",

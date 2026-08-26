@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-001G",
+  "objective": "Prove Block #1 composition/mount using the exact V2-canonical block.media.image-prep@0.1.1 specimen in a disposable Oros execution, with an exact lock and removal/absence proof.",
+  "delegate": "GPT_CONTROL_WITH_EXPLICIT_LOCAL_BUILDER_ONLY",
+  "issued_by": "GPT_CONTROL",
+  "issued_at": "2026-08-26T11:44:32Z",
+  "constraints": [
+    "NO BLOCK #2; no second Capability Block",
+    "legacy Hub/Core/Oros sources are read-only quarry; no live legacy mutation",
+    "use explicit qwen3-builder only for bounded scratch construction; no hidden fallback",
+    "no resolver, registry, package manager, plugin system, new Titan or broad architecture",
+    "mount must bind exact block id, version 0.1.1, digest 48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd and canonical V2 path",
+    "execution workspace must be disposable; V2 Block source remains immutable during runtime proof",
+    "absence/removal must fail loudly; no ghost execution or fallback to othrys-blocks"
+  ],
+  "expected_proof": [
+    "bounded local-builder scratch proposal for the minimum legacy runner adaptation, externally reviewed before any V2 mutation",
+    "exact oros.lock-style composition record naming V2 source, exact version/digest, ports/config refs/evidence",
+    "real Chromium execution succeeds through the existing Talos/Oros Zero path while consuming the V2-owned Block",
+    "same proof with the canonical Block absent/tampered is refused and cannot fall back to legacy source",
+    "legacy Hub/Core/Oros quarry remains byte/status unchanged and V2 closes synced to GitHub"
+  ]
+}
