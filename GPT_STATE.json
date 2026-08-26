@@ -1,20 +1,20 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 40,
+  "sequence": 41,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "fbb46d75645bd5c5ceef7e0a1e551c6e2400a99e",
-  "control_gate": "RUNNING",
+  "remote_head_at_last_verified_read": "04b03ab902c30f8e5cd3d246573eed3226242e69",
+  "control_gate": "WAIT_GPT",
   "active_mission": {
-    "mission_id": "V2-002A",
-    "status": "LOCAL_COMPLETE / SYNC_PENDING",
-    "issued_label": "V2-002A - TALOS QUARRY QUALIFICATION",
+    "mission_id": "V2-002B",
+    "status": "COMPLETE",
+    "issued_label": "V2-002B - MINIMUM TALOS KERNEL",
     "source": "operator_current_conversation"
   },
-  "last_verified_remote_receipt": "fbb46d75645bd5c5ceef7e0a1e551c6e2400a99e",
-  "last_verified_receipt_mission": "V2-001J",
-  "last_log_sequence": 33,
-  "last_log_hash": "6ac4b9cef04c7ed0dbaa957a838c778a2f3082dc833d3f446a7da8b4cc98cb98",
+  "last_verified_remote_receipt": "04b03ab902c30f8e5cd3d246573eed3226242e69",
+  "last_verified_receipt_mission": "V2-002B",
+  "last_log_sequence": 35,
+  "last_log_hash": "e956bc747c5397b203c4b270ca401758bd2cc25ba384252763e0723b39c90010",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-001J",
-    "decision": "RECONCILE_TWO_BLOCK_FOUNDATION",
-    "authority": "documentary/control truth only"
+    "mission_id": "V2-002B",
+    "decision": "ACCEPT_MINIMUM_TALOS_KERNEL",
+    "authority": "execution kernel only"
   },
-  "next_legal_action": "Commit, push and remote-verify V2-002A; then open V2-002B Talos kernel extraction.",
+  "next_legal_action": "Open V2-002C: attach Legion Hub/qwen3-builder as the first bounded node-neutral Talos Worker.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -196,8 +196,13 @@
     },
     {
       "mission_id": "V2-002A",
-      "status": "LOCAL_COMPLETE_SYNC_PENDING",
-      "note": "Talos minimum extraction boundary qualified; disposable Node probe PASS."
+      "status": "COMPLETE",
+      "note": "Talos minimum extraction boundary qualified; disposable Node probe PASS; synced."
+    },
+    {
+      "mission_id": "V2-002B",
+      "status": "COMPLETE",
+      "note": "Minimum Talos lifecycle/retry/replay kernel extracted; 5/5 Legion tests PASS; synced."
     }
   ],
   "git": {
@@ -206,14 +211,14 @@
     "merge_base": "66c45631781dfce93a4c8628f2a3de70a6bad09c",
     "local_parent": "b65ebba9f13a5e852bb778b33b2eaff6fcfa966b",
     "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
-    "base_sha_for_next_mission": "fbb46d75645bd5c5ceef7e0a1e551c6e2400a99e",
+    "base_sha_for_next_mission": "04b03ab902c30f8e5cd3d246573eed3226242e69",
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
-    "sync_status": "PUSH_PENDING",
+    "sync_status": "SYNCED",
     "push_owner": "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
     "base_sha_verified_this_mission": "092607f8bb3e9c8c74141d15bf22d551c03f567d",
     "base_sha_verification": "V2-001J start gate: local HEAD == origin/main == 092607f8bb3e9c8c74141d15bf22d551c03f567d",
     "closeout_law": "BOOK_OF_GPT law 30 plus the V2-001B.R hard law: no mission is complete until push and remote verify succeed. The delegate has never had GitHub egress, so under a literal reading no delegate mission can reach PASS. Recorded as evidence for GPT; not resolved by the delegate.",
-    "unpushed_commits": "PENDING"
+    "unpushed_commits": "NONE"
   },
   "block_state": {
     "capability_blocks_admitted": 2,

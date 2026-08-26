@@ -57,11 +57,11 @@
   "next_state": "WAIT_GPT",
   "objective": "Extract the minimum Talos kernel into V2 and prove deterministic retry, dead-letter, evidence-gated success, and replay on Legion.",
   "receipt_id": "V2-002B--20260826T195800Z",
-  "remote_sha": null,
-  "repo_sha": null,
+  "remote_sha": "04b03ab902c30f8e5cd3d246573eed3226242e69",
+  "repo_sha": "04b03ab902c30f8e5cd3d246573eed3226242e69",
   "result_claimed": "COMPLETE",
   "schema_version": "1.0.0",
-  "sync_status": "NOT_SYNCED",
+  "sync_status": "SYNCED",
   "tests": [
     {
       "detail": "5/5 Node 24 tests",
