@@ -84,3 +84,31 @@ READ_STATE, RUN_TESTS, BUILD_SCRATCH_PROPOSAL, REVIEW_PROPOSAL, and VERIFIED_APP
 ### Next causal gate
 
 Reconcile the isolated Hub safety repair against the live dirty Hub with provenance. Do not reset, stash, or overwrite unrelated work. Produce one bounded safety patch, run the same hostile/regression suite on the merged live-Hub candidate, then decide whether V2 live Apply can enter a separate certification mission.
+
+<!-- V2-HUB-LIVE-QUAL-CHECKPOINT-20260825-2252 -->
+## Live Hub qualification checkpoint — 2026-08-25 22:52 CEST
+
+- Hostile safety: 15/15 PASS; remote/base binding: 5/5 PASS.
+- Integration: 91 PASS (+1 expected Windows skip); approval/Owner Deliverables: 131 PASS (+3 skips).
+- Ladder FREE-recovery truth: 20/20 PASS; Mission-048 authority truth: 10/10 PASS.
+- Prometheus shutdown/cancellation: 12/12 PASS, including honest refusal for non-cooperative workers.
+- Remote arsenal: Commander primary proven; private GitHub relay independent PROBE_ONLY proven through issue #7.
+- Live V2 Apply/Commit/Push remains LOCKED.
+- Next gate: rerun full 265-test runtime/control sweep, then hardening, real Qwen hostile attack, and disposable V2 Apply attack matrix.
+
+<!-- V2-HUB-LIVE-QUAL-FINAL-20260826 -->
+## Final live-Hub qualification — 2026-08-26
+
+Verdict: **QUALIFIED WITH LIVE-V2 WRITE LOCK**.
+
+The actual live Hub passed the full deterministic regression set, real `qwen3-builder`
+containment, and verified-Apply attack matrix against disposable current-V2 clones.
+The Hub is certified for V2 read/state inspection, tests, scratch proposals, proposal
+review, and verified Apply to disposable clones. Apply/Commit/Push to the live V2
+working tree remain locked until a separate explicit live-write qualification mission.
+
+Final proof: hostile safety 15/15; remote/base 5/5; final smoke 20/20; integration 91;
+approval 131; runtime/control 273; self-hosting/Hephaestus/hardening 87; Ladder 20/20;
+Mission-048 10/10; Prometheus shutdown 12/12; real-Qwen containment PASS; disposable
+verified-Apply matrix PASS including stale digest/base/remote, dirty-target, scope-escape,
+tampered-diff and replay refusal.
