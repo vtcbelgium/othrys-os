@@ -53,3 +53,5 @@
 | 21 | V2-006B | Authority-free Legion -> T590 Command Deck telemetry | COMPLETE |
 
 | 22 | V2-006C | Authenticated tablet Refine intent ingress; pending Trust Canal only | COMPLETE |
+
+| 23 | V2-006D | Tablet Refine intent -> Trust Canal admission receipt; no execution | COMPLETE |

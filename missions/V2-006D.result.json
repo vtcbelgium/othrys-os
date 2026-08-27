@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-006D",
+  "verdict": "PASS",
+  "candidate_sha": "83d4734609a24e214443568435e49297bb638538",
+  "actor": "operator/command-deck",
+  "admission_state": "ADMITTED",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "idempotent_replay": {"created":false,"ledger_lines":1},
+  "t590_canonical_proof": true,
+  "mutation_performed": false,
+  "released": false
+}
