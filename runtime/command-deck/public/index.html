@@ -33,17 +33,18 @@ footer{color:var(--muted);font-size:11px;text-align:center;margin-top:18px}.toke
 <div class="card"><div class="kicker">Factory candidate</div><div id="factory" class="value">—</div><div id="factoryMeta" class="sub"></div></div>
 <div class="card"><div class="kicker">Legion builder node</div><div id="legion" class="value">—</div><div id="legionMeta" class="sub"></div></div>
 <div class="card"><div class="kicker">T590 verifier node</div><div id="node" class="value">—</div><div id="nodeMeta" class="sub"></div></div>
-<div class="card full"><div class="kicker">Operator controls</div><div class="actions"><button disabled>ACCEPT<span class="lock">LOCKED</span></button><button disabled>REFINE<span class="lock">LOCKED</span></button><button disabled>REJECT<span class="lock">LOCKED</span></button><button disabled>EMERGENCY STOP<span class="lock">LOCKED</span></button></div><div class="sub" style="margin-top:10px">Future controls must cross an authenticated Trust Canal. This surface is deliberately incapable of mutation.</div></div>
+<div class="card full"><div class="kicker">Operator controls</div><div class="actions"><button disabled>ACCEPT<span class="lock">LOCKED</span></button><button id="refineBtn">REFINE<span class="lock">INTENT ONLY</span></button><button disabled>REJECT<span class="lock">LOCKED</span></button><button disabled>EMERGENCY STOP<span class="lock">LOCKED</span></button></div><div class="sub" style="margin-top:10px">Refine creates a candidate-bound pending intent only. Execution still requires Trust Canal admission. Accept, Reject and Emergency Stop remain locked.</div></div>
 <div class="card full"><div class="kicker">Recent mission trail</div><ul id="recent"></ul></div>
 </section>
 <footer><span id="refresh">Never refreshed</span> · <span id="mode">READ ONLY</span></footer>
 </main>
 <script>
-const $=id=>document.getElementById(id);let readToken=localStorage.getItem('othrys.deck.read')||'';
+const $=id=>document.getElementById(id);let readToken=localStorage.getItem('othrys.deck.read')||'';let controlToken=localStorage.getItem('othrys.deck.control')||'';let currentFactory=null;
 function text(id,value){$(id).textContent=value==null?'—':String(value)}
 function gate(){ $('tokenGate').classList.toggle('hidden',Boolean(readToken)); }
 $('pairBtn').onclick=()=>{const v=$('tokenInput').value.trim();if(v){readToken=v;localStorage.setItem('othrys.deck.read',v);gate();refresh();}};
 function render(data){
+  currentFactory=data.factory??null;
   text('gate',data.controlGate);text('head',data.head);
   text('mission',data.activeMission?.mission_id);text('missionStatus',data.activeMission?.status);
   text('next',data.nextAction);text('decision',data.lastDecision?.decision);text('authority',data.lastDecision?.authority);
@@ -54,6 +55,16 @@ function render(data){
   const list=$('recent');list.replaceChildren();for(const m of data.recentMissions??[]){const li=document.createElement('li'),row=document.createElement('div'),a=document.createElement('span'),b=document.createElement('span');row.className='mission';a.textContent=m.mission_id??'—';b.textContent=m.status??'—';row.append(a,b);li.append(row);if(m.note){const n=document.createElement('div');n.className='sub';n.textContent=m.note;li.append(n);}list.append(li);}
   $('connection').textContent='LIVE';$('connection').className='pill ok';text('refresh',`Updated ${new Date(data.generatedAt).toLocaleTimeString()}`);
 }
+async function submitRefine(){
+  if(!currentFactory?.candidateCommit){alert('No Factory candidate is waiting.');return;}
+  if(!controlToken){controlToken=(prompt('Enter OTHRYS control token')||'').trim();if(controlToken)localStorage.setItem('othrys.deck.control',controlToken);}
+  if(!controlToken)return;
+  const feedback=(prompt('Refine feedback for this candidate')||'').trim();if(!feedback)return;
+  const r=await fetch('/api/intent',{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':controlToken},body:JSON.stringify({action:'REFINE_REQUEST',candidateCommit:currentFactory.candidateCommit,feedback})});
+  const out=await r.json().catch(()=>({}));if(r.status===401){localStorage.removeItem('othrys.deck.control');controlToken='';alert('Control token rejected.');return;}
+  if(!r.ok){alert(`Intent rejected: ${out.error??r.status}`);return;} alert('Refine intent queued. Trust Canal admission is still required.');
+}
+$('refineBtn').onclick=()=>submitRefine().catch(e=>alert(e.message));
 async function refresh(){if(!readToken)return;try{const r=await fetch('/api/status',{headers:{'X-OTHRYS-DECK-TOKEN':readToken},cache:'no-store'});if(r.status===401){localStorage.removeItem('othrys.deck.read');readToken='';gate();throw new Error('PAIRING REQUIRED');}if(!r.ok)throw new Error(`HTTP ${r.status}`);render(await r.json());}catch(e){$('connection').textContent='OFFLINE';$('connection').className='pill bad';text('refresh',e.message);}}
 gate();refresh();setInterval(refresh,5000);
 if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});

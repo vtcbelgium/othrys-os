@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-006C",
+  "title": "Authenticated tablet refine intent ingress",
+  "base_sha": "4c104feac780bbdaa75f9b592c6d806d6aab823b",
+  "goal": "Allow the Command Deck to submit a bounded REFINE_REQUEST without granting execution authority.",
+  "laws": [
+    "Separate control token from read token.",
+    "Only REFINE_REQUEST is accepted in this mission.",
+    "Candidate commit must match the current Factory candidate.",
+    "Intent is append-only machine-local evidence, not execution.",
+    "No accept/reject/release/shell endpoint.",
+    "Trust Canal admission remains required before any downstream mutation."
+  ]
+}

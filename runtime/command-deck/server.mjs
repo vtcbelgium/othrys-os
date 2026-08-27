@@ -1,6 +1,6 @@
-import http from 'node:http';
-import { readFileSync, existsSync } from 'node:fs';
-import { join, resolve, extname } from 'node:path';
+﻿import http from 'node:http';
+import { readFileSync, existsSync, appendFileSync, mkdirSync } from 'node:fs';
+import { join, resolve, extname, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
@@ -9,6 +9,9 @@ const publicDir=join(import.meta.dirname,'public');
 const token=process.env.OTHRYS_DECK_TOKEN ?? '';
 const port=Number(process.env.OTHRYS_DECK_PORT ?? 8780);
 const bind=process.env.OTHRYS_DECK_BIND ?? '127.0.0.1';
+const controlToken=process.env.OTHRYS_DECK_CONTROL_TOKEN ?? '';
+const intentFile=process.env.OTHRYS_DECK_INTENT_FILE ?? '';
+
 
 function json(path){ return JSON.parse(readFileSync(join(root,path),'utf8')); }
 function gitHead(){
@@ -44,6 +47,21 @@ export async function buildStatus(){
   };
 }
 
+function currentCandidate(){
+  if(!existsSync(join(root,'missions','V2-005A.result.json'))) return null;
+  const f=json('missions/V2-005A.result.json'); return f.product_candidate_commit ?? null;
+}
+function controlAuthorized(req){ return !!controlToken && req.headers['x-othrys-control-token']===controlToken; }
+function persistIntent(body){
+  if(!intentFile) throw new Error('INTENT_STORE_REQUIRED');
+  const action=body?.action, candidateCommit=body?.candidateCommit, feedback=String(body?.feedback??'').trim();
+  if(action!=='REFINE_REQUEST') throw new Error('ACTION_NOT_ALLOWED');
+  if(candidateCommit!==currentCandidate()) throw new Error('CANDIDATE_MISMATCH');
+  if(!feedback||feedback.length>1200) throw new Error('INVALID_FEEDBACK');
+  mkdirSync(dirname(intentFile),{recursive:true});
+  const rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,candidateCommit,feedback,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+  appendFileSync(intentFile,JSON.stringify(rec)+'\n'); return rec;
+}
 export function authorized(req){
   if(!token) return false;
   return req.headers['x-othrys-deck-token']===token;
@@ -62,6 +80,11 @@ function serveStatic(pathname,res){
 }
 export async function handle(req,res){
   const url=new URL(req.url??'/',`http://${req.headers.host??'localhost'}`);
+  if(req.method==='POST'&&url.pathname==='/api/intent'){
+    if(!controlAuthorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
+    let raw=''; for await (const c of req) raw+=c; if(raw.length>4096) return send(res,413,JSON.stringify({ok:false,error:'TOO_LARGE'}));
+    try{return send(res,202,JSON.stringify({ok:true,intent:persistIntent(JSON.parse(raw))}));}catch(e){return send(res,400,JSON.stringify({ok:false,error:e.message}));}
+  }
   if(req.method!=='GET') return send(res,405,JSON.stringify({ok:false,error:'READ_ONLY'}));
   if(url.pathname==='/api/status'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
@@ -77,3 +100,5 @@ export function startServer(){
 }
 
 if(process.env.OTHRYS_DECK_NO_START!=='1') startServer();
+
+

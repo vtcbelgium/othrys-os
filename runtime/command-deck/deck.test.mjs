@@ -12,7 +12,9 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/viewport-fit=cover/);
   assert.doesNotMatch(html,/https?:\/\//);
   assert.doesNotMatch(html,/innerHTML/);
-  assert.equal((html.match(/<button disabled/g)||[]).length,4);
+  assert.equal((html.match(/<button disabled/g)||[]).length,3);
+  assert.match(html,/id="refineBtn"/);
+  assert.match(html,/X-OTHRYS-CONTROL-TOKEN/);
   assert.match(html,/X-OTHRYS-DECK-TOKEN/);
   assert.match(html,/Legion builder node/);
 });
@@ -49,3 +51,21 @@ test('Legion telemetry is sanitized and stale-aware',async()=>{
     assert.equal(readLegionTelemetry(f).stale,true);
   }finally{rmSync(d,{recursive:true,force:true});}
 });
+
+test('Refine intent ingress is separately authenticated and non-executing',async t=>{
+  const d=mkdtempSync(join(tmpdir(),'othrys-intent-')); const f=join(d,'intents.jsonl');
+  const candidate=JSON.parse(readFileSync(join(dir,'../../missions/V2-005A.result.json'),'utf8')).product_candidate_commit;
+  const env={...process.env,OTHRYS_DECK_TOKEN:'read',OTHRYS_DECK_CONTROL_TOKEN:'control',OTHRYS_DECK_INTENT_FILE:f,OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18781',OTHRYS_DECK_NO_START:'0'};
+  const child=spawn(process.execPath,[join(dir,'server.mjs')],{env,stdio:['ignore','pipe','pipe']});
+  t.after(()=>{child.kill();rmSync(d,{recursive:true,force:true});});
+  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('server timeout')),4000);child.stdout.on('data',d=>{if(String(d).includes('"ready":true')){clearTimeout(timer);resolve();}});});
+  const url='http://127.0.0.1:18781/api/intent';
+  const body={action:'REFINE_REQUEST',candidateCommit:candidate,feedback:'Make the output clearer for a touch-first user.'};
+  const bad=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'wrong'},body:JSON.stringify(body)}); assert.equal(bad.status,401);
+  const mismatch=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify({...body,candidateCommit:'bad'})}); assert.equal(mismatch.status,400);
+  const forbidden=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify({...body,action:'ACCEPT'})}); assert.equal(forbidden.status,400);
+  const ok=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify(body)}); assert.equal(ok.status,202);
+  const data=await ok.json(); assert.equal(data.intent.status,'PENDING_TRUST_CANAL'); assert.equal(data.intent.authorityGranted,false);
+  const lines=readFileSync(f,'utf8').trim().split(/\r?\n/); assert.equal(lines.length,1); assert.equal(JSON.parse(lines[0]).action,'REFINE_REQUEST');
+});
+
