@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080b10">
+<link rel="manifest" href="/manifest.webmanifest">
+<title>OTHRYS Command Deck</title>
+<style>
+:root{color-scheme:dark;--bg:#080b10;--panel:#101722;--edge:#263449;--text:#eef4ff;--muted:#8da0ba;--hot:#87f7c1;--warn:#ffc96b;--bad:#ff7e8d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -20%,#1a2940 0,var(--bg) 42%);color:var(--text);font:15px/1.45 system-ui,sans-serif;min-height:100vh}
+main{max-width:1180px;margin:auto;padding:max(18px,env(safe-area-inset-top)) 18px 36px}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px}.brand{font-weight:800;letter-spacing:.18em}.sub{color:var(--muted);font-size:12px}
+.pill{border:1px solid var(--edge);border-radius:999px;padding:7px 11px;background:#0b111a}.ok{color:var(--hot)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}.card{grid-column:span 4;background:linear-gradient(180deg,#121b28,#0d141e);border:1px solid var(--edge);border-radius:16px;padding:16px;min-width:0;box-shadow:0 14px 40px #0005}
+.wide{grid-column:span 8}.full{grid-column:1/-1}.kicker{color:var(--muted);text-transform:uppercase;font-size:10px;letter-spacing:.16em;margin-bottom:7px}.value{font-size:18px;font-weight:700;overflow-wrap:anywhere}.mono{font-family:ui-monospace,monospace;font-size:12px;color:#c7d7ec;overflow-wrap:anywhere}
+.actions{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.actions button{min-height:58px;border:1px solid #35445a;border-radius:14px;background:#111a26;color:#75869d;font-weight:800;font-size:14px}.actions button:disabled{cursor:not-allowed;opacity:.7}.lock{display:block;font-size:9px;letter-spacing:.12em;margin-top:3px}
+ul{margin:0;padding:0;list-style:none}li{padding:9px 0;border-top:1px solid #1f2a3a}li:first-child{border-top:0}.mission{display:flex;justify-content:space-between;gap:12px}.mission span:last-child{color:var(--muted);font-size:12px;text-align:right}
+footer{color:var(--muted);font-size:11px;text-align:center;margin-top:18px}.token{position:fixed;inset:0;background:#05080dee;display:grid;place-items:center;padding:24px;z-index:5}.token.hidden{display:none}.tokenbox{width:min(440px,100%);background:#111925;border:1px solid var(--edge);border-radius:18px;padding:22px}.token input{width:100%;font:inherit;background:#080d14;color:var(--text);border:1px solid #34445b;border-radius:12px;padding:14px;margin:12px 0}.token button{width:100%;padding:14px;border:0;border-radius:12px;background:#d8ffe9;color:#07100b;font-weight:800}
+@media(max-width:800px){.card,.wide{grid-column:1/-1}.actions{grid-template-columns:1fr 1fr}header{align-items:flex-start;flex-direction:column}}@media(min-width:900px) and (orientation:landscape){main{padding-left:28px;padding-right:28px}.card{min-height:138px}}
+</style>
+</head>
+<body>
+<div id="tokenGate" class="token"><div class="tokenbox"><div class="kicker">Read-only pairing</div><div class="value">Connect this device to OTHRYS</div><div class="sub">The token stays in this browser. This Deck has no control-write API.</div><input id="tokenInput" type="password" autocomplete="off" placeholder="Deck read token"><button id="pairBtn">PAIR READ-ONLY</button></div></div>
+<main>
+<header><div><div class="brand">OTHRYS // COMMAND DECK</div><div class="sub">tablet-primary · phone-secondary · compute stays in the colony</div></div><div id="connection" class="pill warn">CONNECTING</div></header>
+<section class="grid">
+<div class="card"><div class="kicker">Control gate</div><div id="gate" class="value">—</div></div>
+<div class="card"><div class="kicker">Active mission</div><div id="mission" class="value">—</div><div id="missionStatus" class="sub"></div></div>
+<div class="card"><div class="kicker">Canonical HEAD</div><div id="head" class="mono">—</div></div>
+<div class="card wide"><div class="kicker">Next legal action</div><div id="next" class="value">—</div></div>
+<div class="card"><div class="kicker">Last decision</div><div id="decision" class="value">—</div><div id="authority" class="sub"></div></div>
+<div class="card"><div class="kicker">Factory candidate</div><div id="factory" class="value">—</div><div id="factoryMeta" class="sub"></div></div>
+<div class="card"><div class="kicker">T590 verifier node</div><div id="node" class="value">—</div><div id="nodeMeta" class="sub"></div></div>
+<div class="card full"><div class="kicker">Operator controls</div><div class="actions"><button disabled>ACCEPT<span class="lock">LOCKED</span></button><button disabled>REFINE<span class="lock">LOCKED</span></button><button disabled>REJECT<span class="lock">LOCKED</span></button><button disabled>EMERGENCY STOP<span class="lock">LOCKED</span></button></div><div class="sub" style="margin-top:10px">Future controls must cross an authenticated Trust Canal. This surface is deliberately incapable of mutation.</div></div>
+<div class="card full"><div class="kicker">Recent mission trail</div><ul id="recent"></ul></div>
+</section>
+<footer><span id="refresh">Never refreshed</span> · <span id="mode">READ ONLY</span></footer>
+</main>
+<script>
+const $=id=>document.getElementById(id);let readToken=localStorage.getItem('othrys.deck.read')||'';
+function text(id,value){$(id).textContent=value==null?'—':String(value)}
+function gate(){ $('tokenGate').classList.toggle('hidden',Boolean(readToken)); }
+$('pairBtn').onclick=()=>{const v=$('tokenInput').value.trim();if(v){readToken=v;localStorage.setItem('othrys.deck.read',v);gate();refresh();}};
+function render(data){
+  text('gate',data.controlGate);text('head',data.head);
+  text('mission',data.activeMission?.mission_id);text('missionStatus',data.activeMission?.status);
+  text('next',data.nextAction);text('decision',data.lastDecision?.decision);text('authority',data.lastDecision?.authority);
+  text('factory',data.factory?.product??'No candidate');text('factoryMeta',data.factory?`${data.factory.status} · ${String(data.factory.candidateCommit).slice(0,10)}`:'');
+  text('node',data.localNode?`${data.localNode.id} · ${data.localNode.health?.state??'UNKNOWN'}`:'Node telemetry unavailable');
+  text('nodeMeta',data.localNode?`${data.localNode.advertised?.cpu_threads??'?'} CPU · ${data.localNode.advertised?.ram_mb??'?'} MB · ${data.localNode.capabilities?.length??0} capabilities`:'');
+  const list=$('recent');list.replaceChildren();for(const m of data.recentMissions??[]){const li=document.createElement('li'),row=document.createElement('div'),a=document.createElement('span'),b=document.createElement('span');row.className='mission';a.textContent=m.mission_id??'—';b.textContent=m.status??'—';row.append(a,b);li.append(row);if(m.note){const n=document.createElement('div');n.className='sub';n.textContent=m.note;li.append(n);}list.append(li);}
+  $('connection').textContent='LIVE';$('connection').className='pill ok';text('refresh',`Updated ${new Date(data.generatedAt).toLocaleTimeString()}`);
+}
+async function refresh(){if(!readToken)return;try{const r=await fetch('/api/status',{headers:{'X-OTHRYS-DECK-TOKEN':readToken},cache:'no-store'});if(r.status===401){localStorage.removeItem('othrys.deck.read');readToken='';gate();throw new Error('PAIRING REQUIRED');}if(!r.ok)throw new Error(`HTTP ${r.status}`);render(await r.json());}catch(e){$('connection').textContent='OFFLINE';$('connection').className='pill bad';text('refresh',e.message);}}
+gate();refresh();setInterval(refresh,5000);
+if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});
+</script>
+</body>
+</html>

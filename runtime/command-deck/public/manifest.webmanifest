@@ -1,0 +1,9 @@
+{
+  "name": "OTHRYS Command Deck",
+  "short_name": "OTHRYS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080b10",
+  "theme_color": "#080b10",
+  "description": "Read-only OTHRYS operator surface"
+}

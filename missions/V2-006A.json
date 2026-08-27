@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-006A",
+  "title": "Read-only OTHRYS Command Deck",
+  "authority": "GPT_CONTROL",
+  "base_sha": "5652eb59e618dfa2612dc4c570752b812c8984b7",
+  "goal": "Create a tablet-primary / phone-secondary read-only command surface over the trusted LAN.",
+  "laws": [
+    "No POST/PUT/PATCH/DELETE control endpoints.",
+    "Expose curated status only; never raw secrets or arbitrary files.",
+    "Read token is machine-local and never committed.",
+    "Tablet/phone render and issue read requests only; Legion/T590 do compute.",
+    "Future control actions require a separate Trust Canal-bound authenticated mission."
+  ]
+}

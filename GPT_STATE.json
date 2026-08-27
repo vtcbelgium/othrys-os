@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 75,
+  "sequence": 76,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "85030829ceb5313dc5134778d9fd903c3dc36f40",
-  "control_gate": "CLEAN_SYNCED",
+  "control_gate": "MISSION_ACTIVE",
   "active_mission": {
-    "mission_id": "V2-005G",
-    "status": "COMPLETE",
-    "issued_label": "V2-005G - AI REFINE GAP GATE",
+    "mission_id": "V2-006A",
+    "status": "RUNNING",
+    "issued_label": "V2-006A - READ ONLY COMMAND DECK",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "85030829ceb5313dc5134778d9fd903c3dc36f40",
@@ -67,7 +67,7 @@
     "decision": "ACCEPT_AI_REFINE_GAP_GATE",
     "authority": "qualified AI suggestion may reach Refine only with deterministic negative gap evidence; operator path unchanged"
   },
-  "next_legal_action": "Open V2-006A read-only Command Deck for tablet-primary / phone-secondary operation. No write/control endpoints until a separate Trust Canal-bound control mission.",
+  "next_legal_action": "Build V2-006A read-only Command Deck only; no control writes or authority endpoints.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

@@ -1,0 +1,69 @@
+import http from 'node:http';
+import { readFileSync, existsSync } from 'node:fs';
+import { join, resolve, extname } from 'node:path';
+import { spawnSync } from 'node:child_process';
+
+export const DECK_SCHEMA='othrys.command-deck.status.v1';
+const root=resolve(import.meta.dirname,'../..');
+const publicDir=join(import.meta.dirname,'public');
+const token=process.env.OTHRYS_DECK_TOKEN ?? '';
+const port=Number(process.env.OTHRYS_DECK_PORT ?? 8780);
+const bind=process.env.OTHRYS_DECK_BIND ?? '127.0.0.1';
+
+function json(path){ return JSON.parse(readFileSync(join(root,path),'utf8')); }
+function gitHead(){
+  const p=spawnSync('git',['-C',root,'rev-parse','HEAD'],{encoding:'utf8'});
+  return p.status===0?p.stdout.trim():'UNKNOWN';
+}
+function recent(history,n=8){ return Array.isArray(history)?history.slice(-n).reverse():[]; }
+export async function buildStatus(){
+  const state=json('GPT_STATE.json');
+  let factory=null;
+  if(existsSync(join(root,'missions','V2-005A.result.json'))){
+    const f=json('missions/V2-005A.result.json');
+    factory={orosId:f.oros_id,product:f.product,status:f.factory_status,candidateCommit:f.product_candidate_commit,released:f.released===true};
+  }
+  let node=null;
+  try{ node=(await (await fetch('http://127.0.0.1:8765/health',{signal:AbortSignal.timeout(1200)})).json()).node; }catch{}
+  return {
+    schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
+    activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
+    recentMissions:recent(state.mission_history),factory,
+    localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
+    authorityGranted:false,controlsEnabled:false
+  };
+}
+
+export function authorized(req){
+  if(!token) return false;
+  return req.headers['x-othrys-deck-token']===token;
+}
+function send(res,code,body,type='application/json; charset=utf-8'){
+  res.writeHead(code,{'Content-Type':type,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'});
+  res.end(body);
+}
+function serveStatic(pathname,res){
+  const rel=pathname==='/'?'index.html':pathname.slice(1);
+  if(rel.includes('..')) return send(res,404,'not found','text/plain');
+  const file=join(publicDir,rel);
+  if(!existsSync(file)) return send(res,404,'not found','text/plain');
+  const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.webmanifest':'application/manifest+json','.svg':'image/svg+xml'};
+  send(res,200,readFileSync(file),types[extname(file)]??'application/octet-stream');
+}
+export async function handle(req,res){
+  const url=new URL(req.url??'/',`http://${req.headers.host??'localhost'}`);
+  if(req.method!=='GET') return send(res,405,JSON.stringify({ok:false,error:'READ_ONLY'}));
+  if(url.pathname==='/api/status'){
+    if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
+    return send(res,200,JSON.stringify(await buildStatus()));
+  }
+  return serveStatic(url.pathname,res);
+}
+export function startServer(){
+  if(!token) throw new Error('OTHRYS_DECK_TOKEN_REQUIRED');
+  const server=http.createServer((req,res)=>{handle(req,res).catch(()=>send(res,500,JSON.stringify({ok:false,error:'INTERNAL'})));});
+  server.listen(port,bind,()=>console.log(JSON.stringify({ready:true,bind,port,readOnly:true})));
+  return server;
+}
+
+if(process.env.OTHRYS_DECK_NO_START!=='1') startServer();
