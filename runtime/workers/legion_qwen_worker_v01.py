@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import ctypes
+import hashlib
 import json
 import os
 import platform
@@ -71,20 +72,53 @@ def _safe_rel_paths(values: list[str]) -> list[str]:
         out.append(p.as_posix())
     return out
 
-def _changed_files(workspace: Path) -> list[str]:
+def _repair_single_path_tool_calls(response: dict[str, Any], allowed: list[str]) -> dict[str, Any]:
+    if len(allowed) != 1:
+        return response
+    for call in response.get("tool_calls") or []:
+        fn = call.get("function") or {}
+        if fn.get("name") not in {"write_file", "append_file"}:
+            continue
+        args = fn.get("arguments")
+        try:
+            from hub import engineering as hub_engineering
+            obj = hub_engineering._parse_arguments(args)
+        except Exception:
+            try:
+                obj = json.loads(args) if isinstance(args, str) else dict(args or {})
+            except (json.JSONDecodeError, TypeError, ValueError):
+                obj = {}
+        if not obj.get("path") and isinstance(obj.get("content"), str) and obj.get("content"):
+            obj["path"] = allowed[0]
+            fn["arguments"] = json.dumps(obj, ensure_ascii=False)
+    return response
+
+
+def _dirty_snapshot(workspace: Path) -> dict[str, str]:
     raw = subprocess.check_output(
-        ["git", "-C", str(workspace), "status", "--porcelain"],
+        ["git", "-C", str(workspace), "status", "--porcelain", "--untracked-files=all"],
         text=True, encoding="utf-8", errors="replace", timeout=10,
     )
-    files: list[str] = []
+    snapshot: dict[str, str] = {}
     for line in raw.splitlines():
         if len(line) < 4:
             continue
         path = line[3:].strip()
         if " -> " in path:
             path = path.split(" -> ", 1)[1]
-        files.append(path.replace("\\", "/"))
-    return files
+        rel = path.replace("\\", "/")
+        target = workspace / Path(rel)
+        if not target.exists():
+            snapshot[rel] = "missing"
+        elif target.is_file():
+            snapshot[rel] = hashlib.sha256(target.read_bytes()).hexdigest()
+        else:
+            snapshot[rel] = "non-file"
+    return snapshot
+
+
+def _changed_since(before: dict[str, str], after: dict[str, str]) -> list[str]:
+    return sorted(path for path in set(before) | set(after) if before.get(path) != after.get(path))
 
 
 def _atomic_json(path: Path, payload: dict[str, Any]) -> None:
@@ -117,11 +151,15 @@ def run_job(req: dict[str, Any]) -> dict[str, Any]:
     from hub.engineering_platform import PlatformRequest, run_engineering_mission
 
     builder = Qwen3BuilderMind()
+    if len(allowed) == 1:
+        original_chat_turn = builder.chat_turn
+        builder.chat_turn = lambda messages, tools: _repair_single_path_tool_calls(original_chat_turn(messages, tools), allowed)
     if builder.status() != "ready":
         raise RuntimeError(f"qwen3-builder not ready: {builder.status()}")
 
     started = time.time()
     before = _node_snapshot()
+    dirty_before = _dirty_snapshot(workspace)
     request = PlatformRequest(
         mission_id=req["job_id"],
         task=req["task"],
@@ -137,7 +175,8 @@ def run_job(req: dict[str, Any]) -> dict[str, Any]:
         operator_constraints={"deny": deny},
     )
     result = run_engineering_mission(request)
-    changed = _changed_files(workspace)
+    dirty_after = _dirty_snapshot(workspace)
+    changed = _changed_since(dirty_before, dirty_after)
     outside = sorted(set(changed) - set(allowed))
     completed = time.time()
     payload = result.as_dict()

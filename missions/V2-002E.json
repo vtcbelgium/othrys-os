@@ -1,0 +1,28 @@
+{
+  "mission_id": "V2-002E",
+  "title": "Minimum Trust Canal extraction",
+  "status": "LOCAL_COMPLETE_SYNC_PENDING",
+  "objective": "Quarry and extract only the minimum proven Trust Canal admission/binding boundary required ahead of Talos.",
+  "source": "old Core/control-plane stock; V2 remains canonical",
+  "constraints": {
+    "no_whole_control_plane_copy": true,
+    "no_network_plane_required": true,
+    "no_new_scheduler": true,
+    "fail_closed": true,
+    "one_mission_identity": true
+  },
+  "target": [
+    "strict mission envelope validation",
+    "mission/correlation/digest binding",
+    "explicit authority/capability declaration",
+    "idempotent admission",
+    "durable admission evidence",
+    "rejection before Talos execution"
+  ],
+  "non_goals": [
+    "remote transport",
+    "full custody network",
+    "provider routing",
+    "Trust Canal UI"
+  ]
+}

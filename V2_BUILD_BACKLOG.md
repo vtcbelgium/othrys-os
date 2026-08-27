@@ -9,8 +9,8 @@
 | 1 | V2-002A | Qualify old Core Talos and freeze the minimum V2 extraction boundary | COMPLETE |
 | 2 | V2-002B | Extract minimum Talos kernel and prove deterministic retry/dead-letter/replay | COMPLETE |
 | 3 | V2-002C | Attach Legion Hub/Qwen as first bounded Talos Worker | COMPLETE |
-| 4 | V2-002D | Prove real local engineering repair loop, max 5 attempts | COMPLETE_LOCAL_SYNC_PENDING |
-| 5 | V2-002E | Extract minimum Trust Canal admission/binding boundary ahead of Talos | TODO |
+| 4 | V2-002D | Prove real local engineering repair loop, max 5 attempts | COMPLETE |
+| 5 | V2-002E | Extract minimum Trust Canal admission/binding boundary ahead of Talos | COMPLETE_LOCAL_SYNC_PENDING |
 | 6 | V2-002F | Attach Hephaestus engineering authority above the proven Talos Worker loop | TODO |
 | 7 | V2-003A | Build Block #3 through Hephaestus + Talos; prove first real Port/artifact interaction | TODO |
 | 8 | LATER | Quarry Runtime/Bridge routing only when multiple workers/providers require it | GATED |

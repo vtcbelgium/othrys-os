@@ -1,0 +1,25 @@
+{
+  "mission_id": "V2-002E",
+  "verdict": "PASS_LOCAL_SYNC_PENDING",
+  "tests": "16/16 PASS",
+  "trust_canal": [
+    "strict exact-field admission validation",
+    "missionId == correlationId",
+    "SHA-256 command digest",
+    "explicit role/channel authority",
+    "idempotent identical re-admission",
+    "mission conflict fails closed",
+    "crash-durable JSONL reconstruction",
+    "rejection prevents Talos work"
+  ],
+  "talos_regression": "5/5 included in 16-test combined gate",
+  "qwen_review": "PASS_ADVISORY",
+  "qwen_log": "logs/qwen/QWEN_LOG.jsonl",
+  "deferred": [
+    "network bearer auth",
+    "custody encryption",
+    "governed dispatch",
+    "provider routing",
+    "UI"
+  ]
+}
