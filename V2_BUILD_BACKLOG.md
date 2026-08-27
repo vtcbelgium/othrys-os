@@ -24,4 +24,6 @@
 - No universal registry, new agent framework, marketplace, or second loop engine yet.
 - Adjust this backlog only from measured mission evidence.
 
-| 8 | V2-003B | Three-Block proof-only composition with RAW Block #3 | COMPLETE / SYNC PENDING |
+| 8 | V2-003B | Three-Block proof-only composition with RAW Block #3 | COMPLETE |
+
+| 9 | V2-004A | Mycelium Legion Node #1 census/envelope/Talos execution proof | COMPLETE / SYNC PENDING |

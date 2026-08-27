@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-004A",
+  "title": "Mycelium Legion Node #1 qualification",
+  "status": "COMPLETE",
+  "objective": "Prove Legion-alone census -> advertised envelope -> capability/resource feasibility -> Talos-owned execution using the existing node adapter.",
+  "constraints": {
+    "distributed": false,
+    "cas": false,
+    "second_scheduler": false,
+    "authorityGranted": false,
+    "node_discovery_grants_authority": false,
+    "talos_owns_lifecycle": true
+  },
+  "completed_at": "2026-08-27T13:21:50.039339+00:00"
+}

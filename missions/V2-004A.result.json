@@ -1,0 +1,46 @@
+{
+  "mission_id": "V2-004A",
+  "status": "COMPLETE",
+  "node_id": "legion",
+  "authorityGranted": false,
+  "distributed": false,
+  "owner_policy": "PRIMARY_V2_WITH_OS_RESERVE",
+  "advertised": {
+    "cpu_threads": 30,
+    "ram_mb": 27928,
+    "gpu_count": 1,
+    "vram_mb": 7639,
+    "owner_policy": "PRIMARY_V2_WITH_OS_RESERVE",
+    "ceiling_source": "OWNER_ENV_OR_SAFE_DEFAULT"
+  },
+  "physical": {
+    "logical_cpus": 32,
+    "ram_total_mb": 32024,
+    "disk_free_mb": 673483,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": 8151,
+      "memory_used_mb": 6478,
+      "utilization_pct": 0,
+      "temperature_c": 42,
+      "power_w": 6.93
+    }
+  },
+  "capabilities": [
+    "verification.local",
+    "git.local",
+    "node.local",
+    "engineering.patch"
+  ],
+  "proof": {
+    "mycelium_tests": "6/6 PASS",
+    "spine_tests": "24/24 PASS",
+    "worker_tests": "10/10 PASS",
+    "talos": "SUCCEEDED",
+    "replay": "SUCCEEDED",
+    "attempts": 1,
+    "qwen_seconds": 4.122233152389526
+  },
+  "boundary": "Legion-alone qualification only; no distributed scheduling/CAS/authority."
+}
