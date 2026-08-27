@@ -26,4 +26,4 @@
 
 | 8 | V2-003B | Three-Block proof-only composition with RAW Block #3 | COMPLETE |
 
-| 9 | V2-004A | Mycelium Legion Node #1 census/envelope/Talos execution proof | COMPLETE / SYNC PENDING |
+| 9 | V2-004A | Mycelium Legion Node #1 census/envelope/Talos execution proof | COMPLETE |
