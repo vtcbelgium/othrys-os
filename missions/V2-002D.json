@@ -1,0 +1,27 @@
+{
+  "mission_id": "V2-002D",
+  "title": "Talos local engineering repair loop",
+  "status": "RUNNING",
+  "objective": "Prove Talos can drive a bounded local Qwen engineering repair loop on Legion with independent verification and max five attempts.",
+  "authority": {
+    "talos": "attempt lifecycle, retry/extinction, evidence transport",
+    "worker": "bounded engineering mutation only",
+    "verifier": "independent deterministic success gate",
+    "gpt": "mission policy and final architectural judgement"
+  },
+  "constraints": {
+    "max_attempts": 5,
+    "builder": "qwen3-builder",
+    "node": "legion",
+    "fallback": false,
+    "workspace": "disposable only",
+    "builder_cannot_self_verify": true
+  },
+  "success": [
+    "attempt 1 fails deterministic verifier",
+    "failure packet is fed to next attempt without GPT implementation intervention",
+    "later attempt passes verifier within budget",
+    "Talos records terminal success only after verifier pass",
+    "attempt/evidence log is durable and reconstructable"
+  ]
+}

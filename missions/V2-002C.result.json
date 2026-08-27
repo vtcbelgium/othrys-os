@@ -1,0 +1,20 @@
+{
+  "mission_id": "V2-002C",
+  "result_claimed": "COMPLETE",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "qwen3-builder",
+  "node_id": "legion",
+  "proof": {
+    "detached": true,
+    "duration_sec": 11.671283960342407,
+    "changed_files": ["hello.txt"],
+    "out_of_scope_changes": [],
+    "worker_ok": true,
+    "gpu_resident_mb": 6470,
+    "processor": "100% GPU",
+    "keep_alive": "30m"
+  },
+  "negative_observation": "first proof correctly fail-closed on a deterministic git-porcelain parsing bug; parser repaired and identical proof rerun PASS",
+  "authority": "worker evidence only; independent verification remains external to builder",
+  "next": "V2-002D Talos-driven bounded repair loop"
+}

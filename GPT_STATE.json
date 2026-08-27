@@ -1,20 +1,20 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 41,
+  "sequence": 44,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "04b03ab902c30f8e5cd3d246573eed3226242e69",
-  "control_gate": "WAIT_GPT",
+  "remote_head_at_last_verified_read": "5f200b3a53eccfa43f14da671a92f36eb36480b5",
+  "control_gate": "RUNNING",
   "active_mission": {
-    "mission_id": "V2-002B",
-    "status": "COMPLETE",
-    "issued_label": "V2-002B - MINIMUM TALOS KERNEL",
+    "mission_id": "V2-002D",
+    "status": "RUNNING",
+    "issued_label": "V2-002D - TALOS LOCAL REPAIR LOOP",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "04b03ab902c30f8e5cd3d246573eed3226242e69",
   "last_verified_receipt_mission": "V2-002B",
-  "last_log_sequence": 35,
-  "last_log_hash": "e956bc747c5397b203c4b270ca401758bd2cc25ba384252763e0723b39c90010",
+  "last_log_sequence": 38,
+  "last_log_hash": "0c7b6ab1386c0b9362ecc571cc36bf80fe8fcb9afc9803a3f4ba81742fa853fd",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-002B",
-    "decision": "ACCEPT_MINIMUM_TALOS_KERNEL",
-    "authority": "execution kernel only"
+    "mission_id": "V2-002C",
+    "decision": "ACCEPT_LEGION_QWEN_WORKER",
+    "authority": "bounded local engineering worker only"
   },
-  "next_legal_action": "Open V2-002C: attach Legion Hub/qwen3-builder as the first bounded node-neutral Talos Worker.",
+  "next_legal_action": "Execute V2-002D: Talos drives max-5 Qwen repair attempts; independent verifier gates success.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -203,6 +203,11 @@
       "mission_id": "V2-002B",
       "status": "COMPLETE",
       "note": "Minimum Talos lifecycle/retry/replay kernel extracted; 5/5 Legion tests PASS; synced."
+    },
+    {
+      "mission_id": "V2-002C",
+      "status": "LOCAL_COMPLETE_SYNC_PENDING",
+      "note": "Detached Legion qwen3-builder worker PASS; exact allow-list; durable result; qwen3:8b 100% GPU placement."
     }
   ],
   "git": {
@@ -211,9 +216,9 @@
     "merge_base": "66c45631781dfce93a4c8628f2a3de70a6bad09c",
     "local_parent": "b65ebba9f13a5e852bb778b33b2eaff6fcfa966b",
     "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
-    "base_sha_for_next_mission": "04b03ab902c30f8e5cd3d246573eed3226242e69",
+    "base_sha_for_next_mission": "5f200b3a53eccfa43f14da671a92f36eb36480b5",
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
-    "sync_status": "SYNCED",
+    "sync_status": "PUSH_PENDING",
     "push_owner": "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
     "base_sha_verified_this_mission": "092607f8bb3e9c8c74141d15bf22d551c03f567d",
     "base_sha_verification": "V2-001J start gate: local HEAD == origin/main == 092607f8bb3e9c8c74141d15bf22d551c03f567d",

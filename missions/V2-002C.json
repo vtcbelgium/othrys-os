@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-002C",
+  "objective": "Attach the Legion Hub/qwen3-builder path as the first bounded, node-neutral Talos Worker without importing Hub authority into V2.",
+  "delegate": "GPT_CONTROL_DIRECT_HOST_EXECUTION",
+  "issued_by": "GPT_CONTROL",
+  "issued_at": "2026-08-26T20:20:00Z",
+  "constraints": [
+    "Legion is Node #1 but the request/result contract must not encode a Legion-only mission semantic",
+    "explicit qwen3-builder only; no Auto-Frugal, paid builder, fallback, provider routing, registry expansion or Hub authority import",
+    "worker mutates only a disposable workspace and only operator-declared allowed paths",
+    "long work must survive remote control-channel loss by writing durable UTF-8 logs/results locally",
+    "builder success is evidence only; independent verification remains outside the builder"
+  ],
+  "expected_proof": [
+    "worker contract and Legion adapter exist in V2",
+    "detached job survives launcher exit and writes an atomic result",
+    "qwen3-builder performs a real bounded mutation in a disposable git workspace",
+    "only allowed paths change and deterministic verifier confirms exact target state",
+    "GPU execution evidence and builder identity are recorded"
+  ]
+}
