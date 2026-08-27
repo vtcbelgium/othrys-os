@@ -69,3 +69,16 @@ test('Refine intent ingress is separately authenticated and non-executing',async
   const lines=readFileSync(f,'utf8').trim().split(/\r?\n/); assert.equal(lines.length,1); assert.equal(JSON.parse(lines[0]).action,'REFINE_REQUEST');
 });
 
+
+test('Control intent status derives pending then admitted without execution',async()=>{
+  process.env.OTHRYS_DECK_NO_START='1';
+  const {readControlIntentState}=await import('./server.mjs');
+  const d=mkdtempSync(join(tmpdir(),'othrys-control-state-')); const inbox=join(d,'intents.jsonl'),ledger=join(d,'admission.jsonl');
+  try{
+    const intent={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-27T19:37:22.080Z',action:'REFINE_REQUEST',candidateCommit:'24b99ab9b9420c407d9eed01d23e0cf2f52a73d8',feedback:'Improve touch clarity.',authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+    writeFileSync(inbox,JSON.stringify(intent)+'\n');
+    const pending=readControlIntentState(inbox,ledger); assert.equal(pending.status,'PENDING_TRUST_CANAL'); assert.equal(pending.authorityGranted,false);
+    writeFileSync(ledger,JSON.stringify({missionId:pending.missionId})+'\n');
+    const admitted=readControlIntentState(inbox,ledger); assert.equal(admitted.status,'ADMITTED'); assert.equal(admitted.missionId,pending.missionId);
+  }finally{rmSync(d,{recursive:true,force:true});}
+});

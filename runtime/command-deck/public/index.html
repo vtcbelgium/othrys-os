@@ -33,6 +33,7 @@ footer{color:var(--muted);font-size:11px;text-align:center;margin-top:18px}.toke
 <div class="card"><div class="kicker">Factory candidate</div><div id="factory" class="value">—</div><div id="factoryMeta" class="sub"></div></div>
 <div class="card"><div class="kicker">Legion builder node</div><div id="legion" class="value">—</div><div id="legionMeta" class="sub"></div></div>
 <div class="card"><div class="kicker">T590 verifier node</div><div id="node" class="value">—</div><div id="nodeMeta" class="sub"></div></div>
+<div class="card"><div class="kicker">Latest control intent</div><div id="intent" class="value">None</div><div id="intentMeta" class="sub"></div></div>
 <div class="card full"><div class="kicker">Operator controls</div><div class="actions"><button disabled>ACCEPT<span class="lock">LOCKED</span></button><button id="refineBtn">REFINE<span class="lock">INTENT ONLY</span></button><button disabled>REJECT<span class="lock">LOCKED</span></button><button disabled>EMERGENCY STOP<span class="lock">LOCKED</span></button></div><div class="sub" style="margin-top:10px">Refine creates a candidate-bound pending intent only. Execution still requires Trust Canal admission. Accept, Reject and Emergency Stop remain locked.</div></div>
 <div class="card full"><div class="kicker">Recent mission trail</div><ul id="recent"></ul></div>
 </section>
@@ -52,6 +53,7 @@ function render(data){
   const l=data.legionNode;text('legion',l?`legion · ${l.stale?'STALE':'LIVE'}`:'Telemetry unavailable');text('legionMeta',l?`${l.cpuPercent}% CPU · ${l.ramAvailableMb} MB free · ${l.gpuUtilPercent}% GPU · ${l.vramUsedMb}/${l.vramTotalMb} MB VRAM · ${l.gpuTempC}°C · Qwen ${l.qwenLoaded?'warm':'cold'}`:'');
   text('node',data.localNode?`${data.localNode.id} · ${data.localNode.health?.state??'UNKNOWN'}`:'Node telemetry unavailable');
   text('nodeMeta',data.localNode?`${data.localNode.advertised?.cpu_threads??'?'} CPU · ${data.localNode.advertised?.ram_mb??'?'} MB · ${data.localNode.capabilities?.length??0} capabilities`:'');
+  const ci=data.controlIntent;text('intent',ci?`${ci.action} · ${ci.status}`:'None');text('intentMeta',ci?`${ci.missionId} · ${String(ci.candidateCommit).slice(0,10)}`:'');
   const list=$('recent');list.replaceChildren();for(const m of data.recentMissions??[]){const li=document.createElement('li'),row=document.createElement('div'),a=document.createElement('span'),b=document.createElement('span');row.className='mission';a.textContent=m.mission_id??'—';b.textContent=m.status??'—';row.append(a,b);li.append(row);if(m.note){const n=document.createElement('div');n.className='sub';n.textContent=m.note;li.append(n);}list.append(li);}
   $('connection').textContent='LIVE';$('connection').className='pill ok';text('refresh',`Updated ${new Date(data.generatedAt).toLocaleTimeString()}`);
 }

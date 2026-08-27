@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-006E",
+  "title": "Tablet control-intent status visibility",
+  "base_sha": "1e2b093b0be68ba5d940dd1fbfa475682d4efa06",
+  "goal": "Show pending/admitted tablet intent status on Command Deck without adding execution authority.",
+  "laws": [
+    "Read machine-local inbox and Trust Canal ledger only.",
+    "Expose status and mission identity, not tokens or raw arbitrary files.",
+    "No execution endpoint is added.",
+    "Status is derived deterministically from intent content and admission ledger."
+  ]
+}

@@ -1,7 +1,8 @@
-﻿import http from 'node:http';
+import http from 'node:http';
 import { readFileSync, existsSync, appendFileSync, mkdirSync } from 'node:fs';
 import { join, resolve, extname, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -11,6 +12,7 @@ const port=Number(process.env.OTHRYS_DECK_PORT ?? 8780);
 const bind=process.env.OTHRYS_DECK_BIND ?? '127.0.0.1';
 const controlToken=process.env.OTHRYS_DECK_CONTROL_TOKEN ?? '';
 const intentFile=process.env.OTHRYS_DECK_INTENT_FILE ?? '';
+const admissionLedger=process.env.OTHRYS_DECK_ADMISSION_LEDGER ?? '';
 
 
 function json(path){ return JSON.parse(readFileSync(join(root,path),'utf8')); }
@@ -29,6 +31,19 @@ export function readLegionTelemetry(path=process.env.OTHRYS_LEGION_TELEMETRY){
     return {id:'legion',capturedAt:raw.capturedAt,receivedAt:raw.receivedAt??null,ageMs:Number.isFinite(ageMs)?ageMs:null,stale:!Number.isFinite(ageMs)||ageMs<0||ageMs>30000,cpuPercent:raw.cpuPercent,ramAvailableMb:raw.ramAvailableMb,gpuUtilPercent:raw.gpuUtilPercent,vramUsedMb:raw.vramUsedMb,vramTotalMb:raw.vramTotalMb,gpuTempC:raw.gpuTempC,qwenLoaded:raw.qwenLoaded===true};
   }catch{return null;}
 }
+export function readControlIntentState(inbox=intentFile,ledger=admissionLedger){
+  if(!inbox||!existsSync(inbox)) return null;
+  try{
+    const lines=readFileSync(inbox,'utf8').trim().split(/\r?\n/).filter(Boolean); if(!lines.length)return null;
+    const intent=JSON.parse(lines.at(-1));
+    const body={action:intent.action,candidateCommit:intent.candidateCommit,feedback:intent.feedback,receivedAt:intent.receivedAt};
+    const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex');
+    const missionId=`DECK-REFINE-${digest.slice(0,24)}`;
+    let admitted=false;
+    if(ledger&&existsSync(ledger)) admitted=readFileSync(ledger,'utf8').split(/\r?\n/).some(line=>line.includes(`"missionId":"${missionId}"`));
+    return {action:intent.action,candidateCommit:intent.candidateCommit,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
+  }catch{return null;}
+}
 export async function buildStatus(){
   const state=json('GPT_STATE.json');
   let factory=null;
@@ -41,7 +56,7 @@ export async function buildStatus(){
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),factory,legionNode:readLegionTelemetry(),
+    recentMissions:recent(state.mission_history),factory,legionNode:readLegionTelemetry(),controlIntent:readControlIntentState(),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     authorityGranted:false,controlsEnabled:false
   };
