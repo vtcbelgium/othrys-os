@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-006D",
+  "title": "Tablet intent to Trust Canal admission bridge",
+  "base_sha": "fefa2748d4ddff647be2bab28b0d56bfaffe66fb",
+  "goal": "Convert a pending REFINE_REQUEST into a Trust Canal admission receipt without execution.",
+  "laws": [
+    "Only PENDING_TRUST_CANAL REFINE_REQUEST records are eligible.",
+    "Actor is operator/command-deck.",
+    "Mission id is deterministic from intent content.",
+    "Replay is idempotent; changed content conflicts.",
+    "Bridge emits admission evidence only; no Hephaestus/Talos/Worker call."
+  ]
+}
