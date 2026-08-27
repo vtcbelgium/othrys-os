@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-005C",
+  "title": "Factory capability-addressed Mycelium placement",
+  "status": "COMPLETE",
+  "objective": "Remove host selection from Factory build intent and prove live Mycelium placement into Talos execution.",
+  "constraints": {
+    "factory_no_hostname": true,
+    "mycelium_selects_node": true,
+    "talos_owns_lifecycle": true,
+    "t590_engineering_patch_disabled": true
+  },
+  "completed_at": "2026-08-27T15:55:17.977112+00:00"
+}

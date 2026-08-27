@@ -1,0 +1,26 @@
+{
+  "mission_id": "V2-005C",
+  "status": "COMPLETE",
+  "selected_node": "legion",
+  "factory_requirement": {
+    "capability": "engineering.patch",
+    "resources": {
+      "cpu_threads": 1,
+      "ram_mb": 1024,
+      "gpu_count": 0,
+      "vram_mb": 0
+    }
+  },
+  "proof": {
+    "factory_tests": "14/14 PASS",
+    "talos": "SUCCEEDED",
+    "replay": "SUCCEEDED",
+    "attempts": 1,
+    "qwen_seconds": 5.75
+  },
+  "first_proof_failure": {
+    "state": "DEAD_LETTERED",
+    "reason": "disposable verifier over-specified trailing newline despite semantically correct VALUE=7; corrected to frozen semantic acceptance"
+  },
+  "boundary": "Factory requests capability/resources only; Mycelium selects node; Talos owns worker lifecycle."
+}

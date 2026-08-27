@@ -1,19 +1,19 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 58,
+  "sequence": 59,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "ac87146294191a9a757a91ab4eac8a9ef158dfef",
+  "remote_head_at_last_verified_read": "1f7efcbe9e9a8fef52f42e582fc98e4f763d6063",
   "control_gate": "SYNC_PENDING",
   "active_mission": {
-    "mission_id": "V2-004B",
+    "mission_id": "V2-005C",
     "status": "COMPLETE_SYNC_PENDING",
-    "issued_label": "V2-004B - MYCELIUM T590 NODE 2",
+    "issued_label": "V2-005C - FACTORY CAPABILITY ROUTING",
     "source": "operator_current_conversation"
   },
-  "last_verified_remote_receipt": "ac87146294191a9a757a91ab4eac8a9ef158dfef",
-  "last_verified_receipt_mission": "V2-005B",
-  "last_log_sequence": 53,
+  "last_verified_remote_receipt": "1f7efcbe9e9a8fef52f42e582fc98e4f763d6063",
+  "last_verified_receipt_mission": "V2-004B",
+  "last_log_sequence": 55,
   "last_log_hash": "242970f06018df446478944be650ef2c5170ff5b58d7b3de46df292dfb0c2da6",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-004B",
-    "decision": "ACCEPT_T590_NODE2_CPU_ENVELOPE",
-    "authority": "resource/capability topology only; authorityGranted=false; Talos owns lifecycle"
+    "mission_id": "V2-005C",
+    "decision": "ACCEPT_FACTORY_CAPABILITY_ROUTING",
+    "authority": "Factory requests capability/resources; Mycelium selects node; Talos owns lifecycle; nodes gain no authority"
   },
-  "next_legal_action": "Sync V2-004B, persist the proof-only T590 endpoint at user level, then wire Factory capability requests through Mycelium placement; keep T590 engineering.patch disabled until a local builder is separately certified.",
+  "next_legal_action": "Sync V2-005C. Then qualify useful T590 background capabilities/models separately; do not grant engineering.patch until a builder passes the same bounded worker/verifier contract.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

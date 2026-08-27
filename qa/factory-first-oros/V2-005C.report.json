@@ -1,0 +1,33 @@
+{
+  "mission_id": "V2-005C",
+  "verdict": "PASS",
+  "factory_requirement": {
+    "capability": "engineering.patch",
+    "resources": {
+      "cpu_threads": 1,
+      "ram_mb": 1024,
+      "gpu_count": 0,
+      "vram_mb": 0
+    }
+  },
+  "selected_node": "legion",
+  "talos": {
+    "state": "SUCCEEDED",
+    "replay": "SUCCEEDED",
+    "attempts": 1
+  },
+  "worker_attempts": [
+    {
+      "attempt": 1,
+      "duration_sec": 5.750976324081421,
+      "changed_files": [
+        "target.txt"
+      ],
+      "ok": true,
+      "reason": ""
+    }
+  ],
+  "target": "VALUE=7",
+  "t590_engineering_capable": false,
+  "boundary": "Factory requests capability/resources only; Mycelium selects node; Talos owns worker lifecycle."
+}
