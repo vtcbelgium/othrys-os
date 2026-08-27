@@ -1,6 +1,6 @@
 {
   "mission_id": "V2-006A",
-  "status": "COMPLETE_SYNC_PENDING",
+  "status": "COMPLETE",
   "verdict": "PASS",
   "candidate_sha": "16328bc002af35edd3eb2e0c57014c944e2ef9b7",
   "host": "t590",
@@ -21,5 +21,7 @@
   },
   "authorityGranted": false,
   "controlsEnabled": false,
-  "boundary": "Tablet/phone are read-only operator surfaces; no control-write endpoint exists."
+  "boundary": "Tablet/phone are read-only operator surfaces; no control-write endpoint exists.",
+  "remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
+  "independent_verifier": "T590 Deck 2/2 + V2 fixed suites PASS at exact HEAD"
 }
