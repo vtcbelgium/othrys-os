@@ -1,18 +1,18 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 68,
+  "sequence": 69,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "5ad771d02fa2289d72800dedc77f03f84c4c4a3b",
-  "control_gate": "SYNC_REQUIRED",
+  "remote_head_at_last_verified_read": "33c7894c6f938248581d475ea1767d519d8dcdde",
+  "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-005E",
-    "status": "COMPLETE_SYNC_PENDING",
+    "status": "COMPLETE",
     "issued_label": "V2-005E - AI ADVISORY PRODUCT CRITIQUE",
     "source": "operator_current_conversation"
   },
-  "last_verified_remote_receipt": "5ad771d02fa2289d72800dedc77f03f84c4c4a3b",
-  "last_verified_receipt_mission": "V2-005D",
+  "last_verified_remote_receipt": "33c7894c6f938248581d475ea1767d519d8dcdde",
+  "last_verified_receipt_mission": "V2-005E",
   "last_log_sequence": 58,
   "last_log_hash": "242970f06018df446478944be650ef2c5170ff5b58d7b3de46df292dfb0c2da6",
   "log_integrity": {
@@ -67,7 +67,7 @@
     "decision": "ACCEPT_AI_ADVISORY_LANE_WITH_UNQUALIFIED_OUTPUT",
     "authority": "T590 AI may propose only; live proposal remains unselected; quality qualification required"
   },
-  "next_legal_action": "Sync V2-005E, then build cross-model source-grounded proposal qualification before any AI proposal can feed Refine.",
+  "next_legal_action": "Build cross-model source-grounded qualification for AI proposals before Refine eligibility.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -271,7 +271,7 @@
     "merge_base": "66c45631781dfce93a4c8628f2a3de70a6bad09c",
     "local_parent": "b65ebba9f13a5e852bb778b33b2eaff6fcfa966b",
     "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
-    "base_sha_for_next_mission": "5ad771d02fa2289d72800dedc77f03f84c4c4a3b",
+    "base_sha_for_next_mission": "33c7894c6f938248581d475ea1767d519d8dcdde",
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
     "sync_status": "SYNCED",
     "push_owner": "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
