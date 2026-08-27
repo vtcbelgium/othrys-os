@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-002F",
+  "verdict": "PASS_LOCAL_SYNC_PENDING",
+  "deterministic_tests": "24/24 PASS",
+  "worker_regressions": "6/6 PASS",
+  "live_chain": "Trust Canal -> Hephaestus -> Talos -> Legion/Qwen -> independent verifier",
+  "live_result": "SUCCEEDED / replay SUCCEEDED / 1 attempt / 4.44s",
+  "qwen_review": "APPROVED_ADVISORY",
+  "architecture": [
+    "Talos owns lifecycle/retry",
+    "Hephaestus binds/freeze/plans/repairs only",
+    "verifier independent",
+    "old Forge runner not imported"
+  ]
+}

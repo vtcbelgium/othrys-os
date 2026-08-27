@@ -1,20 +1,20 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 49,
+  "sequence": 51,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "c1585621f3ce68ff27877429bd393e3d73c373f1",
+  "remote_head_at_last_verified_read": "0ec72dcae063316dbbac42bf1fe4f3e60e0a2bef",
   "control_gate": "WAIT_SYNC",
   "active_mission": {
-    "mission_id": "V2-002E",
+    "mission_id": "V2-002F",
     "status": "LOCAL_COMPLETE_SYNC_PENDING",
-    "issued_label": "V2-002E - MINIMUM TRUST CANAL",
+    "issued_label": "V2-002F - HEPHAESTUS ENGINEERING AUTHORITY",
     "source": "operator_current_conversation"
   },
-  "last_verified_remote_receipt": "c1585621f3ce68ff27877429bd393e3d73c373f1",
-  "last_verified_receipt_mission": "V2-002D",
-  "last_log_sequence": 43,
-  "last_log_hash": "19b1faf8114ba513aa71d0dc11f5d98d10164e42ea711174963ccd430e31f99d",
+  "last_verified_remote_receipt": "0ec72dcae063316dbbac42bf1fe4f3e60e0a2bef",
+  "last_verified_receipt_mission": "V2-002E",
+  "last_log_sequence": 45,
+  "last_log_hash": "902c7b83a09ef9b181d6b41e5839435c66be0fda2fd58e9161d3742ac5ceb2fc",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
     "incidents": [
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-002E",
-    "decision": "ACCEPT_MINIMUM_TRUST_CANAL",
-    "authority": "admission/binding boundary ahead of Talos only"
+    "mission_id": "V2-002F",
+    "decision": "ACCEPT_HEPHAESTUS_AUTHORITY",
+    "authority": "engineering judgement/frozen scope only; no lifecycle or self-grade"
   },
-  "next_legal_action": "Commit/push V2-002E, verify remote SHA, then open V2-002F Hephaestus integration.",
+  "next_legal_action": "Commit/push V2-002F, verify remote SHA, then open V2-003A first Block through the proven spine.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -216,8 +216,13 @@
     },
     {
       "mission_id": "V2-002E",
+      "status": "COMPLETE",
+      "note": "Minimum Trust Canal synced at 0ec72dc; 16/16 combined gate PASS."
+    },
+    {
+      "mission_id": "V2-002F",
       "status": "LOCAL_COMPLETE_SYNC_PENDING",
-      "note": "Minimum Trust Canal 16/16 PASS; rejected authority never reaches Talos; Qwen advisory PASS."
+      "note": "Hephaestus minimum authority 24/24 PASS; live chain Qwen SUCCEEDED; sync pending."
     }
   ],
   "git": {
@@ -226,7 +231,7 @@
     "merge_base": "66c45631781dfce93a4c8628f2a3de70a6bad09c",
     "local_parent": "b65ebba9f13a5e852bb778b33b2eaff6fcfa966b",
     "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
-    "base_sha_for_next_mission": "c1585621f3ce68ff27877429bd393e3d73c373f1",
+    "base_sha_for_next_mission": "0ec72dcae063316dbbac42bf1fe4f3e60e0a2bef",
     "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
     "sync_status": "PUSH_PENDING",
     "push_owner": "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",

@@ -1,0 +1,37 @@
+{
+  "mission_id": "V2-002F",
+  "live_mission_id": "V2-HEPH-LIVE",
+  "admission_created": true,
+  "correlation_id": "V2-HEPH-LIVE",
+  "command_digest": "1d74b13c0423bd8a786e0cdeb48edd0a4f7b25c729e6b86de25af05f5c4fea51",
+  "acceptance_digest": "cd628b97d5795c36ac604681328d76fcac2ac41d8d78b658ef60d321433ea4ef",
+  "talos_state": "SUCCEEDED",
+  "replay_state": "SUCCEEDED",
+  "attempts": 1,
+  "final_value": "VALUE=2\n",
+  "verifier_independent": true,
+  "controlled_first_rejection": false,
+  "attempt_evidence": [
+    {
+      "attempt": 1,
+      "duration_sec": 4.438202619552612,
+      "changed_files": [
+        "value.txt"
+      ],
+      "out_of_scope_changes": [],
+      "tool_trace": [
+        "write_file: wrote 8 chars to value.txt",
+        "finish: Replaced value.txt with exactly VALUE=2 followed by one newline."
+      ]
+    }
+  ],
+  "event_types": [
+    "op.received",
+    "op.validated",
+    "op.queued",
+    "op.claimed",
+    "op.running",
+    "op.validating",
+    "op.succeeded"
+  ]
+}

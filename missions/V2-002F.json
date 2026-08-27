@@ -1,0 +1,24 @@
+{
+  "mission_id": "V2-002F",
+  "title": "Hephaestus engineering authority",
+  "status": "LOCAL_COMPLETE_SYNC_PENDING",
+  "objective": "Attach the minimum Hephaestus engineering-judgement layer above the proven Trust Canal -> Talos -> Legion Worker spine.",
+  "source": "old Core Hephaestus doctrine and pure domain stock; V2 remains canonical",
+  "constraints": {
+    "talos_owns_lifecycle": true,
+    "hephaestus_cannot_self_grade": true,
+    "verifier_remains_independent": true,
+    "no_forge_runner_copy": true,
+    "no_provider_brand_in_domain": true,
+    "fail_closed": true
+  },
+  "target": [
+    "bind exact admitted command digest and mission identity",
+    "strictly validate bounded engineering command",
+    "freeze acceptance and mutation scope",
+    "enforce platform forbidden paths",
+    "produce provider-neutral build instruction",
+    "produce focused repair instruction from verifier evidence",
+    "prove live Trust Canal -> Hephaestus -> Talos -> Legion/Qwen -> verifier chain"
+  ]
+}
