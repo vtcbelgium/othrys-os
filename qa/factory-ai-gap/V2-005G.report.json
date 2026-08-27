@@ -1,0 +1,18 @@
+{
+  "mission_id": "V2-005G",
+  "verdict": "PASS",
+  "decision": "NO_CHANGE_JUSTIFIED",
+  "candidate_commit": "24b99ab9b9420c407d9eed01d23e0cf2f52a73d8",
+  "artifact_sha256": "5ea8aebb07a55bb6d9b0afdd575e61dfdd07d6492d76a2ce35959f200f6fb004",
+  "qualification_digest": "13e23a6f43a9a2e36b6f7d03bf0c343bb88f70242aba69dbd63639f29d93b09d",
+  "selected_suggestion_index": 0,
+  "selected_feedback": "Consider adding more robust error handling to handle cases where the query is invalid or the providerId/placementId are missing.",
+  "negative_gap_evidence": [],
+  "qwen_invoked": false,
+  "mutation_performed": false,
+  "real_candidate_clean": true,
+  "operator_accepted": false,
+  "released": false,
+  "authorityGranted": false,
+  "boundary": "Qualified AI feedback without deterministic negative gap evidence is stopped before Hephaestus/Talos/Qwen."
+}

@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-005G",
+  "title": "AI refinement gap gate / anti-churn",
+  "authority": "GPT_CONTROL",
+  "base_sha": "fb0112e42740e8cb8fae385ba40c2213fd9f1d81",
+  "goal": "Require deterministic negative gap evidence before qualified AI feedback may enter Factory Refine.",
+  "laws": [
+    "Operator feedback path remains unchanged.",
+    "Raw or merely qualified AI suggestions do not imply mutation.",
+    "AI refine requires exact negative evidence already verified by qualification.",
+    "No gap evidence => NO_CHANGE_JUSTIFIED with candidate unchanged.",
+    "Gap gate grants no mutation, acceptance, or release authority."
+  ]
+}

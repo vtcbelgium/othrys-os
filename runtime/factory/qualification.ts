@@ -44,7 +44,11 @@ export function selectQualifiedFeedback(qualification:any,index:number,approver:
   if(!qualification.eligibleSuggestionIndexes.includes(index))throw new FactoryQualificationError("SUGGESTION_NOT_ELIGIBLE");
   const actor=String(approver??"").trim();
   if(actor!=="operator"&&actor!=="gpt-control")throw new FactoryQualificationError("APPROVER_NOT_AUTHORIZED");
+  const check=qualification.review.checks.find((x:any)=>x.suggestionIndex===index);
+  if(!check)throw new FactoryQualificationError("REVIEW_CHECK_MISSING");
   return Object.freeze({feedback:qualification.proposal.suggestions[index],source:`ai-qualified:${qualification.qualificationDigest}`,selectedBy:actor,
     proposalDigest:qualification.proposal.proposalDigest,qualificationDigest:qualification.qualificationDigest,
-    candidateCommit:qualification.proposal.candidateCommit,artifactSha256:qualification.proposal.artifactSha256,authorityGranted:false});
+    candidateCommit:qualification.proposal.candidateCommit,artifactSha256:qualification.proposal.artifactSha256,
+    evidence:Object.freeze({verdict:check.verdict,evidenceQuote:check.evidenceQuote,evidenceTerms:Object.freeze([...(check.evidenceTerms??[])]),absentTokens:Object.freeze([...(check.absentTokens??[])]),reason:String(check.reason??"")}),
+    authorityGranted:false});
 }

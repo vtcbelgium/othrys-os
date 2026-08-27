@@ -1,19 +1,19 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 72,
+  "sequence": 74,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "aaa5713755661b91c39a221b81f269d16dfd4848",
-  "control_gate": "CLEAN_SYNCED",
+  "control_gate": "COMPLETE_SYNC_PENDING",
   "active_mission": {
-    "mission_id": "V2-005F",
-    "status": "COMPLETE",
-    "issued_label": "V2-005F - AI PROPOSAL QUALIFICATION COUNCIL",
+    "mission_id": "V2-005G",
+    "status": "COMPLETE_SYNC_PENDING",
+    "issued_label": "V2-005G - AI REFINE GAP GATE",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "aaa5713755661b91c39a221b81f269d16dfd4848",
   "last_verified_receipt_mission": "V2-005F",
-  "last_log_sequence": 60,
+  "last_log_sequence": 61,
   "last_log_hash": "242970f06018df446478944be650ef2c5170ff5b58d7b3de46df292dfb0c2da6",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-005F",
-    "decision": "ACCEPT_SOURCE_GROUNDED_AI_COUNCIL",
-    "authority": "AI proposal/review may create qualified feedback only; mutation, acceptance and release remain forbidden"
+    "mission_id": "V2-005G",
+    "decision": "ACCEPT_AI_REFINE_GAP_GATE",
+    "authority": "qualified AI suggestion may reach Refine only with deterministic negative gap evidence; operator path unchanged"
   },
-  "next_legal_action": "Open V2-005G only: prove qualified AI feedback can enter the existing bounded Refine path on a disposable candidate, with Legion build and T590 independent verification; do not mutate or accept/release the real candidate.",
+  "next_legal_action": "Close/sync V2-005G, then V2-006A may begin as a read-only tablet-primary/phone-secondary Command Deck surface; no control writes yet.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -268,6 +268,11 @@
       "mission_id": "V2-005F",
       "status": "COMPLETE",
       "note": "T590 llama3.2 proposal -> Legion qwen3:8b reviewer -> deterministic per-suggestion retrieval/exact-source/lexical grounding; 31/31 Factory AI, 24/24 Mycelium, 10/10 Worker; no mutation/accept/release."
+    },
+    {
+      "mission_id": "V2-005G",
+      "status": "COMPLETE_SYNC_PENDING",
+      "note": "AI anti-churn gate proven: live qualified suggestion had no negative gap evidence, so NO_CHANGE_JUSTIFIED; real candidate clean; Qwen not invoked; 35/35 Factory, 24/24 Mycelium, 10/10 Worker."
     }
   ],
   "git": {

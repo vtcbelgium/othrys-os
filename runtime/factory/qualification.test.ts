@@ -59,7 +59,7 @@ test("only eligible qualified suggestion can become feedback",()=>{
   assert.match(selected.qualificationDigest,/^[0-9a-f]{64}$/);
 });
 
-test("non-substantive evidence and unsupported support token fail closed",()=>{
+test("non-substantive evidence and invalid lexical grounding fail closed",()=>{
   assert.throws(()=>qualifyProposal(proposal,review([
     {suggestionIndex:0,verdict:"SUPPORTED",evidenceQuote:"=== CANDIDATE ===",evidenceTerms:["candidate"],absentTokens:[]},
     {suggestionIndex:1,verdict:"REJECTED",evidenceQuote:"console.log(JSON.stringify({ query, href: offer.href }));",evidenceTerms:["json"],absentTokens:[]}
