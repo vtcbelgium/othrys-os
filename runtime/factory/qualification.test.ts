@@ -69,5 +69,3 @@ test("non-substantive evidence and unsupported support token fail closed",()=>{
     {suggestionIndex:1,verdict:"REJECTED",evidenceQuote:"console.log(JSON.stringify({ query, href: offer.href }));",evidenceTerms:["json"],absentTokens:[]}
   ]),source),/EVIDENCE_TERM_FAILED/);
 });
-
-

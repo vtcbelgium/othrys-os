@@ -1,6 +1,6 @@
 {
   "mission_id": "V2-005F",
-  "status": "COMPLETE_SYNC_PENDING",
+  "status": "COMPLETE",
   "verdict": "PASS",
   "proposer": {
     "node": "t590",
@@ -45,5 +45,20 @@
   "mutation_performed": false,
   "operator_accepted": false,
   "released": false,
-  "next": "V2-005G may consume qualified feedback only through the existing bounded Refine path; real product remains operator-gated."
+  "next": "V2-005G may consume qualified feedback only through the existing bounded Refine path; real product remains operator-gated.",
+  "remote_receipt": "aaa5713755661b91c39a221b81f269d16dfd4848",
+  "independent_t590_verification": {
+    "head": "aaa5713755661b91c39a221b81f269d16dfd4848",
+    "mycelium": "24/24 PASS",
+    "worker": "10/10 PASS",
+    "factory_trust_heph_talos": "36/36 PASS",
+    "authorityGranted": false
+  },
+  "t590_service_source": {
+    "node_py_sha256": "f70d4ccb90cd95e2f7401057550a06cccb30b322033a7042764cd2addea88677",
+    "canonical_bytes_match": true,
+    "endpoint_healthy": true,
+    "restart_observed": false,
+    "note": "non-interactive shell lacked user-systemd bus; active endpoint remained healthy; canonical source is in place for next restart"
+  }
 }
