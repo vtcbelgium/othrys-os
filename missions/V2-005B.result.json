@@ -1,0 +1,16 @@
+{
+  "mission_id": "V2-005B",
+  "status": "COMPLETE",
+  "proof": {
+    "factory_plus_spine": "36/36 PASS",
+    "worker": "10/10 PASS",
+    "separate_process_resume": "PASS",
+    "decision": "WAIT_OPERATOR",
+    "rebuild_invoked": false,
+    "accept_invoked": false,
+    "release_invoked": false
+  },
+  "durable_run": "C:\\Users\\othry\\AppData\\Local\\OTHRYS\\v2-factory\\runs\\oros-find-item-v2.json",
+  "candidate_commit": "24b99ab9b9420c407d9eed01d23e0cf2f52a73d8",
+  "boundary": "Factory product-run state only; Talos attempt lifecycle unchanged."
+}

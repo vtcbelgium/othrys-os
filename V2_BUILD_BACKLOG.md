@@ -29,3 +29,5 @@
 | 9 | V2-004A | Mycelium Legion Node #1 census/envelope/Talos execution proof | COMPLETE |
 
 | 10 | V2-005A | Minimum Factory contract + first real V2 Oros build | COMPLETE |
+
+| 11 | V2-005B | Factory durable run + resume/operator boundary | COMPLETE / SYNC PENDING |

@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-005B",
+  "title": "Factory durable run + resume boundary",
+  "status": "COMPLETE",
+  "objective": "Persist verified Factory candidates durably and prove restart/resume returns WAITING_OPERATOR without rebuilding, accepting, or releasing.",
+  "constraints": {
+    "talos_owns_attempts": true,
+    "factory_owns_product_run_state_only": true,
+    "no_auto_accept": true,
+    "no_auto_release": true,
+    "atomic_persistence": true,
+    "candidate_commit_bound": true
+  },
+  "completed_at": "2026-08-27T15:30:26.629678+00:00"
+}
