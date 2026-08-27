@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-004D",
+  "status": "COMPLETE",
+  "verdict": "T590_INDEPENDENT_VERIFIER_PROVEN",
+  "capability": "verification.v2-suite@1",
+  "node": "t590",
+  "authorityGranted": false,
+  "verified_head": "909d838102db70a5e742049aa4f41d7dad39f776",
+  "remote_proof": {
+    "mycelium": "19/19 PASS",
+    "worker": "10/10 PASS",
+    "factory_talos": "19/19 PASS",
+    "round_trip_ms": 835
+  },
+  "first_run_failure": "T590 owner resource environment leaked into test subprocess; verifier correctly failed 3 Mycelium fixture tests",
+  "repair": "fixed verifier child environment strips node resource-policy variables; tests unchanged",
+  "boundary": "fixed suite only; no arbitrary shell; no engineering.patch; verifier checkout isolated and SHA-bound",
+  "t590_llama_probe": {"model":"llama3.2","eval_tok_s":22.94,"cold_load_sec":5.3,"decision_test":"WRONG","qualification":"ADVISORY_ONLY"}
+}

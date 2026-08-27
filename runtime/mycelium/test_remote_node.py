@@ -1,7 +1,8 @@
 import hashlib
 import unittest
+from unittest.mock import patch
 
-from remote_node import CAPABILITY, WORK_SCHEMA, execute_work
+from remote_node import CAPABILITY, V2_CAPABILITY, WORK_SCHEMA, execute_work
 
 
 class RemoteNodeTests(unittest.TestCase):
@@ -29,6 +30,17 @@ class RemoteNodeTests(unittest.TestCase):
         w = self.work(); w["payload"]["path"] = "/tmp/x"
         with self.assertRaisesRegex(ValueError, "INVALID_PAYLOAD"):
             execute_work("t590", w)
+
+    def test_v2_suite_payload_is_exact(self):
+        w={"schema":WORK_SCHEMA,"work_id":"v1","capability":V2_CAPABILITY,"payload":{"suite":"core","expected_sha":"abc","command":"pytest"}}
+        with self.assertRaisesRegex(ValueError,"INVALID_VERIFY_PAYLOAD"):
+            execute_work("t590",w)
+
+    def test_v2_suite_requires_disposable_repo(self):
+        w={"schema":WORK_SCHEMA,"work_id":"v1","capability":V2_CAPABILITY,"payload":{"suite":"core","expected_sha":"abc"}}
+        with patch.dict("os.environ",{"OTHRYS_VERIFY_REPO":"C:/definitely/missing"},clear=False):
+            with self.assertRaisesRegex(ValueError,"VERIFY_REPO_UNAVAILABLE"):
+                execute_work("t590",w)
 
 
 if __name__ == "__main__":

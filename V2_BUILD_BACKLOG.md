@@ -37,3 +37,5 @@
 | 13 | V2-005C | Factory capability-addressed Mycelium placement into Talos | COMPLETE |
 
 | 14 | V2-004C | Mycelium load-aware routing + node-loss failover | COMPLETE |
+
+| 15 | V2-004D | T590 independent fixed V2 verifier capability | COMPLETE |

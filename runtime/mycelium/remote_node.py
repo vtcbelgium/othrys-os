@@ -3,6 +3,9 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
+import subprocess
+import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
@@ -12,28 +15,45 @@ from node import build_node_envelope
 
 WORK_SCHEMA = "othrys.mycelium.work.v0.1"
 RESULT_SCHEMA = "othrys.mycelium.work-result.v0.1"
-CAPABILITY = "verification.sha256@1"
+SHA_CAPABILITY = "verification.sha256@1"
+CAPABILITY = SHA_CAPABILITY
+V2_CAPABILITY = "verification.v2-suite@1"
 MAX_TEXT_BYTES = 1_000_000
+def _run_fixed(repo: Path, args: list[str], timeout: int = 90) -> dict[str, Any]:
+    started=time.perf_counter()
+    env=os.environ.copy()
+    for key in ("OTHRYS_CPU_THREADS","OTHRYS_RAM_MB","OTHRYS_GPU_COUNT","OTHRYS_VRAM_MB","OTHRYS_OWNER_POLICY"): env.pop(key,None)
+    proc=subprocess.run(args,cwd=repo,text=True,encoding="utf-8",errors="replace",capture_output=True,timeout=timeout,env=env)
+    return {"ok":proc.returncode==0,"exit":proc.returncode,"duration_ms":round((time.perf_counter()-started)*1000,2),"tail":(proc.stdout+proc.stderr)[-4000:]}
+
+
+def _verify_v2(node_id: str, work_id: str, payload: dict[str, Any]) -> dict[str, Any]:
+    if set(payload) != {"suite", "expected_sha"} or payload.get("suite") != "core": raise ValueError("INVALID_VERIFY_PAYLOAD")
+    repo=Path(os.environ.get("OTHRYS_VERIFY_REPO", "")).expanduser()
+    if not repo.is_dir() or not (repo/".git").exists(): raise ValueError("VERIFY_REPO_UNAVAILABLE")
+    head=subprocess.check_output(["git","rev-parse","HEAD"],cwd=repo,text=True,encoding="utf-8").strip()
+    if head != payload.get("expected_sha"): raise ValueError("VERIFY_HEAD_MISMATCH")
+    node_tests=[str(x.relative_to(repo)) for x in sorted((repo/"runtime/talos-kernel").glob("*.test.ts"))]
+    node_tests += [str(x.relative_to(repo)) for x in sorted((repo/"runtime/factory").glob("*.test.ts"))]
+    node_tests += [str(x.relative_to(repo)) for x in sorted((repo/"qa/trust-canal").glob("*.test.ts"))]
+    node_tests += [str(x.relative_to(repo)) for x in sorted((repo/"qa/hephaestus-integration").glob("*.test.ts"))]
+    suites=[_run_fixed(repo,["python3","-m","unittest","discover","-s","runtime/mycelium","-p","test_*.py"]),_run_fixed(repo,["python3","-m","unittest","discover","-s","runtime/workers","-p","test_*.py"]),_run_fixed(repo,["node","--test",*node_tests])]
+    return {"schema":RESULT_SCHEMA,"work_id":work_id,"node_id":node_id,"capability":V2_CAPABILITY,"authorityGranted":False,"ok":all(x["ok"] for x in suites),"artifact":{"head":head,"suites":suites}}
+
+
+
 def execute_work(node_id: str, raw: dict[str, Any]) -> dict[str, Any]:
-    if set(raw) != {"schema", "work_id", "capability", "payload"}:
-        raise ValueError("INVALID_WORK_FIELDS")
-    if raw["schema"] != WORK_SCHEMA or raw["capability"] != CAPABILITY:
-        raise ValueError("UNSUPPORTED_WORK")
-    work_id = raw["work_id"]
-    payload = raw["payload"]
-    if not isinstance(work_id, str) or not work_id.strip():
-        raise ValueError("INVALID_WORK_ID")
-    if not isinstance(payload, dict) or set(payload) != {"text"}:
-        raise ValueError("INVALID_PAYLOAD")
-    text = payload["text"]
-    if not isinstance(text, str):
-        raise ValueError("INVALID_TEXT")
-    data = text.encode("utf-8")
-    if len(data) > MAX_TEXT_BYTES:
-        raise ValueError("PAYLOAD_TOO_LARGE")
-    return {"schema": RESULT_SCHEMA, "work_id": work_id, "node_id": node_id,
-            "capability": CAPABILITY, "authorityGranted": False, "ok": True,
-            "artifact": {"sha256": hashlib.sha256(data).hexdigest(), "bytes": len(data)}}
+    if set(raw) != {"schema", "work_id", "capability", "payload"}: raise ValueError("INVALID_WORK_FIELDS")
+    if raw.get("schema") != WORK_SCHEMA: raise ValueError("UNSUPPORTED_WORK")
+    work_id=raw.get("work_id"); capability=raw.get("capability"); payload=raw.get("payload")
+    if not isinstance(work_id,str) or not work_id.strip(): raise ValueError("INVALID_WORK_ID")
+    if not isinstance(payload,dict): raise ValueError("INVALID_PAYLOAD")
+    if capability == V2_CAPABILITY: return _verify_v2(node_id, work_id, payload)
+    if capability != SHA_CAPABILITY: raise ValueError("UNSUPPORTED_WORK")
+    if set(payload) != {"text"} or not isinstance(payload.get("text"),str): raise ValueError("INVALID_PAYLOAD")
+    data=payload["text"].encode("utf-8")
+    if len(data)>MAX_TEXT_BYTES: raise ValueError("PAYLOAD_TOO_LARGE")
+    return {"schema":RESULT_SCHEMA,"work_id":work_id,"node_id":node_id,"capability":SHA_CAPABILITY,"authorityGranted":False,"ok":True,"artifact":{"sha256":hashlib.sha256(data).hexdigest(),"bytes":len(data)}}
 def make_handler(node_id: str, root: Path):
     class Handler(BaseHTTPRequestHandler):
         def _json(self, code: int, payload: dict[str, Any]) -> None:
@@ -48,6 +68,8 @@ def make_handler(node_id: str, root: Path):
             if self.path != "/health":
                 self._json(404, {"ok": False, "error": "NOT_FOUND"}); return
             envelope = build_node_envelope(node_id, root, Path("__no_engineering_worker__"))
+            repo=Path(os.environ.get("OTHRYS_VERIFY_REPO", "")).expanduser()
+            if (repo/".git").exists() and V2_CAPABILITY not in envelope["capabilities"]: envelope["capabilities"].append(V2_CAPABILITY)
             self._json(200, {"ok": True, "node": envelope,
                              "transport": "mycelium.http.v0.1", "authorityGranted": False})
 
@@ -88,3 +110,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

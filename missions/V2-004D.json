@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-004D",
+  "title": "T590 independent V2 verifier capability",
+  "status": "RUNNING",
+  "goal": "Expose a fixed, non-shell verification capability on T590 so Talos can offload deterministic V2 gates independently from Legion builds.",
+  "constraints": [
+    "no arbitrary command execution",
+    "verifier checkout is disposable and isolated",
+    "no engineering.patch on T590",
+    "verifier never grants authority",
+    "Talos owns lifecycle and retries"
+  ]
+}
