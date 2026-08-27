@@ -4,6 +4,8 @@ import argparse
 import hashlib
 import json
 import os
+from datetime import datetime, timezone
+from math import isfinite
 import subprocess
 import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -19,6 +21,7 @@ SHA_CAPABILITY = "verification.sha256@1"
 CAPABILITY = SHA_CAPABILITY
 V2_CAPABILITY = "verification.v2-suite@1"
 ADVISORY_CAPABILITY = "advisory.product-critique@1"
+TELEMETRY_CAPABILITY = "telemetry.node-status@1"
 MAX_TEXT_BYTES = 1_000_000
 def _run_fixed(repo: Path, args: list[str], timeout: int = 90) -> dict[str, Any]:
     started=time.perf_counter()
@@ -62,6 +65,25 @@ def _product_critique(node_id: str, work_id: str, payload: dict[str, Any]) -> di
 
 
 
+def _telemetry_status(node_id: str, work_id: str, payload: dict[str, Any]) -> dict[str, Any]:
+    required={"token","nodeId","capturedAt","cpuPercent","ramAvailableMb","gpuUtilPercent","vramUsedMb","vramTotalMb","gpuTempC","qwenLoaded"}
+    if set(payload) != required: raise ValueError("INVALID_TELEMETRY_PAYLOAD")
+    expected=os.environ.get("OTHRYS_TELEMETRY_TOKEN","")
+    if not expected or payload.get("token") != expected: raise ValueError("TELEMETRY_UNAUTHORIZED")
+    if payload.get("nodeId") != "legion" or not isinstance(payload.get("capturedAt"),str): raise ValueError("INVALID_TELEMETRY_IDENTITY")
+    try: captured=datetime.fromisoformat(payload["capturedAt"].replace("Z","+00:00"))
+    except ValueError: raise ValueError("INVALID_TELEMETRY_TIME")
+    if captured.tzinfo is None or abs(datetime.now(timezone.utc).timestamp()-captured.timestamp())>300: raise ValueError("INVALID_TELEMETRY_TIME")
+    numeric=("cpuPercent","ramAvailableMb","gpuUtilPercent","vramUsedMb","vramTotalMb","gpuTempC")
+    if any(not isinstance(payload[k],(int,float)) or isinstance(payload[k],bool) or not isfinite(payload[k]) for k in numeric): raise ValueError("INVALID_TELEMETRY_METRIC")
+    if not (0<=payload["cpuPercent"]<=100 and 0<=payload["gpuUtilPercent"]<=100 and payload["ramAvailableMb"]>=0 and 0<=payload["vramUsedMb"]<=payload["vramTotalMb"] and payload["vramTotalMb"]>0 and 0<=payload["gpuTempC"]<=120): raise ValueError("INVALID_TELEMETRY_METRIC")
+    if not isinstance(payload["qwenLoaded"],bool): raise ValueError("INVALID_TELEMETRY_METRIC")
+    clean={k:v for k,v in payload.items() if k!="token"}; clean["receivedAt"]=datetime.now(timezone.utc).isoformat()
+    directory=Path(os.environ.get("OTHRYS_TELEMETRY_DIR",str(Path.home()/".othrys"/"telemetry"))).expanduser(); directory.mkdir(parents=True,exist_ok=True)
+    target=directory/"legion.json"; tmp=directory/f"legion.json.tmp-{os.getpid()}"; tmp.write_text(json.dumps(clean,separators=(",",":"))+"\n",encoding="utf-8"); tmp.replace(target)
+    return {"schema":RESULT_SCHEMA,"work_id":work_id,"node_id":node_id,"capability":TELEMETRY_CAPABILITY,"authorityGranted":False,"ok":True,"artifact":{"nodeId":"legion","capturedAt":clean["capturedAt"]}}
+
+
 def execute_work(node_id: str, raw: dict[str, Any]) -> dict[str, Any]:
     if set(raw) != {"schema", "work_id", "capability", "payload"}: raise ValueError("INVALID_WORK_FIELDS")
     if raw.get("schema") != WORK_SCHEMA: raise ValueError("UNSUPPORTED_WORK")
@@ -70,6 +92,7 @@ def execute_work(node_id: str, raw: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(payload,dict): raise ValueError("INVALID_PAYLOAD")
     if capability == V2_CAPABILITY: return _verify_v2(node_id, work_id, payload)
     if capability == ADVISORY_CAPABILITY: return _product_critique(node_id, work_id, payload)
+    if capability == TELEMETRY_CAPABILITY: return _telemetry_status(node_id, work_id, payload)
     if capability != SHA_CAPABILITY: raise ValueError("UNSUPPORTED_WORK")
     if set(payload) != {"text"} or not isinstance(payload.get("text"),str): raise ValueError("INVALID_PAYLOAD")
     data=payload["text"].encode("utf-8")
@@ -92,6 +115,7 @@ def make_handler(node_id: str, root: Path):
             repo=Path(os.environ.get("OTHRYS_VERIFY_REPO", "")).expanduser()
             if (repo/".git").exists() and V2_CAPABILITY not in envelope["capabilities"]: envelope["capabilities"].append(V2_CAPABILITY)
             if "llama3.2" in envelope.get("physical",{}).get("ollama_models","") and ADVISORY_CAPABILITY not in envelope["capabilities"]: envelope["capabilities"].append(ADVISORY_CAPABILITY)
+            if os.environ.get("OTHRYS_TELEMETRY_TOKEN") and TELEMETRY_CAPABILITY not in envelope["capabilities"]: envelope["capabilities"].append(TELEMETRY_CAPABILITY)
             self._json(200, {"ok": True, "node": envelope,
                              "transport": "mycelium.http.v0.1", "authorityGranted": False})
 

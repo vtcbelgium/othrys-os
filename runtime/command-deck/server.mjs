@@ -16,6 +16,15 @@ function gitHead(){
   return p.status===0?p.stdout.trim():'UNKNOWN';
 }
 function recent(history,n=8){ return Array.isArray(history)?history.slice(-n).reverse():[]; }
+export function readLegionTelemetry(path=process.env.OTHRYS_LEGION_TELEMETRY){
+  if(!path||!existsSync(path)) return null;
+  try{
+    const raw=JSON.parse(readFileSync(path,'utf8'));
+    if(raw.nodeId!=='legion'||typeof raw.capturedAt!=='string') return null;
+    const ageMs=Date.now()-Date.parse(raw.capturedAt);
+    return {id:'legion',capturedAt:raw.capturedAt,ageMs:Number.isFinite(ageMs)?ageMs:null,stale:!Number.isFinite(ageMs)||ageMs<0||ageMs>30000,cpuPercent:raw.cpuPercent,ramAvailableMb:raw.ramAvailableMb,gpuUtilPercent:raw.gpuUtilPercent,vramUsedMb:raw.vramUsedMb,vramTotalMb:raw.vramTotalMb,gpuTempC:raw.gpuTempC,qwenLoaded:raw.qwenLoaded===true};
+  }catch{return null;}
+}
 export async function buildStatus(){
   const state=json('GPT_STATE.json');
   let factory=null;
@@ -28,7 +37,7 @@ export async function buildStatus(){
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),factory,
+    recentMissions:recent(state.mission_history),factory,legionNode:readLegionTelemetry(),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     authorityGranted:false,controlsEnabled:false
   };

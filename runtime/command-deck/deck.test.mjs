@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { readFileSync, mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 const dir=import.meta.dirname;
@@ -13,6 +14,7 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.doesNotMatch(html,/innerHTML/);
   assert.equal((html.match(/<button disabled/g)||[]).length,4);
   assert.match(html,/X-OTHRYS-DECK-TOKEN/);
+  assert.match(html,/Legion builder node/);
 });
 
 test('Deck API refuses writes and requires token',async t=>{
@@ -33,4 +35,17 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.controlsEnabled,false);
   assert.ok(data.activeMission?.mission_id);
   assert.ok(Array.isArray(data.recentMissions));
+});
+
+
+test('Legion telemetry is sanitized and stale-aware',async()=>{
+  process.env.OTHRYS_DECK_NO_START='1';
+  const {readLegionTelemetry}=await import('./server.mjs');
+  const d=mkdtempSync(join(tmpdir(),'othrys-deck-')); const f=join(d,'legion.json');
+  try{
+    writeFileSync(f,JSON.stringify({nodeId:'legion',capturedAt:new Date().toISOString(),cpuPercent:7,ramAvailableMb:12000,gpuUtilPercent:0,vramUsedMb:345,vramTotalMb:8151,gpuTempC:42,qwenLoaded:false,token:'must-not-leak'}));
+    const live=readLegionTelemetry(f); assert.equal(live.id,'legion'); assert.equal(live.stale,false); assert.equal(live.qwenLoaded,false); assert.equal('token' in live,false);
+    writeFileSync(f,JSON.stringify({nodeId:'legion',capturedAt:new Date(Date.now()-60000).toISOString()}));
+    assert.equal(readLegionTelemetry(f).stale,true);
+  }finally{rmSync(d,{recursive:true,force:true});}
 });

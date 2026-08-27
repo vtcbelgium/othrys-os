@@ -49,3 +49,5 @@
 | 20 | V2-006A | OTHRYS Command Deck: tablet-primary / phone-secondary read-only operator surface | COMPLETE |
 
 | 19 | V2-005G | AI Refine Gap Gate: negative evidence required before qualified AI may trigger mutation | COMPLETE |
+
+| 21 | V2-006B | Authority-free Legion -> T590 Command Deck telemetry | RUNNING |

@@ -1,9 +1,12 @@
 import hashlib
 import json
 import unittest
+from datetime import datetime, timezone
+from tempfile import TemporaryDirectory
+from pathlib import Path
 from unittest.mock import patch
 
-from remote_node import ADVISORY_CAPABILITY, CAPABILITY, V2_CAPABILITY, WORK_SCHEMA, execute_work
+from remote_node import ADVISORY_CAPABILITY, CAPABILITY, TELEMETRY_CAPABILITY, V2_CAPABILITY, WORK_SCHEMA, execute_work
 
 
 class RemoteNodeTests(unittest.TestCase):
@@ -70,6 +73,24 @@ class RemoteNodeTests(unittest.TestCase):
         with patch("remote_node.urlopen",return_value=FakeResponse()):
             with self.assertRaisesRegex(ValueError,"ADVISORY_MODEL_INVALID_OUTPUT"):
                 execute_work("t590",w)
+
+    def telemetry(self, token="secret"):
+        return {"schema":WORK_SCHEMA,"work_id":"t1","capability":TELEMETRY_CAPABILITY,"payload":{"token":token,"nodeId":"legion","capturedAt":datetime.now(timezone.utc).isoformat(),"cpuPercent":12.5,"ramAvailableMb":8192,"gpuUtilPercent":4,"vramUsedMb":512,"vramTotalMb":8151,"gpuTempC":44,"qwenLoaded":False}}
+
+    def test_telemetry_is_token_bound_bounded_and_authority_free(self):
+        with TemporaryDirectory() as d, patch.dict("os.environ",{"OTHRYS_TELEMETRY_TOKEN":"secret","OTHRYS_TELEMETRY_DIR":d},clear=False):
+            r=execute_work("t590",self.telemetry())
+            self.assertTrue(r["ok"]); self.assertFalse(r["authorityGranted"]); self.assertEqual(r["artifact"]["nodeId"],"legion")
+            saved=json.loads(Path(d,"legion.json").read_text())
+            self.assertNotIn("token",saved); self.assertEqual(saved["nodeId"],"legion"); self.assertFalse(saved["qwenLoaded"])
+
+    def test_telemetry_rejects_bad_token_shape_and_metrics(self):
+        with TemporaryDirectory() as d, patch.dict("os.environ",{"OTHRYS_TELEMETRY_TOKEN":"secret","OTHRYS_TELEMETRY_DIR":d},clear=False):
+            with self.assertRaisesRegex(ValueError,"TELEMETRY_UNAUTHORIZED"): execute_work("t590",self.telemetry("wrong"))
+            w=self.telemetry(); w["payload"]["gpuUtilPercent"]=101
+            with self.assertRaisesRegex(ValueError,"INVALID_TELEMETRY_METRIC"): execute_work("t590",w)
+            w=self.telemetry(); w["payload"]["command"]="shutdown"
+            with self.assertRaisesRegex(ValueError,"INVALID_TELEMETRY_PAYLOAD"): execute_work("t590",w)
 
 
 if __name__ == "__main__":

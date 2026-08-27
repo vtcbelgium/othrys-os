@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-006B",
+  "title": "Authority-free colony telemetry",
+  "authority": "GPT_CONTROL",
+  "base_sha": "25a3ee7ca4f10596c2a48024be00c361b90255ff",
+  "goal": "Show live Legion health in the T590-hosted Command Deck without granting tablet/phone or telemetry transport any execution authority.",
+  "laws": [
+    "Reuse bounded Mycelium transport; no arbitrary telemetry fields.",
+    "Telemetry token is machine-local and never committed.",
+    "T590 may persist only the latest validated Legion status outside Git.",
+    "Telemetry grants no task, mutation, acceptance, release, or control authority.",
+    "Stale telemetry must be visibly stale, never implied live."
+  ]
+}

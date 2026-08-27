@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 78,
+  "sequence": 79,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
-  "control_gate": "CLEAN_SYNCED",
+  "control_gate": "MISSION_ACTIVE",
   "active_mission": {
-    "mission_id": "V2-006A",
-    "status": "COMPLETE",
-    "issued_label": "V2-006A - READ ONLY COMMAND DECK",
+    "mission_id": "V2-006B",
+    "status": "RUNNING",
+    "issued_label": "V2-006B - COLONY TELEMETRY",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -67,7 +67,7 @@
     "decision": "ACCEPT_READ_ONLY_COMMAND_DECK",
     "authority": "T590 hosts token-gated read-only Deck; tablet primary and phone secondary; no control writes"
   },
-  "next_legal_action": "Add one-way authority-free Legion telemetry to the read-only Command Deck; do not add control-write endpoints.",
+  "next_legal_action": "Build bounded one-way Legion telemetry into T590-hosted read-only Command Deck; no control writes.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
