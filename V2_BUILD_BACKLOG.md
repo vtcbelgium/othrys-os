@@ -55,3 +55,5 @@
 | 22 | V2-006C | Authenticated tablet Refine intent ingress; pending Trust Canal only | COMPLETE |
 
 | 23 | V2-006D | Tablet Refine intent -> Trust Canal admission receipt; no execution | COMPLETE |
+
+| 24 | V2-006E | Command Deck pending/admitted intent status visibility | COMPLETE |

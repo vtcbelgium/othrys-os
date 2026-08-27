@@ -1,0 +1,10 @@
+{
+  "mission_id": "V2-006E",
+  "verdict": "PASS",
+  "candidate_sha": "e86fb15ca8062a45e1dfd1130e68ad2ea5d90177",
+  "deck_status_visibility": ["PENDING_TRUST_CANAL","ADMITTED"],
+  "live_control_intent": null,
+  "execution_controls_enabled": false,
+  "t590_tests": "7/7",
+  "authorityGranted": false
+}

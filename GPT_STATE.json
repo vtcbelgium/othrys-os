@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 82,
+  "sequence": 83,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-006D",
+    "mission_id": "V2-006E",
     "status": "COMPLETE",
-    "issued_label": "V2-006D - TABLET INTENT TRUST CANAL BRIDGE",
+    "issued_label": "V2-006E - TABLET INTENT STATUS",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-006D",
-    "decision": "ACCEPT_TABLET_INTENT_TRUST_CANAL_ADMISSION",
-    "authority": "admission receipt only; no execution"
+    "mission_id": "V2-006E",
+    "decision": "ACCEPT_CONTROL_INTENT_STATUS_VISIBILITY",
+    "authority": "read-only status; no execution"
   },
-  "next_legal_action": "Open V2-006E intent status visibility on Command Deck; show pending/admitted state without adding execution authority.",
+  "next_legal_action": "Open V2-006F automatic T590 intent admission watcher; admission only, no execution.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
