@@ -1,0 +1,57 @@
+{
+  "mission_id": "V2-002D",
+  "state": "SUCCEEDED",
+  "replay_state": "SUCCEEDED",
+  "attempts": 3,
+  "final_value": "VALUE=2\n",
+  "controlled_failure_injection": "attempt 1 requested VALUE=1 while verifier required VALUE=2",
+  "verifier_independent": true,
+  "attempt_evidence": [
+    {
+      "attempt": 1,
+      "worker_ok": true,
+      "changed_files": [
+        "value.txt"
+      ],
+      "out_of_scope_changes": [],
+      "duration_sec": 6.92757248878479
+    },
+    {
+      "attempt": 2,
+      "worker_ok": true,
+      "changed_files": [
+        "value.txt"
+      ],
+      "out_of_scope_changes": [],
+      "duration_sec": 4.819007158279419
+    },
+    {
+      "attempt": 3,
+      "worker_ok": true,
+      "changed_files": [
+        "value.txt"
+      ],
+      "out_of_scope_changes": [],
+      "duration_sec": 4.721999645233154
+    }
+  ],
+  "event_types": [
+    "op.received",
+    "op.validated",
+    "op.queued",
+    "op.claimed",
+    "op.running",
+    "op.validating",
+    "op.retry_scheduled",
+    "op.queued",
+    "op.claimed",
+    "op.running",
+    "op.validating",
+    "op.retry_scheduled",
+    "op.queued",
+    "op.claimed",
+    "op.running",
+    "op.validating",
+    "op.succeeded"
+  ]
+}

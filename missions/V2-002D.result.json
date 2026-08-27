@@ -1,0 +1,34 @@
+{
+  "mission_id": "V2-002D",
+  "status": "COMPLETE_LOCAL_SYNC_PENDING",
+  "verdict": "PASS",
+  "talos_state": "SUCCEEDED",
+  "replay_state": "SUCCEEDED",
+  "attempts": 3,
+  "max_attempts": 5,
+  "builder": "qwen3-builder",
+  "node": "legion",
+  "fallback": false,
+  "final_value": "VALUE=2\n",
+  "independent_verifier": true,
+  "out_of_scope_changes": 0,
+  "worker_duration_sec_total": 16.468579292297363,
+  "attempt_1": {
+    "worker_ok": true,
+    "verifier_ok": false,
+    "actual": "VALUE=1\n",
+    "failure_packet": "expected exact VALUE=2\\n; actual=\"VALUE=1\\n\""
+  },
+  "attempt_2": {
+    "worker_ok": true,
+    "verifier_ok": false,
+    "actual": "VALUE=2",
+    "failure_packet": "expected exact VALUE=2\\n; actual=\"VALUE=2\""
+  },
+  "attempt_3": {
+    "worker_ok": true,
+    "verifier_ok": true,
+    "actual": "VALUE=2\n"
+  },
+  "proof": "Talos, not GPT, owned retry. Qwen received prior verifier evidence; success was emitted only after deterministic verifier PASS."
+}
