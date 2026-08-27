@@ -1,0 +1,13 @@
+[Unit]
+Description=OTHRYS Mycelium proof-only node endpoint
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.othrys/mycelium
+ExecStart=/usr/bin/python3 %h/.othrys/mycelium/remote_node.py serve --bind 0.0.0.0 --port 8765 --node-id t590
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

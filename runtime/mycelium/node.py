@@ -23,6 +23,17 @@ def _memory_mb() -> int:
         class M(ctypes.Structure):
             _fields_=[("dwLength",ctypes.c_ulong),("dwMemoryLoad",ctypes.c_ulong),("ullTotalPhys",ctypes.c_ulonglong),("ullAvailPhys",ctypes.c_ulonglong),("ullTotalPageFile",ctypes.c_ulonglong),("ullAvailPageFile",ctypes.c_ulonglong),("ullTotalVirtual",ctypes.c_ulonglong),("ullAvailVirtual",ctypes.c_ulonglong),("sullAvailExtendedVirtual",ctypes.c_ulonglong)]
         m=M(); m.dwLength=ctypes.sizeof(M); ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(m)); return int(m.ullTotalPhys//(1024*1024))
+    try:
+        page_size = int(os.sysconf("SC_PAGE_SIZE"))
+        pages = int(os.sysconf("SC_PHYS_PAGES"))
+        return int((page_size * pages) // (1024 * 1024))
+    except (AttributeError, OSError, ValueError):
+        try:
+            for line in Path("/proc/meminfo").read_text(encoding="utf-8").splitlines():
+                if line.startswith("MemTotal:"):
+                    return int(line.split()[1]) // 1024
+        except (OSError, ValueError, IndexError):
+            pass
     return 0
 
 
@@ -58,7 +69,7 @@ def advertised_capacity(physical: dict[str, Any]) -> dict[str, Any]:
 
 
 def capabilities(physical: dict[str, Any], worker_path: Path) -> list[str]:
-    out=["verification.local"]
+    out=["verification.local", "verification.sha256@1"]
     if physical["runtimes"]["git"]: out.append("git.local")
     if physical["runtimes"]["node"]: out.append("node.local")
     if physical["runtimes"]["ollama"] and worker_path.exists() and "qwen3:8b" in physical["ollama_models"]: out.append(WORKER_CAPABILITY)
@@ -75,3 +86,17 @@ def feasible(envelope: dict[str, Any], capability: str, request: dict[str, int])
     if capability not in envelope.get("capabilities",[]): return False
     cap=envelope.get("advertised",{})
     return all(int(request.get(k,0))<=int(cap.get(k,0)) for k in ("cpu_threads","ram_mb","gpu_count","vram_mb"))
+
+
+def select_node(envelopes: list[dict[str, Any]], capability: str, request: dict[str, int]) -> dict[str, Any] | None:
+    candidates = [e for e in envelopes if feasible(e, capability, request)]
+    if not candidates:
+        return None
+    needs_gpu = int(request.get("gpu_count", 0)) > 0 or int(request.get("vram_mb", 0)) > 0
+    def score(e: dict[str, Any]):
+        cap = e.get("advertised", {})
+        node_id = str(e.get("node_id", ""))
+        if needs_gpu:
+            return (-int(cap.get("gpu_count", 0)), -int(cap.get("vram_mb", 0)), node_id)
+        return (int(cap.get("gpu_count", 0)), int(cap.get("cpu_threads", 0)), node_id)
+    return sorted(candidates, key=score)[0]

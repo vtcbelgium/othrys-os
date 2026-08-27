@@ -1,19 +1,19 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 57,
+  "sequence": 58,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "0db0fe5e52b20a1394546de89697dddd4e9b6cae",
+  "remote_head_at_last_verified_read": "ac87146294191a9a757a91ab4eac8a9ef158dfef",
   "control_gate": "SYNC_PENDING",
   "active_mission": {
-    "mission_id": "V2-005B",
+    "mission_id": "V2-004B",
     "status": "COMPLETE_SYNC_PENDING",
-    "issued_label": "V2-005B - FACTORY DURABLE RUN + RESUME",
+    "issued_label": "V2-004B - MYCELIUM T590 NODE 2",
     "source": "operator_current_conversation"
   },
-  "last_verified_remote_receipt": "0db0fe5e52b20a1394546de89697dddd4e9b6cae",
-  "last_verified_receipt_mission": "V2-005A",
-  "last_log_sequence": 51,
+  "last_verified_remote_receipt": "ac87146294191a9a757a91ab4eac8a9ef158dfef",
+  "last_verified_receipt_mission": "V2-005B",
+  "last_log_sequence": 53,
   "last_log_hash": "242970f06018df446478944be650ef2c5170ff5b58d7b3de46df292dfb0c2da6",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-005B",
-    "decision": "ACCEPT_FACTORY_DURABLE_RUN_BOUNDARY",
-    "authority": "Factory may persist product candidate state; operator decision/release remain explicit; Talos owns attempts"
+    "mission_id": "V2-004B",
+    "decision": "ACCEPT_T590_NODE2_CPU_ENVELOPE",
+    "authority": "resource/capability topology only; authorityGranted=false; Talos owns lifecycle"
   },
-  "next_legal_action": "Sync V2-005B then route Factory worker requests through Mycelium capability/resource feasibility rather than hard-coded Legion.",
+  "next_legal_action": "Sync V2-004B, persist the proof-only T590 endpoint at user level, then wire Factory capability requests through Mycelium placement; keep T590 engineering.patch disabled until a local builder is separately certified.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

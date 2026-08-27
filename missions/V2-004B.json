@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-004B",
+  "title": "Mycelium T590 Node #2 qualification",
+  "status": "COMPLETE",
+  "objective": "Qualify T590 as a second authority-free resource patch and prove Mycelium-selected Talos-owned cross-machine CPU work.",
+  "constraints": {
+    "no_remote_shell": true,
+    "no_engineering_patch_on_t590": true,
+    "no_distributed_cas": true,
+    "no_second_scheduler": true,
+    "authorityGranted": false
+  },
+  "completed_at": "2026-08-27T15:46:40.419493+00:00"
+}
