@@ -1,0 +1,20 @@
+{
+  "mission_id": "V2-005E",
+  "status": "COMPLETE",
+  "verdict": "PASS_WITH_UNQUALIFIED_PROPOSAL",
+  "factory_spine": "31/31 PASS",
+  "mycelium": "24/24 PASS",
+  "worker": "10/10 PASS",
+  "node_id": "t590",
+  "model": "llama3.2",
+  "elapsed_ms": 16947.88,
+  "proposal_digest": "b35736fad1e9b3100cd4b4b204b4258b1c62a6ac4ba980cad3483e80eb9b2e2e",
+  "proposal_selected": false,
+  "qualification_status": "UNQUALIFIED",
+  "ai_self_selection_blocked": true,
+  "real_product_unchanged": true,
+  "operator_accepted": false,
+  "released": false,
+  "quality_issue": "Model asserted network/API behavior not established by candidate source; canonical Block source has no fetch/axios/http.request/https.request/XMLHttpRequest primitive.",
+  "boundary": "AI proposal lane is valid; proposal quality is not authority. Separate qualification/fact-check gate required before selection."
+}

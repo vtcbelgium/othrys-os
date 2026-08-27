@@ -18,6 +18,7 @@ RESULT_SCHEMA = "othrys.mycelium.work-result.v0.1"
 SHA_CAPABILITY = "verification.sha256@1"
 CAPABILITY = SHA_CAPABILITY
 V2_CAPABILITY = "verification.v2-suite@1"
+ADVISORY_CAPABILITY = "advisory.product-critique@1"
 MAX_TEXT_BYTES = 1_000_000
 def _run_fixed(repo: Path, args: list[str], timeout: int = 90) -> dict[str, Any]:
     started=time.perf_counter()
@@ -41,6 +42,25 @@ def _verify_v2(node_id: str, work_id: str, payload: dict[str, Any]) -> dict[str,
     return {"schema":RESULT_SCHEMA,"work_id":work_id,"node_id":node_id,"capability":V2_CAPABILITY,"authorityGranted":False,"ok":all(x["ok"] for x in suites),"artifact":{"head":head,"suites":suites}}
 
 
+def _product_critique(node_id: str, work_id: str, payload: dict[str, Any]) -> dict[str, Any]:
+    required={"candidateCommit","artifactSha256","sourceText"}
+    if set(payload) != required: raise ValueError("INVALID_ADVISORY_PAYLOAD")
+    if not isinstance(payload["sourceText"],str) or len(payload["sourceText"].encode("utf-8"))>20000: raise ValueError("INVALID_ADVISORY_SOURCE")
+    if not isinstance(payload["candidateCommit"],str) or not isinstance(payload["artifactSha256"],str): raise ValueError("INVALID_ADVISORY_EVIDENCE")
+    prompt=("You are an advisory product critic. You have NO authority to change code, policy, acceptance, or release. "
+            "Inspect the supplied product source and return JSON only with keys summary, suggestions, risks. "
+            "suggestions must be 1-3 short concrete functionality or usability improvements; risks must be 0-3 strings. "
+            "Do not suggest duplicating platform Block logic or bypassing governance.\nSOURCE:\n"+payload["sourceText"])
+    body=json.dumps({"model":os.environ.get("OTHRYS_ADVISORY_MODEL","llama3.2"),"prompt":prompt,"stream":False,"format":"json","keep_alive":"10m"}).encode("utf-8")
+    req=Request("http://127.0.0.1:11434/api/generate",data=body,headers={"Content-Type":"application/json"},method="POST")
+    with urlopen(req,timeout=45) as response: raw=json.loads(response.read().decode("utf-8"))
+    parsed=json.loads(raw.get("response","{}")); summary=str(parsed.get("summary","")).strip()
+    suggestions=[str(x).strip() for x in parsed.get("suggestions",[]) if str(x).strip()][:3]
+    risks=[str(x).strip() for x in parsed.get("risks",[]) if str(x).strip()][:3]
+    if not summary or not suggestions: raise ValueError("ADVISORY_MODEL_INVALID_OUTPUT")
+    return {"schema":RESULT_SCHEMA,"work_id":work_id,"node_id":node_id,"capability":ADVISORY_CAPABILITY,"authorityGranted":False,"ok":True,"artifact":{"candidateCommit":payload["candidateCommit"],"artifactSha256":payload["artifactSha256"],"model":os.environ.get("OTHRYS_ADVISORY_MODEL","llama3.2"),"summary":summary,"suggestions":suggestions,"risks":risks}}
+
+
 
 def execute_work(node_id: str, raw: dict[str, Any]) -> dict[str, Any]:
     if set(raw) != {"schema", "work_id", "capability", "payload"}: raise ValueError("INVALID_WORK_FIELDS")
@@ -49,6 +69,7 @@ def execute_work(node_id: str, raw: dict[str, Any]) -> dict[str, Any]:
     if not isinstance(work_id,str) or not work_id.strip(): raise ValueError("INVALID_WORK_ID")
     if not isinstance(payload,dict): raise ValueError("INVALID_PAYLOAD")
     if capability == V2_CAPABILITY: return _verify_v2(node_id, work_id, payload)
+    if capability == ADVISORY_CAPABILITY: return _product_critique(node_id, work_id, payload)
     if capability != SHA_CAPABILITY: raise ValueError("UNSUPPORTED_WORK")
     if set(payload) != {"text"} or not isinstance(payload.get("text"),str): raise ValueError("INVALID_PAYLOAD")
     data=payload["text"].encode("utf-8")
@@ -70,6 +91,7 @@ def make_handler(node_id: str, root: Path):
             envelope = build_node_envelope(node_id, root, Path("__no_engineering_worker__"))
             repo=Path(os.environ.get("OTHRYS_VERIFY_REPO", "")).expanduser()
             if (repo/".git").exists() and V2_CAPABILITY not in envelope["capabilities"]: envelope["capabilities"].append(V2_CAPABILITY)
+            if "llama3.2" in envelope.get("physical",{}).get("ollama_models","") and ADVISORY_CAPABILITY not in envelope["capabilities"]: envelope["capabilities"].append(ADVISORY_CAPABILITY)
             self._json(200, {"ok": True, "node": envelope,
                              "transport": "mycelium.http.v0.1", "authorityGranted": False})
 

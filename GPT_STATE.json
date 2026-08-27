@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 66,
+  "sequence": 68,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "5ad771d02fa2289d72800dedc77f03f84c4c4a3b",
-  "control_gate": "CLEAN_SYNCED",
+  "control_gate": "SYNC_REQUIRED",
   "active_mission": {
-    "mission_id": "V2-005D",
-    "status": "COMPLETE",
-    "issued_label": "V2-005D - FACTORY BOUNDED REFINEMENT LOOP",
+    "mission_id": "V2-005E",
+    "status": "COMPLETE_SYNC_PENDING",
+    "issued_label": "V2-005E - AI ADVISORY PRODUCT CRITIQUE",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "5ad771d02fa2289d72800dedc77f03f84c4c4a3b",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-005D",
-    "decision": "ACCEPT_REFINEMENT_KERNEL_PROOF",
-    "authority": "refine may create child candidates but never auto-accept or release"
+    "mission_id": "V2-005E",
+    "decision": "ACCEPT_AI_ADVISORY_LANE_WITH_UNQUALIFIED_OUTPUT",
+    "authority": "T590 AI may propose only; live proposal remains unselected; quality qualification required"
   },
-  "next_legal_action": "Build bounded AI critique/proposal lane; AI may propose but never mutate, accept, release, or alter authority.",
+  "next_legal_action": "Sync V2-005E, then build cross-model source-grounded proposal qualification before any AI proposal can feed Refine.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -258,6 +258,11 @@
       "mission_id": "V2-005D",
       "status": "COMPLETE_SYNC_PENDING",
       "note": "Factory refinement lineage proven on disposable clone; Qwen one-attempt PASS; real candidate untouched; no accept/release."
+    },
+    {
+      "mission_id": "V2-005E",
+      "status": "COMPLETE_SYNC_PENDING",
+      "note": "T590 llama3.2 advisory lane live; proposal exact-candidate-bound and authority-free; hallucinated SQL/network risk preserved; proposal unselected."
     }
   ],
   "git": {

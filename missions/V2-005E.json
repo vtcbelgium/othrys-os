@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-005E",
+  "title": "AI advisory product critique lane",
+  "authority": "GPT_CONTROL",
+  "base_sha": "be8008d4ff0f94e4b408802a88cc6844ab83a66c",
+  "goal": "Use T590 local AI for bounded product critique without granting mutation, policy, acceptance, or release authority.",
+  "laws": [
+    "AI critique is ADVISORY only and authorityGranted is always false.",
+    "Proposal binds exact candidate commit and artifact digest.",
+    "Producer node/model and proposal digest are durable evidence.",
+    "Only operator or gpt-control may select a proposal for Factory Refine.",
+    "Selection creates feedback only; Hephaestus/Talos remain required for mutation."
+  ],
+  "scope": ["runtime/factory", "runtime/mycelium", "qa/factory-ai-advisory", "mission/control evidence"]
+}
