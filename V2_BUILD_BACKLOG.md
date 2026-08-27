@@ -40,4 +40,4 @@
 
 | 15 | V2-004D | T590 independent fixed V2 verifier capability | COMPLETE |
 
-| 16 | V2-005D | Factory bounded refinement loop with immutable candidate lineage | COMPLETE_SYNC_PENDING |
+| 16 | V2-005D | Factory bounded refinement loop with immutable candidate lineage | COMPLETE |
