@@ -1,0 +1,25 @@
+{
+  "mission_id": "V2-004C",
+  "status": "COMPLETE",
+  "verdict": "TWO_NODE_FAILOVER_PROVEN",
+  "routing": {
+    "cpu_background_preference": "t590",
+    "gpu_engineering_preference": "legion",
+    "health_aware": true,
+    "queue_depth_aware": true
+  },
+  "failure_drill": {
+    "talos_state": "SUCCEEDED",
+    "replay_state": "SUCCEEDED",
+    "attempts": 2,
+    "attempt_1": "t590 NODE_LOST",
+    "attempt_2": "legion PASS",
+    "fabricated_continuity": false
+  },
+  "resource_policy": {
+    "legion": "28 CPU / 24576 MB RAM / 1 GPU / 7600 MB VRAM / PRIMARY_GPU_BUILDER",
+    "t590": "6 CPU / 8192 MB RAM / no GPU / MYCELIUM_CPU_WORKER",
+    "qwen_keep_alive": "30m"
+  },
+  "gates": {"mycelium": "19/19 PASS", "factory_talos": "19/19 PASS", "worker": "10/10 PASS"}
+}

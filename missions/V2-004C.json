@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-004C",
+  "title": "Mycelium load-aware routing and node-loss failover",
+  "status": "RUNNING",
+  "goal": "Route bounded work by live capability/resource/health evidence and survive node loss without transferring authority or lifecycle ownership.",
+  "constraints": [
+    "Talos remains lifecycle owner",
+    "Mycelium grants no authority",
+    "T590 does not gain engineering.patch",
+    "no distributed CAS",
+    "no arbitrary remote shell",
+    "failed node work must be retried as a new attempt, never fabricated as continuous"
+  ]
+}

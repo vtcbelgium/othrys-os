@@ -54,3 +54,4 @@
 {"sequence":54,"at":"2026-08-27T15:55:17.977112+00:00","mission_id":"V2-004B","event":"SYNC_STAMP","status":"COMPLETE","remote_receipt":"1f7efcbe9e9a8fef52f42e582fc98e4f763d6063"}
 {"sequence":55,"at":"2026-08-27T15:55:17.977112+00:00","mission_id":"V2-005C","event":"MISSION_CLOSEOUT","status":"COMPLETE_SYNC_PENDING","evidence":"Factory 14/14; Mycelium live route engineering.patch->Legion; Talos/replay SUCCEEDED; Qwen 5.75s; T590 engineering disabled"}
 {"sequence":56,"at":"2026-08-27T15:56:10.073477+00:00","mission_id":"V2-005C","event":"SYNC_STAMP","status":"COMPLETE","remote_receipt":"087cff5b150adaeb9afb057c7fd63d3ab6183a78"}
+{"sequence":57,"at":"2026-08-27T16:47:58.654637+00:00","mission_id":"V2-004C","event":"MISSION_CLOSEOUT","status":"COMPLETE_SYNC_PENDING","evidence":"Mycelium 19/19; Talos failover t590 NODE_LOST -> legion PASS; replay SUCCEEDED; no fabricated continuity"}

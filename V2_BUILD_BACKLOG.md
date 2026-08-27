@@ -35,3 +35,5 @@
 | 12 | V2-004B | Mycelium T590 Node #2 + cross-machine CPU/Talos proof | COMPLETE |
 
 | 13 | V2-005C | Factory capability-addressed Mycelium placement into Talos | COMPLETE |
+
+| 14 | V2-004C | Mycelium load-aware routing + node-loss failover | COMPLETE |

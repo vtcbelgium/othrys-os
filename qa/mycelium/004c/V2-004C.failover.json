@@ -1,0 +1,18 @@
+{
+  "mission_id": "V2-004C",
+  "talos_state": "SUCCEEDED",
+  "replay_state": "SUCCEEDED",
+  "attempts": 2,
+  "placements": [
+    {
+      "attempt": 1,
+      "node_id": "t590"
+    },
+    {
+      "attempt": 2,
+      "node_id": "legion"
+    }
+  ],
+  "expected_sha256": "653933c1e2ecc63dbeeac66dc010b8c4316c1ed611e92d6c9dc48a8486ec6433",
+  "node_loss_preserved_as_distinct_attempt": true
+}
