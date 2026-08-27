@@ -27,3 +27,5 @@
 | 8 | V2-003B | Three-Block proof-only composition with RAW Block #3 | COMPLETE |
 
 | 9 | V2-004A | Mycelium Legion Node #1 census/envelope/Talos execution proof | COMPLETE |
+
+| 10 | V2-005A | Minimum Factory contract + first real V2 Oros build | COMPLETE / SYNC PENDING |

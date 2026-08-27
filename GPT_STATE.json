@@ -1,19 +1,19 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 55,
+  "sequence": 56,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "c3408ebea9263b154bcf068c4c4b809313bd08fe",
   "control_gate": "SYNC_PENDING",
   "active_mission": {
-    "mission_id": "V2-004A",
+    "mission_id": "V2-005A",
     "status": "COMPLETE_SYNC_PENDING",
-    "issued_label": "V2-004A - MYCELIUM LEGION NODE 1",
+    "issued_label": "V2-005A - MINIMUM FACTORY + FIRST REAL OROS",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "c3408ebea9263b154bcf068c4c4b809313bd08fe",
   "last_verified_receipt_mission": "V2-004A",
-  "last_log_sequence": 46,
+  "last_log_sequence": 50,
   "last_log_hash": "242970f06018df446478944be650ef2c5170ff5b58d7b3de46df292dfb0c2da6",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-004A",
-    "decision": "ACCEPT_LEGION_NODE1_ENVELOPE",
-    "authority": "resource/capability topology only; authorityGranted=false; Talos owns lifecycle"
+    "mission_id": "V2-005A",
+    "decision": "ACCEPT_MINIMUM_FACTORY_BUILD_PATH",
+    "authority": "Factory freezes exact eligible Blocks/product intent; Talos owns lifecycle; operator acceptance/release preserved"
   },
-  "next_legal_action": "Quarry the minimum Factory build path and prove first real Oros build on Legion; T590 second-node proof remains next when identity/remote execution is explicitly reachable.",
+  "next_legal_action": "Sync V2-005A, then persist/recover Factory run state and operator boundary without auto-accept/release; T590 second-node proof remains pending explicit identity/remote execution.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -243,6 +243,11 @@
       "mission_id": "V2-004A",
       "status": "COMPLETE_SYNC_PENDING",
       "note": "Legion census/envelope 6/6; Trust->Heph->Talos->Mycelium-selected Legion->Qwen proof SUCCEEDED in one attempt; authority false, distributed false."
+    },
+    {
+      "mission_id": "V2-005A",
+      "status": "COMPLETE_SYNC_PENDING",
+      "note": "Minimum Factory 6/6; Find This Item built via Trust Canal->Hephaestus->Talos->Legion/Qwen using exact Block #2; verifier PASS; WAITING_OPERATOR_ACCEPTANCE; no release. Candidate committed locally at 24b99ab; not pushed, accepted, or released."
     }
   ],
   "git": {

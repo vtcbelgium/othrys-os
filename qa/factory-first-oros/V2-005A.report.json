@@ -1,0 +1,48 @@
+{
+  "mission_id": "V2-005A",
+  "oros_id": "oros-find-item-v2",
+  "product": "Find This Item",
+  "factory_status": "WAITING_OPERATOR_ACCEPTANCE",
+  "released": false,
+  "exact_blocks": [
+    {
+      "blockId": "block.monetization.affiliate-offer",
+      "blockVersion": "0.1.0",
+      "admissionPath": "admissions/block.monetization.affiliate-offer@0.1.0.json",
+      "canonicalPath": "blocks/monetization/affiliate-offer",
+      "maturity": "REUSABLE",
+      "packageName": "@othrys-blocks/monetization-affiliate-offer",
+      "digest": "f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e"
+    }
+  ],
+  "trust_admitted": true,
+  "hephaestus_frozen": true,
+  "talos_state": "SUCCEEDED",
+  "replay_state": "SUCCEEDED",
+  "attempts": 1,
+  "worker_evidence": [
+    {
+      "attempt": 1,
+      "duration_sec": 6.82450795173645,
+      "changed_files": [
+        "index.mjs"
+      ],
+      "out_of_scope_changes": [],
+      "tool_trace": [
+        "write_file: wrote 557 chars to index.mjs",
+        "finish: Built index.mjs with the required functionality using the provided import and logic."
+      ]
+    }
+  ],
+  "product_output": {
+    "query": "Masters of the Universe",
+    "href": "https://www.ebay.com/sch/i.html?_nkw=Masters%20of%20the%20Universe&mkevt=1&mkcid=1&mkrid=711-53200-19255-0&campid=9990000001&toolid=10001&customid=find-this-item-v2",
+    "disclosureRequired": true,
+    "relHints": [
+      "noopener",
+      "noreferrer",
+      "sponsored"
+    ]
+  },
+  "workspace": "C:/Users/othry/Projects/oros/find-this-item-v2"
+}

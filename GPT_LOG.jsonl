@@ -47,3 +47,4 @@
 {"sequence":47,"at":"2026-08-27T13:02:38.680536+00:00","mission_id":"V2-003A","event":"MISSION_CLOSEOUT","status":"COMPLETE_SYNC_PENDING","evidence":"Block3 18/18; spine 24/24; worker 10/10; live chain SUCCEEDED; RAW blocker preserved"}
 {"sequence":48,"at":"2026-08-27T13:13:11.255356+00:00","mission_id":"V2-003B","event":"MISSION_CLOSEOUT","status":"COMPLETE_SYNC_PENDING","evidence":"3 mounts PASS; RAW laundering rejected; Block3 0.1.1 stable digest"}
 {"sequence":49,"at":"2026-08-27T13:21:50.039339+00:00","mission_id":"V2-004A","event":"MISSION_CLOSEOUT","status":"COMPLETE_SYNC_PENDING","evidence":"Mycelium 6/6; spine 24/24; worker 10/10; live Node1 Talos/Qwen PASS"}
+{"sequence":50,"at":"2026-08-27T14:56:15.035057+00:00","mission_id":"V2-005A","event":"MISSION_CLOSEOUT","status":"COMPLETE_SYNC_PENDING","evidence":"Factory 6/6; spine 24/24; worker 10/10; Block2 27/27; first real Oros Talos/Qwen PASS; WAITING_OPERATOR_ACCEPTANCE; no release"}

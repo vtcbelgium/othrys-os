@@ -1,0 +1,17 @@
+{
+  "mission_id": "V2-005A",
+  "title": "Minimum Factory contract + first real V2 Oros",
+  "status": "COMPLETE",
+  "objective": "Extract only the minimum V2 Factory product-build contract and use it to build a real independent Oros on Legion through Trust Canal -> Hephaestus -> Talos -> Qwen -> independent verifier.",
+  "constraints": {
+    "no_second_scheduler": true,
+    "talos_owns_lifecycle": true,
+    "no_universal_resolver": true,
+    "exact_block_refs_only": true,
+    "raw_blocks_ineligible": true,
+    "no_auto_release": true,
+    "operator_acceptance_preserved": true,
+    "product_workspace_outside_v2": true
+  },
+  "completed_at": "2026-08-27T14:54:25.336720+00:00"
+}

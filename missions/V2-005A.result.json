@@ -1,0 +1,32 @@
+{
+  "mission_id": "V2-005A",
+  "status": "COMPLETE",
+  "factory_status": "WAITING_OPERATOR_ACCEPTANCE",
+  "released": false,
+  "oros_id": "oros-find-item-v2",
+  "product": "Find This Item",
+  "workspace": "C:\\Users\\othry\\Projects\\oros\\find-this-item-v2",
+  "product_git_base": "de2ffd5e475d89f2184636d33950f519006fed8d",
+  "product_index_sha256": "5ea8aebb07a55bb6d9b0afdd575e61dfdd07d6492d76a2ce35959f200f6fb004",
+  "product_committed": true,
+  "exact_block": "block.monetization.affiliate-offer@0.1.0",
+  "proof": {
+    "factory_kernel": "6/6 PASS",
+    "spine": "24/24 PASS",
+    "worker": "10/10 PASS",
+    "block2_node": "27/27 PASS",
+    "talos": "SUCCEEDED",
+    "replay": "SUCCEEDED",
+    "attempts": 1,
+    "qwen_seconds": 6.82
+  },
+  "first_run_failure": {
+    "talos": "DEAD_LETTERED",
+    "attempts": 3,
+    "reason": "Factory supplied Block identity/path but insufficient callable interface; Qwen invented API/import, then emitted zero-byte write. No release."
+  },
+  "boundary": "Mission proves build-to-WAITING_OPERATOR only; Accept/Refine/Release not invoked.",
+  "product_candidate_commit": "24b99ab9b9420c407d9eed01d23e0cf2f52a73d8",
+  "product_pushed": false,
+  "operator_accepted": false
+}
