@@ -1,13 +1,13 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 76,
+  "sequence": 77,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "85030829ceb5313dc5134778d9fd903c3dc36f40",
-  "control_gate": "MISSION_ACTIVE",
+  "control_gate": "MISSION_COMPLETE_SYNC_PENDING",
   "active_mission": {
     "mission_id": "V2-006A",
-    "status": "RUNNING",
+    "status": "COMPLETE_SYNC_PENDING",
     "issued_label": "V2-006A - READ ONLY COMMAND DECK",
     "source": "operator_current_conversation"
   },
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-005G",
-    "decision": "ACCEPT_AI_REFINE_GAP_GATE",
-    "authority": "qualified AI suggestion may reach Refine only with deterministic negative gap evidence; operator path unchanged"
+    "mission_id": "V2-006A",
+    "decision": "ACCEPT_READ_ONLY_COMMAND_DECK",
+    "authority": "T590 hosts token-gated read-only Deck; tablet primary and phone secondary; no control writes"
   },
-  "next_legal_action": "Build V2-006A read-only Command Deck only; no control writes or authority endpoints.",
+  "next_legal_action": "Sync V2-006A, then add one-way authority-free Legion telemetry to the Deck without enabling control writes.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -273,6 +273,11 @@
       "mission_id": "V2-005G",
       "status": "COMPLETE",
       "note": "AI anti-churn gate proven: live qualified suggestion had no negative gap evidence, so NO_CHANGE_JUSTIFIED; real candidate clean; Qwen not invoked; 35/35 Factory, 24/24 Mycelium, 10/10 Worker."
+    },
+    {
+      "mission_id": "V2-006A",
+      "status": "COMPLETE_SYNC_PENDING",
+      "note": "Read-only Command Deck live on T590 LAN; 2/2 tests on Legion+T590; GET status only; POST 405; controls locked; token machine-local."
     }
   ],
   "git": {

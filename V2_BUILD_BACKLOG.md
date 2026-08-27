@@ -46,6 +46,6 @@
 
 | 18 | V2-005F | T590 proposal -> Legion/Qwen fact-check -> deterministic source qualification | COMPLETE |
 
-| 20 | V2-006A | OTHRYS Command Deck: tablet-primary / phone-secondary read-only operator surface | RUNNING |
+| 20 | V2-006A | OTHRYS Command Deck: tablet-primary / phone-secondary read-only operator surface | COMPLETE |
 
 | 19 | V2-005G | AI Refine Gap Gate: negative evidence required before qualified AI may trigger mutation | COMPLETE |

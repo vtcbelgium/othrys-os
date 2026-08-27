@@ -1,0 +1,25 @@
+{
+  "mission_id": "V2-006A",
+  "status": "COMPLETE_SYNC_PENDING",
+  "verdict": "PASS",
+  "candidate_sha": "16328bc002af35edd3eb2e0c57014c944e2ef9b7",
+  "host": "t590",
+  "lan_url": "http://192.168.0.188:8780",
+  "token_committed": false,
+  "service_persistent": true,
+  "proof": {
+    "deck_tests": "2/2 PASS on Legion and T590",
+    "lan_page": "200",
+    "authenticated_api": "PASS",
+    "post_control": "405 READ_ONLY",
+    "local_node": "t590 READY"
+  },
+  "qwen_ui_attempt": {
+    "outcome": "REJECTED",
+    "duration_sec": 37.72,
+    "reason": "trailing tool-protocol garbage and API-shape mismatch"
+  },
+  "authorityGranted": false,
+  "controlsEnabled": false,
+  "boundary": "Tablet/phone are read-only operator surfaces; no control-write endpoint exists."
+}
