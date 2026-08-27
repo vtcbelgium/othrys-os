@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 63,
+  "sequence": 65,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "a20e55d346545644ccedca868f2091385fd73cab",
-  "control_gate": "CLEAN_SYNCED",
+  "control_gate": "SYNC_REQUIRED",
   "active_mission": {
-    "mission_id": "V2-004D",
-    "status": "COMPLETE",
-    "issued_label": "V2-004D - T590 INDEPENDENT VERIFIER",
+    "mission_id": "V2-005D",
+    "status": "COMPLETE_SYNC_PENDING",
+    "issued_label": "V2-005D - FACTORY BOUNDED REFINEMENT LOOP",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "a20e55d346545644ccedca868f2091385fd73cab",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-004D",
-    "decision": "ACCEPT_T590_VERIFIER_LANE",
-    "authority": "fixed deterministic verification capability only; T590 remains non-engineering; Talos owns lifecycle"
+    "mission_id": "V2-005D",
+    "decision": "ACCEPT_REFINEMENT_KERNEL_PROOF",
+    "authority": "refine may create child candidates but never auto-accept or release"
   },
-  "next_legal_action": "Use Legion as primary engineering.patch builder and T590 as independent verification.v2-suite@1 node; continue V2 Factory/product path without changing these authority boundaries.",
+  "next_legal_action": "Sync V2-005D, then build bounded AI critique/proposal lane without mutation authority.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -253,6 +253,11 @@
       "mission_id": "V2-005B",
       "status": "COMPLETE_SYNC_PENDING",
       "note": "Durable Factory run reloads in separate process as WAIT_OPERATOR; no rebuild, accept or release; candidate commit remains exact."
+    },
+    {
+      "mission_id": "V2-005D",
+      "status": "COMPLETE_SYNC_PENDING",
+      "note": "Factory refinement lineage proven on disposable clone; Qwen one-attempt PASS; real candidate untouched; no accept/release."
     }
   ],
   "git": {

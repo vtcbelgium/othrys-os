@@ -1,0 +1,16 @@
+{
+  "mission_id": "V2-005D",
+  "title": "Factory bounded refinement loop",
+  "authority": "GPT_CONTROL",
+  "base_sha": "6ea5e78b141f23d32e6104a476d30d14d2f47de7",
+  "goal": "Add immutable candidate refinement lineage without crossing operator acceptance/release boundaries.",
+  "laws": [
+    "Only WAITING_OPERATOR_ACCEPTANCE may enter refinement.",
+    "Feedback is content-bound by SHA-256 and source is explicit.",
+    "Parent candidate commit is immutable evidence.",
+    "A refined candidate must be a distinct commit and independently verified.",
+    "Refine returns to WAITING_OPERATOR_ACCEPTANCE; never auto-accept or release."
+  ],
+  "scope": ["runtime/factory", "qa/factory-refine", "mission/control evidence"],
+  "product_boundary": "Real Find This Item candidate remains untouched; live proof uses disposable clone."
+}

@@ -1,0 +1,23 @@
+{
+  "mission_id": "V2-005D",
+  "status": "COMPLETE",
+  "verdict": "PASS",
+  "factory_tests": "20/20 PASS",
+  "combined_spine": "25/25 PASS",
+  "mycelium": "21/21 PASS",
+  "worker": "10/10 PASS",
+  "talos": {
+    "state": "SUCCEEDED",
+    "replay": "SUCCEEDED",
+    "attempts": 1
+  },
+  "selected_node": "legion",
+  "parent_candidate": "24b99ab9b9420c407d9eed01d23e0cf2f52a73d8",
+  "proof_child_candidate": "8347ee54a0015305e02180f04154fdb8f54454a2",
+  "feedback_digest": "ab5ad5846f84179b1c39ef1b7dcc0cd36c0316b82488d1a6e757fdb3097c3abb",
+  "feedback_source": "gpt-control-advisory-proof",
+  "real_candidate_untouched": true,
+  "operator_accepted": false,
+  "released": false,
+  "boundary": "Disposable refinement proof only; real product remains at 24b99ab and WAITING_OPERATOR_ACCEPTANCE."
+}

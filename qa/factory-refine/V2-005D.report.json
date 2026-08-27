@@ -1,0 +1,81 @@
+{
+  "mission_id": "V2-005D",
+  "verdict": "PASS",
+  "disposable": true,
+  "real_candidate_untouched": true,
+  "admission": {
+    "correlation_id": "V2-005D-LIVE",
+    "command_digest": "c72fe31ef8107eb941603c499788cd878c534069ae973cdd7106173a9b61d0bd",
+    "acceptance_digest": "8549f15cb204babd93024db0c69552b19f58292130af469cf03691bc7b78f382"
+  },
+  "talos": {
+    "state": "SUCCEEDED",
+    "replay": "SUCCEEDED",
+    "attempts": 1
+  },
+  "mycelium": {
+    "selected_node": "legion",
+    "requirement": {
+      "capability": "engineering.patch",
+      "resources": {
+        "cpu_threads": 1,
+        "ram_mb": 1024,
+        "gpu_count": 0,
+        "vram_mb": 0
+      }
+    },
+    "t590_engineering_capable": false
+  },
+  "worker_evidence": [
+    {
+      "attempt": 1,
+      "ok": true,
+      "duration_sec": 12.390921354293823,
+      "changed_files": [
+        "index.mjs"
+      ],
+      "reason": "",
+      "tool_trace": [
+        "read_file: import { constructAffiliateOffer } from '../../othrys-v2/blocks/monetization/affiliate-offer/src/index.js';\n\nconst query = process.argv.slice(2).join(' ').trim();\nif (!query) {\n  console.error('Usage:",
+        "write_file: wrote 583 chars to index.mjs",
+        "finish: Modified index.mjs to expose providerId in the JSON result as required."
+      ]
+    }
+  ],
+  "refinement": {
+    "intent": {
+      "schema": "othrys.v2.factory-refine.v1",
+      "orosId": "oros-find-item-v2",
+      "parentCandidateCommit": "24b99ab9b9420c407d9eed01d23e0cf2f52a73d8",
+      "parentArtifactSha256": "dc4e5fc2701a922a76f6fa03373cbf5a5ee4618c4e42edd3f2135932e3a150e4",
+      "feedback": "Expose providerId in the JSON result so future UI and agent consumers can identify offer provenance without parsing the URL.",
+      "feedbackDigest": "ab5ad5846f84179b1c39ef1b7dcc0cd36c0316b82488d1a6e757fdb3097c3abb",
+      "feedbackSource": "gpt-control-advisory-proof",
+      "status": "REFINING"
+    },
+    "result": {
+      "schema": "othrys.v2.factory-refine.v1",
+      "orosId": "oros-find-item-v2",
+      "parentCandidateCommit": "24b99ab9b9420c407d9eed01d23e0cf2f52a73d8",
+      "parentArtifactSha256": "dc4e5fc2701a922a76f6fa03373cbf5a5ee4618c4e42edd3f2135932e3a150e4",
+      "childCandidateCommit": "8347ee54a0015305e02180f04154fdb8f54454a2",
+      "childArtifactSha256": "cc48181f074810c28786aa397a3b86f95412283803cf2b0259bbb79fdcea17dc",
+      "feedback": "Expose providerId in the JSON result so future UI and agent consumers can identify offer provenance without parsing the URL.",
+      "feedbackDigest": "ab5ad5846f84179b1c39ef1b7dcc0cd36c0316b82488d1a6e757fdb3097c3abb",
+      "feedbackSource": "gpt-control-advisory-proof",
+      "status": "WAITING_OPERATOR_ACCEPTANCE",
+      "operatorDecision": null,
+      "released": false
+    },
+    "lineage": {
+      "parent": "24b99ab9b9420c407d9eed01d23e0cf2f52a73d8",
+      "child": "8347ee54a0015305e02180f04154fdb8f54454a2",
+      "feedbackDigest": "ab5ad5846f84179b1c39ef1b7dcc0cd36c0316b82488d1a6e757fdb3097c3abb",
+      "source": "gpt-control-advisory-proof"
+    }
+  },
+  "parent_index_sha256": "dc4e5fc2701a922a76f6fa03373cbf5a5ee4618c4e42edd3f2135932e3a150e4",
+  "child_index_sha256": "cc48181f074810c28786aa397a3b86f95412283803cf2b0259bbb79fdcea17dc",
+  "operator_accepted": false,
+  "released": false
+}
