@@ -104,6 +104,7 @@ export function buildRepairTask(plan: FrozenEngineeringPlan, failurePacket: stri
   const failure = failurePacket.trim();
   if (!failure) throw new HephaestusRejectedError("FAILURE_PACKET_REQUIRED");
   return [plan.buildTask, "REPAIR MODE: a previous attempt failed independent verification.",
+    "Inspect the current allowed file, make a concrete correction that addresses the verifier evidence, and only then finish.",
     "Make the smallest correction. Do not broaden scope or weaken acceptance.", `Verifier evidence:\n${failure.slice(0, 4000)}`].join("\n\n");
 }
 

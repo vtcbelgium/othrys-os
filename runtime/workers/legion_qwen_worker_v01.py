@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import platform
+import re
 import subprocess
 import sys
 import time
@@ -72,6 +73,25 @@ def _safe_rel_paths(values: list[str]) -> list[str]:
         out.append(p.as_posix())
     return out
 
+def _recover_malformed_write_args(raw: Any, field: str) -> dict[str, str]:
+    if not isinstance(raw, str) or field not in {"content", "text"}:
+        return {}
+    pattern = rf'^\s*\{{\s*"path"\s*:\s*"((?:\\.|[^"\\])*)"\s*,\s*"{field}"\s*:\s*"'
+    match = re.match(pattern, raw, re.DOTALL)
+    if not match:
+        return {}
+    try:
+        path = json.loads('"' + match.group(1) + '"')
+    except Exception:
+        return {}
+    body = raw[match.end():]
+    if body.endswith('"}'):
+        body = body[:-2]
+    body = body.replace('\\r\\n', '\n').replace('\\n', '\n').replace('\\r', '\n').replace('\\t', '\t')
+    body = body.replace('\\"', '"').replace('\\\\', '\\')
+    return {"path": path, field: body}
+
+
 def _repair_single_path_tool_calls(response: dict[str, Any], allowed: list[str]) -> dict[str, Any]:
     if len(allowed) != 1:
         return response
@@ -88,11 +108,46 @@ def _repair_single_path_tool_calls(response: dict[str, Any], allowed: list[str])
                 obj = json.loads(args) if isinstance(args, str) else dict(args or {})
             except (json.JSONDecodeError, TypeError, ValueError):
                 obj = {}
-        if not obj.get("path") and isinstance(obj.get("content"), str) and obj.get("content"):
+        field = "text" if fn.get("name") == "append_file" else "content"
+        if not obj:
+            recovered = _recover_malformed_write_args(args, field)
+            if recovered.get("path") == allowed[0] and isinstance(recovered.get(field), str) and recovered.get(field):
+                obj = recovered
+        if not obj.get("path") and isinstance(obj.get(field), str) and obj.get(field):
             obj["path"] = allowed[0]
+        if obj.get("path") == allowed[0] and isinstance(obj.get(field), str) and obj.get(field):
             fn["arguments"] = json.dumps(obj, ensure_ascii=False)
     return response
 
+
+
+def _gate_finish_tool(tools: list[dict[str, Any]], allow_finish: bool) -> list[dict[str, Any]]:
+    if allow_finish:
+        return tools
+    return [tool for tool in tools if (tool.get("function") or {}).get("name") != "finish"]
+
+
+def _tool_call_diagnostics(response: dict[str, Any]) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for call in response.get("tool_calls") or []:
+        fn = call.get("function") or {}
+        raw = fn.get("arguments", call.get("arguments"))
+        try:
+            from hub import engineering as hub_engineering
+            parsed = hub_engineering._parse_arguments(raw)
+        except Exception:
+            parsed = {}
+        raw_text = raw if isinstance(raw, str) else json.dumps(raw, ensure_ascii=False, default=str)
+        rows.append({
+            "name": fn.get("name") or call.get("name"),
+            "argument_type": type(raw).__name__,
+            "raw_prefix": raw_text[:240],
+            "raw_length": len(raw_text),
+            "parsed_keys": sorted(parsed.keys()) if isinstance(parsed, dict) else [],
+            "has_path": bool(parsed.get("path")) if isinstance(parsed, dict) else False,
+            "content_length": len(parsed.get("content", "")) if isinstance(parsed, dict) and isinstance(parsed.get("content"), str) else 0,
+        })
+    return rows
 
 def _dirty_snapshot(workspace: Path) -> dict[str, str]:
     raw = subprocess.check_output(
@@ -148,60 +203,49 @@ def run_job(req: dict[str, Any]) -> dict[str, Any]:
     workspace, allowed, deny = _validate_request(req)
     sys.path.insert(0, str(HUB_ROOT))
     from hub.builders import Qwen3BuilderMind
-    from hub.engineering_platform import PlatformRequest, run_engineering_mission
+    from hub import engineering as hub_engineering
 
     builder = Qwen3BuilderMind()
+    tool_call_diagnostics: list[dict[str, Any]] = []
+    dirty_before = _dirty_snapshot(workspace)
     if len(allowed) == 1:
         original_chat_turn = builder.chat_turn
-        builder.chat_turn = lambda messages, tools: _repair_single_path_tool_calls(original_chat_turn(messages, tools), allowed)
+        def traced_chat_turn(messages, tools):
+            mutated = bool(_changed_since(dirty_before, _dirty_snapshot(workspace)))
+            effective_tools = _gate_finish_tool(tools, mutated)
+            response = original_chat_turn(messages, effective_tools)
+            tool_call_diagnostics.extend(_tool_call_diagnostics(response))
+            return _repair_single_path_tool_calls(response, allowed)
+        builder.chat_turn = traced_chat_turn
     if builder.status() != "ready":
         raise RuntimeError(f"qwen3-builder not ready: {builder.status()}")
 
+    for path in allowed:
+        if any(path == d or path.startswith(d.rstrip("/") + "/") for d in deny):
+            raise ValueError(f"allowed path conflicts with deny path: {path}")
+
     started = time.time()
     before = _node_snapshot()
-    dirty_before = _dirty_snapshot(workspace)
-    request = PlatformRequest(
-        mission_id=req["job_id"],
-        task=req["task"],
-        workspace=str(workspace),
-        repo_dir=str(workspace),
-        roster=[builder],
-        builder=builder,
-        operator_touch_allow=allowed,
-        policy="direct",
-        emit_events=False,
-        allow_engine_fallback=False,
-        timeout_sec=float(req.get("timeout_sec") or 300),
-        operator_constraints={"deny": deny},
+    eng = hub_engineering.run_engineering_loop(
+        task=req["task"], workspace=workspace, chat_turn=builder.chat_turn,
+        touch_allow=allowed,
     )
-    result = run_engineering_mission(request)
     dirty_after = _dirty_snapshot(workspace)
     changed = _changed_since(dirty_before, dirty_after)
     outside = sorted(set(changed) - set(allowed))
     completed = time.time()
-    payload = result.as_dict()
     return {
         "schema_version": "othrys.worker-result.v0.1",
-        "job_id": req["job_id"],
-        "node_id": "legion",
-        "capability": CAPABILITY,
-        "worker_id": WORKER_ID,
-        "builder_id": "qwen3-builder",
-        "ok": bool(result.ok) and not outside,
-        "reason": (result.reason or "") if not outside else f"out_of_scope_changes: {outside}",
-        "started_at": started,
-        "completed_at": completed,
-        "duration_sec": completed - started,
-        "allowed_paths": allowed,
-        "changed_files": changed,
-        "out_of_scope_changes": outside,
-        "diff": result.diff,
-        "git_status": result.git_status,
-        "summary": result.summary,
-        "runtime_evidence": payload.get("runtime_evidence", {}),
-        "capability_selection": payload.get("capability_selection", {}),
-        "node_before": before,
-        "node_after": _node_snapshot(),
+        "job_id": req["job_id"], "node_id": "legion", "capability": CAPABILITY,
+        "worker_id": WORKER_ID, "builder_id": "qwen3-builder",
+        "ok": bool(eng.ok) and not outside and bool(changed),
+        "reason": (f"out_of_scope_changes: {outside}" if outside else (eng.reason or "" if changed else "NO_ATTEMPT_MUTATION")),
+        "started_at": started, "completed_at": completed, "duration_sec": completed - started,
+        "allowed_paths": allowed, "changed_files": changed, "out_of_scope_changes": outside,
+        "diff": eng.diff, "git_status": eng.git_status, "summary": eng.summary,
+        "runtime_evidence": {"observed_diff": eng.observed_diff, "git_status": eng.git_status, "tool_trace": list(eng.tool_trace or [])[:40], "tool_call_diagnostics": tool_call_diagnostics[:20]},
+        "capability_selection": {"policy": "v2_direct_low_level_loop", "selected_builder": "qwen3-builder", "cost_model": "local"},
+        "node_before": before, "node_after": _node_snapshot(),
     }
 
 

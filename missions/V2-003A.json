@@ -1,0 +1,24 @@
+{
+  "mission_id": "V2-003A",
+  "title": "Recover and prove Block #3 through V2 spine",
+  "status": "COMPLETE",
+  "objective": "Recover the existing RAW block.analytics.visit-tracking lineage, establish a V2 canonical specimen without hiding prior promotion failures, and prove analytics.visit_ingest@1 through Trust Canal -> Hephaestus -> Talos -> Legion plus an explicit storage artifact Bridge.",
+  "source": "othrys-hub BLOCK-QUARRY-003 / BLOCK-003-* evidence + othrys-blocks canonical source",
+  "constraints": {
+    "no_invented_block": true,
+    "preserve_raw_maturity": true,
+    "no_live_vtc_mutation": true,
+    "no_fake_rls_or_schema_truth": true,
+    "no_universal_port_registry": true,
+    "independent_verifier": true
+  },
+  "success": [
+    "source specimen and provenance verified",
+    "same core moved/admitted into V2 canonical home or explicit blocker recorded",
+    "existing Block tests pass",
+    "Port analytics.visit_ingest@1 persists a VisitRecord through a bounded storage Bridge",
+    "full governed spine reaches independent verifier",
+    "prior RAW/promotion failure remains visible"
+  ],
+  "completed_at": "2026-08-27T13:02:38.680536+00:00"
+}

@@ -1,0 +1,24 @@
+{
+  "mission_id": "V2-003A",
+  "status": "COMPLETE",
+  "block_id": "block.analytics.visit-tracking",
+  "version": "0.1.0",
+  "maturity": "RAW",
+  "port": "analytics.visit_ingest@1",
+  "tree_digest": "99525046fb07b4310a668b7c428d55cfaeef11cb8ec6da44860445b09c939de8",
+  "proof": {
+    "block_tests": "18/18 PASS",
+    "spine_tests": "24/24 PASS",
+    "worker_tests": "10/10 PASS",
+    "live_chain": "SUCCEEDED",
+    "replay": "SUCCEEDED",
+    "qwen_seconds": 7.42
+  },
+  "preserved_blocker": "SCHEMA_OR_RLS_TRUTH_MISSING / VISIT_TRACKING_SCOPED_INSERT_AUTHORITY_MISSING",
+  "worker_hardening": [
+    "malformed explicit single-authorized-path write recovery",
+    "finish hidden until attempt-local mutation",
+    "NO_ATTEMPT_MUTATION fail-closed",
+    "stronger repair instruction"
+  ]
+}

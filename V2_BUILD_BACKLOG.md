@@ -11,8 +11,8 @@
 | 3 | V2-002C | Attach Legion Hub/Qwen as first bounded Talos Worker | COMPLETE |
 | 4 | V2-002D | Prove real local engineering repair loop, max 5 attempts | COMPLETE |
 | 5 | V2-002E | Extract minimum Trust Canal admission/binding boundary ahead of Talos | COMPLETE |
-| 6 | V2-002F | Attach Hephaestus engineering authority above the proven Talos Worker loop | COMPLETE_LOCAL_SYNC_PENDING |
-| 7 | V2-003A | Build Block #3 through Hephaestus + Talos; prove first real Port/artifact interaction | TODO |
+| 6 | V2-002F | Attach Hephaestus engineering authority above the proven Talos Worker loop | COMPLETE |
+| 7 | V2-003A | Recover/prove Block #3 through Hephaestus + Talos; prove first real Port/artifact interaction | COMPLETE / SYNC PENDING |
 | 8 | LATER | Quarry Runtime/Bridge routing only when multiple workers/providers require it | GATED |
 | 9 | LATER | Prometheus, Mnemosyne, Kronos, Atlas/Mission Control surfaces | GATED |
 

@@ -1,0 +1,48 @@
+{
+  "mission_id": "V2-003A",
+  "block_id": "block.analytics.visit-tracking",
+  "port": "analytics.visit_ingest@1",
+  "admission_created": true,
+  "correlation_id": "V2-BLOCK3-LIVE",
+  "command_digest": "875a6db088f03aaa2aa5e1ad24578e8c79eea9f928f3fb99f6f4f873ee1bbc68",
+  "acceptance_digest": "b7ea96f1576195241a78e6c1f06893531cee659a5dbfe7d3086ed724d9d7d081",
+  "talos_state": "SUCCEEDED",
+  "replay_state": "SUCCEEDED",
+  "attempts": 1,
+  "worker_attempts": [
+    {
+      "attempt": 1,
+      "duration_sec": 7.4167726039886475,
+      "changed_files": [
+        "consumer.mjs"
+      ],
+      "tool_trace": [
+        "write_file: wrote 569 chars to consumer.mjs",
+        "finish: Replaced consumer.mjs with a minimal Node ESM program that imports from the specified file URL, creates a memory bridge, and executes the ingest operation as required."
+      ]
+    }
+  ],
+  "artifact": {
+    "result": {
+      "ok": true,
+      "stored": true,
+      "record": {
+        "path": "/products/widget",
+        "visitorHash": "b33489b2c6c5d142778702cc4ad6b849c2a2b4e1234f0da94248942a918854b9",
+        "occurredAt": "2026-08-27T12:00:00.000Z",
+        "country": null,
+        "referrerHost": "example.com"
+      }
+    },
+    "records": [
+      {
+        "path": "/products/widget",
+        "visitorHash": "b33489b2c6c5d142778702cc4ad6b849c2a2b4e1234f0da94248942a918854b9",
+        "occurredAt": "2026-08-27T12:00:00.000Z",
+        "country": null,
+        "referrerHost": "example.com"
+      }
+    ]
+  },
+  "failure": ""
+}

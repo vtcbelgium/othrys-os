@@ -1,0 +1,71 @@
+{
+  "schema": "othrys.v2.block_admission.v0",
+  "admission_status": "ACTIVE_ADMITTED",
+  "admitted_by": {
+    "mission": "V2-003A",
+    "authority": "GPT Control"
+  },
+  "block_id": "block.analytics.visit-tracking",
+  "block_version": "0.1.0",
+  "package": "@othrys-blocks/analytics-visit-tracking",
+  "capability_id": "capability.analytics.visit-tracking",
+  "classification": "CAPABILITY",
+  "maturity_at_admission": "RAW",
+  "package_tree_digest": {
+    "value": "99525046fb07b4310a668b7c428d55cfaeef11cb8ec6da44860445b09c939de8",
+    "algorithm": "sha256-of-manifest",
+    "file_count": 21
+  },
+  "source": {
+    "canonical_repo": "othrys-v2",
+    "canonical_path": "blocks/analytics/visit-tracking",
+    "legacy_quarry": "othrys-blocks/blocks/analytics/visit-tracking",
+    "legacy_proof_commit": "d7ff19a2b2bcd24d57ea3f7b2feabe7406c5c8ea",
+    "transplant": "exact-byte tree identity proven before admission"
+  },
+  "contract": {
+    "provides": [
+      "analytics.visit_ingest@1 ingest"
+    ],
+    "requires": [
+      "host salt secret by reference",
+      "storage Bridge persistVisit",
+      "HTTP mount",
+      "host retentionDays",
+      "Trust consent/lawful-basis determination"
+    ],
+    "optional": [
+      "geo Bridge",
+      "hostname-only referrer capture"
+    ],
+    "state_ownership": "logical visit-record@1 schema Block-owned; physical store host-owned",
+    "failure": "typed fail-closed on missing required salt/storage; browser beacon fail-open"
+  },
+  "runtime_proof": {
+    "v2_node": "18/18 PASS",
+    "port": "analytics.visit_ingest@1",
+    "memory_bridge": "test/zero-dependency Bridge only; NOT production authority proof"
+  },
+  "promotion_history": {
+    "legacy_origin_proof": "FAIL",
+    "legacy_stop": "VISIT_TRACKING_SCOPED_INSERT_AUTHORITY_MISSING",
+    "legacy_result": "SCHEMA_OR_RLS_TRUTH_MISSING",
+    "reason": "least-privilege INSERT authority and committed schema/RLS truth were not proven; production retention unratified",
+    "preserved_maturity": "RAW"
+  },
+  "reconstruction": {
+    "path": "blocks/analytics/visit-tracking",
+    "version": "0.1.0",
+    "digest": "99525046fb07b4310a668b7c428d55cfaeef11cb8ec6da44860445b09c939de8",
+    "if_missing": "UNAVAILABLE; no legacy fallback"
+  },
+  "not_this_record": [
+    "promotion to PROVEN",
+    "promotion to REUSABLE",
+    "production storage authority proof",
+    "registry",
+    "resolver",
+    "package manager",
+    "plugin host"
+  ]
+}

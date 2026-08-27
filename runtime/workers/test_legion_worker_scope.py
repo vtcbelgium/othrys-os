@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from legion_qwen_worker_v01 import _changed_since, _dirty_snapshot, _repair_single_path_tool_calls
+from legion_qwen_worker_v01 import _changed_since, _dirty_snapshot, _repair_single_path_tool_calls, _recover_malformed_write_args, _gate_finish_tool
 
 
 def git(root: Path, *args: str) -> None:
@@ -67,6 +67,33 @@ class ToolPathRepairTests(unittest.TestCase):
         fixed = _repair_single_path_tool_calls(response, ["only.txt"])
         args = fixed["tool_calls"][0]["function"]["arguments"]
         self.assertNotIn('"path": "only.txt"', args)
+
+    def test_malformed_json_body_recovers_explicit_authorized_path(self) -> None:
+        raw = '{"path":"only.txt","content":"line one\nconst x = "quoted";\n"}'
+        recovered = _recover_malformed_write_args(raw, "content")
+        self.assertEqual(recovered["path"], "only.txt")
+        self.assertIn('const x = "quoted";', recovered["content"])
+        response = {"tool_calls": [{"function": {"name": "write_file", "arguments": raw}}]}
+        fixed = _repair_single_path_tool_calls(response, ["only.txt"])
+        parsed = __import__("json").loads(fixed["tool_calls"][0]["function"]["arguments"])
+        self.assertEqual(parsed["path"], "only.txt")
+        self.assertIn('const x = "quoted";', parsed["content"])
+
+    def test_malformed_json_body_wrong_explicit_path_is_not_rewritten(self) -> None:
+        raw = '{"path":"other.txt","content":"line one\n"}'
+        response = {"tool_calls": [{"function": {"name": "write_file", "arguments": raw}}]}
+        fixed = _repair_single_path_tool_calls(response, ["only.txt"])
+        self.assertEqual(fixed["tool_calls"][0]["function"]["arguments"], raw)
+
+    def test_finish_tool_hidden_before_attempt_mutation(self) -> None:
+        tools = [{"function": {"name": "read_file"}}, {"function": {"name": "write_file"}}, {"function": {"name": "finish"}}]
+        gated = _gate_finish_tool(tools, False)
+        self.assertEqual([t["function"]["name"] for t in gated], ["read_file", "write_file"])
+
+    def test_finish_tool_available_after_attempt_mutation(self) -> None:
+        tools = [{"function": {"name": "write_file"}}, {"function": {"name": "finish"}}]
+        gated = _gate_finish_tool(tools, True)
+        self.assertEqual([t["function"]["name"] for t in gated], ["write_file", "finish"])
 
 if __name__ == "__main__":
     unittest.main()
