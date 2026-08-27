@@ -1,6 +1,6 @@
 {
   "name": "@othrys-blocks/analytics-visit-tracking",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "description": "Canonical product Capability Block block.analytics.visit-tracking: cookieless, pseudonymous visit and unique-visitor ingest and beacon. Publishing is not authorised.",

@@ -1,0 +1,138 @@
+{
+  "schema": "oros.lock@v0",
+  "blueprint_id": "oros-zero",
+  "blueprint_revision": "1.0.0",
+  "producing_mission": "V2-003B",
+  "producing_report": "qa/block3-composition/V2-003B.report.json",
+  "checks": {
+    "block1_mount": "PASS",
+    "block2_mount": "PASS",
+    "block2_runtime": "PASS",
+    "absence": "PASS",
+    "tamper": "PASS",
+    "lock_binding": "PASS",
+    "legacy_fallback": "PASS"
+  },
+  "resolved_blocks": [
+    {
+      "block_id": "block.media.image-prep",
+      "block_version": "0.1.1",
+      "package": "@othrys-blocks/media-image-prep",
+      "package_tree_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+      "provenance": {
+        "repository": "vtcbelgium/othrys-v2",
+        "path": "blocks/media/image-prep",
+        "source_commit": "819b99e9aa81f8b9e234ca239c134b9635e26dd1",
+        "resolved_at_repo_head": "10ae616f3b5b2a98a151c629ce453bfaf8b73d88"
+      },
+      "maturity_at_resolution": "REUSABLE",
+      "provides": [
+        "prepareImage",
+        "prepare.downscale",
+        "prepare.normalize.jpeg",
+        "prepare.square"
+      ],
+      "requires": [
+        {
+          "edge": "browser.canvas2d",
+          "provider": "Chromium Canvas 2D"
+        }
+      ],
+      "optional_selected": [],
+      "bridges": [],
+      "adapters": [
+        "qa/block1-composition/image-prep-runner.mjs"
+      ],
+      "config_refs": [
+        "flow/oros-zero.flow.json#/config"
+      ],
+      "evidence_ids": [
+        "admissions/block.media.image-prep@0.1.1.json",
+        "receipts/runs/V2-001F/20260826T105833Z.json",
+        "qa/block1-composition/V2-001G.report.json"
+      ]
+    },
+    {
+      "block_id": "block.monetization.affiliate-offer",
+      "block_version": "0.1.0",
+      "package": "@othrys-blocks/monetization-affiliate-offer",
+      "package_tree_digest": "f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e",
+      "provenance": {
+        "repository": "vtcbelgium/othrys-v2",
+        "path": "blocks/monetization/affiliate-offer",
+        "source_commit": "fb36c73fb6a7b805c89c4c0bfe22550671667874"
+      },
+      "maturity_at_resolution": "REUSABLE",
+      "provides": [
+        "monetization.affiliate.offer@1",
+        "constructAffiliateOffer"
+      ],
+      "requires": [
+        {
+          "edge": "provider.bridge",
+          "provider": "ebay-epn"
+        },
+        {
+          "edge": "host.attribution",
+          "provider": "campaignId"
+        }
+      ],
+      "optional_selected": [],
+      "bridges": [
+        "ebay-epn"
+      ],
+      "adapters": [
+        "qa/block2-composition/verify-affiliate-mount.mjs"
+      ],
+      "config_refs": [
+        "host attribution config"
+      ],
+      "evidence_ids": [
+        "admissions/block.monetization.affiliate-offer@0.1.0.json",
+        "docs/V2-001H/EVIDENCE.json"
+      ]
+    },
+    {
+      "block_id": "block.analytics.visit-tracking",
+      "block_version": "0.1.1",
+      "package": "@othrys-blocks/analytics-visit-tracking",
+      "package_tree_digest": "edc34093eff4df0b04d4a09db7ede74594de5f76f0a8c0dbbf0f07c78ce47527",
+      "digest_algorithm": "sha256-of-lf-normalized-manifest-v1",
+      "provenance": {
+        "repository": "vtcbelgium/othrys-v2",
+        "path": "blocks/analytics/visit-tracking",
+        "source_commit": "567b7d484a41a59753f0fcbc32502678ee8e8456"
+      },
+      "maturity_at_resolution": "RAW",
+      "provides": [
+        "analytics.visit_ingest@1",
+        "ingest"
+      ],
+      "requires": [
+        {
+          "edge": "host.salt",
+          "provider": "proof fixture secret reference"
+        },
+        {
+          "edge": "storage.bridge",
+          "provider": "memory bridge proof-only"
+        }
+      ],
+      "optional_selected": [],
+      "bridges": [
+        "memory-proof-only"
+      ],
+      "adapters": [
+        "qa/block3-composition/verify-visit-mount.mjs"
+      ],
+      "evidence_ids": [
+        "admissions/block.analytics.visit-tracking@0.1.1.json",
+        "missions/V2-003A.result.json"
+      ],
+      "eligibility": "PROOF_ONLY_RAW_NOT_FACTORY_REUSE"
+    }
+  ],
+  "composition_mode": "PROOF_ONLY",
+  "factory_eligible": false,
+  "factory_ineligible_reason": "contains RAW block.analytics.visit-tracking"
+}

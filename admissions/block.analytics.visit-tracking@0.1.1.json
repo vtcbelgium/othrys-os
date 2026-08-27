@@ -1,0 +1,54 @@
+{
+  "schema": "othrys.v2.block_admission.v0",
+  "admission_status": "ACTIVE_ADMITTED",
+  "supersedes": {
+    "record": "admissions/block.analytics.visit-tracking@0.1.0.json",
+    "status_of_superseded": "HISTORICAL / SUPERSEDED",
+    "why": "0.1.0 V2 admission used unstable pre-Git working-tree bytes; post-checkout digest was not reconstructible. 0.1.1 is metadata/packaging PATCH only."
+  },
+  "admitted_by": {
+    "mission": "V2-003B",
+    "authority": "GPT Control"
+  },
+  "block_id": "block.analytics.visit-tracking",
+  "block_version": "0.1.1",
+  "package": "@othrys-blocks/analytics-visit-tracking",
+  "capability_id": "capability.analytics.visit-tracking",
+  "classification": "CAPABILITY",
+  "maturity_at_admission": "RAW",
+  "maturity_note": "No promotion. Production schema/RLS/retention blocker remains.",
+  "package_tree_digest": {
+    "value": "edc34093eff4df0b04d4a09db7ede74594de5f76f0a8c0dbbf0f07c78ce47527",
+    "algorithm": "sha256-of-lf-normalized-manifest-v1",
+    "file_count": 21,
+    "procedure": [
+      "walk recursively excluding .git/node_modules/test-results",
+      "POSIX relative paths bytewise sorted",
+      "normalize CRLF to LF before per-file SHA-256",
+      "manifest: <sha256> two spaces <relpath> newline UTF-8",
+      "SHA-256 concatenated manifest"
+    ]
+  },
+  "contract": {
+    "provides": [
+      "analytics.visit_ingest@1 ingest"
+    ],
+    "unchanged_from": "0.1.0"
+  },
+  "promotion_history": {
+    "legacy_stop": "VISIT_TRACKING_SCOPED_INSERT_AUTHORITY_MISSING",
+    "legacy_result": "SCHEMA_OR_RLS_TRUTH_MISSING",
+    "preserved_maturity": "RAW"
+  },
+  "reconstruction": {
+    "path": "blocks/analytics/visit-tracking",
+    "version": "0.1.1",
+    "digest": "edc34093eff4df0b04d4a09db7ede74594de5f76f0a8c0dbbf0f07c78ce47527",
+    "normalization": "CRLF->LF before hashing"
+  },
+  "not_this_record": [
+    "PROVEN",
+    "REUSABLE",
+    "production authority proof"
+  ]
+}

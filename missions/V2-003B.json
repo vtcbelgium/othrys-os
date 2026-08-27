@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-003B",
+  "title": "Three-Block proof-only composition",
+  "status": "COMPLETE",
+  "objective": "Compose exact Blocks #1/#2 plus RAW Block #3 in one disposable Oros fixture; prove all mounts and Block #3 Port artifact without promoting RAW maturity.",
+  "constraints": {
+    "block3_proof_only": true,
+    "no_raw_factory_eligibility": true,
+    "no_framework": true,
+    "no_block_mutation": true,
+    "independent_verification": true
+  },
+  "completed_at": "2026-08-27T13:13:11.255356+00:00"
+}

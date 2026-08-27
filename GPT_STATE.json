@@ -1,18 +1,18 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 53,
+  "sequence": 54,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "1719766b375ee28efd0ad0c8ee100139d9a72fb4",
+  "remote_head_at_last_verified_read": "567b7d484a41a59753f0fcbc32502678ee8e8456",
   "control_gate": "SYNC_PENDING",
   "active_mission": {
-    "mission_id": "V2-003A",
+    "mission_id": "V2-003B",
     "status": "COMPLETE_SYNC_PENDING",
-    "issued_label": "V2-003A - BLOCK 3 THROUGH PROVEN SPINE",
+    "issued_label": "V2-003B - THREE BLOCK PROOF-ONLY COMPOSITION",
     "source": "operator_current_conversation"
   },
-  "last_verified_remote_receipt": "1719766b375ee28efd0ad0c8ee100139d9a72fb4",
-  "last_verified_receipt_mission": "V2-002F",
+  "last_verified_remote_receipt": "567b7d484a41a59753f0fcbc32502678ee8e8456",
+  "last_verified_receipt_mission": "V2-003A",
   "last_log_sequence": 46,
   "last_log_hash": "242970f06018df446478944be650ef2c5170ff5b58d7b3de46df292dfb0c2da6",
   "log_integrity": {
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-003A",
-    "decision": "ACCEPT_RAW_BLOCK3_AND_LIVE_PORT_PROOF",
-    "authority": "RAW admission only; no production storage promotion"
+    "mission_id": "V2-003B",
+    "decision": "ACCEPT_THREE_BLOCK_PROOF_ONLY",
+    "authority": "RAW Block3 remains Factory-ineligible"
   },
-  "next_legal_action": "Sync V2-003A, then open V2-003B three-Block composition proof.",
+  "next_legal_action": "Sync V2-003B, then begin Mycelium execution fabric with Legion as Node #1.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -233,6 +233,11 @@
       "mission_id": "V2-003A",
       "status": "COMPLETE_SYNC_PENDING",
       "note": "Block #3 exact-byte RAW transplant/admission; 18/18 block, 24/24 spine, 10/10 worker; live Trust->Heph->Talos->Qwen->visit-record proof PASS; production schema/RLS blocker preserved."
+    },
+    {
+      "mission_id": "V2-003B",
+      "status": "COMPLETE_SYNC_PENDING",
+      "note": "Three exact mounts PASS; Block3 patched to 0.1.1 for stable LF-normalized digest; RAW maturity laundering rejected; Factory eligibility false."
     }
   ],
   "git": {

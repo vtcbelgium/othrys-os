@@ -1,0 +1,47 @@
+{
+  "schema": "othrys.v2.block3-composition-report.v1",
+  "mission_id": "V2-003B",
+  "verdict": "PASS",
+  "mode": "PROOF_ONLY",
+  "factory_eligible": false,
+  "blocks": [
+    {
+      "id": "block.media.image-prep",
+      "version": "0.1.1",
+      "maturity": "REUSABLE",
+      "mount": "PASS"
+    },
+    {
+      "id": "block.monetization.affiliate-offer",
+      "version": "0.1.0",
+      "maturity": "REUSABLE",
+      "mount": "PASS"
+    },
+    {
+      "id": "block.analytics.visit-tracking",
+      "version": "0.1.1",
+      "maturity": "RAW",
+      "mount": "PASS",
+      "port": "analytics.visit_ingest@1",
+      "digest": "edc34093eff4df0b04d4a09db7ede74594de5f76f0a8c0dbbf0f07c78ce47527"
+    }
+  ],
+  "proof": {
+    "three_mounts": "PASS",
+    "block3_artifact": "PASS /proof + example.com + 64-hex pseudonymous visitor",
+    "raw_maturity_laundering": "LOCK_MISMATCH exit 2",
+    "block3_tests": "18/18 PASS"
+  },
+  "digest_repair": {
+    "old_admission": "0.1.0 HISTORICAL/SUPERSEDED",
+    "defect": "pre-Git mixed-line-ending digest not reconstructible",
+    "patch": "0.1.1 metadata/packaging only",
+    "algorithm": "sha256-of-lf-normalized-manifest-v1"
+  },
+  "qwen": {
+    "outcome": "DEAD_LETTERED",
+    "reason": "invented nonexistent API and emitted tool-protocol garbage",
+    "decision": "deterministic verifier escalation; no Block mutation by model"
+  },
+  "preserved_blocker": "SCHEMA_OR_RLS_TRUTH_MISSING / VISIT_TRACKING_SCOPED_INSERT_AUTHORITY_MISSING"
+}

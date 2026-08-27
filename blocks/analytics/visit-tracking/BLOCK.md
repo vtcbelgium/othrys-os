@@ -3,7 +3,7 @@
 | Field | Value |
 | :--- | :--- |
 | **ID** | `block.analytics.visit-tracking` |
-| **Version** | `0.1.0` |
+| **Version** | `0.1.1` |
 | **Category** | `PRODUCT` |
 | **Maturity** | `RAW` |
 | **Port** | `analytics.visit_ingest@1` |
@@ -29,3 +29,6 @@ Privacy-first, cookieless, pseudonymous daily visit tracking and ingestion block
 - **No Client State**: Zero cookies, zero LocalStorage, zero SessionStorage.
 - **Secrets by Reference**: Secrets (salt, DB keys) must be supplied dynamically by the host application environment.
 - **Storage Isolation**: Storage adapter implementation is decoupled from core business logic.
+
+## 0.1.1 PATCH
+V2 packaging/digest-canonicalization correction only. Capability, Port, privacy, state, and runtime semantics are unchanged from 0.1.0. Maturity remains RAW.

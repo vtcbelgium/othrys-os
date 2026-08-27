@@ -3,7 +3,7 @@
  */
 
 export const BLOCK_ID = "block.analytics.visit-tracking";
-export const BLOCK_VERSION = "0.1.0";
+export const BLOCK_VERSION = "0.1.1";
 
 /** Illustrative Port contract name. No Port Registry. */
 export const PORT = "analytics.visit_ingest@1";

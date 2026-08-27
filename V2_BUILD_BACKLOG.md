@@ -12,7 +12,7 @@
 | 4 | V2-002D | Prove real local engineering repair loop, max 5 attempts | COMPLETE |
 | 5 | V2-002E | Extract minimum Trust Canal admission/binding boundary ahead of Talos | COMPLETE |
 | 6 | V2-002F | Attach Hephaestus engineering authority above the proven Talos Worker loop | COMPLETE |
-| 7 | V2-003A | Recover/prove Block #3 through Hephaestus + Talos; prove first real Port/artifact interaction | COMPLETE / SYNC PENDING |
+| 7 | V2-003A | Recover/prove Block #3 through Hephaestus + Talos; prove first real Port/artifact interaction | COMPLETE |
 | 8 | LATER | Quarry Runtime/Bridge routing only when multiple workers/providers require it | GATED |
 | 9 | LATER | Prometheus, Mnemosyne, Kronos, Atlas/Mission Control surfaces | GATED |
 
@@ -23,3 +23,5 @@
 - Builder never verifies itself; deterministic evidence remains independent.
 - No universal registry, new agent framework, marketplace, or second loop engine yet.
 - Adjust this backlog only from measured mission evidence.
+
+| 8 | V2-003B | Three-Block proof-only composition with RAW Block #3 | COMPLETE / SYNC PENDING |
