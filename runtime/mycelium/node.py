@@ -72,6 +72,7 @@ def capabilities(physical: dict[str, Any], worker_path: Path) -> list[str]:
     out=["verification.local", "verification.sha256@1"]
     if physical["runtimes"]["git"]: out.append("git.local")
     if physical["runtimes"]["node"]: out.append("node.local")
+    if physical["runtimes"]["ollama"] and "qwen3:8b" in physical["ollama_models"]: out.append("advisory.fact-check@1")
     if physical["runtimes"]["ollama"] and worker_path.exists() and "qwen3:8b" in physical["ollama_models"]: out.append(WORKER_CAPABILITY)
     return out
 

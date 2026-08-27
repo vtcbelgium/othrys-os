@@ -1,0 +1,49 @@
+{
+  "mission_id": "V2-005F",
+  "status": "COMPLETE_SYNC_PENDING",
+  "verdict": "PASS",
+  "proposer": {
+    "node": "t590",
+    "model": "llama3.2"
+  },
+  "reviewer": {
+    "node": "legion",
+    "model": "qwen3:8b"
+  },
+  "talos": {
+    "state": "SUCCEEDED",
+    "replay": "SUCCEEDED",
+    "attempts": 1
+  },
+  "qualification_status": "QUALIFIED_ADVISORY",
+  "qualification_digest": "13e23a6f43a9a2e36b6f7d03bf0c343bb88f70242aba69dbd63639f29d93b09d",
+  "eligible_suggestion_indexes": [
+    0
+  ],
+  "selected_feedback": {
+    "feedback": "Consider adding more robust error handling to handle cases where the query is invalid or the providerId/placementId are missing.",
+    "source": "ai-qualified:13e23a6f43a9a2e36b6f7d03bf0c343bb88f70242aba69dbd63639f29d93b09d",
+    "selectedBy": "gpt-control",
+    "proposalDigest": "b35736fad1e9b3100cd4b4b204b4258b1c62a6ac4ba980cad3483e80eb9b2e2e",
+    "qualificationDigest": "13e23a6f43a9a2e36b6f7d03bf0c343bb88f70242aba69dbd63639f29d93b09d",
+    "candidateCommit": "24b99ab9b9420c407d9eed01d23e0cf2f52a73d8",
+    "artifactSha256": "5ea8aebb07a55bb6d9b0afdd575e61dfdd07d6492d76a2ce35959f200f6fb004",
+    "authorityGranted": false
+  },
+  "gates": {
+    "factory_ai": "31/31 PASS",
+    "mycelium": "24/24 PASS",
+    "worker": "10/10 PASS"
+  },
+  "hardening": [
+    "free-form quote generation failed exact-source gate",
+    "global evidence index admitted non-substantive header and was rejected by GPT Control",
+    "model-generated support tokens were too fragile",
+    "final contract: deterministic per-suggestion retrieval + exact quote resolution + lexical overlap proof"
+  ],
+  "authorityGranted": false,
+  "mutation_performed": false,
+  "operator_accepted": false,
+  "released": false,
+  "next": "V2-005G may consume qualified feedback only through the existing bounded Refine path; real product remains operator-gated."
+}

@@ -1,0 +1,16 @@
+{
+  "mission_id": "V2-005F",
+  "title": "Cross-model source-grounded AI proposal qualification",
+  "authority": "GPT_CONTROL",
+  "base_sha": "e02d20b4ab11e211e9d27afe47dffeec87a18cb4",
+  "goal": "Require independent source-grounded qualification before any AI proposal can become Refine feedback.",
+  "laws": [
+    "Raw ADVISORY proposals are not selectable.",
+    "Reviewer node/model must differ from proposer node/model.",
+    "Every reviewer claim cites an exact substring from the supplied source bundle.",
+    "Any claimed absent token is checked deterministically.",
+    "Only SUPPORTED suggestion indexes become eligible.",
+    "Qualification and selection grant no mutation, acceptance, or release authority."
+  ],
+  "live_council": "T590/llama3.2 proposer -> Legion/qwen3:8b fact-checker -> deterministic evidence verifier."
+}

@@ -24,21 +24,8 @@ export function createAdvisoryProposal(input: any) {
   const body={candidateCommit,artifactSha256,nodeId,model,summary,suggestions,risks};
   return Object.freeze({schema:FACTORY_PROPOSAL_SCHEMA,...body,proposalDigest:digest(body),status:"ADVISORY",authorityGranted:false});
 }
-export function selectProposalFeedback(proposal:any,index:number,approver:string){
-  if(proposal?.schema!==FACTORY_PROPOSAL_SCHEMA||proposal.status!=="ADVISORY"||proposal.authorityGranted!==false)throw new FactoryProposalError("INVALID_ADVISORY_PROPOSAL");
-  if(!Number.isInteger(index)||index<0||index>=proposal.suggestions.length)throw new FactoryProposalError("INVALID_SUGGESTION_INDEX");
-  const actor=String(approver??"").trim();
-  if(actor!=="operator"&&actor!=="gpt-control")throw new FactoryProposalError("APPROVER_NOT_AUTHORIZED");
-  const feedback=proposal.suggestions[index];
-  return Object.freeze({
-    feedback,
-    source:`ai-proposal:${proposal.proposalDigest}`,
-    selectedBy:actor,
-    proposalDigest:proposal.proposalDigest,
-    candidateCommit:proposal.candidateCommit,
-    artifactSha256:proposal.artifactSha256,
-    authorityGranted:false
-  });
+export function selectProposalFeedback(_proposal:any,_index:number,_approver:string){
+  throw new FactoryProposalError("PROPOSAL_NOT_QUALIFIED");
 }
 
 export function proposalMatchesCandidate(proposal:any,candidateCommit:string,artifactSha256:string):boolean{

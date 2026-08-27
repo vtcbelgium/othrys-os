@@ -1,0 +1,97 @@
+{
+  "mission_id": "V2-005F",
+  "verdict": "PASS",
+  "proposer": {
+    "node": "t590",
+    "model": "llama3.2"
+  },
+  "reviewer": {
+    "node": "legion",
+    "model": "qwen3:8b"
+  },
+  "route_requirement": {
+    "cpu_threads": 1,
+    "ram_mb": 1024,
+    "gpu_count": 1,
+    "vram_mb": 4500
+  },
+  "talos": {
+    "state": "SUCCEEDED",
+    "replay": "SUCCEEDED",
+    "attempts": 1
+  },
+  "attempt_evidence": [
+    {
+      "attempt": 1,
+      "duration_ms": 4653.7,
+      "eval_count": 205,
+      "load_duration": 2624200,
+      "review": {
+        "proposalDigest": "b35736fad1e9b3100cd4b4b204b4258b1c62a6ac4ba980cad3483e80eb9b2e2e",
+        "candidateCommit": "24b99ab9b9420c407d9eed01d23e0cf2f52a73d8",
+        "artifactSha256": "5ea8aebb07a55bb6d9b0afdd575e61dfdd07d6492d76a2ce35959f200f6fb004",
+        "reviewerNode": "legion",
+        "reviewerModel": "qwen3:8b",
+        "checks": [
+          {
+            "suggestionIndex": 0,
+            "verdict": "SUPPORTED",
+            "evidenceIndex": 0,
+            "absentTokens": [],
+            "reason": "The code already validates the query and providerId in the validateRequest function, which throws errors for invalid inputs.",
+            "evidenceQuote": "* @param {{ query: string, providerId: string, listingIntent?: string, placementId?: string }} request",
+            "evidenceTerms": [
+              "query",
+              "providerid",
+              "placementid"
+            ]
+          },
+          {
+            "suggestionIndex": 1,
+            "verdict": "REJECTED",
+            "evidenceIndex": 0,
+            "absentTokens": [],
+            "reason": "The current code does not support multiple attribution objects, and the suggestion duplicates platform Block logic which is already handled.",
+            "evidenceQuote": "attribution: {",
+            "evidenceTerms": [
+              "attribution"
+            ]
+          },
+          {
+            "suggestionIndex": 2,
+            "verdict": "REJECTED",
+            "evidenceIndex": 0,
+            "absentTokens": [],
+            "reason": "The help documentation is not present in the source bundle, and the suggestion lacks source evidence to support adding instructions.",
+            "evidenceQuote": "import { constructAffiliateOffer } from '../../othrys-v2/blocks/monetization/affiliate-offer/src/index.js';",
+            "evidenceTerms": [
+              "construct"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "proposal_digest": "b35736fad1e9b3100cd4b4b204b4258b1c62a6ac4ba980cad3483e80eb9b2e2e",
+  "qualification_status": "QUALIFIED_ADVISORY",
+  "qualification_digest": "13e23a6f43a9a2e36b6f7d03bf0c343bb88f70242aba69dbd63639f29d93b09d",
+  "eligible_suggestion_indexes": [
+    0
+  ],
+  "selected_feedback": {
+    "feedback": "Consider adding more robust error handling to handle cases where the query is invalid or the providerId/placementId are missing.",
+    "source": "ai-qualified:13e23a6f43a9a2e36b6f7d03bf0c343bb88f70242aba69dbd63639f29d93b09d",
+    "selectedBy": "gpt-control",
+    "proposalDigest": "b35736fad1e9b3100cd4b4b204b4258b1c62a6ac4ba980cad3483e80eb9b2e2e",
+    "qualificationDigest": "13e23a6f43a9a2e36b6f7d03bf0c343bb88f70242aba69dbd63639f29d93b09d",
+    "candidateCommit": "24b99ab9b9420c407d9eed01d23e0cf2f52a73d8",
+    "artifactSha256": "5ea8aebb07a55bb6d9b0afdd575e61dfdd07d6492d76a2ce35959f200f6fb004",
+    "authorityGranted": false
+  },
+  "raw_proposal_directly_selectable": false,
+  "authorityGranted": false,
+  "mutation_performed": false,
+  "operator_accepted": false,
+  "released": false,
+  "boundary": "Cross-model review plus deterministic exact-source evidence is required before proposal selection; selection still creates feedback only."
+}

@@ -43,3 +43,7 @@
 | 16 | V2-005D | Factory bounded refinement loop with immutable candidate lineage | COMPLETE |
 
 | 17 | V2-005E | T590 AI advisory product critique -> content-bound proposal -> gated Refine selection | COMPLETE |
+
+| 18 | V2-005F | T590 proposal -> Legion/Qwen fact-check -> deterministic source qualification | COMPLETE |
+
+| 19 | V2-006A | OTHRYS Command Deck PWA: tablet-primary / phone-secondary operator surface; status, missions, node health, Accept/Refine/Reject, emergency stop; no compute authority | GATED_AFTER_FACTORY_REFINE |

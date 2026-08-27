@@ -26,17 +26,10 @@ test("proposal must contain bounded suggestions and evidence",()=>{
   assert.throws(()=>createAdvisoryProposal({...base,artifactSha256:"bad"}),/PROPOSAL_EVIDENCE_REQUIRED/);
   assert.throws(()=>createAdvisoryProposal({...base,suggestions:Array(6).fill("x")}),/SUGGESTION_COUNT_INVALID/);
 });
-test("only operator or gpt-control may select feedback",()=>{
+test("raw AI proposal cannot be selected",()=>{
   const p=createAdvisoryProposal(base);
-  assert.throws(()=>selectProposalFeedback(p,0,"ai"),/APPROVER_NOT_AUTHORIZED/);
-  assert.equal(selectProposalFeedback(p,1,"gpt-control").feedback,"Add --help usage text");
-  assert.equal(selectProposalFeedback(p,0,"operator").authorityGranted,false);
-});
-
-test("selection cannot escape proposal bounds",()=>{
-  const p=createAdvisoryProposal(base);
-  assert.throws(()=>selectProposalFeedback(p,-1,"operator"),/INVALID_SUGGESTION_INDEX/);
-  assert.throws(()=>selectProposalFeedback(p,99,"operator"),/INVALID_SUGGESTION_INDEX/);
+  assert.throws(()=>selectProposalFeedback(p,0,"operator"),/PROPOSAL_NOT_QUALIFIED/);
+  assert.throws(()=>selectProposalFeedback(p,0,"gpt-control"),/PROPOSAL_NOT_QUALIFIED/);
 });
 
 test("proposal is exact-candidate scoped",()=>{
@@ -48,6 +41,6 @@ test("proposal is exact-candidate scoped",()=>{
 
 test("tampered authority is rejected",()=>{
   const p:any={...createAdvisoryProposal(base),authorityGranted:true};
-  assert.throws(()=>selectProposalFeedback(p,0,"operator"),/INVALID_ADVISORY_PROPOSAL/);
+  assert.throws(()=>selectProposalFeedback(p,0,"operator"),/PROPOSAL_NOT_QUALIFIED/);
   assert.equal(proposalMatchesCandidate(p,"abc123","a".repeat(64)),false);
 });
