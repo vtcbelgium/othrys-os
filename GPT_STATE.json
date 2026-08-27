@@ -1,19 +1,19 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 59,
+  "sequence": 60,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "1f7efcbe9e9a8fef52f42e582fc98e4f763d6063",
-  "control_gate": "SYNC_PENDING",
+  "remote_head_at_last_verified_read": "087cff5b150adaeb9afb057c7fd63d3ab6183a78",
+  "control_gate": "IDLE",
   "active_mission": {
     "mission_id": "V2-005C",
-    "status": "COMPLETE_SYNC_PENDING",
+    "status": "COMPLETE",
     "issued_label": "V2-005C - FACTORY CAPABILITY ROUTING",
     "source": "operator_current_conversation"
   },
-  "last_verified_remote_receipt": "1f7efcbe9e9a8fef52f42e582fc98e4f763d6063",
-  "last_verified_receipt_mission": "V2-004B",
-  "last_log_sequence": 55,
+  "last_verified_remote_receipt": "087cff5b150adaeb9afb057c7fd63d3ab6183a78",
+  "last_verified_receipt_mission": "V2-005C",
+  "last_log_sequence": 56,
   "last_log_hash": "242970f06018df446478944be650ef2c5170ff5b58d7b3de46df292dfb0c2da6",
   "log_integrity": {
     "status": "DEGRADED_RECOVERED",
