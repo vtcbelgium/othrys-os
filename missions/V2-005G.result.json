@@ -1,6 +1,6 @@
 {
   "mission_id": "V2-005G",
-  "status": "COMPLETE_SYNC_PENDING",
+  "status": "COMPLETE",
   "verdict": "PASS",
   "decision": "NO_CHANGE_JUSTIFIED",
   "candidate_commit": "24b99ab9b9420c407d9eed01d23e0cf2f52a73d8",
@@ -15,5 +15,13 @@
   "real_candidate_clean": true,
   "operator_accepted": false,
   "released": false,
-  "law": "qualified AI feedback requires deterministic negative gap evidence before mutation; no gap => NO_CHANGE_JUSTIFIED; operator refine path unchanged"
+  "law": "qualified AI feedback requires deterministic negative gap evidence before mutation; no gap => NO_CHANGE_JUSTIFIED; operator refine path unchanged",
+  "remote_receipt": "85030829ceb5313dc5134778d9fd903c3dc36f40",
+  "independent_t590_verification": {
+    "head": "85030829ceb5313dc5134778d9fd903c3dc36f40",
+    "mycelium": "24/24 PASS",
+    "worker": "10/10 PASS",
+    "combined_runtime": "40/40 PASS",
+    "authorityGranted": false
+  }
 }
