@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-006C",
+  "verdict": "PASS",
+  "candidate_sha": "ad46ef1a3dc1fcb95f22dc84b07ba5883f8d4673",
+  "control": "REFINE_REQUEST only",
+  "authentication": "separate machine-local control token",
+  "live_negative_controls": {"bad_token":401,"forbidden_accept":400,"live_inbox_clean":true},
+  "disposable_valid_proof": {"status":202,"authorityGranted":false,"state":"PENDING_TRUST_CANAL","records":1},
+  "tests": {"deck":"4/4","mycelium":"26/26"},
+  "accept_enabled": false,
+  "reject_enabled": false,
+  "emergency_stop_enabled": false,
+  "mutation_performed": false,
+  "released": false
+}

@@ -50,4 +50,6 @@
 
 | 19 | V2-005G | AI Refine Gap Gate: negative evidence required before qualified AI may trigger mutation | COMPLETE |
 
-| 21 | V2-006B | Authority-free Legion -> T590 Command Deck telemetry | RUNNING |
+| 21 | V2-006B | Authority-free Legion -> T590 Command Deck telemetry | COMPLETE |
+
+| 22 | V2-006C | Authenticated tablet Refine intent ingress; pending Trust Canal only | COMPLETE |
