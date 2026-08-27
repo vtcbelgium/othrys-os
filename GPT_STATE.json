@@ -1,18 +1,18 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 62,
+  "sequence": 63,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "087cff5b150adaeb9afb057c7fd63d3ab6183a78",
-  "control_gate": "SYNC_PENDING",
+  "remote_head_at_last_verified_read": "a20e55d346545644ccedca868f2091385fd73cab",
+  "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-004D",
-    "status": "COMPLETE_SYNC_PENDING",
+    "status": "COMPLETE",
     "issued_label": "V2-004D - T590 INDEPENDENT VERIFIER",
     "source": "operator_current_conversation"
   },
-  "last_verified_remote_receipt": "087cff5b150adaeb9afb057c7fd63d3ab6183a78",
-  "last_verified_receipt_mission": "V2-005C",
+  "last_verified_remote_receipt": "a20e55d346545644ccedca868f2091385fd73cab",
+  "last_verified_receipt_mission": "V2-004D",
   "last_log_sequence": 58,
   "last_log_hash": "242970f06018df446478944be650ef2c5170ff5b58d7b3de46df292dfb0c2da6",
   "log_integrity": {
@@ -67,7 +67,7 @@
     "decision": "ACCEPT_T590_VERIFIER_LANE",
     "authority": "fixed deterministic verification capability only; T590 remains non-engineering; Talos owns lifecycle"
   },
-  "next_legal_action": "Sync V2-004D and redeploy exact canonical verifier source to T590. Then continue V2 product/Factory path with T590 as independent verifier and Legion as primary Qwen builder.",
+  "next_legal_action": "Use Legion as primary engineering.patch builder and T590 as independent verification.v2-suite@1 node; continue V2 Factory/product path without changing these authority boundaries.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
