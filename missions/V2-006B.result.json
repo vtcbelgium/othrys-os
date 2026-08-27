@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-006B",
+  "verdict": "PASS",
+  "candidate_sha": "e1aff258d295689fbb26908a6c25d18678166a88",
+  "transport": "Legion -> telemetry.node-status@1 -> T590 -> Command Deck",
+  "persistent_sender": "Windows Startup user launcher -> Node sampler",
+  "receiver": "T590 Mycelium user service",
+  "tests": {"deck":"3/3","mycelium":"26/26"},
+  "live_proof": {"successive_packets":3,"interval_seconds":10,"deck_stale":false,"qwen_loaded":false},
+  "authorityGranted": false,
+  "control_enabled": false,
+  "secrets_committed": false
+}

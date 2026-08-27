@@ -1,13 +1,13 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 79,
+  "sequence": 80,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
-  "control_gate": "MISSION_ACTIVE",
+  "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-006B",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "issued_label": "V2-006B - COLONY TELEMETRY",
     "source": "operator_current_conversation"
   },
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-006A",
-    "decision": "ACCEPT_READ_ONLY_COMMAND_DECK",
-    "authority": "T590 hosts token-gated read-only Deck; tablet primary and phone secondary; no control writes"
+    "mission_id": "V2-006B",
+    "decision": "ACCEPT_AUTHORITY_FREE_COLONY_TELEMETRY",
+    "authority": "telemetry only; no control authority"
   },
-  "next_legal_action": "Build bounded one-way Legion telemetry into T590-hosted read-only Command Deck; no control writes.",
+  "next_legal_action": "Open V2-006C authenticated tablet intent ingress through Trust Canal; no direct execution/accept/release.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
