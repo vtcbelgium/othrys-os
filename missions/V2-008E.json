@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008E",
+  "title": "Deterministic canonical mission preflight decision",
+  "goal": "Classify a canonical mission before any builder request as NO_CHANGE, MISSING_WORK, or BLOCKED using durable evidence only.",
+  "laws": [
+    "Preflight never invokes a model, builder, Talos work, Hephaestus work, shell mutation, or network.",
+    "NO_CHANGE requires a valid mission preflight artifact bound to the canonical mission and objective.",
+    "BLOCKED is reserved for invalid identity, missing canonical envelope, or authority/state conflict.",
+    "Otherwise classification is MISSING_WORK; absence of proof is never treated as NO_CHANGE.",
+    "Every decision includes evidence paths and keeps authorityGranted/executionStarted false.",
+    "Decision output is deterministic and replayable.",
+    "Independent Legion verification required before closeout."
+  ]
+}
