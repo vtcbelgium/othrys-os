@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-008Q",
+    "mission_id": "V2-008R",
     "status": "COMPLETE",
-    "issued_label": "V2-008Q - FIRST GOVERNED REAL QWEN LAUNCH",
+    "issued_label": "V2-008R - WORKER RESULT ACCEPTANCE GATE",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-008Q",
-    "decision": "ACCEPT_FIRST_GOVERNED_QWEN_DISPATCH",
-    "authority": "worker result accepted only after independent T590 verification; canonical repo not mutated by worker"
+    "mission_id": "V2-008R",
+    "decision": "ACCEPT_WORKER_RESULT_GATE",
+    "authority": "worker result accepted only with bound dispatch + scope + independent PASS evidence"
   },
-  "next_legal_action": "V2-008R may turn worker-result + independent verification into a reusable deterministic acceptance gate before any candidate promotion.",
+  "next_legal_action": "V2-008S may expose verified worker acceptance in Command Centre without granting new execution authority.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

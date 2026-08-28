@@ -1,0 +1,10 @@
+{
+  "mission_id": "V2-008R",
+  "verdict": "PASS",
+  "focused_tests": "4/4 PASS",
+  "combined_tests": "112/112 PASS both nodes",
+  "live_proof": "V2-008Q -> ACCEPTED_VERIFIED",
+  "acceptance_requires": ["dispatch binding", "worker scope", "independent PASS checks"],
+  "authorityGranted": false,
+  "next_state": "WAIT_GPT"
+}
