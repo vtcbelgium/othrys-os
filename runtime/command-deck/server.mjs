@@ -5,6 +5,7 @@ import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { decideMissionPreflight } from './preflight_decision.ts';
 import { proposeBuildRoute } from './build_route.ts';
+import { validateExecutionAuthCandidate } from './execution_auth.ts';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -70,10 +71,13 @@ function deriveIntentState(intent,ledger=admissionLedger){
   }else if(intent.action==='MISSION_BUILD_REQUEST'){
     body={action:intent.action,missionId:intent.missionId,builderId:intent.builderId,routeDigest:intent.routeDigest,receivedAt:intent.receivedAt};
     const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-BUILD-${digest.slice(0,24)}`;
+  }else if(intent.action==='MISSION_EXECUTION_AUTH_REQUEST'){
+    body={action:intent.action,missionId:intent.missionId,buildRequestId:intent.buildRequestId,builderId:intent.builderId,packageDigest:intent.packageDigest,receivedAt:intent.receivedAt};
+    const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-EXEC-${digest.slice(0,24)}`;
   }else return null;
   let admitted=false;
   if(ledger&&existsSync(ledger)) admitted=readFileSync(ledger,'utf8').split(/\r?\n/).some(line=>line.includes(`"missionId":"${missionId}"`));
-  return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,proposalId:intent.proposalId??null,candidateId:intent.candidateId??null,canonicalTargetMissionId:intent.missionId??null,preflightDigest:intent.preflightDigest??null,builderId:intent.builderId??null,routeDigest:intent.routeDigest??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
+  return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,proposalId:intent.proposalId??null,candidateId:intent.candidateId??null,canonicalTargetMissionId:intent.missionId??null,preflightDigest:intent.preflightDigest??null,builderId:intent.builderId??null,routeDigest:intent.routeDigest??null,buildRequestId:intent.buildRequestId??null,packageDigest:intent.packageDigest??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
 }
 export function readControlIntentState(inbox=intentFile,ledger=admissionLedger){
   if(!inbox||!existsSync(inbox)) return null;
@@ -126,6 +130,10 @@ export function latestBuildPackage(){
   const dir=join(root,'missions','build-packages');if(!existsSync(dir))return null;
   const files=readdirSync(dir).filter(n=>/^DECK-BUILD-[0-9a-f]{24}\.json$/.test(n)).sort();if(!files.length)return null;
   try{const p=JSON.parse(readFileSync(join(dir,files.at(-1)),'utf8'));if(p.schema!=='othrys.os.build-package.v1'||p.status!=='READY_NOT_EXECUTING')return null;return p;}catch{return null;}
+}
+export function buildPackagePathForMission(missionId){
+  const dir=join(root,'missions','build-packages');if(!existsSync(dir))return null;
+  for(const name of readdirSync(dir).filter(n=>/^DECK-BUILD-[0-9a-f]{24}\.json$/.test(n)).sort().reverse()){try{const p=JSON.parse(readFileSync(join(dir,name),'utf8'));if(p.schema==='othrys.os.build-package.v1'&&p.missionId===missionId)return join(dir,name);}catch{}}return null;
 }
 export async function buildStatus(){
   const state=json('GPT_STATE.json');
@@ -191,12 +199,13 @@ export async function buildStatus(){
   const activationIntent=readLatestIntentState('MISSION_ACTIVATION_REQUEST');
   const noChangeCloseIntent=readLatestIntentState('MISSION_NO_CHANGE_CLOSE_REQUEST');
   const buildIntent=readLatestIntentState('MISSION_BUILD_REQUEST');
+  const executionAuthIntent=readLatestIntentState('MISSION_EXECUTION_AUTH_REQUEST');
   const missionCandidate=latestMissionCandidate();
   const missionPreflight=readMissionPreflight(missionCandidate?.canonicalMissionId);
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(),
+    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(),missionExecutionAuthRequest:executionAuthIntent,
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     osSurface,workState,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };
@@ -257,6 +266,11 @@ function persistIntent(body){
     if(preflight.class!=='MISSING_WORK'||route.status!=='ROUTE_PROPOSED'||!route.selected) throw new Error('BUILD_ROUTE_NOT_AVAILABLE');
     const routeDigest=createHash('sha256').update(JSON.stringify(route),'utf8').digest('hex');
     rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,missionId,builderId:route.selected.id,routeDigest,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+  }else if(action==='MISSION_EXECUTION_AUTH_REQUEST'){
+    const missionId=String(body?.missionId??'').trim();if(!/^V2-\d{3}[A-Z]$/.test(missionId)) throw new Error('INVALID_MISSION_ID');
+    const packagePath=buildPackagePathForMission(missionId);if(!packagePath) throw new Error('BUILD_PACKAGE_NOT_FOUND');
+    const candidate=validateExecutionAuthCandidate(root,packagePath,switchyardPreview('auto'));
+    rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,missionId,buildRequestId:candidate.buildRequestId,builderId:candidate.builderId,packageDigest:candidate.packageDigest,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
   }else throw new Error('ACTION_NOT_ALLOWED');
   mkdirSync(dirname(intentFile),{recursive:true}); appendFileSync(intentFile,JSON.stringify(rec)+'\n'); return rec;
 }

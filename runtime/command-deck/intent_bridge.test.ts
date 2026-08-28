@@ -88,3 +88,13 @@ test('build request binds canonical mission builder and route digest',()=>{
   const d=mkdtempSync(join(tmpdir(),'deck-build-')); const ledger=join(d,'admission.jsonl');
   try{const a=admitDeckIntent(buildRequest(),ledger),b=admitDeckIntent({...buildRequest(),builderId:'other-builder'},ledger);assert.notEqual(a.missionId,b.missionId);assert.throws(()=>admitDeckIntent({...buildRequest(),routeDigest:'bad'},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
 });
+
+function executionAuthRequest(){return {schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T15:40:00.000Z',action:'MISSION_EXECUTION_AUTH_REQUEST',missionId:'V2-009A',buildRequestId:'DECK-BUILD-0123456789abcdef01234567',builderId:'qwen3-builder',packageDigest:'a'.repeat(64),authorityGranted:false,status:'PENDING_TRUST_CANAL'};}
+
+test('pending execution authorization request is admitted without worker launch',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-exec-auth-'));const ledger=join(d,'admission.jsonl');try{const r=admitDeckIntent(executionAuthRequest(),ledger);assert.equal(r.created,true);assert.match(r.missionId,/^DECK-EXEC-/);assert.equal(r.authorityGranted,false);assert.equal(r.executionStarted,false);}finally{rmSync(d,{recursive:true,force:true});}
+});
+
+test('execution authorization request binds package evidence',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-exec-auth-'));const ledger=join(d,'admission.jsonl');try{const a=admitDeckIntent(executionAuthRequest(),ledger),b=admitDeckIntent({...executionAuthRequest(),packageDigest:'b'.repeat(64)},ledger);assert.notEqual(a.missionId,b.missionId);assert.throws(()=>admitDeckIntent({...executionAuthRequest(),buildRequestId:'bad'},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
+});

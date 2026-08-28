@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008K",
+  "title": "Freshness-gated execution authorization request",
+  "goal": "Allow a READY_NOT_EXECUTING package to request execution authorization only while its mission is still MISSING_WORK on the same route; admission starts no worker.",
+  "laws": [
+    "Recompute mission preflight before execution authorization request.",
+    "Recompute route and require exact builder + route digest match to the package.",
+    "Stale, NO_CHANGE, BLOCKED, or mismatched packages cannot request execution authorization.",
+    "Execution authorization request binds mission, build package, builder and package digest.",
+    "Trust Canal admission remains separate from worker launch.",
+    "authorityGranted and executionStarted remain false at this rung.",
+    "Independent Legion verification required."
+  ]
+}

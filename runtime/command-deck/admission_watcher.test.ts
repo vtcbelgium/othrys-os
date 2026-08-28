@@ -256,3 +256,8 @@ test('complete valid pending MISSION_BUILD_REQUEST is admitted without builder e
     writeFileSync(inbox,JSON.stringify(intent)+'\n','utf8'); const r=admitCompleteIntents(inbox,ledger); assert.equal(r.admitted,1); assert.match(readFileSync(ledger,'utf8'),/DECK-BUILD-/);
   } finally { rmSync(d,{recursive:true,force:true}); }
 });
+
+test('complete valid pending MISSION_EXECUTION_AUTH_REQUEST is admitted without worker launch', () => {
+  const d=mkdtempSync(join(tmpdir(),'admission-watch-exec-')); const inbox=join(d,'inbox.jsonl'),ledger=join(d,'ledger.jsonl');
+  try{const intent={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T15:40:00.000Z',action:'MISSION_EXECUTION_AUTH_REQUEST',missionId:'V2-009A',buildRequestId:'DECK-BUILD-0123456789abcdef01234567',builderId:'qwen3-builder',packageDigest:'a'.repeat(64),authorityGranted:false,status:'PENDING_TRUST_CANAL'};writeFileSync(inbox,JSON.stringify(intent)+'\n');const r=admitCompleteIntents(inbox,ledger);assert.equal(r.admitted,1);assert.match(readFileSync(ledger,'utf8'),/DECK-EXEC-/);}finally{rmSync(d,{recursive:true,force:true});}
+});
