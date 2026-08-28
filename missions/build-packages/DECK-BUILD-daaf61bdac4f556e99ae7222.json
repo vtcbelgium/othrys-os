@@ -1,0 +1,12 @@
+{
+  "schema": "othrys.os.build-package.v1",
+  "missionId": "V2-008J",
+  "objective": "Show the current freshness-validated build package, builder, mission and readiness state in the Command Centre without granting execution authority.",
+  "builderId": "qwen3-builder",
+  "routeDigest": "4e515f9c6e331c3eb691f61b3e0fc987fa677fd729ac98024b721a1ab0d8cce9",
+  "buildRequestId": "DECK-BUILD-daaf61bdac4f556e99ae7222",
+  "preflightClass": "MISSING_WORK",
+  "status": "READY_NOT_EXECUTING",
+  "authorityGranted": false,
+  "executionStarted": false
+}
