@@ -34,6 +34,18 @@ function artifactsFor(root,missionId,mission){
     artifact(root,'intent-mode-admission','runtime/command-deck/intent_bridge.ts'),
     artifact(root,'deck-tests','runtime/command-deck/deck.test.mjs')
   ];
+  if(mission.artifact_profile==='os-atlas') return [...common,
+    artifact(root,'atlas-model','runtime/os/atlas_model.mjs'),
+    artifact(root,'muses','runtime/os/muses.mjs'),
+    artifact(root,'atlas-projection','runtime/os/atlas_projection.mjs'),
+    artifact(root,'atlas-tests','runtime/os/atlas.test.mjs'),
+    artifact(root,'atlas-policy','.othrys/project.json'),
+    artifact(root,'atlas-api','runtime/command-deck/server.mjs'),
+    artifact(root,'atlas-workstation','runtime/command-deck/public/atlas.html'),
+    artifact(root,'deck-tests','runtime/command-deck/deck.test.mjs'),
+    artifact(root,'mnemosyne-inbox','.othrys/knowledge/inbox/inbox-cc73e3f2f89c185c325391e8.json'),
+    artifact(root,'mnemosyne-review','.othrys/knowledge/reviews/review-a2b5a801ab4239ba83141044.json')
+  ];
   if(mission.artifact_profile==='os-knowledge') return [...common,
     artifact(root,'mnemosyne','runtime/os/mnemosyne.mjs'),
     artifact(root,'mnemosyne-tests','runtime/os/mnemosyne.test.mjs'),

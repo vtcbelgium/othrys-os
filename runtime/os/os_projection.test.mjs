@@ -69,3 +69,12 @@ test('knowledge policy cannot enable opaque memory or silent promotion',()=>{
   silent.knowledgePolicy.promotion='AUTO';
   assert.throws(()=>validateProjectManifest(silent),/INVALID_KNOWLEDGE_POLICY/);
 });
+
+test('Atlas policy fails closed when derived/read-only/secret-free law is weakened',()=>{
+  const p=structuredClone(loadProjectManifest(root));
+  p.atlasPolicy.readOnly=false;
+  assert.throws(()=>validateProjectManifest(p),/INVALID_ATLAS_POLICY/);
+  const q=structuredClone(loadProjectManifest(root));
+  q.atlasPolicy.semanticGates='NEW_GODS';
+  assert.throws(()=>validateProjectManifest(q),/INVALID_ATLAS_POLICY/);
+});

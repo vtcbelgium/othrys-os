@@ -1,0 +1,39 @@
+{
+  "mission_id": "V2-010F",
+  "verdict": "PASS",
+  "start_sha": "a94153df66b69a6291521677c269abe09242aaab",
+  "scope": "Atlas cognitive graph foundation",
+  "proof": {
+    "node_runtime": "220/220 PASS across 39 recursive MJS/TS test files",
+    "python_runtime": "36/36 PASS across five runtime test files",
+    "browser_script_parse": "PASS",
+    "diff_check": "PASS",
+    "preclose_graph": "132 nodes / 205 typed relations"
+  },
+  "architecture": {
+    "mnemosyne": "KNOWLEDGE_AUTHORITY",
+    "atlas": "DERIVED_READ_MODEL_WORKSPACE_NOT_TITAN",
+    "nine_muses": "SEMANTIC_GATES_NOT_AUTHORITIES",
+    "authority_granted": false,
+    "execution_started": false,
+    "automatic_promotion": false
+  },
+  "delivered": [
+    "runtime/os/atlas_model.mjs",
+    "runtime/os/muses.mjs",
+    "runtime/os/atlas_projection.mjs",
+    "runtime/os/atlas.test.mjs",
+    "runtime/command-deck/public/atlas.html",
+    "runtime/command-deck/server.mjs:/api/atlas",
+    ".othrys/project.json:atlasPolicy",
+    "docs/V2-010F/ATLAS_FOUNDATION.md"
+  ],
+  "known_limitations": [
+    "No persistent SQLite/FTS/vector index yet",
+    "No bitemporal claim history yet",
+    "No autonomous consolidation or curiosity loop yet",
+    "No Callimachus promotion executor yet",
+    "No independent T590 verification recorded at initial closeout"
+  ],
+  "next_legal_action": "V2-010G may establish the persistent/temporal Atlas index and retrieval substrate after checking legacy Mnemosyne persistence, concordance and Callimachus stock; Switchyard remains deferred by explicit operator priority."
+}

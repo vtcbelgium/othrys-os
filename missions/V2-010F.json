@@ -1,0 +1,85 @@
+{
+  "mission_id": "V2-010F",
+  "title": "Atlas cognitive graph foundation",
+  "goal": "Port the proven OTHRYS Atlas and Mnemosyne semantic foundations into the V2 OTHRYS OS house, then expose a fast derived knowledge-map workspace over canonical evidence.",
+  "artifact_profile": "os-atlas",
+  "work": {
+    "scale": "EPIC",
+    "problem": "V2 has a governed Mnemosyne lifecycle but lacks the prior OTHRYS graph constitution and a usable Atlas-class knowledge operating surface.",
+    "out_of_scope": [
+      "No graph becomes canonical truth",
+      "No automatic knowledge promotion",
+      "No new Titan or duplicate Greek subsystem",
+      "No model-driven autonomous mutation in this mission",
+      "No SQLite/vector dependency yet"
+    ],
+    "risks": [
+      "Atlas becomes a second architecture registry",
+      "Evidence and inference are visually conflated",
+      "Legacy Mnemosyne and Nine Muse semantics are duplicated or renamed",
+      "Browser-facing graph leaks secrets",
+      "Pretty graph ships without deterministic provenance"
+    ]
+  },
+  "laws": [
+    "Atlas is a derived read model and workspace, never a Titan or authority.",
+    "Mnemosyne remains the knowledge authority; the Nine Muses remain semantic gates over one knowledge store.",
+    "Every evidence-basis node and edge carries explicit provenance.",
+    "A V2 evidence reference becomes VERIFIED only when its canonical result exists and passes.",
+    "The browser-facing graph is secret-free and authority-free.",
+    "Graph digest is deterministic when source evidence is unchanged.",
+    "Gravity and heat are cognitive signals, not truth or authority.",
+    "Inbox and Review are distinct lifecycle queues.",
+    "No automatic promotion, execution endpoint or gate relaxation is introduced."
+  ],
+  "slices": [
+    {
+      "id": "graph-constitution",
+      "title": "Atlas graph constitution and Mnemosyne semantic gates",
+      "owner": "hephaestus",
+      "stages": [
+        {"id":"build","owner":"hephaestus","tasks":[
+          {"id":"port-graph-law","title":"Port typed nodes, edges, truth classes, provenance and deterministic IDs"},
+          {"id":"port-muses","title":"Port the existing Nine Muses as semantic gates without new authorities"},
+          {"id":"guard-browser-data","title":"Reject secret-shaped browser-facing graph data"}
+        ]},
+        {"id":"review","owner":"talos","tasks":[
+          {"id":"verify-constitution","title":"Verify vocabulary, provenance, authority and deterministic digest laws"}
+        ]}
+      ],
+      "artifacts": ["atlas-model","muses","atlas-tests","atlas-policy"]
+    },
+    {
+      "id": "cognitive-projection",
+      "title": "Derived V2 cognitive graph",
+      "owner": "hephaestus",
+      "stages": [
+        {"id":"build","owner":"hephaestus","tasks":[
+          {"id":"derive-v2-graph","title":"Project systems, Titans, capabilities, models, integrations, knowledge, missions and Work from V2 evidence"},
+          {"id":"gravity-heat","title":"Calculate gravity and heat without changing truth class"},
+          {"id":"queue-semantics","title":"Keep Mnemosyne Inbox and Review queue semantics distinct"}
+        ]},
+        {"id":"review","owner":"talos","tasks":[
+          {"id":"verify-evidence-inference","title":"Verify evidence references cannot self-certify and inferred edges stay explicit"}
+        ]}
+      ],
+      "artifacts": ["atlas-projection","atlas-api","mnemosyne-inbox","mnemosyne-review"]
+    },
+    {
+      "id": "atlas-workstation",
+      "title": "Fast Atlas room in OTHRYS OS",
+      "owner": "hephaestus",
+      "stages": [
+        {"id":"build","owner":"hephaestus","tasks":[
+          {"id":"atlas-layout","title":"Build Atlas rail, lifecycle nav, typed tree, knowledge canvas and evidence inspector"},
+          {"id":"canvas-engine","title":"Render deterministic pan/zoom graph with gravity mass and heat halos"},
+          {"id":"wire-shell","title":"Link Atlas as a first-class OTHRYS OS room"}
+        ]},
+        {"id":"review","owner":"talos","tasks":[
+          {"id":"verify-read-only-ui","title":"Verify authenticated read-only Atlas API and local workstation contract"}
+        ]}
+      ],
+      "artifacts": ["atlas-workstation","deck-tests"]
+    }
+  ]
+}

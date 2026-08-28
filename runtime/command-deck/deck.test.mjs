@@ -311,3 +311,12 @@ test('Mnemosyne search and export endpoints are authenticated read-only projecti
   r=await fetch('http://127.0.0.1:18788/api/knowledge-export',{headers:{'X-OTHRYS-DECK-TOKEN':'knowledge-read'}});b=await r.json();assert.equal(r.status,200);assert.equal(b.export.projectId,'othrys-v2');assert.equal(b.export.authorityGranted,false);assert.match(b.export.exportDigest,/^[0-9a-f]{64}$/);
   r=await fetch('http://127.0.0.1:18788/api/knowledge-write',{method:'POST',headers:{'X-OTHRYS-DECK-TOKEN':'knowledge-read'}});assert.equal(r.status,405);
 });
+
+test('Atlas endpoint is authenticated, authority-free and the workstation is local',async t=>{
+  const env={...process.env,OTHRYS_DECK_TOKEN:'atlas-read',OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18789',OTHRYS_DECK_NO_START:'0'};
+  const child=spawn(process.execPath,[join(dir,'server.mjs')],{env,stdio:['ignore','pipe','pipe']});t.after(()=>child.kill());
+  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('server timeout')),4000);child.stdout.on('data',x=>{if(String(x).includes('"ready":true')){clearTimeout(timer);resolve();}});});
+  let r=await fetch('http://127.0.0.1:18789/api/atlas');assert.equal(r.status,401);
+  r=await fetch('http://127.0.0.1:18789/api/atlas',{headers:{'X-OTHRYS-DECK-TOKEN':'atlas-read'}});const b=await r.json();assert.equal(r.status,200);assert.equal(b.atlas.schema,'othrys.os.atlas.v2');assert.equal(b.atlas.authorityGranted,false);assert.ok(b.atlas.nodes.some(x=>x.id==='project:othrys-v2'));assert.equal(b.controlsEnabled,false);
+  r=await fetch('http://127.0.0.1:18789/atlas.html');assert.equal(r.status,200);const html=await r.text();assert.match(html,/Knowledge map/);assert.match(html,/Cognitive health/);assert.match(html,/size = gravity/);
+});

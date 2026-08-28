@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 96,
+  "sequence": 97,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-010E",
+    "mission_id": "V2-010F",
     "status": "COMPLETE",
-    "issued_label": "V2-010E - MNEMOSYNE EXPLICIT PROJECT KNOWLEDGE",
+    "issued_label": "V2-010F - ATLAS COGNITIVE GRAPH FOUNDATION",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-010E",
-    "decision": "ACCEPT_MNEMOSYNE_SUBSTRATE",
-    "authority": "explicit project knowledge lifecycle; no opaque memory; no write API; 209/209 Legion runtime"
+    "mission_id": "V2-010F",
+    "decision": "ACCEPT_ATLAS_FOUNDATION",
+    "authority": "derived read model only; Mnemosyne authority preserved; Nine Muses semantic gates; 220/220 Node + 36/36 Python on Legion"
   },
-  "next_legal_action": "V2-010F may establish Switchyard capability-tier model request resolution over the project model policy; roles request capability/privacy/locality/cost/latency rather than named providers; no hidden execution authority.",
+  "next_legal_action": "V2-010G may establish the persistent/temporal Atlas index and retrieval substrate after checking legacy Mnemosyne persistence, concordance and Callimachus stock; Switchyard remains deferred by explicit operator priority.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",
@@ -229,6 +229,11 @@
       "mission_id": "V2-010E",
       "status": "COMPLETE",
       "note": "Mnemosyne explicit knowledge service: inbox-only capture, non-promoting review, deterministic local search, zero-mutation maintenance, reconstructible export; 209/209 Legion runtime."
+    },
+    {
+      "mission_id": "V2-010F",
+      "status": "COMPLETE",
+      "note": "Atlas foundation ported into OTHRYS OS: typed/provenanced derived graph, Nine Muse routing, gravity/heat, secret guard, authenticated read-only API and first Atlas workstation; 220/220 Node + 36/36 Python Legion proof."
     }
   ],
   "git": {

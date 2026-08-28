@@ -68,6 +68,12 @@
       "label": "Command Deck",
       "role": "Operator workstation",
       "statusEvidence": "V2-006E"
+    },
+    {
+      "id": "atlas",
+      "label": "Atlas",
+      "role": "Derived knowledge and system map workspace",
+      "statusEvidence": "V2-010F"
     }
   ],
   "capabilities": [
@@ -236,5 +242,14 @@
     "search": "LOCAL_DETERMINISTIC",
     "export": "RECONSTRUCTIBLE",
     "opaqueMemory": false
+  },
+  "atlasPolicy": {
+    "service": "atlas",
+    "derivedFrom": "MNEMOSYNE_AND_V2_EVIDENCE",
+    "readOnly": true,
+    "secretFree": true,
+    "deterministicDigest": true,
+    "semanticGates": "NINE_MUSES",
+    "declarativeGrant": false
   }
 }

@@ -59,7 +59,7 @@ export function planProjectMaterialization(root,request){
     parentProjectId:base.projectId,engineRef:{projectId:base.projectId,mode:'GOVERNED_V2'},
     paths:{work:'.othrys/work',knowledge:'.othrys/knowledge',rules:'.othrys/rules',capabilities:'.othrys/capabilities',ux:'.othrys/ux',logs:'.othrys/logs'},
     work:structuredClone(template.work),authorities,systems:trust?[structuredClone(trust)]:[],capabilities,
-    roleBindings,modelPolicy:structuredClone(base.modelPolicy),integrations,knowledge,knowledgePolicy:structuredClone(base.knowledgePolicy),
+    roleBindings,modelPolicy:structuredClone(base.modelPolicy),integrations,knowledge,knowledgePolicy:structuredClone(base.knowledgePolicy),atlasPolicy:structuredClone(base.atlasPolicy),
     operatingModes:{...structuredClone(base.operatingModes),default:template.defaultOperatingMode,declarativeGrant:false},
     authorityGranted:false,executionStarted:false
   };

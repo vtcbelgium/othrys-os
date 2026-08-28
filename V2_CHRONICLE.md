@@ -516,3 +516,9 @@ Established OBSERVE / PLAN / SUPERVISED_EXECUTE / AUTONOMOUS_EXECUTE as enforced
 
 ## V2-010E — Mnemosyne explicit project knowledge
 Established an Atlas-class knowledge service over explicit project-local records: capture to inbox, classify/review without promotion, deterministic local search, zero-mutation maintenance and reconstructible export. Panda Atlas boundary was dogfooded through the real inbox/review lifecycle. No opaque memory and no Command Deck knowledge-write API. Legion runtime: 209/209 PASS.
+
+## 2026-08-28 — V2-010F Atlas cognitive graph foundation
+
+Operator reprioritised the planned Switchyard slice in favour of the OTHRYS OS knowledge-map foundation. Live Core/V2 quarry found Atlas already shipped historically as a derived system map and Mnemosyne already owned the Nine Muses as semantic gates. New overlapping Greek subsystems were rejected.
+
+Ported the graph constitution into V2, added provenance/truth classes, deterministic graph digest, secret rejection, legacy-evidence calibration, Nine Muse routing, gravity/heat cognitive signals, real Mnemosyne Inbox/Review queue semantics, authenticated read-only `/api/atlas`, and a first-class Canvas Atlas room in the OTHRYS OS shell. Atlas remained OBSERVED until its own PASS result existed, then self-projected VERIFIED. Legion: 220/220 Node + 36/36 Python; browser script parse and diff check PASS. Switchyard prototype preserved outside runtime and remains deferred.

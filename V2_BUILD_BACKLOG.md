@@ -233,3 +233,6 @@
 
 
 | 78 | V2-010E | Mnemosyne explicit project knowledge lifecycle + deterministic search/export | COMPLETE |
+
+| 79 | V2-010F | Atlas cognitive graph foundation: prior Core graph law + Nine Muses + gravity/heat + read-only OTHRYS OS Atlas room | COMPLETE |
+| 80 | V2-010G | Persistent/temporal Atlas retrieval substrate; quarry Mnemosyne persistence/concordance/Callimachus first; Switchyard deferred by operator priority | NEXT |

@@ -45,3 +45,12 @@ test('materializer creates only project-local OS substrate and is idempotent',()
     assert.throws(()=>materializeProject(target,plan),/PROJECT_EXISTS_CONFLICT/);
   }finally{rmSync(target,{recursive:true,force:true});}
 });
+
+test('new Oros workspaces inherit Atlas and Mnemosyne knowledge law',()=>{
+  const plan=planProjectMaterialization(root,request);
+  assert.deepEqual(plan.manifest.atlasPolicy,loadProjectManifest(root).atlasPolicy);
+  assert.equal(plan.manifest.atlasPolicy.readOnly,true);
+  assert.equal(plan.manifest.atlasPolicy.secretFree,true);
+  assert.equal(plan.manifest.atlasPolicy.semanticGates,'NINE_MUSES');
+  assert.equal(plan.manifest.knowledgePolicy.service,'mnemosyne');
+});
