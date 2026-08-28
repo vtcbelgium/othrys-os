@@ -182,3 +182,5 @@
 | 60 | V2-008H | Live MISSING_WORK build request visible; stale request extinguished before Qwen | COMPLETE |
 
 | 61 | V2-008I | Freshness-gated READY_NOT_EXECUTING build package materializer | COMPLETE |
+
+| 62 | V2-008J | First live READY_NOT_EXECUTING package exposed in Command Centre | COMPLETE |
