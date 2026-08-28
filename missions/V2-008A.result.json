@@ -1,0 +1,16 @@
+{
+  "mission_id": "V2-008A",
+  "verdict": "PASS",
+  "candidate_sha": "29d172ca4ef20fb6cb3d67eb7c350db299eb3bbe",
+  "tests": "41/41",
+  "live_allocation_request_id": "DECK-ALLOCATE-f0196bd8d5bc8cc1845e49f2",
+  "live_status": "ADMITTED",
+  "candidate_id": "CANDIDATE-f5848bffdae68ad8ecab6735",
+  "canonicalMissionId": null,
+  "new_canonical_mission_file": false,
+  "authorityGranted": false,
+  "executionStarted": false,
+  "deck_service": "ACTIVE",
+  "watcher_service": "ACTIVE",
+  "independent_legion_verification": "PASS"
+}
