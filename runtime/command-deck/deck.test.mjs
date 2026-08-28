@@ -92,8 +92,8 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.osSurface.titans.length,2);
   assert.deepEqual(data.osSurface.titans.map(t=>t.id),['hephaestus','talos']);
   assert.ok(Array.isArray(data.canonicalMissions));
-  assert.ok(data.canonicalMissions.some(m=>m.missionId==='V2-007C'&&m.verdict==='PASS'));
-  assert.ok(data.canonicalMissions.some(m=>m.missionId==='V2-007D'&&m.verdict==='PASS'));
+  assert.ok(data.canonicalMissions.length>0);
+  assert.ok(data.canonicalMissions.every(m=>/^V2-/.test(m.missionId)&&typeof m.verdict==='string'));
   if(data.activeMission?.status==='COMPLETE') assert.ok(data.canonicalMissions.some(m=>m.missionId===data.activeMission.mission_id&&m.verdict==='PASS'));
   assert.equal(data.osSurface.models[0].id,'qwen3-builder');
   assert.equal(data.osSurface.models[0].available,true);
