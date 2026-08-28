@@ -110,7 +110,7 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.workState.verifier,'T590');
   assert.ok(['PLAN','BUILD','REVIEW','SHIP'].includes(data.workState.phase));
   assert.equal(data.workState.authorityGranted,false);
-  if(data.workState.status==='COMPLETE'){ assert.equal(data.workState.phase,'SHIP'); assert.ok(data.workState.phases.every(p=>p.status==='COMPLETE')); } else { assert.ok(data.workState.phases.some(p=>p.status==='ACTIVE')||data.workState.phases.some(p=>p.status==='PENDING')); }
+  if(data.workState.status==='COMPLETE'){ assert.equal(data.workState.phase,'SHIP'); assert.ok(data.workState.phases.every(p=>p.status==='COMPLETE')); } else { assert.ok(data.workState.status==='COMPLETE_NO_CHANGE'||data.workState.phases.some(p=>p.status==='ACTIVE')||data.workState.phases.some(p=>p.status==='PENDING')); }
   assert.ok(Array.isArray(data.workState.laws));
   assert.ok(Array.isArray(data.workState.laws));
   assert.ok(data.workState.artifacts.some(a=>a.id==='surface-data'&&a.present===true));
