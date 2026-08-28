@@ -1,0 +1,16 @@
+{
+  "mission_id": "V2-008Y",
+  "title": "One-shot exact-base canonical patch executor",
+  "goal": "Apply a verified patch only to a clean exact-base target workspace using an unconsumed APPLY_READY_NOT_STARTED permit; do not auto-commit.",
+  "laws": [
+    "Target workspace HEAD must exactly equal permit.targetSha.",
+    "Target workspace must be clean before apply.",
+    "Candidate, permit and patch identities/digests/scopes must agree exactly.",
+    "git apply --check must pass before git apply.",
+    "Post-apply changed paths must exactly equal permit.changedFiles.",
+    "Permit is consumed only after successful bounded apply.",
+    "No auto-commit, push, merge, builder invocation, or remote fallback.",
+    "Failure leaves permit unconsumed whenever apply did not occur.",
+    "Independent Legion verification required."
+  ]
+}
