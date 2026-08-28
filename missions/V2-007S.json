@@ -1,0 +1,40 @@
+{
+  "mission_id": "V2-007S",
+  "title": "OTHRYS OS tablet workspace priority layout",
+  "goal": "Use the second live tablet screenshot to make the central workspace primary and Progress a usable secondary inspector.",
+  "laws": [
+    "The center workspace must remain the dominant tablet surface.",
+    "Progress must not permanently consume roughly one third of landscape width.",
+    "Progress remains directly accessible with one touch.",
+    "The inspector must remain scrollable and readable.",
+    "No mission, model, Trust Canal or execution semantics change.",
+    "No external assets or Panda proprietary code are introduced.",
+    "Existing read-only and Refine boundaries remain unchanged."
+  ],
+  "slices": [
+    {
+      "id": "S1",
+      "owner": "Legion",
+      "goal": "Rebalance tablet workspace and inspector proportions.",
+      "artifacts": [
+        "os-shell"
+      ]
+    },
+    {
+      "id": "S2",
+      "owner": "Legion",
+      "goal": "Reduce duplicated inspector chrome and preserve touch access.",
+      "artifacts": [
+        "deck-tests"
+      ]
+    },
+    {
+      "id": "S3",
+      "owner": "T590",
+      "goal": "Independently verify regression and authority boundaries.",
+      "artifacts": [
+        "mission-result"
+      ]
+    }
+  ]
+}
