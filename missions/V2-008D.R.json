@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008D.R",
+  "title": "Preflight existing-stock gap gate for V2-008D",
+  "goal": "Determine from deterministic repository evidence whether V2-008D already exists in working stock before any activation or execution.",
+  "laws": [
+    "Preflight is read-only and may not activate or execute V2-008D.",
+    "The exact V2-008D objective is the only acceptance target.",
+    "Existing canonical evidence outranks implementation activity.",
+    "A no-change verdict requires both implementation evidence and regression proof.",
+    "No model or builder is called when deterministic evidence is sufficient.",
+    "Failure of any required check blocks the no-change verdict.",
+    "V2-008D remains CANONICAL_UNACTIVATED regardless of preflight verdict."
+  ]
+}
