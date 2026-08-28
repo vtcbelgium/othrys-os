@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008I",
+  "title": "Freshness-gated build package materializer",
+  "goal": "Materialize a non-executing build package only when an admitted build request is still fresh against current MISSING_WORK preflight and the same local route.",
+  "laws": [
+    "Recompute preflight immediately before package materialization.",
+    "NO_CHANGE or BLOCKED makes any older build request stale and unusable.",
+    "Recompute the route and require the exact builder and route digest admitted by Trust Canal.",
+    "Package is immutable evidence only; it grants no authority and starts no worker.",
+    "Package carries canonical mission objective, selected builder, route digest and request receipt.",
+    "Replay is idempotent; conflicts fail closed.",
+    "Independent Legion verification required."
+  ]
+}
