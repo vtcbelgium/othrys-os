@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-009A",
+  "title": "Governed apply lifecycle surface",
+  "goal": "Expose the latest verified canonical Qwen apply lifecycle in Command Centre as read-only evidence.",
+  "laws": [
+    "Derive lifecycle only from durable mission/result evidence.",
+    "Show builder, candidate, apply request, canonical commit and verification state.",
+    "No new execution endpoint or authority.",
+    "Do not infer success when required evidence is absent.",
+    "Tablet and Legion surfaces consume the same API truth.",
+    "Independent Legion verification required."
+  ],
+  "artifact_profile": "command-deck"
+}
