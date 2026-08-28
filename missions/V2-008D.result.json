@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-008D",
+  "verdict": "PASS",
+  "closeout": "NO_CHANGE_JUSTIFIED",
+  "objective": "Create a bounded read-only mission proposal status card for the selected othrys-v2 project context.",
+  "preflight_ref": "missions/V2-008D.preflight.json",
+  "preflight_sha256": "e34b889141e2fac27ce95ce98e7cf1c1ef70c91d363a676881584175d094fee5",
+  "close_request_id": "DECK-NOCHANGE-7c476eee21e3736362a661d8",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "mutations": 0,
+  "builderInvoked": false,
+  "next_state": "WAIT_GPT"
+}
