@@ -53,6 +53,9 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/function selectProjectContext/);
   assert.match(html,/mission truth unchanged/);
   assert.doesNotMatch(html,/\/api\/project-context/);
+  assert.match(html,/function chatKey/);
+  assert.match(html,/othrys\.os\.local\.chat\./);
+  assert.doesNotMatch(html,/\/api\/chat/);
   assert.match(html,/othrys\.os\.local\.projects/);
   assert.match(html,/Controller-local project draft/);
   assert.doesNotMatch(html,/\/api\/project/);

@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007O",
+  "title": "OTHRYS OS project-scoped local chat and work context",
+  "goal": "Bind controller-local chat drafts to the selected project context so the Panda-style workspace behaves coherently without sending project context anywhere.",
+  "laws": [
+    "Chat drafts remain browser-local and non-executing.",
+    "Each project context receives an isolated local draft history.",
+    "Switching project context must not merge or leak drafts between contexts.",
+    "Canonical othrys-v2 context remains a valid local chat namespace.",
+    "New Chat clears only the currently selected context.",
+    "No project context or draft is sent to any API, model, Worker or filesystem.",
+    "No execution authority is added."
+  ],
+  "slices": [
+    {"id":"S1","title":"Namespace local chat by project context","owner":"Legion","artifacts":["mission-envelope","os-shell"]},
+    {"id":"S2","title":"Refresh chat on context switches","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","title":"Prove no chat or context API exists","owner":"T590","artifacts":["deck-tests","mission-result"]}
+  ]
+}

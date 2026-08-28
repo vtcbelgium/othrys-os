@@ -67,7 +67,7 @@
     "decision": "ACCEPT_KNOWLEDGE_SURFACE",
     "authority": "read-only knowledge projection; no memory mutation"
   },
-  "next_legal_action": "Open V2-007O for OTHRYS OS project-scoped chat/work visual binding and Panda-style context header, still controller-local and non-executing.",
+  "next_legal_action": "V2-007O project-scoped controller-local chat/work context in progress; no API, model or execution authority.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
