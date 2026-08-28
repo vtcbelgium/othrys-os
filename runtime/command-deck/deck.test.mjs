@@ -144,7 +144,8 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.ok(data.workState.slices.every(x=>['COMPLETE','OPEN'].includes(x.status)));
   const resultSlice=data.workState.slices.find(x=>x.artifacts?.some(a=>a.id==='mission-result'));
   if(resultSlice) assert.equal(resultSlice.status,data.missionEvidence.resultPresent?'COMPLETE':'OPEN');
-  assert.equal(data.missionEvidence.resultPresent,data.missionEvidence.missionId===data.activeMission?.mission_id&&data.activeMission?.status==='COMPLETE');
+  assert.equal(data.missionEvidence.resultPresent,Boolean(data.missionEvidence.verdict));
+  if(data.missionEvidence.missionId===data.activeMission?.mission_id&&data.activeMission?.status==='COMPLETE') assert.equal(data.missionEvidence.resultPresent,true);
 
 });
 
