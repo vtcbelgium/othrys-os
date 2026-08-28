@@ -1,0 +1,17 @@
+{
+  "schema": "othrys.os.change-apply-permit.v1",
+  "permitId": "APPLY-PERMIT-fbf7577c855ef216ef746b54",
+  "candidateId": "CHANGE-c434c7a043bb7fdd8cfdf907",
+  "missionId": "V2-008Z",
+  "patchDigest": "c434c7a043bb7fdd8cfdf907f898ebbcb687f18283d48d168aebc463c2ccf0c4",
+  "targetSha": "57bd45e29d094395b623fa36987207a753182593",
+  "changedFiles": [
+    "scratch/qwen-canonical-apply-proof.txt"
+  ],
+  "applyRequestId": "DECK-APPLY-fbf7577c855ef216ef746b54",
+  "oneShot": true,
+  "consumed": false,
+  "status": "APPLY_READY_NOT_STARTED",
+  "authorityGranted": true,
+  "applied": false
+}

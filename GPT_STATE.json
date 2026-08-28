@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-008Y",
+    "mission_id": "V2-008Z",
     "status": "COMPLETE",
-    "issued_label": "V2-008Y - ONE-SHOT EXACT-BASE PATCH EXECUTOR",
+    "issued_label": "V2-008Z - FIRST GOVERNED CANONICAL QWEN PATCH APPLY",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-008Y",
-    "decision": "ACCEPT_PATCH_EXECUTOR",
-    "authority": "exact-base one-shot apply proven on T590 and Legion; no auto-commit"
+    "mission_id": "V2-008Z",
+    "decision": "ACCEPT_FIRST_CANONICAL_QWEN_APPLY",
+    "authority": "exact-base one-file patch applied after T590 verification; canonical commit independently reverified on Legion"
   },
-  "next_legal_action": "V2-008Z may dogfood one fresh scratch-only Qwen candidate through admitted apply permit and real Legion apply, then require T590 verification before commit.",
+  "next_legal_action": "V2-009A may expose the completed governed build/apply lifecycle in Command Centre and generalize the same evidence chain beyond scratch-only dogfood; no relaxation of gates.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

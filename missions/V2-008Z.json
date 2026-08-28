@@ -1,0 +1,18 @@
+{
+  "mission_id": "V2-008Z",
+  "title": "First governed canonical Qwen patch apply",
+  "objective": "Create, independently verify, admit, permit, apply, verify and commit exactly scratch/qwen-canonical-apply-proof.txt through the complete governed Qwen pipeline.",
+  "status": "CANONICAL_UNACTIVATED",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "laws": [
+    "Base SHA is frozen at 57bd45e5e4c21aaf9a799dc1e4271617cb30a567 unless exact full SHA check proves otherwise.",
+    "Qwen runs only in a disposable Legion worker worktree.",
+    "Only scratch/qwen-canonical-apply-proof.txt may mutate.",
+    "T590 independently verifies worker result before candidate materialization.",
+    "Apply request and one-shot apply permit must bind exact base, patch digest and path.",
+    "Apply occurs in a separate clean Legion target worktree at exact base SHA.",
+    "T590 verifies applied bytes and scope before commit.",
+    "Commit/push occurs only after verification; no other canonical files may enter the apply commit."
+  ]
+}

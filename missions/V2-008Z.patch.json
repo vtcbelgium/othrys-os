@@ -1,0 +1,10 @@
+{
+  "schema": "othrys.os.worker-patch-evidence.v1",
+  "missionId": "V2-008Z",
+  "jobId": "JOB-008Z-CANONICAL-PROOF",
+  "builderId": "qwen3-builder",
+  "baseSha": "57bd45e29d094395b623fa36987207a753182593",
+  "workspaceClass": "DISPOSABLE_LEGION_WORKTREE",
+  "changedFiles": ["scratch/qwen-canonical-apply-proof.txt"],
+  "diff": "diff --git a/scratch/qwen-canonical-apply-proof.txt b/scratch/qwen-canonical-apply-proof.txt\nnew file mode 100644\nindex 0000000..27e9184\n--- /dev/null\n+++ b/scratch/qwen-canonical-apply-proof.txt\n@@ -0,0 +1 @@\n+OTHRYS QWEN CANONICAL APPLY PROOF V2-008Z\n"
+}

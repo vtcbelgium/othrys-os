@@ -1,0 +1,12 @@
+{
+  "schema": "othrys.os.worker-acceptance.v1",
+  "missionId": "V2-008Z",
+  "jobId": "JOB-008Z-CANONICAL-PROOF",
+  "builderId": "qwen3-builder",
+  "status": "ACCEPTED_VERIFIED",
+  "accepted": true,
+  "changedFiles": ["scratch/qwen-canonical-apply-proof.txt"],
+  "verifier": "T590",
+  "contentVerified": "OTHRYS QWEN CANONICAL APPLY PROOF V2-008Z\\n",
+  "outOfScopeChanges": []
+}

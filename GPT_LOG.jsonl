@@ -92,3 +92,4 @@
 {"sequence":87,"at":"2026-08-28T18:00:43Z","mission_id":"V2-008W","event":"MISSION_CLOSEOUT","status":"COMPLETE","evidence":"fresh qwen job 5.05s; T590 verified exact base/content/scope; CHANGE-ceb4003c fresh; DECK-APPLY-eb582827 admitted; no apply"}
 {"sequence":88,"at":"2026-08-28T18:04:50Z","mission_id":"V2-008X","event":"MISSION_CLOSEOUT","status":"COMPLETE","evidence":"129/129 both nodes; one-shot exact-base apply permit proven; live stale candidate rejected TARGET_STALE; no apply"}
 {"sequence":89,"at":"2026-08-28T18:09:50Z","mission_id":"V2-008Y","event":"MISSION_CLOSEOUT","status":"COMPLETE","evidence":"134/134 both nodes; Windows byte-preserving exact-base patch executor proven; no auto-commit"}
+{"sequence": 87, "at": "2026-08-28T18:24:14Z", "mission_id": "V2-008Z", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "qwen3-builder -> T590 verify -> admitted apply -> exact-base apply -> canonical commit 148d4a5 -> 134/134 both nodes"}

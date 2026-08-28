@@ -1,0 +1,19 @@
+{
+  "schema": "othrys.os.apply-verification.v1",
+  "missionId": "V2-008Z",
+  "verifier": "T590",
+  "checks": {
+    "base_sha": true,
+    "scope": true,
+    "sha256": true,
+    "bytes": true
+  },
+  "expectedSha256": "69b0675dff0e8a6f787485a7c7ad57224ad91502111591b1893e7a5dd102f164",
+  "observed": {
+    "head": "57bd45e29d094395b623fa36987207a753182593",
+    "status": "?? scratch/qwen-canonical-apply-proof.txt",
+    "sha256": "69b0675dff0e8a6f787485a7c7ad57224ad91502111591b1893e7a5dd102f164",
+    "bytes_hex": "4F-54-48-52-59-53-20-51-57-45-4E-20-43-41-4E-4F-4E-49-43-41-4C-20-41-50-50-4C-59-20-50-52-4F-4F-46-20-56-32-2D-30-30-38-5A-0A"
+  },
+  "verdict": "PASS"
+}

@@ -214,3 +214,5 @@
 | 71 | V2-008X | Exact-base one-shot apply permit materializer; stale live candidate rejected, no apply | COMPLETE |
 
 | 72 | V2-008Y | One-shot exact-base canonical patch executor; cross-platform bytes preserved; no auto-commit | COMPLETE |
+
+| 70 | V2-008Z | First governed canonical Qwen patch apply; exact-base, one file, T590 verified, 134/134 both nodes | COMPLETE |

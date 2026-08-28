@@ -1,0 +1,16 @@
+{
+  "mission_id": "V2-008Z",
+  "verdict": "PASS",
+  "builder_id": "qwen3-builder",
+  "canonical_apply_commit": "148d4a5fbf7d601f482b7e6611753bdd7b4d0afe",
+  "changed_files": [
+    "scratch/qwen-canonical-apply-proof.txt"
+  ],
+  "t590_tests": "134/134 PASS",
+  "legion_tests": "134/134 PASS",
+  "apply_request_id": "DECK-APPLY-fbf7577c855ef216ef746b54",
+  "candidate_id": "CHANGE-c434c7a043bb7fdd8cfdf907",
+  "base_sha": "57bd45e29d094395b623fa36987207a753182593",
+  "independent_verification": "PASS",
+  "out_of_scope_changes": []
+}
