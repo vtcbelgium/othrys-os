@@ -1,0 +1,18 @@
+{
+  "mission_id": "V2-008Q",
+  "title": "First governed real Qwen worker launch",
+  "objective": "Run one real qwen3-builder engineering.patch job in a disposable Legion worktree to create exactly scratch/qwen-launch-proof.txt containing OTHRYS QWEN LAUNCH PROOF V2-008Q.",
+  "status": "CANONICAL_UNACTIVATED",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "laws": [
+    "Dispatch requires an unexpired one-shot permit and exact permit-bound Worker request.",
+    "Permit is atomically consumed before process launch.",
+    "Legion disposable worktree only; canonical main is not the worker workspace.",
+    "Only scratch/qwen-launch-proof.txt may mutate.",
+    "No hidden provider fallback; qwen3-builder only.",
+    "Worker result is not acceptance; T590 independently verifies candidate diff and exact content.",
+    "Any out-of-scope change, missing proof, timeout, or verifier failure rejects the candidate."
+  ],
+  "next_state": "WAIT_GPT"
+}
