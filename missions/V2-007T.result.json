@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-007T",
+  "verdict": "PASS",
+  "candidate_sha": "2daa2117e4aa8068da881550b77c2f1913cd02e2",
+  "main_mission_identity": "WORK_STATE_BOUND",
+  "inspector_status": "WORK_STATE_BOUND",
+  "duplicate_progress_chrome": "REMOVED",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "authorityGranted": false,
+  "new_write_api": false
+}

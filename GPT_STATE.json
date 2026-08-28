@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007S",
+    "mission_id": "V2-007T",
     "status": "COMPLETE",
-    "issued_label": "V2-007S - TABLET WORKSPACE PRIORITY",
+    "issued_label": "V2-007T - UNIFIED CURRENT WORK IDENTITY",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007S",
-    "decision": "ACCEPT_TABLET_WORKSPACE_PRIORITY_LAYOUT",
-    "authority": "visual presentation only; no execution"
+    "mission_id": "V2-007T",
+    "decision": "ACCEPT_UNIFIED_CURRENT_WORK_IDENTITY",
+    "authority": "presentation binding only; no execution"
   },
-  "next_legal_action": "V2-007T unified current-work identity candidate; align main Mission card, Work inspector status and remove duplicate Progress chrome.",
+  "next_legal_action": "Operator refresh after V2-007T; if shell identity is coherent, open V2-007U for next Panda-style usability refinement from live visual evidence.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
