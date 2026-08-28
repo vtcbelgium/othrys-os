@@ -80,6 +80,8 @@
 
 | 35 | V2-007J | Controller-local New Chat and composer session shell; no model execution | COMPLETE |
 
+| 36 | V2-007K | Controller-local New Project registry shell; no machine mutation | COMPLETE |
+
 ## Future capability — OTHRYS Visual Control Layer
 - Purpose: let OTHRYS observe and eventually interact with Legion and T590 screens as part of autonomous operation and maintenance.
 - Do not build a TeamViewer clone. Optimize for AI observability, control, and verification.

@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007J",
+    "mission_id": "V2-007K",
     "status": "COMPLETE",
-    "issued_label": "V2-007J - LOCAL CHAT SESSION",
+    "issued_label": "V2-007K - LOCAL PROJECT REGISTRY",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007J",
-    "decision": "ACCEPT_LOCAL_CHAT_SESSION_SHELL",
-    "authority": "controller-local drafts only; no model execution"
+    "mission_id": "V2-007K",
+    "decision": "ACCEPT_LOCAL_PROJECT_REGISTRY_SHELL",
+    "authority": "controller-local metadata only; no machine mutation"
   },
-  "next_legal_action": "V2-007K OTHRYS OS local project registry shell in progress; browser metadata only.",
+  "next_legal_action": "Open V2-007L for OTHRYS OS project-to-mission context selection: local project context may scope the visible Work surface only.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

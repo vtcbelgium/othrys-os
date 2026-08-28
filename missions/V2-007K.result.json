@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-007K",
+  "verdict": "PASS",
+  "candidate_sha": "3f032dca7fe027bc559a6bf59bd7ece4d2cf714e",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "project_registry": "CONTROLLER_LOCAL_ONLY",
+  "filesystem_mutation": false,
+  "git_mutation": false,
+  "factory_invocation": false,
+  "project_api": false,
+  "authorityGranted": false
+}
