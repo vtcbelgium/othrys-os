@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007F",
+    "mission_id": "V2-007G",
     "status": "COMPLETE",
-    "issued_label": "V2-007F - EVIDENCE-NATIVE PROGRESS PLAN",
+    "issued_label": "V2-007G - INTERVENTION POLICY",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007F",
-    "decision": "ACCEPT_EVIDENCE_NATIVE_PROGRESS_PLAN",
-    "authority": "read-only mission evidence; no execution"
+    "mission_id": "V2-007G",
+    "decision": "ACCEPT_INTERVENTION_POLICY_VISIBILITY",
+    "authority": "operator preference only; no execution"
   },
-  "next_legal_action": "V2-007G OTHRYS OS intervention policy and approval/evidence gate visibility in progress; no execution authority.",
+  "next_legal_action": "Open V2-007H for OTHRYS OS mission slices/tasks and declared artifact completion contracts, read-only first.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

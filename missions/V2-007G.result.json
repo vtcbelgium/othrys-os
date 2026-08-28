@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-007G",
+  "verdict": "PASS",
+  "candidate_sha": "67d81a695b1343750c90ad90283eec2d5f8d8a12",
+  "t590_tests": "6/6",
+  "legion_tests": "6/6",
+  "default_policy": "checkpoints",
+  "policy_storage": "controller-local",
+  "human_approval_gate": "SEPARATE",
+  "independent_evidence_gate": "SEPARATE",
+  "authorityGranted": false,
+  "new_write_api": false
+}
