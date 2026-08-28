@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-007C",
+  "title": "OTHRYS OS functional navigation surfaces",
+  "base_sha": "51dc1a8336d9a4243e3233562c7e10e496c4ba4f",
+  "goal": "Make the Panda-style OTHRYS OS sidebar open real read-only Titans, Blocks, Models, Nodes and Oroi views backed by proven V2 data.",
+  "laws": [
+    "Navigation may expose existing V2 truth only; it must not invent capabilities.",
+    "Only Hephaestus and Talos may appear as proven Titans in this mission.",
+    "Blocks must preserve proven versus stock/gated distinctions.",
+    "Nodes must display sanitized telemetry only.",
+    "Oroi may expose Factory candidate/status but cannot Accept, Reject, release, or execute.",
+    "Model view inherits V2-007B local-first/gated semantics.",
+    "No new write, shell, routing, provider, Hephaestus, Talos, Worker, or release authority."
+  ]
+}
