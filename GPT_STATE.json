@@ -67,7 +67,7 @@
     "decision": "ACCEPT_LOCAL_PROJECT_REGISTRY_SHELL",
     "authority": "controller-local metadata only; no machine mutation"
   },
-  "next_legal_action": "Open V2-007L for OTHRYS OS project-to-mission context selection: local project context may scope the visible Work surface only.",
+  "next_legal_action": "V2-007L OTHRYS OS project-to-mission context selection in progress; presentation only, no authority.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

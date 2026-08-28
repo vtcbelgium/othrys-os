@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007L",
+  "title": "OTHRYS OS project-to-mission context selection",
+  "goal": "Let controller-local projects scope the visible Work surface without changing canonical mission truth or gaining execution authority.",
+  "laws": [
+    "Selected project context is controller-local presentation state only.",
+    "Canonical mission evidence remains unchanged and machine-derived.",
+    "Project selection may relabel visible context but cannot rewrite mission identity.",
+    "No project context is sent to model, shell, Factory, Trust Canal or Worker.",
+    "Canonical othrys-v2 context is always recoverable in one tap.",
+    "Refresh preserves selected local context on the controller.",
+    "No new API or machine write is added."
+  ],
+  "slices": [
+    {"id":"S1","title":"Add persistent local context selection","owner":"Legion","artifacts":["mission-envelope","os-shell"]},
+    {"id":"S2","title":"Bind project context to Work surface labels","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","title":"Prove canonical mission truth remains unchanged","owner":"T590","artifacts":["deck-tests","mission-result"]}
+  ]
+}
