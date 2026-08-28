@@ -26,6 +26,9 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/data.canonicalMissions/);
   assert.match(html,/id="phaseRows"/);
   assert.match(html,/function renderPhases/);
+  assert.match(html,/id="interventionPolicy"/);
+  assert.match(html,/Only ask at design and checkpoints/);
+  assert.match(html,/Preference only · never grants authority/);
 });
 
 test('Deck API refuses writes and requires token',async t=>{
@@ -67,8 +70,8 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.osSurface.models[1].id,'llama3.2-advisory');
   assert.equal(data.osSurface.models[1].status,'ADVISORY ONLY');
   assert.equal(data.osSurface.models[2].available,false);
-  assert.equal(data.missionEvidence.missionId,'V2-007F');
-  assert.equal(data.missionEvidence.resultPresent,data.activeMission?.status==='COMPLETE');
+  assert.equal(data.missionEvidence.missionId,data.workState.missionId);
+  assert.equal(data.missionEvidence.resultPresent,data.missionEvidence.missionId===data.activeMission?.mission_id&&data.activeMission?.status==='COMPLETE');
 
 });
 

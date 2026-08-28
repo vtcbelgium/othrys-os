@@ -67,7 +67,7 @@
     "decision": "ACCEPT_EVIDENCE_NATIVE_PROGRESS_PLAN",
     "authority": "read-only mission evidence; no execution"
   },
-  "next_legal_action": "Open V2-007G for OTHRYS OS operator intervention policy and approval/evidence gate visibility without execution authority.",
+  "next_legal_action": "V2-007G OTHRYS OS intervention policy and approval/evidence gate visibility in progress; no execution authority.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

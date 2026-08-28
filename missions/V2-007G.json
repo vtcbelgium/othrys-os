@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-007G",
+  "title": "OTHRYS OS intervention policy and gate visibility",
+  "goal": "Expose operator intervention policy and distinguish human approval from independent evidence in the OS Work surface without adding transition authority.",
+  "laws": [
+    "Intervention policy is presentation and operator preference only.",
+    "Human approval and independent evidence remain separate gates.",
+    "Policy selection never grants execution, transition, accept, reject or release authority.",
+    "Default policy is checkpoint-oriented and conservative.",
+    "Preference persists locally on the controller only.",
+    "Trust Canal remains the authority boundary.",
+    "No new write API is added."
+  ]
+}
