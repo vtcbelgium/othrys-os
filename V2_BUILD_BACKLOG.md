@@ -121,6 +121,7 @@
 | 50 | V2-007Y | Admitted promotion -> durable non-executing Mission candidate envelope | COMPLETE |
 | 51 | V2-007Z | Read-only durable Mission candidate review state in OTHRYS OS | COMPLETE |
 | 52 | V2-008A | Trust Canal request for canonical mission-ID allocation; no allocation or execution | COMPLETE |
+| 53 | V2-008B | Control record reconciliation; stale log/receipt gap preserved and repaired | COMPLETE |
 
 ## Future capability — OTHRYS Visual Control Layer
 - Purpose: let OTHRYS observe and eventually interact with Legion and T590 screens as part of autonomous operation and maintenance.

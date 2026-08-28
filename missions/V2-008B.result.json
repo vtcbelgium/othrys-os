@@ -1,0 +1,11 @@
+{
+  "mission_id": "V2-008B",
+  "verdict": "PASS",
+  "candidate_sha": "b9d2963e25015a918c5797b058f5364f7e8cdc54",
+  "historical_gap_preserved": true,
+  "fabricated_historical_events": false,
+  "runtime_files_changed": false,
+  "latest_receipt_mission": "V2-008B",
+  "independent_legion_verification": "PASS",
+  "next_gate": "MISSION_ID_ALLOCATION_POLICY_UNDEFINED"
+}

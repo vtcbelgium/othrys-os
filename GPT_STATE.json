@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-008A",
+    "mission_id": "V2-008B",
     "status": "COMPLETE",
-    "issued_label": "V2-008A - CANONICAL MISSION ID ALLOCATION REQUEST",
+    "issued_label": "V2-008B - CONTROL RECORD RECONCILIATION",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-008A",
-    "decision": "ACCEPT_ALLOCATION_REQUEST_GATE",
-    "authority": "request admitted only; no id allocation or execution"
+    "mission_id": "V2-008B",
+    "decision": "ACCEPT_CONTROL_RECORD_RECONCILIATION",
+    "authority": "control metadata only; historical gap preserved"
   },
-  "next_legal_action": "Research canonical V2 mission-ID allocation policy before any allocator mission; do not invent numbering.",
+  "next_legal_action": "WAIT_GPT / policy gate: canonical V2 mission-ID automatic allocation has no defined namespace/numbering policy; do not invent one.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
