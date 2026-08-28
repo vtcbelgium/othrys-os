@@ -67,8 +67,21 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.osSurface.models[1].id,'llama3.2-advisory');
   assert.equal(data.osSurface.models[1].status,'ADVISORY ONLY');
   assert.equal(data.osSurface.models[2].available,false);
+  assert.equal(data.missionEvidence.missionId,'V2-007F');
+  assert.equal(data.missionEvidence.resultPresent,false);
+
 });
 
+
+test('Mission evidence endpoint is authenticated and read-only',async t=>{
+  const env={...process.env,OTHRYS_DECK_TOKEN:'mission-token',OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18782'};
+  const child=spawn(process.execPath,[join(dir,'server.mjs')],{env,stdio:['ignore','pipe','pipe']}); t.after(()=>child.kill());
+  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('server timeout')),4000);child.stdout.on('data',d=>{if(String(d).includes('"ready":true')){clearTimeout(timer);resolve();}});child.on('exit',c=>reject(new Error(`server exited ${c}`)));});
+  let r=await fetch('http://127.0.0.1:18782/api/mission?id=V2-007E'); assert.equal(r.status,401);
+  r=await fetch('http://127.0.0.1:18782/api/mission?id=V2-007E',{headers:{'X-OTHRYS-DECK-TOKEN':'mission-token'}}); assert.equal(r.status,200);
+  const body=await r.json(); assert.equal(body.evidence.missionId,'V2-007E'); assert.equal(body.evidence.verdict,'PASS'); assert.equal(body.authorityGranted,false); assert.equal(body.controlsEnabled,false);
+  r=await fetch('http://127.0.0.1:18782/api/mission?id=../../etc/passwd',{headers:{'X-OTHRYS-DECK-TOKEN':'mission-token'}}); assert.equal(r.status,404);
+});
 
 test('Legion telemetry is sanitized and stale-aware',async()=>{
   process.env.OTHRYS_DECK_NO_START='1';

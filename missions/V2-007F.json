@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-007F",
+  "title": "OTHRYS OS evidence-native Progress and Plan interaction",
+  "goal": "Make Progress and Plan genuinely navigable from canonical mission evidence without adding execution or transition authority.",
+  "laws": [
+    "Mission detail is derived from missions/*.json and *.result.json only.",
+    "Recent mission selection may change visible detail but never active authority.",
+    "Progress and Plan are distinct read-only projections of the same mission evidence.",
+    "PASS, candidate SHA and result presence must be visible when recorded.",
+    "No chat, model, shell, transition, accept, reject or release execution endpoint is added.",
+    "Existing Refine intent boundary remains unchanged.",
+    "Tablet-first interaction remains touch usable and local."
+  ]
+}

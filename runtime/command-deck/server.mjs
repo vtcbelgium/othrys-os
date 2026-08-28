@@ -29,7 +29,7 @@ export function canonicalMissionTrail(n=12){
       const result=JSON.parse(readFileSync(join(dir,file),'utf8')); const missionId=String(result.mission_id??file.replace('.result.json',''));
       if(missionId!==file.replace('.result.json','')) continue;
       let title=missionId; const envelope=join(dir,`${missionId}.json`); if(existsSync(envelope)){const m=JSON.parse(readFileSync(envelope,'utf8')); title=String(m.title??m.objective??missionId);}
-      out.push({missionId,title,verdict:String(result.verdict??result.status??'RECORDED'),candidateSha:result.candidate_sha??result.candidate_commit??null});
+      out.push({missionId,title,verdict:String(result.verdict??result.status??'RECORDED'),candidateSha:result.candidate_sha??result.candidate_commit??null,resultPresent:true});
     }catch{}
   }
   return out.sort((a,b)=>a.missionId.localeCompare(b.missionId,undefined,{numeric:true})).slice(-n).reverse();
@@ -55,6 +55,15 @@ export function readControlIntentState(inbox=intentFile,ledger=admissionLedger){
     let admitted=false;
     if(ledger&&existsSync(ledger)) admitted=readFileSync(ledger,'utf8').split(/\r?\n/).some(line=>line.includes(`"missionId":"${missionId}"`));
     return {action:intent.action,candidateCommit:intent.candidateCommit,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
+  }catch{return null;}
+}
+export function missionEvidence(missionId){
+  if(!missionId||!/^V2-[0-9]+[A-Z]$/.test(missionId)) return null;
+  const envelope=join(root,'missions',`${missionId}.json`); if(!existsSync(envelope)) return null;
+  try{
+    const m=JSON.parse(readFileSync(envelope,'utf8')); const resultPath=join(root,'missions',`${missionId}.result.json`);
+    let result=null; if(existsSync(resultPath)) result=JSON.parse(readFileSync(resultPath,'utf8'));
+    return {missionId,title:String(m.title??m.objective??missionId),goal:String(m.goal??m.objective??''),laws:Array.isArray(m.laws)?m.laws:[],resultPresent:!!result,verdict:result?String(result.verdict??result.status??'RECORDED'):null,candidateSha:result?.candidate_sha??result?.candidate_commit??null};
   }catch{return null;}
 }
 export async function buildStatus(){
@@ -106,7 +115,7 @@ export async function buildStatus(){
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
     recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent:readControlIntentState(),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
-    osSurface,workState,authorityGranted:false,controlsEnabled:false
+    osSurface,workState,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };
 }
 
@@ -152,6 +161,12 @@ export async function handle(req,res){
   if(url.pathname==='/api/status'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
     return send(res,200,JSON.stringify(await buildStatus()));
+  }
+  if(url.pathname==='/api/mission'){
+    if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
+    const evidence=missionEvidence(url.searchParams.get('id'));
+    if(!evidence) return send(res,404,JSON.stringify({ok:false,error:'MISSION_NOT_FOUND'}));
+    return send(res,200,JSON.stringify({ok:true,evidence,authorityGranted:false,controlsEnabled:false}));
   }
   return serveStatic(url.pathname,res);
 }
