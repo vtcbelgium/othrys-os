@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007J",
+  "title": "OTHRYS OS local chat session shell",
+  "goal": "Make New Chat and the composer functional as a controller-local draft/session surface without invoking models or creating execution authority.",
+  "laws": [
+    "Chat session state is controller-local only.",
+    "Send stores a local draft message and performs no network/model request.",
+    "New Chat clears only the local controller session.",
+    "No /api/chat or model invocation endpoint is added.",
+    "Model selector remains a preference/preview surface only.",
+    "Mission authority and Work State are unchanged by chat drafts.",
+    "Existing Refine intent is the only bounded control write path."
+  ],
+  "slices": [
+    {"id":"S1","title":"Create local session transcript","owner":"Legion","artifacts":["mission-envelope","os-shell"]},
+    {"id":"S2","title":"Wire New Chat and composer locally","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","title":"Prove zero chat execution authority","owner":"T590","artifacts":["deck-tests","mission-result"]}
+  ]
+}

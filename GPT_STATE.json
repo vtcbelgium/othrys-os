@@ -67,7 +67,7 @@
     "decision": "ACCEPT_SWITCHYARD_SELECTION_PREVIEW",
     "authority": "selection preview only; no model invocation"
   },
-  "next_legal_action": "Open V2-007J for OTHRYS OS New Chat composer shell: local draft/session surface only, no model execution yet.",
+  "next_legal_action": "V2-007J OTHRYS OS local chat session shell in progress; local drafts only, no model execution.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

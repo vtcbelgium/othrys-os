@@ -34,6 +34,11 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/Mission slices/);
   assert.match(html,/id="modelRoutePreview"/);
   assert.match(html,/api\/model-selection/);
+  assert.match(html,/id="newChatBtn"/);
+  assert.match(html,/id="promptInput"/);
+  assert.match(html,/id="chatMessages"/);
+  assert.match(html,/othrys\.os\.local\.chat/);
+  assert.doesNotMatch(html,/\/api\/chat/);
 });
 
 test('Deck API refuses writes and requires token',async t=>{
@@ -76,8 +81,8 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.osSurface.models[1].status,'ADVISORY ONLY');
   assert.equal(data.osSurface.models[2].available,false);
   assert.equal(data.missionEvidence.missionId,data.workState.missionId);
-  assert.equal(data.workState.missionId,'V2-007I');
-  assert.deepEqual(data.workState.slices.map(x=>[x.id,x.owner,x.status]),[['S1','Legion','COMPLETE'],['S2','Legion','COMPLETE'],['S3','Legion',data.missionEvidence.resultPresent?'COMPLETE':'OPEN']]);
+  assert.equal(data.workState.missionId,'V2-007J');
+  assert.deepEqual(data.workState.slices.map(x=>[x.id,x.owner,x.status]),[['S1','Legion','COMPLETE'],['S2','Legion','COMPLETE'],['S3','T590',data.missionEvidence.resultPresent?'COMPLETE':'OPEN']]);
   assert.ok(data.workState.slices[2].artifacts.some(a=>a.id==='mission-result'&&a.present===data.missionEvidence.resultPresent));
   assert.equal(data.missionEvidence.resultPresent,data.missionEvidence.missionId===data.activeMission?.mission_id&&data.activeMission?.status==='COMPLETE');
 
