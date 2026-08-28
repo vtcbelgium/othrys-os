@@ -112,3 +112,5 @@
 | 37 | V2-007M | Read-only Apps / Integrations inventory from proven V2 surfaces | COMPLETE |
 
 | 38 | V2-007N | Read-only Knowledge / Mnemosyne surface from canonical and research-classified stock | COMPLETE |
+
+| 39 | V2-007O | Project-scoped controller-local chat drafts; no chat API or execution authority | COMPLETE |

@@ -1,0 +1,11 @@
+{
+  "mission_id": "V2-007O",
+  "verdict": "PASS",
+  "candidate_sha": "0bfa7edeb2459a840857f29fc3ae11c3eb0cf451",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "chat_scope": "controller-local per project context",
+  "cross_context_merge": false,
+  "chat_api": false,
+  "authorityGranted": false
+}
