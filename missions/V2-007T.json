@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007T",
+  "title": "OTHRYS OS unified current-work identity",
+  "goal": "Make the main Mission card, Work inspector and status badge identify the same current Work mission, and remove duplicate Progress chrome.",
+  "laws": [
+    "Visible current-work identity comes from workState when present.",
+    "Closed historical activeMission state must not override a newer open Work mission.",
+    "The inspector status label must reflect actual Work status.",
+    "Progress navigation remains one-touch accessible.",
+    "No mission transition, model, Trust Canal or execution semantics change.",
+    "No new write API is added.",
+    "Existing Refine authority boundary remains unchanged."
+  ],
+  "slices": [
+    {"id":"S1","owner":"Legion","artifacts":["os-shell"]},
+    {"id":"S2","owner":"Legion","artifacts":["deck-tests"]},
+    {"id":"S3","owner":"T590","artifacts":["mission-result"]}
+  ]
+}
