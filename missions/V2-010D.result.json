@@ -8,6 +8,7 @@
   "authority_granted": false,
   "execution_started": false,
   "legion_runtime_tests": "200/200 PASS",
-  "t590_runtime_tests": "PENDING_INDEPENDENT_SYNC_PROOF",
+  "t590_runtime_tests": "200/200 PASS",
+  "t590_verified_commit": "9ffa17b506c69c1d7dee83c3bbe3670f18a24916",
   "proof": "Mode policy constrains intent eligibility at two independent boundaries while preserving existing Trust Canal and Talos authority contracts."
 }
