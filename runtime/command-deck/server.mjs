@@ -185,12 +185,13 @@ export async function buildStatus(){
   const allocationIntent=readLatestIntentState('MISSION_ID_ALLOCATION_REQUEST');
   const activationIntent=readLatestIntentState('MISSION_ACTIVATION_REQUEST');
   const noChangeCloseIntent=readLatestIntentState('MISSION_NO_CHANGE_CLOSE_REQUEST');
+  const buildIntent=readLatestIntentState('MISSION_BUILD_REQUEST');
   const missionCandidate=latestMissionCandidate();
   const missionPreflight=readMissionPreflight(missionCandidate?.canonicalMissionId);
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,
+    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     osSurface,workState,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };
