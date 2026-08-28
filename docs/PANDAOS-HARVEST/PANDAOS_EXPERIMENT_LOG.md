@@ -270,3 +270,17 @@ Panda successfully resumed using project-local reads/search only and produced a 
 - Existing control laws preserved: Refine intent only; Accept/Reject/Emergency Stop remain disabled; Trust Canal still owns admission; no execution authority added.
 - Regression result on Legion: runtime/command-deck/deck.test.mjs = 5/5 PASS.
 - Strategic classification: HARVEST_PATTERN + EXPOSE_OUR_STOCK. Next divergence point should be real Mission/Work State data and local/free model routing, not cosmetic invention.
+
+### 2026-08-28 — local reconstruction sprint: 006F + OTHRYS OS Alpha
+- Panda token use stopped for routine engineering; Legion/T590 became the build/verify pair.
+- V2-006F was transplanted from the Panda candidate, independently proven on T590 (23/23), installed as an active+enabled user-space admission watcher, committed and closed without execution authority.
+- V2-007A reconstructed the Panda-style shell over the existing Command Deck and exposed canonical Work State; Legion 5/5 + T590 5/5.
+- V2-007B added a real local-first model selector: Legion qwen3-builder PRIMARY, T590 llama3.2 ADVISORY ONLY, remote escalation GATED; selection remains browser-local preference only.
+- V2-007C made Titans, Blocks, Models, Nodes and Oroi sidebar views functional; only Hephaestus and Talos are presented as proven Titans.
+- V2-007D replaced incomplete chat/GPT_STATE recent history with a canonical read-only mission trail derived from missions/*.result.json.
+- V2-007E replaced hard-coded Plan/Build/Review/Ship visuals with evidence-derived phase projection; PASS evidence still does not imply Ship/closeout.
+- Every 007 candidate was pushed, verified from the exact commit on the other machine, then closed in a separate result/state commit.
+- T590 Command Deck and admission watcher services remain active; watcher is enabled at user startup.
+- T590 and Legion main were reconciled to the same pushed HEAD; only Panda project metadata remains untracked on Legion.
+- Temporary HTTP transfer server, verification worktrees, patch scripts, transfer directories and reconciliation stash were removed.
+- Harvest result: the Panda workflow patterns are now becoming native OTHRYS OS surfaces while V2 laws remain the motor and proof boundary.
