@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007R",
+  "title": "OTHRYS OS completed-work presentation repair",
+  "goal": "Make the live tablet Progress panel reflect completed missions truthfully and keep Recents bounded within the sidebar viewport.",
+  "laws": [
+    "Completed Work State must never display Working.",
+    "Open Work State may display Working only when result evidence is absent.",
+    "Recents remains evidence-derived and scrollable without hiding canonical truth.",
+    "No mission, authority, routing or execution semantics change.",
+    "Tablet touch targets remain usable.",
+    "Use only existing status evidence from the Deck payload.",
+    "No new API is added."
+  ],
+  "slices": [
+    {"id":"S1","title":"Bind Progress badge to Work State status","owner":"Legion","artifacts":["os-shell"]},
+    {"id":"S2","title":"Bound Recents viewport","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","title":"Verify complete/open presentation boundary","owner":"T590","artifacts":["deck-tests","mission-result"]}
+  ]
+}

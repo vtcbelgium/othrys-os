@@ -42,6 +42,9 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/id="newProjectBtn"/);
   assert.match(html,/id="localProjects"/);
   assert.match(html,/id="contextProject"/);
+  assert.match(html,/id="workStateBadge"/);
+  assert.match(html,/w\?\.status==='COMPLETE'\?'Complete':'Working…'/);
+  assert.match(html,/#recentMissionsSide\{max-height:240px;overflow:auto/);
   assert.match(html,/id="connection"/);
   assert.match(html,/id="contextKind"/);
   assert.match(html,/CONNECTING/);
