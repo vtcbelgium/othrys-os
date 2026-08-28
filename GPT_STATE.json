@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007Y",
+    "mission_id": "V2-007Z",
     "status": "COMPLETE",
-    "issued_label": "V2-007Y - MISSION CANDIDATE MATERIALIZATION",
+    "issued_label": "V2-007Z - MISSION CANDIDATE REVIEW SURFACE",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007Y",
-    "decision": "ACCEPT_NONEXECUTING_CANDIDATE_MATERIALIZATION",
-    "authority": "candidate only; no V2 id or execution"
+    "mission_id": "V2-007Z",
+    "decision": "ACCEPT_READ_ONLY_CANDIDATE_REVIEW",
+    "authority": "display only; no canonical id or execution"
   },
-  "next_legal_action": "V2-007Z candidate review surface built; independent verification required before closeout.",
+  "next_legal_action": "Open V2-008A for explicit canonical mission-ID allocation request from a verified candidate; allocation must remain distinct from execution.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

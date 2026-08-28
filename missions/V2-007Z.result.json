@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-007Z",
+  "verdict": "PASS",
+  "candidate_sha": "af3fb8e379142b35da2b7d151d0277189c7da57c",
+  "tests": "38/38",
+  "mission_candidate_surface": "READ_ONLY",
+  "candidate_id": "CANDIDATE-f5848bffdae68ad8ecab6735",
+  "proposal_id_visible": true,
+  "promotion_id_visible": true,
+  "canonicalMissionId": null,
+  "new_write_api": false,
+  "authorityGranted": false,
+  "executionStarted": false,
+  "independent_legion_verification": "PASS"
+}
