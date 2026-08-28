@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-008B",
+  "title": "Control record reconciliation after OS Alpha acceleration",
+  "goal": "Repair stale GPT log and latest receipt pointers using current repository evidence without inventing historical timestamps or pretending missing atomic events were recorded.",
+  "laws": [
+    "Preserve the discovered logging gap as evidence.",
+    "Do not fabricate historical event timestamps or receipts.",
+    "Reconcile from committed mission/result files and remote HEAD only.",
+    "Append current reconciliation events rather than rewriting GPT_LOG history.",
+    "Create one current immutable reconciliation receipt and update LATEST from it.",
+    "No product/runtime behavior changes.",
+    "Resume feature work only after state, HEAD, log and receipt agree."
+  ],
+  "slices": [
+    {"id":"S1","owner":"GPT Control","artifacts":["mission-envelope"]},
+    {"id":"S2","owner":"GPT Control","artifacts":["control-log","latest-receipt"]},
+    {"id":"S3","owner":"T590","artifacts":["mission-result"]}
+  ]
+}
