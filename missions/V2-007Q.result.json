@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-007Q",
+  "verdict": "PASS",
+  "candidate_sha": "4c5e975e6f5b9d83732aee189e0ed88f7cad0911",
+  "source_evidence": "operator tablet screenshot 2026-08-28",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "tablet_progress_width": "max 520px in 951-1700px landscape",
+  "tablet_sidebar_width": "258px",
+  "authorityGranted": false,
+  "controlsEnabled": false
+}

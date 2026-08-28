@@ -116,3 +116,7 @@
 | 39 | V2-007O | Project-scoped controller-local chat drafts; no chat API or execution authority | COMPLETE |
 
 | 40 | V2-007P | Panda-style context header and repaired live/offline status target | COMPLETE |
+
+
+
+| 41 | V2-007Q | Tablet landscape rail/header repair from live operator screenshot | COMPLETE |
