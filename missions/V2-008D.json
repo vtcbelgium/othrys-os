@@ -1,0 +1,46 @@
+{
+  "mission_id": "V2-008D",
+  "title": "Tablet mission: Create a bounded read-only mission proposal status card for the selected othrys-",
+  "objective": "Create a bounded read-only mission proposal status card for the selected othrys-v2 project context.",
+  "non_goals": [
+    "No execution",
+    "No automatic activation",
+    "No mutation outside a later admitted mission"
+  ],
+  "actor": "UNASSIGNED",
+  "delegate": "UNASSIGNED",
+  "execution_environment": "UNASSIGNED",
+  "allowed_read_paths": [],
+  "allowed_write_paths": [],
+  "allowed_tools": [],
+  "network_policy": "DENY",
+  "secret_config_refs": [],
+  "budgets": {
+    "max_turns": 0,
+    "max_time_seconds": 0,
+    "max_mutations": 0,
+    "max_retries": 0
+  },
+  "required_evidence": [
+    "Explicit activation admission",
+    "Independent verification"
+  ],
+  "terminal_success_condition": "Canonical mission envelope exists and remains non-executing.",
+  "terminal_failure_conditions": [
+    "Missing provenance",
+    "Authority ambiguity",
+    "Evidence mismatch",
+    "Target collision"
+  ],
+  "next_state": "WAIT_GPT",
+  "status": "CANONICAL_UNACTIVATED",
+  "provenance": {
+    "candidateId": "CANDIDATE-f5848bffdae68ad8ecab6735",
+    "proposalId": "DECK-MISSION-f5848bffdae68ad8ecab6735",
+    "promotionId": "DECK-PROMOTE-b29cf9c4659550a16d33db13",
+    "allocationId": "DECK-ALLOCATE-f0196bd8d5bc8cc1845e49f2",
+    "projectContext": "othrys-v2"
+  },
+  "authorityGranted": false,
+  "executionStarted": false
+}
