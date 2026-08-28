@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-009A",
+  "verdict": "PASS",
+  "tests_t590": "134/134 PASS",
+  "tests_legion": "134/134 PASS",
+  "canonical_apply_surface": "VISIBLE",
+  "source_mission": "V2-008Z",
+  "source_commit": "148d4a5fbf7d601f482b7e6611753bdd7b4d0afe",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "candidate_sha": "6b893aab21353b34a17e8dcab51a07cb93bc100d"
+}
