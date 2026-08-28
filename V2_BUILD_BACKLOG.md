@@ -108,3 +108,5 @@
 - Immediate product direction: surface proven machinery as OTHRYS OS while using PandaOS as a high-value UX/orchestration quarry and bounded builder for controlled experiments.
 
 | 36 | V2-007L | Controller-local project-to-mission context selection; canonical mission truth unchanged | COMPLETE |
+
+| 37 | V2-007M | Read-only Apps / Integrations inventory from proven V2 surfaces | COMPLETE |

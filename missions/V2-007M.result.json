@@ -1,0 +1,11 @@
+{
+  "mission_id": "V2-007M",
+  "verdict": "PASS",
+  "candidate_sha": "c6516a597d4865336488ece740f2429784c29d02",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "apps_exposed": 4,
+  "integration_actions": false,
+  "credentials_exposed": false,
+  "authorityGranted": false
+}
