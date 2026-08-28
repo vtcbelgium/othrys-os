@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-007B",
+  "verdict": "PASS",
+  "candidate_sha": "0f4f09daf54f7d244628b33de440525255ea23b8",
+  "legion_deck_tests": "5/5",
+  "t590_deck_tests": "5/5",
+  "live_model_selector_data": "PASS",
+  "available_labor": ["qwen3-builder", "llama3.2-advisory"],
+  "remote_escalation": "GATED",
+  "selection_scope": "tablet-local preference only",
+  "routingAuthorityGranted": false,
+  "executionAuthorityGranted": false
+}
