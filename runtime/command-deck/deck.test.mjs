@@ -20,6 +20,9 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/id="proposalCard"/);
   assert.match(html,/id="candidateRow"/);
   assert.match(html,/id="candidateId"/);
+  assert.match(html,/id="allocationBtn"/);
+  assert.match(html,/MISSION_ID_ALLOCATION_REQUEST/);
+  assert.match(html,/No ID allocated and no execution started/);
   assert.match(html,/CANDIDATE READY · NOT CANONICAL/);
   assert.match(html,/NOT PROMOTED/);
   assert.match(html,/id="promotionBtn"/);
@@ -129,6 +132,7 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.missionCandidate.canonicalMissionId,null);
   assert.equal(data.missionCandidate.authorityGranted,false);
   assert.equal(data.missionCandidate.executionStarted,false);
+  assert.equal(data.missionAllocationRequest,null);
   assert.ok(data.osSurface.knowledge.some(k=>k.id==='north-star'&&k.present===true));
   assert.ok(data.osSurface.knowledge.every(k=>typeof k.path==='string'));
   assert.equal(data.missionEvidence.missionId,data.workState.missionId);
@@ -190,6 +194,10 @@ test('Refine intent ingress is separately authenticated and non-executing',async
   const pok=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify(proposal)}); assert.equal(pok.status,202);
   const pdata=await pok.json(); assert.equal(pdata.intent.action,'MISSION_PROPOSAL'); assert.equal(pdata.intent.status,'PENDING_TRUST_CANAL'); assert.equal(pdata.intent.authorityGranted,false);
   lines=readFileSync(f,'utf8').trim().split(/\r?\n/); assert.equal(lines.length,2); assert.equal(JSON.parse(lines[1]).projectContext,'othrys-v2');
+  const allocation={action:'MISSION_ID_ALLOCATION_REQUEST',candidateId:'CANDIDATE-f5848bffdae68ad8ecab6735'};
+  const aok=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify(allocation)}); assert.equal(aok.status,202);
+  const adata=await aok.json(); assert.equal(adata.intent.action,'MISSION_ID_ALLOCATION_REQUEST'); assert.equal(adata.intent.status,'PENDING_TRUST_CANAL'); assert.equal(adata.intent.authorityGranted,false);
+  lines=readFileSync(f,'utf8').trim().split(/\r?\n/); assert.equal(lines.length,3); assert.equal(JSON.parse(lines[2]).candidateId,allocation.candidateId);
   const promotion={action:'MISSION_PROMOTION_REQUEST',proposalId:'DECK-MISSION-0123456789abcdef01234567'};
   const xbad=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify({...promotion,proposalId:'bad'})}); assert.equal(xbad.status,400);
   const xok=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify(promotion)}); assert.equal(xok.status,202); const xdata=await xok.json(); assert.equal(xdata.intent.action,'MISSION_PROMOTION_REQUEST'); assert.equal(xdata.intent.authorityGranted,false);

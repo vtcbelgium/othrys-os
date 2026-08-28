@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-008A",
+  "title": "Trust Canal canonical mission-ID allocation request",
+  "goal": "Allow a verified Mission candidate to request canonical V2 mission-ID allocation through Trust Canal without allocating an ID or starting execution.",
+  "laws": [
+    "Only a durable CANDIDATE-* identity may request allocation.",
+    "The candidate must exist under missions/candidates and remain non-executing.",
+    "Allocation request is a separate Trust Canal intent and receipt.",
+    "Admission of the request does not allocate a V2 mission ID.",
+    "No missions/V2-*.json file is created by this mission from the candidate.",
+    "No active mission, Talos, Hephaestus, Worker or shell execution starts.",
+    "Request replay is deterministic and idempotent."
+  ],
+  "slices": [
+    {"id":"S1","owner":"Legion","artifacts":["intent-bridge","bridge-tests"]},
+    {"id":"S2","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","owner":"T590","artifacts":["mission-result"]}
+  ]
+}

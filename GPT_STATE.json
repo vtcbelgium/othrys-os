@@ -67,7 +67,7 @@
     "decision": "ACCEPT_READ_ONLY_CANDIDATE_REVIEW",
     "authority": "display only; no canonical id or execution"
   },
-  "next_legal_action": "Open V2-008A for explicit canonical mission-ID allocation request from a verified candidate; allocation must remain distinct from execution.",
+  "next_legal_action": "V2-008A allocation-request boundary built; independent verification and live Trust Canal dogfood required before closeout.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

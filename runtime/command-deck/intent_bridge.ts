@@ -35,6 +35,12 @@ export function admitDeckIntent(intent:any,ledgerPath:string){
     intentDigest=digest({action:intent.action,proposalId,receivedAt});
     missionId=`DECK-PROMOTE-${intentDigest.slice(0,24)}`;
     command=JSON.stringify({type:'MISSION_PROMOTION_REQUEST',proposalId,intentDigest});
+  }else if(intent.action==='MISSION_ID_ALLOCATION_REQUEST'){
+    const candidateId=String(intent.candidateId??'').trim();
+    if(!/^CANDIDATE-[0-9a-f]{24}$/.test(candidateId)) throw new DeckIntentError('INTENT_EVIDENCE_INVALID');
+    intentDigest=digest({action:intent.action,candidateId,receivedAt});
+    missionId=`DECK-ALLOCATE-${intentDigest.slice(0,24)}`;
+    command=JSON.stringify({type:'MISSION_ID_ALLOCATION_REQUEST',candidateId,intentDigest});
   }else throw new DeckIntentError('INTENT_AUTHORITY_INVALID');
   const ledger=new AdmissionLedger({path:ledgerPath});
   const canal=new TrustCanalAdmission(ledger,[{role:'operator',channel:'command-deck'}]);
