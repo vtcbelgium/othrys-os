@@ -166,3 +166,7 @@
 | 42 | V2-007R | Completed-vs-working Progress truth and bounded Recents viewport | COMPLETE |
 
 | 53 | V2-008C | Canonical V2 mission-ID allocation policy; deterministic compute-only sequence | COMPLETE |
+
+| 54 | V2-008C.R | Canonical mission materializer; tablet candidate allocated as V2-008D without execution | COMPLETE |
+
+| 55 | V2-008C.S | Allocation visibility + Trust Canal activation request; mission remains unactivated | COMPLETE |

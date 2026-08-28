@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-008C",
-    "decision": "ACCEPT_CANONICAL_ID_POLICY",
-    "authority": "deterministic ID computation only; no mission creation or execution"
+    "mission_id": "V2-008C.S",
+    "decision": "ACCEPT_ACTIVATION_REQUEST_GATE",
+    "authority": "activation request admitted only; V2-008D remains unactivated and non-executing"
   },
-  "next_legal_action": "V2-008D may materialize the admitted allocation request into the canonical mission envelope under the proven V2-NNNL policy; still no execution.",
+  "next_legal_action": "V2-008D is canonical and has an admitted activation request but remains UNACTIVATED. Next gate: prepare a bounded executable mission envelope before any activation materialization or execution.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

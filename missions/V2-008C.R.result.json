@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-008C.R",
+  "verdict": "PASS",
+  "candidate_sha": "f3bc7bc1b491f997a5514eeccba3e3bb570b2789",
+  "materializedMissionId": "V2-008D",
+  "binding": "missions/candidates/CANDIDATE-f5848bffdae68ad8ecab6735.allocation.json",
+  "missionStatus": "CANONICAL_UNACTIVATED",
+  "t590_full_suite": "50/50",
+  "legion_full_suite": "50/50",
+  "authorityGranted": false,
+  "executionStarted": false
+}

@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008C.S",
+  "verdict": "PASS",
+  "candidate_sha": "e2b04565475ece59dfce7478118241341863a627",
+  "activationReceipt": "DECK-ACTIVATE-65735c127b2f38859cfec84a",
+  "activationStatus": "ADMITTED",
+  "missionId": "V2-008D",
+  "missionStatusAfterAdmission": "CANONICAL_UNACTIVATED",
+  "workStateStatus": "UNACTIVATED",
+  "t590_full_suite": "53/53",
+  "legion_full_suite": "53/53",
+  "authorityGranted": false,
+  "executionStarted": false
+}
