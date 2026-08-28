@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-007H",
+  "verdict": "PASS",
+  "candidate_sha": "a5c987c2908893da46386579f20913fd1b5d704d",
+  "t590_tests": "6/6",
+  "legion_tests": "6/6",
+  "slices": ["S1:COMPLETE","S2:COMPLETE","S3:OPEN_UNTIL_RESULT"],
+  "declared_artifact_contracts": true,
+  "artifact_presence_is_authority": false,
+  "authorityGranted": false,
+  "controlsEnabled": false
+}

@@ -74,6 +74,8 @@
 
 | 32 | V2-007G | Operator intervention policy and separate approval/evidence gate visibility | COMPLETE |
 
+| 33 | V2-007H | Mission slices, owners and declared artifact completion contracts | COMPLETE |
+
 ## Future capability — OTHRYS Visual Control Layer
 - Purpose: let OTHRYS observe and eventually interact with Legion and T590 screens as part of autonomous operation and maintenance.
 - Do not build a TeamViewer clone. Optimize for AI observability, control, and verification.

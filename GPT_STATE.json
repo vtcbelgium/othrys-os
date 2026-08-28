@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007G",
+    "mission_id": "V2-007H",
     "status": "COMPLETE",
-    "issued_label": "V2-007G - INTERVENTION POLICY",
+    "issued_label": "V2-007H - MISSION SLICES CONTRACTS",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007G",
-    "decision": "ACCEPT_INTERVENTION_POLICY_VISIBILITY",
-    "authority": "operator preference only; no execution"
+    "mission_id": "V2-007H",
+    "decision": "ACCEPT_MISSION_SLICES_COMPLETION_CONTRACTS",
+    "authority": "read-only evidence projection; no execution"
   },
-  "next_legal_action": "V2-007H OTHRYS OS mission slices and completion contracts in progress; read-only evidence only.",
+  "next_legal_action": "Open V2-007I for OTHRYS OS model preference -> bounded Switchyard selection evidence, still no execution authority.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
