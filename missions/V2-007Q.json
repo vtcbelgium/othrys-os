@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007Q",
+  "title": "OTHRYS OS tablet landscape layout repair",
+  "goal": "Repair the live Panda-style tablet layout using the operator screenshot: reduce rail pressure, restore readable workspace width and remove header collisions without changing authority.",
+  "laws": [
+    "Use the live tablet screenshot as visual evidence.",
+    "Keep left navigation visible in tablet landscape.",
+    "Progress rail must not crush or overlap the central workspace.",
+    "Top context header must remain readable without colliding with Progress controls.",
+    "No execution, routing, project or mission semantics change.",
+    "Existing touch targets and read-only boundaries remain intact.",
+    "Desktop and narrower mobile fallbacks remain usable."
+  ],
+  "slices": [
+    {"id":"S1","title":"Repair tablet rail proportions","owner":"Legion","artifacts":["os-shell"]},
+    {"id":"S2","title":"Repair header and panel readability","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","title":"Independent layout-boundary verification","owner":"T590","artifacts":["deck-tests","mission-result"]}
+  ]
+}

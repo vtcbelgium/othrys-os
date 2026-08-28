@@ -67,7 +67,7 @@
     "decision": "ACCEPT_CONTEXT_HEADER_STATUS_REPAIR",
     "authority": "presentation/status only; no connection actions"
   },
-  "next_legal_action": "Operator visual check of the live Panda-style OTHRYS OS shell on tablet; then open V2-007Q for deeper project Work State binding if needed.",
+  "next_legal_action": "V2-007Q tablet landscape layout repair from live operator screenshot; visual-only, no authority change.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
