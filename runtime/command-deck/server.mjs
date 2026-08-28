@@ -44,23 +44,30 @@ export function readLegionTelemetry(path=process.env.OTHRYS_LEGION_TELEMETRY){
     return {id:'legion',capturedAt:raw.capturedAt,receivedAt:raw.receivedAt??null,ageMs:Number.isFinite(ageMs)?ageMs:null,stale:!Number.isFinite(ageMs)||ageMs<0||ageMs>30000,cpuPercent:raw.cpuPercent,ramAvailableMb:raw.ramAvailableMb,gpuUtilPercent:raw.gpuUtilPercent,vramUsedMb:raw.vramUsedMb,vramTotalMb:raw.vramTotalMb,gpuTempC:raw.gpuTempC,qwenLoaded:raw.qwenLoaded===true};
   }catch{return null;}
 }
+function deriveIntentState(intent,ledger=admissionLedger){
+  if(!intent||typeof intent!=='object') return null;
+  let body,missionId;
+  if(intent.action==='REFINE_REQUEST'){
+    body={action:intent.action,candidateCommit:intent.candidateCommit,feedback:intent.feedback,receivedAt:intent.receivedAt};
+    const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-REFINE-${digest.slice(0,24)}`;
+  }else if(intent.action==='MISSION_PROPOSAL'){
+    body={action:intent.action,projectContext:intent.projectContext,objective:intent.objective,receivedAt:intent.receivedAt};
+    const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-MISSION-${digest.slice(0,24)}`;
+  }else if(intent.action==='MISSION_PROMOTION_REQUEST'){
+    body={action:intent.action,proposalId:intent.proposalId,receivedAt:intent.receivedAt};
+    const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-PROMOTE-${digest.slice(0,24)}`;
+  }else return null;
+  let admitted=false;
+  if(ledger&&existsSync(ledger)) admitted=readFileSync(ledger,'utf8').split(/\r?\n/).some(line=>line.includes(`"missionId":"${missionId}"`));
+  return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,proposalId:intent.proposalId??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
+}
 export function readControlIntentState(inbox=intentFile,ledger=admissionLedger){
   if(!inbox||!existsSync(inbox)) return null;
-  try{
-    const lines=readFileSync(inbox,'utf8').trim().split(/\r?\n/).filter(Boolean); if(!lines.length)return null;
-    const intent=JSON.parse(lines.at(-1));
-    let body,missionId;
-    if(intent.action==='REFINE_REQUEST'){
-      body={action:intent.action,candidateCommit:intent.candidateCommit,feedback:intent.feedback,receivedAt:intent.receivedAt};
-      const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-REFINE-${digest.slice(0,24)}`;
-    }else if(intent.action==='MISSION_PROPOSAL'){
-      body={action:intent.action,projectContext:intent.projectContext,objective:intent.objective,receivedAt:intent.receivedAt};
-      const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-MISSION-${digest.slice(0,24)}`;
-    }else return null;
-    let admitted=false;
-    if(ledger&&existsSync(ledger)) admitted=readFileSync(ledger,'utf8').split(/\r?\n/).some(line=>line.includes(`"missionId":"${missionId}"`));
-    return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
-  }catch{return null;}
+  try{const lines=readFileSync(inbox,'utf8').trim().split(/\r?\n/).filter(Boolean); if(!lines.length)return null; return deriveIntentState(JSON.parse(lines.at(-1)),ledger);}catch{return null;}
+}
+export function readLatestIntentState(action,inbox=intentFile,ledger=admissionLedger){
+  if(!inbox||!existsSync(inbox)) return null;
+  try{const lines=readFileSync(inbox,'utf8').trim().split(/\r?\n/).filter(Boolean).reverse();for(const line of lines){const intent=JSON.parse(line);if(intent.action===action)return deriveIntentState(intent,ledger);}return null;}catch{return null;}
 }
 export function missionEvidence(missionId){
   if(!missionId||!/^V2-[0-9]+[A-Z]$/.test(missionId)) return null;
@@ -79,11 +86,12 @@ export function switchyardPreview(preference='auto'){
   if(!selected.available) return {policy:'LOCAL_FIRST',preference:pref,selected:null,reason:'PREFERENCE_UNAVAILABLE',executionStarted:false,authorityGranted:false};
   return {policy:'LOCAL_FIRST',preference:pref,selected,reason:'EXPLICIT_AVAILABLE_PREFERENCE',executionStarted:false,authorityGranted:false};
 }
-export function missionProposalEnvelope(controlIntent){
-  if(!controlIntent||controlIntent.action!=='MISSION_PROPOSAL'||!controlIntent.missionId) return null;
-  const projectContext=String(controlIntent.projectContext??'').trim(),objective=String(controlIntent.objective??'').trim();
+export function missionProposalEnvelope(proposalIntent,promotionIntent=null){
+  if(!proposalIntent||proposalIntent.action!=='MISSION_PROPOSAL'||!proposalIntent.missionId) return null;
+  const projectContext=String(proposalIntent.projectContext??'').trim(),objective=String(proposalIntent.objective??'').trim();
   if(!projectContext||!objective) return null;
-  return Object.freeze({schema:'othrys.os.mission-proposal.v1',proposalId:controlIntent.missionId,projectContext,objective,admissionStatus:controlIntent.status,promoted:false,canonicalMissionId:null,authorityGranted:false,executionStarted:false});
+  const promotion=promotionIntent?.action==='MISSION_PROMOTION_REQUEST'&&promotionIntent.proposalId===proposalIntent.missionId?{requestId:promotionIntent.missionId,status:promotionIntent.status}:null;
+  return Object.freeze({schema:'othrys.os.mission-proposal.v1',proposalId:proposalIntent.missionId,projectContext,objective,admissionStatus:proposalIntent.status,promotionRequest:promotion,promoted:false,canonicalMissionId:null,authorityGranted:false,executionStarted:false});
 }
 export async function buildStatus(){
   const state=json('GPT_STATE.json');
@@ -143,10 +151,12 @@ export async function buildStatus(){
     ]
   };
   const controlIntent=readControlIntentState();
+  const proposalIntent=readLatestIntentState('MISSION_PROPOSAL');
+  const promotionIntent=readLatestIntentState('MISSION_PROMOTION_REQUEST');
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(controlIntent),
+    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     osSurface,workState,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };
@@ -171,6 +181,10 @@ function persistIntent(body){
     if(!projectContext||projectContext.length>64) throw new Error('INVALID_PROJECT_CONTEXT');
     if(!objective||objective.length>1200) throw new Error('INVALID_OBJECTIVE');
     rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,projectContext,objective,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+  }else if(action==='MISSION_PROMOTION_REQUEST'){
+    const proposalId=String(body?.proposalId??'').trim();
+    if(!/^DECK-MISSION-[0-9a-f]{24}$/.test(proposalId)) throw new Error('INVALID_PROPOSAL_ID');
+    rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,proposalId,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
   }else throw new Error('ACTION_NOT_ALLOWED');
   mkdirSync(dirname(intentFile),{recursive:true}); appendFileSync(intentFile,JSON.stringify(rec)+'\n'); return rec;
 }

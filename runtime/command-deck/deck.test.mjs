@@ -19,6 +19,8 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/Mission proposal queued for Trust Canal admission/);
   assert.match(html,/id="proposalCard"/);
   assert.match(html,/NOT PROMOTED/);
+  assert.match(html,/id="promotionBtn"/);
+  assert.match(html,/MISSION_PROMOTION_REQUEST/);
   assert.match(html,/X-OTHRYS-CONTROL-TOKEN/);
   assert.match(html,/X-OTHRYS-DECK-TOKEN/);
   assert.match(html,/Legion builder node/);
@@ -180,12 +182,15 @@ test('Refine intent ingress is separately authenticated and non-executing',async
   const pok=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify(proposal)}); assert.equal(pok.status,202);
   const pdata=await pok.json(); assert.equal(pdata.intent.action,'MISSION_PROPOSAL'); assert.equal(pdata.intent.status,'PENDING_TRUST_CANAL'); assert.equal(pdata.intent.authorityGranted,false);
   lines=readFileSync(f,'utf8').trim().split(/\r?\n/); assert.equal(lines.length,2); assert.equal(JSON.parse(lines[1]).projectContext,'othrys-v2');
+  const promotion={action:'MISSION_PROMOTION_REQUEST',proposalId:'DECK-MISSION-0123456789abcdef01234567'};
+  const xbad=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify({...promotion,proposalId:'bad'})}); assert.equal(xbad.status,400);
+  const xok=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify(promotion)}); assert.equal(xok.status,202); const xdata=await xok.json(); assert.equal(xdata.intent.action,'MISSION_PROMOTION_REQUEST'); assert.equal(xdata.intent.authorityGranted,false);
 });
 
 
 test('Control intent status derives pending then admitted without execution',async()=>{
   process.env.OTHRYS_DECK_NO_START='1';
-  const {readControlIntentState,missionProposalEnvelope}=await import('./server.mjs');
+  const {readControlIntentState,readLatestIntentState,missionProposalEnvelope}=await import('./server.mjs');
   const d=mkdtempSync(join(tmpdir(),'othrys-control-state-')); const inbox=join(d,'intents.jsonl'),ledger=join(d,'admission.jsonl');
   try{
     const intent={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-27T19:37:22.080Z',action:'REFINE_REQUEST',candidateCommit:'24b99ab9b9420c407d9eed01d23e0cf2f52a73d8',feedback:'Improve touch clarity.',authorityGranted:false,status:'PENDING_TRUST_CANAL'};
@@ -195,6 +200,6 @@ test('Control intent status derives pending then admitted without execution',asy
     const admitted=readControlIntentState(inbox,ledger); assert.equal(admitted.status,'ADMITTED'); assert.equal(admitted.missionId,pending.missionId);
     const proposal={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T12:30:00.000Z',action:'MISSION_PROPOSAL',projectContext:'othrys-v2',objective:'Create a bounded tablet mission proposal.',authorityGranted:false,status:'PENDING_TRUST_CANAL'};
     writeFileSync(inbox,JSON.stringify(proposal)+'\n');
-    const pp=readControlIntentState(inbox,ledger); assert.match(pp.missionId,/^DECK-MISSION-/); assert.equal(pp.projectContext,'othrys-v2'); assert.equal(pp.status,'PENDING_TRUST_CANAL'); assert.equal(pp.authorityGranted,false); const envp=missionProposalEnvelope(pp); assert.equal(envp.schema,'othrys.os.mission-proposal.v1'); assert.equal(envp.proposalId,pp.missionId); assert.equal(envp.promoted,false); assert.equal(envp.canonicalMissionId,null); assert.equal(envp.executionStarted,false); assert.equal(missionProposalEnvelope({...pp,action:'REFINE_REQUEST'}),null);
+    const pp=readControlIntentState(inbox,ledger); assert.match(pp.missionId,/^DECK-MISSION-/); assert.equal(pp.projectContext,'othrys-v2'); assert.equal(pp.status,'PENDING_TRUST_CANAL'); assert.equal(pp.authorityGranted,false); const envp=missionProposalEnvelope(pp); assert.equal(envp.schema,'othrys.os.mission-proposal.v1'); assert.equal(envp.proposalId,pp.missionId); assert.equal(envp.promoted,false); assert.equal(envp.canonicalMissionId,null); assert.equal(envp.executionStarted,false); assert.equal(missionProposalEnvelope({...pp,action:'REFINE_REQUEST'}),null); const promotion={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T13:00:00.000Z',action:'MISSION_PROMOTION_REQUEST',proposalId:pp.missionId,authorityGranted:false,status:'PENDING_TRUST_CANAL'}; writeFileSync(inbox,JSON.stringify(proposal)+'\n'+JSON.stringify(promotion)+'\n'); const xp=readControlIntentState(inbox,ledger); assert.match(xp.missionId,/^DECK-PROMOTE-/); assert.equal(xp.proposalId,pp.missionId); const latestProposal=readLatestIntentState('MISSION_PROPOSAL',inbox,ledger); const latestPromotion=readLatestIntentState('MISSION_PROMOTION_REQUEST',inbox,ledger); const wrapped=missionProposalEnvelope(latestProposal,latestPromotion); assert.equal(wrapped.proposalId,pp.missionId); assert.equal(wrapped.promotionRequest.requestId,xp.missionId); assert.equal(wrapped.promotionRequest.status,'PENDING_TRUST_CANAL'); assert.equal(wrapped.promoted,false);
   }finally{rmSync(d,{recursive:true,force:true});}
 });

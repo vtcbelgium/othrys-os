@@ -67,7 +67,7 @@
     "decision": "ACCEPT_REVIEWABLE_PROPOSAL_ENVELOPE",
     "authority": "read-only projection; not promoted; no execution"
   },
-  "next_legal_action": "Open V2-007X for an explicit operator MISSION_PROMOTION_REQUEST admitted through Trust Canal; still no canonical mission creation or execution.",
+  "next_legal_action": "V2-007X Trust Canal Mission promotion request candidate; no canonical mission creation or execution.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007X",
+  "title": "OTHRYS OS Trust Canal Mission promotion request",
+  "goal": "Allow an operator to request promotion of an admitted DECK-MISSION proposal through a second Trust Canal admission without creating a canonical mission or starting execution.",
+  "laws": [
+    "Promotion request requires an existing DECK-MISSION proposal identity.",
+    "Promotion request is separately content-bound and admitted as DECK-PROMOTE-*.",
+    "Only the separately authenticated tablet control boundary may submit it.",
+    "Promotion request never creates missions/*.json by itself.",
+    "Promotion request never starts Talos, Hephaestus, Factory, Worker, shell or model execution.",
+    "The original proposal remains visible after a promotion request is submitted.",
+    "Replay is idempotent and malformed proposal identities fail closed."
+  ],
+  "slices": [
+    {"id":"S1","owner":"Legion","artifacts":["mission-envelope","intent-bridge"]},
+    {"id":"S2","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","owner":"T590","artifacts":["bridge-tests","mission-result"]}
+  ]
+}

@@ -23,6 +23,10 @@ function validMissionProposal() {
   return {schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T12:30:00.000Z',action:'MISSION_PROPOSAL',projectContext:'othrys-v2',objective:'Create a bounded project mission proposal.',authorityGranted:false,status:'PENDING_TRUST_CANAL'};
 }
 
+function validPromotionRequest() {
+  return {schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T13:00:00.000Z',action:'MISSION_PROMOTION_REQUEST',proposalId:'DECK-MISSION-0123456789abcdef01234567',authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+}
+
 function tmp() {
   const d = mkdtempSync(join(tmpdir(), 'admission-watcher-'));
   return { d, inbox: join(d, 'intents.jsonl'), ledger: join(d, 'admission.jsonl') };
@@ -68,6 +72,11 @@ test('complete valid pending MISSION_PROPOSAL is admitted without execution', ()
     assert.equal(result.admitted, 1); assert.equal(result.replayed, 0);
     const record = JSON.parse(ledgerLines(ledger)[0]); assert.equal(record.state,'ADMITTED'); assert.match(record.missionId,/^DECK-MISSION-/); assert.equal('authorityGranted' in record,false); assert.equal('executionStarted' in record,false);
   } finally { rmSync(d, { recursive: true, force: true }); }
+});
+
+test('complete valid pending MISSION_PROMOTION_REQUEST is admitted without execution', () => {
+  const { d, inbox, ledger } = tmp();
+  try {writeFileSync(inbox,JSON.stringify(validPromotionRequest())+'\n');const result=admitCompleteIntents(inbox,ledger);assert.equal(result.admitted,1);const record=JSON.parse(ledgerLines(ledger)[0]);assert.match(record.missionId,/^DECK-PROMOTE-/);assert.equal(record.state,'ADMITTED');assert.equal('authorityGranted' in record,false);assert.equal('executionStarted' in record,false);} finally {rmSync(d,{recursive:true,force:true});}
 });
 
 test('authorityGranted and executionStarted remain false in the admission path', () => {

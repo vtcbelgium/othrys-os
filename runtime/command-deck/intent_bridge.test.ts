@@ -24,6 +24,18 @@ test('mission proposal replay is idempotent and malformed evidence fails closed'
   const d=mkdtempSync(join(tmpdir(),'deck-proposal-')); const ledger=join(d,'admission.jsonl');
   try{const a=admitDeckIntent(missionProposal(),ledger),b=admitDeckIntent(missionProposal(),ledger);assert.equal(a.missionId,b.missionId);assert.equal(b.created,false);assert.throws(()=>admitDeckIntent({...missionProposal(),objective:''},ledger),/INTENT_EVIDENCE_INVALID/);assert.throws(()=>admitDeckIntent({...missionProposal(),projectContext:'x'.repeat(65)},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
 });
+
+function promotionRequest(){return {schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T13:00:00.000Z',action:'MISSION_PROMOTION_REQUEST',proposalId:'DECK-MISSION-0123456789abcdef01234567',authorityGranted:false,status:'PENDING_TRUST_CANAL'};}
+
+test('pending promotion request becomes separate Trust Canal admission only',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-promote-')); const ledger=join(d,'admission.jsonl');
+  try{const r=admitDeckIntent(promotionRequest(),ledger);assert.equal(r.created,true);assert.match(r.missionId,/^DECK-PROMOTE-/);assert.equal(r.record.state,'ADMITTED');assert.equal(r.executionStarted,false);assert.equal(r.authorityGranted,false);}finally{rmSync(d,{recursive:true,force:true});}
+});
+
+test('promotion request validates DECK-MISSION identity and replays idempotently',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-promote-')); const ledger=join(d,'admission.jsonl');
+  try{const a=admitDeckIntent(promotionRequest(),ledger),b=admitDeckIntent(promotionRequest(),ledger);assert.equal(a.missionId,b.missionId);assert.equal(b.created,false);assert.throws(()=>admitDeckIntent({...promotionRequest(),proposalId:'V2-007X'},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
+});
 test('replay is idempotent and invalid states fail closed',()=>{
   const d=mkdtempSync(join(tmpdir(),'deck-bridge-')); const ledger=join(d,'admission.jsonl');
   try{const a=admitDeckIntent(intent(),ledger),b=admitDeckIntent(intent(),ledger);assert.equal(a.missionId,b.missionId);assert.equal(b.created,false);assert.throws(()=>admitDeckIntent({...intent(),status:'EXECUTING'},ledger),/INTENT_STATE_INVALID/);assert.throws(()=>admitDeckIntent({...intent(),action:'ACCEPT'},ledger),/INTENT_AUTHORITY_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
