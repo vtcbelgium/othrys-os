@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 84,
+  "sequence": 85,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-006F",
+    "mission_id": "V2-007A",
     "status": "COMPLETE",
-    "issued_label": "V2-006F - AUTOMATIC T590 INTENT ADMISSION WATCHER",
+    "issued_label": "V2-007A - OTHRYS OS ALPHA WORK SURFACE",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-006F",
-    "decision": "ACCEPT_AUTOMATIC_TABLET_INTENT_ADMISSION_WATCHER",
-    "authority": "Trust Canal admission only; no execution"
+    "mission_id": "V2-007A",
+    "decision": "ACCEPT_OTHRYS_OS_ALPHA_WORK_SURFACE",
+    "authority": "read/work-state surface only; existing Refine intent boundary unchanged"
   },
-  "next_legal_action": "Open V2-007A OTHRYS OS Alpha shell: persistent Mission/Work State over proven V2 machinery; no new execution authority.",
+  "next_legal_action": "Open V2-007B OTHRYS OS model selector: expose local-first Switchyard inventory and operator preference without adding routing or execution authority.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -283,6 +283,11 @@
       "mission_id": "V2-006F",
       "status": "COMPLETE",
       "note": "T590 user-space admission watcher active+enabled; 23/23 boundary tests PASS at candidate cb4ae1a; newline-complete and malformed-input fail-closed rules preserved; admission only, no Hephaestus/Talos/Worker/accept/reject/release execution authority."
+    },
+    {
+      "mission_id": "V2-007A",
+      "status": "COMPLETE",
+      "note": "Panda-style OTHRYS OS Alpha shell live on T590 tablet host; canonical mission goal/laws/artifact state exposed; Legion 5/5 and T590 5/5 Deck tests PASS at a63afa7; no Panda branding; no new execution authority."
     }
   ],
   "git": {

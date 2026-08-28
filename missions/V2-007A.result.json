@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-007A",
+  "verdict": "PASS",
+  "candidate_sha": "a63afa747db6932d550048217154c728d68f8cbe",
+  "legion_deck_tests": "5/5",
+  "t590_deck_tests": "5/5",
+  "tablet_host_ui_root": "PASS",
+  "work_state_api": "PASS",
+  "work_state_laws_exposed": 7,
+  "panda_branding_found": false,
+  "authorityGranted": false,
+  "controlsEnabled": false
+}
