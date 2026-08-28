@@ -11,5 +11,6 @@
   "write_api_enabled": false,
   "authority_granted": false,
   "legion_runtime_tests": "209/209 PASS",
-  "t590_runtime_tests": "PENDING_INDEPENDENT_SYNC_PROOF"
+  "t590_runtime_tests": "209/209 PASS",
+  "t590_verified_commit": "e587a70e61d8ee05f6ad611eb06ead3048c9dc8a"
 }
