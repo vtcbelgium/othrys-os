@@ -74,3 +74,4 @@
 {"sequence": 74, "at": "2026-08-28T15:13:49Z", "mission_id": "V2-008E", "event": "SYNC_STAMP", "status": "COMPLETE", "remote_receipt": "2af7ec021f967fde492a5f75af6b149e5d88a219", "independent_verifier": "T590 + Legion 64/64 PASS"}
 {"sequence": 75, "at": "2026-08-28T15:17:50Z", "mission_id": "V2-008F", "event": "SYNC_STAMP", "status": "COMPLETE", "remote_receipt": "93b73c117d58858cc481518cff34feec3d1247be", "independent_verifier": "T590 + Legion 69/69 PASS"}
 {"sequence": 76, "at": "2026-08-28T15:21:20Z", "mission_id": "V2-008G", "event": "SYNC_STAMP", "status": "COMPLETE", "remote_receipt": "dc40511f826783d8ad43a4bdc5f67e7abf168001", "independent_verifier": "T590 + Legion 73/73 PASS"}
+{"sequence": 77, "at": "2026-08-28T15:25:01Z", "mission_id": "V2-008H", "event": "SYNC_STAMP", "status": "COMPLETE", "remote_receipt": "21b9a6bc66c7244acdc39afcb1460a0dd862a236", "independent_verifier": "Legion 21b9a6b 73/73 PASS; stale build request extinguished"}

@@ -178,3 +178,5 @@
 | 58 | V2-008F | Read-only MISSING_WORK -> Switchyard build route proposal | COMPLETE |
 
 | 59 | V2-008G | Trust Canal MISSING_WORK build request gate; no worker invocation | COMPLETE |
+
+| 60 | V2-008H | Live MISSING_WORK build request visible; stale request extinguished before Qwen | COMPLETE |

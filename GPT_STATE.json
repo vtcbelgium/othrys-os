@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-008G",
+    "mission_id": "V2-008H",
     "status": "COMPLETE",
-    "issued_label": "V2-008G - TRUST CANAL BUILD REQUEST GATE",
+    "issued_label": "V2-008H - BUILD REQUEST VISIBILITY DOGFOOD",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-008G",
-    "decision": "ACCEPT_BUILD_REQUEST_GATE",
-    "authority": "build request admission only; no worker invocation"
+    "mission_id": "V2-008H",
+    "decision": "ACCEPT_STALE_BUILD_EXTINCTION",
+    "authority": "admitted build request became unnecessary; no builder invocation"
   },
-  "next_legal_action": "V2-008H may dogfood a real canonical MISSING_WORK mission through build-route and build-request admission; execution remains gated.",
+  "next_legal_action": "V2-008I may require fresh MISSING_WORK + matching route before materializing any executable build package.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",
