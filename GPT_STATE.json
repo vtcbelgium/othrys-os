@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007E",
+    "mission_id": "V2-007F",
     "status": "COMPLETE",
-    "issued_label": "V2-007E - OTHRYS OS EVIDENCE-DERIVED PHASE DISPLAY",
+    "issued_label": "V2-007F - EVIDENCE-NATIVE PROGRESS PLAN",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007E",
-    "decision": "ACCEPT_EVIDENCE_DERIVED_PHASE_DISPLAY",
-    "authority": "read-only phase projection; no transition authority"
+    "mission_id": "V2-007F",
+    "decision": "ACCEPT_EVIDENCE_NATIVE_PROGRESS_PLAN",
+    "authority": "read-only mission evidence; no execution"
   },
-  "next_legal_action": "Operator visual check of OTHRYS OS Alpha on the tablet; then open V2-007F for deeper Panda-style Progress/Plan interaction without new execution authority.",
+  "next_legal_action": "Open V2-007G for OTHRYS OS operator intervention policy and approval/evidence gate visibility without execution authority.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

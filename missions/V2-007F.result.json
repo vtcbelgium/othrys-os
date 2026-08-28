@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-007F",
+  "verdict": "PASS",
+  "candidate_sha": "f1fba4dfc41efc3dd173e0a0b76038830d1c52e7",
+  "t590_tests": "6/6",
+  "legion_tests": "6/6",
+  "mission_evidence_endpoint": "AUTHENTICATED_READ_ONLY",
+  "recent_mission_selection": "CANONICAL_RESULT_EVIDENCE",
+  "progress_plan_tabs": "FUNCTIONAL_READ_ONLY",
+  "authorityGranted": false,
+  "controlsEnabled": false
+}
