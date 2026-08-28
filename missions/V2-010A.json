@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-010A",
+  "title": "OTHRYS OS structural substrate",
+  "goal": "Establish a Panda-class declarative project/workstation substrate over the existing V2 governed motor without creating a second execution engine.",
+  "artifact_profile": "os-substrate",
+  "laws": [
+    "V2 remains canonical execution and evidence authority.",
+    "Project, Work, authority, capability, model, knowledge and integration structure must be declarative and inspectable.",
+    "Role/authority is distinct from capability.",
+    "The OS projection is read-only and grants no execution authority.",
+    "Existing Command Deck API compatibility must be preserved.",
+    "No PandaOS runtime dependency or branding."
+  ]
+}

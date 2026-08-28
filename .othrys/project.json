@@ -1,0 +1,229 @@
+{
+  "schema": "othrys.os.project.v1",
+  "projectId": "othrys-v2",
+  "label": "OTHRYS OS",
+  "kind": "CONTROL_PLANE",
+  "canonicalRoot": ".",
+  "paths": {
+    "missions": "missions",
+    "blocks": "blocks",
+    "knowledge": "docs",
+    "runtime": "runtime"
+  },
+  "work": {
+    "phases": [
+      "PLAN",
+      "DESIGN",
+      "BUILD",
+      "REVIEW",
+      "SHIP"
+    ],
+    "interventionDefault": "CHECKPOINTS",
+    "approvalAuthority": "trust-canal",
+    "evidenceAuthority": "talos"
+  },
+  "authorities": [
+    {
+      "id": "hephaestus",
+      "label": "Hephaestus",
+      "role": "Engineering authority",
+      "statusEvidence": "V2-002F",
+      "capabilities": [
+        "engineering.build"
+      ]
+    },
+    {
+      "id": "talos",
+      "label": "Talos",
+      "role": "Verification / evidence authority",
+      "statusEvidence": "V2-002B",
+      "capabilities": [
+        "verification.independent"
+      ]
+    }
+  ],
+  "systems": [
+    {
+      "id": "trust-canal",
+      "label": "Trust Canal",
+      "role": "Authority / admission",
+      "statusEvidence": "V2-002E"
+    },
+    {
+      "id": "factory",
+      "label": "Factory",
+      "role": "Oros build + refine",
+      "statusEvidence": "V2-005D"
+    },
+    {
+      "id": "mycelium",
+      "label": "Mycelium",
+      "role": "Colony routing",
+      "statusEvidence": "V2-004D"
+    },
+    {
+      "id": "command-deck",
+      "label": "Command Deck",
+      "role": "Operator workstation",
+      "statusEvidence": "V2-006E"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "analytics.visit-tracking",
+      "status": "STOCK"
+    },
+    {
+      "id": "control-feedback",
+      "status": "PROVEN"
+    },
+    {
+      "id": "media.image-prep",
+      "status": "PROVEN"
+    },
+    {
+      "id": "monetization.affiliate-offer",
+      "status": "STOCK"
+    }
+  ],
+  "modelPolicy": {
+    "policy": "LOCAL_FIRST",
+    "requests": [
+      {
+        "id": "qwen3-builder",
+        "label": "Qwen3 8B · Legion",
+        "class": "LOCAL ENGINEERING",
+        "status": "PRIMARY",
+        "available": true,
+        "evidence": "V2-002C"
+      },
+      {
+        "id": "llama3.2-advisory",
+        "label": "Llama 3.2 · T590",
+        "class": "LOCAL ADVISORY",
+        "status": "ADVISORY ONLY",
+        "available": true,
+        "evidence": "V2-004D"
+      },
+      {
+        "id": "remote-escalation",
+        "label": "Remote escalation",
+        "class": "REMOTE",
+        "status": "GATED",
+        "available": false,
+        "evidence": null
+      }
+    ]
+  },
+  "integrations": [
+    {
+      "id": "ollama-legion",
+      "label": "Ollama · Legion",
+      "class": "LOCAL MODEL RUNTIME",
+      "evidence": "V2-002C"
+    },
+    {
+      "id": "ollama-t590",
+      "label": "Ollama · T590",
+      "class": "LOCAL ADVISORY RUNTIME",
+      "evidence": "V2-004D"
+    },
+    {
+      "id": "github-relay",
+      "label": "GitHub relay",
+      "class": "REMOTE FALLBACK TRANSPORT",
+      "evidence": "GPT_STATE.control_lifeline"
+    },
+    {
+      "id": "command-deck-lan",
+      "label": "Command Deck · LAN",
+      "class": "LOCAL CONTROLLER SURFACE",
+      "evidence": "V2-006A"
+    }
+  ],
+  "knowledge": [
+    {
+      "id": "north-star",
+      "label": "OTHRYS OS North Star",
+      "class": "CANONICAL DIRECTION",
+      "path": "OTHRYS_OS_NORTH_STAR.md"
+    },
+    {
+      "id": "build-backlog",
+      "label": "V2 Build Backlog",
+      "class": "CONTROL / ROADMAP",
+      "path": "V2_BUILD_BACKLOG.md"
+    },
+    {
+      "id": "panda-harvest",
+      "label": "PandaOS Harvest",
+      "class": "RESEARCH / GATED",
+      "path": "docs/PANDAOS-HARVEST/PANDAOS_V2_HARVEST_REPORT_2026-08-27.md"
+    },
+    {
+      "id": "visual-control",
+      "label": "Visual Control Concept",
+      "class": "DOCUMENTED / GATED",
+      "path": "docs/V2-VISUAL-CONTROL/CONCEPT.md"
+    },
+    {
+      "id": "temp-library",
+      "label": "Temporary Library",
+      "class": "UNPROMOTED KNOWLEDGE",
+      "path": "TEMP_LIBRARY.md"
+    }
+  ],
+  "roleBindings": [
+    {
+      "role": "planner",
+      "authority": "GPT_CONTROL",
+      "authorityClass": "CONTROL",
+      "capabilities": [
+        "planning"
+      ],
+      "modelRequest": "HIGH_REASONING",
+      "status": "BOUND"
+    },
+    {
+      "role": "designer",
+      "authority": null,
+      "authorityClass": "UNASSIGNED",
+      "capabilities": [
+        "design.prototype"
+      ],
+      "modelRequest": "HIGH_REASONING",
+      "status": "GATED"
+    },
+    {
+      "role": "builder",
+      "authority": "hephaestus",
+      "authorityClass": "TITAN",
+      "capabilities": [
+        "engineering.build"
+      ],
+      "modelRequest": "qwen3-builder",
+      "status": "PROVEN"
+    },
+    {
+      "role": "reviewer",
+      "authority": "talos",
+      "authorityClass": "TITAN",
+      "capabilities": [
+        "verification.independent"
+      ],
+      "modelRequest": "INDEPENDENT_VERIFIER",
+      "status": "PROVEN"
+    }
+  ],
+  "operatingModes": {
+    "enforcedBy": "trust-canal",
+    "modes": [
+      "OBSERVE",
+      "PLAN",
+      "SUPERVISED_EXECUTE",
+      "AUTONOMOUS_EXECUTE"
+    ],
+    "default": "PLAN",
+    "declarativeGrant": false
+  }
+}

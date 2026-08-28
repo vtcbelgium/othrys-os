@@ -9,6 +9,8 @@ import { validateExecutionAuthCandidate } from './execution_auth.ts';
 import { validateWorkerLaunchCandidate } from './worker_launch.ts';
 import { prepareChangeApplyRequest } from './change_apply.ts';
 import { acceptWorkerResult } from './worker_acceptance.ts';
+import { projectMissionWork } from '../os/work_projection.mjs';
+import { projectOsProjection } from '../os/os_projection.mjs';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -178,51 +180,8 @@ export async function buildStatus(){
   const missionResults=existsSync(join(root,'missions'))?readFileSync(join(root,'V2_BUILD_BACKLOG.md'),'utf8').match(/\| COMPLETE \|/g)?.length??0:0;
   const nextMissionId=String(state.next_legal_action??'').match(/\bV2-\d+[A-Z]\b/)?.[0]??null;
   const missionId=state.active_mission?.status==='COMPLETE'&&nextMissionId&&existsSync(join(root,'missions',`${nextMissionId}.json`))?nextMissionId:state.active_mission?.mission_id;
-  let workState=null;
-  if(missionId&&existsSync(join(root,'missions',`${missionId}.json`))){
-    const m=json(`missions/${missionId}.json`);
-    const shellArtifacts=[{id:'mission-envelope',path:`missions/${missionId}.json`,present:existsSync(join(root,'missions',`${missionId}.json`))},{id:'os-shell',path:'runtime/command-deck/public/index.html',present:existsSync(join(root,'runtime','command-deck','public','index.html'))},{id:'work-state-api',path:'runtime/command-deck/server.mjs',present:existsSync(join(root,'runtime','command-deck','server.mjs'))},{id:'deck-tests',path:'runtime/command-deck/deck.test.mjs',present:existsSync(join(root,'runtime','command-deck','deck.test.mjs'))},{id:'intent-bridge',path:'runtime/command-deck/intent_bridge.ts',present:existsSync(join(root,'runtime','command-deck','intent_bridge.ts'))},{id:'bridge-tests',path:'runtime/command-deck/intent_bridge.test.ts',present:existsSync(join(root,'runtime','command-deck','intent_bridge.test.ts'))},{id:'candidate-materializer',path:'runtime/command-deck/mission_candidate.ts',present:existsSync(join(root,'runtime','command-deck','mission_candidate.ts'))},{id:'candidate-tests',path:'runtime/command-deck/mission_candidate.test.ts',present:existsSync(join(root,'runtime','command-deck','mission_candidate.test.ts'))},{id:'id-policy',path:'runtime/command-deck/mission_id_policy.ts',present:existsSync(join(root,'runtime','command-deck','mission_id_policy.ts'))},{id:'id-policy-tests',path:'runtime/command-deck/mission_id_policy.test.ts',present:existsSync(join(root,'runtime','command-deck','mission_id_policy.test.ts'))}];const commandDeckProfile=m.artifact_profile==='command-deck'||missionId?.startsWith('V2-007')||missionId?.startsWith('V2-008');const artifacts=commandDeckProfile?[...shellArtifacts,{id:'surface-data',path:'runtime/command-deck/server.mjs',present:true},{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}]:[{id:'watcher-source',path:'runtime/command-deck/admission_watcher.ts',present:existsSync(join(root,'runtime','command-deck','admission_watcher.ts'))},{id:'watcher-tests',path:'runtime/command-deck/admission_watcher.test.ts',present:existsSync(join(root,'runtime','command-deck','admission_watcher.test.ts'))},{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}];const resultPath=join(root,'missions',`${missionId}.result.json`);let resultVerdict=null;if(existsSync(resultPath)){try{resultVerdict=String(JSON.parse(readFileSync(resultPath,'utf8')).verdict??'RECORDED')}catch{}}const unactivated=m.status==='CANONICAL_UNACTIVATED';const noChangeClosed=unactivated&&resultVerdict==='PASS'&&(()=>{try{return JSON.parse(readFileSync(resultPath,'utf8')).closeout==='NO_CHANGE_JUSTIFIED'}catch{return false}})();const phases=[{id:'PLAN',status:'COMPLETE',basis:unactivated?'canonical envelope allocated':'mission envelope exists'},{id:'BUILD',status:noChangeClosed?'COMPLETE':(unactivated?'PENDING':(resultVerdict?'COMPLETE':'ACTIVE')),basis:noChangeClosed?'no change required':(unactivated?'activation required':(resultVerdict?'result recorded':'result absent'))},{id:'REVIEW',status:resultVerdict==='PASS'?'COMPLETE':'PENDING',basis:resultVerdict==='PASS'?'PASS result':'independent evidence required'},{id:'SHIP',status:noChangeClosed?'COMPLETE':(missionId===state.active_mission?.mission_id&&state.active_mission?.status==='COMPLETE'?'COMPLETE':'PENDING'),basis:noChangeClosed?'governed no-change closeout':'closeout distinct from candidate PASS'}];workState={schema:'othrys.os.work-state.v1',missionId:m.mission_id,title:m.title??m.mission_id,goal:m.goal??'',laws:Array.isArray(m.laws)?m.laws:[],slices:(Array.isArray(m.slices)?m.slices:[]).map(slice=>{const refs=Array.isArray(slice.artifacts)?slice.artifacts:[];const evidence=refs.map(id=>artifacts.find(a=>a.id===id)??{id,path:null,present:false});return {id:String(slice.id??''),title:String(slice.title??slice.id??''),owner:String(slice.owner??'UNASSIGNED'),artifacts:evidence,status:evidence.length&&evidence.every(a=>a.present)?'COMPLETE':'OPEN'};}),phase:phases.find(x=>x.status==='ACTIVE')?.id??(phases.every(x=>x.status==='COMPLETE')?'SHIP':phases.find(x=>x.status==='PENDING')?.id??'PLAN'),phases,owner:'Legion',verifier:'T590',approval:unactivated?'ACTIVATION_REQUIRED':'NOT_REQUIRED',evidence:'REQUIRED',authorityGranted:false,status:noChangeClosed?'COMPLETE_NO_CHANGE':(unactivated?'UNACTIVATED':(missionId===state.active_mission?.mission_id?state.active_mission?.status:'BUILD')),artifacts};
-  }
-  const proven=(id)=>existsSync(join(root,'missions',`${id}.result.json`));
-  const osSurface={
-    name:'OTHRYS OS Alpha',engine:'V2',missionResults,
-    systems:[
-      {id:'talos',label:'Talos',role:'Independent verification',status:'PROVEN'},
-      {id:'trust-canal',label:'Trust Canal',role:'Authority / admission',status:'PROVEN'},
-      {id:'hephaestus',label:'Hephaestus',role:'Engineering authority',status:'PROVEN'},
-      {id:'factory',label:'Factory',role:'Oros build + refine',status:proven('V2-005D')?'PROVEN':'AVAILABLE'},
-      {id:'mycelium',label:'Mycelium',role:'Colony routing',status:proven('V2-004D')?'PROVEN':'AVAILABLE'},
-      {id:'command-deck',label:'Command Deck',role:'Tablet operator surface',status:proven('V2-006E')?'PROVEN':'AVAILABLE'}
-    ],
-    titans:[
-      {id:'hephaestus',label:'Hephaestus',role:'Engineering authority',status:'PROVEN'},
-      {id:'talos',label:'Talos',role:'Verification / evidence authority',status:'PROVEN'}
-    ],
-    blocks:[
-      {id:'analytics.visit-tracking',status:'STOCK'},
-      {id:'control-feedback',status:'PROVEN'},
-      {id:'media.image-prep',status:'PROVEN'},
-      {id:'monetization.affiliate-offer',status:'STOCK'}
-    ],
-    models:[
-      {id:'qwen3-builder',label:'Qwen3 8B · Legion',class:'LOCAL ENGINEERING',status:'PRIMARY',available:true,evidence:'V2-002C'},
-      {id:'llama3.2-advisory',label:'Llama 3.2 · T590',class:'LOCAL ADVISORY',status:'ADVISORY ONLY',available:true,evidence:'V2-004D'},
-      {id:'remote-escalation',label:'Remote escalation',class:'REMOTE',status:'GATED',available:false,evidence:null}
-    ],
-    apps:[
-      {id:'ollama-legion',label:'Ollama · Legion',class:'LOCAL MODEL RUNTIME',status:proven('V2-002C')?'PROVEN':'AVAILABLE',actionable:false,evidence:'V2-002C'},
-      {id:'ollama-t590',label:'Ollama · T590',class:'LOCAL ADVISORY RUNTIME',status:proven('V2-004D')?'PROVEN':'AVAILABLE',actionable:false,evidence:'V2-004D'},
-      {id:'github-relay',label:'GitHub relay',class:'REMOTE FALLBACK TRANSPORT',status:String(state.control_lifeline?.fallback_a?.status??'GATED'),actionable:false,evidence:'GPT_STATE.control_lifeline'},
-      {id:'command-deck-lan',label:'Command Deck · LAN',class:'LOCAL CONTROLLER SURFACE',status:proven('V2-006A')?'PROVEN':'AVAILABLE',actionable:false,evidence:'V2-006A'}
-    ],
-    knowledge:[
-      {id:'north-star',label:'OTHRYS OS North Star',class:'CANONICAL DIRECTION',path:'OTHRYS_OS_NORTH_STAR.md',present:existsSync(join(root,'OTHRYS_OS_NORTH_STAR.md'))},
-      {id:'build-backlog',label:'V2 Build Backlog',class:'CONTROL / ROADMAP',path:'V2_BUILD_BACKLOG.md',present:existsSync(join(root,'V2_BUILD_BACKLOG.md'))},
-      {id:'panda-harvest',label:'PandaOS Harvest',class:'RESEARCH / GATED',path:'docs/PANDAOS-HARVEST/PANDAOS_V2_HARVEST_REPORT_2026-08-27.md',present:existsSync(join(root,'docs','PANDAOS-HARVEST','PANDAOS_V2_HARVEST_REPORT_2026-08-27.md'))},
-      {id:'visual-control',label:'Visual Control Concept',class:'DOCUMENTED / GATED',path:'docs/V2-VISUAL-CONTROL/CONCEPT.md',present:existsSync(join(root,'docs','V2-VISUAL-CONTROL','CONCEPT.md'))},
-      {id:'temp-library',label:'Temporary Library',class:'UNPROMOTED KNOWLEDGE',path:'TEMP_LIBRARY.md',present:existsSync(join(root,'TEMP_LIBRARY.md'))}
-    ]
-  };
+  const workState=projectMissionWork(root,state,missionId);
+  const osSurface=projectOsProjection(root,state,missionResults);
   const controlIntent=readControlIntentState();
   const proposalIntent=readLatestIntentState('MISSION_PROPOSAL');
   const promotionIntent=readLatestIntentState('MISSION_PROMOTION_REQUEST');

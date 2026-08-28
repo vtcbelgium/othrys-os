@@ -220,3 +220,7 @@
 | 71 | V2-009A | Read-only governed canonical apply lifecycle in Command Centre; explicit artifact profile | COMPLETE |
 
 | 72 | V2-009B | Panda-style OTHRYS workstation shell; chat-first centre + durable Progress | COMPLETE |
+
+| 73 | V2-009C | Tablet visual refinement stopped by operator in favor of structural OTHRYS OS build | STOPPED |
+| 74 | V2-010A | Project-local OTHRYS OS substrate + Work/OS projections over V2 motor | COMPLETE |
+| 75 | V2-010B | Durable Work objects + transition records over canonical Mission evidence | NEXT |

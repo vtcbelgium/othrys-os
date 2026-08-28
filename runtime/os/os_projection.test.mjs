@@ -1,0 +1,56 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { resolve } from 'node:path';
+import { loadProjectManifest, validateProjectManifest } from './project_manifest.mjs';
+import { projectOsProjection } from './os_projection.mjs';
+import { projectMissionWork } from './work_projection.mjs';
+
+const root=resolve(import.meta.dirname,'../..');
+
+test('project manifest is declarative and authority-free',()=>{
+  const p=loadProjectManifest(root);
+  assert.equal(p.schema,'othrys.os.project.v1');
+  assert.equal(p.projectId,'othrys-v2');
+  assert.equal(p.kind,'CONTROL_PLANE');
+  assert.ok(p.authorities.some(x=>x.id==='hephaestus'));
+  assert.ok(p.authorities.some(x=>x.id==='talos'));
+  assert.ok(p.capabilities.some(x=>x.id==='media.image-prep'));
+  assert.equal(p.authorityGranted,undefined);
+  assert.equal(p.executionStarted,undefined);
+});
+
+test('manifest validation fails closed',()=>{
+  const p=structuredClone(loadProjectManifest(root));
+  p.authorityGranted=true;
+  assert.throws(()=>validateProjectManifest(p),/CANNOT_GRANT_AUTHORITY/);
+  const duplicate=structuredClone(loadProjectManifest(root));
+  duplicate.authorities.push({...duplicate.authorities[0]});
+  assert.throws(()=>validateProjectManifest(duplicate),/DUPLICATE_AUTHORITIES_ID/);
+});
+test('OS projection maps manifest to proven V2 surfaces',()=>{
+  const os=projectOsProjection(root,{control_lifeline:{fallback_a:{status:'ACTIVE_PROVEN'}}},73);
+  assert.equal(os.schema,'othrys.os.project-projection.v1');
+  assert.equal(os.project.id,'othrys-v2');
+  assert.deepEqual(os.titans.map(x=>x.id),['hephaestus','talos']);
+  assert.equal(os.models[0].id,'qwen3-builder');
+  assert.equal(os.models[1].status,'ADVISORY ONLY');
+  assert.equal(os.models[2].available,false);
+  assert.ok(os.apps.every(x=>x.actionable===false));
+  assert.ok(os.knowledge.some(x=>x.id==='north-star'&&x.present));
+  assert.equal(os.authorityGranted,false);
+  assert.equal(os.executionStarted,false);
+});
+
+test('Work projection derives state from mission evidence, not chat',()=>{
+  const state={active_mission:{mission_id:'V2-010A',status:'COMPLETE'}};
+  const work=projectMissionWork(root,state,'V2-010A');
+  assert.equal(work.schema,'othrys.os.work-state.v1');
+  assert.equal(work.phase,'SHIP');
+  assert.ok(work.phases.every(x=>x.status==='COMPLETE'));
+  assert.equal(work.owner,'Legion');
+  assert.equal(work.verifier,'T590');
+  assert.equal(work.authorityGranted,false);
+  assert.ok(work.artifacts.some(x=>x.id==='surface-data'&&x.present));
+  assert.ok(work.artifacts.some(x=>x.id==='project-manifest'&&x.present));
+  assert.ok(work.artifacts.some(x=>x.id==='os-projector'&&x.present));
+});

@@ -495,3 +495,8 @@ V2-001I ingested and admitted the exact affiliate-offer specimen and proved it b
 ## CH-009B - Command Centre becomes a workstation, not a dashboard
 
 V2-009B harvested PandaOS presentation patterns without importing Panda authority: compact left navigation, a chat-first central workspace, persistent right-side Work/Progress, and existing V2 gates/evidence underneath. Chromium visual probe 1600x900 PASS; Command Deck suite 123/123 PASS.
+
+## CH-010A — OTHRYS OS becomes a structural layer
+
+V2-010A replaces hard-coded Command Deck OS inventories and mission-prefix Work projection with a project-local .othrys/project.json, validated OS/Work projectors, explicit role/capability/model/integration/knowledge bindings, and zero new execution authority. PandaOS is retained as a structural quarry only; V2 remains the governed motor. Full Legion runtime suite: 186/186 PASS.
+
