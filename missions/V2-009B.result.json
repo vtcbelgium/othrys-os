@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-009B",
+  "verdict": "PASS",
+  "base_sha": "4281f620f588aa02f841b50580dd195e48e19f47",
+  "changed_files": [
+    "runtime/command-deck/public/index.html"
+  ],
+  "legion_tests": "123/123 PASS",
+  "visual_probe": "1600x900 Chromium headless PASS",
+  "layout": "left navigation + chat-first workspace + persistent right Progress",
+  "authority_check": "PASS - presentation only; no execution endpoint or gate change",
+  "panda_dependency": false,
+  "out_of_scope_changes": []
+}

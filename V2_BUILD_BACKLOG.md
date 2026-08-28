@@ -218,3 +218,5 @@
 | 70 | V2-008Z | First governed canonical Qwen patch apply; exact-base, one file, T590 verified, 134/134 both nodes | COMPLETE |
 
 | 71 | V2-009A | Read-only governed canonical apply lifecycle in Command Centre; explicit artifact profile | COMPLETE |
+
+| 72 | V2-009B | Panda-style OTHRYS workstation shell; chat-first centre + durable Progress | COMPLETE |

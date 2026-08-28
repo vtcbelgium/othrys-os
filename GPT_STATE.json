@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-009A",
+    "mission_id": "V2-009B",
     "status": "COMPLETE",
-    "issued_label": "V2-009A - GOVERNED APPLY LIFECYCLE SURFACE",
+    "issued_label": "V2-009B - PANDA-STYLE OTHRYS WORKSTATION SHELL",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-009A",
-    "decision": "ACCEPT_GOVERNED_APPLY_LIFECYCLE_SURFACE",
-    "authority": "read-only lifecycle evidence only"
+    "mission_id": "V2-009B",
+    "decision": "ACCEPT_PANDA_STYLE_WORKSTATION_SHELL",
+    "authority": "presentation-only workstation alignment; 123/123 Legion tests; no gate or execution authority change"
   },
-  "next_legal_action": "V2-009B may generalize the scratch-proven pipeline into a reusable bounded canonical-change workflow while preserving all current gates.",
+  "next_legal_action": "V2-009C may refine the Panda-style Command Centre from live tablet visual evidence: spacing, density, typography, chat flow and Progress ergonomics only; no authority change.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

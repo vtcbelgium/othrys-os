@@ -491,3 +491,7 @@ Selection does not admit or ingest the Block. The exact 18-file quarry specimen 
 ## CH-0022 — Block #2 proves the house composes
 
 V2-001I ingested and admitted the exact affiliate-offer specimen and proved it beside Block #1 with one two-Block lock. Removal, tamper and wrong-lock controls fail loudly, including with the legacy quarry still present; no fallback fired.
+
+## CH-009B - Command Centre becomes a workstation, not a dashboard
+
+V2-009B harvested PandaOS presentation patterns without importing Panda authority: compact left navigation, a chat-first central workspace, persistent right-side Work/Progress, and existing V2 gates/evidence underneath. Chromium visual probe 1600x900 PASS; Command Deck suite 123/123 PASS.

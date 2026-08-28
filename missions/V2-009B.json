@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-009B",
+  "title": "Panda-style OTHRYS workstation shell",
+  "goal": "Make Command Centre visually match the proven PandaOS workstation patterns while preserving canonical V2 truth and authority boundaries.",
+  "laws": [
+    "Presentation only: no execution authority or gate relaxation.",
+    "Keep the three-layer split: navigation, chat/workspace, durable Progress.",
+    "Make tablet landscape the primary composition target.",
+    "Keep approval and evidence visibly distinct.",
+    "Reuse existing V2 data and controls; do not invent Panda dependencies.",
+    "All existing Command Deck tests must remain green."
+  ],
+  "artifact_profile": "command-deck"
+}
