@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007X",
+    "mission_id": "V2-007Y",
     "status": "COMPLETE",
-    "issued_label": "V2-007X - TRUST CANAL MISSION PROMOTION REQUEST",
+    "issued_label": "V2-007Y - MISSION CANDIDATE MATERIALIZATION",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007X",
-    "decision": "ACCEPT_PROMOTION_REQUEST_ADMISSION",
-    "authority": "promotion request admitted only; canonical mission absent; no execution"
+    "mission_id": "V2-007Y",
+    "decision": "ACCEPT_NONEXECUTING_CANDIDATE_MATERIALIZATION",
+    "authority": "candidate only; no V2 id or execution"
   },
-  "next_legal_action": "V2-007Y candidate materializer built; independent verification and live evidence materialization required before closeout.",
+  "next_legal_action": "Open V2-007Z to expose durable mission candidate review state in OTHRYS OS; still no canonical V2 mission allocation or execution.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

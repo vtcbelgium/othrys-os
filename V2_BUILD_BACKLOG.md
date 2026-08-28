@@ -118,6 +118,8 @@
 | 48 | V2-007W | Reviewable admitted Mission proposal envelope; not promoted | COMPLETE |
 
 | 49 | V2-007X | Trust Canal Mission promotion request; no canonical creation or execution | COMPLETE |
+| 50 | V2-007Y | Admitted promotion -> durable non-executing Mission candidate envelope | COMPLETE |
+
 ## Future capability — OTHRYS Visual Control Layer
 - Purpose: let OTHRYS observe and eventually interact with Legion and T590 screens as part of autonomous operation and maintenance.
 - Do not build a TeamViewer clone. Optimize for AI observability, control, and verification.

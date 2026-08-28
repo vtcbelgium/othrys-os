@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-007Y",
+  "verdict": "PASS",
+  "candidate_code_sha": "606203a15ed522175ce0a93d4bf95deb64e4ca02",
+  "dogfood_evidence_sha": "67406dfd40561263f81243971c1240f675be093d",
+  "tests": "38/38",
+  "candidate_path": "missions/candidates/CANDIDATE-f5848bffdae68ad8ecab6735.json",
+  "proposal_id": "DECK-MISSION-f5848bffdae68ad8ecab6735",
+  "promotion_id": "DECK-PROMOTE-b29cf9c4659550a16d33db13",
+  "canonicalMissionId": null,
+  "authorityGranted": false,
+  "executionStarted": false,
+  "direct_canonical_mission_file": false,
+  "independent_legion_verification": "PASS"
+}
