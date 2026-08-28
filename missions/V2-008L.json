@@ -1,0 +1,11 @@
+{
+  "mission_id": "V2-008L",
+  "title": "Expose admitted execution authorization in Command Centre",
+  "objective": "Show the current admitted MISSION_EXECUTION_AUTH_REQUEST, selected builder and build package identity in the Command Centre without starting the worker.",
+  "status": "CANONICAL_UNACTIVATED",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "non_goals": ["Do not launch qwen3-builder", "Do not grant worker authority", "Do not mutate Oroi/product code"],
+  "required_evidence": ["Fresh build request", "READY_NOT_EXECUTING package", "DECK-EXEC admission", "Independent verification"],
+  "next_state": "WAIT_GPT"
+}
