@@ -1,0 +1,157 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010E",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010E",
+  "title": "Mnemosyne explicit project knowledge substrate",
+  "objective": "Establish project-local capture, classification, review, deterministic search, maintenance and reconstructible export without opaque memory authority.",
+  "scale": "EPIC",
+  "problem": "OTHRYS exposes knowledge files but lacks a durable knowledge service and lifecycle comparable to Panda Atlas.",
+  "outOfScope": [
+    "No vector database",
+    "No hidden model memory",
+    "No automatic promotion to canonical truth",
+    "No knowledge write API in Command Deck"
+  ],
+  "risks": [
+    "Research is mistaken for canonical truth",
+    "Search becomes non-reconstructible",
+    "Knowledge paths escape project scope"
+  ],
+  "laws": [
+    "Explicit files and records are the source of truth.",
+    "Capture enters inbox only.",
+    "Review never silently promotes knowledge.",
+    "Search is deterministic and local in this mission.",
+    "Maintenance reports issues but performs zero mutation.",
+    "Export must be reconstructible and content-digest bound."
+  ],
+  "slices": [
+    {
+      "id": "mnemosyne-core",
+      "title": "Explicit knowledge lifecycle",
+      "owner": "hephaestus",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "source-records",
+              "title": "Bind declared sources to explicit content digests",
+              "status": "OPEN"
+            },
+            {
+              "id": "capture-review",
+              "title": "Implement inbox capture and non-promoting review",
+              "status": "OPEN"
+            },
+            {
+              "id": "search-maintain-export",
+              "title": "Implement deterministic search, maintenance and export",
+              "status": "OPEN"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "verify-knowledge-law",
+              "title": "Verify path scope, authority-free lifecycle and reconstructibility",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "mnemosyne",
+        "mnemosyne-tests",
+        "knowledge-policy"
+      ]
+    },
+    {
+      "id": "atlas-dogfood",
+      "title": "Panda Atlas quarry captured through Mnemosyne",
+      "owner": "hephaestus",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "capture-atlas-finding",
+              "title": "Capture Panda Atlas service-boundary finding into inbox",
+              "status": "OPEN"
+            },
+            {
+              "id": "review-atlas-finding",
+              "title": "Review as research without promotion",
+              "status": "OPEN"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "verify-not-promoted",
+              "title": "Verify reviewed Panda finding remains non-canonical",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "knowledge-inbox",
+        "knowledge-review"
+      ]
+    },
+    {
+      "id": "knowledge-api",
+      "title": "Read-only knowledge service projection",
+      "owner": "hephaestus",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "search-endpoint",
+              "title": "Expose authenticated deterministic search",
+              "status": "OPEN"
+            },
+            {
+              "id": "export-endpoint",
+              "title": "Expose authenticated reconstructible export",
+              "status": "OPEN"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "verify-no-write-api",
+              "title": "Verify Command Deck has no knowledge write route",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "knowledge-api",
+        "deck-tests"
+      ]
+    }
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "f86fd461e0438a0bb9275eae5e963d2cf34580a0f526c5270b2fc073f0ca33d5"
+}

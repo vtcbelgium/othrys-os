@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-010E",
+  "verdict": "PASS",
+  "status": "COMPLETE",
+  "service": "mnemosyne",
+  "lifecycle": ["CAPTURE", "CLASSIFY", "REVIEW", "SEARCH", "MAINTAIN", "EXPORT"],
+  "knowledge_policy": "EXPLICIT_FILES / INBOX_ONLY / REVIEW_REQUIRED / LOCAL_DETERMINISTIC / RECONSTRUCTIBLE",
+  "dogfood_inbox": "inbox-cc73e3f2f89c185c325391e8",
+  "dogfood_review": "review-a2b5a801ab4239ba83141044",
+  "dogfood_promoted": false,
+  "write_api_enabled": false,
+  "authority_granted": false,
+  "legion_runtime_tests": "209/209 PASS",
+  "t590_runtime_tests": "PENDING_INDEPENDENT_SYNC_PROOF"
+}

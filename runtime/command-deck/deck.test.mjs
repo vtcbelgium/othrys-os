@@ -301,3 +301,13 @@ test('Operating mode endpoint is read-only and PLAN blocks mutation ingress',asy
   const candidate=JSON.parse(readFileSync(join(dir,'../../missions/V2-005A.result.json'),'utf8')).product_candidate_commit;
   r=await fetch('http://127.0.0.1:18787/api/intent',{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'mode-control'},body:JSON.stringify({action:'REFINE_REQUEST',candidateCommit:candidate,feedback:'should be denied in plan mode'})});assert.equal(r.status,400);b=await r.json();assert.equal(b.error,'MODE_DENIES_MUTATE');assert.equal(existsSync(f),false);
 });
+
+test('Mnemosyne search and export endpoints are authenticated read-only projections',async t=>{
+  const env={...process.env,OTHRYS_DECK_TOKEN:'knowledge-read',OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18788',OTHRYS_DECK_NO_START:'0'};
+  const child=spawn(process.execPath,[join(dir,'server.mjs')],{env,stdio:['ignore','pipe','pipe']});t.after(()=>child.kill());
+  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('server timeout')),4000);child.stdout.on('data',x=>{if(String(x).includes('"ready":true')){clearTimeout(timer);resolve();}});});
+  let r=await fetch('http://127.0.0.1:18788/api/knowledge-search?q=PandaOS');assert.equal(r.status,401);
+  r=await fetch('http://127.0.0.1:18788/api/knowledge-search?q=PandaOS',{headers:{'X-OTHRYS-DECK-TOKEN':'knowledge-read'}});let b=await r.json();assert.equal(r.status,200);assert.equal(b.search.authorityGranted,false);assert.ok(b.search.results.some(x=>x.id==='source-panda-harvest'));
+  r=await fetch('http://127.0.0.1:18788/api/knowledge-export',{headers:{'X-OTHRYS-DECK-TOKEN':'knowledge-read'}});b=await r.json();assert.equal(r.status,200);assert.equal(b.export.projectId,'othrys-v2');assert.equal(b.export.authorityGranted,false);assert.match(b.export.exportDigest,/^[0-9a-f]{64}$/);
+  r=await fetch('http://127.0.0.1:18788/api/knowledge-write',{method:'POST',headers:{'X-OTHRYS-DECK-TOKEN':'knowledge-read'}});assert.equal(r.status,405);
+});

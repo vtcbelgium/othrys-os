@@ -14,6 +14,7 @@ import { projectOsProjection } from '../os/os_projection.mjs';
 import { readWorkRecord } from '../os/work_record.mjs';
 import { loadProjectManifest } from '../os/project_manifest.mjs';
 import { resolveOperatingMode, authorizeOperatingModeAction, operatingModeProjection } from '../os/operating_mode.mjs';
+import { exportKnowledge, searchKnowledge } from '../os/mnemosyne.mjs';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -312,6 +313,14 @@ export async function handle(req,res){
   if(url.pathname==='/api/operating-mode'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
     return send(res,200,JSON.stringify({ok:true,...operatingModeProjection(projectManifest,process.env.OTHRYS_OS_MODE??null),controlsEnabled:false}));
+  }
+  if(url.pathname==='/api/knowledge-search'){
+    if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
+    return send(res,200,JSON.stringify({ok:true,search:searchKnowledge(root,projectManifest,url.searchParams.get('q')??''),controlsEnabled:false}));
+  }
+  if(url.pathname==='/api/knowledge-export'){
+    if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
+    return send(res,200,JSON.stringify({ok:true,export:exportKnowledge(root,projectManifest),controlsEnabled:false}));
   }
   if(url.pathname==='/api/mission'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));

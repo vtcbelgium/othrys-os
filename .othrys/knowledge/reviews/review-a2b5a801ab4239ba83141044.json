@@ -1,0 +1,11 @@
+{
+  "schema": "othrys.os.knowledge-review.v1",
+  "reviewId": "review-a2b5a801ab4239ba83141044",
+  "itemId": "inbox-cc73e3f2f89c185c325391e8",
+  "decision": "PROMOTE",
+  "classification": "RESEARCH",
+  "evidence": "V2-010E Panda structural quarry",
+  "reviewedAt": "2026-08-28T20:11:00.000Z",
+  "promoted": false,
+  "authorityGranted": false
+}

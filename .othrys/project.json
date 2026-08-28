@@ -9,7 +9,8 @@
     "blocks": "blocks",
     "knowledge": "docs",
     "runtime": "runtime",
-    "work": ".othrys/work"
+    "work": ".othrys/work",
+    "knowledgeStore": ".othrys/knowledge"
   },
   "work": {
     "phases": [
@@ -226,5 +227,14 @@
     ],
     "default": "SUPERVISED_EXECUTE",
     "declarativeGrant": false
+  },
+  "knowledgePolicy": {
+    "service": "mnemosyne",
+    "sourceOfTruth": "EXPLICIT_FILES",
+    "capture": "INBOX_ONLY",
+    "promotion": "REVIEW_REQUIRED",
+    "search": "LOCAL_DETERMINISTIC",
+    "export": "RECONSTRUCTIBLE",
+    "opaqueMemory": false
   }
 }

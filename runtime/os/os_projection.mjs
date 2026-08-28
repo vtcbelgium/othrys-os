@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { loadProjectManifest } from './project_manifest.mjs';
+import { knowledgeProjection } from './mnemosyne.mjs';
 
 function missionProven(root,id){
   return typeof id==='string'&&/^V2-/.test(id)&&existsSync(join(root,'missions',`${id}.result.json`));
@@ -34,8 +35,8 @@ export function projectOsProjection(root,state,missionResults=0){
   const knowledge=project.knowledge.map(x=>({...x,present:existsSync(join(root,x.path))}));
   return Object.freeze({
     schema:'othrys.os.project-projection.v1',
-    project:{id:project.projectId,label:project.label,kind:project.kind,work:project.work,roles:project.roleBindings??[],operatingModes:project.operatingModes??null},
-    name:project.label,engine:'V2',missionResults,systems,titans,blocks,models,apps,knowledge,templates:projectTemplates(root),
+    project:{id:project.projectId,label:project.label,kind:project.kind,work:project.work,roles:project.roleBindings??[],operatingModes:project.operatingModes??null,knowledgePolicy:project.knowledgePolicy},
+    name:project.label,engine:'V2',missionResults,systems,titans,blocks,models,apps,knowledge,mnemosyne:knowledgeProjection(root,project),templates:projectTemplates(root),
     authorityGranted:false,executionStarted:false
   });
 }

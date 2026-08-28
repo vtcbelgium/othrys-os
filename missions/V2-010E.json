@@ -1,0 +1,77 @@
+{
+  "mission_id": "V2-010E",
+  "title": "Mnemosyne explicit project knowledge substrate",
+  "goal": "Establish project-local capture, classification, review, deterministic search, maintenance and reconstructible export without opaque memory authority.",
+  "artifact_profile": "os-knowledge",
+  "work": {
+    "scale": "EPIC",
+    "problem": "OTHRYS exposes knowledge files but lacks a durable knowledge service and lifecycle comparable to Panda Atlas.",
+    "out_of_scope": [
+      "No vector database",
+      "No hidden model memory",
+      "No automatic promotion to canonical truth",
+      "No knowledge write API in Command Deck"
+    ],
+    "risks": [
+      "Research is mistaken for canonical truth",
+      "Search becomes non-reconstructible",
+      "Knowledge paths escape project scope"
+    ]
+  },
+  "laws": [
+    "Explicit files and records are the source of truth.",
+    "Capture enters inbox only.",
+    "Review never silently promotes knowledge.",
+    "Search is deterministic and local in this mission.",
+    "Maintenance reports issues but performs zero mutation.",
+    "Export must be reconstructible and content-digest bound."
+  ],
+  "slices": [
+    {
+      "id": "mnemosyne-core",
+      "title": "Explicit knowledge lifecycle",
+      "owner": "hephaestus",
+      "stages": [
+        {"id":"build","owner":"hephaestus","tasks":[
+          {"id":"source-records","title":"Bind declared sources to explicit content digests"},
+          {"id":"capture-review","title":"Implement inbox capture and non-promoting review"},
+          {"id":"search-maintain-export","title":"Implement deterministic search, maintenance and export"}
+        ]},
+        {"id":"review","owner":"talos","tasks":[
+          {"id":"verify-knowledge-law","title":"Verify path scope, authority-free lifecycle and reconstructibility"}
+        ]}
+      ],
+      "artifacts": ["mnemosyne","mnemosyne-tests","knowledge-policy"]
+    },
+    {
+      "id": "atlas-dogfood",
+      "title": "Panda Atlas quarry captured through Mnemosyne",
+      "owner": "hephaestus",
+      "stages": [
+        {"id":"build","owner":"hephaestus","tasks":[
+          {"id":"capture-atlas-finding","title":"Capture Panda Atlas service-boundary finding into inbox"},
+          {"id":"review-atlas-finding","title":"Review as research without promotion"}
+        ]},
+        {"id":"review","owner":"talos","tasks":[
+          {"id":"verify-not-promoted","title":"Verify reviewed Panda finding remains non-canonical"}
+        ]}
+      ],
+      "artifacts": ["knowledge-inbox","knowledge-review"]
+    },
+    {
+      "id": "knowledge-api",
+      "title": "Read-only knowledge service projection",
+      "owner": "hephaestus",
+      "stages": [
+        {"id":"build","owner":"hephaestus","tasks":[
+          {"id":"search-endpoint","title":"Expose authenticated deterministic search"},
+          {"id":"export-endpoint","title":"Expose authenticated reconstructible export"}
+        ]},
+        {"id":"review","owner":"talos","tasks":[
+          {"id":"verify-no-write-api","title":"Verify Command Deck has no knowledge write route"}
+        ]}
+      ],
+      "artifacts": ["knowledge-api","deck-tests"]
+    }
+  ]
+}

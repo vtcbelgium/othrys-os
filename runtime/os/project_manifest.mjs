@@ -32,6 +32,8 @@ export function validateProjectManifest(manifest){
   uniqueIds(manifest.knowledge,'KNOWLEDGE');
   uniqueIds(manifest.modelPolicy?.requests,'MODELS');
   uniqueIds((manifest.roleBindings??[]).map(x=>({...x,id:x.role})),'ROLES');
+  const kp=manifest.knowledgePolicy;
+  if(!kp||kp.service!=='mnemosyne'||kp.sourceOfTruth!=='EXPLICIT_FILES'||kp.capture!=='INBOX_ONLY'||kp.promotion!=='REVIEW_REQUIRED'||kp.search!=='LOCAL_DETERMINISTIC'||kp.export!=='RECONSTRUCTIBLE'||kp.opaqueMemory!==false) throw new Error('INVALID_KNOWLEDGE_POLICY');
   if(manifest.operatingModes?.declarativeGrant!==false) throw new Error('OPERATING_MODES_CANNOT_GRANT_AUTHORITY');
   if(!Array.isArray(manifest.work?.phases)||manifest.work.phases.length<4) throw new Error('INVALID_WORK_PHASES');
   if(manifest.authorityGranted===true||manifest.executionStarted===true) throw new Error('PROJECT_MANIFEST_CANNOT_GRANT_AUTHORITY');

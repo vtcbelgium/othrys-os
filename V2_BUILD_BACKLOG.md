@@ -231,3 +231,5 @@
 | 76 | V2-010C | Template-driven project composition + safe .othrys workspace materializer | COMPLETE |
 | 77 | V2-010D | Operating modes enforced at Command Deck ingress + Trust Canal admission | COMPLETE |
 
+
+| 78 | V2-010E | Mnemosyne explicit project knowledge lifecycle + deterministic search/export | COMPLETE |

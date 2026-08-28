@@ -40,6 +40,9 @@ test('OS projection maps manifest to proven V2 surfaces',()=>{
   assert.ok(os.templates.some(x=>x.id==='oros-software'&&x.kind==='OROS'));
   assert.ok(os.project.roles.some(x=>x.role==='reviewer'&&x.authority==='talos'));
   assert.equal(os.project.operatingModes.default,'SUPERVISED_EXECUTE');
+  assert.equal(os.mnemosyne.service,'mnemosyne');
+  assert.equal(os.mnemosyne.opaqueMemory,false);
+  assert.equal(os.mnemosyne.writeApiEnabled,false);
   assert.equal(os.authorityGranted,false);
   assert.equal(os.executionStarted,false);
 });
@@ -56,4 +59,13 @@ test('Work projection derives state from mission evidence, not chat',()=>{
   assert.ok(work.artifacts.some(x=>x.id==='surface-data'&&x.present));
   assert.ok(work.artifacts.some(x=>x.id==='project-manifest'&&x.present));
   assert.ok(work.artifacts.some(x=>x.id==='os-projector'&&x.present));
+});
+
+test('knowledge policy cannot enable opaque memory or silent promotion',()=>{
+  const opaque=structuredClone(loadProjectManifest(root));
+  opaque.knowledgePolicy.opaqueMemory=true;
+  assert.throws(()=>validateProjectManifest(opaque),/INVALID_KNOWLEDGE_POLICY/);
+  const silent=structuredClone(loadProjectManifest(root));
+  silent.knowledgePolicy.promotion='AUTO';
+  assert.throws(()=>validateProjectManifest(silent),/INVALID_KNOWLEDGE_POLICY/);
 });

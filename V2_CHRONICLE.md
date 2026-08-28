@@ -513,3 +513,6 @@ V2-010C adds the first OTHRYS OS project template and deterministic materializer
 
 ## V2-010D — OTHRYS OS operating modes
 Established OBSERVE / PLAN / SUPERVISED_EXECUTE / AUTONOMOUS_EXECUTE as enforced OS policy. Mode checks now occur before intent persistence and again at Trust Canal admission. Default remains supervised; mode never grants authority. Legion runtime: 200/200 PASS.
+
+## V2-010E — Mnemosyne explicit project knowledge
+Established an Atlas-class knowledge service over explicit project-local records: capture to inbox, classify/review without promotion, deterministic local search, zero-mutation maintenance and reconstructible export. Panda Atlas boundary was dogfooded through the real inbox/review lifecycle. No opaque memory and no Command Deck knowledge-write API. Legion runtime: 209/209 PASS.

@@ -1,0 +1,16 @@
+{
+  "schema": "othrys.os.knowledge-item.v1",
+  "id": "inbox-cc73e3f2f89c185c325391e8",
+  "title": "Panda Atlas service boundary",
+  "classification": "INBOX",
+  "status": "AWAITING_REVIEW",
+  "source": {
+    "kind": "CAPTURE",
+    "ref": "othrys-panda-lab/.pandaos/rules/pandaos-config.md:Connected Apps"
+  },
+  "content": "Panda project state declares a knowledge path, while Atlas is exposed as a separate five-tool service. Harvest principle: Mnemosyne should operate over explicit project-local records rather than embed opaque memory in the project manifest.",
+  "contentDigest": "82171ca703efb2700534cffab8bcb951a98fecf0c05b0d5abe9dca2bdf10fcc2",
+  "capturedAt": "2026-08-28T20:10:00.000Z",
+  "authorityGranted": false,
+  "promoted": false
+}
