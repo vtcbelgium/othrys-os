@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008O",
+  "title": "One-shot worker launch permit",
+  "goal": "Materialize an admitted worker-launch request as a short-lived one-shot permit without starting the worker.",
+  "laws": [
+    "Permit requires the exact fresh execution lease and admitted DECK-LAUNCH receipt.",
+    "Mission, builder, lease ID and lease SHA-256 remain bound.",
+    "Permit lifetime is at most two minutes and never outlives its lease.",
+    "Permit is one-shot and starts unconsumed.",
+    "Permit status is PERMIT_READY_NOT_STARTED; executionStarted remains false.",
+    "No Qwen/model/worker process starts in this mission.",
+    "Independent Legion verification required."
+  ]
+}
