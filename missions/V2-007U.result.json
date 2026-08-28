@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-007U",
+  "verdict": "PASS",
+  "candidate_sha": "fbcd46c0c98240dd2706c6b93ae1a021af74909a",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "cards_content_sized": true,
+  "tablet_chat_rail_hidden": true,
+  "work_detail_preserved": true,
+  "authorityGranted": false,
+  "controlsEnabled": false
+}

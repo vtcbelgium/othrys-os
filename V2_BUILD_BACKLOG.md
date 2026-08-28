@@ -74,6 +74,8 @@
 
 | 32 | V2-007G | Operator intervention policy and separate approval/evidence gate visibility | COMPLETE |
 
+| 33 | V2-007U | Tablet Work inspector compaction from live visual evidence | COMPLETE |
+
 | 33 | V2-007H | Mission slices, owners and declared artifact completion contracts | COMPLETE |
 
 | 34 | V2-007I | Local-first Switchyard model selection preview; no invocation | COMPLETE |
