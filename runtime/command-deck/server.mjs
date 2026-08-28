@@ -6,6 +6,7 @@ import { createHash } from 'node:crypto';
 import { decideMissionPreflight } from './preflight_decision.ts';
 import { proposeBuildRoute } from './build_route.ts';
 import { validateExecutionAuthCandidate } from './execution_auth.ts';
+import { validateWorkerLaunchCandidate } from './worker_launch.ts';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -74,10 +75,13 @@ function deriveIntentState(intent,ledger=admissionLedger){
   }else if(intent.action==='MISSION_EXECUTION_AUTH_REQUEST'){
     body={action:intent.action,missionId:intent.missionId,buildRequestId:intent.buildRequestId,builderId:intent.builderId,packageDigest:intent.packageDigest,receivedAt:intent.receivedAt};
     const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-EXEC-${digest.slice(0,24)}`;
+  }else if(intent.action==='MISSION_WORKER_LAUNCH_REQUEST'){
+    body={action:intent.action,missionId:intent.missionId,leaseId:intent.leaseId,builderId:intent.builderId,leaseDigest:intent.leaseDigest,receivedAt:intent.receivedAt};
+    const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-LAUNCH-${digest.slice(0,24)}`;
   }else return null;
   let admitted=false;
   if(ledger&&existsSync(ledger)) admitted=readFileSync(ledger,'utf8').split(/\r?\n/).some(line=>line.includes(`"missionId":"${missionId}"`));
-  return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,proposalId:intent.proposalId??null,candidateId:intent.candidateId??null,canonicalTargetMissionId:intent.missionId??null,preflightDigest:intent.preflightDigest??null,builderId:intent.builderId??null,routeDigest:intent.routeDigest??null,buildRequestId:intent.buildRequestId??null,packageDigest:intent.packageDigest??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
+  return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,proposalId:intent.proposalId??null,candidateId:intent.candidateId??null,canonicalTargetMissionId:intent.missionId??null,preflightDigest:intent.preflightDigest??null,builderId:intent.builderId??null,routeDigest:intent.routeDigest??null,buildRequestId:intent.buildRequestId??null,packageDigest:intent.packageDigest??null,leaseId:intent.leaseId??null,leaseDigest:intent.leaseDigest??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
 }
 export function readControlIntentState(inbox=intentFile,ledger=admissionLedger){
   if(!inbox||!existsSync(inbox)) return null;
@@ -136,6 +140,14 @@ export function latestBuildPackage(missionId=null){
 export function buildPackagePathForMission(missionId){
   const dir=join(root,'missions','build-packages');if(!existsSync(dir))return null;
   for(const name of readdirSync(dir).filter(n=>/^DECK-BUILD-[0-9a-f]{24}\.json$/.test(n)).sort().reverse()){try{const p=JSON.parse(readFileSync(join(dir,name),'utf8'));if(p.schema==='othrys.os.build-package.v1'&&p.missionId===missionId)return join(dir,name);}catch{}}return null;
+}
+export function executionLeasePathForMission(missionId){
+  const dir=join(root,'missions','execution-leases');if(!existsSync(dir))return null;let best=null,bestAt=-1;
+  for(const name of readdirSync(dir).filter(n=>/^LEASE-[0-9a-f]{24}\.json$/.test(n))){try{const p=JSON.parse(readFileSync(join(dir,name),'utf8'));const at=Date.parse(String(p.issuedAt??''));if(p.schema==='othrys.os.execution-lease.v1'&&p.missionId===missionId&&p.status==='LEASE_READY_NOT_STARTED'&&Number.isFinite(at)&&at>bestAt){best=join(dir,name);bestAt=at;}}catch{}}return best;
+}
+export function latestExecutionLease(missionId=null){
+  const path=missionId?executionLeasePathForMission(missionId):null;if(path){try{return JSON.parse(readFileSync(path,'utf8'))}catch{}}
+  const dir=join(root,'missions','execution-leases');if(!existsSync(dir))return null;let best=null,bestAt=-1;for(const name of readdirSync(dir).filter(n=>/^LEASE-[0-9a-f]{24}\.json$/.test(n))){try{const p=JSON.parse(readFileSync(join(dir,name),'utf8'));const at=Date.parse(String(p.issuedAt??''));if(p.schema==='othrys.os.execution-lease.v1'&&p.status==='LEASE_READY_NOT_STARTED'&&Number.isFinite(at)&&at>bestAt){best=p;bestAt=at;}}catch{}}return best;
 }
 export async function buildStatus(){
   const state=json('GPT_STATE.json');
@@ -202,12 +214,13 @@ export async function buildStatus(){
   const noChangeCloseIntent=readLatestIntentState('MISSION_NO_CHANGE_CLOSE_REQUEST');
   const buildIntent=readLatestIntentState('MISSION_BUILD_REQUEST');
   const executionAuthIntent=readLatestIntentState('MISSION_EXECUTION_AUTH_REQUEST');
+  const launchIntent=readLatestIntentState('MISSION_WORKER_LAUNCH_REQUEST');
   const missionCandidate=latestMissionCandidate();
   const missionPreflight=readMissionPreflight(missionCandidate?.canonicalMissionId);
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(executionAuthIntent?.canonicalTargetMissionId??buildIntent?.canonicalTargetMissionId??null),missionExecutionAuthRequest:executionAuthIntent,
+    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(executionAuthIntent?.canonicalTargetMissionId??buildIntent?.canonicalTargetMissionId??null),missionExecutionAuthRequest:executionAuthIntent,executionLease:latestExecutionLease(launchIntent?.canonicalTargetMissionId??executionAuthIntent?.canonicalTargetMissionId??null),missionWorkerLaunchRequest:launchIntent,
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     osSurface,workState,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };
@@ -273,6 +286,11 @@ function persistIntent(body){
     const packagePath=buildPackagePathForMission(missionId);if(!packagePath) throw new Error('BUILD_PACKAGE_NOT_FOUND');
     const candidate=validateExecutionAuthCandidate(root,packagePath,switchyardPreview('auto'));
     rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,missionId,buildRequestId:candidate.buildRequestId,builderId:candidate.builderId,packageDigest:candidate.packageDigest,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+  }else if(action==='MISSION_WORKER_LAUNCH_REQUEST'){
+    const missionId=String(body?.missionId??'').trim();if(!/^V2-\d{3}[A-Z]$/.test(missionId)) throw new Error('INVALID_MISSION_ID');
+    const leasePath=executionLeasePathForMission(missionId);if(!leasePath) throw new Error('EXECUTION_LEASE_NOT_FOUND');
+    const candidate=validateWorkerLaunchCandidate(leasePath,new Date().toISOString());
+    rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,missionId,leaseId:candidate.leaseId,builderId:candidate.builderId,leaseDigest:candidate.leaseDigest,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
   }else throw new Error('ACTION_NOT_ALLOWED');
   mkdirSync(dirname(intentFile),{recursive:true}); appendFileSync(intentFile,JSON.stringify(rec)+'\n'); return rec;
 }

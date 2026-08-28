@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008N",
+  "title": "Worker launch request gate",
+  "goal": "Expose the fresh execution lease and admit a separate digest-bound worker-launch request without starting the worker.",
+  "laws": [
+    "Only an unexpired LEASE_READY_NOT_STARTED lease may request launch.",
+    "Mission ID, builder ID, lease ID and lease SHA-256 are bound into the request.",
+    "Expired, mismatched, or already-started leases fail closed.",
+    "Trust Canal admission of launch request is not worker execution.",
+    "Command Centre exposes lease and launch-request state truthfully.",
+    "No Qwen/model/worker launch occurs in this mission.",
+    "Independent Legion verification required."
+  ]
+}
