@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-007D",
+  "verdict": "PASS",
+  "candidate_sha": "0b76e546bf6765632e86bee4e81d394c6f224215",
+  "legion_deck_tests": "5/5",
+  "t590_deck_tests": "5/5",
+  "canonical_trail_source": "missions/*.result.json",
+  "visible_recent_head": ["V2-007C", "V2-007B", "V2-007A", "V2-006F", "V2-006E"],
+  "incomplete_mission_inferred_complete": false,
+  "writeAuthorityGranted": false,
+  "executionAuthorityGranted": false
+}

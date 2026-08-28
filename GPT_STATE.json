@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 87,
+  "sequence": 88,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007C",
+    "mission_id": "V2-007D",
     "status": "COMPLETE",
-    "issued_label": "V2-007C - OTHRYS OS FUNCTIONAL NAVIGATION SURFACES",
+    "issued_label": "V2-007D - OTHRYS OS CANONICAL MISSION TRAIL",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007C",
-    "decision": "ACCEPT_FUNCTIONAL_OS_NAVIGATION_SURFACES",
-    "authority": "read-only V2 truth surfaces; no new execution"
+    "mission_id": "V2-007D",
+    "decision": "ACCEPT_CANONICAL_MISSION_TRAIL",
+    "authority": "read-only result evidence projection; no execution"
   },
-  "next_legal_action": "Open V2-007D OTHRYS OS mission trail: derive persistent recent Mission/phase/evidence history from canonical result files instead of chat summaries.",
+  "next_legal_action": "Open V2-007E OTHRYS OS phase derivation: derive Plan/Build/Review/Ship display from mission/result evidence without granting transition authority.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -298,6 +298,11 @@
       "mission_id": "V2-007C",
       "status": "COMPLETE",
       "note": "Panda-style sidebar now opens functional Titans, Blocks, Models, Nodes and Oroi views over real V2 data; only Hephaestus/Talos shown as proven Titans; Legion 5/5 + T590 5/5 at b99b318; no write or execution authority added."
+    },
+    {
+      "mission_id": "V2-007D",
+      "status": "COMPLETE",
+      "note": "Recent Mission trail now derives from canonical missions/*.result.json rather than incomplete chat/GPT_STATE history; Legion 5/5 + T590 5/5 at 0b76e54; missing result files are not inferred complete; no new authority."
     }
   ],
   "git": {
