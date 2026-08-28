@@ -208,3 +208,5 @@
 | 73 | V2-008U | Exact-base verified change freshness gate | COMPLETE |
 
 | 69 | V2-008V | Exact-base verified change -> Trust Canal apply request gate; stale candidate rejected, no apply | COMPLETE |
+
+| 70 | V2-008W | Fresh Qwen exact-base change -> verified candidate -> admitted apply request; no apply | COMPLETE |

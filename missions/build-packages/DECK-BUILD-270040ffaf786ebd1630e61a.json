@@ -1,0 +1,12 @@
+{
+  "schema": "othrys.os.build-package.v1",
+  "missionId": "V2-008W",
+  "objective": "Run one fresh qwen3-builder scratch-only change from exact current HEAD, independently verify it, materialize a fresh verified change candidate, and admit its apply request without applying it.",
+  "builderId": "qwen3-builder",
+  "routeDigest": "9d3801e8e3e23347b5806b8eb6d49ad34e584937b2f6e14b6cc8821df5e13da3",
+  "buildRequestId": "DECK-BUILD-270040ffaf786ebd1630e61a",
+  "preflightClass": "MISSING_WORK",
+  "status": "READY_NOT_EXECUTING",
+  "authorityGranted": false,
+  "executionStarted": false
+}

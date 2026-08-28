@@ -1,0 +1,19 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "mission_id": "V2-008W",
+  "job_id": "JOB-7078dde7547b783d5ce21ae7",
+  "node_id": "legion",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "qwen3-builder",
+  "ok": true,
+  "duration_sec": 5.046858310699463,
+  "allowed_paths": ["scratch/qwen-apply-proof.txt"],
+  "changed_files": ["scratch/qwen-apply-proof.txt"],
+  "out_of_scope_changes": [],
+  "summary": "Created scratch/qwen-apply-proof.txt with the specified content.",
+  "tool_trace": ["write_file: wrote 32 chars to scratch/qwen-apply-proof.txt", "finish: Created scratch/qwen-apply-proof.txt with the specified content."],
+  "selected_builder": "qwen3-builder",
+  "cost_model": "local",
+  "observed_sha256": "f24dbdca8a90d9d724b77fe7f22e3436b594bcad4ee4683833144583156933e7",
+  "executionStarted": true
+}

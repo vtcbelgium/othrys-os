@@ -1,0 +1,12 @@
+{
+  "schema": "othrys.os.worker-patch-evidence.v1",
+  "missionId": "V2-008W",
+  "jobId": "JOB-7078dde7547b783d5ce21ae7",
+  "builderId": "qwen3-builder",
+  "baseSha": "de5b0ab26aa1b96c069160d0c72392538ac77b5c",
+  "workspaceClass": "DISPOSABLE_LEGION_WORKTREE",
+  "changedFiles": ["scratch/qwen-apply-proof.txt"],
+  "diff": "diff --git a/scratch/qwen-apply-proof.txt b/scratch/qwen-apply-proof.txt\nnew file mode 100644\nindex 0000000..d4614ae\n--- /dev/null\n+++ b/scratch/qwen-apply-proof.txt\n@@ -0,0 +1 @@\n+OTHRYS QWEN APPLY PROOF V2-008W\n",
+  "workerResultRef": "missions/V2-008W.worker-result.json",
+  "verificationRef": "missions/V2-008W.verification.json"
+}

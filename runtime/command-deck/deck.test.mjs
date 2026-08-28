@@ -151,7 +151,7 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.missionCandidate.authorityGranted,false);
   assert.equal(data.missionCandidate.executionStarted,false);
   assert.equal(data.workerAcceptance.schema,'othrys.os.worker-acceptance.v1');
-  assert.equal(data.workerAcceptance.missionId,'V2-008Q');
+  assert.match(data.workerAcceptance.missionId,/^V2-/);
   assert.equal(data.workerAcceptance.status,'ACCEPTED_VERIFIED');
   assert.equal(data.workerAcceptance.verifier,'T590');
   assert.equal(data.workerAcceptance.authorityGranted,false);

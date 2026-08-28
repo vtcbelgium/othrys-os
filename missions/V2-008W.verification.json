@@ -1,0 +1,17 @@
+{
+  "schema": "othrys.os.independent-verification.v1",
+  "missionId": "V2-008W",
+  "verifier": "T590",
+  "verdict": "PASS",
+  "checks": {
+    "base_sha_exact": true,
+    "only_allowed_path_changed": true,
+    "exact_content_sha256": true,
+    "worker_builder_is_qwen3": true,
+    "no_out_of_scope_changes": true
+  },
+  "baseSha": "de5b0ab26aa1b96c069160d0c72392538ac77b5c",
+  "observedSha256": "f24dbdca8a90d9d724b77fe7f22e3436b594bcad4ee4683833144583156933e7",
+  "expectedSha256": "f24dbdca8a90d9d724b77fe7f22e3436b594bcad4ee4683833144583156933e7",
+  "changedFiles": ["scratch/qwen-apply-proof.txt"]
+}

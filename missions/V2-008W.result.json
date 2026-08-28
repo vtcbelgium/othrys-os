@@ -1,0 +1,18 @@
+{
+  "mission_id": "V2-008W",
+  "verdict": "PASS",
+  "base_sha": "de5b0ab26aa1b96c069160d0c72392538ac77b5c",
+  "job_id": "JOB-7078dde7547b783d5ce21ae7",
+  "builder_id": "qwen3-builder",
+  "worker_duration_sec": 5.046858310699463,
+  "changed_files": ["scratch/qwen-apply-proof.txt"],
+  "verification": "T590 PASS",
+  "change_candidate_id": "CHANGE-ceb4003c501bfc16d7350094",
+  "freshness": "FRESH_EXACT_BASE_MATCH",
+  "apply_request_id": "DECK-APPLY-eb582827709b0f6fdc5c8c9b",
+  "apply_request_status": "ADMITTED",
+  "apply_performed": false,
+  "authorityGranted": false,
+  "tests": "125/125 PASS",
+  "next_state": "WAIT_GPT"
+}

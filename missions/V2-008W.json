@@ -1,0 +1,18 @@
+{
+  "mission_id": "V2-008W",
+  "title": "Fresh Qwen change candidate and apply-request dogfood",
+  "objective": "Run one fresh qwen3-builder scratch-only change from exact current HEAD, independently verify it, materialize a fresh verified change candidate, and admit its apply request without applying it.",
+  "status": "CANONICAL_UNACTIVATED",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "laws": [
+    "Worker runs only in a disposable Legion worktree at the exact canonical base SHA.",
+    "Only scratch/qwen-apply-proof.txt may mutate.",
+    "qwen3-builder only; no remote fallback.",
+    "T590 independently verifies exact content and no out-of-scope mutations.",
+    "Verified candidate baseSha must equal the current canonical target SHA.",
+    "Trust Canal may admit MISSION_CHANGE_APPLY_REQUEST only after freshness proof.",
+    "No canonical apply occurs in this mission."
+  ],
+  "next_state": "WAIT_GPT"
+}
