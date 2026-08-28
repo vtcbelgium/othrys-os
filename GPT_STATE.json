@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-008X",
+    "mission_id": "V2-008Y",
     "status": "COMPLETE",
-    "issued_label": "V2-008X - EXACT-BASE APPLY PERMIT MATERIALIZER",
+    "issued_label": "V2-008Y - ONE-SHOT EXACT-BASE PATCH EXECUTOR",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-008X",
-    "decision": "ACCEPT_APPLY_PERMIT_MATERIALIZER",
-    "authority": "admitted exact-base apply request may become one-shot apply permit; stale target rejected; no apply"
+    "mission_id": "V2-008Y",
+    "decision": "ACCEPT_PATCH_EXECUTOR",
+    "authority": "exact-base one-shot apply proven on T590 and Legion; no auto-commit"
   },
-  "next_legal_action": "V2-008Y may define and prove a one-shot canonical patch executor that consumes APPLY_READY_NOT_STARTED only after exact HEAD/digest/scope checks; no auto-commit.",
+  "next_legal_action": "V2-008Z may dogfood one fresh scratch-only Qwen candidate through admitted apply permit and real Legion apply, then require T590 verification before commit.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

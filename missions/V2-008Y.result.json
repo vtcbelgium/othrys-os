@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-008Y",
+  "verdict": "PASS",
+  "tests_t590": "134/134 PASS",
+  "tests_legion": "134/134 PASS",
+  "windows_byte_preservation": true,
+  "stale_target_rejected": true,
+  "dirty_target_rejected": true,
+  "one_shot_consumption": true,
+  "auto_commit": false,
+  "candidate_sha": "a68754bd322fc39678715520f3e29db6105746bc"
+}
