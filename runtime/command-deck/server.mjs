@@ -93,6 +93,11 @@ export function missionProposalEnvelope(proposalIntent,promotionIntent=null){
   const promotion=promotionIntent?.action==='MISSION_PROMOTION_REQUEST'&&promotionIntent.proposalId===proposalIntent.missionId?{requestId:promotionIntent.missionId,status:promotionIntent.status}:null;
   return Object.freeze({schema:'othrys.os.mission-proposal.v1',proposalId:proposalIntent.missionId,projectContext,objective,admissionStatus:proposalIntent.status,promotionRequest:promotion,promoted:false,canonicalMissionId:null,authorityGranted:false,executionStarted:false});
 }
+export function latestMissionCandidate(){
+  const dir=join(root,'missions','candidates'); if(!existsSync(dir)) return null;
+  const files=readdirSync(dir).filter(n=>/^CANDIDATE-[0-9a-f]{24}\.json$/.test(n)).sort(); if(!files.length) return null;
+  try{const c=JSON.parse(readFileSync(join(dir,files.at(-1)),'utf8')); if(c.schema!=='othrys.os.mission-candidate.v1'||c.status!=='CANDIDATE') return null; return c;}catch{return null;}
+}
 export async function buildStatus(){
   const state=json('GPT_STATE.json');
   let factory=null;
@@ -156,7 +161,7 @@ export async function buildStatus(){
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),
+    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate:latestMissionCandidate(),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     osSurface,workState,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };

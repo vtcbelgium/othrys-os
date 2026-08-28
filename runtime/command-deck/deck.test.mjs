@@ -18,6 +18,9 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/MISSION_PROPOSAL/);
   assert.match(html,/Mission proposal queued for Trust Canal admission/);
   assert.match(html,/id="proposalCard"/);
+  assert.match(html,/id="candidateRow"/);
+  assert.match(html,/id="candidateId"/);
+  assert.match(html,/CANDIDATE READY · NOT CANONICAL/);
   assert.match(html,/NOT PROMOTED/);
   assert.match(html,/id="promotionBtn"/);
   assert.match(html,/MISSION_PROMOTION_REQUEST/);
@@ -121,6 +124,11 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.ok(data.osSurface.apps.every(a=>a.actionable===false));
   assert.ok(data.osSurface.apps.some(a=>a.id==='ollama-legion'&&a.status==='PROVEN'));
   assert.equal(data.osSurface.knowledge.length,5);
+  assert.equal(data.missionCandidate.schema,'othrys.os.mission-candidate.v1');
+  assert.equal(data.missionCandidate.status,'CANDIDATE');
+  assert.equal(data.missionCandidate.canonicalMissionId,null);
+  assert.equal(data.missionCandidate.authorityGranted,false);
+  assert.equal(data.missionCandidate.executionStarted,false);
   assert.ok(data.osSurface.knowledge.some(k=>k.id==='north-star'&&k.present===true));
   assert.ok(data.osSurface.knowledge.every(k=>typeof k.path==='string'));
   assert.equal(data.missionEvidence.missionId,data.workState.missionId);

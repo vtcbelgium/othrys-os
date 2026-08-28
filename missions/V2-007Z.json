@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007Z",
+  "title": "Expose durable Mission candidate review state",
+  "goal": "Show the materialized candidate envelope in OTHRYS OS as reviewable evidence without allocating a canonical V2 mission ID or starting execution.",
+  "laws": [
+    "Candidate display is read-only.",
+    "Only missions/candidates/*.json is read for candidate state.",
+    "Candidate must visibly retain proposal and promotion evidence IDs.",
+    "canonicalMissionId remains null unless a later authorized mission changes it.",
+    "No new write endpoint is added.",
+    "No active mission or execution state changes from candidate display.",
+    "Tablet review remains local and touch-usable."
+  ],
+  "slices": [
+    {"id":"S1","owner":"Legion","artifacts":["os-shell","work-state-api"]},
+    {"id":"S2","owner":"Legion","artifacts":["deck-tests"]},
+    {"id":"S3","owner":"T590","artifacts":["mission-result"]}
+  ]
+}

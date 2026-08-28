@@ -67,7 +67,7 @@
     "decision": "ACCEPT_NONEXECUTING_CANDIDATE_MATERIALIZATION",
     "authority": "candidate only; no V2 id or execution"
   },
-  "next_legal_action": "Open V2-007Z to expose durable mission candidate review state in OTHRYS OS; still no canonical V2 mission allocation or execution.",
+  "next_legal_action": "V2-007Z candidate review surface built; independent verification required before closeout.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
