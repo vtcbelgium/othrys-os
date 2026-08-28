@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008P",
+  "verdict": "PASS",
+  "status": "COMPLETE",
+  "evidence": [
+    "104/104 T590 PASS",
+    "104/104 Legion PASS",
+    "worker request contract frozen",
+    "unsafe paths/consumed permits fail closed"
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "builderInvoked": false
+}

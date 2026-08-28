@@ -82,3 +82,4 @@
 {"sequence": 82, "at": "2026-08-28T16:17:36Z", "mission_id": "V2-008M", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "89/89 both nodes; latest auth selection fixed; live lease materialized; no worker launch"}
 {"sequence": 83, "at": "2026-08-28T16:22:41Z", "mission_id": "V2-008N", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "96/96 both nodes; live launch request admitted; no worker process started"}
 {"sequence": 84, "at": "2026-08-28T16:25:57Z", "mission_id": "V2-008O", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "100/100 both nodes; live one-shot permit; no Qwen process"}
+{"sequence": 85, "at": "2026-08-28T16:31:19Z", "mission_id": "V2-008P", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "104/104 both nodes; permit-bound worker request schema proven; no worker started"}

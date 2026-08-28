@@ -194,3 +194,5 @@
 | 66 | V2-008N | Fresh execution lease -> Trust Canal worker-launch request; no worker launch | COMPLETE |
 
 | 67 | V2-008O | One-shot launch permit from admitted launch request; worker not started | COMPLETE |
+
+| 68 | V2-008P | Permit-bound proven Legion Worker request materializer; no dispatch | COMPLETE |
