@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007P",
+  "title": "OTHRYS OS Panda-style context header and live status repair",
+  "goal": "Repair the missing live-status DOM target and tighten the Panda-style project context header without changing authority.",
+  "laws": [
+    "Live/offline status must have a real DOM target before render touches it.",
+    "Context header distinguishes selected project presentation from canonical branch truth.",
+    "No connection control or network action is added.",
+    "Offline rendering must fail visibly rather than throwing on a missing element.",
+    "Canonical branch remains main and is not rewritten by local project context.",
+    "Existing read/control token boundaries remain unchanged.",
+    "No execution authority is added."
+  ],
+  "slices": [
+    {"id":"S1","title":"Repair connection status target","owner":"Legion","artifacts":["mission-envelope","os-shell"]},
+    {"id":"S2","title":"Polish context header and status display","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","title":"Prove no connection action authority","owner":"T590","artifacts":["deck-tests","mission-result"]}
+  ]
+}
