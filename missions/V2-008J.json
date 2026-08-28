@@ -1,0 +1,11 @@
+{
+  "mission_id": "V2-008J",
+  "title": "Expose READY_NOT_EXECUTING build package in Command Centre",
+  "objective": "Show the current freshness-validated build package, builder, mission and readiness state in the Command Centre without granting execution authority.",
+  "status": "CANONICAL_UNACTIVATED",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "non_goals": ["Do not invoke Qwen", "Do not grant execution authority", "Do not mutate Oroi/product code"],
+  "required_evidence": ["MISSING_WORK", "ROUTE_PROPOSED", "DECK-BUILD admission", "READY_NOT_EXECUTING package", "Independent verification"],
+  "next_state": "WAIT_GPT"
+}
