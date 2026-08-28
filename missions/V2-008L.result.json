@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-008L",
+  "verdict": "PASS",
+  "status": "COMPLETE",
+  "evidence": [
+    "DECK-EXEC-27f30812a0d7b60615648ae6 ADMITTED",
+    "build package DECK-BUILD-8e4e4aaa4d9ef4613390aefe bound to V2-008L",
+    "qwen3-builder selected",
+    "84/84 T590 PASS",
+    "84/84 Legion PASS"
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "builderInvoked": false
+}

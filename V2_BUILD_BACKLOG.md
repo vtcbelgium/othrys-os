@@ -186,3 +186,5 @@
 | 62 | V2-008J | First live READY_NOT_EXECUTING package exposed in Command Centre | COMPLETE |
 
 | 63 | V2-008K | Fresh package execution-authorization request gate; no worker launch | COMPLETE |
+
+| 64 | V2-008L | Live admitted execution authorization + package identity visible; no worker launch | COMPLETE |
