@@ -1,0 +1,11 @@
+{
+  "mission_id": "V2-008H",
+  "title": "Expose admitted build request state in Command Centre",
+  "objective": "Show the current admitted MISSION_BUILD_REQUEST and selected local builder in the Command Centre without adding execution authority.",
+  "status": "CANONICAL_UNACTIVATED",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "non_goals": ["Do not invoke Qwen", "Do not mutate product code outside the Command Centre surface", "Do not activate arbitrary missions"],
+  "required_evidence": ["MISSING_WORK preflight", "ROUTE_PROPOSED local primary builder", "Trust Canal build request receipt", "Independent verification"],
+  "next_state": "WAIT_GPT"
+}
