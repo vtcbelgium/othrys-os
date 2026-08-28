@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-006F",
+  "title": "Automatic T590 tablet-intent admission watcher",
+  "base_sha": "7c1e7fd0190768f8940e8b8af70621741e50427f",
+  "goal": "Automatically admit complete pending tablet Refine intents through Trust Canal without execution.",
+  "laws": [
+    "User-space T590 service only.",
+    "Inbox must be newline-complete before processing.",
+    "Every intent still passes the strict 006D bridge.",
+    "Replay is idempotent.",
+    "Malformed/torn inbox fails closed.",
+    "No Hephaestus, Talos, Worker, accept, reject, release, or shell authority."
+  ]
+}
