@@ -42,6 +42,10 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/id="newProjectBtn"/);
   assert.match(html,/id="localProjects"/);
   assert.match(html,/id="contextProject"/);
+  assert.match(html,/data-page="apps"/);
+  assert.match(html,/id="appsCard"/);
+  assert.match(html,/id="appsList"/);
+  assert.doesNotMatch(html,/\/api\/integration-action/);
   assert.match(html,/function selectProjectContext/);
   assert.match(html,/mission truth unchanged/);
   assert.doesNotMatch(html,/\/api\/project-context/);
@@ -89,6 +93,9 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.osSurface.models[1].id,'llama3.2-advisory');
   assert.equal(data.osSurface.models[1].status,'ADVISORY ONLY');
   assert.equal(data.osSurface.models[2].available,false);
+  assert.equal(data.osSurface.apps.length,4);
+  assert.ok(data.osSurface.apps.every(a=>a.actionable===false));
+  assert.ok(data.osSurface.apps.some(a=>a.id==='ollama-legion'&&a.status==='PROVEN'));
   assert.equal(data.missionEvidence.missionId,data.workState.missionId);
   assert.deepEqual(data.workState.slices.map(x=>[x.id,x.owner,x.status]),[['S1','Legion','COMPLETE'],['S2','Legion','COMPLETE'],['S3','T590',data.missionEvidence.resultPresent?'COMPLETE':'OPEN']]);
   assert.ok(data.workState.slices[2].artifacts.some(a=>a.id==='mission-result'&&a.present===data.missionEvidence.resultPresent));

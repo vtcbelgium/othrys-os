@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007M",
+  "title": "OTHRYS OS Apps and Integrations inventory",
+  "goal": "Expose proven connected surfaces as a read-only Apps and Integrations inventory before any integration action authority exists.",
+  "laws": [
+    "Only integrations backed by existing V2 evidence may appear as proven.",
+    "Inventory is descriptive and read-only.",
+    "No connect, disconnect, OAuth, credential, shell or network action is added.",
+    "Secrets, tokens and raw credentials never enter status JSON.",
+    "Local and remote surfaces are visibly distinguished.",
+    "Unavailable or gated integrations must not look active.",
+    "Any future integration action requires a separate authority mission."
+  ],
+  "slices": [
+    {"id":"S1","title":"Inventory proven integration surfaces","owner":"Legion","artifacts":["mission-envelope","surface-data"]},
+    {"id":"S2","title":"Expose Apps navigation and read-only cards","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","title":"Prove no integration action endpoint exists","owner":"T590","artifacts":["deck-tests","mission-result"]}
+  ]
+}

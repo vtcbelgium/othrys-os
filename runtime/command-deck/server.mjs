@@ -116,6 +116,12 @@ export async function buildStatus(){
       {id:'qwen3-builder',label:'Qwen3 8B · Legion',class:'LOCAL ENGINEERING',status:'PRIMARY',available:true,evidence:'V2-002C'},
       {id:'llama3.2-advisory',label:'Llama 3.2 · T590',class:'LOCAL ADVISORY',status:'ADVISORY ONLY',available:true,evidence:'V2-004D'},
       {id:'remote-escalation',label:'Remote escalation',class:'REMOTE',status:'GATED',available:false,evidence:null}
+    ],
+    apps:[
+      {id:'ollama-legion',label:'Ollama · Legion',class:'LOCAL MODEL RUNTIME',status:proven('V2-002C')?'PROVEN':'AVAILABLE',actionable:false,evidence:'V2-002C'},
+      {id:'ollama-t590',label:'Ollama · T590',class:'LOCAL ADVISORY RUNTIME',status:proven('V2-004D')?'PROVEN':'AVAILABLE',actionable:false,evidence:'V2-004D'},
+      {id:'github-relay',label:'GitHub relay',class:'REMOTE FALLBACK TRANSPORT',status:String(state.control_lifeline?.fallback_a?.status??'GATED'),actionable:false,evidence:'GPT_STATE.control_lifeline'},
+      {id:'command-deck-lan',label:'Command Deck · LAN',class:'LOCAL CONTROLLER SURFACE',status:proven('V2-006A')?'PROVEN':'AVAILABLE',actionable:false,evidence:'V2-006A'}
     ]
   };
   return {
