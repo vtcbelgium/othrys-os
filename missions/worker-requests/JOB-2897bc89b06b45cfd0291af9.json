@@ -1,0 +1,23 @@
+{
+  "schema_version": "othrys.worker-request.v0.1",
+  "job_id": "JOB-2897bc89b06b45cfd0291af9",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "workspace": "C:\\Users\\othry\\AppData\\Local\\Temp\\othrys-qwen-008q",
+  "task": "Create exactly one file scratch/qwen-launch-proof.txt containing exactly: OTHRYS QWEN LAUNCH PROOF V2-008Q followed by a newline. Do not modify any other file.",
+  "allowed_paths": [
+    "scratch/qwen-launch-proof.txt"
+  ],
+  "deny_paths": [
+    ".git"
+  ],
+  "timeout_sec": 120,
+  "metadata": {
+    "mission_id": "V2-008Q",
+    "builder_id": "qwen3-builder",
+    "permit_id": "PERMIT-2897bc89b06b45cfd0291af9",
+    "permit_digest": "1230280fdf6ae4508ae9a2461581cce6e6c32164dc937ceae12a817a8d1e55d0",
+    "launch_request_id": "DECK-LAUNCH-2897bc89b06b45cfd0291af9",
+    "status": "READY_FOR_DISPATCH"
+  }
+}

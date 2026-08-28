@@ -1,0 +1,14 @@
+{
+  "schema": "othrys.os.independent-verification.v1",
+  "missionId": "V2-008Q",
+  "verifier": "T590",
+  "checks": {
+    "exact_content": true,
+    "exact_sha256": true,
+    "only_allowed_path": true
+  },
+  "verdict": "PASS",
+  "expectedSha256": "cd3a5ce1d71480d211eebb878469f983a7628bc39978e86056012d817239b9eb",
+  "observedSha256": "cd3a5ce1d71480d211eebb878469f983a7628bc39978e86056012d817239b9eb",
+  "authorityGranted": false
+}

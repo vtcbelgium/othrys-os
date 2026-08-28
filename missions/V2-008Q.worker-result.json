@@ -1,0 +1,19 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "mission_id": "V2-008Q",
+  "job_id": "JOB-21863d6e4188fddefd0289e2",
+  "node_id": "legion",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "qwen3-builder",
+  "ok": true,
+  "duration_sec": 10.106040477752686,
+  "allowed_paths": ["scratch/qwen-launch-proof.txt"],
+  "changed_files": ["scratch/qwen-launch-proof.txt"],
+  "out_of_scope_changes": [],
+  "summary": "Created scratch/qwen-launch-proof.txt with the specified content.",
+  "tool_trace": ["write_file: wrote 33 chars to scratch/qwen-launch-proof.txt", "finish: Created scratch/qwen-launch-proof.txt with the specified content."],
+  "selected_builder": "qwen3-builder",
+  "cost_model": "local",
+  "observed_sha256": "cd3a5ce1d71480d211eebb878469f983a7628bc39978e86056012d817239b9eb",
+  "executionStarted": true
+}

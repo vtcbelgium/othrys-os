@@ -1,0 +1,17 @@
+{
+  "mission_id": "V2-008Q",
+  "verdict": "PASS",
+  "worker_result": "missions/V2-008Q.worker-result.json",
+  "independent_verification": "missions/V2-008Q.verification.json",
+  "successful_dispatch": "DISPATCH-21863d6e4188fddefd0289e2",
+  "stale_dispatch_preserved": "DISPATCH-2897bc89b06b45cfd0291af9",
+  "builder": "qwen3-builder",
+  "worker_workspace": "Legion disposable worktree",
+  "canonical_repo_mutated_by_worker": false,
+  "changed_files": ["scratch/qwen-launch-proof.txt"],
+  "out_of_scope_changes": [],
+  "t590_verdict": "PASS",
+  "executionStarted": true,
+  "accepted": true,
+  "next_state": "WAIT_GPT"
+}

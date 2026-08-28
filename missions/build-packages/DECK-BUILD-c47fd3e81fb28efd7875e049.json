@@ -1,0 +1,12 @@
+{
+  "schema": "othrys.os.build-package.v1",
+  "missionId": "V2-008Q",
+  "objective": "Run one real qwen3-builder engineering.patch job in a disposable Legion worktree to create exactly scratch/qwen-launch-proof.txt containing OTHRYS QWEN LAUNCH PROOF V2-008Q.",
+  "builderId": "qwen3-builder",
+  "routeDigest": "afef99c60a87ad2740b70f0a664f295ad0dfc7302ee72385e23e60a5c1cbcb79",
+  "buildRequestId": "DECK-BUILD-c47fd3e81fb28efd7875e049",
+  "preflightClass": "MISSING_WORK",
+  "status": "READY_NOT_EXECUTING",
+  "authorityGranted": false,
+  "executionStarted": false
+}
