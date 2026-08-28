@@ -17,6 +17,8 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/X-OTHRYS-CONTROL-TOKEN/);
   assert.match(html,/X-OTHRYS-DECK-TOKEN/);
   assert.match(html,/Legion builder node/);
+  assert.match(html,/id="modelSelect"/);
+  assert.match(html,/Auto · local first/);
 });
 
 test('Deck API refuses writes and requires token',async t=>{
@@ -38,14 +40,19 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.ok(data.activeMission?.mission_id);
   assert.ok(Array.isArray(data.recentMissions));
   assert.equal(data.workState.schema,'othrys.os.work-state.v1');
-  assert.equal(data.workState.missionId,'V2-007A');
+  assert.equal(data.workState.missionId,'V2-007B');
   assert.equal(data.workState.owner,'Legion');
   assert.equal(data.workState.verifier,'T590');
   assert.equal(data.workState.phase,'BUILD');
   assert.equal(data.workState.authorityGranted,false);
   assert.ok(Array.isArray(data.workState.laws));
   assert.ok(data.workState.laws.length>=7);
-  assert.ok(data.workState.artifacts.some(a=>a.id==='os-shell'&&a.present===true));
+  assert.ok(data.workState.artifacts.some(a=>a.id==='model-inventory'&&a.present===true));
+  assert.equal(data.osSurface.models[0].id,'qwen3-builder');
+  assert.equal(data.osSurface.models[0].available,true);
+  assert.equal(data.osSurface.models[1].id,'llama3.2-advisory');
+  assert.equal(data.osSurface.models[1].status,'ADVISORY ONLY');
+  assert.equal(data.osSurface.models[2].available,false);
 });
 
 

@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-007B",
+  "title": "OTHRYS OS local-first model selector",
+  "base_sha": "319f8f6945f3589e07a339a6e7709902885f6a02",
+  "goal": "Expose a Panda-style model selector backed only by proven V2 labor stock, with Auto/local-first preference persisted on the tablet but no new routing authority.",
+  "laws": [
+    "Only models/workers proven by V2 evidence may appear as available labor.",
+    "Qwen3 on Legion is engineering labor; llama3.2 on T590 is advisory-only.",
+    "Remote paid models remain gated until separately admitted and proven.",
+    "Operator selection is a UI preference only in this mission; it cannot dispatch work.",
+    "Auto means local-first preference, not an unproven Switchyard implementation.",
+    "Changing model preference must not reset Mission/Work State.",
+    "No new shell, provider, routing, Hephaestus, Talos, Worker, accept, reject, or release authority."
+  ]
+}

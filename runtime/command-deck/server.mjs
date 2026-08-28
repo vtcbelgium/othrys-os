@@ -59,7 +59,7 @@ export async function buildStatus(){
   let workState=null;
   if(missionId&&existsSync(join(root,'missions',`${missionId}.json`))){
     const m=json(`missions/${missionId}.json`);
-    const artifacts=missionId==='V2-007A'?[{id:'os-shell',path:'runtime/command-deck/public/index.html',present:existsSync(join(root,'runtime','command-deck','public','index.html'))},{id:'work-state-api',path:'runtime/command-deck/server.mjs',present:existsSync(join(root,'runtime','command-deck','server.mjs'))},{id:'deck-tests',path:'runtime/command-deck/deck.test.mjs',present:existsSync(join(root,'runtime','command-deck','deck.test.mjs'))},{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}]:[{id:'watcher-source',path:'runtime/command-deck/admission_watcher.ts',present:existsSync(join(root,'runtime','command-deck','admission_watcher.ts'))},{id:'watcher-tests',path:'runtime/command-deck/admission_watcher.test.ts',present:existsSync(join(root,'runtime','command-deck','admission_watcher.test.ts'))},{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}];workState={schema:'othrys.os.work-state.v1',missionId:m.mission_id,title:m.title??m.mission_id,goal:m.goal??'',laws:Array.isArray(m.laws)?m.laws:[],phase:'BUILD',owner:'Legion',verifier:'T590',approval:'NOT_REQUIRED',evidence:'REQUIRED',authorityGranted:false,status:missionId===state.active_mission?.mission_id?state.active_mission?.status:'BUILD',artifacts};
+    const shellArtifacts=[{id:'os-shell',path:'runtime/command-deck/public/index.html',present:existsSync(join(root,'runtime','command-deck','public','index.html'))},{id:'work-state-api',path:'runtime/command-deck/server.mjs',present:existsSync(join(root,'runtime','command-deck','server.mjs'))},{id:'deck-tests',path:'runtime/command-deck/deck.test.mjs',present:existsSync(join(root,'runtime','command-deck','deck.test.mjs'))}];const artifacts=missionId==='V2-007A'?[...shellArtifacts,{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}]:missionId==='V2-007B'?[...shellArtifacts,{id:'model-inventory',path:'runtime/command-deck/server.mjs',present:true},{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}]:[{id:'watcher-source',path:'runtime/command-deck/admission_watcher.ts',present:existsSync(join(root,'runtime','command-deck','admission_watcher.ts'))},{id:'watcher-tests',path:'runtime/command-deck/admission_watcher.test.ts',present:existsSync(join(root,'runtime','command-deck','admission_watcher.test.ts'))},{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}];workState={schema:'othrys.os.work-state.v1',missionId:m.mission_id,title:m.title??m.mission_id,goal:m.goal??'',laws:Array.isArray(m.laws)?m.laws:[],phase:'BUILD',owner:'Legion',verifier:'T590',approval:'NOT_REQUIRED',evidence:'REQUIRED',authorityGranted:false,status:missionId===state.active_mission?.mission_id?state.active_mission?.status:'BUILD',artifacts};
   }
   const proven=(id)=>existsSync(join(root,'missions',`${id}.result.json`));
   const osSurface={
@@ -79,8 +79,9 @@ export async function buildStatus(){
       {id:'monetization.affiliate-offer',status:'STOCK'}
     ],
     models:[
-      {id:'qwen-local',label:'Qwen local',class:'LOCAL',status:'PRIMARY'},
-      {id:'external',label:'Remote models',class:'ESCALATION',status:'ON DEMAND'}
+      {id:'qwen3-builder',label:'Qwen3 8B · Legion',class:'LOCAL ENGINEERING',status:'PRIMARY',available:true,evidence:'V2-002C'},
+      {id:'llama3.2-advisory',label:'Llama 3.2 · T590',class:'LOCAL ADVISORY',status:'ADVISORY ONLY',available:true,evidence:'V2-004D'},
+      {id:'remote-escalation',label:'Remote escalation',class:'REMOTE',status:'GATED',available:false,evidence:null}
     ]
   };
   return {
