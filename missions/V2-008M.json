@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008M",
+  "title": "Execution lease materializer",
+  "goal": "Materialize an admitted execution authorization as a short-lived package-bound lease without launching the worker.",
+  "laws": [
+    "Lease requires an exact READY_NOT_EXECUTING build package and admitted DECK-EXEC receipt.",
+    "Package SHA-256, builder ID, build request ID and mission ID are immutable lease bindings.",
+    "Lease lifetime is deterministic from authorization receivedAt and expires after ten minutes.",
+    "Expired or mismatched authorization fails closed.",
+    "Lease status is LEASE_READY_NOT_STARTED; authorityGranted and executionStarted remain false.",
+    "No model, worker, shell mutation, or product mutation is started.",
+    "Independent Legion verification required."
+  ]
+}
