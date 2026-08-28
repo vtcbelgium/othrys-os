@@ -114,3 +114,18 @@ test('change apply request validates candidate and target identities',()=>{
   const d=mkdtempSync(join(tmpdir(),'deck-apply-')); const ledger=join(d,'admission.jsonl');
   try{assert.throws(()=>admitDeckIntent({...changeApplyRequest(),candidateId:'bad'},ledger),/INTENT_EVIDENCE_INVALID/);assert.throws(()=>admitDeckIntent({...changeApplyRequest(),targetSha:'bad'},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
 });
+
+test('Trust Canal admission enforces operating mode independently of ingress',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-mode-')); const ledger=join(d,'admission.jsonl');
+  const previous=process.env.OTHRYS_OS_MODE;
+  try{
+    process.env.OTHRYS_OS_MODE='PLAN';
+    assert.throws(()=>admitDeckIntent(intent(),ledger),/MODE_DENIES_MUTATE/);
+    const planned=admitDeckIntent(missionProposal(),ledger);
+    assert.equal(planned.created,true);
+    assert.equal(planned.authorityGranted,false);
+  }finally{
+    if(previous===undefined) delete process.env.OTHRYS_OS_MODE; else process.env.OTHRYS_OS_MODE=previous;
+    rmSync(d,{recursive:true,force:true});
+  }
+});

@@ -12,6 +12,8 @@ import { acceptWorkerResult } from './worker_acceptance.ts';
 import { projectMissionWork } from '../os/work_projection.mjs';
 import { projectOsProjection } from '../os/os_projection.mjs';
 import { readWorkRecord } from '../os/work_record.mjs';
+import { loadProjectManifest } from '../os/project_manifest.mjs';
+import { resolveOperatingMode, authorizeOperatingModeAction, operatingModeProjection } from '../os/operating_mode.mjs';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -22,6 +24,8 @@ const bind=process.env.OTHRYS_DECK_BIND ?? '127.0.0.1';
 const controlToken=process.env.OTHRYS_DECK_CONTROL_TOKEN ?? '';
 const intentFile=process.env.OTHRYS_DECK_INTENT_FILE ?? '';
 const admissionLedger=process.env.OTHRYS_DECK_ADMISSION_LEDGER ?? '';
+const projectManifest=loadProjectManifest(root);
+function activeOperatingMode(){ return resolveOperatingMode(projectManifest,process.env.OTHRYS_OS_MODE??null); }
 
 
 function json(path){ return JSON.parse(readFileSync(join(root,path),'utf8')); }
@@ -200,7 +204,7 @@ export async function buildStatus(){
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
     recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(executionAuthIntent?.canonicalTargetMissionId??buildIntent?.canonicalTargetMissionId??null),missionExecutionAuthRequest:executionAuthIntent,workerAcceptance:latestWorkerAcceptance(),executionLease:latestExecutionLease(launchIntent?.canonicalTargetMissionId??executionAuthIntent?.canonicalTargetMissionId??null),missionWorkerLaunchRequest:launchIntent,latestGovernedApply:latestGovernedApply(),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
-    osSurface,workState,durableWork,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
+    osSurface,operatingMode:operatingModeProjection(projectManifest,process.env.OTHRYS_OS_MODE??null),workState,durableWork,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };
 }
 
@@ -212,6 +216,7 @@ function controlAuthorized(req){ return !!controlToken && req.headers['x-othrys-
 function persistIntent(body){
   if(!intentFile) throw new Error('INTENT_STORE_REQUIRED');
   const action=body?.action;
+  authorizeOperatingModeAction(activeOperatingMode(),action);
   let rec;
   if(action==='REFINE_REQUEST'){
     const candidateCommit=body?.candidateCommit,feedback=String(body?.feedback??'').trim();
@@ -303,6 +308,10 @@ export async function handle(req,res){
   if(url.pathname==='/api/status'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
     return send(res,200,JSON.stringify(await buildStatus()));
+  }
+  if(url.pathname==='/api/operating-mode'){
+    if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
+    return send(res,200,JSON.stringify({ok:true,...operatingModeProjection(projectManifest,process.env.OTHRYS_OS_MODE??null),controlsEnabled:false}));
   }
   if(url.pathname==='/api/mission'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));

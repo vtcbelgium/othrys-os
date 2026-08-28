@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-010D",
+  "verdict": "PASS",
+  "status": "COMPLETE",
+  "operating_mode_default": "SUPERVISED_EXECUTE",
+  "modes": ["OBSERVE", "PLAN", "SUPERVISED_EXECUTE", "AUTONOMOUS_EXECUTE"],
+  "enforcement": ["command-deck-ingress", "trust-canal-admission"],
+  "authority_granted": false,
+  "execution_started": false,
+  "legion_runtime_tests": "200/200 PASS",
+  "t590_runtime_tests": "PENDING_INDEPENDENT_SYNC_PROOF",
+  "proof": "Mode policy constrains intent eligibility at two independent boundaries while preserving existing Trust Canal and Talos authority contracts."
+}

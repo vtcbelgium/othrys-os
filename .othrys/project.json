@@ -224,7 +224,7 @@
       "SUPERVISED_EXECUTE",
       "AUTONOMOUS_EXECUTE"
     ],
-    "default": "PLAN",
+    "default": "SUPERVISED_EXECUTE",
     "declarativeGrant": false
   }
 }

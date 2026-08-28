@@ -26,6 +26,14 @@ function artifactsFor(root,missionId,mission){
     artifact(root,'project-materializer','runtime/os/project_materializer.mjs'),
     artifact(root,'project-materializer-tests','runtime/os/project_materializer.test.mjs')
   ];
+  if(mission.artifact_profile==='os-mode') return [...common,
+    artifact(root,'operating-mode','runtime/os/operating_mode.mjs'),
+    artifact(root,'operating-mode-tests','runtime/os/operating_mode.test.mjs'),
+    artifact(root,'project-mode-policy','.othrys/project.json'),
+    artifact(root,'intent-mode-ingress','runtime/command-deck/server.mjs'),
+    artifact(root,'intent-mode-admission','runtime/command-deck/intent_bridge.ts'),
+    artifact(root,'deck-tests','runtime/command-deck/deck.test.mjs')
+  ];
   if(mission.artifact_profile==='command-deck'||/^V2-00[78]/.test(missionId)) return [...common,
     artifact(root,'os-shell','runtime/command-deck/public/index.html'),
     artifact(root,'work-state-api','runtime/command-deck/server.mjs'),

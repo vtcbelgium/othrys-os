@@ -131,6 +131,8 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.ok(data.workState.artifacts.some(a=>a.id==='surface-data'&&a.present===true));
   assert.equal(data.osSurface.titans.length,2);
   assert.deepEqual(data.osSurface.titans.map(t=>t.id),['hephaestus','talos']);
+  assert.equal(data.operatingMode.active.mode,'SUPERVISED_EXECUTE');
+  assert.equal(data.operatingMode.active.authorityGranted,false);
   assert.ok(Array.isArray(data.canonicalMissions));
   assert.ok(data.canonicalMissions.length>0);
   assert.ok(data.canonicalMissions.every(m=>/^V2-/.test(m.missionId)&&typeof m.verdict==='string'));
@@ -288,4 +290,14 @@ test('Execution authorization ingress rejects stale ready package before admissi
   const env={...process.env,OTHRYS_DECK_TOKEN:'read-exec',OTHRYS_DECK_CONTROL_TOKEN:'control-exec',OTHRYS_DECK_INTENT_FILE:f,OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18786',OTHRYS_DECK_NO_START:'0'};
   const child=spawn(process.execPath,[join(dir,'server.mjs')],{env,stdio:['ignore','pipe','pipe']});t.after(()=>{child.kill();rmSync(d,{recursive:true,force:true});});await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('server timeout')),4000);child.stdout.on('data',d=>{if(String(d).includes('"ready":true')){clearTimeout(timer);resolve();}});});
   const r=await fetch('http://127.0.0.1:18786/api/intent',{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control-exec'},body:JSON.stringify({action:'MISSION_EXECUTION_AUTH_REQUEST',missionId:'V2-008J'})});assert.equal(r.status,400);const b=await r.json();assert.equal(b.error,'BUILD_PACKAGE_STALE');assert.equal(existsSync(f),false);
+});
+
+test('Operating mode endpoint is read-only and PLAN blocks mutation ingress',async t=>{
+  const d=mkdtempSync(join(tmpdir(),'othrys-mode-')),f=join(d,'intents.jsonl');
+  const env={...process.env,OTHRYS_DECK_TOKEN:'mode-read',OTHRYS_DECK_CONTROL_TOKEN:'mode-control',OTHRYS_DECK_INTENT_FILE:f,OTHRYS_OS_MODE:'PLAN',OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18787',OTHRYS_DECK_NO_START:'0'};
+  const child=spawn(process.execPath,[join(dir,'server.mjs')],{env,stdio:['ignore','pipe','pipe']});t.after(()=>{child.kill();rmSync(d,{recursive:true,force:true});});
+  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('server timeout')),4000);child.stdout.on('data',x=>{if(String(x).includes('"ready":true')){clearTimeout(timer);resolve();}});});
+  let r=await fetch('http://127.0.0.1:18787/api/operating-mode',{headers:{'X-OTHRYS-DECK-TOKEN':'mode-read'}});assert.equal(r.status,200);let b=await r.json();assert.equal(b.active.mode,'PLAN');assert.equal(b.authorityGranted,false);assert.equal(b.controlsEnabled,false);
+  const candidate=JSON.parse(readFileSync(join(dir,'../../missions/V2-005A.result.json'),'utf8')).product_candidate_commit;
+  r=await fetch('http://127.0.0.1:18787/api/intent',{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'mode-control'},body:JSON.stringify({action:'REFINE_REQUEST',candidateCommit:candidate,feedback:'should be denied in plan mode'})});assert.equal(r.status,400);b=await r.json();assert.equal(b.error,'MODE_DENIES_MUTATE');assert.equal(existsSync(f),false);
 });

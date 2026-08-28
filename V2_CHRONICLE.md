@@ -510,3 +510,6 @@ V2-010B dogfoods a project-local Work record for itself: Project -> Work -> Slic
 
 V2-010C adds the first OTHRYS OS project template and deterministic materializer. New Oros workspaces can now be composed from role bindings, PROVEN capability references, model policy, knowledge and integrations into a project-local .othrys/ substrate. Unknown/unproven refs and conflicting manifests fail closed; no worker or app generation occurs.
 
+
+## V2-010D — OTHRYS OS operating modes
+Established OBSERVE / PLAN / SUPERVISED_EXECUTE / AUTONOMOUS_EXECUTE as enforced OS policy. Mode checks now occur before intent persistence and again at Trust Canal admission. Default remains supervised; mode never grants authority. Legion runtime: 200/200 PASS.

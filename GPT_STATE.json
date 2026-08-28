@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 94,
+  "sequence": 95,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-010C",
+    "mission_id": "V2-010D",
     "status": "COMPLETE",
-    "issued_label": "V2-010C - OTHRYS OS PROJECT COMPOSITION",
+    "issued_label": "V2-010D - OTHRYS OS OPERATING MODES",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-010C",
-    "decision": "ACCEPT_PROJECT_COMPOSITION",
-    "authority": "template-driven project substrate; PROVEN capability refs only; no execution authority"
+    "mission_id": "V2-010D",
+    "decision": "ACCEPT_OPERATING_MODE_ENFORCEMENT",
+    "authority": "dual-layer mode eligibility enforcement; no authority grant; 200/200 Legion runtime"
   },
-  "next_legal_action": "V2-010D may establish OTHRYS OS operating-mode and permission policy mapped onto Trust Canal: OBSERVE / PLAN / SUPERVISED_EXECUTE / AUTONOMOUS_EXECUTE; no UI-only authority.",
+  "next_legal_action": "V2-010E may establish Mnemosyne/Atlas knowledge substrate: project sources, inbox, review queue, local search, maintenance and reconstructible export; no opaque memory authority.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",
@@ -219,6 +219,11 @@
       "status": "COMPLETE",
       "verdict": "PASS",
       "closeout": "NO_CHANGE_JUSTIFIED"
+    },
+    {
+      "mission_id": "V2-010D",
+      "status": "COMPLETE",
+      "note": "Operating modes enforced at Command Deck ingress and Trust Canal admission; default SUPERVISED_EXECUTE; 200/200 Legion runtime; no authority grant."
     }
   ],
   "git": {

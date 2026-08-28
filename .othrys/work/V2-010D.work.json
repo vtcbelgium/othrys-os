@@ -1,0 +1,112 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010D",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010D",
+  "title": "OTHRYS OS operating modes enforced by Trust Canal",
+  "objective": "Make OBSERVE, PLAN, SUPERVISED_EXECUTE and AUTONOMOUS_EXECUTE first-class OS policy that constrains intent ingress and Trust Canal admission without granting authority.",
+  "scale": "EPIC",
+  "problem": "OTHRYS OS declares operating modes but they are not yet enforceable system law.",
+  "outOfScope": [
+    "No UI mode switcher",
+    "No autonomous scheduler",
+    "No authority bypass",
+    "No change to Talos evidence law"
+  ],
+  "risks": [
+    "A mode becomes a hidden authority grant",
+    "Ingress policy differs from Trust Canal admission policy",
+    "Autonomous mode silently becomes the default"
+  ],
+  "laws": [
+    "Operating mode only constrains actions; it never grants authority.",
+    "Trust Canal remains the enforcement boundary.",
+    "SUPERVISED_EXECUTE is the default to preserve the proven operator-gated chain.",
+    "AUTONOMOUS_EXECUTE still requires existing Trust Canal and Talos evidence contracts."
+  ],
+  "slices": [
+    {
+      "id": "mode-policy",
+      "title": "Operating mode contract",
+      "owner": "hephaestus",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "define-modes",
+              "title": "Define four operating modes and action classes",
+              "status": "OPEN"
+            },
+            {
+              "id": "preserve-authority",
+              "title": "Prove mode decisions never grant authority",
+              "status": "OPEN"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "verify-fail-closed",
+              "title": "Verify invalid or weakened policies fail closed",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "operating-mode",
+        "operating-mode-tests",
+        "project-mode-policy"
+      ]
+    },
+    {
+      "id": "mode-enforcement",
+      "title": "Dual-layer mode enforcement",
+      "owner": "hephaestus",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "guard-ingress",
+              "title": "Enforce mode before intent persistence",
+              "status": "OPEN"
+            },
+            {
+              "id": "guard-admission",
+              "title": "Enforce mode again at Trust Canal admission",
+              "status": "OPEN"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "verify-bypass-resistance",
+              "title": "Prove direct inbox intent cannot bypass mode policy",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "intent-mode-ingress",
+        "intent-mode-admission",
+        "deck-tests"
+      ]
+    }
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "efa7546c7fc45d46bb7ec0e5d58a206f98ebe88c56c78916aa0501ade4e2df06"
+}

@@ -1,4 +1,7 @@
 import { createHash } from 'node:crypto';
+import { resolve } from 'node:path';
+import { loadProjectManifest } from '../os/project_manifest.mjs';
+import { resolveOperatingMode, authorizeOperatingModeAction } from '../os/operating_mode.mjs';
 import { AdmissionLedger } from '../trust-canal/ledger.ts';
 import { TrustCanalAdmission } from '../trust-canal/admission.ts';
 
@@ -9,10 +12,14 @@ export class DeckIntentError extends Error {
 
 function digest(value:unknown){return createHash('sha256').update(JSON.stringify(value),'utf8').digest('hex');}
 
+const osRoot=resolve(import.meta.dirname,'../..');
+
 export function admitDeckIntent(intent:any,ledgerPath:string){
   if(!intent||intent.schema!=='othrys.deck.intent.v1'||intent.status!=='PENDING_TRUST_CANAL') throw new DeckIntentError('INTENT_STATE_INVALID');
   if(intent.authorityGranted!==false) throw new DeckIntentError('INTENT_AUTHORITY_INVALID');
   const receivedAt=String(intent.receivedAt??'').trim();
+  const manifest=loadProjectManifest(osRoot);
+  const mode=resolveOperatingMode(manifest,process.env.OTHRYS_OS_MODE??null);
   if(!Number.isFinite(Date.parse(receivedAt))) throw new DeckIntentError('INTENT_EVIDENCE_INVALID');
   let intentDigest:string, missionId:string, command:string;
   if(intent.action==='REFINE_REQUEST'){
@@ -78,6 +85,7 @@ export function admitDeckIntent(intent:any,ledgerPath:string){
     missionId=`DECK-APPLY-${intentDigest.slice(0,24)}`;
     command=JSON.stringify({type:'MISSION_CHANGE_APPLY_REQUEST',candidateId,missionId:canonicalMissionId,patchDigest,targetSha,intentDigest});
   }else throw new DeckIntentError('INTENT_AUTHORITY_INVALID');
+  authorizeOperatingModeAction(mode,intent.action);
   const ledger=new AdmissionLedger({path:ledgerPath});
   const canal=new TrustCanalAdmission(ledger,[{role:'operator',channel:'command-deck'}]);
   const result=canal.admit({missionId,command,actor:{role:'operator',channel:'command-deck'},context:`tablet intent ${intentDigest}`});
