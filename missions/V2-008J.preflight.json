@@ -1,0 +1,18 @@
+{
+  "schema": "othrys.os.mission-preflight.v1",
+  "missionId": "V2-008J",
+  "verdict": "NO_CHANGE_JUSTIFIED",
+  "objectiveSatisfied": true,
+  "mutationRequired": false,
+  "builderRequired": false,
+  "evidence": [
+    "missions/build-packages/DECK-BUILD-daaf61bdac4f556e99ae7222.json",
+    "runtime/command-deck/server.mjs#latestBuildPackage",
+    "runtime/command-deck/public/index.html#buildPackageRow",
+    "runtime/command-deck/deck.test.mjs"
+  ],
+  "t590Tests": "77/77 PASS",
+  "legionTests": "77/77 PASS",
+  "authorityGranted": false,
+  "executionStarted": false
+}
