@@ -1,0 +1,12 @@
+{
+  "schema": "othrys.os.build-package.v1",
+  "missionId": "V2-008L",
+  "objective": "Show the current admitted MISSION_EXECUTION_AUTH_REQUEST, selected builder and build package identity in the Command Centre without starting the worker.",
+  "builderId": "qwen3-builder",
+  "routeDigest": "b6356687830a66fcbe427385e8d5db5edf04187c8dafcbb03bb47869694a933e",
+  "buildRequestId": "DECK-BUILD-8e4e4aaa4d9ef4613390aefe",
+  "preflightClass": "MISSING_WORK",
+  "status": "READY_NOT_EXECUTING",
+  "authorityGranted": false,
+  "executionStarted": false
+}
