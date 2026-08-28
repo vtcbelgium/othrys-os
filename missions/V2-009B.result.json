@@ -10,5 +10,6 @@
   "layout": "left navigation + chat-first workspace + persistent right Progress",
   "authority_check": "PASS - presentation only; no execution endpoint or gate change",
   "panda_dependency": false,
-  "out_of_scope_changes": []
+  "out_of_scope_changes": [],
+  "t590_tests": "123/123 PASS"
 }
