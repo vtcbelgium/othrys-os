@@ -184,3 +184,5 @@
 | 61 | V2-008I | Freshness-gated READY_NOT_EXECUTING build package materializer | COMPLETE |
 
 | 62 | V2-008J | First live READY_NOT_EXECUTING package exposed in Command Centre | COMPLETE |
+
+| 63 | V2-008K | Fresh package execution-authorization request gate; no worker launch | COMPLETE |

@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-008J",
+    "mission_id": "V2-008K",
     "status": "COMPLETE",
-    "issued_label": "V2-008J - BUILD PACKAGE VISIBILITY",
+    "issued_label": "V2-008K - EXECUTION AUTHORIZATION GATE",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-008J",
-    "decision": "ACCEPT_BUILD_PACKAGE_VISIBILITY",
-    "authority": "READY_NOT_EXECUTING package visible; no builder invocation"
+    "mission_id": "V2-008K",
+    "decision": "ACCEPT_EXECUTION_AUTH_GATE",
+    "authority": "fresh package may request Trust Canal authorization; worker launch still forbidden"
   },
-  "next_legal_action": "V2-008K may define a freshness-gated execution authorization request for a READY_NOT_EXECUTING package; admission still starts no worker.",
+  "next_legal_action": "V2-008L may dogfood a fresh build package through MISSION_EXECUTION_AUTH_REQUEST and expose the admitted authorization state; no worker launch.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

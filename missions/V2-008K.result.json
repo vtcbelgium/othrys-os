@@ -1,0 +1,8 @@
+{
+  "mission_id": "V2-008K",
+  "verdict": "PASS",
+  "tests": "84/84 PASS both nodes",
+  "stalePackage": "V2-008J rejected before execution auth",
+  "authorityGranted": false,
+  "executionStarted": false
+}
