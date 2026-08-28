@@ -67,7 +67,7 @@
     "decision": "ACCEPT_INTERVENTION_POLICY_VISIBILITY",
     "authority": "operator preference only; no execution"
   },
-  "next_legal_action": "Open V2-007H for OTHRYS OS mission slices/tasks and declared artifact completion contracts, read-only first.",
+  "next_legal_action": "V2-007H OTHRYS OS mission slices and completion contracts in progress; read-only evidence only.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

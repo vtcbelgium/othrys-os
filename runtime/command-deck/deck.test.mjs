@@ -29,6 +29,9 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/id="interventionPolicy"/);
   assert.match(html,/Only ask at design and checkpoints/);
   assert.match(html,/Preference only · never grants authority/);
+  assert.match(html,/id="sliceRows"/);
+  assert.match(html,/function renderSlices/);
+  assert.match(html,/Mission slices/);
 });
 
 test('Deck API refuses writes and requires token',async t=>{
@@ -71,6 +74,9 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.osSurface.models[1].status,'ADVISORY ONLY');
   assert.equal(data.osSurface.models[2].available,false);
   assert.equal(data.missionEvidence.missionId,data.workState.missionId);
+  assert.equal(data.workState.missionId,'V2-007H');
+  assert.deepEqual(data.workState.slices.map(x=>[x.id,x.owner,x.status]),[['S1','Legion','COMPLETE'],['S2','Legion','COMPLETE'],['S3','Legion','OPEN']]);
+  assert.ok(data.workState.slices[2].artifacts.some(a=>a.id==='mission-result'&&a.present===false));
   assert.equal(data.missionEvidence.resultPresent,data.missionEvidence.missionId===data.activeMission?.mission_id&&data.activeMission?.status==='COMPLETE');
 
 });

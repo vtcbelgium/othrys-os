@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007H",
+  "title": "OTHRYS OS mission slices and completion contracts",
+  "goal": "Expose real mission slices, owners and declared artifacts in Work State so completion criteria are visible before execution.",
+  "laws": [
+    "Slices and declared artifacts come from the mission envelope.",
+    "Artifact presence is evidence, not authority.",
+    "A slice may be visible as complete only from deterministic local evidence.",
+    "Owners are descriptive routing intent only.",
+    "Missing declared artifacts remain visibly incomplete.",
+    "No execution, transition, accept, reject or release authority is added.",
+    "Existing Trust Canal and Refine boundaries remain unchanged."
+  ],
+  "slices": [
+    {"id":"S1","title":"Expose mission contract","owner":"Legion","artifacts":["mission-envelope"]},
+    {"id":"S2","title":"Project slices into Work State","owner":"Legion","artifacts":["work-state-api","deck-tests"]},
+    {"id":"S3","title":"Render slice and artifact evidence","owner":"Legion","artifacts":["os-shell","mission-result"]}
+  ]
+}
