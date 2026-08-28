@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-008C",
+    "mission_id": "V2-008D",
     "status": "COMPLETE",
-    "issued_label": "V2-008C - CANONICAL MISSION ID ALLOCATION POLICY",
+    "issued_label": "V2-008D - TABLET GENERATED MISSION",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,107 +63,12 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-008C.S",
-    "decision": "ACCEPT_ACTIVATION_REQUEST_GATE",
-    "authority": "activation request admitted only; V2-008D remains unactivated and non-executing"
+    "mission_id": "V2-008D",
+    "decision": "ACCEPT_NO_CHANGE_CLOSEOUT",
+    "authority": "preflight proved objective already satisfied; no builder, no mutation, no execution"
   },
-  "next_legal_action": "V2-008D is canonical and has an admitted activation request but remains UNACTIVATED. Next gate: prepare a bounded executable mission envelope before any activation materialization or execution.",
+  "next_legal_action": "V2-008E may define a deterministic preflight decision envelope for canonical missions; no builder execution.",
   "mission_history": [
-    {
-      "mission_id": "V2-000A",
-      "status": "PARTIAL",
-      "note": "Control Feedback built; 22 tests green; never pushed"
-    },
-    {
-      "mission_id": "V2-000A.1",
-      "status": "COMPLETE",
-      "note": "BOOK_OF_GPT.md created locally"
-    },
-    {
-      "mission_id": "V2-000B",
-      "status": "FAILED",
-      "note": "Host Sync Gate not built; BOOK_OF_GPT.md absent at the time"
-    },
-    {
-      "mission_id": "V2-000C",
-      "status": "PARTIAL",
-      "note": "STOPPED at authority gate; five contradictions recorded"
-    },
-    {
-      "mission_id": "V2-000C.R",
-      "status": "COMPLETE",
-      "note": "C1-C5 ratified and applied"
-    },
-    {
-      "mission_id": "V2-000D",
-      "status": "FAILED",
-      "note": "histories had diverged; the control files it was told to correct were not in the delegate history"
-    },
-    {
-      "mission_id": "V2-000E",
-      "status": "RECONCILIATION_COMPLETE_LOCALLY",
-      "note": "one history; unpushed"
-    },
-    {
-      "mission_id": "V2-000F",
-      "status": "AUDIT_COMPLETE_LOCALLY",
-      "note": "Control Feedback audited and frozen; 30 tests; 2 small defects fixed; no new architecture"
-    },
-    {
-      "mission_id": "V2-001A",
-      "status": "BLOCKED_AT_BASE_GATE",
-      "note": "HEAD != origin/main; the two V2-000F commits are unpushed. Nothing selected or admitted."
-    },
-    {
-      "mission_id": "V2-001A.R",
-      "status": "ADMISSION_COMPLETE_LOCALLY",
-      "note": "Capability Block #1 admitted: block.media.image-prep 0.1.0, digest 32b34548"
-    },
-    {
-      "mission_id": "V2-001B",
-      "status": "INTERRUPTED_BRIDGE_LOST",
-      "note": "receipt valid and preserved; its GPT_STATE and Chronicle updates never landed"
-    },
-    {
-      "mission_id": "V2-001B.R",
-      "status": "BLOCKED_RUNTIME_AND_SYNC",
-      "note": "recovery complete, digest unchanged; no Windows shell and no network, so no runtime proof and no push"
-    },
-    {
-      "mission_id": "V2-001B.S",
-      "status": "RUNTIME_BLOCKED",
-      "note": "runtime smoke only: digest MATCH, node 4/4 (Linux VM, not Windows), Playwright suite NOT_OBSERVED - no Windows shell and Chromium download blocked by network allowlist. Nothing mounted, nothing changed in the Block. Issued as 'V2-001B'; recorded as V2-001B.S because V2-001B and V2-001B.R already exist"
-    },
-    {
-      "mission_id": "V2-001B.T",
-      "status": "RUNTIME_PROVEN",
-      "note": "recording mission: host-supplied LEGION proof - node 4/4, Playwright/Chromium 20/20. Digest matched a 4th time; suite cardinality corroborated. Delegate ran nothing and wrote nothing to othrys-blocks. Evidence class HOST_SUPPLIED_TRUSTED, not delegate-observed. Nothing mounted"
-    },
-    {
-      "mission_id": "V2-001C",
-      "status": "REPAIRED_NOT_BROWSER_VERIFIED",
-      "note": "both defects repaired in 2 hunks; candidate 0.1.1 (PATCH); old digest 32b34548 -> new 48afa7ac; node 10/10 on the delegate; browser and aggressive suites NOT RUN; 0.1.0 admission untouched; no 0.1.1 admission record created"
-    },
-    {
-      "mission_id": "V2-001D",
-      "status": "PROMOTED",
-      "note": "0.1.1 promoted to ACTIVE_ADMITTED, digest 48afa7ac verified before writing; RUNTIME_PROVEN from host proof (10/10, 29/29, 18/18); 0.1.0 marked HISTORICAL/SUPERSEDED in a separate ledger with its record byte-unmodified; separate 0.1.1 digest proof added, 0.1.0 proof left untouched; nothing mounted"
-    },
-    {
-      "mission_id": "V2-001E",
-      "status": "STOPPED_AT_GATE",
-      "note": "BLOCK_CANONICAL_PATH_UNDEFINED. Base gate passed and the 0.1.1 specimen was verified (digest exact match) before stopping. No law defines a V2-internal Capability Block implementation path; senior law places it in othrys-blocks and forbids copies. Nothing copied, no path invented, no ownership or inventory document changed, no legacy mutation. Confirmed the controller's premise: V2 holds hashes, not bytes, and cannot reconstruct Block #1"
-    },
-    {
-      "mission_id": "V2-001E.R",
-      "status": "STOPPED_AT_GATE",
-      "note": "BASE_GATE_FAILED - HEAD != origin/main; the two V2-001E commits are unpushed and the delegate cannot push. Nothing executed downstream: no law recorded, no copy, no path created, no legacy read. The operator's binding V2-monorepo decision and the exact canonical path blocks/media/image-prep are preserved verbatim in the envelope for the next run"
-    },
-    {
-      "mission_id": "LIFELINE-001",
-      "status": "COMPLETE",
-      "note": "Private GitHub relay transport proven end-to-end with issue #1; scheduled watcher running; qwen3-builder/Ollama exact scratch diff; result returned through GitHub; live repo mutation disabled."
-    },
     {
       "mission_id": "V2-HUB-QUAL-001",
       "status": "COMPLETE",
@@ -308,6 +213,12 @@
       "mission_id": "V2-007E",
       "status": "COMPLETE",
       "note": "Progress phases now derive from mission envelope/result evidence: Plan COMPLETE, Build ACTIVE while result absent, Review requires PASS, Ship remains separate closeout; Legion 5/5 + T590 5/5 at 64e395b; projection only, no transition authority."
+    },
+    {
+      "mission_id": "V2-008D",
+      "status": "COMPLETE",
+      "verdict": "PASS",
+      "closeout": "NO_CHANGE_JUSTIFIED"
     }
   ],
   "git": {
