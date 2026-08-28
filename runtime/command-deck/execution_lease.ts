@@ -12,7 +12,7 @@ export function materializeExecutionLease(packagePath:string,inboxPath:string,le
   const raw=readFileSync(packagePath,'utf8');let pkg:any;try{pkg=JSON.parse(raw)}catch{throw new ExecutionLeaseError('BUILD_PACKAGE_INVALID')}
   if(pkg.schema!=='othrys.os.build-package.v1'||pkg.status!=='READY_NOT_EXECUTING'||pkg.authorityGranted!==false||pkg.executionStarted!==false) throw new ExecutionLeaseError('BUILD_PACKAGE_STATE_INVALID');
   const packageDigest=shaText(raw),intents=jsonLines(inboxPath),ledger=jsonLines(ledgerPath);
-  const auth=intents.find(x=>x.action==='MISSION_EXECUTION_AUTH_REQUEST'&&x.missionId===pkg.missionId&&x.buildRequestId===pkg.buildRequestId&&x.builderId===pkg.builderId&&x.packageDigest===packageDigest);
+  const auth=[...intents].reverse().find(x=>x.action==='MISSION_EXECUTION_AUTH_REQUEST'&&x.missionId===pkg.missionId&&x.buildRequestId===pkg.buildRequestId&&x.builderId===pkg.builderId&&x.packageDigest===packageDigest);
   if(!auth) throw new ExecutionLeaseError('EXECUTION_AUTH_NOT_FOUND');
   const body={action:auth.action,missionId:auth.missionId,buildRequestId:auth.buildRequestId,builderId:auth.builderId,packageDigest:auth.packageDigest,receivedAt:auth.receivedAt};
   const authId=`DECK-EXEC-${shaJson(body).slice(0,24)}`;
