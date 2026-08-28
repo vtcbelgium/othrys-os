@@ -88,3 +88,4 @@
 {"sequence": 88, "at": "2026-08-28T17:30:00Z", "mission_id": "V2-008S", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "112/112 both nodes; live Command Centre exposes V2-008Q qwen3-builder T590 ACCEPTED_VERIFIED"}
 {"sequence": 89, "at": "2026-08-28T17:34:00Z", "mission_id": "V2-008T", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "4/4 focused; 116/116 both nodes; live immutable change candidate CHANGE-93bbec... applyEligible=false"}
 {"sequence": 90, "at": "2026-08-28T17:38:00Z", "mission_id": "V2-008U", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "3/3 focused; 119/119 both nodes; live CHANGE-93bbec... classified STALE_BASE / applyEligible=false"}
+{"sequence":86,"at":"2026-08-28T17:47:46Z","mission_id":"V2-008V","event":"MISSION_CLOSEOUT","status":"COMPLETE","evidence":"125/125 both nodes; stale live candidate rejected CHANGE_NOT_FRESH; no apply"}

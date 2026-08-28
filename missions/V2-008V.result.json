@@ -1,0 +1,10 @@
+{
+  "mission_id": "V2-008V",
+  "verdict": "PASS",
+  "tests": "125/125 both nodes",
+  "stale_live_candidate": "CHANGE_NOT_FRESH",
+  "apply_performed": false,
+  "authorityGranted": false,
+  "executionStarted": false,
+  "candidate_sha": "a113ea4cc0a7c56f5e3135ea871a1659ed678d1f"
+}

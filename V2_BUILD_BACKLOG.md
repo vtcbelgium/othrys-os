@@ -206,3 +206,5 @@
 | 72 | V2-008T | Verified change candidate materializer | COMPLETE |
 
 | 73 | V2-008U | Exact-base verified change freshness gate | COMPLETE |
+
+| 69 | V2-008V | Exact-base verified change -> Trust Canal apply request gate; stale candidate rejected, no apply | COMPLETE |
