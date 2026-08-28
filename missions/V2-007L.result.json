@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-007L",
+  "verdict": "PASS",
+  "candidate_sha": "0de2a84235a4119fd71f208ca0de914c81a3f927",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "context_storage": "controller-local",
+  "canonical_context": "othrys-v2",
+  "mission_truth_mutated": false,
+  "new_api": false,
+  "authorityGranted": false
+}

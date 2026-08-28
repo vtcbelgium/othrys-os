@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007K",
+    "mission_id": "V2-007L",
     "status": "COMPLETE",
-    "issued_label": "V2-007K - LOCAL PROJECT REGISTRY",
+    "issued_label": "V2-007L - PROJECT CONTEXT",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007K",
-    "decision": "ACCEPT_LOCAL_PROJECT_REGISTRY_SHELL",
-    "authority": "controller-local metadata only; no machine mutation"
+    "mission_id": "V2-007L",
+    "decision": "ACCEPT_PROJECT_CONTEXT_SELECTION",
+    "authority": "controller-local presentation only; no execution"
   },
-  "next_legal_action": "V2-007L OTHRYS OS project-to-mission context selection in progress; presentation only, no authority.",
+  "next_legal_action": "Open V2-007M for OTHRYS OS Apps / Integrations inventory: expose proven connected surfaces read-only before any integration actions.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

@@ -106,3 +106,5 @@
 - This is a naming/direction decision, **not** authorization for a repo/path mass rename or a rewrite.
 - Existing `V2-*` mission IDs, receipts, evidence and historical references remain immutable provenance.
 - Immediate product direction: surface proven machinery as OTHRYS OS while using PandaOS as a high-value UX/orchestration quarry and bounded builder for controlled experiments.
+
+| 36 | V2-007L | Controller-local project-to-mission context selection; canonical mission truth unchanged | COMPLETE |
