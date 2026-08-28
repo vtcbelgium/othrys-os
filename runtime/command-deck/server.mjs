@@ -7,6 +7,7 @@ import { decideMissionPreflight } from './preflight_decision.ts';
 import { proposeBuildRoute } from './build_route.ts';
 import { validateExecutionAuthCandidate } from './execution_auth.ts';
 import { validateWorkerLaunchCandidate } from './worker_launch.ts';
+import { prepareChangeApplyRequest } from './change_apply.ts';
 import { acceptWorkerResult } from './worker_acceptance.ts';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
@@ -79,10 +80,13 @@ function deriveIntentState(intent,ledger=admissionLedger){
   }else if(intent.action==='MISSION_WORKER_LAUNCH_REQUEST'){
     body={action:intent.action,missionId:intent.missionId,leaseId:intent.leaseId,builderId:intent.builderId,leaseDigest:intent.leaseDigest,receivedAt:intent.receivedAt};
     const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-LAUNCH-${digest.slice(0,24)}`;
+  }else if(intent.action==='MISSION_CHANGE_APPLY_REQUEST'){
+    body={action:intent.action,candidateId:intent.candidateId,missionId:intent.missionId,patchDigest:intent.patchDigest,targetSha:intent.targetSha,receivedAt:intent.receivedAt};
+    const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-APPLY-${digest.slice(0,24)}`;
   }else return null;
   let admitted=false;
   if(ledger&&existsSync(ledger)) admitted=readFileSync(ledger,'utf8').split(/\r?\n/).some(line=>line.includes(`"missionId":"${missionId}"`));
-  return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,proposalId:intent.proposalId??null,candidateId:intent.candidateId??null,canonicalTargetMissionId:intent.missionId??null,preflightDigest:intent.preflightDigest??null,builderId:intent.builderId??null,routeDigest:intent.routeDigest??null,buildRequestId:intent.buildRequestId??null,packageDigest:intent.packageDigest??null,leaseId:intent.leaseId??null,leaseDigest:intent.leaseDigest??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
+  return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,proposalId:intent.proposalId??null,candidateId:intent.candidateId??null,canonicalTargetMissionId:intent.missionId??null,preflightDigest:intent.preflightDigest??null,builderId:intent.builderId??null,routeDigest:intent.routeDigest??null,buildRequestId:intent.buildRequestId??null,packageDigest:intent.packageDigest??null,leaseId:intent.leaseId??null,leaseDigest:intent.leaseDigest??null,patchDigest:intent.patchDigest??null,targetSha:intent.targetSha??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
 }
 export function readControlIntentState(inbox=intentFile,ledger=admissionLedger){
   if(!inbox||!existsSync(inbox)) return null;
@@ -297,6 +301,10 @@ function persistIntent(body){
     const leasePath=executionLeasePathForMission(missionId);if(!leasePath) throw new Error('EXECUTION_LEASE_NOT_FOUND');
     const candidate=validateWorkerLaunchCandidate(leasePath,new Date().toISOString());
     rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,missionId,leaseId:candidate.leaseId,builderId:candidate.builderId,leaseDigest:candidate.leaseDigest,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+  }else if(action==='MISSION_CHANGE_APPLY_REQUEST'){
+    const candidateId=String(body?.candidateId??'').trim();
+    const candidate=prepareChangeApplyRequest(root,candidateId,gitHead());
+    rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,candidateId:candidate.candidateId,missionId:candidate.missionId,patchDigest:candidate.patchDigest,targetSha:candidate.targetSha,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
   }else throw new Error('ACTION_NOT_ALLOWED');
   mkdirSync(dirname(intentFile),{recursive:true}); appendFileSync(intentFile,JSON.stringify(rec)+'\n'); return rec;
 }

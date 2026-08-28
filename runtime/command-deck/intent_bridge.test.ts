@@ -102,3 +102,15 @@ test('execution authorization request binds package evidence',()=>{
 function launchRequest(){return {schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T16:20:00.000Z',action:'MISSION_WORKER_LAUNCH_REQUEST',missionId:'V2-009A',leaseId:'LEASE-0123456789abcdef01234567',builderId:'qwen3-builder',leaseDigest:'a'.repeat(64),authorityGranted:false,status:'PENDING_TRUST_CANAL'};}
 test('pending worker launch request becomes Trust Canal admission only',()=>{const d=mkdtempSync(join(tmpdir(),'deck-launch-'));const ledger=join(d,'admission.jsonl');try{const r=admitDeckIntent(launchRequest(),ledger);assert.equal(r.created,true);assert.match(r.missionId,/^DECK-LAUNCH-/);assert.equal(r.record.state,'ADMITTED');assert.equal(r.executionStarted,false);assert.equal(r.authorityGranted,false);}finally{rmSync(d,{recursive:true,force:true});}});
 test('worker launch request validates exact lease evidence',()=>{const d=mkdtempSync(join(tmpdir(),'deck-launch-'));const ledger=join(d,'admission.jsonl');try{assert.throws(()=>admitDeckIntent({...launchRequest(),leaseDigest:'bad'},ledger),/INTENT_EVIDENCE_INVALID/);assert.throws(()=>admitDeckIntent({...launchRequest(),leaseId:'DECK-EXEC-0123456789abcdef01234567'},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}});
+
+function changeApplyRequest(){return {schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T17:45:00.000Z',action:'MISSION_CHANGE_APPLY_REQUEST',candidateId:'CHANGE-0123456789abcdef01234567',missionId:'V2-009A',patchDigest:'a'.repeat(64),targetSha:'b'.repeat(40),authorityGranted:false,status:'PENDING_TRUST_CANAL'};}
+
+test('pending change apply request becomes Trust Canal admission only',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-apply-')); const ledger=join(d,'admission.jsonl');
+  try{const r=admitDeckIntent(changeApplyRequest(),ledger);assert.equal(r.created,true);assert.match(r.missionId,/^DECK-APPLY-/);assert.equal(r.record.state,'ADMITTED');assert.equal(r.executionStarted,false);assert.equal(r.authorityGranted,false);}finally{rmSync(d,{recursive:true,force:true});}
+});
+
+test('change apply request validates candidate and target identities',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-apply-')); const ledger=join(d,'admission.jsonl');
+  try{assert.throws(()=>admitDeckIntent({...changeApplyRequest(),candidateId:'bad'},ledger),/INTENT_EVIDENCE_INVALID/);assert.throws(()=>admitDeckIntent({...changeApplyRequest(),targetSha:'bad'},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
+});

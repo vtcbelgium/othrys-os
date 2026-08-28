@@ -71,6 +71,12 @@ export function admitDeckIntent(intent:any,ledgerPath:string){
     intentDigest=digest({action:intent.action,missionId:canonicalMissionId,leaseId,builderId,leaseDigest,receivedAt});
     missionId=`DECK-LAUNCH-${intentDigest.slice(0,24)}`;
     command=JSON.stringify({type:'MISSION_WORKER_LAUNCH_REQUEST',missionId:canonicalMissionId,leaseId,builderId,leaseDigest,intentDigest});
+  }else if(intent.action==='MISSION_CHANGE_APPLY_REQUEST'){
+    const candidateId=String(intent.candidateId??'').trim(),canonicalMissionId=String(intent.missionId??'').trim(),patchDigest=String(intent.patchDigest??'').trim(),targetSha=String(intent.targetSha??'').trim();
+    if(!/^CHANGE-[0-9a-f]{24}$/.test(candidateId)||!/^V2-\d{3}[A-Z]$/.test(canonicalMissionId)||!/^[0-9a-f]{64}$/.test(patchDigest)||!/^[0-9a-f]{40}$/.test(targetSha)) throw new DeckIntentError('INTENT_EVIDENCE_INVALID');
+    intentDigest=digest({action:intent.action,candidateId,missionId:canonicalMissionId,patchDigest,targetSha,receivedAt});
+    missionId=`DECK-APPLY-${intentDigest.slice(0,24)}`;
+    command=JSON.stringify({type:'MISSION_CHANGE_APPLY_REQUEST',candidateId,missionId:canonicalMissionId,patchDigest,targetSha,intentDigest});
   }else throw new DeckIntentError('INTENT_AUTHORITY_INVALID');
   const ledger=new AdmissionLedger({path:ledgerPath});
   const canal=new TrustCanalAdmission(ledger,[{role:'operator',channel:'command-deck'}]);

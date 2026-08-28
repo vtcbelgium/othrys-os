@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008V",
+  "title": "Fresh verified change apply-request gate",
+  "goal": "Allow only exact-base FRESH verified change candidates to request apply admission through Trust Canal without applying the patch.",
+  "laws": [
+    "Candidate must be VERIFIED_CHANGE_CANDIDATE and non-applied.",
+    "Current canonical target SHA must exactly equal candidate base SHA.",
+    "STALE_BASE is rejected before durable apply admission.",
+    "Apply request binds candidate ID, mission ID, patch digest and target SHA.",
+    "Trust Canal admission of apply request does not apply any patch.",
+    "Authority and apply remain separate.",
+    "Independent Legion verification required."
+  ]
+}

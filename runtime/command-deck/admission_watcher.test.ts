@@ -263,3 +263,8 @@ test('complete valid pending MISSION_EXECUTION_AUTH_REQUEST is admitted without 
 });
 
 test('complete valid pending MISSION_WORKER_LAUNCH_REQUEST is admitted without worker launch',()=>{const d=mkdtempSync(join(tmpdir(),'watch-launch-')),inbox=join(d,'inbox.jsonl'),ledger=join(d,'ledger.jsonl');try{const intent={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T16:20:00.000Z',action:'MISSION_WORKER_LAUNCH_REQUEST',missionId:'V2-009A',leaseId:'LEASE-0123456789abcdef01234567',builderId:'qwen3-builder',leaseDigest:'a'.repeat(64),authorityGranted:false,status:'PENDING_TRUST_CANAL'};writeFileSync(inbox,JSON.stringify(intent)+'\n');const r=admitCompleteIntents(inbox,ledger);assert.equal(r.admitted,1);assert.match(readFileSync(ledger,'utf8'),/DECK-LAUNCH-/);}finally{rmSync(d,{recursive:true,force:true});}});
+
+test('complete valid pending MISSION_CHANGE_APPLY_REQUEST is admitted without patch apply',()=>{
+  const d=mkdtempSync(join(tmpdir(),'watch-apply-')),inbox=join(d,'inbox.jsonl'),ledger=join(d,'ledger.jsonl');
+  try{const intent={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T17:45:00.000Z',action:'MISSION_CHANGE_APPLY_REQUEST',candidateId:'CHANGE-0123456789abcdef01234567',missionId:'V2-009A',patchDigest:'a'.repeat(64),targetSha:'b'.repeat(40),authorityGranted:false,status:'PENDING_TRUST_CANAL'};writeFileSync(inbox,JSON.stringify(intent)+'\n');const r=admitCompleteIntents(inbox,ledger);assert.equal(r.admitted,1);assert.match(readFileSync(ledger,'utf8'),/DECK-APPLY-/);}finally{rmSync(d,{recursive:true,force:true});}
+});
