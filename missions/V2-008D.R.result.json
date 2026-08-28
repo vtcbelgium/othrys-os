@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-008D.R",
+  "verdict": "PASS",
+  "preflightVerdict": "NO_CHANGE_JUSTIFIED",
+  "objectiveSatisfied": true,
+  "mutationRequired": false,
+  "builderRequired": false,
+  "t590DeckTests": "7/7 PASS",
+  "legionDeckTests": "7/7 PASS",
+  "candidate_sha": "1c0596661e09373eaf7c8f548ff8c4b0676d1fbc",
+  "authorityGranted": false,
+  "executionStarted": false
+}

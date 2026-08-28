@@ -1,0 +1,19 @@
+{
+  "schema": "othrys.os.mission-preflight.v1",
+  "missionId": "V2-008D",
+  "verdict": "NO_CHANGE_JUSTIFIED",
+  "objectiveSatisfied": true,
+  "mutationRequired": false,
+  "builderRequired": false,
+  "evidence": [
+    "runtime/command-deck/public/index.html#proposalCard",
+    "runtime/command-deck/server.mjs#missionProposalEnvelope",
+    "runtime/command-deck/deck.test.mjs",
+    "missions/V2-007W.result.json"
+  ],
+  "t590DeckTests": "7/7 PASS",
+  "legionDeckTests": "7/7 PASS",
+  "missionStatusObserved": "CANONICAL_UNACTIVATED",
+  "authorityGranted": false,
+  "executionStarted": false
+}
