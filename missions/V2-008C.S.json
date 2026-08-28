@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008C.S",
+  "title": "Allocated mission visibility and activation-request gate",
+  "goal": "Expose the canonical V2-008D allocation in OTHRYS OS and allow a separate Trust Canal activation request without activating or executing the mission.",
+  "laws": [
+    "Candidate evidence remains immutable; allocation binding supplies canonicalMissionId.",
+    "Only CANONICAL_UNACTIVATED missions may request activation.",
+    "Activation request is a separate authenticated tablet intent and Trust Canal receipt.",
+    "Admission of activation request does not change canonical mission status.",
+    "No Talos, Hephaestus, Worker, model, shell, mutation, or execution is started.",
+    "Request replay is idempotent and malformed mission identity fails closed.",
+    "The tablet must visibly distinguish allocated from activated."
+  ]
+}

@@ -52,3 +52,15 @@ test('allocation request validates CANDIDATE identity and replays idempotently',
   const d=mkdtempSync(join(tmpdir(),'deck-allocate-')); const ledger=join(d,'admission.jsonl');
   try{const a=admitDeckIntent(allocationRequest(),ledger),b=admitDeckIntent(allocationRequest(),ledger);assert.equal(a.missionId,b.missionId);assert.equal(b.created,false);assert.throws(()=>admitDeckIntent({...allocationRequest(),candidateId:'DECK-MISSION-0123456789abcdef01234567'},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
 });
+
+function activationRequest(){return {schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T13:55:00.000Z',action:'MISSION_ACTIVATION_REQUEST',missionId:'V2-008D',authorityGranted:false,status:'PENDING_TRUST_CANAL'};}
+
+test('pending activation request becomes separate Trust Canal admission only',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-activate-')); const ledger=join(d,'admission.jsonl');
+  try{const r=admitDeckIntent(activationRequest(),ledger);assert.equal(r.created,true);assert.match(r.missionId,/^DECK-ACTIVATE-/);assert.equal(r.record.state,'ADMITTED');assert.equal(r.executionStarted,false);assert.equal(r.authorityGranted,false);}finally{rmSync(d,{recursive:true,force:true});}
+});
+
+test('activation request validates canonical primary mission identity',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-activate-')); const ledger=join(d,'admission.jsonl');
+  try{assert.throws(()=>admitDeckIntent({...activationRequest(),missionId:'V2-008C.R'},ledger),/INTENT_EVIDENCE_INVALID/);assert.throws(()=>admitDeckIntent({...activationRequest(),missionId:'DECK-MISSION-0123456789abcdef01234567'},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
+});

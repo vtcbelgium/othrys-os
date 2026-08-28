@@ -227,3 +227,14 @@ test('complete valid pending MISSION_ID_ALLOCATION_REQUEST is admitted without a
     assert.equal('authorityGranted' in record,false); assert.equal('executionStarted' in record,false);
   } finally { rmSync(d,{recursive:true,force:true}); }
 });
+
+test('complete valid pending MISSION_ACTIVATION_REQUEST is admitted without activation or execution', () => {
+  const { d, inbox, ledger } = tmp();
+  try {
+    const intent={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T13:55:00.000Z',action:'MISSION_ACTIVATION_REQUEST',missionId:'V2-008D',authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+    writeFileSync(inbox, JSON.stringify(intent) + '\n');
+    const result=admitCompleteIntents(inbox,ledger); assert.equal(result.admitted,1);
+    const record=JSON.parse(ledgerLines(ledger)[0]); assert.match(record.missionId,/^DECK-ACTIVATE-/); assert.equal(record.state,'ADMITTED');
+    assert.equal('authorityGranted' in record,false); assert.equal('executionStarted' in record,false);
+  } finally { rmSync(d,{recursive:true,force:true}); }
+});
