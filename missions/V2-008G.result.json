@@ -1,0 +1,8 @@
+{
+  "mission_id": "V2-008G",
+  "verdict": "PASS",
+  "tests": "73/73 PASS both nodes",
+  "gate": "MISSING_WORK + ROUTE_PROPOSED -> Trust Canal build request only",
+  "authorityGranted": false,
+  "executionStarted": false
+}
