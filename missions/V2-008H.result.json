@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-008H",
+  "verdict": "PASS",
+  "closeout": "NO_CHANGE_JUSTIFIED",
+  "objective": "Show the current admitted MISSION_BUILD_REQUEST and selected local builder in the Command Centre without adding execution authority.",
+  "preflight_ref": "missions/V2-008H.preflight.json",
+  "preflight_sha256": "10d113d2adfb74d3132914012d70598a1f82dcc1b533289a31ad8bde723175a2",
+  "close_request_id": "DECK-NOCHANGE-c5a4377cb408d1279a97ac78",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "mutations": 0,
+  "builderInvoked": false,
+  "next_state": "WAIT_GPT"
+}
