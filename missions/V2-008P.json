@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008P",
+  "title": "Permit-bound worker request materializer",
+  "goal": "Freeze a one-shot permit into the proven Legion worker request contract without dispatching it.",
+  "laws": [
+    "Request binds exact permit SHA-256 and qwen3-builder identity.",
+    "Node is legion and capability is engineering.patch only.",
+    "Workspace is explicit; allowed paths are non-empty safe relative paths.",
+    "Deny paths, exact task and bounded timeout are frozen before dispatch.",
+    "Request status is READY_FOR_DISPATCH; permit remains unconsumed.",
+    "No worker/model process starts in this mission.",
+    "Independent Legion verification required."
+  ]
+}
