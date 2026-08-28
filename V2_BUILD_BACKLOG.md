@@ -200,3 +200,5 @@
 | 69 | V2-008Q | First governed real qwen3-builder launch in disposable Legion worktree; T590 independent verification | COMPLETE |
 
 | 70 | V2-008R | Deterministic worker-result acceptance gate | COMPLETE |
+
+| 71 | V2-008S | Verified worker outcome in Command Centre | COMPLETE |

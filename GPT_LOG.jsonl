@@ -85,3 +85,4 @@
 {"sequence": 85, "at": "2026-08-28T16:31:19Z", "mission_id": "V2-008P", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "104/104 both nodes; permit-bound worker request schema proven; no worker started"}
 {"sequence": 86, "at": "2026-08-28T17:23:48Z", "mission_id": "V2-008Q", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "Real qwen3-builder 10.1s Legion disposable worktree; exact one-file mutation; T590 independent exact-content/hash/path PASS; 108/108 both nodes"}
 {"sequence": 87, "at": "2026-08-28T17:26:00Z", "mission_id": "V2-008R", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "4/4 focused; 112/112 both nodes; live V2-008Q accepted only after dispatch/scope/T590 PASS binding"}
+{"sequence": 88, "at": "2026-08-28T17:30:00Z", "mission_id": "V2-008S", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "112/112 both nodes; live Command Centre exposes V2-008Q qwen3-builder T590 ACCEPTED_VERIFIED"}

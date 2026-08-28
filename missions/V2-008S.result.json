@@ -1,0 +1,10 @@
+{
+  "mission_id": "V2-008S",
+  "verdict": "PASS",
+  "combined_tests": "112/112 PASS both nodes",
+  "live_worker_acceptance": "V2-008Q / qwen3-builder / T590 / ACCEPTED_VERIFIED",
+  "command_centre_service": "active",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "next_state": "WAIT_GPT"
+}
