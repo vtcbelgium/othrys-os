@@ -1,0 +1,16 @@
+{
+  "schema": "othrys.os.mission-candidate.v1",
+  "candidateId": "CANDIDATE-f5848bffdae68ad8ecab6735",
+  "proposalId": "DECK-MISSION-f5848bffdae68ad8ecab6735",
+  "promotionId": "DECK-PROMOTE-b29cf9c4659550a16d33db13",
+  "projectContext": "othrys-v2",
+  "objective": "Create a bounded read-only mission proposal status card for the selected othrys-v2 project context.",
+  "proposalReceivedAt": "2026-08-28T12:55:27.727Z",
+  "promotionReceivedAt": "2026-08-28T13:04:41.821Z",
+  "proposalAdmission": "ADMITTED",
+  "promotionAdmission": "ADMITTED",
+  "canonicalMissionId": null,
+  "authorityGranted": false,
+  "executionStarted": false,
+  "status": "CANDIDATE"
+}
