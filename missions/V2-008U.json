@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008U",
+  "title": "Verified change candidate freshness gate",
+  "goal": "Classify a verified non-applied change candidate as FRESH or STALE by exact base-SHA equality with canonical target HEAD.",
+  "laws": [
+    "Only VERIFIED_CHANGE_CANDIDATE inputs are eligible.",
+    "Exact 40-hex base and target identities are required.",
+    "Base mismatch is STALE_BASE even when a patch might technically apply.",
+    "Freshness classification does not mutate the candidate or repository.",
+    "Only FRESH may become apply-request eligible later.",
+    "STALE never receives apply authority.",
+    "Independent Legion verification required."
+  ]
+}
