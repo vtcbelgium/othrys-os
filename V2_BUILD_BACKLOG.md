@@ -84,6 +84,36 @@
 
 | 36 | V2-007K | Controller-local New Project registry shell; no machine mutation | COMPLETE |
 
+
+| 33 | V2-007H | Mission slices and declared artifact completion contracts | COMPLETE |
+
+| 34 | V2-007I | Switchyard local-first selection preview; no invocation | COMPLETE |
+
+| 35 | V2-007J | Controller-local chat session shell; no chat API | COMPLETE |
+
+| 36 | V2-007K | Controller-local project registry shell | COMPLETE |
+
+| 37 | V2-007L | Project-to-mission context selection, presentation only | COMPLETE |
+
+| 38 | V2-007M | Apps / Integrations evidence inventory | COMPLETE |
+
+| 39 | V2-007N | Knowledge / Mnemosyne read-only surface | COMPLETE |
+
+| 40 | V2-007O | Project-scoped controller-local chat drafts | COMPLETE |
+
+| 41 | V2-007P | Live-status and Panda-style context-header repair | COMPLETE |
+
+| 42 | V2-007Q | Tablet landscape layout repair from live visual evidence | COMPLETE |
+
+| 43 | V2-007R | Completed Work presentation repair | COMPLETE |
+
+| 44 | V2-007S | Tablet workspace-priority layout | COMPLETE |
+
+| 45 | V2-007T | Unified current Work identity across shell | COMPLETE |
+
+| 46 | V2-007U | Tablet Work inspector compaction | COMPLETE |
+
+| 47 | V2-007V | Project context to Trust Canal mission proposal admission | COMPLETE |
 ## Future capability — OTHRYS Visual Control Layer
 - Purpose: let OTHRYS observe and eventually interact with Legion and T590 screens as part of autonomous operation and maintenance.
 - Do not build a TeamViewer clone. Optimize for AI observability, control, and verification.

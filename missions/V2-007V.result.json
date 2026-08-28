@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-007V",
+  "verdict": "PASS",
+  "candidate_sha": "91ca08c6c6a41aaf531d7c4beee4b5217c898582",
+  "combined_tests": "33/33",
+  "legion_tests": "33/33",
+  "live_proposal_http": 202,
+  "live_admission_mission_id": "DECK-MISSION-f5848bffdae68ad8ecab6735",
+  "live_admission_status": "ADMITTED",
+  "inbox_delta": 1,
+  "ledger_delta": 1,
+  "authorityGranted": false,
+  "executionStarted": false
+}
