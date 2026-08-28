@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-007E",
+  "title": "OTHRYS OS evidence-derived phase display",
+  "base_sha": "1480edaf9ad3f3035b8d51042ff167845e99f376",
+  "goal": "Derive the visible Plan/Build/Review/Ship phase display from mission and result evidence instead of static UI state, without granting transition authority.",
+  "laws": [
+    "Plan is complete only when a mission envelope exists.",
+    "Build remains active while the current mission has no result file.",
+    "Review may be shown complete only from a PASS result; it is never inferred from builder claims.",
+    "Ship/closeout is distinct from candidate verification and must not be implied by a PASS result alone.",
+    "Phase display is read-only projection, not a state-transition engine.",
+    "Approval and evidence remain separate fields.",
+    "No new transition, write, routing, shell, execution, accept, reject, release, Hephaestus, Talos or Worker authority."
+  ]
+}

@@ -24,6 +24,8 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/function showSurface/);
   assert.match(html,/id="recentMissionsSide"/);
   assert.match(html,/data.canonicalMissions/);
+  assert.match(html,/id="phaseRows"/);
+  assert.match(html,/function renderPhases/);
 });
 
 test('Deck API refuses writes and requires token',async t=>{
@@ -45,11 +47,12 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.ok(data.activeMission?.mission_id);
   assert.ok(Array.isArray(data.recentMissions));
   assert.equal(data.workState.schema,'othrys.os.work-state.v1');
-  assert.equal(data.workState.missionId,'V2-007D');
+  assert.equal(data.workState.missionId,'V2-007E');
   assert.equal(data.workState.owner,'Legion');
   assert.equal(data.workState.verifier,'T590');
   assert.equal(data.workState.phase,'BUILD');
   assert.equal(data.workState.authorityGranted,false);
+  assert.deepEqual(data.workState.phases.map(p=>[p.id,p.status]),[['PLAN','COMPLETE'],['BUILD','ACTIVE'],['REVIEW','PENDING'],['SHIP','PENDING']]);
   assert.ok(Array.isArray(data.workState.laws));
   assert.ok(data.workState.laws.length>=7);
   assert.ok(data.workState.artifacts.some(a=>a.id==='surface-data'&&a.present===true));
@@ -57,7 +60,8 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.deepEqual(data.osSurface.titans.map(t=>t.id),['hephaestus','talos']);
   assert.ok(Array.isArray(data.canonicalMissions));
   assert.ok(data.canonicalMissions.some(m=>m.missionId==='V2-007C'&&m.verdict==='PASS'));
-  assert.equal(data.canonicalMissions.some(m=>m.missionId==='V2-007D'),false);
+  assert.ok(data.canonicalMissions.some(m=>m.missionId==='V2-007D'&&m.verdict==='PASS'));
+  assert.equal(data.canonicalMissions.some(m=>m.missionId==='V2-007E'),false);
   assert.equal(data.osSurface.models[0].id,'qwen3-builder');
   assert.equal(data.osSurface.models[0].available,true);
   assert.equal(data.osSurface.models[1].id,'llama3.2-advisory');
