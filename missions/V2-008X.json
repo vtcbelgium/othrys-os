@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-008X",
+  "title": "Exact-base change apply permit materializer",
+  "goal": "Materialize an admitted exact-base MISSION_CHANGE_APPLY_REQUEST as a one-shot apply permit without mutating canonical files.",
+  "laws": [
+    "Permit requires VERIFIED_CHANGE_CANDIDATE evidence and exact current target SHA match.",
+    "Patch SHA-256 must equal the candidate patchDigest.",
+    "Patch changed paths must exactly equal the verified candidate changedFiles.",
+    "Trust Canal DECK-APPLY admission must bind candidateId, missionId, patchDigest and targetSha.",
+    "Permit is one-shot and status APPLY_READY_NOT_STARTED.",
+    "No git apply, file write, commit, builder, or worker launch occurs in this mission.",
+    "Stale or malformed evidence fails closed.",
+    "Independent Legion verification required."
+  ]
+}
