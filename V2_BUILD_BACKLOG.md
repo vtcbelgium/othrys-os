@@ -192,3 +192,5 @@
 | 65 | V2-008M | Short-lived execution lease materializer; live lease proven, worker not started | COMPLETE |
 
 | 66 | V2-008N | Fresh execution lease -> Trust Canal worker-launch request; no worker launch | COMPLETE |
+
+| 67 | V2-008O | One-shot launch permit from admitted launch request; worker not started | COMPLETE |

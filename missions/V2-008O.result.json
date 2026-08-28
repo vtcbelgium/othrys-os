@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-008O",
+  "verdict": "PASS",
+  "status": "COMPLETE",
+  "permit": "PERMIT-406bc13ab6ced755156a8069",
+  "evidence": [
+    "100/100 T590 PASS",
+    "100/100 Legion PASS",
+    "DECK-LAUNCH-406bc13ab6ced755156a8069 admitted",
+    "one-shot permit materialized"
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "builderInvoked": false
+}
