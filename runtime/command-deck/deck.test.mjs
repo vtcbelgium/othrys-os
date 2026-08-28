@@ -32,6 +32,8 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/id="sliceRows"/);
   assert.match(html,/function renderSlices/);
   assert.match(html,/Mission slices/);
+  assert.match(html,/id="modelRoutePreview"/);
+  assert.match(html,/api\/model-selection/);
 });
 
 test('Deck API refuses writes and requires token',async t=>{
@@ -74,9 +76,9 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.osSurface.models[1].status,'ADVISORY ONLY');
   assert.equal(data.osSurface.models[2].available,false);
   assert.equal(data.missionEvidence.missionId,data.workState.missionId);
-  assert.equal(data.workState.missionId,'V2-007H');
-  assert.deepEqual(data.workState.slices.map(x=>[x.id,x.owner,x.status]),[['S1','Legion','COMPLETE'],['S2','Legion','COMPLETE'],['S3','Legion',data.activeMission?.status==='COMPLETE'?'COMPLETE':'OPEN']]);
-  assert.ok(data.workState.slices[2].artifacts.some(a=>a.id==='mission-result'&&a.present===(data.activeMission?.status==='COMPLETE')));
+  assert.equal(data.workState.missionId,'V2-007I');
+  assert.deepEqual(data.workState.slices.map(x=>[x.id,x.owner,x.status]),[['S1','Legion','COMPLETE'],['S2','Legion','COMPLETE'],['S3','Legion',data.missionEvidence.resultPresent?'COMPLETE':'OPEN']]);
+  assert.ok(data.workState.slices[2].artifacts.some(a=>a.id==='mission-result'&&a.present===data.missionEvidence.resultPresent));
   assert.equal(data.missionEvidence.resultPresent,data.missionEvidence.missionId===data.activeMission?.mission_id&&data.activeMission?.status==='COMPLETE');
 
 });
@@ -90,6 +92,15 @@ test('Mission evidence endpoint is authenticated and read-only',async t=>{
   r=await fetch('http://127.0.0.1:18782/api/mission?id=V2-007E',{headers:{'X-OTHRYS-DECK-TOKEN':'mission-token'}}); assert.equal(r.status,200);
   const body=await r.json(); assert.equal(body.evidence.missionId,'V2-007E'); assert.equal(body.evidence.verdict,'PASS'); assert.equal(body.authorityGranted,false); assert.equal(body.controlsEnabled,false);
   r=await fetch('http://127.0.0.1:18782/api/mission?id=../../etc/passwd',{headers:{'X-OTHRYS-DECK-TOKEN':'mission-token'}}); assert.equal(r.status,404);
+});
+
+test('Switchyard selection preview is authenticated and never executes',async t=>{
+  const env={...process.env,OTHRYS_DECK_TOKEN:'switch-token',OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18783'};
+  const child=spawn(process.execPath,[join(dir,'server.mjs')],{env,stdio:['ignore','pipe','pipe']}); t.after(()=>child.kill());
+  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('server timeout')),4000);child.stdout.on('data',d=>{if(String(d).includes('"ready":true')){clearTimeout(timer);resolve();}});});
+  let r=await fetch('http://127.0.0.1:18783/api/model-selection?preference=auto'); assert.equal(r.status,401);
+  r=await fetch('http://127.0.0.1:18783/api/model-selection?preference=auto',{headers:{'X-OTHRYS-DECK-TOKEN':'switch-token'}}); let b=await r.json(); assert.equal(b.selection.selected.id,'qwen3-builder'); assert.equal(b.selection.reason,'PRIMARY_LOCAL_AVAILABLE'); assert.equal(b.selection.executionStarted,false); assert.equal(b.selection.authorityGranted,false);
+  r=await fetch('http://127.0.0.1:18783/api/model-selection?preference=remote-escalation',{headers:{'X-OTHRYS-DECK-TOKEN':'switch-token'}}); b=await r.json(); assert.equal(b.selection.selected,null); assert.equal(b.selection.reason,'PREFERENCE_UNAVAILABLE');
 });
 
 test('Legion telemetry is sanitized and stale-aware',async()=>{

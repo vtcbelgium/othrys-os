@@ -67,7 +67,7 @@
     "decision": "ACCEPT_MISSION_SLICES_COMPLETION_CONTRACTS",
     "authority": "read-only evidence projection; no execution"
   },
-  "next_legal_action": "Open V2-007I for OTHRYS OS model preference -> bounded Switchyard selection evidence, still no execution authority.",
+  "next_legal_action": "V2-007I OTHRYS OS Switchyard selection preview in progress; read-only, no model invocation.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

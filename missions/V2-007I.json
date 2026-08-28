@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007I",
+  "title": "OTHRYS OS Switchyard selection preview",
+  "goal": "Resolve the OS model preference into a deterministic local-first selection preview without invoking any model or granting routing authority.",
+  "laws": [
+    "Selection preview is read-only and deterministic.",
+    "Auto prefers available PRIMARY local engineering labor.",
+    "Explicit preference may select only an available declared model.",
+    "Unavailable or unknown preferences fail closed.",
+    "Preview never invokes a model, Worker, Talos or shell.",
+    "Remote escalation remains gated and unavailable.",
+    "Actual execution routing remains a later mission."
+  ],
+  "slices": [
+    {"id":"S1","title":"Define deterministic selection policy","owner":"Legion","artifacts":["mission-envelope","work-state-api"]},
+    {"id":"S2","title":"Expose authenticated selection preview","owner":"Legion","artifacts":["work-state-api","deck-tests"]},
+    {"id":"S3","title":"Render selection reason beside model selector","owner":"Legion","artifacts":["os-shell","mission-result"]}
+  ]
+}

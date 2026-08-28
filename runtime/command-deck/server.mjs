@@ -66,6 +66,14 @@ export function missionEvidence(missionId){
     return {missionId,title:String(m.title??m.objective??missionId),goal:String(m.goal??m.objective??''),laws:Array.isArray(m.laws)?m.laws:[],resultPresent:!!result,verdict:result?String(result.verdict??result.status??'RECORDED'):null,candidateSha:result?.candidate_sha??result?.candidate_commit??null};
   }catch{return null;}
 }
+export function switchyardPreview(preference='auto'){
+  const models=[{id:'qwen3-builder',label:'Qwen3 8B · Legion',class:'LOCAL ENGINEERING',status:'PRIMARY',available:true,evidence:'V2-002C'},{id:'llama3.2-advisory',label:'Llama 3.2 · T590',class:'LOCAL ADVISORY',status:'ADVISORY ONLY',available:true,evidence:'V2-004D'},{id:'remote-escalation',label:'Remote escalation',class:'REMOTE',status:'GATED',available:false,evidence:null}];
+  const pref=String(preference??'auto');
+  if(pref==='auto'){const selected=models.find(m=>m.available&&m.status==='PRIMARY');return {policy:'LOCAL_FIRST',preference:'auto',selected:selected??null,reason:selected?'PRIMARY_LOCAL_AVAILABLE':'NO_PRIMARY_LOCAL_AVAILABLE',executionStarted:false,authorityGranted:false};}
+  const selected=models.find(m=>m.id===pref); if(!selected) return {policy:'LOCAL_FIRST',preference:pref,selected:null,reason:'UNKNOWN_PREFERENCE',executionStarted:false,authorityGranted:false};
+  if(!selected.available) return {policy:'LOCAL_FIRST',preference:pref,selected:null,reason:'PREFERENCE_UNAVAILABLE',executionStarted:false,authorityGranted:false};
+  return {policy:'LOCAL_FIRST',preference:pref,selected,reason:'EXPLICIT_AVAILABLE_PREFERENCE',executionStarted:false,authorityGranted:false};
+}
 export async function buildStatus(){
   const state=json('GPT_STATE.json');
   let factory=null;
@@ -167,6 +175,10 @@ export async function handle(req,res){
     const evidence=missionEvidence(url.searchParams.get('id'));
     if(!evidence) return send(res,404,JSON.stringify({ok:false,error:'MISSION_NOT_FOUND'}));
     return send(res,200,JSON.stringify({ok:true,evidence,authorityGranted:false,controlsEnabled:false}));
+  }
+  if(url.pathname==='/api/model-selection'){
+    if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
+    return send(res,200,JSON.stringify({ok:true,selection:switchyardPreview(url.searchParams.get('preference')??'auto'),controlsEnabled:false}));
   }
   return serveStatic(url.pathname,res);
 }
