@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008C.R",
+  "title": "Canonical mission envelope materializer",
+  "goal": "Materialize the admitted tablet candidate into the reserved next canonical primary ID under V2-008C policy without activation or execution.",
+  "laws": [
+    "Revision mission V2-008C.R does not consume a primary sequence position.",
+    "The source candidate must exist durably and remain immutable.",
+    "A matching MISSION_ID_ALLOCATION_REQUEST must be durably ADMITTED by Trust Canal.",
+    "The target ID must come only from the proven V2-008C policy.",
+    "The canonical envelope must satisfy GPT_RAILS minimum fields with zero mutation authority.",
+    "Materialization must create a separate immutable candidate-to-mission binding rather than rewriting candidate evidence.",
+    "No active mission state, Talos, Hephaestus, Worker, model call, shell execution, or product mutation is started."
+  ]
+}
