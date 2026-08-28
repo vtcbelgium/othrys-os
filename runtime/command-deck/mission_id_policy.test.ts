@@ -19,7 +19,7 @@ test('Z rolls numeric series forward to A',()=>{
 });
 
 test('revision IDs do not consume primary sequence positions',()=>{
-  withDir(['V2-001A.json','V2-001A.R.json','V2-001B.json'],d=>assert.equal(nextPrimaryMissionId(d),'V2-001C'));
+  withDir(['V2-001A.json','V2-001A.R.json','V2-001A.1.json','V2-001B.json'],d=>assert.equal(nextPrimaryMissionId(d),'V2-001C'));
 });
 test('historical gaps are not backfilled',()=>{
   withDir(['V2-001A.json','V2-001C.json'],d=>assert.equal(nextPrimaryMissionId(d),'V2-001D'));

@@ -20,7 +20,7 @@ export function nextPrimaryMissionId(missionsDir:string):string {
       if(seen.has(id)) throw new MissionIdPolicyError('MISSION_ID_DUPLICATE');
       seen.add(id); primaries.push({id,n:Number(m[1]),l:m[2]}); continue;
     }
-    if(PRIMARY_LIKE.test(name) && !/^V2-\d{3}[A-Z]\.[A-Z]\.json$/.test(name)) throw new MissionIdPolicyError('MISSION_ID_FILENAME_AMBIGUOUS');
+    if(PRIMARY_LIKE.test(name) && !/^V2-\d{3}[A-Z]\.[A-Z0-9]+\.json$/.test(name)) throw new MissionIdPolicyError('MISSION_ID_FILENAME_AMBIGUOUS');
   }
   if(!primaries.length) throw new MissionIdPolicyError('MISSION_ID_SEQUENCE_EMPTY');
   primaries.sort((a,b)=>a.n-b.n||a.l.localeCompare(b.l));
