@@ -1,0 +1,8 @@
+{
+  "mission_id": "V2-008F",
+  "verdict": "PASS",
+  "tests": "69/69 PASS both nodes",
+  "route": "MISSING_WORK -> qwen3-builder preview only",
+  "authorityGranted": false,
+  "executionStarted": false
+}

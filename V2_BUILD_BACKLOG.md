@@ -174,3 +174,5 @@
 | 56 | V2-008D | Tablet-generated canonical mission closed NO_CHANGE_JUSTIFIED; zero execution | COMPLETE |
 
 | 57 | V2-008E | Deterministic mission preflight: NO_CHANGE / MISSING_WORK / BLOCKED | COMPLETE |
+
+| 58 | V2-008F | Read-only MISSING_WORK -> Switchyard build route proposal | COMPLETE |
