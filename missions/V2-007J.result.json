@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-007J",
+  "verdict": "PASS",
+  "candidate_sha": "940e4928010f6c8eda0a2582f6d3d683af466a5b",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "chat_state": "CONTROLLER_LOCAL_ONLY",
+  "new_chat": "CLEARS_LOCAL_SESSION_ONLY",
+  "chat_api": false,
+  "model_invocation": false,
+  "authorityGranted": false,
+  "existing_control_write_path": "REFINE_INTENT_ONLY"
+}

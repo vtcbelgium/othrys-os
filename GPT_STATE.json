@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007I",
+    "mission_id": "V2-007J",
     "status": "COMPLETE",
-    "issued_label": "V2-007I - SWITCHYARD PREVIEW",
+    "issued_label": "V2-007J - LOCAL CHAT SESSION",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007I",
-    "decision": "ACCEPT_SWITCHYARD_SELECTION_PREVIEW",
-    "authority": "selection preview only; no model invocation"
+    "mission_id": "V2-007J",
+    "decision": "ACCEPT_LOCAL_CHAT_SESSION_SHELL",
+    "authority": "controller-local drafts only; no model execution"
   },
-  "next_legal_action": "V2-007J OTHRYS OS local chat session shell in progress; local drafts only, no model execution.",
+  "next_legal_action": "Open V2-007K for OTHRYS OS local project registry shell: New Project creates controller-local project metadata only.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
