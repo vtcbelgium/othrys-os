@@ -17,6 +17,8 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/id="proposalBtn"/);
   assert.match(html,/MISSION_PROPOSAL/);
   assert.match(html,/Mission proposal queued for Trust Canal admission/);
+  assert.match(html,/id="proposalCard"/);
+  assert.match(html,/NOT PROMOTED/);
   assert.match(html,/X-OTHRYS-CONTROL-TOKEN/);
   assert.match(html,/X-OTHRYS-DECK-TOKEN/);
   assert.match(html,/Legion builder node/);
@@ -183,7 +185,7 @@ test('Refine intent ingress is separately authenticated and non-executing',async
 
 test('Control intent status derives pending then admitted without execution',async()=>{
   process.env.OTHRYS_DECK_NO_START='1';
-  const {readControlIntentState}=await import('./server.mjs');
+  const {readControlIntentState,missionProposalEnvelope}=await import('./server.mjs');
   const d=mkdtempSync(join(tmpdir(),'othrys-control-state-')); const inbox=join(d,'intents.jsonl'),ledger=join(d,'admission.jsonl');
   try{
     const intent={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-27T19:37:22.080Z',action:'REFINE_REQUEST',candidateCommit:'24b99ab9b9420c407d9eed01d23e0cf2f52a73d8',feedback:'Improve touch clarity.',authorityGranted:false,status:'PENDING_TRUST_CANAL'};
@@ -193,6 +195,6 @@ test('Control intent status derives pending then admitted without execution',asy
     const admitted=readControlIntentState(inbox,ledger); assert.equal(admitted.status,'ADMITTED'); assert.equal(admitted.missionId,pending.missionId);
     const proposal={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T12:30:00.000Z',action:'MISSION_PROPOSAL',projectContext:'othrys-v2',objective:'Create a bounded tablet mission proposal.',authorityGranted:false,status:'PENDING_TRUST_CANAL'};
     writeFileSync(inbox,JSON.stringify(proposal)+'\n');
-    const pp=readControlIntentState(inbox,ledger); assert.match(pp.missionId,/^DECK-MISSION-/); assert.equal(pp.projectContext,'othrys-v2'); assert.equal(pp.status,'PENDING_TRUST_CANAL'); assert.equal(pp.authorityGranted,false);
+    const pp=readControlIntentState(inbox,ledger); assert.match(pp.missionId,/^DECK-MISSION-/); assert.equal(pp.projectContext,'othrys-v2'); assert.equal(pp.status,'PENDING_TRUST_CANAL'); assert.equal(pp.authorityGranted,false); const envp=missionProposalEnvelope(pp); assert.equal(envp.schema,'othrys.os.mission-proposal.v1'); assert.equal(envp.proposalId,pp.missionId); assert.equal(envp.promoted,false); assert.equal(envp.canonicalMissionId,null); assert.equal(envp.executionStarted,false); assert.equal(missionProposalEnvelope({...pp,action:'REFINE_REQUEST'}),null);
   }finally{rmSync(d,{recursive:true,force:true});}
 });

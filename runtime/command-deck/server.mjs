@@ -79,6 +79,12 @@ export function switchyardPreview(preference='auto'){
   if(!selected.available) return {policy:'LOCAL_FIRST',preference:pref,selected:null,reason:'PREFERENCE_UNAVAILABLE',executionStarted:false,authorityGranted:false};
   return {policy:'LOCAL_FIRST',preference:pref,selected,reason:'EXPLICIT_AVAILABLE_PREFERENCE',executionStarted:false,authorityGranted:false};
 }
+export function missionProposalEnvelope(controlIntent){
+  if(!controlIntent||controlIntent.action!=='MISSION_PROPOSAL'||!controlIntent.missionId) return null;
+  const projectContext=String(controlIntent.projectContext??'').trim(),objective=String(controlIntent.objective??'').trim();
+  if(!projectContext||!objective) return null;
+  return Object.freeze({schema:'othrys.os.mission-proposal.v1',proposalId:controlIntent.missionId,projectContext,objective,admissionStatus:controlIntent.status,promoted:false,canonicalMissionId:null,authorityGranted:false,executionStarted:false});
+}
 export async function buildStatus(){
   const state=json('GPT_STATE.json');
   let factory=null;
@@ -136,10 +142,11 @@ export async function buildStatus(){
       {id:'temp-library',label:'Temporary Library',class:'UNPROMOTED KNOWLEDGE',path:'TEMP_LIBRARY.md',present:existsSync(join(root,'TEMP_LIBRARY.md'))}
     ]
   };
+  const controlIntent=readControlIntentState();
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent:readControlIntentState(),
+    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(controlIntent),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     osSurface,workState,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };

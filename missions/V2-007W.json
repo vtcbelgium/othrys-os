@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007W",
+  "title": "OTHRYS OS reviewable admitted Mission proposal envelope",
+  "goal": "Project the latest admitted tablet MISSION_PROPOSAL into a deterministic reviewable OS envelope without creating a canonical mission or starting execution.",
+  "laws": [
+    "The proposal envelope is derived from the admitted tablet intent and Trust Canal receipt state.",
+    "Proposal ID remains the DECK-MISSION correlation identity; it is not rewritten as a V2 mission ID.",
+    "The envelope exposes project context, objective, admission state and promotion state.",
+    "Canonical promotion remains false until a later explicit authority mission.",
+    "No missions/*.json file is created from the operator proposal.",
+    "No Talos, Hephaestus, Factory, Worker, shell or model execution begins.",
+    "Malformed or non-proposal intents produce no proposal envelope."
+  ],
+  "slices": [
+    {"id":"S1","owner":"Legion","artifacts":["mission-envelope","work-state-api"]},
+    {"id":"S2","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","owner":"T590","artifacts":["deck-tests","mission-result"]}
+  ]
+}

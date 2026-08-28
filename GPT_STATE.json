@@ -67,7 +67,7 @@
     "decision": "ACCEPT_TABLET_MISSION_PROPOSAL_ADMISSION",
     "authority": "proposal admission only; no execution"
   },
-  "next_legal_action": "Open V2-007W to project an admitted tablet mission proposal into a reviewable proposed Mission envelope, still without execution or canonical promotion.",
+  "next_legal_action": "V2-007W reviewable admitted Mission proposal envelope candidate; no canonical promotion or execution.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
