@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-007X",
+  "verdict": "PASS",
+  "candidate_sha": "b22b7fe6f1922d0562c2902542ef0a59b1cb7e49",
+  "combined_tests": "36/36",
+  "legion_tests": "36/36",
+  "live_request_http": 202,
+  "live_request_id": "DECK-PROMOTE-b29cf9c4659550a16d33db13",
+  "live_request_status": "ADMITTED",
+  "proposal_preserved": true,
+  "promoted": false,
+  "canonicalMissionId": null,
+  "authorityGranted": false,
+  "executionStarted": false
+}
