@@ -1,0 +1,17 @@
+{
+  "schema": "othrys.os.change-candidate.v1",
+  "candidateId": "CHANGE-93bbec51650562887cbc81f6",
+  "missionId": "V2-008Q",
+  "jobId": "JOB-21863d6e4188fddefd0289e2",
+  "builderId": "qwen3-builder",
+  "baseSha": "8daa5265dc367fc5dab46b4ba42f76fc5037bf58",
+  "changedFiles": [
+    "scratch/qwen-launch-proof.txt"
+  ],
+  "patchDigest": "93bbec51650562887cbc81f697b703ace3daeb0984be2ce689f9f6f62a745d94",
+  "workspaceClass": "DISPOSABLE_LEGION_WORKTREE",
+  "status": "VERIFIED_CHANGE_CANDIDATE",
+  "applyEligible": false,
+  "authorityGranted": false,
+  "applied": false
+}

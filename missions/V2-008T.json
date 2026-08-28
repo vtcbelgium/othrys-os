@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008T",
+  "title": "Verified change candidate materializer",
+  "goal": "Turn an accepted worker result plus exact base-SHA and patch evidence into an immutable non-applied change candidate.",
+  "laws": [
+    "Candidate requires ACCEPTED_VERIFIED worker acceptance.",
+    "Mission, job, builder and changed-file identities must match patch evidence.",
+    "Base SHA must be exact 40-hex Git identity.",
+    "Patch digest is content-bound and immutable.",
+    "Candidate status is VERIFIED_CHANGE_CANDIDATE; applyEligible remains false until a later freshness gate.",
+    "No canonical apply or product mutation occurs.",
+    "Independent Legion verification required."
+  ]
+}
