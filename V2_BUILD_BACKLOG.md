@@ -180,3 +180,5 @@
 | 59 | V2-008G | Trust Canal MISSING_WORK build request gate; no worker invocation | COMPLETE |
 
 | 60 | V2-008H | Live MISSING_WORK build request visible; stale request extinguished before Qwen | COMPLETE |
+
+| 61 | V2-008I | Freshness-gated READY_NOT_EXECUTING build package materializer | COMPLETE |

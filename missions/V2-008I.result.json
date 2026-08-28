@@ -1,0 +1,8 @@
+{
+  "mission_id": "V2-008I",
+  "verdict": "PASS",
+  "tests": "77/77 PASS both nodes",
+  "liveStaleCheck": "V2-008H -> BUILD_REQUEST_STALE",
+  "authorityGranted": false,
+  "executionStarted": false
+}
