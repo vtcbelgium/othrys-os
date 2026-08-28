@@ -1,0 +1,11 @@
+{
+  "mission_id": "V2-007P",
+  "verdict": "PASS",
+  "candidate_sha": "02846bb0ab5c79df1246210506d0f7cb710d6796",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "connection_dom_target": "PRESENT",
+  "context_kind_badge": "PRESENT",
+  "connection_action_api": false,
+  "authorityGranted": false
+}

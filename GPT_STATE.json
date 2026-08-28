@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007O",
+    "mission_id": "V2-007P",
     "status": "COMPLETE",
-    "issued_label": "V2-007O - PROJECT SCOPED CHAT",
+    "issued_label": "V2-007P - CONTEXT HEADER STATUS",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007O",
-    "decision": "ACCEPT_PROJECT_SCOPED_LOCAL_CHAT",
-    "authority": "controller-local drafts only; no model or execution"
+    "mission_id": "V2-007P",
+    "decision": "ACCEPT_CONTEXT_HEADER_STATUS_REPAIR",
+    "authority": "presentation/status only; no connection actions"
   },
-  "next_legal_action": "V2-007P Panda-style context header and live-status repair in progress; no connection action authority.",
+  "next_legal_action": "Operator visual check of the live Panda-style OTHRYS OS shell on tablet; then open V2-007Q for deeper project Work State binding if needed.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
