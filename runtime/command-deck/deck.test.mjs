@@ -29,6 +29,8 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/id="executionAuthStatus"/);
   assert.match(html,/id="executionLeaseRow"/);
   assert.match(html,/id="workerLaunchRow"/);
+  assert.match(html,/id="workerAcceptanceRow"/);
+  assert.match(html,/data.workerAcceptance/);
   assert.match(html,/data.executionLease/);
   assert.match(html,/data.missionWorkerLaunchRequest/);
   assert.match(html,/data.missionExecutionAuthRequest/);
@@ -148,6 +150,11 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.missionCandidate.allocationStatus,'ALLOCATED_UNACTIVATED');
   assert.equal(data.missionCandidate.authorityGranted,false);
   assert.equal(data.missionCandidate.executionStarted,false);
+  assert.equal(data.workerAcceptance.schema,'othrys.os.worker-acceptance.v1');
+  assert.equal(data.workerAcceptance.missionId,'V2-008Q');
+  assert.equal(data.workerAcceptance.status,'ACCEPTED_VERIFIED');
+  assert.equal(data.workerAcceptance.verifier,'T590');
+  assert.equal(data.workerAcceptance.authorityGranted,false);
   assert.equal(data.missionAllocationRequest,null);
   assert.equal(data.missionActivationRequest,null);
   assert.ok(data.osSurface.knowledge.some(k=>k.id==='north-star'&&k.present===true));

@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008S",
+  "title": "Verified worker outcome in Command Centre",
+  "goal": "Expose the latest deterministically accepted worker result in Command Centre without changing acceptance or execution authority.",
+  "laws": [
+    "Surface consumes the proven worker acceptance gate; it does not infer acceptance itself.",
+    "Show mission, job, builder, verifier, status and changed-file count.",
+    "Missing or invalid evidence renders no accepted worker outcome.",
+    "No worker invocation or product mutation occurs.",
+    "Authority remains false on the OS surface.",
+    "No stale result may be displayed as current acceptance.",
+    "Independent Legion verification required."
+  ]
+}

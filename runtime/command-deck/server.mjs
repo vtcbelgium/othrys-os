@@ -7,6 +7,7 @@ import { decideMissionPreflight } from './preflight_decision.ts';
 import { proposeBuildRoute } from './build_route.ts';
 import { validateExecutionAuthCandidate } from './execution_auth.ts';
 import { validateWorkerLaunchCandidate } from './worker_launch.ts';
+import { acceptWorkerResult } from './worker_acceptance.ts';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -137,6 +138,11 @@ export function latestBuildPackage(missionId=null){
   const files=readdirSync(dir).filter(n=>/^DECK-BUILD-[0-9a-f]{24}\.json$/.test(n)).sort();if(!files.length)return null;
   try{const p=JSON.parse(readFileSync(join(dir,files.at(-1)),'utf8'));if(p.schema!=='othrys.os.build-package.v1'||p.status!=='READY_NOT_EXECUTING')return null;return p;}catch{return null;}
 }
+export function latestWorkerAcceptance(){
+  const dir=join(root,'missions');if(!existsSync(dir))return null;
+  const files=readdirSync(dir).filter(n=>/^V2-\d{3}[A-Z]\.worker-result\.json$/.test(n)).sort().reverse();
+  for(const name of files){try{const worker=JSON.parse(readFileSync(join(dir,name),'utf8')),missionId=name.replace('.worker-result.json',''),job=String(worker.job_id??'');if(!/^JOB-[0-9a-f]{24}$/.test(job))continue;const dispatch=join(dir,'dispatch-tickets',`DISPATCH-${job.slice(4)}.json`),verify=join(dir,`${missionId}.verification.json`);return acceptWorkerResult(dispatch,join(dir,name),verify);}catch{}}return null;
+}
 export function buildPackagePathForMission(missionId){
   const dir=join(root,'missions','build-packages');if(!existsSync(dir))return null;
   for(const name of readdirSync(dir).filter(n=>/^DECK-BUILD-[0-9a-f]{24}\.json$/.test(n)).sort().reverse()){try{const p=JSON.parse(readFileSync(join(dir,name),'utf8'));if(p.schema==='othrys.os.build-package.v1'&&p.missionId===missionId)return join(dir,name);}catch{}}return null;
@@ -220,7 +226,7 @@ export async function buildStatus(){
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(executionAuthIntent?.canonicalTargetMissionId??buildIntent?.canonicalTargetMissionId??null),missionExecutionAuthRequest:executionAuthIntent,executionLease:latestExecutionLease(launchIntent?.canonicalTargetMissionId??executionAuthIntent?.canonicalTargetMissionId??null),missionWorkerLaunchRequest:launchIntent,
+    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(executionAuthIntent?.canonicalTargetMissionId??buildIntent?.canonicalTargetMissionId??null),missionExecutionAuthRequest:executionAuthIntent,workerAcceptance:latestWorkerAcceptance(),executionLease:latestExecutionLease(launchIntent?.canonicalTargetMissionId??executionAuthIntent?.canonicalTargetMissionId??null),missionWorkerLaunchRequest:launchIntent,
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     osSurface,workState,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };
