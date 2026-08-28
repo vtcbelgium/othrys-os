@@ -202,3 +202,5 @@
 | 70 | V2-008R | Deterministic worker-result acceptance gate | COMPLETE |
 
 | 71 | V2-008S | Verified worker outcome in Command Centre | COMPLETE |
+
+| 72 | V2-008T | Verified change candidate materializer | COMPLETE |

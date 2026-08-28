@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-008T",
+  "verdict": "PASS",
+  "focused_tests": "4/4 PASS",
+  "combined_tests": "116/116 PASS both nodes",
+  "live_change_candidate": "CHANGE-93bbec51650562887cbc81f6",
+  "candidate_status": "VERIFIED_CHANGE_CANDIDATE",
+  "applyEligible": false,
+  "authorityGranted": false,
+  "applied": false,
+  "next_state": "WAIT_GPT"
+}
