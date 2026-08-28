@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-008L",
+    "mission_id": "V2-008M",
     "status": "COMPLETE",
-    "issued_label": "V2-008L - EXECUTION AUTHORIZATION VISIBILITY",
+    "issued_label": "V2-008M - EXECUTION LEASE MATERIALIZER",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-008L",
-    "decision": "ACCEPT_EXECUTION_AUTH_VISIBILITY",
-    "authority": "authorization visible and package-bound; worker launch still forbidden"
+    "mission_id": "V2-008M",
+    "decision": "ACCEPT_EXECUTION_LEASE",
+    "authority": "short-lived lease proven; worker launch still forbidden"
   },
-  "next_legal_action": "V2-008M may materialize a short-lived execution lease from the admitted DECK-EXEC receipt; no worker launch.",
+  "next_legal_action": "V2-008N may expose the live lease and admit a separate worker-launch request; do not launch a worker.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

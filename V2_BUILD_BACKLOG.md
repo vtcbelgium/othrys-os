@@ -188,3 +188,5 @@
 | 63 | V2-008K | Fresh package execution-authorization request gate; no worker launch | COMPLETE |
 
 | 64 | V2-008L | Live admitted execution authorization + package identity visible; no worker launch | COMPLETE |
+
+| 65 | V2-008M | Short-lived execution lease materializer; live lease proven, worker not started | COMPLETE |

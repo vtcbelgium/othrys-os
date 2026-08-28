@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-008M",
+  "verdict": "PASS",
+  "status": "COMPLETE",
+  "lease": "LEASE-a17c8c5b8f88ede97629a30c",
+  "evidence": [
+    "89/89 T590 PASS",
+    "89/89 Legion PASS",
+    "fresh DECK-EXEC-a17c8c5b8f88ede97629a30c",
+    "LEASE_READY_NOT_STARTED"
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "builderInvoked": false
+}
