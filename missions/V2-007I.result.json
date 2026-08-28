@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-007I",
+  "verdict": "PASS",
+  "candidate_sha": "5b85eae82f58294745acdb8195944916a54669cb",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "auto_selection": "qwen3-builder",
+  "auto_reason": "PRIMARY_LOCAL_AVAILABLE",
+  "remote_escalation": "PREFERENCE_UNAVAILABLE",
+  "model_invocation": false,
+  "executionStarted": false,
+  "authorityGranted": false
+}
