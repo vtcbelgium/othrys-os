@@ -53,12 +53,42 @@ export async function buildStatus(){
   }
   let node=null;
   try{ node=(await (await fetch('http://127.0.0.1:8765/health',{signal:AbortSignal.timeout(1200)})).json()).node; }catch{}
+  const missionResults=existsSync(join(root,'missions'))?readFileSync(join(root,'V2_BUILD_BACKLOG.md'),'utf8').match(/\| COMPLETE \|/g)?.length??0:0;
+  const nextMissionId=String(state.next_legal_action??'').match(/\bV2-\d+[A-Z]\b/)?.[0]??null;
+  const missionId=state.active_mission?.status==='COMPLETE'&&nextMissionId&&existsSync(join(root,'missions',`${nextMissionId}.json`))?nextMissionId:state.active_mission?.mission_id;
+  let workState=null;
+  if(missionId&&existsSync(join(root,'missions',`${missionId}.json`))){
+    const m=json(`missions/${missionId}.json`);
+    const artifacts=missionId==='V2-007A'?[{id:'os-shell',path:'runtime/command-deck/public/index.html',present:existsSync(join(root,'runtime','command-deck','public','index.html'))},{id:'work-state-api',path:'runtime/command-deck/server.mjs',present:existsSync(join(root,'runtime','command-deck','server.mjs'))},{id:'deck-tests',path:'runtime/command-deck/deck.test.mjs',present:existsSync(join(root,'runtime','command-deck','deck.test.mjs'))},{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}]:[{id:'watcher-source',path:'runtime/command-deck/admission_watcher.ts',present:existsSync(join(root,'runtime','command-deck','admission_watcher.ts'))},{id:'watcher-tests',path:'runtime/command-deck/admission_watcher.test.ts',present:existsSync(join(root,'runtime','command-deck','admission_watcher.test.ts'))},{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}];workState={schema:'othrys.os.work-state.v1',missionId:m.mission_id,title:m.title??m.mission_id,goal:m.goal??'',laws:Array.isArray(m.laws)?m.laws:[],phase:'BUILD',owner:'Legion',verifier:'T590',approval:'NOT_REQUIRED',evidence:'REQUIRED',authorityGranted:false,status:missionId===state.active_mission?.mission_id?state.active_mission?.status:'BUILD',artifacts};
+  }
+  const proven=(id)=>existsSync(join(root,'missions',`${id}.result.json`));
+  const osSurface={
+    name:'OTHRYS OS Alpha',engine:'V2',missionResults,
+    systems:[
+      {id:'talos',label:'Talos',role:'Independent verification',status:'PROVEN'},
+      {id:'trust-canal',label:'Trust Canal',role:'Authority / admission',status:'PROVEN'},
+      {id:'hephaestus',label:'Hephaestus',role:'Engineering authority',status:'PROVEN'},
+      {id:'factory',label:'Factory',role:'Oros build + refine',status:proven('V2-005D')?'PROVEN':'AVAILABLE'},
+      {id:'mycelium',label:'Mycelium',role:'Colony routing',status:proven('V2-004D')?'PROVEN':'AVAILABLE'},
+      {id:'command-deck',label:'Command Deck',role:'Tablet operator surface',status:proven('V2-006E')?'PROVEN':'AVAILABLE'}
+    ],
+    blocks:[
+      {id:'analytics.visit-tracking',status:'STOCK'},
+      {id:'control-feedback',status:'PROVEN'},
+      {id:'media.image-prep',status:'PROVEN'},
+      {id:'monetization.affiliate-offer',status:'STOCK'}
+    ],
+    models:[
+      {id:'qwen-local',label:'Qwen local',class:'LOCAL',status:'PRIMARY'},
+      {id:'external',label:'Remote models',class:'ESCALATION',status:'ON DEMAND'}
+    ]
+  };
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
     recentMissions:recent(state.mission_history),factory,legionNode:readLegionTelemetry(),controlIntent:readControlIntentState(),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
-    authorityGranted:false,controlsEnabled:false
+    osSurface,workState,authorityGranted:false,controlsEnabled:false
   };
 }
 

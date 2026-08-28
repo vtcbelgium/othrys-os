@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-007A",
+  "title": "OTHRYS OS Alpha persistent Work surface",
+  "base_sha": "6d577ce943a77f76f45ebf380d823569249ee632",
+  "goal": "Expose a Panda-style OTHRYS OS Alpha shell on the tablet, backed by canonical V2 mission/evidence state rather than chat-only progress.",
+  "laws": [
+    "Reuse the existing Command Deck; do not create a parallel control plane.",
+    "Canonical repo mission/state evidence outranks conversational summaries.",
+    "Progress must distinguish Plan, Build, Review, and Ship without fake completion.",
+    "Legion remains builder; T590 remains independent verifier and tablet-facing host.",
+    "Human approval and independent evidence remain separate concepts.",
+    "No new Accept, Reject, release, shell, Hephaestus, Talos, or Worker execution authority.",
+    "PandaOS visual/workflow patterns may be reconstructed, but Panda branding/assets/code are forbidden."
+  ]
+}

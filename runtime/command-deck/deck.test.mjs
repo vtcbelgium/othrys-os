@@ -37,6 +37,15 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.controlsEnabled,false);
   assert.ok(data.activeMission?.mission_id);
   assert.ok(Array.isArray(data.recentMissions));
+  assert.equal(data.workState.schema,'othrys.os.work-state.v1');
+  assert.equal(data.workState.missionId,'V2-007A');
+  assert.equal(data.workState.owner,'Legion');
+  assert.equal(data.workState.verifier,'T590');
+  assert.equal(data.workState.phase,'BUILD');
+  assert.equal(data.workState.authorityGranted,false);
+  assert.ok(Array.isArray(data.workState.laws));
+  assert.ok(data.workState.laws.length>=7);
+  assert.ok(data.workState.artifacts.some(a=>a.id==='os-shell'&&a.present===true));
 });
 
 
