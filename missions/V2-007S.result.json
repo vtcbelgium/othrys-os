@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-007S",
+  "verdict": "PASS",
+  "candidate_sha": "b3292dc7b93362aa4be72e4db972112e9f6dbc1a",
+  "visual_confirmation": "PASS_FROM_LIVE_TABLET_SCREENSHOT_2026-08-28T14:15+02:00",
+  "workspace_priority": "PASS",
+  "progress_width": "USABLE_SECONDARY_INSPECTOR",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "authorityGranted": false,
+  "controlsEnabled": false
+}
