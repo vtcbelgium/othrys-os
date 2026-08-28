@@ -90,3 +90,4 @@
 {"sequence": 90, "at": "2026-08-28T17:38:00Z", "mission_id": "V2-008U", "event": "MISSION_CLOSEOUT", "status": "COMPLETE", "evidence": "3/3 focused; 119/119 both nodes; live CHANGE-93bbec... classified STALE_BASE / applyEligible=false"}
 {"sequence":86,"at":"2026-08-28T17:47:46Z","mission_id":"V2-008V","event":"MISSION_CLOSEOUT","status":"COMPLETE","evidence":"125/125 both nodes; stale live candidate rejected CHANGE_NOT_FRESH; no apply"}
 {"sequence":87,"at":"2026-08-28T18:00:43Z","mission_id":"V2-008W","event":"MISSION_CLOSEOUT","status":"COMPLETE","evidence":"fresh qwen job 5.05s; T590 verified exact base/content/scope; CHANGE-ceb4003c fresh; DECK-APPLY-eb582827 admitted; no apply"}
+{"sequence":88,"at":"2026-08-28T18:04:50Z","mission_id":"V2-008X","event":"MISSION_CLOSEOUT","status":"COMPLETE","evidence":"129/129 both nodes; one-shot exact-base apply permit proven; live stale candidate rejected TARGET_STALE; no apply"}

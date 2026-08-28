@@ -1,0 +1,11 @@
+{
+  "mission_id": "V2-008X",
+  "verdict": "PASS",
+  "tests": "129/129 both nodes",
+  "live_stale_candidate": "CHANGE-ceb4003c501bfc16d7350094",
+  "live_stale_result": "TARGET_STALE",
+  "apply_permit_created": false,
+  "apply_performed": false,
+  "authorityGranted": false,
+  "candidate_sha": "fa45a53080c012d1df1f5ea3e3ca6161ac3a7bfb"
+}

@@ -210,3 +210,5 @@
 | 69 | V2-008V | Exact-base verified change -> Trust Canal apply request gate; stale candidate rejected, no apply | COMPLETE |
 
 | 70 | V2-008W | Fresh Qwen exact-base change -> verified candidate -> admitted apply request; no apply | COMPLETE |
+
+| 71 | V2-008X | Exact-base one-shot apply permit materializer; stale live candidate rejected, no apply | COMPLETE |
