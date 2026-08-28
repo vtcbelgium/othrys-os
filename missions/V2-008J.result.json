@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "mission_id": "V2-008J",
+  "verdict": "PASS",
+  "closeout": "NO_CHANGE_JUSTIFIED",
+  "objective": "Show the current freshness-validated build package, builder, mission and readiness state in the Command Centre without granting execution authority.",
+  "preflight_ref": "missions/V2-008J.preflight.json",
+  "preflight_sha256": "8b1b89592d19e6e6631c9fee0ab8fde837822840f42ab529c9f286ab828555ef",
+  "close_request_id": "DECK-NOCHANGE-daf03f44e0f989cfd54c4474",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "mutations": 0,
+  "builderInvoked": false,
+  "next_state": "WAIT_GPT"
+}
