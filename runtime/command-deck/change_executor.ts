@@ -17,11 +17,11 @@ export function executeVerifiedChange(workspace:string,permitPath:string,candida
   const diff=String(patch.diff??''),changed=Array.isArray(permit.changedFiles)?[...permit.changedFiles].map(String).sort():[];
   if(candidate.schema!=='othrys.os.change-candidate.v1'||candidate.candidateId!==permit.candidateId||candidate.missionId!==permit.missionId||candidate.baseSha!==permit.targetSha||candidate.patchDigest!==permit.patchDigest) throw new ChangeExecutorError('CANDIDATE_PERMIT_MISMATCH');
   if(patch.schema!=='othrys.os.worker-patch-evidence.v1'||patch.missionId!==permit.missionId||sha(diff)!==permit.patchDigest||JSON.stringify(diffPaths(diff))!==JSON.stringify(changed)) throw new ChangeExecutorError('PATCH_PERMIT_MISMATCH');
-  const check=spawnSync('git',['-C',workspace,'apply','--check','-'],{encoding:'utf8',input:diff});if(check.status!==0) throw new ChangeExecutorError('GIT_APPLY_CHECK_FAILED');
-  const applied=spawnSync('git',['-C',workspace,'apply','-'],{encoding:'utf8',input:diff});if(applied.status!==0) throw new ChangeExecutorError('GIT_APPLY_FAILED');
+  const check=spawnSync('git',['-c','core.autocrlf=false','-C',workspace,'apply','--check','-'],{encoding:'utf8',input:diff});if(check.status!==0) throw new ChangeExecutorError('GIT_APPLY_CHECK_FAILED');
+  const applied=spawnSync('git',['-c','core.autocrlf=false','-C',workspace,'apply','-'],{encoding:'utf8',input:diff});if(applied.status!==0) throw new ChangeExecutorError('GIT_APPLY_FAILED');
   const afterRaw=git(workspace,['status','--porcelain','--untracked-files=all']),after=statusPaths(afterRaw);
   if(JSON.stringify(after)!==JSON.stringify(changed)){
-    const rollback=spawnSync('git',['-C',workspace,'apply','-R','-'],{encoding:'utf8',input:diff});
+    const rollback=spawnSync('git',['-c','core.autocrlf=false','-C',workspace,'apply','-R','-'],{encoding:'utf8',input:diff});
     if(rollback.status!==0||git(workspace,['status','--porcelain','--untracked-files=all'])) throw new ChangeExecutorError('ROLLBACK_FAILED');
     throw new ChangeExecutorError('POST_APPLY_SCOPE_MISMATCH');
   }
