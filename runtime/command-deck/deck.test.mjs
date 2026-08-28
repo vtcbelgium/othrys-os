@@ -25,6 +25,9 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/id="buildRequestBuilder"/);
   assert.match(html,/id="buildPackageRow"/);
   assert.match(html,/id="buildPackageStatus"/);
+  assert.match(html,/id="executionAuthRow"/);
+  assert.match(html,/id="executionAuthStatus"/);
+  assert.match(html,/data.missionExecutionAuthRequest/);
   assert.match(html,/data.buildPackage/);
   assert.match(html,/missionBuildRequest/);
   assert.match(html,/id="activationBtn"/);
