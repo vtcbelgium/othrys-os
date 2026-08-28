@@ -1,0 +1,16 @@
+{
+  "mission_id": "V2-008N",
+  "verdict": "PASS",
+  "status": "COMPLETE",
+  "launch_request": "DECK-LAUNCH-aff9573501463186fa433c90",
+  "lease": "LEASE-a17c8c5b8f88ede97629a30c",
+  "evidence": [
+    "96/96 T590 PASS",
+    "96/96 Legion PASS",
+    "launch request ADMITTED",
+    "Command Centre lease + launch state"
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "builderInvoked": false
+}

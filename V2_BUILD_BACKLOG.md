@@ -190,3 +190,5 @@
 | 64 | V2-008L | Live admitted execution authorization + package identity visible; no worker launch | COMPLETE |
 
 | 65 | V2-008M | Short-lived execution lease materializer; live lease proven, worker not started | COMPLETE |
+
+| 66 | V2-008N | Fresh execution lease -> Trust Canal worker-launch request; no worker launch | COMPLETE |
