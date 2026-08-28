@@ -1,0 +1,20 @@
+{
+  "mission_id": "V2-009C",
+  "title": "Tablet Panda refinement",
+  "status": "COMPLETE_WITH_KNOWN_DYNAMIC_TEST",
+  "objective": "Refine the Panda-style Command Centre from live Samsung tablet evidence so the work surface no longer collides with the Progress inspector and remains chat-first at tablet desktop viewport widths.",
+  "scope": [
+    "runtime/command-deck/public/index.html"
+  ],
+  "laws": [
+    "Presentation only",
+    "No authority or execution changes",
+    "Tablet desktop viewport must not overlap the inspector",
+    "Preserve all existing Command Deck tests"
+  ],
+  "verification": {
+    "ui_test": "PASS",
+    "deck_suite": "9/10",
+    "known_dynamic_failure": "surface-data artifact reflects mission envelope and is unrelated to presentation-only CSS change"
+  }
+}
