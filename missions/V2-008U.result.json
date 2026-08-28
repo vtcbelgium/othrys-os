@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-008U",
+  "verdict": "PASS",
+  "focused_tests": "3/3 PASS",
+  "combined_tests": "119/119 PASS both nodes",
+  "live_candidate": "CHANGE-93bbec51650562887cbc81f6",
+  "live_status": "STALE_BASE",
+  "applyEligible": false,
+  "reason": "BASE_SHA_MISMATCH",
+  "authorityGranted": false,
+  "next_state": "WAIT_GPT"
+}

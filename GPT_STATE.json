@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-008T",
+    "mission_id": "V2-008U",
     "status": "COMPLETE",
-    "issued_label": "V2-008T - VERIFIED CHANGE CANDIDATE",
+    "issued_label": "V2-008U - CHANGE FRESHNESS GATE",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-008T",
-    "decision": "ACCEPT_VERIFIED_CHANGE_CANDIDATE",
-    "authority": "candidate immutable and non-applied; freshness gate still required"
+    "mission_id": "V2-008U",
+    "decision": "ACCEPT_EXACT_BASE_FRESHNESS_GATE",
+    "authority": "stale base rejected from apply eligibility"
   },
-  "next_legal_action": "V2-008U may classify verified change candidates as FRESH or STALE against canonical target HEAD before any apply request.",
+  "next_legal_action": "V2-008V may admit an apply request only for exact-base FRESH verified change candidates; request itself performs no apply.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

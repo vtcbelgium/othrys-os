@@ -204,3 +204,5 @@
 | 71 | V2-008S | Verified worker outcome in Command Centre | COMPLETE |
 
 | 72 | V2-008T | Verified change candidate materializer | COMPLETE |
+
+| 73 | V2-008U | Exact-base verified change freshness gate | COMPLETE |
