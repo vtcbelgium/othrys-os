@@ -113,3 +113,7 @@ When the canonical Great Library/Garden/Mnemosyne is admitted into V2, migrate b
 `ITEM -> canonical owner/reference`
 
 No silent duplication. No item becomes more authoritative merely because it is placed in the Library.
+## RESEARCH ADDENDUM — PANDAOS REFERENCE
+
+### Room 02 / Shelf: Research
+- `docs/PANDAOS-HARVEST/PANDAOS_V2_HARVEST_REPORT_2026-08-27.md` — extensive observed PandaOS v1.0.1 architecture/UX harvest: Work State, gates, personas/skills, Atlas, model routing, permissions, local search, limitations and bounded follow-up study. `RESEARCH / DOCUMENTED_ONLY`; no runtime or architecture authority.

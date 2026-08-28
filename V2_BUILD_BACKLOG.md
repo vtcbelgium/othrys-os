@@ -57,3 +57,40 @@
 | 23 | V2-006D | Tablet Refine intent -> Trust Canal admission receipt; no execution | COMPLETE |
 
 | 24 | V2-006E | Command Deck pending/admitted intent status visibility | COMPLETE |
+
+| 25 | V2-006F | Automatic T590 tablet-intent admission watcher; Trust Canal admission only | COMPLETE |
+
+| 26 | V2-007A | OTHRYS OS Alpha persistent Work surface over existing Command Deck | COMPLETE |
+
+| 27 | V2-007B | OTHRYS OS local-first model selector; preference only, no routing authority | COMPLETE |
+
+| 28 | V2-007C | Functional Titans / Blocks / Models / Nodes / Oroi navigation surfaces | COMPLETE |
+
+| 29 | V2-007D | Canonical Recent Mission trail derived from result evidence | COMPLETE |
+
+| 30 | V2-007E | Evidence-derived Plan / Build / Review / Ship phase display | COMPLETE |
+
+## Future capability — OTHRYS Visual Control Layer
+- Purpose: let OTHRYS observe and eventually interact with Legion and T590 screens as part of autonomous operation and maintenance.
+- Do not build a TeamViewer clone. Optimize for AI observability, control, and verification.
+- Phase 1 — OBSERVE: live/periodic screenshots, active-window/device status, timestamps, tablet-primary viewing.
+- Phase 2 — SUPERVISED: approved click, keyboard, scroll and window-control actions with clear operator feedback.
+- Phase 3 — AUTONOMOUS: `observe -> detect -> act -> verify -> record`, with bounded retries and evidence.
+- Prefer lightweight 2–5 FPS screen state plus accessibility/window metadata over high-bandwidth video where sufficient.
+- Safety modes: `OBSERVE`, `SUPERVISED`, `AUTONOMOUS`; permissions must be explicit and fail closed.
+- Nodes: Legion + T590. Controller surface: tablet primary, phone secondary.
+- This capability serves the OTHRYS North Star: autonomously build, verify, operate, repair and maintain Oros/OTHRYS over time.
+- Status: DOCUMENTED_ONLY / GATED — no implementation mission authorized yet.
+
+## Research reference — PandaOS harvest
+- `docs/PANDAOS-HARVEST/PANDAOS_V2_HARVEST_REPORT_2026-08-27.md` captures the observed PandaOS v1.0.1 reference architecture and a bounded harvest agenda.
+- Priority study before related V2 design: Work State transitions, approval-vs-evidence gates, autonomy/intervention policy, durable Progress UI, Atlas/Mnemosyne patterns, tier-based model routing and local search.
+- Next evidence is one tiny real OTHRYS task under Panda Work State with independent V2 verification.
+- Status: `RESEARCH / GATED`; this entry authorizes no implementation and creates no PandaOS dependency.
+
+## Canonical strategic rename — OTHRYS OS
+- **Decision 2026-08-27:** `OTHRYS V2` is now strategically/product-facing **OTHRYS OS**.
+- North Star authority: `OTHRYS_OS_NORTH_STAR.md`.
+- This is a naming/direction decision, **not** authorization for a repo/path mass rename or a rewrite.
+- Existing `V2-*` mission IDs, receipts, evidence and historical references remain immutable provenance.
+- Immediate product direction: surface proven machinery as OTHRYS OS while using PandaOS as a high-value UX/orchestration quarry and bounded builder for controlled experiments.

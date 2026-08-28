@@ -26,3 +26,4 @@ Promotion requires context and evidence. No item may launch a build by itself.
 
 - [ ] IDEA | GPT CONTROL | Treat conversation as an intelligence sensor and connect new signals to existing Titans, Blocks, Oroi, products and decisions before creating duplicates | operator direction 2026-08-23 | review when canonical Garden intake is wired
 - [ ] TODO-CANDIDATE | MEMORY | Replace this temporary inbox with canonical Garden/Mnemosyne intake once V2 has proven the required memory/admission Blocks | operator direction 2026-08-23 | not before control foundation is stable
+- [ ] RESEARCH | V2 / PANDAOS HARVEST | Study Panda Work State gates, intervention policy, Atlas/Mnemosyne patterns, local routing/search and declarative persona-skill composition; do not promote architecture until a bounded real OTHRYS task is independently verified | observed PandaOS v1.0.1 session 2026-08-27; `docs/PANDAOS-HARVEST/PANDAOS_V2_HARVEST_REPORT_2026-08-27.md` | next real-work Panda trial
