@@ -21,7 +21,10 @@ function artifactsFor(root,missionId,mission){
     artifact(root,'work-record','.othrys/work/'+missionId+'.work.json'),
     artifact(root,'work-record-module','runtime/os/work_record.mjs'),
     artifact(root,'work-record-tests','runtime/os/work_record.test.mjs'),
-    artifact(root,'work-ledger','.othrys/work/'+missionId+'.transitions.jsonl')
+    artifact(root,'work-ledger','.othrys/work/'+missionId+'.transitions.jsonl'),
+    artifact(root,'project-template','runtime/os/templates/oros-software.json'),
+    artifact(root,'project-materializer','runtime/os/project_materializer.mjs'),
+    artifact(root,'project-materializer-tests','runtime/os/project_materializer.test.mjs')
   ];
   if(mission.artifact_profile==='command-deck'||/^V2-00[78]/.test(missionId)) return [...common,
     artifact(root,'os-shell','runtime/command-deck/public/index.html'),

@@ -1,0 +1,18 @@
+{
+  "schema": "othrys.os.project-template.v1",
+  "templateId": "oros-software",
+  "label": "Software Oros",
+  "kind": "OROS",
+  "description": "General software product workspace governed by the OTHRYS V2 motor.",
+  "defaultRoles": ["planner", "designer", "builder", "reviewer"],
+  "work": {
+    "phases": ["PLAN", "DESIGN", "BUILD", "REVIEW", "SHIP"],
+    "interventionDefault": "CHECKPOINTS",
+    "approvalAuthority": "trust-canal",
+    "evidenceAuthority": "talos"
+  },
+  "defaultOperatingMode": "PLAN",
+  "defaultCapabilities": [],
+  "defaultKnowledge": [],
+  "defaultIntegrations": []
+}

@@ -144,6 +144,7 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.ok(data.osSurface.apps.every(a=>a.actionable===false));
   assert.ok(data.osSurface.apps.some(a=>a.id==='ollama-legion'&&a.status==='PROVEN'));
   assert.equal(data.osSurface.knowledge.length,5);
+  assert.ok(data.osSurface.templates.some(t=>t.id==='oros-software'&&t.kind==='OROS'));
   assert.equal(data.missionCandidate.schema,'othrys.os.mission-candidate.v1');
   assert.equal(data.missionCandidate.status,'CANDIDATE');
   assert.equal(data.missionCandidate.canonicalMissionId,'V2-008D');

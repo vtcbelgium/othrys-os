@@ -227,3 +227,6 @@
 
 | 75 | V2-010B | Durable Work object + stable slice/stage/task identity + append-only evidence transitions | COMPLETE |
 | 76 | V2-010C | Project creation/materialization from project-local OTHRYS OS manifest | NEXT |
+
+| 76 | V2-010C | Template-driven project composition + safe .othrys workspace materializer | COMPLETE |
+| 77 | V2-010D | Operating-mode/permission policy mapped to Trust Canal authority classes | NEXT |

@@ -505,3 +505,8 @@ V2-010A replaces hard-coded Command Deck OS inventories and mission-prefix Work 
 
 V2-010B dogfoods a project-local Work record for itself: Project -> Work -> Slice -> Stage -> Task, deterministic definition digest, BUILD observation, PASS evidence, then SHIP observation. Transition replay is idempotent and regression fails closed. Work remains an evidence-bound orchestration record; V2 Mission/Trust/Talos remain authoritative.
 
+
+## CH-010C — Projects become composable OS objects
+
+V2-010C adds the first OTHRYS OS project template and deterministic materializer. New Oros workspaces can now be composed from role bindings, PROVEN capability references, model policy, knowledge and integrations into a project-local .othrys/ substrate. Unknown/unproven refs and conflicting manifests fail closed; no worker or app generation occurs.
+

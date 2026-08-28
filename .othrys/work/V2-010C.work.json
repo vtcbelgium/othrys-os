@@ -1,0 +1,112 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010C",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010C",
+  "title": "OTHRYS OS project composition and materializer",
+  "objective": "Establish project templates and a safe materializer for project-local .othrys workspaces using selected roles, proven capability references, model policy, knowledge and integrations.",
+  "scale": "EPIC",
+  "problem": "OTHRYS OS has a project manifest but cannot yet compose/materialize a new project workspace like PandaOS New Project.",
+  "outOfScope": [
+    "No app source generation",
+    "No worker invocation",
+    "No project execution authority",
+    "No UI wizard implementation"
+  ],
+  "risks": [
+    "Template accidentally grants authority",
+    "Unknown capability or integration references become trusted",
+    "Existing workspace is overwritten"
+  ],
+  "laws": [
+    "Materialization is file/config creation only.",
+    "Templates cannot grant execution authority.",
+    "Capability/integration/knowledge references must resolve against canonical OTHRYS stock.",
+    "Existing conflicting project manifests fail closed.",
+    "No PandaOS dependency."
+  ],
+  "slices": [
+    {
+      "id": "project-template",
+      "title": "Project template contract",
+      "owner": "hephaestus",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "define-template",
+              "title": "Define Oros software composition template",
+              "status": "OPEN"
+            },
+            {
+              "id": "validate-request",
+              "title": "Validate project creation request and refs",
+              "status": "OPEN"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "verify-template",
+              "title": "Prove template cannot grant authority",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "project-template",
+        "project-materializer",
+        "project-materializer-tests"
+      ]
+    },
+    {
+      "id": "project-materialize",
+      "title": "Safe workspace materialization",
+      "owner": "hephaestus",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "plan-files",
+              "title": "Plan deterministic .othrys workspace files",
+              "status": "OPEN"
+            },
+            {
+              "id": "write-files",
+              "title": "Materialize idempotently without overwriting conflicts",
+              "status": "OPEN"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "verify-workspace",
+              "title": "Verify generated project reloads through project manifest validator",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "project-materializer",
+        "project-materializer-tests"
+      ]
+    }
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "446583143d65a09e8c96e95901506f94e3b06c398ea3680847fbcd451218f0b2"
+}

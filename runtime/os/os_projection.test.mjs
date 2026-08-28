@@ -37,6 +37,9 @@ test('OS projection maps manifest to proven V2 surfaces',()=>{
   assert.equal(os.models[2].available,false);
   assert.ok(os.apps.every(x=>x.actionable===false));
   assert.ok(os.knowledge.some(x=>x.id==='north-star'&&x.present));
+  assert.ok(os.templates.some(x=>x.id==='oros-software'&&x.kind==='OROS'));
+  assert.ok(os.project.roles.some(x=>x.role==='reviewer'&&x.authority==='talos'));
+  assert.equal(os.project.operatingModes.default,'PLAN');
   assert.equal(os.authorityGranted,false);
   assert.equal(os.executionStarted,false);
 });
