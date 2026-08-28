@@ -126,8 +126,10 @@ export function readMissionPreflight(missionId){
   const path=join(root,'missions',`${missionId}.preflight.json`); if(!existsSync(path)) return null;
   try{const raw=readFileSync(path,'utf8'),p=JSON.parse(raw);if(p.schema!=='othrys.os.mission-preflight.v1'||p.missionId!==missionId)return null;return {...p,digest:createHash('sha256').update(raw,'utf8').digest('hex')};}catch{return null;}
 }
-export function latestBuildPackage(){
+export function latestBuildPackage(missionId=null){
   const dir=join(root,'missions','build-packages');if(!existsSync(dir))return null;
+  const preferred=missionId?buildPackagePathForMission(missionId):null;
+  if(preferred){try{const p=JSON.parse(readFileSync(preferred,'utf8'));if(p.schema==='othrys.os.build-package.v1'&&p.status==='READY_NOT_EXECUTING')return p;}catch{}}
   const files=readdirSync(dir).filter(n=>/^DECK-BUILD-[0-9a-f]{24}\.json$/.test(n)).sort();if(!files.length)return null;
   try{const p=JSON.parse(readFileSync(join(dir,files.at(-1)),'utf8'));if(p.schema!=='othrys.os.build-package.v1'||p.status!=='READY_NOT_EXECUTING')return null;return p;}catch{return null;}
 }
@@ -205,7 +207,7 @@ export async function buildStatus(){
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(),missionExecutionAuthRequest:executionAuthIntent,
+    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(executionAuthIntent?.canonicalTargetMissionId??buildIntent?.canonicalTargetMissionId??null),missionExecutionAuthRequest:executionAuthIntent,
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     osSurface,workState,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };
