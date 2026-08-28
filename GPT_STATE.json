@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-008P",
+    "mission_id": "V2-008Q",
     "status": "COMPLETE",
-    "issued_label": "V2-008P - PERMIT-BOUND WORKER REQUEST",
+    "issued_label": "V2-008Q - FIRST GOVERNED REAL QWEN LAUNCH",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-008P",
-    "decision": "ACCEPT_WORKER_REQUEST_MATERIALIZER",
-    "authority": "request schema proven; first real worker launch may be scratch-only in disposable Legion worktree"
+    "mission_id": "V2-008Q",
+    "decision": "ACCEPT_FIRST_GOVERNED_QWEN_DISPATCH",
+    "authority": "worker result accepted only after independent T590 verification; canonical repo not mutated by worker"
   },
-  "next_legal_action": "V2-008Q may run one real qwen3-builder engineering.patch job in a disposable Legion worktree with exactly one scratch file allowed, then require independent T590 verification.",
+  "next_legal_action": "V2-008R may turn worker-result + independent verification into a reusable deterministic acceptance gate before any candidate promotion.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

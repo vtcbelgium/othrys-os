@@ -196,3 +196,5 @@
 | 67 | V2-008O | One-shot launch permit from admitted launch request; worker not started | COMPLETE |
 
 | 68 | V2-008P | Permit-bound proven Legion Worker request materializer; no dispatch | COMPLETE |
+
+| 69 | V2-008Q | First governed real qwen3-builder launch in disposable Legion worktree; T590 independent verification | COMPLETE |
