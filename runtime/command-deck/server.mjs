@@ -11,6 +11,7 @@ import { prepareChangeApplyRequest } from './change_apply.ts';
 import { acceptWorkerResult } from './worker_acceptance.ts';
 import { projectMissionWork } from '../os/work_projection.mjs';
 import { projectOsProjection } from '../os/os_projection.mjs';
+import { readWorkRecord } from '../os/work_record.mjs';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -182,6 +183,7 @@ export async function buildStatus(){
   const missionId=state.active_mission?.status==='COMPLETE'&&nextMissionId&&existsSync(join(root,'missions',`${nextMissionId}.json`))?nextMissionId:state.active_mission?.mission_id;
   const workState=projectMissionWork(root,state,missionId);
   const osSurface=projectOsProjection(root,state,missionResults);
+  const durableWork=missionId?readWorkRecord(root,missionId):null;
   const controlIntent=readControlIntentState();
   const proposalIntent=readLatestIntentState('MISSION_PROPOSAL');
   const promotionIntent=readLatestIntentState('MISSION_PROMOTION_REQUEST');
@@ -198,7 +200,7 @@ export async function buildStatus(){
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
     recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(executionAuthIntent?.canonicalTargetMissionId??buildIntent?.canonicalTargetMissionId??null),missionExecutionAuthRequest:executionAuthIntent,workerAcceptance:latestWorkerAcceptance(),executionLease:latestExecutionLease(launchIntent?.canonicalTargetMissionId??executionAuthIntent?.canonicalTargetMissionId??null),missionWorkerLaunchRequest:launchIntent,latestGovernedApply:latestGovernedApply(),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
-    osSurface,workState,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
+    osSurface,workState,durableWork,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };
 }
 
@@ -308,7 +310,14 @@ export async function handle(req,res){
     if(!evidence) return send(res,404,JSON.stringify({ok:false,error:'MISSION_NOT_FOUND'}));
     return send(res,200,JSON.stringify({ok:true,evidence,authorityGranted:false,controlsEnabled:false}));
   }
-  if(url.pathname==='/api/model-selection'){
+  if(url.pathname==='/api/work'){
+    if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
+    const workMissionId=url.searchParams.get('id')??'';
+    if(!/^V2-\d+[A-Z]$/.test(workMissionId)) return send(res,404,JSON.stringify({ok:false,error:'WORK_NOT_FOUND'}));
+    const work=readWorkRecord(root,workMissionId); if(!work) return send(res,404,JSON.stringify({ok:false,error:'WORK_NOT_FOUND'}));
+    const state=json('GPT_STATE.json');
+    return send(res,200,JSON.stringify({ok:true,work,projection:projectMissionWork(root,state,workMissionId),authorityGranted:false,controlsEnabled:false}));
+  }  if(url.pathname==='/api/model-selection'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
     return send(res,200,JSON.stringify({ok:true,selection:switchyardPreview(url.searchParams.get('preference')??'auto'),controlsEnabled:false}));
   }

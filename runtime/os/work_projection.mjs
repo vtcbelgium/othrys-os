@@ -17,6 +17,12 @@ function artifactsFor(root,missionId,mission){
     artifact(root,'os-projector','runtime/os/os_projection.mjs'),
     artifact(root,'os-tests','runtime/os/os_projection.test.mjs')
   ];
+  if(mission.artifact_profile==='os-work') return [...common,
+    artifact(root,'work-record','.othrys/work/'+missionId+'.work.json'),
+    artifact(root,'work-record-module','runtime/os/work_record.mjs'),
+    artifact(root,'work-record-tests','runtime/os/work_record.test.mjs'),
+    artifact(root,'work-ledger','.othrys/work/'+missionId+'.transitions.jsonl')
+  ];
   if(mission.artifact_profile==='command-deck'||/^V2-00[78]/.test(missionId)) return [...common,
     artifact(root,'os-shell','runtime/command-deck/public/index.html'),
     artifact(root,'work-state-api','runtime/command-deck/server.mjs'),

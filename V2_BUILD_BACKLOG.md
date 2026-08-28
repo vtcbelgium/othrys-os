@@ -224,3 +224,6 @@
 | 73 | V2-009C | Tablet visual refinement stopped by operator in favor of structural OTHRYS OS build | STOPPED |
 | 74 | V2-010A | Project-local OTHRYS OS substrate + Work/OS projections over V2 motor | COMPLETE |
 | 75 | V2-010B | Durable Work objects + transition records over canonical Mission evidence | NEXT |
+
+| 75 | V2-010B | Durable Work object + stable slice/stage/task identity + append-only evidence transitions | COMPLETE |
+| 76 | V2-010C | Project creation/materialization from project-local OTHRYS OS manifest | NEXT |

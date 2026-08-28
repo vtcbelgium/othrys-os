@@ -1,0 +1,13 @@
+{
+  "mission_id": "V2-010B",
+  "verdict": "PASS",
+  "status": "COMPLETE",
+  "work_id": "WORK-V2-010B",
+  "work_record": ".othrys/work/V2-010B.work.json",
+  "transition_ledger": ".othrys/work/V2-010B.transitions.jsonl",
+  "stable_identity": "Project -> Work -> Slice -> Stage -> Task",
+  "regression_policy": "FAIL_CLOSED",
+  "legion_tests": "190/190 PASS",
+  "authority_granted": false,
+  "execution_started": false
+}

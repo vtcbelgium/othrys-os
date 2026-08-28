@@ -8,7 +8,8 @@
     "missions": "missions",
     "blocks": "blocks",
     "knowledge": "docs",
-    "runtime": "runtime"
+    "runtime": "runtime",
+    "work": ".othrys/work"
   },
   "work": {
     "phases": [

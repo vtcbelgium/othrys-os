@@ -26,7 +26,7 @@ export function projectOsProjection(root,state,missionResults=0){
   const knowledge=project.knowledge.map(x=>({...x,present:existsSync(join(root,x.path))}));
   return Object.freeze({
     schema:'othrys.os.project-projection.v1',
-    project:{id:project.projectId,label:project.label,kind:project.kind,work:project.work},
+    project:{id:project.projectId,label:project.label,kind:project.kind,work:project.work,roles:project.roleBindings??[],operatingModes:project.operatingModes??null},
     name:project.label,engine:'V2',missionResults,systems,titans,blocks,models,apps,knowledge,
     authorityGranted:false,executionStarted:false
   });

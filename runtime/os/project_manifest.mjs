@@ -31,6 +31,8 @@ export function validateProjectManifest(manifest){
   uniqueIds(manifest.integrations,'INTEGRATIONS');
   uniqueIds(manifest.knowledge,'KNOWLEDGE');
   uniqueIds(manifest.modelPolicy?.requests,'MODELS');
+  uniqueIds((manifest.roleBindings??[]).map(x=>({...x,id:x.role})),'ROLES');
+  if(manifest.operatingModes?.declarativeGrant!==false) throw new Error('OPERATING_MODES_CANNOT_GRANT_AUTHORITY');
   if(!Array.isArray(manifest.work?.phases)||manifest.work.phases.length<4) throw new Error('INVALID_WORK_PHASES');
   if(manifest.authorityGranted===true||manifest.executionStarted===true) throw new Error('PROJECT_MANIFEST_CANNOT_GRANT_AUTHORITY');
   return Object.freeze(manifest);

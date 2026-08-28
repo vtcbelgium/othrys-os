@@ -1,0 +1,104 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010B",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010B",
+  "title": "Durable OTHRYS Work objects",
+  "objective": "Establish durable project-local Work records and evidence transition history over canonical V2 Missions without creating a second execution engine.",
+  "scale": "EPIC",
+  "problem": "OTHRYS has governed Mission execution but needs a durable Panda-class Work object for structured project orchestration and resume.",
+  "outOfScope": [
+    "No new worker execution path",
+    "No autonomous phase transition authority",
+    "No UI redesign"
+  ],
+  "risks": [
+    "Dual truth if Work state can override Mission evidence",
+    "False completion if transition history is not evidence-bound"
+  ],
+  "laws": [
+    "Canonical Mission/result/receipt evidence wins over Work projection.",
+    "Work transitions are observations, not authority grants.",
+    "Stable work/slice/stage/task identities must survive resume.",
+    "Transition history is append-only and content-bound.",
+    "No PandaOS dependency."
+  ],
+  "slices": [
+    {
+      "id": "work-core",
+      "title": "Work record core",
+      "owner": "hephaestus",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "compile-record",
+              "title": "Compile deterministic Work object from Mission definition",
+              "status": "OPEN"
+            },
+            {
+              "id": "materialize-record",
+              "title": "Materialize project-local Work JSON idempotently",
+              "status": "OPEN"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "verify-record",
+              "title": "Verify identity, authority-free state and tamper handling",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "work-record-module",
+        "work-record-tests"
+      ]
+    },
+    {
+      "id": "transition-ledger",
+      "title": "Evidence transition ledger",
+      "owner": "talos",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "observe-transition",
+              "title": "Derive transition observation from canonical Work projection",
+              "status": "OPEN"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "verify-transition",
+              "title": "Prove append-only idempotent transition history",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "work-ledger",
+        "work-record-tests"
+      ]
+    }
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "44cab33c8ba5ff0f5b338ede763c8818faa0bbd02b4b1ab7e23cdfc2e1d929ff"
+}

@@ -500,3 +500,8 @@ V2-009B harvested PandaOS presentation patterns without importing Panda authorit
 
 V2-010A replaces hard-coded Command Deck OS inventories and mission-prefix Work projection with a project-local .othrys/project.json, validated OS/Work projectors, explicit role/capability/model/integration/knowledge bindings, and zero new execution authority. PandaOS is retained as a structural quarry only; V2 remains the governed motor. Full Legion runtime suite: 186/186 PASS.
 
+
+## CH-010B — Work becomes durable without becoming a second engine
+
+V2-010B dogfoods a project-local Work record for itself: Project -> Work -> Slice -> Stage -> Task, deterministic definition digest, BUILD observation, PASS evidence, then SHIP observation. Transition replay is idempotent and regression fails closed. Work remains an evidence-bound orchestration record; V2 Mission/Trust/Talos remain authoritative.
+

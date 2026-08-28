@@ -165,6 +165,11 @@ test('Deck API refuses writes and requires token',async t=>{
   const resultSlice=data.workState.slices.find(x=>x.artifacts?.some(a=>a.id==='mission-result'));
   if(resultSlice) assert.equal(resultSlice.status,data.missionEvidence.resultPresent?'COMPLETE':'OPEN');
   assert.equal(data.missionEvidence.resultPresent,Boolean(data.missionEvidence.verdict));
+  assert.equal(data.durableWork.schema,'othrys.os.work.v1');
+  assert.equal(data.durableWork.sourceMissionId,data.workState.missionId);
+  assert.equal(data.durableWork.authorityGranted,false);
+  assert.ok(data.osSurface.project.roles.some(r=>r.role==='builder'&&r.authority==='hephaestus'));
+  assert.equal(data.osSurface.project.operatingModes.declarativeGrant,false);
   if(data.missionEvidence.missionId===data.activeMission?.mission_id&&data.activeMission?.status==='COMPLETE') assert.equal(data.missionEvidence.resultPresent,true);
 
 });
@@ -180,6 +185,15 @@ test('Mission evidence endpoint is authenticated and read-only',async t=>{
   r=await fetch('http://127.0.0.1:18782/api/mission?id=../../etc/passwd',{headers:{'X-OTHRYS-DECK-TOKEN':'mission-token'}}); assert.equal(r.status,404);
 });
 
+test('Durable Work endpoint is authenticated and authority-free',async t=>{
+  const env={...process.env,OTHRYS_DECK_TOKEN:'work-token',OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18787'};
+  const child=spawn(process.execPath,[join(dir,'server.mjs')],{env,stdio:['ignore','pipe','pipe']}); t.after(()=>child.kill());
+  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('server timeout')),4000);child.stdout.on('data',d=>{if(String(d).includes('\"ready\":true')){clearTimeout(timer);resolve();}});});
+  let r=await fetch('http://127.0.0.1:18787/api/work?id=V2-010B'); assert.equal(r.status,401);
+  r=await fetch('http://127.0.0.1:18787/api/work?id=V2-010B',{headers:{'X-OTHRYS-DECK-TOKEN':'work-token'}}); assert.equal(r.status,200);
+  const b=await r.json(); assert.equal(b.work.schema,'othrys.os.work.v1'); assert.equal(b.work.workId,'WORK-V2-010B'); assert.equal(b.work.authorityGranted,false); assert.equal(b.projection.phase,'SHIP'); assert.equal(b.authorityGranted,false); assert.equal(b.controlsEnabled,false);
+  r=await fetch('http://127.0.0.1:18787/api/work?id=../../etc/passwd',{headers:{'X-OTHRYS-DECK-TOKEN':'work-token'}}); assert.equal(r.status,404);
+});
 test('Switchyard selection preview is authenticated and never executes',async t=>{
   const env={...process.env,OTHRYS_DECK_TOKEN:'switch-token',OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18783'};
   const child=spawn(process.execPath,[join(dir,'server.mjs')],{env,stdio:['ignore','pipe','pipe']}); t.after(()=>child.kill());
