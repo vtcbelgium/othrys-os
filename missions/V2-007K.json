@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007K",
+  "title": "OTHRYS OS local project registry shell",
+  "goal": "Make New Project functional as controller-local project metadata without filesystem, git, Factory or execution authority.",
+  "laws": [
+    "Project drafts live in controller-local browser storage only.",
+    "Creating a project does not create directories, repositories or Oroi.",
+    "No filesystem, git, Factory, shell or model endpoint is added.",
+    "Canonical othrys-v2 remains separately visible and immutable from this control.",
+    "Project names are bounded and plain text only.",
+    "Deleting local project metadata changes no machine state.",
+    "Promotion into a real Oros remains a later explicit mission."
+  ],
+  "slices": [
+    {"id":"S1","title":"Create local project registry","owner":"Legion","artifacts":["mission-envelope","os-shell"]},
+    {"id":"S2","title":"Wire New Project and selection","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","title":"Prove zero machine mutation authority","owner":"T590","artifacts":["deck-tests","mission-result"]}
+  ]
+}

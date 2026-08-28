@@ -67,7 +67,7 @@
     "decision": "ACCEPT_LOCAL_CHAT_SESSION_SHELL",
     "authority": "controller-local drafts only; no model execution"
   },
-  "next_legal_action": "Open V2-007K for OTHRYS OS local project registry shell: New Project creates controller-local project metadata only.",
+  "next_legal_action": "V2-007K OTHRYS OS local project registry shell in progress; browser metadata only.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
