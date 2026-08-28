@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007U",
+  "title": "OTHRYS OS tablet inspector compaction",
+  "goal": "Use the live tablet screenshot to remove wasted vertical and horizontal space while preserving all current work evidence.",
+  "laws": [
+    "Cards must size to content instead of stretching into empty slabs.",
+    "The tablet Work inspector must not waste width on a redundant one-item chat rail.",
+    "All Progress, Plan, phase and evidence content remains reachable.",
+    "No mission, model, Trust Canal or execution semantics change.",
+    "The center workspace remains primary.",
+    "No external assets or proprietary Panda code are introduced.",
+    "Existing read-only and Refine boundaries remain unchanged."
+  ],
+  "slices": [
+    {"id":"S1","owner":"Legion","artifacts":["os-shell"]},
+    {"id":"S2","owner":"Legion","artifacts":["deck-tests"]},
+    {"id":"S3","owner":"T590","artifacts":["mission-result"]}
+  ]
+}
