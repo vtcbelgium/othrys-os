@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-006F",
+  "verdict": "PASS",
+  "candidate_sha": "cb4ae1a8c5a70db2725b926a065e509c052bb6a1",
+  "t590_boundary_tests": "23/23",
+  "watcher_service": "active",
+  "watcher_enabled": true,
+  "inbox_clean_at_activation": true,
+  "ledger_clean_at_activation": true,
+  "authorityGranted": false,
+  "executionStarted": false
+}
