@@ -10,5 +10,7 @@
   "legion_tests": "186/186 PASS",
   "authority_granted": false,
   "execution_started": false,
-  "panda_runtime_dependency": false
+  "panda_runtime_dependency": false,
+  "t590_tests": "186/186 PASS",
+  "independent_verification": "PASS"
 }

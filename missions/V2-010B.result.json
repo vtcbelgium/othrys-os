@@ -9,5 +9,7 @@
   "regression_policy": "FAIL_CLOSED",
   "legion_tests": "190/190 PASS",
   "authority_granted": false,
-  "execution_started": false
+  "execution_started": false,
+  "t590_tests": "190/190 PASS",
+  "independent_verification": "PASS"
 }

@@ -10,5 +10,7 @@
   "capability_policy": "PROVEN_ONLY",
   "legion_tests": "193/193 PASS",
   "authority_granted": false,
-  "execution_started": false
+  "execution_started": false,
+  "t590_tests": "193/193 PASS",
+  "independent_verification": "PASS"
 }
