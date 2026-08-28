@@ -238,3 +238,12 @@ test('Build route endpoint is authenticated read-only and never executes',async 
   let r=await fetch('http://127.0.0.1:18784/api/build-route?mission=V2-008D');assert.equal(r.status,401);
   r=await fetch('http://127.0.0.1:18784/api/build-route?mission=V2-008D',{headers:{'X-OTHRYS-DECK-TOKEN':'route-token'}});const b=await r.json();assert.equal(b.preflight.class,'NO_CHANGE');assert.equal(b.route.status,'NOT_REQUIRED');assert.equal(b.route.executionStarted,false);assert.equal(b.route.authorityGranted,false);
 });
+
+test('Build request ingress recomputes MISSING_WORK route and does not execute',async t=>{
+  const d=mkdtempSync(join(tmpdir(),'othrys-build-request-')),f=join(d,'intents.jsonl');
+  const env={...process.env,OTHRYS_DECK_TOKEN:'read-build',OTHRYS_DECK_CONTROL_TOKEN:'control-build',OTHRYS_DECK_INTENT_FILE:f,OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18785',OTHRYS_DECK_NO_START:'0'};
+  const child=spawn(process.execPath,[join(dir,'server.mjs')],{env,stdio:['ignore','pipe','pipe']});t.after(()=>{child.kill();rmSync(d,{recursive:true,force:true});});
+  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('server timeout')),4000);child.stdout.on('data',d=>{if(String(d).includes('"ready":true')){clearTimeout(timer);resolve();}});});
+  const r=await fetch('http://127.0.0.1:18785/api/intent',{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control-build'},body:JSON.stringify({action:'MISSION_BUILD_REQUEST',missionId:'V2-008G'})});assert.equal(r.status,202);const b=await r.json();assert.equal(b.intent.builderId,'qwen3-builder');assert.match(b.intent.routeDigest,/^[0-9a-f]{64}$/);assert.equal(b.intent.authorityGranted,false);assert.equal(b.intent.status,'PENDING_TRUST_CANAL');
+  const line=JSON.parse(readFileSync(f,'utf8').trim());assert.equal(line.action,'MISSION_BUILD_REQUEST');assert.equal(line.builderId,'qwen3-builder');
+});

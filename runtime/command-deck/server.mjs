@@ -67,10 +67,13 @@ function deriveIntentState(intent,ledger=admissionLedger){
   }else if(intent.action==='MISSION_NO_CHANGE_CLOSE_REQUEST'){
     body={action:intent.action,missionId:intent.missionId,preflightDigest:intent.preflightDigest,receivedAt:intent.receivedAt};
     const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-NOCHANGE-${digest.slice(0,24)}`;
+  }else if(intent.action==='MISSION_BUILD_REQUEST'){
+    body={action:intent.action,missionId:intent.missionId,builderId:intent.builderId,routeDigest:intent.routeDigest,receivedAt:intent.receivedAt};
+    const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-BUILD-${digest.slice(0,24)}`;
   }else return null;
   let admitted=false;
   if(ledger&&existsSync(ledger)) admitted=readFileSync(ledger,'utf8').split(/\r?\n/).some(line=>line.includes(`"missionId":"${missionId}"`));
-  return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,proposalId:intent.proposalId??null,candidateId:intent.candidateId??null,canonicalTargetMissionId:intent.missionId??null,preflightDigest:intent.preflightDigest??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
+  return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,proposalId:intent.proposalId??null,candidateId:intent.candidateId??null,canonicalTargetMissionId:intent.missionId??null,preflightDigest:intent.preflightDigest??null,builderId:intent.builderId??null,routeDigest:intent.routeDigest??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
 }
 export function readControlIntentState(inbox=intentFile,ledger=admissionLedger){
   if(!inbox||!existsSync(inbox)) return null;
@@ -241,6 +244,13 @@ function persistIntent(body){
     if(preflight.verdict!=='NO_CHANGE_JUSTIFIED'||preflight.objectiveSatisfied!==true||preflight.mutationRequired!==false||preflight.builderRequired!==false||preflight.authorityGranted!==false||preflight.executionStarted!==false) throw new Error('PREFLIGHT_NOT_CLOSABLE');
     const preflightDigest=createHash('sha256').update(raw,'utf8').digest('hex');
     rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,missionId,preflightDigest,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+  }else if(action==='MISSION_BUILD_REQUEST'){
+    const missionId=String(body?.missionId??'').trim();
+    if(!/^V2-\d{3}[A-Z]$/.test(missionId)) throw new Error('INVALID_MISSION_ID');
+    const preflight=decideMissionPreflight(root,missionId),selection=switchyardPreview('auto'),route=proposeBuildRoute(preflight,selection);
+    if(preflight.class!=='MISSING_WORK'||route.status!=='ROUTE_PROPOSED'||!route.selected) throw new Error('BUILD_ROUTE_NOT_AVAILABLE');
+    const routeDigest=createHash('sha256').update(JSON.stringify(route),'utf8').digest('hex');
+    rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,missionId,builderId:route.selected.id,routeDigest,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
   }else throw new Error('ACTION_NOT_ALLOWED');
   mkdirSync(dirname(intentFile),{recursive:true}); appendFileSync(intentFile,JSON.stringify(rec)+'\n'); return rec;
 }

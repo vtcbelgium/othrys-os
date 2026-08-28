@@ -248,3 +248,11 @@ test('complete valid pending MISSION_NO_CHANGE_CLOSE_REQUEST is admitted without
     const line=readFileSync(ledger,'utf8').trim(); assert.match(line,/DECK-NOCHANGE-/); assert.doesNotMatch(line,/executionStarted":true/);
   } finally { rmSync(d,{recursive:true,force:true}); }
 });
+
+test('complete valid pending MISSION_BUILD_REQUEST is admitted without builder execution', () => {
+  const d=mkdtempSync(join(tmpdir(),'admission-watch-build-')); const inbox=join(d,'inbox.jsonl'),ledger=join(d,'ledger.jsonl');
+  try{
+    const intent={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T15:20:00.000Z',action:'MISSION_BUILD_REQUEST',missionId:'V2-008G',builderId:'qwen3-builder',routeDigest:'a'.repeat(64),authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+    writeFileSync(inbox,JSON.stringify(intent)+'\n','utf8'); const r=admitCompleteIntents(inbox,ledger); assert.equal(r.admitted,1); assert.match(readFileSync(ledger,'utf8'),/DECK-BUILD-/);
+  } finally { rmSync(d,{recursive:true,force:true}); }
+});

@@ -1,0 +1,17 @@
+{
+  "mission_id": "V2-008G",
+  "title": "Trust Canal build request gate",
+  "goal": "Admit a build request only for canonical MISSING_WORK with a deterministic proposed local route, without invoking the selected builder.",
+  "laws": [
+    "Build request requires canonical primary mission identity.",
+    "Server recomputes preflight and route; client cannot forge MISSING_WORK or builder choice.",
+    "Only ROUTE_PROPOSED with PRIMARY available local labor may request build.",
+    "Exact route SHA-256 is bound into the Trust Canal request.",
+    "Admission does not invoke a model, worker, Talos, or Hephaestus.",
+    "authorityGranted and executionStarted remain false.",
+    "Independent Legion verification required."
+  ],
+  "status": "CANONICAL_UNACTIVATED",
+  "authorityGranted": false,
+  "executionStarted": false
+}

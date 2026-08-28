@@ -76,3 +76,15 @@ test('no-change close request binds exact preflight digest',()=>{
   const d=mkdtempSync(join(tmpdir(),'deck-nochange-')); const ledger=join(d,'admission.jsonl');
   try{const a=admitDeckIntent(noChangeCloseRequest(),ledger),b=admitDeckIntent({...noChangeCloseRequest(),preflightDigest:'b'.repeat(64)},ledger);assert.notEqual(a.missionId,b.missionId);assert.throws(()=>admitDeckIntent({...noChangeCloseRequest(),preflightDigest:'bad'},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
 });
+
+function buildRequest(){return {schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T15:20:00.000Z',action:'MISSION_BUILD_REQUEST',missionId:'V2-008G',builderId:'qwen3-builder',routeDigest:'a'.repeat(64),authorityGranted:false,status:'PENDING_TRUST_CANAL'};}
+
+test('pending build request becomes Trust Canal admission only',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-build-')); const ledger=join(d,'admission.jsonl');
+  try{const r=admitDeckIntent(buildRequest(),ledger);assert.equal(r.created,true);assert.match(r.missionId,/^DECK-BUILD-/);assert.equal(r.executionStarted,false);assert.equal(r.authorityGranted,false);}finally{rmSync(d,{recursive:true,force:true});}
+});
+
+test('build request binds canonical mission builder and route digest',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-build-')); const ledger=join(d,'admission.jsonl');
+  try{const a=admitDeckIntent(buildRequest(),ledger),b=admitDeckIntent({...buildRequest(),builderId:'other-builder'},ledger);assert.notEqual(a.missionId,b.missionId);assert.throws(()=>admitDeckIntent({...buildRequest(),routeDigest:'bad'},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
+});
