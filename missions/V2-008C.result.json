@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008C",
+  "verdict": "PASS",
+  "candidate_sha": "c9d779d9bb208c82b6f8d3cb3054a1d704ec62e6",
+  "policy": "V2-NNNL primary sequence; A-Z then numeric rollover",
+  "revision_suffixes": "NON_CONSUMING_HISTORY",
+  "historical_gaps": "NOT_BACKFILLED",
+  "current_next_id": "V2-008D",
+  "t590_full_suite": "47/47",
+  "legion_full_suite": "47/47",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "missionCreated": false
+}

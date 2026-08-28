@@ -164,3 +164,5 @@
 
 
 | 42 | V2-007R | Completed-vs-working Progress truth and bounded Recents viewport | COMPLETE |
+
+| 53 | V2-008C | Canonical V2 mission-ID allocation policy; deterministic compute-only sequence | COMPLETE |
