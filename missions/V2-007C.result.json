@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-007C",
+  "verdict": "PASS",
+  "candidate_sha": "b99b3180e50ff16d78942749e714670afb1a6e5f",
+  "legion_deck_tests": "5/5",
+  "t590_deck_tests": "5/5",
+  "functional_views": ["Titans", "Blocks", "Models", "Nodes", "Oroi"],
+  "proven_titans": ["Hephaestus", "Talos"],
+  "navigation_static_check": "PASS",
+  "writeAuthorityGranted": false,
+  "executionAuthorityGranted": false
+}
