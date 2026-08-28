@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007V",
+  "title": "OTHRYS OS project context to Trust Canal mission proposal",
+  "goal": "Allow the tablet to turn the selected project context and an operator objective into a durable mission proposal admitted by Trust Canal, without execution authority.",
+  "laws": [
+    "Mission proposal is a new bounded tablet intent, not direct mission execution.",
+    "Selected project context and objective are content-bound into the proposal digest.",
+    "Only the existing separately authenticated control boundary may submit a proposal.",
+    "Trust Canal admission produces a durable receipt before any future execution stage.",
+    "Proposal admission never starts Talos, Hephaestus, Factory, Worker, shell or model execution.",
+    "Replay is idempotent and malformed proposals fail closed.",
+    "Existing REFINE_REQUEST behavior remains compatible."
+  ],
+  "slices": [
+    {"id":"S1","owner":"Legion","artifacts":["mission-envelope","intent-bridge"]},
+    {"id":"S2","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","owner":"T590","artifacts":["bridge-tests","mission-result"]}
+  ]
+}

@@ -49,12 +49,17 @@ export function readControlIntentState(inbox=intentFile,ledger=admissionLedger){
   try{
     const lines=readFileSync(inbox,'utf8').trim().split(/\r?\n/).filter(Boolean); if(!lines.length)return null;
     const intent=JSON.parse(lines.at(-1));
-    const body={action:intent.action,candidateCommit:intent.candidateCommit,feedback:intent.feedback,receivedAt:intent.receivedAt};
-    const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex');
-    const missionId=`DECK-REFINE-${digest.slice(0,24)}`;
+    let body,missionId;
+    if(intent.action==='REFINE_REQUEST'){
+      body={action:intent.action,candidateCommit:intent.candidateCommit,feedback:intent.feedback,receivedAt:intent.receivedAt};
+      const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-REFINE-${digest.slice(0,24)}`;
+    }else if(intent.action==='MISSION_PROPOSAL'){
+      body={action:intent.action,projectContext:intent.projectContext,objective:intent.objective,receivedAt:intent.receivedAt};
+      const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-MISSION-${digest.slice(0,24)}`;
+    }else return null;
     let admitted=false;
     if(ledger&&existsSync(ledger)) admitted=readFileSync(ledger,'utf8').split(/\r?\n/).some(line=>line.includes(`"missionId":"${missionId}"`));
-    return {action:intent.action,candidateCommit:intent.candidateCommit,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
+    return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
   }catch{return null;}
 }
 export function missionEvidence(missionId){
@@ -89,7 +94,7 @@ export async function buildStatus(){
   let workState=null;
   if(missionId&&existsSync(join(root,'missions',`${missionId}.json`))){
     const m=json(`missions/${missionId}.json`);
-    const shellArtifacts=[{id:'mission-envelope',path:`missions/${missionId}.json`,present:existsSync(join(root,'missions',`${missionId}.json`))},{id:'os-shell',path:'runtime/command-deck/public/index.html',present:existsSync(join(root,'runtime','command-deck','public','index.html'))},{id:'work-state-api',path:'runtime/command-deck/server.mjs',present:existsSync(join(root,'runtime','command-deck','server.mjs'))},{id:'deck-tests',path:'runtime/command-deck/deck.test.mjs',present:existsSync(join(root,'runtime','command-deck','deck.test.mjs'))}];const artifacts=missionId?.startsWith('V2-007')?[...shellArtifacts,{id:'surface-data',path:'runtime/command-deck/server.mjs',present:true},{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}]:[{id:'watcher-source',path:'runtime/command-deck/admission_watcher.ts',present:existsSync(join(root,'runtime','command-deck','admission_watcher.ts'))},{id:'watcher-tests',path:'runtime/command-deck/admission_watcher.test.ts',present:existsSync(join(root,'runtime','command-deck','admission_watcher.test.ts'))},{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}];const resultPath=join(root,'missions',`${missionId}.result.json`);let resultVerdict=null;if(existsSync(resultPath)){try{resultVerdict=String(JSON.parse(readFileSync(resultPath,'utf8')).verdict??'RECORDED')}catch{}}const phases=[{id:'PLAN',status:'COMPLETE',basis:'mission envelope exists'},{id:'BUILD',status:resultVerdict?'COMPLETE':'ACTIVE',basis:resultVerdict?'result recorded':'result absent'},{id:'REVIEW',status:resultVerdict==='PASS'?'COMPLETE':'PENDING',basis:resultVerdict==='PASS'?'PASS result':'independent evidence required'},{id:'SHIP',status:missionId===state.active_mission?.mission_id&&state.active_mission?.status==='COMPLETE'?'COMPLETE':'PENDING',basis:'closeout distinct from candidate PASS'}];workState={schema:'othrys.os.work-state.v1',missionId:m.mission_id,title:m.title??m.mission_id,goal:m.goal??'',laws:Array.isArray(m.laws)?m.laws:[],slices:(Array.isArray(m.slices)?m.slices:[]).map(slice=>{const refs=Array.isArray(slice.artifacts)?slice.artifacts:[];const evidence=refs.map(id=>artifacts.find(a=>a.id===id)??{id,path:null,present:false});return {id:String(slice.id??''),title:String(slice.title??slice.id??''),owner:String(slice.owner??'UNASSIGNED'),artifacts:evidence,status:evidence.length&&evidence.every(a=>a.present)?'COMPLETE':'OPEN'};}),phase:phases.find(x=>x.status==='ACTIVE')?.id??(phases.every(x=>x.status==='COMPLETE')?'SHIP':phases.find(x=>x.status==='PENDING')?.id??'PLAN'),phases,owner:'Legion',verifier:'T590',approval:'NOT_REQUIRED',evidence:'REQUIRED',authorityGranted:false,status:missionId===state.active_mission?.mission_id?state.active_mission?.status:'BUILD',artifacts};
+    const shellArtifacts=[{id:'mission-envelope',path:`missions/${missionId}.json`,present:existsSync(join(root,'missions',`${missionId}.json`))},{id:'os-shell',path:'runtime/command-deck/public/index.html',present:existsSync(join(root,'runtime','command-deck','public','index.html'))},{id:'work-state-api',path:'runtime/command-deck/server.mjs',present:existsSync(join(root,'runtime','command-deck','server.mjs'))},{id:'deck-tests',path:'runtime/command-deck/deck.test.mjs',present:existsSync(join(root,'runtime','command-deck','deck.test.mjs'))},{id:'intent-bridge',path:'runtime/command-deck/intent_bridge.ts',present:existsSync(join(root,'runtime','command-deck','intent_bridge.ts'))},{id:'bridge-tests',path:'runtime/command-deck/intent_bridge.test.ts',present:existsSync(join(root,'runtime','command-deck','intent_bridge.test.ts'))}];const artifacts=missionId?.startsWith('V2-007')?[...shellArtifacts,{id:'surface-data',path:'runtime/command-deck/server.mjs',present:true},{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}]:[{id:'watcher-source',path:'runtime/command-deck/admission_watcher.ts',present:existsSync(join(root,'runtime','command-deck','admission_watcher.ts'))},{id:'watcher-tests',path:'runtime/command-deck/admission_watcher.test.ts',present:existsSync(join(root,'runtime','command-deck','admission_watcher.test.ts'))},{id:'mission-result',path:`missions/${missionId}.result.json`,present:existsSync(join(root,'missions',`${missionId}.result.json`))}];const resultPath=join(root,'missions',`${missionId}.result.json`);let resultVerdict=null;if(existsSync(resultPath)){try{resultVerdict=String(JSON.parse(readFileSync(resultPath,'utf8')).verdict??'RECORDED')}catch{}}const phases=[{id:'PLAN',status:'COMPLETE',basis:'mission envelope exists'},{id:'BUILD',status:resultVerdict?'COMPLETE':'ACTIVE',basis:resultVerdict?'result recorded':'result absent'},{id:'REVIEW',status:resultVerdict==='PASS'?'COMPLETE':'PENDING',basis:resultVerdict==='PASS'?'PASS result':'independent evidence required'},{id:'SHIP',status:missionId===state.active_mission?.mission_id&&state.active_mission?.status==='COMPLETE'?'COMPLETE':'PENDING',basis:'closeout distinct from candidate PASS'}];workState={schema:'othrys.os.work-state.v1',missionId:m.mission_id,title:m.title??m.mission_id,goal:m.goal??'',laws:Array.isArray(m.laws)?m.laws:[],slices:(Array.isArray(m.slices)?m.slices:[]).map(slice=>{const refs=Array.isArray(slice.artifacts)?slice.artifacts:[];const evidence=refs.map(id=>artifacts.find(a=>a.id===id)??{id,path:null,present:false});return {id:String(slice.id??''),title:String(slice.title??slice.id??''),owner:String(slice.owner??'UNASSIGNED'),artifacts:evidence,status:evidence.length&&evidence.every(a=>a.present)?'COMPLETE':'OPEN'};}),phase:phases.find(x=>x.status==='ACTIVE')?.id??(phases.every(x=>x.status==='COMPLETE')?'SHIP':phases.find(x=>x.status==='PENDING')?.id??'PLAN'),phases,owner:'Legion',verifier:'T590',approval:'NOT_REQUIRED',evidence:'REQUIRED',authorityGranted:false,status:missionId===state.active_mission?.mission_id?state.active_mission?.status:'BUILD',artifacts};
   }
   const proven=(id)=>existsSync(join(root,'missions',`${id}.result.json`));
   const osSurface={
@@ -147,13 +152,20 @@ function currentCandidate(){
 function controlAuthorized(req){ return !!controlToken && req.headers['x-othrys-control-token']===controlToken; }
 function persistIntent(body){
   if(!intentFile) throw new Error('INTENT_STORE_REQUIRED');
-  const action=body?.action, candidateCommit=body?.candidateCommit, feedback=String(body?.feedback??'').trim();
-  if(action!=='REFINE_REQUEST') throw new Error('ACTION_NOT_ALLOWED');
-  if(candidateCommit!==currentCandidate()) throw new Error('CANDIDATE_MISMATCH');
-  if(!feedback||feedback.length>1200) throw new Error('INVALID_FEEDBACK');
-  mkdirSync(dirname(intentFile),{recursive:true});
-  const rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,candidateCommit,feedback,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
-  appendFileSync(intentFile,JSON.stringify(rec)+'\n'); return rec;
+  const action=body?.action;
+  let rec;
+  if(action==='REFINE_REQUEST'){
+    const candidateCommit=body?.candidateCommit,feedback=String(body?.feedback??'').trim();
+    if(candidateCommit!==currentCandidate()) throw new Error('CANDIDATE_MISMATCH');
+    if(!feedback||feedback.length>1200) throw new Error('INVALID_FEEDBACK');
+    rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,candidateCommit,feedback,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+  }else if(action==='MISSION_PROPOSAL'){
+    const projectContext=String(body?.projectContext??'').trim(),objective=String(body?.objective??'').trim();
+    if(!projectContext||projectContext.length>64) throw new Error('INVALID_PROJECT_CONTEXT');
+    if(!objective||objective.length>1200) throw new Error('INVALID_OBJECTIVE');
+    rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,projectContext,objective,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+  }else throw new Error('ACTION_NOT_ALLOWED');
+  mkdirSync(dirname(intentFile),{recursive:true}); appendFileSync(intentFile,JSON.stringify(rec)+'\n'); return rec;
 }
 export function authorized(req){
   if(!token) return false;

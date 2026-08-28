@@ -14,6 +14,9 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.doesNotMatch(html,/innerHTML/);
   assert.equal((html.match(/<button disabled/g)||[]).length,3);
   assert.match(html,/id="refineBtn"/);
+  assert.match(html,/id="proposalBtn"/);
+  assert.match(html,/MISSION_PROPOSAL/);
+  assert.match(html,/Mission proposal queued for Trust Canal admission/);
   assert.match(html,/X-OTHRYS-CONTROL-TOKEN/);
   assert.match(html,/X-OTHRYS-DECK-TOKEN/);
   assert.match(html,/Legion builder node/);
@@ -169,7 +172,12 @@ test('Refine intent ingress is separately authenticated and non-executing',async
   const forbidden=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify({...body,action:'ACCEPT'})}); assert.equal(forbidden.status,400);
   const ok=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify(body)}); assert.equal(ok.status,202);
   const data=await ok.json(); assert.equal(data.intent.status,'PENDING_TRUST_CANAL'); assert.equal(data.intent.authorityGranted,false);
-  const lines=readFileSync(f,'utf8').trim().split(/\r?\n/); assert.equal(lines.length,1); assert.equal(JSON.parse(lines[0]).action,'REFINE_REQUEST');
+  let lines=readFileSync(f,'utf8').trim().split(/\r?\n/); assert.equal(lines.length,1); assert.equal(JSON.parse(lines[0]).action,'REFINE_REQUEST');
+  const proposal={action:'MISSION_PROPOSAL',projectContext:'othrys-v2',objective:'Create a bounded mission proposal from tablet context.'};
+  const pbad=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify({...proposal,projectContext:''})}); assert.equal(pbad.status,400);
+  const pok=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-CONTROL-TOKEN':'control'},body:JSON.stringify(proposal)}); assert.equal(pok.status,202);
+  const pdata=await pok.json(); assert.equal(pdata.intent.action,'MISSION_PROPOSAL'); assert.equal(pdata.intent.status,'PENDING_TRUST_CANAL'); assert.equal(pdata.intent.authorityGranted,false);
+  lines=readFileSync(f,'utf8').trim().split(/\r?\n/); assert.equal(lines.length,2); assert.equal(JSON.parse(lines[1]).projectContext,'othrys-v2');
 });
 
 
@@ -183,5 +191,8 @@ test('Control intent status derives pending then admitted without execution',asy
     const pending=readControlIntentState(inbox,ledger); assert.equal(pending.status,'PENDING_TRUST_CANAL'); assert.equal(pending.authorityGranted,false);
     writeFileSync(ledger,JSON.stringify({missionId:pending.missionId})+'\n');
     const admitted=readControlIntentState(inbox,ledger); assert.equal(admitted.status,'ADMITTED'); assert.equal(admitted.missionId,pending.missionId);
+    const proposal={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T12:30:00.000Z',action:'MISSION_PROPOSAL',projectContext:'othrys-v2',objective:'Create a bounded tablet mission proposal.',authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+    writeFileSync(inbox,JSON.stringify(proposal)+'\n');
+    const pp=readControlIntentState(inbox,ledger); assert.match(pp.missionId,/^DECK-MISSION-/); assert.equal(pp.projectContext,'othrys-v2'); assert.equal(pp.status,'PENDING_TRUST_CANAL'); assert.equal(pp.authorityGranted,false);
   }finally{rmSync(d,{recursive:true,force:true});}
 });

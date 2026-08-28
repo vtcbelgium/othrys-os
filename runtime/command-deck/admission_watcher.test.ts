@@ -19,6 +19,10 @@ function validIntent() {
   };
 }
 
+function validMissionProposal() {
+  return {schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T12:30:00.000Z',action:'MISSION_PROPOSAL',projectContext:'othrys-v2',objective:'Create a bounded project mission proposal.',authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+}
+
 function tmp() {
   const d = mkdtempSync(join(tmpdir(), 'admission-watcher-'));
   return { d, inbox: join(d, 'intents.jsonl'), ledger: join(d, 'admission.jsonl') };
@@ -53,6 +57,16 @@ test('complete valid pending REFINE_REQUEST is admitted through admitDeckIntent'
     const record = JSON.parse(lines[0]);
     assert.equal(record.state, 'ADMITTED');
     assert.match(record.missionId, /^DECK-REFINE-/);
+  } finally { rmSync(d, { recursive: true, force: true }); }
+});
+
+test('complete valid pending MISSION_PROPOSAL is admitted without execution', () => {
+  const { d, inbox, ledger } = tmp();
+  try {
+    writeFileSync(inbox, JSON.stringify(validMissionProposal()) + '\n');
+    const result = admitCompleteIntents(inbox, ledger);
+    assert.equal(result.admitted, 1); assert.equal(result.replayed, 0);
+    const record = JSON.parse(ledgerLines(ledger)[0]); assert.equal(record.state,'ADMITTED'); assert.match(record.missionId,/^DECK-MISSION-/); assert.equal('authorityGranted' in record,false); assert.equal('executionStarted' in record,false);
   } finally { rmSync(d, { recursive: true, force: true }); }
 });
 
