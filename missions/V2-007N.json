@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007N",
+  "title": "OTHRYS OS Knowledge and Mnemosyne surface",
+  "goal": "Expose canonical OTHRYS knowledge stock as a read-only Knowledge surface without building a second memory system.",
+  "laws": [
+    "Knowledge entries point to existing canonical or explicitly research-classified files only.",
+    "The surface does not promote research into law or implementation authority.",
+    "No file editing, indexing, embedding, Atlas clone or memory mutation is added.",
+    "Knowledge class and source path remain visible.",
+    "Missing source files fail visibly rather than being invented.",
+    "Mnemosyne remains a future deeper integration, not a renamed sidebar list.",
+    "Any write or autonomous memory maintenance requires a separate mission."
+  ],
+  "slices": [
+    {"id":"S1","title":"Inventory existing knowledge stock","owner":"Legion","artifacts":["mission-envelope","surface-data"]},
+    {"id":"S2","title":"Expose Knowledge navigation and classifications","owner":"Legion","artifacts":["os-shell","deck-tests"]},
+    {"id":"S3","title":"Prove read-only source projection","owner":"T590","artifacts":["deck-tests","mission-result"]}
+  ]
+}

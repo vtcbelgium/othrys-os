@@ -122,6 +122,13 @@ export async function buildStatus(){
       {id:'ollama-t590',label:'Ollama · T590',class:'LOCAL ADVISORY RUNTIME',status:proven('V2-004D')?'PROVEN':'AVAILABLE',actionable:false,evidence:'V2-004D'},
       {id:'github-relay',label:'GitHub relay',class:'REMOTE FALLBACK TRANSPORT',status:String(state.control_lifeline?.fallback_a?.status??'GATED'),actionable:false,evidence:'GPT_STATE.control_lifeline'},
       {id:'command-deck-lan',label:'Command Deck · LAN',class:'LOCAL CONTROLLER SURFACE',status:proven('V2-006A')?'PROVEN':'AVAILABLE',actionable:false,evidence:'V2-006A'}
+    ],
+    knowledge:[
+      {id:'north-star',label:'OTHRYS OS North Star',class:'CANONICAL DIRECTION',path:'OTHRYS_OS_NORTH_STAR.md',present:existsSync(join(root,'OTHRYS_OS_NORTH_STAR.md'))},
+      {id:'build-backlog',label:'V2 Build Backlog',class:'CONTROL / ROADMAP',path:'V2_BUILD_BACKLOG.md',present:existsSync(join(root,'V2_BUILD_BACKLOG.md'))},
+      {id:'panda-harvest',label:'PandaOS Harvest',class:'RESEARCH / GATED',path:'docs/PANDAOS-HARVEST/PANDAOS_V2_HARVEST_REPORT_2026-08-27.md',present:existsSync(join(root,'docs','PANDAOS-HARVEST','PANDAOS_V2_HARVEST_REPORT_2026-08-27.md'))},
+      {id:'visual-control',label:'Visual Control Concept',class:'DOCUMENTED / GATED',path:'docs/V2-VISUAL-CONTROL/CONCEPT.md',present:existsSync(join(root,'docs','V2-VISUAL-CONTROL','CONCEPT.md'))},
+      {id:'temp-library',label:'Temporary Library',class:'UNPROMOTED KNOWLEDGE',path:'TEMP_LIBRARY.md',present:existsSync(join(root,'TEMP_LIBRARY.md'))}
     ]
   };
   return {
