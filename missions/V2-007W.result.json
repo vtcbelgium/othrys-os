@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-007W",
+  "verdict": "PASS",
+  "candidate_sha": "dee39033c883d03057bedbe6eea9a15a47e3a86a",
+  "combined_tests": "33/33",
+  "legion_tests": "33/33",
+  "live_proposal_id": "DECK-MISSION-f5848bffdae68ad8ecab6735",
+  "live_admission_status": "ADMITTED",
+  "proposal_schema": "othrys.os.mission-proposal.v1",
+  "promoted": false,
+  "canonicalMissionId": null,
+  "authorityGranted": false,
+  "executionStarted": false
+}
