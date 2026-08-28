@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007Q",
+    "mission_id": "V2-007R",
     "status": "COMPLETE",
-    "issued_label": "V2-007Q - TABLET LANDSCAPE REPAIR",
+    "issued_label": "V2-007R - COMPLETED WORK PRESENTATION",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007Q",
-    "decision": "ACCEPT_TABLET_LAYOUT_REPAIR",
-    "authority": "visual layout only; no execution"
+    "mission_id": "V2-007R",
+    "decision": "ACCEPT_COMPLETED_WORK_PRESENTATION_REPAIR",
+    "authority": "visual truth only; no execution"
   },
-  "next_legal_action": "V2-007R completed-work presentation repair from live tablet screenshot; visual truth only.",
+  "next_legal_action": "Operator refresh of the live tablet shell after 007Q/007R visual repairs; use the next screenshot to tune remaining Panda-style proportions.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-007R",
+  "verdict": "PASS",
+  "candidate_sha": "d117e845d2d12c12c48bdf1de9b2538968be2dc7",
+  "source_evidence": "operator tablet screenshot 2026-08-28",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "complete_badge": "COMPLETE",
+  "recents_scroll_bound_px": 240,
+  "authorityGranted": false,
+  "new_api": false
+}

@@ -120,3 +120,6 @@
 
 
 | 41 | V2-007Q | Tablet landscape rail/header repair from live operator screenshot | COMPLETE |
+
+
+| 42 | V2-007R | Completed-vs-working Progress truth and bounded Recents viewport | COMPLETE |
