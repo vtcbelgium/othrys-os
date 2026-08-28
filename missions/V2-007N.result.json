@@ -1,0 +1,11 @@
+{
+  "mission_id": "V2-007N",
+  "verdict": "PASS",
+  "candidate_sha": "bd5b3aca937fbde87f606f2ceabed8adb0676f47",
+  "t590_tests": "7/7",
+  "legion_tests": "7/7",
+  "knowledge_entries": 5,
+  "memory_mutation": false,
+  "knowledge_write_api": false,
+  "authorityGranted": false
+}

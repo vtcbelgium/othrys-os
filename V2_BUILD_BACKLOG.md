@@ -110,3 +110,5 @@
 | 36 | V2-007L | Controller-local project-to-mission context selection; canonical mission truth unchanged | COMPLETE |
 
 | 37 | V2-007M | Read-only Apps / Integrations inventory from proven V2 surfaces | COMPLETE |
+
+| 38 | V2-007N | Read-only Knowledge / Mnemosyne surface from canonical and research-classified stock | COMPLETE |
