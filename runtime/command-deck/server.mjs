@@ -1,5 +1,5 @@
 import http from 'node:http';
-import { readFileSync, existsSync, appendFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, existsSync, appendFileSync, mkdirSync, readdirSync } from 'node:fs';
 import { join, resolve, extname, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
@@ -21,6 +21,19 @@ function gitHead(){
   return p.status===0?p.stdout.trim():'UNKNOWN';
 }
 function recent(history,n=8){ return Array.isArray(history)?history.slice(-n).reverse():[]; }
+export function canonicalMissionTrail(n=12){
+  const dir=join(root,'missions'); if(!existsSync(dir)) return [];
+  const out=[];
+  for(const file of readdirSync(dir).filter(x=>x.startsWith('V2-')&&x.endsWith('.result.json'))){
+    try{
+      const result=JSON.parse(readFileSync(join(dir,file),'utf8')); const missionId=String(result.mission_id??file.replace('.result.json',''));
+      if(missionId!==file.replace('.result.json','')) continue;
+      let title=missionId; const envelope=join(dir,`${missionId}.json`); if(existsSync(envelope)){const m=JSON.parse(readFileSync(envelope,'utf8')); title=String(m.title??m.objective??missionId);}
+      out.push({missionId,title,verdict:String(result.verdict??result.status??'RECORDED'),candidateSha:result.candidate_sha??result.candidate_commit??null});
+    }catch{}
+  }
+  return out.sort((a,b)=>a.missionId.localeCompare(b.missionId,undefined,{numeric:true})).slice(-n).reverse();
+}
 export function readLegionTelemetry(path=process.env.OTHRYS_LEGION_TELEMETRY){
   if(!path||!existsSync(path)) return null;
   try{
@@ -91,7 +104,7 @@ export async function buildStatus(){
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),factory,legionNode:readLegionTelemetry(),controlIntent:readControlIntentState(),
+    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent:readControlIntentState(),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     osSurface,workState,authorityGranted:false,controlsEnabled:false
   };

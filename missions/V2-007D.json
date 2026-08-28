@@ -1,0 +1,15 @@
+{
+  "mission_id": "V2-007D",
+  "title": "OTHRYS OS canonical mission trail",
+  "base_sha": "33205350fc7a15362419b52da40d5468b50a4cc7",
+  "goal": "Drive the OS Recent Missions surface from canonical mission result files so visible completion state does not depend on incomplete chat/GPT_STATE history.",
+  "laws": [
+    "missions/*.result.json is the completion evidence source for this surface.",
+    "A mission without a result file must never be displayed as completed by inference.",
+    "Verdicts and candidate SHAs must be shown without rewriting historical evidence.",
+    "Mission titles may be joined from matching mission envelopes when present.",
+    "The trail is read-only and must tolerate malformed/unrelated files by omission.",
+    "Conversational summaries and GPT_STATE mission_history may supplement but never override result evidence.",
+    "No new write, routing, shell, provider, execution, accept, reject, release, Hephaestus, Talos or Worker authority."
+  ]
+}
