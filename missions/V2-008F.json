@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008F",
+  "title": "Read-only missing-work build route proposal",
+  "goal": "Map only MISSING_WORK preflight decisions to a deterministic local-first Switchyard route proposal without invoking a model or worker.",
+  "laws": [
+    "NO_CHANGE and BLOCKED never receive a build route.",
+    "Route proposal consumes the existing Switchyard selection result; it does not invent provider policy.",
+    "Selected labor must be available and PRIMARY for automatic local route proposal.",
+    "Remote escalation stays gated.",
+    "Output is read-only, authenticated when exposed through Command Deck, and executionStarted remains false.",
+    "No worker/model/provider invocation occurs.",
+    "Independent Legion verification required."
+  ]
+}

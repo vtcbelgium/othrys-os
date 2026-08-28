@@ -3,6 +3,8 @@ import { readFileSync, existsSync, appendFileSync, mkdirSync, readdirSync } from
 import { join, resolve, extname, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
+import { decideMissionPreflight } from './preflight_decision.ts';
+import { proposeBuildRoute } from './build_route.ts';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -279,6 +281,13 @@ export async function handle(req,res){
   if(url.pathname==='/api/model-selection'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
     return send(res,200,JSON.stringify({ok:true,selection:switchyardPreview(url.searchParams.get('preference')??'auto'),controlsEnabled:false}));
+  }
+  if(url.pathname==='/api/build-route'){
+    if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
+    const missionId=url.searchParams.get('mission')??'';
+    const preflight=decideMissionPreflight(root,missionId);
+    const selection=switchyardPreview(url.searchParams.get('preference')??'auto');
+    return send(res,200,JSON.stringify({ok:true,preflight,route:proposeBuildRoute(preflight,selection),controlsEnabled:false}));
   }
   return serveStatic(url.pathname,res);
 }
