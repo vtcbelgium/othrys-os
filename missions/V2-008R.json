@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008R",
+  "title": "Deterministic worker-result acceptance gate",
+  "goal": "Accept a worker result only when dispatch evidence, worker scope evidence and independent verifier evidence all bind to the same mission/job.",
+  "laws": [
+    "Worker ok=true is never sufficient by itself.",
+    "Dispatch ticket, worker result and independent verification must bind the same mission/job.",
+    "Out-of-scope mutations always reject.",
+    "Verification verdict must be PASS and every declared check true.",
+    "Acceptance grants no new execution authority.",
+    "Malformed or mismatched evidence fails closed.",
+    "Independent Legion regression verification required."
+  ]
+}
