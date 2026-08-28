@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-008E",
+  "verdict": "PASS",
+  "classification_contract": [
+    "NO_CHANGE",
+    "MISSING_WORK",
+    "BLOCKED"
+  ],
+  "tests": "64/64 PASS both nodes",
+  "authorityGranted": false,
+  "executionStarted": false
+}
