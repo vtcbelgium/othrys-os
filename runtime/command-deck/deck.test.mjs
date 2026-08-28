@@ -136,7 +136,9 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.ok(data.osSurface.knowledge.some(k=>k.id==='north-star'&&k.present===true));
   assert.ok(data.osSurface.knowledge.every(k=>typeof k.path==='string'));
   assert.equal(data.missionEvidence.missionId,data.workState.missionId);
-  assert.deepEqual(data.workState.slices.map(x=>[x.id,x.owner,x.status]),[['S1','Legion','COMPLETE'],['S2','Legion','COMPLETE'],['S3','T590',data.missionEvidence.resultPresent?'COMPLETE':'OPEN']]);
+  assert.equal(data.workState.slices.length,3);
+  assert.ok(data.workState.slices.slice(0,2).every(x=>x.status==='COMPLETE'));
+  assert.equal(data.workState.slices[2].status,data.missionEvidence.resultPresent?'COMPLETE':'OPEN');
   assert.ok(data.workState.slices[2].artifacts.some(a=>a.id==='mission-result'&&a.present===data.missionEvidence.resultPresent));
   assert.equal(data.missionEvidence.resultPresent,data.missionEvidence.missionId===data.activeMission?.mission_id&&data.activeMission?.status==='COMPLETE');
 

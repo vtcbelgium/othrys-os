@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-008C",
+  "title": "Canonical V2 mission-ID allocation policy",
+  "goal": "Define and prove the deterministic canonical V2 mission-ID sequence from repository evidence before any automatic allocation is permitted.",
+  "laws": [
+    "Canonical primary mission IDs are exactly V2-NNNL where NNN is 000-999 and L is A-Z.",
+    "Revision IDs such as V2-001A.R are immutable history but never consume primary sequence positions.",
+    "The next primary ID is the immediate successor of the greatest canonical primary mission envelope present.",
+    "Letter succession is A through Z; Z rolls the numeric series forward and resets to A.",
+    "Missing earlier IDs are historical gaps and are never backfilled automatically.",
+    "Any malformed primary-looking mission filename, duplicate identity, numeric overflow, or target collision fails closed.",
+    "Allocation policy computes an ID only; it does not write a mission, activate work, or execute anything."
+  ],
+  "slices": [
+    {"id":"S1","owner":"Legion","artifacts":["mission-envelope","id-policy"]},
+    {"id":"S2","owner":"Legion","artifacts":["id-policy-tests"]},
+    {"id":"S3","owner":"T590","artifacts":["mission-result"]}
+  ]
+}

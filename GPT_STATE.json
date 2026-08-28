@@ -67,7 +67,7 @@
     "decision": "ACCEPT_CONTROL_RECORD_RECONCILIATION",
     "authority": "control metadata only; historical gap preserved"
   },
-  "next_legal_action": "WAIT_GPT / policy gate: canonical V2 mission-ID automatic allocation has no defined namespace/numbering policy; do not invent one.",
+  "next_legal_action": "V2-008C canonical mission-ID allocation policy candidate; compute only, no allocation, write, activation, or execution.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
