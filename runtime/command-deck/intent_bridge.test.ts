@@ -64,3 +64,15 @@ test('activation request validates canonical primary mission identity',()=>{
   const d=mkdtempSync(join(tmpdir(),'deck-activate-')); const ledger=join(d,'admission.jsonl');
   try{assert.throws(()=>admitDeckIntent({...activationRequest(),missionId:'V2-008C.R'},ledger),/INTENT_EVIDENCE_INVALID/);assert.throws(()=>admitDeckIntent({...activationRequest(),missionId:'DECK-MISSION-0123456789abcdef01234567'},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
 });
+
+function noChangeCloseRequest(){return {schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T14:10:00.000Z',action:'MISSION_NO_CHANGE_CLOSE_REQUEST',missionId:'V2-008D',preflightDigest:'a'.repeat(64),authorityGranted:false,status:'PENDING_TRUST_CANAL'};}
+
+test('pending no-change close request becomes Trust Canal admission only',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-nochange-')); const ledger=join(d,'admission.jsonl');
+  try{const r=admitDeckIntent(noChangeCloseRequest(),ledger);assert.equal(r.created,true);assert.match(r.missionId,/^DECK-NOCHANGE-/);assert.equal(r.record.state,'ADMITTED');assert.equal(r.executionStarted,false);assert.equal(r.authorityGranted,false);}finally{rmSync(d,{recursive:true,force:true});}
+});
+
+test('no-change close request binds exact preflight digest',()=>{
+  const d=mkdtempSync(join(tmpdir(),'deck-nochange-')); const ledger=join(d,'admission.jsonl');
+  try{const a=admitDeckIntent(noChangeCloseRequest(),ledger),b=admitDeckIntent({...noChangeCloseRequest(),preflightDigest:'b'.repeat(64)},ledger);assert.notEqual(a.missionId,b.missionId);assert.throws(()=>admitDeckIntent({...noChangeCloseRequest(),preflightDigest:'bad'},ledger),/INTENT_EVIDENCE_INVALID/);}finally{rmSync(d,{recursive:true,force:true});}
+});

@@ -238,3 +238,13 @@ test('complete valid pending MISSION_ACTIVATION_REQUEST is admitted without acti
     assert.equal('authorityGranted' in record,false); assert.equal('executionStarted' in record,false);
   } finally { rmSync(d,{recursive:true,force:true}); }
 });
+
+test('complete valid pending MISSION_NO_CHANGE_CLOSE_REQUEST is admitted without closeout or execution', () => {
+  const d=mkdtempSync(join(tmpdir(),'admission-watch-nochange-')); const inbox=join(d,'inbox.jsonl'),ledger=join(d,'ledger.jsonl');
+  try{
+    const intent={schema:'othrys.deck.intent.v1',receivedAt:'2026-08-28T14:10:00.000Z',action:'MISSION_NO_CHANGE_CLOSE_REQUEST',missionId:'V2-008D',preflightDigest:'a'.repeat(64),authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+    writeFileSync(inbox,JSON.stringify(intent)+'\n','utf8');
+    const r=admitCompleteIntents(inbox,ledger); assert.equal(r.admitted,1); assert.equal(r.failed,false);
+    const line=readFileSync(ledger,'utf8').trim(); assert.match(line,/DECK-NOCHANGE-/); assert.doesNotMatch(line,/executionStarted":true/);
+  } finally { rmSync(d,{recursive:true,force:true}); }
+});

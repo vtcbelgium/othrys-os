@@ -62,10 +62,13 @@ function deriveIntentState(intent,ledger=admissionLedger){
   }else if(intent.action==='MISSION_ACTIVATION_REQUEST'){
     body={action:intent.action,missionId:intent.missionId,receivedAt:intent.receivedAt};
     const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-ACTIVATE-${digest.slice(0,24)}`;
+  }else if(intent.action==='MISSION_NO_CHANGE_CLOSE_REQUEST'){
+    body={action:intent.action,missionId:intent.missionId,preflightDigest:intent.preflightDigest,receivedAt:intent.receivedAt};
+    const digest=createHash('sha256').update(JSON.stringify(body),'utf8').digest('hex'); missionId=`DECK-NOCHANGE-${digest.slice(0,24)}`;
   }else return null;
   let admitted=false;
   if(ledger&&existsSync(ledger)) admitted=readFileSync(ledger,'utf8').split(/\r?\n/).some(line=>line.includes(`"missionId":"${missionId}"`));
-  return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,proposalId:intent.proposalId??null,candidateId:intent.candidateId??null,canonicalTargetMissionId:intent.missionId??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
+  return {action:intent.action,candidateCommit:intent.candidateCommit??null,projectContext:intent.projectContext??null,objective:intent.objective??null,proposalId:intent.proposalId??null,candidateId:intent.candidateId??null,canonicalTargetMissionId:intent.missionId??null,preflightDigest:intent.preflightDigest??null,receivedAt:intent.receivedAt,missionId,status:admitted?'ADMITTED':'PENDING_TRUST_CANAL',authorityGranted:false};
 }
 export function readControlIntentState(inbox=intentFile,ledger=admissionLedger){
   if(!inbox||!existsSync(inbox)) return null;
@@ -108,6 +111,11 @@ export function latestMissionCandidate(){
     const b=JSON.parse(readFileSync(bp,'utf8')); if(b.schema!=='othrys.os.mission-allocation.v1'||b.candidateId!==c.candidateId) return c;
     return {...c,canonicalMissionId:b.missionId,allocationStatus:b.status,allocationId:b.allocationId};
   }catch{return null;}
+}
+export function readMissionPreflight(missionId){
+  if(!/^V2-\d{3}[A-Z]$/.test(String(missionId??''))) return null;
+  const path=join(root,'missions',`${missionId}.preflight.json`); if(!existsSync(path)) return null;
+  try{const raw=readFileSync(path,'utf8'),p=JSON.parse(raw);if(p.schema!=='othrys.os.mission-preflight.v1'||p.missionId!==missionId)return null;return {...p,digest:createHash('sha256').update(raw,'utf8').digest('hex')};}catch{return null;}
 }
 export async function buildStatus(){
   const state=json('GPT_STATE.json');
@@ -171,10 +179,13 @@ export async function buildStatus(){
   const promotionIntent=readLatestIntentState('MISSION_PROMOTION_REQUEST');
   const allocationIntent=readLatestIntentState('MISSION_ID_ALLOCATION_REQUEST');
   const activationIntent=readLatestIntentState('MISSION_ACTIVATION_REQUEST');
+  const noChangeCloseIntent=readLatestIntentState('MISSION_NO_CHANGE_CLOSE_REQUEST');
+  const missionCandidate=latestMissionCandidate();
+  const missionPreflight=readMissionPreflight(missionCandidate?.canonicalMissionId);
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate:latestMissionCandidate(),missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,
+    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     osSurface,workState,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };
@@ -218,6 +229,16 @@ function persistIntent(body){
     const mission=JSON.parse(readFileSync(missionPath,'utf8'));
     if(mission.status!=='CANONICAL_UNACTIVATED'||mission.authorityGranted!==false||mission.executionStarted!==false) throw new Error('MISSION_NOT_ACTIVATABLE');
     rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,missionId,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
+  }else if(action==='MISSION_NO_CHANGE_CLOSE_REQUEST'){
+    const missionId=String(body?.missionId??'').trim();
+    if(!/^V2-\d{3}[A-Z]$/.test(missionId)) throw new Error('INVALID_MISSION_ID');
+    const missionPath=join(root,'missions',`${missionId}.json`); if(!existsSync(missionPath)) throw new Error('MISSION_NOT_FOUND');
+    const mission=JSON.parse(readFileSync(missionPath,'utf8')),preflightPath=join(root,'missions',`${missionId}.preflight.json`); if(!existsSync(preflightPath)) throw new Error('PREFLIGHT_NOT_FOUND');
+    const raw=readFileSync(preflightPath,'utf8'),preflight=JSON.parse(raw);
+    if(mission.status!=='CANONICAL_UNACTIVATED'||mission.authorityGranted!==false||mission.executionStarted!==false) throw new Error('MISSION_STATE_INVALID');
+    if(preflight.verdict!=='NO_CHANGE_JUSTIFIED'||preflight.objectiveSatisfied!==true||preflight.mutationRequired!==false||preflight.builderRequired!==false||preflight.authorityGranted!==false||preflight.executionStarted!==false) throw new Error('PREFLIGHT_NOT_CLOSABLE');
+    const preflightDigest=createHash('sha256').update(raw,'utf8').digest('hex');
+    rec={schema:'othrys.deck.intent.v1',receivedAt:new Date().toISOString(),action,missionId,preflightDigest,authorityGranted:false,status:'PENDING_TRUST_CANAL'};
   }else throw new Error('ACTION_NOT_ALLOWED');
   mkdirSync(dirname(intentFile),{recursive:true}); appendFileSync(intentFile,JSON.stringify(rec)+'\n'); return rec;
 }

@@ -1,0 +1,14 @@
+{
+  "mission_id": "V2-008D.S",
+  "title": "Trust Canal no-change close request",
+  "goal": "Allow a deterministically proven NO_CHANGE_JUSTIFIED canonical mission to request terminal closeout through Trust Canal without activation, builder work, or mutation.",
+  "laws": [
+    "Only a canonical primary mission with durable NO_CHANGE_JUSTIFIED preflight may request no-change closeout.",
+    "The exact preflight artifact SHA-256 is bound into the request.",
+    "The mission must still be non-executing and authority-free.",
+    "Close request is a separate authenticated tablet intent and Trust Canal receipt.",
+    "Admission of the close request does not itself write a result file.",
+    "No builder, model, Talos work, Hephaestus work, shell, or product mutation is started.",
+    "Malformed identity, stale preflight, or evidence mismatch fails closed."
+  ]
+}

@@ -47,6 +47,12 @@ export function admitDeckIntent(intent:any,ledgerPath:string){
     intentDigest=digest({action:intent.action,missionId:canonicalMissionId,receivedAt});
     missionId=`DECK-ACTIVATE-${intentDigest.slice(0,24)}`;
     command=JSON.stringify({type:'MISSION_ACTIVATION_REQUEST',missionId:canonicalMissionId,intentDigest});
+  }else if(intent.action==='MISSION_NO_CHANGE_CLOSE_REQUEST'){
+    const canonicalMissionId=String(intent.missionId??'').trim(),preflightDigest=String(intent.preflightDigest??'').trim();
+    if(!/^V2-\d{3}[A-Z]$/.test(canonicalMissionId)||!/^[0-9a-f]{64}$/.test(preflightDigest)) throw new DeckIntentError('INTENT_EVIDENCE_INVALID');
+    intentDigest=digest({action:intent.action,missionId:canonicalMissionId,preflightDigest,receivedAt});
+    missionId=`DECK-NOCHANGE-${intentDigest.slice(0,24)}`;
+    command=JSON.stringify({type:'MISSION_NO_CHANGE_CLOSE_REQUEST',missionId:canonicalMissionId,preflightDigest,intentDigest});
   }else throw new DeckIntentError('INTENT_AUTHORITY_INVALID');
   const ledger=new AdmissionLedger({path:ledgerPath});
   const canal=new TrustCanalAdmission(ledger,[{role:'operator',channel:'command-deck'}]);
