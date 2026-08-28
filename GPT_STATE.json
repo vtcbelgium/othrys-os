@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 88,
+  "sequence": 89,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-007D",
+    "mission_id": "V2-007E",
     "status": "COMPLETE",
-    "issued_label": "V2-007D - OTHRYS OS CANONICAL MISSION TRAIL",
+    "issued_label": "V2-007E - OTHRYS OS EVIDENCE-DERIVED PHASE DISPLAY",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-007D",
-    "decision": "ACCEPT_CANONICAL_MISSION_TRAIL",
-    "authority": "read-only result evidence projection; no execution"
+    "mission_id": "V2-007E",
+    "decision": "ACCEPT_EVIDENCE_DERIVED_PHASE_DISPLAY",
+    "authority": "read-only phase projection; no transition authority"
   },
-  "next_legal_action": "Open V2-007E OTHRYS OS phase derivation: derive Plan/Build/Review/Ship display from mission/result evidence without granting transition authority.",
+  "next_legal_action": "Operator visual check of OTHRYS OS Alpha on the tablet; then open V2-007F for deeper Panda-style Progress/Plan interaction without new execution authority.",
   "mission_history": [
     {
       "mission_id": "V2-000A",
@@ -303,6 +303,11 @@
       "mission_id": "V2-007D",
       "status": "COMPLETE",
       "note": "Recent Mission trail now derives from canonical missions/*.result.json rather than incomplete chat/GPT_STATE history; Legion 5/5 + T590 5/5 at 0b76e54; missing result files are not inferred complete; no new authority."
+    },
+    {
+      "mission_id": "V2-007E",
+      "status": "COMPLETE",
+      "note": "Progress phases now derive from mission envelope/result evidence: Plan COMPLETE, Build ACTIVE while result absent, Review requires PASS, Ship remains separate closeout; Legion 5/5 + T590 5/5 at 64e395b; projection only, no transition authority."
     }
   ],
   "git": {

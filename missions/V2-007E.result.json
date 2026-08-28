@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-007E",
+  "verdict": "PASS",
+  "candidate_sha": "64e395b5844f19083d4d9daa3636966e73be99e1",
+  "legion_deck_tests": "5/5",
+  "t590_deck_tests": "5/5",
+  "phase_projection": [["PLAN","COMPLETE"],["BUILD","ACTIVE"],["REVIEW","PENDING"],["SHIP","PENDING"]],
+  "phase_source": "mission envelope + result evidence",
+  "transitionAuthorityGranted": false,
+  "writeAuthorityGranted": false,
+  "executionAuthorityGranted": false
+}
