@@ -67,7 +67,7 @@
     "decision": "ACCEPT_PROMOTION_REQUEST_ADMISSION",
     "authority": "promotion request admitted only; canonical mission absent; no execution"
   },
-  "next_legal_action": "V2-007Y is gated: materialize an admitted promotion request into a canonical candidate Mission envelope without execution; require preserved proposal/promotion evidence and independent verification.",
+  "next_legal_action": "V2-007Y candidate materializer built; independent verification and live evidence materialization required before closeout.",
   "mission_history": [
     {
       "mission_id": "V2-000A",

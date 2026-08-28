@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-007Y",
+  "title": "Materialize admitted promotion as candidate Mission envelope",
+  "goal": "Convert an admitted DECK-PROMOTE receipt into a durable candidate Mission envelope while preserving proposal and promotion evidence and starting no execution.",
+  "laws": [
+    "Only an ADMITTED MISSION_PROMOTION_REQUEST may materialize a candidate.",
+    "The referenced DECK-MISSION proposal must also be ADMITTED.",
+    "Candidate envelopes live under missions/candidates and are not canonical V2 missions.",
+    "Candidate identity is deterministic and replay-idempotent.",
+    "Proposal objective and project context remain content-bound evidence.",
+    "No V2 mission ID is allocated by this mission.",
+    "No active mission, Talos, Hephaestus, Worker, shell or execution path is started."
+  ],
+  "slices": [
+    {"id":"S1","owner":"Legion","artifacts":["mission-envelope","candidate-materializer"]},
+    {"id":"S2","owner":"Legion","artifacts":["candidate-tests"]},
+    {"id":"S3","owner":"T590","artifacts":["mission-result"]}
+  ]
+}
