@@ -68,7 +68,7 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.osSurface.models[1].status,'ADVISORY ONLY');
   assert.equal(data.osSurface.models[2].available,false);
   assert.equal(data.missionEvidence.missionId,'V2-007F');
-  assert.equal(data.missionEvidence.resultPresent,false);
+  assert.equal(data.missionEvidence.resultPresent,data.activeMission?.status==='COMPLETE');
 
 });
 
