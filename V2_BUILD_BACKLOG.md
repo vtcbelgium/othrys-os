@@ -264,3 +264,6 @@
 
 95. **V2-010T Sclerotium / Clean-Root Recovery — COMPLETE/PASS** — 339/339 Node + 78/78 Mycelium + 10/10 workers on Legion/T590; identical clean-root manifest digest.
 96. **V2-010U Switchyard / Frugal Heart — RUNNING** — strict capability/tier resolver over legal qualified candidates; cheapest capable first; no authority or paid auto-escalation.
+
+97. **V2-010U Switchyard / Frugal Heart — COMPLETE/PASS** — 350/350 Node + 78/78 Mycelium + 10/10 workers on Legion/T590; qwen selected, advisory/remote rejected explicitly.
+98. **V2-010V Switchyard House Admission — RUNNING** — manifest + Book + component contract + Atlas/Mnemosyne derived admission; no duplicate routing backend.

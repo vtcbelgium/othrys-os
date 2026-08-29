@@ -1,0 +1,23 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010V",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010V",
+  "title": "Switchyard House Admission",
+  "objective": "Admit the now-proven Switchyard resolver as a current OTHRYS OS House resident without duplicating routing backends: manifest, Book, component contract, Atlas/Mnemosyne projection and anti-drift tests must move together.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "A House resident must have exactly one manifest identity, one current Book and one component contract.",
+    "Switchyard owns deterministic selection evidence only; provider health, certification, Trust Canal authority and worker execution remain elsewhere.",
+    "Atlas and Mnemosyne remain derived projections and cannot promote Switchyard by themselves.",
+    "Admission must remove only the obsolete quarry-only prohibition for Switchyard, not Prometheus, Rhea or Visual Control.",
+    "No new execution, approval, provider credential or paid escalation authority is introduced."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "4fa32bea6faeb68b5c0b98f4927b593dd39c4315ece4ccfcec6602691caf966f"
+}

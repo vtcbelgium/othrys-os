@@ -611,3 +611,5 @@ V2-010S opens from the Great Harvest of 061D Rhizomorph and 061H Experience. The
 - 2026-08-29 — V2-010S COMPLETE/PASS at 6d347de: bounded Experience/Rhizomorph independently verified on T590; V2-010T Sclerotium opened harvest-first.
 
 - 2026-08-29 — V2-010T COMPLETE/PASS at fdf0aec: clean-root Sclerotium independently matched on Legion/T590 with manifest digest 20a321a0...; V2-010U Switchyard opened harvest-first.
+
+- 2026-08-29 — V2-010U COMPLETE/PASS at 37f97e4: deterministic Frugal Heart independently verified on T590; V2-010V opened to admit Switchyard through canonical House surfaces.

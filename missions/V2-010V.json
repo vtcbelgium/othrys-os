@@ -1,0 +1,28 @@
+{
+  "mission_id": "V2-010V",
+  "title": "Switchyard House Admission",
+  "status": "RUNNING",
+  "owner": "GPT_CONTROL",
+  "start_sha": "37f97e4c85a9f4cf0d973aed462b3f5e9314b83d",
+  "artifact_profile": "os-substrate",
+  "objective": "Admit the now-proven Switchyard resolver as a current OTHRYS OS House resident without duplicating routing backends: manifest, Book, component contract, Atlas/Mnemosyne projection and anti-drift tests must move together.",
+  "great_harvest_preflight": {
+    "classification": "REUSE",
+    "evidence": ["V2-010U verified Switchyard resolver", "existing V2-007B Command Deck model-selection preview", "current House Book/component-contract laws", "current project manifest + Atlas/Mnemosyne derived projections"],
+    "reason": "The capability now exists and is independently verified; this mission changes admission/documentary topology, not resolver behavior."
+  },
+  "pandaos_reconstruction": {
+    "policy": "SURFACE_ONLY",
+    "rule": "Expose Switchyard selection evidence through the existing OTHRYS Work/Models surface later; do not create a Panda routing backend or second provider registry."
+  },
+  "laws": [
+    "A House resident must have exactly one manifest identity, one current Book and one component contract.",
+    "Switchyard owns deterministic selection evidence only; provider health, certification, Trust Canal authority and worker execution remain elsewhere.",
+    "Atlas and Mnemosyne remain derived projections and cannot promote Switchyard by themselves.",
+    "Admission must remove only the obsolete quarry-only prohibition for Switchyard, not Prometheus, Rhea or Visual Control.",
+    "No new execution, approval, provider credential or paid escalation authority is introduced."
+  ],
+  "out_of_scope": ["No new model/provider adapter", "No Command Deck redesign", "No PandaOS backend", "No provider credential changes", "No automatic paid execution"],
+  "authority_granted": false,
+  "execution_started": false
+}

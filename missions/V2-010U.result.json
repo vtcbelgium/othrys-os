@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-010U",
+  "verdict": "PASS",
+  "start_sha": "fdf0aec259983b548934e48d9e0456295dca0a84",
+  "implementation_sha": "37f97e4c85a9f4cf0d973aed462b3f5e9314b83d",
+  "scope": "Deterministic Switchyard capability/tier resolver over finite predeclared legal candidates",
+  "proof": {
+    "legion_node": "350/350 PASS",
+    "legion_python": "78/78 Mycelium + 10/10 workers PASS",
+    "t590_node": "350/350 PASS exact implementation commit",
+    "t590_python": "78/78 Mycelium + 10/10 workers PASS",
+    "dogfood": "engineering.build selects qwen3-builder; T590 advisory rejected by capability mismatch; remote escalation rejected unavailable",
+    "negative": "unhealthy, untested engineering, privacy/locality mismatch, over-cost, over-latency and no-capability candidates fail closed; paid-only route requires approval and is never auto-selected"
+  },
+  "authority_granted": false,
+  "execution_started": false,
+  "automatic_paid_escalation": false,
+  "next_legal_action": "V2-010V Switchyard House Admission"
+}
