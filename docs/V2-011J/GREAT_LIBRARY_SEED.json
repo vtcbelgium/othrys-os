@@ -1,0 +1,1522 @@
+{
+  "schema": "othrys.os.great-library-seed.v1",
+  "missionId": "V2-011J",
+  "status": "QUARRY_ONLY",
+  "laws": [
+    "broad primitives before vertical specialization",
+    "Great Harvest before invention",
+    "candidate is not admitted Block",
+    "Blueprint composes capabilities; it does not grant authority",
+    "product glue stays with the product",
+    "extract only after at least one real boundary and independent proof"
+  ],
+  "blocks": [
+    {
+      "id": "block.media.image-prep",
+      "name": "Image preparation",
+      "domain": "media",
+      "tier": 0,
+      "status": "ADMITTED",
+      "evidence": [
+        "blocks/media/image-prep"
+      ],
+      "uses": [
+        "catalog",
+        "marketplace",
+        "scanner",
+        "cms"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "block.monetization.affiliate-offer",
+      "name": "Affiliate offer construction",
+      "domain": "monetization",
+      "tier": 0,
+      "status": "ADMITTED",
+      "evidence": [
+        "blocks/monetization/affiliate-offer"
+      ],
+      "uses": [
+        "affiliate-site",
+        "catalog",
+        "content"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "block.analytics.visit-tracking",
+      "name": "Cookieless visit tracking",
+      "domain": "analytics",
+      "tier": 0,
+      "status": "ADMITTED",
+      "evidence": [
+        "blocks/analytics/visit-tracking"
+      ],
+      "uses": [
+        "website",
+        "dashboard",
+        "growth"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.identity.auth",
+      "name": "Authentication/session",
+      "domain": "identity",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:Supabase auth",
+        "othrys-web:magic-link auth"
+      ],
+      "uses": [
+        "saas",
+        "community",
+        "admin"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.identity.rbac",
+      "name": "Roles and permissions",
+      "domain": "identity",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:profiles role/admin/mod"
+      ],
+      "uses": [
+        "admin",
+        "community",
+        "saas"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.data.crud",
+      "name": "Validated CRUD",
+      "domain": "data",
+      "tier": 0,
+      "status": "POTENTIAL",
+      "evidence": [
+        "VTC tables + API routes"
+      ],
+      "uses": [
+        "catalog",
+        "crm",
+        "inventory"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.data.search",
+      "name": "Search/filter/sort/pagination",
+      "domain": "data",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:FinderTab",
+        "vtc:DatabaseTab"
+      ],
+      "uses": [
+        "catalog",
+        "directory",
+        "marketplace"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.data.import-export",
+      "name": "CSV/JSON import-export",
+      "domain": "data",
+      "tier": 0,
+      "status": "POTENTIAL",
+      "evidence": [
+        "VTC collection export debt",
+        "upload scripts"
+      ],
+      "uses": [
+        "collection",
+        "inventory",
+        "crm"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.storage.user-upload",
+      "name": "User file/image upload",
+      "domain": "storage",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:src/uploadImage.js"
+      ],
+      "uses": [
+        "profile",
+        "catalog",
+        "cms"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.comms.email",
+      "name": "Transactional email",
+      "domain": "communications",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:src/emails.js"
+      ],
+      "uses": [
+        "auth",
+        "alerts",
+        "commerce"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.comms.realtime-message",
+      "name": "Realtime messaging",
+      "domain": "communications",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:src/Messenger.jsx",
+        "vtc:src/MessageReports.jsx"
+      ],
+      "uses": [
+        "community",
+        "support",
+        "marketplace"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.notify.alerts",
+      "name": "Notification/alert engine",
+      "domain": "communications",
+      "tier": 0,
+      "status": "POTENTIAL",
+      "evidence": [
+        "vtc:notifications",
+        "VTC audit dead price_alerts"
+      ],
+      "uses": [
+        "wishlist",
+        "monitoring",
+        "care"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.web.seo-render",
+      "name": "SSR metadata/SEO renderer",
+      "domain": "web",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:lib/ssr/*",
+        "vtc:api/render.js"
+      ],
+      "uses": [
+        "website",
+        "catalog",
+        "blog"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.web.sitemap",
+      "name": "Sitemap/robots generator",
+      "domain": "web",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:api/sitemap.js"
+      ],
+      "uses": [
+        "website",
+        "catalog",
+        "blog"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.web.pwa",
+      "name": "PWA install/offline shell",
+      "domain": "web",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:public/manifest.json",
+        "vtc:public/sw.js",
+        "vtc:InstallButton.jsx"
+      ],
+      "uses": [
+        "mobile-web",
+        "field-tool"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.web.feature-flags",
+      "name": "Feature flags",
+      "domain": "web",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:src/featureFlags.js"
+      ],
+      "uses": [
+        "saas",
+        "staged-launch"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.audit-log",
+      "name": "Append-only audit/change log",
+      "domain": "operations",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "VTC admin/mod change-log design",
+        "OTHRYS ledgers"
+      ],
+      "uses": [
+        "admin",
+        "compliance"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.health-probe",
+      "name": "Service health probe",
+      "domain": "operations",
+      "tier": 0,
+      "status": "PROVEN_V2",
+      "evidence": [
+        "runtime/os/provider_probe.mjs"
+      ],
+      "uses": [
+        "api",
+        "homeostasis"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.usage-meter",
+      "name": "Usage/quota metering",
+      "domain": "operations",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:api/chat.js",
+        "vtc:api/xp.js"
+      ],
+      "uses": [
+        "ai",
+        "saas",
+        "free-tier"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.scheduler",
+      "name": "Bounded scheduled job",
+      "domain": "operations",
+      "tier": 0,
+      "status": "POTENTIAL",
+      "evidence": [
+        "Kronos Prometheus beat",
+        "VTC n8n jobs"
+      ],
+      "uses": [
+        "alerts",
+        "newsletter",
+        "maintenance"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.webhook",
+      "name": "Webhook ingest/dispatch",
+      "domain": "operations",
+      "tier": 0,
+      "status": "POTENTIAL",
+      "evidence": [
+        "VTC automation seams"
+      ],
+      "uses": [
+        "payments",
+        "automation",
+        "integrations"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.community.moderation",
+      "name": "Reports/moderation queue",
+      "domain": "community",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:ModTab",
+        "vtc:MessageReports.jsx"
+      ],
+      "uses": [
+        "forum",
+        "marketplace",
+        "ugc"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.community.gamification",
+      "name": "XP/badges/quests",
+      "domain": "community",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:api/xp.js",
+        "vtc:Badges.jsx",
+        "vtc:Quests.jsx"
+      ],
+      "uses": [
+        "learning",
+        "community",
+        "fitness"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.finance.wallet",
+      "name": "Credit wallet/ledger",
+      "domain": "finance",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:api/credits.js",
+        "vtc:CreditStore.jsx"
+      ],
+      "uses": [
+        "marketplace",
+        "saas"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.geo.map-directory",
+      "name": "Map/place directory",
+      "domain": "geo",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:WorldMapTab.jsx",
+        "supabase_worldmap_setup.sql"
+      ],
+      "uses": [
+        "travel",
+        "local-business",
+        "heritage"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.events.calendar-rsvp",
+      "name": "Events/calendar/RSVP",
+      "domain": "events",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:EventsCalendar.jsx",
+        "vtc:EventsTab.jsx"
+      ],
+      "uses": [
+        "community",
+        "tourism",
+        "education"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.document.pdf-export",
+      "name": "PDF/report export",
+      "domain": "documents",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:src/pdfExport.js"
+      ],
+      "uses": [
+        "collection",
+        "invoice",
+        "report"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ai.inference-gateway",
+      "name": "AI provider gateway",
+      "domain": "ai",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "Hub provider fleet",
+        "V2 Switchyard/Keymaster"
+      ],
+      "uses": [
+        "assistant",
+        "scanner",
+        "automation"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ai.embeddings-rag",
+      "name": "Embeddings/RAG knowledge retrieval",
+      "domain": "ai",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:supabase/functions/backfill-embeddings",
+        "embed-jina",
+        "V2 Mnemosyne"
+      ],
+      "uses": [
+        "knowledge-base",
+        "study",
+        "support"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ai.vision-identify",
+      "name": "Image identify/classify",
+      "domain": "ai",
+      "tier": 0,
+      "status": "QUARRY",
+      "evidence": [
+        "vtc:ScanFlow.jsx",
+        "vtc:api/scan.js"
+      ],
+      "uses": [
+        "collector",
+        "inventory",
+        "inspection"
+      ],
+      "authorityGranted": false
+    }
+  ],
+  "blueprints": [
+    {
+      "id": "blueprint.web.brochure",
+      "name": "Brochure/business website",
+      "category": "website",
+      "tier": 1,
+      "requires": [
+        "web.seo-render",
+        "analytics.visit-tracking"
+      ],
+      "evidence": [
+        "VTC SSR/SEO",
+        "Othrys web shells"
+      ],
+      "examples": [
+        "restaurant",
+        "consultant",
+        "tradesperson",
+        "club"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.web.landing",
+      "name": "Campaign/landing page",
+      "category": "website",
+      "tier": 1,
+      "requires": [
+        "web.seo-render",
+        "analytics.visit-tracking"
+      ],
+      "evidence": [
+        "VTC marketing/free-guide"
+      ],
+      "examples": [
+        "product launch",
+        "waitlist",
+        "event"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.web.blog-news",
+      "name": "Blog/news publication",
+      "category": "content",
+      "tier": 1,
+      "requires": [
+        "web.seo-render",
+        "web.sitemap",
+        "data.crud"
+      ],
+      "evidence": [
+        "VTC BlogTab + Media Office"
+      ],
+      "examples": [
+        "company blog",
+        "magazine",
+        "newsroom"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.web.directory",
+      "name": "Searchable directory",
+      "category": "directory",
+      "tier": 1,
+      "requires": [
+        "data.search",
+        "data.crud",
+        "geo.map-directory"
+      ],
+      "evidence": [
+        "VTC World Map/catalog"
+      ],
+      "examples": [
+        "shops",
+        "members",
+        "services",
+        "heritage sites"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.web.catalog",
+      "name": "Structured catalog/reference database",
+      "category": "catalog",
+      "tier": 1,
+      "requires": [
+        "data.search",
+        "data.crud",
+        "storage.user-upload",
+        "web.seo-render"
+      ],
+      "evidence": [
+        "VTC Database/Filecards"
+      ],
+      "examples": [
+        "collectibles",
+        "museum objects",
+        "products",
+        "parts"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.collection",
+      "name": "Personal collection/inventory tracker",
+      "category": "app",
+      "tier": 1,
+      "requires": [
+        "data.crud",
+        "data.search",
+        "document.pdf-export"
+      ],
+      "evidence": [
+        "VTC Collection/Wishlist",
+        "Travel Log"
+      ],
+      "examples": [
+        "toys",
+        "books",
+        "wine",
+        "tools",
+        "assets"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.marketplace",
+      "name": "Classified marketplace",
+      "category": "commerce",
+      "tier": 1,
+      "requires": [
+        "identity.auth",
+        "identity.rbac",
+        "data.crud",
+        "comms.realtime-message",
+        "community.moderation"
+      ],
+      "evidence": [
+        "VTC Marketplace"
+      ],
+      "examples": [
+        "collectibles",
+        "local classifieds",
+        "B2B listings"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.community",
+      "name": "Community/forum",
+      "category": "community",
+      "tier": 1,
+      "requires": [
+        "identity.auth",
+        "community.moderation",
+        "community.gamification",
+        "comms.realtime-message"
+      ],
+      "evidence": [
+        "VTC Forum/Messenger"
+      ],
+      "examples": [
+        "hobby forum",
+        "alumni",
+        "customer community"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.booking",
+      "name": "Booking/reservation system",
+      "category": "business",
+      "tier": 1,
+      "requires": [
+        "identity.auth",
+        "events.calendar-rsvp",
+        "comms.email",
+        "notify.alerts"
+      ],
+      "evidence": [
+        "events/calendar stock; new composition"
+      ],
+      "examples": [
+        "appointments",
+        "classes",
+        "rentals"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.events",
+      "name": "Events portal",
+      "category": "events",
+      "tier": 1,
+      "requires": [
+        "events.calendar-rsvp",
+        "geo.map-directory",
+        "notify.alerts"
+      ],
+      "evidence": [
+        "VTC Events/WorldMap"
+      ],
+      "examples": [
+        "fairs",
+        "meetups",
+        "courses",
+        "conferences"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.admin",
+      "name": "Admin/mod control room",
+      "category": "operations",
+      "tier": 1,
+      "requires": [
+        "identity.rbac",
+        "ops.audit-log",
+        "community.moderation",
+        "ops.health-probe"
+      ],
+      "evidence": [
+        "VTC Admin/Mod",
+        "OTHRYS Command Deck"
+      ],
+      "examples": [
+        "SaaS admin",
+        "community ops",
+        "internal tools"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.crm",
+      "name": "Light CRM/lead manager",
+      "category": "business",
+      "tier": 1,
+      "requires": [
+        "identity.auth",
+        "data.crud",
+        "data.search",
+        "comms.email"
+      ],
+      "evidence": [
+        "VTC user/admin patterns"
+      ],
+      "examples": [
+        "freelancer CRM",
+        "sales pipeline",
+        "case manager"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.inventory",
+      "name": "Inventory/asset manager",
+      "category": "business",
+      "tier": 1,
+      "requires": [
+        "data.crud",
+        "data.search",
+        "data.import-export",
+        "storage.user-upload"
+      ],
+      "evidence": [
+        "VTC Collection/database"
+      ],
+      "examples": [
+        "warehouse",
+        "equipment",
+        "library",
+        "museum store"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.finance",
+      "name": "Invoice/quote/bookkeeping helper",
+      "category": "business",
+      "tier": 1,
+      "requires": [
+        "document.pdf-export",
+        "data.crud",
+        "ops.audit-log"
+      ],
+      "evidence": [
+        "VTC Boekhouding/FinancePanel"
+      ],
+      "examples": [
+        "freelancer",
+        "small business",
+        "club treasury"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.learning",
+      "name": "Learning/study companion",
+      "category": "education",
+      "tier": 1,
+      "requires": [
+        "ai.embeddings-rag",
+        "data.crud",
+        "notify.alerts",
+        "document.pdf-export"
+      ],
+      "evidence": [
+        "Study Buddy plans",
+        "VTC knowledge machinery"
+      ],
+      "examples": [
+        "course companion",
+        "exam prep",
+        "corporate training"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.travel",
+      "name": "Travel log/planner",
+      "category": "travel",
+      "tier": 1,
+      "requires": [
+        "geo.map-directory",
+        "data.crud",
+        "data.search"
+      ],
+      "evidence": [
+        "EU Capitals Travel Log"
+      ],
+      "examples": [
+        "city checklist",
+        "roadtrip",
+        "heritage passport"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.browser-extension",
+      "name": "Browser extension utility",
+      "category": "extension",
+      "tier": 1,
+      "requires": [
+        "data.crud"
+      ],
+      "evidence": [
+        "Office Buddy Mini",
+        "Travel Log MV3"
+      ],
+      "examples": [
+        "productivity",
+        "capture",
+        "workflow helper"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.app.pwa-controller",
+      "name": "Installable mobile/PWA controller",
+      "category": "mobile",
+      "tier": 1,
+      "requires": [
+        "web.pwa",
+        "identity.auth",
+        "ops.health-probe"
+      ],
+      "evidence": [
+        "VTC PWA",
+        "OTHRYS mobile study"
+      ],
+      "examples": [
+        "operations console",
+        "field checklist"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.ai.assistant",
+      "name": "AI assistant with usage controls",
+      "category": "ai",
+      "tier": 1,
+      "requires": [
+        "ai.inference-gateway",
+        "ops.usage-meter",
+        "identity.auth"
+      ],
+      "evidence": [
+        "VTC chat",
+        "V2 Switchyard"
+      ],
+      "examples": [
+        "support bot",
+        "writing assistant",
+        "domain copilot"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.ai.rag-assistant",
+      "name": "RAG knowledge assistant",
+      "category": "ai",
+      "tier": 1,
+      "requires": [
+        "ai.embeddings-rag",
+        "ai.inference-gateway",
+        "data.search"
+      ],
+      "evidence": [
+        "Mnemosyne/Study Buddy stock"
+      ],
+      "examples": [
+        "docs Q&A",
+        "course tutor",
+        "support KB"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.automation.workflow",
+      "name": "Workflow automation service",
+      "category": "automation",
+      "tier": 1,
+      "requires": [
+        "ops.scheduler",
+        "ops.webhook",
+        "comms.email",
+        "ops.audit-log"
+      ],
+      "evidence": [
+        "VTC n8n/Media Office",
+        "OTHRYS loops"
+      ],
+      "examples": [
+        "lead routing",
+        "content pipeline",
+        "reporting"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.content.media-office",
+      "name": "AI-assisted content/SEO office",
+      "category": "content",
+      "tier": 1,
+      "requires": [
+        "ai.inference-gateway",
+        "web.seo-render",
+        "web.sitemap",
+        "ops.scheduler"
+      ],
+      "evidence": [
+        "VTC Media Office"
+      ],
+      "examples": [
+        "blog engine",
+        "SEO publisher",
+        "social content"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.intel.newsletter",
+      "name": "Research/newsletter engine",
+      "category": "intelligence",
+      "tier": 1,
+      "requires": [
+        "ops.scheduler",
+        "ai.inference-gateway",
+        "comms.email"
+      ],
+      "evidence": [
+        "Prometheus Daily"
+      ],
+      "examples": [
+        "industry brief",
+        "course news",
+        "competitive watch"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.monetization.affiliate-site",
+      "name": "Affiliate/content site",
+      "category": "monetization",
+      "tier": 1,
+      "requires": [
+        "monetization.affiliate-offer",
+        "web.seo-render",
+        "analytics.visit-tracking"
+      ],
+      "evidence": [
+        "VTC affiliate spine"
+      ],
+      "examples": [
+        "niche guides",
+        "comparison site",
+        "deal pages"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.collectibles",
+      "name": "Collectibles catalog + collection + wishlist + classifieds",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "web.catalog",
+        "app.collection",
+        "app.marketplace"
+      ],
+      "evidence": [
+        "VTC"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.heritage",
+      "name": "Heritage archive / local history portal",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "web.catalog",
+        "web.directory",
+        "app.events"
+      ],
+      "evidence": [
+        "VTC patterns + heritage use"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.museum",
+      "name": "Museum/collection public catalog",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "web.catalog",
+        "app.admin",
+        "document.pdf-export"
+      ],
+      "evidence": [
+        "VTC filecards/provenance"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.tourism",
+      "name": "Tourism discovery + itinerary + local map",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "web.directory",
+        "app.travel",
+        "app.events"
+      ],
+      "evidence": [
+        "VTC WorldMap + Travel Log"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.education",
+      "name": "Course companion + tutor + knowledge magnet",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "app.learning",
+        "ai.rag-assistant",
+        "intel.newsletter"
+      ],
+      "evidence": [
+        "Study Buddy"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.local-business",
+      "name": "Local business website + leads + booking",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "web.brochure",
+        "app.booking",
+        "app.crm"
+      ],
+      "evidence": [
+        "composed basics"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.membership",
+      "name": "Membership club portal",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "app.community",
+        "app.events",
+        "app.finance"
+      ],
+      "evidence": [
+        "VTC community/credits patterns"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.creator",
+      "name": "Creator portfolio + newsletter + digital guides",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "web.blog-news",
+        "intel.newsletter",
+        "document.pdf-export"
+      ],
+      "evidence": [
+        "VTC media/PDF"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.support",
+      "name": "Customer support knowledge + assistant",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "ai.rag-assistant",
+        "app.admin",
+        "automation.workflow"
+      ],
+      "evidence": [
+        "Hermes/Mnemosyne patterns"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.monitor",
+      "name": "Monitoring/news/price/availability watcher",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "intel.newsletter",
+        "ops.health-probe",
+        "notify.alerts"
+      ],
+      "evidence": [
+        "Prometheus + VTC price alerts"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.field-tool",
+      "name": "Offline/installable field checklist",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "app.pwa-controller",
+        "app.collection",
+        "data.import-export"
+      ],
+      "evidence": [
+        "VTC PWA + Travel Log"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.extension-productivity",
+      "name": "Office/productivity browser helper",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "app.browser-extension",
+        "ai.assistant"
+      ],
+      "evidence": [
+        "Office Buddy Mini"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.market-intel",
+      "name": "Price/value intelligence dashboard",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "web.catalog",
+        "ops.scheduler",
+        "analytics.visit-tracking"
+      ],
+      "evidence": [
+        "VTC valuation/eBay"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.community-market",
+      "name": "Niche community + classifieds + reputation",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "app.community",
+        "app.marketplace",
+        "community.gamification"
+      ],
+      "evidence": [
+        "VTC"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    },
+    {
+      "id": "blueprint.vertical.directory-market",
+      "name": "Local directory + ratings + leads",
+      "category": "vertical",
+      "tier": 2,
+      "requires": [
+        "web.directory",
+        "community.moderation",
+        "app.crm"
+      ],
+      "evidence": [
+        "VTC WorldMap/ratings"
+      ],
+      "examples": [],
+      "authorityGranted": false
+    }
+  ],
+  "counts": {
+    "blockFamilies": 30,
+    "blueprints": 39,
+    "admittedBlocks": 3,
+    "patterns": 9,
+    "antiPatterns": 14,
+    "playbooks": 4
+  },
+  "authorityGranted": false,
+  "automaticAdmission": false,
+  "patterns": [
+    {
+      "id": "pattern.additive-only-write",
+      "name": "Additive-only write",
+      "tier": -1,
+      "status": "HARVESTED_PATTERN",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/patterns"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "pattern.atomic-capped-value-path",
+      "name": "Atomic capped value path",
+      "tier": -1,
+      "status": "HARVESTED_PATTERN",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/patterns"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "pattern.composition-root-injection",
+      "name": "Composition-root injection",
+      "tier": -1,
+      "status": "HARVESTED_PATTERN",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/patterns"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "pattern.fail-closed-control-channel",
+      "name": "Fail-closed control channel",
+      "tier": -1,
+      "status": "HARVESTED_PATTERN",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/patterns"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "pattern.one-door-between-worlds",
+      "name": "One door between worlds",
+      "tier": -1,
+      "status": "HARVESTED_PATTERN",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/patterns"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "pattern.proposal-only-write",
+      "name": "Proposal-only write",
+      "tier": -1,
+      "status": "HARVESTED_PATTERN",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/patterns"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "pattern.provider-behind-adapter",
+      "name": "Provider behind an adapter",
+      "tier": -1,
+      "status": "HARVESTED_PATTERN",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/patterns"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "pattern.schema-source-truth",
+      "name": "Schema as source of truth",
+      "tier": -1,
+      "status": "HARVESTED_PATTERN",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/patterns"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "pattern.structural-rail",
+      "name": "Structural rail over prose",
+      "tier": -1,
+      "status": "HARVESTED_PATTERN",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/patterns"
+      ],
+      "authorityGranted": false
+    }
+  ],
+  "antiPatterns": [
+    {
+      "id": "antipattern.never-bypass-audit",
+      "name": "never bypass audit",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-bypass-the-bridge",
+      "name": "never bypass the bridge",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-create-a-second-truth",
+      "name": "never create a second truth",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-duplicate-ownership",
+      "name": "never duplicate ownership",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-fabricate-health",
+      "name": "never fabricate health",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-full-file-replace-working-source",
+      "name": "never full file replace working source",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-hardcode-a-provider",
+      "name": "never hardcode a provider",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-hide-uncertainty",
+      "name": "never hide uncertainty",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-ignore-provenance",
+      "name": "never ignore provenance",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-leak-between-oroi",
+      "name": "never leak between oroi",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-let-automation-decide",
+      "name": "never let automation decide",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-rewrite-history",
+      "name": "never rewrite history",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-self-authorize-a-titan",
+      "name": "never self authorize a titan",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "antipattern.never-weaken-a-structural-rail",
+      "name": "never weaken a structural rail",
+      "status": "HARVESTED_ANTIPATTERN",
+      "evidence": [
+        "vtc-platform historical Great Library anti-pattern shelf"
+      ],
+      "authorityGranted": false
+    }
+  ],
+  "playbooks": [
+    {
+      "id": "playbook.canon-read-back",
+      "name": "canon read back",
+      "status": "HARVESTED_PLAYBOOK",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/playbooks"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "playbook.edge-fn-drift-sync",
+      "name": "edge fn drift sync",
+      "status": "HARVESTED_PLAYBOOK",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/playbooks"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "playbook.emergency-restore",
+      "name": "emergency restore",
+      "status": "HARVESTED_PLAYBOOK",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/playbooks"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "playbook.secret-rotation",
+      "name": "secret rotation",
+      "status": "HARVESTED_PLAYBOOK",
+      "evidence": [
+        "vtc-platform@b4e4d20:great-library/library/playbooks"
+      ],
+      "authorityGranted": false
+    }
+  ]
+}

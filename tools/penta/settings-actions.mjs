@@ -5,6 +5,7 @@ export const SETTINGS_ACTIONS=Object.freeze([
   {id:'othrys-deep',label:'Run Deep Check',command:['node','tools/penta/run-diagnostics.mjs','deep'],kind:'TEST',mutates:false},
   {id:'care-check',label:'Run Care Check',command:['node','tools/penta/run-diagnostics.mjs','care'],kind:'TEST',mutates:false},
   {id:'intelligence-check',label:'Run Intelligence Check',command:['node','tools/penta/run-diagnostics.mjs','intelligence'],kind:'TEST',mutates:false},
+  {id:'library-check',label:'Check Great Library',command:['node','tools/penta/run-diagnostics.mjs','library'],kind:'TEST',mutates:false},
   {id:'execution-check',label:'Run Execution Check',command:['node','tools/penta/run-diagnostics.mjs','execution'],kind:'TEST',mutates:false},
   {id:'comms-check',label:'Run Comms Check',command:['node','tools/penta/run-diagnostics.mjs','communications'],kind:'TEST',mutates:false},
   {id:'prometheus-daily-check',label:'Test Daily Prometheus',command:['node','--test','runtime/os/prometheus_daily.test.mjs','runtime/os/prometheus_daily_loop.test.mjs'],kind:'TEST',mutates:false},

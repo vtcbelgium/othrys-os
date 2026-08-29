@@ -1,0 +1,5076 @@
+{
+  "schema": "othrys.os.great-library-potential.v1",
+  "missionId": "V2-011J",
+  "classification": "QUARRY_ONLY",
+  "domains": [
+    "accessibility",
+    "ai-multimodal",
+    "ai-tools",
+    "automation",
+    "business",
+    "calculators",
+    "catalogs",
+    "commerce",
+    "communications",
+    "community",
+    "dashboards",
+    "developer-tools",
+    "directories",
+    "ecommerce",
+    "education",
+    "events-booking",
+    "files-media",
+    "forms-surveys",
+    "generators",
+    "heritage-tourism",
+    "logistics",
+    "media-growth",
+    "mobile-field",
+    "monitoring",
+    "operations",
+    "personal-apps",
+    "productivity",
+    "publishing",
+    "rag-intelligence",
+    "saas",
+    "security-privacy",
+    "websites"
+  ],
+  "ideas": [
+    {
+      "id": "potential.websites.corporate-business-website",
+      "name": "Corporate/business website",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.freelancer-portfolio",
+      "name": "Freelancer portfolio",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.personal-portfolio",
+      "name": "Personal portfolio",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.product-landing-page",
+      "name": "Product landing page",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.waitlist-site",
+      "name": "Waitlist site",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.restaurant-website",
+      "name": "Restaurant website",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.cafe-website",
+      "name": "Cafe website",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.tradesperson-website",
+      "name": "Tradesperson website",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.agency-website",
+      "name": "Agency website",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.club-website",
+      "name": "Club website",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.non-profit-website",
+      "name": "Non-profit website",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.conference-microsite",
+      "name": "Conference microsite",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.wedding-event-website",
+      "name": "Wedding/event website",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.property-showcase",
+      "name": "Property showcase",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.websites.hotel-b-b-website",
+      "name": "Hotel/B&B website",
+      "domain": "websites",
+      "parentBlueprint": "blueprint.web.brochure",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.publishing.blog",
+      "name": "Blog",
+      "domain": "publishing",
+      "parentBlueprint": "blueprint.web.blog-news",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.publishing.newsroom",
+      "name": "Newsroom",
+      "domain": "publishing",
+      "parentBlueprint": "blueprint.web.blog-news",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.publishing.online-magazine",
+      "name": "Online magazine",
+      "domain": "publishing",
+      "parentBlueprint": "blueprint.web.blog-news",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.publishing.documentation-site",
+      "name": "Documentation site",
+      "domain": "publishing",
+      "parentBlueprint": "blueprint.web.blog-news",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.publishing.knowledge-base",
+      "name": "Knowledge base",
+      "domain": "publishing",
+      "parentBlueprint": "blueprint.web.blog-news",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.publishing.public-changelog",
+      "name": "Public changelog",
+      "domain": "publishing",
+      "parentBlueprint": "blueprint.web.blog-news",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.publishing.release-notes-site",
+      "name": "Release-notes site",
+      "domain": "publishing",
+      "parentBlueprint": "blueprint.web.blog-news",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.publishing.research-publication",
+      "name": "Research publication",
+      "domain": "publishing",
+      "parentBlueprint": "blueprint.web.blog-news",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.publishing.newsletter-archive",
+      "name": "Newsletter archive",
+      "domain": "publishing",
+      "parentBlueprint": "blueprint.web.blog-news",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.publishing.recipe-content-library",
+      "name": "Recipe/content library",
+      "domain": "publishing",
+      "parentBlueprint": "blueprint.web.blog-news",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.publishing.digital-guide-library",
+      "name": "Digital guide library",
+      "domain": "publishing",
+      "parentBlueprint": "blueprint.web.blog-news",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.publishing.press-media-room",
+      "name": "Press/media room",
+      "domain": "publishing",
+      "parentBlueprint": "blueprint.web.blog-news",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.local-business-directory",
+      "name": "Local business directory",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.shop-locator",
+      "name": "Shop locator",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.professional-directory",
+      "name": "Professional directory",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.member-directory",
+      "name": "Member directory",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.supplier-directory",
+      "name": "Supplier directory",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.heritage-site-directory",
+      "name": "Heritage site directory",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.museum-directory",
+      "name": "Museum directory",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.restaurant-guide",
+      "name": "Restaurant guide",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.travel-place-guide",
+      "name": "Travel place guide",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.job-board",
+      "name": "Job board",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.course-directory",
+      "name": "Course directory",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.event-directory",
+      "name": "Event directory",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.resource-directory",
+      "name": "Resource directory",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.directories.tool-api-directory",
+      "name": "Tool/API directory",
+      "domain": "directories",
+      "parentBlueprint": "blueprint.web.directory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.catalogs.product-catalog",
+      "name": "Product catalog",
+      "domain": "catalogs",
+      "parentBlueprint": "blueprint.web.catalog",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.catalogs.museum-collection-catalog",
+      "name": "Museum collection catalog",
+      "domain": "catalogs",
+      "parentBlueprint": "blueprint.web.catalog",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.catalogs.archive-catalog",
+      "name": "Archive catalog",
+      "domain": "catalogs",
+      "parentBlueprint": "blueprint.web.catalog",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.catalogs.library-catalog",
+      "name": "Library catalog",
+      "domain": "catalogs",
+      "parentBlueprint": "blueprint.web.catalog",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.catalogs.parts-catalog",
+      "name": "Parts catalog",
+      "domain": "catalogs",
+      "parentBlueprint": "blueprint.web.catalog",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.catalogs.collectibles-database",
+      "name": "Collectibles database",
+      "domain": "catalogs",
+      "parentBlueprint": "blueprint.web.catalog",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.catalogs.vehicle-catalog",
+      "name": "Vehicle catalog",
+      "domain": "catalogs",
+      "parentBlueprint": "blueprint.web.catalog",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.catalogs.property-catalog",
+      "name": "Property catalog",
+      "domain": "catalogs",
+      "parentBlueprint": "blueprint.web.catalog",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.catalogs.equipment-catalog",
+      "name": "Equipment catalog",
+      "domain": "catalogs",
+      "parentBlueprint": "blueprint.web.catalog",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.catalogs.species-reference-catalog",
+      "name": "Species/reference catalog",
+      "domain": "catalogs",
+      "parentBlueprint": "blueprint.web.catalog",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.catalogs.media-catalog",
+      "name": "Media catalog",
+      "domain": "catalogs",
+      "parentBlueprint": "blueprint.web.catalog",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.catalogs.digital-asset-catalog",
+      "name": "Digital asset catalog",
+      "domain": "catalogs",
+      "parentBlueprint": "blueprint.web.catalog",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.commerce.classified-marketplace",
+      "name": "Classified marketplace",
+      "domain": "commerce",
+      "parentBlueprint": "blueprint.app.marketplace",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.commerce.b2b-listing-board",
+      "name": "B2B listing board",
+      "domain": "commerce",
+      "parentBlueprint": "blueprint.app.marketplace",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.commerce.rental-listing-board",
+      "name": "Rental listing board",
+      "domain": "commerce",
+      "parentBlueprint": "blueprint.app.marketplace",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.commerce.swap-trade-board",
+      "name": "Swap/trade board",
+      "domain": "commerce",
+      "parentBlueprint": "blueprint.app.marketplace",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.commerce.digital-product-storefront",
+      "name": "Digital product storefront",
+      "domain": "commerce",
+      "parentBlueprint": "blueprint.app.marketplace",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.commerce.affiliate-comparison-site",
+      "name": "Affiliate comparison site",
+      "domain": "commerce",
+      "parentBlueprint": "blueprint.app.marketplace",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.commerce.dealer-directory",
+      "name": "Dealer directory",
+      "domain": "commerce",
+      "parentBlueprint": "blueprint.app.marketplace",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.commerce.lead-marketplace",
+      "name": "Lead marketplace",
+      "domain": "commerce",
+      "parentBlueprint": "blueprint.app.marketplace",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.commerce.service-marketplace",
+      "name": "Service marketplace",
+      "domain": "commerce",
+      "parentBlueprint": "blueprint.app.marketplace",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.commerce.used-equipment-market",
+      "name": "Used equipment market",
+      "domain": "commerce",
+      "parentBlueprint": "blueprint.app.marketplace",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.commerce.niche-hobby-market",
+      "name": "Niche hobby market",
+      "domain": "commerce",
+      "parentBlueprint": "blueprint.app.marketplace",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.business.light-crm",
+      "name": "Light CRM",
+      "domain": "business",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.business.lead-pipeline",
+      "name": "Lead pipeline",
+      "domain": "business",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.business.contact-manager",
+      "name": "Contact manager",
+      "domain": "business",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.business.quote-builder",
+      "name": "Quote builder",
+      "domain": "business",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.business.invoice-helper",
+      "name": "Invoice helper",
+      "domain": "business",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.business.customer-portal",
+      "name": "Customer portal",
+      "domain": "business",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.business.vendor-manager",
+      "name": "Vendor manager",
+      "domain": "business",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.business.case-manager",
+      "name": "Case manager",
+      "domain": "business",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.business.sales-dashboard",
+      "name": "Sales dashboard",
+      "domain": "business",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.business.renewal-tracker",
+      "name": "Renewal tracker",
+      "domain": "business",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.business.subscription-tracker",
+      "name": "Subscription tracker",
+      "domain": "business",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.business.client-onboarding-portal",
+      "name": "Client onboarding portal",
+      "domain": "business",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.operations.admin-console",
+      "name": "Admin console",
+      "domain": "operations",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.operations.moderation-console",
+      "name": "Moderation console",
+      "domain": "operations",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.operations.status-dashboard",
+      "name": "Status dashboard",
+      "domain": "operations",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.operations.incident-console",
+      "name": "Incident console",
+      "domain": "operations",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.operations.audit-viewer",
+      "name": "Audit viewer",
+      "domain": "operations",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.operations.feature-flag-console",
+      "name": "Feature-flag console",
+      "domain": "operations",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.operations.cron-job-monitor",
+      "name": "Cron/job monitor",
+      "domain": "operations",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.operations.api-health-console",
+      "name": "API health console",
+      "domain": "operations",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.operations.credential-inventory-viewer",
+      "name": "Credential inventory viewer",
+      "domain": "operations",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.operations.deployment-dashboard",
+      "name": "Deployment dashboard",
+      "domain": "operations",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.operations.release-gate",
+      "name": "Release gate",
+      "domain": "operations",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.operations.qa-control-room",
+      "name": "QA control room",
+      "domain": "operations",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.productivity.grammar-rewrite-extension",
+      "name": "Grammar/rewrite extension",
+      "domain": "productivity",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.productivity.calendar-copy-extension",
+      "name": "Calendar-copy extension",
+      "domain": "productivity",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.productivity.web-clipper",
+      "name": "Web clipper",
+      "domain": "productivity",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.productivity.tab-organizer",
+      "name": "Tab organizer",
+      "domain": "productivity",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.productivity.form-helper",
+      "name": "Form helper",
+      "domain": "productivity",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.productivity.screenshot-helper",
+      "name": "Screenshot helper",
+      "domain": "productivity",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.productivity.research-capture-extension",
+      "name": "Research capture extension",
+      "domain": "productivity",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.productivity.price-watch-extension",
+      "name": "Price-watch extension",
+      "domain": "productivity",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.productivity.page-annotation-extension",
+      "name": "Page annotation extension",
+      "domain": "productivity",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.productivity.accessibility-helper",
+      "name": "Accessibility helper",
+      "domain": "productivity",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.productivity.developer-inspector-extension",
+      "name": "Developer inspector extension",
+      "domain": "productivity",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.productivity.meeting-helper",
+      "name": "Meeting helper",
+      "domain": "productivity",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.collection-tracker",
+      "name": "Collection tracker",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.home-inventory",
+      "name": "Home inventory",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.reading-tracker",
+      "name": "Reading tracker",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.watchlist-tracker",
+      "name": "Watchlist tracker",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.travel-passport",
+      "name": "Travel passport",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.wishlist-manager",
+      "name": "Wishlist manager",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.habit-tracker",
+      "name": "Habit tracker",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.goal-tracker",
+      "name": "Goal tracker",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.personal-archive",
+      "name": "Personal archive",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.recipe-organizer",
+      "name": "Recipe organizer",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.gift-tracker",
+      "name": "Gift tracker",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.maintenance-log",
+      "name": "Maintenance log",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.personal-apps.warranty-tracker",
+      "name": "Warranty tracker",
+      "domain": "personal-apps",
+      "parentBlueprint": "blueprint.app.collection",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.events-booking.appointment-booking",
+      "name": "Appointment booking",
+      "domain": "events-booking",
+      "parentBlueprint": "blueprint.app.booking",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.events-booking.class-booking",
+      "name": "Class booking",
+      "domain": "events-booking",
+      "parentBlueprint": "blueprint.app.booking",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.events-booking.workshop-registration",
+      "name": "Workshop registration",
+      "domain": "events-booking",
+      "parentBlueprint": "blueprint.app.booking",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.events-booking.event-rsvp-portal",
+      "name": "Event RSVP portal",
+      "domain": "events-booking",
+      "parentBlueprint": "blueprint.app.booking",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.events-booking.room-booking",
+      "name": "Room booking",
+      "domain": "events-booking",
+      "parentBlueprint": "blueprint.app.booking",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.events-booking.equipment-reservation",
+      "name": "Equipment reservation",
+      "domain": "events-booking",
+      "parentBlueprint": "blueprint.app.booking",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.events-booking.volunteer-scheduler",
+      "name": "Volunteer scheduler",
+      "domain": "events-booking",
+      "parentBlueprint": "blueprint.app.booking",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.events-booking.shift-planner",
+      "name": "Shift planner",
+      "domain": "events-booking",
+      "parentBlueprint": "blueprint.app.booking",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.events-booking.tour-booking",
+      "name": "Tour booking",
+      "domain": "events-booking",
+      "parentBlueprint": "blueprint.app.booking",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.events-booking.rental-calendar",
+      "name": "Rental calendar",
+      "domain": "events-booking",
+      "parentBlueprint": "blueprint.app.booking",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.events-booking.queue-waitlist-manager",
+      "name": "Queue/waitlist manager",
+      "domain": "events-booking",
+      "parentBlueprint": "blueprint.app.booking",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.events-booking.availability-calendar",
+      "name": "Availability calendar",
+      "domain": "events-booking",
+      "parentBlueprint": "blueprint.app.booking",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.community.forum",
+      "name": "Forum",
+      "domain": "community",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.community.membership-club-portal",
+      "name": "Membership club portal",
+      "domain": "community",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.community.alumni-community",
+      "name": "Alumni community",
+      "domain": "community",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.community.customer-community",
+      "name": "Customer community",
+      "domain": "community",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.community.hobby-community",
+      "name": "Hobby community",
+      "domain": "community",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.community.volunteer-community",
+      "name": "Volunteer community",
+      "domain": "community",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.community.private-mastermind",
+      "name": "Private mastermind",
+      "domain": "community",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.community.q-a-community",
+      "name": "Q&A community",
+      "domain": "community",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.community.idea-voting-board",
+      "name": "Idea/voting board",
+      "domain": "community",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.community.contributor-portal",
+      "name": "Contributor portal",
+      "domain": "community",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.community.ambassador-program",
+      "name": "Ambassador program",
+      "domain": "community",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.community.reputation-badge-community",
+      "name": "Reputation/badge community",
+      "domain": "community",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.education.study-companion",
+      "name": "Study companion",
+      "domain": "education",
+      "parentBlueprint": "blueprint.app.learning",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.education.flashcard-trainer",
+      "name": "Flashcard trainer",
+      "domain": "education",
+      "parentBlueprint": "blueprint.app.learning",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.education.quiz-generator",
+      "name": "Quiz generator",
+      "domain": "education",
+      "parentBlueprint": "blueprint.app.learning",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.education.course-knowledge-bank",
+      "name": "Course knowledge bank",
+      "domain": "education",
+      "parentBlueprint": "blueprint.app.learning",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.education.lesson-transcript-library",
+      "name": "Lesson transcript library",
+      "domain": "education",
+      "parentBlueprint": "blueprint.app.learning",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.education.exam-prep-planner",
+      "name": "Exam-prep planner",
+      "domain": "education",
+      "parentBlueprint": "blueprint.app.learning",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.education.skill-gap-finder",
+      "name": "Skill-gap finder",
+      "domain": "education",
+      "parentBlueprint": "blueprint.app.learning",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.education.coding-practice-tracker",
+      "name": "Coding practice tracker",
+      "domain": "education",
+      "parentBlueprint": "blueprint.app.learning",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.education.language-practice-helper",
+      "name": "Language practice helper",
+      "domain": "education",
+      "parentBlueprint": "blueprint.app.learning",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.education.teacher-resource-hub",
+      "name": "Teacher resource hub",
+      "domain": "education",
+      "parentBlueprint": "blueprint.app.learning",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.education.training-compliance-portal",
+      "name": "Training compliance portal",
+      "domain": "education",
+      "parentBlueprint": "blueprint.app.learning",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.education.microlearning-app",
+      "name": "Microlearning app",
+      "domain": "education",
+      "parentBlueprint": "blueprint.app.learning",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-tools.customer-support-assistant",
+      "name": "Customer support assistant",
+      "domain": "ai-tools",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-tools.writing-assistant",
+      "name": "Writing assistant",
+      "domain": "ai-tools",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-tools.research-assistant",
+      "name": "Research assistant",
+      "domain": "ai-tools",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-tools.codebase-assistant",
+      "name": "Codebase assistant",
+      "domain": "ai-tools",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-tools.document-summarizer",
+      "name": "Document summarizer",
+      "domain": "ai-tools",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-tools.email-triage-assistant",
+      "name": "Email triage assistant",
+      "domain": "ai-tools",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-tools.meeting-notes-assistant",
+      "name": "Meeting-notes assistant",
+      "domain": "ai-tools",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-tools.translation-assistant",
+      "name": "Translation assistant",
+      "domain": "ai-tools",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-tools.classification-assistant",
+      "name": "Classification assistant",
+      "domain": "ai-tools",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-tools.data-extraction-assistant",
+      "name": "Data extraction assistant",
+      "domain": "ai-tools",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-tools.prompt-workflow-assistant",
+      "name": "Prompt/workflow assistant",
+      "domain": "ai-tools",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-tools.local-desktop-copilot",
+      "name": "Local desktop copilot",
+      "domain": "ai-tools",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.rag-intelligence.document-q-a",
+      "name": "Document Q&A",
+      "domain": "rag-intelligence",
+      "parentBlueprint": "blueprint.ai.rag-assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.rag-intelligence.course-tutor",
+      "name": "Course tutor",
+      "domain": "rag-intelligence",
+      "parentBlueprint": "blueprint.ai.rag-assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.rag-intelligence.company-policy-assistant",
+      "name": "Company policy assistant",
+      "domain": "rag-intelligence",
+      "parentBlueprint": "blueprint.ai.rag-assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.rag-intelligence.technical-docs-assistant",
+      "name": "Technical docs assistant",
+      "domain": "rag-intelligence",
+      "parentBlueprint": "blueprint.ai.rag-assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.rag-intelligence.personal-knowledge-assistant",
+      "name": "Personal knowledge assistant",
+      "domain": "rag-intelligence",
+      "parentBlueprint": "blueprint.ai.rag-assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.rag-intelligence.research-corpus-explorer",
+      "name": "Research corpus explorer",
+      "domain": "rag-intelligence",
+      "parentBlueprint": "blueprint.ai.rag-assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.rag-intelligence.support-knowledge-bot",
+      "name": "Support knowledge bot",
+      "domain": "rag-intelligence",
+      "parentBlueprint": "blueprint.ai.rag-assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.rag-intelligence.case-file-assistant",
+      "name": "Case-file assistant",
+      "domain": "rag-intelligence",
+      "parentBlueprint": "blueprint.ai.rag-assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.rag-intelligence.archive-discovery-assistant",
+      "name": "Archive discovery assistant",
+      "domain": "rag-intelligence",
+      "parentBlueprint": "blueprint.ai.rag-assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.rag-intelligence.museum-collection-assistant",
+      "name": "Museum collection assistant",
+      "domain": "rag-intelligence",
+      "parentBlueprint": "blueprint.ai.rag-assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.rag-intelligence.legal-document-navigator",
+      "name": "Legal-document navigator",
+      "domain": "rag-intelligence",
+      "parentBlueprint": "blueprint.ai.rag-assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.rag-intelligence.product-manual-assistant",
+      "name": "Product manual assistant",
+      "domain": "rag-intelligence",
+      "parentBlueprint": "blueprint.ai.rag-assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.lead-routing",
+      "name": "Lead routing",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.email-to-task-automation",
+      "name": "Email-to-task automation",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.form-processing",
+      "name": "Form processing",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.document-intake",
+      "name": "Document intake",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.content-approval-pipeline",
+      "name": "Content approval pipeline",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.social-scheduling",
+      "name": "Social scheduling",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.scheduled-reporting",
+      "name": "Scheduled reporting",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.data-sync",
+      "name": "Data sync",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.webhook-router",
+      "name": "Webhook router",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.backup-workflow",
+      "name": "Backup workflow",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.moderation-triage",
+      "name": "Moderation triage",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.invoice-reminder-workflow",
+      "name": "Invoice reminder workflow",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.price-alert-workflow",
+      "name": "Price alert workflow",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.automation.availability-watcher",
+      "name": "Availability watcher",
+      "domain": "automation",
+      "parentBlueprint": "blueprint.automation.workflow",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.media-growth.seo-content-engine",
+      "name": "SEO content engine",
+      "domain": "media-growth",
+      "parentBlueprint": "blueprint.content.media-office",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.media-growth.social-media-office",
+      "name": "Social media office",
+      "domain": "media-growth",
+      "parentBlueprint": "blueprint.content.media-office",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.media-growth.newsletter-production-system",
+      "name": "Newsletter production system",
+      "domain": "media-growth",
+      "parentBlueprint": "blueprint.content.media-office",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.media-growth.content-calendar",
+      "name": "Content calendar",
+      "domain": "media-growth",
+      "parentBlueprint": "blueprint.content.media-office",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.media-growth.research-to-blog-pipeline",
+      "name": "Research-to-blog pipeline",
+      "domain": "media-growth",
+      "parentBlueprint": "blueprint.content.media-office",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.media-growth.product-description-generator",
+      "name": "Product-description generator",
+      "domain": "media-growth",
+      "parentBlueprint": "blueprint.content.media-office",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.media-growth.press-kit-generator",
+      "name": "Press-kit generator",
+      "domain": "media-growth",
+      "parentBlueprint": "blueprint.content.media-office",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.media-growth.campaign-asset-factory",
+      "name": "Campaign asset factory",
+      "domain": "media-growth",
+      "parentBlueprint": "blueprint.content.media-office",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.media-growth.ugc-moderation-pipeline",
+      "name": "UGC moderation pipeline",
+      "domain": "media-growth",
+      "parentBlueprint": "blueprint.content.media-office",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.media-growth.affiliate-content-engine",
+      "name": "Affiliate content engine",
+      "domain": "media-growth",
+      "parentBlueprint": "blueprint.content.media-office",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.media-growth.knowledge-to-social-repurposer",
+      "name": "Knowledge-to-social repurposer",
+      "domain": "media-growth",
+      "parentBlueprint": "blueprint.content.media-office",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.mobile-field.field-inspection-checklist",
+      "name": "Field inspection checklist",
+      "domain": "mobile-field",
+      "parentBlueprint": "blueprint.app.pwa-controller",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.mobile-field.technician-job-sheet",
+      "name": "Technician job sheet",
+      "domain": "mobile-field",
+      "parentBlueprint": "blueprint.app.pwa-controller",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.mobile-field.museum-inventory-scanner",
+      "name": "Museum inventory scanner",
+      "domain": "mobile-field",
+      "parentBlueprint": "blueprint.app.pwa-controller",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.mobile-field.travel-checklist",
+      "name": "Travel checklist",
+      "domain": "mobile-field",
+      "parentBlueprint": "blueprint.app.pwa-controller",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.mobile-field.event-staff-console",
+      "name": "Event staff console",
+      "domain": "mobile-field",
+      "parentBlueprint": "blueprint.app.pwa-controller",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.mobile-field.warehouse-pick-list",
+      "name": "Warehouse pick list",
+      "domain": "mobile-field",
+      "parentBlueprint": "blueprint.app.pwa-controller",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.mobile-field.maintenance-checklist",
+      "name": "Maintenance checklist",
+      "domain": "mobile-field",
+      "parentBlueprint": "blueprint.app.pwa-controller",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.mobile-field.offline-survey",
+      "name": "Offline survey",
+      "domain": "mobile-field",
+      "parentBlueprint": "blueprint.app.pwa-controller",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.mobile-field.safety-checklist",
+      "name": "Safety checklist",
+      "domain": "mobile-field",
+      "parentBlueprint": "blueprint.app.pwa-controller",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.mobile-field.volunteer-field-app",
+      "name": "Volunteer field app",
+      "domain": "mobile-field",
+      "parentBlueprint": "blueprint.app.pwa-controller",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.mobile-field.mobile-ops-controller",
+      "name": "Mobile ops controller",
+      "domain": "mobile-field",
+      "parentBlueprint": "blueprint.app.pwa-controller",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.heritage-tourism.local-history-archive",
+      "name": "Local history archive",
+      "domain": "heritage-tourism",
+      "parentBlueprint": "blueprint.vertical.heritage",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.heritage-tourism.postcard-archive",
+      "name": "Postcard archive",
+      "domain": "heritage-tourism",
+      "parentBlueprint": "blueprint.vertical.heritage",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.heritage-tourism.oral-history-portal",
+      "name": "Oral-history portal",
+      "domain": "heritage-tourism",
+      "parentBlueprint": "blueprint.vertical.heritage",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.heritage-tourism.monument-database",
+      "name": "Monument database",
+      "domain": "heritage-tourism",
+      "parentBlueprint": "blueprint.vertical.heritage",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.heritage-tourism.walking-tour-guide",
+      "name": "Walking-tour guide",
+      "domain": "heritage-tourism",
+      "parentBlueprint": "blueprint.vertical.heritage",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.heritage-tourism.museum-companion",
+      "name": "Museum companion",
+      "domain": "heritage-tourism",
+      "parentBlueprint": "blueprint.vertical.heritage",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.heritage-tourism.genealogy-document-index",
+      "name": "Genealogy document index",
+      "domain": "heritage-tourism",
+      "parentBlueprint": "blueprint.vertical.heritage",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.heritage-tourism.historic-map-explorer",
+      "name": "Historic map explorer",
+      "domain": "heritage-tourism",
+      "parentBlueprint": "blueprint.vertical.heritage",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.heritage-tourism.community-heritage-wiki",
+      "name": "Community heritage wiki",
+      "domain": "heritage-tourism",
+      "parentBlueprint": "blueprint.vertical.heritage",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.heritage-tourism.architecture-inventory",
+      "name": "Architecture inventory",
+      "domain": "heritage-tourism",
+      "parentBlueprint": "blueprint.vertical.heritage",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.heritage-tourism.archaeology-finds-register",
+      "name": "Archaeology finds register",
+      "domain": "heritage-tourism",
+      "parentBlueprint": "blueprint.vertical.heritage",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.monitoring.ai-news-monitor",
+      "name": "AI news monitor",
+      "domain": "monitoring",
+      "parentBlueprint": "blueprint.vertical.monitor",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.monitoring.technology-news-monitor",
+      "name": "Technology news monitor",
+      "domain": "monitoring",
+      "parentBlueprint": "blueprint.vertical.monitor",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.monitoring.competitor-monitor",
+      "name": "Competitor monitor",
+      "domain": "monitoring",
+      "parentBlueprint": "blueprint.vertical.monitor",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.monitoring.price-tracker",
+      "name": "Price tracker",
+      "domain": "monitoring",
+      "parentBlueprint": "blueprint.vertical.monitor",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.monitoring.stock-availability-watcher",
+      "name": "Stock/availability watcher",
+      "domain": "monitoring",
+      "parentBlueprint": "blueprint.vertical.monitor",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.monitoring.website-uptime-monitor",
+      "name": "Website uptime monitor",
+      "domain": "monitoring",
+      "parentBlueprint": "blueprint.vertical.monitor",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.monitoring.api-health-watcher",
+      "name": "API health watcher",
+      "domain": "monitoring",
+      "parentBlueprint": "blueprint.vertical.monitor",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.monitoring.dependency-release-watcher",
+      "name": "Dependency release watcher",
+      "domain": "monitoring",
+      "parentBlueprint": "blueprint.vertical.monitor",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.monitoring.security-advisory-digest",
+      "name": "Security advisory digest",
+      "domain": "monitoring",
+      "parentBlueprint": "blueprint.vertical.monitor",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.monitoring.grant-opportunity-monitor",
+      "name": "Grant/opportunity monitor",
+      "domain": "monitoring",
+      "parentBlueprint": "blueprint.vertical.monitor",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.monitoring.job-posting-monitor",
+      "name": "Job-posting monitor",
+      "domain": "monitoring",
+      "parentBlueprint": "blueprint.vertical.monitor",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.monitoring.course-curriculum-news-monitor",
+      "name": "Course/curriculum news monitor",
+      "domain": "monitoring",
+      "parentBlueprint": "blueprint.vertical.monitor",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.developer-tools.api-explorer",
+      "name": "API explorer",
+      "domain": "developer-tools",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.developer-tools.webhook-tester",
+      "name": "Webhook tester",
+      "domain": "developer-tools",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.developer-tools.log-viewer",
+      "name": "Log viewer",
+      "domain": "developer-tools",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.developer-tools.json-schema-validator",
+      "name": "JSON/schema validator",
+      "domain": "developer-tools",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.developer-tools.fixture-generator",
+      "name": "Fixture generator",
+      "domain": "developer-tools",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.developer-tools.test-dashboard",
+      "name": "Test dashboard",
+      "domain": "developer-tools",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.developer-tools.benchmark-runner",
+      "name": "Benchmark runner",
+      "domain": "developer-tools",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.developer-tools.dependency-inventory",
+      "name": "Dependency inventory",
+      "domain": "developer-tools",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.developer-tools.code-search-portal",
+      "name": "Code-search portal",
+      "domain": "developer-tools",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.developer-tools.release-checklist",
+      "name": "Release checklist",
+      "domain": "developer-tools",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.developer-tools.environment-inspector",
+      "name": "Environment inspector",
+      "domain": "developer-tools",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.developer-tools.provider-model-benchmark-console",
+      "name": "Provider/model benchmark console",
+      "domain": "developer-tools",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.forms-surveys.contact-form-backend",
+      "name": "Contact form backend",
+      "domain": "forms-surveys",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.forms-surveys.survey-builder",
+      "name": "Survey builder",
+      "domain": "forms-surveys",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.forms-surveys.poll-voting-app",
+      "name": "Poll/voting app",
+      "domain": "forms-surveys",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.forms-surveys.application-form-portal",
+      "name": "Application form portal",
+      "domain": "forms-surveys",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.forms-surveys.intake-questionnaire",
+      "name": "Intake questionnaire",
+      "domain": "forms-surveys",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.forms-surveys.feedback-collector",
+      "name": "Feedback collector",
+      "domain": "forms-surveys",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.forms-surveys.incident-report-form",
+      "name": "Incident report form",
+      "domain": "forms-surveys",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.forms-surveys.registration-form-system",
+      "name": "Registration form system",
+      "domain": "forms-surveys",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.forms-surveys.consent-form-tracker",
+      "name": "Consent form tracker",
+      "domain": "forms-surveys",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.forms-surveys.inspection-form-builder",
+      "name": "Inspection form builder",
+      "domain": "forms-surveys",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.forms-surveys.quote-request-form",
+      "name": "Quote request form",
+      "domain": "forms-surveys",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.forms-surveys.multi-step-wizard",
+      "name": "Multi-step wizard",
+      "domain": "forms-surveys",
+      "parentBlueprint": "blueprint.app.crm",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.saas.multi-tenant-saas-dashboard",
+      "name": "Multi-tenant SaaS dashboard",
+      "domain": "saas",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.saas.user-account-portal",
+      "name": "User account portal",
+      "domain": "saas",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.saas.team-workspace",
+      "name": "Team workspace",
+      "domain": "saas",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.saas.settings-billing-portal",
+      "name": "Settings/billing portal",
+      "domain": "saas",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.saas.usage-dashboard",
+      "name": "Usage dashboard",
+      "domain": "saas",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.saas.plan-entitlement-manager",
+      "name": "Plan/entitlement manager",
+      "domain": "saas",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.saas.onboarding-checklist",
+      "name": "Onboarding checklist",
+      "domain": "saas",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.saas.customer-success-dashboard",
+      "name": "Customer success dashboard",
+      "domain": "saas",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.saas.feature-request-portal",
+      "name": "Feature request portal",
+      "domain": "saas",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.saas.api-key-management-portal",
+      "name": "API key management portal",
+      "domain": "saas",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.saas.white-label-client-portal",
+      "name": "White-label client portal",
+      "domain": "saas",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.saas.internal-saas-backoffice",
+      "name": "Internal SaaS backoffice",
+      "domain": "saas",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ecommerce.simple-product-storefront",
+      "name": "Simple product storefront",
+      "domain": "ecommerce",
+      "parentBlueprint": "blueprint.monetization.affiliate-site",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ecommerce.digital-download-shop",
+      "name": "Digital download shop",
+      "domain": "ecommerce",
+      "parentBlueprint": "blueprint.monetization.affiliate-site",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ecommerce.subscription-content-site",
+      "name": "Subscription content site",
+      "domain": "ecommerce",
+      "parentBlueprint": "blueprint.monetization.affiliate-site",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ecommerce.preorder-page",
+      "name": "Preorder page",
+      "domain": "ecommerce",
+      "parentBlueprint": "blueprint.monetization.affiliate-site",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ecommerce.coupon-deal-site",
+      "name": "Coupon/deal site",
+      "domain": "ecommerce",
+      "parentBlueprint": "blueprint.monetization.affiliate-site",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ecommerce.product-comparison-engine",
+      "name": "Product comparison engine",
+      "domain": "ecommerce",
+      "parentBlueprint": "blueprint.monetization.affiliate-site",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ecommerce.price-comparison-portal",
+      "name": "Price comparison portal",
+      "domain": "ecommerce",
+      "parentBlueprint": "blueprint.monetization.affiliate-site",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ecommerce.gift-guide-site",
+      "name": "Gift guide site",
+      "domain": "ecommerce",
+      "parentBlueprint": "blueprint.monetization.affiliate-site",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ecommerce.niche-recommendation-engine",
+      "name": "Niche recommendation engine",
+      "domain": "ecommerce",
+      "parentBlueprint": "blueprint.monetization.affiliate-site",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ecommerce.vendor-catalog-storefront",
+      "name": "Vendor catalog storefront",
+      "domain": "ecommerce",
+      "parentBlueprint": "blueprint.monetization.affiliate-site",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ecommerce.membership-sales-page",
+      "name": "Membership sales page",
+      "domain": "ecommerce",
+      "parentBlueprint": "blueprint.monetization.affiliate-site",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ecommerce.donation-supporter-page",
+      "name": "Donation/supporter page",
+      "domain": "ecommerce",
+      "parentBlueprint": "blueprint.monetization.affiliate-site",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.files-media.document-organizer",
+      "name": "Document organizer",
+      "domain": "files-media",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.files-media.photo-library",
+      "name": "Photo library",
+      "domain": "files-media",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.files-media.digital-asset-manager",
+      "name": "Digital asset manager",
+      "domain": "files-media",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.files-media.file-upload-portal",
+      "name": "File upload portal",
+      "domain": "files-media",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.files-media.secure-file-request",
+      "name": "Secure file request",
+      "domain": "files-media",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.files-media.document-approval-workflow",
+      "name": "Document approval workflow",
+      "domain": "files-media",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.files-media.image-batch-processor",
+      "name": "Image batch processor",
+      "domain": "files-media",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.files-media.pdf-toolkit",
+      "name": "PDF toolkit",
+      "domain": "files-media",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.files-media.csv-cleanup-tool",
+      "name": "CSV cleanup tool",
+      "domain": "files-media",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.files-media.metadata-editor",
+      "name": "Metadata editor",
+      "domain": "files-media",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.files-media.duplicate-file-finder",
+      "name": "Duplicate-file finder",
+      "domain": "files-media",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.files-media.archive-backup-browser",
+      "name": "Archive/backup browser",
+      "domain": "files-media",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.dashboards.kpi-dashboard",
+      "name": "KPI dashboard",
+      "domain": "dashboards",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.dashboards.analytics-dashboard",
+      "name": "Analytics dashboard",
+      "domain": "dashboards",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.dashboards.operations-dashboard",
+      "name": "Operations dashboard",
+      "domain": "dashboards",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.dashboards.finance-dashboard",
+      "name": "Finance dashboard",
+      "domain": "dashboards",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.dashboards.sales-dashboard",
+      "name": "Sales dashboard",
+      "domain": "dashboards",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.dashboards.marketing-dashboard",
+      "name": "Marketing dashboard",
+      "domain": "dashboards",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.dashboards.project-portfolio-dashboard",
+      "name": "Project portfolio dashboard",
+      "domain": "dashboards",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.dashboards.energy-resource-dashboard",
+      "name": "Energy/resource dashboard",
+      "domain": "dashboards",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.dashboards.community-health-dashboard",
+      "name": "Community health dashboard",
+      "domain": "dashboards",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.dashboards.content-performance-dashboard",
+      "name": "Content performance dashboard",
+      "domain": "dashboards",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.dashboards.learning-progress-dashboard",
+      "name": "Learning progress dashboard",
+      "domain": "dashboards",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.dashboards.executive-daily-brief",
+      "name": "Executive daily brief",
+      "domain": "dashboards",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.generators.document-generator",
+      "name": "Document generator",
+      "domain": "generators",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.generators.report-generator",
+      "name": "Report generator",
+      "domain": "generators",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.generators.proposal-generator",
+      "name": "Proposal generator",
+      "domain": "generators",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.generators.resume-cv-generator",
+      "name": "Resume/CV generator",
+      "domain": "generators",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.generators.cover-letter-generator",
+      "name": "Cover-letter generator",
+      "domain": "generators",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.generators.product-description-generator",
+      "name": "Product description generator",
+      "domain": "generators",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.generators.social-post-generator",
+      "name": "Social post generator",
+      "domain": "generators",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.generators.faq-generator",
+      "name": "FAQ generator",
+      "domain": "generators",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.generators.quiz-generator",
+      "name": "Quiz generator",
+      "domain": "generators",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.generators.checklist-generator",
+      "name": "Checklist generator",
+      "domain": "generators",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.generators.schema-config-generator",
+      "name": "Schema/config generator",
+      "domain": "generators",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.generators.test-fixture-generator",
+      "name": "Test-fixture generator",
+      "domain": "generators",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.calculators.price-calculator",
+      "name": "Price calculator",
+      "domain": "calculators",
+      "parentBlueprint": "blueprint.web.landing",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.calculators.roi-calculator",
+      "name": "ROI calculator",
+      "domain": "calculators",
+      "parentBlueprint": "blueprint.web.landing",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.calculators.loan-calculator",
+      "name": "Loan calculator",
+      "domain": "calculators",
+      "parentBlueprint": "blueprint.web.landing",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.calculators.budget-calculator",
+      "name": "Budget calculator",
+      "domain": "calculators",
+      "parentBlueprint": "blueprint.web.landing",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.calculators.quote-estimator",
+      "name": "Quote estimator",
+      "domain": "calculators",
+      "parentBlueprint": "blueprint.web.landing",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.calculators.shipping-estimator",
+      "name": "Shipping estimator",
+      "domain": "calculators",
+      "parentBlueprint": "blueprint.web.landing",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.calculators.time-cost-estimator",
+      "name": "Time/cost estimator",
+      "domain": "calculators",
+      "parentBlueprint": "blueprint.web.landing",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.calculators.capacity-planner",
+      "name": "Capacity planner",
+      "domain": "calculators",
+      "parentBlueprint": "blueprint.web.landing",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.calculators.unit-converter",
+      "name": "Unit converter",
+      "domain": "calculators",
+      "parentBlueprint": "blueprint.web.landing",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.calculators.date-duration-calculator",
+      "name": "Date/duration calculator",
+      "domain": "calculators",
+      "parentBlueprint": "blueprint.web.landing",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.calculators.collection-valuation-calculator",
+      "name": "Collection valuation calculator",
+      "domain": "calculators",
+      "parentBlueprint": "blueprint.web.landing",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.calculators.carbon-energy-calculator",
+      "name": "Carbon/energy calculator",
+      "domain": "calculators",
+      "parentBlueprint": "blueprint.web.landing",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.logistics.delivery-tracker",
+      "name": "Delivery tracker",
+      "domain": "logistics",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.logistics.route-job-planner",
+      "name": "Route/job planner",
+      "domain": "logistics",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.logistics.fleet-maintenance-log",
+      "name": "Fleet maintenance log",
+      "domain": "logistics",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.logistics.vehicle-inspection-app",
+      "name": "Vehicle inspection app",
+      "domain": "logistics",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.logistics.warehouse-receiving-app",
+      "name": "Warehouse receiving app",
+      "domain": "logistics",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.logistics.stock-reorder-assistant",
+      "name": "Stock reorder assistant",
+      "domain": "logistics",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.logistics.equipment-checkout-system",
+      "name": "Equipment checkout system",
+      "domain": "logistics",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.logistics.parcel-inventory",
+      "name": "Parcel inventory",
+      "domain": "logistics",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.logistics.field-service-dispatcher",
+      "name": "Field-service dispatcher",
+      "domain": "logistics",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.logistics.work-order-tracker",
+      "name": "Work-order tracker",
+      "domain": "logistics",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.logistics.asset-location-tracker",
+      "name": "Asset location tracker",
+      "domain": "logistics",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.logistics.supplier-order-tracker",
+      "name": "Supplier order tracker",
+      "domain": "logistics",
+      "parentBlueprint": "blueprint.app.inventory",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.security-privacy.security-posture-dashboard",
+      "name": "Security posture dashboard",
+      "domain": "security-privacy",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.security-privacy.secret-inventory",
+      "name": "Secret inventory",
+      "domain": "security-privacy",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.security-privacy.permission-audit",
+      "name": "Permission audit",
+      "domain": "security-privacy",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.security-privacy.access-review-portal",
+      "name": "Access review portal",
+      "domain": "security-privacy",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.security-privacy.dependency-vulnerability-viewer",
+      "name": "Dependency vulnerability viewer",
+      "domain": "security-privacy",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.security-privacy.incident-evidence-ledger",
+      "name": "Incident evidence ledger",
+      "domain": "security-privacy",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.security-privacy.privacy-request-tracker",
+      "name": "Privacy request tracker",
+      "domain": "security-privacy",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.security-privacy.data-retention-dashboard",
+      "name": "Data retention dashboard",
+      "domain": "security-privacy",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.security-privacy.audit-log-explorer",
+      "name": "Audit-log explorer",
+      "domain": "security-privacy",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.security-privacy.policy-compliance-checklist",
+      "name": "Policy compliance checklist",
+      "domain": "security-privacy",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.security-privacy.backup-verification-console",
+      "name": "Backup verification console",
+      "domain": "security-privacy",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.security-privacy.credential-rotation-planner",
+      "name": "Credential rotation planner",
+      "domain": "security-privacy",
+      "parentBlueprint": "blueprint.app.admin",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.accessibility.reading-mode-extension",
+      "name": "Reading mode extension",
+      "domain": "accessibility",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.accessibility.contrast-checker",
+      "name": "Contrast checker",
+      "domain": "accessibility",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.accessibility.keyboard-navigation-checker",
+      "name": "Keyboard navigation checker",
+      "domain": "accessibility",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.accessibility.alt-text-assistant",
+      "name": "Alt-text assistant",
+      "domain": "accessibility",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.accessibility.caption-helper",
+      "name": "Caption helper",
+      "domain": "accessibility",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.accessibility.dyslexia-friendly-reader",
+      "name": "Dyslexia-friendly reader",
+      "domain": "accessibility",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.accessibility.focus-mode",
+      "name": "Focus mode",
+      "domain": "accessibility",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.accessibility.page-simplifier",
+      "name": "Page simplifier",
+      "domain": "accessibility",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.accessibility.accessibility-audit-helper",
+      "name": "Accessibility audit helper",
+      "domain": "accessibility",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.accessibility.text-to-speech-controller",
+      "name": "Text-to-speech controller",
+      "domain": "accessibility",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.accessibility.form-accessibility-checker",
+      "name": "Form accessibility checker",
+      "domain": "accessibility",
+      "parentBlueprint": "blueprint.app.browser-extension",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-multimodal.image-classifier",
+      "name": "Image classifier",
+      "domain": "ai-multimodal",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-multimodal.ocr-document-extractor",
+      "name": "OCR/document extractor",
+      "domain": "ai-multimodal",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-multimodal.receipt-invoice-extractor",
+      "name": "Receipt/invoice extractor",
+      "domain": "ai-multimodal",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-multimodal.audio-transcription-assistant",
+      "name": "Audio transcription assistant",
+      "domain": "ai-multimodal",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-multimodal.meeting-transcription-app",
+      "name": "Meeting transcription app",
+      "domain": "ai-multimodal",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-multimodal.voice-note-organizer",
+      "name": "Voice-note organizer",
+      "domain": "ai-multimodal",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-multimodal.image-captioner",
+      "name": "Image captioner",
+      "domain": "ai-multimodal",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-multimodal.visual-qa-assistant",
+      "name": "Visual QA assistant",
+      "domain": "ai-multimodal",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-multimodal.photo-quality-checker",
+      "name": "Photo quality checker",
+      "domain": "ai-multimodal",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-multimodal.document-classification-pipeline",
+      "name": "Document classification pipeline",
+      "domain": "ai-multimodal",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-multimodal.semantic-search-over-images",
+      "name": "Semantic search over images",
+      "domain": "ai-multimodal",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.ai-multimodal.speech-to-structured-notes",
+      "name": "Speech-to-structured-notes",
+      "domain": "ai-multimodal",
+      "parentBlueprint": "blueprint.ai.assistant",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.communications.team-chat",
+      "name": "Team chat",
+      "domain": "communications",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.communications.support-inbox",
+      "name": "Support inbox",
+      "domain": "communications",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.communications.contact-center-helper",
+      "name": "Contact-center helper",
+      "domain": "communications",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.communications.announcement-center",
+      "name": "Announcement center",
+      "domain": "communications",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.communications.notification-center",
+      "name": "Notification center",
+      "domain": "communications",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.communications.private-member-messaging",
+      "name": "Private member messaging",
+      "domain": "communications",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.communications.comment-review-system",
+      "name": "Comment/review system",
+      "domain": "communications",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.communications.customer-feedback-inbox",
+      "name": "Customer feedback inbox",
+      "domain": "communications",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.communications.internal-bulletin-board",
+      "name": "Internal bulletin board",
+      "domain": "communications",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.communications.incident-communication-hub",
+      "name": "Incident communication hub",
+      "domain": "communications",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.communications.community-digest",
+      "name": "Community digest",
+      "domain": "communications",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    },
+    {
+      "id": "potential.communications.moderation-inbox",
+      "name": "Moderation inbox",
+      "domain": "communications",
+      "parentBlueprint": "blueprint.app.community",
+      "status": "POTENTIAL_ONLY",
+      "evidence": [
+        "V2-011J operator potential directive",
+        "Great Harvest/VTC capability quarry"
+      ],
+      "authorityGranted": false,
+      "automaticBuild": false
+    }
+  ],
+  "ideaCount": 387,
+  "authorityGranted": false,
+  "automaticAdmission": false,
+  "automaticBuild": false
+}

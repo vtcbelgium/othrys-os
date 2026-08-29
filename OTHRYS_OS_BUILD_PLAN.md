@@ -48,3 +48,6 @@ Prometheus/Keymaster is now treated as the OS capability bloodstream: Kronos pro
 
 ### V2-011J self-honing reinforcement
 The Pentarchy now exercises itself through a bounded canonical self-hone entrypoint. Organ jobs are explicit Work slices; Mnemosyne archives operational PASS/DEGRADED/FAIL lessons automatically; Talos independently verifies whole-body/fault/soak evidence; Keymaster measures the shared Hub credential arsenal; Prometheus remains Kronos-gated. UI remains out of scope.
+
+### Great Library seed
+V2-011J now seeds a tested Pattern -> Block -> Blueprint -> Specialized Blueprint library plus a 387-item potential map. Next: reuse-frequency analysis to rank the next low-gravity Block extraction; no automatic admission/build.
