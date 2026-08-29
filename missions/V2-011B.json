@@ -1,0 +1,30 @@
+{
+  "mission_id": "V2-011B",
+  "title": "Kronos Resident Qualification",
+  "status": "COMPLETE",
+  "owner": "GPT_CONTROL",
+  "start_sha": "de95bd007396ae257eef974d49bf66bf37580e57",
+  "objective": "Qualify the repo-proven Kronos heartbeat/lifecycle/supervision stock against current OTHRYS V2 Work, Talos, Rhea, Trust Canal and operating-mode contracts before any House admission or LIFE execution.",
+  "great_harvest_classification": "ADAPT",
+  "laws": [
+    "Kronos owns LIFE/time/lifecycle semantics only where current evidence proves them; legacy naming grants no authority.",
+    "Rhea may escalate vitality concerns to Kronos but cannot invoke LIFE actions.",
+    "Talos remains execution-verification authority; Kronos cannot self-verify lifecycle effects.",
+    "Trust Canal and current operating modes remain the authority boundary for consequential actions.",
+    "No old scheduler, daemon, subprocess bridge, UI, or global state store is transplanted by qualification.",
+    "Heartbeat evidence is not execution authority and lifecycle proposals are not lifecycle actions.",
+    "PandaOS contributes no Kronos backend authority."
+  ],
+  "out_of_scope": [
+    "House admission",
+    "safe-mode/halt/boot execution",
+    "scheduler/daemon",
+    "credentials",
+    "visual redesign",
+    "automatic repair or lifecycle action"
+  ],
+  "authority_granted": false,
+  "execution_started": false,
+  "qualification_evidence": "docs/V2-011B/KRONOS_QUALIFICATION.md",
+  "next_slice": "PURE_KRONOS_CONTRACT_KERNEL_HOUSE_ADMISSION"
+}

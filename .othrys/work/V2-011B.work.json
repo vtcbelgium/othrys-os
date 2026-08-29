@@ -1,0 +1,25 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-011B",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-011B",
+  "title": "Kronos Resident Qualification",
+  "objective": "Qualify the repo-proven Kronos heartbeat/lifecycle/supervision stock against current OTHRYS V2 Work, Talos, Rhea, Trust Canal and operating-mode contracts before any House admission or LIFE execution.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Kronos owns LIFE/time/lifecycle semantics only where current evidence proves them; legacy naming grants no authority.",
+    "Rhea may escalate vitality concerns to Kronos but cannot invoke LIFE actions.",
+    "Talos remains execution-verification authority; Kronos cannot self-verify lifecycle effects.",
+    "Trust Canal and current operating modes remain the authority boundary for consequential actions.",
+    "No old scheduler, daemon, subprocess bridge, UI, or global state store is transplanted by qualification.",
+    "Heartbeat evidence is not execution authority and lifecycle proposals are not lifecycle actions.",
+    "PandaOS contributes no Kronos backend authority."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "2d0031393ad8a54189d9069aff1aa65eadd27440fc5b5741c44d90ce1f01e40a"
+}

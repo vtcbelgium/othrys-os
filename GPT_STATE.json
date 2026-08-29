@@ -1,14 +1,14 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 128,
+    "sequence": 130,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read": "c78bd9be3db8afe504bd4becea799b31e1e31753",
+    "remote_head_at_last_verified_read": "de95bd007396ae257eef974d49bf66bf37580e57",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
-        "mission_id": "V2-011A",
+        "mission_id": "V2-011B",
         "status": "COMPLETE",
-        "issued_label": "V2-011A - RHEA CARE HOUSE ADMISSION",
+        "issued_label": "V2-011B - KRONOS RESIDENT QUALIFICATION",
         "source": "operator_current_conversation"
     },
     "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
         "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
     ],
     "last_control_decision": {
-        "mission_id": "V2-011A",
-        "decision": "RHEA_HOUSE_ADMISSION_PASS",
-        "authority": "Care interpretation/request semantics only; no repair, Talos verification or LIFE authority."
+        "mission_id": "V2-011B",
+        "decision": "KRONOS_QUALIFIED_ADAPT_PURE_CONTRACT_ONLY",
+        "authority": "Qualification only; old PID-1 intent is not current V2 LIFE execution proof."
     },
-    "next_legal_action": "Great Harvest qualify Kronos heartbeat/lifecycle/supervision stock before any House admission.",
+    "next_legal_action": "Open separate Kronos House admission for pure lifecycle/heartbeat/supervision/cancellation contracts only.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",
@@ -319,6 +319,16 @@
             "mission_id": "V2-011A",
             "status": "COMPLETE",
             "note": "Native Rhea Care resident admitted with pure lifecycle/anti-noise/request/escalation kernel, Book/contract/Atlas/Mnemosyne and exact T590 proof; no duplicate store/orchestrator/repair/LIFE authority."
+        },
+        {
+            "mission_id": "V2-011B",
+            "status": "RUNNING",
+            "note": "Kronos qualification opened from Great Harvest stock; no House admission or LIFE execution."
+        },
+        {
+            "mission_id": "V2-011B",
+            "status": "COMPLETE",
+            "note": "Kronos qualified ADAPT: 11/11 Core contracts + 25/25 focused Hub Life proof; pure LIFE contracts retained, Hub Life runtime/UI/store and actual LIFE execution deferred/rejected."
         }
     ],
     "git": {

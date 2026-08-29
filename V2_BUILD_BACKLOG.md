@@ -286,3 +286,8 @@
 
 109. **V2-011A Rhea Care House Admission - COMPLETE/PASS** - pure CareCase/anti-noise/request/Kronos-escalation kernel + Book/contract/Atlas/Mnemosyne; exact T590 proof; no store/orchestrator/repair/LIFE authority.
 110. **Kronos Resident Qualification - NEXT** - Great Harvest heartbeat/lifecycle/supervision stock first; no House admission or LIFE execution until separately proven.
+
+111. **V2-011B Kronos Resident Qualification - RUNNING** - Great Harvest heartbeat/lifecycle/supervision qualification only; no House admission or LIFE execution.
+
+112. **V2-011B Kronos Resident Qualification - COMPLETE/PASS** - 11/11 Core contracts + 25/25 focused Hub Life proof; pure LIFE contracts qualified, actual platform LIFE execution deferred.
+113. **Kronos House Admission - NEXT** - pure lifecycle/heartbeat/supervision/cancellation kernel only; no boot/halt/safe-mode execution.
