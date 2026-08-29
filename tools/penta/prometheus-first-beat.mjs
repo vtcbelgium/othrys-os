@@ -1,0 +1,11 @@
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { createKronosHeartbeat } from '../../runtime/os/kronos.mjs';
+import { createPrometheusKronosBeat } from '../../runtime/os/kronos_prometheus_beat.mjs';
+const root=process.cwd(), now=new Date().toISOString(), lease=Date.now()+3600000;
+const components=['prometheus','mnemosyne','hermes','keymaster'].map(componentId=>({componentId,mandatory:true,band:'ready',evidenceRef:`os:${componentId}`,leaseExpiresAt:lease}));
+const heartbeat=createKronosHeartbeat({bootId:`prometheus-daily-${now.slice(0,10)}`,sequence:1,timestamp:now,uptimeMs:0,lifecycleState:'VERIFYING',components});
+const beat=createPrometheusKronosBeat({heartbeat,now});
+const dir=join(root,'.othrys','runtime','kronos');mkdirSync(dir,{recursive:true});
+const path=join(dir,'prometheus-first-heartbeat.json');writeFileSync(path,JSON.stringify({schema:'othrys.os.prometheus-first-heartbeat-proof.v1',heartbeat,beat,authorityGranted:false,executionStarted:false},null,2)+'\n');
+console.log(JSON.stringify({status:'RECORDED',path,heartbeatDigest:heartbeat.heartbeatDigest,beatDigest:beat.beatDigest,due:beat.due,authorityGranted:false},null,2));

@@ -296,17 +296,18 @@
     {
       "id": "keymaster",
       "title": "The Book of Keymaster",
-      "role": "Sanitized credential metadata, health classification and inert lifecycle policy.",
+      "role": "Credential custody boundary: sanitized inventory/health/policy plus sealed, read-only use of approved bootstrap credentials.",
       "evidence": [
         "V2-011D",
         ".othrys/project.json#systems/keymaster",
-        "runtime/os/keymaster.mjs"
+        "runtime/os/keymaster.mjs",
+        "runtime/os/keymaster_vault.mjs"
       ],
       "legacy": [
         "othrys-core/titan/keymaster/**",
         "othrys-hub Keymaster Missions 046/051 preserved by the Great Harvest"
       ],
-      "boundary": "Keymaster classifies sanitized credential metadata and health; the resident carries no secret values or locators, resolves nothing, mutates nothing and cannot approve credential actions.",
+      "boundary": "Keymaster owns credential custody. House state stays secret-free; bootstrap credentials may be resolved only as sealed read-only handles at explicit provider boundaries. No account/billing acquisition, lifecycle write, auto-enable or authority.",
       "path": "books/book-of-keymaster/README.md",
       "status": "CURRENT_OS_EDITION"
     },

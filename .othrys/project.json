@@ -108,7 +108,7 @@
     {
       "id": "keymaster",
       "label": "Keymaster",
-      "role": "Sanitized credential metadata / health / policy",
+      "role": "Credential custody boundary / health / sealed local bootstrap access",
       "statusEvidence": "V2-011D"
     },
     {

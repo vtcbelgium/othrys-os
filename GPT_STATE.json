@@ -8,7 +8,7 @@
   "active_mission": {
     "mission_id": "V2-011J",
     "status": "RUNNING",
-    "issued_label": "V2-011J - PENTARCHY + OTHRYS OS REINFORCEMENT"
+    "issued_label": "V2-011J - PENTARCHY + HOMEOSTASIS BLOOD LOOP"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "last_verified_receipt_mission": "V2-006A",
@@ -66,7 +66,7 @@
     "decision": "HOUSE_ADMITTED",
     "authority": "Hermes is resident as pure provider-neutral communication contracts only; no live channel/storage/mutation authority."
   },
-  "next_legal_action": "Continue V2-011J: bind measured Pentarchy diagnostics and daily Prometheus/Frugal resource loop into canonical non-visual OS operation; no UI.",
+  "next_legal_action": "Continue V2-011J: harden the operator-gated Prometheus/Keymaster blood loop and qualification lifecycle, then admit a real Kronos cadence executor separately; no UI or live Telegram delivery yet.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

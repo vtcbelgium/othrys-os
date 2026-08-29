@@ -5,9 +5,10 @@ import { evaluatePrometheusDailyBeat,createPrometheusDailyReport,createPrometheu
 import { captureKnowledgeInbox } from './mnemosyne.mjs';
 
 const sha=v=>createHash('sha256').update(String(v),'utf8').digest('hex');
-const statePath=root=>join(root,'.othrys','prometheus','daily-state.json');
-const claimPath=root=>join(root,'.othrys','prometheus','daily-claim.json');
-const reportDir=root=>join(root,'.othrys','prometheus','daily-reports');
+const runtimeDir=root=>join(root,'.othrys','runtime','prometheus');
+const statePath=root=>join(runtimeDir(root),'daily-state.json');
+const claimPath=root=>join(runtimeDir(root),'daily-claim.json');
+const reportDir=root=>join(root,'.othrys','knowledge','archive','prometheus-daily');
 function loadState(root){
   const p=statePath(root); if(!existsSync(p)) return {schema:'othrys.os.prometheus-daily-state.v1',enabled:true,lastCompletedAt:null,lastReportDigest:null};
   try{return JSON.parse(readFileSync(p,'utf8'));}catch{throw new Error('PROM_DAILY_STATE_INVALID');}
@@ -35,13 +36,13 @@ export async function runPrometheusDailyLoop(root,{heartbeat,now,scanRunner,inte
     const findings=await scanRunner({runId,now,authorityGranted:false});
     if(!Array.isArray(findings)) throw new Error('PROM_DAILY_SCAN_RESULT_INVALID');
     const report=createPrometheusDailyReport({runId,completedAt:now,findings});
-    const capture=createPrometheusMnemosyneCapture(report);
-    const mnem=captureKnowledgeInbox(root,{title:capture.title,text:capture.text,source:capture.source,capturedAt:now});
     const message=createPrometheusDailyMessageIntent(report),harvest=createPrometheusHarvestWakeProposal(report);
     const reportPath=join(reportDir(root),`${now.slice(0,10)}-${report.reportDigest.slice(0,12)}.json`);
-    save(reportPath,{...report,mnemosyneInboxId:mnem.item.id,messageIntent:message,harvestWake:harvest});
+    let mnemosyneInboxId=null;
+    if(harvest.recommended){const capture=createPrometheusMnemosyneCapture(report),mnem=captureKnowledgeInbox(root,{title:capture.title,text:capture.text,source:capture.source,capturedAt:now});mnemosyneInboxId=mnem.item.id;}
+    save(reportPath,{...report,mnemosyneInboxId,messageIntent:message,harvestWake:harvest});
     save(statePath(root),{schema:'othrys.os.prometheus-daily-state.v1',enabled:state.enabled!==false,lastCompletedAt:now,lastReportDigest:report.reportDigest,lastRunId:runId,lastOutcome:'COMPLETE',orphanRecovered:lock.orphanRecovered,authorityGranted:false});
-    return Object.freeze({schema:'othrys.os.prometheus-daily-loop.v1',status:'COMPLETE',runId,reportDigest:report.reportDigest,mnemosyneInboxId:mnem.item.id,messageIntent:message,harvestWake:harvest,reportPath,orphanRecovered:lock.orphanRecovered,mutationsPerformed:4,authorityGranted:false,executionStarted:false});
+    return Object.freeze({schema:'othrys.os.prometheus-daily-loop.v1',status:'COMPLETE',runId,reportDigest:report.reportDigest,mnemosyneArchivePath:reportPath,mnemosyneInboxId,messageIntent:message,harvestWake:harvest,reportPath,orphanRecovered:lock.orphanRecovered,mutationsPerformed:mnemosyneInboxId?4:3,authorityGranted:false,executionStarted:false});
   }catch(error){
     save(statePath(root),{schema:'othrys.os.prometheus-daily-state.v1',enabled:state.enabled!==false,lastCompletedAt:state.lastCompletedAt??null,lastReportDigest:state.lastReportDigest??null,lastRunId:runId,lastOutcome:'FAILED',lastFailure:{at:now,code:error?.message??'PROM_DAILY_FAILED'},authorityGranted:false});
     return Object.freeze({schema:'othrys.os.prometheus-daily-loop.v1',status:'FAILED',runId,error:String(error?.message??error).slice(0,240),mutationsPerformed:2,authorityGranted:false,executionStarted:false});

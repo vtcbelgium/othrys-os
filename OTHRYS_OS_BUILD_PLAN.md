@@ -42,3 +42,6 @@ Run at the measured throughput knee, not at hardware redline. Project files decl
 ## Current phase -- V2-011J PENTARCHY + OTHRYS OS REINFORCEMENT
 
 UI work is paused. Pentarchy is the operational core. V2 now has settings-ready read-only diagnostics, benchmark/soak tooling, a Kronos-beat Prometheus daily loop with Mnemosyne/Hermes/Harvest outputs, and a Frugal reserve overlay that preserves the final 10% of metered zero-marginal capacity for fallback while consuming other legal free capacity first. No new scheduler or authority is introduced.
+
+### V2-011J blood-loop reinforcement
+Prometheus/Keymaster is now treated as the OS capability bloodstream: Kronos provides daily beat evidence; Prometheus discovers and briefs; Keymaster owns sealed credential custody; Talos qualifies; Mnemosyne archives; Hermes carries future delivery; operator ADD/DENY is the acquisition gate. The live Legion source exposes 22 credential names with no values; Groq/NVIDIA/OpenRouter safe probes are green. Current GPT ecosystem-harvest reporting remains untouched. Telegram is the preferred first mobile notification/action adapter; native Command Deck PWA remains the long-term private controller.

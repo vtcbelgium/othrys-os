@@ -3,21 +3,21 @@
 **ID:** `keymaster`
 **Book:** `books/book-of-keymaster/README.md`
 **Owner:** `GPT_CONTROL`
-**Purpose:** Sanitized credential metadata, health classification and inert lifecycle policy.
-**Inputs:** metadata-only credential records and bounded structured health signals containing no credential material or locator
-**Outputs:** validated metadata records, health states, sanitized readiness projections, inert validation policy, or non-executing remediation proposals
-**Dependencies:** Trust Canal approval boundary; Switchyard consumes sanitized readiness; Rhea consumes sanitized health; Kronos may consume readiness evidence
-**Allowed touch:** metadata validation, health classification, sanitized readiness aggregation, risk-policy projection, remediation proposal construction
-**Forbidden touch:** secret values or locators; vault access; provider calls; raw provider bodies; store/replace/revoke/rotate; account/billing mutation; scheduler; UI authority
-**Authority:** NO_SELF_GRANT -- Keymaster intelligence cannot authorize or execute credential use or lifecycle mutation
-**Evidence:** V2-011D; .othrys/project.json#systems/keymaster; runtime/os/keymaster.mjs
+**Purpose:** Credential custody boundary: sanitized inventory/health/policy plus sealed, read-only use of approved bootstrap credentials.
+**Inputs:** metadata/health facts, credential name/reference, explicit read-only consumer context
+**Outputs:** sanitized readiness projection, inert policy/remediation proposal, or sealed credential object that cannot serialize its value
+**Dependencies:** Trust Canal approval; Switchyard sanitized readiness; Prometheus discovery/gap requests; Talos qualification; Rhea health; Kronos readiness only
+**Allowed touch:** metadata validation, health classification, inventory names/presence, read-only bootstrap resolution, sealed application at provider boundary
+**Forbidden touch:** secret values in canonical state/logs/events; secret copying; plaintext lifecycle writes; raw provider bodies; auto account creation; billing; store/replace/revoke/rotate; scheduler; UI authority
+**Authority:** NO_SELF_GRANT -- custody does not authorize acquisition, enablement, paid use or lifecycle mutation
+**Evidence:** V2-011D; V2-011E; .othrys/project.json#systems/keymaster; runtime/os/keymaster.mjs; runtime/os/keymaster_vault.mjs
 
 ## Loop contract
 - OWNER: `GPT_CONTROL`
-- TRIGGER: bounded explicit credential-metadata or health-evaluation request
-- INPUT: finite sanitized facts only; no hidden vault/provider/scheduler state
-- STATE: none required by resident kernel; all outputs reconstruct from supplied sanitized evidence
-- BUDGET: one deterministic validation/classification/projection per call
-- EXIT CONDITION: sanitized result, remediation proposal, or fail-closed validation error
-- EVIDENCE: V2-011D; runtime/os/keymaster.test.mjs
-- STALL/FAILURE: secret-adjacent fields, secret-shaped values, malformed health signals, unknown risk/category, or direct credential-action attempts fail closed
+- TRIGGER: explicit inventory, health, or sealed read-only access request
+- INPUT: finite sanitized facts plus an approved bootstrap reference when sealed access is required
+- STATE: House remains secret-free; secret material stays only in external bootstrap source/closure
+- BUDGET: one deterministic inventory/resolve operation per call
+- EXIT CONDITION: sanitized result, sealed handle, proposal, or fail-closed denial
+- EVIDENCE: runtime/os/keymaster.test.mjs; runtime/os/keymaster_vault.test.mjs
+- STALL/FAILURE: malformed reference, missing credential, non-read-only consumer, secret serialization, unsafe lifecycle mutation or unknown policy fails closed

@@ -4,10 +4,40 @@
   "status": "RUNNING",
   "phase": "BUILD",
   "start_sha": "20bd2e0f1c07e49b82bbfda213d91c9766ddf6f0",
-  "objective": "Reconcile the harvested Pentarchy autonomy campaign with current V2 and strengthen the non-visual OTHRYS OS control contracts before any UI work.",
-  "laws": ["repo truth before invention", "OTHRYS-first", "one mission rule", "learning never grants authority", "no duplicate orchestrator", "no UI work in this mission"],
-  "scope": ["Pentarchy readiness contract", "self-hosting capability debt", "cross-seat evidence requirements", "bounded autonomy gates", "tests and canonical build-plan update"],
-  "out_of_scope": ["Command Deck UI", "Flow Canvas", "Panda UI", "live external mutation", "new authority", "new scheduler"],
+  "objective": "Reinforce the Pentarchy and establish the Prometheus/Keymaster homeostasis blood loop: Kronos daily beat, concise intelligence, operator-gated arsenal intake, sealed credential custody and exhaustive diagnostics before UI work.",
+  "laws": [
+    "repo truth before invention",
+    "OTHRYS-first",
+    "one mission rule",
+    "learning never grants authority",
+    "no duplicate orchestrator",
+    "no UI work in this mission",
+    "Prometheus discovers; Keymaster custodies; Talos qualifies; operator approves acquisition",
+    "free capacity is preferred but never bypasses qualification"
+  ],
+  "scope": [
+    "Pentarchy readiness and diagnostics",
+    "self-hosting capability debt",
+    "Keymaster sealed read-only bootstrap custody",
+    "special Kronos Prometheus daily heartbeat",
+    "bounded AI/tech/Syntra newsletter",
+    "Prometheus Add/Deny opportunity intake",
+    "zero-cost read-only provider probes",
+    "Frugal reserve/capacity",
+    "Telegram/PWA channel study and non-delivering contracts"
+  ],
+  "out_of_scope": [
+    "Command Deck UI",
+    "Flow Canvas",
+    "Panda UI",
+    "live Telegram delivery",
+    "native phone app implementation",
+    "autonomous account creation",
+    "paid usage",
+    "credential lifecycle writes",
+    "new scheduler engine",
+    "automatic provider enablement"
+  ],
   "authorityGranted": false,
   "executionStarted": false
 }

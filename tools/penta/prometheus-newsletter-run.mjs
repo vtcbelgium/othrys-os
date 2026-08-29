@@ -1,0 +1,13 @@
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { discoverKeymasterEnvSource, resolveSealedEnvCredential } from '../../runtime/os/keymaster_vault.mjs';
+import { runPrometheusDailySearch } from '../../runtime/os/prometheus_news_search.mjs';
+import { createPrometheusDailyReport, createPrometheusMnemosyneCapture, createPrometheusDailyMessageIntent } from '../../runtime/os/prometheus_daily.mjs';
+const source=discoverKeymasterEnvSource(); const resolved=resolveSealedEnvCredential(source,'TAVILY_API_KEY',{consumer:'prometheus-daily-newsletter',readOnly:true,authorityGranted:false});
+if(!resolved.ok) throw new Error(`PROM_NEWS_TAVILY_UNAVAILABLE:${resolved.reason}`);
+const completedAt=new Date().toISOString(), search=await runPrometheusDailySearch({sealedCredential:resolved.value,maxItems:8});
+const report=createPrometheusDailyReport({runId:`prom-daily-${completedAt.slice(0,10)}`,completedAt,findings:search.findings,maxMessageItems:8});
+const capture=createPrometheusMnemosyneCapture(report), message=createPrometheusDailyMessageIntent(report);
+const root=process.cwd(), dir=join(root,'.othrys','runtime','prometheus','newsletter'); mkdirSync(dir,{recursive:true});
+const path=join(dir,`${completedAt.slice(0,10)}.json`); const out={schema:'othrys.os.prometheus-newsletter-run.v1',search,report,capture,message,delivered:false,authorityGranted:false,executionStarted:false};
+writeFileSync(path,JSON.stringify(out,null,2)+'\n');console.log(JSON.stringify({status:'PASS',path,creditsUsed:search.creditsUsed,itemCount:report.findings.length,lenses:report.lenses,actionCards:report.actionCards.length,delivered:false,authorityGranted:false},null,2));
