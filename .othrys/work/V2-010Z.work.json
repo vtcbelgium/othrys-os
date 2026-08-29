@@ -1,0 +1,25 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010Z",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010Z",
+  "title": "Rhea Care Resident Qualification",
+  "objective": "Qualify the repo-proven Rhea/Care system against current OTHRYS V2 evidence, Work, Talos, Prometheus, Mnemosyne and Hephaestus contracts before any House admission.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Rhea is Care, not a fourth Triad office and not Kronos.",
+    "Care may observe, assess, case-manage, coordinate, verify and watch; it never owns Life, scheduling, engineering, credentials, research, memory or approval authority.",
+    "Care failure must not stop the Triad or the system.",
+    "Consequential repair must stop at current authority gates; Rhea cannot approve or apply its own repair.",
+    "Current Talos, Work, Prometheus, Mnemosyne and Hephaestus are reused, never duplicated.",
+    "Old Hub state stores, schedulers, alert engines and UI are not transplanted without separate proof.",
+    "PandaOS contributes experience patterns only; no care backend authority."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "4f2392903a8716b3a35e3b94a4d16638d4cceff58e5294a3ad71ca8fe8c17ccf"
+}

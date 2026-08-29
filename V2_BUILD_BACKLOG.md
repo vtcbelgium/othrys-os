@@ -277,3 +277,7 @@
 
 104. **V2-010Y Prometheus House Admission - COMPLETE/PASS** - native cap-score-v1 intelligence kernel + manifest + Book + component contract + Atlas/Mnemosyne; exact T590 proof; no duplicate backend/authority.
 105. **Next integration resident qualification - NEXT** - Great Harvest first; Rhea/care is strongest current quarry candidate, Visual Control remains later/gated.
+
+106. **V2-010Z Rhea Care Resident Qualification - RUNNING** - Great Harvest ADAPT pass over case lifecycle, anti-noise thresholds, evidence sources, repair-request boundary, Kronos separation and failure continuity.
+
+107. **V2-010Z Rhea Care Resident Qualification - COMPLETE/PASS** - 13/13 old proof green; pure lifecycle/anti-noise/request seam qualified; duplicate care store/orchestrator/source plumbing rejected.

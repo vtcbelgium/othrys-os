@@ -1,0 +1,55 @@
+{
+  "mission_id": "V2-010Z",
+  "title": "Rhea Care Resident Qualification",
+  "status": "COMPLETE",
+  "owner": "GPT_CONTROL",
+  "start_sha": "09c4f8c9c93e421a0fbdf7230f5d5e1300e05c07",
+  "objective": "Qualify the repo-proven Rhea/Care system against current OTHRYS V2 evidence, Work, Talos, Prometheus, Mnemosyne and Hephaestus contracts before any House admission.",
+  "great_harvest_preflight": {
+    "classification": "ADAPT",
+    "evidence": [
+      "othrys-hub hub/care/runtime.py current Git object 9df6f786c03f905334c2888ebf370d55b4b1bf8e",
+      "othrys-hub tests/test_mission037_rhea_triad_care.py current Git object 5ad41d92692d274a8eb841ed46722c65460f4dbb",
+      "commit 3fb2a72b8bbe084b1b0b22871407fd1b9b40a5e2 feat: activate Rhea Care around the Triad",
+      "commit ca83571fcb194a72f2fa1e62bdeb2d88d3226163 feat: wire Talos WORK tick and Nyx into Rhea CARE and Mountain"
+    ],
+    "reason": "Rhea has substantial proven care/runtime/test stock, but old Hub storage, orchestration and UI wiring must be bounded against current V2 rather than transplanted."
+  },
+  "laws": [
+    "Rhea is Care, not a fourth Triad office and not Kronos.",
+    "Care may observe, assess, case-manage, coordinate, verify and watch; it never owns Life, scheduling, engineering, credentials, research, memory or approval authority.",
+    "Care failure must not stop the Triad or the system.",
+    "Consequential repair must stop at current authority gates; Rhea cannot approve or apply its own repair.",
+    "Current Talos, Work, Prometheus, Mnemosyne and Hephaestus are reused, never duplicated.",
+    "Old Hub state stores, schedulers, alert engines and UI are not transplanted without separate proof.",
+    "PandaOS contributes experience patterns only; no care backend authority."
+  ],
+  "out_of_scope": [
+    "House admission",
+    "autonomous repair/apply",
+    "Life ownership changes",
+    "new scheduler",
+    "new durable store",
+    "new alert backend",
+    "visual redesign"
+  ],
+  "authority_granted": false,
+  "execution_started": false,
+  "next_slice": "COMPLETE",
+  "verdict": "PASS",
+  "qualification": {
+    "verdict": "QUALIFIED_FOR_ADAPTATION",
+    "evidence": "docs/V2-010Z/RHEA_CARE_QUALIFICATION.md",
+    "old_hub_tests": "13/13 PASS",
+    "minimum_resident_seam": "pure CareCase state machine + durable-evidence anti-noise assessment + typed care-plan/repair/escalation envelopes",
+    "rejected_transplants": [
+      "Hub Care JSON/index store",
+      "Hub-wide source collector",
+      "run_triad_care_cycle orchestrator",
+      "TitanDNA implementation",
+      "HubAlert backend",
+      "scheduler/cadence"
+    ]
+  },
+  "next_legal_action": "Open the next primary mission for Rhea House admission; adapt the qualified minimum pure Care seam only, then admit through manifest + Book + contract + Atlas/Mnemosyne with exact T590 proof."
+}

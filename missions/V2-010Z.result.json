@@ -1,0 +1,35 @@
+{
+  "mission_id": "V2-010Z",
+  "verdict": "PASS",
+  "start_sha": "09c4f8c9c93e421a0fbdf7230f5d5e1300e05c07",
+  "classification": "ADAPT",
+  "objective": "Qualify the repo-proven Rhea/Care system against current OTHRYS V2 evidence, Work, Talos, Prometheus, Mnemosyne and Hephaestus contracts before any House admission.",
+  "house_admitted": false,
+  "authority_granted": false,
+  "execution_started": false,
+  "evidence": "docs/V2-010Z/RHEA_CARE_QUALIFICATION.md",
+  "focused_old_hub_tests": "13/13 PASS",
+  "reuse": [
+    "CareCase state transition semantics",
+    "secret refusal",
+    "transient-failure suppression",
+    "Prometheus/Mnemosyne/Hephaestus request boundaries",
+    "Kronos LIFE ownership separation",
+    "honest NOT_YET_MEASURED metrics"
+  ],
+  "adapt": [
+    "anti-noise streaks from durable observations instead of process memory",
+    "vitality verification distinct from Talos execution verification",
+    "alerts as projection only"
+  ],
+  "reject": [
+    "private Hub care store as new authority",
+    "Hub source wiring",
+    "care workflow orchestrator",
+    "legacy TitanDNA form",
+    "new alert backend",
+    "new scheduler"
+  ],
+  "minimum_resident_seam": "pure CareCase state machine + bounded assessment + typed request/escalation envelopes; no action execution",
+  "next_legal_action": "Open the next primary mission for Rhea House admission; adapt the qualified minimum pure Care seam only, then admit through manifest + Book + contract + Atlas/Mnemosyne with exact T590 proof."
+}
