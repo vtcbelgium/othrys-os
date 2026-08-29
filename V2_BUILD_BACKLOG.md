@@ -243,3 +243,4 @@
 
 | 84 | V2-010K | Library/Vault posture: logical zones + Hecatoncheires current-code audit | COMPLETE |
 | 85 | V2-010L | Housekeeping optimization: stress, remove waste, qualify bounded multichannel/3D Mycelium | COMPLETE |
+| 86 | V2-010M | Mycelium metabolism/adaptive calibration: truthful resource economy + measured-knee growth/contraction | RUNNING |

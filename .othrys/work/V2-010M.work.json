@@ -1,0 +1,80 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010M",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010M",
+  "title": "Mycelium Metabolism / Adaptive Calibration",
+  "objective": "Re-admit the smallest safe Mycelium metabolism layer from proven OTHRYS stock and biological network principles so project-aware execution can grow, reinforce, hold or contract from measured conditions without inventing routes or authority.",
+  "scale": "MISSION",
+  "problem": "010L can place multiple lanes, but it does not yet know when wider execution is beneficial, wasteful or dangerous for a specific project/workload.",
+  "outOfScope": [
+    "No worker launch or autonomous fan-out",
+    "No learned legality or route invention",
+    "No distributed CAS or persistent adaptive state",
+    "No hardware identity inside project manifests",
+    "No AI or opaque score for metabolism"
+  ],
+  "risks": [
+    "maximizing concurrency reduces throughput",
+    "telemetry is missing or dishonest",
+    "adaptive preference becomes authority",
+    "project phenotype hardcodes one machine"
+  ],
+  "laws": [
+    "Remove work before accelerating work.",
+    "Run at the measured throughput knee, not the hardware redline.",
+    "Unknown telemetry is labeled, never fabricated.",
+    "Growth requires expected useful gain above marginal metabolic cost.",
+    "Stress may contract or quiesce topology but never change authority or legality."
+  ],
+  "slices": [
+    {
+      "id": "metabolism",
+      "title": "Truthful resource economy and marginal growth",
+      "owner": "mycelium",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "mycelium",
+          "tasks": [
+            {
+              "id": "metabolic-decision",
+              "title": "Implement resource reports, metabolic modes and grow/hold/contract/quiesce decisions",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "runtime/mycelium/metabolism.py",
+        "runtime/mycelium/test_metabolism.py"
+      ]
+    },
+    {
+      "id": "proof",
+      "title": "Biological harvest and real-node calibration proof",
+      "owner": "talos",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "stress",
+              "title": "Prove hostile telemetry, measured-knee contraction and cross-node portability",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "docs/V2-010M/BIOLOGICAL_MYCELIUM_HARVEST_2026-08-29.md"
+      ]
+    }
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "c52dbc70cff7e302739a3b958dae85ba535d113c59a7cf01bfbf4b519a61bd47"
+}

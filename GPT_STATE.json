@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 106,
+  "sequence": 107,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "2bfd845bf56daf0d40fb8c75ede135c7550d62b0",
+  "remote_head_at_last_verified_read": "a74645d6057ebe209267962cd891a323402050fa",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-010L",
-    "status": "COMPLETE",
-    "issued_label": "V2-010L - HOUSEKEEPING OPTIMIZATION / MULTICHANNEL STUDY",
+    "mission_id": "V2-010M",
+    "status": "RUNNING",
+    "issued_label": "V2-010M - MYCELIUM METABOLISM / ADAPTIVE CALIBRATION",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-010L",
-    "decision": "MAXIMIZATION_PROVEN",
-    "authority": "Measured and qualified project-aware optimization primitives only; next work is 061F metabolism/calibration with no route invention or authority expansion."
+    "mission_id": "V2-010M",
+    "decision": "BIOLOGICAL_METABOLISM_ONLY",
+    "authority": "Re-admit measured resource economy, contraction and calibration from proven OTHRYS stock plus biological-network evidence; no route invention, worker launch or authority expansion."
   },
-  "next_legal_action": "Open a bounded Mycelium metabolism/adaptive-calibration mission: re-admit truthful resource dispositions, metabolic modes, marginal growth/contraction and measured concurrency-knee preference from proven 061F stock.",
+  "next_legal_action": "Implement and prove truthful resource reports, seven metabolic modes, measured-knee growth/contraction and project-aware marginal decisions; then stress Legion/T590 and update front-door progression.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",
