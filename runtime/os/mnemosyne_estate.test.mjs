@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, readFileSync, rmSync, utimesSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { estateRecordCurrentness, estateSummary, searchEstateKnowledge, verifyEstateArchive } from './mnemosyne_estate.mjs';
+import { estateLexicalCacheStats, estateRecordCurrentness, estateSummary, searchEstateKnowledge, verifyEstateArchive } from './mnemosyne_estate.mjs';
 
 const sha=value=>createHash('sha256').update(value).digest('hex');
 function fixture(){
@@ -90,5 +90,36 @@ test('estate catalog digest is checkout-portable across LF and CRLF',()=>{
     const result=searchEstateKnowledge(f.root,'boring proof');
     assert.equal(result.results[0].contentDigest,f.safeHash);
     assert.equal(result.authorityGranted,false);
+  }finally{rmSync(f.root,{recursive:true,force:true});}
+});
+
+
+test('term-hit cache preserves exact repeated search semantics',()=>{
+  const f=fixture();
+  try{
+    const cold=searchEstateKnowledge(f.root,'boring proof',{limit:12});
+    const statsAfterCold=estateLexicalCacheStats();
+    const warm=searchEstateKnowledge(f.root,'boring proof',{limit:12});
+    assert.deepEqual(warm,cold);
+    assert.ok(statsAfterCold.terms>=2); assert.equal(estateLexicalCacheStats().terms,statsAfterCold.terms);
+  }finally{rmSync(f.root,{recursive:true,force:true});}
+});
+
+test('catalog change invalidates term-hit cache and exposes new evidence',()=>{
+  const f=fixture();
+  try{
+    assert.equal(searchEstateKnowledge(f.root,'newneedle').results.length,0);
+    const catalogDir=join(f.root,'.othrys','knowledge','catalog'),catalogPath=join(catalogDir,'estate-catalog.jsonl');
+    const newBody=Buffer.from('newneedle is present after catalog change'); const newHash=sha(newBody);
+    writeFileSync(join(f.objects,newHash),newBody);
+    const records=readFileSync(catalogPath,'utf8').trim().split(/\r?\n/).map(JSON.parse);
+    records.push({sha256:newHash,bytes:newBody.length,kinds:['document'],archived:true,leakPattern:null,sources:[{repo:'othrys-v2',path:'docs/new.md',lineage:'local:test'}]});
+    const bytes=Buffer.from(records.map(r=>JSON.stringify(r)).join('\n')+'\n'); writeFileSync(catalogPath,bytes);
+    const summaryPath=join(catalogDir,'estate-summary.json'),summary=JSON.parse(readFileSync(summaryPath,'utf8'));
+    Object.assign(summary,{occurrences:3,uniqueObjects:3,archivedObjects:2,uniqueBytes:summary.uniqueBytes+newBody.length,archivedBytes:summary.archivedBytes+newBody.length,catalogSha256:sha(bytes)});
+    writeFileSync(summaryPath,JSON.stringify(summary,null,2)+'\n');
+    const future=new Date(Date.now()+2000); utimesSync(catalogPath,future,future);
+    const result=searchEstateKnowledge(f.root,'newneedle');
+    assert.equal(result.results[0].contentDigest,newHash); assert.equal(estateLexicalCacheStats().catalogSha256,summary.catalogSha256);
   }finally{rmSync(f.root,{recursive:true,force:true});}
 });

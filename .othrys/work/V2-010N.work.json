@@ -1,0 +1,102 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010N",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010N",
+  "title": "Context Metabolism / Cross-Repo Gem Harvest",
+  "objective": "Reduce already-selected OTHRYS evidence into minimal deterministic transport capsules while preserving required evidence, authority evidence and frozen identities; quarry old OTHRYS and VTC for proven efficiency patterns before implementation.",
+  "scale": "MISSION",
+  "problem": "Current OTHRYS selects relevant context but still carries more evidence bytes than some consumers require, and high-value production patterns remain scattered across historical Core/Hub/VTC lineage.",
+  "outOfScope": [
+    "No AI context summarizer or learned relevance authority",
+    "No change to Mnemosyne knowledge authority or search ranking",
+    "No artifact reuse/CAS execution yet",
+    "No mutation of VTC, dirty Hub, or old Core worktrees",
+    "No automatic promotion from quarry"
+  ],
+  "risks": [
+    "compression hides required evidence",
+    "reference substitution loses provenance",
+    "parallel enrichment expands frozen scope",
+    "historical duplicate code is mistaken for a new subsystem"
+  ],
+  "laws": [
+    "Mnemosyne decides what belongs; Context Metabolism only decides how much selected evidence travels.",
+    "Required evidence lost = 0; authority evidence lost = 0; frozen identity expansion = 0.",
+    "Compression must be real reference substitution or eviction; never pretend bytes became smaller.",
+    "Ungrounded or corroborated repetition cannot outrank canonical or grounded evidence.",
+    "VTC and historical repos are quarry/provenance only; current V2 law remains authoritative."
+  ],
+  "slices": [
+    {
+      "id": "quarry",
+      "title": "Cross-repo gem harvest",
+      "owner": "gpt-control",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "study",
+          "owner": "gpt-control",
+          "tasks": [
+            {
+              "id": "lineage",
+              "title": "Compare old OTHRYS/VTC production patterns against current V2",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "docs/V2-010N/CROSS_REPO_GEM_HARVEST.md"
+      ]
+    },
+    {
+      "id": "capsule",
+      "title": "Evidence-preserving context metabolism",
+      "owner": "mnemosyne",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "mnemosyne",
+          "tasks": [
+            {
+              "id": "reduce",
+              "title": "Implement deterministic transport capsule reduction after Mnemosyne selection",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "runtime/os/context_metabolism.mjs",
+        "runtime/os/context_metabolism.test.mjs"
+      ]
+    },
+    {
+      "id": "proof",
+      "title": "Hostile and cross-node proof",
+      "owner": "talos",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "stress",
+              "title": "Prove zero required/authority evidence loss, no identity expansion and deterministic reduction",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "docs/V2-010N/WORK_LOG.md"
+      ]
+    }
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "a97ddcb22b539ee6255a42dbdf5a1862c84b5adbfece9de81a32aadb59891d78"
+}

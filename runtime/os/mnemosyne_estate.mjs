@@ -8,8 +8,8 @@ const clean=value=>String(value??'').trim();
 const STOPWORDS=new Set(['of','the','and','a','an','to','in','on','for','with','from','is','are']);
 const tokens=value=>[...new Set((clean(value).toLowerCase().match(/[a-z0-9][a-z0-9._-]{1,}/g)??[]).filter(x=>!STOPWORDS.has(x)))];
 
-let cache={path:null,mtimeMs:null,records:null,summary:null};
-let lexicalCache={catalogSha256:null,lowerBySha:new Map()};
+let cache={path:null,mtimeMs:null,records:null,recordBySha:null,summary:null};
+let lexicalCache={catalogSha256:null,lowerBySha:new Map(),metaBySha:new Map(),termHits:new Map(),metaTermHits:new Map()};
 function paths(root){
   const base=join(root,'.othrys','knowledge');
   return {
@@ -29,8 +29,8 @@ function load(root){
   const canonicalCatalog=Buffer.from(bytes.toString('utf8').replace(/\r\n/g,'\n'),'utf8');
   if(sha(canonicalCatalog)!==summary.catalogSha256) throw new Error('ESTATE_CATALOG_DIGEST_MISMATCH');
   const records=canonicalCatalog.toString('utf8').split('\n').filter(Boolean).map(line=>JSON.parse(line));
-  cache={path:p.catalog,mtimeMs:st.mtimeMs,records,summary};
-  if(lexicalCache.catalogSha256!==summary.catalogSha256) lexicalCache={catalogSha256:summary.catalogSha256,lowerBySha:new Map()};
+  cache={path:p.catalog,mtimeMs:st.mtimeMs,records,recordBySha:new Map(records.map(record=>[record.sha256,record])),summary};
+  if(lexicalCache.catalogSha256!==summary.catalogSha256) lexicalCache={catalogSha256:summary.catalogSha256,lowerBySha:new Map(),metaBySha:new Map(),termHits:new Map(),metaTermHits:new Map()};
   return {...cache,paths:p};
 }
 export function estateSummary(root){
@@ -63,8 +63,28 @@ function objectLower(loaded,record){
   lexicalCache.lowerBySha.set(record.sha256,value);
   return value;
 }
+function metadataLower(record){
+  const cached=lexicalCache.metaBySha.get(record.sha256); if(cached!==undefined) return cached;
+  const value=metadata(record); lexicalCache.metaBySha.set(record.sha256,value); return value;
+}
+function ensureTermHits(loaded,terms){
+  const missing=terms.filter(term=>!lexicalCache.termHits.has(term));
+  if(!missing.length) return;
+  for(const term of missing){lexicalCache.termHits.set(term,new Set());lexicalCache.metaTermHits.set(term,new Set());}
+  for(const record of loaded.records){
+    const meta=metadataLower(record);
+    const unresolved=[];
+    for(const term of missing){
+      if(meta.includes(term)){lexicalCache.termHits.get(term).add(record.sha256);lexicalCache.metaTermHits.get(term).add(record.sha256);}
+      else unresolved.push(term);
+    }
+    if(!unresolved.length||record.archived!==true||!existsSync(join(loaded.paths.objects,record.sha256))) continue;
+    const lower=objectLower(loaded,record);
+    for(const term of unresolved) if(lower.includes(term)) lexicalCache.termHits.get(term).add(record.sha256);
+  }
+}
 export function estateLexicalCacheStats(){
-  return Object.freeze({catalogSha256:lexicalCache.catalogSha256,objects:lexicalCache.lowerBySha.size,authorityGranted:false});
+  return Object.freeze({catalogSha256:lexicalCache.catalogSha256,objects:lexicalCache.lowerBySha.size,metadata:lexicalCache.metaBySha.size,terms:lexicalCache.termHits.size,authorityGranted:false});
 }
 
 function sourcePath(root,ref){
@@ -88,21 +108,22 @@ export function estateRecordCurrentness(root,record){
 export function searchEstateKnowledge(root,query,{limit=12}={}){
   const terms=tokens(query),loaded=load(root);
   if(!loaded||!terms.length) return Object.freeze({schema:'othrys.os.estate-search.v1',query:clean(query),results:[],authorityGranted:false});
+  ensureTermHits(loaded,terms);
+  const candidateShas=new Set();
+  for(const term of terms) for(const id of lexicalCache.termHits.get(term)??[]) candidateShas.add(id);
   const results=[];
-  for(const record of loaded.records){
-    const meta=metadata(record),metaMatched=new Set(terms.filter(t=>meta.includes(t))),matched=new Set(metaMatched);
-    if(record.archived===true&&existsSync(join(loaded.paths.objects,record.sha256))&&matched.size<terms.length){
-      const lower=objectLower(loaded,record);
-      for(const term of terms) if(lower.includes(term)) matched.add(term);
-    }
-    if(!matched.size) continue;
-    const sourceCount=record.sources?.length??0,coverage=matched.size/terms.length,metaCoverage=metaMatched.size/terms.length;
+  for(const id of candidateShas){
+    const record=loaded.recordBySha.get(id); if(!record) continue;
+    const matched=terms.filter(term=>lexicalCache.termHits.get(term)?.has(id));
+    const metaMatched=terms.filter(term=>lexicalCache.metaTermHits.get(term)?.has(id));
+    if(!matched.length) continue;
+    const sourceCount=record.sources?.length??0,coverage=matched.length/terms.length,metaCoverage=metaMatched.length/terms.length;
     const score=Number((coverage*.75+metaCoverage*.25).toFixed(6));
     results.push({id:`estate-${record.sha256.slice(0,24)}`,title:sourceLabel(record),classification:(record.kinds??[]).includes('book')?'BOOK':(record.kinds??[]).includes('log')?'LOG':'DOCUMENT',status:record.archived?'ARCHIVED':'EXCLUDED',score,matchedTerms:[...matched].sort(),metadataMatchedTerms:[...metaMatched].sort(),source:{kind:'ESTATE_ARCHIVE',sha256:record.sha256,refs:(record.sources??[]).slice(0,8),sourceCount},contentDigest:record.sha256,bytes:record.bytes,excerpt:'',leakPattern:record.leakPattern??null});
   }
   results.sort((a,b)=>b.score-a.score||b.metadataMatchedTerms.length-a.metadataMatchedTerms.length||a.title.localeCompare(b.title));
   const selected=results.slice(0,Math.max(1,Math.min(50,limit))).map(result=>{
-    const record=loaded.records.find(x=>x.sha256===result.contentDigest);
+    const record=loaded.recordBySha.get(result.contentDigest);
     const currentness=record?estateRecordCurrentness(root,record):Object.freeze({status:'MISSING',currentRefs:0,changedRefs:0,missingRefs:0,invalidRefs:0,observedRefs:0,authorityGranted:false});
     if(result.status!=='ARCHIVED'||!result.matchedTerms.length) return {...result,currentness};
     const objectPath=join(loaded.paths.objects,result.contentDigest);
@@ -111,6 +132,7 @@ export function searchEstateKnowledge(root,query,{limit=12}={}){
   });
   return Object.freeze({schema:'othrys.os.estate-search.v1',query:clean(query),results:selected,catalogSha256:loaded.summary.catalogSha256,authorityGranted:false});
 }
+
 export function verifyEstateArchive(root){
   const loaded=load(root);
   if(!loaded) throw new Error('ESTATE_ABSENT');

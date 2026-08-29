@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 108,
+  "sequence": 109,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "bae7b7ad031b9624efc4fc64ebac032672ad0e4a",
+  "remote_head_at_last_verified_read": "655d29bd8f007ae9edc5efe283e85d6ef778e7df",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-010M",
-    "status": "COMPLETE",
-    "issued_label": "V2-010M - MYCELIUM METABOLISM / ADAPTIVE CALIBRATION",
+    "mission_id": "V2-010N",
+    "status": "RUNNING",
+    "issued_label": "V2-010N - CONTEXT METABOLISM / CROSS-REPO GEM HARVEST",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-010M",
-    "decision": "METABOLISM_PROVEN",
-    "authority": "Measured metabolism, contraction and compatibility-gated fusion planning are proven; next reduce context/evidence load without losing required or authority evidence."
+    "mission_id": "V2-010N",
+    "decision": "REDUCE_COGNITIVE_WEIGHT",
+    "authority": "Adapt proven 061G evidence-preserving context reduction and current VTC production constraints; no AI context authority, identity expansion, or evidence loss."
   },
-  "next_legal_action": "Context Metabolism / evidence capsules: adapt proven 061G reduction with requiredEvidenceLost=0 and authorityEvidenceLost=0 before any AI context optimizer.",
+  "next_legal_action": "Implement deterministic evidence capsules over already-selected Mnemosyne context; required/authority evidence and frozen identities must survive exactly.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

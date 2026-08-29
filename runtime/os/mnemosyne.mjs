@@ -4,6 +4,7 @@ import { dirname, join, normalize, resolve, sep } from 'node:path';
 import { estateSummary, searchEstateKnowledge } from './mnemosyne_estate.mjs';
 import { buildAtlasProjection } from './atlas_projection.mjs';
 import { classifyKnowledgeZone } from './knowledge_zones.mjs';
+import { metabolizeSelectedKnowledge } from './context_metabolism.mjs';
 
 export const KNOWLEDGE_SCHEMA='othrys.os.knowledge-item.v1';
 const sha=(value)=>createHash('sha256').update(value).digest('hex');
@@ -134,7 +135,7 @@ export function deriveContextWarnings({maintenance={},graphSummary={},estateEvid
 export function assembleKnowledgeContext(root,manifest,query,{limit=12,state={},budget={}}={}){
   const appliedBudget=contextBudget(limit,budget);
   const terms=tokenize(query);
-  if(!terms.length) return Object.freeze({schema:'othrys.os.context-capsule.v1',query:clean(query),projectTruth:[],estateEvidence:[],related:[],warnings:[],authorityGranted:false});
+  if(!terms.length){ const full={schema:'othrys.os.context-capsule.v1',query:clean(query),projectTruth:[],estateEvidence:[],related:[],warnings:[],authorityGranted:false}; return Object.freeze({...full,transportCapsule:metabolizeSelectedKnowledge(full)}); }
   const search=searchKnowledge(root,manifest,query,{limit:Math.max(appliedBudget.total*4,24)});
   const bookPath=join(root,'books','BOOK_REGISTRY.json');
   const bookMatches=[];
@@ -174,7 +175,9 @@ export function assembleKnowledgeContext(root,manifest,query,{limit=12,state={},
   const maintenance=maintainKnowledge(root,manifest);
   const selectedWarnings=deriveContextWarnings({maintenance,graphSummary:graph.summary,estateEvidence}).slice(0,appliedBudget.warnings);
   const budgetReport=Object.freeze({...appliedBudget,selected:projectTruth.length+estateEvidence.length+related.length});
-  return Object.freeze({schema:'othrys.os.context-capsule.v1',query:clean(query),projectTruth,estateEvidence,related,warnings:selectedWarnings,contextBudget:budgetReport,estateCatalogSha256:search.estateCatalogSha256??null,authorityGranted:false});
+  const full={schema:'othrys.os.context-capsule.v1',query:clean(query),projectTruth,estateEvidence,related,warnings:selectedWarnings,contextBudget:budgetReport,estateCatalogSha256:search.estateCatalogSha256??null,authorityGranted:false};
+  const transportCapsule=metabolizeSelectedKnowledge(full);
+  return Object.freeze({...full,transportCapsule});
 }
 
 export function maintainKnowledge(root,manifest){
