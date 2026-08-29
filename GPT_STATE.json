@@ -7,7 +7,7 @@
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-010I",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "issued_label": "V2-010I - OTHRYS OS LOOP WEAVING AND PROCESSING OPTIMIZATION",
     "source": "operator_current_conversation"
   },
@@ -67,7 +67,7 @@
     "decision": "LOOP_WEAVING_ONLY",
     "authority": "Inventory, constrain, trace and optimize existing loops; no scheduler or authority expansion."
   },
-  "next_legal_action": "Inventory real runtime loops, map to component contracts, add authority-free trace/diagnosis metrics, then verify.",
+  "next_legal_action": "Begin bounded Mnemosyne Intelligence work from OTHRYS_OS_BUILD_PLAN.md: currentness, conflict/staleness, relationship-aware retrieval and context capsules before embeddings or a database.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

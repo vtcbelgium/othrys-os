@@ -553,3 +553,7 @@ Housekeeping closed only after the exact implementation commit was fast-forwarde
 ## 2026-08-29 ? V2-010H Component Contracts and loop-law hardening
 
 Fourteen current-house component contracts now align Book identity, ownership, IO, dependencies, forbidden touch, authority, evidence and bounded Loop Laws fields. Loop research added goal-state reflection, structured diagnosis, verifier-gated completion, trace compression and capability-gated optimization. Estate scanning now excludes local `.othrys/logs` and `.othrys/runtime`; live Housekeeper activity cannot perturb Mnemosyne. Legion and T590: 244/244 Node + 36/36 Python PASS.
+
+## 2026-08-29 - V2-010I Loop Weaving closes
+
+Loop Weaving closed after source-grounding every current free-running runtime loop, adding authority-free normalized loop traces, Talos event-to-trace projection, processing-health/stall/compression analysis, runtime-wide unregistered-loop drift detection, and measured Housekeeper fast-path expansion. The five-minute fast path now covers the anti-drift spine in under one second on Legion. No scheduler authority, automatic continuation, chain-of-thought storage, or automatic Block promotion was added. Legion and T590 both proved 268/268 Node + 36/36 Python PASS on the exact implementation commit. Mnemosyne remained deterministic with zero defects. The front-door Build Plan advances to Mnemosyne Intelligence.

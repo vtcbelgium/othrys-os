@@ -2,7 +2,7 @@
 
 **Status:** LIVE FRONT-DOOR CONTROL FILE
 **Owner:** GPT Control / House Manager
-**Last evidence update:** 2026-08-29 - V2-010I RUNNING; Legion 268/268 Node + 36/36 Python; deterministic estate 8,041 archived objects / 6 exclusions; archive verification PASS; Mnemosyne defects 0. T590 proof pending.
+**Last evidence update:** 2026-08-29 - V2-010I COMPLETE; Legion 268/268 Node + 36/36 Python; T590 268/268 Node + 36/36 Python; deterministic estate 8,041 archived objects / 6 exclusions; archive verification PASS; Mnemosyne defects 0.
 **Update law:** update whenever a room materially gains/loses capability, proof, scope, or maturity. Percentages are house-manager estimates against the intended mature room, never proof by themselves.
 
 ## Current house progression
