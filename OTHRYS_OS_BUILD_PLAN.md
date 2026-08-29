@@ -4,14 +4,14 @@
 
 ## Current phase -- MNEMOSYNE INTELLIGENCE
 
-V2-010I Loop Weaving is complete and independently verified. The next bounded build step is Mnemosyne Intelligence: improve currentness, conflict/staleness, relationship-aware retrieval and context capsules before embeddings or a database.
+V2-010I Loop Weaving is complete and independently verified. V2-010J Mnemosyne Intelligence is CURRENT: improve currentness, conflict/staleness, relationship-aware retrieval and context capsules before embeddings or a database.
 
 ## Build order
 
 1. **[COMPLETE] Close Housekeeping 010G** -- final Mnemosyne estate sweep, quality/Book/Chronicle/log checks, repeated Legion + T590 proof, clean canonical checkpoint.
 2. **[COMPLETE] Component contracts** -- define a tiny anti-drift `.md` contract for each current house resident only. No duplicate prose: ownership, boundaries, inputs/outputs, dependencies, evidence, loop contract, forbidden actions.
 3. **[COMPLETE] Loop weaving** — treat `LOOP_LAWS.md` as processing law. Every recurring or AI-assisted component declares OWNER, TRIGGER, INPUT, STATE, BUDGET, EXIT, EVIDENCE and stall behavior.
-4. **[NEXT] Mnemosyne intelligence** — improve context capsules, exact identity recall, relationship-aware retrieval, stale/conflict/duplicate warnings, source-currentness and explainable ranking before adding embeddings or a database.
+4. **[CURRENT] Mnemosyne intelligence** — improve context capsules, exact identity recall, relationship-aware retrieval, stale/conflict/duplicate warnings, source-currentness and explainable ranking before adding embeddings or a database.
 5. **Library/Vault posture** — formalize Great Library zones, Source Vault, Blueprint Vault, Hall of Echoes, Garden/R&D boundaries and Hecatoncheires security posture from proven stock.
 6. **Switchyard** — only after the house is stable; resume the deferred capability/tier resolver from Quarry with no direct model-to-authority binding.
 7. **Integrations and services** — admit only repo-proven residents through separate missions; each admission updates manifest, Book, component contract, Atlas and Mnemosyne together.

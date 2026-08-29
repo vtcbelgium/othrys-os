@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto';
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { estateSummary, searchEstateKnowledge, verifyEstateArchive } from './mnemosyne_estate.mjs';
+import { estateRecordCurrentness, estateSummary, searchEstateKnowledge, verifyEstateArchive } from './mnemosyne_estate.mjs';
 
 const sha=value=>createHash('sha256').update(value).digest('hex');
 function fixture(){
@@ -58,4 +58,25 @@ test('catalog digest mismatch fails closed',()=>{
     writeFileSync(p,readFileSync(p,'utf8')+'{}\n');
     assert.throws(()=>searchEstateKnowledge(f.root,'proof'),/ESTATE_CATALOG_DIGEST_MISMATCH/);
   }finally{rmSync(f.root,{recursive:true,force:true});}
+});
+
+test('estate currentness is derived from live source bytes without authority',()=>{
+  const f=fixture();
+  const parent=join(f.root,'..'),repoA=`source-a-${f.safeHash.slice(0,8)}`,repoB=`source-b-${f.safeHash.slice(0,8)}`;
+  const a=join(parent,repoA,'docs'),b=join(parent,repoB,'docs');
+  const body=Buffer.from('Mnemosyne remembers the boring proof.');
+  const record={sha256:f.safeHash,sources:[{repo:repoA,path:'docs/facts.md'}]};
+  try{
+    mkdirSync(a,{recursive:true}); mkdirSync(b,{recursive:true});
+    writeFileSync(join(a,'facts.md'),body);
+    assert.deepEqual(estateRecordCurrentness(f.root,record),{status:'CURRENT',currentRefs:1,changedRefs:0,missingRefs:0,invalidRefs:0,observedRefs:1,authorityGranted:false});
+    writeFileSync(join(a,'facts.md'),'changed');
+    assert.equal(estateRecordCurrentness(f.root,record).status,'SUPERSEDED');
+    writeFileSync(join(b,'facts.md'),body);
+    assert.equal(estateRecordCurrentness(f.root,{...record,sources:[...record.sources,{repo:repoB,path:'docs/facts.md'}]}).status,'DIVERGED');
+    rmSync(join(a,'facts.md')); rmSync(join(b,'facts.md'));
+    assert.equal(estateRecordCurrentness(f.root,record).status,'MISSING');
+  }finally{
+    rmSync(join(parent,repoA),{recursive:true,force:true}); rmSync(join(parent,repoB),{recursive:true,force:true}); rmSync(f.root,{recursive:true,force:true});
+  }
 });

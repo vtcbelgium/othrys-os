@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto';
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
-import { assembleKnowledgeContext, captureKnowledgeInbox, declaredKnowledge, exportKnowledge, knowledgeProjection, maintainKnowledge, reviewKnowledgeInbox, searchKnowledge } from './mnemosyne.mjs';
+import { assembleKnowledgeContext, captureKnowledgeInbox, declaredKnowledge, deriveContextWarnings, exportKnowledge, knowledgeProjection, maintainKnowledge, reviewKnowledgeInbox, searchKnowledge } from './mnemosyne.mjs';
 
 const root=resolve(import.meta.dirname,'../..');
 const manifest=JSON.parse(readFileSync(join(root,'.othrys','project.json'),'utf8'));
@@ -83,4 +83,26 @@ test('Mnemosyne projection exposes lifecycle but no write API or opaque memory',
 test('source paths cannot escape the project',()=>{
   const bad={projectId:'x',knowledge:[{id:'escape',label:'Escape',class:'BAD',path:'../secret.txt'}]};
   assert.throws(()=>declaredKnowledge(root,bad),/KNOWLEDGE_PATH_ESCAPE/);
+});
+
+test('context budget stays bounded and Atlas relations remain explainable',()=>{
+  const out=assembleKnowledgeContext(root,manifest,'Mnemosyne',{limit:6});
+  assert.equal(out.contextBudget.total,6);
+  assert.ok(out.contextBudget.selected<=6);
+  assert.ok(out.related.every(x=>Array.isArray(x.relationKinds)));
+  assert.ok(out.related.some(x=>x.id==='system:mnemosyne'));
+});
+
+test('derived warnings expose stale and divergent evidence without authority',()=>{
+  const warnings=deriveContextWarnings({
+    maintenance:{missingSources:['source-missing'],awaitingReview:[]},
+    graphSummary:{conflictCount:1},
+    estateEvidence:[
+      {id:'estate-a',contentDigest:'a',currentness:{status:'SUPERSEDED',currentRefs:0,changedRefs:1,missingRefs:0},source:{refs:[{lineage:'repo:x',path:'docs/fact.md'}]}},
+      {id:'estate-b',contentDigest:'b',currentness:{status:'CURRENT',currentRefs:1,changedRefs:0,missingRefs:0},source:{refs:[{lineage:'repo:x',path:'docs/fact.md'}]}}
+    ]
+  });
+  assert.ok(warnings.some(x=>x.kind==='estate-source-currentness'&&x.status==='SUPERSEDED'));
+  assert.ok(warnings.some(x=>x.kind==='source-divergence'&&x.digests.length===2));
+  assert.ok(warnings.some(x=>x.kind==='atlas-conflicts'));
 });

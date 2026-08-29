@@ -6,9 +6,9 @@
   "remote_head_at_last_verified_read": "25fa48d24c948cd982774438c92d448e581f9c8b",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-010I",
-    "status": "COMPLETE",
-    "issued_label": "V2-010I - OTHRYS OS LOOP WEAVING AND PROCESSING OPTIMIZATION",
+    "mission_id": "V2-010J",
+    "status": "RUNNING",
+    "issued_label": "V2-010J - OTHRYS OS MNEMOSYNE INTELLIGENCE",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -67,7 +67,7 @@
     "decision": "LOOP_WEAVING_ONLY",
     "authority": "Inventory, constrain, trace and optimize existing loops; no scheduler or authority expansion."
   },
-  "next_legal_action": "Begin bounded Mnemosyne Intelligence work from OTHRYS_OS_BUILD_PLAN.md: currentness, conflict/staleness, relationship-aware retrieval and context capsules before embeddings or a database.",
+  "next_legal_action": "Implement deterministic source currentness/divergence first, then explicit context budgets and relationship-aware recall reasons; no embeddings/database.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

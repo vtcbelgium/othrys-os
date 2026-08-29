@@ -2,7 +2,7 @@
 
 **Status:** LIVE FRONT-DOOR CONTROL FILE
 **Owner:** GPT Control / House Manager
-**Last evidence update:** 2026-08-29 - V2-010I COMPLETE; Legion 268/268 Node + 36/36 Python; T590 268/268 Node + 36/36 Python; deterministic estate 8,041 archived objects / 6 exclusions; archive verification PASS; Mnemosyne defects 0.
+**Last evidence update:** 2026-08-29 - V2-010J RUNNING; Mnemosyne currentness/divergence, bounded context, relation reasons and lexical-cache optimization focused tests PASS; full cross-node proof pending.
 **Update law:** update whenever a room materially gains/loses capability, proof, scope, or maturity. Percentages are house-manager estimates against the intended mature room, never proof by themselves.
 
 ## Current house progression
@@ -13,7 +13,7 @@
 | Hephaestus | 61% | governed engineering authority + builder chain + Factory integration | forge/quarry pipeline, stronger sandbox, compounding recipes, component contract |
 | Talos | 72% | verification, retry/replay, evidence gates, tick/introspection stock | OS-wide continuous verification and requalified inspection muscles |
 | Trust Canal | 74% | default-deny authority boundary + operating-mode enforcement | broader resident coverage + Hecatoncheires hardening |
-| Mnemosyne | 66% | explicit memory, cross-repo estate, provenance, Books, Muses, quality, context capsules, deterministic archive verification | relations, temporal truth, conflicts/staleness, deeper Callimachus, Great Library/Vault semantics |
+| Mnemosyne | 72% | explicit memory, cross-repo estate, provenance, Books, Muses, quality, context capsules, deterministic archive verification | temporal truth, deeper Callimachus, Great Library/Vault semantics, measured retrieval feedback |
 | Atlas | 48% | typed derived graph, provenance, gravity/heat, Muses, visual room | richer relationships/lenses/timeline/conflict/health navigation |
 | Missions + Work | 81% | durable mission/work hierarchy + evidence-bound transitions | Loop Laws contract woven into every recurring flow |
 | Blocks | 62% | two admitted reusable Blocks + exact composition law | mature quarry -> qualify -> forge -> reuse pipeline |

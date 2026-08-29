@@ -1,0 +1,36 @@
+{
+  "mission_id": "V2-010J",
+  "title": "OTHRYS OS Mnemosyne Intelligence",
+  "goal": "Make existing Mnemosyne recall more current, conflict-aware, relationship-aware and context-efficient without adding a second memory authority or new storage technology.",
+  "artifact_profile": "os-substrate",
+  "work": {
+    "scale": "MISSION",
+    "problem": "Mnemosyne already preserves and searches explicit knowledge, but context capsules do not yet explain source currentness/divergence strongly enough and use coarse per-section limits rather than an explicit context budget.",
+    "out_of_scope": [
+      "No embeddings, vector database or LLM reranker",
+      "No new Greek memory subsystem or second knowledge authority",
+      "No autonomous promotion, canon mutation or research loop",
+      "No UI redesign",
+      "No destructive cleanup of historical estate evidence"
+    ],
+    "risks": [
+      "Derived currentness is mistaken for authority",
+      "Historical evidence is suppressed instead of labeled",
+      "Conflict detection produces noisy false certainty",
+      "Context budgeting hides required project truth"
+    ]
+  },
+  "laws": [
+    "Project-local declared truth and House Books outrank historical estate evidence.",
+    "Currentness and conflict are derived warnings, never authority or automatic deletion.",
+    "Historical evidence remains retrievable with provenance even when superseded.",
+    "Context selection must explain why each item was selected and respect a bounded budget.",
+    "Atlas remains a derived read model; Mnemosyne remains the knowledge authority."
+  ],
+  "slices": [
+    {"id":"currentness","title":"Source currentness and divergence","owner":"mnemosyne","stages":[{"id":"build","owner":"mnemosyne","tasks":[{"id":"classify","title":"Classify live/current/superseded/missing source evidence deterministically"}]}],"artifacts":["mnemosyne-currentness"]},
+    {"id":"context","title":"Bounded explainable context capsules","owner":"mnemosyne","stages":[{"id":"build","owner":"mnemosyne","tasks":[{"id":"budget","title":"Apply explicit project/estate/related/warning context budgets"}]}],"artifacts":["context-budget"]},
+    {"id":"relations","title":"Relationship-aware recall reasons","owner":"atlas","stages":[{"id":"review","owner":"talos","tasks":[{"id":"reasons","title":"Expose one-hop relation kinds and deterministic ranking reasons"}]}],"artifacts":["relation-reasons"]},
+    {"id":"proof","title":"Negative controls and boring verification","owner":"talos","stages":[{"id":"review","owner":"talos","tasks":[{"id":"tests","title":"Prove historical evidence remains visible, conflicts stay warnings and authority stays false"}]}],"artifacts":["mnemosyne-intelligence-tests"]}
+  ]
+}

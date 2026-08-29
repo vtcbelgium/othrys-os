@@ -81,6 +81,18 @@ export function reviewKnowledgeInbox(root,itemId,input){
 function tokenize(value){
   return [...new Set(clean(value).toLowerCase().match(/[a-z0-9][a-z0-9._-]{1,}/g)??[])];
 }
+function contextBudget(limit,input={}){
+  const total=Math.max(3,Math.min(36,Number.isInteger(input?.total)?input.total:Number.isInteger(limit)?limit:12));
+  const requestedProject=Number.isInteger(input?.projectTruth)?input.projectTruth:Math.max(1,Math.ceil(total*.4));
+  const projectTruth=Math.max(1,Math.min(total,requestedProject));
+  const remainingAfterProject=total-projectTruth;
+  const requestedEstate=Number.isInteger(input?.estateEvidence)?input.estateEvidence:Math.max(1,Math.floor(total*.35));
+  const estateEvidence=Math.max(0,Math.min(remainingAfterProject,requestedEstate));
+  const remaining=total-projectTruth-estateEvidence;
+  const related=Math.max(0,Math.min(remaining,Number.isInteger(input?.related)?input.related:remaining));
+  const warnings=Math.max(0,Math.min(20,Number.isInteger(input?.warnings)?input.warnings:8));
+  return Object.freeze({total,projectTruth,estateEvidence,related,warnings});
+}
 
 export function searchKnowledge(root,manifest,query,{limit=12}={}){
   const terms=tokenize(query);
@@ -99,10 +111,29 @@ export function searchKnowledge(root,manifest,query,{limit=12}={}){
   merged.sort((a,b)=>b.score-a.score||(Number(a.id.startsWith('estate-'))-Number(b.id.startsWith('estate-')))||a.id.localeCompare(b.id));
   return Object.freeze({schema:'othrys.os.knowledge-search.v1',query:clean(query),results:merged.slice(0,Math.max(1,Math.min(50,limit))),estateCatalogSha256:estate.catalogSha256??null,authorityGranted:false});
 }
-export function assembleKnowledgeContext(root,manifest,query,{limit=12,state={}}={}){
+export function deriveContextWarnings({maintenance={},graphSummary={},estateEvidence=[]}={}){
+  const warnings=[];
+  for(const id of maintenance.missingSources??[]) warnings.push({kind:'missing-source',id});
+  for(const id of maintenance.awaitingReview??[]) warnings.push({kind:'awaiting-review',id});
+  if(graphSummary?.conflictCount) warnings.push({kind:'atlas-conflicts',count:graphSummary.conflictCount});
+  const logical=new Map();
+  for(const item of estateEvidence){
+    const status=item.currentness?.status;
+    if(status&&status!=='CURRENT') warnings.push({kind:'estate-source-currentness',id:item.id,status,currentRefs:item.currentness.currentRefs,changedRefs:item.currentness.changedRefs,missingRefs:item.currentness.missingRefs});
+    for(const ref of item.source?.refs??[]){
+      const key=`${ref.lineage??ref.repo??'unknown'}|${ref.path??'unknown'}`;
+      const digests=logical.get(key)??new Set(); digests.add(item.contentDigest); logical.set(key,digests);
+    }
+  }
+  for(const [sourceKey,digests] of logical) if(digests.size>1) warnings.push({kind:'source-divergence',sourceKey,digests:[...digests].sort()});
+  return Object.freeze(warnings);
+}
+
+export function assembleKnowledgeContext(root,manifest,query,{limit=12,state={},budget={}}={}){
+  const appliedBudget=contextBudget(limit,budget);
   const terms=tokenize(query);
   if(!terms.length) return Object.freeze({schema:'othrys.os.context-capsule.v1',query:clean(query),projectTruth:[],estateEvidence:[],related:[],warnings:[],authorityGranted:false});
-  const search=searchKnowledge(root,manifest,query,{limit:Math.max(limit*3,24)});
+  const search=searchKnowledge(root,manifest,query,{limit:Math.max(appliedBudget.total*4,24)});
   const bookPath=join(root,'books','BOOK_REGISTRY.json');
   const bookMatches=[];
   if(existsSync(bookPath)){
@@ -119,25 +150,29 @@ export function assembleKnowledgeContext(root,manifest,query,{limit=12,state={}}
   }
   const localMatches=search.results.filter(x=>!x.id.startsWith('estate-')).map(x=>({...x,selectedBecause:'project-local match'}));
   const seen=new Set();
-  const projectTruth=[...bookMatches,...localMatches].filter(x=>!seen.has(x.id)&&(seen.add(x.id),true)).slice(0,limit);
-  const estateEvidence=search.results.filter(x=>x.id.startsWith('estate-')&&x.status!=='EXCLUDED').slice(0,limit).map(x=>({...x,selectedBecause:'supporting estate evidence'}));
+  const projectTruth=[...bookMatches,...localMatches].filter(x=>!seen.has(x.id)&&(seen.add(x.id),true)).slice(0,appliedBudget.projectTruth);
+  const estateEvidence=search.results.filter(x=>x.id.startsWith('estate-')&&x.status!=='EXCLUDED').slice(0,appliedBudget.estateEvidence).map(x=>({...x,selectedBecause:'supporting estate evidence'}));
   const graph=buildAtlasProjection(root,state),matched=new Set();
   for(const n of graph.nodes){
     const hay=`${n.id} ${n.title} ${n.description??''} ${(n.tags??[]).join(' ')}`.toLowerCase();
     if(terms.some(t=>hay.includes(t))) matched.add(n.id);
   }
-  const neighborIds=new Set(matched);
-  for(const e of graph.edges) if(matched.has(e.from)||matched.has(e.to)){neighborIds.add(e.from);neighborIds.add(e.to)}
+  const neighborIds=new Set(matched),relationKinds=new Map();
+  for(const e of graph.edges){
+    if(matched.has(e.from)||matched.has(e.to)){neighborIds.add(e.from);neighborIds.add(e.to)}
+    if(matched.has(e.from)){const a=relationKinds.get(e.to)??new Set();a.add(e.type);relationKinds.set(e.to,a)}
+    if(matched.has(e.to)){const a=relationKinds.get(e.from)??new Set();a.add(e.type);relationKinds.set(e.from,a)}
+  }
   const degree=new Map(); for(const e of graph.edges){degree.set(e.from,(degree.get(e.from)??0)+1);degree.set(e.to,(degree.get(e.to)??0)+1)}
   const related=graph.nodes.filter(n=>neighborIds.has(n.id)).map(n=>{
     const hay=`${n.id} ${n.title}`.toLowerCase(),exact=terms.some(t=>hay===t||n.id.toLowerCase().endsWith(`:${t}`)||n.title.toLowerCase()===t);
-    return {id:n.id,type:n.type,title:n.title,truthClass:n.truthClass,muses:n.muses??[],provenance:n.provenance??[],relationCount:degree.get(n.id)??0,exactMatch:exact,selectedBecause:matched.has(n.id)?'direct Atlas match':'one-hop Atlas relation'};
-  }).sort((a,b)=>Number(b.exactMatch)-Number(a.exactMatch)||(Number(b.selectedBecause.startsWith('direct'))-Number(a.selectedBecause.startsWith('direct')))||b.relationCount-a.relationCount||a.id.localeCompare(b.id)).slice(0,limit);
-  const maintenance=maintainKnowledge(root,manifest),warnings=[];
-  for(const id of maintenance.missingSources??[]) warnings.push({kind:'missing-source',id});
-  for(const id of maintenance.awaitingReview??[]) warnings.push({kind:'awaiting-review',id});
-  if(graph.summary?.conflictCount) warnings.push({kind:'atlas-conflicts',count:graph.summary.conflictCount});
-  return Object.freeze({schema:'othrys.os.context-capsule.v1',query:clean(query),projectTruth,estateEvidence,related,warnings,estateCatalogSha256:search.estateCatalogSha256??null,authorityGranted:false});
+    const relations=[...(relationKinds.get(n.id)??[])].sort();
+    return {id:n.id,type:n.type,title:n.title,truthClass:n.truthClass,muses:n.muses??[],provenance:n.provenance??[],relationCount:degree.get(n.id)??0,relationKinds:relations,exactMatch:exact,selectedBecause:matched.has(n.id)?'direct Atlas match':`one-hop Atlas relation${relations.length?`: ${relations.join(', ')}`:''}`};
+  }).sort((a,b)=>Number(b.exactMatch)-Number(a.exactMatch)||(Number(b.selectedBecause.startsWith('direct'))-Number(a.selectedBecause.startsWith('direct')))||b.relationKinds.length-a.relationKinds.length||b.relationCount-a.relationCount||a.id.localeCompare(b.id)).slice(0,appliedBudget.related);
+  const maintenance=maintainKnowledge(root,manifest);
+  const selectedWarnings=deriveContextWarnings({maintenance,graphSummary:graph.summary,estateEvidence}).slice(0,appliedBudget.warnings);
+  const budgetReport=Object.freeze({...appliedBudget,selected:projectTruth.length+estateEvidence.length+related.length});
+  return Object.freeze({schema:'othrys.os.context-capsule.v1',query:clean(query),projectTruth,estateEvidence,related,warnings:selectedWarnings,contextBudget:budgetReport,estateCatalogSha256:search.estateCatalogSha256??null,authorityGranted:false});
 }
 
 export function maintainKnowledge(root,manifest){

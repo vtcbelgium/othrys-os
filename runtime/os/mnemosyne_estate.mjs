@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join, normalize, resolve, sep } from 'node:path';
 
 export const ESTATE_SCHEMA='othrys.os.mnemosyne-estate.v1';
 const sha=value=>createHash('sha256').update(value).digest('hex');
@@ -9,6 +9,7 @@ const STOPWORDS=new Set(['of','the','and','a','an','to','in','on','for','with','
 const tokens=value=>[...new Set((clean(value).toLowerCase().match(/[a-z0-9][a-z0-9._-]{1,}/g)??[]).filter(x=>!STOPWORDS.has(x)))];
 
 let cache={path:null,mtimeMs:null,records:null,summary:null};
+let lexicalCache={catalogSha256:null,lowerBySha:new Map()};
 function paths(root){
   const base=join(root,'.othrys','knowledge');
   return {
@@ -28,6 +29,7 @@ function load(root){
   if(sha(bytes)!==summary.catalogSha256) throw new Error('ESTATE_CATALOG_DIGEST_MISMATCH');
   const records=bytes.toString('utf8').split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line));
   cache={path:p.catalog,mtimeMs:st.mtimeMs,records,summary};
+  if(lexicalCache.catalogSha256!==summary.catalogSha256) lexicalCache={catalogSha256:summary.catalogSha256,lowerBySha:new Map()};
   return {...cache,paths:p};
 }
 export function estateSummary(root){
@@ -53,25 +55,60 @@ function excerpt(text,terms){
   return text.slice(start,end).replace(/\s+/g,' ').trim();
 }
 
+function objectLower(loaded,record){
+  const cached=lexicalCache.lowerBySha.get(record.sha256);
+  if(cached!==undefined) return cached;
+  const value=readFileSync(join(loaded.paths.objects,record.sha256),'utf8').toLowerCase();
+  lexicalCache.lowerBySha.set(record.sha256,value);
+  return value;
+}
+export function estateLexicalCacheStats(){
+  return Object.freeze({catalogSha256:lexicalCache.catalogSha256,objects:lexicalCache.lowerBySha.size,authorityGranted:false});
+}
+
+function sourcePath(root,ref){
+  const repo=clean(ref?.repo),rel=clean(ref?.path).replaceAll('\\','/');
+  if(!repo||!rel||rel.startsWith('/')||rel.split('/').includes('..')) return null;
+  const repoRoot=resolve(dirname(root),repo),target=resolve(repoRoot,normalize(rel));
+  if(target!==repoRoot&&!target.startsWith(repoRoot+sep)) return null;
+  return target;
+}
+export function estateRecordCurrentness(root,record){
+  let currentRefs=0,changedRefs=0,missingRefs=0,invalidRefs=0;
+  for(const ref of record?.sources??[]){
+    const path=sourcePath(root,ref);
+    if(!path){invalidRefs+=1;continue;}
+    if(!existsSync(path)){missingRefs+=1;continue;}
+    if(sha(readFileSync(path))===record.sha256) currentRefs+=1; else changedRefs+=1;
+  }
+  const status=currentRefs>0&&changedRefs>0?'DIVERGED':currentRefs>0?'CURRENT':changedRefs>0?'SUPERSEDED':'MISSING';
+  return Object.freeze({status,currentRefs,changedRefs,missingRefs,invalidRefs,observedRefs:(record?.sources??[]).length,authorityGranted:false});
+}
 export function searchEstateKnowledge(root,query,{limit=12}={}){
   const terms=tokens(query),loaded=load(root);
   if(!loaded||!terms.length) return Object.freeze({schema:'othrys.os.estate-search.v1',query:clean(query),results:[],authorityGranted:false});
   const results=[];
   for(const record of loaded.records){
     const meta=metadata(record),metaMatched=new Set(terms.filter(t=>meta.includes(t))),matched=new Set(metaMatched);
-    let preview='';
     if(record.archived===true&&existsSync(join(loaded.paths.objects,record.sha256))&&matched.size<terms.length){
-      const text=readFileSync(join(loaded.paths.objects,record.sha256),'utf8'),lower=text.toLowerCase();
+      const lower=objectLower(loaded,record);
       for(const term of terms) if(lower.includes(term)) matched.add(term);
-      if(matched.size) preview=excerpt(text,[...matched]);
     }
     if(!matched.size) continue;
     const sourceCount=record.sources?.length??0,coverage=matched.size/terms.length,metaCoverage=metaMatched.size/terms.length;
     const score=Number((coverage*.75+metaCoverage*.25).toFixed(6));
-    results.push({id:`estate-${record.sha256.slice(0,24)}`,title:sourceLabel(record),classification:(record.kinds??[]).includes('book')?'BOOK':(record.kinds??[]).includes('log')?'LOG':'DOCUMENT',status:record.archived?'ARCHIVED':'EXCLUDED',score,matchedTerms:[...matched].sort(),metadataMatchedTerms:[...metaMatched].sort(),source:{kind:'ESTATE_ARCHIVE',sha256:record.sha256,refs:(record.sources??[]).slice(0,8),sourceCount},contentDigest:record.sha256,bytes:record.bytes,excerpt:preview,leakPattern:record.leakPattern??null});
+    results.push({id:`estate-${record.sha256.slice(0,24)}`,title:sourceLabel(record),classification:(record.kinds??[]).includes('book')?'BOOK':(record.kinds??[]).includes('log')?'LOG':'DOCUMENT',status:record.archived?'ARCHIVED':'EXCLUDED',score,matchedTerms:[...matched].sort(),metadataMatchedTerms:[...metaMatched].sort(),source:{kind:'ESTATE_ARCHIVE',sha256:record.sha256,refs:(record.sources??[]).slice(0,8),sourceCount},contentDigest:record.sha256,bytes:record.bytes,excerpt:'',leakPattern:record.leakPattern??null});
   }
   results.sort((a,b)=>b.score-a.score||b.metadataMatchedTerms.length-a.metadataMatchedTerms.length||a.title.localeCompare(b.title));
-  return Object.freeze({schema:'othrys.os.estate-search.v1',query:clean(query),results:results.slice(0,Math.max(1,Math.min(50,limit))),catalogSha256:loaded.summary.catalogSha256,authorityGranted:false});
+  const selected=results.slice(0,Math.max(1,Math.min(50,limit))).map(result=>{
+    const record=loaded.records.find(x=>x.sha256===result.contentDigest);
+    const currentness=record?estateRecordCurrentness(root,record):Object.freeze({status:'MISSING',currentRefs:0,changedRefs:0,missingRefs:0,invalidRefs:0,observedRefs:0,authorityGranted:false});
+    if(result.status!=='ARCHIVED'||!result.matchedTerms.length) return {...result,currentness};
+    const objectPath=join(loaded.paths.objects,result.contentDigest);
+    if(!existsSync(objectPath)) return {...result,currentness};
+    return {...result,currentness,excerpt:excerpt(readFileSync(objectPath,'utf8'),result.matchedTerms)};
+  });
+  return Object.freeze({schema:'othrys.os.estate-search.v1',query:clean(query),results:selected,catalogSha256:loaded.summary.catalogSha256,authorityGranted:false});
 }
 export function verifyEstateArchive(root){
   const loaded=load(root);
