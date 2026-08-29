@@ -7,7 +7,10 @@
   "objective": "Qualify the repo-proven Prometheus research/search fabric against current OTHRYS OS contracts before any House admission.",
   "great_harvest_preflight": {
     "classification": "ADAPT",
-    "evidence": ["othrys-hub hub/prometheus_research/daily_scan.py current Git object d0e99b5e8435735c0f5d84ac684db5c458131dfe", "historical Prometheus daily_scan lineages preserved by Great Harvest"],
+    "evidence": [
+      "othrys-hub hub/prometheus_research/daily_scan.py current Git object d0e99b5e8435735c0f5d84ac684db5c458131dfe",
+      "historical Prometheus daily_scan lineages preserved by Great Harvest"
+    ],
     "reason": "Prometheus has substantial proven prior implementation. V2 must harvest and bound it rather than invent a new search/research backend."
   },
   "laws": [
@@ -17,7 +20,21 @@
     "House admission, if justified, requires manifest + Book + component contract + Atlas/Mnemosyne evidence together.",
     "PandaOS remains experience-only and contributes no Prometheus backend authority."
   ],
-  "out_of_scope": ["No House admission yet", "No new external search provider", "No credentials", "No autonomous scheduled research", "No visual redesign"],
+  "out_of_scope": [
+    "No House admission yet",
+    "No new external search provider",
+    "No credentials",
+    "No autonomous scheduled research",
+    "No visual redesign"
+  ],
   "authority_granted": false,
-  "execution_started": false
+  "execution_started": false,
+  "triad_penta_study": {
+    "triad": "REUSE_CONSTITUTIONAL_CONTRACT",
+    "penta": "REUSE_CAMPAIGN_PROOF_PATTERNS",
+    "prometheus": "ADAPT",
+    "evidence": "docs/V2-010X/TRIAD_PENTA_PROMETHEUS_STUDY.md",
+    "focused_old_hub_tests": "80 PASS / 1 Windows byte-offset defect harvested"
+  },
+  "next_slice": "PROMETHEUS_LOCAL_INTELLIGENCE_QUALIFICATION"
 }
