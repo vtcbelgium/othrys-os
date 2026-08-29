@@ -26,7 +26,7 @@ Use when rules, state transitions or checks can be executed without AI.
 Typical uses: validation, hashing, routing, policy checks, test execution, state comparison, schema checks.
 
 ### ReAct loop
-`OBSERVE -> DECIDE -> ACT ONCE -> OBSERVE`
+`OBSERVE -> COMPARE STATE TO GOAL -> ACT ONCE -> VERIFY DELTA`
 
 Use for responsive tool-grounded execution inside one bounded attempt. ReAct is local reasoning around real observations; it is not permission for indefinite continuation.
 
@@ -143,15 +143,17 @@ Repeated zero progress beyond the declared threshold -> `STALL -> STOP`.
 
 When verification fails:
 1. identify the first causal blocker supported by evidence;
-2. decide whether repair remains inside the frozen contract;
-3. if yes, allow only the next bounded correction iteration;
-4. otherwise STOP and re-plan outside the loop.
+2. record a structured diagnosis: failure class, causal evidence, changed assumption and allowed next action;
+3. decide whether repair remains inside the frozen contract;
+4. if yes, allow only the next bounded correction iteration;
+5. otherwise STOP and re-plan outside the loop.
 
 Do not repair downstream symptoms while the first causal blocker remains.
 
 ## 8. REACT LAW
 
 - Observe before acting.
+- Compare current state to the frozen goal/acceptance state before choosing the next action.
 - One action should answer one concrete uncertainty or advance one frozen objective.
 - Incorporate the actual result before the next action.
 - Re-reading unchanged truth is stall, not caution.
@@ -176,7 +178,7 @@ Each iteration must:
 5. checkpoint the outcome;
 6. terminate its context.
 
-The next iteration reads persisted truth and evidence, not the previous worker's narrative.
+The next iteration reads persisted truth and evidence, not the previous worker's narrative. A worker-emitted DONE/NEXT/COMPLETE sentinel is only a proposal; external verification controls the actual transition.
 
 ## 11. EVALUATOR-OPTIMIZER LAW
 
@@ -211,6 +213,27 @@ Repeated successful processing should reduce future reasoning. Before turning a 
 - can it be tested?;
 - does an existing capability already cover it?;
 - does reuse remove future reasoning rather than add coupling?
+
+
+## 15A. TRACE COMPRESSION LAW
+
+A mature loop should require less AI over time. Inspect execution traces for repeated, stable tool/action subsequences. When a sequence is repeatedly proven, bounded, generalizable and safe, qualify it as a deterministic recipe/meta-tool/Block candidate instead of asking a model to rediscover the same steps.
+
+Compression requirements:
+- same frozen intent shape or clearly parameterized family;
+- repeated external PASS evidence;
+- deterministic inputs/outputs and failure semantics;
+- no hidden authority expansion;
+- negative controls;
+- measurable reduction in model/tool turns.
+
+The goal of compounding is not a larger agent. It is a smaller future reasoning burden.
+
+## 15B. CAPABILITY-GATED LOOP FREEDOM
+
+Prescribed scaffolding is the default. A worker may choose among loop strategies only when its capability is explicitly qualified for that freedom. Even then, the outer controller freezes objective, permitted interactions, data boundary, total budget, evaluator and authority.
+
+Weak/unknown labor receives a narrow prescribed loop. Strong qualified labor may choose the route, but never rewrite the destination or the proof standard.
 
 ## 16. EVENT-DRIVEN BEFORE POLLING
 
@@ -269,6 +292,23 @@ A non-trivial loop attempt should make continuation reconstructible. Record or r
 - requested next action;
 - whether continuation is authorized.
 
+
+## 20A. LOOP OPTIMIZATION TELEMETRY
+
+Trace non-trivial loops so OTHRYS can reduce future reasoning. Useful measurements include:
+- semantic-progress rate per iteration;
+- verifier PASS yield per mutation;
+- repeated/redundant tool-call ratio;
+- identical-failure recurrence;
+- time/token/cost per accepted state delta;
+- context restart/compaction frequency;
+- first-causal-blocker resolution rate;
+- strategy-switch/fallback frequency;
+- human intervention frequency and cause;
+- recurring trace sequences suitable for deterministic compression.
+
+Metrics optimize processing; they do not grant authority or prove correctness by themselves.
+
 ## 21. FORBIDDEN ANTI-PATTERNS
 
 - infinite agent loops;
@@ -284,7 +324,10 @@ A non-trivial loop attempt should make continuation reconstructible. Record or r
 - worker broadens objective after finding adjacent work;
 - tests changed merely to bless output;
 - hidden outer authority inside an inner loop;
-- successful loop automatically promoted to reusable capability.
+- successful loop automatically promoted to reusable capability;
+- worker self-reported completion accepted without external proof;
+- ritual reflection after every turn when no surprise/state mismatch exists;
+- capable optimizer allowed to rewrite its objective, evaluator or total budget.
 
 ## 22. DEFAULT DECISION TABLE
 

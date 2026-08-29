@@ -4,6 +4,7 @@ from pathlib import Path
 
 DOC_EXT={'.md','.txt','.json','.jsonl','.ndjson','.yaml','.yml','.toml','.csv','.log','.sql','.xml','.html','.rst','.ini','.cfg','.conf'}
 EXCLUDE_DIRS={'node_modules','.git','dist','build','__pycache__','.next','.venv','venv','coverage'}
+LOCAL_STATE_DIRS={'.othrys/logs','.othrys/runtime'}
 LEAK_PATTERNS=[
  ('ghp',re.compile(rb'\bghp_[A-Za-z0-9]{20,}')),
  ('github_pat',re.compile(rb'\bgithub_pat_[A-Za-z0-9_]{20,}')),
@@ -42,7 +43,13 @@ def leak_name(data:bytes)->str|None:
 
 def iter_docs(repo:Path):
     for dp,dns,fns in os.walk(repo,topdown=True,followlinks=False):
-        dns[:]=[d for d in dns if d not in EXCLUDE_DIRS and not os.path.islink(os.path.join(dp,d))]
+        kept=[]
+        for d in dns:
+            if d in EXCLUDE_DIRS or os.path.islink(os.path.join(dp,d)): continue
+            rel=(Path(dp)/d).relative_to(repo).as_posix()
+            if rel in LOCAL_STATE_DIRS: continue
+            kept.append(d)
+        dns[:]=kept
         for fn in fns:
             p=Path(dp)/fn
             if p.suffix.lower() in DOC_EXT: yield p

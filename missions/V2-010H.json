@@ -1,0 +1,93 @@
+{
+  "mission_id": "V2-010H",
+  "title": "OTHRYS OS Component Contracts and anti-drift lint",
+  "goal": "Create one compact machine-checkable component contract for every current house surface and prove contract/Book/manifest alignment without changing runtime authority or product capability.",
+  "artifact_profile": "os-housekeeping",
+  "work": {
+    "scale": "MISSION",
+    "problem": "Current Books explain purpose and history, but component ownership, IO, dependency, authority, loop and failure boundaries are not yet expressed in one compact machine-checkable anti-drift contract per current surface.",
+    "out_of_scope": [
+      "No new resident, Titan, model, integration or product capability",
+      "No runtime execution path changes",
+      "No UI expansion",
+      "No duplicate Book prose",
+      "No contract for Quarry-only surfaces"
+    ],
+    "risks": [
+      "Contracts become aspirational architecture",
+      "Contracts duplicate Books and drift independently",
+      "A contract is misread as authority",
+      "Recurring components omit bounded Loop Laws fields"
+    ]
+  },
+  "laws": [
+    "Book = what/why/history/boundary; Component Contract = operational anti-drift interface.",
+    "Every current Book target has exactly one component contract.",
+    "A contract cannot grant authority or certify its own implementation.",
+    "Loop fields follow LOOP_LAWS.md and may explicitly declare NONE when a component is not a recurring loop.",
+    "Evidence must point to current repo truth.",
+    "Quarry-only surfaces must not acquire contracts by documentation."
+  ],
+  "slices": [
+    {
+      "id": "schema",
+      "title": "Define compact component contract schema",
+      "owner": "hephaestus",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "contract-law",
+              "title": "Define required operational and loop fields without Book duplication"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "contract-schema"
+      ]
+    },
+    {
+      "id": "coverage",
+      "title": "Cover every current house surface exactly once",
+      "owner": "hephaestus",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "current-contracts",
+              "title": "Materialize contracts from current Book/manifest truth"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "component-contracts"
+      ]
+    },
+    {
+      "id": "drift",
+      "title": "Machine-check contract/Book/manifest alignment",
+      "owner": "talos",
+      "stages": [
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "lint",
+              "title": "Fail on missing, extra, malformed, authority-drifting or unbounded contracts"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "contract-lint"
+      ]
+    }
+  ]
+}

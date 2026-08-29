@@ -23,6 +23,7 @@ V2-010G housekeeping is complete and independently verified. The next bounded bu
 - `OTHRYS_OS_BUILD_PLAN.md` = current build order; not execution authority.
 - `LOOP_LAWS.md` = reusable loop constitution.
 - `books/BOOK_REGISTRY.json` = one Book target per admitted house surface.
+- `contracts/components/*.md` = compact operational anti-drift contract per current Book target.
 - `.othrys/project.json` = machine-readable current resident inventory.
 - Mnemosyne = institutional knowledge authority; Atlas = derived read model.
 - Garden/R&D/Quarry preserve possibility without gaining current-house status.
