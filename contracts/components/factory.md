@@ -17,7 +17,7 @@
 - TRIGGER: admitted Factory plan/build/refine request
 - INPUT: strict brief; proven Blocks/capabilities; qualified critique; operator gates
 - STATE: durable candidate/run lineage
-- BUDGET: bounded build/refine cycles defined by mission
+- BUDGET: build command `maxAttempts=3`; refinement is mission-bounded and only opens from qualified negative gap evidence
 - EXIT CONDITION: verified candidate awaits operator, accepted release becomes eligible, or failure is terminal
 - EVIDENCE: V2-005D; .othrys/project.json#systems/factory
 - STALL/FAILURE: no visual/semantic change or repeated critique without mutation stops

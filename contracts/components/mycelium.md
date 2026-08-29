@@ -14,10 +14,10 @@
 
 ## Loop contract
 - OWNER: `GPT_CONTROL`
-- TRIGGER: work requires node/capability placement or health observation
+- TRIGGER: work requires node/capability placement or periodic Legion telemetry observation
 - INPUT: node envelopes; capabilities; health; work resource requirements
-- STATE: node envelopes + health/quarantine + route evidence
-- BUDGET: bounded route attempts and retry policy
+- STATE: node envelopes + health/quarantine + route evidence + authority-free telemetry samples
+- BUDGET: bounded route attempts; telemetry interval >=5000ms (default 10000ms), POST timeout 4000ms, `--once` supported
 - EXIT CONDITION: feasible route selected or no eligible node proven
 - EVIDENCE: V2-004D; .othrys/project.json#systems/mycelium
 - STALL/FAILURE: unreachable/quarantined nodes stop being retried without new evidence

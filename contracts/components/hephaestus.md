@@ -17,7 +17,7 @@
 - TRIGGER: admitted engineering/build request
 - INPUT: admitted mission/build request; exact touch allowlist; proven capability stock
 - STATE: engineering plan + attempt evidence + bounded workspace
-- BUDGET: mission-defined attempts; default hard cap inherited from Talos/build path
+- BUDGET: frozen engineering command permits exactly 1..5 attempts; retry/correction never expands touch scope or acceptance
 - EXIT CONDITION: candidate produced for independent verification or causal blocker proven
 - EVIDENCE: V2-002F; .othrys/project.json#authorities/hephaestus
 - STALL/FAILURE: stop at first causal blocker or exhausted attempt budget

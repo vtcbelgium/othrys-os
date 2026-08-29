@@ -17,7 +17,7 @@
 - TRIGGER: candidate or due verification event
 - INPUT: candidate; mission contract; independent checks; receipts
 - STATE: verification ledger + retry/replay state
-- BUDGET: bounded retries and wall-time defined by mission/loop law
-- EXIT CONDITION: independent PASS, terminal FAIL/BLOCKED, or retry budget exhausted
+- BUDGET: `RetryPolicy.maxAttempts` (default 3) with deterministic exponential backoff (1s base, factor 2, 60s cap by default)
+- EXIT CONDITION: verifier-gated SUCCEEDED, semantic FAILED, CANCELLED/BLOCKED equivalent, or DEAD_LETTERED when retry budget is exhausted
 - EVIDENCE: V2-002B; .othrys/project.json#authorities/talos
 - STALL/FAILURE: repeated checks without new evidence stop as zero progress

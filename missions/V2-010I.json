@@ -1,0 +1,93 @@
+{
+  "mission_id": "V2-010I",
+  "title": "OTHRYS OS Loop Weaving and processing optimization",
+  "goal": "Map every current recurring/retry/AI-assisted runtime loop to Loop Laws, add a read-only loop registry and trace/diagnosis metrics, and identify deterministic compression opportunities without adding scheduler or execution authority.",
+  "artifact_profile": "os-housekeeping",
+  "work": {
+    "scale": "MISSION",
+    "problem": "Loop Laws and component contracts are now explicit, but actual runtime loops are not yet inventoried, machine-mapped, trace-normalized or measured for redundant AI/tool activity.",
+    "out_of_scope": [
+      "No new scheduler/daemon/Titan/resident",
+      "No automatic continuation authority",
+      "No autonomous capability promotion",
+      "No model/provider routing changes",
+      "No UI expansion"
+    ],
+    "risks": [
+      "Generic loop abstraction hides different semantics",
+      "Telemetry becomes authority",
+      "Trace capture leaks secrets or full prompts",
+      "Compression candidate is mistaken for admitted capability"
+    ]
+  },
+  "laws": [
+    "Actual code defines which loops exist; docs do not invent loops.",
+    "Every admitted runtime loop maps to a current component contract and LOOP_LAWS.md.",
+    "Loop traces contain bounded metadata/evidence references, not hidden reasoning or secrets.",
+    "Structured diagnosis precedes correction after causal failure.",
+    "Trace metrics optimize processing only and grant no authority.",
+    "Compression candidates remain candidates until separately qualified."
+  ],
+  "slices": [
+    {
+      "id": "inventory",
+      "title": "Inventory actual runtime loops",
+      "owner": "talos",
+      "stages": [
+        {
+          "id": "inspect",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "map-loops",
+              "title": "Map actual polling, cadence, retry and refinement loops from source"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "loop-registry"
+      ]
+    },
+    {
+      "id": "trace",
+      "title": "Normalize loop evidence and failure diagnosis",
+      "owner": "hephaestus",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "trace-schema",
+              "title": "Add authority-free trace/diagnosis schema and metrics"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "loop-trace"
+      ]
+    },
+    {
+      "id": "compress",
+      "title": "Detect deterministic compression candidates",
+      "owner": "talos",
+      "stages": [
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "trace-analysis",
+              "title": "Flag repeated stable action families without auto-promotion"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "compression-report"
+      ]
+    }
+  ]
+}

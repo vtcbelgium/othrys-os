@@ -22,8 +22,9 @@ function acquire(){
   catch{return false;}
 }
 function release(){try{unlinkSync(lockPath);}catch{}}
+export const HOUSEKEEPER_FAST_TESTS=Object.freeze(['runtime/os/housekeeping_pulse.test.mjs','runtime/os/mnemosyne_estate.test.mjs','runtime/os/house_books.test.mjs','runtime/os/front_door_contract.test.mjs','runtime/os/house_drift.test.mjs','runtime/os/component_contracts.test.mjs','runtime/os/loop_laws.test.mjs','runtime/os/loop_registry.test.mjs','runtime/os/loop_trace.test.mjs','runtime/os/loop_projection.test.mjs']);
 function verifyFast(){
-  const files=['runtime/os/housekeeping_pulse.test.mjs','runtime/os/mnemosyne_estate.test.mjs','runtime/os/house_books.test.mjs'];
+  const files=HOUSEKEEPER_FAST_TESTS;
   const r=spawnSync(process.execPath,['--test',...files],{cwd:root,encoding:'utf8',timeout:120000});
   return {ok:r.status===0,status:r.status,signal:r.signal,tail:(r.stdout+r.stderr).trim().split(/\r?\n/).slice(-20)};
 }

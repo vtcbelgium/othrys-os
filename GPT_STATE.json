@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 101,
+  "sequence": 102,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "25fa48d24c948cd982774438c92d448e581f9c8b",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-010H",
-    "status": "COMPLETE",
-    "issued_label": "V2-010H - OTHRYS OS COMPONENT CONTRACTS AND ANTI-DRIFT LINT",
+    "mission_id": "V2-010I",
+    "status": "RUNNING",
+    "issued_label": "V2-010I - OTHRYS OS LOOP WEAVING AND PROCESSING OPTIMIZATION",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-010H",
-    "decision": "COMPONENT_CONTRACTS_ONLY",
-    "authority": "Describe and lint existing house boundaries; no capability or authority expansion."
+    "mission_id": "V2-010I",
+    "decision": "LOOP_WEAVING_ONLY",
+    "authority": "Inventory, constrain, trace and optimize existing loops; no scheduler or authority expansion."
   },
-  "next_legal_action": "Start V2-010I Loop Weaving as a new bounded mission from the verified component contracts and loop research.",
+  "next_legal_action": "Inventory real runtime loops, map to component contracts, add authority-free trace/diagnosis metrics, then verify.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

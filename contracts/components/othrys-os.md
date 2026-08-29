@@ -14,10 +14,10 @@
 
 ## Loop contract
 - OWNER: `GPT_CONTROL`
-- TRIGGER: operator-directed house mission
+- TRIGGER: operator-directed house mission or bounded Housekeeper cadence
 - INPUT: project manifest; GPT state; Books; Missions/Work; evidence
-- STATE: GPT_STATE + Mission/Work + repo truth
-- BUDGET: one active mission; explicit bounded attempts
-- EXIT CONDITION: mission evidence satisfies scope or a blocker is recorded
+- STATE: GPT_STATE + Mission/Work + repo truth; Housekeeper local state/logs remain non-canonical telemetry
+- BUDGET: one active mission; explicit bounded attempts; Housekeeper interval >=60s (default 5m), fast proof each cycle and full proof every 12 cycles
+- EXIT CONDITION: mission evidence satisfies scope or blocker is recorded; Housekeeper cycle ends after one bounded inspection/test pass
 - EVIDENCE: OTHRYS_OS_NORTH_STAR.md; .othrys/project.json; V2-010A; V2-010F
 - STALL/FAILURE: stop on ambiguous authority, stale truth, or zero semantic progress

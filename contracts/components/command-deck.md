@@ -14,10 +14,10 @@
 
 ## Loop contract
 - OWNER: `GPT_CONTROL`
-- TRIGGER: operator request or projection refresh
+- TRIGGER: operator request, projection refresh, or admission-inbox polling cycle
 - INPUT: read-only OS projections; operator gestures/intents; authenticated session
-- STATE: read models + explicit pending/admitted intent state
-- BUDGET: event-driven; no unbounded polling or AI turn loop
-- EXIT CONDITION: projection rendered or intent handed to Trust Canal
+- STATE: read models + explicit pending/admitted intent state + local watcher error state
+- BUDGET: admission watcher poll >=1000ms (default 5000ms), `--once` supported; polling performs no AI turn and process stop remains external
+- EXIT CONDITION: projection rendered, intent handed to Trust Canal, `--once` completes, or watcher process is externally stopped
 - EVIDENCE: V2-006E; V2-009B; .othrys/project.json#systems/command-deck
 - STALL/FAILURE: stale/unavailable evidence is shown, not fabricated

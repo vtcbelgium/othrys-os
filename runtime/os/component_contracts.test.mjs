@@ -30,7 +30,7 @@ test('every component contract is operationally bounded and evidence-backed',()=
     assert.match(field(doc,'Authority'),/^NO_SELF_GRANT\b/,`${id}: authority can self-grant`);
     for(const evidence of book.evidence??[]) assert.match(field(doc,'Evidence'),new RegExp(evidence.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')),`${id}: Book evidence drift ${evidence}`);
     for(const name of loopFields) assert.ok(loop(doc,name),`${id}: loop ${name} missing`);
-    assert.match(loop(doc,'BUDGET'),/bounded|hard cap|max(?:imum)?|one |event-driven|deterministic|idempotent/i,`${id}: loop budget is not explicitly bounded`);
+    assert.match(loop(doc,'BUDGET'),/bounded|hard cap|max(?:imum)?|one |event-driven|deterministic|idempotent|poll\s*>?=|interval\s*>?=|\d+\.\.\d+\s+attempts/i,`${id}: loop budget is not explicitly bounded`);
     assert.doesNotMatch(doc,/\b(?:TODO|TBD)\b/i,`${id}: placeholder drift`);
   }
 });

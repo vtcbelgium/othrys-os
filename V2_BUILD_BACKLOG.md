@@ -237,3 +237,5 @@
 | 79 | V2-010F | Atlas cognitive graph foundation: prior Core graph law + Nine Muses + gravity/heat + read-only OTHRYS OS Atlas room | COMPLETE |
 | 80 | V2-010G | OTHRYS OS housekeeping + Mnemosyne estate consolidation + Books/House/log integrity + boring verification | COMPLETE |
 | 81 | V2-010H | OTHRYS OS component contracts + anti-drift lint for current house surfaces | RUNNING |
+
+| 82 | V2-010I | Loop Weaving: actual loop inventory + trace/diagnosis metrics + compression candidates | RUNNING |
