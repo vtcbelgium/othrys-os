@@ -26,8 +26,9 @@ def code_kind(path:str)->str|None:
 def indexable_path(path:str)->bool:
     rel=path.replace('\\','/')
     if rel.startswith('./'):rel=rel[2:]
-    blocked=('.othrys/knowledge/catalog/','.othrys/knowledge/archive/','.othrys/logs/','.othrys/runtime/','.othrys/work/')
-    return not rel.startswith(blocked) and code_kind(rel) is not None
+    blocked=('.othrys/','docs/','missions/','receipts/','admissions/','state/')
+    if rel in {'GPT_STATE.json'} or rel.startswith(blocked):return False
+    return code_kind(rel) is not None
 
 def lang(path:str)->str:
     name=Path(path).name; ext=Path(path).suffix.lower()

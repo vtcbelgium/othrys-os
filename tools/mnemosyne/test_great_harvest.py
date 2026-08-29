@@ -17,6 +17,7 @@ class GreatHarvestTests(unittest.TestCase):
             git(repo,'remote','add','origin','https://example.invalid/demo.git')
             (repo/'src').mkdir(); (repo/'src'/'old.py').write_text("SECRET_SENTINEL='never copy'\ndef old(): return 1\n",encoding='utf-8')
             hidden=repo/'.othrys'/'knowledge'/'catalog'; hidden.mkdir(parents=True); (hidden/'self.jsonl').write_text('{"generated":true}\n',encoding='utf-8')
+            docs=repo/'docs'; docs.mkdir(); (docs/'evidence.json').write_text('{"evidence":true}\n',encoding='utf-8')
             git(repo,'add','.'); git(repo,'commit','-m','first implementation')
             (repo/'src'/'old.py').unlink(); (repo/'src'/'live.py').write_text('def live(): return 2\n',encoding='utf-8')
             git(repo,'add','-A'); git(repo,'commit','-m','replace old implementation')
@@ -28,7 +29,7 @@ class GreatHarvestTests(unittest.TestCase):
             self.assertEqual(s1['workspaceCount'],2); self.assertEqual(s1['lineageCount'],1)
             self.assertEqual(s1['catalogSha256'],s2['catalogSha256']); self.assertEqual(s1['commitCatalogSha256'],s2['commitCatalogSha256'])
             catalog=(root/'.othrys'/'knowledge'/'catalog'/'great-harvest-code.jsonl').read_text(encoding='utf-8')
-            self.assertNotIn('SECRET_SENTINEL',catalog); self.assertNotIn('self.jsonl',catalog)
+            self.assertNotIn('SECRET_SENTINEL',catalog); self.assertNotIn('self.jsonl',catalog); self.assertNotIn('evidence.json',catalog)
             parsed=[json.loads(x) for x in catalog.splitlines()]
             old=[r for r in parsed if 'src/old.py' in r['paths']]
             self.assertTrue(old and old[0]['historicalOnly']); self.assertFalse(old[0]['authorityGranted'])

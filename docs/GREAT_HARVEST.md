@@ -15,11 +15,11 @@ Before designing or inventing a capability, inspect The Great Harvest for prior 
 
 ## Baseline — 2026-08-29
 - 40 discovered non-disposable Git workspaces collapsed into 12 repository lineages.
-- 11,255 indexed recoverable code/config objects.
-- 5,147 objects currently present; 6,108 historical-only objects.
-- 3,091 indexed commits.
-- 1,439 Git objects appear across more than one lineage and are therefore visible as cross-lineage duplication.
-- Code/config bytes represented by Git object identity: 428,667,505 bytes.
+- 9,330 indexed recoverable source-code/source-config objects.
+- 3,537 objects currently present; 5,793 historical-only objects.
+- 3,092 indexed commits.
+- 1,289 Git objects appear across more than one lineage and are therefore visible as cross-lineage duplication.
+- Source-code/source-config bytes represented by Git object identity: 213,629,343 bytes.
 - Source payload copied into Mnemosyne: **NO**.
 - Authority granted / automatic promotion: **NO / NO**.
 ## Canonical derived catalogs

@@ -2,25 +2,25 @@
   "schema": "othrys.os.great-harvest.summary.v1",
   "workspaceCount": 40,
   "lineageCount": 12,
-  "indexedObjects": 11255,
-  "currentObjects": 5147,
-  "historicalOnlyObjects": 6108,
-  "indexedBytes": 329036778,
-  "crossLineageDuplicateObjects": 1439,
+  "indexedObjects": 9330,
+  "currentObjects": 3537,
+  "historicalOnlyObjects": 5793,
+  "indexedBytes": 213629343,
+  "crossLineageDuplicateObjects": 1289,
   "kinds": {
-    "CODE": 8316,
-    "CONFIG": 2939
+    "CODE": 8180,
+    "CONFIG": 1150
   },
   "languages": {
-    "ts": 4107,
-    "json": 2737,
-    "py": 1980,
+    "ts": 4097,
+    "py": 1856,
+    "json": 978,
     "jsx": 888,
-    "mjs": 719,
-    "js": 318,
+    "mjs": 720,
+    "js": 316,
     "tsx": 173,
-    "jsonl": 124,
-    "sql": 61,
+    "jsonl": 94,
+    "sql": 60,
     "yml": 60,
     "css": 47,
     "sh": 18,
@@ -29,10 +29,10 @@
     "ps1": 5,
     "yaml": 2
   },
-  "catalogSha256": "e4646861e98db4adf75dcd7a71d853d0947fb093808236ba063d3e57faa75225",
+  "catalogSha256": "ee94a2236b41840c3bacbbb0da771c36cc7675b181b61ac7f0518192726926a3",
   "catalogPath": ".othrys/knowledge/catalog/great-harvest-code.jsonl",
-  "commitCount": 3091,
-  "commitCatalogSha256": "ba6530980c86a5c9b984eabcbc72b046488c4e9fc0fec5911942d67209e18a6a",
+  "commitCount": 3092,
+  "commitCatalogSha256": "8199fbe36db24098224fdf089bad1fa7449706f84e68801018f899da542099a7",
   "commitCatalogPath": ".othrys/knowledge/catalog/great-harvest-commits.jsonl",
   "repositoryIndex": [
     {
@@ -95,10 +95,10 @@
         "othrys-v2-verify-008cs",
         "othrys-v2-verify-008dr"
       ],
-      "head": "bf838fb840cd492af9411dd3cbee1c63d7a294cb",
+      "head": "8d240c55a8522622141473f01c350d03df9fe531",
       "branch": "mission/v2-010o-great-harvest",
       "refCount": 23,
-      "refDigest": "8ba0a8fa70e77c5ad2a34f165d4742fa00f6be9b1fc002c6f183edba0c307f82",
+      "refDigest": "5ee7fdcc0baecfe202779aa87225fc346809c5e07aac5f49d5090e98f17861f9",
       "recoveredBrokenPointers": []
     },
     {

@@ -18,11 +18,11 @@ The repeated redesign problem is now treated as a knowledge-infrastructure defec
 - Four stale WSL-pointer Hub worktrees are recovered through their still-live parent Hub refs instead of disappearing from coverage.
 ## Baseline census
 - 40 non-disposable workspaces -> 12 repository lineages.
-- 11,255 recoverable code/config objects.
-- 5,147 current objects; 6,108 historical-only objects.
-- 3,091 commits indexed.
+- 9,330 recoverable source-code/source-config objects after separating docs/state/evidence back into the Mnemosyne Estate.
+- 3,537 current objects; 5,793 historical-only objects.
+- 3,092 commits indexed.
 - 1,439 cross-lineage duplicate Git objects.
-- ~428.7 MB represented by Git object identity without source payload duplication.
+- ~213.6 MB represented by Git object identity without source payload duplication.
 
 ## Defects caught during implementation
 1. Initial scanner syntax typo stopped before catalog mutation.
@@ -47,3 +47,9 @@ The repeated redesign problem is now treated as a knowledge-infrastructure defec
 - Workers: 10/10 Python PASS.
 - Synthetic Great Harvest history/worktree/payload regression: PASS.
 - Mnemosyne quality verifies both Great Harvest catalog digests cheaply and keeps authority false.
+
+## Source/evidence boundary refinement
+- Great Harvest excludes `docs/`, `missions/`, `receipts/`, `admissions/`, `state/`, `.othrys/` and `GPT_STATE.json`; those remain in Mnemosyne Estate.
+- This removed duplicated evidence/config noise and prevents ordinary closeout bookkeeping from churning the source-code catalog.
+- Final stable code digest: `ee94a2236b41840c3bacbbb0da771c36cc7675b181b61ac7f0518192726926a3`.
+- Final stable commit digest at implementation checkpoint: `8199fbe36db24098224fdf089bad1fa7449706f84e68801018f899da542099a7`.
