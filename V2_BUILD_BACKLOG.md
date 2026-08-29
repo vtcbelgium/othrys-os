@@ -274,3 +274,6 @@
 
 102. **V2-010X Prometheus Resident Qualification - COMPLETE/PASS** - Triad/Penta boundaries + local intelligence + live public dry-run evidence + inbox lifecycle qualified; scheduling deferred.
 103. **V2-010Y Prometheus House Admission - RUNNING** - current House manifest + Book + component contract + derived Atlas/Mnemosyne only; no duplicate backend or new authority.
+
+104. **V2-010Y Prometheus House Admission - COMPLETE/PASS** - native cap-score-v1 intelligence kernel + manifest + Book + component contract + Atlas/Mnemosyne; exact T590 proof; no duplicate backend/authority.
+105. **Next integration resident qualification - NEXT** - Great Harvest first; Rhea/care is strongest current quarry candidate, Visual Control remains later/gated.

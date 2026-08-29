@@ -1,7 +1,7 @@
 {
   "mission_id": "V2-010Y",
   "title": "Prometheus House Admission",
-  "status": "RUNNING",
+  "status": "COMPLETE",
   "owner": "GPT_CONTROL",
   "start_sha": "c688d0d02f1c25e294af466c946200d3d86c3fab",
   "objective": "Admit the qualified minimum Prometheus resident into the current OTHRYS House without transplanting the old Hub backend or granting new authority.",
@@ -51,12 +51,23 @@
     "knowledge_admission": false,
     "execution": false
   },
-  "admission_state": "IMPLEMENTED_PENDING_INDEPENDENT_PROOF",
+  "admission_state": "ADMITTED_VERIFIED",
   "legion_proof": {
     "prometheus_scoped": "7/7 PASS",
     "house_atlas_mnemosyne_scoped": "39/39 PASS",
     "runtime_qa": "366/368 PASS; 2 pre-existing image-prep 0.1.0 digest tests",
     "python": "88/88 mycelium+workers PASS",
     "deck_opening_defect": "repaired by canonical V2-010Y durable Work materialization"
-  }
+  },
+  "verdict": "PASS",
+  "implementation_sha": "db440bffd8895ec733fab506d9512f8b04948795",
+  "independent_proof": {
+    "device": "T590",
+    "exact_sha": "db440bffd8895ec733fab506d9512f8b04948795",
+    "node_scoped": "39/39 PASS",
+    "mycelium": "78/78 PASS",
+    "workers": "10/10 PASS",
+    "full_runtime_qa": "360/368; 8 unrelated image-prep Windows-path portability failures"
+  },
+  "next_legal_action": "Great Harvest preflight for the next integration/service resident; Rhea is the strongest current quarry candidate, but admission requires separate qualification."
 }

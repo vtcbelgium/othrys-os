@@ -2,7 +2,7 @@
 
 **Front-door plan.** Read after `BOOK_OF_GPT.md` and current `GPT_STATE.json`.
 
-## Current phase -- V2-010Y PROMETHEUS HOUSE ADMISSION
+## Current phase -- INTEGRATIONS AND SERVICES / NEXT RESIDENT QUALIFICATION
 
 Milestone `M-OS-FOUNDATION-HARVEST-001` is achieved. V2-010Q proved native verified Artifact reuse and V2-010R formalized the VTC-proven Block extraction/extinction method. V2-010S completed the smallest safe 061D/061H Experience/Rhizomorph layer: immutable observations, holdouts, transparent Pareto preference, hysteresis/decay and sparse reinforcement among predeclared legal routes only. PandaOS remains a clarity/UX quarry, never routing or authority truth.
 
@@ -27,7 +27,7 @@ Before designing or inventing a capability, query `docs/GREAT_HARVEST.md`, `docs
 12. **[COMPLETE] V2-010S Rhizomorph / Experience / sparse resilience** -- harvest 061D/061H plus biological network lessons: immutable flow observations, qualification, Pareto frontier, holdouts, hysteresis/decay, sparse cross-link budget and reinforced routes among predeclared legal variants only. Every reinforcement has a retraction law.
 13. **[COMPLETE] V2-010T Sclerotium / clean-root recovery** -- current-House survival inventory, minimal trusted pack, secret exclusion, rebuild/reacquire/rebind classes, corrupt/wrong-body fail-closed and cross-node portability proof.
 14. **[COMPLETE] V2-010U Switchyard / Frugal Heart** -- resume deferred capability/tier resolver only after metabolism/reuse/recovery are stable; model choice never binds authority; provider health, task-specific measured trust and VTC-style evidence ladders may exclude/reorder only inside legal tiers.
-15. **[RUNNING] Integrations and services** -- V2-010V admitted Switchyard; V2-010W projected native Switchyard through the Deck; V2-010X qualified Prometheus from Great Harvest evidence. Current: V2-010Y admit the qualified minimum Prometheus through the same manifest + Book + contract + Atlas/Mnemosyne pattern, without transplanting Hub orchestration or granting new authority.
+15. **[RUNNING] Integrations and services** -- V2-010V admitted Switchyard; V2-010W projected native Switchyard through the Deck; V2-010X qualified Prometheus; V2-010Y admitted the minimum native Prometheus intelligence resident with exact T590 proof. Next resident must start with Great Harvest qualification; Rhea is the strongest current quarry candidate, not yet admitted.
 16. **Workstation polish** -- UI follows real OS objects and measured operating state; no decorative architecture.
 
 ## Mycelium tissue model

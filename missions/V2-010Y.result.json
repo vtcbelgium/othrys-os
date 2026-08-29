@@ -1,0 +1,46 @@
+{
+  "mission_id": "V2-010Y",
+  "verdict": "PASS",
+  "start_sha": "c688d0d02f1c25e294af466c946200d3d86c3fab",
+  "implementation_sha": "db440bffd8895ec733fab506d9512f8b04948795",
+  "objective": "Admit the qualified minimum Prometheus resident into the current OTHRYS House without transplanting the old Hub backend or granting new authority.",
+  "house_admitted": true,
+  "resident": "prometheus",
+  "native_kernel": "runtime/os/prometheus.mjs",
+  "policy": "cap-score-v1",
+  "admission_surfaces": [
+    ".othrys/project.json",
+    "books/BOOK_REGISTRY.json",
+    "books/book-of-prometheus/README.md",
+    "contracts/components/prometheus.md",
+    "Atlas derived system relation",
+    "Mnemosyne current project truth"
+  ],
+  "boundaries": {
+    "authority_granted": false,
+    "execution_started": false,
+    "knowledge_admitted": false,
+    "network_connector_added": false,
+    "credential_store_added": false,
+    "scheduler_added": false,
+    "event_store_added": false,
+    "duplicate_backend_created": false
+  },
+  "legion_proof": {
+    "prometheus": "7/7 PASS",
+    "house_mnemosyne": "27/27 PASS",
+    "atlas_quality": "12/12 PASS",
+    "deck": "14/14 PASS",
+    "python": "88/88 PASS",
+    "runtime_qa": "366/368; only pre-existing image-prep 0.1.0 digest failures"
+  },
+  "t590_proof": {
+    "exact_sha": "db440bffd8895ec733fab506d9512f8b04948795",
+    "prometheus_house_atlas_mnemosyne": "39/39 PASS",
+    "mycelium": "78/78 PASS",
+    "workers": "10/10 PASS",
+    "runtime_qa": "360/368; 8 image-prep tests embed Legion Windows paths"
+  },
+  "work_record": "canonical V2-010Y durable Work materialized; opening-state Deck null defect repaired",
+  "next_legal_action": "Great Harvest preflight for the next integration/service resident; Rhea is the strongest current quarry candidate, but admission requires separate qualification."
+}

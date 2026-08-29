@@ -1,13 +1,13 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 123,
+    "sequence": 124,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read": "3318bf4df80d9875712148f3530ee5110dd1fb50",
+    "remote_head_at_last_verified_read": "db440bffd8895ec733fab506d9512f8b04948795",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
         "mission_id": "V2-010Y",
-        "status": "RUNNING",
+        "status": "COMPLETE",
         "issued_label": "V2-010Y - PROMETHEUS HOUSE ADMISSION",
         "source": "operator_current_conversation"
     },
@@ -64,10 +64,10 @@
     ],
     "last_control_decision": {
         "mission_id": "V2-010Y",
-        "decision": "ADMIT_QUALIFIED_MINIMUM_PROMETHEUS",
-        "authority": "Admission only; intelligence evidence service, no knowledge/execution/lifecycle authority."
+        "decision": "PROMETHEUS_ADMITTED_VERIFIED",
+        "authority": "Resident intelligence only; no knowledge, execution, verification or lifecycle authority."
     },
-    "next_legal_action": "Apply the V2-010V resident-admission pattern to qualified Prometheus: project manifest, Book, component contract and derived Atlas/Mnemosyne evidence; remove only Prometheus from quarry-only guard.",
+    "next_legal_action": "Great Harvest preflight for the next integration/service resident; Rhea is the strongest current quarry candidate, but admission requires separate qualification.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",
@@ -294,6 +294,11 @@
             "mission_id": "V2-010Y",
             "status": "RUNNING",
             "note": "Prometheus House admission only; reuse current resident surfaces, no Hub backend transplant."
+        },
+        {
+            "mission_id": "V2-010Y",
+            "status": "COMPLETE",
+            "note": "Native Prometheus intelligence resident admitted with Book/contract/Atlas/Mnemosyne and exact T590 proof; no duplicate Hub backend."
         }
     ],
     "git": {
