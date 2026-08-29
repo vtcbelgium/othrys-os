@@ -10,6 +10,7 @@ Mycelium routes work; it does not create mission authority or trust a node by pr
 
 ## Canonical evidence
 - `V2-004D`
+- `V2-010L`
 - `.othrys/project.json#systems/mycelium`
 
 ## Preserved quarry / provenance

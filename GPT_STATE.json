@@ -1,13 +1,13 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 105,
+  "sequence": 106,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "9fb6b5e7ce04af297d932a0d812b633e2ec4a441",
+  "remote_head_at_last_verified_read": "2bfd845bf56daf0d40fb8c75ede135c7550d62b0",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-010L",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "issued_label": "V2-010L - HOUSEKEEPING OPTIMIZATION / MULTICHANNEL STUDY",
     "source": "operator_current_conversation"
   },
@@ -64,10 +64,10 @@
   ],
   "last_control_decision": {
     "mission_id": "V2-010L",
-    "decision": "MEASURE_THEN_MULTIPLY",
-    "authority": "Optimize existing residents; bounded multichannel planning only where independence and verifier boundaries are explicit."
+    "decision": "MAXIMIZATION_PROVEN",
+    "authority": "Measured and qualified project-aware optimization primitives only; next work is 061F metabolism/calibration with no route invention or authority expansion."
   },
-  "next_legal_action": "Benchmark current routing and duplicate-work economics; remove algorithmic waste first; then qualify bounded multichannel planning without execution authority.",
+  "next_legal_action": "Open a bounded Mycelium metabolism/adaptive-calibration mission: re-admit truthful resource dispositions, metabolic modes, marginal growth/contraction and measured concurrency-knee preference from proven 061F stock.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",
@@ -239,6 +239,11 @@
       "mission_id": "V2-010K",
       "status": "COMPLETE",
       "note": "Library/Vault posture + Hecatoncheires audit; Legion 287/287 + 36/36, T590 287/287 + 36/36 exact implementation; estate deterministic/0 defects; multichannel candidate logged only."
+    },
+    {
+      "mission_id": "V2-010L",
+      "status": "COMPLETE",
+      "note": "Housekeeping optimization proved multichannel Mycelium, isolated Hephaestus hands, WorkKey/anastomosis planning, per-project optimization phenotypes, network/concurrency knees and zero-growth test-temp hygiene; implementation independently green on T590."
     }
   ],
   "git": {

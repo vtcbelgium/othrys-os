@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-010L",
+  "verdict": "PASS",
+  "start_sha": "241dd8f175cc85b8aae47527c6e97dd0a283998b",
+  "implementation_sha": "2bfd845bf56daf0d40fb8c75ede135c7550d62b0",
+  "scope": "OTHRYS OS housekeeping optimization, project-aware execution phenotypes, bounded multichannel Mycelium and isolated Hephaestus hands",
+  "proof": {
+    "legion_node": "297/297 PASS exact implementation tree",
+    "legion_python": "50/50 Mycelium + 10/10 workers PASS",
+    "t590_node": "297/297 PASS exact implementation commit",
+    "t590_python": "50/50 Mycelium + 10/10 workers PASS",
+    "estate": "38 workspaces; 42138 occurrences; 8066 unique; 8060 archived; 6 excluded; two identical sweeps; catalog 2837570e0a6b896d6a5d076d690dc7ec962294a8da4facb97f088f8ffd9e9594; archive PASS",
+    "hygiene": "full-suite OTHRYS temp-root delta 0 on Legion and T590; 1891 stale known test roots pruned on Legion and 1003 on T590",
+    "network": "Legion-to-T590 wired 0-1 ms RTT / 0 percent loss / approximately 116 MB/s with curl",
+    "parallelism": "concurrent full-runtime verification reduced observed wall time by roughly 45 percent versus sequential; Legion test knee ~16, T590 ~4"
+  },
+  "authority_granted": false,
+  "next_legal_action": "Re-admit the smallest safe Mycelium metabolism/calibration layer from proven 061F stock: truthful resource dispositions, project-phenotype-aware marginal growth/contraction, measured concurrency knees and no route invention or execution authority."
+}

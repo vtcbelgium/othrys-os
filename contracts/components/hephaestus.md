@@ -10,7 +10,7 @@
 **Allowed touch:** only paths explicitly permitted by the active engineering contract
 **Forbidden touch:** touch out-of-scope paths; ratify evidence; alter mission authority; silently expand dependencies; parallelize one mutable workspace
 **Authority:** NO_SELF_GRANT -- engineering authority is bounded by admitted mission scope
-**Evidence:** V2-002F; .othrys/project.json#authorities/hephaestus
+**Evidence:** V2-002F; V2-010L; .othrys/project.json#authorities/hephaestus
 
 ## Loop contract
 - OWNER: `HEPHAESTUS`
@@ -19,5 +19,5 @@
 - STATE: engineering plan + attempt evidence + bounded workspace
 - BUDGET: frozen engineering command permits exactly 1..5 attempts; optional hand plan permits 1..3 isolated hands only; retry/correction and hand planning never expand touch scope or acceptance
 - EXIT CONDITION: candidate produced for independent verification or causal blocker proven
-- EVIDENCE: V2-002F; .othrys/project.json#authorities/hephaestus
+- EVIDENCE: V2-002F; V2-010L; .othrys/project.json#authorities/hephaestus
 - STALL/FAILURE: stop at first causal blocker or exhausted attempt budget

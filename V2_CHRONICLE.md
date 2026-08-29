@@ -561,3 +561,11 @@ Loop Weaving closed after source-grounding every current free-running runtime lo
 ## 2026-08-29 - V2-010J Mnemosyne Intelligence closes
 
 Mnemosyne now labels estate evidence as CURRENT, SUPERSEDED, DIVERGED or MISSING from live source bytes; context capsules enforce a total evidence budget, reserve space for Atlas relations, expose concrete relation kinds, and surface stale/conflict/source-divergence warnings without deleting historical evidence. A catalog-keyed in-process lexical cache plus deferred excerpt/currentness work reduced warm live estate recall to roughly 0.20-0.28 seconds and a 12-item Mnemosyne context capsule to roughly 0.22 seconds on Legion, without SQLite, vectors, embeddings, LLM reranking or new authority. Legion and T590 both proved 271/271 Node + 36/36 Python PASS on the exact implementation commit.
+
+## 2026-08-29 - V2-010L Housekeeping Optimization closes
+
+010L turned current OTHRYS OS around before adding more residents. Mycelium gained capacity-backed PACK/SPREAD and strict placement planning, optional saturation-aware routing, deterministic WorkKey identity, planning-only Anastomosis, and six portable per-project optimization phenotypes. Hephaestus gained an authority-free <=3 isolated-hand planner for disjoint slices or alternative candidates only; same mutable workspace parallelism remains forbidden.
+
+Measured hardware evidence now shapes policy instead of intuition: Legion test throughput reaches its practical knee near concurrency 16, T590 near 4; wired Legion-to-T590 transport measured ~0-1 ms RTT and ~116 MB/s with curl; concurrent cross-node full-runtime verification reduced observed wall time by roughly 45% versus sequential proof. A large disposable-test-root leak was eliminated and the full suite now produces zero net OTHRYS temp-root growth on both machines.
+
+The old Mycelium quarry proved the deeper law worth re-admitting next: REMOVE WORK BEFORE ACCELERATING WORK. 010L therefore stops before persistent CAS, learned route preference, autonomous fan-out or distributed state. Legion and T590 independently proved 297/297 Node + 50/50 Mycelium + 10/10 worker tests on the implementation. Work closes SHIP/COMPLETE with authorityGranted=false.

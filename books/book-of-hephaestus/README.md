@@ -10,6 +10,7 @@ Hephaestus builds; it does not ratify evidence, memory, or constitutional author
 
 ## Canonical evidence
 - `V2-002F`
+- `V2-010L`
 - `.othrys/project.json#authorities/hephaestus`
 
 ## Preserved quarry / provenance

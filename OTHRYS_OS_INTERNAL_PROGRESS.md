@@ -2,28 +2,28 @@
 
 **Status:** LIVE FRONT-DOOR CONTROL FILE
 **Owner:** GPT Control / House Manager
-**Last evidence update:** 2026-08-29 - V2-010K COMPLETE; Legion 287/287 Node + 36/36 Python, T590 287/287 Node + 36/36 Python exact implementation; estate 8,053 archived / 6 excluded / 0 defects; live Housekeeper security proof green; repeated stress/soak produced no flaky failures.
+**Last evidence update:** 2026-08-29 - V2-010L implementation independently verified at `2bfd845bf56daf0d40fb8c75ede135c7550d62b0`: Legion/T590 297/297 Node + 50/50 Mycelium + 10/10 workers; deterministic estate 8,060 archived / 6 excluded; archive PASS; full-suite temp-root delta 0.
 **Update law:** update whenever a room materially gains/loses capability, proof, scope, or maturity. Percentages are house-manager estimates against the intended mature room, never proof by themselves.
 
 ## Current house progression
 
 | Room / resident | Progress | Current state | Next proof / maturity step |
 |---|---:|---|---|
-| GPT / Front Door | 78% | Control law, state, build plan, repo-first discipline, remote lifeline, protected front-door order/encoding, verified mission closeout | component contract; broader drift guard; canonical log repair/replacement |
-| Hephaestus | 61% | governed engineering authority + builder chain + Factory integration | forge/quarry pipeline, stronger sandbox, compounding recipes, component contract |
-| Talos | 72% | verification, retry/replay, evidence gates, tick/introspection stock | OS-wide continuous verification and requalified inspection muscles |
-| Trust Canal | 74% | default-deny authority boundary + operating-mode enforcement | broader resident coverage + Hecatoncheires hardening |
-| Mnemosyne | 72% | explicit memory, cross-repo estate, provenance, Books, Muses, quality, context capsules, deterministic archive verification | temporal truth, deeper Callimachus, Great Library/Vault semantics, measured retrieval feedback |
-| Atlas | 48% | typed derived graph, provenance, gravity/heat, Muses, visual room | richer relationships/lenses/timeline/conflict/health navigation |
-| Missions + Work | 81% | durable mission/work hierarchy + evidence-bound transitions | Loop Laws contract woven into every recurring flow |
+| GPT / Front Door | 80% | Control law, repo-first state, build/harvest/progression front doors and cross-node closeout discipline | canonical log repair/replacement; keep next-step drift machine-checked |
+| Hephaestus | 67% | governed engineering authority + bounded repair + <=3 isolated hand planner; disposable worktree isolation proven | second qualified builder or real disjoint-slice execution; artifact fingerprint/reuse integration |
+| Talos | 75% | independent verification, retry/replay, traces, evidence gates and proven cross-node parallel proof | reusable proof receipts only where independence is not required; continuous verifier profiles |
+| Trust Canal | 75% | default-deny authority boundary + operating-mode enforcement | broader resident coverage + remaining Hecatoncheires hardening |
+| Mnemosyne | 73% | explicit memory, estate, provenance, currentness, bounded context, zones and measured fast recall | context metabolism, temporal truth and deeper Callimachus quality |
+| Atlas | 49% | typed derived graph, provenance, gravity/heat, Muses and visual room | execution/evidence topology, richer relationships/timeline/conflict lenses |
+| Missions + Work | 82% | durable mission/work hierarchy + evidence-bound transitions | WorkKey/Claim linkage without making Work a scheduler |
 | Blocks | 62% | two admitted reusable Blocks + exact composition law | mature quarry -> qualify -> forge -> reuse pipeline |
-| Factory | 58% | real build/refine/verify/accept/release lineage | repeated multi-product composition + boring soak proof |
-| Mycelium | 62% | real Legion/T590 routing and node model | node health, workload policy, reliability, scheduling depth |
-| Command Deck | 52% | tablet-first workstation + real views + Atlas | functional integration first; visual polish later |
-| Oroi / Projects | 57% | declarative manifests + safe materializer | lifecycle depth, templates, isolation, real multi-project use |
-| Models / Labor | 38% | proven local/advisory labor routes | Switchyard/tier resolver after housekeeping |
-| Great Library / Vaults / Garden / R&D / Hall of Echoes | 52% | current logical zones + Source Vault facet + deterministic filtering/provenance | lifecycle depth, protected grants/export posture, richer browse surfaces |
-| Hecatoncheires / Security | 46% | machine-checked 11-hand current posture: 3 PRESENT_AND_TESTED / 4 PARTIAL / 4 ABSENT; hostile secret exclusion; Housekeeper proof | qualify missing encryption/anomaly/injection/export-lockdown controls through separate missions |
-| Housekeeping / Drift Control | 86% | repeated Legion/T590 proof, live Housekeeper, deterministic estate, security posture, cross-platform digest and cross-estate test guards | bounded optimization pass: measure waste, concurrency and safe multiplicity without authority expansion |
+| Factory | 60% | real build/refine/verify/accept/release lineage | critical-path/action fingerprints and deterministic cacheable stages |
+| Mycelium | 74% | heterogeneous routing, capacity/saturation-aware PACK/SPREAD, WorkKey, planning-only Anastomosis and measured node knees | 061F metabolism/calibration, then local verified Artifact reuse and 061H experience |
+| Command Deck | 52% | tablet-first workstation + real views + Atlas | expose real project phenotype/metabolic state after substrate stabilizes |
+| Oroi / Projects | 65% | declarative manifests/materializer + six portable bounded optimization phenotypes | workload-class declarations, real multi-project calibration and isolation proof |
+| Models / Labor | 40% | proven local/advisory labor routes + physical builder asymmetry measured | Switchyard after metabolism/reuse/recovery; qualify second engineering builder separately |
+| Great Library / Vaults / Garden / R&D / Hall of Echoes | 53% | logical zones + Source Vault facet + deterministic filtering/provenance | lifecycle depth, grants/export posture and richer browse surfaces |
+| Hecatoncheires / Security | 46% | machine-checked 11-hand posture + hostile secret exclusion + Housekeeper proof | encryption/anomaly/injection/export-lockdown controls through separate missions |
+| Housekeeping / Drift Control | 92% | repeated Legion/T590 proof, deterministic estate, security drift, measured stress, zero-growth test scratch and safe stale-scratch reclamation | keep optimization regressions boring while metabolism/reuse layers are admitted |
 
-**Foundation-OS estimate:** 55-60%.  **Eventual autonomous OTHRYS vision:** 30-35%.
+**Foundation-OS estimate:** 60-65%.  **Eventual autonomous OTHRYS vision:** 33-38%.

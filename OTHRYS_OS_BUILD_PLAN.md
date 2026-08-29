@@ -2,30 +2,27 @@
 
 **Front-door plan.** Read after `BOOK_OF_GPT.md` and current `GPT_STATE.json`.
 
-## Current phase -- HOUSEKEEPING OPTIMIZATION / MULTICHANNEL STUDY
+## Current phase -- MYCELIUM METABOLISM / ADAPTIVE CALIBRATION
 
-V2-010K Library/Vault Posture is complete and independently verified. Operator priority is a turn-around housekeeping optimization pass: measure what exists, stress it, remove waste, and qualify multiplicity only where verified throughput gains beat coordination/verification/contention cost. Multichannel/3D Mycelium and isolated multi-hand Hephaestus are study candidates, not execution authority.
+V2-010L Housekeeping Optimization is implementation-PASS and independently verified. The next bounded step is not more agents or a heavier scheduler: re-admit the smallest safe 061F metabolism/calibration layer so project optimization phenotypes can contract or expand inside measured resource/concurrency envelopes. Preference may change; authority and route legality may not.
 
 ## Build order
 
-1. **[COMPLETE] Close Housekeeping 010G** -- final Mnemosyne estate sweep, quality/Book/Chronicle/log checks, repeated Legion + T590 proof, clean canonical checkpoint.
-2. **[COMPLETE] Component contracts** -- define a tiny anti-drift `.md` contract for each current house resident only. No duplicate prose: ownership, boundaries, inputs/outputs, dependencies, evidence, loop contract, forbidden actions.
-3. **[COMPLETE] Loop weaving** — treat `LOOP_LAWS.md` as processing law. Every recurring or AI-assisted component declares OWNER, TRIGGER, INPUT, STATE, BUDGET, EXIT, EVIDENCE and stall behavior.
-4. **[COMPLETE] Mnemosyne intelligence** — improve context capsules, exact identity recall, relationship-aware retrieval, stale/conflict/duplicate warnings, source-currentness and explainable ranking before adding embeddings or a database.
-5. **[COMPLETE] Library/Vault posture** — formalize Great Library zones, Source Vault, Blueprint Vault, Hall of Echoes, Garden/R&D boundaries and Hecatoncheires security posture from proven stock.
-6. **[NEXT] Housekeeping optimization / multichannel study** -- stress current residents, measure bottlenecks/duplication, and qualify safe independent fan-out; no same-path parallel mutation or authority expansion.
-7. **Switchyard** — only after the house is stable; resume the deferred capability/tier resolver from Quarry with no direct model-to-authority binding.
-8. **Integrations and services** — admit only repo-proven residents through separate missions; each admission updates manifest, Book, component contract, Atlas and Mnemosyne together.
-9. **Workstation polish** — UI follows real OS objects after their contracts are stable; no decorative architecture.
+1. **[COMPLETE] Housekeeping 010G** -- estate consolidation, Books, House law, Housekeeper and boring cross-node proof.
+2. **[COMPLETE] Component contracts 010H** -- operational anti-drift contract for every current House resident.
+3. **[COMPLETE] Loop weaving 010I** -- actual loop registry, trace/diagnosis metrics, bounded continuation and compression candidates.
+4. **[COMPLETE] Mnemosyne intelligence 010J** -- currentness, conflicts, bounded context, relationships and measured recall performance.
+5. **[COMPLETE] Library/Vault posture 010K** -- logical knowledge zones, Source Vault facet and machine-checked Hecatoncheires posture.
+6. **[COMPLETE] Housekeeping optimization / multichannel 010L** -- measured network/concurrency knees, capacity-aware PACK/SPREAD, isolated Hephaestus hands, deterministic WorkKey, planning-only Anastomosis, project optimization phenotypes and zero-growth test-temp hygiene.
+7. **[NEXT] Mycelium metabolism / adaptive calibration** -- harvest 061F: truthful resource disposition, REST/INTERACTIVE/NORMAL/BURST/CONSERVE/SOAK/RECOVERY modes, marginal growth/contraction, project-aware concurrency knees and backpressure. No learned legality or execution authority.
+8. **Anastomosis Artifact / local action cache** -- add immutable verified Artifact identity, provenance/freshness/integrity validation and local deterministic reuse. Independent-verification Claims remain non-reusable; no distributed CAS yet.
+9. **Experience / Pareto / hysteresis** -- harvest 061H immutable route observations, qualification, Pareto frontier, holdouts, drift/anomaly detection and disposable preference among predeclared legal routes only.
+10. **Sclerotium / clean-root recovery** -- current-House survival inventory, minimal trusted pack, secret exclusion, rebuild/reacquire/rebind classes, corrupt/wrong-body fail-closed and cross-node portability proof.
+11. **Switchyard** -- resume deferred capability/tier resolver only after metabolism/reuse/recovery are stable; model choice never binds authority.
+12. **Integrations and services** -- admit repo-proven residents through separate missions; manifest, Book, contract, Atlas and Mnemosyne move together.
+13. **Workstation polish** -- UI follows real OS objects and measured operating state; no decorative architecture.
 
-## Permanent laws
+## Permanent optimization law
 
-- `BOOK_OF_GPT.md` = controller/front-door law.
-- `OTHRYS_OS_BUILD_PLAN.md` = current build order; not execution authority.
-- `LOOP_LAWS.md` = reusable loop constitution.
-- `books/BOOK_REGISTRY.json` = one Book target per admitted house surface.
-- `contracts/components/*.md` = compact operational anti-drift contract per current Book target.
-- `.othrys/project.json` = machine-readable current resident inventory.
-- Mnemosyne = institutional knowledge authority; Atlas = derived read model.
-- Garden/R&D/Quarry preserve possibility without gaining current-house status.
-- A component may not be called stable until its contract, implementation, tests, evidence and Book agree.
+`REMOVE WORK -> PACK/SPREAD -> PARALLELIZE ONLY INDEPENDENT WORK -> VERIFY -> REUSE PROVEN COMPUTATION -> RETRACT IDLE CAPACITY`.
+Run at the measured throughput knee, not at hardware redline. Project files declare portable optimization intent; live node evidence decides placement. Mycelium may prefer among legal routes but may never invent legality, authority, capability or approval.

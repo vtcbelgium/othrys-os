@@ -226,7 +226,7 @@
 | 75 | V2-010B | Durable Work objects + transition records over canonical Mission evidence | NEXT |
 
 | 75 | V2-010B | Durable Work object + stable slice/stage/task identity + append-only evidence transitions | COMPLETE |
-| 76 | V2-010C | Project creation/materialization from project-local OTHRYS OS manifest | NEXT |
+| 76 | V2-010C | Project creation/materialization from project-local OTHRYS OS manifest | COMPLETE |
 
 | 76 | V2-010C | Template-driven project composition + safe .othrys workspace materializer | COMPLETE |
 | 77 | V2-010D | Operating modes enforced at Command Deck ingress + Trust Canal admission | COMPLETE |
@@ -236,10 +236,10 @@
 
 | 79 | V2-010F | Atlas cognitive graph foundation: prior Core graph law + Nine Muses + gravity/heat + read-only OTHRYS OS Atlas room | COMPLETE |
 | 80 | V2-010G | OTHRYS OS housekeeping + Mnemosyne estate consolidation + Books/House/log integrity + boring verification | COMPLETE |
-| 81 | V2-010H | OTHRYS OS component contracts + anti-drift lint for current house surfaces | RUNNING |
+| 81 | V2-010H | OTHRYS OS component contracts + anti-drift lint for current house surfaces | COMPLETE |
 
 | 82 | V2-010I | Loop Weaving: actual loop inventory + trace/diagnosis metrics + compression candidates | COMPLETE |
 | 83 | V2-010J | Mnemosyne Intelligence: currentness + conflict/staleness + bounded context + relationship-aware recall | COMPLETE |
 
 | 84 | V2-010K | Library/Vault posture: logical zones + Hecatoncheires current-code audit | COMPLETE |
-| 85 | V2-010L | Housekeeping optimization: stress, remove waste, qualify bounded multichannel/3D Mycelium | RUNNING |
+| 85 | V2-010L | Housekeeping optimization: stress, remove waste, qualify bounded multichannel/3D Mycelium | COMPLETE |

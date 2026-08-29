@@ -11,6 +11,7 @@ A project manifest is declarative and cannot grant execution authority. A projec
 ## Canonical evidence
 - `V2-010A`
 - `V2-010C`
+- `V2-010L`
 - `.othrys/project.json`
 
 ## Preserved quarry / provenance
