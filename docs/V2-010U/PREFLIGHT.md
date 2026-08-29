@@ -9,3 +9,9 @@ Smallest safe contract: strict request + finite predeclared candidate roster →
 Provider-health and builder-certification evidence remain separate. Unknown/untested candidates are not silently upgraded. Remote escalation cannot bypass LOCAL_ONLY / LOCAL_REQUIRED and is never automatically paid. Selection grants no authority and starts no execution.
 
 PandaOS remains surface/orchestration reference only: explain why a candidate won or was rejected, but do not create Panda-owned provider state or a second routing backend.
+
+## Harvested selection laws admitted
+
+The old Hub Auto Frugal selector confirms the same useful shape: cheapest eligible tier first, readiness filtering before execution, measured evidence only reorders within an already legal cheap pool, and paid tiers require approval. Historic provider-health work is kept distinct from engineering certification. The V2-010F deferred prototype contributes only its strict request vocabulary; it was never shipped authority.
+
+The first V2 implementation therefore keeps candidate evidence explicit at the call boundary. Switchyard does not discover provider health, certify builders, read credentials, or launch work. It consumes those already-grounded facts, rejects unknown/unsafe candidates, and returns only selection evidence.
