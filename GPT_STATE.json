@@ -1,13 +1,13 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 109,
+  "sequence": 110,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "655d29bd8f007ae9edc5efe283e85d6ef778e7df",
+  "remote_head_at_last_verified_read": "3ffa8539ddef174876e2f8a87662e6e8c4dc9e39",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-010N",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "issued_label": "V2-010N - CONTEXT METABOLISM / CROSS-REPO GEM HARVEST",
     "source": "operator_current_conversation"
   },
@@ -64,10 +64,10 @@
   ],
   "last_control_decision": {
     "mission_id": "V2-010N",
-    "decision": "REDUCE_COGNITIVE_WEIGHT",
-    "authority": "Adapt proven 061G evidence-preserving context reduction and current VTC production constraints; no AI context authority, identity expansion, or evidence loss."
+    "decision": "CONTEXT_WEIGHT_AND_RECALL_PROVEN",
+    "authority": "Admit deterministic evidence transport and catalog-keyed exact term-hit caches; next step is verified Artifact reuse with negative/refusal memory and no independent-verification fusion."
   },
-  "next_legal_action": "Implement deterministic evidence capsules over already-selected Mnemosyne context; required/authority evidence and frozen identities must survive exactly.",
+  "next_legal_action": "Open bounded Artifact/local action-cache mission: immutable verified Artifact receipts, provenance/freshness/integrity/compatibility checks, durable refusal/invalidation identity, and local deterministic reuse only; no distributed CAS.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",
@@ -249,6 +249,11 @@
       "mission_id": "V2-010M",
       "status": "COMPLETE",
       "note": "Project-aware Mycelium metabolism/calibration + biological-network harvest; Legion/T590 297 Node + 66 Mycelium + 10 workers; 0-defect deterministic estate; authority unchanged."
+    },
+    {
+      "mission_id": "V2-010N",
+      "status": "COMPLETE",
+      "note": "Context Metabolism + cross-repo gem harvest; 31-43% conservative transport reduction, ~5.8-7.7x warm context speedup from exact catalog-keyed term-hit cache, 307/307 Node + 66/66 Mycelium + 10/10 workers on Legion/T590 implementation checkpoint."
     }
   ],
   "git": {

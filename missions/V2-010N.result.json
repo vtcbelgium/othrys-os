@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-010N",
+  "verdict": "PASS",
+  "start_sha": "655d29bd8f007ae9edc5efe283e85d6ef778e7df",
+  "implementation_sha": "3ffa8539ddef174876e2f8a87662e6e8c4dc9e39",
+  "scope": "Context Metabolism, exact estate-recall hot-path optimization, and cross-repo VTC/Hub/Core gem harvest",
+  "proof": {
+    "legion_node": "307/307 PASS implementation tree",
+    "legion_python": "66/66 Mycelium + 10/10 workers PASS",
+    "t590_node": "307/307 PASS exact implementation commit",
+    "t590_python": "66/66 Mycelium + 10/10 workers PASS",
+    "transport": "seven live House queries: complete transport capsule 31-43 percent smaller with selected identities unchanged",
+    "recall": "warm context on Legion improved from about 214-232 ms to about 28-37 ms for measured Mycelium/Mnemosyne/Talos queries",
+    "parity": "16 live query families matched brute-force prior search IDs/scores/matched terms exactly",
+    "stress": "200000 randomized context capsules with zero evidence-loss/identity-expansion/authority failures"
+  },
+  "authority_granted": false,
+  "next_legal_action": "Verified Artifact/local action cache with provenance/freshness/integrity/compatibility plus durable refusal/invalidation identity; independent verification remains non-reusable."
+}

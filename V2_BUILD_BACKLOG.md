@@ -245,4 +245,4 @@
 | 85 | V2-010L | Housekeeping optimization: stress, remove waste, qualify bounded multichannel/3D Mycelium | COMPLETE |
 | 86 | V2-010M | Mycelium metabolism/adaptive calibration: truthful resource economy + measured-knee growth/contraction | COMPLETE |
 
-| 87 | V2-010N | Context metabolism / evidence capsules + cross-repo gem harvest | RUNNING |
+| 87 | V2-010N | Context metabolism / evidence capsules + cross-repo gem harvest | COMPLETE |
