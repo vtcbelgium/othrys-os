@@ -1,13 +1,13 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 131,
+    "sequence": 132,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read": "7ee120e880869a051cd3e6ed91dced21b3f2f2d0",
+    "remote_head_at_last_verified_read": "88b7d60e9f3f91debdcd32c123d859123f115446",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
         "mission_id": "V2-011C",
-        "status": "RUNNING",
+        "status": "COMPLETE",
         "issued_label": "V2-011C - KRONOS HOUSE ADMISSION",
         "source": "operator_current_conversation"
     },
@@ -64,10 +64,10 @@
     ],
     "last_control_decision": {
         "mission_id": "V2-011C",
-        "decision": "ADAPT_MINIMUM_KRONOS_CONTRACT_KERNEL",
-        "authority": "House admission of pure LIFE contracts only; no LIFE execution."
+        "decision": "KRONOS_HOUSE_ADMISSION_PASS",
+        "authority": "Pure LIFE contracts only; no boot/halt/safe-mode/composition-root execution authority."
     },
-    "next_legal_action": "Implement pure Kronos lifecycle/heartbeat/supervision/cancellation kernel, then prove House anti-drift and T590 exact commit.",
+    "next_legal_action": "Great Harvest preflight for next integration/service resident; select from repo evidence, not memory.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",
@@ -334,6 +334,11 @@
             "mission_id": "V2-011C",
             "status": "RUNNING",
             "note": "Kronos House admission opened after V2-011B qualification; pure contract kernel only, no LIFE execution."
+        },
+        {
+            "mission_id": "V2-011C",
+            "status": "COMPLETE",
+            "note": "Native Kronos contract resident admitted with lifecycle/heartbeat/supervision/cancellation law, Book/contract/Atlas/Mnemosyne and exact T590 proof; no actual LIFE execution."
         }
     ],
     "git": {

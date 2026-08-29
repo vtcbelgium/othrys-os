@@ -1,0 +1,42 @@
+{
+  "mission_id": "V2-011C",
+  "verdict": "PASS",
+  "start_sha": "7ee120e880869a051cd3e6ed91dced21b3f2f2d0",
+  "implementation_sha": "88b7d60e9f3f91debdcd32c123d859123f115446",
+  "objective": "Adapt and admit the qualified minimum Kronos resident as pure lifecycle/heartbeat/supervision/cancellation contracts without granting or executing platform LIFE authority.",
+  "house_admitted": true,
+  "resident": "kronos",
+  "native_kernel": "runtime/os/kronos.mjs",
+  "admission_surfaces": [
+    ".othrys/project.json",
+    "books/BOOK_REGISTRY.json",
+    "books/book-of-kronos/README.md",
+    "contracts/components/kronos.md",
+    "Atlas derived system relation",
+    "Mnemosyne current project truth"
+  ],
+  "boundaries": {
+    "authority_granted": false,
+    "execution_started": false,
+    "boot_execution_added": false,
+    "halt_execution_added": false,
+    "safe_mode_execution_added": false,
+    "scheduler_added": false,
+    "daemon_added": false,
+    "composition_root_changed": false,
+    "talos_verification_authority_changed": false
+  },
+  "legion_proof": {
+    "kronos_house_atlas_mnemosyne": "41/41 PASS",
+    "mycelium": "78/78 PASS",
+    "workers": "10/10 PASS",
+    "runtime_qa": "206/208; only pre-existing image-prep 0.1.0 digest failures"
+  },
+  "t590_proof": {
+    "exact_sha": "88b7d60e9f3f91debdcd32c123d859123f115446",
+    "kronos_house_atlas_mnemosyne": "41/41 PASS",
+    "mycelium": "78/78 PASS",
+    "workers": "10/10 PASS"
+  },
+  "next_legal_action": "Great Harvest preflight for the next integration/service resident; do not assume Visual Control or actual LIFE execution."
+}

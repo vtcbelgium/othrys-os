@@ -293,3 +293,6 @@
 113. **Kronos House Admission - NEXT** - pure lifecycle/heartbeat/supervision/cancellation kernel only; no boot/halt/safe-mode execution.
 
 114. **V2-011C Kronos House Admission - RUNNING** - pure lifecycle/heartbeat/supervision/cancellation contracts only; no boot/halt/safe-mode execution.
+
+115. **V2-011C Kronos House Admission - COMPLETE/PASS** - pure lifecycle/heartbeat/supervision/cancellation resident + Book/contract/Atlas/Mnemosyne; exact T590 proof; no LIFE execution.
+116. **Next integration resident preflight - NEXT** - compare Great Harvest candidates before opening a mission; no Visual Control or LIFE assumption.
