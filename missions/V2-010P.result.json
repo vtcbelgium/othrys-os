@@ -36,9 +36,12 @@
                   "quality":  "Mnemosyne quality defectCount 0; Great Harvest integrity info",
                   "federation":  "cross-device content dedup preserves all locations and deterministic digests",
                   "coverage":  "common user-space roots on Legion and T590 swept; code classifier includes HTML/CSS/notebooks/Terraform/HCL/GraphQL",
-                  "sourcePayloadCopied":  false
+                  "sourcePayloadCopied":  false,
+                  "t590":  "Exact c770e1d implementation independently verified on T590: 308/308 Node + 66/66 Mycelium + 10/10 workers + 2/2 Great Harvest Python PASS; clean against origin/main.",
+                  "independent_verification_sha":  "c770e1d073b9b1acd105eea3cd72101860f946ad"
               },
     "authority_granted":  false,
     "automatic_promotion":  false,
-    "coverage_claim":  "All recoverable local code/config within the enumerated Legion/T590 user-space census is inventoried by Git identity, live fingerprint, perimeter classification, or explicit tool-cache exclusion. Unreachable Git objects and unmounted/offline/unknown storage remain outside provable scope."
+    "coverage_claim":  "All recoverable local code/config within the enumerated Legion/T590 user-space census is inventoried by Git identity, live fingerprint, perimeter classification, or explicit tool-cache exclusion. Unreachable Git objects and unmounted/offline/unknown storage remain outside provable scope.",
+    "implementation_sha":  "c770e1d073b9b1acd105eea3cd72101860f946ad"
 }

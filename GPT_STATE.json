@@ -3,7 +3,7 @@
     "sequence":  113,
     "state_owner":  "GPT_CONTROL",
     "remote_repo":  "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read":  "36fae4a915b43c635948b82c800b77c72da5a25a",
+    "remote_head_at_last_verified_read":  "c770e1d073b9b1acd105eea3cd72101860f946ad",
     "control_gate":  "CLEAN_SYNCED",
     "active_mission":  {
                            "mission_id":  "V2-010P",
@@ -64,10 +64,10 @@
                        ],
     "last_control_decision":  {
                                   "mission_id":  "V2-010P",
-                                  "decision":  "FEDERATED_LOCAL_CODE_CENSUS_COMPLETE_PENDING_CANONICAL_PROOF",
+                                  "decision":  "FEDERATED_LOCAL_CODE_CENSUS_CANONICALLY_VERIFIED",
                                   "authority":  "Inventory evidence only; no harvested source authority or automatic promotion."
                               },
-    "next_legal_action":  "Commit V2-010P implementation, push fast-forward, verify exact commit independently on T590, then write canonical proof closeout.",
+    "next_legal_action":  "Advance from the completed Great Harvest using the canonical catalogs as retrieval/provenance stock; do not redesign or re-harvest without new evidence.",
     "mission_history":  [
                             {
                                 "mission_id":  "V2-HUB-QUAL-001",
@@ -254,6 +254,11 @@
                                 "mission_id":  "V2-010N",
                                 "status":  "COMPLETE",
                                 "note":  "Context Metabolism + cross-repo gem harvest; 31-43% conservative transport reduction, ~5.8-7.7x warm context speedup from exact catalog-keyed term-hit cache, 307/307 Node + 66/66 Mycelium + 10/10 workers on Legion/T590 implementation checkpoint."
+                            },
+                            {
+                                "mission_id":  "V2-010P",
+                                "status":  "COMPLETE",
+                                "note":  "Whole-local-network Great Harvest federated across Legion/T590; 63 device-qualified Git workspaces, 25 lineages, 12,961 Git code/config objects, 2,405 live-only fingerprints / 2,563 locations, 3,891 commits, 24 perimeter roots; exact implementation independently green on T590; source authority/promotion remains false."
                             }
                         ],
     "git":  {
@@ -262,7 +267,7 @@
                 "merge_base":  "66c45631781dfce93a4c8628f2a3de70a6bad09c",
                 "local_parent":  "b65ebba9f13a5e852bb778b33b2eaff6fcfa966b",
                 "remote_parent":  "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
-                "base_sha_for_next_mission":  "00ad97c0937eee629167773bdd52455eb7fc50a8",
+                "base_sha_for_next_mission":  "c770e1d073b9b1acd105eea3cd72101860f946ad",
                 "safety_ref":  "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
                 "sync_status":  "SYNCED",
                 "push_owner":  "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
