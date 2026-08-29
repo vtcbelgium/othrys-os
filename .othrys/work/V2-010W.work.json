@@ -1,0 +1,23 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010W",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010W",
+  "title": "Native Switchyard Deck Projection",
+  "objective": "Remove the old hardcoded Command Deck model-selection duplicate and project the resident native Switchyard through the existing Panda-clear Models surface using one canonical candidate roster.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Command Deck may project Switchyard evidence but may not implement a second selector.",
+    "Candidate facts live in one canonical project model policy; UI code does not invent provider health or certification.",
+    "Unknown measured trust remains explicit and cannot be fabricated for ranking.",
+    "Paid or unavailable remote escalation remains non-executing and approval-gated.",
+    "Presentation never grants execution or approval authority."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "c33d1f9ad2e4a5605b05f4c2f59efe3e8dd165c0b4ed81caad2d56c6a603cb88"
+}

@@ -69,3 +69,8 @@ test('no capability match returns explicit no-legal-candidate evidence',()=>{
   assert.equal(r.outcome,'NO_LEGAL_CANDIDATE'); assert.equal(r.rejections.other,'CAPABILITY_MISMATCH');
   assert.equal(r.authorityGranted,false); assert.equal(r.executionStarted,false);
 });
+
+test('unknown measured trust stays explicit and falls through to deterministic id tie-break',()=>{
+  const r=selectSwitchyardRoute(req(),[candidate('b',{measuredTrust:null}),candidate('a',{measuredTrust:null})]);
+  assert.equal(r.selected.id,'a'); assert.equal(r.selected.measuredTrust,null); assert.equal(r.rejections.b,'DETERMINISTIC_ID_TIE_BREAK');
+});

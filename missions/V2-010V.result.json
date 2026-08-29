@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-010V",
+  "verdict": "PASS",
+  "start_sha": "37f97e4c85a9f4cf0d973aed462b3f5e9314b83d",
+  "implementation_sha": "e1bdf89bfb55bdc65b47f51d2569d4802846f973",
+  "scope": "Canonical House admission of the independently verified Switchyard resolver through project manifest, Book registry, Book, component contract and derived Atlas/Mnemosyne evidence",
+  "proof": {
+    "legion_node": "351/351 PASS",
+    "legion_python": "78/78 Mycelium + 10/10 workers PASS",
+    "t590_node": "351/351 PASS exact implementation commit",
+    "t590_python": "78/78 Mycelium + 10/10 workers PASS",
+    "atlas": "system:switchyard derived from current manifest",
+    "mnemosyne": "book-switchyard present as current project truth in context capsule",
+    "anti_drift": "Book shelf and component-contract shelf exactly match current House; only switchyard removed from quarry-only prohibition"
+  },
+  "authority_granted": false,
+  "duplicate_backend_created": false,
+  "next_legal_action": "V2-010W Native Switchyard Deck Projection"
+}

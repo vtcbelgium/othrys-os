@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {proposeBuildRoute} from './build_route.ts';
-const sel={selected:{id:'qwen3-builder',label:'Qwen3 8B · Legion',class:'LOCAL ENGINEERING',status:'PRIMARY',available:true,evidence:'V2-002C'},reason:'PRIMARY_LOCAL_AVAILABLE'};
+const sel={selected:{id:'qwen3-builder',label:'Qwen3 8B · Legion',capabilities:['engineering.build'],tier:'STANDARD',costClass:'ZERO',locality:'LOCAL',providerHealth:'HEALTHY',certification:'CERTIFIED',measuredTrust:null},reason:'NATIVE_SWITCHYARD_SELECTED'};
 
 test('MISSING_WORK proposes local primary route without execution',()=>{const r=proposeBuildRoute({missionId:'V2-009A',class:'MISSING_WORK'},sel);assert.equal(r.status,'ROUTE_PROPOSED');assert.equal(r.selected.id,'qwen3-builder');assert.equal(r.authorityGranted,false);assert.equal(r.executionStarted,false);});
 
@@ -7,4 +7,4 @@ test('NO_CHANGE never routes',()=>{const r=proposeBuildRoute({missionId:'V2-009A
 
 test('BLOCKED never routes',()=>{const r=proposeBuildRoute({missionId:'V2-009A',class:'BLOCKED',reason:'X'},sel);assert.equal(r.status,'BLOCKED');assert.equal(r.selected,null);});
 
-test('unavailable or non-primary labor fails closed',()=>{assert.equal(proposeBuildRoute({missionId:'V2-009A',class:'MISSING_WORK'},{selected:null,reason:'NO_PRIMARY'}).status,'BLOCKED');assert.equal(proposeBuildRoute({missionId:'V2-009A',class:'MISSING_WORK'},{selected:{...sel.selected,status:'ADVISORY ONLY'}}).status,'BLOCKED');});
+test('unavailable or uncertified labor fails closed',()=>{assert.equal(proposeBuildRoute({missionId:'V2-009A',class:'MISSING_WORK'},{selected:null,reason:'NO_PRIMARY'}).status,'BLOCKED');assert.equal(proposeBuildRoute({missionId:'V2-009A',class:'MISSING_WORK'},{selected:{...sel.selected,providerHealth:'UNAVAILABLE'}}).status,'BLOCKED');});

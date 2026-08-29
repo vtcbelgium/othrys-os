@@ -115,7 +115,19 @@
         "class": "LOCAL ENGINEERING",
         "status": "PRIMARY",
         "available": true,
-        "evidence": "V2-002C"
+        "evidence": "V2-002C",
+        "capabilities": [
+          "engineering.build"
+        ],
+        "tier": "STANDARD",
+        "costClass": "ZERO",
+        "latencyClass": "INTERACTIVE",
+        "locality": "LOCAL",
+        "providerHealth": "HEALTHY",
+        "certification": "CERTIFIED",
+        "measuredTrust": null,
+        "paidApprovalRequired": false,
+        "legal": true
       },
       {
         "id": "llama3.2-advisory",
@@ -123,7 +135,19 @@
         "class": "LOCAL ADVISORY",
         "status": "ADVISORY ONLY",
         "available": true,
-        "evidence": "V2-004D"
+        "evidence": "V2-004D",
+        "capabilities": [
+          "analysis.summarize"
+        ],
+        "tier": "LIGHT",
+        "costClass": "ZERO",
+        "latencyClass": "INTERACTIVE",
+        "locality": "LOCAL",
+        "providerHealth": "HEALTHY",
+        "certification": "UNTESTED",
+        "measuredTrust": null,
+        "paidApprovalRequired": false,
+        "legal": true
       },
       {
         "id": "remote-escalation",
@@ -131,7 +155,19 @@
         "class": "REMOTE",
         "status": "GATED",
         "available": false,
-        "evidence": null
+        "evidence": null,
+        "capabilities": [
+          "engineering.build"
+        ],
+        "tier": "HIGH",
+        "costClass": "PAID",
+        "latencyClass": "NORMAL",
+        "locality": "REMOTE",
+        "providerHealth": "UNAVAILABLE",
+        "certification": "UNTESTED",
+        "measuredTrust": null,
+        "paidApprovalRequired": true,
+        "legal": true
       }
     ]
   },

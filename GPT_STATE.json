@@ -1,14 +1,14 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 119,
+    "sequence": 120,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read": "37f97e4c85a9f4cf0d973aed462b3f5e9314b83d",
+    "remote_head_at_last_verified_read": "e1bdf89bfb55bdc65b47f51d2569d4802846f973",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
-        "mission_id": "V2-010V",
+        "mission_id": "V2-010W",
         "status": "RUNNING",
-        "issued_label": "V2-010V - SWITCHYARD HOUSE ADMISSION",
+        "issued_label": "V2-010W - NATIVE SWITCHYARD DECK PROJECTION",
         "source": "operator_current_conversation"
     },
     "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
         "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
     ],
     "last_control_decision": {
-        "mission_id": "V2-010V",
-        "decision": "SWITCHYARD_VERIFIED_HOUSE_ADMISSION_OPEN",
-        "authority": "Admission/documentary topology only; no selection behavior, provider authority, execution or paid escalation changes. PandaOS remains surface reference only."
+        "mission_id": "V2-010W",
+        "decision": "SWITCHYARD_ADMITTED_REMOVE_DECK_DUPLICATE",
+        "authority": "Projection only; native Switchyard remains selector. No provider, execution, approval or paid escalation authority."
     },
-    "next_legal_action": "Admit proven Switchyard through the canonical House surfaces only: project manifest + Book registry + Book + component contract + anti-drift tests; verify Atlas/Mnemosyne derive it without a duplicate backend.",
+    "next_legal_action": "Replace Command Deck hardcoded model selector with native Switchyard projection driven from canonical project model policy; preserve Panda-style clarity without duplicate backend.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",

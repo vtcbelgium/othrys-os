@@ -16,6 +16,7 @@ import { loadProjectManifest } from '../os/project_manifest.mjs';
 import { resolveOperatingMode, authorizeOperatingModeAction, operatingModeProjection } from '../os/operating_mode.mjs';
 import { exportKnowledge, searchKnowledge } from '../os/mnemosyne.mjs';
 import { buildAtlasProjection } from '../os/atlas_projection.mjs';
+import { MODEL_REQUEST_SCHEMA, selectSwitchyardRoute } from '../os/switchyard.mjs';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -114,13 +115,18 @@ export function missionEvidence(missionId){
     return {missionId,title:String(m.title??m.objective??missionId),goal:String(m.goal??m.objective??''),laws:Array.isArray(m.laws)?m.laws:[],resultPresent:!!result,verdict:result?String(result.verdict??result.status??'RECORDED'):null,candidateSha:result?.candidate_sha??result?.candidate_commit??null};
   }catch{return null;}
 }
+function switchyardCandidates(){
+  return projectManifest.modelPolicy.requests.map(({id,label,capabilities,tier,costClass,latencyClass,locality,providerHealth,certification,measuredTrust,paidApprovalRequired,legal})=>({id,label,capabilities,tier,costClass,latencyClass,locality,providerHealth,certification,measuredTrust,paidApprovalRequired,legal}));
+}
 export function switchyardPreview(preference='auto'){
-  const models=[{id:'qwen3-builder',label:'Qwen3 8B · Legion',class:'LOCAL ENGINEERING',status:'PRIMARY',available:true,evidence:'V2-002C'},{id:'llama3.2-advisory',label:'Llama 3.2 · T590',class:'LOCAL ADVISORY',status:'ADVISORY ONLY',available:true,evidence:'V2-004D'},{id:'remote-escalation',label:'Remote escalation',class:'REMOTE',status:'GATED',available:false,evidence:null}];
   const pref=String(preference??'auto');
-  if(pref==='auto'){const selected=models.find(m=>m.available&&m.status==='PRIMARY');return {policy:'LOCAL_FIRST',preference:'auto',selected:selected??null,reason:selected?'PRIMARY_LOCAL_AVAILABLE':'NO_PRIMARY_LOCAL_AVAILABLE',executionStarted:false,authorityGranted:false};}
-  const selected=models.find(m=>m.id===pref); if(!selected) return {policy:'LOCAL_FIRST',preference:pref,selected:null,reason:'UNKNOWN_PREFERENCE',executionStarted:false,authorityGranted:false};
-  if(!selected.available) return {policy:'LOCAL_FIRST',preference:pref,selected:null,reason:'PREFERENCE_UNAVAILABLE',executionStarted:false,authorityGranted:false};
-  return {policy:'LOCAL_FIRST',preference:pref,selected,reason:'EXPLICIT_AVAILABLE_PREFERENCE',executionStarted:false,authorityGranted:false};
+  const all=switchyardCandidates();
+  const candidates=pref==='auto'?all:all.filter(x=>x.id===pref);
+  if(!candidates.length) return {schema:'othrys.os.switchyard-selection.v1',outcome:'NO_LEGAL_CANDIDATE',request:null,selected:null,eligible:[],rejections:{[pref]:'UNKNOWN_PREFERENCE'},paidApprovalRequired:false,authorityGranted:false,executionStarted:false,policy:projectManifest.modelPolicy.policy,preference:pref,reason:'UNKNOWN_PREFERENCE'};
+  const request={schema:MODEL_REQUEST_SCHEMA,capability:'engineering.build',minimumTier:'STANDARD',privacy:'PROJECT',locality:'PREFER_LOCAL',maxCostClass:'PAID',maxLatency:'BATCH'};
+  const result=selectSwitchyardRoute(request,candidates);
+  const reason=result.outcome==='SELECTED'?'NATIVE_SWITCHYARD_SELECTED':result.outcome;
+  return {...result,policy:projectManifest.modelPolicy.policy,preference:pref,reason};
 }
 export function missionProposalEnvelope(proposalIntent,promotionIntent=null){
   if(!proposalIntent||proposalIntent.action!=='MISSION_PROPOSAL'||!proposalIntent.missionId) return null;

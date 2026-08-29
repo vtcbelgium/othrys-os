@@ -40,7 +40,7 @@ export function validateSwitchyardCandidate(candidate){
   if(!['LOCAL','REMOTE'].includes(candidate.locality)) throw new Error('INVALID_CANDIDATE_LOCALITY');
   if(!HEALTH.has(candidate.providerHealth)) throw new Error('INVALID_CANDIDATE_HEALTH');
   if(!CERT.has(candidate.certification)) throw new Error('INVALID_CANDIDATE_CERTIFICATION');
-  if(typeof candidate.measuredTrust!=='number'||candidate.measuredTrust<0||candidate.measuredTrust>1) throw new Error('INVALID_CANDIDATE_TRUST');
+  if(candidate.measuredTrust!==null&&(typeof candidate.measuredTrust!=='number'||candidate.measuredTrust<0||candidate.measuredTrust>1)) throw new Error('INVALID_CANDIDATE_TRUST');
   if(typeof candidate.paidApprovalRequired!=='boolean'||typeof candidate.legal!=='boolean') throw new Error('INVALID_CANDIDATE_FLAGS');
   return Object.freeze({...candidate,id,label,tier,costClass,latencyClass,capabilities:Object.freeze([...candidate.capabilities])});
 }
@@ -72,7 +72,7 @@ export function selectSwitchyardRoute(requestRaw,candidatesRaw){
     COST[a.costClass]-COST[b.costClass] ||
     TIER[a.tier]-TIER[b.tier] ||
     (a.locality==='LOCAL'?0:1)-(b.locality==='LOCAL'?0:1) ||
-    b.measuredTrust-a.measuredTrust ||
+    (b.measuredTrust??-1)-(a.measuredTrust??-1) ||
     a.id.localeCompare(b.id)
   );
   if(!ranked.length) return Object.freeze({schema:SWITCHYARD_SCHEMA,outcome:'NO_LEGAL_CANDIDATE',request,selected:null,
@@ -82,7 +82,7 @@ export function selectSwitchyardRoute(requestRaw,candidatesRaw){
     if(COST[c.costClass]>COST[winner.costClass]) rejections[c.id]='MORE_EXPENSIVE_THAN_SELECTED';
     else if(TIER[c.tier]>TIER[winner.tier]) rejections[c.id]='HIGHER_TIER_THAN_NEEDED';
     else if(c.locality!==winner.locality&&winner.locality==='LOCAL') rejections[c.id]='LOCAL_TIE_BREAK';
-    else if(c.measuredTrust<winner.measuredTrust) rejections[c.id]='LOWER_MEASURED_TASK_TRUST';
+    else if(c.measuredTrust!==null&&winner.measuredTrust!==null&&c.measuredTrust<winner.measuredTrust) rejections[c.id]='LOWER_MEASURED_TASK_TRUST';
     else rejections[c.id]='DETERMINISTIC_ID_TIE_BREAK';
   }
   const paid=winner.costClass==='PAID'||winner.paidApprovalRequired===true;
