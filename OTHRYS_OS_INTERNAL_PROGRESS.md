@@ -2,7 +2,7 @@
 
 **Status:** LIVE FRONT-DOOR CONTROL FILE
 **Owner:** GPT Control / House Manager
-**Last evidence update:** 2026-08-29 - V2-010N implementation independently verified at `3ffa8539ddef174876e2f8a87662e6e8c4dc9e39`: Legion/T590 307/307 Node + 66/66 Mycelium + 10/10 workers; live context transport 31-43% smaller; warm context ~214-232 ms -> ~28-37 ms on Legion; brute-force search parity 16/16; context fuzz 200,000/200,000.
+**Last evidence update:** 2026-08-29 - V2-010O Great Harvest complete implementation: 40 Git workspaces / 12 lineages / 9,338 recoverable Git code/config objects (5,801 historical-only) / 3,094 commits plus 180 live-only specimens (22 filesystem-only, 50 modified, 108 untracked); no source payload copy; exact implementation independently proven on T590 at `36fae4a915b43c635948b82c800b77c72da5a25a`.
 **Update law:** update whenever a room materially gains/loses capability, proof, scope, or maturity. Percentages are house-manager estimates against the intended mature room, never proof by themselves.
 
 ## Current house progression
@@ -13,7 +13,7 @@
 | Hephaestus | 67% | governed engineering authority + bounded repair + <=3 isolated hand planner; disposable worktree isolation proven | second qualified builder or real disjoint-slice execution; artifact fingerprint/reuse integration |
 | Talos | 75% | independent verification, retry/replay, traces, evidence gates and proven cross-node parallel proof | reusable proof receipts only where independence is not required; continuous verifier profiles |
 | Trust Canal | 75% | default-deny authority boundary + operating-mode enforcement | broader resident coverage + remaining Hecatoncheires hardening |
-| Mnemosyne | 80% | explicit memory, estate, provenance/currentness/zones, deterministic evidence transport and exact catalog-keyed term-hit recall; live transport 31-43% smaller and warm context ~6x faster | verified Artifact/reference lifecycle, refusal/invalidation memory, temporal truth and deeper Callimachus quality |
+| Mnemosyne | 84% | explicit memory, estate, provenance/currentness/zones, compact evidence transport, fast exact recall and permanent Great Harvest over recoverable code/commit lineage + live-only fingerprints | verified Artifact/reference lifecycle, refusal/invalidation memory, temporal truth and deeper Callimachus quality |
 | Atlas | 49% | typed derived graph, provenance, gravity/heat, Muses and visual room | execution/evidence topology, richer relationships/timeline/conflict lenses |
 | Missions + Work | 82% | durable mission/work hierarchy + evidence-bound transitions | WorkKey/Claim linkage without making Work a scheduler |
 | Blocks | 63% | two admitted reusable Blocks + exact composition law; VTC proves three safe product-to-Block extraction patterns in quarry | formal Quarry extraction classifier, duplicate-algorithm extinction proof and repeated product reuse |
@@ -24,6 +24,6 @@
 | Models / Labor | 40% | proven local/advisory labor routes + physical builder asymmetry measured | Switchyard after metabolism/reuse/recovery; qualify second engineering builder separately |
 | Great Library / Vaults / Garden / R&D / Hall of Echoes | 53% | logical zones + Source Vault facet + deterministic filtering/provenance | lifecycle depth, grants/export posture and richer browse surfaces |
 | Hecatoncheires / Security | 46% | machine-checked 11-hand posture + hostile secret exclusion + Housekeeper proof | encryption/anomaly/injection/export-lockdown controls through separate missions |
-| Housekeeping / Drift Control | 94% | repeated cross-node proof, deterministic estate/security drift, measured stress, zero-growth scratch, cross-repo quarry discipline and cache invalidation guards | keep quality/performance ratchets boring while reuse/recovery layers are admitted |
+| Housekeeping / Drift Control | 95% | repeated cross-node proof, deterministic estate/security drift, measured stress, zero-growth scratch, permanent Great Harvest integrity and mandatory anti-redesign preflight | keep quality/performance/freshness ratchets boring while reuse/recovery layers are admitted |
 
-**Foundation-OS estimate:** 64-69%.  **Eventual autonomous OTHRYS vision:** 35-40%.
+**Foundation-OS estimate:** 66-71%.  **Eventual autonomous OTHRYS vision:** 36-41%.

@@ -1,13 +1,13 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 111,
+  "sequence": 112,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "bf838fb840cd492af9411dd3cbee1c63d7a294cb",
+  "remote_head_at_last_verified_read": "36fae4a915b43c635948b82c800b77c72da5a25a",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-010O",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "issued_label": "V2-010O - THE GREAT HARVEST / PERMANENT CODE LINEAGE QUARRY",
     "source": "operator_current_conversation"
   },
@@ -64,10 +64,10 @@
   ],
   "last_control_decision": {
     "mission_id": "V2-010O",
-    "decision": "GREAT_HARVEST_INSTITUTION_RUNNING",
-    "authority": "Index recoverable code lineage + commit intent as permanent Mnemosyne quarry; no source payload copy, admission or execution authority."
+    "decision": "GREAT_HARVEST_PROVEN",
+    "authority": "Permanent Git-history + commit-intent + live-only source quarry is deterministic, authority-free, and mandatory design preflight."
   },
-  "next_legal_action": "Complete deterministic Great Harvest catalogs, prove historical/current/worktree coverage, register permanent Mnemosyne entry, cross-node verify, then return to Artifact reuse/local action cache.",
+  "next_legal_action": "Verified Artifact/local action cache: immutable verified Artifact identity, refusal/invalidation memory and local deterministic reuse; independent verification remains non-reusable.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

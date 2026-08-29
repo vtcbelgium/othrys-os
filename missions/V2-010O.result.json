@@ -1,0 +1,38 @@
+{
+  "mission_id": "V2-010O",
+  "verdict": "PASS",
+  "start_sha": "bf838fb840cd492af9411dd3cbee1c63d7a294cb",
+  "implementation_sha": "36fae4a915b43c635948b82c800b77c72da5a25a",
+  "scope": "The Great Harvest permanent Mnemosyne Git-lineage + commit-intent + live-only code quarry",
+  "census": {
+    "workspaces": 40,
+    "lineages": 12,
+    "indexedObjects": 9338,
+    "currentObjects": 3537,
+    "historicalOnlyObjects": 5801,
+    "indexedBytes": 213691915,
+    "commitCount": 3094,
+    "crossLineageDuplicateObjects": 1289,
+    "liveOnlyCount": 180,
+    "liveOnlyBytes": 3126270,
+    "liveOnlyStates": {
+      "FILESYSTEM_ONLY": 22,
+      "WORKTREE_MODIFIED": 50,
+      "WORKTREE_UNTRACKED": 108
+    }
+  },
+  "digests": {
+    "code": "ee182a71706bf1dd1cab3fa2f233bb88a5cf58060d3b335b3418d855986fb209",
+    "commits": "788ac2a7fb1cea8cfac5a8d10b8d8cf529f1840c305034fbb1a6f56f2305f737",
+    "liveOnly": "99e7ef6db2c75831359395f7bce68026d51dbc6d1fcdcde953fe3a651ce80496"
+  },
+  "proof": {
+    "legion": "308/308 Node + 66/66 Mycelium + 10/10 workers + synthetic Great Harvest PASS before final closeout",
+    "t590": "308/308 Node + 66/66 Mycelium + 10/10 workers + synthetic Great Harvest PASS on exact complete implementation commit 36fae4a",
+    "determinism": "two complete post-code scans produced identical Git-code, commit and live-only catalog digests",
+    "sourcePayloadCopied": false
+  },
+  "authority_granted": false,
+  "automatic_promotion": false,
+  "next_legal_action": "Verified Artifact/local action cache with provenance/freshness/integrity/compatibility; independent verification remains non-reusable."
+}
