@@ -1,0 +1,18 @@
+{
+  "mission_id": "V2-011I",
+  "verdict": "PASS_WITH_T590_PYTEST_ENV_LIMITATION",
+  "start_sha": "191f2ef3805fd742dba657592899685baebc4648",
+  "implementation_sha": "7da64c93d01fbaacee40b05e82c680079e25766e",
+  "house_admitted": true,
+  "resident": "visual-control",
+  "boundary": "pure OBSERVE visual evidence contracts only",
+  "legion_proof": {"visual_house_atlas_mnemosyne":"43/43 PASS","mycelium":"78/78 PASS","workers":"10/10 PASS"},
+  "t590_proof": {"exact_sha":"7da64c93d01fbaacee40b05e82c680079e25766e","visual_house_atlas_mnemosyne":"43/43 PASS","python_suites":"NOT_RUN: pytest absent on verifier environment"},
+  "authorityGranted": false,
+  "executionStarted": false,
+  "capture_adapter_added": false,
+  "input_control_added": false,
+  "supervised_control": false,
+  "autonomous_control": false,
+  "next_legal_action": "Great Harvest preflight for next missing service/integration; any Visual Control capture or input layer requires a separate mission."
+}
