@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 110,
+  "sequence": 111,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "3ffa8539ddef174876e2f8a87662e6e8c4dc9e39",
+  "remote_head_at_last_verified_read": "bf838fb840cd492af9411dd3cbee1c63d7a294cb",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-010N",
-    "status": "COMPLETE",
-    "issued_label": "V2-010N - CONTEXT METABOLISM / CROSS-REPO GEM HARVEST",
+    "mission_id": "V2-010O",
+    "status": "RUNNING",
+    "issued_label": "V2-010O - THE GREAT HARVEST / PERMANENT CODE LINEAGE QUARRY",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-010N",
-    "decision": "CONTEXT_WEIGHT_AND_RECALL_PROVEN",
-    "authority": "Admit deterministic evidence transport and catalog-keyed exact term-hit caches; next step is verified Artifact reuse with negative/refusal memory and no independent-verification fusion."
+    "mission_id": "V2-010O",
+    "decision": "GREAT_HARVEST_INSTITUTION_RUNNING",
+    "authority": "Index recoverable code lineage + commit intent as permanent Mnemosyne quarry; no source payload copy, admission or execution authority."
   },
-  "next_legal_action": "Open bounded Artifact/local action-cache mission: immutable verified Artifact receipts, provenance/freshness/integrity/compatibility checks, durable refusal/invalidation identity, and local deterministic reuse only; no distributed CAS.",
+  "next_legal_action": "Complete deterministic Great Harvest catalogs, prove historical/current/worktree coverage, register permanent Mnemosyne entry, cross-node verify, then return to Artifact reuse/local action cache.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

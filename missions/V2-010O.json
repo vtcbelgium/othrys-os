@@ -1,0 +1,24 @@
+{
+  "mission_id": "V2-010O",
+  "title": "The Great Harvest — Permanent Code Lineage Quarry",
+  "status": "RUNNING",
+  "owner": "GPT_CONTROL",
+  "objective": "Create one permanent Mnemosyne quarry that indexes recoverable OTHRYS/VTC code lineage, including historical Git objects, so future design begins from prior stock instead of rediscovery.",
+  "laws": [
+    "Great Harvest is quarry and evidence navigation, never authority or automatic promotion.",
+    "Index metadata and Git retrieval identity; do not duplicate source-code payloads into Mnemosyne.",
+    "Collapse equivalent worktrees/repositories by Git lineage before counting stock.",
+    "Historical and deleted code remains discoverable but never masquerades as current.",
+    "Before redesigning or inventing a capability, consult Great Harvest and record reuse/adapt/reject rationale.",
+    "No mutation of harvested repositories."
+  ],
+  "out_of_scope": [
+    "No automatic code admission or execution",
+    "No secret harvesting",
+    "No semantic AI scoring of source code",
+    "No rewriting VTC, Hub, Core, or historical repos",
+    "No distributed source-code mirror"
+  ],
+  "authority_granted": false,
+  "execution_started": false
+}

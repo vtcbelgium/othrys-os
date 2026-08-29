@@ -221,6 +221,12 @@
       "path": "docs/HECATONCHEIRES_POSTURE.json",
       "id": "hecatoncheires-posture",
       "class": "SECURITY / CURRENT POSTURE"
+    },
+    {
+      "label": "The Great Harvest",
+      "path": "docs/GREAT_HARVEST.md",
+      "id": "great-harvest",
+      "class": "MNEMOSYNE / PERMANENT QUARRY"
     }
   ],
   "roleBindings": [

@@ -1,4 +1,5 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { loadProjectManifest } from './project_manifest.mjs';
 import { maintainKnowledge } from './mnemosyne.mjs';
@@ -38,6 +39,17 @@ export function inspectMnemosyneQuality(root,{projectsRoot=null}={}){
       }
       if(missing) findings.push(finding('source-ref-missing','medium',`${missing} catalog provenance refs no longer resolve in the current estate.`,{sample}));
     }
+  }
+  const ghSummaryPath=join(root,'.othrys','knowledge','catalog','great-harvest-summary.json');
+  const ghCodePath=join(root,'.othrys','knowledge','catalog','great-harvest-code.jsonl');
+  const ghCommitPath=join(root,'.othrys','knowledge','catalog','great-harvest-commits.jsonl');
+  if(!existsSync(ghSummaryPath)||!existsSync(ghCodePath)||!existsSync(ghCommitPath)) findings.push(finding('great-harvest-missing','high','Permanent Great Harvest catalogs are missing.'));
+  else{
+    const gh=readJson(ghSummaryPath),digest=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
+    const invalid=gh.schema!=='othrys.os.great-harvest.summary.v1'||gh.authorityGranted!==false||gh.automaticPromotion!==false||gh.sourcePayloadCopied!==false;
+    if(invalid) findings.push(finding('great-harvest-policy','high','Great Harvest summary violates permanent quarry policy.'));
+    else if(digest(ghCodePath)!==gh.catalogSha256||digest(ghCommitPath)!==gh.commitCatalogSha256) findings.push(finding('great-harvest-integrity','high','Great Harvest catalog digest mismatch.',{expectedCode:gh.catalogSha256,expectedCommits:gh.commitCatalogSha256}));
+    else findings.push(finding('great-harvest-integrity','info',`Great Harvest is intact: ${gh.workspaceCount} workspaces, ${gh.indexedObjects} code/config objects, ${gh.commitCount} commits.`,{workspaceCount:gh.workspaceCount,lineageCount:gh.lineageCount,indexedObjects:gh.indexedObjects,historicalOnlyObjects:gh.historicalOnlyObjects,commitCount:gh.commitCount}));
   }
   const maintenance=maintainKnowledge(root,manifest);
   for(const item of maintenance.missingSources??[]) findings.push(finding('declared-source-missing','high',`Declared knowledge source ${item.id??item.path??'unknown'} is missing.`,item));

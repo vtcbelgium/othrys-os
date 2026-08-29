@@ -191,6 +191,16 @@ export function maintainKnowledge(root,manifest){
   return Object.freeze({schema:'othrys.os.knowledge-maintenance.v1',declaredSources:declared.length,inboxItems:inbox.length,reviews:reviews.length,missingSources:missing,awaitingReview:awaiting,healthy:missing.length===0,mutationsPerformed:0,authorityGranted:false});
 }
 
+function greatHarvestProjection(root){
+  const path=join(root,'.othrys','knowledge','catalog','great-harvest-summary.json');
+  if(!existsSync(path)) return Object.freeze({status:'MISSING',authorityGranted:false});
+  try{
+    const value=JSON.parse(readFileSync(path,'utf8'));
+    if(value.schema!=='othrys.os.great-harvest.summary.v1'||value.authorityGranted!==false||value.automaticPromotion!==false||value.sourcePayloadCopied!==false) return Object.freeze({status:'INVALID',authorityGranted:false});
+    return Object.freeze({status:'READY',workspaceCount:value.workspaceCount,lineageCount:value.lineageCount,indexedObjects:value.indexedObjects,historicalOnlyObjects:value.historicalOnlyObjects,commitCount:value.commitCount,catalogSha256:value.catalogSha256,commitCatalogSha256:value.commitCatalogSha256,authorityGranted:false});
+  }catch{return Object.freeze({status:'INVALID',authorityGranted:false});}
+}
+
 export function exportKnowledge(root,manifest){
   const sources=declaredKnowledge(root,manifest).map(item=>{
     const content=item.present?readFileSync(safeProjectPath(root,item.source.path),'utf8'):null;
@@ -205,5 +215,5 @@ export function exportKnowledge(root,manifest){
 
 export function knowledgeProjection(root,manifest){
   const maintenance=maintainKnowledge(root,manifest);
-  return Object.freeze({schema:'othrys.os.mnemosyne.v1',service:'mnemosyne',lifecycle:['CAPTURE','CLASSIFY','REVIEW','SEARCH','MAINTAIN','EXPORT'],...maintenance,estate:estateSummary(root),zonePolicy:'docs/KNOWLEDGE_ZONES.md',securityPosture:'docs/HECATONCHEIRES_POSTURE.json',writeApiEnabled:false,opaqueMemory:false,authorityGranted:false});
+  return Object.freeze({schema:'othrys.os.mnemosyne.v1',service:'mnemosyne',lifecycle:['CAPTURE','CLASSIFY','REVIEW','SEARCH','MAINTAIN','EXPORT'],...maintenance,estate:estateSummary(root),greatHarvest:greatHarvestProjection(root),zonePolicy:'docs/KNOWLEDGE_ZONES.md',securityPosture:'docs/HECATONCHEIRES_POSTURE.json',writeApiEnabled:false,opaqueMemory:false,authorityGranted:false});
 }

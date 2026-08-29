@@ -246,3 +246,4 @@
 | 86 | V2-010M | Mycelium metabolism/adaptive calibration: truthful resource economy + measured-knee growth/contraction | COMPLETE |
 
 | 87 | V2-010N | Context metabolism / evidence capsules + cross-repo gem harvest | COMPLETE |
+| 88 | V2-010O | The Great Harvest: permanent Mnemosyne code-lineage + commit-intent quarry | RUNNING |

@@ -2,9 +2,13 @@
 
 **Front-door plan.** Read after `BOOK_OF_GPT.md` and current `GPT_STATE.json`.
 
-## Current phase -- ARTIFACT REUSE / LOCAL ACTION CACHE
+## Current phase -- THE GREAT HARVEST / PERMANENT CODE QUARRY
 
-V2-010N Context Metabolism is implementation-PASS and independently verified. The next bounded step attacks duplicate completed work: reuse only immutable verified Artifacts whose WorkKey, provenance, freshness, integrity and compatibility still match. Refusals/invalidations are evidence too; independent-verification Claims never reuse the same execution.
+V2-010O establishes The Great Harvest as a permanent Mnemosyne quarry over recoverable code lineage, commit intent and the existing evidence estate. This mission changes no execution authority. After it closes, the next bounded runtime step returns to Artifact reuse/local action cache.
+
+## Permanent Great Harvest preflight
+
+Before designing or inventing a capability, query `docs/GREAT_HARVEST.md` and the Great Harvest catalogs for prior implementations, commits, tests, failures and measurements. When relevant prior stock exists, the mission must record `REUSE`, `ADAPT`, or `REJECT` with a reason. A stale Harvest is refreshed before architectural invention; Harvest evidence never grants authority or admission.
 
 ## Build order
 
@@ -16,13 +20,14 @@ V2-010N Context Metabolism is implementation-PASS and independently verified. Th
 6. **[COMPLETE] Housekeeping optimization / multichannel 010L** -- measured network/concurrency knees, capacity-aware PACK/SPREAD, isolated Hephaestus hands, deterministic WorkKey, planning-only Anastomosis, project optimization phenotypes and zero-growth test-temp hygiene.
 7. **[COMPLETE] Mycelium metabolism / adaptive calibration** -- harvest 061F: truthful resource disposition, REST/INTERACTIVE/NORMAL/BURST/CONSERVE/SOAK/RECOVERY modes, marginal growth/contraction, project-aware concurrency knees and backpressure. No learned legality or execution authority.
 8. **[COMPLETE] Context metabolism / evidence capsules** -- harvest 061G evidence-preserving reduction: keep pinned/active/authority evidence, compress to references where safe, evict irrelevant payload, and prove requiredEvidenceLost=0 / authorityEvidenceLost=0 before any AI context optimizer.
-9. **[NEXT] Anastomosis Artifact / local action cache** -- add immutable verified Artifact identity, provenance/freshness/integrity + compatibility validation, durable refusal/invalidation identity and local deterministic reuse. Independent-verification Claims remain non-reusable; failed compatibility isolates only that fusion edge; no distributed CAS yet.
-10. **Block Quarry / extraction / compounding** -- turn the VTC-proven HOST_CONFIG/BRIDGE/CALLER/DEBT/FALSE_POSITIVE method into a Hephaestus capability-extraction pipeline: prove duplicate algorithm extinction, preserve product glue, qualify canonical Blocks, and never harvest unrelated lookalikes.
-11. **Rhizomorph / Experience / sparse resilience** -- harvest 061D/061H plus biological network lessons: immutable flow observations, qualification, Pareto frontier, holdouts, hysteresis/decay, sparse cross-link budget and reinforced routes among predeclared legal variants only. Every reinforcement has a retraction law.
-12. **Sclerotium / clean-root recovery** -- current-House survival inventory, minimal trusted pack, secret exclusion, rebuild/reacquire/rebind classes, corrupt/wrong-body fail-closed and cross-node portability proof.
-13. **Switchyard / Frugal Heart** -- resume deferred capability/tier resolver only after metabolism/reuse/recovery are stable; model choice never binds authority; provider health, task-specific measured trust and VTC-style evidence ladders may exclude/reorder only inside legal tiers.
-14. **Integrations and services** -- admit repo-proven residents through separate missions; manifest, Book, contract, Atlas and Mnemosyne move together.
-15. **Workstation polish** -- UI follows real OS objects and measured operating state; no decorative architecture.
+9. **[CURRENT] The Great Harvest / permanent code lineage quarry** -- index all recoverable code/config Git objects + commit intent across deduplicated local lineages, preserve historical-only state, expose deterministic query/retrieval metadata, and make Harvest preflight permanent.
+10. **[NEXT] Anastomosis Artifact / local action cache** -- add immutable verified Artifact identity, provenance/freshness/integrity + compatibility validation, durable refusal/invalidation identity and local deterministic reuse. Independent-verification Claims remain non-reusable; failed compatibility isolates only that fusion edge; no distributed CAS yet.
+11. **Block Quarry / extraction / compounding** -- turn the VTC-proven HOST_CONFIG/BRIDGE/CALLER/DEBT/FALSE_POSITIVE method into a Hephaestus capability-extraction pipeline: prove duplicate algorithm extinction, preserve product glue, qualify canonical Blocks, and never harvest unrelated lookalikes.
+12. **Rhizomorph / Experience / sparse resilience** -- harvest 061D/061H plus biological network lessons: immutable flow observations, qualification, Pareto frontier, holdouts, hysteresis/decay, sparse cross-link budget and reinforced routes among predeclared legal variants only. Every reinforcement has a retraction law.
+13. **Sclerotium / clean-root recovery** -- current-House survival inventory, minimal trusted pack, secret exclusion, rebuild/reacquire/rebind classes, corrupt/wrong-body fail-closed and cross-node portability proof.
+14. **Switchyard / Frugal Heart** -- resume deferred capability/tier resolver only after metabolism/reuse/recovery are stable; model choice never binds authority; provider health, task-specific measured trust and VTC-style evidence ladders may exclude/reorder only inside legal tiers.
+15. **Integrations and services** -- admit repo-proven residents through separate missions; manifest, Book, contract, Atlas and Mnemosyne move together.
+16. **Workstation polish** -- UI follows real OS objects and measured operating state; no decorative architecture.
 
 ## Mycelium tissue model
 

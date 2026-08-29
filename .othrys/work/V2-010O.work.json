@@ -1,0 +1,24 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010O",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010O",
+  "title": "The Great Harvest — Permanent Code Lineage Quarry",
+  "objective": "Create one permanent Mnemosyne quarry that indexes recoverable OTHRYS/VTC code lineage, including historical Git objects, so future design begins from prior stock instead of rediscovery.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Great Harvest is quarry and evidence navigation, never authority or automatic promotion.",
+    "Index metadata and Git retrieval identity; do not duplicate source-code payloads into Mnemosyne.",
+    "Collapse equivalent worktrees/repositories by Git lineage before counting stock.",
+    "Historical and deleted code remains discoverable but never masquerades as current.",
+    "Before redesigning or inventing a capability, consult Great Harvest and record reuse/adapt/reject rationale.",
+    "No mutation of harvested repositories."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "fbb6721c0f9d45656a22582fa5a617342d1e7e90a270d8f61bd42d7db37746bd"
+}

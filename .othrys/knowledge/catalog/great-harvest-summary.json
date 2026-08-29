@@ -1,0 +1,219 @@
+{
+  "schema": "othrys.os.great-harvest.summary.v1",
+  "workspaceCount": 40,
+  "lineageCount": 12,
+  "indexedObjects": 11255,
+  "currentObjects": 5147,
+  "historicalOnlyObjects": 6108,
+  "indexedBytes": 329036778,
+  "crossLineageDuplicateObjects": 1439,
+  "kinds": {
+    "CODE": 8316,
+    "CONFIG": 2939
+  },
+  "languages": {
+    "ts": 4107,
+    "json": 2737,
+    "py": 1980,
+    "jsx": 888,
+    "mjs": 719,
+    "js": 318,
+    "tsx": 173,
+    "jsonl": 124,
+    "sql": 61,
+    "yml": 60,
+    "css": 47,
+    "sh": 18,
+    "toml": 10,
+    "xml": 6,
+    "ps1": 5,
+    "yaml": 2
+  },
+  "catalogSha256": "e4646861e98db4adf75dcd7a71d853d0947fb093808236ba063d3e57faa75225",
+  "catalogPath": ".othrys/knowledge/catalog/great-harvest-code.jsonl",
+  "commitCount": 3091,
+  "commitCatalogSha256": "ba6530980c86a5c9b984eabcbc72b046488c4e9fc0fec5911942d67209e18a6a",
+  "commitCatalogPath": ".othrys/knowledge/catalog/great-harvest-commits.jsonl",
+  "repositoryIndex": [
+    {
+      "lineage": "https://github.com/vtcbelgium/othrys-core",
+      "representative": "othrys-core-windows",
+      "workspaces": [
+        "othrys-core-mission036-adr",
+        "othrys-core-windows"
+      ],
+      "head": "5f4d6d014a15ecf8db2ff60ac7647a13e789df52",
+      "branch": "mission/p013-validation-harness",
+      "refCount": 105,
+      "refDigest": "f78c43a44e9d53e1c9deea29d3bf5466c6d10926f900bdc3a0f611b33159897d",
+      "recoveredBrokenPointers": []
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/othrys-hub",
+      "representative": "othrys-hub",
+      "workspaces": [
+        "othrys-hub",
+        "othrys-hub-blueprint-studio-001",
+        "othrys-hub-design-studio-modern-web-001",
+        "othrys-hub-hephaestus-block-forge-001",
+        "othrys-hub-main",
+        "othrys-hub-obsidian-always-sync-001",
+        "othrys-hub-oros-composition-law-001",
+        "othrys-hub-study-buddy-spaced-review-contract-001",
+        "othrys-hub-system-map",
+        "othrys-hub-tiles-hub-cutover-001",
+        "othrys-hub-tiles-pack-review-001",
+        "othrys-hub-tiles-productization-001",
+        "othrys-hub-tiles-studio-001"
+      ],
+      "head": "59fd8385d9b999a2db3eafa7d7d3e25197fbc3c3",
+      "branch": "mission/oros-factory-001",
+      "refCount": 138,
+      "refDigest": "390efd508f9fd933ae7d6feca3727ab3eca7afc7b8231a8db4ff5f63067dcaea",
+      "recoveredBrokenPointers": [
+        "othrys-hub-hephaestus-block-forge-001",
+        "othrys-hub-obsidian-always-sync-001",
+        "othrys-hub-oros-composition-law-001",
+        "othrys-hub-study-buddy-spaced-review-contract-001"
+      ]
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/othrys-v2",
+      "representative": "othrys-v2",
+      "workspaces": [
+        "othrys-v2",
+        "othrys-v2-009a-close",
+        "othrys-v2-009b-panda",
+        "othrys-v2-os-010a",
+        "othrys-v2-verify-007y-b",
+        "othrys-v2-verify-007z",
+        "othrys-v2-verify-008a",
+        "othrys-v2-verify-008b",
+        "othrys-v2-verify-008c",
+        "othrys-v2-verify-008cr",
+        "othrys-v2-verify-008cr2",
+        "othrys-v2-verify-008cs",
+        "othrys-v2-verify-008dr"
+      ],
+      "head": "bf838fb840cd492af9411dd3cbee1c63d7a294cb",
+      "branch": "mission/v2-010o-great-harvest",
+      "refCount": 23,
+      "refDigest": "8ba0a8fa70e77c5ad2a34f165d4742fa00f6be9b1fc002c6f183edba0c307f82",
+      "recoveredBrokenPointers": []
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/othrys-web",
+      "representative": "othrys-web",
+      "workspaces": [
+        "othrys-web"
+      ],
+      "head": "1f76ebc0a7c644305fa0ec000c40c97ccec9a299",
+      "branch": "docs/othrys-web-venture-align-001",
+      "refCount": 20,
+      "refDigest": "ecff9a8cf8ecbbd0f98b6e94664ef70a6e4c6f68fa5bf92e15306d7c5a0b0b04",
+      "recoveredBrokenPointers": []
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/vtc-platform",
+      "representative": "vtc-platform",
+      "workspaces": [
+        "vtc-block-affiliate-extract-001",
+        "vtc-block-analytics-extract-001",
+        "vtc-block-extract-001r",
+        "vtc-platform"
+      ],
+      "head": "032a47ca0fa0731febdf47f45607983ac9b721b4",
+      "branch": "feat/vtc-latam-stores-001",
+      "refCount": 28,
+      "refDigest": "24c5db2996914f8fd45cd5eef49ce30b0e704ca367864ae620d2d70f04d7751a",
+      "recoveredBrokenPointers": []
+    },
+    {
+      "lineage": "local:find-this-item-v2",
+      "representative": "find-this-item-v2",
+      "workspaces": [
+        "find-this-item-v2"
+      ],
+      "head": "24b99ab9b9420c407d9eed01d23e0cf2f52a73d8",
+      "branch": "master",
+      "refCount": 1,
+      "refDigest": "92233bc866e8ba9923da2acdbd0cf75c9324e2be4e5f4cc07438fde34f44b99a",
+      "recoveredBrokenPointers": []
+    },
+    {
+      "lineage": "local:oros-affiliate-offer-transplant",
+      "representative": "oros-affiliate-offer-transplant",
+      "workspaces": [
+        "oros-affiliate-offer-transplant"
+      ],
+      "head": "79062a11dcc9333382746cc1c912cba56ef3492a",
+      "branch": "main",
+      "refCount": 1,
+      "refDigest": "c39f2e47dca5c9e69dc0006449325d9d5029decc36d1625c12ea68f5631da867",
+      "recoveredBrokenPointers": []
+    },
+    {
+      "lineage": "local:oros-image-prep-transplant",
+      "representative": "oros-image-prep-transplant",
+      "workspaces": [
+        "oros-image-prep-transplant"
+      ],
+      "head": "039bb8657f3d55e2eec33b69ef97ff3a37edb39d",
+      "branch": "main",
+      "refCount": 1,
+      "refDigest": "d9bce62e02d40a2ffc66b047514ae3ef75cf6403a6c063776a169bad97e147ee",
+      "recoveredBrokenPointers": []
+    },
+    {
+      "lineage": "local:othrys-blocks",
+      "representative": "othrys-blocks",
+      "workspaces": [
+        "othrys-blocks"
+      ],
+      "head": "b4171d3eb3a28acd30a707892dc7db9c73444a82",
+      "branch": "mission/block-003-extract-001",
+      "refCount": 5,
+      "refDigest": "35b80e8a36f763b3ffa10d0d220bcda6e55f5306ff6aa9ac8c1b057774ca2691",
+      "recoveredBrokenPointers": []
+    },
+    {
+      "lineage": "local:othrys-studio",
+      "representative": "othrys-studio",
+      "workspaces": [
+        "othrys-studio"
+      ],
+      "head": "b236b19d1535ad2876db06fc648c9896045975c2",
+      "branch": "mission/studio-mockup-to-block-001",
+      "refCount": 3,
+      "refDigest": "3dac5caf6a77c8988381423785c431eb7abd2f72e4d32f444a8f15d992d69c4c",
+      "recoveredBrokenPointers": []
+    },
+    {
+      "lineage": "local:othrys-tools",
+      "representative": "othrys-tools",
+      "workspaces": [
+        "othrys-tools"
+      ],
+      "head": "447af79566c298283dd8187d30432d25c73a50a4",
+      "branch": "master",
+      "refCount": 1,
+      "refDigest": "5b34d29fb1707448c67513fcd4c73d031ca7717c556fa2a545e46fbeab67ef73",
+      "recoveredBrokenPointers": []
+    },
+    {
+      "lineage": "local:study-buddy",
+      "representative": "study-buddy",
+      "workspaces": [
+        "study-buddy"
+      ],
+      "head": "c7f6373dc777d03c67dd90315f2832515f169b6b",
+      "branch": "main",
+      "refCount": 1,
+      "refDigest": "f5355f49d96daefd6ca43451102cdb769b6d6a35aa1ee14b5e08c1230f597e13",
+      "recoveredBrokenPointers": []
+    }
+  ],
+  "sourcePayloadCopied": false,
+  "authorityGranted": false,
+  "automaticPromotion": false
+}

@@ -39,3 +39,12 @@ test('quality inspection includes machine-grounded Hecatoncheires posture',()=>{
   assert.deepEqual(finding.evidence.counts,{PRESENT_AND_TESTED:3,PARTIAL:4,ABSENT:4});
   assert.equal(finding.authorityGranted,false);
 });
+test('quality inspection verifies permanent Great Harvest integrity',()=>{
+  const report=inspectMnemosyneQuality(root);
+  const finding=report.findings.find(x=>x.kind==='great-harvest-integrity');
+  assert.ok(finding);
+  assert.equal(finding.severity,'info');
+  assert.ok(finding.evidence.indexedObjects>0);
+  assert.ok(finding.evidence.historicalOnlyObjects>0);
+  assert.equal(finding.authorityGranted,false);
+});
