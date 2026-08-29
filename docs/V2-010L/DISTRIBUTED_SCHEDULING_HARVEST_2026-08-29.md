@@ -47,3 +47,15 @@
 - Kubernetes/Ray/Dask as runtime dependencies: too much control-plane weight for two nodes today.
 - Unbounded actors/workers, automatic autoscaling, same-workspace multi-writer builds.
 - GPU sharing/overcommit before model-specific VRAM and thermal measurements exist.
+
+## Build-system harvest
+- Buck2/Bazel remote execution fingerprints command + inputs, checks an action cache, and executes only on a miss. This is more valuable than duplicating deterministic work.
+- Buck2 deferred materialization shows another useful law: keep intermediate artifacts remote/content-addressed until a consumer actually needs the bytes.
+- Nix remote builds reinforce capability/platform-based delegation and realise-or-fetch semantics.
+- OTHRYS adaptation candidate: `ActionFingerprint -> verified receipt/artifact digest -> reuse if environment/capability/acceptance identity still matches`. This remains harvest only; Mnemosyne is not to be abused as a build cache.
+- Do not add Buck2, Bazel, Nix, Buildbarn or a distributed CAS to the current two-node house merely to copy their architecture.
+
+## Hephaestus hand threshold
+- Coding multiplicity cap remains 3 because coordination and candidate-review cost grows quickly; planner width is not proof of useful physical execution width.
+- Current hardware has only one `engineering.patch` node (Legion), so multi-node AI Hephaestus is not currently available.
+- Legal future execution shapes: isolated disjoint worktrees or isolated same-scope candidate races followed by one Talos fan-in decision.

@@ -6,7 +6,7 @@
 Engineering authority for bounded construction under mission scope.
 
 ## Current house law
-Hephaestus builds; it does not ratify evidence, memory, or constitutional authority.
+Hephaestus builds; it does not ratify evidence, memory, or constitutional authority. Multi-hand planning is bounded to at most three isolated hands: disjoint slices may fan in through verified merge, while same-scope alternatives require separate worktrees and verifier selection of exactly one candidate. Planning does not launch hands or multiply authority.
 
 ## Canonical evidence
 - `V2-002F`
