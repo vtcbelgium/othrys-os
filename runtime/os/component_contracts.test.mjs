@@ -36,5 +36,6 @@ test('every component contract is operationally bounded and evidence-backed',()=
 });
 
 test('Quarry-only surfaces cannot acquire component contracts',()=>{
-  for(const id of ['visual-control']) assert.equal(ids.includes(id),false,id);
+  for(const id of []) assert.equal(ids.includes(id),false,id);
 });
+

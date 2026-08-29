@@ -1,0 +1,12 @@
+{
+  "mission_id": "V2-011I",
+  "title": "Visual Control Observe House Admission",
+  "status": "RUNNING",
+  "phase": "BUILD",
+  "start_sha": "191f2ef3805fd742dba657592899685baebc4648",
+  "objective": "Admit the qualified pure OBSERVE visual evidence kernel without screen capture, input control, network transport or authority.",
+  "scope": ["frame observation validation", "freshness and blankness classification", "stable evidence digest", "before/after comparison", "Talos verification candidate"],
+  "out_of_scope": ["screen capture adapter", "mouse", "keyboard", "live stream", "OCR", "vision model", "autonomous computer use", "network transport"],
+  "authorityGranted": false,
+  "executionStarted": false
+}

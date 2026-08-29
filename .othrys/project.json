@@ -116,6 +116,12 @@
       "label": "Hermes",
       "role": "Universal communications contracts / message lifecycle",
       "statusEvidence": "V2-011F"
+    },
+    {
+      "id": "visual-control",
+      "label": "Visual Control",
+      "role": "Visual observation / evidence contracts",
+      "statusEvidence": "V2-011H"
     }
   ],
   "capabilities": [

@@ -325,6 +325,22 @@
       "boundary": "Hermes normalizes and tracks communication; it does not own authority, product work, execution verification, credentials, live channel providers or storage backends.",
       "path": "books/book-of-hermes/README.md",
       "status": "CURRENT_OS_EDITION"
+    },
+    {
+      "id": "visual-control",
+      "title": "The Book of Visual Control",
+      "role": "Fail-closed visual observation and before/after evidence contracts.",
+      "evidence": [
+        "V2-011H",
+        ".othrys/project.json#systems/visual-control",
+        "runtime/os/visual_control.mjs"
+      ],
+      "legacy": [
+        "Studio visual_proof.py and browser visual-fidelity evidence preserved by the Great Harvest"
+      ],
+      "boundary": "Visual Control observes and compares explicit frame evidence; it does not capture screens, inject input, route nodes, verify execution or grant authority.",
+      "path": "books/book-of-visual-control/README.md",
+      "status": "CURRENT_OS_EDITION"
     }
   ],
   "authorityGranted": false,
