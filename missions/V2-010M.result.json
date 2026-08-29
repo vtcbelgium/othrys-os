@@ -1,0 +1,18 @@
+{
+  "mission_id": "V2-010M",
+  "verdict": "PASS",
+  "start_sha": "a74645d6057ebe209267962cd891a323402050fa",
+  "implementation_sha": "bae7b7ad031b9624efc4fc64ebac032672ad0e4a",
+  "scope": "Mycelium metabolism/adaptive calibration + biological network harvest + compatibility-gated planning Anastomosis",
+  "proof": {
+    "legion_node": "297/297 PASS exact implementation tree",
+    "legion_python": "66/66 Mycelium + 10/10 workers PASS",
+    "t590_node": "297/297 PASS exact implementation commit",
+    "t590_python": "66/66 Mycelium + 10/10 workers PASS",
+    "metabolic_fuzz": "500000 decisions + 100000 route plans; 0 invariant failures",
+    "compatibility_fuzz": "100000 Claims across two compatibility domains + independent verification; exact 10002 producers / 89998 duplicates prevented; no cross-domain fusion",
+    "estate": "38 workspaces; 42144 occurrences; 8072 unique; 8066 archived; 6 excluded; two identical sweeps; catalog 5518c8695e9688bb5fe75460591d18116e2b5421af1ddfa67815707b437dc8f6; archive PASS; quality 0 defects"
+  },
+  "authority_granted": false,
+  "next_legal_action": "Context Metabolism / evidence capsules: adapt proven 061G reduction with requiredEvidenceLost=0 and authorityEvidenceLost=0 before any AI context optimizer."
+}

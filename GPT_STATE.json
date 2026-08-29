@@ -1,13 +1,13 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 107,
+  "sequence": 108,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "a74645d6057ebe209267962cd891a323402050fa",
+  "remote_head_at_last_verified_read": "bae7b7ad031b9624efc4fc64ebac032672ad0e4a",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-010M",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "issued_label": "V2-010M - MYCELIUM METABOLISM / ADAPTIVE CALIBRATION",
     "source": "operator_current_conversation"
   },
@@ -64,10 +64,10 @@
   ],
   "last_control_decision": {
     "mission_id": "V2-010M",
-    "decision": "BIOLOGICAL_METABOLISM_ONLY",
-    "authority": "Re-admit measured resource economy, contraction and calibration from proven OTHRYS stock plus biological-network evidence; no route invention, worker launch or authority expansion."
+    "decision": "METABOLISM_PROVEN",
+    "authority": "Measured metabolism, contraction and compatibility-gated fusion planning are proven; next reduce context/evidence load without losing required or authority evidence."
   },
-  "next_legal_action": "Implement and prove truthful resource reports, seven metabolic modes, measured-knee growth/contraction and project-aware marginal decisions; then stress Legion/T590 and update front-door progression.",
+  "next_legal_action": "Context Metabolism / evidence capsules: adapt proven 061G reduction with requiredEvidenceLost=0 and authorityEvidenceLost=0 before any AI context optimizer.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",
@@ -244,6 +244,11 @@
       "mission_id": "V2-010L",
       "status": "COMPLETE",
       "note": "Housekeeping optimization proved multichannel Mycelium, isolated Hephaestus hands, WorkKey/anastomosis planning, per-project optimization phenotypes, network/concurrency knees and zero-growth test-temp hygiene; implementation independently green on T590."
+    },
+    {
+      "mission_id": "V2-010M",
+      "status": "COMPLETE",
+      "note": "Project-aware Mycelium metabolism/calibration + biological-network harvest; Legion/T590 297 Node + 66 Mycelium + 10 workers; 0-defect deterministic estate; authority unchanged."
     }
   ],
   "git": {
