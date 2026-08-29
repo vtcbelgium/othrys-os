@@ -240,3 +240,5 @@
 
 | 82 | V2-010I | Loop Weaving: actual loop inventory + trace/diagnosis metrics + compression candidates | COMPLETE |
 | 83 | V2-010J | Mnemosyne Intelligence: currentness + conflict/staleness + bounded context + relationship-aware recall | COMPLETE |
+
+| 84 | V2-010K | Library/Vault posture: logical zones + Hecatoncheires current-code audit | RUNNING |

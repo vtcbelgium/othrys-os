@@ -1,0 +1,103 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010K",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010K",
+  "title": "OTHRYS OS Library / Vault Posture",
+  "objective": "Formalize current Great Library, Source Vault, Blueprint Vault, Hall of Echoes, Garden/R&D and Hecatoncheires posture as derived policy over existing Mnemosyne evidence, without creating a second storage engine or authority.",
+  "scale": "STANDARD",
+  "problem": "Knowledge zones and vault/security posture exist as researched law but are not yet machine-checkable against current OTHRYS OS runtime truth.",
+  "outOfScope": [
+    "new database or object store",
+    "encryption/key-manager implementation",
+    "new autonomous security daemon",
+    "new Titan or resident",
+    "automatic knowledge promotion",
+    "Switchyard or model-routing work"
+  ],
+  "risks": [
+    "security theater",
+    "zone metaphor becoming authority",
+    "legacy claims copied without current proof"
+  ],
+  "laws": [
+    "Mnemosyne remains the only admitted knowledge substrate",
+    "zones are derived policy/read models and grant no authority",
+    "Source Vault evidence is content-addressed and immutable-by-identity",
+    "Hall of Echoes preserves history while removing current-first rank",
+    "Garden and R&D remain zero-authority until explicit later admission",
+    "Hecatoncheires claims require current V2 evidence; ABSENT is preferable to theater"
+  ],
+  "slices": [
+    {
+      "id": "zones",
+      "title": "Machine-checkable knowledge-zone policy",
+      "owner": "MNEMOSYNE",
+      "acceptance": "Derived zone classification is deterministic, authority-free, source-backed and tested.",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "MNEMOSYNE",
+          "tasks": [
+            {
+              "id": "zone-policy",
+              "title": "Implement and test logical zone projection",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "runtime/os/knowledge_zones.mjs"
+      ]
+    },
+    {
+      "id": "security-posture",
+      "title": "Current-code Hecatoncheires posture",
+      "owner": "TALOS",
+      "acceptance": "All eleven hands have honest status and current evidence; PRESENT_AND_TESTED claims fail if proof disappears.",
+      "stages": [
+        {
+          "id": "audit",
+          "owner": "TALOS",
+          "tasks": [
+            {
+              "id": "eleven-hands",
+              "title": "Audit and guard all eleven security hands",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "docs/V2-010K/HECATONCHEIRES_POSTURE.json",
+        "runtime/os/hecatoncheires_posture.test.mjs"
+      ]
+    },
+    {
+      "id": "proof",
+      "title": "Boring cross-node verification",
+      "owner": "TALOS",
+      "acceptance": "Legion and T590 independently pass full suites; Mnemosyne estate remains deterministic and defect-free.",
+      "stages": [
+        {
+          "id": "verify",
+          "owner": "TALOS",
+          "tasks": [
+            {
+              "id": "cross-node",
+              "title": "Run repeated Legion/T590 proof and estate verification",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "missions/V2-010K.result.json"
+      ]
+    }
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "9da87377c96e97cb89b47e45914c17c4d13ce0f13f4fa3ec77ade05fb782208e"
+}

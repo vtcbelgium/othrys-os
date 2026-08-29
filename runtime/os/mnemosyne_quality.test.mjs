@@ -31,3 +31,11 @@ test('quality inspection surfaces unresolved provenance without mutating the hou
     rmSync(nowhere,{recursive:true,force:true});
   }
 });
+test('quality inspection includes machine-grounded Hecatoncheires posture',()=>{
+  const report=inspectMnemosyneQuality(root);
+  const finding=report.findings.find(x=>x.kind==='hecatoncheires-posture');
+  assert.ok(finding);
+  assert.equal(finding.severity,'info');
+  assert.deepEqual(finding.evidence.counts,{PRESENT_AND_TESTED:3,PARTIAL:4,ABSENT:4});
+  assert.equal(finding.authorityGranted,false);
+});

@@ -106,3 +106,20 @@ test('derived warnings expose stale and divergent evidence without authority',()
   assert.ok(warnings.some(x=>x.kind==='source-divergence'&&x.digests.length===2));
   assert.ok(warnings.some(x=>x.kind==='atlas-conflicts'));
 });
+
+test('Mnemosyne estate results carry logical zone and Source Vault facets',()=>{
+  const search=searchKnowledge(root,manifest,'Mnemosyne',{limit:12});
+  const estate=search.results.filter(x=>x.id.startsWith('estate-'));
+  assert.ok(estate.length>0);
+  assert.ok(estate.every(x=>x.zone&&x.zone.authorityGranted===false));
+  assert.ok(estate.filter(x=>x.status==='ARCHIVED').every(x=>x.zone.sourceVault===true));
+  const context=assembleKnowledgeContext(root,manifest,'Mnemosyne',{limit:8});
+  assert.ok(context.estateEvidence.every(x=>x.zone&&x.zone.reasons.length>0));
+});
+
+test('Mnemosyne projection points to stable current zone and security policy artifacts',()=>{
+  const view=knowledgeProjection(root,manifest);
+  assert.equal(view.zonePolicy,'docs/KNOWLEDGE_ZONES.md');
+  assert.equal(view.securityPosture,'docs/HECATONCHEIRES_POSTURE.json');
+  assert.equal(view.authorityGranted,false);
+});

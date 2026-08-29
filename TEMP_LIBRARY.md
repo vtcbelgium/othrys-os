@@ -122,8 +122,11 @@ Current mapping:
 | Blocks & Oros | canonical V2 Blocks/Oros evidence + Books; Mnemosyne indexes references |
 | Missions & Evidence | Mission/Work/receipts remain source evidence; Mnemosyne indexes, never overrides |
 
-Future Great Library, Source Vault, Blueprint Vault, Hall of Echoes, Garden and R&D Centre are logical policy zones described in docs/V2-010G/KNOWLEDGE_ZONES.md; they are not separate storage engines or authorities in 010G. Migration is reference-first: no silent duplication, and no item becomes more authoritative because it appears in this index.
+Great Library, Source Vault, Blueprint Vault, Hall of Echoes, Garden and R&D Centre are now current logical policy zones defined in `docs/KNOWLEDGE_ZONES.md` and projected by `runtime/os/knowledge_zones.mjs`. They remain classifications over Mnemosyne, not separate storage engines or authorities. Migration is reference-first: no silent duplication, and no item becomes more authoritative because it appears in this index.
 ## RESEARCH ADDENDUM — PANDAOS REFERENCE
 
 ### Room 02 / Shelf: Research
 - `docs/PANDAOS-HARVEST/PANDAOS_V2_HARVEST_REPORT_2026-08-27.md` — extensive observed PandaOS v1.0.1 architecture/UX harvest: Work State, gates, personas/skills, Atlas, model routing, permissions, local search, limitations and bounded follow-up study. `RESEARCH / DOCUMENTED_ONLY`; no runtime or architecture authority.
+
+### Multiplicity / multichannel candidate - 2026-08-29
+Current Mycelium is proven as an authority-free single-placement router and already models multiple nodes. A future bounded mission should study **3D Mycelium**: route independent work across node/resource patch x capability x work lane/claim. This is not permission for parallel mutation. Talos keeps leases/retries, Trust Canal keeps authority, and independent verification/merge stays external. Hephaestus may later use multiple isolated hands for independent slices or competing candidates, but same-workspace/same-path concurrent mutation remains forbidden. Promote only if measured verified throughput beats coordination, verification and contention cost.

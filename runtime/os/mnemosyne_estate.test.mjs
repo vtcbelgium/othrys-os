@@ -80,3 +80,15 @@ test('estate currentness is derived from live source bytes without authority',()
     rmSync(join(parent,repoA),{recursive:true,force:true}); rmSync(join(parent,repoB),{recursive:true,force:true}); rmSync(f.root,{recursive:true,force:true});
   }
 });
+
+test('estate catalog digest is checkout-portable across LF and CRLF',()=>{
+  const f=fixture();
+  try{
+    const p=join(f.root,'.othrys','knowledge','catalog','estate-catalog.jsonl');
+    const lf=readFileSync(p,'utf8');
+    writeFileSync(p,lf.replace(/\n/g,'\r\n'),'utf8');
+    const result=searchEstateKnowledge(f.root,'boring proof');
+    assert.equal(result.results[0].contentDigest,f.safeHash);
+    assert.equal(result.authorityGranted,false);
+  }finally{rmSync(f.root,{recursive:true,force:true});}
+});

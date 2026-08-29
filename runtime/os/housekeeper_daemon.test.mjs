@@ -10,7 +10,8 @@ test('Housekeeper fast path covers current anti-drift spine',()=>{
   const required=[
     'runtime/os/housekeeping_pulse.test.mjs','runtime/os/mnemosyne_estate.test.mjs','runtime/os/house_books.test.mjs',
     'runtime/os/front_door_contract.test.mjs','runtime/os/house_drift.test.mjs','runtime/os/component_contracts.test.mjs',
-    'runtime/os/loop_laws.test.mjs','runtime/os/loop_registry.test.mjs','runtime/os/loop_trace.test.mjs','runtime/os/loop_projection.test.mjs'
+    'runtime/os/loop_laws.test.mjs','runtime/os/loop_registry.test.mjs','runtime/os/loop_trace.test.mjs','runtime/os/loop_projection.test.mjs',
+    'runtime/os/hecatoncheires_posture.test.mjs'
   ];
   assert.deepEqual([...HOUSEKEEPER_FAST_TESTS],required);
   for(const rel of HOUSEKEEPER_FAST_TESTS)assert.equal(existsSync(join(root,...rel.split('/'))),true,rel);

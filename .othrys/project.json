@@ -209,6 +209,18 @@
       "path": "LOOP_LAWS.md",
       "id": "loop-laws",
       "class": "PROCESSING LAW"
+    },
+    {
+      "label": "OTHRYS OS Knowledge Zones",
+      "path": "docs/KNOWLEDGE_ZONES.md",
+      "id": "knowledge-zones",
+      "class": "KNOWLEDGE / CURRENT POLICY"
+    },
+    {
+      "label": "Hecatoncheires Security Posture",
+      "path": "docs/HECATONCHEIRES_POSTURE.json",
+      "id": "hecatoncheires-posture",
+      "class": "SECURITY / CURRENT POSTURE"
     }
   ],
   "roleBindings": [

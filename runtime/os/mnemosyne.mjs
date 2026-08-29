@@ -3,6 +3,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import { dirname, join, normalize, resolve, sep } from 'node:path';
 import { estateSummary, searchEstateKnowledge } from './mnemosyne_estate.mjs';
 import { buildAtlasProjection } from './atlas_projection.mjs';
+import { classifyKnowledgeZone } from './knowledge_zones.mjs';
 
 export const KNOWLEDGE_SCHEMA='othrys.os.knowledge-item.v1';
 const sha=(value)=>createHash('sha256').update(value).digest('hex');
@@ -107,7 +108,8 @@ export function searchKnowledge(root,manifest,query,{limit=12}={}){
     if(matched.length) results.push({id:item.id,title:item.title,classification:item.classification,status:item.status,score:matched.length/terms.length,matchedTerms:matched,source:item.source,contentDigest:item.contentDigest});
   }
   const estate=searchEstateKnowledge(root,query,{limit:50});
-  const merged=[...results,...estate.results];
+  const estateResults=estate.results.map(item=>({...item,zone:classifyKnowledgeZone(item)}));
+  const merged=[...results,...estateResults];
   merged.sort((a,b)=>b.score-a.score||(Number(a.id.startsWith('estate-'))-Number(b.id.startsWith('estate-')))||a.id.localeCompare(b.id));
   return Object.freeze({schema:'othrys.os.knowledge-search.v1',query:clean(query),results:merged.slice(0,Math.max(1,Math.min(50,limit))),estateCatalogSha256:estate.catalogSha256??null,authorityGranted:false});
 }
@@ -200,5 +202,5 @@ export function exportKnowledge(root,manifest){
 
 export function knowledgeProjection(root,manifest){
   const maintenance=maintainKnowledge(root,manifest);
-  return Object.freeze({schema:'othrys.os.mnemosyne.v1',service:'mnemosyne',lifecycle:['CAPTURE','CLASSIFY','REVIEW','SEARCH','MAINTAIN','EXPORT'],...maintenance,estate:estateSummary(root),writeApiEnabled:false,opaqueMemory:false,authorityGranted:false});
+  return Object.freeze({schema:'othrys.os.mnemosyne.v1',service:'mnemosyne',lifecycle:['CAPTURE','CLASSIFY','REVIEW','SEARCH','MAINTAIN','EXPORT'],...maintenance,estate:estateSummary(root),zonePolicy:'docs/KNOWLEDGE_ZONES.md',securityPosture:'docs/HECATONCHEIRES_POSTURE.json',writeApiEnabled:false,opaqueMemory:false,authorityGranted:false});
 }

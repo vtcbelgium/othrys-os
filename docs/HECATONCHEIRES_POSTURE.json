@@ -1,0 +1,104 @@
+{
+  "schema": "othrys.os.hecatoncheires-posture.v1",
+  "statusVocabulary": ["PRESENT_AND_TESTED", "PARTIAL", "ABSENT"],
+  "authorityGranted": false,
+  "legacySource": "othrys-core-mission036-adr/titan/HECATONCHEIRES.md",
+  "hands": [
+    {
+      "id": 1,
+      "hand": "identity-and-mission-authorization",
+      "status": "PRESENT_AND_TESTED",
+      "mechanisms": ["runtime/trust-canal/admission.ts", "runtime/trust-canal/validation.ts"],
+      "tests": ["runtime/trust-canal/admission.test.ts"],
+      "signals": ["unauthorized actor is rejected before durable admission", "invalid mission id is rejected"],
+      "gap": "Current proof is V2 admission-path scoped; no claim of universal identity infrastructure."
+    },
+    {
+      "id": 2,
+      "hand": "least-privilege-capability-grants",
+      "status": "PARTIAL",
+      "mechanisms": ["runtime/hephaestus/authority.ts"],
+      "tests": ["runtime/hephaestus/authority.test.ts"],
+      "signals": ["mutation scope accepts only exact allowed paths", "platform forbidden scope is rejected"],
+      "gap": "Exact engineering touch scope is proven, but a general principal-bound capability grant store is not present."
+    },    {
+      "id": 3,
+      "hand": "encryption-in-transit-and-at-rest",
+      "status": "ABSENT",
+      "mechanisms": [],
+      "tests": [],
+      "signals": [],
+      "gap": "No current V2 encrypted-at-rest knowledge vault or TLS termination control is implemented in this repo."
+    },
+    {
+      "id": 4,
+      "hand": "integrity-hashes-and-tamper-evidence",
+      "status": "PRESENT_AND_TESTED",
+      "mechanisms": ["runtime/os/mnemosyne_estate.mjs", "runtime/trust-canal/ledger.ts"],
+      "tests": ["runtime/os/mnemosyne_estate.test.mjs", "runtime/trust-canal/admission.test.ts", "runtime/hephaestus/authority.test.ts"],
+      "signals": ["archive verification proves byte identity and exclusion absence", "tampered command is rejected against Trust Canal digest"],
+      "gap": "Integrity is proven for current evidence/admission surfaces; this is not a universal filesystem integrity layer."
+    },
+    {
+      "id": 5,
+      "hand": "append-only-audit",
+      "status": "PRESENT_AND_TESTED",
+      "mechanisms": ["runtime/trust-canal/ledger.ts", "runtime/trust-canal/append-durable.ts"],
+      "tests": ["runtime/trust-canal/admission.test.ts"],
+      "signals": ["admission binds mission correlation digest actor and durable receipt", "torn ledger tail is rejected"],
+      "gap": "Admission ledger is append-only/reconstructible but not hash-chained."
+    },    {
+      "id": 6,
+      "hand": "anomaly-and-enumeration-detection",
+      "status": "ABSENT",
+      "mechanisms": [],
+      "tests": [],
+      "signals": [],
+      "gap": "No current V2 vault-access anomaly, rate, or enumeration detector is implemented."
+    },
+    {
+      "id": 7,
+      "hand": "cross-oros-isolation",
+      "status": "PARTIAL",
+      "mechanisms": ["runtime/os/project_materializer.mjs", "runtime/os/project_manifest.mjs"],
+      "tests": ["runtime/os/project_materializer.test.mjs"],
+      "signals": ["materializer creates only project-local OS substrate and is idempotent", "new Oros workspaces inherit Atlas and Mnemosyne knowledge law"],
+      "gap": "Project-local substrate exists, but no proven cross-Oros durable vault/grant enforcement exists yet."
+    },
+    {
+      "id": 8,
+      "hand": "provider-context-minimization",
+      "status": "PARTIAL",
+      "mechanisms": ["runtime/os/atlas_model.mjs", "tools/mnemosyne/estate_sweep.py"],
+      "tests": ["runtime/os/atlas.test.mjs", "runtime/os/estate_sweep_contract.test.mjs"],
+      "signals": ["Atlas refuses secret-shaped browser data", "estate sweep records secret-shaped metadata but never archives secret-shaped bytes"],
+      "gap": "Secret-shaped exclusion is real; general per-provider minimum-context enforcement is not yet implemented."
+    },    {
+      "id": 9,
+      "hand": "prompt-injection-quarantine",
+      "status": "ABSENT",
+      "mechanisms": [],
+      "tests": [],
+      "signals": [],
+      "gap": "No general prompt-injection quarantine/firewall exists across current V2 knowledge and agent paths."
+    },
+    {
+      "id": 10,
+      "hand": "backup-validation-and-restoration-drills",
+      "status": "PARTIAL",
+      "mechanisms": ["runtime/os/mnemosyne_estate.mjs"],
+      "tests": ["runtime/os/mnemosyne_estate.test.mjs"],
+      "signals": ["archive verification proves byte identity and exclusion absence"],
+      "gap": "Archive integrity is proven, but a destructive restore drill from backup into a fresh house is not yet proven."
+    },
+    {
+      "id": 11,
+      "hand": "export-approval-and-emergency-lockdown",
+      "status": "ABSENT",
+      "mechanisms": [],
+      "tests": [],
+      "signals": [],
+      "gap": "Current Mnemosyne export is read-only and authority-free, but no sensitive-vault export approval gate or emergency lockdown exists."
+    }
+  ]
+}

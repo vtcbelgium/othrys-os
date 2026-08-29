@@ -26,8 +26,9 @@ function load(root){
   const bytes=readFileSync(p.catalog);
   const summary=JSON.parse(readFileSync(p.summary,'utf8'));
   if(summary.schema!==ESTATE_SCHEMA||summary.authorityGranted!==false||summary.automaticPromotion!==false) throw new Error('ESTATE_SUMMARY_INVALID');
-  if(sha(bytes)!==summary.catalogSha256) throw new Error('ESTATE_CATALOG_DIGEST_MISMATCH');
-  const records=bytes.toString('utf8').split(/\r?\n/).filter(Boolean).map(line=>JSON.parse(line));
+  const canonicalCatalog=Buffer.from(bytes.toString('utf8').replace(/\r\n/g,'\n'),'utf8');
+  if(sha(canonicalCatalog)!==summary.catalogSha256) throw new Error('ESTATE_CATALOG_DIGEST_MISMATCH');
+  const records=canonicalCatalog.toString('utf8').split('\n').filter(Boolean).map(line=>JSON.parse(line));
   cache={path:p.catalog,mtimeMs:st.mtimeMs,records,summary};
   if(lexicalCache.catalogSha256!==summary.catalogSha256) lexicalCache={catalogSha256:summary.catalogSha256,lowerBySha:new Map()};
   return {...cache,paths:p};

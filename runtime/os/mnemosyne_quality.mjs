@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { loadProjectManifest } from './project_manifest.mjs';
 import { maintainKnowledge } from './mnemosyne.mjs';
 import { verifyEstateArchive } from './mnemosyne_estate.mjs';
+import { inspectHecatoncheiresPosture } from './hecatoncheires_posture.mjs';
 
 const readJson=p=>JSON.parse(readFileSync(p,'utf8'));
 const readJsonl=p=>readFileSync(p,'utf8').split(/\r?\n/).filter(Boolean).map(JSON.parse);
@@ -48,6 +49,9 @@ export function inspectMnemosyneQuality(root,{projectsRoot=null}={}){
     for(const id of required) if(bookIds.filter(x=>x===id).length!==1) findings.push(finding('book-coverage','high',`House surface ${id} does not have exactly one Book target.`,{id}));
     for(const id of ['prometheus','rhea','switchyard','visual-control']) if(bookIds.includes(id)) findings.push(finding('quarry-promoted-by-doc','high',`Quarry-only surface ${id} appears as a current house Book.`,{id}));
   }
+  const security=inspectHecatoncheiresPosture(root);
+  if(!security.ok) findings.push(finding('hecatoncheires-posture','high','Hecatoncheires posture claims are missing, invalid or unsupported.',{issues:security.issues}));
+  else findings.push(finding('hecatoncheires-posture','info',`Security posture is machine-grounded: ${security.counts.PRESENT_AND_TESTED} present/tested, ${security.counts.PARTIAL} partial, ${security.counts.ABSENT} absent.`,{counts:security.counts}));
   findings.sort((a,b)=>(severityRank[a.severity]??9)-(severityRank[b.severity]??9)||a.kind.localeCompare(b.kind));
   const defects=findings.filter(x=>x.severity!=='info');
   return Object.freeze({schema:'othrys.os.mnemosyne-quality.v1',ok:defects.length===0,defectCount:defects.length,infoCount:findings.length-defects.length,findings,authorityGranted:false,mutationPerformed:false});
