@@ -267,3 +267,7 @@
 
 97. **V2-010U Switchyard / Frugal Heart — COMPLETE/PASS** — 350/350 Node + 78/78 Mycelium + 10/10 workers on Legion/T590; qwen selected, advisory/remote rejected explicitly.
 98. **V2-010V Switchyard House Admission — RUNNING** — manifest + Book + component contract + Atlas/Mnemosyne derived admission; no duplicate routing backend.
+
+99. **V2-010V Switchyard House Admission - COMPLETE/PASS** - resident manifest + Book + contract + Atlas/Mnemosyne; exact T590 proof.
+100. **V2-010W Native Switchyard Deck Projection - COMPLETE/PASS** - duplicate Deck selector removed; native canonical policy projection; exact T590 proof.
+101. **V2-010X Prometheus Resident Qualification - NEXT** - Great Harvest preflight over repo-proven research/search fabric before any House admission.

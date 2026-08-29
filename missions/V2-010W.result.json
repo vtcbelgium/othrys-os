@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-010W",
+  "verdict": "PASS",
+  "start_sha": "e1bdf89bfb55bdc65b47f51d2569d4802846f973",
+  "implementation_sha": "44c0c44f7a6b62ac7305b21e13a1ac2e80f4894f",
+  "scope": "Replace Command Deck hardcoded model selector with resident native Switchyard over canonical project model policy.",
+  "proof": {
+    "legion_scoped": "37/37 PASS",
+    "t590_scoped": "37/37 PASS exact implementation commit",
+    "t590_python": "78/78 Mycelium + 10/10 workers PASS",
+    "full_runtime": "413/415 PASS; two image-prep digest failures independently reproduced unchanged at start SHA e1bdf89",
+    "duplicate_removed": "Command Deck no longer owns a hardcoded candidate roster or selection algorithm",
+    "unknown_trust": "measuredTrust remains explicit null and cannot be fabricated for ranking"
+  },
+  "authority_granted": false,
+  "execution_started": false,
+  "duplicate_backend_created": false,
+  "next_legal_action": "V2-010X Prometheus resident qualification / integration preflight"
+}

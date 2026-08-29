@@ -1,14 +1,14 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 120,
+    "sequence": 122,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read": "e1bdf89bfb55bdc65b47f51d2569d4802846f973",
+    "remote_head_at_last_verified_read": "44c0c44f7a6b62ac7305b21e13a1ac2e80f4894f",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
-        "mission_id": "V2-010W",
+        "mission_id": "V2-010X",
         "status": "RUNNING",
-        "issued_label": "V2-010W - NATIVE SWITCHYARD DECK PROJECTION",
+        "issued_label": "V2-010X - PROMETHEUS RESIDENT QUALIFICATION",
         "source": "operator_current_conversation"
     },
     "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
         "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
     ],
     "last_control_decision": {
-        "mission_id": "V2-010W",
-        "decision": "SWITCHYARD_ADMITTED_REMOVE_DECK_DUPLICATE",
-        "authority": "Projection only; native Switchyard remains selector. No provider, execution, approval or paid escalation authority."
+        "mission_id": "V2-010X",
+        "decision": "GREAT_HARVEST_ADAPT_PROMETHEUS",
+        "authority": "Qualification only; no House admission, network, scheduling or knowledge-promotion authority."
     },
-    "next_legal_action": "Replace Command Deck hardcoded model selector with native Switchyard projection driven from canonical project model policy; preserve Panda-style clarity without duplicate backend.",
+    "next_legal_action": "Inspect harvested Prometheus implementation and tests; classify reusable research/search seams, dependencies and forbidden authority before any V2 adaptation.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",
