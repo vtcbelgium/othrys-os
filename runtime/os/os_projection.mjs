@@ -17,7 +17,7 @@ function projectTemplates(root){
   const dir=join(root,'runtime','os','templates'); if(!existsSync(dir)) return [];
   const out=[];
   for(const name of readdirSync(dir).filter(x=>x.endsWith('.json')).sort()){
-    try{const t=JSON.parse(readFileSync(join(dir,name),'utf8'));if(t.schema!=='othrys.os.project-template.v1')continue;out.push({id:t.templateId,label:t.label,kind:t.kind,description:t.description,defaultRoles:t.defaultRoles??[]});}catch{}
+    try{const t=JSON.parse(readFileSync(join(dir,name),'utf8'));if(t.schema!=='othrys.os.project-template.v1')continue;out.push({id:t.templateId,label:t.label,kind:t.kind,description:t.description,defaultRoles:t.defaultRoles??[],defaultOptimizationProfile:t.defaultOptimizationProfile??'BALANCED'});}catch{}
   }
   return out;
 }
@@ -35,7 +35,7 @@ export function projectOsProjection(root,state,missionResults=0){
   const knowledge=project.knowledge.map(x=>({...x,present:existsSync(join(root,x.path))}));
   return Object.freeze({
     schema:'othrys.os.project-projection.v1',
-    project:{id:project.projectId,label:project.label,kind:project.kind,work:project.work,roles:project.roleBindings??[],operatingModes:project.operatingModes??null,knowledgePolicy:project.knowledgePolicy},
+    project:{id:project.projectId,label:project.label,kind:project.kind,work:project.work,roles:project.roleBindings??[],operatingModes:project.operatingModes??null,optimizationPolicy:project.optimizationPolicy??null,knowledgePolicy:project.knowledgePolicy},
     name:project.label,engine:'V2',missionResults,systems,titans,blocks,models,apps,knowledge,mnemosyne:knowledgeProjection(root,project),templates:projectTemplates(root),
     authorityGranted:false,executionStarted:false
   });

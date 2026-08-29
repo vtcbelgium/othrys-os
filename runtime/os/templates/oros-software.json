@@ -4,6 +4,7 @@
   "label": "Software Oros",
   "kind": "OROS",
   "description": "General software product workspace governed by the OTHRYS V2 motor.",
+  "defaultOptimizationProfile": "BALANCED",
   "defaultRoles": ["planner", "designer", "builder", "reviewer"],
   "work": {
     "phases": ["PLAN", "DESIGN", "BUILD", "REVIEW", "SHIP"],

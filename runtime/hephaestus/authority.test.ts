@@ -1,8 +1,9 @@
 import assert from "node:assert/strict";
-import { mkdtempSync } from "node:fs";
-import { tmpdir } from "node:os";
+
+
 import { join } from "node:path";
 import test from "node:test";
+import { makeTestTemp } from "../test_temp.mjs";
 import { TrustCanalAdmission } from "../trust-canal/admission.ts";
 import { AdmissionLedger } from "../trust-canal/ledger.ts";
 import { buildRepairTask, HephaestusRejectedError, prepareEngineering, verifyMutationScope } from "./authority.ts";
@@ -14,7 +15,7 @@ function command(missionId = "V2-HEPH-001") {
     acceptance: { commands: ["node verify.mjs"], criteria: ["value is exact"] }, maxAttempts: 3 });
 }
 function admit(rawCommand: string, missionId = "V2-HEPH-001") {
-  const path = join(mkdtempSync(join(tmpdir(), "othrys-heph-")), "admission.jsonl");
+  const path = join(makeTestTemp("othrys-heph-"), "admission.jsonl");
   const canal = new TrustCanalAdmission(new AdmissionLedger({ path, now: () => "2026-08-27T09:00:00.000Z" }), [actor]);
   return canal.admit({ missionId, command: rawCommand, actor, context: "engineering" }).record;
 }

@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { loadProjectManifest, validateProjectManifest } from './project_manifest.mjs';
+import { optimizationPolicyFor } from './project_optimization.mjs';
 
 export const PROJECT_CREATE_SCHEMA='othrys.os.project-create.v1';
 export const PROJECT_TEMPLATE_SCHEMA='othrys.os.project-template.v1';
@@ -43,6 +44,7 @@ export function planProjectMaterialization(root,request){
   if(!request||request.schema!==PROJECT_CREATE_SCHEMA) throw new Error('INVALID_PROJECT_CREATE_SCHEMA');
   const base=loadProjectManifest(root),template=loadProjectTemplate(root,request.templateId);
   const projectId=slug(request.projectId),projectLabel=label(request.label);
+  const optimizationPolicy=optimizationPolicyFor(request.optimizationProfile??template.defaultOptimizationProfile??'BALANCED');
   const roleIds=refs(request.roles??template.defaultRoles,'ROLES');
   const capabilityIds=refs(request.capabilities??template.defaultCapabilities,'CAPABILITIES');
   const knowledgeIds=refs(request.knowledge??template.defaultKnowledge,'KNOWLEDGE');
@@ -59,7 +61,7 @@ export function planProjectMaterialization(root,request){
     parentProjectId:base.projectId,engineRef:{projectId:base.projectId,mode:'GOVERNED_V2'},
     paths:{work:'.othrys/work',knowledge:'.othrys/knowledge',rules:'.othrys/rules',capabilities:'.othrys/capabilities',ux:'.othrys/ux',logs:'.othrys/logs'},
     work:structuredClone(template.work),authorities,systems:trust?[structuredClone(trust)]:[],capabilities,
-    roleBindings,modelPolicy:structuredClone(base.modelPolicy),integrations,knowledge,knowledgePolicy:structuredClone(base.knowledgePolicy),atlasPolicy:structuredClone(base.atlasPolicy),
+    roleBindings,modelPolicy:structuredClone(base.modelPolicy),integrations,knowledge,knowledgePolicy:structuredClone(base.knowledgePolicy),atlasPolicy:structuredClone(base.atlasPolicy),optimizationPolicy,
     operatingModes:{...structuredClone(base.operatingModes),default:template.defaultOperatingMode,declarativeGrant:false},
     authorityGranted:false,executionStarted:false
   };

@@ -6,7 +6,7 @@
 Colony and node routing across OTHRYS machines.
 
 ## Current house law
-Mycelium routes work; it does not create mission authority or trust a node by presence alone. Current multichannel planning is three-dimensional only in the routing sense: resource patch x capability x independent work lane. It plans bounded placements but does not launch workers, own leases, or permit shared-path parallel mutation. Current planner supports PACK/SPREAD and strict all-or-nothing variants, cumulative advertised-capacity accounting, and optional saturation-aware scoring; these remain routing policy only.
+Mycelium routes work; it does not create mission authority or trust a node by presence alone. Current multichannel planning is three-dimensional only in the routing sense: resource patch x capability x independent work lane. It plans bounded placements but does not launch workers, own leases, or permit shared-path parallel mutation. Current planner supports PACK/SPREAD and strict all-or-nothing variants, cumulative advertised-capacity accounting, and optional saturation-aware scoring; these remain routing policy only. Current V2 also has deterministic WorkKey identity and planning-only Anastomosis: equivalent shareable Claims may map to one producer plan, but Claims never merge and independent-verification Claims never fuse. No CAS, producer join, artifact reuse, or execution authority is admitted by that planner.
 
 ## Canonical evidence
 - `V2-004D`

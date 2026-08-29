@@ -1,8 +1,9 @@
 import test from "node:test";
+import { makeTestTemp } from "../test_temp.mjs";
 import assert from "node:assert/strict";
-import { mkdtempSync, writeFileSync } from "node:fs";
+import { writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { tmpdir } from "node:os";
+
 import { acceptCandidate, canRelease, FactoryRunError, loadFactoryRun, newFactoryRun, recordVerifiedCandidate, resumeDecision, saveFactoryRun } from "./run.ts";
 
 function candidate() {
@@ -11,7 +12,7 @@ function candidate() {
 }
 
 test("verified candidate persists and reloads", () => {
-  const dir = mkdtempSync(join(tmpdir(), "othrys-factory-")); const path = join(dir, "run.json");
+  const dir = makeTestTemp("othrys-factory-"); const path = join(dir, "run.json");
   saveFactoryRun(path, candidate()); const loaded = loadFactoryRun(path);
   assert.equal(loaded.status, "WAITING_OPERATOR_ACCEPTANCE");
   assert.equal(loaded.candidateCommit, "abc123");
@@ -36,7 +37,7 @@ test("matching acceptance enables release but does not perform it", () => {
 });
 
 test("corrupt durable run fails closed", () => {
-  const dir = mkdtempSync(join(tmpdir(), "othrys-factory-")); const path = join(dir, "run.json");
+  const dir = makeTestTemp("othrys-factory-"); const path = join(dir, "run.json");
   writeFileSync(path, "{broken", "utf8");
   assert.throws(() => loadFactoryRun(path), (e) => e instanceof FactoryRunError && e.code === "RUN_CORRUPT");
 });

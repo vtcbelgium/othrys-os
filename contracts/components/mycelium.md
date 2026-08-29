@@ -4,11 +4,11 @@
 **Book:** `books/book-of-mycelium/README.md`
 **Owner:** `GPT_CONTROL`
 **Purpose:** Colony and node routing across OTHRYS machines.
-**Inputs:** node envelopes; capabilities; health; work resource requirements
-**Outputs:** authority-free single-route selection, bounded capacity-checked PACK/SPREAD placement plans, and node telemetry
+**Inputs:** node envelopes; capabilities; health; work resource requirements; deterministic operation/input identities; consumer Claims
+**Outputs:** authority-free single-route selection, bounded capacity-checked PACK/SPREAD placement plans, deterministic WorkKeys, planning-only duplicate-computation groups, and node telemetry
 **Dependencies:** Legion/T590 node adapters; Talos; worker contracts
 **Allowed touch:** routing/telemetry state, bounded authority-free placement planning, and bounded node invocation through proven worker paths
-**Forbidden touch:** treat presence as trust; create mission authority; hardcode a machine as semantic owner; parallelize shared-path mutation
+**Forbidden touch:** treat presence as trust; create mission authority; hardcode a machine as semantic owner; parallelize shared-path mutation; merge Claims/authority; fuse independent verification; treat WorkKey equality as reuse permission
 **Authority:** NO_SELF_GRANT -- routing selects feasible labor only
 **Evidence:** V2-004D; .othrys/project.json#systems/mycelium
 

@@ -54,3 +54,13 @@ test('new Oros workspaces inherit Atlas and Mnemosyne knowledge law',()=>{
   assert.equal(plan.manifest.atlasPolicy.semanticGates,'NINE_MUSES');
   assert.equal(plan.manifest.knowledgePolicy.service,'mnemosyne');
 });
+test('project materialization carries a bounded optimization phenotype',()=>{
+  const balanced=planProjectMaterialization(root,request);
+  assert.equal(balanced.manifest.optimizationPolicy.profile,'BALANCED');
+  assert.equal(balanced.manifest.optimizationPolicy.declarativeGrant,false);
+  const batch=planProjectMaterialization(root,{...request,projectId:'batch-oros',optimizationProfile:'BATCH'});
+  assert.equal(batch.manifest.optimizationPolicy.profile,'BATCH');
+  assert.equal(batch.manifest.optimizationPolicy.maxChannels,8);
+  assert.equal(batch.manifest.optimizationPolicy.sharedMutation,false);
+  assert.throws(()=>planProjectMaterialization(root,{...request,optimizationProfile:'YOLO'}),/INVALID_OPTIMIZATION_PROFILE/);
+});

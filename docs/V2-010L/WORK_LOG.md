@@ -29,3 +29,15 @@
 - Optimization law: operate at measured throughput knee, not maximum concurrency. Higher concurrency remains available for experiments but is not the default recommendation.
 - Remote-execution harvest: Buck2/Bazel action digest + action cache + CAS and deferred materialization, plus Nix remote realisation, suggest a later OTHRYS action-fingerprint -> verified artifact receipt cache. Not implemented in 010L.
 - Disposable Git worktree drill: two disjoint hand branches changed separate files and cherry-picked cleanly into integration; two same-file alternative candidates remained isolated while integration stayed unchanged. First drill exposed unsupported `git cherry-pick -q`; rerun without that flag passed. Scratch repo/worktrees were removed after each drill.
+- Repo-first maximization audit re-read old Mycelium 061F/061G/061H/062 proofs before adding current code. Decision: adapt tiny proven primitives into V2; do not resurrect old ~32.7k-line organism wholesale.
+- Added deterministic timestamp-free WorkKey v1 with stricter explicit NONDETERMINISTIC nonce. Focused 6/6; full Mycelium 45/45 at that gate.
+- Added six portable project optimization phenotypes: MINIMAL, INTERACTIVE, BALANCED, BATCH, VERIFICATION_HEAVY, GPU_HEAVY. Project policy contains no Legion/T590 identity and cannot grant authority/capabilities/models. Focused project suite 14/14.
+- Current OTHRYS OS control plane declares VERIFICATION_HEAVY; new software Oroi default BALANCED and may explicitly request another finite profile.
+- Added planning-only Anastomosis. Claims remain distinct; shareable equivalent WorkKeys may share one producer plan; independent-verification Claims never fuse. Focused 5/5; full Mycelium 50/50.
+- Anastomosis stress: 100,000 equivalent shareable Claims -> 1 producer plan / 99,999 duplicates prevented in ~69.4 ms. 10,000 independent verifier Claims -> 10,000 producer plans / 0 dedupe in ~13.7 ms.
+- Housekeeping found severe historic temp-test residue: T590 1,320 OTHRYS temp artifacts; Legion 2,986. Current leak sources were Trust Canal, Talos gate, Heph authority and Factory run tests.
+- Added shared test-temp retraction helper and migrated the four current leak families. Focused 25/25 PASS with temp count delta exactly 0.
+- Maximization audit written at docs/V2-010L/OTHRYS_OS_MAXIMIZATION_AUDIT_2026-08-29.md, including per-project execution phenotypes and research-grade demonstration target.
+- Safe stale-scratch reclamation (known current test prefixes, older than two hours only): Legion pruned 1,891 directories; T590 pruned 1,003. Newer/possibly active roots were left untouched.
+- Final pre-commit estate: two real sweeps PASS with identical catalog SHA `2837570e0a6b896d6a5d076d690dc7ec962294a8da4facb97f088f8ffd9e9594`; 38 workspaces / 42,138 occurrences / 8,066 unique / 8,060 archived / 6 excluded. Archive verification PASS: 0 missing / 0 mismatched / 0 excluded bytes present.
+- Exact Legion implementation tree: 297/297 Node + 50/50 Mycelium Python + 10/10 worker Python, diff clean, full-suite OTHRYS temp-root delta 0.

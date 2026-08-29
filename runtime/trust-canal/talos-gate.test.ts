@@ -1,15 +1,16 @@
 import assert from "node:assert/strict";
-import { mkdtempSync } from "node:fs";
-import { tmpdir } from "node:os";
+
+
 import { join } from "node:path";
 import test from "node:test";
+import { makeTestTemp } from "../test_temp.mjs";
 import { TrustCanalAdmission, AuthorityRejectedError } from "./admission.ts";
 import { AdmissionLedger } from "./ledger.ts";
 import { runLoop } from "../talos-kernel/loop.ts";
 
 const allowed = { role: "gpt-control", channel: "v2" };
 function gate() {
-  const path = join(mkdtempSync(join(tmpdir(), "othrys-gate-")), "admission.jsonl");
+  const path = join(makeTestTemp("othrys-gate-"), "admission.jsonl");
   return new TrustCanalAdmission(new AdmissionLedger({ path }), [allowed]);
 }
 

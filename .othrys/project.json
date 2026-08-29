@@ -265,6 +265,20 @@
       "status": "PROVEN"
     }
   ],
+  "optimizationPolicy": {
+    "schema": "othrys.os.project-optimization.v1",
+    "profile": "VERIFICATION_HEAVY",
+    "objective": "VERIFIED_USEFUL_WORK_PER_METABOLIC_COST",
+    "latencyClass": "BALANCED",
+    "placementHint": "SPREAD",
+    "maxChannels": 4,
+    "maxHephaestusHands": 1,
+    "verificationFanout": 2,
+    "reusePreference": "SAFE_DETERMINISTIC",
+    "sharedMutation": false,
+    "claimsMerge": false,
+    "declarativeGrant": false
+  },
   "operatingModes": {
     "enforcedBy": "trust-canal",
     "modes": [

@@ -1,8 +1,9 @@
-﻿import assert from "node:assert/strict";
-import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
-import { tmpdir } from "node:os";
+import assert from "node:assert/strict";
+import { readFileSync, writeFileSync } from "node:fs";
+
 import { join } from "node:path";
 import test from "node:test";
+import { makeTestTemp } from "../test_temp.mjs";
 import { TrustCanalAdmission, AuthorityRejectedError } from "./admission.ts";
 import { AdmissionLedger, LedgerCorruptionError, MissionConflictError } from "./ledger.ts";
 import { BoundaryValidationError } from "./validation.ts";
@@ -11,7 +12,7 @@ const NOW = "2026-08-27T09:00:00.000Z";
 const ACTOR = { role: "gpt-control", channel: "v2" };
 function input(command = "build block") { return { missionId: "V2-TC-001", command, actor: ACTOR, context: "bounded" }; }
 function makeCanal() {
-  const dir = mkdtempSync(join(tmpdir(), "othrys-tc-"));
+  const dir = makeTestTemp("othrys-tc-");
   const path = join(dir, "admission.jsonl");
   const ledger = new AdmissionLedger({ path, now: () => NOW });
   return { path, ledger, canal: new TrustCanalAdmission(ledger, [ACTOR]) };
@@ -61,7 +62,7 @@ test("ledger reconstructs durable admission", () => {
 });
 
 test("torn ledger tail is rejected", () => {
-  const dir = mkdtempSync(join(tmpdir(), "othrys-tc-torn-"));
+  const dir = makeTestTemp("othrys-tc-torn-");
   const path = join(dir, "admission.jsonl");
   writeFileSync(path, '{"broken":true}', "utf8");
   assert.throws(() => new AdmissionLedger({ path }), (e) => e instanceof LedgerCorruptionError && e.code === "LEDGER_TORN_TAIL");

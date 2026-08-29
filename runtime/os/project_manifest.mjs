@@ -1,5 +1,6 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { validateOptimizationPolicy } from './project_optimization.mjs';
 
 export const PROJECT_SCHEMA='othrys.os.project.v1';
 
@@ -37,6 +38,7 @@ export function validateProjectManifest(manifest){
   const ap=manifest.atlasPolicy;
   if(!ap||ap.service!=='atlas'||ap.derivedFrom!=='MNEMOSYNE_AND_V2_EVIDENCE'||ap.readOnly!==true||ap.secretFree!==true||ap.deterministicDigest!==true||ap.semanticGates!=='NINE_MUSES'||ap.declarativeGrant!==false) throw new Error('INVALID_ATLAS_POLICY');
   if(manifest.operatingModes?.declarativeGrant!==false) throw new Error('OPERATING_MODES_CANNOT_GRANT_AUTHORITY');
+  if(manifest.optimizationPolicy) validateOptimizationPolicy(manifest.optimizationPolicy);
   if(!Array.isArray(manifest.work?.phases)||manifest.work.phases.length<4) throw new Error('INVALID_WORK_PHASES');
   if(manifest.authorityGranted===true||manifest.executionStarted===true) throw new Error('PROJECT_MANIFEST_CANNOT_GRANT_AUTHORITY');
   return Object.freeze(manifest);
