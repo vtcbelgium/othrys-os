@@ -7,7 +7,7 @@
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-010J",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "issued_label": "V2-010J - OTHRYS OS MNEMOSYNE INTELLIGENCE",
     "source": "operator_current_conversation"
   },
@@ -67,7 +67,7 @@
     "decision": "LOOP_WEAVING_ONLY",
     "authority": "Inventory, constrain, trace and optimize existing loops; no scheduler or authority expansion."
   },
-  "next_legal_action": "Implement deterministic source currentness/divergence first, then explicit context budgets and relationship-aware recall reasons; no embeddings/database.",
+  "next_legal_action": "Begin bounded Library/Vault posture work from OTHRYS_OS_BUILD_PLAN.md using proven recovered stock; no new authority or daemon.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

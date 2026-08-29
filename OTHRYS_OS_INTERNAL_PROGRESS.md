@@ -2,7 +2,7 @@
 
 **Status:** LIVE FRONT-DOOR CONTROL FILE
 **Owner:** GPT Control / House Manager
-**Last evidence update:** 2026-08-29 - V2-010J RUNNING; Mnemosyne currentness/divergence, bounded context, relation reasons and lexical-cache optimization focused tests PASS; full cross-node proof pending.
+**Last evidence update:** 2026-08-29 - V2-010J COMPLETE; Legion 271/271 Node + 36/36 Python; T590 271/271 Node + 36/36 Python; deterministic estate and Mnemosyne defects 0; warm recall ~0.20-0.28s and 12-item context capsule ~0.22s on Legion.
 **Update law:** update whenever a room materially gains/loses capability, proof, scope, or maturity. Percentages are house-manager estimates against the intended mature room, never proof by themselves.
 
 ## Current house progression
