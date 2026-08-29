@@ -220,10 +220,27 @@
         ".othrys/project.json#modelPolicy"
       ],
       "legacy": [
-        "Switchyard prototype is deferred stock only"
+        "quarry/deferred/V2-010F-switchyard.partial.mjs"
       ],
-      "boundary": "Model identity is labor, not authority. Switchyard is not yet a resident system and this Book must not claim otherwise.",
+      "boundary": "Model identity is labor, not authority. Switchyard may select among proven legal labor but cannot grant execution or approval authority.",
       "path": "books/book-of-models/README.md",
+      "status": "CURRENT_OS_EDITION"
+    },
+    {
+      "id": "switchyard",
+      "title": "The Book of Switchyard",
+      "role": "Deterministic capability and model-labor selection over predeclared legal qualified candidates.",
+      "evidence": [
+        "V2-010U",
+        ".othrys/project.json#systems/switchyard",
+        "runtime/os/switchyard.mjs"
+      ],
+      "legacy": [
+        "quarry/deferred/V2-010F-switchyard.partial.mjs",
+        "othrys-hub Mission 008a Auto Frugal evidence in Great Harvest"
+      ],
+      "boundary": "Switchyard selects and explains; it does not discover credentials, certify builders, grant authority, launch execution, or auto-approve paid escalation.",
+      "path": "books/book-of-switchyard/README.md",
       "status": "CURRENT_OS_EDITION"
     }
   ],

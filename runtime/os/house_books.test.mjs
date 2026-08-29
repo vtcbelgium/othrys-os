@@ -27,7 +27,7 @@ test('every current OTHRYS OS house surface has exactly one Book',()=>{
 });
 test('quarry-only systems cannot appear as current house Books',()=>{
   const ids=new Set(registry.books.map(x=>x.id));
-  for(const id of ['prometheus','rhea','switchyard','visual-control']) assert.equal(ids.has(id),false,id);
+  for(const id of ['prometheus','rhea','visual-control']) assert.equal(ids.has(id),false,id);
 });
 
 test('OTHRYS OS edition Books are evidence-bound and non-authoritative',()=>{
