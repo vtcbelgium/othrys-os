@@ -1,0 +1,72 @@
+{
+  "mission_id": "V2-010L",
+  "title": "OTHRYS OS Housekeeping Optimization / Multichannel Study",
+  "goal": "Turn around and optimize current OTHRYS OS residents through measurement, stress and bounded multiplicity, admitting parallelism only where independent work can increase verified throughput without sharing authority.",
+  "artifact_profile": "os-substrate",
+  "work": {
+    "scale": "MISSION",
+    "problem": "Current residents are stable but multiplicity, routing cost and duplicate-work economics have not been qualified as one measured housekeeping pass.",
+    "out_of_scope": [
+      "No same-path concurrent mutation",
+      "No new scheduler or authority plane",
+      "No automatic mission fan-out",
+      "No unbounded worker pool",
+      "No model/provider routing changes"
+    ],
+    "risks": [
+      "parallelism creates contention instead of throughput",
+      "duplicate workers create ambiguous evidence",
+      "Mycelium becomes a scheduler",
+      "Hephaestus hands collide in one workspace"
+    ]
+  },
+  "laws": [
+    "Measure before multiplying.",
+    "Verified useful throughput, not utilization, is the optimization target.",
+    "Mycelium may plan placements but Talos owns leases/lifecycle and Trust Canal owns authority.",
+    "Parallel mutation of the same path set is forbidden.",
+    "Multiplicity is bounded and must remain safe when reduced back to one channel."
+  ],
+  "slices": [
+    {
+      "id": "routing",
+      "title": "Routing efficiency and bounded multichannel planning",
+      "owner": "mycelium",
+      "stages": [
+        {
+          "id": "build",
+          "owner": "mycelium",
+          "tasks": [
+            {
+              "id": "mycelium-plan",
+              "title": "Optimize single route and qualify bounded placement planning"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "runtime/mycelium/colony.py"
+      ]
+    },
+    {
+      "id": "proof",
+      "title": "Stress and cross-node proof",
+      "owner": "talos",
+      "stages": [
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "stress",
+              "title": "Run stress, failure and cross-node verification"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "docs/V2-010L/WORK_LOG.md"
+      ]
+    }
+  ]
+}

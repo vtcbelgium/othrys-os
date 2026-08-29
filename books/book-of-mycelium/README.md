@@ -6,7 +6,7 @@
 Colony and node routing across OTHRYS machines.
 
 ## Current house law
-Mycelium routes work; it does not create mission authority or trust a node by presence alone.
+Mycelium routes work; it does not create mission authority or trust a node by presence alone. Current multichannel planning is three-dimensional only in the routing sense: resource patch x capability x independent work lane. It plans bounded placements but does not launch workers, own leases, or permit shared-path parallel mutation.
 
 ## Canonical evidence
 - `V2-004D`

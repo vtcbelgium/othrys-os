@@ -1,6 +1,6 @@
 import unittest
 
-from colony import quarantine, route_live
+from colony import quarantine, route_live, route_plan
 
 
 def env(node_id, gpu=0, cpu=6, queue=0, state="READY", caps=None):
@@ -46,3 +46,24 @@ class ColonyTests(unittest.TestCase):
 
 
 if __name__ == "__main__": unittest.main()
+from colony import route_plan
+
+class MultichannelRoutingTests(unittest.TestCase):
+    def test_multichannel_plan_is_bounded_distinct_and_authority_free(self):
+        nodes=[env("a",0,8),env("b",0,8),env("c",0,8)]
+        plan=route_plan(nodes,"verification.sha256@1",{"cpu_threads":1},channels=2)
+        self.assertEqual(len(plan["placements"]),2)
+        self.assertEqual(len({x["node_id"] for x in plan["placements"]}),2)
+        self.assertFalse(plan["authorityGranted"]); self.assertFalse(plan["executionStarted"])
+
+    def test_multichannel_rejects_shared_mutation_and_unbounded_width(self):
+        nodes=[env("a",0,8),env("b",0,8)]
+        with self.assertRaisesRegex(ValueError,"MULTICHANNEL_WORK_MODE_FORBIDDEN"):
+            route_plan(nodes,"verification.sha256@1",{},channels=2,work_mode="SHARED_MUTATION")
+        with self.assertRaisesRegex(ValueError,"CHANNEL_BUDGET_INVALID"):
+            route_plan(nodes,"verification.sha256@1",{},channels=9)
+
+    def test_duplicate_node_envelopes_cannot_fake_extra_channels(self):
+        a=env("a",0,8)
+        plan=route_plan([a,a,env("b",0,8)],"verification.sha256@1",{},channels=3)
+        self.assertEqual([x["node_id"] for x in plan["placements"]],["a","b"])

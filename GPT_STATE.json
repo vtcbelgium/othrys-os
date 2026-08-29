@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 104,
+  "sequence": 105,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "9fb6b5e7ce04af297d932a0d812b633e2ec4a441",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-010K",
-    "status": "COMPLETE",
-    "issued_label": "V2-010K - OTHRYS OS LIBRARY / VAULT POSTURE",
+    "mission_id": "V2-010L",
+    "status": "RUNNING",
+    "issued_label": "V2-010L - HOUSEKEEPING OPTIMIZATION / MULTICHANNEL STUDY",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-010K",
-    "decision": "PASS_CROSS_NODE",
-    "authority": "Library/Vault posture admitted as authority-free read/policy layer; Hecatoncheires posture is evidence-bound and may report ABSENT."
+    "mission_id": "V2-010L",
+    "decision": "MEASURE_THEN_MULTIPLY",
+    "authority": "Optimize existing residents; bounded multichannel planning only where independence and verifier boundaries are explicit."
   },
-  "next_legal_action": "Open a bounded housekeeping optimization mission: measure current bottlenecks and duplicate-work opportunities; study multichannel/3D Mycelium and isolated multi-hand Hephaestus without parallel same-path mutation or authority expansion.",
+  "next_legal_action": "Benchmark current routing and duplicate-work economics; remove algorithmic waste first; then qualify bounded multichannel planning without execution authority.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",
