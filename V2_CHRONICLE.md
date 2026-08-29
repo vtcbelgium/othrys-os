@@ -549,3 +549,7 @@ Housekeeping resolved a false drift signal in the durable Work layer. Compiled t
 ## 2026-08-29 - V2-010G housekeeping closes boringly
 
 Housekeeping closed only after the exact implementation commit was fast-forwarded to origin/main and independently verified on T590. Legion proved 236/236 Node and 36/36 Python; T590 proved 236/236 Node and the same 36 Python tests through native unittest. Mnemosyne estate generation was deterministic across repeated sweeps, archive verification passed, quality reported zero defects, and front-door/Book/Block-map drift guards were green. No new product capability, Titan, model dependency, UI authority or automatic promotion path was added. The front-door Build Plan now advances to Component Contracts as a separate bounded mission.
+
+## 2026-08-29 ? V2-010H Component Contracts and loop-law hardening
+
+Fourteen current-house component contracts now align Book identity, ownership, IO, dependencies, forbidden touch, authority, evidence and bounded Loop Laws fields. Loop research added goal-state reflection, structured diagnosis, verifier-gated completion, trace compression and capability-gated optimization. Estate scanning now excludes local `.othrys/logs` and `.othrys/runtime`; live Housekeeper activity cannot perturb Mnemosyne. Legion and T590: 244/244 Node + 36/36 Python PASS.

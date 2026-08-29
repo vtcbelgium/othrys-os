@@ -1,13 +1,13 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 100,
+  "sequence": 101,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "25fa48d24c948cd982774438c92d448e581f9c8b",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-010H",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "issued_label": "V2-010H - OTHRYS OS COMPONENT CONTRACTS AND ANTI-DRIFT LINT",
     "source": "operator_current_conversation"
   },
@@ -67,7 +67,7 @@
     "decision": "COMPONENT_CONTRACTS_ONLY",
     "authority": "Describe and lint existing house boundaries; no capability or authority expansion."
   },
-  "next_legal_action": "Define compact component contract law, materialize exactly one contract per current Book target, and machine-check drift.",
+  "next_legal_action": "Start V2-010I Loop Weaving as a new bounded mission from the verified component contracts and loop research.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",
