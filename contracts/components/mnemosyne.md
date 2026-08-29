@@ -4,8 +4,8 @@
 **Book:** `books/book-of-mnemosyne/README.md`
 **Owner:** `MNEMOSYNE`
 **Purpose:** Knowledge governance and institutional memory over explicit evidence.
-**Inputs:** explicit project files; inbox captures; reviewed evidence; estate provenance; Great Harvest Git lineage/commit metadata
-**Outputs:** search/full-context/compact-evidence-transport/export/quality/currentness/knowledge-zone/reconstructible knowledge views plus non-authoritative Great Harvest quarry indexes
+**Inputs:** explicit project files; inbox captures; reviewed evidence; estate provenance; Great Harvest Git lineage/commit metadata and live-only source fingerprints
+**Outputs:** search/full-context/compact-evidence-transport/export/quality/currentness/knowledge-zone/reconstructible knowledge views plus non-authoritative Great Harvest Git/live-only quarry indexes
 **Dependencies:** Git/Mission evidence; Books; estate catalog; Great Harvest catalogs; Nine Muses; Atlas read model
 **Allowed touch:** governed knowledge inbox/review/catalog/archive operations plus derived zone/currentness/transport read models and rebuildable catalog-digest-keyed lexical caches under explicit mission law
 **Forbidden touch:** research autonomously; build/execute; silently promote; let derived index replace source truth; drop required/authority evidence; expand frozen context identities; treat cached hit sets or digest references as trust

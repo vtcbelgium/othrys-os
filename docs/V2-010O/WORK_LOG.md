@@ -16,12 +16,13 @@ The repeated redesign problem is now treated as a knowledge-infrastructure defec
 - Indexes commit SHA/date/subject as an intent ledger.
 - Historical-only objects stay explicitly historical; generated Mnemosyne catalogs never self-index.
 - Four stale WSL-pointer Hub worktrees are recovered through their still-live parent Hub refs instead of disappearing from coverage.
+- Live-only layer fingerprints uncommitted and non-Git code/config without copying payload; this surfaced Office Buddy Mini and active VTC WIP that Git-only history would miss.
 ## Baseline census
 - 40 non-disposable workspaces -> 12 repository lineages.
-- 9,330 recoverable source-code/source-config objects after separating docs/state/evidence back into the Mnemosyne Estate.
-- 3,537 current objects; 5,793 historical-only objects.
-- 3,092 commits indexed.
-- 1,439 cross-lineage duplicate Git objects.
+- 9,338 recoverable source-code/source-config objects after separating docs/state/evidence back into the Mnemosyne Estate.
+- 3,537 current objects; 5,801 historical-only objects.
+- 3,094 commits indexed.
+- 1,289 cross-lineage duplicate Git objects.
 - ~213.6 MB represented by Git object identity without source payload duplication.
 
 ## Defects caught during implementation
@@ -35,6 +36,7 @@ The repeated redesign problem is now treated as a knowledge-infrastructure defec
 - `docs/GREAT_HARVEST.md`
 - `.othrys/knowledge/catalog/great-harvest-code.jsonl`
 - `.othrys/knowledge/catalog/great-harvest-commits.jsonl`
+- `.othrys/knowledge/catalog/great-harvest-live.jsonl`
 - `.othrys/knowledge/catalog/great-harvest-summary.json`
 - `tools/mnemosyne/great_harvest.py`
 - `tools/mnemosyne/great_harvest_query.py`
@@ -51,5 +53,10 @@ The repeated redesign problem is now treated as a knowledge-infrastructure defec
 ## Source/evidence boundary refinement
 - Great Harvest excludes `docs/`, `missions/`, `receipts/`, `admissions/`, `state/`, `.othrys/` and `GPT_STATE.json`; those remain in Mnemosyne Estate.
 - This removed duplicated evidence/config noise and prevents ordinary closeout bookkeeping from churning the source-code catalog.
-- Final stable code digest: `ee94a2236b41840c3bacbbb0da771c36cc7675b181b61ac7f0518192726926a3`.
-- Final stable commit digest at implementation checkpoint: `8199fbe36db24098224fdf089bad1fa7449706f84e68801018f899da542099a7`.
+- Final stable code digest: `ee182a71706bf1dd1cab3fa2f233bb88a5cf58060d3b335b3418d855986fb209`.
+- Final stable commit digest at implementation checkpoint: `788ac2a7fb1cea8cfac5a8d10b8d8cf529f1840c305034fbb1a6f56f2305f737`.
+- Final live-only digest: `99e7ef6db2c75831359395f7bce68026d51dbc6d1fcdcde953fe3a651ce80496`; 180 specimens / 3,126,270 bytes / no payload copy.
+
+## Final snapshot boundary
+- Final deterministic catalogs are refreshed through implementation commit `cd02787d739cf3172bbbeb93d42f9729ec3c0cf5`.
+- The later proof/closeout commit is intentionally not required to index itself; otherwise a commit catalog would recursively change on every catalog-closing commit. The permanent preflight refreshes the Harvest before future design.

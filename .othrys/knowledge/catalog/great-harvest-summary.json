@@ -2,21 +2,21 @@
   "schema": "othrys.os.great-harvest.summary.v1",
   "workspaceCount": 40,
   "lineageCount": 12,
-  "indexedObjects": 9330,
+  "indexedObjects": 9338,
   "currentObjects": 3537,
-  "historicalOnlyObjects": 5793,
-  "indexedBytes": 213629343,
+  "historicalOnlyObjects": 5801,
+  "indexedBytes": 213691915,
   "crossLineageDuplicateObjects": 1289,
   "kinds": {
-    "CODE": 8180,
+    "CODE": 8188,
     "CONFIG": 1150
   },
   "languages": {
     "ts": 4097,
-    "py": 1856,
+    "py": 1861,
     "json": 978,
     "jsx": 888,
-    "mjs": 720,
+    "mjs": 723,
     "js": 316,
     "tsx": 173,
     "jsonl": 94,
@@ -29,11 +29,20 @@
     "ps1": 5,
     "yaml": 2
   },
-  "catalogSha256": "ee94a2236b41840c3bacbbb0da771c36cc7675b181b61ac7f0518192726926a3",
+  "catalogSha256": "ee182a71706bf1dd1cab3fa2f233bb88a5cf58060d3b335b3418d855986fb209",
   "catalogPath": ".othrys/knowledge/catalog/great-harvest-code.jsonl",
-  "commitCount": 3092,
-  "commitCatalogSha256": "8199fbe36db24098224fdf089bad1fa7449706f84e68801018f899da542099a7",
+  "commitCount": 3094,
+  "commitCatalogSha256": "788ac2a7fb1cea8cfac5a8d10b8d8cf529f1840c305034fbb1a6f56f2305f737",
   "commitCatalogPath": ".othrys/knowledge/catalog/great-harvest-commits.jsonl",
+  "liveOnlyCount": 180,
+  "liveOnlyBytes": 3126270,
+  "liveOnlyDigest": "99e7ef6db2c75831359395f7bce68026d51dbc6d1fcdcde953fe3a651ce80496",
+  "liveOnlyCatalogPath": ".othrys/knowledge/catalog/great-harvest-live.jsonl",
+  "liveOnlyStates": {
+    "FILESYSTEM_ONLY": 22,
+    "WORKTREE_MODIFIED": 50,
+    "WORKTREE_UNTRACKED": 108
+  },
   "repositoryIndex": [
     {
       "lineage": "https://github.com/vtcbelgium/othrys-core",
@@ -95,10 +104,10 @@
         "othrys-v2-verify-008cs",
         "othrys-v2-verify-008dr"
       ],
-      "head": "8d240c55a8522622141473f01c350d03df9fe531",
+      "head": "cd02787d739cf3172bbbeb93d42f9729ec3c0cf5",
       "branch": "mission/v2-010o-great-harvest",
       "refCount": 23,
-      "refDigest": "5ee7fdcc0baecfe202779aa87225fc346809c5e07aac5f49d5090e98f17861f9",
+      "refDigest": "0b71bd5f692aeafabd0a4880b3b152da146447752ae4918a177f73a4e642a7b3",
       "recoveredBrokenPointers": []
     },
     {
