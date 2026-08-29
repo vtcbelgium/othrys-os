@@ -1,0 +1,225 @@
+{
+    "schema":  "othrys.os.great-harvest.perimeter-manifest.v1",
+    "generatedAt":  "2026-08-29",
+    "scope":  "LOCAL_NETWORK_LEGION_T590",
+    "roots":  [
+                  {
+                      "device":  "Legion",
+                      "path":  "C:/Users/othry/jarvis",
+                      "classification":  "CANONICAL",
+                      "reason":  "Unique Jarvis lineage; live modified stock requires fingerprint visibility.",
+                      "lineage":  "https://github.com/vtcbelgium/jarvis",
+                      "head":  "7650e465bde7ea2670048e9c1b7c6df9ebd24ad4",
+                      "dirtyEntries":  14
+                  },
+                  {
+                      "device":  "Legion",
+                      "path":  "C:/Users/othry/Documents/OTHRYS Memory",
+                      "classification":  "CANONICAL",
+                      "reason":  "Dedicated OTHRYS Memory lineage outside Projects.",
+                      "lineage":  "https://github.com/vtcbelgium/othrys-memory",
+                      "head":  "251266de03d07b25b300a49f523507e9b130bbbb",
+                      "dirtyEntries":  0
+                  },
+                  {
+                      "device":  "Legion",
+                      "path":  "C:/Users/othry/.pandaos/atlas",
+                      "classification":  "HISTORICAL",
+                      "reason":  "Local Panda Atlas Git specimen; no origin, preserve as historical quarry.",
+                      "lineage":  "local:atlas",
+                      "head":  "ff105d01a09ffe9fef5cefadb9526f1d604f2b1f",
+                      "dirtyEntries":  0
+                  },
+                  {
+                      "device":  "Legion",
+                      "path":  "C:/Users/othry/Documents/Codex",
+                      "classification":  "HISTORICAL",
+                      "reason":  "Codex-generated work copies; classify child Git roots by lineage, preserve unique heads/WIP.",
+                      "lineage":  "mixed:codex-work",
+                      "head":  null,
+                      "dirtyEntries":  null
+                  },
+                  {
+                      "device":  "Legion",
+                      "path":  "C:/Users/othry/Documents/OthrysPortabilityProof",
+                      "classification":  "PROOF",
+                      "reason":  "Portability proof clones; evidence-bearing, not canonical workspaces.",
+                      "lineage":  "mixed:othrys-proof",
+                      "head":  null,
+                      "dirtyEntries":  null
+                  },
+                  {
+                      "device":  "Legion",
+                      "path":  "C:/Users/othry/Documents/OthrysRecoveryProof",
+                      "classification":  "PROOF",
+                      "reason":  "Recovery proof clones; evidence-bearing, not canonical workspaces.",
+                      "lineage":  "mixed:othrys-proof",
+                      "head":  null,
+                      "dirtyEntries":  null
+                  },
+                  {
+                      "device":  "Legion",
+                      "path":  "C:/Users/othry/Desktop/old/OthrysDeliverables",
+                      "classification":  "LIVE_ONLY",
+                      "reason":  "Loose historical deliverable code outside Git/Projects.",
+                      "lineage":  "livefs:legion-desktop-othrys",
+                      "head":  null,
+                      "dirtyEntries":  null
+                  },
+                  {
+                      "device":  "Legion",
+                      "path":  "C:/Users/othry/Downloads/othrys-hub-architecture*.html",
+                      "classification":  "LIVE_ONLY",
+                      "reason":  "Loose architecture specimens outside Git/Projects.",
+                      "lineage":  "livefs:legion-downloads-othrys",
+                      "head":  null,
+                      "dirtyEntries":  null
+                  },
+                  {
+                      "device":  "Legion",
+                      "path":  "C:/Users/othry/.cursor/plugins/cache",
+                      "classification":  "TOOL_CACHE",
+                      "reason":  "Third-party editor plugin cache; explicit exclusion.",
+                      "lineage":  "external:cursor-cache",
+                      "head":  null,
+                      "dirtyEntries":  null
+                  },
+                  {
+                      "device":  "T590",
+                      "path":  "/home/jeroen/Development",
+                      "classification":  "HISTORICAL",
+                      "reason":  "Older clean development checkouts; preserve heads and collapse by origin lineage.",
+                      "lineage":  "mixed:development",
+                      "head":  null,
+                      "dirtyEntries":  null
+                  },
+                  {
+                      "device":  "T590",
+                      "path":  "/home/jeroen/othrys-core",
+                      "classification":  "DUPLICATE",
+                      "reason":  "Same OTHRYS Core origin lineage as Development/current estate, but distinct head/WIP locator retained.",
+                      "lineage":  "https://github.com/vtcbelgium/othrys-core",
+                      "head":  "7059b5569c2bf583fa403fb6533ad4d6167bb48d",
+                      "dirtyEntries":  1
+                  },
+                  {
+                      "device":  "T590",
+                      "path":  "/home/jeroen/othrys-web",
+                      "classification":  "DUPLICATE",
+                      "reason":  "Same OTHRYS Web origin lineage; distinct historical head retained.",
+                      "lineage":  "https://github.com/vtcbelgium/othrys-web",
+                      "head":  "888b09e8992c8c2b257ab4f625dedaa8b6e23a26",
+                      "dirtyEntries":  0
+                  },
+                  {
+                      "device":  "T590",
+                      "path":  "/home/jeroen/titan-os",
+                      "classification":  "HISTORICAL",
+                      "reason":  "Titan OS lineage outside Legion Projects estate.",
+                      "lineage":  "https://github.com/vtcbelgium/titan-os",
+                      "head":  "c8264395e12e504dc2f0b0c73b33a9415fe63661",
+                      "dirtyEntries":  0
+                  },
+                  {
+                      "device":  "T590",
+                      "path":  "/home/jeroen/vtc-docs",
+                      "classification":  "DUPLICATE",
+                      "reason":  "VTC docs lineage duplicate with distinct historical head.",
+                      "lineage":  "https://github.com/vtcbelgium/vtc-docs",
+                      "head":  "c067f7e76058e341fdc5ce6710112b415c87bed6",
+                      "dirtyEntries":  0
+                  },
+                  {
+                      "device":  "T590",
+                      "path":  "/home/jeroen/vtc-office",
+                      "classification":  "CANONICAL",
+                      "reason":  "Unique VTC Office lineage with substantial live-only WIP.",
+                      "lineage":  "https://github.com/vtcbelgium/vtc-office",
+                      "head":  "ff37b717d9c85a97274b3e52fc2184a290ffc336",
+                      "dirtyEntries":  208
+                  },
+                  {
+                      "device":  "T590",
+                      "path":  "/home/jeroen/vtc-platform",
+                      "classification":  "DUPLICATE",
+                      "reason":  "VTC platform lineage already harvested on Legion but T590 head is distinct; preserve location/head.",
+                      "lineage":  "https://github.com/vtcbelgium/vtc-platform",
+                      "head":  "0237160e7fdf7cf5879f5ab4464193fb387c035c",
+                      "dirtyEntries":  0
+                  },
+                  {
+                      "device":  "T590",
+                      "path":  "/home/jeroen/vtc-platform/odysseus",
+                      "classification":  "CANONICAL",
+                      "reason":  "Distinct Odysseus lineage nested in VTC platform.",
+                      "lineage":  "https://github.com/pewdiepie-archdaemon/odysseus",
+                      "head":  "893e490cdccf8a2a16a5fd3241ca9facfe2a3968",
+                      "dirtyEntries":  0
+                  },
+                  {
+                      "device":  "T590",
+                      "path":  "/home/jeroen/Pictures/design_handoff_catalog_press",
+                      "classification":  "LIVE_ONLY",
+                      "reason":  "Loose VTC design/code handoff outside Git.",
+                      "lineage":  "livefs:t590-design-handoff",
+                      "head":  null,
+                      "dirtyEntries":  null
+                  },
+                  {
+                      "device":  "T590",
+                      "path":  "/home/jeroen/Downloads",
+                      "classification":  "LIVE_ONLY",
+                      "reason":  "Loose SQL/HTML specimens outside Git; requires query-time filtering.",
+                      "lineage":  "livefs:t590-downloads",
+                      "head":  null,
+                      "dirtyEntries":  null
+                  },
+                  {
+                      "device":  "T590",
+                      "path":  "/home/jeroen/.claude/plugins",
+                      "classification":  "TOOL_CACHE",
+                      "reason":  "Third-party plugin marketplace/cache; explicit exclusion.",
+                      "lineage":  "external:claude-plugins",
+                      "head":  null,
+                      "dirtyEntries":  null
+                  },
+                  {
+                      "device":  "T590",
+                      "path":  "/home/jeroen/.cursor/plugins/cache",
+                      "classification":  "TOOL_CACHE",
+                      "reason":  "Third-party editor plugin cache; explicit exclusion.",
+                      "lineage":  "external:cursor-cache",
+                      "head":  null,
+                      "dirtyEntries":  null
+                  },
+                  {
+                      "device":  "Legion",
+                      "dirtyEntries":  null,
+                      "path":  "C:/Users/othry/Claude/Artifacts",
+                      "lineage":  "livefs:legion-claude-artifacts",
+                      "classification":  "LIVE_ONLY",
+                      "reason":  "Claude-produced HTML artifacts outside Projects; code-bearing design/history specimens.",
+                      "head":  null
+                  },
+                  {
+                      "device":  "Legion",
+                      "dirtyEntries":  null,
+                      "path":  "C:/Users/othry/Tools",
+                      "lineage":  "livefs:legion-tools",
+                      "classification":  "LIVE_ONLY",
+                      "reason":  "Local operator tooling outside Projects; code-bearing scripts.",
+                      "head":  null
+                  },
+                  {
+                      "device":  "Legion",
+                      "dirtyEntries":  null,
+                      "path":  "C:/Users/othry/WSL-Backups",
+                      "lineage":  "livefs:legion-wsl-backups",
+                      "classification":  "LIVE_ONLY",
+                      "reason":  "Local backup/admin scripts outside Projects; code-bearing operational history.",
+                      "head":  null
+                  }
+              ],
+    "authorityGranted":  false,
+    "automaticPromotion":  false
+}

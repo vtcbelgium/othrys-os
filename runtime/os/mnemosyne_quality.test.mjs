@@ -46,5 +46,7 @@ test('quality inspection verifies permanent Great Harvest integrity',()=>{
   assert.equal(finding.severity,'info');
   assert.ok(finding.evidence.indexedObjects>0);
   assert.ok(finding.evidence.historicalOnlyObjects>0);
+  assert.ok(finding.evidence.perimeterCount>0);
+  assert.ok(finding.evidence.perimeterClassifications.CANONICAL>=1);
   assert.equal(finding.authorityGranted,false);
 });

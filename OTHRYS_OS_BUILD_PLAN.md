@@ -8,7 +8,7 @@ V2-010O The Great Harvest is complete and permanently woven into Mnemosyne/desig
 
 ## Permanent Great Harvest preflight
 
-Before designing or inventing a capability, query `docs/GREAT_HARVEST.md` and the Great Harvest Git/live-only catalogs for prior implementations, commits, tests, failures, measurements and uncommitted/non-Git stock. When relevant prior stock exists, the mission must record `REUSE`, `ADAPT`, or `REJECT` with a reason. A stale Harvest is refreshed before architectural invention; Harvest evidence never grants authority or admission.
+Before designing or inventing a capability, query `docs/GREAT_HARVEST.md`, `docs/GREAT_HARVEST_PERIMETER.json`, and the Great Harvest Git/live-only/perimeter catalogs for prior implementations, commits, tests, failures, measurements and uncommitted/non-Git stock. When relevant prior stock exists, the mission must record `REUSE`, `ADAPT`, or `REJECT` with a reason. A stale Harvest is refreshed before architectural invention; Harvest evidence never grants authority or admission.
 
 ## Build order
 
@@ -21,6 +21,7 @@ Before designing or inventing a capability, query `docs/GREAT_HARVEST.md` and th
 7. **[COMPLETE] Mycelium metabolism / adaptive calibration** -- harvest 061F: truthful resource disposition, REST/INTERACTIVE/NORMAL/BURST/CONSERVE/SOAK/RECOVERY modes, marginal growth/contraction, project-aware concurrency knees and backpressure. No learned legality or execution authority.
 8. **[COMPLETE] Context metabolism / evidence capsules** -- harvest 061G evidence-preserving reduction: keep pinned/active/authority evidence, compress to references where safe, evict irrelevant payload, and prove requiredEvidenceLost=0 / authorityEvidenceLost=0 before any AI context optimizer.
 9. **[COMPLETE] The Great Harvest / permanent code lineage quarry** -- index all recoverable code/config Git objects + commit intent across deduplicated local lineages, preserve historical-only state, expose deterministic query/retrieval metadata, and make Harvest preflight permanent.
+9a. **[COMPLETE] Great Harvest perimeter / whole local network census** -- account for code-bearing roots outside Projects on Legion + T590, explicitly classify duplicates/history/proofs/tool caches/live-only stock, and keep location provenance without copying source.
 10. **[NEXT] Anastomosis Artifact / local action cache** -- add immutable verified Artifact identity, provenance/freshness/integrity + compatibility validation, durable refusal/invalidation identity and local deterministic reuse. Independent-verification Claims remain non-reusable; failed compatibility isolates only that fusion edge; no distributed CAS yet.
 11. **Block Quarry / extraction / compounding** -- turn the VTC-proven HOST_CONFIG/BRIDGE/CALLER/DEBT/FALSE_POSITIVE method into a Hephaestus capability-extraction pipeline: prove duplicate algorithm extinction, preserve product glue, qualify canonical Blocks, and never harvest unrelated lookalikes.
 12. **Rhizomorph / Experience / sparse resilience** -- harvest 061D/061H plus biological network lessons: immutable flow observations, qualification, Pareto frontier, holdouts, hysteresis/decay, sparse cross-link budget and reinforced routes among predeclared legal variants only. Every reinforcement has a retraction law.

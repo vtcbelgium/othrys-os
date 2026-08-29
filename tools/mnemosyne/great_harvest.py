@@ -1,10 +1,11 @@
 from __future__ import annotations
 import argparse, hashlib, json, os, subprocess
+from fnmatch import fnmatch
 from collections import Counter, defaultdict
 from pathlib import Path
 
 SCHEMA='othrys.os.great-harvest.code-lineage.v1'
-CODE_EXT={'.py','.js','.mjs','.cjs','.ts','.tsx','.jsx','.java','.go','.rs','.cs','.c','.cc','.cpp','.h','.hpp','.sh','.bash','.zsh','.ps1','.psm1','.sql','.rb','.php','.swift','.kt','.kts','.dart','.lua','.r','.m','.mm','.fs','.fsx','.ex','.exs','.erl','.hrl','.clj','.cljs','.scala','.sol','.vue','.svelte','.css','.scss','.less'}
+CODE_EXT={'.py','.js','.mjs','.cjs','.ts','.tsx','.jsx','.java','.go','.rs','.cs','.c','.cc','.cpp','.h','.hpp','.sh','.bash','.zsh','.ps1','.psm1','.sql','.rb','.php','.swift','.kt','.kts','.dart','.lua','.r','.m','.mm','.fs','.fsx','.ex','.exs','.erl','.hrl','.clj','.cljs','.scala','.sol','.vue','.svelte','.html','.htm','.ipynb','.tf','.hcl','.graphql','.gql','.css','.scss','.less'}
 CONFIG_EXT={'.json','.jsonl','.yaml','.yml','.toml','.ini','.cfg','.conf','.xml','.gradle','.properties'}
 SPECIAL={'Dockerfile','Makefile','CMakeLists.txt','Jenkinsfile','Procfile','Gemfile','Rakefile'}
 SKIP_NAMES={'package-lock.json','pnpm-lock.yaml','yarn.lock','Cargo.lock','poetry.lock','uv.lock'}
@@ -36,6 +37,7 @@ def lang(path:str)->str:
 
 def discover_workspaces(projects:Path)->list[Path]:
     out=[]
+    if (projects/'.git').exists() and projects.name not in DISPOSABLE_WORKSPACES: return [projects]
     for dp,dns,_ in os.walk(projects,topdown=True):
         dns[:]=[d for d in dns if d not in SKIP_DIRS and not d.startswith('.')]
         p=Path(dp)
@@ -188,10 +190,33 @@ def build_live_records(projects:Path)->list[dict]:
         key=(rec['sourceState'],rec['lineage'],rec['workspace'],rec['path']); dedup[key]=rec
     return sorted(dedup.values(),key=lambda r:(r['sourceState'],r['lineage'],r['workspace'],r['path']))
 
+
+PERIMETER_CLASSIFICATIONS={'CANONICAL','DUPLICATE','HISTORICAL','PROOF','TOOL_CACHE','DISPOSABLE','LIVE_ONLY'}
+
+def load_perimeter(path:Path|None)->list[dict]:
+    if path is None or not path.exists(): return []
+    value=json.loads(path.read_text(encoding='utf-8'))
+    roots=value.get('roots',[]) if isinstance(value,dict) else []
+    out=[]
+    for item in roots:
+        classification=str(item.get('classification','')).upper()
+        if classification not in PERIMETER_CLASSIFICATIONS: raise ValueError(f'INVALID_PERIMETER_CLASSIFICATION:{classification}')
+        rec={**item,'classification':classification,'authorityGranted':False,'automaticPromotion':False}
+        for key in ('path','lineage','head','reason','device'):
+            if rec.get(key) is not None: rec[key]=str(rec[key])
+        out.append(rec)
+    return sorted(out,key=lambda r:(str(r.get('device','')),str(r.get('path','')).lower()))
+
+def write_perimeter_catalog(root:Path, records:list[dict])->dict:
+    catalog_dir=root/'.othrys'/'knowledge'/'catalog'; catalog_dir.mkdir(parents=True,exist_ok=True)
+    body=''.join(stable_json(r)+'\n' for r in records); path=catalog_dir/'great-harvest-perimeter.jsonl'
+    path.write_text(body,encoding='utf-8',newline='\n')
+    classes=Counter(r['classification'] for r in records); devices=Counter(str(r.get('device','UNKNOWN')) for r in records)
+    return {'perimeterCount':len(records),'perimeterDigest':hashlib.sha256(body.encode()).hexdigest(),'perimeterCatalogPath':'.othrys/knowledge/catalog/great-harvest-perimeter.jsonl','perimeterClassifications':dict(sorted(classes.items())),'perimeterDevices':dict(sorted(devices.items()))}
 def stable_json(value)->str:
     return json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=False)
 
-def write_catalog(root:Path,records:list[dict],repos:list[dict],oid_lineages:dict[str,set[str]],commits:list[dict],live_records:list[dict]|None=None):
+def write_catalog(root:Path,records:list[dict],repos:list[dict],oid_lineages:dict[str,set[str]],commits:list[dict],live_records:list[dict]|None=None,perimeter_records:list[dict]|None=None):
     catalog_dir=root/'.othrys'/'knowledge'/'catalog'; catalog_dir.mkdir(parents=True,exist_ok=True)
     records=sorted(records,key=lambda r:(r['lineage'],r['gitObject']))
     body=''.join(stable_json(r)+'\n' for r in records)
@@ -200,14 +225,15 @@ def write_catalog(root:Path,records:list[dict],repos:list[dict],oid_lineages:dic
     live_records=live_records or []; live_body=''.join(stable_json(r)+'\n' for r in live_records); (catalog_dir/'great-harvest-live.jsonl').write_text(live_body,encoding='utf-8',newline='\n')
     languages=Counter(r['language'] for r in records); kinds=Counter(r['kind'] for r in records)
     summary={'schema':'othrys.os.great-harvest.summary.v1','workspaceCount':sum(len(r['workspaces']) for r in repos),'lineageCount':len(repos),'indexedObjects':len(records),'currentObjects':sum(not r['historicalOnly'] for r in records),'historicalOnlyObjects':sum(r['historicalOnly'] for r in records),'indexedBytes':sum(r['bytes'] for r in records),'crossLineageDuplicateObjects':sum(len(v)>1 for v in oid_lineages.values()),'kinds':dict(sorted(kinds.items())),'languages':dict(sorted(languages.items(),key=lambda kv:(-kv[1],kv[0]))),'catalogSha256':hashlib.sha256(body.encode()).hexdigest(),'catalogPath':'.othrys/knowledge/catalog/great-harvest-code.jsonl','commitCount':len(commits),'commitCatalogSha256':hashlib.sha256(commit_body.encode()).hexdigest(),'commitCatalogPath':'.othrys/knowledge/catalog/great-harvest-commits.jsonl','liveOnlyCount':len(live_records),'liveOnlyBytes':sum(r['bytes'] for r in live_records),'liveOnlyDigest':hashlib.sha256(live_body.encode()).hexdigest(),'liveOnlyCatalogPath':'.othrys/knowledge/catalog/great-harvest-live.jsonl','liveOnlyStates':dict(sorted(Counter(r['sourceState'] for r in live_records).items())),'repositoryIndex':repos,'sourcePayloadCopied':False,'authorityGranted':False,'automaticPromotion':False}
+    summary.update(write_perimeter_catalog(root,perimeter_records or []))
     summary_path=catalog_dir/'great-harvest-summary.json'
     summary_path.write_text(json.dumps(summary,indent=2,ensure_ascii=False)+'\n',encoding='utf-8',newline='\n')
     return summary
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument('--projects',required=True); ap.add_argument('--othrys-root',required=True)
+    ap=argparse.ArgumentParser(); ap.add_argument('--projects',required=True); ap.add_argument('--othrys-root',required=True); ap.add_argument('--perimeter-manifest')
     args=ap.parse_args(); projects=Path(args.projects); root=Path(args.othrys_root)
-    records,repos,dupes=build_records(projects); commits=build_commits(projects); live_records=build_live_records(projects); summary=write_catalog(root,records,repos,dupes,commits,live_records)
+    records,repos,dupes=build_records(projects); commits=build_commits(projects); live_records=build_live_records(projects); perimeter=load_perimeter(Path(args.perimeter_manifest) if args.perimeter_manifest else None); summary=write_catalog(root,records,repos,dupes,commits,live_records,perimeter)
     print(json.dumps(summary,indent=2,ensure_ascii=False))
 
 if __name__=='__main__':main()

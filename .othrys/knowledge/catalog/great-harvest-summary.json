@@ -1,49 +1,104 @@
 {
   "schema": "othrys.os.great-harvest.summary.v1",
-  "workspaceCount": 40,
-  "lineageCount": 12,
-  "indexedObjects": 9338,
-  "currentObjects": 3537,
-  "historicalOnlyObjects": 5801,
-  "indexedBytes": 213691915,
-  "crossLineageDuplicateObjects": 1289,
+  "workspaceCount": 63,
+  "lineageCount": 25,
+  "indexedObjects": 12961,
+  "currentObjects": 5815,
+  "historicalOnlyObjects": 7146,
+  "indexedBytes": 309273171,
+  "crossLineageDuplicateObjects": 3173,
   "kinds": {
-    "CODE": 8188,
-    "CONFIG": 1150
+    "CODE": 11601,
+    "CONFIG": 1360
   },
   "languages": {
-    "ts": 4097,
-    "py": 1861,
-    "json": 978,
-    "jsx": 888,
-    "mjs": 723,
-    "js": 316,
-    "tsx": 173,
+    "ts": 5147,
+    "py": 3859,
+    "json": 1177,
+    "jsx": 889,
+    "mjs": 848,
+    "js": 325,
+    "html": 191,
+    "tsx": 183,
     "jsonl": 94,
-    "sql": 60,
-    "yml": 60,
-    "css": 47,
-    "sh": 18,
-    "toml": 10,
-    "xml": 6,
-    "ps1": 5,
+    "sql": 76,
+    "yml": 68,
+    "css": 48,
+    "sh": 23,
+    "ps1": 12,
+    "toml": 12,
+    "xml": 7,
     "yaml": 2
   },
-  "catalogSha256": "ee182a71706bf1dd1cab3fa2f233bb88a5cf58060d3b335b3418d855986fb209",
+  "catalogSha256": "e1bd4b168165c98b3328af6533a9b6b6cb52a0735d8b899ed90a7023edd3a83e",
   "catalogPath": ".othrys/knowledge/catalog/great-harvest-code.jsonl",
-  "commitCount": 3094,
-  "commitCatalogSha256": "788ac2a7fb1cea8cfac5a8d10b8d8cf529f1840c305034fbb1a6f56f2305f737",
+  "commitCount": 3891,
+  "commitCatalogSha256": "6b2d7c77ddc522256907c287157002b304a99a8f54948d8f5e567c957a8a5bc7",
   "commitCatalogPath": ".othrys/knowledge/catalog/great-harvest-commits.jsonl",
-  "liveOnlyCount": 180,
-  "liveOnlyBytes": 3126270,
-  "liveOnlyDigest": "99e7ef6db2c75831359395f7bce68026d51dbc6d1fcdcde953fe3a651ce80496",
+  "liveOnlyCount": 2405,
+  "liveOnlyLocationCount": 2563,
+  "liveOnlyBytes": 48757301,
+  "liveOnlyDigest": "8cd155c847836fd1da5045d1e8ce291c2aed27a22f7f0ce36b235ef5a40483bc",
   "liveOnlyCatalogPath": ".othrys/knowledge/catalog/great-harvest-live.jsonl",
   "liveOnlyStates": {
-    "FILESYSTEM_ONLY": 22,
-    "WORKTREE_MODIFIED": 50,
-    "WORKTREE_UNTRACKED": 108
+    "FILESYSTEM_ONLY": 614,
+    "WORKTREE_MODIFIED": 143,
+    "WORKTREE_UNTRACKED": 1648
   },
   "repositoryIndex": [
+    {
+      "lineage": "/mnt/c/users/othry/jarvis",
+      "representative": "jarvis-optimized",
+      "workspaces": [
+        "jarvis-optimized"
+      ],
+      "head": "51e768224a6caba63669145d63e7f662e6edb08f",
+      "branch": "codex/jarvis-full-local-intelligence",
+      "refCount": 4,
+      "refDigest": "5bf9b4c485448d66ed1a300aee06eee22d4cac1b316cd3f4f20a082eacc66ff4",
+      "recoveredBrokenPointers": [],
+      "device": "LegionDocs"
+    },
+    {
+      "lineage": "/mnt/c/users/othry/projects/othrys-hub",
+      "representative": "othrys-hub.incomplete",
+      "workspaces": [
+        "othrys-hub-operational",
+        "othrys-hub.incomplete"
+      ],
+      "head": "c5957b442f2dd04e6ae508a150e8ac6d38221fed",
+      "branch": "main",
+      "refCount": 63,
+      "refDigest": "a2ee0b1acf04ab3e7d1f435d3c5f79d10de375ae39d6ec3b3f469b0357d3ae12",
+      "recoveredBrokenPointers": [],
+      "device": "LegionDocs"
+    },
+    {
+      "lineage": "c:\\users\\othry\\projects\\othrys-hub",
+      "representative": "mission032_20260807_120618",
+      "workspaces": [
+        "mission032_20260807_120618"
+      ],
+      "head": "19684964d8ab189062875c8c63411b11f46161d6",
+      "branch": "feat/mission-032-portable-bootstrap",
+      "refCount": 2,
+      "refDigest": "dd1893fff700ddc7823df3c0c33d1dc34e22f31b7eccd17f5abbb7360d70d38a",
+      "recoveredBrokenPointers": [],
+      "device": "LegionDocs"
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/jarvis",
+      "representative": "jarvis",
+      "workspaces": [
+        "jarvis"
+      ],
+      "head": "7650e465bde7ea2670048e9c1b7c6df9ebd24ad4",
+      "branch": "codex/jarvis-full-local-intelligence",
+      "refCount": 3,
+      "refDigest": "36d1eb540b522e9edb59d2f930b5a630f3245de571121f1415bfdb6a77d88761",
+      "recoveredBrokenPointers": [],
+      "device": "LegionJarvis"
+    },
     {
       "lineage": "https://github.com/vtcbelgium/othrys-core",
       "representative": "othrys-core-windows",
@@ -55,7 +110,38 @@
       "branch": "mission/p013-validation-harness",
       "refCount": 105,
       "refDigest": "f78c43a44e9d53e1c9deea29d3bf5466c6d10926f900bdc3a0f611b33159897d",
-      "recoveredBrokenPointers": []
+      "recoveredBrokenPointers": [],
+      "device": "LegionProjects"
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/othrys-core",
+      "representative": "othrys-core",
+      "workspaces": [
+        "othrys-core",
+        "othrys-core"
+      ],
+      "head": "d372612fa04bbc4917e9e9316e2779302f8dae86",
+      "branch": "feat/phase3-credential-broker-usage-ledger",
+      "refCount": 41,
+      "refDigest": "231b496ac0fb8a46c85470b391d5d7aa0e80267289e72a29829bf598b7ea065b",
+      "recoveredBrokenPointers": [],
+      "device": "T590"
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/othrys-hub",
+      "representative": "repo",
+      "workspaces": [
+        "hub-fresh",
+        "othrys-hub",
+        "othrys-hub",
+        "repo"
+      ],
+      "head": "19684964d8ab189062875c8c63411b11f46161d6",
+      "branch": null,
+      "refCount": 5,
+      "refDigest": "63cb9d4c385cbff0b9f31fd7d746e7f57f085af85ff0d2780b92f895d806338c",
+      "recoveredBrokenPointers": [],
+      "device": "LegionDocs"
     },
     {
       "lineage": "https://github.com/vtcbelgium/othrys-hub",
@@ -84,7 +170,22 @@
         "othrys-hub-obsidian-always-sync-001",
         "othrys-hub-oros-composition-law-001",
         "othrys-hub-study-buddy-spaced-review-contract-001"
-      ]
+      ],
+      "device": "LegionProjects"
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/othrys-memory",
+      "representative": "memory-fresh",
+      "workspaces": [
+        "OTHRYS Memory",
+        "memory-fresh"
+      ],
+      "head": "36250d23fc3a2e6ae9a12d09671cdffa8106e8dc",
+      "branch": null,
+      "refCount": 4,
+      "refDigest": "6ac805ff21a453c934b6b7e4c97a76664eaa8a85452c07004a0980274be0153b",
+      "recoveredBrokenPointers": [],
+      "device": "LegionDocs"
     },
     {
       "lineage": "https://github.com/vtcbelgium/othrys-v2",
@@ -104,11 +205,25 @@
         "othrys-v2-verify-008cs",
         "othrys-v2-verify-008dr"
       ],
-      "head": "cd02787d739cf3172bbbeb93d42f9729ec3c0cf5",
+      "head": "c7f0ee96634e5e0e394e8a22d267d72c969aacb7",
       "branch": "mission/v2-010o-great-harvest",
       "refCount": 23,
-      "refDigest": "0b71bd5f692aeafabd0a4880b3b152da146447752ae4918a177f73a4e642a7b3",
-      "recoveredBrokenPointers": []
+      "refDigest": "cbf5d4fe418b9628bc5591882df13b573b913deae535287665289b49eee1319c",
+      "recoveredBrokenPointers": [],
+      "device": "LegionProjects"
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/othrys-v2",
+      "representative": "othrys-v2-verify",
+      "workspaces": [
+        "othrys-v2-verify"
+      ],
+      "head": "c7f0ee96634e5e0e394e8a22d267d72c969aacb7",
+      "branch": null,
+      "refCount": 3,
+      "refDigest": "129164a1b30f4b23602f8d5a35b1313e7848418ce2c702d7ebba35b2ca0fad83",
+      "recoveredBrokenPointers": [],
+      "device": "T590"
     },
     {
       "lineage": "https://github.com/vtcbelgium/othrys-web",
@@ -120,7 +235,89 @@
       "branch": "docs/othrys-web-venture-align-001",
       "refCount": 20,
       "refDigest": "ecff9a8cf8ecbbd0f98b6e94664ef70a6e4c6f68fa5bf92e15306d7c5a0b0b04",
-      "recoveredBrokenPointers": []
+      "recoveredBrokenPointers": [],
+      "device": "LegionProjects"
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/othrys-web",
+      "representative": "othrys-web",
+      "workspaces": [
+        "othrys-web",
+        "othrys-web"
+      ],
+      "head": "a1182cd1425dc52a2447a69450452263c8e3f301",
+      "branch": "main",
+      "refCount": 14,
+      "refDigest": "14c4f04571581db3619777f9dced5a904fe83f5eab1066335efd1a5f12bef829",
+      "recoveredBrokenPointers": [],
+      "device": "T590"
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/titan-os",
+      "representative": "titan-os",
+      "workspaces": [
+        "titan-os",
+        "titan-os"
+      ],
+      "head": "4d89f6262e7a2c0ac02900e42aac756fde814a2a",
+      "branch": "main",
+      "refCount": 7,
+      "refDigest": "da7dbf4f05e79137a09cb129820b934d004047ac8882be7570df69c18640c1b0",
+      "recoveredBrokenPointers": [],
+      "device": "T590"
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/vtc-docs",
+      "representative": "vtc-docs",
+      "workspaces": [
+        "vtc-docs"
+      ],
+      "head": "e1424963d7ef16a90b825cc22008f961929c2589",
+      "branch": "main",
+      "refCount": 3,
+      "refDigest": "16bc4483a487e2ff49c5f0f479cc6aca06fb9ba050a4f25f34ebb74cbe210fca",
+      "recoveredBrokenPointers": [],
+      "device": "LegionDocs"
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/vtc-docs",
+      "representative": "vtc-docs",
+      "workspaces": [
+        "vtc-docs",
+        "vtc-docs"
+      ],
+      "head": "e1424963d7ef16a90b825cc22008f961929c2589",
+      "branch": "main",
+      "refCount": 4,
+      "refDigest": "81f5608f82ffcbb2a2b1735156e3b7e6442fd68d43ac1a81cd2c13f3b93a76bd",
+      "recoveredBrokenPointers": [],
+      "device": "T590"
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/vtc-office",
+      "representative": "vtc-office",
+      "workspaces": [
+        "vtc-office"
+      ],
+      "head": "ff37b717d9c85a97274b3e52fc2184a290ffc336",
+      "branch": "main",
+      "refCount": 3,
+      "refDigest": "cf19b1b29b01ae5c3a387d26ea29dd3924ac93cdf8c671174cef8094d1c3fc17",
+      "recoveredBrokenPointers": [],
+      "device": "T590"
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/vtc-platform",
+      "representative": "vtc-platform",
+      "workspaces": [
+        "vtc-platform"
+      ],
+      "head": "032a47ca0fa0731febdf47f45607983ac9b721b4",
+      "branch": "main",
+      "refCount": 3,
+      "refDigest": "808e30e1c27536b7c52869d719aa3ee77b992416e0813626d8a3e493fc928e2d",
+      "recoveredBrokenPointers": [],
+      "device": "LegionDocs"
     },
     {
       "lineage": "https://github.com/vtcbelgium/vtc-platform",
@@ -135,7 +332,35 @@
       "branch": "feat/vtc-latam-stores-001",
       "refCount": 28,
       "refDigest": "24c5db2996914f8fd45cd5eef49ce30b0e704ca367864ae620d2d70f04d7751a",
-      "recoveredBrokenPointers": []
+      "recoveredBrokenPointers": [],
+      "device": "LegionProjects"
+    },
+    {
+      "lineage": "https://github.com/vtcbelgium/vtc-platform",
+      "representative": "vtc-platform",
+      "workspaces": [
+        "vtc-platform",
+        "vtc-platform"
+      ],
+      "head": "032a47ca0fa0731febdf47f45607983ac9b721b4",
+      "branch": "main",
+      "refCount": 24,
+      "refDigest": "bae2f203e14f7085118c5ad5f9ede7e4b4a1df75fa505f1dd1470ce22b1031fc",
+      "recoveredBrokenPointers": [],
+      "device": "T590"
+    },
+    {
+      "lineage": "local:atlas",
+      "representative": "atlas",
+      "workspaces": [
+        "atlas"
+      ],
+      "head": "ff105d01a09ffe9fef5cefadb9526f1d604f2b1f",
+      "branch": "main",
+      "refCount": 1,
+      "refDigest": "33e8152712a8300611d6118e7743bbc4f64f314690f708fcb885af03463f4e16",
+      "recoveredBrokenPointers": [],
+      "device": "LegionPanda"
     },
     {
       "lineage": "local:find-this-item-v2",
@@ -147,7 +372,21 @@
       "branch": "master",
       "refCount": 1,
       "refDigest": "92233bc866e8ba9923da2acdbd0cf75c9324e2be4e5f4cc07438fde34f44b99a",
-      "recoveredBrokenPointers": []
+      "recoveredBrokenPointers": [],
+      "device": "LegionProjects"
+    },
+    {
+      "lineage": "local:hub-external-site",
+      "representative": "hub-external-site",
+      "workspaces": [
+        "hub-external-site"
+      ],
+      "head": "f5f74d8cc3261a5a94a3a472f5d9270f944362fe",
+      "branch": "main",
+      "refCount": 1,
+      "refDigest": "906755e14574a6e5e9a5d2cda7fbf1fc27cf170ab479878dfc3da1d8e3e94a2b",
+      "recoveredBrokenPointers": [],
+      "device": "LegionDocs"
     },
     {
       "lineage": "local:oros-affiliate-offer-transplant",
@@ -159,7 +398,8 @@
       "branch": "main",
       "refCount": 1,
       "refDigest": "c39f2e47dca5c9e69dc0006449325d9d5029decc36d1625c12ea68f5631da867",
-      "recoveredBrokenPointers": []
+      "recoveredBrokenPointers": [],
+      "device": "LegionProjects"
     },
     {
       "lineage": "local:oros-image-prep-transplant",
@@ -171,7 +411,8 @@
       "branch": "main",
       "refCount": 1,
       "refDigest": "d9bce62e02d40a2ffc66b047514ae3ef75cf6403a6c063776a169bad97e147ee",
-      "recoveredBrokenPointers": []
+      "recoveredBrokenPointers": [],
+      "device": "LegionProjects"
     },
     {
       "lineage": "local:othrys-blocks",
@@ -183,7 +424,47 @@
       "branch": "mission/block-003-extract-001",
       "refCount": 5,
       "refDigest": "35b80e8a36f763b3ffa10d0d220bcda6e55f5306ff6aa9ac8c1b057774ca2691",
-      "recoveredBrokenPointers": []
+      "recoveredBrokenPointers": [],
+      "device": "LegionProjects"
+    },
+    {
+      "lineage": "local:othrys-hub",
+      "representative": "othrys-hub",
+      "workspaces": [
+        "othrys-hub"
+      ],
+      "head": "c1f0de83d61f89c7eb19a5ee8113d07a68e95542",
+      "branch": "master",
+      "refCount": 1,
+      "refDigest": "d7d228a490743d27c8b00c6ac6a23435aaa200b532fbf504f07ebd94dcbacb0d",
+      "recoveredBrokenPointers": [],
+      "device": "LegionDocs"
+    },
+    {
+      "lineage": "local:othrys-hub-layout",
+      "representative": "othrys-hub-layout",
+      "workspaces": [
+        "othrys-hub-layout"
+      ],
+      "head": "77f63a416b2352f408b3c385d357e9d4a74b9adb",
+      "branch": "master",
+      "refCount": 1,
+      "refDigest": "723900f948aae21fd2fe625feea993862a32e3593c5700ddb065ca0f017c533f",
+      "recoveredBrokenPointers": [],
+      "device": "LegionDocs"
+    },
+    {
+      "lineage": "local:othrys-hub-unblocked",
+      "representative": "othrys-hub-unblocked",
+      "workspaces": [
+        "othrys-hub-unblocked"
+      ],
+      "head": "f77deaf1d9d40c7d6232a8b2dacfa5bebd82e676",
+      "branch": "master",
+      "refCount": 1,
+      "refDigest": "c86c0d618fd1be584040c2c7551bd77f436511e075d961b2c7bd4b4d8dcadd69",
+      "recoveredBrokenPointers": [],
+      "device": "LegionDocs"
     },
     {
       "lineage": "local:othrys-studio",
@@ -195,7 +476,8 @@
       "branch": "mission/studio-mockup-to-block-001",
       "refCount": 3,
       "refDigest": "3dac5caf6a77c8988381423785c431eb7abd2f72e4d32f444a8f15d992d69c4c",
-      "recoveredBrokenPointers": []
+      "recoveredBrokenPointers": [],
+      "device": "LegionProjects"
     },
     {
       "lineage": "local:othrys-tools",
@@ -207,7 +489,8 @@
       "branch": "master",
       "refCount": 1,
       "refDigest": "5b34d29fb1707448c67513fcd4c73d031ca7717c556fa2a545e46fbeab67ef73",
-      "recoveredBrokenPointers": []
+      "recoveredBrokenPointers": [],
+      "device": "LegionProjects"
     },
     {
       "lineage": "local:study-buddy",
@@ -219,9 +502,25 @@
       "branch": "main",
       "refCount": 1,
       "refDigest": "f5355f49d96daefd6ca43451102cdb769b6d6a35aa1ee14b5e08c1230f597e13",
-      "recoveredBrokenPointers": []
+      "recoveredBrokenPointers": [],
+      "device": "LegionProjects"
     }
   ],
+  "perimeterCount": 24,
+  "perimeterDigest": "fb8a2caa8e5df25c7e758d1655fef2b3f8682b1843775ab2541515dfdddafb60",
+  "perimeterCatalogPath": ".othrys/knowledge/catalog/great-harvest-perimeter.jsonl",
+  "perimeterClassifications": {
+    "CANONICAL": 4,
+    "DUPLICATE": 4,
+    "HISTORICAL": 4,
+    "LIVE_ONLY": 7,
+    "PROOF": 2,
+    "TOOL_CACHE": 3
+  },
+  "perimeterDevices": {
+    "Legion": 12,
+    "T590": 12
+  },
   "sourcePayloadCopied": false,
   "authorityGranted": false,
   "automaticPromotion": false

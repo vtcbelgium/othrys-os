@@ -44,13 +44,14 @@ export function inspectMnemosyneQuality(root,{projectsRoot=null}={}){
   const ghCodePath=join(root,'.othrys','knowledge','catalog','great-harvest-code.jsonl');
   const ghCommitPath=join(root,'.othrys','knowledge','catalog','great-harvest-commits.jsonl');
   const ghLivePath=join(root,'.othrys','knowledge','catalog','great-harvest-live.jsonl');
-  if(!existsSync(ghSummaryPath)||!existsSync(ghCodePath)||!existsSync(ghCommitPath)||!existsSync(ghLivePath)) findings.push(finding('great-harvest-missing','high','Permanent Great Harvest catalogs are missing.'));
+  const ghPerimeterPath=join(root,'.othrys','knowledge','catalog','great-harvest-perimeter.jsonl');
+  if(!existsSync(ghSummaryPath)||!existsSync(ghCodePath)||!existsSync(ghCommitPath)||!existsSync(ghLivePath)||!existsSync(ghPerimeterPath)) findings.push(finding('great-harvest-missing','high','Permanent Great Harvest catalogs are missing.'));
   else{
     const gh=readJson(ghSummaryPath),digest=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
     const invalid=gh.schema!=='othrys.os.great-harvest.summary.v1'||gh.authorityGranted!==false||gh.automaticPromotion!==false||gh.sourcePayloadCopied!==false;
     if(invalid) findings.push(finding('great-harvest-policy','high','Great Harvest summary violates permanent quarry policy.'));
-    else if(digest(ghCodePath)!==gh.catalogSha256||digest(ghCommitPath)!==gh.commitCatalogSha256||digest(ghLivePath)!==gh.liveOnlyDigest) findings.push(finding('great-harvest-integrity','high','Great Harvest catalog digest mismatch.',{expectedCode:gh.catalogSha256,expectedCommits:gh.commitCatalogSha256,expectedLive:gh.liveOnlyDigest}));
-    else findings.push(finding('great-harvest-integrity','info',`Great Harvest is intact: ${gh.workspaceCount} Git workspaces, ${gh.indexedObjects} Git code/config objects, ${gh.liveOnlyCount} live-only specimens, ${gh.commitCount} commits.`,{workspaceCount:gh.workspaceCount,lineageCount:gh.lineageCount,indexedObjects:gh.indexedObjects,historicalOnlyObjects:gh.historicalOnlyObjects,liveOnlyCount:gh.liveOnlyCount,commitCount:gh.commitCount}));
+    else if(digest(ghCodePath)!==gh.catalogSha256||digest(ghCommitPath)!==gh.commitCatalogSha256||digest(ghLivePath)!==gh.liveOnlyDigest||digest(ghPerimeterPath)!==gh.perimeterDigest) findings.push(finding('great-harvest-integrity','high','Great Harvest catalog digest mismatch.',{expectedCode:gh.catalogSha256,expectedCommits:gh.commitCatalogSha256,expectedLive:gh.liveOnlyDigest,expectedPerimeter:gh.perimeterDigest}));
+    else findings.push(finding('great-harvest-integrity','info',`Great Harvest is intact: ${gh.workspaceCount} Git workspaces, ${gh.indexedObjects} Git code/config objects, ${gh.liveOnlyCount} live-only specimens, ${gh.commitCount} commits.`,{workspaceCount:gh.workspaceCount,lineageCount:gh.lineageCount,indexedObjects:gh.indexedObjects,historicalOnlyObjects:gh.historicalOnlyObjects,liveOnlyCount:gh.liveOnlyCount,commitCount:gh.commitCount,perimeterCount:gh.perimeterCount??0,perimeterClassifications:gh.perimeterClassifications??{}}));
   }
   const maintenance=maintainKnowledge(root,manifest);
   for(const item of maintenance.missingSources??[]) findings.push(finding('declared-source-missing','high',`Declared knowledge source ${item.id??item.path??'unknown'} is missing.`,item));

@@ -123,25 +123,25 @@
 | 52 | V2-008A | Trust Canal request for canonical mission-ID allocation; no allocation or execution | COMPLETE |
 | 53 | V2-008B | Control record reconciliation; stale log/receipt gap preserved and repaired | COMPLETE |
 
-## Future capability — OTHRYS Visual Control Layer
+## Future capability â€” OTHRYS Visual Control Layer
 - Purpose: let OTHRYS observe and eventually interact with Legion and T590 screens as part of autonomous operation and maintenance.
 - Do not build a TeamViewer clone. Optimize for AI observability, control, and verification.
-- Phase 1 — OBSERVE: live/periodic screenshots, active-window/device status, timestamps, tablet-primary viewing.
-- Phase 2 — SUPERVISED: approved click, keyboard, scroll and window-control actions with clear operator feedback.
-- Phase 3 — AUTONOMOUS: `observe -> detect -> act -> verify -> record`, with bounded retries and evidence.
-- Prefer lightweight 2–5 FPS screen state plus accessibility/window metadata over high-bandwidth video where sufficient.
+- Phase 1 â€” OBSERVE: live/periodic screenshots, active-window/device status, timestamps, tablet-primary viewing.
+- Phase 2 â€” SUPERVISED: approved click, keyboard, scroll and window-control actions with clear operator feedback.
+- Phase 3 â€” AUTONOMOUS: `observe -> detect -> act -> verify -> record`, with bounded retries and evidence.
+- Prefer lightweight 2â€“5 FPS screen state plus accessibility/window metadata over high-bandwidth video where sufficient.
 - Safety modes: `OBSERVE`, `SUPERVISED`, `AUTONOMOUS`; permissions must be explicit and fail closed.
 - Nodes: Legion + T590. Controller surface: tablet primary, phone secondary.
 - This capability serves the OTHRYS North Star: autonomously build, verify, operate, repair and maintain Oros/OTHRYS over time.
-- Status: DOCUMENTED_ONLY / GATED — no implementation mission authorized yet.
+- Status: DOCUMENTED_ONLY / GATED â€” no implementation mission authorized yet.
 
-## Research reference — PandaOS harvest
+## Research reference â€” PandaOS harvest
 - `docs/PANDAOS-HARVEST/PANDAOS_V2_HARVEST_REPORT_2026-08-27.md` captures the observed PandaOS v1.0.1 reference architecture and a bounded harvest agenda.
 - Priority study before related V2 design: Work State transitions, approval-vs-evidence gates, autonomy/intervention policy, durable Progress UI, Atlas/Mnemosyne patterns, tier-based model routing and local search.
 - Next evidence is one tiny real OTHRYS task under Panda Work State with independent V2 verification.
 - Status: `RESEARCH / GATED`; this entry authorizes no implementation and creates no PandaOS dependency.
 
-## Canonical strategic rename — OTHRYS OS
+## Canonical strategic rename â€” OTHRYS OS
 - **Decision 2026-08-27:** `OTHRYS V2` is now strategically/product-facing **OTHRYS OS**.
 - North Star authority: `OTHRYS_OS_NORTH_STAR.md`.
 - This is a naming/direction decision, **not** authorization for a repo/path mass rename or a rewrite.
@@ -247,3 +247,5 @@
 
 | 87 | V2-010N | Context metabolism / evidence capsules + cross-repo gem harvest | COMPLETE |
 | 88 | V2-010O | The Great Harvest: permanent Mnemosyne code-lineage + commit-intent quarry | COMPLETE |
+
+| 89 | V2-010P | The Great Harvest perimeter: whole local network code census + explicit exclusions | COMPLETE |

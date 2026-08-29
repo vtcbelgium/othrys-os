@@ -1,390 +1,390 @@
 {
-  "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 112,
-  "state_owner": "GPT_CONTROL",
-  "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "36fae4a915b43c635948b82c800b77c72da5a25a",
-  "control_gate": "CLEAN_SYNCED",
-  "active_mission": {
-    "mission_id": "V2-010O",
-    "status": "COMPLETE",
-    "issued_label": "V2-010O - THE GREAT HARVEST / PERMANENT CODE LINEAGE QUARRY",
-    "source": "operator_current_conversation"
-  },
-  "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
-  "last_verified_receipt_mission": "V2-006A",
-  "last_log_sequence": 64,
-  "last_log_hash": "242970f06018df446478944be650ef2c5170ff5b58d7b3de46df292dfb0c2da6",
-  "log_integrity": {
-    "status": "DEGRADED_RECOVERED",
-    "incidents": [
-      "sequence 3 stored entry_hash mismatch",
-      "sequence 8 append commit accidentally altered historical sequence 4 text; restored and recorded as sequence 9"
-    ],
-    "recovery_events": [
-      4,
-      9
-    ]
-  },
-  "inventory": {
-    "root": "LEGACY_INVENTORY.md",
-    "coverage": "PARTIAL",
-    "supplements": [
-      "inventory/JARVIS.md",
-      "inventory/OTHRYS_CORE_CONTROL.md"
-    ],
-    "senior_canon_pointers": "LEGACY_INVENTORY.md section 9 (recovered by V2-000C)"
-  },
-  "control_files": {
-    "law": "BOOK_OF_GPT.md",
-    "foundation_law": "FOUNDATION_LAWS.md",
-    "foundation_research": "FOUNDATION_LAWS_RESEARCH.md",
-    "rails": "GPT_RAILS.md",
-    "log": "GPT_LOG.jsonl",
-    "chronicle": "V2_CHRONICLE.md",
-    "research": "GPT_RAILS_RESEARCH.md",
-    "intake": "GPT_INBOX.md",
-    "library": "TEMP_LIBRARY.md",
-    "inventory": "LEGACY_INVENTORY.md"
-  },
-  "memory_boundary": {
-    "othrys_v2_repo": "MACHINE_CONTROL_TRUTH",
-    "othrys_memory": "ACCEPTED_KNOWLEDGE_PROJECTION",
-    "memory_pointer": "02 Projects/Othrys/V2/CONTROL-INDEX.md",
-    "chat_memory": "NON_AUTHORITATIVE",
-    "gpt_inbox": "UNPROMOTED_INTELLIGENCE_ONLY"
-  },
-  "known_blockers": [
-    "DIGEST_CANONICALIZATION_PENDING - the admitted digest procedure hashes working-tree bytes, so both the 0.1.0 and 0.1.1 digests reproduce only on a checkout that materialises line endings identically (CRLF on Windows). Deliberately not solved in V2-001D",
-    "qa/block.media.image-prep/digest.test.mjs pins the live tree to the 0.1.0 admission, so 2 of its 3 tests now fail BY DESIGN. Not edited (V2-001D section 7). The active proof is the separate digest-0.1.1.test.mjs",
-    "the delegate has no Windows shell and cannot install Chromium (cdn.playwright.dev 403, network allowlist). All browser evidence is HOST_SUPPLIED_TRUSTED",
-    "the delegate has no GitHub egress; only the Windows host can push othrys-v2",
-    "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
-    "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
-  ],
-  "last_control_decision": {
-    "mission_id": "V2-010O",
-    "decision": "GREAT_HARVEST_PROVEN",
-    "authority": "Permanent Git-history + commit-intent + live-only source quarry is deterministic, authority-free, and mandatory design preflight."
-  },
-  "next_legal_action": "Verified Artifact/local action cache: immutable verified Artifact identity, refusal/invalidation memory and local deterministic reuse; independent verification remains non-reusable.",
-  "mission_history": [
-    {
-      "mission_id": "V2-HUB-QUAL-001",
-      "status": "COMPLETE",
-      "note": "Hub qualified as bounded V2 construction/inspection surface; live V2 write remained locked during qualification. Final proof recorded at 6304cebf."
-    },
-    {
-      "mission_id": "V2-001F",
-      "status": "COMPLETE",
-      "note": "Canonical V2 Block #1 source established at blocks/media/image-prep; digest exact; Node 10/10, Chromium 29/29, aggressive 18/18; mission commit synced at 819b99e. Not mounted; Block #2 forbidden."
-    },
-    {
-      "mission_id": "V2-001G",
-      "status": "COMPLETE",
-      "note": "Block #1 exact composition/removal proof PASS; real Talos/Chromium SUCCEEDED; all hostile composition controls PASS."
-    },
-    {
-      "mission_id": "V2-001H",
-      "status": "COMPLETE",
-      "note": "Block #2 candidate selected and synced."
-    },
-    {
-      "mission_id": "V2-001I",
-      "status": "COMPLETE",
-      "note": "Block #2 admitted/composed; hostile controls PASS; synced."
-    },
-    {
-      "mission_id": "V2-001J",
-      "status": "COMPLETE",
-      "note": "Two-Block state/documentary truth reconciled; both exact mount verifiers PASS; synced at fbb46d7."
-    },
-    {
-      "mission_id": "V2-002A",
-      "status": "COMPLETE",
-      "note": "Talos minimum extraction boundary qualified; disposable Node probe PASS; synced."
-    },
-    {
-      "mission_id": "V2-002B",
-      "status": "COMPLETE",
-      "note": "Minimum Talos lifecycle/retry/replay kernel extracted; 5/5 Legion tests PASS; synced."
-    },
-    {
-      "mission_id": "V2-002C",
-      "status": "COMPLETE",
-      "note": "Detached Legion qwen3-builder worker PASS; exact allow-list; durable result; synced at 9e20c3f."
-    },
-    {
-      "mission_id": "V2-002D",
-      "status": "COMPLETE",
-      "note": "Talos drove 3 Qwen attempts; verifier rejected first two; attempt 3 PASS; replay SUCCEEDED; synced at c158562."
-    },
-    {
-      "mission_id": "V2-002E",
-      "status": "COMPLETE",
-      "note": "Minimum Trust Canal synced at 0ec72dc; 16/16 combined gate PASS."
-    },
-    {
-      "mission_id": "V2-002F",
-      "status": "COMPLETE",
-      "note": "Hephaestus authority synced at 1719766; live chain proven."
-    },
-    {
-      "mission_id": "V2-003A",
-      "status": "RUNNING",
-      "note": "Use existing RAW Block #3 analytics.visit-tracking lineage; do not invent a new Block."
-    },
-    {
-      "mission_id": "V2-003A",
-      "status": "COMPLETE_SYNC_PENDING",
-      "note": "Block #3 exact-byte RAW transplant/admission; 18/18 block, 24/24 spine, 10/10 worker; live Trust->Heph->Talos->Qwen->visit-record proof PASS; production schema/RLS blocker preserved."
-    },
-    {
-      "mission_id": "V2-003B",
-      "status": "COMPLETE_SYNC_PENDING",
-      "note": "Three exact mounts PASS; Block3 patched to 0.1.1 for stable LF-normalized digest; RAW maturity laundering rejected; Factory eligibility false."
-    },
-    {
-      "mission_id": "V2-004A",
-      "status": "COMPLETE_SYNC_PENDING",
-      "note": "Legion census/envelope 6/6; Trust->Heph->Talos->Mycelium-selected Legion->Qwen proof SUCCEEDED in one attempt; authority false, distributed false."
-    },
-    {
-      "mission_id": "V2-005A",
-      "status": "COMPLETE_SYNC_PENDING",
-      "note": "Minimum Factory 6/6; Find This Item built via Trust Canal->Hephaestus->Talos->Legion/Qwen using exact Block #2; verifier PASS; WAITING_OPERATOR_ACCEPTANCE; no release. Candidate committed locally at 24b99ab; not pushed, accepted, or released."
-    },
-    {
-      "mission_id": "V2-005B",
-      "status": "COMPLETE_SYNC_PENDING",
-      "note": "Durable Factory run reloads in separate process as WAIT_OPERATOR; no rebuild, accept or release; candidate commit remains exact."
-    },
-    {
-      "mission_id": "V2-005D",
-      "status": "COMPLETE_SYNC_PENDING",
-      "note": "Factory refinement lineage proven on disposable clone; Qwen one-attempt PASS; real candidate untouched; no accept/release."
-    },
-    {
-      "mission_id": "V2-005E",
-      "status": "COMPLETE_SYNC_PENDING",
-      "note": "T590 llama3.2 advisory lane live; proposal exact-candidate-bound and authority-free; hallucinated SQL/network risk preserved; proposal unselected."
-    },
-    {
-      "mission_id": "V2-005F",
-      "status": "COMPLETE",
-      "note": "T590 llama3.2 proposal -> Legion qwen3:8b reviewer -> deterministic per-suggestion retrieval/exact-source/lexical grounding; 31/31 Factory AI, 24/24 Mycelium, 10/10 Worker; no mutation/accept/release."
-    },
-    {
-      "mission_id": "V2-005G",
-      "status": "COMPLETE",
-      "note": "AI anti-churn gate proven: live qualified suggestion had no negative gap evidence, so NO_CHANGE_JUSTIFIED; real candidate clean; Qwen not invoked; 35/35 Factory, 24/24 Mycelium, 10/10 Worker."
-    },
-    {
-      "mission_id": "V2-006A",
-      "status": "COMPLETE_SYNC_PENDING",
-      "note": "Read-only Command Deck live on T590 LAN; 2/2 tests on Legion+T590; GET status only; POST 405; controls locked; token machine-local."
-    },
-    {
-      "mission_id": "V2-006F",
-      "status": "COMPLETE",
-      "note": "T590 user-space admission watcher active+enabled; 23/23 boundary tests PASS at candidate cb4ae1a; newline-complete and malformed-input fail-closed rules preserved; admission only, no Hephaestus/Talos/Worker/accept/reject/release execution authority."
-    },
-    {
-      "mission_id": "V2-007A",
-      "status": "COMPLETE",
-      "note": "Panda-style OTHRYS OS Alpha shell live on T590 tablet host; canonical mission goal/laws/artifact state exposed; Legion 5/5 and T590 5/5 Deck tests PASS at a63afa7; no Panda branding; no new execution authority."
-    },
-    {
-      "mission_id": "V2-007B",
-      "status": "COMPLETE",
-      "note": "Panda-style model selector backed by proven V2 stock: Legion qwen3-builder PRIMARY, T590 llama3.2 ADVISORY ONLY, remote escalation GATED; Legion 5/5 + T590 5/5 at 0f4f09d; selection persists only as tablet preference and grants no routing/execution authority."
-    },
-    {
-      "mission_id": "V2-007C",
-      "status": "COMPLETE",
-      "note": "Panda-style sidebar now opens functional Titans, Blocks, Models, Nodes and Oroi views over real V2 data; only Hephaestus/Talos shown as proven Titans; Legion 5/5 + T590 5/5 at b99b318; no write or execution authority added."
-    },
-    {
-      "mission_id": "V2-007D",
-      "status": "COMPLETE",
-      "note": "Recent Mission trail now derives from canonical missions/*.result.json rather than incomplete chat/GPT_STATE history; Legion 5/5 + T590 5/5 at 0b76e54; missing result files are not inferred complete; no new authority."
-    },
-    {
-      "mission_id": "V2-007E",
-      "status": "COMPLETE",
-      "note": "Progress phases now derive from mission envelope/result evidence: Plan COMPLETE, Build ACTIVE while result absent, Review requires PASS, Ship remains separate closeout; Legion 5/5 + T590 5/5 at 64e395b; projection only, no transition authority."
-    },
-    {
-      "mission_id": "V2-008D",
-      "status": "COMPLETE",
-      "verdict": "PASS",
-      "closeout": "NO_CHANGE_JUSTIFIED"
-    },
-    {
-      "mission_id": "V2-010D",
-      "status": "COMPLETE",
-      "note": "Operating modes enforced at Command Deck ingress and Trust Canal admission; default SUPERVISED_EXECUTE; 200/200 Legion runtime; no authority grant."
-    },
-    {
-      "mission_id": "V2-010E",
-      "status": "COMPLETE",
-      "note": "Mnemosyne explicit knowledge service: inbox-only capture, non-promoting review, deterministic local search, zero-mutation maintenance, reconstructible export; 209/209 Legion runtime."
-    },
-    {
-      "mission_id": "V2-010F",
-      "status": "COMPLETE",
-      "note": "Atlas foundation ported into OTHRYS OS: typed/provenanced derived graph, Nine Muse routing, gravity/heat, secret guard, authenticated read-only API and first Atlas workstation; 220/220 Node + 36/36 Python Legion proof."
-    },
-    {
-      "mission_id": "V2-010K",
-      "status": "COMPLETE",
-      "note": "Library/Vault posture + Hecatoncheires audit; Legion 287/287 + 36/36, T590 287/287 + 36/36 exact implementation; estate deterministic/0 defects; multichannel candidate logged only."
-    },
-    {
-      "mission_id": "V2-010L",
-      "status": "COMPLETE",
-      "note": "Housekeeping optimization proved multichannel Mycelium, isolated Hephaestus hands, WorkKey/anastomosis planning, per-project optimization phenotypes, network/concurrency knees and zero-growth test-temp hygiene; implementation independently green on T590."
-    },
-    {
-      "mission_id": "V2-010M",
-      "status": "COMPLETE",
-      "note": "Project-aware Mycelium metabolism/calibration + biological-network harvest; Legion/T590 297 Node + 66 Mycelium + 10 workers; 0-defect deterministic estate; authority unchanged."
-    },
-    {
-      "mission_id": "V2-010N",
-      "status": "COMPLETE",
-      "note": "Context Metabolism + cross-repo gem harvest; 31-43% conservative transport reduction, ~5.8-7.7x warm context speedup from exact catalog-keyed term-hit cache, 307/307 Node + 66/66 Mycelium + 10/10 workers on Legion/T590 implementation checkpoint."
-    }
-  ],
-  "git": {
-    "canonical_history": "single",
-    "law": "BOOK_OF_GPT.md law 30 (ONE V2 HISTORY)",
-    "merge_base": "66c45631781dfce93a4c8628f2a3de70a6bad09c",
-    "local_parent": "b65ebba9f13a5e852bb778b33b2eaff6fcfa966b",
-    "remote_parent": "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
-    "base_sha_for_next_mission": "00ad97c0937eee629167773bdd52455eb7fc50a8",
-    "safety_ref": "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
-    "sync_status": "SYNCED",
-    "push_owner": "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
-    "base_sha_verified_this_mission": "092607f8bb3e9c8c74141d15bf22d551c03f567d",
-    "base_sha_verification": "V2-001J start gate: local HEAD == origin/main == 092607f8bb3e9c8c74141d15bf22d551c03f567d",
-    "closeout_law": "BOOK_OF_GPT law 30 plus the V2-001B.R hard law: no mission is complete until push and remote verify succeed. The delegate has never had GitHub egress, so under a literal reading no delegate mission can reach PASS. Recorded as evidence for GPT; not resolved by the delegate.",
-    "unpushed_commits": "NONE"
-  },
-  "block_state": {
-    "capability_blocks_admitted": 2,
-    "block_2": "ADMITTED_COMPOSED - block.monetization.affiliate-offer@0.1.0",
-    "control_feedback": {
-      "path": "blocks/control_feedback/",
-      "classification": "SHARED_SERVICE / PLATFORM_ONLY",
-      "is_capability_block": false,
-      "technical_debt": "lives under blocks/; relocation is a separate mission",
-      "status": "FROZEN_AND_AUDITED (V2-000F), unchanged by V2-001A.R"
-    },
-    "oros": "othrys-v2 is control plane, not an Oros. The Oros Zero specimen is oros/oros-zero (PENTA-001), referenced and untouched.",
-    "foundation_state": "TWO_BLOCK_FOUNDATION_PROVEN",
-    "oros_zero": "Composition proof fixture only. V2-001G proved Block #1 can be mounted through the existing Talos/Oros Zero path without making legacy Oros Zero canonical V2 product code.",
-    "capability_blocks_note": "Two active admitted Capability Blocks: image-prep@0.1.1 and affiliate-offer@0.1.0.",
-    "active_block_1": {
-      "block_id": "block.media.image-prep",
-      "block_version": "0.1.1",
-      "package_tree_digest": "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
-      "admission_status": "ACTIVE_ADMITTED",
-      "runtime_status": "RUNTIME_PROVEN",
-      "admitted_by": "V2-001D",
-      "admission_record": "admissions/block.media.image-prep@0.1.1.json",
-      "supersession_ledger": "admissions/SUPERSESSION.md",
-      "maturity": "REUSABLE - unchanged; a PATCH repair is not a maturity promotion (Book of Blocks 7)",
-      "canonical_source": "othrys-v2/blocks/media/image-prep (canonical since V2-001F); legacy othrys-blocks source retained as provenance",
-      "runtime_proof": "V2-owned copy on LEGION, directly observed by GPT Control: node 10/10, canonical browser 29/29 with real Chromium, aggressive 18/18 with byte-identical canonical QA harness.",
-      "delegate_corroboration": "digest exact match; playwright --list enumerates 29 and 18, matching the reported totals; node suite re-run locally 10/10; staged aggressive harness byte-identical to qa/ sources",
-      "repair_evidence": "V2-001C - docs/V2-001C/DEFECT_REPAIR.md",
-      "digest_proof": "qa/block.media.image-prep/digest-0.1.1.test.mjs (5 tests, Windows-host by construction)",
-      "implementation_in_v2": true,
-      "mounted": false,
-      "relocation_status": "HOME - exact active 0.1.1 specimen ingested by V2-001F at blocks/media/image-prep; no refactor; legacy source is quarry/provenance.",
-      "reconstructible_from_v2_alone": true,
-      "current_canonical_home": "blocks/media/image-prep",
-      "composition_proven": true,
-      "composition_proof": "V2-001G: exact 0.1.1/digest lock; disposable Oros Zero via legacy Talos; real Chromium SUCCEEDED; absence/tamper/wrong-lock/no-legacy-fallback all PASS.",
-      "mount_status": "PROVEN_IN_DISPOSABLE_OROS_ZERO; no production Oros mount claimed"
-    },
-    "block_1_historical_0_1_0": {
-      "block_id": "block.media.image-prep",
-      "block_version": "0.1.0",
-      "package": "@othrys-blocks/media-image-prep",
-      "package_tree_digest": "32b34548ad2dcd31c81d6efc5b569e0f19f33943e621f910f2f07b15ad363d7b",
-      "maturity_at_admission": "REUSABLE",
-      "canonical_source": "othrys-blocks/blocks/media/image-prep @ 09efbc7088c320a8bb0ae6de0566a764e502115c",
-      "admission_record": "admissions/block.media.image-prep@0.1.0.json",
-      "admitted_by": "V2-001A.R",
-      "implementation_in_v2": false,
-      "mounted": false,
-      "digest_rechecked_at": "2026-08-24 (V2-001B, V2-001B.R, V2-001B.S and V2-001B.T) - unchanged all four times",
-      "runtime_proof": "RUNTIME_PROVEN on LEGION Windows, recorded by V2-001B.T from host-supplied evidence. NODE_RUNTIME: npm.cmd run test:node -> 4 tests, 4 passed, 0 failed, 0 skipped, 0 cancelled. BROWSER_RUNTIME: npm.cmd run test:browser -> Playwright with real Chromium, 20 tests, 20 passed, 0 failed, 1 worker, ~4.8 s. Host attests not mocked, not substituted with cloud Chromium, no Block repair required. Evidence class HOST_SUPPLIED_TRUSTED: the delegate did NOT observe the runs and does not claim to. It verified the specimen digest (exact match) and that the suites declare exactly 20 and 4 tests against one chromium project, consistent with the reported totals.",
-      "runtime_status": "RUNTIME_PROVEN for 0.1.0 only (V2-001B.T). NOT inherited by candidate 0.1.1.",
-      "runtime_evidence": "docs/V2-001B.T/RUNTIME_PROOF.md; receipts/runs/V2-001B.T/20260824T190245Z.json",
-      "previous_blocker_resolution": "RESOLVED_BY_HOST_PROOF - for this proof only; the delegate's inability to reach Windows runtime is unchanged",
-      "admitted_version": "0.1.0 (unchanged; admission record byte-identical)",
-      "admission_status": "HISTORICAL / SUPERSEDED",
-      "superseded_by": "0.1.1 (V2-001D)",
-      "note": "Retained as historical evidence. Record byte-unmodified; RUNTIME_PROVEN (V2-001B.T) remains true OF 0.1.0; reconstructible from othrys-blocks 09efbc7088c320a8bb0ae6de0566a764e502115c. Superseded means 'not the specimen to mount', not 'wrong'."
-    },
-    "technical_debt": [
-      "DIGEST_CANONICALIZATION_PENDING - see known_blockers",
-      "block.media.image-prep@0.1.1 BLOCK.md contains stale package-version prose (says 0.1.0) but is content-bound inside the admitted digest; do not edit in place."
-    ],
-    "block_2_candidate": {
-      "block_id": "block.monetization.affiliate-offer",
-      "block_version": "0.1.0",
-      "package_tree_digest": "f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e",
-      "quarry_path": "othrys-blocks/blocks/monetization/affiliate-offer",
-      "maturity": "REUSABLE",
-      "selected_by": "V2-001H",
-      "implementation_in_v2": true,
-      "admitted": true,
-      "mounted": false,
-      "composition_proven": true,
-      "canonical_path": "blocks/monetization/affiliate-offer",
-      "admitted_by": "V2-001I",
-      "mount_status": "PROVEN_IN_TWO_BLOCK_COMPOSITION_FIXTURE; no production Oros mount claimed"
-    }
-  },
-  "control_feedback": {
-    "classification": "SHARED_SERVICE / PLATFORM_ONLY",
-    "status": "FROZEN_AND_AUDITED",
-    "audit": "docs/V2-000F/CONTROL_FEEDBACK_AUDIT.md",
-    "files": 11,
-    "lines": 996,
-    "tests": 30,
-    "dependencies": "stdlib only",
-    "hard_laws": "15 of 15 verdicted with evidence",
-    "known_limits": [
-      "a crash between the run-receipt write and the LATEST.json write leaves evidence intact and the pointer lagging",
-      "the same applies between a sync stamp and its LATEST.json update"
-    ]
-  },
-  "control_lifeline": {
-    "directive": "BOOK_OF_GPT.md -> DIRECTIVE 0 - CONTROL LIFELINE",
-    "primary": {
-      "transport": "ChatGPT / GPT Control -> Remote Desktop Commander Remote MCP -> authorized Legion -> OTHRYS Hub -> explicit local Ollama builder -> deterministic proof",
-      "status": "ACTIVE_PROVEN",
-      "proof": "2026-08-24 GPT-LOCAL-BUILDER-CERT-001: remote Legion reached; Hub engineering_platform invoked qwen3-builder -> Ollama qwen3:8b; one-file scratch mutation exact; independent Git diff verified; temp repo deleted"
-    },
-    "fallback_a": {
-      "transport": "private GitHub command relay -> Legion watcher -> Hub -> local builder -> proof relay",
-      "status": "ACTIVE_PROVEN_TRANSPORT_PROBE_ONLY",
-      "activation_gate": "PASSED by LIFELINE-001 private issue #1 full round-trip proof",
-      "watcher": "Windows Scheduled Task: OTHRYS-Lifeline-GitHub-Relay; state RUNNING during proof; starts at user logon",
-      "proof": "LIFELINE-001-PROBE-001: ChatGPT-created private issue #1 -> watcher -> Hub -> qwen3-builder/Ollama -> exact PROBE.txt diff -> PASS comment -> issue closed -> ChatGPT retrieved proof",
-      "scope": "scratch_builder_probe only; live repo mutation disabled; arbitrary task text absent from command schema",
-      "reboot_persistence": "CONFIGURED_AT_LOGON_NOT_REBOOT_PROVEN"
-    },
-    "break_glass": {
-      "transport": "operator direct Legion control executing an exact frozen GPT Control instruction",
-      "status": "MANUAL_ONLY"
-    },
-    "failure_state": "CONTROL_LINK_DOWN -> STOP ALL NON-LIFELINE WORK",
-    "fallback_policy": "NO_HIDDEN_FALLBACK; transport changes are operator-visible and logged"
-  }
+    "schema":  "othrys.v2.gpt-state.v1",
+    "sequence":  113,
+    "state_owner":  "GPT_CONTROL",
+    "remote_repo":  "vtcbelgium/othrys-v2",
+    "remote_head_at_last_verified_read":  "36fae4a915b43c635948b82c800b77c72da5a25a",
+    "control_gate":  "CLEAN_SYNCED",
+    "active_mission":  {
+                           "mission_id":  "V2-010P",
+                           "status":  "COMPLETE",
+                           "issued_label":  "V2-010P - THE GREAT HARVEST PERIMETER / WHOLE LOCAL NETWORK CENSUS",
+                           "source":  "operator_current_conversation"
+                       },
+    "last_verified_remote_receipt":  "00ad97c0937eee629167773bdd52455eb7fc50a8",
+    "last_verified_receipt_mission":  "V2-006A",
+    "last_log_sequence":  64,
+    "last_log_hash":  "242970f06018df446478944be650ef2c5170ff5b58d7b3de46df292dfb0c2da6",
+    "log_integrity":  {
+                          "status":  "DEGRADED_RECOVERED",
+                          "incidents":  [
+                                            "sequence 3 stored entry_hash mismatch",
+                                            "sequence 8 append commit accidentally altered historical sequence 4 text; restored and recorded as sequence 9"
+                                        ],
+                          "recovery_events":  [
+                                                  4,
+                                                  9
+                                              ]
+                      },
+    "inventory":  {
+                      "root":  "LEGACY_INVENTORY.md",
+                      "coverage":  "PARTIAL",
+                      "supplements":  [
+                                          "inventory/JARVIS.md",
+                                          "inventory/OTHRYS_CORE_CONTROL.md"
+                                      ],
+                      "senior_canon_pointers":  "LEGACY_INVENTORY.md section 9 (recovered by V2-000C)"
+                  },
+    "control_files":  {
+                          "law":  "BOOK_OF_GPT.md",
+                          "foundation_law":  "FOUNDATION_LAWS.md",
+                          "foundation_research":  "FOUNDATION_LAWS_RESEARCH.md",
+                          "rails":  "GPT_RAILS.md",
+                          "log":  "GPT_LOG.jsonl",
+                          "chronicle":  "V2_CHRONICLE.md",
+                          "research":  "GPT_RAILS_RESEARCH.md",
+                          "intake":  "GPT_INBOX.md",
+                          "library":  "TEMP_LIBRARY.md",
+                          "inventory":  "LEGACY_INVENTORY.md"
+                      },
+    "memory_boundary":  {
+                            "othrys_v2_repo":  "MACHINE_CONTROL_TRUTH",
+                            "othrys_memory":  "ACCEPTED_KNOWLEDGE_PROJECTION",
+                            "memory_pointer":  "02 Projects/Othrys/V2/CONTROL-INDEX.md",
+                            "chat_memory":  "NON_AUTHORITATIVE",
+                            "gpt_inbox":  "UNPROMOTED_INTELLIGENCE_ONLY"
+                        },
+    "known_blockers":  [
+                           "DIGEST_CANONICALIZATION_PENDING - the admitted digest procedure hashes working-tree bytes, so both the 0.1.0 and 0.1.1 digests reproduce only on a checkout that materialises line endings identically (CRLF on Windows). Deliberately not solved in V2-001D",
+                           "qa/block.media.image-prep/digest.test.mjs pins the live tree to the 0.1.0 admission, so 2 of its 3 tests now fail BY DESIGN. Not edited (V2-001D section 7). The active proof is the separate digest-0.1.1.test.mjs",
+                           "the delegate has no Windows shell and cannot install Chromium (cdn.playwright.dev 403, network allowlist). All browser evidence is HOST_SUPPLIED_TRUSTED",
+                           "the delegate has no GitHub egress; only the Windows host can push othrys-v2",
+                           "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
+                           "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
+                       ],
+    "last_control_decision":  {
+                                  "mission_id":  "V2-010P",
+                                  "decision":  "FEDERATED_LOCAL_CODE_CENSUS_COMPLETE_PENDING_CANONICAL_PROOF",
+                                  "authority":  "Inventory evidence only; no harvested source authority or automatic promotion."
+                              },
+    "next_legal_action":  "Commit V2-010P implementation, push fast-forward, verify exact commit independently on T590, then write canonical proof closeout.",
+    "mission_history":  [
+                            {
+                                "mission_id":  "V2-HUB-QUAL-001",
+                                "status":  "COMPLETE",
+                                "note":  "Hub qualified as bounded V2 construction/inspection surface; live V2 write remained locked during qualification. Final proof recorded at 6304cebf."
+                            },
+                            {
+                                "mission_id":  "V2-001F",
+                                "status":  "COMPLETE",
+                                "note":  "Canonical V2 Block #1 source established at blocks/media/image-prep; digest exact; Node 10/10, Chromium 29/29, aggressive 18/18; mission commit synced at 819b99e. Not mounted; Block #2 forbidden."
+                            },
+                            {
+                                "mission_id":  "V2-001G",
+                                "status":  "COMPLETE",
+                                "note":  "Block #1 exact composition/removal proof PASS; real Talos/Chromium SUCCEEDED; all hostile composition controls PASS."
+                            },
+                            {
+                                "mission_id":  "V2-001H",
+                                "status":  "COMPLETE",
+                                "note":  "Block #2 candidate selected and synced."
+                            },
+                            {
+                                "mission_id":  "V2-001I",
+                                "status":  "COMPLETE",
+                                "note":  "Block #2 admitted/composed; hostile controls PASS; synced."
+                            },
+                            {
+                                "mission_id":  "V2-001J",
+                                "status":  "COMPLETE",
+                                "note":  "Two-Block state/documentary truth reconciled; both exact mount verifiers PASS; synced at fbb46d7."
+                            },
+                            {
+                                "mission_id":  "V2-002A",
+                                "status":  "COMPLETE",
+                                "note":  "Talos minimum extraction boundary qualified; disposable Node probe PASS; synced."
+                            },
+                            {
+                                "mission_id":  "V2-002B",
+                                "status":  "COMPLETE",
+                                "note":  "Minimum Talos lifecycle/retry/replay kernel extracted; 5/5 Legion tests PASS; synced."
+                            },
+                            {
+                                "mission_id":  "V2-002C",
+                                "status":  "COMPLETE",
+                                "note":  "Detached Legion qwen3-builder worker PASS; exact allow-list; durable result; synced at 9e20c3f."
+                            },
+                            {
+                                "mission_id":  "V2-002D",
+                                "status":  "COMPLETE",
+                                "note":  "Talos drove 3 Qwen attempts; verifier rejected first two; attempt 3 PASS; replay SUCCEEDED; synced at c158562."
+                            },
+                            {
+                                "mission_id":  "V2-002E",
+                                "status":  "COMPLETE",
+                                "note":  "Minimum Trust Canal synced at 0ec72dc; 16/16 combined gate PASS."
+                            },
+                            {
+                                "mission_id":  "V2-002F",
+                                "status":  "COMPLETE",
+                                "note":  "Hephaestus authority synced at 1719766; live chain proven."
+                            },
+                            {
+                                "mission_id":  "V2-003A",
+                                "status":  "RUNNING",
+                                "note":  "Use existing RAW Block #3 analytics.visit-tracking lineage; do not invent a new Block."
+                            },
+                            {
+                                "mission_id":  "V2-003A",
+                                "status":  "COMPLETE_SYNC_PENDING",
+                                "note":  "Block #3 exact-byte RAW transplant/admission; 18/18 block, 24/24 spine, 10/10 worker; live Trust-\u003eHeph-\u003eTalos-\u003eQwen-\u003evisit-record proof PASS; production schema/RLS blocker preserved."
+                            },
+                            {
+                                "mission_id":  "V2-003B",
+                                "status":  "COMPLETE_SYNC_PENDING",
+                                "note":  "Three exact mounts PASS; Block3 patched to 0.1.1 for stable LF-normalized digest; RAW maturity laundering rejected; Factory eligibility false."
+                            },
+                            {
+                                "mission_id":  "V2-004A",
+                                "status":  "COMPLETE_SYNC_PENDING",
+                                "note":  "Legion census/envelope 6/6; Trust-\u003eHeph-\u003eTalos-\u003eMycelium-selected Legion-\u003eQwen proof SUCCEEDED in one attempt; authority false, distributed false."
+                            },
+                            {
+                                "mission_id":  "V2-005A",
+                                "status":  "COMPLETE_SYNC_PENDING",
+                                "note":  "Minimum Factory 6/6; Find This Item built via Trust Canal-\u003eHephaestus-\u003eTalos-\u003eLegion/Qwen using exact Block #2; verifier PASS; WAITING_OPERATOR_ACCEPTANCE; no release. Candidate committed locally at 24b99ab; not pushed, accepted, or released."
+                            },
+                            {
+                                "mission_id":  "V2-005B",
+                                "status":  "COMPLETE_SYNC_PENDING",
+                                "note":  "Durable Factory run reloads in separate process as WAIT_OPERATOR; no rebuild, accept or release; candidate commit remains exact."
+                            },
+                            {
+                                "mission_id":  "V2-005D",
+                                "status":  "COMPLETE_SYNC_PENDING",
+                                "note":  "Factory refinement lineage proven on disposable clone; Qwen one-attempt PASS; real candidate untouched; no accept/release."
+                            },
+                            {
+                                "mission_id":  "V2-005E",
+                                "status":  "COMPLETE_SYNC_PENDING",
+                                "note":  "T590 llama3.2 advisory lane live; proposal exact-candidate-bound and authority-free; hallucinated SQL/network risk preserved; proposal unselected."
+                            },
+                            {
+                                "mission_id":  "V2-005F",
+                                "status":  "COMPLETE",
+                                "note":  "T590 llama3.2 proposal -\u003e Legion qwen3:8b reviewer -\u003e deterministic per-suggestion retrieval/exact-source/lexical grounding; 31/31 Factory AI, 24/24 Mycelium, 10/10 Worker; no mutation/accept/release."
+                            },
+                            {
+                                "mission_id":  "V2-005G",
+                                "status":  "COMPLETE",
+                                "note":  "AI anti-churn gate proven: live qualified suggestion had no negative gap evidence, so NO_CHANGE_JUSTIFIED; real candidate clean; Qwen not invoked; 35/35 Factory, 24/24 Mycelium, 10/10 Worker."
+                            },
+                            {
+                                "mission_id":  "V2-006A",
+                                "status":  "COMPLETE_SYNC_PENDING",
+                                "note":  "Read-only Command Deck live on T590 LAN; 2/2 tests on Legion+T590; GET status only; POST 405; controls locked; token machine-local."
+                            },
+                            {
+                                "mission_id":  "V2-006F",
+                                "status":  "COMPLETE",
+                                "note":  "T590 user-space admission watcher active+enabled; 23/23 boundary tests PASS at candidate cb4ae1a; newline-complete and malformed-input fail-closed rules preserved; admission only, no Hephaestus/Talos/Worker/accept/reject/release execution authority."
+                            },
+                            {
+                                "mission_id":  "V2-007A",
+                                "status":  "COMPLETE",
+                                "note":  "Panda-style OTHRYS OS Alpha shell live on T590 tablet host; canonical mission goal/laws/artifact state exposed; Legion 5/5 and T590 5/5 Deck tests PASS at a63afa7; no Panda branding; no new execution authority."
+                            },
+                            {
+                                "mission_id":  "V2-007B",
+                                "status":  "COMPLETE",
+                                "note":  "Panda-style model selector backed by proven V2 stock: Legion qwen3-builder PRIMARY, T590 llama3.2 ADVISORY ONLY, remote escalation GATED; Legion 5/5 + T590 5/5 at 0f4f09d; selection persists only as tablet preference and grants no routing/execution authority."
+                            },
+                            {
+                                "mission_id":  "V2-007C",
+                                "status":  "COMPLETE",
+                                "note":  "Panda-style sidebar now opens functional Titans, Blocks, Models, Nodes and Oroi views over real V2 data; only Hephaestus/Talos shown as proven Titans; Legion 5/5 + T590 5/5 at b99b318; no write or execution authority added."
+                            },
+                            {
+                                "mission_id":  "V2-007D",
+                                "status":  "COMPLETE",
+                                "note":  "Recent Mission trail now derives from canonical missions/*.result.json rather than incomplete chat/GPT_STATE history; Legion 5/5 + T590 5/5 at 0b76e54; missing result files are not inferred complete; no new authority."
+                            },
+                            {
+                                "mission_id":  "V2-007E",
+                                "status":  "COMPLETE",
+                                "note":  "Progress phases now derive from mission envelope/result evidence: Plan COMPLETE, Build ACTIVE while result absent, Review requires PASS, Ship remains separate closeout; Legion 5/5 + T590 5/5 at 64e395b; projection only, no transition authority."
+                            },
+                            {
+                                "mission_id":  "V2-008D",
+                                "status":  "COMPLETE",
+                                "verdict":  "PASS",
+                                "closeout":  "NO_CHANGE_JUSTIFIED"
+                            },
+                            {
+                                "mission_id":  "V2-010D",
+                                "status":  "COMPLETE",
+                                "note":  "Operating modes enforced at Command Deck ingress and Trust Canal admission; default SUPERVISED_EXECUTE; 200/200 Legion runtime; no authority grant."
+                            },
+                            {
+                                "mission_id":  "V2-010E",
+                                "status":  "COMPLETE",
+                                "note":  "Mnemosyne explicit knowledge service: inbox-only capture, non-promoting review, deterministic local search, zero-mutation maintenance, reconstructible export; 209/209 Legion runtime."
+                            },
+                            {
+                                "mission_id":  "V2-010F",
+                                "status":  "COMPLETE",
+                                "note":  "Atlas foundation ported into OTHRYS OS: typed/provenanced derived graph, Nine Muse routing, gravity/heat, secret guard, authenticated read-only API and first Atlas workstation; 220/220 Node + 36/36 Python Legion proof."
+                            },
+                            {
+                                "mission_id":  "V2-010K",
+                                "status":  "COMPLETE",
+                                "note":  "Library/Vault posture + Hecatoncheires audit; Legion 287/287 + 36/36, T590 287/287 + 36/36 exact implementation; estate deterministic/0 defects; multichannel candidate logged only."
+                            },
+                            {
+                                "mission_id":  "V2-010L",
+                                "status":  "COMPLETE",
+                                "note":  "Housekeeping optimization proved multichannel Mycelium, isolated Hephaestus hands, WorkKey/anastomosis planning, per-project optimization phenotypes, network/concurrency knees and zero-growth test-temp hygiene; implementation independently green on T590."
+                            },
+                            {
+                                "mission_id":  "V2-010M",
+                                "status":  "COMPLETE",
+                                "note":  "Project-aware Mycelium metabolism/calibration + biological-network harvest; Legion/T590 297 Node + 66 Mycelium + 10 workers; 0-defect deterministic estate; authority unchanged."
+                            },
+                            {
+                                "mission_id":  "V2-010N",
+                                "status":  "COMPLETE",
+                                "note":  "Context Metabolism + cross-repo gem harvest; 31-43% conservative transport reduction, ~5.8-7.7x warm context speedup from exact catalog-keyed term-hit cache, 307/307 Node + 66/66 Mycelium + 10/10 workers on Legion/T590 implementation checkpoint."
+                            }
+                        ],
+    "git":  {
+                "canonical_history":  "single",
+                "law":  "BOOK_OF_GPT.md law 30 (ONE V2 HISTORY)",
+                "merge_base":  "66c45631781dfce93a4c8628f2a3de70a6bad09c",
+                "local_parent":  "b65ebba9f13a5e852bb778b33b2eaff6fcfa966b",
+                "remote_parent":  "92d29d5e67c4bbc5945b0fa5c6c4f15df4f1ab8f",
+                "base_sha_for_next_mission":  "00ad97c0937eee629167773bdd52455eb7fc50a8",
+                "safety_ref":  "refs/heads/backup/pre-v2-reconcile at b65ebba (host-created, untouched)",
+                "sync_status":  "SYNCED",
+                "push_owner":  "Windows host. Delegates do not gain GitHub authority. GPT Control may operate the host only through an explicitly authorized transport.",
+                "base_sha_verified_this_mission":  "092607f8bb3e9c8c74141d15bf22d551c03f567d",
+                "base_sha_verification":  "V2-001J start gate: local HEAD == origin/main == 092607f8bb3e9c8c74141d15bf22d551c03f567d",
+                "closeout_law":  "BOOK_OF_GPT law 30 plus the V2-001B.R hard law: no mission is complete until push and remote verify succeed. The delegate has never had GitHub egress, so under a literal reading no delegate mission can reach PASS. Recorded as evidence for GPT; not resolved by the delegate.",
+                "unpushed_commits":  "NONE"
+            },
+    "block_state":  {
+                        "capability_blocks_admitted":  2,
+                        "block_2":  "ADMITTED_COMPOSED - block.monetization.affiliate-offer@0.1.0",
+                        "control_feedback":  {
+                                                 "path":  "blocks/control_feedback/",
+                                                 "classification":  "SHARED_SERVICE / PLATFORM_ONLY",
+                                                 "is_capability_block":  false,
+                                                 "technical_debt":  "lives under blocks/; relocation is a separate mission",
+                                                 "status":  "FROZEN_AND_AUDITED (V2-000F), unchanged by V2-001A.R"
+                                             },
+                        "oros":  "othrys-v2 is control plane, not an Oros. The Oros Zero specimen is oros/oros-zero (PENTA-001), referenced and untouched.",
+                        "foundation_state":  "TWO_BLOCK_FOUNDATION_PROVEN",
+                        "oros_zero":  "Composition proof fixture only. V2-001G proved Block #1 can be mounted through the existing Talos/Oros Zero path without making legacy Oros Zero canonical V2 product code.",
+                        "capability_blocks_note":  "Two active admitted Capability Blocks: image-prep@0.1.1 and affiliate-offer@0.1.0.",
+                        "active_block_1":  {
+                                               "block_id":  "block.media.image-prep",
+                                               "block_version":  "0.1.1",
+                                               "package_tree_digest":  "48afa7ac082db75b40278bf71ff552f6ff0ca4e1429006f759dec4c37b3b55bd",
+                                               "admission_status":  "ACTIVE_ADMITTED",
+                                               "runtime_status":  "RUNTIME_PROVEN",
+                                               "admitted_by":  "V2-001D",
+                                               "admission_record":  "admissions/block.media.image-prep@0.1.1.json",
+                                               "supersession_ledger":  "admissions/SUPERSESSION.md",
+                                               "maturity":  "REUSABLE - unchanged; a PATCH repair is not a maturity promotion (Book of Blocks 7)",
+                                               "canonical_source":  "othrys-v2/blocks/media/image-prep (canonical since V2-001F); legacy othrys-blocks source retained as provenance",
+                                               "runtime_proof":  "V2-owned copy on LEGION, directly observed by GPT Control: node 10/10, canonical browser 29/29 with real Chromium, aggressive 18/18 with byte-identical canonical QA harness.",
+                                               "delegate_corroboration":  "digest exact match; playwright --list enumerates 29 and 18, matching the reported totals; node suite re-run locally 10/10; staged aggressive harness byte-identical to qa/ sources",
+                                               "repair_evidence":  "V2-001C - docs/V2-001C/DEFECT_REPAIR.md",
+                                               "digest_proof":  "qa/block.media.image-prep/digest-0.1.1.test.mjs (5 tests, Windows-host by construction)",
+                                               "implementation_in_v2":  true,
+                                               "mounted":  false,
+                                               "relocation_status":  "HOME - exact active 0.1.1 specimen ingested by V2-001F at blocks/media/image-prep; no refactor; legacy source is quarry/provenance.",
+                                               "reconstructible_from_v2_alone":  true,
+                                               "current_canonical_home":  "blocks/media/image-prep",
+                                               "composition_proven":  true,
+                                               "composition_proof":  "V2-001G: exact 0.1.1/digest lock; disposable Oros Zero via legacy Talos; real Chromium SUCCEEDED; absence/tamper/wrong-lock/no-legacy-fallback all PASS.",
+                                               "mount_status":  "PROVEN_IN_DISPOSABLE_OROS_ZERO; no production Oros mount claimed"
+                                           },
+                        "block_1_historical_0_1_0":  {
+                                                         "block_id":  "block.media.image-prep",
+                                                         "block_version":  "0.1.0",
+                                                         "package":  "@othrys-blocks/media-image-prep",
+                                                         "package_tree_digest":  "32b34548ad2dcd31c81d6efc5b569e0f19f33943e621f910f2f07b15ad363d7b",
+                                                         "maturity_at_admission":  "REUSABLE",
+                                                         "canonical_source":  "othrys-blocks/blocks/media/image-prep @ 09efbc7088c320a8bb0ae6de0566a764e502115c",
+                                                         "admission_record":  "admissions/block.media.image-prep@0.1.0.json",
+                                                         "admitted_by":  "V2-001A.R",
+                                                         "implementation_in_v2":  false,
+                                                         "mounted":  false,
+                                                         "digest_rechecked_at":  "2026-08-24 (V2-001B, V2-001B.R, V2-001B.S and V2-001B.T) - unchanged all four times",
+                                                         "runtime_proof":  "RUNTIME_PROVEN on LEGION Windows, recorded by V2-001B.T from host-supplied evidence. NODE_RUNTIME: npm.cmd run test:node -\u003e 4 tests, 4 passed, 0 failed, 0 skipped, 0 cancelled. BROWSER_RUNTIME: npm.cmd run test:browser -\u003e Playwright with real Chromium, 20 tests, 20 passed, 0 failed, 1 worker, ~4.8 s. Host attests not mocked, not substituted with cloud Chromium, no Block repair required. Evidence class HOST_SUPPLIED_TRUSTED: the delegate did NOT observe the runs and does not claim to. It verified the specimen digest (exact match) and that the suites declare exactly 20 and 4 tests against one chromium project, consistent with the reported totals.",
+                                                         "runtime_status":  "RUNTIME_PROVEN for 0.1.0 only (V2-001B.T). NOT inherited by candidate 0.1.1.",
+                                                         "runtime_evidence":  "docs/V2-001B.T/RUNTIME_PROOF.md; receipts/runs/V2-001B.T/20260824T190245Z.json",
+                                                         "previous_blocker_resolution":  "RESOLVED_BY_HOST_PROOF - for this proof only; the delegate\u0027s inability to reach Windows runtime is unchanged",
+                                                         "admitted_version":  "0.1.0 (unchanged; admission record byte-identical)",
+                                                         "admission_status":  "HISTORICAL / SUPERSEDED",
+                                                         "superseded_by":  "0.1.1 (V2-001D)",
+                                                         "note":  "Retained as historical evidence. Record byte-unmodified; RUNTIME_PROVEN (V2-001B.T) remains true OF 0.1.0; reconstructible from othrys-blocks 09efbc7088c320a8bb0ae6de0566a764e502115c. Superseded means \u0027not the specimen to mount\u0027, not \u0027wrong\u0027."
+                                                     },
+                        "technical_debt":  [
+                                               "DIGEST_CANONICALIZATION_PENDING - see known_blockers",
+                                               "block.media.image-prep@0.1.1 BLOCK.md contains stale package-version prose (says 0.1.0) but is content-bound inside the admitted digest; do not edit in place."
+                                           ],
+                        "block_2_candidate":  {
+                                                  "block_id":  "block.monetization.affiliate-offer",
+                                                  "block_version":  "0.1.0",
+                                                  "package_tree_digest":  "f87bbdc437fb2f27e80f6e11cf9a9d327d7620218bc312505367dfa085e02c4e",
+                                                  "quarry_path":  "othrys-blocks/blocks/monetization/affiliate-offer",
+                                                  "maturity":  "REUSABLE",
+                                                  "selected_by":  "V2-001H",
+                                                  "implementation_in_v2":  true,
+                                                  "admitted":  true,
+                                                  "mounted":  false,
+                                                  "composition_proven":  true,
+                                                  "canonical_path":  "blocks/monetization/affiliate-offer",
+                                                  "admitted_by":  "V2-001I",
+                                                  "mount_status":  "PROVEN_IN_TWO_BLOCK_COMPOSITION_FIXTURE; no production Oros mount claimed"
+                                              }
+                    },
+    "control_feedback":  {
+                             "classification":  "SHARED_SERVICE / PLATFORM_ONLY",
+                             "status":  "FROZEN_AND_AUDITED",
+                             "audit":  "docs/V2-000F/CONTROL_FEEDBACK_AUDIT.md",
+                             "files":  11,
+                             "lines":  996,
+                             "tests":  30,
+                             "dependencies":  "stdlib only",
+                             "hard_laws":  "15 of 15 verdicted with evidence",
+                             "known_limits":  [
+                                                  "a crash between the run-receipt write and the LATEST.json write leaves evidence intact and the pointer lagging",
+                                                  "the same applies between a sync stamp and its LATEST.json update"
+                                              ]
+                         },
+    "control_lifeline":  {
+                             "directive":  "BOOK_OF_GPT.md -\u003e DIRECTIVE 0 - CONTROL LIFELINE",
+                             "primary":  {
+                                             "transport":  "ChatGPT / GPT Control -\u003e Remote Desktop Commander Remote MCP -\u003e authorized Legion -\u003e OTHRYS Hub -\u003e explicit local Ollama builder -\u003e deterministic proof",
+                                             "status":  "ACTIVE_PROVEN",
+                                             "proof":  "2026-08-24 GPT-LOCAL-BUILDER-CERT-001: remote Legion reached; Hub engineering_platform invoked qwen3-builder -\u003e Ollama qwen3:8b; one-file scratch mutation exact; independent Git diff verified; temp repo deleted"
+                                         },
+                             "fallback_a":  {
+                                                "transport":  "private GitHub command relay -\u003e Legion watcher -\u003e Hub -\u003e local builder -\u003e proof relay",
+                                                "status":  "ACTIVE_PROVEN_TRANSPORT_PROBE_ONLY",
+                                                "activation_gate":  "PASSED by LIFELINE-001 private issue #1 full round-trip proof",
+                                                "watcher":  "Windows Scheduled Task: OTHRYS-Lifeline-GitHub-Relay; state RUNNING during proof; starts at user logon",
+                                                "proof":  "LIFELINE-001-PROBE-001: ChatGPT-created private issue #1 -\u003e watcher -\u003e Hub -\u003e qwen3-builder/Ollama -\u003e exact PROBE.txt diff -\u003e PASS comment -\u003e issue closed -\u003e ChatGPT retrieved proof",
+                                                "scope":  "scratch_builder_probe only; live repo mutation disabled; arbitrary task text absent from command schema",
+                                                "reboot_persistence":  "CONFIGURED_AT_LOGON_NOT_REBOOT_PROVEN"
+                                            },
+                             "break_glass":  {
+                                                 "transport":  "operator direct Legion control executing an exact frozen GPT Control instruction",
+                                                 "status":  "MANUAL_ONLY"
+                                             },
+                             "failure_state":  "CONTROL_LINK_DOWN -\u003e STOP ALL NON-LIFELINE WORK",
+                             "fallback_policy":  "NO_HIDDEN_FALLBACK; transport changes are operator-visible and logged"
+                         }
 }

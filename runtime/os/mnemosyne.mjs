@@ -197,7 +197,7 @@ function greatHarvestProjection(root){
   try{
     const value=JSON.parse(readFileSync(path,'utf8'));
     if(value.schema!=='othrys.os.great-harvest.summary.v1'||value.authorityGranted!==false||value.automaticPromotion!==false||value.sourcePayloadCopied!==false) return Object.freeze({status:'INVALID',authorityGranted:false});
-    return Object.freeze({status:'READY',workspaceCount:value.workspaceCount,lineageCount:value.lineageCount,indexedObjects:value.indexedObjects,historicalOnlyObjects:value.historicalOnlyObjects,liveOnlyCount:value.liveOnlyCount??0,liveOnlyStates:value.liveOnlyStates??{},commitCount:value.commitCount,catalogSha256:value.catalogSha256,commitCatalogSha256:value.commitCatalogSha256,liveOnlyDigest:value.liveOnlyDigest??null,authorityGranted:false});
+    return Object.freeze({status:'READY',workspaceCount:value.workspaceCount,lineageCount:value.lineageCount,indexedObjects:value.indexedObjects,historicalOnlyObjects:value.historicalOnlyObjects,liveOnlyCount:value.liveOnlyCount??0,liveOnlyStates:value.liveOnlyStates??{},commitCount:value.commitCount,perimeterCount:value.perimeterCount??0,perimeterClassifications:value.perimeterClassifications??{},perimeterDevices:value.perimeterDevices??{},catalogSha256:value.catalogSha256,commitCatalogSha256:value.commitCatalogSha256,liveOnlyDigest:value.liveOnlyDigest??null,perimeterDigest:value.perimeterDigest??null,authorityGranted:false});
   }catch{return Object.freeze({status:'INVALID',authorityGranted:false});}
 }
 

@@ -39,5 +39,13 @@ class GreatHarvestTests(unittest.TestCase):
             self.assertEqual(s1['liveOnlyDigest'],s2['liveOnlyDigest']); self.assertGreaterEqual(s1['liveOnlyCount'],2)
             livecat=(root/'.othrys'/'knowledge'/'catalog'/'great-harvest-live.jsonl').read_text(encoding='utf-8')
             self.assertNotIn('export const loose=1',livecat); self.assertIn('FILESYSTEM_ONLY',livecat); self.assertIn('WORKTREE_MODIFIED',livecat)
-
+            manifest=base/'perimeter.json'
+            manifest.write_text(json.dumps({'roots':[{'device':'Legion','path':'C:/Users/demo/jarvis','classification':'CANONICAL','reason':'unique lineage'},{'device':'T590','path':'/home/demo/jarvis','classification':'DUPLICATE','reason':'same lineage elsewhere'}]}),encoding='utf-8')
+            perimeter=gh.load_perimeter(manifest); self.assertEqual(len(perimeter),2)
+            pmeta=gh.write_perimeter_catalog(root,perimeter); self.assertEqual(pmeta['perimeterCount'],2)
+            self.assertEqual(pmeta['perimeterClassifications'],{'CANONICAL':1,'DUPLICATE':1})
+            pcat=(root/'.othrys'/'knowledge'/'catalog'/'great-harvest-perimeter.jsonl').read_text(encoding='utf-8')
+            self.assertNotIn('authorityGranted":true',pcat)
+            bad=base/'bad-perimeter.json'; bad.write_text(json.dumps({'roots':[{'device':'X','path':'x','classification':'UNKNOWN'}]}),encoding='utf-8')
+            with self.assertRaises(ValueError): gh.load_perimeter(bad)
 if __name__=='__main__':unittest.main()

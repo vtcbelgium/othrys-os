@@ -1,0 +1,24 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010P",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010P",
+  "title": "The Great Harvest Perimeter / Whole Local Network Census",
+  "objective": "Extend The Great Harvest from the Projects estate to every legitimate code-bearing root on Legion and T590, with explicit exclusions and cross-device lineage/content deduplication.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Harvested repositories and loose-code roots are read-only evidence sources.",
+    "Every discovered local code root is classified; nothing disappears merely because it is duplicate or disposable.",
+    "Tool/plugin caches are explicit exclusions, not Harvest stock.",
+    "Cross-device duplicates collapse by lineage/content while preserving location provenance.",
+    "Live-only source is fingerprinted, never copied or promoted automatically.",
+    "Great Harvest remains quarry only: authorityGranted=false and automaticPromotion=false."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "c81ee1fc7d2fb8135b6e01ebbc7e222e52951ab46372f6c070eba43168266159"
+}

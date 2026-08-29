@@ -1,0 +1,44 @@
+{
+    "mission_id":  "V2-010P",
+    "verdict":  "PASS",
+    "start_sha":  "c7f0ee96634e5e0e394e8a22d267d72c969aacb7",
+    "scope":  "Federated whole-local-network Great Harvest perimeter census across Legion and T590",
+    "census":  {
+                   "workspaces":  63,
+                   "lineages":  25,
+                   "indexedObjects":  12961,
+                   "currentObjects":  5815,
+                   "historicalOnlyObjects":  7146,
+                   "indexedBytes":  309273171,
+                   "commitCount":  3891,
+                   "crossLineageDuplicateObjects":  3173,
+                   "liveOnlyCount":  2405,
+                   "liveOnlyLocationCount":  2563,
+                   "liveOnlyBytes":  48757301,
+                   "perimeterCount":  24,
+                   "perimeterClassifications":  {
+                                                    "CANONICAL":  4,
+                                                    "DUPLICATE":  4,
+                                                    "HISTORICAL":  4,
+                                                    "LIVE_ONLY":  7,
+                                                    "PROOF":  2,
+                                                    "TOOL_CACHE":  3
+                                                }
+               },
+    "digests":  {
+                    "code":  "e1bd4b168165c98b3328af6533a9b6b6cb52a0735d8b899ed90a7023edd3a83e",
+                    "commits":  "6b2d7c77ddc522256907c287157002b304a99a8f54948d8f5e567c957a8a5bc7",
+                    "liveOnly":  "8cd155c847836fd1da5045d1e8ce291c2aed27a22f7f0ce36b235ef5a40483bc",
+                    "perimeter":  "fb8a2caa8e5df25c7e758d1655fef2b3f8682b1843775ab2541515dfdddafb60"
+                },
+    "proof":  {
+                  "legion":  "308/308 Node + 66/66 Mycelium + 10/10 workers + 2/2 Great Harvest Python PASS",
+                  "quality":  "Mnemosyne quality defectCount 0; Great Harvest integrity info",
+                  "federation":  "cross-device content dedup preserves all locations and deterministic digests",
+                  "coverage":  "common user-space roots on Legion and T590 swept; code classifier includes HTML/CSS/notebooks/Terraform/HCL/GraphQL",
+                  "sourcePayloadCopied":  false
+              },
+    "authority_granted":  false,
+    "automatic_promotion":  false,
+    "coverage_claim":  "All recoverable local code/config within the enumerated Legion/T590 user-space census is inventoried by Git identity, live fingerprint, perimeter classification, or explicit tool-cache exclusion. Unreachable Git objects and unmounted/offline/unknown storage remain outside provable scope."
+}

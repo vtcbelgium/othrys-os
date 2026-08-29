@@ -1,0 +1,18 @@
+{
+  "mission_id": "V2-010P",
+  "title": "The Great Harvest Perimeter / Whole Local Network Census",
+  "status": "RUNNING",
+  "owner": "GPT_CONTROL",
+  "objective": "Extend The Great Harvest from the Projects estate to every legitimate code-bearing root on Legion and T590, with explicit exclusions and cross-device lineage/content deduplication.",
+  "laws": [
+    "Harvested repositories and loose-code roots are read-only evidence sources.",
+    "Every discovered local code root is classified; nothing disappears merely because it is duplicate or disposable.",
+    "Tool/plugin caches are explicit exclusions, not Harvest stock.",
+    "Cross-device duplicates collapse by lineage/content while preserving location provenance.",
+    "Live-only source is fingerprinted, never copied or promoted automatically.",
+    "Great Harvest remains quarry only: authorityGranted=false and automaticPromotion=false."
+  ],
+  "out_of_scope": ["No deletion or cleanup of harvested roots", "No automatic admission", "No mutation of VTC/Jarvis/legacy repos", "No remote/cloud source inventory"],
+  "authority_granted": false,
+  "execution_started": false
+}
