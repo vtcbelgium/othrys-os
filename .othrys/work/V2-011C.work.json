@@ -1,0 +1,25 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-011C",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-011C",
+  "title": "Kronos House Admission",
+  "objective": "Adapt and admit the qualified minimum Kronos resident as pure lifecycle/heartbeat/supervision/cancellation contracts without granting or executing platform LIFE authority.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Kronos resident contracts express LIFE semantics but do not themselves grant LIFE authority.",
+    "No boot, halt, safe-mode, recovery, shutdown, composition-root swap, scheduler or daemon execution in this mission.",
+    "Heartbeat evidence may never claim healthier state than mandatory component evidence.",
+    "Kronos owns no WORK; Work/Talos/Mycelium/Hephaestus remain unchanged.",
+    "Rhea may request LIFE review; Kronos request/proposal output remains non-executing.",
+    "Trust Canal and operating modes remain the authority boundary for any future consequential LIFE action.",
+    "House admission requires manifest + Book + component contract + Atlas/Mnemosyne + exact T590 proof."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "28988a21653ce04e0f93b729b62af55a3cb282cf5a803bd4c23a517b2b137fd3"
+}

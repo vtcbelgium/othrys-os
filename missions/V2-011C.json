@@ -1,0 +1,35 @@
+{
+  "mission_id": "V2-011C",
+  "title": "Kronos House Admission",
+  "status": "RUNNING",
+  "owner": "GPT_CONTROL",
+  "start_sha": "7ee120e880869a051cd3e6ed91dced21b3f2f2d0",
+  "objective": "Adapt and admit the qualified minimum Kronos resident as pure lifecycle/heartbeat/supervision/cancellation contracts without granting or executing platform LIFE authority.",
+  "qualification_source": "V2-011B",
+  "great_harvest_classification": "ADAPT",
+  "minimum_resident_seam": [
+    "pure lifecycle transition guard",
+    "authority-free heartbeat evidence constructor/validator",
+    "finite supervision evaluator over explicit component/lease evidence",
+    "graceful/forced cancellation contracts"
+  ],
+  "laws": [
+    "Kronos resident contracts express LIFE semantics but do not themselves grant LIFE authority.",
+    "No boot, halt, safe-mode, recovery, shutdown, composition-root swap, scheduler or daemon execution in this mission.",
+    "Heartbeat evidence may never claim healthier state than mandatory component evidence.",
+    "Kronos owns no WORK; Work/Talos/Mycelium/Hephaestus remain unchanged.",
+    "Rhea may request LIFE review; Kronos request/proposal output remains non-executing.",
+    "Trust Canal and operating modes remain the authority boundary for any future consequential LIFE action.",
+    "House admission requires manifest + Book + component contract + Atlas/Mnemosyne + exact T590 proof."
+  ],
+  "out_of_scope": [
+    "actual boot/shutdown",
+    "safe_mode/halt execution",
+    "signed boot record",
+    "Constitution activation",
+    "scheduler/daemon",
+    "visual redesign"
+  ],
+  "authority_granted": false,
+  "execution_started": false
+}

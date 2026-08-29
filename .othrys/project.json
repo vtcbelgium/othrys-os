@@ -98,6 +98,12 @@
       "label": "Rhea",
       "role": "Care / vitality stewardship",
       "statusEvidence": "V2-011A"
+    },
+    {
+      "id": "kronos",
+      "label": "Kronos",
+      "role": "Lifecycle / heartbeat / supervision contracts",
+      "statusEvidence": "V2-011B"
     }
   ],
   "capabilities": [

@@ -275,6 +275,23 @@
       "boundary": "Rhea interprets vitality, case-manages and requests governed repair; it does not own LIFE, scheduling, engineering, research, memory, credentials, execution verification or approval authority.",
       "path": "books/book-of-rhea/README.md",
       "status": "CURRENT_OS_EDITION"
+    },
+    {
+      "id": "kronos",
+      "title": "The Book of Kronos",
+      "role": "Lifecycle, heartbeat and supervision contracts for platform LIFE evidence.",
+      "evidence": [
+        "V2-011B",
+        ".othrys/project.json#systems/kronos",
+        "runtime/os/kronos.mjs"
+      ],
+      "legacy": [
+        "othrys-core/titan/kronos/**",
+        "othrys-hub Life/Kronos evidence preserved by the Great Harvest"
+      ],
+      "boundary": "Kronos expresses LIFE state, heartbeat honesty, supervision and cancellation contracts; the resident does not boot, halt, recover, schedule, execute work, or grant lifecycle authority.",
+      "path": "books/book-of-kronos/README.md",
+      "status": "CURRENT_OS_EDITION"
     }
   ],
   "authorityGranted": false,

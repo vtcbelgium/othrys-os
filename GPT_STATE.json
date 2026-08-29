@@ -1,14 +1,14 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 130,
+    "sequence": 131,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read": "de95bd007396ae257eef974d49bf66bf37580e57",
+    "remote_head_at_last_verified_read": "7ee120e880869a051cd3e6ed91dced21b3f2f2d0",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
-        "mission_id": "V2-011B",
-        "status": "COMPLETE",
-        "issued_label": "V2-011B - KRONOS RESIDENT QUALIFICATION",
+        "mission_id": "V2-011C",
+        "status": "RUNNING",
+        "issued_label": "V2-011C - KRONOS HOUSE ADMISSION",
         "source": "operator_current_conversation"
     },
     "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
         "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
     ],
     "last_control_decision": {
-        "mission_id": "V2-011B",
-        "decision": "KRONOS_QUALIFIED_ADAPT_PURE_CONTRACT_ONLY",
-        "authority": "Qualification only; old PID-1 intent is not current V2 LIFE execution proof."
+        "mission_id": "V2-011C",
+        "decision": "ADAPT_MINIMUM_KRONOS_CONTRACT_KERNEL",
+        "authority": "House admission of pure LIFE contracts only; no LIFE execution."
     },
-    "next_legal_action": "Open separate Kronos House admission for pure lifecycle/heartbeat/supervision/cancellation contracts only.",
+    "next_legal_action": "Implement pure Kronos lifecycle/heartbeat/supervision/cancellation kernel, then prove House anti-drift and T590 exact commit.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",
@@ -329,6 +329,11 @@
             "mission_id": "V2-011B",
             "status": "COMPLETE",
             "note": "Kronos qualified ADAPT: 11/11 Core contracts + 25/25 focused Hub Life proof; pure LIFE contracts retained, Hub Life runtime/UI/store and actual LIFE execution deferred/rejected."
+        },
+        {
+            "mission_id": "V2-011C",
+            "status": "RUNNING",
+            "note": "Kronos House admission opened after V2-011B qualification; pure contract kernel only, no LIFE execution."
         }
     ],
     "git": {

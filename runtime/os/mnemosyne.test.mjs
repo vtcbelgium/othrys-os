@@ -153,3 +153,11 @@ test('resident Rhea is current project truth and Atlas evidence without a second
   assert.equal(c.authorityGranted,false);
   assert.equal(c.transportCapsule.authorityGranted,false);
 });
+
+test('resident Kronos is current project truth and Atlas evidence without a second registry',()=>{
+  const c=assembleKnowledgeContext(root,manifest,'Kronos',{limit:8});
+  assert.ok(c.projectTruth.some(x=>x.id==='book-kronos'&&x.source?.kind==='HOUSE_BOOK'));
+  assert.ok(c.related.some(x=>x.id==='system:kronos'&&x.exactMatch===true));
+  assert.equal(c.authorityGranted,false);
+  assert.equal(c.transportCapsule.authorityGranted,false);
+});
