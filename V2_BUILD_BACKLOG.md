@@ -303,3 +303,6 @@
 119. **Keymaster House Admission - NEXT** - pure sanitized metadata/health/policy kernel only; no secret access.
 
 120. **V2-011E Keymaster House Admission - RUNNING** - sanitized metadata/health/policy resident only; no secret locator, access, provider calls or mutation.
+
+121. **V2-011E Keymaster House Admission - COMPLETE/PASS** - metadata/health/policy resident with no secret value or locator surface; exact T590 proof.
+122. **Nyx vs Hermes resident comparison - NEXT** - Great Harvest + V2 overlap first; admit neither by name alone.

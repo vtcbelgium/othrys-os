@@ -1,13 +1,13 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 135,
+    "sequence": 136,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read": "1d6978bceb74ff75ea1a5277df32544acd82fb72",
+    "remote_head_at_last_verified_read": "d77ee490f3913bb5f6492e4fd117b5004722a63e",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
         "mission_id": "V2-011E",
-        "status": "RUNNING",
+        "status": "COMPLETE",
         "issued_label": "V2-011E - KEYMASTER HOUSE ADMISSION",
         "source": "operator_current_conversation"
     },
@@ -64,10 +64,10 @@
     ],
     "last_control_decision": {
         "mission_id": "V2-011E",
-        "decision": "ADAPT_KEYMASTER_METADATA_ONLY",
-        "authority": "House admission of sanitized credential intelligence only; no secret access or mutation."
+        "decision": "KEYMASTER_HOUSE_ADMISSION_PASS",
+        "authority": "Sanitized metadata/health/policy only; no secret value/locator/access/mutation."
     },
-    "next_legal_action": "Implement pure metadata/health/policy Keymaster kernel, then prove House anti-drift and T590 exact commit.",
+    "next_legal_action": "Compare Nyx introspection vs Hermes signal fabric against current V2 overlap before opening next mission.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",
@@ -354,6 +354,11 @@
             "mission_id": "V2-011E",
             "status": "RUNNING",
             "note": "Keymaster House admission opened; metadata/health/policy only, no secret locator/access/mutation."
+        },
+        {
+            "mission_id": "V2-011E",
+            "status": "COMPLETE",
+            "note": "Native Keymaster metadata resident admitted with no secret value or locator surface; House/Atlas/Mnemosyne exact T590 proof green."
         }
     ],
     "git": {

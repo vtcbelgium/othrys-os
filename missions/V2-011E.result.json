@@ -1,0 +1,42 @@
+{
+  "mission_id": "V2-011E",
+  "verdict": "PASS",
+  "start_sha": "1d6978bceb74ff75ea1a5277df32544acd82fb72",
+  "implementation_sha": "d77ee490f3913bb5f6492e4fd117b5004722a63e",
+  "objective": "Adapt and admit the qualified minimum Keymaster resident as sanitized credential metadata/health/policy intelligence without secret locators, secret access, provider calls, rotation or credential mutation.",
+  "house_admitted": true,
+  "resident": "keymaster",
+  "native_kernel": "runtime/os/keymaster.mjs",
+  "admission_surfaces": [
+    ".othrys/project.json",
+    "books/BOOK_REGISTRY.json",
+    "books/book-of-keymaster/README.md",
+    "contracts/components/keymaster.md",
+    "Atlas derived system relation",
+    "Mnemosyne current project truth"
+  ],
+  "boundaries": {
+    "authority_granted": false,
+    "execution_started": false,
+    "secret_values_allowed": false,
+    "secret_locators_allowed": false,
+    "provider_calls_added": false,
+    "vault_access_added": false,
+    "rotation_added": false,
+    "credential_mutation_added": false,
+    "scheduler_added": false
+  },
+  "legion_proof": {
+    "keymaster_house_atlas_mnemosyne": "43/43 PASS",
+    "mycelium": "78/78 PASS",
+    "workers": "10/10 PASS",
+    "runtime_qa": "215/217; only pre-existing image-prep 0.1.0 digest failures"
+  },
+  "t590_proof": {
+    "exact_sha": "d77ee490f3913bb5f6492e4fd117b5004722a63e",
+    "keymaster_house_atlas_mnemosyne": "43/43 PASS",
+    "mycelium": "78/78 PASS",
+    "workers": "10/10 PASS"
+  },
+  "next_legal_action": "Compare Nyx introspection and Hermes signal-fabric stock against current V2 before selecting the next resident."
+}
