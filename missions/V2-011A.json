@@ -1,7 +1,7 @@
 {
   "mission_id": "V2-011A",
   "title": "Rhea Care House Admission",
-  "status": "RUNNING",
+  "status": "COMPLETE",
   "owner": "GPT_CONTROL",
   "start_sha": "04fcb63321fae89b3d4520f1710e3b52b9d7605b",
   "objective": "Adapt and admit the qualified minimum Rhea Care resident without introducing a duplicate store, orchestrator, scheduler, alert backend or repair authority.",

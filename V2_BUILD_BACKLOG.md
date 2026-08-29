@@ -283,3 +283,6 @@
 107. **V2-010Z Rhea Care Resident Qualification - COMPLETE/PASS** - 13/13 old proof green; pure lifecycle/anti-noise/request seam qualified; duplicate care store/orchestrator/source plumbing rejected.
 
 108. **V2-011A Rhea Care House Admission - RUNNING** - pure CareCase/anti-noise/request/escalation seam only; no duplicate store/orchestrator/repair authority.
+
+109. **V2-011A Rhea Care House Admission - COMPLETE/PASS** - pure CareCase/anti-noise/request/Kronos-escalation kernel + Book/contract/Atlas/Mnemosyne; exact T590 proof; no store/orchestrator/repair/LIFE authority.
+110. **Kronos Resident Qualification - NEXT** - Great Harvest heartbeat/lifecycle/supervision stock first; no House admission or LIFE execution until separately proven.

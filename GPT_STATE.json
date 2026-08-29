@@ -1,13 +1,13 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 127,
+    "sequence": 128,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read": "db440bffd8895ec733fab506d9512f8b04948795",
+    "remote_head_at_last_verified_read": "c78bd9be3db8afe504bd4becea799b31e1e31753",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
         "mission_id": "V2-011A",
-        "status": "RUNNING",
+        "status": "COMPLETE",
         "issued_label": "V2-011A - RHEA CARE HOUSE ADMISSION",
         "source": "operator_current_conversation"
     },
@@ -64,10 +64,10 @@
     ],
     "last_control_decision": {
         "mission_id": "V2-011A",
-        "decision": "ADAPT_MINIMUM_RHEA_FOR_HOUSE",
-        "authority": "Admission only; Care interpretation/request semantics, no repair or LIFE authority."
+        "decision": "RHEA_HOUSE_ADMISSION_PASS",
+        "authority": "Care interpretation/request semantics only; no repair, Talos verification or LIFE authority."
     },
-    "next_legal_action": "Implement the qualified pure Rhea Care kernel, prove authority separation, then move manifest + Book + contract + Atlas/Mnemosyne together.",
+    "next_legal_action": "Great Harvest qualify Kronos heartbeat/lifecycle/supervision stock before any House admission.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",
@@ -314,6 +314,11 @@
             "mission_id": "V2-011A",
             "status": "RUNNING",
             "note": "Rhea House admission opened after canonical allocator returned V2-011A."
+        },
+        {
+            "mission_id": "V2-011A",
+            "status": "COMPLETE",
+            "note": "Native Rhea Care resident admitted with pure lifecycle/anti-noise/request/escalation kernel, Book/contract/Atlas/Mnemosyne and exact T590 proof; no duplicate store/orchestrator/repair/LIFE authority."
         }
     ],
     "git": {

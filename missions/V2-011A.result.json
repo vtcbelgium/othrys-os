@@ -1,0 +1,41 @@
+{
+  "mission_id": "V2-011A",
+  "verdict": "PASS",
+  "start_sha": "04fcb63321fae89b3d4520f1710e3b52b9d7605b",
+  "implementation_sha": "c78bd9be3db8afe504bd4becea799b31e1e31753",
+  "objective": "Adapt and admit the qualified minimum Rhea Care resident without introducing a duplicate store, orchestrator, scheduler, alert backend or repair authority.",
+  "house_admitted": true,
+  "resident": "rhea",
+  "native_kernel": "runtime/os/rhea.mjs",
+  "admission_surfaces": [
+    ".othrys/project.json",
+    "books/BOOK_REGISTRY.json",
+    "books/book-of-rhea/README.md",
+    "contracts/components/rhea.md",
+    "Atlas derived system relation",
+    "Mnemosyne current project truth"
+  ],
+  "boundaries": {
+    "authority_granted": false,
+    "execution_started": false,
+    "private_care_store_added": false,
+    "scheduler_added": false,
+    "alert_backend_added": false,
+    "repair_execution_added": false,
+    "life_action_added": false,
+    "talos_verification_authority_changed": false
+  },
+  "legion_proof": {
+    "rhea_house_atlas_mnemosyne": "41/41 PASS",
+    "mycelium": "78/78 PASS",
+    "workers": "10/10 PASS",
+    "runtime_qa": "198/200; only pre-existing image-prep 0.1.0 digest failures"
+  },
+  "t590_proof": {
+    "exact_sha": "c78bd9be3db8afe504bd4becea799b31e1e31753",
+    "rhea_house_atlas_mnemosyne": "41/41 PASS",
+    "mycelium": "78/78 PASS",
+    "workers": "10/10 PASS"
+  },
+  "next_legal_action": "Great Harvest qualification of Kronos lifecycle/heartbeat/supervision stock before any House admission."
+}
