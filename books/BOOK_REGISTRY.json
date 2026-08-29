@@ -259,6 +259,22 @@
       "boundary": "Prometheus discovers, scores and recommends evidence; it does not admit memory, build, verify execution, own lifecycle cadence, or grant authority.",
       "path": "books/book-of-prometheus/README.md",
       "status": "CURRENT_OS_EDITION"
+    },
+    {
+      "id": "rhea",
+      "title": "The Book of Rhea",
+      "role": "Care and vitality stewardship over explicit system evidence and governed repair requests.",
+      "evidence": [
+        "V2-010Z",
+        ".othrys/project.json#systems/rhea",
+        "runtime/os/rhea.mjs"
+      ],
+      "legacy": [
+        "othrys-hub hub/care/** and Mission 036/037 evidence preserved by the Great Harvest"
+      ],
+      "boundary": "Rhea interprets vitality, case-manages and requests governed repair; it does not own LIFE, scheduling, engineering, research, memory, credentials, execution verification or approval authority.",
+      "path": "books/book-of-rhea/README.md",
+      "status": "CURRENT_OS_EDITION"
     }
   ],
   "authorityGranted": false,
