@@ -1,0 +1,24 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010T",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010T",
+  "title": "Sclerotium / Clean-Root Recovery",
+  "objective": "Build the smallest evidence-bound survival/recovery substrate so OTHRYS can identify what must survive, what can be rebuilt or reacquired, what must be rebound locally, and reject corrupt or wrong-body recovery material without smuggling secrets or authority.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Minimal trusted pack contains only current-House identity/evidence required to reconstruct, never broad source hoarding.",
+    "Secrets are excluded; recovery records references/rebind requirements, never secret payloads.",
+    "Every item is classified REBUILD, REACQUIRE, REBIND, PRESERVE_EVIDENCE or EXCLUDE.",
+    "Corrupt, digest-mismatched or wrong-body material fails closed.",
+    "Recovery grants no execution, admission, approval or promotion authority.",
+    "Cross-node proof must show checkout/device portability of identity and recovery instructions."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "f036d5162118e0540117b93293bcd1d696077cf1d7f888e8b0f4e83844721630"
+}

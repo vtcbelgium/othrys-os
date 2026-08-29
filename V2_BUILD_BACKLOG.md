@@ -258,3 +258,6 @@
 
 | 94 | V2-010R | Block Quarry classifier + three grounded VTC extraction fixtures + duplicate-algorithm extinction proof | COMPLETE |
 | 95 | V2-010S | Rhizomorph / Experience / sparse resilience: legal-route qualification + holdout + Pareto/hysteresis/decay | RUNNING |
+
+93. **V2-010S Rhizomorph / Experience / Sparse Resilience — COMPLETE/PASS** — exact T590 proof.
+94. **V2-010T Sclerotium / Clean-Root Recovery — RUNNING** — minimal trusted survival pack; secret-free, portable and fail-closed.

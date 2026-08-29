@@ -1,0 +1,19 @@
+{
+  "mission_id": "V2-010S",
+  "verdict": "PASS",
+  "start_sha": "3431433028201ba99f84e90ac8e06393d564c63f",
+  "implementation_sha": "6d347de6a7d935685061d276c8f97c76b3e61d07",
+  "scope": "Bounded Rhizomorph/Experience qualification over predeclared legal routes with immutable observations, current-environment/version/contract invalidation, holdout gates, Pareto frontiers, hysteresis, sparse reinforcement budgets and retraction laws",
+  "proof": {
+    "legion_node": "331/331 PASS",
+    "legion_python": "78/78 Mycelium + 10/10 workers PASS",
+    "t590_node": "331/331 PASS exact implementation commit",
+    "t590_python": "78/78 Mycelium + 10/10 workers PASS",
+    "stress": "10,000 qualifications / 60,000 observations / 0 failures",
+    "negative": "unregistered routes, stale-only evidence, bad quality gates, invented/unqualified sparse links and unbounded link budgets fail closed"
+  },
+  "authority_granted": false,
+  "route_generation_by_mycelium": false,
+  "adaptive_state_authoritative": false,
+  "next_legal_action": "V2-010T Sclerotium / clean-root recovery"
+}

@@ -18,7 +18,7 @@
 | Missions + Work | 82% | durable mission/work hierarchy + evidence-bound transitions | WorkKey/Claim linkage without making Work a scheduler |
 | Blocks | 72% | two admitted reusable Blocks + exact composition law; VTC proves three safe product-to-Block extraction patterns in quarry | formal Quarry extraction classifier, duplicate-algorithm extinction proof and repeated product reuse |
 | Factory | 63% | real build/refine/verify/accept/release lineage; verified local Artifact reuse kernel now proven on Context Metabolism | critical-path/action fingerprints and deterministic cacheable stages |
-| Mycelium | 88% | heterogeneous routing + measured-knee metabolism, WorkKey, compatibility-gated Anastomosis, context metabolism and verified local Artifact reuse | Rhizomorph/experience qualification now active, then Sclerotium recovery |
+| Mycelium | 88% | heterogeneous routing + measured-knee metabolism, WorkKey, compatibility-gated Anastomosis, context metabolism and verified local Artifact reuse | Rhizomorph/experience qualification proven; Sclerotium clean-root recovery now active |
 | Command Deck | 52% | tablet-first workstation + real views + Atlas | expose real project phenotype/metabolic state after substrate stabilizes |
 | Oroi / Projects | 67% | declarative manifests/materializer + six portable bounded optimization phenotypes consumed by Mycelium metabolism | workload-class observations, real multi-project calibration and isolation proof |
 | Models / Labor | 40% | proven local/advisory labor routes + physical builder asymmetry measured | Switchyard after metabolism/reuse/recovery; qualify second engineering builder separately |

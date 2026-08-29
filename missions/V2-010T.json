@@ -1,0 +1,29 @@
+{
+  "mission_id": "V2-010T",
+  "title": "Sclerotium / Clean-Root Recovery",
+  "status": "RUNNING",
+  "owner": "GPT_CONTROL",
+  "start_sha": "6d347de6a7d935685061d276c8f97c76b3e61d07",
+  "artifact_profile": "os-substrate",
+  "objective": "Build the smallest evidence-bound survival/recovery substrate so OTHRYS can identify what must survive, what can be rebuilt or reacquired, what must be rebound locally, and reject corrupt or wrong-body recovery material without smuggling secrets or authority.",
+  "great_harvest_preflight": {
+    "classification": "ADAPT",
+    "evidence": ["current House Books/component contracts", "Great Harvest permanent catalogs", "historic recovery/clean-root/sclerotium stock if present", "current Mnemosyne estate + Hecatoncheires secret posture"],
+    "reason": "Recovery must reuse existing canonical identity/provenance knowledge and harvested recovery patterns before inventing backup architecture."
+  },
+  "pandaos_reconstruction": {
+    "policy": "SURFACE_ONLY",
+    "rule": "Panda-like recovery clarity may show what is safe/rebuildable/missing; never create Panda-owned backup state or parallel backend."
+  },
+  "laws": [
+    "Minimal trusted pack contains only current-House identity/evidence required to reconstruct, never broad source hoarding.",
+    "Secrets are excluded; recovery records references/rebind requirements, never secret payloads.",
+    "Every item is classified REBUILD, REACQUIRE, REBIND, PRESERVE_EVIDENCE or EXCLUDE.",
+    "Corrupt, digest-mismatched or wrong-body material fails closed.",
+    "Recovery grants no execution, admission, approval or promotion authority.",
+    "Cross-node proof must show checkout/device portability of identity and recovery instructions."
+  ],
+  "out_of_scope": ["No cloud backup service", "No secret vault implementation", "No whole-disk imaging", "No automatic destructive restore", "No PandaOS backend", "No autonomous recovery execution"],
+  "authority_granted": false,
+  "execution_started": false
+}
