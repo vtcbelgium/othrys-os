@@ -145,17 +145,61 @@ def build_commits(projects:Path):
             seen.add(parts[0]); commits.append({'schema':'othrys.os.great-harvest.commit.v1','lineage':lineage,'commit':parts[0],'authoredAt':parts[1],'subject':parts[2],'retrieval':f"git show {parts[0]}",'authorityGranted':False,'automaticPromotion':False})
     return sorted(commits,key=lambda r:(r['lineage'],r['commit']))
 
+def live_file_record(projects:Path, workspace:str, lineage:str, rel_path:str, full_path:Path, source_state:str)->dict:
+    data=full_path.read_bytes(); digest=hashlib.sha256(data).hexdigest()
+    return {'schema':'othrys.os.great-harvest.live-code.v1','sourceState':source_state,'lineage':lineage,'workspace':workspace,'path':rel_path.replace('\\','/'),'sha256':digest,'bytes':len(data),'kind':code_kind(rel_path),'language':lang(rel_path),'retrieval':f'filesystem:{rel_path.replace(chr(92),chr(47))}','durableProvenance':False,'authorityGranted':False,'automaticPromotion':False}
+
+def build_live_records(projects:Path)->list[dict]:
+    records=[]; workspaces=discover_workspaces(projects); roots={w.resolve() for w in workspaces}
+    for repo in workspaces:
+        try: meta=repo_meta(repo)
+        except Exception:
+            recovered=recovered_worktree_meta(repo,projects); meta=recovered or {'lineage':f'local:{repo.name}'}
+        try: raw=run(repo,'status','--porcelain=v1','--untracked-files=all')
+        except Exception: raw=''
+        for line in raw.splitlines():
+            if len(line)<4: continue
+            status=line[:2]; rel=line[3:].strip().strip('"').replace('\\','/')
+            if ' -> ' in rel: rel=rel.split(' -> ',1)[1]
+            if not indexable_path(rel): continue
+            full=repo/rel
+            if not full.is_file(): continue
+            state='WORKTREE_UNTRACKED' if status=='??' else 'WORKTREE_MODIFIED'
+            try: records.append(live_file_record(projects,repo.name,meta['lineage'],rel,full,state))
+            except OSError: pass
+    for dp,dns,fns in os.walk(projects,topdown=True):
+        p=Path(dp)
+        dns[:]=[d for d in dns if d not in SKIP_DIRS and not d.startswith('.')]
+        if p.resolve() in roots:
+            dns[:]=[]; continue
+        if (p/'.git').exists():
+            dns[:]=[]; continue
+        for fn in fns:
+            full=p/fn
+            try: rel=full.relative_to(projects).as_posix()
+            except ValueError: continue
+            if not indexable_path(rel): continue
+            parts=Path(rel).parts
+            workspace='/'.join(parts[:2]) if parts and parts[0].lower()=='oros' and len(parts)>1 else (parts[0] if parts else 'projects')
+            try: records.append(live_file_record(projects,workspace,f'livefs:{workspace.lower()}',rel,full,'FILESYSTEM_ONLY'))
+            except OSError: pass
+    dedup={}
+    for rec in records:
+        key=(rec['sourceState'],rec['lineage'],rec['workspace'],rec['path']); dedup[key]=rec
+    return sorted(dedup.values(),key=lambda r:(r['sourceState'],r['lineage'],r['workspace'],r['path']))
+
 def stable_json(value)->str:
     return json.dumps(value,sort_keys=True,separators=(',',':'),ensure_ascii=False)
 
-def write_catalog(root:Path,records:list[dict],repos:list[dict],oid_lineages:dict[str,set[str]],commits:list[dict]):
+def write_catalog(root:Path,records:list[dict],repos:list[dict],oid_lineages:dict[str,set[str]],commits:list[dict],live_records:list[dict]|None=None):
     catalog_dir=root/'.othrys'/'knowledge'/'catalog'; catalog_dir.mkdir(parents=True,exist_ok=True)
     records=sorted(records,key=lambda r:(r['lineage'],r['gitObject']))
     body=''.join(stable_json(r)+'\n' for r in records)
     catalog=(catalog_dir/'great-harvest-code.jsonl'); catalog.write_text(body,encoding='utf-8',newline='\n')
     commit_body=''.join(stable_json(r)+'\n' for r in commits); (catalog_dir/'great-harvest-commits.jsonl').write_text(commit_body,encoding='utf-8',newline='\n')
+    live_records=live_records or []; live_body=''.join(stable_json(r)+'\n' for r in live_records); (catalog_dir/'great-harvest-live.jsonl').write_text(live_body,encoding='utf-8',newline='\n')
     languages=Counter(r['language'] for r in records); kinds=Counter(r['kind'] for r in records)
-    summary={'schema':'othrys.os.great-harvest.summary.v1','workspaceCount':sum(len(r['workspaces']) for r in repos),'lineageCount':len(repos),'indexedObjects':len(records),'currentObjects':sum(not r['historicalOnly'] for r in records),'historicalOnlyObjects':sum(r['historicalOnly'] for r in records),'indexedBytes':sum(r['bytes'] for r in records),'crossLineageDuplicateObjects':sum(len(v)>1 for v in oid_lineages.values()),'kinds':dict(sorted(kinds.items())),'languages':dict(sorted(languages.items(),key=lambda kv:(-kv[1],kv[0]))),'catalogSha256':hashlib.sha256(body.encode()).hexdigest(),'catalogPath':'.othrys/knowledge/catalog/great-harvest-code.jsonl','commitCount':len(commits),'commitCatalogSha256':hashlib.sha256(commit_body.encode()).hexdigest(),'commitCatalogPath':'.othrys/knowledge/catalog/great-harvest-commits.jsonl','repositoryIndex':repos,'sourcePayloadCopied':False,'authorityGranted':False,'automaticPromotion':False}
+    summary={'schema':'othrys.os.great-harvest.summary.v1','workspaceCount':sum(len(r['workspaces']) for r in repos),'lineageCount':len(repos),'indexedObjects':len(records),'currentObjects':sum(not r['historicalOnly'] for r in records),'historicalOnlyObjects':sum(r['historicalOnly'] for r in records),'indexedBytes':sum(r['bytes'] for r in records),'crossLineageDuplicateObjects':sum(len(v)>1 for v in oid_lineages.values()),'kinds':dict(sorted(kinds.items())),'languages':dict(sorted(languages.items(),key=lambda kv:(-kv[1],kv[0]))),'catalogSha256':hashlib.sha256(body.encode()).hexdigest(),'catalogPath':'.othrys/knowledge/catalog/great-harvest-code.jsonl','commitCount':len(commits),'commitCatalogSha256':hashlib.sha256(commit_body.encode()).hexdigest(),'commitCatalogPath':'.othrys/knowledge/catalog/great-harvest-commits.jsonl','liveOnlyCount':len(live_records),'liveOnlyBytes':sum(r['bytes'] for r in live_records),'liveOnlyDigest':hashlib.sha256(live_body.encode()).hexdigest(),'liveOnlyCatalogPath':'.othrys/knowledge/catalog/great-harvest-live.jsonl','liveOnlyStates':dict(sorted(Counter(r['sourceState'] for r in live_records).items())),'repositoryIndex':repos,'sourcePayloadCopied':False,'authorityGranted':False,'automaticPromotion':False}
     summary_path=catalog_dir/'great-harvest-summary.json'
     summary_path.write_text(json.dumps(summary,indent=2,ensure_ascii=False)+'\n',encoding='utf-8',newline='\n')
     return summary
@@ -163,7 +207,7 @@ def write_catalog(root:Path,records:list[dict],repos:list[dict],oid_lineages:dic
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--projects',required=True); ap.add_argument('--othrys-root',required=True)
     args=ap.parse_args(); projects=Path(args.projects); root=Path(args.othrys_root)
-    records,repos,dupes=build_records(projects); commits=build_commits(projects); summary=write_catalog(root,records,repos,dupes,commits)
+    records,repos,dupes=build_records(projects); commits=build_commits(projects); live_records=build_live_records(projects); summary=write_catalog(root,records,repos,dupes,commits,live_records)
     print(json.dumps(summary,indent=2,ensure_ascii=False))
 
 if __name__=='__main__':main()

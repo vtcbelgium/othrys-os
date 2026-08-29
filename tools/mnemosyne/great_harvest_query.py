@@ -11,7 +11,7 @@ def load_jsonl(path:Path):
     return out
 
 def haystack(record:dict)->str:
-    fields=[record.get('lineage',''),record.get('language',''),record.get('kind',''),record.get('subject','')]
+    fields=[record.get('lineage',''),record.get('workspace',''),record.get('path',''),record.get('sourceState',''),record.get('language',''),record.get('kind',''),record.get('subject','')]
     fields.extend(record.get('paths',[])); fields.extend(record.get('currentPaths',[]))
     return ' '.join(str(x) for x in fields).lower()
 
@@ -20,7 +20,7 @@ def main():
     args=ap.parse_args(); root=Path(args.root); terms=[t.lower() for t in args.query.split() if t.strip()]
     cat=root/'.othrys'/'knowledge'/'catalog'
     results=[]
-    for kind,name in [('code','great-harvest-code.jsonl'),('commit','great-harvest-commits.jsonl')]:
+    for kind,name in [('code','great-harvest-code.jsonl'),('live','great-harvest-live.jsonl'),('commit','great-harvest-commits.jsonl')]:
         for rec in load_jsonl(cat/name):
             hay=haystack(rec); hits=sum(term in hay for term in terms)
             if hits:results.append((hits,kind,rec))

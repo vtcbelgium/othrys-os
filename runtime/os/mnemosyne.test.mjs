@@ -79,6 +79,7 @@ test('Mnemosyne projection exposes lifecycle but no write API or opaque memory',
   assert.equal(view.opaqueMemory,false);
   assert.equal(view.greatHarvest.status,'READY');
   assert.ok(view.greatHarvest.indexedObjects>0);
+  assert.ok(view.greatHarvest.liveOnlyCount>=0);
   assert.equal(view.greatHarvest.authorityGranted,false);
   assert.equal(view.authorityGranted,false);
 });
