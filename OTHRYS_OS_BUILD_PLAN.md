@@ -2,14 +2,14 @@
 
 **Front-door plan.** Read after `BOOK_OF_GPT.md` and current `GPT_STATE.json`.
 
-## Current phase — HOUSEKEEPING / FOUNDATION HARDENING
+## Current phase -- COMPONENT CONTRACTS / ANTI-DRIFT
 
-Finish V2-010G before adding residents or product capability. The house must become boring: deterministic, indexed, documented, tested, logged, reconstructible, and drift-visible.
+V2-010G housekeeping is complete and independently verified. The next bounded build step is component contracts; no resident or product capability is added by that step.
 
 ## Build order
 
-1. **Close Housekeeping 010G** — final Mnemosyne estate sweep, quality/Book/Chronicle/log checks, repeated Legion + T590 proof, clean canonical checkpoint.
-2. **Component contracts** — define a tiny anti-drift `.md` contract for each current house resident only. No duplicate prose: ownership, boundaries, inputs/outputs, dependencies, evidence, loop contract, forbidden actions.
+1. **[COMPLETE] Close Housekeeping 010G** -- final Mnemosyne estate sweep, quality/Book/Chronicle/log checks, repeated Legion + T590 proof, clean canonical checkpoint.
+2. **[NEXT] Component contracts** -- define a tiny anti-drift `.md` contract for each current house resident only. No duplicate prose: ownership, boundaries, inputs/outputs, dependencies, evidence, loop contract, forbidden actions.
 3. **Loop weaving** — treat `LOOP_LAWS.md` as processing law. Every recurring or AI-assisted component declares OWNER, TRIGGER, INPUT, STATE, BUDGET, EXIT, EVIDENCE and stall behavior.
 4. **Mnemosyne intelligence** — improve context capsules, exact identity recall, relationship-aware retrieval, stale/conflict/duplicate warnings, source-currentness and explainable ranking before adding embeddings or a database.
 5. **Library/Vault posture** — formalize Great Library zones, Source Vault, Blueprint Vault, Hall of Echoes, Garden/R&D boundaries and Hecatoncheires security posture from proven stock.

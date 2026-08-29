@@ -1,13 +1,13 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 98,
+  "sequence": 99,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
+  "remote_head_at_last_verified_read": "25fa48d24c948cd982774438c92d448e581f9c8b",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-010G",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "issued_label": "V2-010G - OTHRYS OS HOUSEKEEPING AND MNEMOSYNE ESTATE CONSOLIDATION",
     "source": "operator_current_conversation"
   },
@@ -64,10 +64,10 @@
   ],
   "last_control_decision": {
     "mission_id": "V2-010G",
-    "decision": "HOUSEKEEPING_ONLY",
-    "authority": "No new product capability; consolidate, classify, test, log, and fail closed."
+    "decision": "HOUSEKEEPING_COMPLETE",
+    "authority": "Closeout is evidence-backed; no new capability or authority was granted."
   },
-  "next_legal_action": "Continue V2-010G housekeeping only: estate integrity, Books/House drift, Chronicle/log hygiene, stale/quarry classification, repeated cross-language verification. No feature expansion.",
+  "next_legal_action": "Start a new bounded Component Contracts mission from OTHRYS_OS_BUILD_PLAN.md. Do not mutate V2-010G.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

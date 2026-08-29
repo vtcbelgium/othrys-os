@@ -1,0 +1,36 @@
+{
+  "mission_id": "V2-010G",
+  "verdict": "PASS",
+  "start_sha": "441fde34b35090b0511f3585229d6c77c19b9a47",
+  "implementation_sha": "25fa48d24c948cd982774438c92d448e581f9c8b",
+  "scope": "OTHRYS OS housekeeping and Mnemosyne estate consolidation",
+  "proof": {
+    "legion_node": "236/236 PASS across 45 recursive runtime test files",
+    "legion_python": "36/36 PASS",
+    "t590_node": "236/236 PASS on exact implementation commit",
+    "t590_python": "36/36 PASS via native unittest (26 Mycelium + 10 Worker)",
+    "estate": "two consecutive identical sweeps; archive verification PASS; Mnemosyne quality defectCount 0",
+    "diff_check": "PASS on Legion and T590"
+  },
+  "architecture": {
+    "mnemosyne": "KNOWLEDGE_AUTHORITY",
+    "atlas": "DERIVED_READ_MODEL",
+    "housekeeper": "READ_ONLY_TELEMETRY_AND_TEST_CRANK",
+    "automatic_promotion": false,
+    "authority_granted": false
+  },
+  "delivered": [
+    "front-door progression/build/harvest controls",
+    "evidence-bound Book shelf",
+    "content-addressed Mnemosyne estate/catalog",
+    "quality + drift guards",
+    "bounded local Housekeeper",
+    "quarry/deprecation/knowledge-zone housekeeping law"
+  ],
+  "known_limitations": [
+    "archive object bytes remain local and Git-ignored by design",
+    "component contracts are deliberately the next build step, not part of V2-010G",
+    "SQLite/vector/temporal retrieval remains deferred until measured need"
+  ],
+  "next_legal_action": "Begin the Component Contracts anti-drift step from OTHRYS_OS_BUILD_PLAN.md as a new bounded mission; do not reopen V2-010G."
+}
