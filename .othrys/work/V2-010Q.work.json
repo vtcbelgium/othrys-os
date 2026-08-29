@@ -1,0 +1,59 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010Q",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010Q",
+  "title": "Anastomosis Artifact / Local Action Cache",
+  "objective": "Eliminate repeated deterministic work by reusing only immutable verified Artifacts when action/WorkKey identity, provenance, freshness, integrity and compatibility all still match.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Cache state is derived/disposable; canonical source/evidence remains authoritative.",
+    "A reusable Artifact is immutable and content-digest bound.",
+    "Reuse requires exact legal identity plus provenance, freshness, integrity and compatibility validation.",
+    "Changed input/environment/acceptance identity is a miss, never a guessed hit.",
+    "Refusal and invalidation receive durable evidence identity so the same unsafe reuse is not rediscovered.",
+    "Unknown/corrupt/torn reuse evidence is not fresh and fails closed to recomputation.",
+    "Independent-verification Claims never reuse the execution/result they are meant to independently verify.",
+    "Reuse grants no new execution, approval, admission or promotion authority."
+  ],
+  "slices": [
+    {
+      "id": "preflight",
+      "title": "preflight",
+      "owner": "gpt-control",
+      "acceptance": "",
+      "stages": [],
+      "artifacts": []
+    },
+    {
+      "id": "artifact",
+      "title": "artifact",
+      "owner": "hephaestus",
+      "acceptance": "",
+      "stages": [],
+      "artifacts": []
+    },
+    {
+      "id": "refusal",
+      "title": "refusal",
+      "owner": "mnemosyne",
+      "acceptance": "",
+      "stages": [],
+      "artifacts": []
+    },
+    {
+      "id": "proof",
+      "title": "proof",
+      "owner": "talos",
+      "acceptance": "",
+      "stages": [],
+      "artifacts": []
+    }
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "4e5ed868ec2f7e8cf5145cb591b098d84c2414cd2b933669de1c287a25d1ca3a"
+}

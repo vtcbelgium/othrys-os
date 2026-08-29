@@ -2,9 +2,9 @@
 
 **Front-door plan.** Read after `BOOK_OF_GPT.md` and current `GPT_STATE.json`.
 
-## Current phase -- ARTIFACT REUSE / LOCAL ACTION CACHE
+## Current phase -- V2-010Q ANASTOMOSIS ARTIFACT / LOCAL ACTION CACHE
 
-V2-010O The Great Harvest is complete and permanently woven into Mnemosyne/design preflight. The next bounded step attacks duplicate completed work: reuse only immutable verified Artifacts whose WorkKey, provenance, freshness, integrity and compatibility still match. Refusals/invalidations are evidence too; independent-verification Claims never reuse the same execution.
+Milestone `M-OS-FOUNDATION-HARVEST-001` is achieved. V2-010P closed the federated Great Harvest and V2-010Q now attacks duplicate completed work: reuse only immutable verified Artifacts whose WorkKey/action identity, provenance, freshness, integrity and compatibility still match. Refusals/invalidations are evidence too; independent-verification Claims never reuse the same execution. PandaOS remains the reconstruction/UX reference: expose native OTHRYS evidence in a Panda-clear Work/Progress experience, never duplicate its backend.
 
 ## Permanent Great Harvest preflight
 
@@ -22,7 +22,7 @@ Before designing or inventing a capability, query `docs/GREAT_HARVEST.md`, `docs
 8. **[COMPLETE] Context metabolism / evidence capsules** -- harvest 061G evidence-preserving reduction: keep pinned/active/authority evidence, compress to references where safe, evict irrelevant payload, and prove requiredEvidenceLost=0 / authorityEvidenceLost=0 before any AI context optimizer.
 9. **[COMPLETE] The Great Harvest / permanent code lineage quarry** -- index all recoverable code/config Git objects + commit intent across deduplicated local lineages, preserve historical-only state, expose deterministic query/retrieval metadata, and make Harvest preflight permanent.
 9a. **[COMPLETE] Great Harvest perimeter / whole local network census** -- account for code-bearing roots outside Projects on Legion + T590, explicitly classify duplicates/history/proofs/tool caches/live-only stock, and keep location provenance without copying source.
-10. **[NEXT] Anastomosis Artifact / local action cache** -- add immutable verified Artifact identity, provenance/freshness/integrity + compatibility validation, durable refusal/invalidation identity and local deterministic reuse. Independent-verification Claims remain non-reusable; failed compatibility isolates only that fusion edge; no distributed CAS yet.
+10. **[RUNNING] V2-010Q Anastomosis Artifact / local action cache** -- add immutable verified Artifact identity, provenance/freshness/integrity + compatibility validation, durable refusal/invalidation identity and local deterministic reuse. Independent-verification Claims remain non-reusable; failed compatibility isolates only that fusion edge; no distributed CAS yet.
 11. **Block Quarry / extraction / compounding** -- turn the VTC-proven HOST_CONFIG/BRIDGE/CALLER/DEBT/FALSE_POSITIVE method into a Hephaestus capability-extraction pipeline: prove duplicate algorithm extinction, preserve product glue, qualify canonical Blocks, and never harvest unrelated lookalikes.
 12. **Rhizomorph / Experience / sparse resilience** -- harvest 061D/061H plus biological network lessons: immutable flow observations, qualification, Pareto frontier, holdouts, hysteresis/decay, sparse cross-link budget and reinforced routes among predeclared legal variants only. Every reinforcement has a retraction law.
 13. **Sclerotium / clean-root recovery** -- current-House survival inventory, minimal trusted pack, secret exclusion, rebuild/reacquire/rebind classes, corrupt/wrong-body fail-closed and cross-node portability proof.

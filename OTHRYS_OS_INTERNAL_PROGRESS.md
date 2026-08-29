@@ -2,7 +2,7 @@
 
 **Status:** LIVE FRONT-DOOR CONTROL FILE
 **Owner:** GPT Control / House Manager
-**Last evidence update:** 2026-08-29 - V2-010O Great Harvest complete implementation: 40 Git workspaces / 12 lineages / 9,338 recoverable Git code/config objects (5,801 historical-only) / 3,094 commits plus 180 live-only specimens (22 filesystem-only, 50 modified, 108 untracked); no source payload copy; exact implementation independently proven on T590 at `36fae4a915b43c635948b82c800b77c72da5a25a`.
+**Last evidence update:** 2026-08-29 - Milestone `M-OS-FOUNDATION-HARVEST-001` achieved at proof head `9a6dcdca402a88ff4fdf7ad32d0a7b79d590171e`; V2-010P federated Great Harvest: 63 device-qualified Git workspaces / 25 lineages / 12,961 recoverable Git code/config objects / 3,891 commits / 2,405 live-only fingerprints across 2,563 locations / 24 perimeter roots; exact implementation independently green on T590. V2-010Q Artifact reuse is now RUNNING.
 **Update law:** update whenever a room materially gains/loses capability, proof, scope, or maturity. Percentages are house-manager estimates against the intended mature room, never proof by themselves.
 
 ## Current house progression
@@ -18,7 +18,7 @@
 | Missions + Work | 82% | durable mission/work hierarchy + evidence-bound transitions | WorkKey/Claim linkage without making Work a scheduler |
 | Blocks | 63% | two admitted reusable Blocks + exact composition law; VTC proves three safe product-to-Block extraction patterns in quarry | formal Quarry extraction classifier, duplicate-algorithm extinction proof and repeated product reuse |
 | Factory | 60% | real build/refine/verify/accept/release lineage | critical-path/action fingerprints and deterministic cacheable stages |
-| Mycelium | 82% | heterogeneous routing + measured-knee metabolism, seven operating modes, grow/hold/contract/quiesce planning, WorkKey and compatibility-gated planning Anastomosis | context metabolism, then verified Artifact reuse and Rhizomorph/experience qualification |
+| Mycelium | 84% | heterogeneous routing + measured-knee metabolism, seven operating modes, grow/hold/contract/quiesce planning, WorkKey, compatibility-gated planning Anastomosis and context metabolism | verified Artifact reuse now active, then Rhizomorph/experience qualification |
 | Command Deck | 52% | tablet-first workstation + real views + Atlas | expose real project phenotype/metabolic state after substrate stabilizes |
 | Oroi / Projects | 67% | declarative manifests/materializer + six portable bounded optimization phenotypes consumed by Mycelium metabolism | workload-class observations, real multi-project calibration and isolation proof |
 | Models / Labor | 40% | proven local/advisory labor routes + physical builder asymmetry measured | Switchyard after metabolism/reuse/recovery; qualify second engineering builder separately |

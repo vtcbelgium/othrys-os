@@ -249,3 +249,6 @@
 | 88 | V2-010O | The Great Harvest: permanent Mnemosyne code-lineage + commit-intent quarry | COMPLETE |
 
 | 89 | V2-010P | The Great Harvest perimeter: whole local network code census + explicit exclusions | COMPLETE |
+
+| 90 | M-OS-FOUNDATION-HARVEST-001 | Milestone: OTHRYS OS foundation consolidation + federated Great Harvest sealed; Panda reconstruction rule retained | ACHIEVED |
+| 91 | V2-010Q | Anastomosis Artifact / local action cache: immutable verified reuse + durable refusal/invalidation evidence; Panda-clear UX, native OTHRYS backend | RUNNING |
