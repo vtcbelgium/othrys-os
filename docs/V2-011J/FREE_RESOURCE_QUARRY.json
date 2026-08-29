@@ -1,0 +1,15 @@
+{
+  "schema": "othrys.os.free-resource-quarry.v1",
+  "asOf": "2026-08-29",
+  "authorityGranted": false,
+  "automaticAdmission": false,
+  "policy": "ZERO_MARGINAL_COST_FIRST_RESERVE_LAST_10_PERCENT",
+  "candidates": [
+    {"id":"local-ollama","class":"LOCAL_UNMETERED","status":"PROVEN_CURRENT_V2","admission":"EXISTING_SWITCHYARD"},
+    {"id":"groq-free","class":"FREE_REMOTE_QUOTA","status":"PUBLIC_CANDIDATE","quotaSignal":"rate-limit headers","admission":"QUALIFICATION_REQUIRED"},
+    {"id":"openrouter-free","class":"FREE_REMOTE_QUOTA","status":"PUBLIC_CANDIDATE","quotaSignal":"daily request allowance","admission":"QUALIFICATION_REQUIRED"},
+    {"id":"cloudflare-workers-ai-free","class":"FREE_REMOTE_DAILY_POOL","status":"PUBLIC_CANDIDATE","quotaSignal":"daily neuron allocation","admission":"QUALIFICATION_REQUIRED"},
+    {"id":"gemini-api-free","class":"FREE_REMOTE_QUOTA","status":"PUBLIC_CANDIDATE","quotaSignal":"model/account rate limits","admission":"QUALIFICATION_REQUIRED"},
+    {"id":"github-models","class":"RETIRED","status":"REJECT","reason":"service retired 2026-07-30"}
+  ]
+}

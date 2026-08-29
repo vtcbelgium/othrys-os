@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { createFreeCapacityObservation,parseGroqRateLimitHeaders,assessCapacityFreshness } from './free_capacity.mjs';
+
+test('capacity observation uses the tightest quota dimension',()=>{const x=createFreeCapacityObservation({providerId:'p',observedAt:'2026-08-29T08:00:00Z',limitRequests:1000,remainingRequests:900,limitTokens:200000,remainingTokens:20000});assert.equal(x.remainingFraction,.1);assert.equal(x.authorityGranted,false);});
+test('Groq headers normalize into reserve-compatible fraction',()=>{const h={'x-ratelimit-limit-requests':'1000','x-ratelimit-remaining-requests':'90','x-ratelimit-limit-tokens':'8000','x-ratelimit-remaining-tokens':'4000','x-ratelimit-reset-requests':'1h','x-ratelimit-reset-tokens':'3s'};const x=parseGroqRateLimitHeaders(h,{observedAt:'2026-08-29T08:00:00Z'});assert.equal(x.remainingFraction,.09);assert.equal(x.providerId,'groq-free');});
+test('stale quota evidence fails freshness without inventing availability',()=>{const x=createFreeCapacityObservation({providerId:'p',observedAt:'2026-08-29T08:00:00Z',limitRequests:100,remainingRequests:99,limitTokens:100,remainingTokens:99});assert.equal(assessCapacityFreshness(x,{now:'2026-08-29T08:10:00Z'}).fresh,false);});
+test('impossible quota ranges fail closed',()=>assert.throws(()=>createFreeCapacityObservation({providerId:'p',observedAt:'2026-08-29T08:00:00Z',limitRequests:10,remainingRequests:11,limitTokens:10,remainingTokens:1}),/RANGE/));
