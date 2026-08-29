@@ -1,0 +1,2 @@
+{"missionId":"V2-011H","from":null,"to":"BUILD","status":"RUNNING","reason":"Canonical allocator returned V2-011H; Great Harvest found strong visual-proof stock; qualification opened before implementation.","authorityGranted":false,"executionStarted":false}
+{"missionId":"V2-011H","from":"BUILD","to":"SHIP","status":"COMPLETE","reason":"Visual Control qualified for pure OBSERVE-only adaptation; supervised/autonomous control remains closed.","authorityGranted":false,"executionStarted":false}

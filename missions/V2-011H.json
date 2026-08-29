@@ -1,0 +1,30 @@
+﻿{
+    "mission_id":  "V2-011H",
+    "title":  "Visual Control Resident Qualification",
+    "status":  "COMPLETE",
+    "phase":  "SHIP",
+    "start_sha":  "1f6d7ed2efc5181336a6efe0ce71df9403c9ad25",
+    "objective":  "Qualify repo-proven visual observation and visual verification contracts for a smallest safe V2 resident before any screen-control authority.",
+    "laws":  [
+                 "OBSERVE before SUPERVISED before AUTONOMOUS.",
+                 "Visual Control is sensor/evidence infrastructure, not a second orchestrator.",
+                 "A screenshot or click is never success by itself; Talos remains verification truth.",
+                 "Fail closed on stale frames, uncertain targets, lost nodes or permission mismatch.",
+                 "Trust Canal remains authority boundary for consequential input actions.",
+                 "Mycelium remains node routing truth; Command Deck remains operator projection.",
+                 "PandaOS is experience quarry only, never backend truth."
+             ],
+    "out_of_scope":  [
+                         "mouse or keyboard injection",
+                         "autonomous computer use",
+                         "remote desktop product",
+                         "live video streaming",
+                         "new node transport",
+                         "second verifier",
+                         "second authority system",
+                         "tablet redesign"
+                     ],
+    "authorityGranted":  false,
+    "executionStarted":  false,
+    "verdict":  "QUALIFIED_FOR_ADAPTATION_OBSERVE_ONLY"
+}

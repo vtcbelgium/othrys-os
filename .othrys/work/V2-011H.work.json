@@ -1,0 +1,17 @@
+﻿{
+    "schema":  "othrys.os.work.v1",
+    "missionId":  "V2-011H",
+    "title":  "Visual Control Resident Qualification",
+    "phase":  "SHIP",
+    "status":  "COMPLETE",
+    "objective":  "Qualify the smallest honest visual observation/verification seam from harvested repo evidence.",
+    "startSha":  "1f6d7ed2efc5181336a6efe0ce71df9403c9ad25",
+    "authorityGranted":  false,
+    "executionStarted":  false,
+    "progress":  {
+                     "harvestQueried":  true,
+                     "overlapInspection":  true,
+                     "qualificationWritten":  true,
+                     "houseAdmission":  false
+                 }
+}

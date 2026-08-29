@@ -1,0 +1,18 @@
+{
+  "mission_id": "V2-011H",
+  "verdict": "PASS",
+  "classification": "QUALIFIED_FOR_ADAPTATION_OBSERVE_ONLY",
+  "start_sha": "1f6d7ed2efc5181336a6efe0ce71df9403c9ad25",
+  "house_admitted": false,
+  "harvest": {
+    "visual_proof_object": "1b94013aa9507240e39c5854ed5157dfbc081db0",
+    "playwright_fidelity_object": "b4275395fbeb96c6039b1ab53a552ebecbb9cfa2",
+    "classification": "ADAPT"
+  },
+  "resident_boundary": "pure frame observation and visual evidence contracts only",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "supervised_control": false,
+  "autonomous_control": false,
+  "next_legal_action": "Allocate the next canonical mission and admit the pure OBSERVE contract kernel only."
+}
