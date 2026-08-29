@@ -17,3 +17,9 @@
 - Hephaestus remains single-mutation-boundary today. Multi-hand Hephaestus requires isolated workspaces/slices or alternative candidates plus one external verifier/merge gate before it can be activated safely.
 - Multichannel planner stress: 20,000 width-3 plans across 32 caller threads, 0 failures, ~0.290 ms/plan over a 256-node synthetic colony.
 - Activation stress exposed a malformed hand-built Work record digest and then a stale Command Deck test server process. Work was rematerialized through the canonical `work_record.mjs` API; stale test server was removed. Deck 14/14, full Node 287/287, Mycelium 29/29 and worker Python 10/10 returned green. This is now part of the housekeeping evidence.
+- Deep scheduling harvest compared Ray, Dask, Borg, Kubernetes, Slurm, Nomad, Erlang/OTP and Celery. Kept logical resources, pack/spread, saturation/backpressure, strict placement, restart-intensity law and duration-class lanes; rejected heavyweight control planes and unsafe overcommit.
+- Live colony census: Legion advertises 30 CPU threads / 27.9 GB RAM / 1 GPU / 7.6 GB VRAM; T590 advertises 6 CPU threads / 11.0 GB RAM / no GPU.
+- LAN probe Legion -> T590 wired: 20/20 ping, 0% loss, ~0-1 ms RTT. 64 MiB curl transfer measured ~116 MB/s (~930 Mbit/s); an initial PowerShell downloader result (~11.3 Mbit/s) was correctly identified as client overhead, not LAN capacity. Temporary probe server/file removed.
+- Parallel full-runtime proof: Legion 287/287 in ~3.68 s while T590 simultaneously ran 287/287 in ~3.29 s. Compared with sequential ~6.7 s, two independent verification lanes reduce wall clock by roughly 45% without shared mutation.
+- Planner v0.2 adds cumulative capacity accounting, PACK/SPREAD/STRICT_PACK/STRICT_SPREAD, SATISFIED/PARTIAL/INFEASIBLE result state and balanced SPREAD reuse.
+- Optional CPU/GPU pressure now affects route score; saturated right-sized nodes yield to healthier feasible nodes. Mycelium direct and discovery suite both 20/20.
