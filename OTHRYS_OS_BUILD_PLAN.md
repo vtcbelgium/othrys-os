@@ -2,9 +2,9 @@
 
 **Front-door plan.** Read after `BOOK_OF_GPT.md` and current `GPT_STATE.json`.
 
-## Current phase -- V2-010R BLOCK QUARRY / EXTRACTION / COMPOUNDING
+## Current phase -- V2-010S RHIZOMORPH / EXPERIENCE / SPARSE RESILIENCE
 
-Milestone `M-OS-FOUNDATION-HARVEST-001` is achieved and V2-010Q has proven native verified Artifact reuse, including a real Context Metabolism consumer. V2-010R now compounds existing code stock into Blocks by formalizing the VTC-proven extraction classifier and duplicate-algorithm extinction proof. PandaOS remains the reconstruction/UX reference: make Block candidates and evidence understandable, but never replace OTHRYS provenance, maturity, admission or independent proof with Panda-style skill convenience.
+Milestone `M-OS-FOUNDATION-HARVEST-001` is achieved. V2-010Q proved native verified Artifact reuse and V2-010R formalized the VTC-proven Block extraction/extinction method. V2-010S now adapts the smallest safe 061D/061H Experience/Rhizomorph layer: immutable observations, holdouts, transparent Pareto preference, hysteresis/decay and sparse reinforcement among predeclared legal routes only. PandaOS remains a clarity/UX quarry, never routing or authority truth.
 
 ## Permanent Great Harvest preflight
 
@@ -23,8 +23,8 @@ Before designing or inventing a capability, query `docs/GREAT_HARVEST.md`, `docs
 9. **[COMPLETE] The Great Harvest / permanent code lineage quarry** -- index all recoverable code/config Git objects + commit intent across deduplicated local lineages, preserve historical-only state, expose deterministic query/retrieval metadata, and make Harvest preflight permanent.
 9a. **[COMPLETE] Great Harvest perimeter / whole local network census** -- account for code-bearing roots outside Projects on Legion + T590, explicitly classify duplicates/history/proofs/tool caches/live-only stock, and keep location provenance without copying source.
 10. **[COMPLETE] V2-010Q Anastomosis Artifact / local action cache** -- add immutable verified Artifact identity, provenance/freshness/integrity + compatibility validation, durable refusal/invalidation identity and local deterministic reuse. Independent-verification Claims remain non-reusable; failed compatibility isolates only that fusion edge; no distributed CAS yet.
-11. **[RUNNING] V2-010R Block Quarry / extraction / compounding** -- turn the VTC-proven HOST_CONFIG/BRIDGE/CALLER/DEBT/FALSE_POSITIVE method into a Hephaestus capability-extraction pipeline: prove duplicate algorithm extinction, preserve product glue, qualify canonical Blocks, and never harvest unrelated lookalikes.
-12. **Rhizomorph / Experience / sparse resilience** -- harvest 061D/061H plus biological network lessons: immutable flow observations, qualification, Pareto frontier, holdouts, hysteresis/decay, sparse cross-link budget and reinforced routes among predeclared legal variants only. Every reinforcement has a retraction law.
+11. **[COMPLETE] V2-010R Block Quarry / extraction / compounding** -- turn the VTC-proven HOST_CONFIG/BRIDGE/CALLER/DEBT/FALSE_POSITIVE method into a Hephaestus capability-extraction pipeline: prove duplicate algorithm extinction, preserve product glue, qualify canonical Blocks, and never harvest unrelated lookalikes.
+12. **[RUNNING] V2-010S Rhizomorph / Experience / sparse resilience** -- harvest 061D/061H plus biological network lessons: immutable flow observations, qualification, Pareto frontier, holdouts, hysteresis/decay, sparse cross-link budget and reinforced routes among predeclared legal variants only. Every reinforcement has a retraction law.
 13. **Sclerotium / clean-root recovery** -- current-House survival inventory, minimal trusted pack, secret exclusion, rebuild/reacquire/rebind classes, corrupt/wrong-body fail-closed and cross-node portability proof.
 14. **Switchyard / Frugal Heart** -- resume deferred capability/tier resolver only after metabolism/reuse/recovery are stable; model choice never binds authority; provider health, task-specific measured trust and VTC-style evidence ladders may exclude/reorder only inside legal tiers.
 15. **Integrations and services** -- admit repo-proven residents through separate missions; manifest, Book, contract, Atlas and Mnemosyne move together.

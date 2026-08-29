@@ -255,3 +255,6 @@
 
 | 92 | V2-010Q | Verified local Artifact reuse + Context Metabolism consumer; 4.27x measured warm reuse | COMPLETE |
 | 93 | V2-010R | Block Quarry / extraction / compounding: deterministic classification + host-glue preservation + extinction proof | RUNNING |
+
+| 94 | V2-010R | Block Quarry classifier + three grounded VTC extraction fixtures + duplicate-algorithm extinction proof | COMPLETE |
+| 95 | V2-010S | Rhizomorph / Experience / sparse resilience: legal-route qualification + holdout + Pareto/hysteresis/decay | RUNNING |

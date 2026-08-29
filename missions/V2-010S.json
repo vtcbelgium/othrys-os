@@ -1,0 +1,30 @@
+{
+  "mission_id": "V2-010S",
+  "title": "Rhizomorph / Experience / Sparse Resilience",
+  "status": "RUNNING",
+  "owner": "GPT_CONTROL",
+  "start_sha": "3431433028201ba99f84e90ac8e06393d564c63f",
+  "artifact_profile": "os-substrate",
+  "objective": "Adapt the smallest safe 061D/061H route-experience layer so OTHRYS can reinforce repeatedly proven legal routes, decay/degrade them when evidence shifts, and preserve sparse resilience without learning legality or authority.",
+  "great_harvest_preflight": {
+    "classification": "ADAPT",
+    "evidence": ["historic 061D rhizomorph.ts + tests", "historic 061H experience.ts + tests", "V2-010M biological mycelium harvest", "current WorkKey/Anastomosis/Metabolism/Artifact reuse"],
+    "reason": "The old implementation already contains lifecycle, holdout, Pareto, hysteresis, decay and legal-route-only preference laws; current V2 should re-admit a smaller measured subset rather than recreate adaptive routing."
+  },
+  "pandaos_reconstruction": {
+    "policy": "SURFACE_ONLY",
+    "rule": "Panda-like operator clarity may later explain why a route is preferred/degraded; preference remains derived evidence, never hidden model magic or authority."
+  },
+  "laws": [
+    "Preference may choose only among predeclared legal route variants; Mycelium never invents legality.",
+    "Frequency alone never reinforces a route; correctness/integrity/authority evidence and holdout are required.",
+    "Every reinforcement has decay, degrade and retirement/retraction behavior.",
+    "Experience observations are immutable evidence; preference state is derived and disposable.",
+    "Pareto preference must not collapse latency/resource/reuse/correctness into one opaque score.",
+    "Sparse cross-links are budgeted; morphological growth cannot become unbounded topology.",
+    "Cold/deleted adaptive state falls back safely to current metabolism/calibration defaults."
+  ],
+  "out_of_scope": ["No learned route invention", "No AI scoring", "No authority/capability mutation", "No autonomous worker fan-out", "No distributed adaptive database", "No PandaOS dependency"],
+  "authority_granted": false,
+  "execution_started": false
+}

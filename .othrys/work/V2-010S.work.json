@@ -1,0 +1,25 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010S",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010S",
+  "title": "Rhizomorph / Experience / Sparse Resilience",
+  "objective": "Adapt the smallest safe 061D/061H route-experience layer so OTHRYS can reinforce repeatedly proven legal routes, decay/degrade them when evidence shifts, and preserve sparse resilience without learning legality or authority.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Preference may choose only among predeclared legal route variants; Mycelium never invents legality.",
+    "Frequency alone never reinforces a route; correctness/integrity/authority evidence and holdout are required.",
+    "Every reinforcement has decay, degrade and retirement/retraction behavior.",
+    "Experience observations are immutable evidence; preference state is derived and disposable.",
+    "Pareto preference must not collapse latency/resource/reuse/correctness into one opaque score.",
+    "Sparse cross-links are budgeted; morphological growth cannot become unbounded topology.",
+    "Cold/deleted adaptive state falls back safely to current metabolism/calibration defaults."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "466f0cf4189fca9712327fe62d333a7a5c3bcd624a78ae8abd202addfc890249"
+}
