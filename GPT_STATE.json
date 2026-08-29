@@ -1,14 +1,14 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 136,
+    "sequence": 138,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read": "d77ee490f3913bb5f6492e4fd117b5004722a63e",
+    "remote_head_at_last_verified_read": "b23d111eb817862b6da3135149a8f84070710a31",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
-        "mission_id": "V2-011E",
+        "mission_id": "V2-011F",
         "status": "COMPLETE",
-        "issued_label": "V2-011E - KEYMASTER HOUSE ADMISSION",
+        "issued_label": "V2-011F - HERMES RESIDENT QUALIFICATION",
         "source": "operator_current_conversation"
     },
     "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
         "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
     ],
     "last_control_decision": {
-        "mission_id": "V2-011E",
-        "decision": "KEYMASTER_HOUSE_ADMISSION_PASS",
-        "authority": "Sanitized metadata/health/policy only; no secret value/locator/access/mutation."
+        "mission_id": "V2-011F",
+        "decision": "QUALIFIED_FOR_ADAPTATION",
+        "authority": "Qualification only; pure Hermes contract resident may proceed; no channel/storage/mutation authority."
     },
-    "next_legal_action": "Compare Nyx introspection vs Hermes signal fabric against current V2 overlap before opening next mission.",
+    "next_legal_action": "Open V2-011G Hermes House Admission; pure non-networked resident contract only.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",
@@ -359,6 +359,16 @@
             "mission_id": "V2-011E",
             "status": "COMPLETE",
             "note": "Native Keymaster metadata resident admitted with no secret value or locator surface; House/Atlas/Mnemosyne exact T590 proof green."
+        },
+        {
+            "mission_id": "V2-011F",
+            "status": "RUNNING",
+            "note": "Nyx classified MERGE/no standalone resident after V2 overlap proof; Hermes qualification opened as missing communications boundary."
+        },
+        {
+            "mission_id": "V2-011F",
+            "status": "COMPLETE",
+            "note": "Hermes QUALIFIED_FOR_ADAPTATION: old spine 167/167 plus Mission 044 7/7; Nyx merged/no standalone; no live channels, storage backend or mutation authority."
         }
     ],
     "git": {

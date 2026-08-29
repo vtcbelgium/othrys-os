@@ -1,0 +1,37 @@
+{
+  "mission_id": "V2-011F",
+  "title": "Hermes Resident Qualification",
+  "status": "COMPLETE",
+  "owner": "GPT_CONTROL",
+  "start_sha": "b23d111eb817862b6da3135149a8f84070710a31",
+  "objective": "Qualify the repo-proven Hermes universal communications contracts against current V2 Command Deck, Trust Canal, Work, Talos, Keymaster and Mycelium ownership before any House admission or channel integration.",
+  "great_harvest_classification": "QUALIFIED_FOR_ADAPTATION",
+  "candidate_comparison": {
+    "nyx": "MERGE_NO_STANDALONE_RESIDENT",
+    "hermes": "ADAPT_CANDIDATE"
+  },
+  "laws": [
+    "Hermes is infrastructure, not a Titan.",
+    "Hermes may own universal communications acceptance/tracking/delivery semantics but never planning or product WORK.",
+    "Trust Canal remains the authority/admission boundary for consequential intents; Hermes cannot become a second approval authority.",
+    "Work remains canonical orchestration projection; Talos remains execution verification/retry truth.",
+    "Keymaster owns credential semantics; Hermes carries no raw secrets or secret resolution.",
+    "Channel adapters cannot bypass Hermes into Titans, Talos, shell or workers.",
+    "No live external channel, network provider, credential, database, scheduler or mutation execution is added by qualification.",
+    "Nyx introspection is harvested into existing Talos/Housekeeping/Mnemosyne audit surfaces; no standalone Nyx resident is created."
+  ],
+  "out_of_scope": [
+    "House admission",
+    "Telegram activation",
+    "ChatGPT live adapter",
+    "email/webhook integration",
+    "database deployment",
+    "network calls",
+    "credential resolution",
+    "mutation execution",
+    "rate limiting implementation",
+    "visual redesign"
+  ],
+  "authority_granted": false,
+  "execution_started": false
+}

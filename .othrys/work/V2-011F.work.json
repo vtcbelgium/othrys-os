@@ -1,0 +1,26 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-011F",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-011F",
+  "title": "Hermes Resident Qualification",
+  "objective": "Qualify the repo-proven Hermes universal communications contracts against current V2 Command Deck, Trust Canal, Work, Talos, Keymaster and Mycelium ownership before any House admission or channel integration.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Hermes is infrastructure, not a Titan.",
+    "Hermes may own universal communications acceptance/tracking/delivery semantics but never planning or product WORK.",
+    "Trust Canal remains the authority/admission boundary for consequential intents; Hermes cannot become a second approval authority.",
+    "Work remains canonical orchestration projection; Talos remains execution verification/retry truth.",
+    "Keymaster owns credential semantics; Hermes carries no raw secrets or secret resolution.",
+    "Channel adapters cannot bypass Hermes into Titans, Talos, shell or workers.",
+    "No live external channel, network provider, credential, database, scheduler or mutation execution is added by qualification.",
+    "Nyx introspection is harvested into existing Talos/Housekeeping/Mnemosyne audit surfaces; no standalone Nyx resident is created."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "1e26f1bd35d6df1e1e9a182df5ca4d2fdec3821b742228c5915262ee309ca680"
+}

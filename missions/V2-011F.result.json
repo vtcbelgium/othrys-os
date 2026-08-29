@@ -1,0 +1,26 @@
+{
+  "mission_id": "V2-011F",
+  "verdict": "PASS",
+  "start_sha": "b23d111eb817862b6da3135149a8f84070710a31",
+  "objective": "Qualify Hermes communications contracts against current V2 ownership before House admission.",
+  "great_harvest_classification": "QUALIFIED_FOR_ADAPTATION",
+  "nyx_classification": "MERGE_NO_STANDALONE_RESIDENT",
+  "resident_boundary": "pure non-networked communication contract kernel",
+  "proof": {
+    "old_hermes_contracts": "58/58 PASS",
+    "old_hermes_pipeline": "42/42 PASS",
+    "old_hermes_adversarial": "67/67 PASS",
+    "old_mission044_event_bus": "7/7 PASS",
+    "v2_house_overlap": "35/35 PASS"
+  },
+  "boundaries": {
+    "authority_granted": false,
+    "execution_started": false,
+    "live_channels_added": false,
+    "storage_backend_added": false,
+    "credential_resolution_added": false,
+    "mutation_engine_added": false
+  },
+  "qualification": "docs/V2-011F/HERMES_QUALIFICATION.md",
+  "next_legal_action": "Open V2-011G Hermes House Admission and adapt only the pure resident seam."
+}

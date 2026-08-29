@@ -259,14 +259,14 @@
 | 94 | V2-010R | Block Quarry classifier + three grounded VTC extraction fixtures + duplicate-algorithm extinction proof | COMPLETE |
 | 95 | V2-010S | Rhizomorph / Experience / sparse resilience: legal-route qualification + holdout + Pareto/hysteresis/decay | RUNNING |
 
-93. **V2-010S Rhizomorph / Experience / Sparse Resilience — COMPLETE/PASS** — exact T590 proof.
-94. **V2-010T Sclerotium / Clean-Root Recovery — RUNNING** — minimal trusted survival pack; secret-free, portable and fail-closed.
+93. **V2-010S Rhizomorph / Experience / Sparse Resilience ï¿½ COMPLETE/PASS** ï¿½ exact T590 proof.
+94. **V2-010T Sclerotium / Clean-Root Recovery ï¿½ RUNNING** ï¿½ minimal trusted survival pack; secret-free, portable and fail-closed.
 
-95. **V2-010T Sclerotium / Clean-Root Recovery — COMPLETE/PASS** — 339/339 Node + 78/78 Mycelium + 10/10 workers on Legion/T590; identical clean-root manifest digest.
-96. **V2-010U Switchyard / Frugal Heart — RUNNING** — strict capability/tier resolver over legal qualified candidates; cheapest capable first; no authority or paid auto-escalation.
+95. **V2-010T Sclerotium / Clean-Root Recovery ï¿½ COMPLETE/PASS** ï¿½ 339/339 Node + 78/78 Mycelium + 10/10 workers on Legion/T590; identical clean-root manifest digest.
+96. **V2-010U Switchyard / Frugal Heart ï¿½ RUNNING** ï¿½ strict capability/tier resolver over legal qualified candidates; cheapest capable first; no authority or paid auto-escalation.
 
-97. **V2-010U Switchyard / Frugal Heart — COMPLETE/PASS** — 350/350 Node + 78/78 Mycelium + 10/10 workers on Legion/T590; qwen selected, advisory/remote rejected explicitly.
-98. **V2-010V Switchyard House Admission — RUNNING** — manifest + Book + component contract + Atlas/Mnemosyne derived admission; no duplicate routing backend.
+97. **V2-010U Switchyard / Frugal Heart ï¿½ COMPLETE/PASS** ï¿½ 350/350 Node + 78/78 Mycelium + 10/10 workers on Legion/T590; qwen selected, advisory/remote rejected explicitly.
+98. **V2-010V Switchyard House Admission ï¿½ RUNNING** ï¿½ manifest + Book + component contract + Atlas/Mnemosyne derived admission; no duplicate routing backend.
 
 99. **V2-010V Switchyard House Admission - COMPLETE/PASS** - resident manifest + Book + contract + Atlas/Mnemosyne; exact T590 proof.
 100. **V2-010W Native Switchyard Deck Projection - COMPLETE/PASS** - duplicate Deck selector removed; native canonical policy projection; exact T590 proof.
@@ -306,3 +306,8 @@
 
 121. **V2-011E Keymaster House Admission - COMPLETE/PASS** - metadata/health/policy resident with no secret value or locator surface; exact T590 proof.
 122. **Nyx vs Hermes resident comparison - NEXT** - Great Harvest + V2 overlap first; admit neither by name alone.
+
+123. **Nyx resident comparison - MERGE/NO STANDALONE RESIDENT** - old Nyx is Talos introspection/proposal-only audit; current Housekeeping/Mnemosyne/Hecatoncheires/Talos already own the useful semantics.
+124. **V2-011F Hermes Resident Qualification - RUNNING** - universal communications contract/core qualification; Hermes is infrastructure, not Titan; no live channel or second authority.
+125. **V2-011F Hermes Resident Qualification - COMPLETE/PASS** - old Hermes 167/167 + Mission 044 7/7; pure communications seam qualified; Nyx merged; no live channels/storage/mutation authority.
+126. **V2-011G Hermes House Admission - NEXT** - pure message/conversation/idempotency/lifecycle/binding kernel only; Panda experience quarry, no Panda backend duplication.
