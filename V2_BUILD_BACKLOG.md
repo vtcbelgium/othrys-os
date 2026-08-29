@@ -312,3 +312,5 @@
 125. **V2-011F Hermes Resident Qualification - COMPLETE/PASS** - old Hermes 167/167 + Mission 044 7/7; pure communications seam qualified; Nyx merged; no live channels/storage/mutation authority.
 126. **V2-011G Hermes House Admission - COMPLETE/PASS** - pure message/conversation/idempotency/lifecycle/binding kernel only; Panda experience quarry, no Panda backend duplication.
 127. **Next integration/service preflight - NEXT** - Great Harvest + current V2 overlap first; rank Metis/Hyperion/remaining service candidates before opening a resident mission; Visual Control stays gated.
+
+125. V2-011J Pentarchy + OTHRYS OS Reinforcement -- RUNNING -- non-visual evidence gate + self-hosting/capability-debt law; focused proof 54/54 green; next bind live V2 evidence and attack weakest seat.
