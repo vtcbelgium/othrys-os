@@ -112,7 +112,26 @@ export function readRefusals(root,path='.othrys/artifact-refusals.jsonl'){
 export function findArtifactByWorkKey(root,workKey){
   requireHex(workKey,'WORK_KEY'); const dir=join(root,'.othrys','artifacts'); if(!existsSync(dir)) return null;
   for(const name of readdirSync(dir).filter(x=>x.endsWith('.json')).sort()){
-    try{const record=validateArtifactRecord(JSON.parse(readFileSync(join(dir,name),'utf8'))); if(record.workKey===workKey) return record;}catch{continue}
+    let record; try{record=validateArtifactRecord(JSON.parse(readFileSync(join(dir,name),'utf8')));}catch{throw new Error('ARTIFACT_STORE_UNKNOWN');}
+    if(record.workKey===workKey){ const paths=artifactPaths(root,record.artifactId); if(!existsSync(paths.payload)||sha(readFileSync(paths.payload))!==record.payloadDigest) throw new Error('ARTIFACT_STORE_UNKNOWN'); return record; }
   }
   return null;
+}
+
+export function listArtifactsByWorkKey(root,workKey){
+  requireHex(workKey,'WORK_KEY'); const dir=join(root,'.othrys','artifacts'); if(!existsSync(dir)) return Object.freeze([]);
+  const matches=[];
+  for(const name of readdirSync(dir).filter(x=>x.endsWith('.json')).sort()){
+    let record; try{record=validateArtifactRecord(JSON.parse(readFileSync(join(dir,name),'utf8')));}catch{throw new Error('ARTIFACT_STORE_UNKNOWN');}
+    if(record.workKey!==workKey) continue;
+    const paths=artifactPaths(root,record.artifactId); if(!existsSync(paths.payload)||sha(readFileSync(paths.payload))!==record.payloadDigest) throw new Error('ARTIFACT_STORE_UNKNOWN');
+    matches.push(record);
+  }
+  return Object.freeze(matches);
+}
+export function findArtifactForReuse(root,claim,current){
+  const records=listArtifactsByWorkKey(root,claim.workKey); if(!records.length) return null;
+  return records.find(r=>r.compatibilityDigest===claim.compatibilityDigest&&r.acceptanceDigest===claim.acceptanceDigest&&r.provenanceDigest===current?.provenanceDigest&&r.freshnessDigest===current?.freshnessDigest)
+    ??records.find(r=>r.compatibilityDigest===claim.compatibilityDigest&&r.acceptanceDigest===claim.acceptanceDigest)
+    ??records[0];
 }

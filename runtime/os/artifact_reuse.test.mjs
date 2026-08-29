@@ -84,3 +84,18 @@ test('missing artifact is a legal MISS and incomplete current evidence is UNKNOW
   const d=evaluateArtifactReuse({claim:claim(),artifact,payload,current:{provenanceDigest:base.provenanceDigest}});
   assert.equal(d.outcome,'UNKNOWN'); assert.equal(d.reason,'CURRENT_EVIDENCE_INCOMPLETE');
 });
+
+test('tampered record becomes UNKNOWN instead of a guessed hit',()=>{
+  const artifact=createArtifactRecord(base,payload),tampered={...artifact,producerId:'other'};
+  const d=evaluateArtifactReuse({claim:claim(),artifact:tampered,payload,current:current()});
+  assert.equal(d.outcome,'UNKNOWN'); assert.equal(d.reason,'ARTIFACT_EVIDENCE_INVALID');
+});
+
+test('torn or corrupt local store fails closed to UNKNOWN lookup',()=>{
+  const root=mkdtempSync(join(tmpdir(),'othrys-store-unknown-'));
+  try{
+    const a=materializeArtifact(root,base,payload);
+    unlinkSync(a.paths.payload);
+    assert.throws(()=>findArtifactByWorkKey(root,base.workKey),/ARTIFACT_STORE_UNKNOWN/);
+  }finally{rmSync(root,{recursive:true,force:true});}
+});

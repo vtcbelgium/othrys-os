@@ -1,4 +1,6 @@
 import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { artifactPaths, appendRefusal, createRefusalRecord, evaluateArtifactReuse, findArtifactForReuse, materializeArtifact, readRefusals } from './artifact_reuse.mjs';
 
 export const CONTEXT_METABOLISM_SCHEMA='othrys.os.context-metabolism.v1';
 export const CAPSULE_CLASSES=Object.freeze(['PINNED','ACTIVE','RELEVANT','COMPRESSIBLE','EVICTABLE']);
@@ -79,4 +81,30 @@ export function metabolizeSelectedKnowledge(capsule){
   for(const x of capsule.warnings??[]) add('warnings',x,'ACTIVE','GROUNDED',true,null);
   if(!items.length) return Object.freeze({schema:CONTEXT_METABOLISM_SCHEMA,capsuleId:`transport:${capsule.query??''}`,items:[],beforeBytes:0,afterBytes:0,reductionBytes:0,reductionRatio:0,requiredEvidenceLost:0,authorityEvidenceLost:0,identityExpansion:0,frozenIdentities:[],referenced:[],evicted:[],catalogDigest:capsule.estateCatalogSha256??null,aiRouting:false,learnedRouting:false,authorityGranted:false,executionStarted:false,capsuleDigest:sha('empty')});
   return metabolizeEvidenceCapsule({capsuleId:`transport:${capsule.query??''}`,items,frozenIdentities:items.map(x=>x.id),catalogDigest:capsule.estateCatalogSha256??null});
+}
+
+export function metabolizeEvidenceCapsuleCached(args,reuse){
+  if(!reuse||!clean(reuse.cacheRoot)) throw new Error('CONTEXT_CACHE_ROOT_REQUIRED');
+  const claim={claimId:clean(reuse.claimId)||`context:${args?.capsuleId??'unknown'}`,reusePolicy:reuse.reusePolicy??'SHARE_COMPUTATION',workKey:reuse.workKey,compatibilityDigest:reuse.compatibilityDigest,acceptanceDigest:reuse.acceptanceDigest};
+  const current={provenanceDigest:reuse.provenanceDigest,freshnessDigest:reuse.freshnessDigest};
+  let artifact=null,ledger={status:'EMPTY',records:[]},lookupUnknown=false;
+  try{ artifact=findArtifactForReuse(reuse.cacheRoot,claim,current); ledger=readRefusals(reuse.cacheRoot); if(ledger.status==='UNKNOWN') lookupUnknown=true; }
+  catch(err){ if(String(err?.message)!=='ARTIFACT_STORE_UNKNOWN') throw err; lookupUnknown=true; }
+  if(lookupUnknown){
+    const capsule=metabolizeEvidenceCapsule(args);
+    return Object.freeze({schema:'othrys.os.context-metabolism-cache.v1',reuse:Object.freeze({outcome:'UNKNOWN',reason:'CACHE_EVIDENCE_UNKNOWN',authorityGranted:false,executionStarted:false}),executed:true,stored:false,capsule});
+  }
+  const payload=artifact?readFileSync(artifactPaths(reuse.cacheRoot,artifact.artifactId).payload):null;
+  const reuseDecision=evaluateArtifactReuse({claim,artifact,payload,current,refusals:ledger.records});
+  if(reuseDecision.outcome==='HIT'){
+    return Object.freeze({schema:'othrys.os.context-metabolism-cache.v1',reuse:reuseDecision,executed:false,stored:true,capsule:JSON.parse(payload.toString('utf8'))});
+  }
+  const capsule=metabolizeEvidenceCapsule(args);
+  if(claim.reusePolicy==='INDEPENDENT_EXECUTION_REQUIRED') return Object.freeze({schema:'othrys.os.context-metabolism-cache.v1',reuse:reuseDecision,executed:true,stored:false,capsule});
+  if(reuseDecision.outcome==='REFUSED'&&artifact){
+    const evidenceDigest=sha(JSON.stringify({claim,current,reason:reuseDecision.reason}));
+    appendRefusal(reuse.cacheRoot,createRefusalRecord({claimId:claim.claimId,artifactId:artifact.artifactId,reason:reuseDecision.reason,evidenceDigest}));
+  }
+  const stored=materializeArtifact(reuse.cacheRoot,{workKey:claim.workKey,compatibilityDigest:claim.compatibilityDigest,acceptanceDigest:claim.acceptanceDigest,provenanceDigest:current.provenanceDigest,freshnessDigest:current.freshnessDigest,verifierEvidenceDigest:reuse.verifierEvidenceDigest,producerId:reuse.producerId},JSON.stringify(capsule));
+  return Object.freeze({schema:'othrys.os.context-metabolism-cache.v1',reuse:reuseDecision,executed:true,stored:true,artifactId:stored.record.artifactId,capsule});
 }
