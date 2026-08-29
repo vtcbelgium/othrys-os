@@ -309,6 +309,22 @@
       "boundary": "Keymaster classifies sanitized credential metadata and health; the resident carries no secret values or locators, resolves nothing, mutates nothing and cannot approve credential actions.",
       "path": "books/book-of-keymaster/README.md",
       "status": "CURRENT_OS_EDITION"
+    },
+    {
+      "id": "hermes",
+      "title": "The Book of Hermes",
+      "role": "Provider-neutral communication contracts, message lifecycle and delivery evidence.",
+      "evidence": [
+        "V2-011F",
+        ".othrys/project.json#systems/hermes",
+        "runtime/os/hermes.mjs"
+      ],
+      "legacy": [
+        "othrys-core/hermes/** and Mission 044 evidence preserved by the Great Harvest"
+      ],
+      "boundary": "Hermes normalizes and tracks communication; it does not own authority, product work, execution verification, credentials, live channel providers or storage backends.",
+      "path": "books/book-of-hermes/README.md",
+      "status": "CURRENT_OS_EDITION"
     }
   ],
   "authorityGranted": false,

@@ -1,0 +1,21 @@
+{
+  "mission_id": "V2-011G",
+  "title": "Hermes House Admission",
+  "status": "RUNNING",
+  "owner": "GPT_CONTROL",
+  "start_sha": "eb16f47328c175ed407cc5dba2f8741a7ce3040e",
+  "objective": "Adapt and admit the qualified minimum Hermes resident as a pure provider-neutral communications contract kernel without live channels, storage backend, credential resolution, mutation execution, second authority, or duplicate orchestration.",
+  "great_harvest_classification": "ADAPT",
+  "laws": [
+    "Hermes is infrastructure, not a Titan.",
+    "Trust Canal remains the only consequential admission/authority boundary.",
+    "Work remains orchestration truth and Talos remains execution verification/retry truth.",
+    "Keymaster owns credential semantics; Hermes carries no raw secrets or credential locators.",
+    "No ACK may be claimed without explicit durable receipt evidence.",
+    "Processing lifecycle and delivery lifecycle remain distinct.",
+    "Channel bindings are default-deny and provider-neutral.",
+    "PandaOS is copied for useful experience patterns only; its backend is not duplicated."
+  ],
+  "authority_granted": false,
+  "execution_started": false
+}

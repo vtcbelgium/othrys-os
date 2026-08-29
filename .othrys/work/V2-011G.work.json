@@ -1,0 +1,26 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-011G",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-011G",
+  "title": "Hermes House Admission",
+  "objective": "Adapt and admit the qualified minimum Hermes resident as a pure provider-neutral communications contract kernel without live channels, storage backend, credential resolution, mutation execution, second authority, or duplicate orchestration.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Hermes is infrastructure, not a Titan.",
+    "Trust Canal remains the only consequential admission/authority boundary.",
+    "Work remains orchestration truth and Talos remains execution verification/retry truth.",
+    "Keymaster owns credential semantics; Hermes carries no raw secrets or credential locators.",
+    "No ACK may be claimed without explicit durable receipt evidence.",
+    "Processing lifecycle and delivery lifecycle remain distinct.",
+    "Channel bindings are default-deny and provider-neutral.",
+    "PandaOS is copied for useful experience patterns only; its backend is not duplicated."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "699491da56cdc1f102bede3343416f37342652ddaba84135a025fc7e02a55a75"
+}

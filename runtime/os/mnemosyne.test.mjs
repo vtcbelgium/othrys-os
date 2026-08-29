@@ -169,3 +169,11 @@ test('resident Keymaster is current project truth and Atlas evidence without a s
   assert.equal(c.authorityGranted,false);
   assert.equal(c.transportCapsule.authorityGranted,false);
 });
+
+test('resident Hermes is current project truth and Atlas evidence without a second registry',()=>{
+  const c=assembleKnowledgeContext(root,manifest,'Hermes',{limit:8});
+  assert.ok(c.projectTruth.some(x=>x.id==='book-hermes'&&x.source?.kind==='HOUSE_BOOK'));
+  assert.ok(c.related.some(x=>x.id==='system:hermes'&&x.exactMatch===true));
+  assert.equal(c.authorityGranted,false);
+  assert.equal(c.transportCapsule.authorityGranted,false);
+});

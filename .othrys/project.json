@@ -110,6 +110,12 @@
       "label": "Keymaster",
       "role": "Sanitized credential metadata / health / policy",
       "statusEvidence": "V2-011D"
+    },
+    {
+      "id": "hermes",
+      "label": "Hermes",
+      "role": "Universal communications contracts / message lifecycle",
+      "statusEvidence": "V2-011F"
     }
   ],
   "capabilities": [
