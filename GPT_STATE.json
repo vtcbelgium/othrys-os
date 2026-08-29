@@ -1,14 +1,14 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 122,
+    "sequence": 123,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read": "44c0c44f7a6b62ac7305b21e13a1ac2e80f4894f",
+    "remote_head_at_last_verified_read": "3318bf4df80d9875712148f3530ee5110dd1fb50",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
-        "mission_id": "V2-010X",
+        "mission_id": "V2-010Y",
         "status": "RUNNING",
-        "issued_label": "V2-010X - PROMETHEUS RESIDENT QUALIFICATION",
+        "issued_label": "V2-010Y - PROMETHEUS HOUSE ADMISSION",
         "source": "operator_current_conversation"
     },
     "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
         "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
     ],
     "last_control_decision": {
-        "mission_id": "V2-010X",
-        "decision": "GREAT_HARVEST_ADAPT_PROMETHEUS",
-        "authority": "Qualification only; no House admission, network, scheduling or knowledge-promotion authority."
+        "mission_id": "V2-010Y",
+        "decision": "ADMIT_QUALIFIED_MINIMUM_PROMETHEUS",
+        "authority": "Admission only; intelligence evidence service, no knowledge/execution/lifecycle authority."
     },
-    "next_legal_action": "Inspect harvested Prometheus implementation and tests; classify reusable research/search seams, dependencies and forbidden authority before any V2 adaptation.",
+    "next_legal_action": "Apply the V2-010V resident-admission pattern to qualified Prometheus: project manifest, Book, component contract and derived Atlas/Mnemosyne evidence; remove only Prometheus from quarry-only guard.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",
@@ -284,6 +284,16 @@
             "mission_id": "V2-010S",
             "status": "RUNNING",
             "note": "Rhizomorph/Experience opened from Great Harvest ADAPT of 061D/061H; immutable observations, holdouts, Pareto/hysteresis/decay and sparse legal-route reinforcement only."
+        },
+        {
+            "mission_id": "V2-010X",
+            "status": "COMPLETE",
+            "note": "Prometheus qualified from Great Harvest: local intelligence + public dry-run evidence + bounded inbox; Triad/Penta boundaries preserved; scheduling deferred; no admission/authority."
+        },
+        {
+            "mission_id": "V2-010Y",
+            "status": "RUNNING",
+            "note": "Prometheus House admission only; reuse current resident surfaces, no Hub backend transplant."
         }
     ],
     "git": {

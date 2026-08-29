@@ -271,3 +271,6 @@
 99. **V2-010V Switchyard House Admission - COMPLETE/PASS** - resident manifest + Book + contract + Atlas/Mnemosyne; exact T590 proof.
 100. **V2-010W Native Switchyard Deck Projection - COMPLETE/PASS** - duplicate Deck selector removed; native canonical policy projection; exact T590 proof.
 101. **V2-010X Prometheus Resident Qualification - NEXT** - Great Harvest preflight over repo-proven research/search fabric before any House admission.
+
+102. **V2-010X Prometheus Resident Qualification - COMPLETE/PASS** - Triad/Penta boundaries + local intelligence + live public dry-run evidence + inbox lifecycle qualified; scheduling deferred.
+103. **V2-010Y Prometheus House Admission - RUNNING** - current House manifest + Book + component contract + derived Atlas/Mnemosyne only; no duplicate backend or new authority.

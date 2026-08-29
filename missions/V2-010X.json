@@ -1,7 +1,7 @@
 {
   "mission_id": "V2-010X",
   "title": "Prometheus Resident Qualification",
-  "status": "RUNNING",
+  "status": "COMPLETE",
   "owner": "GPT_CONTROL",
   "start_sha": "44c0c44f7a6b62ac7305b21e13a1ac2e80f4894f",
   "objective": "Qualify the repo-proven Prometheus research/search fabric against current OTHRYS OS contracts before any House admission.",
@@ -36,11 +36,24 @@
     "evidence": "docs/V2-010X/TRIAD_PENTA_PROMETHEUS_STUDY.md",
     "focused_old_hub_tests": "80 PASS / 1 Windows byte-offset defect harvested"
   },
-  "next_slice": "PROMETHEUS_EXTERNAL_EVIDENCE_QUALIFICATION",
+  "next_slice": "COMPLETE",
   "local_intelligence_qualification": {
     "verdict": "QUALIFIED_FOR_ADAPTATION",
     "evidence": "docs/V2-010X/LOCAL_INTELLIGENCE_QUALIFICATION.md",
     "live_proof": "score OK; recommend OK; manifest 18; 13 PASS / 1 stale-count test",
     "architecture": "resident typed intelligence service; no Hub subprocess transplant"
+  },
+  "verdict": "PASS",
+  "external_evidence_qualification": {
+    "verdict": "QUALIFIED_FOR_ADAPTATION",
+    "evidence": "docs/V2-010X/EXTERNAL_EVIDENCE_QUALIFICATION.md",
+    "live_proof": "nvidia-api-catalog dry-run forced; 83 fetched/normalized; 0 candidates/admissions/cost",
+    "focused_tests": "34/34 route+live gate; 15/15 gather core"
+  },
+  "research_lifecycle_qualification": {
+    "inbox": "REUSE_PATTERN",
+    "scheduling": "DEFER",
+    "evidence": "docs/V2-010X/RESEARCH_LIFECYCLE_QUALIFICATION.md",
+    "proof": "6/6 non-UI inbox + 6/6 non-stale daily-scan tests; 2 stale historical tests classified"
   }
 }

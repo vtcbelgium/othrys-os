@@ -1,0 +1,38 @@
+{
+  "mission_id": "V2-010X",
+  "verdict": "PASS",
+  "start_sha": "44c0c44f7a6b62ac7305b21e13a1ac2e80f4894f",
+  "qualification_head_before_closeout": "3318bf4df80d9875712148f3530ee5110dd1fb50",
+  "scope": "Great-Harvest qualification of Prometheus local intelligence, external evidence and research lifecycle plus Triad/Penta boundaries; no House admission",
+  "classification": "ADAPT",
+  "qualified": {
+    "triad": "REUSE constitutional contract; no orchestrator",
+    "penta": "REUSE campaign proof patterns; not authority",
+    "local_intelligence": "score/recommend QUALIFIED",
+    "external_evidence": "registered-source dry-run evidence acquisition QUALIFIED",
+    "research_inbox": "REUSE bounded evidence lifecycle",
+    "scheduled_research": "DEFER to future Cronos/time-governed mission"
+  },
+  "live_proof": {
+    "score": "OK",
+    "recommend": "OK",
+    "external": "OK; 83 current records; dryRun forced; 0 admissions; cost 0"
+  },
+  "test_proof": {
+    "local": "13 PASS + 1 stale fixed-count fossil",
+    "gather": "49/49 focused PASS",
+    "inbox": "6/6 semantic PASS",
+    "daily_scan": "6/6 semantic PASS",
+    "harvested_fossils": [
+      "Windows CRLF byte-offset test",
+      "fixed capability-count test",
+      "UI copy assertion",
+      "mixed-clock stale-claim test"
+    ]
+  },
+  "authority_granted": false,
+  "execution_started": false,
+  "house_admitted": false,
+  "duplicate_backend_created": false,
+  "next_legal_action": "V2-010Y Prometheus House Admission through current manifest + Book + component contract + derived Atlas/Mnemosyne only."
+}

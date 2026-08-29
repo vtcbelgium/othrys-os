@@ -1,0 +1,44 @@
+{
+  "mission_id": "V2-010Y",
+  "title": "Prometheus House Admission",
+  "status": "RUNNING",
+  "owner": "GPT_CONTROL",
+  "start_sha": "PENDING_CLOSEOUT_COMMIT",
+  "objective": "Admit the qualified minimum Prometheus resident into the current OTHRYS House without transplanting the old Hub backend or granting new authority.",
+  "qualification_source": "V2-010X",
+  "great_harvest_classification": "ADAPT",
+  "admission_surfaces": [
+    ".othrys/project.json",
+    "books/BOOK_REGISTRY.json",
+    "Book of Prometheus",
+    "component contract",
+    "derived Atlas evidence",
+    "derived Mnemosyne project truth",
+    "anti-drift tests"
+  ],
+  "minimum_resident_seam": [
+    "manifest-driven intelligence identity",
+    "local score/recommend semantics",
+    "registered-source evidence contract",
+    "proposal/inbox evidence boundary"
+  ],
+  "laws": [
+    "Prometheus owns Intelligence only; never Memory, Engineering, Historical truth, verification or lifecycle authority.",
+    "No Genesis subprocess transplant.",
+    "No duplicate source/provider/credential/scheduler/event-store backend.",
+    "No autonomous scheduled research.",
+    "No knowledge auto-admission.",
+    "No execution authority.",
+    "Triad remains constitutional; Penta remains campaign composition."
+  ],
+  "out_of_scope": [
+    "external source expansion",
+    "credentials",
+    "autonomous scans",
+    "Hephaestus build execution",
+    "Mnemosyne auto-admission",
+    "visual redesign"
+  ],
+  "authority_granted": false,
+  "execution_started": false
+}
