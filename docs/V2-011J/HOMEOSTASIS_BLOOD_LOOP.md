@@ -32,7 +32,7 @@ The discovered central bootstrap source is read-only. Its 22 credential names ar
 ## Vital diagnostics
 `node tools/penta/run-diagnostics.mjs blood` is the canonical simple health button backend. It exercises cadence, daily report, search, opportunity intake, Keymaster custody, provider probes and Frugal reserve without performing mutations.
 ## Live Legion proof — 2026-08-29
-Keymaster discovered **22** credential names in the central read-only bootstrap source without exposing values. Three safe provider probes are currently admitted and all passed live: Groq `200` / 14 models, NVIDIA `200` / 83 models, OpenRouter `200` / 396 models. The remaining 19 credentials stay `CONFIGURED_UNVERIFIED`; presence is not health.
+Hub Keymaster now projects **24** credential slots into V2 without copying values. Live zero-cost/read-only health covers **16** slots: 14 HEALTHY, 2 DEGRADED (Fireworks 412, Together 401), 6 CONFIGURED_UNVERIFIED, and 2 ABSENT. Healthy metadata probes include Anthropic, Cerebras, Cloudflare, Cohere, GitHub, Google, Groq, Hugging Face, Mistral, NVIDIA, OpenAI, OpenRouter, Supabase management and Vercel. Presence is never treated as health.
 
 A real Groq `ADD` intake used the existing Keymaster credential through a sealed handle, returned HTTP 200 and 14 models, persisted no provider body or secret, and produced a zero-cost Talos qualification request with `autoEnable:false`.
 
@@ -43,3 +43,6 @@ The first real OS daily pulse then completed from a Kronos heartbeat; a second i
 - Credentials are not version-owned. They may be reused across OTHRYS versions on the same authorized machine without duplicating values into repositories.
 - The third Prometheus newsletter lens is `CURRICULUM`, not school/Syntra news: full-stack engineering plus AI automation (TypeScript/React/Next.js/Node/APIs/databases/DevOps, agents/n8n/RAG/workflows/MCP).
 - Live metadata-only Keymaster health probing remains zero-cost, read-only and secret-free; provider readiness is evidence, never enablement authority.
+
+## Self-honing loop
+`node tools/penta/self-hone.mjs` is the canonical non-UI self-hone entrypoint. Kronos opens a bounded cycle; independent organ jobs run in parallel; Talos performs whole-body/status/fault verification; Prometheus gets its daily due gate; Keymaster measures the shared arsenal; Mnemosyne automatically archives every PASS/DEGRADED/FAIL observation. FAIL history is retained for review but never silently promoted. Current Legion proof: whole-body PASS, 100/100 quick soak, 100/100 blood soak, 20k-round benchmarks; only non-mandatory Keymaster resource health remains DEGRADED because Fireworks/Together are unhealthy.

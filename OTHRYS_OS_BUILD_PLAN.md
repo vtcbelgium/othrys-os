@@ -45,3 +45,6 @@ UI work is paused. Pentarchy is the operational core. V2 now has settings-ready 
 
 ### V2-011J blood-loop reinforcement
 Prometheus/Keymaster is now treated as the OS capability bloodstream: Kronos provides daily beat evidence; Prometheus discovers and briefs; Keymaster owns sealed credential custody; Talos qualifies; Mnemosyne archives; Hermes carries future delivery; operator ADD/DENY is the acquisition gate. The live Legion source exposes 22 credential names with no values; Groq/NVIDIA/OpenRouter safe probes are green. Current GPT ecosystem-harvest reporting remains untouched. Telegram is the preferred first mobile notification/action adapter; native Command Deck PWA remains the long-term private controller.
+
+### V2-011J self-honing reinforcement
+The Pentarchy now exercises itself through a bounded canonical self-hone entrypoint. Organ jobs are explicit Work slices; Mnemosyne archives operational PASS/DEGRADED/FAIL lessons automatically; Talos independently verifies whole-body/fault/soak evidence; Keymaster measures the shared Hub credential arsenal; Prometheus remains Kronos-gated. UI remains out of scope.

@@ -66,7 +66,7 @@
     "decision": "HOUSE_ADMITTED",
     "authority": "Hermes is resident as pure provider-neutral communication contracts only; no live channel/storage/mutation authority."
   },
-  "next_legal_action": "Continue V2-011J: harden the operator-gated Prometheus/Keymaster blood loop and qualification lifecycle, then admit a real Kronos cadence executor separately; no UI or live Telegram delivery yet.",
+  "next_legal_action": "Continue V2-011J self-honing: use canonical self-hone/diagnostic loops, let Mnemosyne retain operational lessons, repair only reproduced defects, and keep UI paused.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

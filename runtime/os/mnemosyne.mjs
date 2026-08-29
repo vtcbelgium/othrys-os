@@ -110,9 +110,11 @@ export function searchKnowledge(root,manifest,query,{limit=12}={}){
   }
   const estate=searchEstateKnowledge(root,query,{limit:50});
   const estateResults=estate.results.map(item=>({...item,zone:classifyKnowledgeZone(item)}));
-  const merged=[...results,...estateResults];
-  merged.sort((a,b)=>b.score-a.score||(Number(a.id.startsWith('estate-'))-Number(b.id.startsWith('estate-')))||a.id.localeCompare(b.id));
-  return Object.freeze({schema:'othrys.os.knowledge-search.v1',query:clean(query),results:merged.slice(0,Math.max(1,Math.min(50,limit))),estateCatalogSha256:estate.catalogSha256??null,authorityGranted:false});
+  const cap=Math.max(1,Math.min(50,limit));
+  results.sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id)); estateResults.sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id));
+  const reserve=Math.min(estateResults.length,Math.max(1,Math.floor(cap/4))), selected=[...results.slice(0,Math.max(0,cap-reserve)),...estateResults.slice(0,reserve)];
+  selected.sort((a,b)=>b.score-a.score||(Number(a.id.startsWith('estate-'))-Number(b.id.startsWith('estate-')))||a.id.localeCompare(b.id));
+  return Object.freeze({schema:'othrys.os.knowledge-search.v1',query:clean(query),results:selected,estateCatalogSha256:estate.catalogSha256??null,authorityGranted:false});
 }
 export function deriveContextWarnings({maintenance={},graphSummary={},estateEvidence=[]}={}){
   const warnings=[];

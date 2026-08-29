@@ -2,6 +2,7 @@ import { spawnSync } from 'node:child_process';
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { DIAGNOSTIC_PACKS,diagnosticCatalog } from './diagnostics.mjs';
+import { recordOperationalEvent,recordTroubleshootingFailure } from '../../runtime/os/mnemosyne_operations.mjs';
 
 const root=new URL('../../',import.meta.url).pathname.replace(/^\/(.:\/)/,'$1');
 const packId=process.argv[2]??'quick';
@@ -15,5 +16,7 @@ const run=spawnSync(process.execPath,['--test',...files],{cwd:root,encoding:'utf
 const output=`${run.stdout??''}\n${run.stderr??''}`;
 const value=name=>Number(output.match(new RegExp(`(?:ℹ|#) ${name} (\\d+)`))?.[1]??0);
 const result={schema:'othrys.os.diagnostic-result.v1',packId,label:pack.label,status:run.status===0?'PASS':'FAIL',tests:value('tests'),passed:value('pass'),failed:value('fail'),durationMs:Math.round((performance.now()-started)*100)/100,mutationsPerformed:0,authorityGranted:false,executionStarted:false};
+const opInput={actor:'talos',job:`diagnostic:${packId}`,status:result.status,evidence:{tests:result.tests,passed:result.passed,failed:result.failed,durationMs:result.durationMs},lesson:result.status==='PASS'?`${pack.label} verified clean`:`${pack.label} exposed ${result.failed} failing tests`};
+if(result.status==='PASS') recordOperationalEvent(root,opInput); else recordTroubleshootingFailure(root,opInput);
 console.log(JSON.stringify(result,null,2));
 if(run.status!==0){console.error(output.slice(-12000));process.exit(run.status??1);}

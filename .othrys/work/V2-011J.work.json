@@ -1,10 +1,22 @@
 {
-  "mission_id": "V2-011J",
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-011J",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-011J",
   "title": "Pentarchy and OTHRYS OS Reinforcement",
-  "status": "RUNNING",
-  "phase": "BUILD",
-  "start_sha": "20bd2e0f1c07e49b82bbfda213d91c9766ddf6f0",
   "objective": "Reinforce the Pentarchy and establish the Prometheus/Keymaster homeostasis blood loop: Kronos daily beat, concise intelligence, operator-gated arsenal intake, sealed credential custody and exhaustive diagnostics before UI work.",
+  "scale": "STANDARD",
+  "problem": "OTHRYS must use its own organs to test, remember and improve itself without inventing authority.",
+  "outOfScope": [
+    "UI work",
+    "autonomous paid usage",
+    "silent knowledge promotion"
+  ],
+  "risks": [
+    "self-test recursion",
+    "false green from shared evidence",
+    "operational memory flooding"
+  ],
   "laws": [
     "repo truth before invention",
     "OTHRYS-first",
@@ -15,45 +27,6 @@
     "Prometheus discovers; Keymaster custodies; Talos qualifies; operator approves acquisition",
     "free capacity is preferred but never bypasses qualification"
   ],
-  "scope": [
-    "Pentarchy readiness and diagnostics",
-    "self-hosting capability debt",
-    "Keymaster sealed read-only bootstrap custody",
-    "special Kronos Prometheus daily heartbeat",
-    "bounded AI/tech/Syntra newsletter",
-    "Prometheus Add/Deny opportunity intake",
-    "zero-cost read-only provider probes",
-    "Frugal reserve/capacity",
-    "Telegram/PWA channel study and non-delivering contracts"
-  ],
-  "out_of_scope": [
-    "Command Deck UI",
-    "Flow Canvas",
-    "Panda UI",
-    "live Telegram delivery",
-    "native phone app implementation",
-    "autonomous account creation",
-    "paid usage",
-    "credential lifecycle writes",
-    "new scheduler engine",
-    "automatic provider enablement"
-  ],
-  "authorityGranted": false,
-  "executionStarted": false,
-  "work": {
-    "scale": "STANDARD",
-    "problem": "OTHRYS must use its own organs to test, remember and improve itself without inventing authority.",
-    "out_of_scope": [
-      "UI work",
-      "autonomous paid usage",
-      "silent knowledge promotion"
-    ],
-    "risks": [
-      "self-test recursion",
-      "false green from shared evidence",
-      "operational memory flooding"
-    ]
-  },
   "slices": [
     {
       "id": "kronos-life",
@@ -67,11 +40,13 @@
           "tasks": [
             {
               "id": "heartbeat",
-              "title": "Issue bounded heartbeat evidence"
+              "title": "Issue bounded heartbeat evidence",
+              "status": "OPEN"
             },
             {
               "id": "cadence",
-              "title": "Gate Prometheus daily cadence"
+              "title": "Gate Prometheus daily cadence",
+              "status": "OPEN"
             }
           ]
         }
@@ -92,11 +67,13 @@
           "tasks": [
             {
               "id": "newsletter",
-              "title": "Scan AI, tech and curriculum news"
+              "title": "Scan AI, tech and curriculum news",
+              "status": "OPEN"
             },
             {
               "id": "opportunities",
-              "title": "Produce Add/Deny arsenal candidates"
+              "title": "Produce Add/Deny arsenal candidates",
+              "status": "OPEN"
             }
           ]
         }
@@ -118,11 +95,13 @@
           "tasks": [
             {
               "id": "archive",
-              "title": "Archive PASS/DEGRADED/FAIL observations"
+              "title": "Archive PASS/DEGRADED/FAIL observations",
+              "status": "OPEN"
             },
             {
               "id": "lessons",
-              "title": "Retain troubleshooting lessons"
+              "title": "Retain troubleshooting lessons",
+              "status": "OPEN"
             }
           ]
         }
@@ -143,11 +122,13 @@
           "tasks": [
             {
               "id": "fix",
-              "title": "Repair reproduced defects"
+              "title": "Repair reproduced defects",
+              "status": "OPEN"
             },
             {
               "id": "reuse",
-              "title": "Prefer harvested/proven computation"
+              "title": "Prefer harvested/proven computation",
+              "status": "OPEN"
             }
           ]
         }
@@ -168,15 +149,18 @@
           "tasks": [
             {
               "id": "whole-body",
-              "title": "Run whole-body verification"
+              "title": "Run whole-body verification",
+              "status": "OPEN"
             },
             {
               "id": "faults",
-              "title": "Inject Pentarchy faults"
+              "title": "Inject Pentarchy faults",
+              "status": "OPEN"
             },
             {
               "id": "soak",
-              "title": "Run bounded repeat loops"
+              "title": "Run bounded repeat loops",
+              "status": "OPEN"
             }
           ]
         }
@@ -198,19 +182,23 @@
           "tasks": [
             {
               "id": "care",
-              "title": "Watch vitality and open evidence-led care"
+              "title": "Watch vitality and open evidence-led care",
+              "status": "OPEN"
             },
             {
               "id": "keys",
-              "title": "Measure Keymaster arsenal health"
+              "title": "Measure Keymaster arsenal health",
+              "status": "OPEN"
             },
             {
               "id": "comms",
-              "title": "Verify Hermes contracts"
+              "title": "Verify Hermes contracts",
+              "status": "OPEN"
             },
             {
               "id": "frugal",
-              "title": "Verify Switchyard free-capacity reserve"
+              "title": "Verify Switchyard free-capacity reserve",
+              "status": "OPEN"
             }
           ]
         }
@@ -220,5 +208,8 @@
         "runtime/os/frugal_reserve.mjs"
       ]
     }
-  ]
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "c631a6f8a1a9c391757319e3ac5f874f56138190f681b6c32576b125cb760517"
 }

@@ -21,3 +21,8 @@
 - EXIT CONDITION: requested knowledge view/evidence produced or defect/blocker reported
 - EVIDENCE: V2-010E; V2-010G; V2-010J; V2-010N; V2-010O; docs/GREAT_HARVEST.md; docs/KNOWLEDGE_ZONES.md; .othrys/project.json#knowledgePolicy
 - STALL/FAILURE: conflict/staleness/secret ambiguity is surfaced and stops promotion
+
+## Operational memory extension
+- Automatic diagnostics/self-hone logging is allowed only into the local secret-free operational archive.
+- PASS/DEGRADED/FAIL events may be retained automatically; none grants knowledge authority or promotion.
+- FAIL events carry reviewRecommended=true and remain troubleshooting evidence until explicitly reviewed.

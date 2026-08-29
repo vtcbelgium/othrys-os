@@ -25,3 +25,8 @@ Mnemosyne admits, classifies, relates, searches, reviews and preserves; it also 
 
 ## Book rule
 This Book may be expanded only from inspectable implementation, tests, mission results, receipts, ADRs, or reviewed Mnemosyne evidence. Contradictions are recorded; history is never silently rewritten.
+
+## Operational memory / self-honing
+During V2 bring-up, bounded diagnostics and self-honing runs automatically append secret-free operational events to Mnemosyne's local archive under `.othrys/knowledge/archive/operations/`. PASS, DEGRADED and FAIL observations are retained with actor, job, evidence summary and lesson. FAIL events are marked review-recommended but are not silently promoted into canonical knowledge.
+
+This operational archive is deliberately reconstructible, local and non-authoritative. It exists so troubleshooting history is not lost while the Pentarchy learns how to build and verify itself. Canonical promotion still requires the normal Mnemosyne review law.

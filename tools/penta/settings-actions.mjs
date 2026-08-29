@@ -13,6 +13,7 @@ export const SETTINGS_ACTIONS=Object.freeze([
   {id:'keymaster-live-health',label:'Check API Health',command:['node','tools/penta/keymaster-live-health.mjs'],kind:'STATUS',mutates:false},
   {id:'frugal-check',label:'Test Free Frugal',command:['node','--test','runtime/os/frugal_reserve.test.mjs','runtime/os/free_capacity.test.mjs','runtime/os/free_resource_quarry.test.mjs'],kind:'TEST',mutates:false},
   {id:'free-inventory',label:'Check Free Capacity',command:['node','tools/penta/local-free-inventory.mjs'],kind:'STATUS',mutates:false},
+  {id:'self-hone',label:'Self-Hone OTHRYS',command:['node','tools/penta/self-hone.mjs'],kind:'TEST',mutates:false},
   {id:'whole-body',label:'Run Whole OTHRYS',command:['node','tools/penta/whole-body.mjs'],kind:'TEST',mutates:false},
   {id:'penta-benchmark',label:'Benchmark Penta',command:['node','tools/penta/benchmark.mjs','20000'],kind:'BENCHMARK',mutates:false},
   {id:'penta-loop-10',label:'Run 10x Loop',command:['node','tools/penta/soak.mjs','10','quick'],kind:'SOAK',mutates:false},
