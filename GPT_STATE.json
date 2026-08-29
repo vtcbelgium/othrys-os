@@ -1,13 +1,13 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 103,
+  "sequence": 104,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "41e06a932ed4b89d74aa567e1bc43f7264b88f6b",
+  "remote_head_at_last_verified_read": "9fb6b5e7ce04af297d932a0d812b633e2ec4a441",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-010K",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "issued_label": "V2-010K - OTHRYS OS LIBRARY / VAULT POSTURE",
     "source": "operator_current_conversation"
   },
@@ -64,10 +64,10 @@
   ],
   "last_control_decision": {
     "mission_id": "V2-010K",
-    "decision": "LIBRARY_VAULT_POSTURE_ONLY",
-    "authority": "Classify existing Mnemosyne evidence into logical knowledge zones and audit current security posture; no new storage engine, daemon or authority."
+    "decision": "PASS_CROSS_NODE",
+    "authority": "Library/Vault posture admitted as authority-free read/policy layer; Hecatoncheires posture is evidence-bound and may report ABSENT."
   },
-  "next_legal_action": "Audit current V2 security controls, implement authority-free knowledge-zone projection, machine-check Hecatoncheires posture, then run repeated cross-node proof.",
+  "next_legal_action": "Open a bounded housekeeping optimization mission: measure current bottlenecks and duplicate-work opportunities; study multichannel/3D Mycelium and isolated multi-hand Hephaestus without parallel same-path mutation or authority expansion.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",
@@ -234,6 +234,11 @@
       "mission_id": "V2-010F",
       "status": "COMPLETE",
       "note": "Atlas foundation ported into OTHRYS OS: typed/provenanced derived graph, Nine Muse routing, gravity/heat, secret guard, authenticated read-only API and first Atlas workstation; 220/220 Node + 36/36 Python Legion proof."
+    },
+    {
+      "mission_id": "V2-010K",
+      "status": "COMPLETE",
+      "note": "Library/Vault posture + Hecatoncheires audit; Legion 287/287 + 36/36, T590 287/287 + 36/36 exact implementation; estate deterministic/0 defects; multichannel candidate logged only."
     }
   ],
   "git": {

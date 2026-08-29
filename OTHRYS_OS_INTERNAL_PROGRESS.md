@@ -2,7 +2,7 @@
 
 **Status:** LIVE FRONT-DOOR CONTROL FILE
 **Owner:** GPT Control / House Manager
-**Last evidence update:** 2026-08-29 - V2-010J COMPLETE; Legion 271/271 Node + 36/36 Python; T590 271/271 Node + 36/36 Python; deterministic estate and Mnemosyne defects 0; warm recall ~0.20-0.28s and 12-item context capsule ~0.22s on Legion.
+**Last evidence update:** 2026-08-29 - V2-010K COMPLETE; Legion 287/287 Node + 36/36 Python, T590 287/287 Node + 36/36 Python exact implementation; estate 8,053 archived / 6 excluded / 0 defects; live Housekeeper security proof green; repeated stress/soak produced no flaky failures.
 **Update law:** update whenever a room materially gains/loses capability, proof, scope, or maturity. Percentages are house-manager estimates against the intended mature room, never proof by themselves.
 
 ## Current house progression
@@ -22,8 +22,8 @@
 | Command Deck | 52% | tablet-first workstation + real views + Atlas | functional integration first; visual polish later |
 | Oroi / Projects | 57% | declarative manifests + safe materializer | lifecycle depth, templates, isolation, real multi-project use |
 | Models / Labor | 38% | proven local/advisory labor routes | Switchyard/tier resolver after housekeeping |
-| Great Library / Vaults / Garden / R&D / Hall of Echoes | 25% | strong recovered law + Mnemosyne substrate | formal current zoning, protected Blueprint/Source Vaults, lifecycle tests |
-| Hecatoncheires / Security | 30% | strong legacy 11-hand specification + partial controls | current-code hand-by-hand audit with PRESENT/PARTIAL/ABSENT proof |
-| Housekeeping / Drift Control | 80% | V2-010G independently verified; Books, Housekeeper, quality inspector/tests, deterministic estate, quarry/deprecation rules, front-door and Block-map drift guards | close V2-010I on T590; then continue Mnemosyne intelligence and measured loop optimization |
+| Great Library / Vaults / Garden / R&D / Hall of Echoes | 52% | current logical zones + Source Vault facet + deterministic filtering/provenance | lifecycle depth, protected grants/export posture, richer browse surfaces |
+| Hecatoncheires / Security | 46% | machine-checked 11-hand current posture: 3 PRESENT_AND_TESTED / 4 PARTIAL / 4 ABSENT; hostile secret exclusion; Housekeeper proof | qualify missing encryption/anomaly/injection/export-lockdown controls through separate missions |
+| Housekeeping / Drift Control | 86% | repeated Legion/T590 proof, live Housekeeper, deterministic estate, security posture, cross-platform digest and cross-estate test guards | bounded optimization pass: measure waste, concurrency and safe multiplicity without authority expansion |
 
 **Foundation-OS estimate:** 55-60%.  **Eventual autonomous OTHRYS vision:** 30-35%.
