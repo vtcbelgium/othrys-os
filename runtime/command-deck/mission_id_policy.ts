@@ -8,6 +8,8 @@ export class MissionIdPolicyError extends Error {
 
 const PRIMARY=/^V2-(\d{3})([A-Z])\.json$/;
 const PRIMARY_LIKE=/^V2-\d{3}[A-Z].*\.json$/;
+const REVISION=/^V2-\d{3}[A-Z]\.[A-Z0-9]+\.json$/;
+const LEGACY_SIDECAR=/^V2-\d{3}[A-Z]\.(?:preflight|patch|verification|worker-result|acceptance|apply-verification)\.json$/;
 
 export function nextPrimaryMissionId(missionsDir:string):string {
   const names=readdirSync(missionsDir).filter(n=>n.endsWith('.json')&&!n.endsWith('.result.json'));
@@ -20,7 +22,7 @@ export function nextPrimaryMissionId(missionsDir:string):string {
       if(seen.has(id)) throw new MissionIdPolicyError('MISSION_ID_DUPLICATE');
       seen.add(id); primaries.push({id,n:Number(m[1]),l:m[2]}); continue;
     }
-    if(PRIMARY_LIKE.test(name) && !/^V2-\d{3}[A-Z]\.[A-Z0-9]+\.json$/.test(name)) throw new MissionIdPolicyError('MISSION_ID_FILENAME_AMBIGUOUS');
+    if(PRIMARY_LIKE.test(name) && !REVISION.test(name) && !LEGACY_SIDECAR.test(name)) throw new MissionIdPolicyError('MISSION_ID_FILENAME_AMBIGUOUS');
   }
   if(!primaries.length) throw new MissionIdPolicyError('MISSION_ID_SEQUENCE_EMPTY');
   primaries.sort((a,b)=>a.n-b.n||a.l.localeCompare(b.l));
