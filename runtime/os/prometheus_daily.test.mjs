@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createKronosHeartbeat} from './kronos.mjs';
+import {evaluatePrometheusDailyBeat,createPrometheusDailyReport,createPrometheusMnemosyneCapture,createPrometheusHarvestWakeProposal,createPrometheusDailyMessageIntent} from './prometheus_daily.mjs';
+
+const beat=createKronosHeartbeat({bootId:'boot-1',sequence:1,timestamp:'2026-08-29T08:00:00Z',uptimeMs:1000,lifecycleState:'ALIVE',components:[{componentId:'prometheus',mandatory:true,band:'ready',evidenceRef:'test',leaseExpiresAt:null}]});
+
+test('daily loop is due from Kronos beat and invents no scheduler',()=>{const x=evaluatePrometheusDailyBeat({heartbeat:beat,enabled:true,lastCompletedAt:'2026-08-28T07:00:00Z',now:'2026-08-29T08:00:00Z'});assert.equal(x.due,true);assert.equal(x.triggerOwner,'KRONOS');assert.equal(x.schedulerInvented,false);});
+test('daily loop is not due inside interval or while disabled',()=>{assert.equal(evaluatePrometheusDailyBeat({heartbeat:beat,lastCompletedAt:'2026-08-29T07:00:00Z',now:'2026-08-29T08:00:00Z'}).due,false);assert.equal(evaluatePrometheusDailyBeat({heartbeat:beat,enabled:false,now:'2026-08-29T08:00:00Z'}).due,false);});
+test('daily report separates news from harvestable findings',()=>{const r=createPrometheusDailyReport({runId:'daily-1',completedAt:'2026-08-29T08:05:00Z',findings:[{title:'Tool release',source:'official',summary:'New free local tool.',kind:'NEWS',score:.7},{title:'Reusable scheduler law',source:'repo',summary:'Old proven daily loop can be adapted.',kind:'HARVEST',score:.93}]});assert.equal(r.newsCount,1);assert.equal(r.harvestableCount,1);assert.equal(r.harvestWakeRecommended,true);assert.equal(r.automaticHarvestStarted,false);});
+test('Mnemosyne capture remains inbox-only',()=>{const r=createPrometheusDailyReport({runId:'daily-2',completedAt:'2026-08-29T08:05:00Z',findings:[]});const c=createPrometheusMnemosyneCapture(r);assert.equal(c.classification,'INBOX');assert.equal(c.promotionRequired,true);assert.equal(c.authorityGranted,false);});
+test('harvest wake is recommendation, never auto-promotion',()=>{const r=createPrometheusDailyReport({runId:'daily-3',completedAt:'2026-08-29T08:05:00Z',findings:[{title:'Gem',source:'repo',summary:'Strong reusable stock.',kind:'HARVEST',score:.99}]});const w=createPrometheusHarvestWakeProposal(r);assert.equal(w.recommended,true);assert.equal(w.automaticPromotion,false);assert.equal(w.automaticHarvestStarted,false);});
+test('daily message is Hermes-bound and non-delivering',()=>{const r=createPrometheusDailyReport({runId:'daily-4',completedAt:'2026-08-29T08:05:00Z',findings:[]});const m=createPrometheusDailyMessageIntent(r);assert.equal(m.requiresHermes,true);assert.equal(m.deliveryStarted,false);assert.equal(m.channel,'operator.daily');});
+

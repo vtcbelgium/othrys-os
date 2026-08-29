@@ -38,3 +38,7 @@ Before designing or inventing a capability, query `docs/GREAT_HARVEST.md`, `docs
 
 `REMOVE WORK -> PACK/SPREAD -> PARALLELIZE ONLY INDEPENDENT WORK -> VERIFY -> REUSE PROVEN COMPUTATION -> RETRACT IDLE CAPACITY`.
 Run at the measured throughput knee, not at hardware redline. Project files declare portable optimization intent; live node evidence decides placement. Mycelium may prefer among legal routes but may never invent legality, authority, capability or approval.
+
+## Current phase -- V2-011J PENTARCHY + OTHRYS OS REINFORCEMENT
+
+UI work is paused. Pentarchy is the operational core. V2 now has settings-ready read-only diagnostics, benchmark/soak tooling, a Kronos-beat Prometheus daily loop with Mnemosyne/Hermes/Harvest outputs, and a Frugal reserve overlay that preserves the final 10% of metered zero-marginal capacity for fallback while consuming other legal free capacity first. No new scheduler or authority is introduced.
