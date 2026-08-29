@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto';
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
-import { captureKnowledgeInbox, declaredKnowledge, exportKnowledge, knowledgeProjection, maintainKnowledge, reviewKnowledgeInbox, searchKnowledge } from './mnemosyne.mjs';
+import { assembleKnowledgeContext, captureKnowledgeInbox, declaredKnowledge, exportKnowledge, knowledgeProjection, maintainKnowledge, reviewKnowledgeInbox, searchKnowledge } from './mnemosyne.mjs';
 
 const root=resolve(import.meta.dirname,'../..');
 const manifest=JSON.parse(readFileSync(join(root,'.othrys','project.json'),'utf8'));
@@ -24,6 +24,19 @@ test('local search is deterministic over inspectable project sources',()=>{
   assert.equal(a.authorityGranted,false);
   assert.ok(a.results.some(x=>x.id==='source-panda-harvest'));
 });
+
+test('context capsule anchors current House Books and Atlas relations before estate history',()=>{
+  const a=assembleKnowledgeContext(root,manifest,'Mnemosyne',{limit:6});
+  const b=assembleKnowledgeContext(root,manifest,'Mnemosyne',{limit:6});
+  assert.deepEqual(a,b);
+  assert.equal(a.authorityGranted,false);
+  assert.equal(a.projectTruth[0].id,'book-mnemosyne');
+  assert.ok(a.related.some(x=>x.id==='system:mnemosyne'&&x.exactMatch===true));
+  assert.ok(a.estateEvidence.length>0);
+  assert.ok(a.projectTruth.every(x=>x.selectedBecause));
+  assert.ok(a.related.every(x=>x.selectedBecause));
+});
+
 test('capture lands in inbox and review cannot silently promote it',()=>{
   const d=mkdtempSync(join(tmpdir(),'mnemosyne-'));
   try{

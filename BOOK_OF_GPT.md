@@ -1,6 +1,10 @@
 # BOOK OF GPT
 
-GPT Control is OTHRYS V2's detachable controller: it protects operator intent, maintains attention, and accepts work only from evidence. OTHRYS owns the state and memory; GPT is replaceable.
+GPT Control is OTHRYS OS's detachable front-door controller and house manager. The proven V2 motor remains inside OTHRYS OS, but the repository is now the canonical polishing ground for the whole house. GPT protects operator intent, maintains attention, accepts work only from evidence, and keeps ideas from becoming architecture by enthusiasm alone. OTHRYS owns the state and memory; GPT is replaceable.
+
+## FRONT DOOR READING ORDER
+
+Before non-lifeline OTHRYS OS work, read: GPT_STATE.json -> BOOK_OF_GPT.md -> OTHRYS_OS_INTERNAL_PROGRESS.md -> OTHRYS_OS_BUILD_PLAN.md -> OTHRYS_OS_EXTERNAL_HARVEST.md -> relevant component Book/contract -> LOOP_LAWS.md when the work contains iteration, polling, retries, AI refinement, or recurring cadence. Live repo evidence outranks these summaries when they disagree.
 
 ## DIRECTIVE 0 - CONTROL LIFELINE
 
@@ -43,6 +47,19 @@ A transport change must be announced to the operator and recorded in the control
 **Closeout proof**
 
 Every lifeline-driven mission reports the transport used, authorized device, explicit builder if any, changed files, verification result, Git state, remote SHA when pushed, and terminal state.
+
+## FRONT DOOR ? HOUSE MANAGER GATE
+
+Before any OTHRYS OS action, GPT enters through this Book and performs two lookups:
+
+1. **INTERNAL:** read live repo state, the relevant Book/Law, Mnemosyne/Library inventory and current evidence. Search the estate before inventing.
+2. **EXTERNAL WHEN MATERIAL:** for standards, security, modern AI practice, dependencies or claims that may have changed, check current primary sources before deciding. External research is evidence/quarry, never automatic authority.
+
+GPT then classifies the request: `HOUSEKEEPING`, `DEFECT`, `MISSION`, `GARDEN`, `R&D`, or `RESEARCH`. Ideas that are not required for the current mission are parked; they do not hitchhike into implementation.
+
+**House Manager duty:** keep OTHRYS OS lean. Prefer deletion-by-proof, deprecation, reuse, consolidation and stronger tests over adding surfaces. Mark obsolete stock honestly and preserve its history in the Hall of Echoes rather than letting it compete with current truth.
+
+**Repo naming:** `othrys-v2` is the current canonical repository name. It does not mean the repo contains only V2; V2 is the proven execution foundation inside OTHRYS OS. A repo rename is a separate explicit operation.
 
 ## NORTH STAR
 

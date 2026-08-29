@@ -1,10 +1,10 @@
 # OTHRYS V2 TEMPORARY LIBRARY
 
-**Status:** TEMPORARY INDEX / NO RUNTIME AUTHORITY  
+**Status:** HISTORICAL BOOTSTRAP INDEX / NO RUNTIME AUTHORITY
 **Owner:** GPT Control  
-**Purpose:** give early V2 knowledge a simple physical home before the canonical Great Library/Garden/Mnemosyne is wired.
+**Purpose:** preserve the early V2 room/shelf map while current knowledge ownership is reconciled into Mnemosyne and the OTHRYS OS knowledge zones.
 
-The temporary Library is an index, not a second source of truth. Canonical machine state remains in V2 control files and receipts. Accepted institutional knowledge may later move into the real OTHRYS Library/Mnemosyne structure.
+The temporary Library is an index, not a second source of truth. Mnemosyne is now the admitted knowledge substrate; canonical machine state remains in V2 control files, mission/work evidence and receipts. This file persists only as a migration/reference map until every listed item has an explicit current owner.
 
 ## LIBRARY LAW
 
@@ -66,8 +66,14 @@ Books and Laws are deliberately different artifact classes. Do not call a mechan
 
 ## ROOM 04 — BLOCKS & OROS
 
-### Shelf: Block Stock — ADMITTED INTO V2 (exactly one)
-- `block.media.image-prep` — **one Block, two admission records, one active specimen.**
+### Shelf: Block Stock -- CURRENT ADMISSION MAP
+- `block.media.image-prep` -- active admitted `0.1.1`; earlier `0.1.0` is historical/superseded evidence.
+- `block.monetization.affiliate-offer` -- active admitted `0.1.0`, maturity `REUSABLE`, proven two-Block composition.
+- `block.analytics.visit-tracking` -- active admitted `0.1.1`, maturity remains `RAW`; production schema/RLS/retention proof is still absent.
+
+Historical ledgers may contain mission-era statements such as "Block #2 remains FORBIDDEN." Those statements remain valid historical evidence for their time and are not current house law.
+
+#### Image-prep detail
   - **ACTIVE:** `0.1.1` — digest `48afa7ac…7b3b55bd`, `RUNTIME_PROVEN` on LEGION
     (node 10/10, browser 29/29, aggressive 18/18). Promoted by V2-001D.
     Record: `admissions/block.media.image-prep@0.1.1.json`.
@@ -102,17 +108,21 @@ Books and Laws are deliberately different artifact classes. Do not call a mechan
 
 Receipts are evidence/runtime control artifacts, not knowledge notes. The Library indexes them but does not reinterpret them.
 
-## GROWTH RULE
+## MIGRATION / GROWTH RULE
 
-Do not build a Library application, database, semantic index or navigation system yet. This file is the temporary map.
+Do not build a Library application, database, semantic index or navigation system from this file. Mnemosyne is already admitted; this file is now the historical bootstrap map.
 
-When the canonical Great Library/Garden/Mnemosyne is admitted into V2, migrate by explicit mapping:
+Current mapping:
 
-`TEMP ROOM -> CANONICAL ROOM/DOMAIN`
-`TEMP SHELF -> CANONICAL SHELF/COLLECTION`
-`ITEM -> canonical owner/reference`
+| Temporary room | Current canonical owner / zone |
+|---|---|
+| Control & Governance | repo control files + Books/Laws; indexed by Mnemosyne |
+| Memory & Intelligence | Mnemosyne; Chronicle remains curated history |
+| Legacy Quarry | Quarry / External Harvest; zero admission by location |
+| Blocks & Oros | canonical V2 Blocks/Oros evidence + Books; Mnemosyne indexes references |
+| Missions & Evidence | Mission/Work/receipts remain source evidence; Mnemosyne indexes, never overrides |
 
-No silent duplication. No item becomes more authoritative merely because it is placed in the Library.
+Future Great Library, Source Vault, Blueprint Vault, Hall of Echoes, Garden and R&D Centre are logical policy zones described in docs/V2-010G/KNOWLEDGE_ZONES.md; they are not separate storage engines or authorities in 010G. Migration is reference-first: no silent duplication, and no item becomes more authoritative because it appears in this index.
 ## RESEARCH ADDENDUM — PANDAOS REFERENCE
 
 ### Room 02 / Shelf: Research

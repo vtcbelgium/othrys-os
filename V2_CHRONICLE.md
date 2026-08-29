@@ -496,17 +496,17 @@ V2-001I ingested and admitted the exact affiliate-offer specimen and proved it b
 
 V2-009B harvested PandaOS presentation patterns without importing Panda authority: compact left navigation, a chat-first central workspace, persistent right-side Work/Progress, and existing V2 gates/evidence underneath. Chromium visual probe 1600x900 PASS; Command Deck suite 123/123 PASS.
 
-## CH-010A � OTHRYS OS becomes a structural layer
+## CH-010A — OTHRYS OS becomes a structural layer
 
 V2-010A replaces hard-coded Command Deck OS inventories and mission-prefix Work projection with a project-local .othrys/project.json, validated OS/Work projectors, explicit role/capability/model/integration/knowledge bindings, and zero new execution authority. PandaOS is retained as a structural quarry only; V2 remains the governed motor. Full Legion runtime suite: 186/186 PASS.
 
 
-## CH-010B � Work becomes durable without becoming a second engine
+## CH-010B — Work becomes durable without becoming a second engine
 
 V2-010B dogfoods a project-local Work record for itself: Project -> Work -> Slice -> Stage -> Task, deterministic definition digest, BUILD observation, PASS evidence, then SHIP observation. Transition replay is idempotent and regression fails closed. Work remains an evidence-bound orchestration record; V2 Mission/Trust/Talos remain authoritative.
 
 
-## CH-010C � Projects become composable OS objects
+## CH-010C — Projects become composable OS objects
 
 V2-010C adds the first OTHRYS OS project template and deterministic materializer. New Oros workspaces can now be composed from role bindings, PROVEN capability references, model policy, knowledge and integrations into a project-local .othrys/ substrate. Unknown/unproven refs and conflicting manifests fail closed; no worker or app generation occurs.
 
@@ -522,3 +522,26 @@ Established an Atlas-class knowledge service over explicit project-local records
 Operator reprioritised the planned Switchyard slice in favour of the OTHRYS OS knowledge-map foundation. Live Core/V2 quarry found Atlas already shipped historically as a derived system map and Mnemosyne already owned the Nine Muses as semantic gates. New overlapping Greek subsystems were rejected.
 
 Ported the graph constitution into V2, added provenance/truth classes, deterministic graph digest, secret rejection, legacy-evidence calibration, Nine Muse routing, gravity/heat cognitive signals, real Mnemosyne Inbox/Review queue semantics, authenticated read-only `/api/atlas`, and a first-class Canvas Atlas room in the OTHRYS OS shell. Atlas remained OBSERVED until its own PASS result existed, then self-projected VERIFIED. Legion: 220/220 Node + 36/36 Python; browser script parse and diff check PASS. Switchyard prototype preserved outside runtime and remains deferred.
+
+
+## 2026-08-29 — V2-010G OTHRYS OS housekeeping begins
+
+The operator designated `othrys-v2` as the main OTHRYS OS polishing house and explicitly froze feature growth for this round. V2 is treated as one subsystem inside the wider OS house, not the whole product identity.
+
+Housekeeping consolidated current residents into an evidence-bound Book shelf, centralized the cross-repo document/log estate under Mnemosyne by SHA-256, retained secret-shaped sources as exclusions only, and added a read-only Housekeeper pulse derived from the historic Kronos/Talos/Callimachus cadence pattern. The local daemon may inspect, test and journal; it grants no authority and performs no canon promotion or feature work.
+
+The first final-estate sweep resolved two stale generated archive objects by adding deterministic garbage collection. Current estate baseline: 42,089 occurrences, 8,016 unique objects, 8,010 archived, 6 excluded, 1,218 log/evidence objects, 248 Book objects, 120,646,104 archived bytes. Mnemosyne quality returned zero defects after cleanup. Full Node runtime reached 228/228 PASS. Housekeeping remains RUNNING until repeated cross-language and independent-node verification becomes boring.
+
+
+## 2026-08-29 — V2-010G front-door drift hardening checkpoint
+
+Front-door control hardened without new authority: Internal Progress, Build Plan, External Harvest and Loop Laws are now explicit project knowledge; local .claude/.pandaos/.othrys runtime state is classified out of Git; stale quarry-path and hard-coded knowledge-count drift were repaired. Mnemosyne estate regenerated at catalog 721c5047f77c6c8961e42cdb8fd307570382f959e4602a78279abfa0cf72b0a0. Legion: 232/232 Node PASS, five core Python files exit 0, control-feedback 30/30 PASS, Mnemosyne quality 0 defects. No product capability, UI feature, Titan, model dependency or execution authority added.
+
+
+## 2026-08-29 — V2-010G Library ownership reconciliation
+
+Housekeeping retired stale bootstrap wording without creating a new Library subsystem. TEMP_LIBRARY.md is now explicitly a historical migration/index map: Mnemosyne owns the admitted knowledge substrate; Mission/Work/receipts remain source evidence; Quarry/External Harvest remains zero-authority stock; future Great Library/Vault/Garden/R&D names remain logical policy zones only. The External Harvest Switchyard pointer was corrected to its actual deferred quarry path. Three legacy Windows-1252 em-dash bytes in this Chronicle were normalized to UTF-8; no historical wording was rewritten. No authority, runtime capability, UI, model dependency, or storage engine was added.
+
+## 2026-08-29 — V2-010G Work semantics reconciliation
+
+Housekeeping resolved a false drift signal in the durable Work layer. Compiled task entries remain immutable `OPEN` definition placeholders by design; live mission progress is derived from Mission evidence and append-only Work transitions. The House definition now states this explicitly so future inspectors do not mutate Work definitions to imitate task tracking. No mission status, authority, execution state, product capability or closeout evidence changed.

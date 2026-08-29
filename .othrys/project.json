@@ -70,6 +70,12 @@
       "statusEvidence": "V2-006E"
     },
     {
+      "id": "mnemosyne",
+      "label": "Mnemosyne",
+      "role": "Knowledge governance / institutional memory",
+      "statusEvidence": "V2-010E"
+    },
+    {
       "id": "atlas",
       "label": "Atlas",
       "role": "Derived knowledge and system map workspace",
@@ -179,6 +185,30 @@
       "label": "Temporary Library",
       "class": "UNPROMOTED KNOWLEDGE",
       "path": "TEMP_LIBRARY.md"
+    },
+    {
+      "label": "OTHRYS OS Internal Progress",
+      "path": "OTHRYS_OS_INTERNAL_PROGRESS.md",
+      "id": "internal-progress",
+      "class": "CONTROL / LIVE PROGRESSION"
+    },
+    {
+      "label": "OTHRYS OS Build Plan",
+      "path": "OTHRYS_OS_BUILD_PLAN.md",
+      "id": "build-plan",
+      "class": "CONTROL / BUILD NAVIGATION"
+    },
+    {
+      "label": "OTHRYS OS External Harvest",
+      "path": "OTHRYS_OS_EXTERNAL_HARVEST.md",
+      "id": "external-harvest",
+      "class": "QUARRY / GATED"
+    },
+    {
+      "label": "OTHRYS Loop Laws",
+      "path": "LOOP_LAWS.md",
+      "id": "loop-laws",
+      "class": "PROCESSING LAW"
     }
   ],
   "roleBindings": [

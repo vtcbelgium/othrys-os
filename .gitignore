@@ -3,3 +3,8 @@ __pycache__/
 .tmp-*
 *.bundle
 runtime/mycelium/node.env
+.othrys/knowledge/archive/
+.othrys/logs/
+.claude/
+.pandaos/
+.othrys/runtime/

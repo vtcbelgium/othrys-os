@@ -7,6 +7,7 @@ import { join } from 'node:path';
 
 const dir=import.meta.dirname;
 const html=readFileSync(join(dir,'public/index.html'),'utf8');
+const projectManifest=JSON.parse(readFileSync(join(dir,'../../.othrys/project.json'),'utf8'));
 
 test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/viewport-fit=cover/);
@@ -145,7 +146,7 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.osSurface.apps.length,4);
   assert.ok(data.osSurface.apps.every(a=>a.actionable===false));
   assert.ok(data.osSurface.apps.some(a=>a.id==='ollama-legion'&&a.status==='PROVEN'));
-  assert.equal(data.osSurface.knowledge.length,5);
+  assert.equal(data.osSurface.knowledge.length,projectManifest.knowledge.length);
   assert.ok(data.osSurface.templates.some(t=>t.id==='oros-software'&&t.kind==='OROS'));
   assert.equal(data.missionCandidate.schema,'othrys.os.mission-candidate.v1');
   assert.equal(data.missionCandidate.status,'CANDIDATE');

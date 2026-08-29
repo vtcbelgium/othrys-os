@@ -1,0 +1,209 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010G",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010G",
+  "title": "OTHRYS OS Housekeeping and Mnemosyne estate consolidation",
+  "objective": "Define the current OTHRYS OS house from live repo truth, centralize and index its existing knowledge estate in Mnemosyne, recover proven legacy Mnemosyne quality controls, and verify the house repeatedly without adding product capability.",
+  "scale": "EPIC",
+  "problem": "OTHRYS OS now has a working structural foundation, but its books, logs, evidence and legacy knowledge are spread across many repositories and worktrees instead of one inspectable Mnemosyne estate.",
+  "outOfScope": [
+    "No new product capability",
+    "No UI expansion or visual refinement",
+    "No new Titan, Muse or Greek subsystem",
+    "No autonomous promotion or canon mutation",
+    "No Switchyard expansion",
+    "No vector database or new model dependency"
+  ],
+  "risks": [
+    "Worktree duplicates pollute institutional memory",
+    "Secrets are copied into the knowledge archive",
+    "Historical evidence is summarized away instead of preserved",
+    "Books become aspirational instead of repo-grounded",
+    "Housekeeping changes execution authority"
+  ],
+  "laws": [
+    "The live repositories are the quarry; chat memory is non-authoritative.",
+    "Every archived source is byte-preserved and SHA-256 addressed.",
+    "Duplicate content across worktrees is one knowledge object with many provenance refs.",
+    "Secret-shaped source bytes are excluded and recorded by pattern name only.",
+    "Mnemosyne remains the knowledge authority; Atlas remains a derived read model.",
+    "Books describe only proven current house surfaces and cite their source evidence.",
+    "Review never silently promotes knowledge.",
+    "No housekeeping change may grant execution authority or relax Trust Canal/Talos gates.",
+    "Tests must become boring: repeat cleanly, detect drift, and fail closed."
+  ],
+  "slices": [
+    {
+      "id": "house-definition",
+      "title": "Define the OTHRYS OS house and Book shelf",
+      "owner": "hephaestus",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "inventory",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "map-house",
+              "title": "Map only existing authorities, systems, stores, interfaces and projects",
+              "status": "OPEN"
+            },
+            {
+              "id": "book-registry",
+              "title": "Define one Book of obligation for every admitted house surface",
+              "status": "OPEN"
+            },
+            {
+              "id": "detect-overlap",
+              "title": "Reject duplicate names and duplicate architectural roles",
+              "status": "OPEN"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "verify-house",
+              "title": "Verify every house claim against current repo evidence",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "house-definition",
+        "book-registry",
+        "overlap-report"
+      ]
+    },
+    {
+      "id": "estate-consolidation",
+      "title": "Centralize logs, evidence, books and documents in Mnemosyne",
+      "owner": "mnemosyne",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "inventory",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "scan-repos",
+              "title": "Inventory every Git workspace and collapse worktree lineages",
+              "status": "OPEN"
+            },
+            {
+              "id": "hash-estate",
+              "title": "Hash every knowledge-bearing text source and deduplicate by content",
+              "status": "OPEN"
+            },
+            {
+              "id": "archive-estate",
+              "title": "Copy safe unique source bytes into the content-addressed Mnemosyne archive",
+              "status": "OPEN"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "verify-catalog",
+              "title": "Verify archive digest, provenance completeness, duplicate collapse and secret exclusions",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "estate-catalog",
+        "source-archive",
+        "exclusion-ledger"
+      ]
+    },
+    {
+      "id": "mnemosyne-hardening",
+      "title": "Recover proven Mnemosyne quality controls without widening authority",
+      "owner": "mnemosyne",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "quarry",
+          "owner": "hephaestus",
+          "tasks": [
+            {
+              "id": "recover-admission",
+              "title": "Reuse structured provenance, contradiction and leak-screen law",
+              "status": "OPEN"
+            },
+            {
+              "id": "recover-catalogue",
+              "title": "Reuse Callimachus duplicate/orphan/stale/book-drift inspection concepts",
+              "status": "OPEN"
+            },
+            {
+              "id": "recover-persistence",
+              "title": "Reuse deterministic snapshot/integrity concepts where compatible with explicit-file V2 law",
+              "status": "OPEN"
+            }
+          ]
+        },
+        {
+          "id": "review",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "verify-no-authority-drift",
+              "title": "Prove Mnemosyne remains inspect/classify/search/review only",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "mnemosyne-stock-map",
+        "quality-report",
+        "retrieval-proof"
+      ]
+    },
+    {
+      "id": "boring-verification",
+      "title": "Repeat whole-house verification until stable",
+      "owner": "talos",
+      "acceptance": "",
+      "stages": [
+        {
+          "id": "verify",
+          "owner": "talos",
+          "tasks": [
+            {
+              "id": "full-runtime",
+              "title": "Run the complete cross-language V2 runtime repeatedly",
+              "status": "OPEN"
+            },
+            {
+              "id": "knowledge-integrity",
+              "title": "Verify archive/catalog/search/export determinism and reconstruction",
+              "status": "OPEN"
+            },
+            {
+              "id": "drift-pass",
+              "title": "Run Book/catalogue/house drift checks and record every remaining defect",
+              "status": "OPEN"
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        "verification-matrix",
+        "remaining-defects"
+      ]
+    }
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "2ed9c1757910b68ee6127b43e77f4ab1c5069a904323f27816c2c0ef3f600318"
+}

@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 97,
+  "sequence": 98,
   "state_owner": "GPT_CONTROL",
   "remote_repo": "vtcbelgium/othrys-v2",
   "remote_head_at_last_verified_read": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
-    "mission_id": "V2-010F",
-    "status": "COMPLETE",
-    "issued_label": "V2-010F - ATLAS COGNITIVE GRAPH FOUNDATION",
+    "mission_id": "V2-010G",
+    "status": "RUNNING",
+    "issued_label": "V2-010G - OTHRYS OS HOUSEKEEPING AND MNEMOSYNE ESTATE CONSOLIDATION",
     "source": "operator_current_conversation"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-010F",
-    "decision": "ACCEPT_ATLAS_FOUNDATION",
-    "authority": "derived read model only; Mnemosyne authority preserved; Nine Muses semantic gates; 220/220 Node + 36/36 Python on Legion"
+    "mission_id": "V2-010G",
+    "decision": "HOUSEKEEPING_ONLY",
+    "authority": "No new product capability; consolidate, classify, test, log, and fail closed."
   },
-  "next_legal_action": "V2-010G may establish the persistent/temporal Atlas index and retrieval substrate after checking legacy Mnemosyne persistence, concordance and Callimachus stock; Switchyard remains deferred by explicit operator priority.",
+  "next_legal_action": "Continue V2-010G housekeeping only: estate integrity, Books/House drift, Chronicle/log hygiene, stale/quarry classification, repeated cross-language verification. No feature expansion.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

@@ -1,0 +1,195 @@
+{
+  "schema": "othrys.os.mnemosyne-estate-repos.v1",
+  "repositories": [
+    {
+      "repo": "_tc_scratch",
+      "origin": null,
+      "lineage": "local:_tc_scratch"
+    },
+    {
+      "repo": "othrys-blocks",
+      "origin": null,
+      "lineage": "local:othrys-blocks"
+    },
+    {
+      "repo": "othrys-core-mission036-adr",
+      "origin": "https://github.com/vtcbelgium/othrys-core.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-core.git"
+    },
+    {
+      "repo": "othrys-core-windows",
+      "origin": "https://github.com/vtcbelgium/othrys-core.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-core.git"
+    },
+    {
+      "repo": "othrys-hub",
+      "origin": "https://github.com/vtcbelgium/othrys-hub.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-hub.git"
+    },
+    {
+      "repo": "othrys-hub-blueprint-studio-001",
+      "origin": "https://github.com/vtcbelgium/othrys-hub.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-hub.git"
+    },
+    {
+      "repo": "othrys-hub-design-studio-modern-web-001",
+      "origin": "https://github.com/vtcbelgium/othrys-hub.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-hub.git"
+    },
+    {
+      "repo": "othrys-hub-hephaestus-block-forge-001",
+      "origin": null,
+      "lineage": "local:othrys-hub-hephaestus-block-forge-001"
+    },
+    {
+      "repo": "othrys-hub-main",
+      "origin": "https://github.com/vtcbelgium/othrys-hub.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-hub.git"
+    },
+    {
+      "repo": "othrys-hub-obsidian-always-sync-001",
+      "origin": null,
+      "lineage": "local:othrys-hub-obsidian-always-sync-001"
+    },
+    {
+      "repo": "othrys-hub-oros-composition-law-001",
+      "origin": null,
+      "lineage": "local:othrys-hub-oros-composition-law-001"
+    },
+    {
+      "repo": "othrys-hub-study-buddy-spaced-review-contract-001",
+      "origin": null,
+      "lineage": "local:othrys-hub-study-buddy-spaced-review-contract-001"
+    },
+    {
+      "repo": "othrys-hub-system-map",
+      "origin": "https://github.com/vtcbelgium/othrys-hub.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-hub.git"
+    },
+    {
+      "repo": "othrys-hub-tiles-hub-cutover-001",
+      "origin": "https://github.com/vtcbelgium/othrys-hub.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-hub.git"
+    },
+    {
+      "repo": "othrys-hub-tiles-pack-review-001",
+      "origin": "https://github.com/vtcbelgium/othrys-hub.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-hub.git"
+    },
+    {
+      "repo": "othrys-hub-tiles-productization-001",
+      "origin": "https://github.com/vtcbelgium/othrys-hub.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-hub.git"
+    },
+    {
+      "repo": "othrys-hub-tiles-studio-001",
+      "origin": "https://github.com/vtcbelgium/othrys-hub.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-hub.git"
+    },
+    {
+      "repo": "othrys-studio",
+      "origin": null,
+      "lineage": "local:othrys-studio"
+    },
+    {
+      "repo": "othrys-tools",
+      "origin": null,
+      "lineage": "local:othrys-tools"
+    },
+    {
+      "repo": "othrys-v2",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-v2-009a-close",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-v2-009b-panda",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-v2-os-010a",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-v2-verify-007y-b",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-v2-verify-007z",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-v2-verify-008a",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-v2-verify-008b",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-v2-verify-008c",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-v2-verify-008cr",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-v2-verify-008cr2",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-v2-verify-008cs",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-v2-verify-008dr",
+      "origin": "https://github.com/vtcbelgium/othrys-v2.git",
+      "lineage": "https://github.com/vtcbelgium/othrys-v2.git"
+    },
+    {
+      "repo": "othrys-web",
+      "origin": "git@github.com:vtcbelgium/othrys-web.git",
+      "lineage": "git@github.com:vtcbelgium/othrys-web.git"
+    },
+    {
+      "repo": "study-buddy",
+      "origin": null,
+      "lineage": "local:study-buddy"
+    },
+    {
+      "repo": "vtc-block-affiliate-extract-001",
+      "origin": "https://github.com/vtcbelgium/vtc-platform.git",
+      "lineage": "https://github.com/vtcbelgium/vtc-platform.git"
+    },
+    {
+      "repo": "vtc-block-analytics-extract-001",
+      "origin": "https://github.com/vtcbelgium/vtc-platform.git",
+      "lineage": "https://github.com/vtcbelgium/vtc-platform.git"
+    },
+    {
+      "repo": "vtc-block-extract-001r",
+      "origin": "https://github.com/vtcbelgium/vtc-platform.git",
+      "lineage": "https://github.com/vtcbelgium/vtc-platform.git"
+    },
+    {
+      "repo": "vtc-platform",
+      "origin": "https://github.com/vtcbelgium/vtc-platform.git",
+      "lineage": "https://github.com/vtcbelgium/vtc-platform.git"
+    }
+  ]
+}

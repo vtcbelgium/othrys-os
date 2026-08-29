@@ -1,6 +1,8 @@
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join, normalize, resolve, sep } from 'node:path';
+import { estateSummary, searchEstateKnowledge } from './mnemosyne_estate.mjs';
+import { buildAtlasProjection } from './atlas_projection.mjs';
 
 export const KNOWLEDGE_SCHEMA='othrys.os.knowledge-item.v1';
 const sha=(value)=>createHash('sha256').update(value).digest('hex');
@@ -92,9 +94,52 @@ export function searchKnowledge(root,manifest,query,{limit=12}={}){
     const matched=terms.filter(term=>hay.includes(term));
     if(matched.length) results.push({id:item.id,title:item.title,classification:item.classification,status:item.status,score:matched.length/terms.length,matchedTerms:matched,source:item.source,contentDigest:item.contentDigest});
   }
-  results.sort((a,b)=>b.score-a.score||a.id.localeCompare(b.id));
-  return Object.freeze({schema:'othrys.os.knowledge-search.v1',query:clean(query),results:results.slice(0,Math.max(1,Math.min(50,limit))),authorityGranted:false});
+  const estate=searchEstateKnowledge(root,query,{limit:50});
+  const merged=[...results,...estate.results];
+  merged.sort((a,b)=>b.score-a.score||(Number(a.id.startsWith('estate-'))-Number(b.id.startsWith('estate-')))||a.id.localeCompare(b.id));
+  return Object.freeze({schema:'othrys.os.knowledge-search.v1',query:clean(query),results:merged.slice(0,Math.max(1,Math.min(50,limit))),estateCatalogSha256:estate.catalogSha256??null,authorityGranted:false});
 }
+export function assembleKnowledgeContext(root,manifest,query,{limit=12,state={}}={}){
+  const terms=tokenize(query);
+  if(!terms.length) return Object.freeze({schema:'othrys.os.context-capsule.v1',query:clean(query),projectTruth:[],estateEvidence:[],related:[],warnings:[],authorityGranted:false});
+  const search=searchKnowledge(root,manifest,query,{limit:Math.max(limit*3,24)});
+  const bookPath=join(root,'books','BOOK_REGISTRY.json');
+  const bookMatches=[];
+  if(existsSync(bookPath)){
+    const registry=JSON.parse(readFileSync(bookPath,'utf8'));
+    for(const b of registry.books??[]){
+      const id=String(b.id??'').toLowerCase(),title=String(b.title??'').toLowerCase(),role=String(b.role??'').toLowerCase(),hay=`${id} ${title} ${role}`,hits=terms.filter(t=>hay.includes(t));
+      if(hits.length){
+        const identityHits=terms.filter(t=>id===t||id.endsWith(`-${t}`)||title===t||title.endsWith(` ${t}`));
+        const identityScore=identityHits.length/terms.length,coverage=hits.length/terms.length;
+        bookMatches.push({id:`book-${b.id}`,title:b.title,classification:'HOUSE_BOOK',status:b.status??'CURRENT',score:Number((coverage+identityScore).toFixed(6)),matchedTerms:hits,identityMatchedTerms:identityHits,source:{kind:'HOUSE_BOOK',path:b.path},contentDigest:existsSync(join(root,b.path))?sha(readFileSync(join(root,b.path),'utf8')):null,selectedBecause:identityHits.length?'current House Book identity':'current House Book reference'});
+      }
+    }
+    bookMatches.sort((a,b)=>b.score-a.score||b.identityMatchedTerms.length-a.identityMatchedTerms.length||a.title.localeCompare(b.title));
+  }
+  const localMatches=search.results.filter(x=>!x.id.startsWith('estate-')).map(x=>({...x,selectedBecause:'project-local match'}));
+  const seen=new Set();
+  const projectTruth=[...bookMatches,...localMatches].filter(x=>!seen.has(x.id)&&(seen.add(x.id),true)).slice(0,limit);
+  const estateEvidence=search.results.filter(x=>x.id.startsWith('estate-')&&x.status!=='EXCLUDED').slice(0,limit).map(x=>({...x,selectedBecause:'supporting estate evidence'}));
+  const graph=buildAtlasProjection(root,state),matched=new Set();
+  for(const n of graph.nodes){
+    const hay=`${n.id} ${n.title} ${n.description??''} ${(n.tags??[]).join(' ')}`.toLowerCase();
+    if(terms.some(t=>hay.includes(t))) matched.add(n.id);
+  }
+  const neighborIds=new Set(matched);
+  for(const e of graph.edges) if(matched.has(e.from)||matched.has(e.to)){neighborIds.add(e.from);neighborIds.add(e.to)}
+  const degree=new Map(); for(const e of graph.edges){degree.set(e.from,(degree.get(e.from)??0)+1);degree.set(e.to,(degree.get(e.to)??0)+1)}
+  const related=graph.nodes.filter(n=>neighborIds.has(n.id)).map(n=>{
+    const hay=`${n.id} ${n.title}`.toLowerCase(),exact=terms.some(t=>hay===t||n.id.toLowerCase().endsWith(`:${t}`)||n.title.toLowerCase()===t);
+    return {id:n.id,type:n.type,title:n.title,truthClass:n.truthClass,muses:n.muses??[],provenance:n.provenance??[],relationCount:degree.get(n.id)??0,exactMatch:exact,selectedBecause:matched.has(n.id)?'direct Atlas match':'one-hop Atlas relation'};
+  }).sort((a,b)=>Number(b.exactMatch)-Number(a.exactMatch)||(Number(b.selectedBecause.startsWith('direct'))-Number(a.selectedBecause.startsWith('direct')))||b.relationCount-a.relationCount||a.id.localeCompare(b.id)).slice(0,limit);
+  const maintenance=maintainKnowledge(root,manifest),warnings=[];
+  for(const id of maintenance.missingSources??[]) warnings.push({kind:'missing-source',id});
+  for(const id of maintenance.awaitingReview??[]) warnings.push({kind:'awaiting-review',id});
+  if(graph.summary?.conflictCount) warnings.push({kind:'atlas-conflicts',count:graph.summary.conflictCount});
+  return Object.freeze({schema:'othrys.os.context-capsule.v1',query:clean(query),projectTruth,estateEvidence,related,warnings,estateCatalogSha256:search.estateCatalogSha256??null,authorityGranted:false});
+}
+
 export function maintainKnowledge(root,manifest){
   const declared=declaredKnowledge(root,manifest);
   const inbox=inboxItems(root);
@@ -114,11 +159,11 @@ export function exportKnowledge(root,manifest){
   const inbox=inboxItems(root);
   const reviewsDir=join(root,'.othrys','knowledge','reviews');
   const reviews=existsSync(reviewsDir)?readdirSync(reviewsDir).filter(x=>x.endsWith('.json')).sort().map(x=>JSON.parse(readFileSync(join(reviewsDir,x),'utf8'))):[];
-  const body={schema:'othrys.os.knowledge-export.v1',projectId:manifest.projectId,sources,inbox,reviews,authorityGranted:false};
+  const body={schema:'othrys.os.knowledge-export.v1',projectId:manifest.projectId,sources,inbox,reviews,estate:estateSummary(root),authorityGranted:false};
   return Object.freeze({...body,exportDigest:sha(JSON.stringify(body))});
 }
 
 export function knowledgeProjection(root,manifest){
   const maintenance=maintainKnowledge(root,manifest);
-  return Object.freeze({schema:'othrys.os.mnemosyne.v1',service:'mnemosyne',lifecycle:['CAPTURE','CLASSIFY','REVIEW','SEARCH','MAINTAIN','EXPORT'],...maintenance,writeApiEnabled:false,opaqueMemory:false,authorityGranted:false});
+  return Object.freeze({schema:'othrys.os.mnemosyne.v1',service:'mnemosyne',lifecycle:['CAPTURE','CLASSIFY','REVIEW','SEARCH','MAINTAIN','EXPORT'],...maintenance,estate:estateSummary(root),writeApiEnabled:false,opaqueMemory:false,authorityGranted:false});
 }
