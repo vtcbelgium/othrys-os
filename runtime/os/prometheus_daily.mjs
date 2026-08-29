@@ -22,7 +22,7 @@ function finding(raw,i){
   const title=clean(raw.title),source=clean(raw.source),summary=clean(raw.summary),kind=clean(raw.kind).toUpperCase();
   if(!title||!source||!summary||summary.length>1800||!['NEWS','HARVEST','WATCH'].includes(kind)) throw new Error(`PROM_DAILY_FINDING_INVALID:${i}`);
   const score=Number(raw.score); if(!Number.isFinite(score)||score<0||score>1) throw new Error(`PROM_DAILY_SCORE_INVALID:${i}`);
-  const lens=clean(raw.lens||'AI').toUpperCase(); if(!['AI','TECH','SYNTRA'].includes(lens)) throw new Error('PROM_DAILY_LENS_INVALID:'+i); let opportunity=null; if(raw.url&&raw.type){opportunity=normalizePrometheusOpportunity({title,summary,source,url:raw.url,type:raw.type,score,harvestable:kind==='HARVEST',freeTier:raw.freeTier===true,requiresAccount:raw.requiresAccount===true,credentialEnvVar:raw.credentialEnvVar??null,alreadyKnown:raw.alreadyHarvested===true});} return Object.freeze({title,source,summary,kind,lens,score,alreadyHarvested:raw.alreadyHarvested===true,opportunity});
+  const lens=clean(raw.lens||'AI').toUpperCase(); if(!['AI','TECH','CURRICULUM'].includes(lens)) throw new Error('PROM_DAILY_LENS_INVALID:'+i); let opportunity=null; if(raw.url&&raw.type){opportunity=normalizePrometheusOpportunity({title,summary,source,url:raw.url,type:raw.type,score,harvestable:kind==='HARVEST',freeTier:raw.freeTier===true,requiresAccount:raw.requiresAccount===true,credentialEnvVar:raw.credentialEnvVar??null,alreadyKnown:raw.alreadyHarvested===true});} return Object.freeze({title,source,summary,kind,lens,score,alreadyHarvested:raw.alreadyHarvested===true,opportunity});
 }
 export function createPrometheusDailyReport({runId,completedAt,findings=[],maxMessageItems=8,harvestWakeThreshold=0.82}={}){
   runId=clean(runId); completedAt=clean(completedAt);
@@ -32,9 +32,9 @@ export function createPrometheusDailyReport({runId,completedAt,findings=[],maxMe
   const wake=harvestable.some(x=>x.score>=harvestWakeThreshold);
   const messageItems=rows.slice(0,Math.max(1,Math.min(10,Math.trunc(maxMessageItems))));
   const section=(lens,label)=>{const items=messageItems.filter(x=>x.lens===lens);return items.length?`${label}\n${items.map(x=>`- ${x.title} — ${x.summary}`).join('\n')}`:null;};
-  const sections=[section('AI','AI'),section('TECH','TECH'),section('SYNTRA','SYNTRA WATCH')].filter(Boolean);
+  const sections=[section('AI','AI'),section('TECH','TECH'),section('CURRICULUM','CURRICULUM WATCH')].filter(Boolean);
   const message=sections.length?sections.join('\n\n'):'No material findings today.';
-  const actionCards=rows.filter(x=>x.opportunity&&x.kind==='HARVEST'&&!x.alreadyHarvested).map(x=>Object.freeze({opportunityId:x.opportunity.opportunityId,title:x.title,freeTier:x.opportunity.freeTier,requiresAccount:x.opportunity.requiresAccount,actions:Object.freeze(['ADD','DENY'])})); const body={schema:'othrys.os.prometheus-daily-report.v1',runId,completedAt,findings:Object.freeze(rows),newsCount:news.length,harvestableCount:harvestable.length,actionCards:Object.freeze(actionCards),lenses:Object.freeze({ai:rows.filter(x=>x.lens==='AI').length,tech:rows.filter(x=>x.lens==='TECH').length,syntra:rows.filter(x=>x.lens==='SYNTRA').length}),harvestWakeRecommended:wake,message,automaticHarvestStarted:false};
+  const actionCards=rows.filter(x=>x.opportunity&&x.kind==='HARVEST'&&!x.alreadyHarvested).map(x=>Object.freeze({opportunityId:x.opportunity.opportunityId,title:x.title,freeTier:x.opportunity.freeTier,requiresAccount:x.opportunity.requiresAccount,actions:Object.freeze(['ADD','DENY'])})); const body={schema:'othrys.os.prometheus-daily-report.v1',runId,completedAt,findings:Object.freeze(rows),newsCount:news.length,harvestableCount:harvestable.length,actionCards:Object.freeze(actionCards),lenses:Object.freeze({ai:rows.filter(x=>x.lens==='AI').length,tech:rows.filter(x=>x.lens==='TECH').length,curriculum:rows.filter(x=>x.lens==='CURRICULUM').length}),harvestWakeRecommended:wake,message,automaticHarvestStarted:false};
   return base({...body,reportDigest:sha(body)});
 }
 

@@ -2,7 +2,7 @@ import { PROMETHEUS_NEWSLETTER_PROFILE } from './prometheus_arsenal.mjs';
 const QUERIES=Object.freeze([
   {lens:'AI',query:'important AI model agent API open-source release official announcement today'},
   {lens:'TECH',query:'important developer automation technology security hardware cloud release official news today'},
-  {lens:'SYNTRA',query:'AI automation full-stack developer agents APIs n8n RAG workflow automation new release documentation tutorial today'}
+  {lens:'CURRICULUM',query:'full stack web development TypeScript React Next.js Node.js APIs databases DevOps AI automation agents n8n RAG workflow automation MCP new release best practice today'}
 ]);
 export { QUERIES as PROMETHEUS_DAILY_QUERIES };
 
@@ -26,7 +26,7 @@ export async function runPrometheusDailySearch({sealedCredential,fetchImpl=fetch
   }
   const pool=dedupe(all).sort((a,b)=>b.score-a.score||a.title.localeCompare(b.title)); const cap=Math.max(1,Math.min(10,maxItems));
   const quotas={AI:Math.min(4,cap),TECH:Math.min(2,cap),SYNTRA:Math.min(2,cap)}; const ranked=[];
-  for(const lens of ['AI','SYNTRA','TECH']) for(const row of pool.filter(x=>x.lens===lens).slice(0,quotas[lens])) if(ranked.length<cap) ranked.push(row);
+  for(const lens of ['AI','CURRICULUM','TECH']) for(const row of pool.filter(x=>x.lens===lens).slice(0,quotas[lens])) if(ranked.length<cap) ranked.push(row);
   for(const row of pool) if(ranked.length<cap&&!ranked.some(x=>x.url===row.url)) ranked.push(row);
   const findings=ranked.map(x=>Object.freeze({title:x.title,source:x.url,summary:x.summary,kind:'NEWS',lens:x.lens,score:x.score,alreadyHarvested:false}));
   return Object.freeze({schema:'othrys.os.prometheus-daily-search.v1',queries:QUERIES.length,creditsUsed,findings:Object.freeze(findings),maxItems,searchDepth:'basic',rawContent:false,generatedAnswer:false,paidFallback:false,authorityGranted:false,executionStarted:false});

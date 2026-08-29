@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 const sha=v=>createHash('sha256').update(JSON.stringify(v),'utf8').digest('hex');
 const clean=v=>typeof v==='string'?v.trim():'';
-const TYPES=new Set(['AI_NEWS','TECH_NEWS','SYNTRA_WATCH','API','MODEL','TOOL','SOURCE']);
+const TYPES=new Set(['AI_NEWS','TECH_NEWS','CURRICULUM_WATCH','API','MODEL','TOOL','SOURCE']);
 const DECISIONS=new Set(['ADD','DENY']);
 
 export function normalizePrometheusOpportunity(raw){
@@ -35,5 +35,5 @@ export function createArsenalIntakeRequest(raw,decision){
 export const PROMETHEUS_NEWSLETTER_PROFILE=Object.freeze({schema:'othrys.os.prometheus-newsletter-profile.v1',maxItems:8,lenses:Object.freeze([
   {id:'ai',label:'AI',weight:1,include:['models','agents','APIs','open source','research','providers']},
   {id:'tech',label:'Tech',weight:.55,include:['developer tools','automation','hardware','cloud','security']},
-  {id:'syntra',label:'Syntra Watch',weight:.75,include:['AI automation','AI architecture','agents','APIs','n8n','workflow automation','RAG','LLM engineering']}
+  {id:'curriculum',label:'Curriculum Watch',weight:.75,include:['AI automation','AI architecture','agents','APIs','n8n','workflow automation','RAG','LLM engineering']}
 ]),preferActionable:true,preferFree:true,authorityGranted:false,executionStarted:false});

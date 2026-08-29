@@ -37,3 +37,9 @@ Keymaster discovered **22** credential names in the central read-only bootstrap 
 A real Groq `ADD` intake used the existing Keymaster credential through a sealed handle, returned HTTP 200 and 14 models, persisted no provider body or secret, and produced a zero-cost Talos qualification request with `autoEnable:false`.
 
 The first real OS daily pulse then completed from a Kronos heartbeat; a second immediate pulse returned `NOT_DUE`. The report was archived under Mnemosyne's ignored knowledge archive and produced a Hermes message intent without delivering it. Normal daily news does not dirty the review inbox; only a harvest wake creates an Inbox review item.
+
+## 2026-08-29 refinement
+- Hub Keymaster `credentials.json` is the shared credential registry across OTHRYS versions; V2 consumes its `env:` references directly and resolves values only through the sealed local bootstrap source.
+- Credentials are not version-owned. They may be reused across OTHRYS versions on the same authorized machine without duplicating values into repositories.
+- The third Prometheus newsletter lens is `CURRICULUM`, not school/Syntra news: full-stack engineering plus AI automation (TypeScript/React/Next.js/Node/APIs/databases/DevOps, agents/n8n/RAG/workflows/MCP).
+- Live metadata-only Keymaster health probing remains zero-cost, read-only and secret-free; provider readiness is evidence, never enablement authority.
