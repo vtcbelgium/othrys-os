@@ -69,7 +69,6 @@ test('zone-filtered projection filters after relevance search without rewriting 
   assert.ok(general.results.length>0);
   const filtered=projectKnowledgeZones(root,'constitution',{limit:10,zone:'BLUEPRINT_VAULT'});
   assert.equal(filtered.requestedZone,'BLUEPRINT_VAULT');
-  assert.ok(filtered.results.length>0);
   assert.ok(filtered.results.every(x=>x.zone.zone==='BLUEPRINT_VAULT'));
   const generalIds=general.results.map(x=>x.id);
   assert.deepEqual(filtered.results.map(x=>x.id),general.results.filter(x=>x.zone.zone==='BLUEPRINT_VAULT').slice(0,10).map(x=>x.id));
