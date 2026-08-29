@@ -36,5 +36,11 @@
     "evidence": "docs/V2-010X/TRIAD_PENTA_PROMETHEUS_STUDY.md",
     "focused_old_hub_tests": "80 PASS / 1 Windows byte-offset defect harvested"
   },
-  "next_slice": "PROMETHEUS_LOCAL_INTELLIGENCE_QUALIFICATION"
+  "next_slice": "PROMETHEUS_EXTERNAL_EVIDENCE_QUALIFICATION",
+  "local_intelligence_qualification": {
+    "verdict": "QUALIFIED_FOR_ADAPTATION",
+    "evidence": "docs/V2-010X/LOCAL_INTELLIGENCE_QUALIFICATION.md",
+    "live_proof": "score OK; recommend OK; manifest 18; 13 PASS / 1 stale-count test",
+    "architecture": "resident typed intelligence service; no Hub subprocess transplant"
+  }
 }
