@@ -14,20 +14,26 @@ def plan_anastomosis(claims: list[dict[str, Any]]) -> dict[str, Any]:
     groups: dict[str, dict[str, Any]] = {}
     order: list[str] = []
     for raw in claims:
-        if set(raw) != {"claimId", "consumerId", "workKey", "reusePolicy"}:
+        if set(raw) != {"claimId", "consumerId", "workKey", "compatibilityDigest", "reusePolicy"}:
             raise ValueError("CLAIM_FIELDS_INVALID")
         claim_id, consumer = str(raw["claimId"]).strip(), str(raw["consumerId"]).strip()
-        work_key, policy = str(raw["workKey"]), str(raw["reusePolicy"])
+        work_key = str(raw["workKey"])
+        compatibility = str(raw["compatibilityDigest"])
+        policy = str(raw["reusePolicy"])
         if not claim_id or not consumer or claim_id in seen:
             raise ValueError("CLAIM_IDENTITY_INVALID")
         if not HEX64.fullmatch(work_key):
             raise ValueError("CLAIM_WORK_KEY_INVALID")
+        if not HEX64.fullmatch(compatibility):
+            raise ValueError("CLAIM_COMPATIBILITY_INVALID")
         if policy not in REUSE_POLICIES:
             raise ValueError("CLAIM_REUSE_POLICY_INVALID")
         seen.add(claim_id)
-        group_id = f"shared:{work_key}" if policy == "SHARE_COMPUTATION" else f"independent:{claim_id}"
+        group_id = (f"shared:{work_key}:{compatibility}"
+                    if policy == "SHARE_COMPUTATION" else f"independent:{claim_id}")
         if group_id not in groups:
-            groups[group_id] = {"workKey": work_key, "claimIds": [], "consumers": [], "reusePolicy": policy}
+            groups[group_id] = {"workKey": work_key, "compatibilityDigest": compatibility,
+                                "claimIds": [], "consumers": [], "reusePolicy": policy}
             order.append(group_id)
         groups[group_id]["claimIds"].append(claim_id)
         groups[group_id]["consumers"].append(consumer)
@@ -40,6 +46,7 @@ def plan_anastomosis(claims: list[dict[str, Any]]) -> dict[str, Any]:
         producers.append({
             "producerPlanId": f"producer-{i}",
             "workKey": group["workKey"],
+            "compatibilityDigest": group["compatibilityDigest"],
             "claimIds": tuple(group["claimIds"]),
             "consumers": tuple(group["consumers"]),
             "reusePolicy": group["reusePolicy"],
@@ -52,6 +59,7 @@ def plan_anastomosis(claims: list[dict[str, Any]]) -> dict[str, Any]:
         "duplicatesPrevented": duplicates_prevented,
         "producerPlans": tuple(producers),
         "claimsMerged": False,
+        "compatibilityChecked": True,
         "authorityGranted": False,
         "executionStarted": False,
     }

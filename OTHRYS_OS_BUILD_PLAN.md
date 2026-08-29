@@ -15,12 +15,17 @@ V2-010L Housekeeping Optimization is implementation-PASS and independently verif
 5. **[COMPLETE] Library/Vault posture 010K** -- logical knowledge zones, Source Vault facet and machine-checked Hecatoncheires posture.
 6. **[COMPLETE] Housekeeping optimization / multichannel 010L** -- measured network/concurrency knees, capacity-aware PACK/SPREAD, isolated Hephaestus hands, deterministic WorkKey, planning-only Anastomosis, project optimization phenotypes and zero-growth test-temp hygiene.
 7. **[RUNNING] Mycelium metabolism / adaptive calibration** -- harvest 061F: truthful resource disposition, REST/INTERACTIVE/NORMAL/BURST/CONSERVE/SOAK/RECOVERY modes, marginal growth/contraction, project-aware concurrency knees and backpressure. No learned legality or execution authority.
-8. **Anastomosis Artifact / local action cache** -- add immutable verified Artifact identity, provenance/freshness/integrity validation and local deterministic reuse. Independent-verification Claims remain non-reusable; no distributed CAS yet.
-9. **Experience / Pareto / hysteresis** -- harvest 061H immutable route observations, qualification, Pareto frontier, holdouts, drift/anomaly detection and disposable preference among predeclared legal routes only.
-10. **Sclerotium / clean-root recovery** -- current-House survival inventory, minimal trusted pack, secret exclusion, rebuild/reacquire/rebind classes, corrupt/wrong-body fail-closed and cross-node portability proof.
-11. **Switchyard** -- resume deferred capability/tier resolver only after metabolism/reuse/recovery are stable; model choice never binds authority.
-12. **Integrations and services** -- admit repo-proven residents through separate missions; manifest, Book, contract, Atlas and Mnemosyne move together.
-13. **Workstation polish** -- UI follows real OS objects and measured operating state; no decorative architecture.
+8. **Context metabolism / evidence capsules** -- harvest 061G evidence-preserving reduction: keep pinned/active/authority evidence, compress to references where safe, evict irrelevant payload, and prove requiredEvidenceLost=0 / authorityEvidenceLost=0 before any AI context optimizer.
+9. **Anastomosis Artifact / local action cache** -- add immutable verified Artifact identity, provenance/freshness/integrity + compatibility validation and local deterministic reuse. Independent-verification Claims remain non-reusable; failed compatibility isolates only that fusion edge; no distributed CAS yet.
+10. **Rhizomorph / Experience / sparse resilience** -- harvest 061D/061H plus biological network lessons: immutable flow observations, qualification, Pareto frontier, holdouts, hysteresis/decay, sparse cross-link budget and reinforced routes among predeclared legal variants only. Every reinforcement has a retraction law.
+11. **Sclerotium / clean-root recovery** -- current-House survival inventory, minimal trusted pack, secret exclusion, rebuild/reacquire/rebind classes, corrupt/wrong-body fail-closed and cross-node portability proof.
+12. **Switchyard** -- resume deferred capability/tier resolver only after metabolism/reuse/recovery are stable; model choice never binds authority.
+13. **Integrations and services** -- admit repo-proven residents through separate missions; manifest, Book, contract, Atlas and Mnemosyne move together.
+14. **Workstation polish** -- UI follows real OS objects and measured operating state; no decorative architecture.
+
+## Mycelium tissue model
+
+`HYPHA -> RHIZOMORPH -> SCLEROTIUM` are three functional/temporal tissues of one Mycelium, not three authorities or services. Hyphae explore cheaply; Rhizomorphs reinforce repeatedly proven useful flow; Sclerotium preserves the minimum trusted body required to regrow. Anastomosis connects compatible flow; Metabolism decides when topology may grow, hold, contract or quiesce.
 
 ## Permanent optimization law
 

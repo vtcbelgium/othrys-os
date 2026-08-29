@@ -57,3 +57,11 @@ The strongest OTHRYS lesson is therefore not maximum parallelism. It is dynamic 
 - **Pulsatile/bidirectional transport:** do not assume one static preferred route. Experience should allow mode-dependent route changes and hysteresis rather than lock-in.
 - **Tissue hierarchy:** exploratory Hypha -> reinforced Rhizomorph -> Sclerotium survival body is a more meaningful “3D Mycelium” than literal x/y/z scheduling. These are different temporal/functional layers of one organism.
 - **Sparse healing loops:** independent cross-node verification, fallback transport and compatible Anastomosis are valuable loops; redundant same-node copies without failure diversity are usually waste.
+
+## Compatibility / non-self recognition harvest
+
+Filamentous fungi may fuse compatible hyphae, but non-self recognition can suppress fusion before contact or compartmentalize/kill incompatible fusion cells afterward. This is a direct systems lesson: contact/equivalence is not sufficient for trust.
+
+Current adaptation: planning-only Anastomosis now requires both `workKey` and `compatibilityDigest` equality before shareable Claims can map to one producer plan. Independent-verification Claims remain separate regardless. The digest is not authority or authenticity proof; later Artifact reuse must derive compatibility from verified environment, capability version, provenance/freshness and authority envelope.
+
+This also suggests a future containment rule: failed compatibility should isolate only the attempted fusion edge, not poison the entire healthy network.

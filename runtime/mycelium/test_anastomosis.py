@@ -4,10 +4,13 @@ from anastomosis import plan_anastomosis
 
 WK = "a" * 64
 OTHER = "b" * 64
+COMPAT = "c" * 64
+OTHER_COMPAT = "d" * 64
 
 
-def claim(claim_id, consumer, work_key=WK, policy="SHARE_COMPUTATION"):
-    return {"claimId": claim_id, "consumerId": consumer, "workKey": work_key, "reusePolicy": policy}
+def claim(claim_id, consumer, work_key=WK, policy="SHARE_COMPUTATION", compatibility=COMPAT):
+    return {"claimId": claim_id, "consumerId": consumer, "workKey": work_key,
+            "compatibilityDigest": compatibility, "reusePolicy": policy}
 
 
 class AnastomosisPlannerTests(unittest.TestCase):
@@ -17,15 +20,18 @@ class AnastomosisPlannerTests(unittest.TestCase):
         self.assertEqual(plan["producerCount"], 1)
         self.assertEqual(plan["duplicatesPrevented"], 2)
         self.assertEqual(plan["producerPlans"][0]["claimIds"], ("c1", "c2", "c3"))
+        self.assertTrue(plan["compatibilityChecked"])
         self.assertFalse(plan["claimsMerged"])
         self.assertFalse(plan["authorityGranted"])
         self.assertFalse(plan["executionStarted"])
 
     def test_independent_verification_is_never_fused(self):
-        claims = [claim("v1", "talos-legion", policy="INDEPENDENT_EXECUTION_REQUIRED"), claim("v2", "talos-t590", policy="INDEPENDENT_EXECUTION_REQUIRED")]
+        claims = [claim("v1", "talos-legion", policy="INDEPENDENT_EXECUTION_REQUIRED"),
+                  claim("v2", "talos-t590", policy="INDEPENDENT_EXECUTION_REQUIRED")]
         plan = plan_anastomosis(claims)
         self.assertEqual(plan["producerCount"], 2)
         self.assertEqual(plan["duplicatesPrevented"], 0)
+
     def test_shareable_and_independent_claims_for_same_work_key_stay_distinct(self):
         claims = [
             claim("s1", "factory"),
@@ -37,6 +43,14 @@ class AnastomosisPlannerTests(unittest.TestCase):
         self.assertEqual(plan["duplicatesPrevented"], 1)
         self.assertEqual(plan["producerPlans"][0]["claimIds"], ("s1", "s2"))
         self.assertEqual(plan["producerPlans"][1]["claimIds"], ("v1",))
+
+    def test_same_work_key_with_incompatible_envelopes_never_fuses(self):
+        plan = plan_anastomosis([
+            claim("a", "factory"),
+            claim("b", "factory", compatibility=OTHER_COMPAT),
+        ])
+        self.assertEqual(plan["producerCount"], 2)
+        self.assertEqual(plan["duplicatesPrevented"], 0)
 
     def test_different_work_keys_never_fuse(self):
         plan = plan_anastomosis([claim("a", "factory", WK), claim("b", "factory", OTHER)])
@@ -52,6 +66,14 @@ class AnastomosisPlannerTests(unittest.TestCase):
             plan_anastomosis([claim("x", "a", "bad")])
         with self.assertRaisesRegex(ValueError, "CLAIM_REUSE_POLICY_INVALID"):
             plan_anastomosis([claim("x", "a", policy="ALWAYS_REUSE")])
+        bad = claim("z", "a")
+        bad["compatibilityDigest"] = "bad"
+        with self.assertRaisesRegex(ValueError, "CLAIM_COMPATIBILITY_INVALID"):
+            plan_anastomosis([bad])
+        missing = claim("m", "a")
+        del missing["compatibilityDigest"]
+        with self.assertRaisesRegex(ValueError, "CLAIM_FIELDS_INVALID"):
+            plan_anastomosis([missing])
 
 
 if __name__ == "__main__":
