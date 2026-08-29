@@ -61,7 +61,7 @@ export function inspectMnemosyneQuality(root,{projectsRoot=null}={}){
     const registry=readJson(bookPath),bookIds=registry.books?.map(x=>x.id)??[];
     const required=new Set(['othrys-os','gpt','missions-work','blocks','oroi-projects','models',...manifest.authorities.map(x=>x.id),...manifest.systems.map(x=>x.id),manifest.knowledgePolicy.service]);
     for(const id of required) if(bookIds.filter(x=>x===id).length!==1) findings.push(finding('book-coverage','high',`House surface ${id} does not have exactly one Book target.`,{id}));
-    for(const id of ['prometheus','rhea','visual-control']) if(bookIds.includes(id)) findings.push(finding('quarry-promoted-by-doc','high',`Quarry-only surface ${id} appears as a current house Book.`,{id}));
+    for(const id of ['rhea','visual-control']) if(bookIds.includes(id)) findings.push(finding('quarry-promoted-by-doc','high',`Quarry-only surface ${id} appears as a current house Book.`,{id}));
   }
   const security=inspectHecatoncheiresPosture(root);
   if(!security.ok) findings.push(finding('hecatoncheires-posture','high','Hecatoncheires posture claims are missing, invalid or unsupported.',{issues:security.issues}));

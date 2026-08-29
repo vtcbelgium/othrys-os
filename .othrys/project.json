@@ -86,6 +86,12 @@
       "label": "Switchyard",
       "role": "Deterministic capability / model-labor selection",
       "statusEvidence": "V2-010U"
+    },
+    {
+      "id": "prometheus",
+      "label": "Prometheus",
+      "role": "Intelligence / evidence discovery and evaluation",
+      "statusEvidence": "V2-010X"
     }
   ],
   "capabilities": [

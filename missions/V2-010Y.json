@@ -3,7 +3,7 @@
   "title": "Prometheus House Admission",
   "status": "RUNNING",
   "owner": "GPT_CONTROL",
-  "start_sha": "PENDING_CLOSEOUT_COMMIT",
+  "start_sha": "c688d0d02f1c25e294af466c946200d3d86c3fab",
   "objective": "Admit the qualified minimum Prometheus resident into the current OTHRYS House without transplanting the old Hub backend or granting new authority.",
   "qualification_source": "V2-010X",
   "great_harvest_classification": "ADAPT",
@@ -40,5 +40,23 @@
     "visual redesign"
   ],
   "authority_granted": false,
-  "execution_started": false
+  "execution_started": false,
+  "native_kernel": {
+    "path": "runtime/os/prometheus.mjs",
+    "policy": "cap-score-v1",
+    "authority_granted": false,
+    "network": false,
+    "storage": false,
+    "scheduling": false,
+    "knowledge_admission": false,
+    "execution": false
+  },
+  "admission_state": "IMPLEMENTED_PENDING_INDEPENDENT_PROOF",
+  "legion_proof": {
+    "prometheus_scoped": "7/7 PASS",
+    "house_atlas_mnemosyne_scoped": "39/39 PASS",
+    "runtime_qa": "366/368 PASS; 2 pre-existing image-prep 0.1.0 digest tests",
+    "python": "88/88 mycelium+workers PASS",
+    "deck_opening_defect": "repaired by canonical V2-010Y durable Work materialization"
+  }
 }

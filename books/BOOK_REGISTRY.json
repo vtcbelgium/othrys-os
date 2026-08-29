@@ -242,6 +242,23 @@
       "boundary": "Switchyard selects and explains; it does not discover credentials, certify builders, grant authority, launch execution, or auto-approve paid escalation.",
       "path": "books/book-of-switchyard/README.md",
       "status": "CURRENT_OS_EDITION"
+    },
+    {
+      "id": "prometheus",
+      "title": "The Book of Prometheus",
+      "role": "Intelligence and evidence evaluation over explicit, provenance-bound capability and research evidence.",
+      "evidence": [
+        "V2-010X",
+        ".othrys/project.json#systems/prometheus",
+        "runtime/os/prometheus.mjs"
+      ],
+      "legacy": [
+        "othrys-core/titan/prometheus/**",
+        "othrys-hub Prometheus Gather/Research evidence preserved by the Great Harvest"
+      ],
+      "boundary": "Prometheus discovers, scores and recommends evidence; it does not admit memory, build, verify execution, own lifecycle cadence, or grant authority.",
+      "path": "books/book-of-prometheus/README.md",
+      "status": "CURRENT_OS_EDITION"
     }
   ],
   "authorityGranted": false,

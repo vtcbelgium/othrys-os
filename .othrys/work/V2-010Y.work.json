@@ -1,0 +1,25 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010Y",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010Y",
+  "title": "Prometheus House Admission",
+  "objective": "Admit the qualified minimum Prometheus resident into the current OTHRYS House without transplanting the old Hub backend or granting new authority.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Prometheus owns Intelligence only; never Memory, Engineering, Historical truth, verification or lifecycle authority.",
+    "No Genesis subprocess transplant.",
+    "No duplicate source/provider/credential/scheduler/event-store backend.",
+    "No autonomous scheduled research.",
+    "No knowledge auto-admission.",
+    "No execution authority.",
+    "Triad remains constitutional; Penta remains campaign composition."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "8f1664c309bacf0f9a6cdbebd6cbc041bd572269815190a2f4241fcf8671d4e4"
+}
