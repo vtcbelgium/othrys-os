@@ -1,13 +1,13 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 139,
+    "sequence": 140,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
     "remote_head_at_last_verified_read": "b23d111eb817862b6da3135149a8f84070710a31",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
         "mission_id": "V2-011G",
-        "status": "RUNNING",
+        "status": "COMPLETE",
         "issued_label": "V2-011G - HERMES HOUSE ADMISSION",
         "source": "operator_current_conversation"
     },
@@ -64,10 +64,10 @@
     ],
     "last_control_decision": {
         "mission_id": "V2-011G",
-        "decision": "ADMIT_MINIMUM_HERMES_RESIDENT",
-        "authority": "Pure communication contracts only; no live channels, storage backend, credentials, mutation or second authority."
+        "decision": "HOUSE_ADMITTED",
+        "authority": "Hermes is resident as pure provider-neutral communication contracts only; no live channel/storage/mutation authority."
     },
-    "next_legal_action": "Verify Hermes kernel + House/Atlas/Mnemosyne surfaces, then full regression and exact T590 proof.",
+    "next_legal_action": "Great Harvest preflight: rank next missing integration/service resident; Visual Control remains gated and Panda remains experience-only.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",
@@ -374,6 +374,11 @@
             "mission_id": "V2-011G",
             "status": "RUNNING",
             "note": "Hermes House admission opened after canonical allocator returned V2-011G; pure contract kernel only."
+        },
+        {
+            "mission_id": "V2-011G",
+            "status": "COMPLETE",
+            "note": "Native Hermes resident admitted: pure message/conversation/idempotency/lifecycle/binding/limbo contracts; Legion 46/46 + 78/78 + 10/10, T590 exact proof green; no live channel/storage/mutation authority."
         }
     ],
     "git": {

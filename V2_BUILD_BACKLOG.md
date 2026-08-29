@@ -310,4 +310,5 @@
 123. **Nyx resident comparison - MERGE/NO STANDALONE RESIDENT** - old Nyx is Talos introspection/proposal-only audit; current Housekeeping/Mnemosyne/Hecatoncheires/Talos already own the useful semantics.
 124. **V2-011F Hermes Resident Qualification - RUNNING** - universal communications contract/core qualification; Hermes is infrastructure, not Titan; no live channel or second authority.
 125. **V2-011F Hermes Resident Qualification - COMPLETE/PASS** - old Hermes 167/167 + Mission 044 7/7; pure communications seam qualified; Nyx merged; no live channels/storage/mutation authority.
-126. **V2-011G Hermes House Admission - RUNNING** - pure message/conversation/idempotency/lifecycle/binding kernel only; Panda experience quarry, no Panda backend duplication.
+126. **V2-011G Hermes House Admission - COMPLETE/PASS** - pure message/conversation/idempotency/lifecycle/binding kernel only; Panda experience quarry, no Panda backend duplication.
+127. **Next integration/service preflight - NEXT** - Great Harvest + current V2 overlap first; rank Metis/Hyperion/remaining service candidates before opening a resident mission; Visual Control stays gated.

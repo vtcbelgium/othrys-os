@@ -2,7 +2,7 @@
 
 **Front-door plan.** Read after `BOOK_OF_GPT.md` and current `GPT_STATE.json`.
 
-## Current phase -- V2-011G HERMES HOUSE ADMISSION
+## Current phase -- V2-011G HERMES HOUSE ADMISSION CLOSEOUT
 
 Milestone `M-OS-FOUNDATION-HARVEST-001` is achieved. V2-010Q proved native verified Artifact reuse and V2-010R formalized the VTC-proven Block extraction/extinction method. V2-010S completed the smallest safe 061D/061H Experience/Rhizomorph layer: immutable observations, holdouts, transparent Pareto preference, hysteresis/decay and sparse reinforcement among predeclared legal routes only. PandaOS remains a clarity/UX quarry, never routing or authority truth.
 
@@ -27,7 +27,7 @@ Before designing or inventing a capability, query `docs/GREAT_HARVEST.md`, `docs
 12. **[COMPLETE] V2-010S Rhizomorph / Experience / sparse resilience** -- harvest 061D/061H plus biological network lessons: immutable flow observations, qualification, Pareto frontier, holdouts, hysteresis/decay, sparse cross-link budget and reinforced routes among predeclared legal variants only. Every reinforcement has a retraction law.
 13. **[COMPLETE] V2-010T Sclerotium / clean-root recovery** -- current-House survival inventory, minimal trusted pack, secret exclusion, rebuild/reacquire/rebind classes, corrupt/wrong-body fail-closed and cross-node portability proof.
 14. **[COMPLETE] V2-010U Switchyard / Frugal Heart** -- resume deferred capability/tier resolver only after metabolism/reuse/recovery are stable; model choice never binds authority; provider health, task-specific measured trust and VTC-style evidence ladders may exclude/reorder only inside legal tiers.
-15. **[RUNNING] Integrations and services** -- Switchyard, Prometheus, Rhea, pure-contract Kronos and metadata-only Keymaster are resident. Nyx is merged/no standalone resident. Hermes is QUALIFIED_FOR_ADAPTATION; V2-011G admits only its pure non-networked communications contract seam, with Panda-style experience reuse but no Panda/backend duplication.
+15. **[RUNNING] Integrations and services** -- Switchyard, Prometheus, Rhea, pure-contract Kronos, metadata-only Keymaster and pure-contract Hermes are resident. Nyx is merged/no standalone resident. Next resident is selected only by Great Harvest overlap/preflight. Panda remains an experience quarry; Visual Control remains gated.
 16. **Workstation polish** -- UI follows real OS objects and measured operating state; no decorative architecture.
 
 ## Mycelium tissue model

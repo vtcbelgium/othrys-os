@@ -1,0 +1,32 @@
+{
+  "mission_id": "V2-011G",
+  "verdict": "PASS",
+  "start_sha": "eb16f47328c175ed407cc5dba2f8741a7ce3040e",
+  "implementation_sha": "3086153b50cd1dec3ed709666590659eb0fbb3ab",
+  "objective": "Admit the qualified minimum Hermes resident as a pure provider-neutral communications contract kernel.",
+  "house_admitted": true,
+  "resident": "hermes",
+  "native_kernel": "runtime/os/hermes.mjs",
+  "boundaries": {
+    "authority_granted": false,
+    "execution_started": false,
+    "live_channels_added": false,
+    "storage_backend_added": false,
+    "credential_resolution_added": false,
+    "mutation_engine_added": false,
+    "retry_worker_added": false
+  },
+  "legion_proof": {
+    "hermes_house_atlas_mnemosyne": "46/46 PASS",
+    "mycelium": "78/78 PASS",
+    "workers": "10/10 PASS",
+    "runtime_qa": "404/406; only the two pre-existing image-prep 0.1.0 digest failures"
+  },
+  "t590_proof": {
+    "exact_sha": "3086153b50cd1dec3ed709666590659eb0fbb3ab",
+    "hermes_house_atlas_mnemosyne": "46/46 PASS",
+    "mycelium": "78/78 PASS",
+    "workers": "10/10 PASS"
+  },
+  "next_legal_action": "Run Great Harvest preflight to rank the next missing integration/service resident; keep Visual Control gated and PandaOS experience-only."
+}
