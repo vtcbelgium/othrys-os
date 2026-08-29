@@ -2,7 +2,7 @@
 
 **Front-door plan.** Read after `BOOK_OF_GPT.md` and current `GPT_STATE.json`.
 
-## Current phase -- V2-010S RHIZOMORPH / EXPERIENCE / SPARSE RESILIENCE
+## Current phase -- V2-010U SWITCHYARD / FRUGAL HEART
 
 Milestone `M-OS-FOUNDATION-HARVEST-001` is achieved. V2-010Q proved native verified Artifact reuse and V2-010R formalized the VTC-proven Block extraction/extinction method. V2-010S now adapts the smallest safe 061D/061H Experience/Rhizomorph layer: immutable observations, holdouts, transparent Pareto preference, hysteresis/decay and sparse reinforcement among predeclared legal routes only. PandaOS remains a clarity/UX quarry, never routing or authority truth.
 
@@ -25,8 +25,8 @@ Before designing or inventing a capability, query `docs/GREAT_HARVEST.md`, `docs
 10. **[COMPLETE] V2-010Q Anastomosis Artifact / local action cache** -- add immutable verified Artifact identity, provenance/freshness/integrity + compatibility validation, durable refusal/invalidation identity and local deterministic reuse. Independent-verification Claims remain non-reusable; failed compatibility isolates only that fusion edge; no distributed CAS yet.
 11. **[COMPLETE] V2-010R Block Quarry / extraction / compounding** -- turn the VTC-proven HOST_CONFIG/BRIDGE/CALLER/DEBT/FALSE_POSITIVE method into a Hephaestus capability-extraction pipeline: prove duplicate algorithm extinction, preserve product glue, qualify canonical Blocks, and never harvest unrelated lookalikes.
 12. **[RUNNING] V2-010S Rhizomorph / Experience / sparse resilience** -- harvest 061D/061H plus biological network lessons: immutable flow observations, qualification, Pareto frontier, holdouts, hysteresis/decay, sparse cross-link budget and reinforced routes among predeclared legal variants only. Every reinforcement has a retraction law.
-13. **[RUNNING] V2-010T Sclerotium / clean-root recovery** -- current-House survival inventory, minimal trusted pack, secret exclusion, rebuild/reacquire/rebind classes, corrupt/wrong-body fail-closed and cross-node portability proof.
-14. **Switchyard / Frugal Heart** -- resume deferred capability/tier resolver only after metabolism/reuse/recovery are stable; model choice never binds authority; provider health, task-specific measured trust and VTC-style evidence ladders may exclude/reorder only inside legal tiers.
+13. **[COMPLETE] V2-010T Sclerotium / clean-root recovery** -- current-House survival inventory, minimal trusted pack, secret exclusion, rebuild/reacquire/rebind classes, corrupt/wrong-body fail-closed and cross-node portability proof.
+14. **[RUNNING] V2-010U Switchyard / Frugal Heart** -- resume deferred capability/tier resolver only after metabolism/reuse/recovery are stable; model choice never binds authority; provider health, task-specific measured trust and VTC-style evidence ladders may exclude/reorder only inside legal tiers.
 15. **Integrations and services** -- admit repo-proven residents through separate missions; manifest, Book, contract, Atlas and Mnemosyne move together.
 16. **Workstation polish** -- UI follows real OS objects and measured operating state; no decorative architecture.
 

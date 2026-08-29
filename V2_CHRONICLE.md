@@ -609,3 +609,5 @@ The next mission, V2-010R, does not invent a new Block system. Great Harvest cla
 V2-010S opens from the Great Harvest of 061D Rhizomorph and 061H Experience. The old code already proves the important laws: frequency alone cannot reinforce, legal route families are predeclared, observations are immutable, preference is derived/disposable, holdouts gate maturity, Pareto preference stays transparent, hysteresis suppresses flapping, and decay/degrade/retire provides retraction. Current V2 will re-admit a smaller layer over existing metabolism, WorkKey, Anastomosis and Artifact reuse rather than port the old 1k+ line subsystem wholesale.
 
 - 2026-08-29 — V2-010S COMPLETE/PASS at 6d347de: bounded Experience/Rhizomorph independently verified on T590; V2-010T Sclerotium opened harvest-first.
+
+- 2026-08-29 — V2-010T COMPLETE/PASS at fdf0aec: clean-root Sclerotium independently matched on Legion/T590 with manifest digest 20a321a0...; V2-010U Switchyard opened harvest-first.

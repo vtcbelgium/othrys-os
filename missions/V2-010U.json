@@ -1,0 +1,29 @@
+{
+  "mission_id": "V2-010U",
+  "title": "Switchyard / Frugal Heart",
+  "status": "RUNNING",
+  "owner": "GPT_CONTROL",
+  "start_sha": "fdf0aec259983b548934e48d9e0456295dca0a84",
+  "artifact_profile": "os-substrate",
+  "objective": "Resume Switchyard as a deterministic capability/tier resolver that chooses the cheapest currently qualified legal route without changing authority, legality or execution state.",
+  "great_harvest_preflight": {
+    "classification": "ADAPT",
+    "evidence": ["deferred V2-010F switchyard validator", "historic Mission 008a frugal builder tiers", "historic provider-health and builder-health evidence", "V2-007B local-first model selector", "V2-010M/S/Q current metabolism, experience and artifact reuse"],
+    "reason": "Current and harvested stock already define request constraints, local-first posture, provider health and certification separation; resume the smallest deterministic resolver rather than inventing a new router."
+  },
+  "pandaos_reconstruction": {
+    "policy": "SURFACE_ONLY",
+    "rule": "Panda-like model-choice clarity may explain selected/rejected routes; Panda does not own provider state, routing authority or execution."
+  },
+  "laws": [
+    "Switchyard filters only predeclared legal candidates and never invents capability or legality.",
+    "Provider healthy is not builder certified; engineering selection requires explicit task-capable certification.",
+    "UNTESTED, unavailable, privacy-incompatible or over-budget candidates cannot win by fallback guesswork.",
+    "Within the legal qualified set, choose the cheapest capable candidate; locality and measured task trust are deterministic tie-breakers only.",
+    "Remote escalation remains gated and cannot bypass LOCAL_ONLY or LOCAL_REQUIRED constraints.",
+    "Model/provider choice grants no execution, admission, approval or promotion authority."
+  ],
+  "out_of_scope": ["No AI router", "No learned legality", "No provider credential management", "No automatic paid escalation", "No execution launch", "No PandaOS backend"],
+  "authority_granted": false,
+  "execution_started": false
+}

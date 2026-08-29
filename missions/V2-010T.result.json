@@ -1,0 +1,20 @@
+{
+  "mission_id": "V2-010T",
+  "verdict": "PASS",
+  "start_sha": "6d347de6a7d935685061d276c8f97c76b3e61d07",
+  "implementation_sha": "fdf0aec259983b548934e48d9e0456295dca0a84",
+  "scope": "Deterministic clean-root Sclerotium manifest with portable evidence digests and REBUILD / REACQUIRE / REBIND / PRESERVE_EVIDENCE / EXCLUDE recovery classes",
+  "proof": {
+    "legion_node": "339/339 PASS",
+    "legion_python": "78/78 Mycelium + 10/10 workers PASS",
+    "t590_node": "339/339 PASS exact implementation commit",
+    "t590_python": "78/78 Mycelium + 10/10 workers PASS",
+    "cross_node_manifest_digest": "20a321a0d3aef1ffdba297faea59022046926d6cc59a0bef393519db16386d93",
+    "manifest_shape": "13 items: 6 PRESERVE_EVIDENCE, 1 REACQUIRE, 1 REBUILD, 3 REBIND, 2 EXCLUDE",
+    "negative": "wrong-body, corruption, manifest tamper, secret-shaped payload and missing current-House evidence fail closed"
+  },
+  "secrets_copied": false,
+  "automatic_restore": false,
+  "authority_granted": false,
+  "next_legal_action": "V2-010U Switchyard / Frugal Heart"
+}

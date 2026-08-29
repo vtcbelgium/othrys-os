@@ -1,14 +1,14 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 117,
+    "sequence": 118,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read": "6d347de6a7d935685061d276c8f97c76b3e61d07",
+    "remote_head_at_last_verified_read": "fdf0aec259983b548934e48d9e0456295dca0a84",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
-        "mission_id": "V2-010T",
+        "mission_id": "V2-010U",
         "status": "RUNNING",
-        "issued_label": "V2-010T - SCLEROTIUM / CLEAN-ROOT RECOVERY",
+        "issued_label": "V2-010U - SWITCHYARD / FRUGAL HEART",
         "source": "operator_current_conversation"
     },
     "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
         "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
     ],
     "last_control_decision": {
-        "mission_id": "V2-010T",
-        "decision": "RHIZOMORPH_EXPERIENCE_VERIFIED_SCLEROTIUM_OPEN",
-        "authority": "Recovery classification/evidence only; no restore execution, secret transport or authority. PandaOS remains surface reference only."
+        "mission_id": "V2-010U",
+        "decision": "SCLEROTIUM_VERIFIED_SWITCHYARD_OPEN",
+        "authority": "Selection only among predeclared legal qualified routes; no legality, execution, approval or paid escalation authority. PandaOS remains surface reference only."
     },
-    "next_legal_action": "Execute V2-010T harvest-first preflight: inventory minimal current-House survival identities and classify each as REBUILD/REACQUIRE/REBIND/PRESERVE_EVIDENCE/EXCLUDE; then implement smallest deterministic recovery manifest + hostile verification.",
+    "next_legal_action": "Execute V2-010U smallest deterministic resolver: strict request plus finite legal candidates; separate provider health from builder certification; filter capability/privacy/locality/cost/latency; cheapest qualified first with deterministic locality/task-trust tie-breakers; no execution.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",

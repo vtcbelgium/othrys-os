@@ -261,3 +261,6 @@
 
 93. **V2-010S Rhizomorph / Experience / Sparse Resilience — COMPLETE/PASS** — exact T590 proof.
 94. **V2-010T Sclerotium / Clean-Root Recovery — RUNNING** — minimal trusted survival pack; secret-free, portable and fail-closed.
+
+95. **V2-010T Sclerotium / Clean-Root Recovery — COMPLETE/PASS** — 339/339 Node + 78/78 Mycelium + 10/10 workers on Legion/T590; identical clean-root manifest digest.
+96. **V2-010U Switchyard / Frugal Heart — RUNNING** — strict capability/tier resolver over legal qualified candidates; cheapest capable first; no authority or paid auto-escalation.

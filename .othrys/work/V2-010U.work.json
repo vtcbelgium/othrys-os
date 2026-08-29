@@ -1,0 +1,24 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010U",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010U",
+  "title": "Switchyard / Frugal Heart",
+  "objective": "Resume Switchyard as a deterministic capability/tier resolver that chooses the cheapest currently qualified legal route without changing authority, legality or execution state.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Switchyard filters only predeclared legal candidates and never invents capability or legality.",
+    "Provider healthy is not builder certified; engineering selection requires explicit task-capable certification.",
+    "UNTESTED, unavailable, privacy-incompatible or over-budget candidates cannot win by fallback guesswork.",
+    "Within the legal qualified set, choose the cheapest capable candidate; locality and measured task trust are deterministic tie-breakers only.",
+    "Remote escalation remains gated and cannot bypass LOCAL_ONLY or LOCAL_REQUIRED constraints.",
+    "Model/provider choice grants no execution, admission, approval or promotion authority."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "4262b6b0ca0118fd4dc75b02f05761a99d6ff0c61e8201b331387bbe961340c2"
+}
