@@ -1,0 +1,25 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-011D",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-011D",
+  "title": "Keymaster Resident Qualification",
+  "objective": "Qualify the repo-proven Keymaster credential lifecycle/health/vault boundary against current V2 secret exclusion, Trust Canal, Switchyard, Rhea and Kronos contracts before any House admission or secret access.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Keymaster governs credential metadata and lifecycle semantics; secret values must never enter House knowledge, logs, UI, Atlas, Mnemosyne or ordinary artifacts.",
+    "Trust Canal remains authority for consequential credential actions; Keymaster cannot self-approve store/replace/revoke or deployment use.",
+    "Switchyard consumes sanitized provider/credential health facts but does not resolve credentials.",
+    "Rhea may consume sanitized Keymaster health; Rhea never reads secrets or rotates credentials.",
+    "Kronos may depend on credential readiness evidence but does not absorb Keymaster or key custody.",
+    "No provider network validation, secret resolution, rotation, account creation, billing activation or vault mutation in qualification.",
+    "Old Hub UI, scheduler, bell and orchestration are not transplanted."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "17bafde92bf28cd03dd6e5cb045e214aa984fb31b82ed17ee1560df0043a3662"
+}

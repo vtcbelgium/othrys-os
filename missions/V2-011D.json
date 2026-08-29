@@ -1,0 +1,32 @@
+{
+  "mission_id": "V2-011D",
+  "title": "Keymaster Resident Qualification",
+  "status": "COMPLETE",
+  "owner": "GPT_CONTROL",
+  "start_sha": "70dd2f1e8172450e365427a8d6188dbdf6f288b2",
+  "objective": "Qualify the repo-proven Keymaster credential lifecycle/health/vault boundary against current V2 secret exclusion, Trust Canal, Switchyard, Rhea and Kronos contracts before any House admission or secret access.",
+  "great_harvest_classification": "ADAPT",
+  "laws": [
+    "Keymaster governs credential metadata and lifecycle semantics; secret values must never enter House knowledge, logs, UI, Atlas, Mnemosyne or ordinary artifacts.",
+    "Trust Canal remains authority for consequential credential actions; Keymaster cannot self-approve store/replace/revoke or deployment use.",
+    "Switchyard consumes sanitized provider/credential health facts but does not resolve credentials.",
+    "Rhea may consume sanitized Keymaster health; Rhea never reads secrets or rotates credentials.",
+    "Kronos may depend on credential readiness evidence but does not absorb Keymaster or key custody.",
+    "No provider network validation, secret resolution, rotation, account creation, billing activation or vault mutation in qualification.",
+    "Old Hub UI, scheduler, bell and orchestration are not transplanted."
+  ],
+  "out_of_scope": [
+    "House admission",
+    "reading real secrets",
+    "network validation",
+    "store/replace/revoke",
+    "rotation",
+    "scheduler",
+    "UI",
+    "provider/account mutation"
+  ],
+  "authority_granted": false,
+  "execution_started": false,
+  "qualification_evidence": "docs/V2-011D/KEYMASTER_QUALIFICATION.md",
+  "next_slice": "KEYMASTER_METADATA_HEALTH_HOUSE_ADMISSION"
+}

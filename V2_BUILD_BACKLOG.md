@@ -296,3 +296,8 @@
 
 115. **V2-011C Kronos House Admission - COMPLETE/PASS** - pure lifecycle/heartbeat/supervision/cancellation resident + Book/contract/Atlas/Mnemosyne; exact T590 proof; no LIFE execution.
 116. **Next integration resident preflight - NEXT** - compare Great Harvest candidates before opening a mission; no Visual Control or LIFE assumption.
+
+117. **V2-011D Keymaster Resident Qualification - RUNNING** - sanitized inventory/health/policy/vault-boundary qualification only; no secret access, rotation or mutation.
+
+118. **V2-011D Keymaster Resident Qualification - COMPLETE/PASS** - 68/68 core + current health/remediation proof; metadata/health/policy qualified, secret resolution/mutation deferred.
+119. **Keymaster House Admission - NEXT** - pure sanitized metadata/health/policy kernel only; no secret access.

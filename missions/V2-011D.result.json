@@ -1,0 +1,38 @@
+{
+  "mission_id": "V2-011D",
+  "verdict": "PASS",
+  "start_sha": "70dd2f1e8172450e365427a8d6188dbdf6f288b2",
+  "great_harvest_classification": "ADAPT",
+  "evidence": "docs/V2-011D/KEYMASTER_QUALIFICATION.md",
+  "proof": {
+    "core_keymaster": "68/68 PASS",
+    "mission046_sanitized_health_current_subset": "8/8 PASS",
+    "mission051_current_remediation": "8/8 PASS",
+    "superseded_test": "Mission046 one-global-Bell assertion superseded by Mission051 per-credential alerts",
+    "old_runner_defect": "workspace runner blocked by pre-existing BOM/PostCSS discovery defect"
+  },
+  "qualified": [
+    "metadata-only credential inventory",
+    "closed credential health classification",
+    "sanitized rollup",
+    "inert risk/validation policy",
+    "non-executing remediation proposal",
+    "deny-by-default/no-raw-secret law"
+  ],
+  "deferred": [
+    "secret resolution",
+    "provider validation",
+    "rotation/store/replace/revoke",
+    "managed vault backend",
+    "account acquisition"
+  ],
+  "rejected": [
+    "Hub UI/Bell/scheduler/subprocess/state projection/event-fabric duplication",
+    "auto-rotation",
+    "raw provider bodies",
+    "secret-bearing House artifact"
+  ],
+  "authority_granted": false,
+  "execution_started": false,
+  "next_legal_action": "Separate House admission of pure metadata/health/policy Keymaster kernel; secret resolution remains out of scope."
+}

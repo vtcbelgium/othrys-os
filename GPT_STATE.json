@@ -1,14 +1,14 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 132,
+    "sequence": 134,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
-    "remote_head_at_last_verified_read": "88b7d60e9f3f91debdcd32c123d859123f115446",
+    "remote_head_at_last_verified_read": "70dd2f1e8172450e365427a8d6188dbdf6f288b2",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
-        "mission_id": "V2-011C",
+        "mission_id": "V2-011D",
         "status": "COMPLETE",
-        "issued_label": "V2-011C - KRONOS HOUSE ADMISSION",
+        "issued_label": "V2-011D - KEYMASTER RESIDENT QUALIFICATION",
         "source": "operator_current_conversation"
     },
     "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
         "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
     ],
     "last_control_decision": {
-        "mission_id": "V2-011C",
-        "decision": "KRONOS_HOUSE_ADMISSION_PASS",
-        "authority": "Pure LIFE contracts only; no boot/halt/safe-mode/composition-root execution authority."
+        "mission_id": "V2-011D",
+        "decision": "KEYMASTER_QUALIFIED_ADAPT_METADATA_ONLY",
+        "authority": "Qualification only; secret resolution and credential mutation remain deferred."
     },
-    "next_legal_action": "Great Harvest preflight for next integration/service resident; select from repo evidence, not memory.",
+    "next_legal_action": "Open Keymaster House admission for metadata/health/policy kernel only.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",
@@ -339,6 +339,16 @@
             "mission_id": "V2-011C",
             "status": "COMPLETE",
             "note": "Native Kronos contract resident admitted with lifecycle/heartbeat/supervision/cancellation law, Book/contract/Atlas/Mnemosyne and exact T590 proof; no actual LIFE execution."
+        },
+        {
+            "mission_id": "V2-011D",
+            "status": "RUNNING",
+            "note": "Keymaster qualification opened after candidate comparison; sanitized credential-domain evidence only, no secret access."
+        },
+        {
+            "mission_id": "V2-011D",
+            "status": "COMPLETE",
+            "note": "Keymaster ADAPT qualified: 68/68 core + current Hub health/remediation proof; metadata/health/policy first, all secret resolution/mutation deferred."
         }
     ],
     "git": {
