@@ -65,11 +65,14 @@ test('Hall of Echoes recognizes explicit historical paths and exposes classifica
 });
 
 test('zone-filtered projection filters after relevance search without rewriting rank semantics',()=>{
-  const general=projectKnowledgeZones(root,'Blueprint',{limit:10});
-  assert.ok(general.results.some(x=>x.zone.zone==='GREAT_LIBRARY'));
+  const general=projectKnowledgeZones(root,'Blueprint',{limit:50});
+  assert.ok(general.results.length>0);
   const filtered=projectKnowledgeZones(root,'Blueprint',{limit:10,zone:'BLUEPRINT_VAULT'});
   assert.equal(filtered.requestedZone,'BLUEPRINT_VAULT');
   assert.ok(filtered.results.length>0);
   assert.ok(filtered.results.every(x=>x.zone.zone==='BLUEPRINT_VAULT'));
+  const generalIds=general.results.map(x=>x.id);
+  assert.deepEqual(filtered.results.map(x=>x.id),general.results.filter(x=>x.zone.zone==='BLUEPRINT_VAULT').slice(0,10).map(x=>x.id));
+  assert.ok(filtered.results.every(x=>generalIds.includes(x.id)));
   assert.throws(()=>projectKnowledgeZones(root,'Blueprint',{zone:'IMAGINARY'}),/KNOWLEDGE_ZONE_INVALID/);
 });
