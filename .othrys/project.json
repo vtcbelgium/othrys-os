@@ -104,6 +104,12 @@
       "label": "Kronos",
       "role": "Lifecycle / heartbeat / supervision contracts",
       "statusEvidence": "V2-011B"
+    },
+    {
+      "id": "keymaster",
+      "label": "Keymaster",
+      "role": "Sanitized credential metadata / health / policy",
+      "statusEvidence": "V2-011D"
     }
   ],
   "capabilities": [

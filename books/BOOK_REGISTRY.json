@@ -292,6 +292,23 @@
       "boundary": "Kronos expresses LIFE state, heartbeat honesty, supervision and cancellation contracts; the resident does not boot, halt, recover, schedule, execute work, or grant lifecycle authority.",
       "path": "books/book-of-kronos/README.md",
       "status": "CURRENT_OS_EDITION"
+    },
+    {
+      "id": "keymaster",
+      "title": "The Book of Keymaster",
+      "role": "Sanitized credential metadata, health classification and inert lifecycle policy.",
+      "evidence": [
+        "V2-011D",
+        ".othrys/project.json#systems/keymaster",
+        "runtime/os/keymaster.mjs"
+      ],
+      "legacy": [
+        "othrys-core/titan/keymaster/**",
+        "othrys-hub Keymaster Missions 046/051 preserved by the Great Harvest"
+      ],
+      "boundary": "Keymaster classifies sanitized credential metadata and health; the resident carries no secret values or locators, resolves nothing, mutates nothing and cannot approve credential actions.",
+      "path": "books/book-of-keymaster/README.md",
+      "status": "CURRENT_OS_EDITION"
     }
   ],
   "authorityGranted": false,

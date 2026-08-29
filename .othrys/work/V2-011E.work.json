@@ -1,0 +1,25 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-011E",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-011E",
+  "title": "Keymaster House Admission",
+  "objective": "Adapt and admit the qualified minimum Keymaster resident as sanitized credential metadata/health/policy intelligence without secret locators, secret access, provider calls, rotation or credential mutation.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Resident Keymaster stores and returns no secret values and no secret locators.",
+    "Secret resolution, sealed use, provider validation, store, replace, revoke and rotation are out of scope.",
+    "Trust Canal remains approval authority for consequential credential actions.",
+    "Switchyard may consume sanitized health only and cannot resolve credentials.",
+    "Rhea may consume sanitized health only; no auto-rotation.",
+    "Kronos may read readiness evidence but owns no credential custody.",
+    "House admission requires manifest + Book + component contract + Atlas/Mnemosyne + exact T590 proof."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "20bfc4906ac13bbc4f0a82a7150e41b33264f6b50384e779d4bd9196ebb784a1"
+}

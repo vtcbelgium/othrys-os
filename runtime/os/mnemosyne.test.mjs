@@ -161,3 +161,11 @@ test('resident Kronos is current project truth and Atlas evidence without a seco
   assert.equal(c.authorityGranted,false);
   assert.equal(c.transportCapsule.authorityGranted,false);
 });
+
+test('resident Keymaster is current project truth and Atlas evidence without a second registry',()=>{
+  const c=assembleKnowledgeContext(root,manifest,'Keymaster',{limit:8});
+  assert.ok(c.projectTruth.some(x=>x.id==='book-keymaster'&&x.source?.kind==='HOUSE_BOOK'));
+  assert.ok(c.related.some(x=>x.id==='system:keymaster'&&x.exactMatch===true));
+  assert.equal(c.authorityGranted,false);
+  assert.equal(c.transportCapsule.authorityGranted,false);
+});
