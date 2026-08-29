@@ -1,0 +1,36 @@
+{
+  "mission_id": "V2-011A",
+  "title": "Rhea Care House Admission",
+  "status": "RUNNING",
+  "owner": "GPT_CONTROL",
+  "start_sha": "04fcb63321fae89b3d4520f1710e3b52b9d7605b",
+  "objective": "Adapt and admit the qualified minimum Rhea Care resident without introducing a duplicate store, orchestrator, scheduler, alert backend or repair authority.",
+  "qualification_source": "V2-010Z",
+  "great_harvest_classification": "ADAPT",
+  "minimum_resident_seam": [
+    "pure CareCase state machine",
+    "bounded anti-noise assessment over explicit timestamped observations",
+    "typed care-plan and repair-request envelopes",
+    "typed Kronos escalation envelope",
+    "vitality recovery/watch semantics distinct from Talos execution verification"
+  ],
+  "laws": [
+    "Rhea is Care, not Triad and not Kronos.",
+    "Rhea consumes current evidence; it does not own a sensor fabric.",
+    "Rhea never grants approval, starts execution, schedules work, builds, researches, admits memory, owns credentials or invokes LIFE actions.",
+    "Consequential repair requests stop at WAITING_FOR_AUTHORITY.",
+    "Talos remains execution-verification truth; Rhea verifies vitality only.",
+    "No private care store, scheduler, HubAlert backend, Genesis adapter or care workflow engine is introduced.",
+    "House admission requires manifest + Book + component contract + Atlas/Mnemosyne derived evidence + independent T590 proof."
+  ],
+  "out_of_scope": [
+    "autonomous repair/apply",
+    "durable care store",
+    "alert UI/backend",
+    "cadence/scheduling",
+    "Kronos LIFE runtime",
+    "visual redesign"
+  ],
+  "authority_granted": false,
+  "execution_started": false
+}

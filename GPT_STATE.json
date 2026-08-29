@@ -1,14 +1,14 @@
 {
     "schema": "othrys.v2.gpt-state.v1",
-    "sequence": 126,
+    "sequence": 127,
     "state_owner": "GPT_CONTROL",
     "remote_repo": "vtcbelgium/othrys-v2",
     "remote_head_at_last_verified_read": "db440bffd8895ec733fab506d9512f8b04948795",
     "control_gate": "CLEAN_SYNCED",
     "active_mission": {
-        "mission_id": "V2-010Z",
-        "status": "COMPLETE",
-        "issued_label": "V2-010Z - RHEA CARE RESIDENT QUALIFICATION",
+        "mission_id": "V2-011A",
+        "status": "RUNNING",
+        "issued_label": "V2-011A - RHEA CARE HOUSE ADMISSION",
         "source": "operator_current_conversation"
     },
     "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -63,11 +63,11 @@
         "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
     ],
     "last_control_decision": {
-        "mission_id": "V2-010Z",
-        "decision": "RHEA_QUALIFIED_ADAPT_MINIMUM",
-        "authority": "Qualification complete; no House admission or repair authority."
+        "mission_id": "V2-011A",
+        "decision": "ADAPT_MINIMUM_RHEA_FOR_HOUSE",
+        "authority": "Admission only; Care interpretation/request semantics, no repair or LIFE authority."
     },
-    "next_legal_action": "Open the next primary mission for Rhea House admission; adapt the qualified minimum pure Care seam only, then admit through manifest + Book + contract + Atlas/Mnemosyne with exact T590 proof.",
+    "next_legal_action": "Implement the qualified pure Rhea Care kernel, prove authority separation, then move manifest + Book + contract + Atlas/Mnemosyne together.",
     "mission_history": [
         {
             "mission_id": "V2-HUB-QUAL-001",
@@ -309,6 +309,11 @@
             "mission_id": "V2-010Z",
             "status": "COMPLETE",
             "note": "Rhea Care qualified: keep lifecycle/anti-noise/request semantics; reject duplicate store/orchestrator/source fabric; 13/13 old proof green."
+        },
+        {
+            "mission_id": "V2-011A",
+            "status": "RUNNING",
+            "note": "Rhea House admission opened after canonical allocator returned V2-011A."
         }
     ],
     "git": {

@@ -1,0 +1,25 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-011A",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-011A",
+  "title": "Rhea Care House Admission",
+  "objective": "Adapt and admit the qualified minimum Rhea Care resident without introducing a duplicate store, orchestrator, scheduler, alert backend or repair authority.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Rhea is Care, not Triad and not Kronos.",
+    "Rhea consumes current evidence; it does not own a sensor fabric.",
+    "Rhea never grants approval, starts execution, schedules work, builds, researches, admits memory, owns credentials or invokes LIFE actions.",
+    "Consequential repair requests stop at WAITING_FOR_AUTHORITY.",
+    "Talos remains execution-verification truth; Rhea verifies vitality only.",
+    "No private care store, scheduler, HubAlert backend, Genesis adapter or care workflow engine is introduced.",
+    "House admission requires manifest + Book + component contract + Atlas/Mnemosyne derived evidence + independent T590 proof."
+  ],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "7d543c8f701a087a7aa67d72ac9b8edbcac748286b79b1a7eb3a9fa651e43f5d"
+}

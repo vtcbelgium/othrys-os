@@ -281,3 +281,5 @@
 106. **V2-010Z Rhea Care Resident Qualification - RUNNING** - Great Harvest ADAPT pass over case lifecycle, anti-noise thresholds, evidence sources, repair-request boundary, Kronos separation and failure continuity.
 
 107. **V2-010Z Rhea Care Resident Qualification - COMPLETE/PASS** - 13/13 old proof green; pure lifecycle/anti-noise/request seam qualified; duplicate care store/orchestrator/source plumbing rejected.
+
+108. **V2-011A Rhea Care House Admission - RUNNING** - pure CareCase/anti-noise/request/escalation seam only; no duplicate store/orchestrator/repair authority.
