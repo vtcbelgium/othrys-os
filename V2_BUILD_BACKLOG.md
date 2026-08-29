@@ -252,3 +252,6 @@
 
 | 90 | M-OS-FOUNDATION-HARVEST-001 | Milestone: OTHRYS OS foundation consolidation + federated Great Harvest sealed; Panda reconstruction rule retained | ACHIEVED |
 | 91 | V2-010Q | Anastomosis Artifact / local action cache: immutable verified reuse + durable refusal/invalidation evidence; Panda-clear UX, native OTHRYS backend | RUNNING |
+
+| 92 | V2-010Q | Verified local Artifact reuse + Context Metabolism consumer; 4.27x measured warm reuse | COMPLETE |
+| 93 | V2-010R | Block Quarry / extraction / compounding: deterministic classification + host-glue preservation + extinction proof | RUNNING |

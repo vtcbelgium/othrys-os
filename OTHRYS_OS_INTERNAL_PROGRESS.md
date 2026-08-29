@@ -16,9 +16,9 @@
 | Mnemosyne | 84% | explicit memory, estate, provenance/currentness/zones, compact evidence transport, fast exact recall and permanent Great Harvest over recoverable code/commit lineage + live-only fingerprints | verified Artifact/reference lifecycle, refusal/invalidation memory, temporal truth and deeper Callimachus quality |
 | Atlas | 49% | typed derived graph, provenance, gravity/heat, Muses and visual room | execution/evidence topology, richer relationships/timeline/conflict lenses |
 | Missions + Work | 82% | durable mission/work hierarchy + evidence-bound transitions | WorkKey/Claim linkage without making Work a scheduler |
-| Blocks | 63% | two admitted reusable Blocks + exact composition law; VTC proves three safe product-to-Block extraction patterns in quarry | formal Quarry extraction classifier, duplicate-algorithm extinction proof and repeated product reuse |
-| Factory | 60% | real build/refine/verify/accept/release lineage | critical-path/action fingerprints and deterministic cacheable stages |
-| Mycelium | 84% | heterogeneous routing + measured-knee metabolism, seven operating modes, grow/hold/contract/quiesce planning, WorkKey, compatibility-gated planning Anastomosis and context metabolism | verified Artifact reuse now active, then Rhizomorph/experience qualification |
+| Blocks | 66% | two admitted reusable Blocks + exact composition law; VTC proves three safe product-to-Block extraction patterns in quarry | formal Quarry extraction classifier, duplicate-algorithm extinction proof and repeated product reuse |
+| Factory | 63% | real build/refine/verify/accept/release lineage; verified local Artifact reuse kernel now proven on Context Metabolism | critical-path/action fingerprints and deterministic cacheable stages |
+| Mycelium | 87% | heterogeneous routing + measured-knee metabolism, WorkKey, compatibility-gated Anastomosis, context metabolism and verified local Artifact reuse | Block extraction compounding, then Rhizomorph/experience qualification |
 | Command Deck | 52% | tablet-first workstation + real views + Atlas | expose real project phenotype/metabolic state after substrate stabilizes |
 | Oroi / Projects | 67% | declarative manifests/materializer + six portable bounded optimization phenotypes consumed by Mycelium metabolism | workload-class observations, real multi-project calibration and isolation proof |
 | Models / Labor | 40% | proven local/advisory labor routes + physical builder asymmetry measured | Switchyard after metabolism/reuse/recovery; qualify second engineering builder separately |

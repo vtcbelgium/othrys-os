@@ -1,0 +1,20 @@
+{
+  "mission_id": "V2-010Q",
+  "verdict": "PASS",
+  "start_sha": "9a6dcdca402a88ff4fdf7ad32d0a7b79d590171e",
+  "implementation_sha": "9aa1f6c35dee1bf2f14e29de8b460e46bdb45645",
+  "scope": "Immutable verified local Artifact reuse + durable refusal/invalidation evidence + first Context Metabolism consumer",
+  "proof": {
+    "legion_node": "324/324 PASS",
+    "legion_python": "66/66 Mycelium + 10/10 workers PASS",
+    "t590_node": "324/324 PASS exact implementation commit",
+    "t590_python": "66/66 Mycelium + 10/10 workers PASS",
+    "hostile_reuse": "changed WorkKey, compatibility, acceptance, provenance, freshness, payload integrity, record tamper, torn store/refusal ledger and independent execution all fail safe",
+    "real_consumer": "Context Metabolism first run stores verified Artifact; exact repeat HIT returns executed=false; stale freshness recomputes once and records refusal",
+    "benchmark": "2000-item Context Metabolism workload on Legion: direct median 7.0648 ms, verified HIT median 1.6560 ms, 4.27x warm speedup"
+  },
+  "authority_granted": false,
+  "automatic_promotion": false,
+  "pandaos_dependency": false,
+  "next_legal_action": "V2-010R Block Quarry / extraction / compounding using Great Harvest REUSE/ADAPT/REJECT preflight and VTC HOST_CONFIG/BRIDGE/CALLER/DEBT/FALSE_POSITIVE classification."
+}

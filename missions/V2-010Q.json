@@ -1,44 +1,60 @@
 {
-  "mission_id": "V2-010Q",
-  "title": "Anastomosis Artifact / Local Action Cache",
-  "status": "RUNNING",
-  "owner": "GPT_CONTROL",
-  "start_sha": "9a6dcdca402a88ff4fdf7ad32d0a7b79d590171e",
-  "artifact_profile": "os-substrate",
-  "objective": "Eliminate repeated deterministic work by reusing only immutable verified Artifacts when action/WorkKey identity, provenance, freshness, integrity and compatibility all still match.",
-  "great_harvest_preflight": {
-    "classification": "ADAPT",
-    "reason": "010N already harvested WorkKey/input-bound identity, refusal memory, unknown-is-not-fresh, crash-window honesty, stat/digest invalidation and action-cache principles. Reuse those laws rather than inventing a second cache architecture."
-  },
-  "pandaos_reconstruction": {
-    "policy": "KEEP_IN_MIND / NO_BACKEND_DUPLICATION",
-    "rule": "Preserve Panda-like persistent Work/progress/operator clarity at the OS surface, but expose this as native OTHRYS Artifact evidence. Do not create a Panda cache, Panda authority path or parallel Work engine.",
-    "future_surface": "A cache hit/refusal/invalidation must be explainable in Work/Progress as evidence, not hidden optimization magic."
-  },
-  "laws": [
-    "Cache state is derived/disposable; canonical source/evidence remains authoritative.",
-    "A reusable Artifact is immutable and content-digest bound.",
-    "Reuse requires exact legal identity plus provenance, freshness, integrity and compatibility validation.",
-    "Changed input/environment/acceptance identity is a miss, never a guessed hit.",
-    "Refusal and invalidation receive durable evidence identity so the same unsafe reuse is not rediscovered.",
-    "Unknown/corrupt/torn reuse evidence is not fresh and fails closed to recomputation.",
-    "Independent-verification Claims never reuse the execution/result they are meant to independently verify.",
-    "Reuse grants no new execution, approval, admission or promotion authority."
-  ],
-  "out_of_scope": [
-    "No distributed CAS or remote artifact server",
-    "No learned/AI cache policy",
-    "No automatic authority or acceptance from a cache hit",
-    "No reuse of independent verification",
-    "No PandaOS dependency or duplicate Panda backend",
-    "No mutation of harvested legacy/VTC/Hub repositories"
-  ],
-  "slices": [
-    {"id":"preflight","owner":"gpt-control","goal":"Map current WorkKey/Claim/Artifact and harvested cache/refusal stock; freeze exact identity and invalidation contract."},
-    {"id":"artifact","owner":"hephaestus","goal":"Implement smallest local immutable Artifact record/store and deterministic reuse decision."},
-    {"id":"refusal","owner":"mnemosyne","goal":"Persist bounded refusal/invalidation evidence outside reusable derived state."},
-    {"id":"proof","owner":"talos","goal":"Hostile tests for changed input, stale provenance, digest corruption, compatibility mismatch, torn evidence and independent-verifier non-reuse; then independent T590 proof."}
-  ],
-  "authority_granted": false,
-  "execution_started": false
+    "mission_id":  "V2-010Q",
+    "title":  "Anastomosis Artifact / Local Action Cache",
+    "status":  "COMPLETE",
+    "owner":  "GPT_CONTROL",
+    "start_sha":  "9a6dcdca402a88ff4fdf7ad32d0a7b79d590171e",
+    "artifact_profile":  "os-substrate",
+    "objective":  "Eliminate repeated deterministic work by reusing only immutable verified Artifacts when action/WorkKey identity, provenance, freshness, integrity and compatibility all still match.",
+    "great_harvest_preflight":  {
+                                    "classification":  "ADAPT",
+                                    "reason":  "010N already harvested WorkKey/input-bound identity, refusal memory, unknown-is-not-fresh, crash-window honesty, stat/digest invalidation and action-cache principles. Reuse those laws rather than inventing a second cache architecture."
+                                },
+    "pandaos_reconstruction":  {
+                                   "policy":  "KEEP_IN_MIND / NO_BACKEND_DUPLICATION",
+                                   "rule":  "Preserve Panda-like persistent Work/progress/operator clarity at the OS surface, but expose this as native OTHRYS Artifact evidence. Do not create a Panda cache, Panda authority path or parallel Work engine.",
+                                   "future_surface":  "A cache hit/refusal/invalidation must be explainable in Work/Progress as evidence, not hidden optimization magic."
+                               },
+    "laws":  [
+                 "Cache state is derived/disposable; canonical source/evidence remains authoritative.",
+                 "A reusable Artifact is immutable and content-digest bound.",
+                 "Reuse requires exact legal identity plus provenance, freshness, integrity and compatibility validation.",
+                 "Changed input/environment/acceptance identity is a miss, never a guessed hit.",
+                 "Refusal and invalidation receive durable evidence identity so the same unsafe reuse is not rediscovered.",
+                 "Unknown/corrupt/torn reuse evidence is not fresh and fails closed to recomputation.",
+                 "Independent-verification Claims never reuse the execution/result they are meant to independently verify.",
+                 "Reuse grants no new execution, approval, admission or promotion authority."
+             ],
+    "out_of_scope":  [
+                         "No distributed CAS or remote artifact server",
+                         "No learned/AI cache policy",
+                         "No automatic authority or acceptance from a cache hit",
+                         "No reuse of independent verification",
+                         "No PandaOS dependency or duplicate Panda backend",
+                         "No mutation of harvested legacy/VTC/Hub repositories"
+                     ],
+    "slices":  [
+                   {
+                       "id":  "preflight",
+                       "owner":  "gpt-control",
+                       "goal":  "Map current WorkKey/Claim/Artifact and harvested cache/refusal stock; freeze exact identity and invalidation contract."
+                   },
+                   {
+                       "id":  "artifact",
+                       "owner":  "hephaestus",
+                       "goal":  "Implement smallest local immutable Artifact record/store and deterministic reuse decision."
+                   },
+                   {
+                       "id":  "refusal",
+                       "owner":  "mnemosyne",
+                       "goal":  "Persist bounded refusal/invalidation evidence outside reusable derived state."
+                   },
+                   {
+                       "id":  "proof",
+                       "owner":  "talos",
+                       "goal":  "Hostile tests for changed input, stale provenance, digest corruption, compatibility mismatch, torn evidence and independent-verifier non-reuse; then independent T590 proof."
+                   }
+               ],
+    "authority_granted":  false,
+    "execution_started":  false
 }

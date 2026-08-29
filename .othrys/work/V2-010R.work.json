@@ -1,0 +1,57 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-010R",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-010R",
+  "title": "Block Quarry / Extraction / Compounding",
+  "objective": "Turn the already-proven VTC product-to-Block extraction method into a deterministic Hephaestus quarry classifier and extinction-proof pipeline so reusable capability code can compound without deleting host glue or harvesting lookalikes.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [
+    "Every matching origin region is exactly one of CAPABILITY, HOST_CONFIG, BRIDGE, CALLER, DEBT or FALSE_POSITIVE.",
+    "Only independently reusable CAPABILITY algorithm code is extraction target; host glue survives.",
+    "Duplicate-algorithm extinction must be proven before origin duplicate deletion is proposed.",
+    "Existing admitted Block source is never silently forked into a second canonical implementation.",
+    "Quarry classification grants no Block admission, deletion, mutation or execution authority.",
+    "Great Harvest evidence is consulted before every extraction candidate is created."
+  ],
+  "slices": [
+    {
+      "id": "classifier",
+      "title": "classifier",
+      "owner": "hephaestus",
+      "acceptance": "",
+      "stages": [],
+      "artifacts": []
+    },
+    {
+      "id": "fixtures",
+      "title": "fixtures",
+      "owner": "hephaestus",
+      "acceptance": "",
+      "stages": [],
+      "artifacts": []
+    },
+    {
+      "id": "extinction",
+      "title": "extinction",
+      "owner": "talos",
+      "acceptance": "",
+      "stages": [],
+      "artifacts": []
+    },
+    {
+      "id": "proof",
+      "title": "proof",
+      "owner": "talos",
+      "acceptance": "",
+      "stages": [],
+      "artifacts": []
+    }
+  ],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "41efc2d8cc0707bd37c9ba9af3aa998c0904548b75053d10f50a827d17917dba"
+}
