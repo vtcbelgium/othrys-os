@@ -7,7 +7,7 @@
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-011J",
-    "status": "RUNNING",
+    "status": "COMPLETE",
     "issued_label": "V2-011J - PENTARCHY + HOMEOSTASIS BLOOD LOOP"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
@@ -62,11 +62,11 @@
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
-    "mission_id": "V2-011G",
-    "decision": "HOUSE_ADMITTED",
-    "authority": "Hermes is resident as pure provider-neutral communication contracts only; no live channel/storage/mutation authority."
+    "mission_id": "V2-011J",
+    "decision": "PASS_WITH_T590_WHOLE_BODY_ENV_LIMITATION",
+    "authority": "Great Quarry closed; governed front door proven; chat never grants execution."
   },
-  "next_legal_action": "Continue V2-011J self-honing: use canonical self-hone/diagnostic loops, let Mnemosyne retain operational lessons, repair only reproduced defects, and keep UI paused.",
+  "next_legal_action": "Front door is ready for operator dogfood and UI/othrys-web design. Supervised Visual Control remains a separate qualification mission.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

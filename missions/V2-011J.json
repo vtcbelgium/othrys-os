@@ -1,8 +1,8 @@
 {
   "mission_id": "V2-011J",
   "title": "Pentarchy and OTHRYS OS Reinforcement",
-  "status": "RUNNING",
-  "phase": "BUILD",
+  "status": "COMPLETE",
+  "phase": "SHIP",
   "start_sha": "20bd2e0f1c07e49b82bbfda213d91c9766ddf6f0",
   "objective": "Reinforce the Pentarchy and OTHRYS OS, establish the Prometheus/Keymaster homeostasis blood loop, close the Great Quarry with every recovered candidate accounted for, and reconcile the closed catalogue against PandaOS before UI work.",
   "laws": [

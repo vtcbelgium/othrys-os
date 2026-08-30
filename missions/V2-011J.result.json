@@ -1,0 +1,38 @@
+{
+  "mission_id": "V2-011J",
+  "verdict": "PASS_WITH_T590_WHOLE_BODY_ENV_LIMITATION",
+  "start_sha": "20bd2e0f1c07e49b82bbfda213d91c9766ddf6f0",
+  "implementation_sha": "5efce26f18e43213ff22e908ea1b38f789ced7cb",
+  "objective": "Reinforce the Pentarchy and OTHRYS OS, establish the Prometheus/Keymaster homeostasis blood loop, close the Great Quarry with every recovered candidate accounted for, and reconcile the closed catalogue against PandaOS before UI work.",
+  "great_quarry": "CLOSED_43_OF_43_ZERO_UNREVIEWED",
+  "panda_backend": "15_OF_16_ACCOUNTED_H16_VISUAL_SUPERVISED_GATED",
+  "front_door": {
+    "chat_http": "PASS",
+    "smoke": "7/7 PASS",
+    "question_owner": "MNEMOSYNE",
+    "research_owner": "PROMETHEUS+MNEMOSYNE",
+    "plan_owner": "HEPHAESTUS_AFTER_PROMETHEUS_MNEMOSYNE",
+    "build_owner": "HEPHAESTUS",
+    "verifier": "TALOS",
+    "research_route": "llama3.2-advisory",
+    "build_route": "qwen3-builder",
+    "execution_from_chat": false
+  },
+  "legion_proof": {
+    "front_door_deck": "19/19 PASS",
+    "deep": "314/314 PASS",
+    "whole_body": "454/454 PASS",
+    "self_hone": "PASS_ZERO_FAILED_ZERO_DEGRADED",
+    "secret_scan": "23 values / 0 leaks"
+  },
+  "t590_proof": {
+    "exact_sha": "5efce26f18e43213ff22e908ea1b38f789ced7cb",
+    "front_door_deck": "19/19 PASS",
+    "deep": "314/314 PASS",
+    "whole_body": "366 Node tests PASS; Mycelium/workers launched 0 tests on verifier environment"
+  },
+  "work_projection_repaired": true,
+  "authorityGranted": false,
+  "executionStarted": false,
+  "next_legal_action": "Front door is ready for operator dogfood and UI/othrys-web design. Supervised Visual Control remains a separate qualification mission."
+}
