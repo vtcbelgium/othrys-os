@@ -97,3 +97,12 @@ class ToolPathRepairTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def test_malformed_single_path_write_recovery_discards_stray_json_tail():
+    import importlib.util
+    mod_path=Path(__file__).with_name("legion_qwen_worker_v01.py")
+    spec=importlib.util.spec_from_file_location("worker_mod_tail",mod_path);mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+    raw='{"path":"x.mjs","content":"export const x = 1;\n"}]}]}\n\ No newline at end of file'
+    got=mod._recover_malformed_write_args(raw,"content")
+    assert got=={"path":"x.mjs","content":"export const x = 1;\n"}

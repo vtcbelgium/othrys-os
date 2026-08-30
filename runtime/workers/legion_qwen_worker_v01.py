@@ -85,8 +85,11 @@ def _recover_malformed_write_args(raw: Any, field: str) -> dict[str, str]:
     except Exception:
         return {}
     body = raw[match.end():]
-    if body.endswith('"}'):
-        body = body[:-2]
+    # Prefer the final object-closing quote. This preserves unescaped quotes that
+    # some local models emit inside code while discarding any tail after the tool JSON.
+    end_match = re.search(r'"\s*\}', body)
+    if end_match:
+        body = body[:end_match.start()]
     body = body.replace('\\r\\n', '\n').replace('\\n', '\n').replace('\\r', '\n').replace('\\t', '\t')
     body = body.replace('\\"', '"').replace('\\\\', '\\')
     return {"path": path, field: body}

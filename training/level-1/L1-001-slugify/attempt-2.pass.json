@@ -1,0 +1,15 @@
+{
+  "schema": "othrys.os.training-cycle-evidence.v1",
+  "jobId": "L1-001",
+  "attempt": 2,
+  "stage": "VERIFY",
+  "status": "PASS",
+  "builder": "qwen3-builder",
+  "builderDurationSec": 19.03178858757019,
+  "talosCases": 7,
+  "outOfScopeChanges": [],
+  "disposition": "BLOCK_CANDIDATE",
+  "blockId": "block.text.slugify",
+  "lesson": "First training job exposed and repaired two infrastructure defects before passing: missing worker watchdog and malformed single-path write tail recovery.",
+  "authorityGranted": false
+}

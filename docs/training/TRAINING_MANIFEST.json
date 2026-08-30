@@ -100,7 +100,7 @@
         "title": "Text slugifier",
         "contract": "string -> lowercase URL-safe slug",
         "sequence": 1,
-        "status": "QUEUED",
+        "status": "COMPLETE",
         "targetDisposition": "BLOCK_OR_MERGE",
         "quality": [
           "deterministic",
@@ -110,7 +110,16 @@
           "no secrets",
           "authority-free"
         ],
-        "authorityGranted": false
+        "authorityGranted": false,
+        "attempts": 4,
+        "blockDisposition": "TRAINING_CANDIDATE",
+        "blockId": "block.text.slugify",
+        "proof": "blocks/text/slugify/tests/contract.test.mjs",
+        "lessons": [
+          "worker watchdog required",
+          "malformed single-path tool writes require bounded recovery",
+          "test fixtures must be encoding-stable"
+        ]
       },
       {
         "id": "L1-002",
@@ -853,7 +862,8 @@
         ],
         "authorityGranted": false
       }
-    ]
+    ],
+    "completedJobs": 1
   },
   "inspirationSources": [
     "Great Library 387-potential catalogue",

@@ -1566,6 +1566,16 @@
       "implementationTarget": "Great Library block quarry",
       "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
       "reviewed": true
+    },
+    {
+      "id": "block.text.slugify",
+      "name": "Text Slugifier",
+      "domain": "text",
+      "status": "TRAINING_CANDIDATE",
+      "source": "V2-011K L1-001",
+      "evidence": "blocks/text/slugify",
+      "admitted": false,
+      "authorityGranted": false
     }
   ],
   "blueprints": [
@@ -2317,10 +2327,11 @@
     "patterns": 9,
     "antiPatterns": 14,
     "playbooks": 4,
-    "blocks": 96,
+    "blocks": 97,
     "provenStockUnadmitted": 7,
     "harvestCandidates": 16,
-    "finalQuarryCandidates": 43
+    "finalQuarryCandidates": 43,
+    "trainingCandidates": 1
   },
   "authorityGranted": false,
   "automaticAdmission": false,

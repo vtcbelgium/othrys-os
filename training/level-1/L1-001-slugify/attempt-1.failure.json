@@ -1,0 +1,12 @@
+﻿{
+    "schema":  "othrys.os.training-cycle-evidence.v1",
+    "jobId":  "L1-001",
+    "attempt":  1,
+    "stage":  "BUILD",
+    "status":  "FAIL",
+    "reason":  "WORKER_HUNG_BEYOND_REQUEST_TIMEOUT",
+    "observed":  "Detached qwen3-builder worker remained alive beyond the 180s request timeout and emitted no result/log.",
+    "lesson":  "Worker request timeout is not currently enforced around the Hub engineering loop. Training mode requires a watchdog before pounding Level 1.",
+    "mutationObserved":  false,
+    "authorityGranted":  false
+}

@@ -8,7 +8,7 @@
     "C:/Users/othry/Projects/othrys-blocks/blocks/"
   ],
   "summary": {
-    "trackedStock": 96,
+    "trackedStock": 97,
     "admittedBlocks": 3,
     "localBlockPackages": 3,
     "externalProvenPackages": 10,
@@ -32,7 +32,8 @@
     "BLOCK_LIBRARY": 20,
     "REFERENCE_ONLY_LICENSE_BOUND": 4,
     "REFERENCE_LIBRARY": 2,
-    "BLUEPRINT_LIBRARY": 5
+    "BLUEPRINT_LIBRARY": 5,
+    "TRAINING_CANDIDATE": 1
   },
   "domains": [
     {
@@ -419,7 +420,8 @@
     "v2": [
       "blocks/analytics/visit-tracking",
       "blocks/media/image-prep",
-      "blocks/monetization/affiliate-offer"
+      "blocks/monetization/affiliate-offer",
+      "blocks/text/slugify"
     ],
     "othrysBlocks": [
       "C:/Users/othry/Projects/othrys-blocks/blocks/ai/provider-router",
@@ -447,5 +449,13 @@
     "Search/navigation may rank but never grant authority.",
     "Training output must merge with existing owners before new Block creation."
   ],
-  "authorityGranted": false
+  "authorityGranted": false,
+  "trainingCandidates": [
+    {
+      "id": "block.text.slugify",
+      "name": "Text Slugifier",
+      "domain": "text",
+      "evidence": "blocks/text/slugify"
+    }
+  ]
 }

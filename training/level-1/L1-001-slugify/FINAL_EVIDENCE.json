@@ -1,0 +1,23 @@
+{
+  "schema": "othrys.os.training-cycle-evidence.v1",
+  "jobId": "L1-001",
+  "status": "PASS_AFTER_REPAIR",
+  "attempts": 4,
+  "finalBuilder": "qwen3-builder",
+  "finalTest": "7/7 PASS",
+  "blockId": "block.text.slugify",
+  "blockStatus": "TRAINING_CANDIDATE",
+  "failures": [
+    "attempt 1 worker hung beyond request timeout",
+    "attempt 2 malformed tool-call tail produced invalid JavaScript",
+    "attempt 3 repair truncated closing brace",
+    "test fixture encoding initially replaced accented characters"
+  ],
+  "repairs": [
+    "bounded worker --wait watchdog",
+    "malformed single-path write tail recovery + regression test",
+    "short deterministic repair prompt",
+    "Unicode-escape fixture"
+  ],
+  "authorityGranted": false
+}
