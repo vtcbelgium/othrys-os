@@ -1,0 +1,58 @@
+{
+  "schema": "othrys.hephaestus.remote-spark.v1",
+  "rows": [
+    {
+      "model": "moonshotai/kimi-k3",
+      "ok": true,
+      "latencyMs": 5689,
+      "chars": 36,
+      "hasFunction": true,
+      "preview": "export function add(a,b){return a+b}"
+    },
+    {
+      "model": "deepseek-ai/deepseek-v4-pro-0813",
+      "ok": false,
+      "latencyMs": 35116,
+      "error": "TimeoutError:The read operation timed out"
+    },
+    {
+      "model": "deepseek-ai/deepseek-v4-flash-0731",
+      "ok": true,
+      "latencyMs": 9071,
+      "chars": 36,
+      "hasFunction": true,
+      "preview": "export function add(a,b){return a+b}"
+    },
+    {
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "ok": true,
+      "latencyMs": 13390,
+      "chars": 411,
+      "hasFunction": true,
+      "preview": "Here's a thinking process:  1.  **Analyze User Input:**    - User says: \"Return ONLY valid JavaScrip"
+    },
+    {
+      "model": "poolside/laguna-xs-2.1",
+      "ok": true,
+      "latencyMs": 19725,
+      "chars": 36,
+      "hasFunction": true,
+      "preview": "export function add(a,b){return a+b}"
+    },
+    {
+      "model": "minimaxai/minimax-m3",
+      "ok": true,
+      "latencyMs": 4101,
+      "chars": 36,
+      "hasFunction": true,
+      "preview": "export function add(a,b){return a+b}"
+    },
+    {
+      "model": "moonshotai/kimi-k2.6",
+      "ok": false,
+      "latencyMs": 296,
+      "error": "HTTPError:HTTP Error 404: Not Found"
+    }
+  ],
+  "authorityGranted": false
+}

@@ -1,0 +1,310 @@
+{
+  "schema": "othrys.hephaestus.forge-roster.v1",
+  "generatedAt": "2026-08-30",
+  "laws": [
+    "rank is advisory; qualification gates execution",
+    "Talos owns independent correctness evidence",
+    "Mycelium owns resource/metabolic placement signals, never builder authority",
+    "Switchyard owns legal/cost/privacy resolution",
+    "Mnemosyne retains task-fitness evidence",
+    "reuse proven stock before generation"
+  ],
+  "forges": [
+    {
+      "id": "forge.fast.local",
+      "label": "Fast Local Smith",
+      "workload": [
+        "atomic",
+        "small-patch",
+        "repair"
+      ],
+      "candidates": [
+        "local.qwen3.5-9b",
+        "local.qwen2.5-coder-7b",
+        "local.qwen3-8b",
+        "local.qwen3-4b"
+      ]
+    },
+    {
+      "id": "forge.code.local",
+      "label": "Heavy Local Code Smith",
+      "workload": [
+        "repo-patch",
+        "multi-file",
+        "hard-repair"
+      ],
+      "candidates": [
+        "local.qwen3-coder-30b",
+        "local.gpt-oss-20b"
+      ]
+    },
+    {
+      "id": "forge.remote.free",
+      "label": "Free Frontier Smith",
+      "workload": [
+        "hard-repair",
+        "agentic-coding",
+        "long-context"
+      ],
+      "candidates": [
+        "nvidia.kimi-k3",
+        "nvidia.deepseek-v4-pro",
+        "nvidia.deepseek-v4-flash",
+        "nvidia.nemotron-3.5-lightning",
+        "nvidia.laguna-xs-2.1",
+        "nvidia.minimax-m3",
+        "nvidia.kimi-k2.6"
+      ]
+    },
+    {
+      "id": "forge.escalation.paid",
+      "label": "Paid Escalation Smith",
+      "workload": [
+        "operator-approved-escalation"
+      ],
+      "candidates": [
+        "paid.claude-builder"
+      ]
+    }
+  ],
+  "builders": [
+    {
+      "id": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "general-code",
+        "reasoning",
+        "small-patch"
+      ],
+      "readiness": "LOADED_UNQUALIFIED",
+      "qualificationPriority": 1,
+      "executionAllowed": false
+    },
+    {
+      "id": "local.qwen2.5-coder-7b",
+      "model": "qwen2.5-coder:7b",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "code",
+        "small-patch"
+      ],
+      "readiness": "LOADED_UNQUALIFIED",
+      "qualificationPriority": 2,
+      "executionAllowed": false
+    },
+    {
+      "id": "local.qwen3-8b",
+      "model": "qwen3:8b",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "general",
+        "code"
+      ],
+      "readiness": "CERTIFIED_LEGACY_SCAFFOLD",
+      "qualificationPriority": 3,
+      "executionAllowed": true,
+      "knownLimitations": [
+        "Level-1 training exposed repeated logic and JSON-write failures under legacy scaffold"
+      ]
+    },
+    {
+      "id": "local.qwen3-4b",
+      "model": "qwen3:4b",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "tiny-fast"
+      ],
+      "readiness": "LOADED_UNQUALIFIED",
+      "qualificationPriority": 7,
+      "executionAllowed": false
+    },
+    {
+      "id": "local.qwen3-coder-30b",
+      "model": "qwen3-coder:30b",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "agentic-code",
+        "repo-scale",
+        "tool-use"
+      ],
+      "readiness": "LOADED_UNQUALIFIED_HEAVY",
+      "qualificationPriority": 1,
+      "executionAllowed": false,
+      "hardwareNote": "18GB quant exceeds 8GB VRAM; expect CPU/RAM offload"
+    },
+    {
+      "id": "local.gpt-oss-20b",
+      "model": "gpt-oss:20b",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "reasoning",
+        "code"
+      ],
+      "readiness": "LOADED_UNQUALIFIED_HEAVY",
+      "qualificationPriority": 4,
+      "executionAllowed": false
+    },
+    {
+      "id": "nvidia.kimi-k3",
+      "model": "moonshotai/kimi-k3",
+      "provider": "nvidia-nim",
+      "locality": "REMOTE",
+      "installed": false,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "long-horizon-code",
+        "agentic-tool-use",
+        "multimodal"
+      ],
+      "readiness": "REMOTE_LIVE_UNQUALIFIED",
+      "qualificationPriority": 1,
+      "executionAllowed": false
+    },
+    {
+      "id": "nvidia.deepseek-v4-pro",
+      "model": "deepseek-ai/deepseek-v4-pro-0813",
+      "provider": "nvidia-nim",
+      "locality": "REMOTE",
+      "installed": false,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "coding",
+        "reasoning",
+        "agentic",
+        "long-context"
+      ],
+      "readiness": "REMOTE_LIVE_UNQUALIFIED",
+      "qualificationPriority": 1,
+      "executionAllowed": false
+    },
+    {
+      "id": "nvidia.deepseek-v4-flash",
+      "model": "deepseek-ai/deepseek-v4-flash-0731",
+      "provider": "nvidia-nim",
+      "locality": "REMOTE",
+      "installed": false,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "fast-coding",
+        "agentic",
+        "long-context"
+      ],
+      "readiness": "REMOTE_LIVE_UNQUALIFIED",
+      "qualificationPriority": 2,
+      "executionAllowed": false
+    },
+    {
+      "id": "nvidia.nemotron-3.5-lightning",
+      "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+      "provider": "nvidia-nim",
+      "locality": "REMOTE",
+      "installed": false,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "fast-agentic",
+        "specialized-agents"
+      ],
+      "readiness": "REMOTE_LIVE_UNQUALIFIED",
+      "qualificationPriority": 2,
+      "executionAllowed": false
+    },
+    {
+      "id": "nvidia.laguna-xs-2.1",
+      "model": "poolside/laguna-xs-2.1",
+      "provider": "nvidia-nim",
+      "locality": "REMOTE",
+      "installed": false,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "agentic-code",
+        "terminal",
+        "long-horizon"
+      ],
+      "readiness": "REMOTE_LIVE_UNQUALIFIED",
+      "qualificationPriority": 2,
+      "executionAllowed": false
+    },
+    {
+      "id": "nvidia.minimax-m3",
+      "model": "minimaxai/minimax-m3",
+      "provider": "nvidia-nim",
+      "locality": "REMOTE",
+      "installed": false,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "coding",
+        "reasoning",
+        "tool-calling"
+      ],
+      "readiness": "REMOTE_LIVE_UNQUALIFIED",
+      "qualificationPriority": 3,
+      "executionAllowed": false
+    },
+    {
+      "id": "nvidia.kimi-k2.6",
+      "model": "moonshotai/kimi-k2.6",
+      "provider": "nvidia-nim",
+      "locality": "REMOTE",
+      "installed": false,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "coding",
+        "agentic"
+      ],
+      "readiness": "REMOTE_LIVE_UNQUALIFIED",
+      "qualificationPriority": 4,
+      "executionAllowed": false
+    },
+    {
+      "id": "paid.claude-builder",
+      "model": "claude-builder",
+      "provider": "anthropic",
+      "locality": "REMOTE",
+      "installed": false,
+      "endpointAvailable": true,
+      "costClass": "PAID",
+      "specialties": [
+        "engineering",
+        "hard-repair"
+      ],
+      "readiness": "CERTIFIED_PAID_OPERATOR_GATE",
+      "qualificationPriority": 99,
+      "executionAllowed": false,
+      "operatorApprovalRequired": true
+    }
+  ],
+  "authorityGranted": false,
+  "automaticPromotion": false
+}

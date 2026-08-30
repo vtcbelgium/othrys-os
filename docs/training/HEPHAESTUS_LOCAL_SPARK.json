@@ -1,0 +1,38 @@
+{
+  "schema": "othrys.hephaestus.local-spark.v1",
+  "rows": [
+    {
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "latencyMs": 7332,
+      "chars": 0,
+      "hasFunction": false,
+      "preview": ""
+    },
+    {
+      "model": "qwen2.5-coder:7b",
+      "ok": true,
+      "latencyMs": 3869,
+      "chars": 63,
+      "hasFunction": true,
+      "preview": "```javascript export function add(a, b) {   return a + b; } ```"
+    },
+    {
+      "model": "qwen3:8b",
+      "ok": true,
+      "latencyMs": 5516,
+      "chars": 0,
+      "hasFunction": false,
+      "preview": ""
+    },
+    {
+      "model": "qwen3:4b",
+      "ok": true,
+      "latencyMs": 4161,
+      "chars": 0,
+      "hasFunction": false,
+      "preview": ""
+    }
+  ],
+  "authorityGranted": false
+}
