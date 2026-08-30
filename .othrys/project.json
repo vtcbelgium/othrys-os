@@ -140,6 +140,11 @@
     {
       "id": "monetization.affiliate-offer",
       "status": "STOCK"
+    },
+    {
+      "id": "knowledge.local-semantic-search",
+      "status": "QUALIFIED_LOCAL",
+      "evidence": "docs/V2-011J/LOCAL_SEARCH_BENCHMARK_WARM.json"
     }
   ],
   "modelPolicy": {
@@ -212,25 +217,29 @@
       "id": "ollama-legion",
       "label": "Ollama Â· Legion",
       "class": "LOCAL MODEL RUNTIME",
-      "evidence": "V2-002C"
+      "evidence": "V2-002C",
+      "canonicalClass": "ENGINE"
     },
     {
       "id": "ollama-t590",
       "label": "Ollama Â· T590",
       "class": "LOCAL ADVISORY RUNTIME",
-      "evidence": "V2-004D"
+      "evidence": "V2-004D",
+      "canonicalClass": "ENGINE"
     },
     {
       "id": "github-relay",
       "label": "GitHub relay",
       "class": "REMOTE FALLBACK TRANSPORT",
-      "evidence": "GPT_STATE.control_lifeline"
+      "evidence": "GPT_STATE.control_lifeline",
+      "canonicalClass": "INTEGRATION"
     },
     {
       "id": "command-deck-lan",
       "label": "Command Deck Â· LAN",
       "class": "LOCAL CONTROLLER SURFACE",
-      "evidence": "V2-006A"
+      "evidence": "V2-006A",
+      "canonicalClass": "APP"
     }
   ],
   "knowledge": [

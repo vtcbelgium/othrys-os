@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { classifyIntegration } from './integration_classes.mjs';
+import { createWorkCheckpoint, assessWorkRecovery, persistWorkCheckpoint, readWorkCheckpoint } from './work_recovery.mjs';
+
+test('integration classes never smuggle authority',()=>{for(const kind of ['APP','INTEGRATION','ENGINE','SOURCE']){const x=classifyIntegration({id:`x-${kind}`,class:kind,capabilities:['read']});assert.equal(x.hiddenAuthority,false);assert.equal(x.authorityGranted,false);assert.equal(x.ownsExecution,false);}});
+test('checkpoint survives restart read-back and resumes only with fresh evidence',()=>{const root=mkdtempSync(join(tmpdir(),'othrys-recovery-'));try{const digest='a'.repeat(64);const cp=createWorkCheckpoint({workId:'WORK-V2-X',stage:'BUILD',digest,definitionDigest:digest,criticalTransition:true});persistWorkCheckpoint(root,cp);const afterRestart=readWorkCheckpoint(root,'WORK-V2-X');assert.deepEqual(afterRestart,cp);const ok=assessWorkRecovery({workId:'WORK-V2-X',definitionDigest:digest,checkpoint:afterRestart,approval:{required:true,fresh:true},partialArtifact:{present:false},interrupted:true});assert.equal(ok.resumable,true);assert.equal(ok.replayRequired,true);}finally{rmSync(root,{recursive:true,force:true});}});
+test('stale approval, partial artifacts, drift and cancellation all fail closed',()=>{const d='a'.repeat(64),cp=createWorkCheckpoint({workId:'W',stage:'BUILD',digest:d,definitionDigest:d});const base={workId:'W',definitionDigest:d,checkpoint:cp,interrupted:true};assert.ok(assessWorkRecovery({...base,approval:{required:true,fresh:false}}).reasons.includes('APPROVAL_STALE_OR_MISSING'));assert.ok(assessWorkRecovery({...base,partialArtifact:{present:true,verified:false}}).reasons.includes('PARTIAL_ARTIFACT_UNVERIFIED'));assert.ok(assessWorkRecovery({...base,definitionDigest:'b'.repeat(64)}).reasons.includes('DEFINITION_DRIFT'));assert.ok(assessWorkRecovery({...base,cancelled:true}).reasons.includes('WORK_CANCELLED'));});

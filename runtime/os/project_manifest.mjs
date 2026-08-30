@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { validateOptimizationPolicy } from './project_optimization.mjs';
+import { INTEGRATION_CLASSES } from './integration_classes.mjs';
 
 export const PROJECT_SCHEMA='othrys.os.project.v1';
 
@@ -30,6 +31,7 @@ export function validateProjectManifest(manifest){
   uniqueIds(manifest.systems,'SYSTEMS');
   uniqueIds(manifest.capabilities,'CAPABILITIES');
   uniqueIds(manifest.integrations,'INTEGRATIONS');
+  for(const item of manifest.integrations){if(item.canonicalClass!==undefined&&!INTEGRATION_CLASSES[String(item.canonicalClass).toUpperCase()]) throw new Error('INVALID_INTEGRATION_CLASS');}
   uniqueIds(manifest.knowledge,'KNOWLEDGE');
   uniqueIds(manifest.modelPolicy?.requests,'MODELS');
   uniqueIds((manifest.roleBindings??[]).map(x=>({...x,id:x.role})),'ROLES');

@@ -1,0 +1,6 @@
+export const INTEGRATION_CLASSES=Object.freeze({APP:Object.freeze({ownsExecution:false,mayRead:true,mayWrite:false,description:'operator-facing application surface'}),INTEGRATION:Object.freeze({ownsExecution:false,mayRead:true,mayWrite:false,description:'external service connector through governed capabilities'}),ENGINE:Object.freeze({ownsExecution:false,mayRead:true,mayWrite:false,description:'large capability subsystem invoked through OTHRYS contracts'}),SOURCE:Object.freeze({ownsExecution:false,mayRead:true,mayWrite:false,description:'knowledge/evidence source; never an authority path'})});
+export function classifyIntegration(raw){
+  const kind=String(raw?.canonicalClass??raw?.class??'').toUpperCase(),policy=INTEGRATION_CLASSES[kind];if(!policy)throw new Error('INTEGRATION_CLASS_INVALID');
+  if(typeof raw.id!=='string'||!raw.id.trim())throw new Error('INTEGRATION_ID_REQUIRED');
+  return Object.freeze({schema:'othrys.os.integration-class.v1',id:raw.id.trim(),class:kind,...policy,capabilities:Object.freeze([...(raw.capabilities??[])].map(String).sort()),credentialEnv:raw.credentialEnv??null,trustBoundary:'OTHRYS_GOVERNED',hiddenAuthority:false,authorityGranted:false,executionStarted:false});
+}

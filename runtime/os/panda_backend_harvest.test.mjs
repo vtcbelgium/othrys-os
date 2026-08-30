@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { resolveInterventionPolicy, shouldInterrupt } from './intervention_policy.mjs';
+import { freezeEvidenceContract, evaluateEvidenceContract } from './evidence_contract.mjs';
+import { proposeSkillFromProcedure } from './procedure_skill_proposal.mjs';
+
+test('intervention policy changes prompts, not authority law',()=>{const p=resolveInterventionPolicy('CHECKPOINTS');assert.equal(shouldInterrupt(p,'CHECKPOINT').interrupt,true);assert.equal(shouldInterrupt(resolveInterventionPolicy('RUN_BOUNDED'),'SLICE_START').interrupt,false);assert.equal(shouldInterrupt(resolveInterventionPolicy('RUN_BOUNDED'),'AUTHORITY_CHANGE').interrupt,true);assert.equal(p.declarativeGrant,false);});
+test('evidence contract is frozen before execution and Talos-gated',()=>{const c=freezeEvidenceContract({missionId:'V2-X',artifacts:[{id:'unit',verifier:'TALOS'},{id:'diff',verifier:'TALOS'}]});assert.equal(evaluateEvidenceContract(c,[{id:'unit'}]).complete,false);assert.deepEqual(evaluateEvidenceContract(c,[{id:'unit'},{id:'diff'}]).missing,[]);assert.equal(c.frozenBeforeExecution,true);});
+test('repeated procedure becomes Garden candidate, never direct Block admission',()=>{const p=proposeSkillFromProcedure({name:'provider-health-probe',repeatCount:4,successRate:.9,evidenceRefs:['r1','r2']});assert.equal(p.eligible,true);assert.equal(p.disposition,'GARDEN_CANDIDATE');assert.equal(p.directBlockAdmission,false);assert.equal(proposeSkillFromProcedure({name:'x',repeatCount:2,successRate:1,evidenceRefs:['a','b']}).disposition,'OBSERVE_MORE');});

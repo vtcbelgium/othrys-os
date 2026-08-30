@@ -1,39 +1,73 @@
-# V2-011J — Final Great Quarry Census
+# V2-011J — Great Quarry Closed
 
-Status: **CENSUS COMPLETE · REFINEMENT PENDING**. This is the last broad search before refinement/merge/reject and quarry close. It grants no admission or build authority.
+Status: **CLOSED**. 43/43 final candidates reviewed; **0 unreviewed**. No automatic admission or authority was granted.
 
 ## Coverage
 
-The final census traversed all **11 GitHub repositories** on their default branches: 8,950 blobs, 375 plan-like paths and 5,485 capability-shaped paths; no recursive GitHub tree was truncated. Historical Git evidence was cross-checked against Mnemosyne's Great Harvest commit catalogue (1,040 rows).
+GitHub: 11 repositories, 8950 blobs, 375 plan-like paths, 5485 capability-shaped paths, 0 truncated trees.
+Local: 34 Git roots, 832 plan files reduced to 127 unique plan bodies, 5326 unique tagged code artifacts, 46049 duplicate copies collapsed.
+Historical cross-check: 1040 Great Harvest commit rows. Canonical Great Harvest perimeter remains the broader recovery census.
 
-The current local `C:\Users\othry\Projects` estate contained **34 top-level Git roots**. Recursive local scanning found 832 plan-like files, reduced by normalized content hash to **127 unique plan bodies**, plus **5,326 unique capability-tagged code artifacts** after collapsing 46,049 duplicate copies/worktree echoes.
+## Terminal dispositions
 
-This census supplements rather than replaces the canonical Great Harvest perimeter (63 device-qualified workspaces / 25 lineages / 12,961 recoverable objects).
+- **IMPLEMENTED_OR_MERGED_NATIVE: 12**
+- **BLOCK_LIBRARY: 20**
+- **REFERENCE_ONLY_LICENSE_BOUND: 4**
+- **REFERENCE_LIBRARY: 2**
+- **BLUEPRINT_LIBRARY: 5**
 
-## Main correction
+## Every final candidate
 
-The Great Harvest successfully preserved old code, but several mature subsystems existed only as indexed archaeology and had never become first-class Great Library stock. Existence evidence is now separated from Library classification.
-## Highest-value recovered stock
+| Candidate | Final disposition | Destination |
+|---|---|---|
+| `candidate.os.capability-registry` | IMPLEMENTED_OR_MERGED_NATIVE | runtime/os/capability_registry.mjs |
+| `candidate.os.credential-broker` | IMPLEMENTED_OR_MERGED_NATIVE | runtime/os/credential_broker.mjs + runtime/os/credential_usage_ledger.mjs |
+| `candidate.os.fact-event-fabric` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.os.governed-gateway` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.os.intelligence-foundation` | IMPLEMENTED_OR_MERGED_NATIVE | runtime/os/intelligence_foundation.mjs |
+| `candidate.os.titan-runtime` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.triad.machine-covenant` | IMPLEMENTED_OR_MERGED_NATIVE | runtime/os/triad_covenant.mjs |
+| `candidate.os.bridge-recovery` | IMPLEMENTED_OR_MERGED_NATIVE | runtime/talos-kernel |
+| `candidate.os.projection-delivery-contract` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.browser.governed-webview` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.voice.local-interface` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.ops.assurance-test-centre` | IMPLEMENTED_OR_MERGED_NATIVE | tools/penta/diagnostics.mjs |
+| `candidate.ops.self-calibration` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.ops.soak-controller` | IMPLEMENTED_OR_MERGED_NATIVE | tools/penta/soak.mjs |
+| `candidate.ops.sclerotium-recovery` | IMPLEMENTED_OR_MERGED_NATIVE | runtime/os/sclerotium.mjs |
+| `candidate.security.execution-sandbox` | IMPLEMENTED_OR_MERGED_NATIVE | runtime/os/mission_sandbox.mjs |
+| `candidate.design.reference-ingest` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.design.visual-decomposition` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.design.fidelity-compare` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.design.bounded-refinement` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.design.operator-gate` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.ai.deep-research-workspace` | REFERENCE_ONLY_LICENSE_BOUND | Great Library reference |
+| `candidate.ai.blind-model-compare` | REFERENCE_ONLY_LICENSE_BOUND | Great Library reference |
+| `candidate.comms.email-workbench` | REFERENCE_ONLY_LICENSE_BOUND | Great Library reference |
+| `candidate.product.notes-tasks-calendar` | REFERENCE_ONLY_LICENSE_BOUND | Great Library reference |
+| `candidate.ai.skill-contract` | IMPLEMENTED_OR_MERGED_NATIVE | runtime/os/skill_contract.mjs |
+| `candidate.security.mission-sandbox` | IMPLEMENTED_OR_MERGED_NATIVE | runtime/os/mission_sandbox.mjs |
+| `candidate.intelligence.capability-harvest-pipeline` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.ops.persistent-timer` | REFERENCE_LIBRARY | Great Library reference |
+| `candidate.knowledge.proposal-drafter` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.finance.portfolio-appraisal` | BLUEPRINT_LIBRARY | Great Library blueprint |
+| `candidate.notify.price-alerts` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.ai.identification-api` | BLUEPRINT_LIBRARY | Great Library blueprint |
+| `candidate.catalog.white-label` | BLUEPRINT_LIBRARY | Great Library blueprint |
+| `candidate.ops.scheduled-reinspection` | IMPLEMENTED_OR_MERGED_NATIVE | runtime/os/housekeeper_daemon.mjs |
+| `candidate.learning.fsrs` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.learning.error-ledger` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.learning.assessment-mode` | BLUEPRINT_LIBRARY | Great Library blueprint |
+| `candidate.knowledge.lecture-pipeline` | BLUEPRINT_LIBRARY | Great Library blueprint |
+| `candidate.knowledge.multiformat-ingest` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.ops.backup-restore-proof` | BLOCK_LIBRARY | Great Library block quarry |
+| `candidate.os.reviewer-harness` | REFERENCE_LIBRARY | Great Library reference |
+| `candidate.webhook.github-replay` | BLOCK_LIBRARY | Great Library block quarry |
 
-**Reuse-review first:** Capability Registry; sealed Credential Broker + Usage Ledger; governed Gateway; composed Intelligence Foundation; machine-checked Triad covenant; Assurance Test Centre; execution/source sandbox.
+## License boundary
 
-**Adapt, do not duplicate:** persist-first event fabric; discoverable/quarantining Titan Runtime; Bridge retry/dead-letter/outbox/safe-mode grammar; versioned projection delivery contract; Hub persistent governed browser; Hub local voice interface; self-calibration; soak controller; Sclerotium recovery; Studio reference ingest/decomposition/fidelity compare/refinement/operator gate.
+Odysseus is retained as a concept/reference source only. Its PewDiePie/archdaemon lineage is AGPL-3.0-or-later; no source code was transplanted into OTHRYS.
 
-**External/design references:** Odysseus deep research, blind model comparison, email workbench and notes/tasks/calendar are strong UX/capability references but remain license-gated. Titan OS contributes a canonical Skill Contract, mission sandbox/checkpoint/rollback model and formal capability-harvest fitness pipeline.
+## Closure law
 
-**Product/Blueprint stock:** VTC and Study Buddy contribute portfolio appraisal, price/change alerts, identification API/SaaS, white-label catalogs, scheduled reinspection, FSRS scheduling, Error Ledger, assessment mode, lecture-to-knowledge pipeline, multi-format ingestion and tested backup/restore.
-
-## Important forgotten implementation lessons
-
-Old Core already proved restart/replay around the Prometheus-Keymaster-Mnemosyne intelligence path. Old Runtime already proved bad-component quarantine, dependency-cycle handling and strict CI boot. Old Bridge already proved retained dead letters and a notification outbox. Old VTC Office proved persistent scheduled workers with idempotent batches. Hub Voice proved a finite voice state machine with graceful absence. Hub Browser proved persistent authenticated browsing with explicit-only credential fill. Studio proved that visual similarity must weight structure/foreground so dark backgrounds cannot fake progress.
-## Classification result
-
-The final under-harvest set contains **43 candidates**: 7 REUSE, 24 ADAPT, 7 REFERENCE and 5 BLUEPRINT. They have been added to the Great Library only as `FINAL_QUARRY_CANDIDATE`; none is admitted automatically.
-
-The Great Library now tracks **96 Block/capability-family entries** plus 39 generic Blueprints and the existing 387-product/32-domain potential map. That number is an inventory, not a claim that 96 Blocks are built.
-
-## Refinement gate before closure
-
-The quarry should now stop expanding laterally. Refinement must merge overlaps, reject obsolete/vendor-locked/product-glue candidates, bind each survivor to the strongest source, and rank only the smallest high-reuse extraction seams. In particular, current V2 must compare its Blood Loop against the old Intelligence Foundation/Capability Registry/Credential Broker before inventing more lifecycle machinery.
-
-Closure condition: every one of the 43 final candidates receives exactly one disposition — **REUSE / ADAPT / REFERENCE / BLUEPRINT / MERGE / REJECT** — with no `UNREVIEWED` remainder. Only then mark the Great Quarry closed.
+Broad quarry expansion is finished. New capability work must start from this catalogue and Great Harvest evidence. If a future capability is not here, first prove that it is genuinely new rather than reopening the estate search.

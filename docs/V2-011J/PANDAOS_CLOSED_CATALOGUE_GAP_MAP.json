@@ -1,0 +1,273 @@
+{
+  "schema": "othrys.os.panda-closed-catalogue-gap-map.v1",
+  "generatedAt": "2026-08-30T06:14:41.509Z",
+  "reference": "PandaOS harvest docs only; experience patterns, never backend authority",
+  "h1ToH16": [
+    {
+      "id": "H1",
+      "name": "Work State state machine",
+      "status": "BACKEND_RECOVERY_PROVEN",
+      "evidence": [
+        "runtime/os/work_record.mjs",
+        "runtime/os/work_recovery.mjs"
+      ],
+      "delta": "Durable Work, transitions and atomic checkpoint restart recovery are proven; UI cancellation controls remain later.",
+      "action": "EXPOSE_UI_LATER",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H2",
+      "name": "Gate taxonomy",
+      "status": "MATCHED_STRONGER",
+      "evidence": [
+        "runtime/os/operating_mode.mjs",
+        "runtime/os/evidence_contract.mjs"
+      ],
+      "delta": "OTHRYS separates authority/policy from Talos evidence; keep one vocabulary and avoid a second gate engine.",
+      "action": "CONSOLIDATE_VOCABULARY",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H3",
+      "name": "Intervention policy",
+      "status": "IMPLEMENTED_NATIVE",
+      "evidence": [
+        "runtime/os/intervention_policy.mjs"
+      ],
+      "delta": "Operator prompt frequency now varies without changing Trust/Talos law.",
+      "action": "DONE_BACKEND",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H4",
+      "name": "Atlas -> Mnemosyne",
+      "status": "MATCHED_STRONGER",
+      "evidence": [
+        "runtime/os/mnemosyne.mjs",
+        "runtime/os/mnemosyne_quality.mjs",
+        "runtime/os/atlas_model.mjs"
+      ],
+      "delta": "Typed admission, explicit files, review, provenance and maintenance exist; contradiction UX/export presentation remains later.",
+      "action": "UI_LATER",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H5",
+      "name": "Repeated procedure -> skill",
+      "status": "IMPLEMENTED_NATIVE",
+      "evidence": [
+        "runtime/os/procedure_skill_proposal.mjs",
+        "runtime/os/skill_contract.mjs"
+      ],
+      "delta": "Three-plus repeated successful procedures can become Garden candidates; direct Block admission remains forbidden.",
+      "action": "DONE_BACKEND",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H6",
+      "name": "Local semantic search",
+      "status": "QUALIFIED_NATIVE",
+      "evidence": [
+        "runtime/os/local_semantic_search.mjs",
+        "docs/V2-011J/LOCAL_SEARCH_BENCHMARK_WARM.json"
+      ],
+      "delta": "embeddinggemma earned 12/12 top-1 on a live bounded benchmark and a V2-native Ollama embedding adapter now exists.",
+      "action": "DONE_BACKEND",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H7",
+      "name": "Model tier requests",
+      "status": "MATCHED_STRONGER",
+      "evidence": [
+        "runtime/os/switchyard.mjs",
+        "runtime/os/frugal_reserve.mjs",
+        "runtime/os/free_capacity.mjs"
+      ],
+      "delta": "Capability/tier/cost/locality/health/certification routing already exceeds Panda reference.",
+      "action": "EXPOSE_UI_LATER",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H8",
+      "name": "Project composition",
+      "status": "BACKEND_READY_UI_PENDING",
+      "evidence": [
+        "runtime/os/project_manifest.mjs",
+        "runtime/os/project_materializer.mjs"
+      ],
+      "delta": "Project roles, authorities, systems, capabilities, integrations, knowledge and model policy are declarative.",
+      "action": "UI_LATER",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H9",
+      "name": "Project-local control files",
+      "status": "MATCHED_STRONGER",
+      "evidence": [
+        ".othrys/project.json",
+        "books/BOOK_REGISTRY.json"
+      ],
+      "delta": "Git-native project truth and Books are already inspectable/versionable; hidden UI state is not canonical.",
+      "action": "KEEP",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H10",
+      "name": "Progress surface",
+      "status": "BACKEND_READY_UI_PENDING",
+      "evidence": [
+        "runtime/os/work_projection.mjs",
+        "runtime/os/work_record.mjs"
+      ],
+      "delta": "Objective/scope/risks/owners/artifacts/transitions are projected; visual surface comes after OS closeout.",
+      "action": "UI_LATER",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H11",
+      "name": "Permission UX",
+      "status": "BACKEND_READY_UI_PENDING",
+      "evidence": [
+        "runtime/os/operating_mode.mjs",
+        "runtime/os/intervention_policy.mjs"
+      ],
+      "delta": "Observe/Plan/Supervised/Autonomous policy and prompt cadence are explicit; UI wording is not built yet.",
+      "action": "UI_LATER",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H12",
+      "name": "Evidence artifact declaration",
+      "status": "IMPLEMENTED_NATIVE",
+      "evidence": [
+        "runtime/os/evidence_contract.mjs",
+        "runtime/os/work_record.mjs"
+      ],
+      "delta": "Expected evidence can be frozen before execution and remains Talos-gated.",
+      "action": "DONE_BACKEND",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H13",
+      "name": "Resumability",
+      "status": "BACKEND_RECOVERY_PROVEN",
+      "evidence": [
+        "runtime/os/work_recovery.mjs",
+        "runtime/os/sclerotium.mjs"
+      ],
+      "delta": "Atomic checkpoint restart read-back plus stale approval, partial artifact, drift and cancellation faults are proven fail-closed.",
+      "action": "DONE_BACKEND",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H14",
+      "name": "Integration/source boundaries",
+      "status": "IMPLEMENTED_NATIVE",
+      "evidence": [
+        "runtime/os/integration_classes.mjs",
+        ".othrys/project.json"
+      ],
+      "delta": "Canonical APP / INTEGRATION / ENGINE / SOURCE vocabulary is implemented; live integrations carry additive canonicalClass metadata.",
+      "action": "DONE_BACKEND",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H15",
+      "name": "Local connection",
+      "status": "MATCHED_STRONGER",
+      "evidence": [
+        "runtime/os/switchyard.mjs",
+        "runtime/os/free_capacity.mjs",
+        ".othrys/project.json"
+      ],
+      "delta": "Legion/T590/local Ollama and remote execution stock already exist under bounded routing.",
+      "action": "EXPOSE_UI_LATER",
+      "authorityGranted": false,
+      "executionStarted": false
+    },
+    {
+      "id": "H16",
+      "name": "Visual/computer-use bridge",
+      "status": "PARTIAL_GATED",
+      "evidence": [
+        "runtime/os/visual_control.mjs"
+      ],
+      "delta": "Observe/evidence comparison is admitted; supervised input and autonomous control remain intentionally refused.",
+      "action": "QUALIFY_SUPERVISED_LATER",
+      "authorityGranted": false,
+      "executionStarted": false
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "name": "OS Shell / information architecture",
+      "status": "BACKEND_READY_UI_PENDING",
+      "need": "Truthful shell only; no backend rebuild."
+    },
+    {
+      "step": 2,
+      "name": "Work / Mission Control",
+      "status": "BACKEND_STRONG",
+      "need": "Recovery semantics are proven; visual controls remain later."
+    },
+    {
+      "step": 3,
+      "name": "Team + Skills",
+      "status": "BACKEND_READY",
+      "need": "Expose Titans, Blocks and Skill Contracts later."
+    },
+    {
+      "step": 4,
+      "name": "Knowledge / Atlas",
+      "status": "BACKEND_STRONG",
+      "need": "UI/review ergonomics later; no new memory engine."
+    },
+    {
+      "step": 5,
+      "name": "Models / Switchyard",
+      "status": "BACKEND_STRONGER_THAN_REFERENCE",
+      "need": "Expose routing reasons/health/cost later."
+    },
+    {
+      "step": 6,
+      "name": "Mycelium + Visual Control",
+      "status": "PARTIAL_GATED",
+      "need": "Node projection exists; supervised visual input still needs qualification."
+    },
+    {
+      "step": 7,
+      "name": "Apps / Integrations / Engines + Factory",
+      "status": "BACKEND_STRONG",
+      "need": "Canonical integration classes exist; prove one governed external-engine path in a later execution mission."
+    },
+    {
+      "step": 8,
+      "name": "Autonomous operations",
+      "status": "NOT_YET",
+      "need": "Requires live cadence plus bounded self-originated maintenance mission evidence."
+    }
+  ],
+  "missingCount": 1,
+  "missing": [
+    "H16"
+  ],
+  "uiWorkStarted": false,
+  "authorityGranted": false,
+  "executionStarted": false
+}

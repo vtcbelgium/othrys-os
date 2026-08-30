@@ -1,7 +1,7 @@
 {
   "schema": "othrys.os.final-quarry-census.v1",
   "missionId": "V2-011J",
-  "status": "CENSUS_COMPLETE_REFINEMENT_PENDING",
+  "status": "CLOSED",
   "scope": {
     "githubRepos": 11,
     "githubBlobs": 8950,
@@ -26,7 +26,12 @@
       ],
       "why": "Separate lifecycle/readiness/health catalog; Prometheus fills, Keymaster certifies, Mnemosyne preserves.",
       "disposition": "REUSE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "IMPLEMENTED_OR_MERGED_NATIVE",
+      "target": "runtime/os/capability_registry.mjs",
+      "closeoutReason": "Useful invariant already has or now has a V2-native implementation.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.os.credential-broker",
@@ -38,7 +43,12 @@
       ],
       "why": "Provider handles without raw secrets; scoped grants, caps, audit, durable usage ledger, deny-all transport.",
       "disposition": "REUSE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "IMPLEMENTED_OR_MERGED_NATIVE",
+      "target": "runtime/os/credential_broker.mjs + runtime/os/credential_usage_ledger.mjs",
+      "closeoutReason": "Useful invariant already has or now has a V2-native implementation.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.os.fact-event-fabric",
@@ -50,7 +60,12 @@
       ],
       "why": "Immutable causal facts, persist-first delivery, subscriber isolation, choreography.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.os.governed-gateway",
@@ -62,7 +77,12 @@
       ],
       "why": "Mission pre-gate, version negotiation, governed pipelines and provider-neutral fetch.",
       "disposition": "REUSE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.os.intelligence-foundation",
@@ -74,7 +94,12 @@
       ],
       "why": "Prometheus+Keymaster+registry+Mnemosyne with fact log, snapshots, restart/replay and secret refusal.",
       "disposition": "REUSE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "IMPLEMENTED_OR_MERGED_NATIVE",
+      "target": "runtime/os/intelligence_foundation.mjs",
+      "closeoutReason": "Useful invariant already has or now has a V2-native implementation.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.os.titan-runtime",
@@ -86,7 +111,12 @@
       ],
       "why": "Manifest discovery, dependency resolution, quarantine, health, bounded metrics and generator CLI.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.triad.machine-covenant",
@@ -98,7 +128,12 @@
       ],
       "why": "Exclusive ownership, optional cross-office dependencies, acyclic graph, shared vocabulary and human-gated council.",
       "disposition": "REUSE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "IMPLEMENTED_OR_MERGED_NATIVE",
+      "target": "runtime/os/triad_covenant.mjs",
+      "closeoutReason": "Useful invariant already has or now has a V2-native implementation.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.os.bridge-recovery",
@@ -110,7 +145,12 @@
       ],
       "why": "Inbox/queue/validator/policy/router/audit/knowledge/notify/health ports with dead-letter replay, outbox, safe mode and kill.",
       "disposition": "REFERENCE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "IMPLEMENTED_OR_MERGED_NATIVE",
+      "target": "runtime/talos-kernel",
+      "closeoutReason": "Useful invariant already has or now has a V2-native implementation.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.os.projection-delivery-contract",
@@ -122,7 +162,12 @@
       ],
       "why": "Versioned graph projection, validation, traversal, drift detection and proof manifest for consumers.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.browser.governed-webview",
@@ -134,7 +179,12 @@
       ],
       "why": "Persistent authenticated webview, bounded navigation, explicit credential fill and isolated capture.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.voice.local-interface",
@@ -146,7 +196,12 @@
       ],
       "why": "Recorder/STT/TTS/wake/hotkey state machine with interruption, fail-closed availability and optional source reuse.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.ops.assurance-test-centre",
@@ -158,7 +213,12 @@
       ],
       "why": "Reusable assurance harness for component and organism verification.",
       "disposition": "REUSE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "IMPLEMENTED_OR_MERGED_NATIVE",
+      "target": "tools/penta/diagnostics.mjs",
+      "closeoutReason": "Useful invariant already has or now has a V2-native implementation.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.ops.self-calibration",
@@ -170,7 +230,12 @@
       ],
       "why": "Evidence-driven bounded calibration instead of hand-tuned runtime assumptions.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.ops.soak-controller",
@@ -182,7 +247,12 @@
       ],
       "why": "Repeated-cycle stability proof with bounded duration and evidence.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "IMPLEMENTED_OR_MERGED_NATIVE",
+      "target": "tools/penta/soak.mjs",
+      "closeoutReason": "Useful invariant already has or now has a V2-native implementation.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.ops.sclerotium-recovery",
@@ -194,7 +264,12 @@
       ],
       "why": "Portable survival state for recovery and reconstruction.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "IMPLEMENTED_OR_MERGED_NATIVE",
+      "target": "runtime/os/sclerotium.mjs",
+      "closeoutReason": "Useful invariant already has or now has a V2-native implementation.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.security.execution-sandbox",
@@ -207,7 +282,12 @@
       ],
       "why": "Scratch-clone and OS isolation patterns for untrusted builds and source experiments.",
       "disposition": "REUSE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "IMPLEMENTED_OR_MERGED_NATIVE",
+      "target": "runtime/os/mission_sandbox.mjs",
+      "closeoutReason": "Useful invariant already has or now has a V2-native implementation.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.design.reference-ingest",
@@ -219,7 +299,12 @@
       ],
       "why": "Hash/dimensions/viewport identity for reproducible reference-derived design work.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.design.visual-decomposition",
@@ -231,7 +316,12 @@
       ],
       "why": "Inspectable palette, region, foreground and layout decomposition from screenshots.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.design.fidelity-compare",
@@ -243,7 +333,12 @@
       ],
       "why": "Pixel comparison that prevents background similarity from faking visual fidelity.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.design.bounded-refinement",
@@ -255,7 +350,12 @@
       ],
       "why": "Bounded refine cycles with no-regression gates and no fake shell nudges.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.design.operator-gate",
@@ -267,7 +367,12 @@
       ],
       "why": "Explicit accept/reject separate from production mutation and Block graduation.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.ai.deep-research-workspace",
@@ -279,7 +384,12 @@
       ],
       "why": "Multi-source research and synthesis patterns; AGPL-derived, reference/license gate only.",
       "disposition": "REFERENCE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "REFERENCE_ONLY_LICENSE_BOUND",
+      "target": "Great Library reference",
+      "closeoutReason": "Odysseus/PewDiePie lineage is AGPL-3.0-or-later; concepts only, no code transplant.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.ai.blind-model-compare",
@@ -291,7 +401,12 @@
       ],
       "why": "Provider/model evaluation without brand bias, followed by synthesis.",
       "disposition": "REFERENCE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "REFERENCE_ONLY_LICENSE_BOUND",
+      "target": "Great Library reference",
+      "closeoutReason": "Odysseus/PewDiePie lineage is AGPL-3.0-or-later; concepts only, no code transplant.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.comms.email-workbench",
@@ -303,7 +418,12 @@
       ],
       "why": "IMAP/SMTP inbox, tagging, summaries, reminders and draft workflows.",
       "disposition": "REFERENCE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "REFERENCE_ONLY_LICENSE_BOUND",
+      "target": "Great Library reference",
+      "closeoutReason": "Odysseus/PewDiePie lineage is AGPL-3.0-or-later; concepts only, no code transplant.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.product.notes-tasks-calendar",
@@ -317,7 +437,12 @@
       ],
       "why": "General personal productivity Blueprint family including CalDAV interoperability.",
       "disposition": "REFERENCE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "REFERENCE_ONLY_LICENSE_BOUND",
+      "target": "Great Library reference",
+      "closeoutReason": "Odysseus/PewDiePie lineage is AGPL-3.0-or-later; concepts only, no code transplant.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.ai.skill-contract",
@@ -329,7 +454,12 @@
       ],
       "why": "Typed skills with inputs/outputs/tools/permissions/cost/risk/evaluation/version and a selection router.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "IMPLEMENTED_OR_MERGED_NATIVE",
+      "target": "runtime/os/skill_contract.mjs",
+      "closeoutReason": "Useful invariant already has or now has a V2-native implementation.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.security.mission-sandbox",
@@ -341,7 +471,12 @@
       ],
       "why": "Per-mission credentials, checkpoints, rollback and kill-switch policy for agent work.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "IMPLEMENTED_OR_MERGED_NATIVE",
+      "target": "runtime/os/mission_sandbox.mjs",
+      "closeoutReason": "Useful invariant already has or now has a V2-native implementation.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.intelligence.capability-harvest-pipeline",
@@ -353,7 +488,12 @@
       ],
       "why": "Inspect identity/license/maintenance/deps/install/update/security/provider lock-in and quarantine-test before adoption.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.ops.persistent-timer",
@@ -365,7 +505,12 @@
       ],
       "why": "Persistent user timer plus idempotent batch queue and run evidence; strong Kronos cadence reference.",
       "disposition": "REFERENCE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "REFERENCE_LIBRARY",
+      "target": "Great Library reference",
+      "closeoutReason": "Proven lesson/pattern, not a new native subsystem.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.knowledge.proposal-drafter",
@@ -377,7 +522,12 @@
       ],
       "why": "Extract facts to pending proposals, keep canon sealed, human promotion later.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.finance.portfolio-appraisal",
@@ -389,7 +539,12 @@
       ],
       "why": "Reusable valuation/report Blueprint beyond collectibles.",
       "disposition": "BLUEPRINT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLUEPRINT_LIBRARY",
+      "target": "Great Library blueprint",
+      "closeoutReason": "Product-shaped composition; retain without OS coupling.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.notify.price-alerts",
@@ -401,7 +556,12 @@
       ],
       "why": "General threshold/change notification capability.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.ai.identification-api",
@@ -413,7 +573,12 @@
       ],
       "why": "Vision/lookup productization pattern with API boundary.",
       "disposition": "BLUEPRINT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLUEPRINT_LIBRARY",
+      "target": "Great Library blueprint",
+      "closeoutReason": "Product-shaped composition; retain without OS coupling.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.catalog.white-label",
@@ -425,7 +590,12 @@
       ],
       "why": "Reusable catalog/data/community composition for multiple niches.",
       "disposition": "BLUEPRINT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLUEPRINT_LIBRARY",
+      "target": "Great Library blueprint",
+      "closeoutReason": "Product-shaped composition; retain without OS coupling.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.ops.scheduled-reinspection",
@@ -437,7 +607,12 @@
       ],
       "why": "Periodic inspect->evidence->repair-proposal loop.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "IMPLEMENTED_OR_MERGED_NATIVE",
+      "target": "runtime/os/housekeeper_daemon.mjs",
+      "closeoutReason": "Useful invariant already has or now has a V2-native implementation.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.learning.fsrs",
@@ -450,7 +625,12 @@
       ],
       "why": "Event-backed adaptive spaced repetition.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.learning.error-ledger",
@@ -462,7 +642,12 @@
       ],
       "why": "First-class repeated-error memory feeding targeted practice.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.learning.assessment-mode",
@@ -474,7 +659,12 @@
       ],
       "why": "Timed no-hint assessment with readiness scoring over mastery evidence.",
       "disposition": "BLUEPRINT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLUEPRINT_LIBRARY",
+      "target": "Great Library blueprint",
+      "closeoutReason": "Product-shaped composition; retain without OS coupling.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.knowledge.lecture-pipeline",
@@ -486,7 +676,12 @@
       ],
       "why": "Audio -> raw transcript -> clean transcript -> timestamped notes -> deep source links.",
       "disposition": "BLUEPRINT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLUEPRINT_LIBRARY",
+      "target": "Great Library blueprint",
+      "closeoutReason": "Product-shaped composition; retain without OS coupling.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.knowledge.multiformat-ingest",
@@ -498,7 +693,12 @@
       ],
       "why": "Slide/docx/xlsx/URL/email/screenshot ingestion behind extraction seams.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.ops.backup-restore-proof",
@@ -512,7 +712,12 @@
       ],
       "why": "Backup is not healthy until restore is exercised and digest checked.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.os.reviewer-harness",
@@ -524,7 +729,12 @@
       ],
       "why": "Five skills, three reviewer agents and one structural rail; useful for Hephaestus delegation/evaluation.",
       "disposition": "REFERENCE",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "REFERENCE_LIBRARY",
+      "target": "Great Library reference",
+      "closeoutReason": "Proven lesson/pattern, not a new native subsystem.",
+      "reviewed": true,
+      "executionStarted": false
     },
     {
       "id": "candidate.webhook.github-replay",
@@ -536,7 +746,12 @@
       ],
       "why": "Authenticated external event intake with replay testing.",
       "disposition": "ADAPT",
-      "authorityGranted": false
+      "authorityGranted": false,
+      "finalDisposition": "BLOCK_LIBRARY",
+      "target": "Great Library block quarry",
+      "closeoutReason": "Useful capability, but premature or duplicate to wire into current OS.",
+      "reviewed": true,
+      "executionStarted": false
     }
   ],
   "counts": {
@@ -554,5 +769,21 @@
     "refinement may merge or reject duplicates before quarry close"
   ],
   "authorityGranted": false,
-  "automaticAdmission": false
+  "automaticAdmission": false,
+  "closedAt": "2026-08-30T06:20:04.022Z",
+  "unreviewed": 0,
+  "finalCounts": {
+    "IMPLEMENTED_OR_MERGED_NATIVE": 12,
+    "BLOCK_LIBRARY": 20,
+    "REFERENCE_ONLY_LICENSE_BOUND": 4,
+    "REFERENCE_LIBRARY": 2,
+    "BLUEPRINT_LIBRARY": 5
+  },
+  "odysseusPolicy": {
+    "lineage": "PewDiePie/archdaemon Odysseus -> odysseus-dev",
+    "license": "AGPL-3.0-or-later",
+    "codeTransplantAllowed": false,
+    "conceptHarvestAllowed": true
+  },
+  "executionStarted": false
 }

@@ -1,0 +1,267 @@
+{
+  "schema": "othrys.os.local-semantic-search-benchmark.v1",
+  "model": "embeddinggemma:latest",
+  "documentCount": 12,
+  "queryCount": 12,
+  "accuracy": 1,
+  "docEmbedMs": 206.09,
+  "queryEmbedMs": 105.06,
+  "status": "PASS",
+  "rows": [
+    {
+      "query": "Which organ handles API key custody?",
+      "expected": "keymaster",
+      "top1": "keymaster",
+      "score": 0.3748,
+      "pass": true,
+      "top3": [
+        {
+          "id": "keymaster",
+          "score": 0.3747764807870015
+        },
+        {
+          "id": "kronos",
+          "score": 0.3405032971618655
+        },
+        {
+          "id": "hephaestus",
+          "score": 0.3069467600122818
+        }
+      ]
+    },
+    {
+      "query": "Who researches new tools and sources?",
+      "expected": "prometheus",
+      "top1": "prometheus",
+      "score": 0.4243,
+      "pass": true,
+      "top3": [
+        {
+          "id": "prometheus",
+          "score": 0.4243233144473799
+        },
+        {
+          "id": "hephaestus",
+          "score": 0.32716243180885823
+        },
+        {
+          "id": "mnemosyne",
+          "score": 0.27730890037483324
+        }
+      ]
+    },
+    {
+      "query": "Where are lessons and provenance remembered?",
+      "expected": "mnemosyne",
+      "top1": "mnemosyne",
+      "score": 0.5606,
+      "pass": true,
+      "top3": [
+        {
+          "id": "mnemosyne",
+          "score": 0.5605825615567096
+        },
+        {
+          "id": "sclerotium",
+          "score": 0.2584034811092196
+        },
+        {
+          "id": "visual",
+          "score": 0.2528105353499154
+        }
+      ]
+    },
+    {
+      "query": "Who builds and integrates code?",
+      "expected": "hephaestus",
+      "top1": "hephaestus",
+      "score": 0.5625,
+      "pass": true,
+      "top3": [
+        {
+          "id": "hephaestus",
+          "score": 0.562508759682503
+        },
+        {
+          "id": "kronos",
+          "score": 0.4062601905398722
+        },
+        {
+          "id": "prometheus",
+          "score": 0.36099508934637214
+        }
+      ]
+    },
+    {
+      "query": "Which organ independently checks whether execution really passed?",
+      "expected": "talos",
+      "top1": "talos",
+      "score": 0.5056,
+      "pass": true,
+      "top3": [
+        {
+          "id": "talos",
+          "score": 0.5056061315992347
+        },
+        {
+          "id": "rhea",
+          "score": 0.43489585253754237
+        },
+        {
+          "id": "visual",
+          "score": 0.2712651051373332
+        }
+      ]
+    },
+    {
+      "query": "Who owns heartbeat and timing?",
+      "expected": "kronos",
+      "top1": "kronos",
+      "score": 0.5945,
+      "pass": true,
+      "top3": [
+        {
+          "id": "kronos",
+          "score": 0.5945152346914275
+        },
+        {
+          "id": "rhea",
+          "score": 0.2729481618174247
+        },
+        {
+          "id": "hephaestus",
+          "score": 0.26954884907344745
+        }
+      ]
+    },
+    {
+      "query": "What chooses the cheapest healthy legal model route?",
+      "expected": "switchyard",
+      "top1": "switchyard",
+      "score": 0.6374,
+      "pass": true,
+      "top3": [
+        {
+          "id": "switchyard",
+          "score": 0.6373947265179701
+        },
+        {
+          "id": "rhea",
+          "score": 0.30617763024960964
+        },
+        {
+          "id": "hephaestus",
+          "score": 0.2631621354918395
+        }
+      ]
+    },
+    {
+      "query": "Which organ monitors health and care?",
+      "expected": "rhea",
+      "top1": "rhea",
+      "score": 0.4958,
+      "pass": true,
+      "top3": [
+        {
+          "id": "rhea",
+          "score": 0.49584128652715337
+        },
+        {
+          "id": "visual",
+          "score": 0.32887319926134206
+        },
+        {
+          "id": "kronos",
+          "score": 0.3144661416163373
+        }
+      ]
+    },
+    {
+      "query": "What carries messages and acknowledgements?",
+      "expected": "hermes",
+      "top1": "hermes",
+      "score": 0.4925,
+      "pass": true,
+      "top3": [
+        {
+          "id": "hermes",
+          "score": 0.4924575388919752
+        },
+        {
+          "id": "mnemosyne",
+          "score": 0.33816054245146837
+        },
+        {
+          "id": "keymaster",
+          "score": 0.32385864508343104
+        }
+      ]
+    },
+    {
+      "query": "Where do screen observations live before computer control is allowed?",
+      "expected": "visual",
+      "top1": "visual",
+      "score": 0.6123,
+      "pass": true,
+      "top3": [
+        {
+          "id": "visual",
+          "score": 0.6123491674652968
+        },
+        {
+          "id": "rhea",
+          "score": 0.35313685070045264
+        },
+        {
+          "id": "mycelium",
+          "score": 0.26782749219201846
+        }
+      ]
+    },
+    {
+      "query": "What survives a crash so the system can recover?",
+      "expected": "sclerotium",
+      "top1": "sclerotium",
+      "score": 0.3802,
+      "pass": true,
+      "top3": [
+        {
+          "id": "sclerotium",
+          "score": 0.38021507536664484
+        },
+        {
+          "id": "switchyard",
+          "score": 0.3606695355910017
+        },
+        {
+          "id": "hephaestus",
+          "score": 0.2951723324341959
+        }
+      ]
+    },
+    {
+      "query": "What coordinates compute capacity across machines?",
+      "expected": "mycelium",
+      "top1": "mycelium",
+      "score": 0.5324,
+      "pass": true,
+      "top3": [
+        {
+          "id": "mycelium",
+          "score": 0.5323805221015613
+        },
+        {
+          "id": "hermes",
+          "score": 0.27990565042813786
+        },
+        {
+          "id": "prometheus",
+          "score": 0.27338409141069764
+        }
+      ]
+    }
+  ],
+  "freeLocal": true,
+  "authorityGranted": false,
+  "executionStarted": false
+}

@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { createCapabilityRegistry } from './capability_registry.mjs';
+import { draftCapabilityGrant, decideCredentialUse } from './credential_broker.mjs';
+
+function fixture(){const registry=createCapabilityRegistry([],{now:()=> '2026-08-30T06:00:00Z'});registry.put({id:'groq',provider:'groq',category:'ai',features:['chat'],freeTier:true,asOf:'2026-08-30'});registry.certify('groq',{readiness:'READY',health:'HEALTHY'});const grant={...draftCapabilityGrant({grantId:'g1',consumer:'prometheus',provider:'groq',capabilities:['chat'],oros:['othrys'],environments:['development'],maxRequests:2}),enabled:true};return {registry,grant};}
+
+test('broker grants scoped zero-cost use without exposing a credential',()=>{const {registry,grant}=fixture();const out=decideCredentialUse({consumer:'prometheus',provider:'groq',capability:'chat',oros:'othrys',environment:'development',purpose:'research',estimatedCost:0},{registry,grants:[grant],credentialPresent:true,usage:{requests:0,cost:0},now:'2026-08-30T06:00:00Z'});assert.equal(out.allowed,true);assert.equal(out.secretExposed,false);assert.equal(out.authorityGranted,false);});
+
+test('deny wins for missing credential, scope and request ceiling',()=>{const {registry,grant}=fixture();const req={consumer:'prometheus',provider:'groq',capability:'chat',oros:'othrys',environment:'development',purpose:'research'};assert.equal(decideCredentialUse(req,{registry,grants:[grant],credentialPresent:false,now:'2026-08-30'}).code,'CREDENTIAL_MISSING');assert.equal(decideCredentialUse({...req,oros:'other'},{registry,grants:[grant],credentialPresent:true,now:'2026-08-30'}).code,'OROS_NOT_GRANTED');assert.equal(decideCredentialUse(req,{registry,grants:[grant],credentialPresent:true,usage:{requests:2,cost:0},now:'2026-08-30'}).code,'REQUEST_CEILING_REACHED');});
