@@ -1,0 +1,6 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { searchKnowledge } from './mnemosyne.mjs';
+export function loadTrainingManifest(root){const m=JSON.parse(readFileSync(join(root,'docs','training','TRAINING_MANIFEST.json'),'utf8'));if(m.schema!=='othrys.os.training-manifest.v1')throw new Error('TRAINING_MANIFEST_INVALID');return m;}
+export function nextTrainingJob(root){const m=loadTrainingManifest(root);if(m.currentLevel!==1)throw new Error('TRAINING_LEVEL_NOT_ACTIVE');return m.level1.jobs.find(x=>x.status==='QUEUED')??null;}
+export function prepareTrainingJob(root,manifest,jobId){const m=loadTrainingManifest(root),j=m.level1.jobs.find(x=>x.id===jobId);if(!j)throw new Error('TRAINING_JOB_NOT_FOUND');const stock=searchKnowledge(root,manifest,`${j.title} ${j.family} block`,{limit:10});return Object.freeze({schema:'othrys.os.training-job-preflight.v1',level:1,job:j,cycle:m.cycleLaw,stockMatches:stock.results.map(x=>({id:x.id,title:x.title,classification:x.classification,status:x.status,score:x.score,source:x.source})),requiredOrgans:['MNEMOSYNE','HEPHAESTUS','TALOS','SWITCHYARD'],dispositionRequired:true,authorityGranted:false,executionStarted:false});}

@@ -1,0 +1,451 @@
+{
+  "schema": "othrys.os.great-library-index.v1",
+  "generatedFrom": [
+    "docs/V2-011J/GREAT_LIBRARY_SEED.json",
+    "docs/V2-011J/GREAT_LIBRARY_POTENTIAL.json",
+    "docs/training/TRAINING_MANIFEST.json",
+    "blocks/",
+    "C:/Users/othry/Projects/othrys-blocks/blocks/"
+  ],
+  "summary": {
+    "trackedStock": 96,
+    "admittedBlocks": 3,
+    "localBlockPackages": 3,
+    "externalProvenPackages": 10,
+    "blueprints": 39,
+    "patterns": 9,
+    "antiPatterns": 14,
+    "playbooks": 4,
+    "potentialProducts": 387,
+    "potentialDomains": 32,
+    "trainingLevels": 10,
+    "level1Jobs": 40
+  },
+  "statusCount": {
+    "ADMITTED": 3,
+    "QUARRY": 21,
+    "POTENTIAL": 5,
+    "PROVEN_V2": 1,
+    "PROVEN_STOCK_UNADMITTED": 7,
+    "HARVEST_CANDIDATE": 16,
+    "IMPLEMENTED_OR_MERGED_NATIVE": 12,
+    "BLOCK_LIBRARY": 20,
+    "REFERENCE_ONLY_LICENSE_BOUND": 4,
+    "REFERENCE_LIBRARY": 2,
+    "BLUEPRINT_LIBRARY": 5
+  },
+  "domains": [
+    {
+      "domain": "agents",
+      "count": 1,
+      "admitted": 0
+    },
+    {
+      "domain": "ai",
+      "count": 7,
+      "admitted": 0
+    },
+    {
+      "domain": "analytics",
+      "count": 2,
+      "admitted": 1
+    },
+    {
+      "domain": "browser",
+      "count": 3,
+      "admitted": 0
+    },
+    {
+      "domain": "catalog",
+      "count": 1,
+      "admitted": 0
+    },
+    {
+      "domain": "communications",
+      "count": 5,
+      "admitted": 0
+    },
+    {
+      "domain": "community",
+      "count": 2,
+      "admitted": 0
+    },
+    {
+      "domain": "data",
+      "count": 4,
+      "admitted": 0
+    },
+    {
+      "domain": "design",
+      "count": 5,
+      "admitted": 0
+    },
+    {
+      "domain": "documents",
+      "count": 1,
+      "admitted": 0
+    },
+    {
+      "domain": "engineering",
+      "count": 1,
+      "admitted": 0
+    },
+    {
+      "domain": "events",
+      "count": 1,
+      "admitted": 0
+    },
+    {
+      "domain": "finance",
+      "count": 2,
+      "admitted": 0
+    },
+    {
+      "domain": "geo",
+      "count": 1,
+      "admitted": 0
+    },
+    {
+      "domain": "governance",
+      "count": 1,
+      "admitted": 0
+    },
+    {
+      "domain": "identity",
+      "count": 4,
+      "admitted": 0
+    },
+    {
+      "domain": "integrations",
+      "count": 1,
+      "admitted": 0
+    },
+    {
+      "domain": "intelligence",
+      "count": 2,
+      "admitted": 0
+    },
+    {
+      "domain": "knowledge",
+      "count": 7,
+      "admitted": 0
+    },
+    {
+      "domain": "learning",
+      "count": 6,
+      "admitted": 0
+    },
+    {
+      "domain": "media",
+      "count": 1,
+      "admitted": 1
+    },
+    {
+      "domain": "monetization",
+      "count": 1,
+      "admitted": 1
+    },
+    {
+      "domain": "notifications",
+      "count": 1,
+      "admitted": 0
+    },
+    {
+      "domain": "operations",
+      "count": 5,
+      "admitted": 0
+    },
+    {
+      "domain": "ops",
+      "count": 13,
+      "admitted": 0
+    },
+    {
+      "domain": "productivity",
+      "count": 1,
+      "admitted": 0
+    },
+    {
+      "domain": "recovery",
+      "count": 2,
+      "admitted": 0
+    },
+    {
+      "domain": "research",
+      "count": 1,
+      "admitted": 0
+    },
+    {
+      "domain": "security",
+      "count": 4,
+      "admitted": 0
+    },
+    {
+      "domain": "storage",
+      "count": 2,
+      "admitted": 0
+    },
+    {
+      "domain": "verification",
+      "count": 3,
+      "admitted": 0
+    },
+    {
+      "domain": "voice",
+      "count": 1,
+      "admitted": 0
+    },
+    {
+      "domain": "web",
+      "count": 4,
+      "admitted": 0
+    }
+  ],
+  "admitted": [
+    {
+      "id": "block.media.image-prep",
+      "name": "Image preparation",
+      "domain": "media",
+      "evidence": [
+        "blocks/media/image-prep"
+      ]
+    },
+    {
+      "id": "block.monetization.affiliate-offer",
+      "name": "Affiliate offer construction",
+      "domain": "monetization",
+      "evidence": [
+        "blocks/monetization/affiliate-offer"
+      ]
+    },
+    {
+      "id": "block.analytics.visit-tracking",
+      "name": "Cookieless visit tracking",
+      "domain": "analytics",
+      "evidence": [
+        "blocks/analytics/visit-tracking"
+      ]
+    }
+  ],
+  "provenStockUnadmitted": [
+    {
+      "id": "block.ai.provider-router",
+      "name": "AI provider router",
+      "domain": "ai",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/ai/provider-router"
+      ]
+    },
+    {
+      "id": "block.analytics.event-log",
+      "name": "Structured event log",
+      "domain": "analytics",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/analytics/event-log"
+      ]
+    },
+    {
+      "id": "block.auth.supabase-session",
+      "name": "Supabase session/auth boundary",
+      "domain": "identity",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/auth/supabase-session"
+      ]
+    },
+    {
+      "id": "block.knowledge.grounded-retrieval",
+      "name": "Grounded retrieval/RAG",
+      "domain": "knowledge",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/knowledge/grounded-retrieval"
+      ]
+    },
+    {
+      "id": "block.knowledge.source-extraction",
+      "name": "Source extraction",
+      "domain": "knowledge",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/knowledge/source-extraction"
+      ]
+    },
+    {
+      "id": "block.learning.gap-engine",
+      "name": "Learning gap engine",
+      "domain": "learning",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/learning/gap-engine"
+      ]
+    },
+    {
+      "id": "block.learning.mastery-ledger",
+      "name": "Mastery ledger",
+      "domain": "learning",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/learning/mastery-ledger"
+      ]
+    }
+  ],
+  "harvestCandidates": [
+    {
+      "id": "candidate.ai.transcription",
+      "name": "Audio transcription adapter",
+      "domain": "ai",
+      "evidence": [
+        "study-buddy/lib/ai/transcription.ts"
+      ]
+    },
+    {
+      "id": "candidate.data.chunking",
+      "name": "Knowledge chunking",
+      "domain": "knowledge",
+      "evidence": [
+        "study-buddy/lib/chunk.ts"
+      ]
+    },
+    {
+      "id": "candidate.learning.spaced-review",
+      "name": "Spaced review scheduler",
+      "domain": "learning",
+      "evidence": [
+        "study-buddy/lib/reviews.ts"
+      ]
+    },
+    {
+      "id": "candidate.data.export",
+      "name": "Authenticated data export",
+      "domain": "data",
+      "evidence": [
+        "study-buddy/app/api/export/route.ts"
+      ]
+    },
+    {
+      "id": "candidate.storage.secure-file-download",
+      "name": "Authorized source file delivery",
+      "domain": "storage",
+      "evidence": [
+        "study-buddy/app/api/sources/[id]/file/route.ts"
+      ]
+    },
+    {
+      "id": "candidate.web.auth-callback",
+      "name": "Auth callback flow",
+      "domain": "identity",
+      "evidence": [
+        "study-buddy/app/auth/callback/route.ts"
+      ]
+    },
+    {
+      "id": "candidate.browser.local-state",
+      "name": "Browser local persistence",
+      "domain": "browser",
+      "evidence": [
+        "oros/eu-capitals-travel-log/popup.js"
+      ]
+    },
+    {
+      "id": "candidate.browser.extension-shell",
+      "name": "Chrome MV3 extension shell",
+      "domain": "browser",
+      "evidence": [
+        "oros/eu-capitals-travel-log/manifest.json"
+      ]
+    },
+    {
+      "id": "candidate.os.provider-health",
+      "name": "Provider-safe health probe",
+      "domain": "ops",
+      "evidence": [
+        "othrys-v2/runtime/os/provider_probe.mjs"
+      ]
+    },
+    {
+      "id": "candidate.os.bounded-retry",
+      "name": "Bounded retry policy",
+      "domain": "ops",
+      "evidence": [
+        "othrys-v2/runtime/talos-kernel/retry.ts"
+      ]
+    },
+    {
+      "id": "candidate.os.lifecycle-fsm",
+      "name": "Deterministic lifecycle FSM",
+      "domain": "ops",
+      "evidence": [
+        "othrys-v2/runtime/talos-kernel/lifecycle.ts"
+      ]
+    },
+    {
+      "id": "candidate.os.care-case",
+      "name": "Care/degradation case lifecycle",
+      "domain": "ops",
+      "evidence": [
+        "othrys-v2/runtime/os/rhea.mjs"
+      ]
+    },
+    {
+      "id": "candidate.os.communication-contract",
+      "name": "Provider-neutral communication contract",
+      "domain": "communications",
+      "evidence": [
+        "othrys-v2/runtime/os/hermes.mjs"
+      ]
+    },
+    {
+      "id": "candidate.os.credential-metadata",
+      "name": "Secret-free credential metadata",
+      "domain": "security",
+      "evidence": [
+        "othrys-v2/runtime/os/keymaster.mjs"
+      ]
+    },
+    {
+      "id": "candidate.os.capability-routing",
+      "name": "Capability/provider route selection",
+      "domain": "ops",
+      "evidence": [
+        "othrys-v2/runtime/os/switchyard.mjs"
+      ]
+    },
+    {
+      "id": "candidate.os.knowledge-lineage",
+      "name": "Knowledge lineage and operational memory",
+      "domain": "knowledge",
+      "evidence": [
+        "othrys-v2/runtime/os/mnemosyne.mjs"
+      ]
+    }
+  ],
+  "actualPackages": {
+    "v2": [
+      "blocks/analytics/visit-tracking",
+      "blocks/media/image-prep",
+      "blocks/monetization/affiliate-offer"
+    ],
+    "othrysBlocks": [
+      "C:/Users/othry/Projects/othrys-blocks/blocks/ai/provider-router",
+      "C:/Users/othry/Projects/othrys-blocks/blocks/analytics/event-log",
+      "C:/Users/othry/Projects/othrys-blocks/blocks/analytics/visit-tracking",
+      "C:/Users/othry/Projects/othrys-blocks/blocks/auth/supabase-session",
+      "C:/Users/othry/Projects/othrys-blocks/blocks/knowledge/grounded-retrieval",
+      "C:/Users/othry/Projects/othrys-blocks/blocks/knowledge/source-extraction",
+      "C:/Users/othry/Projects/othrys-blocks/blocks/learning/gap-engine",
+      "C:/Users/othry/Projects/othrys-blocks/blocks/learning/mastery-ledger",
+      "C:/Users/othry/Projects/othrys-blocks/blocks/media/image-prep",
+      "C:/Users/othry/Projects/othrys-blocks/blocks/monetization/affiliate-offer"
+    ]
+  },
+  "navigation": {
+    "stock": "docs/V2-011J/GREAT_LIBRARY_SEED.json",
+    "potential": "docs/V2-011J/GREAT_LIBRARY_POTENTIAL.json",
+    "training": "docs/training/TRAINING_MANIFEST.json",
+    "foundation": "docs/V2-011J/GREAT_LIBRARY_FOUNDATION.md",
+    "atlasEndpoint": "/api/atlas"
+  },
+  "laws": [
+    "Index is a projection, never a second canon.",
+    "Status and evidence remain visible; no maturity laundering.",
+    "Search/navigation may rank but never grant authority.",
+    "Training output must merge with existing owners before new Block creation."
+  ],
+  "authorityGranted": false
+}

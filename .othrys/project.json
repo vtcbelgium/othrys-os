@@ -338,6 +338,18 @@
       "path": "docs/V2-011J/FINAL_QUARRY_CENSUS.md",
       "id": "final-quarry-census",
       "class": "MNEMOSYNE / QUARRY CENSUS"
+    },
+    {
+      "label": "OTHRYS Training Manifest",
+      "path": "docs/training/TRAINING_MANIFEST.json",
+      "id": "training-manifest",
+      "class": "CANONICAL TRAINING / GATED"
+    },
+    {
+      "label": "Great Library Index",
+      "path": ".othrys/library/INDEX.json",
+      "id": "great-library-index",
+      "class": "DERIVED INDEX / READ ONLY"
     }
   ],
   "roleBindings": [

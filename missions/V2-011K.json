@@ -1,0 +1,35 @@
+{
+    "mission_id":  "V2-011K",
+    "title":  "OTHRYS Training Mode Level 1",
+    "status":  "RUNNING",
+    "phase":  "PLAN",
+    "start_sha":  "b31bb7c9dcce5838de915bbbcb17414bdfd02436",
+    "objective":  "Establish the permanent training manifest and Atlas-indexed Great Library, inventory all existing stock, then cycle Level 1 atomic utility jobs through governed OTHRYS to create polished reusable Blocks and training evidence.",
+    "scope":  [
+                  "training manifest levels 1-10",
+                  "Great Library canonical index and navigation",
+                  "Atlas intelligence-memory projection for library stock",
+                  "Level 1 atomic utility job queue",
+                  "OTHRYS front-door/planner/builder/Talos training cycles",
+                  "Block extraction and reuse evidence",
+                  "training metrics and self-honing"
+              ],
+    "out_of_scope":  [
+                         "UI redesign",
+                         "othrys-web redesign",
+                         "Level 2+ execution",
+                         "autonomous authority expansion"
+                     ],
+    "laws":  [
+                 "follow training levels in order",
+                 "Level 1 is fast-moving polished currency",
+                 "repo truth before invention",
+                 "reuse before build",
+                 "every job produces proof and a library disposition",
+                 "failures become Mnemosyne lessons",
+                 "no automatic authority or admission",
+                 "one mission rule"
+             ],
+    "authorityGranted":  false,
+    "executionStarted":  false
+}

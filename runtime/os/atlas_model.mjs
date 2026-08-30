@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 export const ATLAS_SCHEMA='othrys.os.atlas.v2';
 export const NODE_TYPES=Object.freeze([
   'project','system','titan','capability','model','integration','knowledge','mission','work',
-  'evidence','decision','lesson','incident','research','pattern','question','source'
+  'evidence','decision','lesson','incident','research','pattern','question','source','block','blueprint','training-level','training-job'
 ]);
 export const EDGE_TYPES=Object.freeze([
   'contains','owns','uses','depends-on','derived-from','supersedes','conflicts-with',

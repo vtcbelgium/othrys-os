@@ -100,6 +100,8 @@ export function searchKnowledge(root,manifest,query,{limit=12}={}){
   const terms=tokenize(query);
   if(!terms.length) return Object.freeze({schema:'othrys.os.knowledge-search.v1',query:clean(query),results:[],authorityGranted:false});
   const items=[...declaredKnowledge(root,manifest),...inboxItems(root)];
+  const atlas=buildAtlasProjection(root,{});
+  for(const n of atlas.nodes.filter(x=>['block','blueprint','training-level','training-job','pattern'].includes(x.type))) items.push({id:`atlas-${n.id}`,title:n.title,classification:`ATLAS_${n.type.toUpperCase()}`,status:n.truthClass,source:{kind:'ATLAS',ref:n.id},content:`${n.description??''} ${(n.tags??[]).join(' ')}`,contentDigest:null});
   const results=[];
   for(const item of items){
     let content=item.content??'';

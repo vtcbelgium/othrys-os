@@ -48,6 +48,26 @@ export function buildAtlasProjection(root,state={}){
     const abs=join(root,x.path),truth=/CANONICAL|CONTROL/.test(x.class)?'CANONICAL':/RESEARCH/.test(x.class)?'RESEARCH':'REVIEWED';
     add(baseNode('knowledge',x.id,x.label,x.class,existsSync(abs)?truth:'STALE',{kind:'project-file',ref:x.path,abs},['knowledge',x.class.toLowerCase()]));
   }
+  const librarySeedPath=join(root,'docs','V2-011J','GREAT_LIBRARY_SEED.json');
+  if(existsSync(librarySeedPath)){
+    const ls=readJson(librarySeedPath),ref={kind:'great-library-seed',ref:'docs/V2-011J/GREAT_LIBRARY_SEED.json',abs:librarySeedPath};
+    for(const b of ls.blocks??[]) add(baseNode('block',b.id,b.name??b.id,`${b.domain??'unknown'} ? ${b.status??'UNKNOWN'}`,b.status==='ADMITTED'?'VERIFIED':b.status==='REFERENCE_ONLY_LICENSE_BOUND'?'RESEARCH':'REVIEWED',ref,['library','block',b.domain??'unknown',String(b.status??'unknown').toLowerCase()]));
+    for(const b of ls.blueprints??[]) add(baseNode('blueprint',b.id,b.name??b.id,b.domain??'Great Library blueprint','REVIEWED',ref,['library','blueprint',b.domain??'unknown']));
+    for(const p of ls.patterns??[]) add(baseNode('pattern',p.id,p.name??p.id,'Great Library pattern','VERIFIED',ref,['library','pattern']));
+  }
+  const libraryIndexPath=join(root,'.othrys','library','INDEX.json');
+  if(existsSync(libraryIndexPath)){
+    const li=readJson(libraryIndexPath),ref={kind:'great-library-index',ref:'.othrys/library/INDEX.json',abs:libraryIndexPath};
+    // Navigation index is declared knowledge; canonical stock nodes come from GREAT_LIBRARY_SEED to avoid duplicate truth.
+  }
+  const trainingPath=join(root,'docs','training','TRAINING_MANIFEST.json');
+  if(existsSync(trainingPath)){
+    const tm=readJson(trainingPath),ref={kind:'training-manifest',ref:'docs/training/TRAINING_MANIFEST.json',abs:trainingPath};
+    for(const l of tm.levels??[]){
+      const ln=add(baseNode('training-level',String(l.level),`Level ${l.level}: ${l.name}`,l.goal,l.status==='ACTIVE'?'CANONICAL':'REVIEWED',ref,['training',String(l.status).toLowerCase()]));
+      if(l.level===1) for(const j of tm.level1?.jobs??[]){const jn=add(baseNode('training-job',j.id,j.title,j.contract,j.status==='COMPLETE'?'VERIFIED':'REVIEWED',ref,['training','level-1',j.family,String(j.status).toLowerCase()]));edges.push(edge('contains',ln.id,jn.id,'training-manifest','docs/training/TRAINING_MANIFEST.json'));}
+    }
+  }
   const missionsDir=join(root,'missions');
   if(existsSync(missionsDir)) for(const name of readdirSync(missionsDir).filter(x=>/^V2-\d+[A-Z]\.json$/.test(x)).sort()){
     const id=name.replace('.json',''),missionPath=join(missionsDir,name),m=readJson(missionPath),resultPath=join(missionsDir,`${id}.result.json`);
