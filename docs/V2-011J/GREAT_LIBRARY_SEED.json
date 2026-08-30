@@ -507,6 +507,328 @@
         "inspection"
       ],
       "authorityGranted": false
+    },
+    {
+      "id": "block.ai.provider-router",
+      "name": "AI provider router",
+      "domain": "ai",
+      "tier": 0,
+      "status": "PROVEN_STOCK_UNADMITTED",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/ai/provider-router"
+      ],
+      "uses": [
+        "reusable-product-capability"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "block.analytics.event-log",
+      "name": "Structured event log",
+      "domain": "analytics",
+      "tier": 0,
+      "status": "PROVEN_STOCK_UNADMITTED",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/analytics/event-log"
+      ],
+      "uses": [
+        "reusable-product-capability"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "block.auth.supabase-session",
+      "name": "Supabase session/auth boundary",
+      "domain": "identity",
+      "tier": 0,
+      "status": "PROVEN_STOCK_UNADMITTED",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/auth/supabase-session"
+      ],
+      "uses": [
+        "reusable-product-capability"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "block.knowledge.grounded-retrieval",
+      "name": "Grounded retrieval/RAG",
+      "domain": "knowledge",
+      "tier": 0,
+      "status": "PROVEN_STOCK_UNADMITTED",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/knowledge/grounded-retrieval"
+      ],
+      "uses": [
+        "reusable-product-capability"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "block.knowledge.source-extraction",
+      "name": "Source extraction",
+      "domain": "knowledge",
+      "tier": 0,
+      "status": "PROVEN_STOCK_UNADMITTED",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/knowledge/source-extraction"
+      ],
+      "uses": [
+        "reusable-product-capability"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "block.learning.gap-engine",
+      "name": "Learning gap engine",
+      "domain": "learning",
+      "tier": 0,
+      "status": "PROVEN_STOCK_UNADMITTED",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/learning/gap-engine"
+      ],
+      "uses": [
+        "reusable-product-capability"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "block.learning.mastery-ledger",
+      "name": "Mastery ledger",
+      "domain": "learning",
+      "tier": 0,
+      "status": "PROVEN_STOCK_UNADMITTED",
+      "evidence": [
+        "C:/Users/othry/Projects/othrys-blocks/blocks/learning/mastery-ledger"
+      ],
+      "uses": [
+        "reusable-product-capability"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ai.transcription",
+      "name": "Audio transcription adapter",
+      "domain": "ai",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "study-buddy/lib/ai/transcription.ts"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.data.chunking",
+      "name": "Knowledge chunking",
+      "domain": "knowledge",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "study-buddy/lib/chunk.ts"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.learning.spaced-review",
+      "name": "Spaced review scheduler",
+      "domain": "learning",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "study-buddy/lib/reviews.ts"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.data.export",
+      "name": "Authenticated data export",
+      "domain": "data",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "study-buddy/app/api/export/route.ts"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.storage.secure-file-download",
+      "name": "Authorized source file delivery",
+      "domain": "storage",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "study-buddy/app/api/sources/[id]/file/route.ts"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.web.auth-callback",
+      "name": "Auth callback flow",
+      "domain": "identity",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "study-buddy/app/auth/callback/route.ts"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.browser.local-state",
+      "name": "Browser local persistence",
+      "domain": "browser",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "oros/eu-capitals-travel-log/popup.js"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.browser.extension-shell",
+      "name": "Chrome MV3 extension shell",
+      "domain": "browser",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "oros/eu-capitals-travel-log/manifest.json"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.provider-health",
+      "name": "Provider-safe health probe",
+      "domain": "ops",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "othrys-v2/runtime/os/provider_probe.mjs"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.bounded-retry",
+      "name": "Bounded retry policy",
+      "domain": "ops",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "othrys-v2/runtime/talos-kernel/retry.ts"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.lifecycle-fsm",
+      "name": "Deterministic lifecycle FSM",
+      "domain": "ops",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "othrys-v2/runtime/talos-kernel/lifecycle.ts"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.care-case",
+      "name": "Care/degradation case lifecycle",
+      "domain": "ops",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "othrys-v2/runtime/os/rhea.mjs"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.communication-contract",
+      "name": "Provider-neutral communication contract",
+      "domain": "communications",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "othrys-v2/runtime/os/hermes.mjs"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.credential-metadata",
+      "name": "Secret-free credential metadata",
+      "domain": "security",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "othrys-v2/runtime/os/keymaster.mjs"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.capability-routing",
+      "name": "Capability/provider route selection",
+      "domain": "ops",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "othrys-v2/runtime/os/switchyard.mjs"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.knowledge-lineage",
+      "name": "Knowledge lineage and operational memory",
+      "domain": "knowledge",
+      "tier": 0,
+      "status": "HARVEST_CANDIDATE",
+      "evidence": [
+        "othrys-v2/runtime/os/mnemosyne.mjs"
+      ],
+      "uses": [
+        "cross-product-reuse-candidate"
+      ],
+      "authorityGranted": false
     }
   ],
   "blueprints": [
@@ -1257,7 +1579,10 @@
     "admittedBlocks": 3,
     "patterns": 9,
     "antiPatterns": 14,
-    "playbooks": 4
+    "playbooks": 4,
+    "blocks": 53,
+    "provenStockUnadmitted": 7,
+    "harvestCandidates": 16
   },
   "authorityGranted": false,
   "automaticAdmission": false,
