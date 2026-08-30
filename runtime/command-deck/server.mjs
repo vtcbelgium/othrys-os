@@ -17,6 +17,7 @@ import { resolveOperatingMode, authorizeOperatingModeAction, operatingModeProjec
 import { exportKnowledge, searchKnowledge } from '../os/mnemosyne.mjs';
 import { buildAtlasProjection } from '../os/atlas_projection.mjs';
 import { MODEL_REQUEST_SCHEMA, selectSwitchyardRoute } from '../os/switchyard.mjs';
+import { answerFrontDoor, classifyFrontDoorIntent } from '../os/front_door.mjs';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -118,16 +119,17 @@ export function missionEvidence(missionId){
 function switchyardCandidates(){
   return projectManifest.modelPolicy.requests.map(({id,label,capabilities,tier,costClass,latencyClass,locality,providerHealth,certification,measuredTrust,paidApprovalRequired,legal})=>({id,label,capabilities,tier,costClass,latencyClass,locality,providerHealth,certification,measuredTrust,paidApprovalRequired,legal}));
 }
-export function switchyardPreview(preference='auto'){
+export function switchyardPreviewFor(capability='engineering.build',minimumTier='STANDARD',preference='auto'){
   const pref=String(preference??'auto');
   const all=switchyardCandidates();
   const candidates=pref==='auto'?all:all.filter(x=>x.id===pref);
   if(!candidates.length) return {schema:'othrys.os.switchyard-selection.v1',outcome:'NO_LEGAL_CANDIDATE',request:null,selected:null,eligible:[],rejections:{[pref]:'UNKNOWN_PREFERENCE'},paidApprovalRequired:false,authorityGranted:false,executionStarted:false,policy:projectManifest.modelPolicy.policy,preference:pref,reason:'UNKNOWN_PREFERENCE'};
-  const request={schema:MODEL_REQUEST_SCHEMA,capability:'engineering.build',minimumTier:'STANDARD',privacy:'PROJECT',locality:'PREFER_LOCAL',maxCostClass:'PAID',maxLatency:'BATCH'};
+  const request={schema:MODEL_REQUEST_SCHEMA,capability,minimumTier,privacy:'PROJECT',locality:'PREFER_LOCAL',maxCostClass:'PAID',maxLatency:'BATCH'};
   const result=selectSwitchyardRoute(request,candidates);
   const reason=result.outcome==='SELECTED'?'NATIVE_SWITCHYARD_SELECTED':result.outcome;
   return {...result,policy:projectManifest.modelPolicy.policy,preference:pref,reason};
 }
+export function switchyardPreview(preference='auto'){return switchyardPreviewFor('engineering.build','STANDARD',preference);}
 export function missionProposalEnvelope(proposalIntent,promotionIntent=null){
   if(!proposalIntent||proposalIntent.action!=='MISSION_PROPOSAL'||!proposalIntent.missionId) return null;
   const projectContext=String(proposalIntent.projectContext??'').trim(),objective=String(proposalIntent.objective??'').trim();
@@ -307,6 +309,11 @@ function serveStatic(pathname,res){
 }
 export async function handle(req,res){
   const url=new URL(req.url??'/',`http://${req.headers.host??'localhost'}`);
+  if(req.method==='POST'&&url.pathname==='/api/chat'){
+    if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
+    let raw=''; for await (const c of req) raw+=c; if(raw.length>4096) return send(res,413,JSON.stringify({ok:false,error:'TOO_LARGE'}));
+    try{const body=JSON.parse(raw),input=String(body?.input??'');const status=await buildStatus();const quarry=json('docs/V2-011J/FINAL_QUARRY_CENSUS.json');const intent=classifyFrontDoorIntent(input);const routeInspection=/\b(builder|build model|engineering model)\b/i.test(input);const selection=intent==='RESEARCH'?switchyardPreviewFor('analysis.summarize','LIGHT',body?.preference??'auto'):['PLAN','BUILD'].includes(intent)||routeInspection?switchyardPreview(body?.preference??'auto'):null;const turn=answerFrontDoor(input,{status:{activeMission:status.activeMission,quarryClosed:quarry?.status==='CLOSED',bodyStatus:status.controlGate==='CLEAN_SYNCED'?'CONTROL_PLANE_HEALTHY':'ATTENTION',deepProof:'use Deep/Whole diagnostics for current proof'},modelSelection:selection});return send(res,200,JSON.stringify({ok:true,turn,controlsEnabled:false}));}catch(e){return send(res,400,JSON.stringify({ok:false,error:e.message}));}
+  }
   if(req.method==='POST'&&url.pathname==='/api/intent'){
     if(!controlAuthorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
     let raw=''; for await (const c of req) raw+=c; if(raw.length>4096) return send(res,413,JSON.stringify({ok:false,error:'TOO_LARGE'}));

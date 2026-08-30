@@ -72,7 +72,8 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.match(html,/id="promptInput"/);
   assert.match(html,/id="chatMessages"/);
   assert.match(html,/othrys\.os\.local\.chat/);
-  assert.doesNotMatch(html,/\/api\/chat/);
+  assert.match(html,/\/api\/chat/);
+  assert.match(html,/function sendChat/);
   assert.match(html,/id="newProjectBtn"/);
   assert.match(html,/id="localProjects"/);
   assert.match(html,/id="contextProject"/);
@@ -96,7 +97,8 @@ test('Deck UI is local, touch-ready and read-only',()=>{
   assert.doesNotMatch(html,/\/api\/project-context/);
   assert.match(html,/function chatKey/);
   assert.match(html,/othrys\.os\.local\.chat\./);
-  assert.doesNotMatch(html,/\/api\/chat/);
+  assert.match(html,/\/api\/chat/);
+  assert.match(html,/function sendChat/);
   assert.match(html,/othrys\.os\.local\.projects/);
   assert.match(html,/Controller-local project draft/);
   assert.doesNotMatch(html,/\/api\/project/);
@@ -178,6 +180,15 @@ test('Deck API refuses writes and requires token',async t=>{
 
 });
 
+
+
+test('Front door chat is authenticated, classifies intent and never executes',async t=>{
+  const env={...process.env,OTHRYS_DECK_TOKEN:'chat-token',OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18788'};
+  const child=spawn(process.execPath,[join(dir,'server.mjs')],{env,stdio:['ignore','pipe','pipe']}); t.after(()=>child.kill());
+  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('server timeout')),4000);child.stdout.on('data',d=>{if(String(d).includes('"ready":true')){clearTimeout(timer);resolve();}});});
+  let r=await fetch('http://127.0.0.1:18788/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({input:'What is OTHRYS?'})}); assert.equal(r.status,401);
+  r=await fetch('http://127.0.0.1:18788/api/chat',{method:'POST',headers:{'Content-Type':'application/json','X-OTHRYS-DECK-TOKEN':'chat-token'},body:JSON.stringify({input:'Build a hello world page'})}); const b=await r.json(); assert.equal(r.status,200);assert.equal(b.turn.intent,'BUILD');assert.equal(b.turn.dispatch.planner,'HEPHAESTUS');assert.equal(b.turn.modelRoute.id,'qwen3-builder');assert.equal(b.turn.executionStarted,false);assert.equal(b.controlsEnabled,false);
+});
 
 test('Mission evidence endpoint is authenticated and read-only',async t=>{
   const env={...process.env,OTHRYS_DECK_TOKEN:'mission-token',OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18782'};

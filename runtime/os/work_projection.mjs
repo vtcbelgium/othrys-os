@@ -88,7 +88,7 @@ export function projectMissionWork(root,state,missionId){
   const artifacts=artifactsFor(root,missionId,mission);
   const slices=(Array.isArray(mission.slices)?mission.slices:[]).map(slice=>{
     const refs=Array.isArray(slice.artifacts)?slice.artifacts:[];
-    const evidence=refs.map(id=>artifacts.find(a=>a.id===id)??{id,path:null,present:false});
+    const evidence=refs.map(id=>artifacts.find(a=>a.id===id)??(typeof id==='string'&&existsSync(join(root,id))?{id,path:id,present:true}:{id,path:null,present:false}));
     return {id:String(slice.id??''),title:String(slice.title??slice.id??''),owner:String(slice.owner??'UNASSIGNED'),artifacts:evidence,status:evidence.length&&evidence.every(a=>a.present)?'COMPLETE':'OPEN'};
   });
   const phase=phases.find(x=>x.status==='ACTIVE')?.id??(phases.every(x=>x.status==='COMPLETE')?'SHIP':phases.find(x=>x.status==='PENDING')?.id??'PLAN');

@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
+const p=JSON.parse(readFileSync(new URL('../../docs/V2-011J/FRONT_DOOR_SMOKE.json',import.meta.url),'utf8'));
+test('front door dogfood proof covers question research plan build and operation',()=>{assert.equal(p.status,'PASS');assert.equal(p.rows.length,7);assert.ok(p.rows.every(x=>x.http===200&&x.executionStarted===false));assert.equal(p.rows.find(x=>x.intent==='RESEARCH').planner,'PROMETHEUS');assert.equal(p.rows.find(x=>x.intent==='PLAN').planner,'HEPHAESTUS');assert.equal(p.rows.find(x=>x.intent==='BUILD').model,'qwen3-builder');});

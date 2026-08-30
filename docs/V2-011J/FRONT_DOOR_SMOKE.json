@@ -1,0 +1,107 @@
+{
+  "schema": "othrys.os.front-door-smoke.v1",
+  "status": "PASS",
+  "rows": [
+    {
+      "input": "What is OTHRYS?",
+      "http": 200,
+      "intent": "QUESTION",
+      "organs": [
+        "MNEMOSYNE"
+      ],
+      "planner": null,
+      "model": null,
+      "answer": "OTHRYS OS is the operating surface over the proven V2 machinery: Missions, Titans, Blocks, Mnemosyne, routing, nodes, Factory, Trust Canal and Talos evidence in one governed system.",
+      "executionStarted": false
+    },
+    {
+      "input": "What is the active mission?",
+      "http": 200,
+      "intent": "OPERATION",
+      "organs": [
+        "KRONOS",
+        "RHEA",
+        "TALOS",
+        "MNEMOSYNE"
+      ],
+      "planner": null,
+      "model": null,
+      "answer": "Active mission: V2-011J · RUNNING.",
+      "executionStarted": false
+    },
+    {
+      "input": "Which builder would you use?",
+      "http": 200,
+      "intent": "OPERATION",
+      "organs": [
+        "KRONOS",
+        "RHEA",
+        "TALOS",
+        "MNEMOSYNE"
+      ],
+      "planner": null,
+      "model": null,
+      "answer": "Current engineering route: qwen3-builder (Qwen3 8B Â· Legion), LOCAL, ZERO, CERTIFIED.",
+      "executionStarted": false
+    },
+    {
+      "input": "Research local voice models",
+      "http": 200,
+      "intent": "RESEARCH",
+      "organs": [
+        "PROMETHEUS",
+        "MNEMOSYNE"
+      ],
+      "planner": "PROMETHEUS",
+      "model": "llama3.2-advisory",
+      "answer": "Prometheus owns this research request; Mnemosyne supplies existing evidence. No research execution has started.",
+      "executionStarted": false
+    },
+    {
+      "input": "Plan a tiny status page",
+      "http": 200,
+      "intent": "PLAN",
+      "organs": [
+        "PROMETHEUS",
+        "MNEMOSYNE",
+        "HEPHAESTUS"
+      ],
+      "planner": "HEPHAESTUS",
+      "model": "qwen3-builder",
+      "answer": "Hephaestus is the planner after Prometheus/Mnemosyne context. This is a planning request only; no build has started.",
+      "executionStarted": false
+    },
+    {
+      "input": "Build a hello world page",
+      "http": 200,
+      "intent": "BUILD",
+      "organs": [
+        "MNEMOSYNE",
+        "HEPHAESTUS",
+        "TALOS",
+        "SWITCHYARD"
+      ],
+      "planner": "HEPHAESTUS",
+      "model": "qwen3-builder",
+      "answer": "Hephaestus owns the build plan and Talos owns independent verification. Switchyard selects qwen3-builder as the current legal engineering builder. No execution has started.",
+      "executionStarted": false
+    },
+    {
+      "input": "Does OTHRYS work? health status",
+      "http": 200,
+      "intent": "OPERATION",
+      "organs": [
+        "KRONOS",
+        "RHEA",
+        "TALOS",
+        "MNEMOSYNE"
+      ],
+      "planner": null,
+      "model": null,
+      "answer": "OTHRYS body status: CONTROL_PLANE_HEALTHY. Deep proof: use Deep/Whole diagnostics for current proof.",
+      "executionStarted": false
+    }
+  ],
+  "authorityGranted": false,
+  "executionStarted": false
+}
