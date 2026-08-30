@@ -1,0 +1,155 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-035",
+    "title": "Safe config merge",
+    "family": "generate",
+    "contract": "base + overlay -> merged config",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "safeConfigMerge.test.mjs",
+    "declaredTests": 8,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "repair2-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "durationSec": 85.60711169242859,
+      "changedFiles": [],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6208",
+        "utilization_pct": "9",
+        "temperature_c": "45",
+        "power_w": "6.80"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "1",
+        "temperature_c": "56",
+        "power_w": "13.18"
+      }
+    },
+    {
+      "file": "worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 16.222269535064697,
+      "changedFiles": [
+        "training/level-1/L1-035-config-merge/safeConfigMerge.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6466",
+        "utilization_pct": "4",
+        "temperature_c": "41",
+        "power_w": "6.01"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "1",
+        "temperature_c": "53",
+        "power_w": "13.46"
+      }
+    }
+  ],
+  "semanticLearning": {
+    "receiptDigest": "627ed50c3ce6ef0137a62127cf6037ba45a345b66e5a6c6bd603347e328bfeb9",
+    "lessons": [
+      "Talos must be subordinate to the declared contract",
+      "single-file constraints need import/static gates",
+      "repair regression can be worse than original failure",
+      "launcher receipt gaps must not be silently attributed"
+    ],
+    "buildAttempts": [
+      {
+        "attempt": 1,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 16.222269535064697,
+        "talos": "PASS_2_OF_8",
+        "failure": "scalar validation rejected valid values; deep-freeze ordering broke arrays; merge unusable"
+      },
+      {
+        "attempt": 2,
+        "builder": "requested:local.qwen3-coder-30b",
+        "model": "requested:qwen3-coder:30b",
+        "durationSec": null,
+        "talos": "MODULE_IMPORT_FAIL",
+        "failure": "repair artifact imported missing helpers.js; launcher result receipt missing after timeout"
+      },
+      {
+        "attempt": 3,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 85.60711169242859,
+        "talos": "NO_CHANGE",
+        "failure": "NO_ATTEMPT_MUTATION"
+      },
+      {
+        "attempt": 4,
+        "builder": "talos-oracle-reconciliation",
+        "model": null,
+        "durationSec": null,
+        "talos": "FIXTURE_CORRECTED",
+        "repair": "strict deep-equality fixture contradicted declared null-prototype output; changed to semantic JSON comparison"
+      },
+      {
+        "attempt": 5,
+        "builder": "operator-bounded-recovery",
+        "model": null,
+        "durationSec": null,
+        "talos": "PASS_8_OF_8",
+        "repair": "exact safe deep-merge implementation"
+      }
+    ],
+    "talos": {
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "independent": true,
+      "oracleCorrection": true
+    }
+  },
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

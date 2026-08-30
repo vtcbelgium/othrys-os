@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {normalizeIsoDate} from './normalizeIsoDate.mjs';
+test('date only',()=>assert.equal(normalizeIsoDate('2024-02-29'),'2024-02-29T00:00:00.000Z'));
+test('zoned z',()=>assert.equal(normalizeIsoDate('2024-01-02T03:04:05Z'),'2024-01-02T03:04:05.000Z'));
+test('offset',()=>assert.equal(normalizeIsoDate('2024-01-02T03:04:05+02:00'),'2024-01-02T01:04:05.000Z'));
+test('date object',()=>{const d=new Date('2024-01-01T00:00:00Z');const before=d.getTime();assert.equal(normalizeIsoDate(d),'2024-01-01T00:00:00.000Z');assert.equal(d.getTime(),before)});
+test('reject rollover',()=>assert.throws(()=>normalizeIsoDate('2024-02-30'),RangeError));
+test('reject no timezone',()=>assert.throws(()=>normalizeIsoDate('2024-01-01T12:00:00'),RangeError));
+test('reject locale',()=>assert.throws(()=>normalizeIsoDate('01/02/2024'),RangeError));
+test('bad date',()=>assert.throws(()=>normalizeIsoDate(new Date('bad')),RangeError));
+test('type',()=>assert.throws(()=>normalizeIsoDate(1),TypeError));

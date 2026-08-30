@@ -1,0 +1,96 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-038",
+    "title": "Color parser/converter",
+    "family": "validate",
+    "contract": "hex/rgb -> normalized values",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "parseColor.test.mjs",
+    "declaredTests": 9,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 22.46787667274475,
+      "changedFiles": [
+        "training/level-1/L1-038-color/parseColor.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6208",
+        "utilization_pct": "5",
+        "temperature_c": "41",
+        "power_w": "5.88"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6466",
+        "utilization_pct": "2",
+        "temperature_c": "47",
+        "power_w": "10.19"
+      }
+    }
+  ],
+  "semanticLearning": {
+    "receiptDigest": "262d02d611d01c7fb6708f0d1b1e91498e21c28f55112a60ae4358aee903d012",
+    "lessons": [
+      "first-pass semantic success is positive task-fitness evidence"
+    ],
+    "buildAttempts": [
+      {
+        "attempt": 1,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 22.46787667274475,
+        "changed": [
+          "training/level-1/L1-038-color/parseColor.mjs"
+        ],
+        "outOfScope": [],
+        "talos": "PASS_9_OF_9",
+        "failure": null,
+        "note": null
+      }
+    ],
+    "talos": {
+      "tests": 9,
+      "pass": 9,
+      "fail": 0,
+      "independent": true
+    }
+  },
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

@@ -1,0 +1,11 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {validateIdentifier} from '../src/index.mjs';
+test('valid frozen',()=>{const r=validateIdentifier('alpha_1');assert.deepEqual(r,{valid:true,issues:[]});assert.equal(Object.isFrozen(r),true);assert.equal(Object.isFrozen(r.issues),true)});
+test('empty codes stable',()=>assert.deepEqual(validateIdentifier('').issues,['EMPTY','TOO_SHORT','PATTERN']));
+test('length',()=>assert.deepEqual(validateIdentifier('abcd',{maxLength:3}).issues,['TOO_LONG']));
+test('pattern',()=>assert.deepEqual(validateIdentifier('1bad').issues,['PATTERN']));
+test('reserved sensitive',()=>assert.deepEqual(validateIdentifier('admin',{reserved:['admin']}).issues,['RESERVED']));
+test('reserved insensitive',()=>assert.deepEqual(validateIdentifier('Admin',{reserved:['admin'],caseSensitiveReserved:false}).issues,['RESERVED']));
+test('custom pattern',()=>assert.deepEqual(validateIdentifier('123',{pattern:'^\\d+$'}).issues,[]));
+test('unknown policy',()=>assert.throws(()=>validateIdentifier('a',{wat:true}),RangeError));
+test('bad regex',()=>assert.throws(()=>validateIdentifier('a',{pattern:'['}),RangeError));
+test('type',()=>assert.throws(()=>validateIdentifier(1),TypeError));

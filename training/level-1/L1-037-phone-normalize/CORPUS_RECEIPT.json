@@ -1,0 +1,120 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-037",
+    "title": "Phone shape normalizer",
+    "family": "validate",
+    "contract": "phone + region hint -> normalized shape",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "normalizePhone.test.mjs",
+    "declaredTests": 9,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 27.906787395477295,
+      "changedFiles": [
+        "training/level-1/L1-037-phone-normalize/normalizePhone.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6208",
+        "utilization_pct": "9",
+        "temperature_c": "41",
+        "power_w": "6.30"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "1",
+        "temperature_c": "47",
+        "power_w": "12.32"
+      }
+    }
+  ],
+  "semanticLearning": {
+    "receiptDigest": "2884c8583d69a870195fe7df5f65b01410faf690cbb4c72c933128f1d4b8625f",
+    "lessons": [
+      "prefix detection must precede normalization",
+      "repair regressions are high-value negative evidence",
+      "operator intervention is capability debt, never builder credit"
+    ],
+    "buildAttempts": [
+      {
+        "attempt": 1,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 27.906787395477295,
+        "changed": [
+          "training/level-1/L1-037-phone-normalize/normalizePhone.mjs"
+        ],
+        "outOfScope": [],
+        "talos": "PASS_4_OF_9",
+        "failure": null,
+        "note": null
+      },
+      {
+        "attempt": 2,
+        "builder": "requested:local.qwen3-coder-30b",
+        "model": null,
+        "durationSec": null,
+        "changed": [],
+        "outOfScope": [],
+        "talos": "REGRESSION",
+        "failure": "repair changed export and violated prefix semantics; MCP result missing",
+        "note": null
+      },
+      {
+        "attempt": 3,
+        "builder": "operator-bounded",
+        "model": null,
+        "durationSec": null,
+        "changed": [],
+        "outOfScope": [],
+        "talos": "PASS_9_OF_9",
+        "failure": null,
+        "note": "recovery only after governed repair path failed"
+      }
+    ],
+    "talos": {
+      "tests": 9,
+      "pass": 9,
+      "fail": 0,
+      "independent": true
+    }
+  },
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

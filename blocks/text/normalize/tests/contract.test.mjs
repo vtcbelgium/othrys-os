@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {normalizeText} from '../src/index.mjs';
+const cases=[['Speech-to-Text','speech to text'],['  AI   automation  ','ai automation'],['foo_bar/baz','foo bar baz'],['already clean','already clean'],['',''],['A\tB\nC','a b c']];for(const [input,expected] of cases)test(JSON.stringify(input),()=>assert.equal(normalizeText(input),expected));

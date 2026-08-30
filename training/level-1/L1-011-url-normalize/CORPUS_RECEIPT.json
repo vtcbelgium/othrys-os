@@ -1,0 +1,70 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-011",
+    "title": "URL normalizer",
+    "family": "web",
+    "contract": "URL -> canonical URL",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "urlNormalize.test.mjs",
+    "declaredTests": 7,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 15.219298601150513,
+      "changedFiles": [
+        "training/level-1/L1-011-url-normalize/urlNormalize.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6459",
+        "utilization_pct": "8",
+        "temperature_c": "39",
+        "power_w": "5.60"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6459",
+        "utilization_pct": "2",
+        "temperature_c": "45",
+        "power_w": "18.36"
+      }
+    }
+  ],
+  "semanticLearning": null,
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

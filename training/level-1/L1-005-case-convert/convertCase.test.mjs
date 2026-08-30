@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {convertCase} from './convertCase.mjs';
+const cases=[['Hello World','lower','hello world'],['Hello World','upper','HELLO WORLD'],['hello world','title','Hello World'],['HELLO WORLD','sentence','Hello world'],['hello world_test','camel','helloWorldTest'],['hello-world test','pascal','HelloWorldTest'],['helloWorld Test','snake','hello_world_test'],['helloWorld_test','kebab','hello-world-test'],[null,'lower','']];for(const [input,mode,expected] of cases)test(mode+':'+String(input),()=>assert.equal(convertCase(input,mode),expected));
+test('unsupported mode fails closed',()=>assert.throws(()=>convertCase('x','wat'),RangeError));

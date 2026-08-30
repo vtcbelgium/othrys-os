@@ -1,0 +1,135 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-004",
+    "title": "Text statistics",
+    "family": "text",
+    "contract": "text -> words/chars/lines",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "textStats.test.mjs",
+    "declaredTests": 6,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "rebuild-result.json",
+      "builder": "qwen3-builder",
+      "model": null,
+      "ok": true,
+      "reason": "",
+      "durationSec": 4.850867748260498,
+      "changedFiles": [
+        "training/level-1/L1-004-text-stats/textStats.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6134",
+        "utilization_pct": "0",
+        "temperature_c": "40",
+        "power_w": "5.45"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6134",
+        "utilization_pct": "0",
+        "temperature_c": "43",
+        "power_w": "25.49"
+      }
+    },
+    {
+      "file": "repair-result.json",
+      "builder": "qwen3-builder",
+      "model": null,
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/level-1/L1-004-text-stats/repair.log']",
+      "durationSec": 28.68425941467285,
+      "changedFiles": [
+        "training/level-1/L1-004-text-stats/repair.log"
+      ],
+      "outOfScopeChanges": [
+        "training/level-1/L1-004-text-stats/repair.log"
+      ],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6134",
+        "utilization_pct": "0",
+        "temperature_c": "39",
+        "power_w": "8.74"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6134",
+        "utilization_pct": "0",
+        "temperature_c": "56",
+        "power_w": "60.26"
+      }
+    },
+    {
+      "file": "worker-result.json",
+      "builder": "qwen3-builder",
+      "model": null,
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/level-1/L1-004-text-stats/worker.log']",
+      "durationSec": 4.96104621887207,
+      "changedFiles": [
+        "training/level-1/L1-004-text-stats/textStats.mjs",
+        "training/level-1/L1-004-text-stats/worker.log"
+      ],
+      "outOfScopeChanges": [
+        "training/level-1/L1-004-text-stats/worker.log"
+      ],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6134",
+        "utilization_pct": "0",
+        "temperature_c": "39",
+        "power_w": "7.86"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6134",
+        "utilization_pct": "0",
+        "temperature_c": "42",
+        "power_w": "24.45"
+      }
+    }
+  ],
+  "semanticLearning": null,
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

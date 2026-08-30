@@ -1,0 +1,137 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-033",
+    "title": "Markdown table generator",
+    "family": "generate",
+    "contract": "records -> markdown table",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "markdownTable.test.mjs",
+    "declaredTests": 8,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "model": "qwen3-coder:30b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "durationSec": 19.965213537216187,
+      "changedFiles": [],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "0",
+        "temperature_c": "42",
+        "power_w": "5.39"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "129",
+        "utilization_pct": "8",
+        "temperature_c": "44",
+        "power_w": "8.89"
+      }
+    },
+    {
+      "file": "worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 14.652314901351929,
+      "changedFiles": [
+        "training/level-1/L1-033-markdown-table/markdownTable.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6208",
+        "utilization_pct": "0",
+        "temperature_c": "41",
+        "power_w": "5.34"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "2",
+        "temperature_c": "46",
+        "power_w": "9.90"
+      }
+    }
+  ],
+  "semanticLearning": {
+    "receiptDigest": "edd1614a4f90034ec6bfdd2c4af6156cd1d2201f351048ebfd7b2043bc267bba",
+    "lessons": [
+      "0/8 first pass is strong negative task-fit evidence",
+      "repair no-mutation should lower route confidence for this task shape",
+      "operator recovery remains explicitly separated from builder success"
+    ],
+    "buildAttempts": [
+      {
+        "attempt": 1,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 14.652314901351929,
+        "talos": "FAIL_0_OF_8",
+        "failure": "inverted scalar validation; first-row-only columns; malformed markdown delimiters; empty input bug"
+      },
+      {
+        "attempt": 2,
+        "builder": "local.qwen3-coder-30b",
+        "model": "qwen3-coder:30b",
+        "durationSec": 19.965213537216187,
+        "talos": "NO_CHANGE",
+        "failure": "NO_ATTEMPT_MUTATION"
+      },
+      {
+        "attempt": 3,
+        "builder": "operator-bounded-recovery",
+        "model": null,
+        "durationSec": null,
+        "talos": "PASS_8_OF_8",
+        "repair": "exact contract implementation after governed repair failure"
+      }
+    ],
+    "talos": {
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "independent": true
+    }
+  },
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

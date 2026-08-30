@@ -1,0 +1,131 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-032",
+    "title": "Deterministic fixture generator",
+    "family": "generate",
+    "contract": "schema + seed -> fixture",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "generateFixture.test.mjs",
+    "declaredTests": 8,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "worker-result.json",
+      "builder": "qwen3-builder",
+      "model": null,
+      "ok": false,
+      "reason": "FileNotFoundError(2, 'No such file or directory')",
+      "durationSec": null,
+      "changedFiles": [],
+      "outOfScopeChanges": [],
+      "gpuBefore": null,
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6250",
+        "utilization_pct": "0",
+        "temperature_c": "41",
+        "power_w": "5.28"
+      }
+    },
+    {
+      "file": "worker2-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 24.16381025314331,
+      "changedFiles": [
+        "training/level-1/L1-032-fixture/generateFixture.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6250",
+        "utilization_pct": "0",
+        "temperature_c": "41",
+        "power_w": "5.33"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "1",
+        "temperature_c": "48",
+        "power_w": "10.09"
+      }
+    }
+  ],
+  "semanticLearning": {
+    "receiptDigest": "5add2f5b036bec435820efea97296c9d97b6b842a53e75c7013cc0038d1c545b",
+    "lessons": [
+      "prompt transport itself is a training surface",
+      "semantic tests need static contract gates for forbidden dependencies",
+      "proof and attribution must be separate: missing worker receipt does not erase Talos proof",
+      "orchestration receipt gaps are Rhea/Kronos/Hephaestus data"
+    ],
+    "buildAttempts": [
+      {
+        "attempt": 0,
+        "builder": "transport",
+        "model": null,
+        "durationSec": null,
+        "talos": "NOT_RUN",
+        "failure": "PowerShell prompt transport corrupted request before worker execution"
+      },
+      {
+        "attempt": 1,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 24.16381025314331,
+        "talos": "PASS_6_OF_8_PLUS_STATIC_FAIL",
+        "failure": "normal prototype result; unsupported type wrong error class; crypto import violated dependency-free PRNG contract"
+      },
+      {
+        "attempt": 2,
+        "builder": "requested:local.qwen3-coder-30b",
+        "model": "requested:qwen3-coder:30b",
+        "durationSec": null,
+        "talos": "PASS_8_OF_8_PLUS_STATIC_IMPORT_PASS",
+        "failure": "launcher/MCP timeout left no repair result receipt; attribution incomplete"
+      }
+    ],
+    "talos": {
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "independent": true,
+      "staticImportGate": "PASS"
+    }
+  },
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

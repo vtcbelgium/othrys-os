@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {sanitizeFilename} from './sanitizeFilename.mjs';
+test('reserved chars',()=>assert.equal(sanitizeFilename('a<b>:c?.txt'),'a-b-c-.txt'));
+test('slashes/path separators',()=>assert.equal(sanitizeFilename('a/b\\c.txt'),'a-b-c.txt'));
+test('controls whitespace trailing dot',()=>assert.equal(sanitizeFilename('  a\u0000   b.  '),'a b'));
+test('reserved basename',()=>assert.equal(sanitizeFilename('CON.txt'),'_CON.txt'));
+test('reserved bare',()=>assert.equal(sanitizeFilename('nul'),'_nul'));
+test('empty fallback',()=>assert.equal(sanitizeFilename('***'),'_'));
+test('unicode nfc',()=>assert.equal(sanitizeFilename('e\u0301.txt'),'é.txt'));
+test('max length',()=>assert.ok(sanitizeFilename('a'.repeat(300)).length<=255));
+test('bad input',()=>assert.throws(()=>sanitizeFilename(null),TypeError));

@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {normalizePhone} from './normalizePhone.mjs';
+test('international plus',()=>assert.deepEqual(normalizePhone('+32 475 12 34 56'),{normalized:'+32475123456',valid:true,reason:null}));
+test('00 prefix',()=>assert.deepEqual(normalizePhone('0032475123456'),{normalized:'+32475123456',valid:true,reason:null}));
+test('BE local',()=>assert.equal(normalizePhone('0475/12.34.56','BE').normalized,'+32475123456'));
+test('US local',()=>assert.equal(normalizePhone('(415) 555-2671','US').normalized,'+14155552671'));
+test('missing region invalid',()=>assert.equal(normalizePhone('0475123456').reason,'REGION'));
+test('letters format',()=>assert.equal(normalizePhone('+32ABC').reason,'FORMAT'));
+test('length',()=>assert.equal(normalizePhone('+123').reason,'LENGTH'));
+test('frozen',()=>assert.equal(Object.isFrozen(normalizePhone('+32475123456')),true));
+test('type',()=>assert.throws(()=>normalizePhone(123),TypeError));

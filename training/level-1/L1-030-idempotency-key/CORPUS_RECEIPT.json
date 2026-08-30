@@ -1,0 +1,177 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-030",
+    "title": "Idempotency key generator",
+    "family": "developer",
+    "contract": "stable request fields -> key",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "idempotencyKey.test.mjs",
+    "declaredTests": 8,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "durationSec": 31.642554998397827,
+      "changedFiles": [],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6461",
+        "utilization_pct": "7",
+        "temperature_c": "42",
+        "power_w": "5.65"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6461",
+        "utilization_pct": "1",
+        "temperature_c": "50",
+        "power_w": "20.13"
+      }
+    },
+    {
+      "file": "repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "model": "qwen3-coder:30b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 25.139653205871582,
+      "changedFiles": [
+        "training/level-1/L1-030-idempotency-key/idempotencyKey.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6461",
+        "utilization_pct": "0",
+        "temperature_c": "41",
+        "power_w": "5.38"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6243",
+        "utilization_pct": "1",
+        "temperature_c": "51",
+        "power_w": "13.24"
+      }
+    },
+    {
+      "file": "worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 17.752553701400757,
+      "changedFiles": [
+        "training/level-1/L1-030-idempotency-key/idempotencyKey.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "122",
+        "utilization_pct": "0",
+        "temperature_c": "40",
+        "power_w": "5.31"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6461",
+        "utilization_pct": "2",
+        "temperature_c": "46",
+        "power_w": "11.04"
+      }
+    }
+  ],
+  "semanticLearning": {
+    "receiptDigest": "9ad4334f65e6876cb41f3b715f4b3e1cb86b77666fce301821426924a02b0953",
+    "lessons": [
+      "repair mutation is not repair success",
+      "minimal fixes can trigger destructive model rewrites",
+      "original worker diffs are valuable recovery artifacts",
+      "operator intervention must be recorded as capability debt, not model success"
+    ],
+    "buildAttempts": [
+      {
+        "attempt": 1,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 17.752553701400757,
+        "talos": "PASS_7_OF_8",
+        "failure": "non-finite numbers canonicalized instead of rejected"
+      },
+      {
+        "attempt": 2,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 31.642554998397827,
+        "talos": "NO_CHANGE",
+        "failure": "NO_ATTEMPT_MUTATION"
+      },
+      {
+        "attempt": 3,
+        "builder": "local.qwen3-coder-30b",
+        "model": "qwen3-coder:30b",
+        "durationSec": 25.139653205871582,
+        "talos": "REGRESSION_MODULE_CONTRACT",
+        "failure": "hard repair replaced full module and removed idempotencyKey export"
+      },
+      {
+        "attempt": 4,
+        "builder": "operator-bounded-recovery",
+        "model": null,
+        "durationSec": null,
+        "talos": "PASS_8_OF_8",
+        "repair": "restored original worker diff and added finite-number guard only"
+      }
+    ],
+    "talos": {
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "independent": true,
+      "regressionCaught": true
+    }
+  },
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

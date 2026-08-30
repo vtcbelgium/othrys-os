@@ -1,0 +1,133 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-007",
+    "title": "JSON validator",
+    "family": "data",
+    "contract": "text -> valid/error location",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "jsonValidate.test.mjs",
+    "declaredTests": 5,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "repair-result.json",
+      "builder": "local.qwen3-8b",
+      "model": "qwen3:8b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 8.293697595596313,
+      "changedFiles": [
+        "training/level-1/L1-007-json-validate/jsonValidate.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "5305",
+        "utilization_pct": "8",
+        "temperature_c": "41",
+        "power_w": "5.56"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "5305",
+        "utilization_pct": "2",
+        "temperature_c": "44",
+        "power_w": "18.88"
+      }
+    },
+    {
+      "file": "worker-result.json",
+      "builder": "local.qwen3-8b",
+      "model": "qwen3:8b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 5.812146425247192,
+      "changedFiles": [
+        "training/level-1/L1-007-json-validate/jsonValidate.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "5305",
+        "utilization_pct": "7",
+        "temperature_c": "40",
+        "power_w": "5.77"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "5305",
+        "utilization_pct": "1",
+        "temperature_c": "47",
+        "power_w": "40.11"
+      }
+    }
+  ],
+  "semanticLearning": {
+    "receiptDigest": "d98b26d9462a97415f3c8bda44dc2abc20c84a5c2c46b5b0b81875b87ceda3d6",
+    "lessons": [
+      "explicit immutability requirements need direct Talos fixtures",
+      "native parser diagnostics vary; derive only from evidence and never guess",
+      "bounded repair succeeded with zero out-of-scope mutation"
+    ],
+    "buildAttempts": [
+      {
+        "attempt": 1,
+        "builder": "local.qwen3-8b",
+        "model": "qwen3:8b",
+        "durationSec": 5.812146425247192,
+        "outOfScope": [],
+        "talos": "FAIL_3_OF_5",
+        "failure": "result objects not frozen; location derivation not contract-strong"
+      },
+      {
+        "attempt": 2,
+        "builder": "local.qwen3-8b",
+        "model": "qwen3:8b",
+        "durationSec": 8.293697595596313,
+        "outOfScope": [],
+        "talos": "PASS_5_OF_5",
+        "repair": "freeze results; derive location from original input when native position exists"
+      }
+    ],
+    "talos": {
+      "tests": 5,
+      "pass": 5,
+      "fail": 0,
+      "independent": true
+    }
+  },
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

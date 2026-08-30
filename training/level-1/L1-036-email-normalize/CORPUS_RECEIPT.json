@@ -1,0 +1,148 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-036",
+    "title": "Email normalizer/validator",
+    "family": "validate",
+    "contract": "email -> normalized/valid",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "normalizeEmail.test.mjs",
+    "declaredTests": 9,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "durationSec": 36.67223381996155,
+      "changedFiles": [],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "13",
+        "temperature_c": "41",
+        "power_w": "6.28"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "1",
+        "temperature_c": "51",
+        "power_w": "15.83"
+      }
+    },
+    {
+      "file": "worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 19.24891233444214,
+      "changedFiles": [
+        "training/level-1/L1-036-email-normalize/normalizeEmail.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "4",
+        "temperature_c": "41",
+        "power_w": "6.49"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "2",
+        "temperature_c": "47",
+        "power_w": "10.49"
+      }
+    }
+  ],
+  "semanticLearning": {
+    "receiptDigest": "981fdf1f5ca0463784415ac6425a8f674bacd291b0ebf242d85a955ce8a09cff",
+    "lessons": [
+      "strengthened Talos with ASCII-letter TLD fixture",
+      "Qwen3.5 repair no-mutation",
+      "heavy repair succeeded but receipt persistence failed"
+    ],
+    "buildAttempts": [
+      {
+        "attempt": 1,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 19.24891233444214,
+        "changed": [
+          "training/level-1/L1-036-email-normalize/normalizeEmail.mjs"
+        ],
+        "outOfScope": [],
+        "talos": "PASS_7_OF_9",
+        "failure": null,
+        "note": null
+      },
+      {
+        "attempt": 2,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 36.67223381996155,
+        "changed": [],
+        "outOfScope": [],
+        "talos": "NO_CHANGE",
+        "failure": "NO_ATTEMPT_MUTATION",
+        "note": null
+      },
+      {
+        "attempt": 3,
+        "builder": "requested:local.qwen3-coder-30b",
+        "model": null,
+        "durationSec": null,
+        "changed": [],
+        "outOfScope": [],
+        "talos": "PASS_9_OF_9",
+        "failure": null,
+        "note": "artifact repaired after MCP timeout; no persisted worker result receipt"
+      }
+    ],
+    "talos": {
+      "tests": 9,
+      "pass": 9,
+      "fail": 0,
+      "independent": true
+    }
+  },
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

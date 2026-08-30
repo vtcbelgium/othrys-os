@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {convertUnit} from '../src/index.mjs';
+const near=(a,b,e=1e-10)=>assert.ok(Math.abs(a-b)<=e*Math.max(1,Math.abs(b)));
+test('m to cm',()=>assert.equal(convertUnit(1,'m','cm'),100));
+test('mile to km',()=>near(convertUnit(1,'mi','km'),1.609344));
+test('lb to kg',()=>near(convertUnit(1,'lb','kg'),0.45359237));
+test('C to F',()=>near(convertUnit(100,'C','F'),212));
+test('F to C',()=>near(convertUnit(32,'F','C'),0));
+test('C to K',()=>near(convertUnit(0,'C','K'),273.15));
+test('cross dimension',()=>assert.throws(()=>convertUnit(1,'m','kg'),RangeError));
+test('bad value/unit',()=>{assert.throws(()=>convertUnit(NaN,'m','cm'),TypeError);assert.throws(()=>convertUnit(1,'M','cm'),RangeError)});

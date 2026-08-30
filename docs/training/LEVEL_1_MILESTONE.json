@@ -1,0 +1,43 @@
+{
+    "schema":  "othrys.os.training-level-milestone.v1",
+    "mission":  "V2-011K",
+    "level":  1,
+    "status":  "COMPLETE",
+    "completed_jobs":  40,
+    "queued_jobs":  0,
+    "source_test_files":  40,
+    "source_tests":  {
+                         "pass":  305,
+                         "fail":  0
+                     },
+    "candidate_block_test_files":  40,
+    "candidate_block_tests":  {
+                                  "pass":  305,
+                                  "fail":  0
+                              },
+    "worker_receipt_files":  81,
+    "measured_worker_duration_seconds":  2050.89990401268,
+    "no_attempt_mutation_receipts":  23,
+    "out_of_scope_changes_observed":  6,
+    "data_class":  "HIGH_VALUE_OPERATIONAL_LEARNING",
+    "learning_organs":  [
+                            "MNEMOSYNE",
+                            "HEPHAESTUS",
+                            "TALOS",
+                            "PROMETHEUS",
+                            "KRONOS",
+                            "RHEA",
+                            "MYCELIUM",
+                            "SWITCHYARD"
+                        ],
+    "block_disposition":  "TRAINING_CANDIDATES_ONLY",
+    "automatic_admission":  false,
+    "authority_granted":  false,
+    "next_training_job":  null,
+    "proof_note":  "Level 1 is exhausted. Advancing to another level requires an explicit governed curriculum transition; completion itself grants no authority.",
+    "runtime_test_files":  75,
+    "runtime_tests":  {
+                          "pass":  346,
+                          "fail":  0
+                      }
+}

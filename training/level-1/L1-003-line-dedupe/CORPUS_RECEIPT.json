@@ -1,0 +1,73 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-003",
+    "title": "Line deduplicator",
+    "family": "text",
+    "contract": "lines -> stable unique lines",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "dedupeLines.test.mjs",
+    "declaredTests": 6,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "worker-result.json",
+      "builder": "qwen3-builder",
+      "model": null,
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/level-1/L1-003-line-dedupe/worker.log']",
+      "durationSec": 9.063152074813843,
+      "changedFiles": [
+        "training/level-1/L1-003-line-dedupe/dedupeLines.mjs",
+        "training/level-1/L1-003-line-dedupe/worker.log"
+      ],
+      "outOfScopeChanges": [
+        "training/level-1/L1-003-line-dedupe/worker.log"
+      ],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6134",
+        "utilization_pct": "0",
+        "temperature_c": "39",
+        "power_w": "8.03"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6134",
+        "utilization_pct": "0",
+        "temperature_c": "43",
+        "power_w": "20.20"
+      }
+    }
+  ],
+  "semanticLearning": null,
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

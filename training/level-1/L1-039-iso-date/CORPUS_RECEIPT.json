@@ -1,0 +1,179 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-039",
+    "title": "ISO date normalizer",
+    "family": "validate",
+    "contract": "date input -> ISO or error",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "normalizeIsoDate.test.mjs",
+    "declaredTests": 9,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "model": "qwen3-coder:30b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "durationSec": 20.1745445728302,
+      "changedFiles": [],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6466",
+        "utilization_pct": "9",
+        "temperature_c": "43",
+        "power_w": "6.66"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "129",
+        "utilization_pct": "6",
+        "temperature_c": "44",
+        "power_w": "9.62"
+      }
+    },
+    {
+      "file": "worker-result.json",
+      "builder": "qwen3-builder",
+      "model": null,
+      "ok": false,
+      "reason": "FileNotFoundError(2, 'No such file or directory')",
+      "durationSec": null,
+      "changedFiles": [],
+      "outOfScopeChanges": [],
+      "gpuBefore": null,
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6466",
+        "utilization_pct": "0",
+        "temperature_c": "42",
+        "power_w": "5.37"
+      }
+    },
+    {
+      "file": "worker2-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 12.651259899139404,
+      "changedFiles": [
+        "training/level-1/L1-039-iso-date/normalizeIsoDate.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6466",
+        "utilization_pct": "5",
+        "temperature_c": "41",
+        "power_w": "5.62"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6466",
+        "utilization_pct": "1",
+        "temperature_c": "51",
+        "power_w": "13.32"
+      }
+    }
+  ],
+  "semanticLearning": {
+    "receiptDigest": "2da94c1d7fb8c5539678bfb6fb13239c11abfaac8151681981a815c99cc6b816",
+    "lessons": [
+      "request transport failures belong in training evidence",
+      "timezone offsets must not be discarded",
+      "strict accepted-shape validation avoids locale ambiguity"
+    ],
+    "buildAttempts": [
+      {
+        "attempt": 1,
+        "builder": "qwen3-builder",
+        "model": null,
+        "durationSec": null,
+        "changed": [],
+        "outOfScope": [],
+        "talos": "NO_BUILD",
+        "failure": "operator request/result path transport mistake caused FileNotFoundError",
+        "note": null
+      },
+      {
+        "attempt": 2,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 12.651259899139404,
+        "changed": [
+          "training/level-1/L1-039-iso-date/normalizeIsoDate.mjs"
+        ],
+        "outOfScope": [],
+        "talos": "PASS_6_OF_9",
+        "failure": null,
+        "note": null
+      },
+      {
+        "attempt": 3,
+        "builder": "local.qwen3-coder-30b",
+        "model": "qwen3-coder:30b",
+        "durationSec": 20.1745445728302,
+        "changed": [],
+        "outOfScope": [],
+        "talos": "NO_CHANGE",
+        "failure": "NO_ATTEMPT_MUTATION",
+        "note": null
+      },
+      {
+        "attempt": 4,
+        "builder": "operator-bounded",
+        "model": null,
+        "durationSec": null,
+        "changed": [],
+        "outOfScope": [],
+        "talos": "PASS_9_OF_9",
+        "failure": null,
+        "note": "recovery after governed repair path failed"
+      }
+    ],
+    "talos": {
+      "tests": 9,
+      "pass": 9,
+      "fail": 0,
+      "independent": true
+    }
+  },
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

@@ -1,882 +1,898 @@
 {
-  "schema": "othrys.os.training-manifest.v1",
-  "missionId": "V2-011K",
-  "mode": "TRAINING",
-  "currentLevel": 1,
-  "levelLaw": "Levels execute in order. Additions are allowed but never silently reorder completed currency.",
-  "currencyLaw": "Level 1 jobs are fast-moving polished currency: small, deterministic, reusable, independently tested and cheap to repeat.",
-  "cycleLaw": "INTAKE -> ATLAS/MNEMOSYNE STOCK CHECK -> PLAN -> BUILD/REUSE -> TALOS -> REPEAT/FAULT -> BLOCK DISPOSITION -> INDEX -> LESSON",
-  "promotionLaw": "A training job does not admit a Block. Admission requires reusable contract, independent proof, provenance, no duplicate owner and explicit library disposition.",
-  "levels": [
-    {
-      "level": 1,
-      "name": "Atomic Currency",
-      "goal": "Tiny deterministic, polished, dependency-light utilities. One bounded input/output contract; minutes not days.",
-      "status": "ACTIVE",
-      "entryGate": "V2-011K operator activation",
-      "authorityGranted": false
-    },
-    {
-      "level": 2,
-      "name": "Stateful Currency",
-      "goal": "Small local state, CRUD, import/export, settings, trackers and dashboards.",
-      "status": "LOCKED",
-      "entryGate": "Level 1 graduation receipt",
-      "authorityGranted": false
-    },
-    {
-      "level": 3,
-      "name": "Small Applications",
-      "goal": "Complete single-purpose apps, static sites, extensions and local-first tools.",
-      "status": "LOCKED",
-      "entryGate": "Level 2 graduation receipt",
-      "authorityGranted": false
-    },
-    {
-      "level": 4,
-      "name": "Connected Applications",
-      "goal": "Auth, databases, storage, APIs, email, search, PWA/offline and external integrations.",
-      "status": "LOCKED",
-      "entryGate": "Level 3 graduation receipt",
-      "authorityGranted": false
-    },
-    {
-      "level": 5,
-      "name": "AI Applications",
-      "goal": "Extraction, classification, summarization, transcription, RAG and bounded inference workflows.",
-      "status": "LOCKED",
-      "entryGate": "Level 4 graduation receipt",
-      "authorityGranted": false
-    },
-    {
-      "level": 6,
-      "name": "Automation Systems",
-      "goal": "Scheduled and event-driven multi-step workflows with approvals, monitoring and recovery.",
-      "status": "LOCKED",
-      "entryGate": "Level 5 graduation receipt",
-      "authorityGranted": false
-    },
-    {
-      "level": 7,
-      "name": "Production Products",
-      "goal": "Multi-user SaaS, commerce, community, booking and business systems with production rails.",
-      "status": "LOCKED",
-      "entryGate": "Level 6 graduation receipt",
-      "authorityGranted": false
-    },
-    {
-      "level": 8,
-      "name": "Oros Systems",
-      "goal": "Composed products assembled substantially from admitted Great Library Blocks and Blueprints.",
-      "status": "LOCKED",
-      "entryGate": "Level 7 graduation receipt",
-      "authorityGranted": false
-    },
-    {
-      "level": 9,
-      "name": "Autonomous Construction",
-      "goal": "Requirement to research, blueprint, compose, build, verify, repair and release under operator gates.",
-      "status": "LOCKED",
-      "entryGate": "Level 8 graduation receipt",
-      "authorityGranted": false
-    },
-    {
-      "level": 10,
-      "name": "Recursive OTHRYS",
-      "goal": "OTHRYS safely improves OTHRYS: identifies missing primitives, proves reuse, extracts Blocks and learns without drift.",
-      "status": "LOCKED",
-      "entryGate": "Level 9 graduation receipt",
-      "authorityGranted": false
-    }
-  ],
-  "level1": {
-    "status": "ACTIVE",
-    "targetJobs": 40,
-    "jobs": [
-      {
-        "id": "L1-001",
-        "key": "slugify",
-        "family": "text",
-        "title": "Text slugifier",
-        "contract": "string -> lowercase URL-safe slug",
-        "sequence": 1,
-        "status": "COMPLETE",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false,
-        "attempts": 4,
-        "blockDisposition": "TRAINING_CANDIDATE",
-        "blockId": "block.text.slugify",
-        "proof": "blocks/text/slugify/tests/contract.test.mjs",
-        "lessons": [
-          "worker watchdog required",
-          "malformed single-path tool writes require bounded recovery",
-          "test fixtures must be encoding-stable"
-        ]
-      },
-      {
-        "id": "L1-002",
-        "key": "text-normalize",
-        "family": "text",
-        "title": "Whitespace/text normalizer",
-        "contract": "string -> normalized text",
-        "sequence": 2,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-003",
-        "key": "line-dedupe",
-        "family": "text",
-        "title": "Line deduplicator",
-        "contract": "lines -> stable unique lines",
-        "sequence": 3,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-004",
-        "key": "word-count",
-        "family": "text",
-        "title": "Text statistics",
-        "contract": "text -> words/chars/lines",
-        "sequence": 4,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-005",
-        "key": "case-convert",
-        "family": "text",
-        "title": "Case converter",
-        "contract": "text + case -> converted text",
-        "sequence": 5,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-006",
-        "key": "json-format",
-        "family": "data",
-        "title": "JSON formatter/minifier",
-        "contract": "JSON text -> canonical pretty/minified JSON",
-        "sequence": 6,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-007",
-        "key": "json-validate",
-        "family": "data",
-        "title": "JSON validator",
-        "contract": "text -> valid/error location",
-        "sequence": 7,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-008",
-        "key": "csv-clean",
-        "family": "data",
-        "title": "CSV row cleaner",
-        "contract": "CSV -> normalized CSV",
-        "sequence": 8,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-009",
-        "key": "csv-json",
-        "family": "data",
-        "title": "CSV/JSON converter",
-        "contract": "CSV <-> JSON records",
-        "sequence": 9,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-010",
-        "key": "sort-records",
-        "family": "data",
-        "title": "Stable record sorter",
-        "contract": "records + keys -> stable sorted records",
-        "sequence": 10,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-011",
-        "key": "url-normalize",
-        "family": "web",
-        "title": "URL normalizer",
-        "contract": "URL -> canonical URL",
-        "sequence": 11,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-012",
-        "key": "querystring",
-        "family": "web",
-        "title": "Query-string parser/builder",
-        "contract": "query <-> key/value object",
-        "sequence": 12,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-013",
-        "key": "html-escape",
-        "family": "web",
-        "title": "HTML escape/unescape",
-        "contract": "text <-> escaped text",
-        "sequence": 13,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-014",
-        "key": "utm-builder",
-        "family": "web",
-        "title": "UTM URL builder",
-        "contract": "URL + campaign fields -> tagged URL",
-        "sequence": 14,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-015",
-        "key": "meta-check",
-        "family": "web",
-        "title": "Metadata field checker",
-        "contract": "metadata -> missing/invalid fields",
-        "sequence": 15,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-016",
-        "key": "unit-convert",
-        "family": "calculate",
-        "title": "Unit converter",
-        "contract": "value + units -> converted value",
-        "sequence": 16,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-017",
-        "key": "duration-calc",
-        "family": "calculate",
-        "title": "Date/duration calculator",
-        "contract": "dates/durations -> normalized result",
-        "sequence": 17,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-018",
-        "key": "percent-calc",
-        "family": "calculate",
-        "title": "Percentage calculator",
-        "contract": "values -> percent/change/portion",
-        "sequence": 18,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-019",
-        "key": "price-calc",
-        "family": "calculate",
-        "title": "Price/VAT/discount calculator",
-        "contract": "price inputs -> totals",
-        "sequence": 19,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-020",
-        "key": "time-cost",
-        "family": "calculate",
-        "title": "Time/cost estimator",
-        "contract": "rate + duration -> cost",
-        "sequence": 20,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-021",
-        "key": "checksum",
-        "family": "file",
-        "title": "Checksum calculator",
-        "contract": "bytes/text -> digest",
-        "sequence": 21,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-022",
-        "key": "filename-sanitize",
-        "family": "file",
-        "title": "Filename sanitizer",
-        "contract": "name -> portable safe filename",
-        "sequence": 22,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-023",
-        "key": "extension-detect",
-        "family": "file",
-        "title": "File extension/media classifier",
-        "contract": "filename -> extension/category",
-        "sequence": 23,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-024",
-        "key": "duplicate-signature",
-        "family": "file",
-        "title": "Duplicate signature helper",
-        "contract": "metadata/digests -> duplicate groups",
-        "sequence": 24,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-025",
-        "key": "path-normalize",
-        "family": "file",
-        "title": "Portable path normalizer",
-        "contract": "path -> normalized portable path",
-        "sequence": 25,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-026",
-        "key": "semver-compare",
-        "family": "developer",
-        "title": "Semantic-version comparator",
-        "contract": "versions -> ordering",
-        "sequence": 26,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-027",
-        "key": "env-parse",
-        "family": "developer",
-        "title": ".env metadata parser",
-        "contract": "env text -> names/presence only",
-        "sequence": 27,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-028",
-        "key": "schema-check",
-        "family": "developer",
-        "title": "Simple schema checker",
-        "contract": "object + field rules -> issues",
-        "sequence": 28,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-029",
-        "key": "retry-policy",
-        "family": "developer",
-        "title": "Bounded retry calculator",
-        "contract": "attempt policy -> next/refuse",
-        "sequence": 29,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-030",
-        "key": "idempotency-key",
-        "family": "developer",
-        "title": "Idempotency key generator",
-        "contract": "stable request fields -> key",
-        "sequence": 30,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-031",
-        "key": "checklist",
-        "family": "generate",
-        "title": "Checklist generator",
-        "contract": "items/rules -> normalized checklist",
-        "sequence": 31,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-032",
-        "key": "fixture",
-        "family": "generate",
-        "title": "Deterministic fixture generator",
-        "contract": "schema + seed -> fixture",
-        "sequence": 32,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-033",
-        "key": "table-markdown",
-        "family": "generate",
-        "title": "Markdown table generator",
-        "contract": "records -> markdown table",
-        "sequence": 33,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-034",
-        "key": "changelog-entry",
-        "family": "generate",
-        "title": "Changelog entry formatter",
-        "contract": "change metadata -> entry",
-        "sequence": 34,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-035",
-        "key": "config-merge",
-        "family": "generate",
-        "title": "Safe config merge",
-        "contract": "base + overlay -> merged config",
-        "sequence": 35,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-036",
-        "key": "email-normalize",
-        "family": "validate",
-        "title": "Email normalizer/validator",
-        "contract": "email -> normalized/valid",
-        "sequence": 36,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-037",
-        "key": "phone-normalize",
-        "family": "validate",
-        "title": "Phone shape normalizer",
-        "contract": "phone + region hint -> normalized shape",
-        "sequence": 37,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-038",
-        "key": "hex-color",
-        "family": "validate",
-        "title": "Color parser/converter",
-        "contract": "hex/rgb -> normalized values",
-        "sequence": 38,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-039",
-        "key": "date-iso",
-        "family": "validate",
-        "title": "ISO date normalizer",
-        "contract": "date input -> ISO or error",
-        "sequence": 39,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      },
-      {
-        "id": "L1-040",
-        "key": "identifier",
-        "family": "validate",
-        "title": "Identifier validator",
-        "contract": "identifier + policy -> valid/issues",
-        "sequence": 40,
-        "status": "QUEUED",
-        "targetDisposition": "BLOCK_OR_MERGE",
-        "quality": [
-          "deterministic",
-          "pure or bounded filesystem-free core",
-          "edge cases",
-          "stable serialization where relevant",
-          "no secrets",
-          "authority-free"
-        ],
-        "authorityGranted": false
-      }
-    ],
-    "completedJobs": 1
-  },
-  "inspirationSources": [
-    "Great Library 387-potential catalogue",
-    "Great Harvest estate",
-    "OTHRYS organs and diagnostics",
-    "othrys-blocks proven stock",
-    "Study Buddy",
-    "Oroi products",
-    "VTC historical code",
-    "PandaOS experience concepts (not backend duplication)",
-    "future Prometheus harvests"
-  ],
-  "authorityGranted": false,
-  "automaticAdmission": false,
-  "automaticLevelAdvance": false
+    "schema":  "othrys.os.training-manifest.v1",
+    "missionId":  "V2-011K",
+    "mode":  "TRAINING",
+    "currentLevel":  1,
+    "levelLaw":  "Levels execute in order. Additions are allowed but never silently reorder completed currency.",
+    "currencyLaw":  "Level 1 jobs are fast-moving polished currency: small, deterministic, reusable, independently tested and cheap to repeat.",
+    "cycleLaw":  "INTAKE -\u003e ATLAS/MNEMOSYNE STOCK CHECK -\u003e PLAN -\u003e BUILD/REUSE -\u003e TALOS -\u003e REPEAT/FAULT -\u003e BLOCK DISPOSITION -\u003e INDEX -\u003e LESSON",
+    "promotionLaw":  "A training job does not admit a Block. Admission requires reusable contract, independent proof, provenance, no duplicate owner and explicit library disposition.",
+    "levels":  [
+                   {
+                       "level":  1,
+                       "name":  "Atomic Currency",
+                       "goal":  "Tiny deterministic, polished, dependency-light utilities. One bounded input/output contract; minutes not days.",
+                       "status":  "ACTIVE",
+                       "entryGate":  "V2-011K operator activation",
+                       "authorityGranted":  false
+                   },
+                   {
+                       "level":  2,
+                       "name":  "Stateful Currency",
+                       "goal":  "Small local state, CRUD, import/export, settings, trackers and dashboards.",
+                       "status":  "LOCKED",
+                       "entryGate":  "Level 1 graduation receipt",
+                       "authorityGranted":  false
+                   },
+                   {
+                       "level":  3,
+                       "name":  "Small Applications",
+                       "goal":  "Complete single-purpose apps, static sites, extensions and local-first tools.",
+                       "status":  "LOCKED",
+                       "entryGate":  "Level 2 graduation receipt",
+                       "authorityGranted":  false
+                   },
+                   {
+                       "level":  4,
+                       "name":  "Connected Applications",
+                       "goal":  "Auth, databases, storage, APIs, email, search, PWA/offline and external integrations.",
+                       "status":  "LOCKED",
+                       "entryGate":  "Level 3 graduation receipt",
+                       "authorityGranted":  false
+                   },
+                   {
+                       "level":  5,
+                       "name":  "AI Applications",
+                       "goal":  "Extraction, classification, summarization, transcription, RAG and bounded inference workflows.",
+                       "status":  "LOCKED",
+                       "entryGate":  "Level 4 graduation receipt",
+                       "authorityGranted":  false
+                   },
+                   {
+                       "level":  6,
+                       "name":  "Automation Systems",
+                       "goal":  "Scheduled and event-driven multi-step workflows with approvals, monitoring and recovery.",
+                       "status":  "LOCKED",
+                       "entryGate":  "Level 5 graduation receipt",
+                       "authorityGranted":  false
+                   },
+                   {
+                       "level":  7,
+                       "name":  "Production Products",
+                       "goal":  "Multi-user SaaS, commerce, community, booking and business systems with production rails.",
+                       "status":  "LOCKED",
+                       "entryGate":  "Level 6 graduation receipt",
+                       "authorityGranted":  false
+                   },
+                   {
+                       "level":  8,
+                       "name":  "Oros Systems",
+                       "goal":  "Composed products assembled substantially from admitted Great Library Blocks and Blueprints.",
+                       "status":  "LOCKED",
+                       "entryGate":  "Level 7 graduation receipt",
+                       "authorityGranted":  false
+                   },
+                   {
+                       "level":  9,
+                       "name":  "Autonomous Construction",
+                       "goal":  "Requirement to research, blueprint, compose, build, verify, repair and release under operator gates.",
+                       "status":  "LOCKED",
+                       "entryGate":  "Level 8 graduation receipt",
+                       "authorityGranted":  false
+                   },
+                   {
+                       "level":  10,
+                       "name":  "Recursive OTHRYS",
+                       "goal":  "OTHRYS safely improves OTHRYS: identifies missing primitives, proves reuse, extracts Blocks and learns without drift.",
+                       "status":  "LOCKED",
+                       "entryGate":  "Level 9 graduation receipt",
+                       "authorityGranted":  false
+                   }
+               ],
+    "level1":  {
+                   "status":  "ACTIVE",
+                   "targetJobs":  40,
+                   "jobs":  [
+                                {
+                                    "id":  "L1-001",
+                                    "key":  "slugify",
+                                    "family":  "text",
+                                    "title":  "Text slugifier",
+                                    "contract":  "string -\u003e lowercase URL-safe slug",
+                                    "sequence":  1,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false,
+                                    "attempts":  4,
+                                    "blockDisposition":  "TRAINING_CANDIDATE",
+                                    "blockId":  "block.text.slugify",
+                                    "proof":  "blocks/text/slugify/tests/contract.test.mjs",
+                                    "lessons":  [
+                                                    "worker watchdog required",
+                                                    "malformed single-path tool writes require bounded recovery",
+                                                    "test fixtures must be encoding-stable"
+                                                ]
+                                },
+                                {
+                                    "id":  "L1-002",
+                                    "key":  "text-normalize",
+                                    "family":  "text",
+                                    "title":  "Whitespace/text normalizer",
+                                    "contract":  "string -\u003e lowercase canonical search text; -_/ separators to spaces; collapse whitespace; trim",
+                                    "sequence":  2,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false,
+                                    "disposition":  "ADAPT_STOCK",
+                                    "blockId":  "block.text.normalize",
+                                    "completedEvidence":  "training/level-1/L1-002-text-normalize/ATTEMPT_SUMMARY.json",
+                                    "lesson":  "Bounded qwen task-fit failure triggered proven-stock adaptation; training hardened worker transport, finish enforcement, evidence scoping and oracle review."
+                                },
+                                {
+                                    "id":  "L1-003",
+                                    "key":  "line-dedupe",
+                                    "family":  "text",
+                                    "title":  "Line deduplicator",
+                                    "contract":  "lines -\u003e stable unique lines",
+                                    "sequence":  3,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false,
+                                    "disposition":  "BLOCK_CANDIDATE",
+                                    "blockId":  "block.text.line-dedupe",
+                                    "completedEvidence":  "training/level-1/L1-003-line-dedupe/worker-result.json",
+                                    "lesson":  "First clean one-shot currency cycle after marker transport/evidence containment repairs."
+                                },
+                                {
+                                    "id":  "L1-004",
+                                    "key":  "word-count",
+                                    "family":  "text",
+                                    "title":  "Text statistics",
+                                    "contract":  "text -\u003e words/chars/lines",
+                                    "sequence":  4,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false,
+                                    "disposition":  "BLOCK_CANDIDATE",
+                                    "blockId":  "block.text.stats",
+                                    "completedEvidence":  "training/level-1/L1-004-text-stats/rebuild-result.json",
+                                    "lesson":  "Fresh rebuild recovered from stale repair loop; Talos caught both implementation defect and fixture encoding defect."
+                                },
+                                {
+                                    "id":  "L1-005",
+                                    "key":  "case-convert",
+                                    "family":  "text",
+                                    "title":  "Case converter",
+                                    "contract":  "text + case -\u003e converted text",
+                                    "sequence":  5,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false,
+                                    "disposition":  "BLOCK_CANDIDATE",
+                                    "blockId":  "block.text.case-convert",
+                                    "completedEvidence":  "training/level-1/L1-005-case-convert/repair-result.json",
+                                    "lesson":  "Shared tokenizer removed duplicated mode-specific parsing defects; Talos oracle was reconciled with the declared boundary rule."
+                                },
+                                {
+                                    "id":  "L1-006",
+                                    "key":  "json-format",
+                                    "family":  "data",
+                                    "title":  "JSON formatter/minifier",
+                                    "contract":  "JSON text -\u003e canonical pretty/minified JSON",
+                                    "sequence":  6,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-007",
+                                    "key":  "json-validate",
+                                    "family":  "data",
+                                    "title":  "JSON validator",
+                                    "contract":  "text -\u003e valid/error location",
+                                    "sequence":  7,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-008",
+                                    "key":  "csv-clean",
+                                    "family":  "data",
+                                    "title":  "CSV row cleaner",
+                                    "contract":  "CSV -\u003e normalized CSV",
+                                    "sequence":  8,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-009",
+                                    "key":  "csv-json",
+                                    "family":  "data",
+                                    "title":  "CSV/JSON converter",
+                                    "contract":  "CSV \u003c-\u003e JSON records",
+                                    "sequence":  9,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-010",
+                                    "key":  "sort-records",
+                                    "family":  "data",
+                                    "title":  "Stable record sorter",
+                                    "contract":  "records + keys -\u003e stable sorted records",
+                                    "sequence":  10,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-011",
+                                    "key":  "url-normalize",
+                                    "family":  "web",
+                                    "title":  "URL normalizer",
+                                    "contract":  "URL -\u003e canonical URL",
+                                    "sequence":  11,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-012",
+                                    "key":  "querystring",
+                                    "family":  "web",
+                                    "title":  "Query-string parser/builder",
+                                    "contract":  "query \u003c-\u003e key/value object",
+                                    "sequence":  12,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-013",
+                                    "key":  "html-escape",
+                                    "family":  "web",
+                                    "title":  "HTML escape/unescape",
+                                    "contract":  "text \u003c-\u003e escaped text",
+                                    "sequence":  13,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-014",
+                                    "key":  "utm-builder",
+                                    "family":  "web",
+                                    "title":  "UTM URL builder",
+                                    "contract":  "URL + campaign fields -\u003e tagged URL",
+                                    "sequence":  14,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-015",
+                                    "key":  "meta-check",
+                                    "family":  "web",
+                                    "title":  "Metadata field checker",
+                                    "contract":  "metadata -\u003e missing/invalid fields",
+                                    "sequence":  15,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-016",
+                                    "key":  "unit-convert",
+                                    "family":  "calculate",
+                                    "title":  "Unit converter",
+                                    "contract":  "value + units -\u003e converted value",
+                                    "sequence":  16,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-017",
+                                    "key":  "duration-calc",
+                                    "family":  "calculate",
+                                    "title":  "Date/duration calculator",
+                                    "contract":  "dates/durations -\u003e normalized result",
+                                    "sequence":  17,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-018",
+                                    "key":  "percent-calc",
+                                    "family":  "calculate",
+                                    "title":  "Percentage calculator",
+                                    "contract":  "values -\u003e percent/change/portion",
+                                    "sequence":  18,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-019",
+                                    "key":  "price-calc",
+                                    "family":  "calculate",
+                                    "title":  "Price/VAT/discount calculator",
+                                    "contract":  "price inputs -\u003e totals",
+                                    "sequence":  19,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-020",
+                                    "key":  "time-cost",
+                                    "family":  "calculate",
+                                    "title":  "Time/cost estimator",
+                                    "contract":  "rate + duration -\u003e cost",
+                                    "sequence":  20,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-021",
+                                    "key":  "checksum",
+                                    "family":  "file",
+                                    "title":  "Checksum calculator",
+                                    "contract":  "bytes/text -\u003e digest",
+                                    "sequence":  21,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-022",
+                                    "key":  "filename-sanitize",
+                                    "family":  "file",
+                                    "title":  "Filename sanitizer",
+                                    "contract":  "name -\u003e portable safe filename",
+                                    "sequence":  22,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-023",
+                                    "key":  "extension-detect",
+                                    "family":  "file",
+                                    "title":  "File extension/media classifier",
+                                    "contract":  "filename -\u003e extension/category",
+                                    "sequence":  23,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-024",
+                                    "key":  "duplicate-signature",
+                                    "family":  "file",
+                                    "title":  "Duplicate signature helper",
+                                    "contract":  "metadata/digests -\u003e duplicate groups",
+                                    "sequence":  24,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-025",
+                                    "key":  "path-normalize",
+                                    "family":  "file",
+                                    "title":  "Portable path normalizer",
+                                    "contract":  "path -\u003e normalized portable path",
+                                    "sequence":  25,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-026",
+                                    "key":  "semver-compare",
+                                    "family":  "developer",
+                                    "title":  "Semantic-version comparator",
+                                    "contract":  "versions -\u003e ordering",
+                                    "sequence":  26,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-027",
+                                    "key":  "env-parse",
+                                    "family":  "developer",
+                                    "title":  ".env metadata parser",
+                                    "contract":  "env text -\u003e names/presence only",
+                                    "sequence":  27,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-028",
+                                    "key":  "schema-check",
+                                    "family":  "developer",
+                                    "title":  "Simple schema checker",
+                                    "contract":  "object + field rules -\u003e issues",
+                                    "sequence":  28,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-029",
+                                    "key":  "retry-policy",
+                                    "family":  "developer",
+                                    "title":  "Bounded retry calculator",
+                                    "contract":  "attempt policy -\u003e next/refuse",
+                                    "sequence":  29,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-030",
+                                    "key":  "idempotency-key",
+                                    "family":  "developer",
+                                    "title":  "Idempotency key generator",
+                                    "contract":  "stable request fields -\u003e key",
+                                    "sequence":  30,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-031",
+                                    "key":  "checklist",
+                                    "family":  "generate",
+                                    "title":  "Checklist generator",
+                                    "contract":  "items/rules -\u003e normalized checklist",
+                                    "sequence":  31,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-032",
+                                    "key":  "fixture",
+                                    "family":  "generate",
+                                    "title":  "Deterministic fixture generator",
+                                    "contract":  "schema + seed -\u003e fixture",
+                                    "sequence":  32,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-033",
+                                    "key":  "table-markdown",
+                                    "family":  "generate",
+                                    "title":  "Markdown table generator",
+                                    "contract":  "records -\u003e markdown table",
+                                    "sequence":  33,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-034",
+                                    "key":  "changelog-entry",
+                                    "family":  "generate",
+                                    "title":  "Changelog entry formatter",
+                                    "contract":  "change metadata -\u003e entry",
+                                    "sequence":  34,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-035",
+                                    "key":  "config-merge",
+                                    "family":  "generate",
+                                    "title":  "Safe config merge",
+                                    "contract":  "base + overlay -\u003e merged config",
+                                    "sequence":  35,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-036",
+                                    "key":  "email-normalize",
+                                    "family":  "validate",
+                                    "title":  "Email normalizer/validator",
+                                    "contract":  "email -\u003e normalized/valid",
+                                    "sequence":  36,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-037",
+                                    "key":  "phone-normalize",
+                                    "family":  "validate",
+                                    "title":  "Phone shape normalizer",
+                                    "contract":  "phone + region hint -\u003e normalized shape",
+                                    "sequence":  37,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-038",
+                                    "key":  "hex-color",
+                                    "family":  "validate",
+                                    "title":  "Color parser/converter",
+                                    "contract":  "hex/rgb -\u003e normalized values",
+                                    "sequence":  38,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-039",
+                                    "key":  "date-iso",
+                                    "family":  "validate",
+                                    "title":  "ISO date normalizer",
+                                    "contract":  "date input -\u003e ISO or error",
+                                    "sequence":  39,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                },
+                                {
+                                    "id":  "L1-040",
+                                    "key":  "identifier",
+                                    "family":  "validate",
+                                    "title":  "Identifier validator",
+                                    "contract":  "identifier + policy -\u003e valid/issues",
+                                    "sequence":  40,
+                                    "status":  "COMPLETE",
+                                    "targetDisposition":  "BLOCK_OR_MERGE",
+                                    "quality":  [
+                                                    "deterministic",
+                                                    "pure or bounded filesystem-free core",
+                                                    "edge cases",
+                                                    "stable serialization where relevant",
+                                                    "no secrets",
+                                                    "authority-free"
+                                                ],
+                                    "authorityGranted":  false
+                                }
+                            ],
+                   "completedJobs":  1
+               },
+    "inspirationSources":  [
+                               "Great Library 387-potential catalogue",
+                               "Great Harvest estate",
+                               "OTHRYS organs and diagnostics",
+                               "othrys-blocks proven stock",
+                               "Study Buddy",
+                               "Oroi products",
+                               "VTC historical code",
+                               "PandaOS experience concepts (not backend duplication)",
+                               "future Prometheus harvests"
+                           ],
+    "authorityGranted":  false,
+    "automaticAdmission":  false,
+    "automaticLevelAdvance":  false
 }

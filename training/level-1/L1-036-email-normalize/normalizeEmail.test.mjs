@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {normalizeEmail} from './normalizeEmail.mjs';
+test('valid domain lower only',()=>assert.deepEqual(normalizeEmail(' User.Name+tag@Example.COM '),{normalized:'User.Name+tag@example.com',valid:true,reason:null}));
+test('frozen',()=>assert.equal(Object.isFrozen(normalizeEmail('a@b.com')),true));
+test('empty',()=>assert.deepEqual(normalizeEmail('  '),{normalized:'',valid:false,reason:'EMPTY'}));
+test('bad local dots',()=>assert.equal(normalizeEmail('.a@b.com').reason,'LOCAL'));
+test('bad domain hyphen',()=>assert.equal(normalizeEmail('a@-b.com').reason,'DOMAIN'));
+test('needs dot tld',()=>assert.equal(normalizeEmail('a@localhost').reason,'DOMAIN'));
+test('multiple at',()=>assert.equal(normalizeEmail('a@@b.com').reason,'FORMAT'));
+test('type',()=>assert.throws(()=>normalizeEmail(null),TypeError));
+test('tld letters only',()=>assert.equal(normalizeEmail('a@b.12').reason,'DOMAIN'));

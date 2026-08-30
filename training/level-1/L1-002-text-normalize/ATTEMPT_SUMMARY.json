@@ -1,0 +1,43 @@
+{
+  "schema": "othrys.os.training-attempt-summary.v1",
+  "jobId": "L1-002",
+  "finalDisposition": "ADAPT_STOCK",
+  "finalStatus": "PASS",
+  "finalTest": "6/6 PASS",
+  "source": {
+    "path": "C:/Users/othry/Projects/othrys-hub-main/core/titan/prometheus/src/domain/recommend.ts",
+    "function": "normalizeText",
+    "provenUse": "Prometheus word-aware capability matching"
+  },
+  "attemptsObserved": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "lessons": [
+    "qwen3-builder nested JSON-string write transport corrupts escape-heavy source",
+    "Level-1 marker transport avoids nested JSON escaping",
+    "finish must be refused by enforcement, not only hidden from tool schema",
+    "worker evidence must be allowlist-scoped to prevent recursive result amplification",
+    "Talos oracle must be checked against the declared contract before blaming builder output",
+    "after bounded task-fit failures, reuse proven stock instead of retrying indefinitely"
+  ],
+  "infrastructureRepairs": [
+    "bounded --wait watchdog",
+    "single-path tail recovery",
+    "marker training transport",
+    "finish-before-mutation refusal",
+    "workspace/ prefix normalization",
+    "allowlist-scoped diff evidence",
+    "deterministic training stock extractor"
+  ],
+  "authorityGranted": false
+}

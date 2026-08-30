@@ -1,0 +1,52 @@
+{
+    "schema":  "othrys.os.training-cycle-evidence.v1",
+    "jobId":  "L1-002",
+    "status":  "INFRA_FAILURE_CONTAINED",
+    "reason":  "RECURSIVE_WORKER_RESULT_DIFF_AMPLIFICATION",
+    "observedSizes":  [
+                          {
+                              "Name":  "attempt10-result.json",
+                              "Length":  1956019363
+                          },
+                          {
+                              "Name":  "attempt4-result.json",
+                              "Length":  487753
+                          },
+                          {
+                              "Name":  "attempt5-result.json",
+                              "Length":  1686769
+                          },
+                          {
+                              "Name":  "attempt6-result.json",
+                              "Length":  6139639
+                          },
+                          {
+                              "Name":  "attempt7-result.json",
+                              "Length":  23784689
+                          },
+                          {
+                              "Name":  "attempt8-result.json",
+                              "Length":  98176106
+                          },
+                          {
+                              "Name":  "attempt9-result.json",
+                              "Length":  428585650
+                          },
+                          {
+                              "Name":  "repair-result.json",
+                              "Length":  44139
+                          },
+                          {
+                              "Name":  "repair2-result.json",
+                              "Length":  145865
+                          },
+                          {
+                              "Name":  "worker-result.json",
+                              "Length":  11552
+                          }
+                      ],
+    "largestBytes":  1956019363,
+    "lesson":  "Worker evidence must be scoped to allowed_paths. Whole-repo diff inside a result artifact recursively ingested prior results and grew to ~1.96GB.",
+    "mutationBoundary":  "allowed output file only",
+    "authorityGranted":  false
+}

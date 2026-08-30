@@ -1,0 +1,10 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {parseColor} from './parseColor.mjs';
+test('short hex',()=>assert.deepEqual(parseColor('#AbC'),{hex:'#aabbcc',r:170,g:187,b:204}));
+test('long hex',()=>assert.deepEqual(parseColor('#00ff7F'),{hex:'#00ff7f',r:0,g:255,b:127}));
+test('rgb',()=>assert.deepEqual(parseColor('RGB( 1, 2 ,255 )'),{hex:'#0102ff',r:1,g:2,b:255}));
+test('frozen',()=>assert.equal(Object.isFrozen(parseColor('#000')),true));
+test('range',()=>assert.throws(()=>parseColor('rgb(256,0,0)'),RangeError));
+test('integer only',()=>assert.throws(()=>parseColor('rgb(1.5,0,0)'),RangeError));
+test('no alpha',()=>assert.throws(()=>parseColor('rgba(1,2,3,1)'),RangeError));
+test('bad hex',()=>assert.throws(()=>parseColor('#ggg'),RangeError));
+test('type',()=>assert.throws(()=>parseColor(3),TypeError));

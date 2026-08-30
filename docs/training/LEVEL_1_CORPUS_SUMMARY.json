@@ -1,0 +1,107 @@
+{
+    "schema":  "othrys.os.training-corpus-summary.v1",
+    "mission":  "V2-011K",
+    "level":  1,
+    "dataClass":  "HIGH_VALUE_OPERATIONAL_LEARNING",
+    "generatedAt":  "2026-08-30T14:10:32.253Z",
+    "jobs":  {
+                 "total":  40,
+                 "complete":  40,
+                 "queued":  0
+             },
+    "liveProof":  {
+                      "testFiles":  40,
+                      "tests":  305,
+                      "pass":  305,
+                      "fail":  0
+                  },
+    "workerEvidence":  {
+                           "receiptFiles":  81,
+                           "byBuilder":  {
+                                             "qwen3-builder":  {
+                                                                   "receipts":  13,
+                                                                   "ok":  4,
+                                                                   "failed":  9,
+                                                                   "durationSec":  176.34008240699768,
+                                                                   "durationSamples":  11,
+                                                                   "avgDurationSec":  16.030916582454335
+                                                               },
+                                             "local.qwen3-8b":  {
+                                                                    "receipts":  6,
+                                                                    "ok":  5,
+                                                                    "failed":  1,
+                                                                    "durationSec":  83.68105888366699,
+                                                                    "durationSamples":  6,
+                                                                    "avgDurationSec":  13.946843147277832
+                                                                },
+                                             "local.qwen3.5-9b":  {
+                                                                      "receipts":  48,
+                                                                      "ok":  31,
+                                                                      "failed":  17,
+                                                                      "durationSec":  1203.9515302181244,
+                                                                      "durationSamples":  48,
+                                                                      "avgDurationSec":  25.082323546210926
+                                                                  },
+                                             "local.qwen3-coder-30b":  {
+                                                                           "receipts":  14,
+                                                                           "ok":  10,
+                                                                           "failed":  4,
+                                                                           "durationSec":  586.927232503891,
+                                                                           "durationSamples":  14,
+                                                                           "avgDurationSec":  41.923373750277925
+                                                                       }
+                                         },
+                           "reasons":  {
+                                           "out_of_scope_changes: [\u0027training/level-1/L1-002-text-normalize/attempt11.log\u0027]":  1,
+                                           "NO_ATTEMPT_MUTATION":  23,
+                                           "out_of_scope_changes: [\u0027training/level-1/L1-002-text-normalize/attempt13.log\u0027]":  1,
+                                           "out_of_scope_changes: [\u0027training/level-1/L1-002-text-normalize/attempt14.log\u0027]":  1,
+                                           "out_of_scope_changes: [\u0027training/level-1/L1-003-line-dedupe/worker.log\u0027]":  1,
+                                           "out_of_scope_changes: [\u0027training/level-1/L1-004-text-stats/repair.log\u0027]":  1,
+                                           "out_of_scope_changes: [\u0027training/level-1/L1-004-text-stats/worker.log\u0027]":  1,
+                                           "FileNotFoundError(2, \u0027No such file or directory\u0027)":  2
+                                       },
+                           "totalMeasuredDurationSec":  2050.89990401268,
+                           "durationSamples":  79,
+                           "outOfScopeChangesObserved":  6
+                       },
+    "learningOrgans":  [
+                           "MNEMOSYNE",
+                           "HEPHAESTUS",
+                           "TALOS",
+                           "PROMETHEUS",
+                           "KRONOS",
+                           "RHEA",
+                           "MYCELIUM",
+                           "SWITCHYARD"
+                       ],
+    "learningDimensions":  [
+                               "task contract",
+                               "stock/reuse decision",
+                               "builder/model route",
+                               "attempt and repair outcome",
+                               "Talos fixture/result",
+                               "operator intervention debt",
+                               "latency/resource evidence",
+                               "provider/tool failure",
+                               "regression evidence",
+                               "candidate Block provenance"
+                           ],
+    "laws":  {
+                 "learningMayGrantAuthority":  false,
+                 "trainingMayAutoAdmitBlocks":  false,
+                 "failuresAreEvidence":  true,
+                 "operatorInterventionMustNotBeCreditedToBuilder":  true
+             },
+    "caveats":  [
+                    "Worker receipt success means bounded worker execution succeeded, not semantic Talos success.",
+                    "Some historical Level 1 jobs predate the richer per-job learning receipt and are represented by raw worker/test artifacts.",
+                    "Operator interventions and verifier corrections require semantic provenance; aggregate receipt counts alone cannot infer them."
+                ],
+    "runtimeProof":  {
+                         "testFiles":  75,
+                         "tests":  346,
+                         "pass":  346,
+                         "fail":  0
+                     }
+}

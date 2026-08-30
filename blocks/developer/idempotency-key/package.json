@@ -1,0 +1,1 @@
+﻿{"name":"@othrys/block-developer-idempotency-key","version":"0.1.0-training","type":"module","private":true,"scripts":{"test":"node --test tests/contract.test.mjs"}}

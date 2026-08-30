@@ -1,0 +1,148 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-040",
+    "title": "Identifier validator",
+    "family": "validate",
+    "contract": "identifier + policy -> valid/issues",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "validateIdentifier.test.mjs",
+    "declaredTests": 10,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "durationSec": 32.54615926742554,
+      "changedFiles": [],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "6",
+        "temperature_c": "41",
+        "power_w": "5.79"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "1",
+        "temperature_c": "52",
+        "power_w": "13.38"
+      }
+    },
+    {
+      "file": "worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 23.170506238937378,
+      "changedFiles": [
+        "training/level-1/L1-040-identifier/validateIdentifier.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "129",
+        "utilization_pct": "7",
+        "temperature_c": "41",
+        "power_w": "6.78"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6468",
+        "utilization_pct": "2",
+        "temperature_c": "47",
+        "power_w": "10.18"
+      }
+    }
+  ],
+  "semanticLearning": {
+    "receiptDigest": "122ad29728db7ff4ce13a041cac070c78123639c79b75f776b17cc95c58dec7e",
+    "lessons": [
+      "issue codes must accumulate independently in stable order",
+      "case-insensitive reserved comparison must normalize both sides",
+      "final Level 1 job proves sequence exhaustion without authority advancement"
+    ],
+    "buildAttempts": [
+      {
+        "attempt": 1,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 23.170506238937378,
+        "changed": [
+          "training/level-1/L1-040-identifier/validateIdentifier.mjs"
+        ],
+        "outOfScope": [],
+        "talos": "PASS_8_OF_10",
+        "failure": null,
+        "note": null
+      },
+      {
+        "attempt": 2,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 32.54615926742554,
+        "changed": [],
+        "outOfScope": [],
+        "talos": "NO_CHANGE",
+        "failure": "NO_ATTEMPT_MUTATION",
+        "note": null
+      },
+      {
+        "attempt": 3,
+        "builder": "operator-bounded",
+        "model": null,
+        "durationSec": null,
+        "changed": [],
+        "outOfScope": [],
+        "talos": "PASS_10_OF_10",
+        "failure": null,
+        "note": "two bounded semantic corrections after repair failure"
+      }
+    ],
+    "talos": {
+      "tests": 10,
+      "pass": 10,
+      "fail": 0,
+      "independent": true
+    }
+  },
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

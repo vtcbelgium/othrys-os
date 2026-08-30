@@ -1,0 +1,145 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 1,
+  "job": {
+    "id": "L1-031",
+    "title": "Checklist generator",
+    "family": "generate",
+    "contract": "items/rules -> normalized checklist",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "suite": "LEVEL_1_SOURCE_2026-08-30",
+    "testFile": "generateChecklist.test.mjs",
+    "declaredTests": 8,
+    "allLevel1SourceTestsPass": true,
+    "allLevel1SourcePassCount": 305,
+    "allLevel1SourceFailCount": 0
+  },
+  "workerEvidence": [
+    {
+      "file": "repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "durationSec": 29.48090696334839,
+      "changedFiles": [],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6459",
+        "utilization_pct": "7",
+        "temperature_c": "41",
+        "power_w": "6.37"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6466",
+        "utilization_pct": "1",
+        "temperature_c": "55",
+        "power_w": "13.26"
+      }
+    },
+    {
+      "file": "worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 18.04037380218506,
+      "changedFiles": [
+        "training/level-1/L1-031-checklist/generateChecklist.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "5587",
+        "utilization_pct": "8",
+        "temperature_c": "41",
+        "power_w": "6.19"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6459",
+        "utilization_pct": "1",
+        "temperature_c": "46",
+        "power_w": "10.31"
+      }
+    }
+  ],
+  "semanticLearning": {
+    "receiptDigest": "1a0e20546d0469c42e701cf1603b34dcbdd805c753c0f09ab9e71c2afad8d332",
+    "lessons": [
+      "named export omissions should have a cheap pre-Talos compile gate",
+      "no-mutation repairs and timeouts are routing evidence",
+      "operator intervention remains explicit capability debt"
+    ],
+    "buildAttempts": [
+      {
+        "attempt": 1,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 18.04037380218506,
+        "talos": "MODULE_IMPORT_FAIL",
+        "failure": "required named export omitted"
+      },
+      {
+        "attempt": 2,
+        "builder": "local.qwen3.5-9b",
+        "model": "qwen3.5:9b",
+        "durationSec": 29.48090696334839,
+        "talos": "NO_CHANGE",
+        "failure": "NO_ATTEMPT_MUTATION"
+      },
+      {
+        "attempt": 3,
+        "builder": "local.qwen3-coder-30b",
+        "model": "qwen3-coder:30b",
+        "durationSec": null,
+        "talos": "TIMEOUT_NO_USABLE_RESULT",
+        "failure": "worker timeout"
+      },
+      {
+        "attempt": 4,
+        "builder": "operator-bounded-recovery",
+        "model": null,
+        "durationSec": null,
+        "talos": "PASS_8_OF_8",
+        "repair": "exact contract restoration"
+      }
+    ],
+    "talos": {
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "independent": true
+    }
+  },
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}
