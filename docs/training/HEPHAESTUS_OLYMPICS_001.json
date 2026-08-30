@@ -1,0 +1,321 @@
+{
+  "schema": "othrys.hephaestus.olympics-run.v1",
+  "runId": "OLYMPICS-001-SPRINT",
+  "missionId": "V2-011K",
+  "event": "SPRINT",
+  "cards": [
+    {
+      "schema": "othrys.hephaestus.olympics-card.v1",
+      "builderId": "local.qwen3.5-9b",
+      "eventId": "SPRINT",
+      "talosPass": true,
+      "latencyMs": 3886,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "protocolPass": true,
+      "mycelium": {
+        "metabolicMode": "INTERACTIVE"
+      },
+      "authorityGranted": false,
+      "executionStarted": false,
+      "cardDigest": "c86cbbd7cf30eaa1e75beb652f33fd0580ab0e66a510d03da20440a1b722402c"
+    },
+    {
+      "schema": "othrys.hephaestus.olympics-card.v1",
+      "builderId": "local.qwen2.5-coder-7b",
+      "eventId": "SPRINT",
+      "talosPass": false,
+      "latencyMs": 3869,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "protocolPass": false,
+      "mycelium": {
+        "metabolicMode": "INTERACTIVE"
+      },
+      "authorityGranted": false,
+      "executionStarted": false,
+      "cardDigest": "45d6468a7d6b3997ea314d4f39314202fe881b1870782bfb751c6514e9120a7d"
+    },
+    {
+      "schema": "othrys.hephaestus.olympics-card.v1",
+      "builderId": "local.qwen3-8b",
+      "eventId": "SPRINT",
+      "talosPass": true,
+      "latencyMs": 3129,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "protocolPass": true,
+      "mycelium": {
+        "metabolicMode": "INTERACTIVE"
+      },
+      "authorityGranted": false,
+      "executionStarted": false,
+      "cardDigest": "a551bd427594eba75b6b4c8fce93cbac6841c4a7e87cafbdef434bb9f4a88a69"
+    },
+    {
+      "schema": "othrys.hephaestus.olympics-card.v1",
+      "builderId": "local.qwen3-4b",
+      "eventId": "SPRINT",
+      "talosPass": false,
+      "latencyMs": 3365,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "protocolPass": false,
+      "mycelium": {
+        "metabolicMode": "INTERACTIVE"
+      },
+      "authorityGranted": false,
+      "executionStarted": false,
+      "cardDigest": "e3ebd0654ed380788f7ab3c5ca96044ad697735dbb1c9d3cf03361e07e7638de"
+    },
+    {
+      "schema": "othrys.hephaestus.olympics-card.v1",
+      "builderId": "local.qwen3-coder-30b",
+      "eventId": "SPRINT",
+      "talosPass": true,
+      "latencyMs": 14603,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "protocolPass": true,
+      "mycelium": {
+        "metabolicMode": "INTERACTIVE"
+      },
+      "authorityGranted": false,
+      "executionStarted": false,
+      "cardDigest": "dc1b8d4f2edfe534362747568ab470814134e5d80411f5b3d47ecc275a0fc12e"
+    },
+    {
+      "schema": "othrys.hephaestus.olympics-card.v1",
+      "builderId": "local.gpt-oss-20b",
+      "eventId": "SPRINT",
+      "talosPass": false,
+      "latencyMs": 16303,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "protocolPass": true,
+      "mycelium": {
+        "metabolicMode": "INTERACTIVE"
+      },
+      "authorityGranted": false,
+      "executionStarted": false,
+      "cardDigest": "580bf692fca37300e6e31b4086c1f037fe4168e5619bb93e0e09bafb392fb394"
+    },
+    {
+      "schema": "othrys.hephaestus.olympics-card.v1",
+      "builderId": "nvidia.kimi-k3",
+      "eventId": "SPRINT",
+      "talosPass": true,
+      "latencyMs": 5689,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "protocolPass": true,
+      "mycelium": {
+        "metabolicMode": "INTERACTIVE"
+      },
+      "authorityGranted": false,
+      "executionStarted": false,
+      "cardDigest": "3f2bb29f1062b3dc8e36d83c286a2378fddefde245d76cdf5d4320f5ed5f28ed"
+    },
+    {
+      "schema": "othrys.hephaestus.olympics-card.v1",
+      "builderId": "nvidia.deepseek-v4-flash",
+      "eventId": "SPRINT",
+      "talosPass": true,
+      "latencyMs": 9071,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "protocolPass": true,
+      "mycelium": {
+        "metabolicMode": "INTERACTIVE"
+      },
+      "authorityGranted": false,
+      "executionStarted": false,
+      "cardDigest": "d2cf5998ba9db6c6b379741256c2129346036d3054a07dadf9ea17f26a2c77bd"
+    },
+    {
+      "schema": "othrys.hephaestus.olympics-card.v1",
+      "builderId": "nvidia.nemotron-3.5-lightning",
+      "eventId": "SPRINT",
+      "talosPass": false,
+      "latencyMs": 13390,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "protocolPass": false,
+      "mycelium": {
+        "metabolicMode": "INTERACTIVE"
+      },
+      "authorityGranted": false,
+      "executionStarted": false,
+      "cardDigest": "a8cfbdea914649bf605bf5599829baf41b83e0b4f1fa5257678f27ece72315c7"
+    },
+    {
+      "schema": "othrys.hephaestus.olympics-card.v1",
+      "builderId": "nvidia.laguna-xs-2.1",
+      "eventId": "SPRINT",
+      "talosPass": true,
+      "latencyMs": 19725,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "protocolPass": true,
+      "mycelium": {
+        "metabolicMode": "INTERACTIVE"
+      },
+      "authorityGranted": false,
+      "executionStarted": false,
+      "cardDigest": "52667a9fece458c79042378f6be823f61a7b902343a7228e34e981bcb005867f"
+    },
+    {
+      "schema": "othrys.hephaestus.olympics-card.v1",
+      "builderId": "nvidia.minimax-m3",
+      "eventId": "SPRINT",
+      "talosPass": true,
+      "latencyMs": 4101,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "protocolPass": true,
+      "mycelium": {
+        "metabolicMode": "INTERACTIVE"
+      },
+      "authorityGranted": false,
+      "executionStarted": false,
+      "cardDigest": "0763bdcf4b8db1309f11b868298ab0d14013935c786262cce783df0831b6c1e6"
+    }
+  ],
+  "standings": [
+    {
+      "builderId": "local.qwen3-8b",
+      "events": 1,
+      "passes": 1,
+      "latency": 3129,
+      "violations": 0,
+      "repairs": 0,
+      "protocol": 1,
+      "firstPassRate": 1,
+      "protocolRate": 1,
+      "medianLatencyMs": 3129
+    },
+    {
+      "builderId": "local.qwen3.5-9b",
+      "events": 1,
+      "passes": 1,
+      "latency": 3886,
+      "violations": 0,
+      "repairs": 0,
+      "protocol": 1,
+      "firstPassRate": 1,
+      "protocolRate": 1,
+      "medianLatencyMs": 3886
+    },
+    {
+      "builderId": "nvidia.minimax-m3",
+      "events": 1,
+      "passes": 1,
+      "latency": 4101,
+      "violations": 0,
+      "repairs": 0,
+      "protocol": 1,
+      "firstPassRate": 1,
+      "protocolRate": 1,
+      "medianLatencyMs": 4101
+    },
+    {
+      "builderId": "nvidia.kimi-k3",
+      "events": 1,
+      "passes": 1,
+      "latency": 5689,
+      "violations": 0,
+      "repairs": 0,
+      "protocol": 1,
+      "firstPassRate": 1,
+      "protocolRate": 1,
+      "medianLatencyMs": 5689
+    },
+    {
+      "builderId": "nvidia.deepseek-v4-flash",
+      "events": 1,
+      "passes": 1,
+      "latency": 9071,
+      "violations": 0,
+      "repairs": 0,
+      "protocol": 1,
+      "firstPassRate": 1,
+      "protocolRate": 1,
+      "medianLatencyMs": 9071
+    },
+    {
+      "builderId": "local.qwen3-coder-30b",
+      "events": 1,
+      "passes": 1,
+      "latency": 14603,
+      "violations": 0,
+      "repairs": 0,
+      "protocol": 1,
+      "firstPassRate": 1,
+      "protocolRate": 1,
+      "medianLatencyMs": 14603
+    },
+    {
+      "builderId": "nvidia.laguna-xs-2.1",
+      "events": 1,
+      "passes": 1,
+      "latency": 19725,
+      "violations": 0,
+      "repairs": 0,
+      "protocol": 1,
+      "firstPassRate": 1,
+      "protocolRate": 1,
+      "medianLatencyMs": 19725
+    },
+    {
+      "builderId": "local.gpt-oss-20b",
+      "events": 1,
+      "passes": 0,
+      "latency": 16303,
+      "violations": 0,
+      "repairs": 0,
+      "protocol": 1,
+      "firstPassRate": 0,
+      "protocolRate": 1,
+      "medianLatencyMs": 16303
+    },
+    {
+      "builderId": "local.qwen3-4b",
+      "events": 1,
+      "passes": 0,
+      "latency": 3365,
+      "violations": 0,
+      "repairs": 0,
+      "protocol": 0,
+      "firstPassRate": 0,
+      "protocolRate": 0,
+      "medianLatencyMs": 3365
+    },
+    {
+      "builderId": "local.qwen2.5-coder-7b",
+      "events": 1,
+      "passes": 0,
+      "latency": 3869,
+      "violations": 0,
+      "repairs": 0,
+      "protocol": 0,
+      "firstPassRate": 0,
+      "protocolRate": 0,
+      "medianLatencyMs": 3869
+    },
+    {
+      "builderId": "nvidia.nemotron-3.5-lightning",
+      "events": 1,
+      "passes": 0,
+      "latency": 13390,
+      "violations": 0,
+      "repairs": 0,
+      "protocol": 0,
+      "firstPassRate": 0,
+      "protocolRate": 0,
+      "medianLatencyMs": 13390
+    }
+  ],
+  "qualificationGranted": false,
+  "authorityGranted": false,
+  "executionStarted": false
+}

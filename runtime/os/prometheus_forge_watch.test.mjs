@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {normalizeForgeDiscovery,createBrotherHandoff,forgeAdmissionMessage} from './prometheus_forge_watch.mjs';
+test('Prometheus hands builder discoveries to Hephaestus without authority',()=>{const d=normalizeForgeDiscovery({name:'Builder X',source:'vendor',url:'https://example.com/x',freeTier:true,claimedCapabilities:['coding'],discoveredAt:'2026-08-30T12:00:00+02:00'});const h=createBrotherHandoff(d);assert.equal(h.to,'HEPHAESTUS');assert.equal(h.autoAddToExecutableForge,false);assert.equal(h.authorityGranted,false);});
+test('operator is only messaged after admission',()=>{assert.equal(forgeAdmissionMessage({name:'X',state:'TESTING'}),null);assert.equal(forgeAdmissionMessage({name:'X',state:'ADMITTED'}),'X was tested and added.');});
