@@ -829,6 +829,614 @@
         "cross-product-reuse-candidate"
       ],
       "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.capability-registry",
+      "name": "Capability registry",
+      "domain": "ops",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-core:titan/capability-registry"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.credential-broker",
+      "name": "Sealed credential broker + usage ledger",
+      "domain": "security",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-core:titan/credential-broker"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.fact-event-fabric",
+      "name": "Persist-first domain event fabric",
+      "domain": "ops",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-core:titan/event-bus"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.governed-gateway",
+      "name": "Governed capability gateway",
+      "domain": "ops",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-core:titan/gateway"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.intelligence-foundation",
+      "name": "Intelligence foundation composition",
+      "domain": "intelligence",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-core:titan/intelligence"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.titan-runtime",
+      "name": "Discoverable component runtime",
+      "domain": "ops",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-core:titan/runtime"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.triad.machine-covenant",
+      "name": "Machine-checked Triad covenant",
+      "domain": "governance",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-core:titan/triad"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.bridge-recovery",
+      "name": "Bridge recovery grammar",
+      "domain": "ops",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-core:titan/bridge"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.projection-delivery-contract",
+      "name": "Versioned projection delivery contract",
+      "domain": "ops",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-core:titan/atlas-delivery-contract"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.browser.governed-webview",
+      "name": "Persistent governed browser",
+      "domain": "browser",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-hub:hub/browser.py"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.voice.local-interface",
+      "name": "Local voice interface",
+      "domain": "voice",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-hub:hub/voice.py"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.assurance-test-centre",
+      "name": "Assurance Test Centre",
+      "domain": "verification",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-hub:core/titan/hephaestus/src/host/assuranceTestCentreHost.ts"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.self-calibration",
+      "name": "Organ calibration/autotuning",
+      "domain": "verification",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-hub:core/titan/hephaestus/src/mycelium/calibration.ts"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.soak-controller",
+      "name": "Bounded soak controller",
+      "domain": "verification",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-hub:core/titan/hephaestus/src/mycelium/soak_controller.ts"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.sclerotium-recovery",
+      "name": "Sclerotium survival/recovery artifact",
+      "domain": "recovery",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-hub:core/titan/hephaestus/src/mycelium/sclerotium.ts"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.security.execution-sandbox",
+      "name": "Execution/source sandbox",
+      "domain": "security",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-hub:core/titan/hephaestus/src/sandbox",
+        "othrys-hub:hub/design_studio/source_sandbox.py"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.design.reference-ingest",
+      "name": "Reference visual ingest",
+      "domain": "design",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-studio:apps/hub-web/src/mockup-pipeline/ingest.ts"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.design.visual-decomposition",
+      "name": "Visual structural decomposition",
+      "domain": "design",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-studio:apps/hub-web/src/mockup-pipeline/decompose.ts"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.design.fidelity-compare",
+      "name": "Structural/foreground fidelity compare",
+      "domain": "design",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-studio:apps/hub-web/src/reference/compare.ts"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.design.bounded-refinement",
+      "name": "Evidence-gated design refinement",
+      "domain": "design",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-studio:apps/hub-web/src/mockup-pipeline/refine.ts"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.design.operator-gate",
+      "name": "Design acceptance/graduation gate",
+      "domain": "design",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-studio:apps/hub-web/src/reference/gate.ts"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ai.deep-research-workspace",
+      "name": "Deep research workspace",
+      "domain": "research",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "github:vtcbelgium/odysseus-local:services/research"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ai.blind-model-compare",
+      "name": "Blind model compare + synthesis",
+      "domain": "ai",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "github:vtcbelgium/odysseus-local:routes/compare.py"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.comms.email-workbench",
+      "name": "Email triage/summarize/draft workbench",
+      "domain": "communications",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "github:vtcbelgium/odysseus-local:routes/email.py"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.product.notes-tasks-calendar",
+      "name": "Notes/tasks/calendar workspace",
+      "domain": "productivity",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "github:vtcbelgium/odysseus-local:routes/notes.py",
+        "github:vtcbelgium/odysseus-local:routes/tasks.py",
+        "github:vtcbelgium/odysseus-local:routes/calendar.py"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ai.skill-contract",
+      "name": "Canonical Skill Contract + router",
+      "domain": "agents",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "github:vtcbelgium/titan-os:ROADMAP.md"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.security.mission-sandbox",
+      "name": "Mission-scoped sandbox/checkpoint/rollback",
+      "domain": "security",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "github:vtcbelgium/titan-os:ROADMAP.md"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.intelligence.capability-harvest-pipeline",
+      "name": "Capability harvest/fitness pipeline",
+      "domain": "intelligence",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "github:vtcbelgium/titan-os:ROADMAP.md"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.persistent-timer",
+      "name": "Persistent scheduled worker",
+      "domain": "ops",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "vtc-office handoffs/systemd price worker"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.knowledge.proposal-drafter",
+      "name": "Facts-only proposal drafter",
+      "domain": "knowledge",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "vtc-office Lane B handoffs"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.finance.portfolio-appraisal",
+      "name": "Portfolio valuation + gain/loss + appraisal report",
+      "domain": "finance",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "github:vtcbelgium/vtc-docs:ROADMAP.md"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.notify.price-alerts",
+      "name": "Price/change alerts",
+      "domain": "notifications",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "github:vtcbelgium/vtc-docs:ROADMAP.md"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ai.identification-api",
+      "name": "Identification API/SaaS",
+      "domain": "ai",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "github:vtcbelgium/vtc-docs:ROADMAP.md"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.catalog.white-label",
+      "name": "White-label catalog engine",
+      "domain": "catalog",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "github:vtcbelgium/vtc-docs:ROADMAP.md"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.scheduled-reinspection",
+      "name": "Scheduled maintenance/reinspection",
+      "domain": "ops",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "github:vtcbelgium/vtc-docs:ROADMAP.md"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.learning.fsrs",
+      "name": "FSRS/Anki-compatible scheduling",
+      "domain": "learning",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "study-buddy:BACKLOG.md",
+        "study-buddy:lib/reviews.ts"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.learning.error-ledger",
+      "name": "Learning error/misconception ledger",
+      "domain": "learning",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "study-buddy:BACKLOG.md"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.learning.assessment-mode",
+      "name": "Assessment/readiness mode",
+      "domain": "learning",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "study-buddy:BACKLOG.md"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.knowledge.lecture-pipeline",
+      "name": "Lecture knowledge pipeline",
+      "domain": "knowledge",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "study-buddy:BACKLOG.md"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.knowledge.multiformat-ingest",
+      "name": "Multi-format knowledge ingest",
+      "domain": "knowledge",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "study-buddy:BACKLOG.md"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.backup-restore-proof",
+      "name": "Automated backup + tested restore",
+      "domain": "recovery",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "study-buddy:BACKLOG.md",
+        "othrys-memory:.automation/sync_obsidian_vault.py",
+        "othrys-core:Mnemosyne snapshot commits"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.reviewer-harness",
+      "name": "Multi-reviewer coding harness",
+      "domain": "engineering",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-core commit 1c0ade47"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.webhook.github-replay",
+      "name": "GitHub webhook + replay harness",
+      "domain": "integrations",
+      "tier": 0,
+      "status": "FINAL_QUARRY_CANDIDATE",
+      "evidence": [
+        "othrys-core mission-control webhook commits"
+      ],
+      "uses": [
+        "great-library-final-quarry"
+      ],
+      "authorityGranted": false
     }
   ],
   "blueprints": [
@@ -1580,9 +2188,10 @@
     "patterns": 9,
     "antiPatterns": 14,
     "playbooks": 4,
-    "blocks": 53,
+    "blocks": 96,
     "provenStockUnadmitted": 7,
-    "harvestCandidates": 16
+    "harvestCandidates": 16,
+    "finalQuarryCandidates": 43
   },
   "authorityGranted": false,
   "automaticAdmission": false,

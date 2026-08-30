@@ -51,3 +51,6 @@ The Pentarchy now exercises itself through a bounded canonical self-hone entrypo
 
 ### Great Library seed
 V2-011J now seeds a tested Pattern -> Block -> Blueprint -> Specialized Blueprint library plus a 387-item potential map. Next: reuse-frequency analysis to rank the next low-gravity Block extraction; no automatic admission/build.
+
+### V2-011J final quarry census
+Final broad census complete before refinement: all 11 GitHub default trees (8,950 blobs; none truncated), Great Harvest history, 34 current local Git roots, 832 local plan files collapsed to 127 unique plan bodies, and 5,326 unique capability-tagged code artifacts were reviewed. Forty-three under-harvested candidates were bound into the Great Library as inert FINAL_QUARRY_CANDIDATE stock. Next: refinement/merge/reject only; no more lateral quarry expansion unless new evidence proves the perimeter incomplete.

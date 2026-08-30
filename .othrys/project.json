@@ -147,7 +147,7 @@
     "requests": [
       {
         "id": "qwen3-builder",
-        "label": "Qwen3 8B \u00c2\u00b7 Legion",
+        "label": "Qwen3 8B Â· Legion",
         "class": "LOCAL ENGINEERING",
         "status": "PRIMARY",
         "available": true,
@@ -167,7 +167,7 @@
       },
       {
         "id": "llama3.2-advisory",
-        "label": "Llama 3.2 \u00c2\u00b7 T590",
+        "label": "Llama 3.2 Â· T590",
         "class": "LOCAL ADVISORY",
         "status": "ADVISORY ONLY",
         "available": true,
@@ -210,13 +210,13 @@
   "integrations": [
     {
       "id": "ollama-legion",
-      "label": "Ollama \u00c2\u00b7 Legion",
+      "label": "Ollama Â· Legion",
       "class": "LOCAL MODEL RUNTIME",
       "evidence": "V2-002C"
     },
     {
       "id": "ollama-t590",
-      "label": "Ollama \u00c2\u00b7 T590",
+      "label": "Ollama Â· T590",
       "class": "LOCAL ADVISORY RUNTIME",
       "evidence": "V2-004D"
     },
@@ -228,7 +228,7 @@
     },
     {
       "id": "command-deck-lan",
-      "label": "Command Deck \u00c2\u00b7 LAN",
+      "label": "Command Deck Â· LAN",
       "class": "LOCAL CONTROLLER SURFACE",
       "evidence": "V2-006A"
     }
@@ -323,6 +323,12 @@
       "path": "docs/V2-011J/GREAT_LIBRARY_POTENTIAL.json",
       "id": "great-library-potential",
       "class": "BLUEPRINT POTENTIAL / QUARRY / GATED"
+    },
+    {
+      "label": "Final Great Quarry Census",
+      "path": "docs/V2-011J/FINAL_QUARRY_CENSUS.md",
+      "id": "final-quarry-census",
+      "class": "MNEMOSYNE / QUARRY CENSUS"
     }
   ],
   "roleBindings": [

@@ -1,0 +1,558 @@
+{
+  "schema": "othrys.os.final-quarry-census.v1",
+  "missionId": "V2-011J",
+  "status": "CENSUS_COMPLETE_REFINEMENT_PENDING",
+  "scope": {
+    "githubRepos": 11,
+    "githubBlobs": 8950,
+    "githubPlanPaths": 375,
+    "githubCandidatePaths": 5485,
+    "githubTruncatedTrees": 0,
+    "localGitRoots": 34,
+    "localPlanFiles": 832,
+    "localUniquePlanBodies": 127,
+    "localUniqueTaggedCode": 5326,
+    "duplicateCodeCopiesCollapsed": 46049,
+    "greatHarvestHistoricalCommitRows": 1040
+  },
+  "candidates": [
+    {
+      "id": "candidate.os.capability-registry",
+      "name": "Capability registry",
+      "domain": "ops",
+      "status": "MATURE_OLD_STOCK",
+      "evidence": [
+        "othrys-core:titan/capability-registry"
+      ],
+      "why": "Separate lifecycle/readiness/health catalog; Prometheus fills, Keymaster certifies, Mnemosyne preserves.",
+      "disposition": "REUSE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.credential-broker",
+      "name": "Sealed credential broker + usage ledger",
+      "domain": "security",
+      "status": "MATURE_OLD_STOCK",
+      "evidence": [
+        "othrys-core:titan/credential-broker"
+      ],
+      "why": "Provider handles without raw secrets; scoped grants, caps, audit, durable usage ledger, deny-all transport.",
+      "disposition": "REUSE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.fact-event-fabric",
+      "name": "Persist-first domain event fabric",
+      "domain": "ops",
+      "status": "MATURE_OLD_STOCK",
+      "evidence": [
+        "othrys-core:titan/event-bus"
+      ],
+      "why": "Immutable causal facts, persist-first delivery, subscriber isolation, choreography.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.governed-gateway",
+      "name": "Governed capability gateway",
+      "domain": "ops",
+      "status": "MATURE_OLD_STOCK",
+      "evidence": [
+        "othrys-core:titan/gateway"
+      ],
+      "why": "Mission pre-gate, version negotiation, governed pipelines and provider-neutral fetch.",
+      "disposition": "REUSE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.intelligence-foundation",
+      "name": "Intelligence foundation composition",
+      "domain": "intelligence",
+      "status": "MATURE_OLD_STOCK",
+      "evidence": [
+        "othrys-core:titan/intelligence"
+      ],
+      "why": "Prometheus+Keymaster+registry+Mnemosyne with fact log, snapshots, restart/replay and secret refusal.",
+      "disposition": "REUSE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.titan-runtime",
+      "name": "Discoverable component runtime",
+      "domain": "ops",
+      "status": "MATURE_OLD_STOCK",
+      "evidence": [
+        "othrys-core:titan/runtime"
+      ],
+      "why": "Manifest discovery, dependency resolution, quarantine, health, bounded metrics and generator CLI.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.triad.machine-covenant",
+      "name": "Machine-checked Triad covenant",
+      "domain": "governance",
+      "status": "MATURE_OLD_STOCK",
+      "evidence": [
+        "othrys-core:titan/triad"
+      ],
+      "why": "Exclusive ownership, optional cross-office dependencies, acyclic graph, shared vocabulary and human-gated council.",
+      "disposition": "REUSE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.bridge-recovery",
+      "name": "Bridge recovery grammar",
+      "domain": "ops",
+      "status": "MATURE_OLD_STOCK",
+      "evidence": [
+        "othrys-core:titan/bridge"
+      ],
+      "why": "Inbox/queue/validator/policy/router/audit/knowledge/notify/health ports with dead-letter replay, outbox, safe mode and kill.",
+      "disposition": "REFERENCE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.projection-delivery-contract",
+      "name": "Versioned projection delivery contract",
+      "domain": "ops",
+      "status": "MATURE_OLD_STOCK",
+      "evidence": [
+        "othrys-core:titan/atlas-delivery-contract"
+      ],
+      "why": "Versioned graph projection, validation, traversal, drift detection and proof manifest for consumers.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.browser.governed-webview",
+      "name": "Persistent governed browser",
+      "domain": "browser",
+      "status": "PROVEN_HUB_STOCK",
+      "evidence": [
+        "othrys-hub:hub/browser.py"
+      ],
+      "why": "Persistent authenticated webview, bounded navigation, explicit credential fill and isolated capture.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.voice.local-interface",
+      "name": "Local voice interface",
+      "domain": "voice",
+      "status": "PROVEN_HUB_STOCK",
+      "evidence": [
+        "othrys-hub:hub/voice.py"
+      ],
+      "why": "Recorder/STT/TTS/wake/hotkey state machine with interruption, fail-closed availability and optional source reuse.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.assurance-test-centre",
+      "name": "Assurance Test Centre",
+      "domain": "verification",
+      "status": "PROVEN_HUB_STOCK",
+      "evidence": [
+        "othrys-hub:core/titan/hephaestus/src/host/assuranceTestCentreHost.ts"
+      ],
+      "why": "Reusable assurance harness for component and organism verification.",
+      "disposition": "REUSE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.self-calibration",
+      "name": "Organ calibration/autotuning",
+      "domain": "verification",
+      "status": "PROVEN_HUB_STOCK",
+      "evidence": [
+        "othrys-hub:core/titan/hephaestus/src/mycelium/calibration.ts"
+      ],
+      "why": "Evidence-driven bounded calibration instead of hand-tuned runtime assumptions.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.soak-controller",
+      "name": "Bounded soak controller",
+      "domain": "verification",
+      "status": "PROVEN_HUB_STOCK",
+      "evidence": [
+        "othrys-hub:core/titan/hephaestus/src/mycelium/soak_controller.ts"
+      ],
+      "why": "Repeated-cycle stability proof with bounded duration and evidence.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.sclerotium-recovery",
+      "name": "Sclerotium survival/recovery artifact",
+      "domain": "recovery",
+      "status": "PROVEN_HUB_STOCK",
+      "evidence": [
+        "othrys-hub:core/titan/hephaestus/src/mycelium/sclerotium.ts"
+      ],
+      "why": "Portable survival state for recovery and reconstruction.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.security.execution-sandbox",
+      "name": "Execution/source sandbox",
+      "domain": "security",
+      "status": "PROVEN_HUB_STOCK",
+      "evidence": [
+        "othrys-hub:core/titan/hephaestus/src/sandbox",
+        "othrys-hub:hub/design_studio/source_sandbox.py"
+      ],
+      "why": "Scratch-clone and OS isolation patterns for untrusted builds and source experiments.",
+      "disposition": "REUSE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.design.reference-ingest",
+      "name": "Reference visual ingest",
+      "domain": "design",
+      "status": "PROVEN_STUDIO_STOCK",
+      "evidence": [
+        "othrys-studio:apps/hub-web/src/mockup-pipeline/ingest.ts"
+      ],
+      "why": "Hash/dimensions/viewport identity for reproducible reference-derived design work.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.design.visual-decomposition",
+      "name": "Visual structural decomposition",
+      "domain": "design",
+      "status": "PROVEN_STUDIO_STOCK",
+      "evidence": [
+        "othrys-studio:apps/hub-web/src/mockup-pipeline/decompose.ts"
+      ],
+      "why": "Inspectable palette, region, foreground and layout decomposition from screenshots.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.design.fidelity-compare",
+      "name": "Structural/foreground fidelity compare",
+      "domain": "design",
+      "status": "PROVEN_STUDIO_STOCK",
+      "evidence": [
+        "othrys-studio:apps/hub-web/src/reference/compare.ts"
+      ],
+      "why": "Pixel comparison that prevents background similarity from faking visual fidelity.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.design.bounded-refinement",
+      "name": "Evidence-gated design refinement",
+      "domain": "design",
+      "status": "PROVEN_STUDIO_STOCK",
+      "evidence": [
+        "othrys-studio:apps/hub-web/src/mockup-pipeline/refine.ts"
+      ],
+      "why": "Bounded refine cycles with no-regression gates and no fake shell nudges.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.design.operator-gate",
+      "name": "Design acceptance/graduation gate",
+      "domain": "design",
+      "status": "PROVEN_STUDIO_STOCK",
+      "evidence": [
+        "othrys-studio:apps/hub-web/src/reference/gate.ts"
+      ],
+      "why": "Explicit accept/reject separate from production mutation and Block graduation.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ai.deep-research-workspace",
+      "name": "Deep research workspace",
+      "domain": "research",
+      "status": "EXTERNAL_REFERENCE",
+      "evidence": [
+        "github:vtcbelgium/odysseus-local:services/research"
+      ],
+      "why": "Multi-source research and synthesis patterns; AGPL-derived, reference/license gate only.",
+      "disposition": "REFERENCE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ai.blind-model-compare",
+      "name": "Blind model compare + synthesis",
+      "domain": "ai",
+      "status": "EXTERNAL_REFERENCE",
+      "evidence": [
+        "github:vtcbelgium/odysseus-local:routes/compare.py"
+      ],
+      "why": "Provider/model evaluation without brand bias, followed by synthesis.",
+      "disposition": "REFERENCE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.comms.email-workbench",
+      "name": "Email triage/summarize/draft workbench",
+      "domain": "communications",
+      "status": "EXTERNAL_REFERENCE",
+      "evidence": [
+        "github:vtcbelgium/odysseus-local:routes/email.py"
+      ],
+      "why": "IMAP/SMTP inbox, tagging, summaries, reminders and draft workflows.",
+      "disposition": "REFERENCE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.product.notes-tasks-calendar",
+      "name": "Notes/tasks/calendar workspace",
+      "domain": "productivity",
+      "status": "EXTERNAL_REFERENCE",
+      "evidence": [
+        "github:vtcbelgium/odysseus-local:routes/notes.py",
+        "github:vtcbelgium/odysseus-local:routes/tasks.py",
+        "github:vtcbelgium/odysseus-local:routes/calendar.py"
+      ],
+      "why": "General personal productivity Blueprint family including CalDAV interoperability.",
+      "disposition": "REFERENCE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ai.skill-contract",
+      "name": "Canonical Skill Contract + router",
+      "domain": "agents",
+      "status": "DESIGN_STOCK",
+      "evidence": [
+        "github:vtcbelgium/titan-os:ROADMAP.md"
+      ],
+      "why": "Typed skills with inputs/outputs/tools/permissions/cost/risk/evaluation/version and a selection router.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.security.mission-sandbox",
+      "name": "Mission-scoped sandbox/checkpoint/rollback",
+      "domain": "security",
+      "status": "DESIGN_STOCK",
+      "evidence": [
+        "github:vtcbelgium/titan-os:ROADMAP.md"
+      ],
+      "why": "Per-mission credentials, checkpoints, rollback and kill-switch policy for agent work.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.intelligence.capability-harvest-pipeline",
+      "name": "Capability harvest/fitness pipeline",
+      "domain": "intelligence",
+      "status": "DESIGN_STOCK",
+      "evidence": [
+        "github:vtcbelgium/titan-os:ROADMAP.md"
+      ],
+      "why": "Inspect identity/license/maintenance/deps/install/update/security/provider lock-in and quarantine-test before adoption.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.persistent-timer",
+      "name": "Persistent scheduled worker",
+      "domain": "ops",
+      "status": "PROVEN_VTC_OFFICE_STOCK",
+      "evidence": [
+        "vtc-office handoffs/systemd price worker"
+      ],
+      "why": "Persistent user timer plus idempotent batch queue and run evidence; strong Kronos cadence reference.",
+      "disposition": "REFERENCE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.knowledge.proposal-drafter",
+      "name": "Facts-only proposal drafter",
+      "domain": "knowledge",
+      "status": "PROVEN_VTC_OFFICE_STOCK",
+      "evidence": [
+        "vtc-office Lane B handoffs"
+      ],
+      "why": "Extract facts to pending proposals, keep canon sealed, human promotion later.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.finance.portfolio-appraisal",
+      "name": "Portfolio valuation + gain/loss + appraisal report",
+      "domain": "finance",
+      "status": "PRODUCT_STOCK",
+      "evidence": [
+        "github:vtcbelgium/vtc-docs:ROADMAP.md"
+      ],
+      "why": "Reusable valuation/report Blueprint beyond collectibles.",
+      "disposition": "BLUEPRINT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.notify.price-alerts",
+      "name": "Price/change alerts",
+      "domain": "notifications",
+      "status": "PRODUCT_STOCK",
+      "evidence": [
+        "github:vtcbelgium/vtc-docs:ROADMAP.md"
+      ],
+      "why": "General threshold/change notification capability.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ai.identification-api",
+      "name": "Identification API/SaaS",
+      "domain": "ai",
+      "status": "PRODUCT_STOCK",
+      "evidence": [
+        "github:vtcbelgium/vtc-docs:ROADMAP.md"
+      ],
+      "why": "Vision/lookup productization pattern with API boundary.",
+      "disposition": "BLUEPRINT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.catalog.white-label",
+      "name": "White-label catalog engine",
+      "domain": "catalog",
+      "status": "PRODUCT_STOCK",
+      "evidence": [
+        "github:vtcbelgium/vtc-docs:ROADMAP.md"
+      ],
+      "why": "Reusable catalog/data/community composition for multiple niches.",
+      "disposition": "BLUEPRINT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.scheduled-reinspection",
+      "name": "Scheduled maintenance/reinspection",
+      "domain": "ops",
+      "status": "PRODUCT_STOCK",
+      "evidence": [
+        "github:vtcbelgium/vtc-docs:ROADMAP.md"
+      ],
+      "why": "Periodic inspect->evidence->repair-proposal loop.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.learning.fsrs",
+      "name": "FSRS/Anki-compatible scheduling",
+      "domain": "learning",
+      "status": "STUDY_BUDDY_STOCK",
+      "evidence": [
+        "study-buddy:BACKLOG.md",
+        "study-buddy:lib/reviews.ts"
+      ],
+      "why": "Event-backed adaptive spaced repetition.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.learning.error-ledger",
+      "name": "Learning error/misconception ledger",
+      "domain": "learning",
+      "status": "STUDY_BUDDY_STOCK",
+      "evidence": [
+        "study-buddy:BACKLOG.md"
+      ],
+      "why": "First-class repeated-error memory feeding targeted practice.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.learning.assessment-mode",
+      "name": "Assessment/readiness mode",
+      "domain": "learning",
+      "status": "STUDY_BUDDY_STOCK",
+      "evidence": [
+        "study-buddy:BACKLOG.md"
+      ],
+      "why": "Timed no-hint assessment with readiness scoring over mastery evidence.",
+      "disposition": "BLUEPRINT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.knowledge.lecture-pipeline",
+      "name": "Lecture knowledge pipeline",
+      "domain": "knowledge",
+      "status": "STUDY_BUDDY_STOCK",
+      "evidence": [
+        "study-buddy:BACKLOG.md"
+      ],
+      "why": "Audio -> raw transcript -> clean transcript -> timestamped notes -> deep source links.",
+      "disposition": "BLUEPRINT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.knowledge.multiformat-ingest",
+      "name": "Multi-format knowledge ingest",
+      "domain": "knowledge",
+      "status": "STUDY_BUDDY_STOCK",
+      "evidence": [
+        "study-buddy:BACKLOG.md"
+      ],
+      "why": "Slide/docx/xlsx/URL/email/screenshot ingestion behind extraction seams.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.ops.backup-restore-proof",
+      "name": "Automated backup + tested restore",
+      "domain": "recovery",
+      "status": "MULTI_ESTATE_STOCK",
+      "evidence": [
+        "study-buddy:BACKLOG.md",
+        "othrys-memory:.automation/sync_obsidian_vault.py",
+        "othrys-core:Mnemosyne snapshot commits"
+      ],
+      "why": "Backup is not healthy until restore is exercised and digest checked.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.os.reviewer-harness",
+      "name": "Multi-reviewer coding harness",
+      "domain": "engineering",
+      "status": "MATURE_OLD_STOCK",
+      "evidence": [
+        "othrys-core commit 1c0ade47"
+      ],
+      "why": "Five skills, three reviewer agents and one structural rail; useful for Hephaestus delegation/evaluation.",
+      "disposition": "REFERENCE",
+      "authorityGranted": false
+    },
+    {
+      "id": "candidate.webhook.github-replay",
+      "name": "GitHub webhook + replay harness",
+      "domain": "integrations",
+      "status": "MATURE_OLD_STOCK",
+      "evidence": [
+        "othrys-core mission-control webhook commits"
+      ],
+      "why": "Authenticated external event intake with replay testing.",
+      "disposition": "ADAPT",
+      "authorityGranted": false
+    }
+  ],
+  "counts": {
+    "candidates": 43,
+    "reuse": 7,
+    "adapt": 24,
+    "reference": 7,
+    "blueprint": 5
+  },
+  "laws": [
+    "existence in Great Harvest is not admission",
+    "candidate does not grant authority",
+    "reuse/adapt before rebuild",
+    "third-party code is reference until license boundary is satisfied",
+    "refinement may merge or reject duplicates before quarry close"
+  ],
+  "authorityGranted": false,
+  "automaticAdmission": false
+}
