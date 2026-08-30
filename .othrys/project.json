@@ -166,7 +166,7 @@
         "locality": "LOCAL",
         "providerHealth": "HEALTHY",
         "certification": "CERTIFIED",
-        "measuredTrust": null,
+        "measuredTrust": 0.76,
         "paidApprovalRequired": false,
         "legal": true
       },
@@ -208,6 +208,46 @@
         "certification": "UNTESTED",
         "measuredTrust": null,
         "paidApprovalRequired": true,
+        "legal": true
+      },
+      {
+        "id": "local.qwen3.5-9b",
+        "label": "Qwen3.5 9B - Legion Forge",
+        "class": "LOCAL ENGINEERING",
+        "status": "QUALIFIED",
+        "available": true,
+        "evidence": "docs/training/HEPHAESTUS_LOCAL_FORGE_QUALIFICATION.json",
+        "capabilities": [
+          "engineering.build"
+        ],
+        "tier": "STANDARD",
+        "costClass": "ZERO",
+        "latencyClass": "INTERACTIVE",
+        "locality": "LOCAL",
+        "providerHealth": "HEALTHY",
+        "certification": "CERTIFIED",
+        "measuredTrust": 0.75,
+        "paidApprovalRequired": false,
+        "legal": true
+      },
+      {
+        "id": "local.qwen3-coder-30b",
+        "label": "Qwen3-Coder 30B - Legion Heavy Forge",
+        "class": "LOCAL ENGINEERING HEAVY",
+        "status": "QUALIFIED",
+        "available": true,
+        "evidence": "docs/training/HEPHAESTUS_LOCAL_FORGE_QUALIFICATION.json",
+        "capabilities": [
+          "engineering.build"
+        ],
+        "tier": "HIGH",
+        "costClass": "ZERO",
+        "latencyClass": "BATCH",
+        "locality": "LOCAL",
+        "providerHealth": "HEALTHY",
+        "certification": "CERTIFIED",
+        "measuredTrust": 0.75,
+        "paidApprovalRequired": false,
         "legal": true
       }
     ]

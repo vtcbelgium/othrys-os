@@ -79,11 +79,14 @@
       "specialties": [
         "general-code",
         "reasoning",
-        "small-patch"
+        "small-patch",
+        "fast",
+        "tiny-patch"
       ],
-      "readiness": "LOADED_UNQUALIFIED",
+      "readiness": "QUALIFIED_LOCAL",
       "qualificationPriority": 1,
-      "executionAllowed": false
+      "executionAllowed": true,
+      "qualificationEvidence": "docs/training/HEPHAESTUS_LOCAL_FORGE_QUALIFICATION.json"
     },
     {
       "id": "local.qwen2.5-coder-7b",
@@ -148,10 +151,11 @@
         "repo-scale",
         "tool-use"
       ],
-      "readiness": "LOADED_UNQUALIFIED_HEAVY",
+      "readiness": "QUALIFIED_LOCAL_HEAVY",
       "qualificationPriority": 1,
-      "executionAllowed": false,
-      "hardwareNote": "18GB quant exceeds 8GB VRAM; expect CPU/RAM offload"
+      "executionAllowed": true,
+      "hardwareNote": "18GB quant exceeds 8GB VRAM; expect CPU/RAM offload",
+      "qualificationEvidence": "docs/training/HEPHAESTUS_LOCAL_FORGE_QUALIFICATION.json"
     },
     {
       "id": "local.gpt-oss-20b",

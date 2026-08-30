@@ -1,0 +1,95 @@
+{
+  "schema": "othrys.hephaestus.local-forge-qualification.v1",
+  "missionId": "V2-011K",
+  "rows": [
+    {
+      "builderId": "local.qwen3-8b",
+      "workerPass": true,
+      "durationSec": 7.587861776351929,
+      "changedFiles": [
+        "training/forge-qualification/local_qwen3-8b/candidate.mjs"
+      ],
+      "outOfScope": [],
+      "model": "qwen3:8b",
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6120",
+        "utilization_pct": "0",
+        "temperature_c": "37",
+        "power_w": "7.99"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "5202",
+        "utilization_pct": "0",
+        "temperature_c": "42",
+        "power_w": "55.24"
+      },
+      "talosBehaviorPass": true
+    },
+    {
+      "builderId": "local.qwen3.5-9b",
+      "workerPass": true,
+      "durationSec": 7.944052219390869,
+      "changedFiles": [
+        "training/forge-qualification/local_qwen3_5-9b/candidate.mjs"
+      ],
+      "outOfScope": [],
+      "model": "qwen3.5:9b",
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "5202",
+        "utilization_pct": "0",
+        "temperature_c": "42",
+        "power_w": "17.63"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6338",
+        "utilization_pct": "0",
+        "temperature_c": "45",
+        "power_w": "37.21"
+      },
+      "talosBehaviorPass": true
+    },
+    {
+      "builderId": "local.qwen3-coder-30b",
+      "workerPass": true,
+      "durationSec": 19.534701108932495,
+      "changedFiles": [
+        "training/forge-qualification/local_qwen3-coder-30b/candidate.mjs"
+      ],
+      "outOfScope": [],
+      "model": "qwen3-coder:30b",
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6338",
+        "utilization_pct": "0",
+        "temperature_c": "44",
+        "power_w": "12.11"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6078",
+        "utilization_pct": "0",
+        "temperature_c": "47",
+        "power_w": "23.93"
+      },
+      "talosBehaviorPass": true
+    }
+  ],
+  "admissionRule": "Olympics candidate + bounded real worker mutation + Talos behavior PASS + zero out-of-scope changes",
+  "authorityGranted": false
+}

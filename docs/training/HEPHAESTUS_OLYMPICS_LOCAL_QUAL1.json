@@ -1,0 +1,165 @@
+{
+  "schema": "othrys.hephaestus.olympics-heat.v1",
+  "rows": [
+    {
+      "builderId": "local.qwen3.5-9b",
+      "eventId": "PROTOCOL",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 6232,
+      "finish": "stop",
+      "chars": 27,
+      "preview": "{\"ok\":true,\"items\":[1,2,3]}"
+    },
+    {
+      "builderId": "local.qwen3.5-9b",
+      "eventId": "REPAIR",
+      "talosPass": false,
+      "protocolPass": true,
+      "latencyMs": 1236,
+      "finish": "stop",
+      "chars": 163,
+      "preview": "function clamp(n, min, max) { return Math.min(Math.max(n, min), max); } console.log(clamp(5, 0, 10)); console.log(clamp(-2, 0, 10)); console.log(clamp(20, 0, 10"
+    },
+    {
+      "builderId": "local.qwen3.5-9b",
+      "eventId": "REPO",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 512,
+      "finish": "stop",
+      "chars": 61,
+      "preview": "{\"file\":\"a.mjs\",\"replacement\":\"export const add=(a,b)=>a+b;\"}"
+    },
+    {
+      "builderId": "local.qwen3.5-9b",
+      "eventId": "TOOLS",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 452,
+      "finish": "stop",
+      "chars": 68,
+      "preview": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"x.txt\",\"content\":\"hello\"}}"
+    },
+    {
+      "builderId": "local.qwen3-8b",
+      "eventId": "PROTOCOL",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 4133,
+      "finish": "stop",
+      "chars": 27,
+      "preview": "{\"ok\":true,\"items\":[1,2,3]}"
+    },
+    {
+      "builderId": "local.qwen3-8b",
+      "eventId": "REPAIR",
+      "talosPass": false,
+      "protocolPass": true,
+      "latencyMs": 589,
+      "finish": "stop",
+      "chars": 94,
+      "preview": "function clamp(n, min, max) { return Math.min(min, Math.max(max, n)); } exports.clamp = clamp;"
+    },
+    {
+      "builderId": "local.qwen3-8b",
+      "eventId": "REPO",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 582,
+      "finish": "stop",
+      "chars": 77,
+      "preview": "{\n  \"file\": \"a.mjs\",\n  \"replacement\": \"export const add = (a, b) => a + b;\"\n}"
+    },
+    {
+      "builderId": "local.qwen3-8b",
+      "eventId": "TOOLS",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 369,
+      "finish": "stop",
+      "chars": 68,
+      "preview": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"x.txt\",\"content\":\"hello\"}}"
+    },
+    {
+      "builderId": "local.qwen3-coder-30b",
+      "eventId": "PROTOCOL",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 15020,
+      "finish": "stop",
+      "chars": 27,
+      "preview": "{\"ok\":true,\"items\":[1,2,3]}"
+    },
+    {
+      "builderId": "local.qwen3-coder-30b",
+      "eventId": "REPAIR",
+      "talosPass": false,
+      "protocolPass": true,
+      "latencyMs": 2005,
+      "finish": "stop",
+      "chars": 166,
+      "preview": "function clamp(n,min,max){return Math.max(min,Math.min(max,n))}\n\nconsole.log(clamp(5,0,10)); // 5\nconsole.log(clamp(-2,0,10)); // 0\nconsole.log(clamp(20,0,10));"
+    },
+    {
+      "builderId": "local.qwen3-coder-30b",
+      "eventId": "REPO",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 813,
+      "finish": "stop",
+      "chars": 61,
+      "preview": "{\"file\":\"a.mjs\",\"replacement\":\"export const add=(a,b)=>a+b;\"}"
+    },
+    {
+      "builderId": "local.qwen3-coder-30b",
+      "eventId": "TOOLS",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 688,
+      "finish": "stop",
+      "chars": 68,
+      "preview": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"x.txt\",\"content\":\"hello\"}}"
+    },
+    {
+      "builderId": "local.qwen2.5-coder-7b",
+      "eventId": "PROTOCOL",
+      "talosPass": false,
+      "protocolPass": false,
+      "latencyMs": 4909,
+      "finish": "stop",
+      "chars": 39,
+      "preview": "```json\n{\"ok\":true,\"items\":[1,2,3]}\n```"
+    },
+    {
+      "builderId": "local.qwen2.5-coder-7b",
+      "eventId": "REPAIR",
+      "talosPass": false,
+      "protocolPass": false,
+      "latencyMs": 1184,
+      "finish": "stop",
+      "chars": 200,
+      "preview": "```javascript\nfunction clamp(n, min, max) {\n  return Math.min(max, Math.max(n, min));\n}\n\nconsole.log(clamp(5, 0, 10)); // 5\nconsole.log(clamp(-2, 0, 10)); // 0\n"
+    },
+    {
+      "builderId": "local.qwen2.5-coder-7b",
+      "eventId": "REPO",
+      "talosPass": false,
+      "protocolPass": false,
+      "latencyMs": 509,
+      "finish": "stop",
+      "chars": 89,
+      "preview": "```json\n{\n  \"file\": \"a.mjs\",\n  \"replacement\": \"export const add = (a, b) => a + b;\"\n}\n```"
+    },
+    {
+      "builderId": "local.qwen2.5-coder-7b",
+      "eventId": "TOOLS",
+      "talosPass": false,
+      "protocolPass": false,
+      "latencyMs": 525,
+      "finish": "stop",
+      "chars": 104,
+      "preview": "```json\n{\n  \"tool\": \"write_file\",\n  \"arguments\": {\n    \"path\": \"x.txt\",\n    \"content\": \"hello\"\n  }\n}\n```"
+    }
+  ]
+}

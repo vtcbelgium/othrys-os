@@ -1,0 +1,58 @@
+{
+  "schema": "othrys.hephaestus.olympics-checkpoint.v1",
+  "missionId": "V2-011K",
+  "status": "PASS",
+  "admitted": [
+    {
+      "builderId": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "role": "FAST_LOCAL_CHALLENGER",
+      "workerQualification": "PASS",
+      "postAdmissionSmoke": "PASS",
+      "executionAllowed": true
+    },
+    {
+      "builderId": "local.qwen3-coder-30b",
+      "model": "qwen3-coder:30b",
+      "role": "HEAVY_LOCAL_SMITH",
+      "workerQualification": "PASS",
+      "postAdmissionSmoke": "PASS",
+      "executionAllowed": true
+    }
+  ],
+  "incumbent": {
+    "builderId": "qwen3-builder",
+    "model": "qwen3:8b",
+    "role": "PRIMARY_LOCAL",
+    "measuredTrust": 0.76
+  },
+  "remoteEvidence": {
+    "nvidia.kimi-k3": {
+      "semanticPasses": 3,
+      "providerThrottleEvents": 1,
+      "state": "KEEP_TESTING"
+    },
+    "nvidia.minimax-m3": {
+      "state": "KEEP_TESTING_PROVIDER_RATE_LIMIT_OBSERVED"
+    },
+    "nvidia.deepseek-v4-flash": {
+      "state": "KEEP_TESTING"
+    }
+  },
+  "myceliumLaw": "Provider throttles and machine pressure are operational fitness evidence, not model-quality failures.",
+  "switchyard": {
+    "eligible": [
+      "qwen3-builder",
+      "local.qwen3.5-9b",
+      "local.qwen3-coder-30b"
+    ],
+    "selected": "qwen3-builder"
+  },
+  "proof": {
+    "focused": "25/25 PASS",
+    "deep": "320/320 PASS",
+    "whole": "468/468 PASS",
+    "workers": "18/18 PASS"
+  },
+  "authorityGranted": false
+}

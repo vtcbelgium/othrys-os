@@ -106,3 +106,47 @@ def test_malformed_single_path_write_recovery_discards_stray_json_tail():
     raw='{"path":"x.mjs","content":"export const x = 1;\n"}]}]}\n\ No newline at end of file'
     got=mod._recover_malformed_write_args(raw,"content")
     assert got=={"path":"x.mjs","content":"export const x = 1;\n"}
+
+
+def test_malformed_outer_tail_preserves_source_escape_sequences():
+    import importlib.util
+    mod_path=Path(__file__).with_name("legion_qwen_worker_v01.py")
+    spec=importlib.util.spec_from_file_location("worker_mod_escape",mod_path);mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+    raw='{"path":"x.mjs","content":"const LF = \\\"\\\\n\\\";\\nconst r = /\\\\n{3,}/g;\\n"}]}'
+    got=mod._recover_malformed_write_args(raw,"content")
+    assert got["path"]=="x.mjs"
+    assert got["content"]=='const LF = "\\n";\nconst r = /\\n{3,}/g;\n'
+
+
+def test_worker_source_refuses_finish_before_mutation():
+    text=Path(__file__).with_name("legion_qwen_worker_v01.py").read_text(encoding="utf-8")
+    assert 'finish refused before mutation' in text
+    assert 'if not mutated:' in text
+
+
+def test_worker_evidence_is_allowlist_scoped():
+    text=Path(__file__).with_name("legion_qwen_worker_v01.py").read_text(encoding="utf-8")
+    assert '_scoped_workspace_diff(workspace, allowed)' in text
+    assert 'hub_engineering.workspace_diff = lambda _workspace' in text
+
+
+def test_single_path_repair_normalizes_workspace_prefix_without_widening_scope():
+    import importlib.util
+    mod_path=Path(__file__).with_name("legion_qwen_worker_v01.py")
+    spec=importlib.util.spec_from_file_location("worker_mod_prefix",mod_path);mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+    response={"tool_calls":[{"function":{"name":"write_file","arguments":{"path":"workspace/x.mjs","content":"ok"}}}]}
+    got=mod._repair_single_path_tool_calls(response,["x.mjs"])
+    import json
+    args=json.loads(got["tool_calls"][0]["function"]["arguments"])
+    assert args["path"]=="x.mjs"
+
+
+def test_forge_execution_reads_roster_permission(tmp_path):
+    import importlib.util, json
+    mod_path=Path(__file__).with_name("legion_qwen_worker_v01.py")
+    spec=importlib.util.spec_from_file_location("worker_mod_forge",mod_path);mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+    roster=tmp_path/"runtime"/"hephaestus"/"data";roster.mkdir(parents=True)
+    (roster/"forge_roster.json").write_text(json.dumps({"builders":[{"id":"a","executionAllowed":True},{"id":"b","executionAllowed":False}]}),encoding="utf-8")
+    assert mod._forge_execution_allowed(tmp_path,"a") is True
+    assert mod._forge_execution_allowed(tmp_path,"b") is False
+    assert mod._forge_execution_allowed(tmp_path,"missing") is False
