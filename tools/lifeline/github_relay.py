@@ -12,7 +12,7 @@ import tempfile
 import time
 from pathlib import Path
 
-REPO = "vtcbelgium/othrys-v2"
+REPO = "vtcbelgium/othrys-os"
 TITLE_PREFIX = "[LIFELINE-CMD]"
 SCHEMA = "othrys.v2.lifeline.command.v1"
 ALLOWED_AUTHOR = "vtcbelgium"

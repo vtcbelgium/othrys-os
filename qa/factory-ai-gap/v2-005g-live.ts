@@ -4,7 +4,7 @@ import { createAdvisoryProposal } from "../../runtime/factory/proposal.ts";
 import { qualifyProposal } from "../../runtime/factory/qualification.ts";
 import { decideQualifiedAIRefinement } from "../../runtime/factory/ai_refine.ts";
 
-const root="C:/Users/othry/Projects/othrys-v2";
+const root="C:/Users/othry/Projects/othrys-os";
 const product="C:/Users/othry/Projects/oros/find-this-item-v2";
 const e=JSON.parse(readFileSync(root+"/qa/factory-ai-advisory/V2-005E.report.json","utf8"));
 const f=JSON.parse(readFileSync(root+"/qa/factory-ai-council/V2-005F.report.json","utf8"));

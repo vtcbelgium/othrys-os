@@ -4,7 +4,7 @@ import { spawnSync } from "node:child_process";
 import { factoryBuildRequirement } from "../../runtime/factory/placement.ts";
 import { replay, runLoop } from "../../runtime/talos-kernel/loop.ts";
 
-const root = "C:/Users/othry/Projects/othrys-v2";
+const root = "C:/Users/othry/Projects/othrys-os";
 const remoteUrl = process.env.OTHRYS_T590_URL;
 if (!remoteUrl) throw new Error("OTHRYS_T590_URL required");
 const requirement = factoryBuildRequirement();

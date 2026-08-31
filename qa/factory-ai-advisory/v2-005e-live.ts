@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import { createAdvisoryProposal, proposalMatchesCandidate, selectProposalFeedback } from "../../runtime/factory/proposal.ts";
 
-const root="C:/Users/othry/Projects/othrys-v2";
+const root="C:/Users/othry/Projects/othrys-os";
 const product="C:/Users/othry/Projects/oros/find-this-item-v2";
 const t590=process.env.OTHRYS_T590_URL ?? "http://192.168.0.188:8765";
 function git(...args:string[]){const p=spawnSync("git",["-C",product,...args],{encoding:"utf8"});if(p.status!==0)throw new Error(p.stderr);return p.stdout.trim();}

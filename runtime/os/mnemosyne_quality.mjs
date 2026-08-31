@@ -47,7 +47,7 @@ export function inspectMnemosyneQuality(root,{projectsRoot=null}={}){
   const ghPerimeterPath=join(root,'.othrys','knowledge','catalog','great-harvest-perimeter.jsonl');
   if(!existsSync(ghSummaryPath)||!existsSync(ghCodePath)||!existsSync(ghCommitPath)||!existsSync(ghLivePath)||!existsSync(ghPerimeterPath)) findings.push(finding('great-harvest-missing','high','Permanent Great Harvest catalogs are missing.'));
   else{
-    const gh=readJson(ghSummaryPath),digest=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
+    const gh=readJson(ghSummaryPath),digest=p=>{const text=readFileSync(p,'utf8').replace(/^\uFEFF/,'').replace(/\r\n/g,'\n'); return createHash('sha256').update(text,'utf8').digest('hex');};
     const invalid=gh.schema!=='othrys.os.great-harvest.summary.v1'||gh.authorityGranted!==false||gh.automaticPromotion!==false||gh.sourcePayloadCopied!==false;
     if(invalid) findings.push(finding('great-harvest-policy','high','Great Harvest summary violates permanent quarry policy.'));
     else if(digest(ghCodePath)!==gh.catalogSha256||digest(ghCommitPath)!==gh.commitCatalogSha256||digest(ghLivePath)!==gh.liveOnlyDigest||digest(ghPerimeterPath)!==gh.perimeterDigest) findings.push(finding('great-harvest-integrity','high','Great Harvest catalog digest mismatch.',{expectedCode:gh.catalogSha256,expectedCommits:gh.commitCatalogSha256,expectedLive:gh.liveOnlyDigest,expectedPerimeter:gh.perimeterDigest}));

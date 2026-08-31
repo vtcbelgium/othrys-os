@@ -23,6 +23,6 @@ for repo in repos:
 records=[]
 for h,r in byhash.items(): records.append({'sha256':h,'bytes':r['bytes'],'terms':sorted(r['terms']),'sources':sorted(r['sources'],key=lambda x:(x['repo'],x['path']))})
 records.sort(key=lambda x:(-len(x['terms']),x['sources'][0]['repo'],x['sources'][0]['path']))
-out=Path(r'C:\Users\othry\Projects\othrys-v2\docs\V2-010G\MNEMOSYNE_CODE_QUARRY.json')
+out=Path(r'C:\Users\othry\Projects\othrys-os\docs\V2-010G\MNEMOSYNE_CODE_QUARRY.json')
 out.write_text(json.dumps({'schema':'othrys.os.mnemosyne-code-quarry.v1','workspaceCount':len(repos),'occurrences':occurrences,'uniqueFiles':len(records),'terms':terms,'files':records},indent=2)+'\n',encoding='utf8')
 print(json.dumps({'workspaceCount':len(repos),'occurrences':occurrences,'uniqueFiles':len(records),'top':[{'terms':len(r['terms']),'source':r['sources'][0],'hits':r['terms']} for r in records[:30]]},indent=2))

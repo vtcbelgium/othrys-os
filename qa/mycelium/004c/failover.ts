@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 import { runLoop, replay } from "../../../runtime/talos-kernel/loop.ts";
 
-const root = "C:/Users/othry/Projects/othrys-v2";
+const root = "C:/Users/othry/Projects/othrys-os";
 const t590Raw = JSON.parse(readFileSync(`${root}/qa/mycelium/004c/t590-health.json`, "utf8"));
 const legionRaw = JSON.parse(readFileSync(`${root}/qa/mycelium/004c/legion-envelope.json`, "utf8"));
 let envelopes = [t590Raw.node, legionRaw.envelope];

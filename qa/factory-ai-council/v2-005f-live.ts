@@ -4,7 +4,7 @@ import { createAdvisoryProposal } from "../../runtime/factory/proposal.ts";
 import { qualifyProposal, selectQualifiedFeedback } from "../../runtime/factory/qualification.ts";
 import { replay, runLoop } from "../../runtime/talos-kernel/loop.ts";
 
-const root="C:/Users/othry/Projects/othrys-v2";
+const root="C:/Users/othry/Projects/othrys-os";
 const product="C:/Users/othry/Projects/oros/find-this-item-v2";
 const prior=JSON.parse(readFileSync(root+"/qa/factory-ai-advisory/V2-005E.report.json","utf8"));
 const p=prior.proposal;

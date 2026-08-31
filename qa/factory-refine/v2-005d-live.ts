@@ -9,7 +9,7 @@ import { replay, runLoop } from "../../runtime/talos-kernel/loop.ts";
 import { beginRefinement, completeRefinement, refinementLineage } from "../../runtime/factory/refine.ts";
 import { factoryBuildRequirement } from "../../runtime/factory/placement.ts";
 
-const root="C:/Users/othry/Projects/othrys-v2";
+const root="C:/Users/othry/Projects/othrys-os";
 const source="C:/Users/othry/Projects/oros/find-this-item-v2";
 const workspace="C:/Users/othry/Projects/oros/.proof-find-this-item-v2-005d";
 const evidence=join(process.env.LOCALAPPDATA ?? process.env.TEMP ?? ".","OTHRYS","v2-005d-refine");
