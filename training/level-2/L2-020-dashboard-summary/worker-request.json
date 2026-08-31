@@ -1,0 +1,12 @@
+{
+  "schema_version":"othrys.worker-request.v0.1",
+  "job_id":"TRAIN-L2-020-001",
+  "node_id":"legion",
+  "capability":"engineering.patch",
+  "workspace":"C:/Users/othry/Projects/othrys-v2",
+  "allowed_paths":["training/level-2/L2-020-dashboard-summary/dashboardSummary.mjs"],
+  "deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],
+  "timeout_sec":120,
+  "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-020","forge_builder_id":"local.qwen3.5-9b"},
+  "task":"OTHRYS L2-020 Dashboard summary. Stock-first found archived Keymaster dashboard evidence; adapt concepts only. Create exactly dashboardSummary.mjs. Export createDashboardSummary(filePath), frozen async {replace,summary}. Persist canonical JSON array of unique-id plain records with id trimmed nonempty and optional status/category scalar strings plus numeric amount. Missing file empty/no write; corrupt/noncanonical state STATE_CORRUPT preserving bytes. replace validates entire array before atomic same-dir unique-temp persist. summary() reloads disk and deterministically returns deep-cloned {count,byStatus,byCategory,totalAmount}, with lexical object keys, missing status/category grouped as '(none)', finite numeric amounts summed, absent amount contributes 0. No timestamps, no mutation, Node ESM stdlib only. Touch no other file."
+}

@@ -1,0 +1,26 @@
+﻿{
+    "schema_version":  "othrys.worker-request.v0.1",
+    "job_id":  "TRAIN-L1-003-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "task":  "OTHRYS TRAINING LEVEL 1 JOB L1-003. Create exactly training/level-1/L1-003-line-dedupe/dedupeLines.mjs. Export function dedupeLines(lines, options={}). Input must be an array; otherwise throw TypeError. Convert each element to String. Preserve first occurrence order. options.trim===true trims each value before comparison/output. options.ignoreEmpty===true skips empty values after optional trim. options.caseSensitive===false compares lowercase keys but preserves the first output spelling. Default trim false, ignoreEmpty false, caseSensitive true. Return a new array; never mutate input. Dependency-free, deterministic, no I/O/network. Re-read before finish. Touch no other file.",
+    "allowed_paths":  [
+                          "training/level-1/L1-003-line-dedupe/dedupeLines.mjs"
+                      ],
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "timeout_sec":  90,
+    "metadata":  {
+                     "training_job":  "L1-003",
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_level":  1
+                 }
+}

@@ -1,0 +1,21 @@
+{
+  "schema":"othrys.prometheus.forge-watch.v1",
+  "date":"2026-08-31",
+  "discoveries":[{
+    "name":"North Mini Code 1.0",
+    "candidateId":"local.north-mini-code-1.0",
+    "status":"KEEP_TESTING_NOT_ADMITTED",
+    "sources":["https://docs.cohere.com/changelog/north-mini-code-1-0","https://ollama.com/library/north-mini-code-1.0"],
+    "licenseCostBoundary":"Apache-2.0 plus Cohere Labs AUP; local Ollama; zero provider cost; no provider secret",
+    "availability":"PASS: installed 18GB Q4_K_M; Ollama endpoint live; observed 69% CPU / 31% GPU on Legion",
+    "builderOlympics":"3/4 direct events passed: structured protocol, repo JSON, tool JSON. Repair event exhausted response budget in thinking and returned no final answer.",
+    "hephaestusQualification":"FAIL: isolated governed worker qualification returned NO_ATTEMPT_MUTATION after 92.7s; no candidate artifact, no scope violation. Earlier non-isolated attempt was invalidated by concurrent Training Mode filesystem changes and is not counted against the model.",
+    "talos":"NOT_RUN: no candidate artifact existed to qualify",
+    "admitted":false,
+    "authorityGranted":false
+  }],
+  "knownNoiseSuppressed":["local.qwen3.8-27b","local.ornith-1.5-9b","Muse Glimmer 30B","NVIDIA Nemotron 3.5 Lightning","GLM-5.3-Flash","Qwen Code 0.22.x"],
+  "admitted":[],
+  "automaticPaidUsage":false,
+  "automaticPromotion":false
+}

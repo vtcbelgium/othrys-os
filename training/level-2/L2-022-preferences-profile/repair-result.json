@@ -1,0 +1,122 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L2-022-REPAIR-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3-coder-30b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788174243.1019733,
+  "completed_at": 1788174272.9893055,
+  "duration_sec": 29.88733220100403,
+  "allowed_paths": [
+    "training/level-2/L2-022-preferences-profile/preferenceProfile.mjs"
+  ],
+  "changed_files": [
+    "training/level-2/L2-022-preferences-profile/preferenceProfile.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-2/L2-022-preferences-profile/preferenceProfile.mjs\n+++ b/training/level-2/L2-022-preferences-profile/preferenceProfile.mjs\n@@ -0,0 +1,138 @@\n+// Preference Profile Module\n+// Node ESM stdlib only\n+\n+import { readFileSync, writeFileSync, dirname } from 'node:fs/promises';\n+import { randomUUID } from 'node:crypto';\n+import { resolve } from 'node:path';\n+\n+export function createPreferenceProfile(filePath, { defaults = {} } = {}) {\n+  // Ensure defaults are plain JSON-safe objects with recursively sorted keys\n+  const canonicalDefaults = normalizeObject(defaults);\n+\n+  // Load persisted profile from file\n+  let persistedProfile = null;\n+  try {\n+    const fileContent = await readFileSync(filePath, 'utf-8');\n+    persistedProfile = JSON.parse(fileContent);\n+    // Validate persisted profile\n+    if (!isValidProfile(persistedProfile)) {\n+      throw new Error('STATE_CORRUPT');\n+    }\n+  } catch (e) {\n+    // If file doesn't exist or is corrupt, use defaults\n+    persistedProfile = canonicalDefaults;\n+  }\n+\n+  // Return frozen async API\n+  return Object.freeze({\n+    get: async () => {\n+      // Return deep clone of current effective profile\n+      return deepClone(persistedProfile);\n+    },\n+    patch: async (patchData) => {\n+      // Validate patch data\n+      if (!isValidProfile(patchData)) {\n+        throw new Error('INVALID_PROFILE');\n+      }\n+\n+      // Deep merge patch data onto current profile\n+      const newProfile = deepMerge(persistedProfile, patchData);\n+\n+      // Persist canonical exact JSON\n+      try {\n+        await writeFileSync(filePath, JSON.stringify(newProfile, null, 0), 'utf-8');\n+      } catch (e) {\n+        throw new Error('STATE_CORRUPT');\n+      }\n+\n+      // Reload persisted profile\n+      persistedProfile = newProfile;\n+      return deepClone(persistedProfile);\n+    },\n+    replace: async (newProfile) => {\n+      // Validate new profile\n+      if (!isValidProfile(newProfile)) {\n+        throw new Error('INVALID_PROFILE');\n+      }\n+\n+      // Persist canonical exact JSON\n+      try {\n+        await writeFileSync(filePath, JSON.stringify(newProfile, null, 0), 'utf-8');\n+      } catch (e) {\n+        throw new Error('STATE_CORRUPT');\n+      }\n+\n+      // Reload persisted profile\n+      persistedProfile = newProfile;\n+      return deepClone(persistedProfile);\n+    },\n+    reset: async () => {\n+      // Validate existing file\n+      try {\n+        const fileContent = await readFileSync(filePath, 'utf-8');\n+        const fileProfile = JSON.parse(fileContent);\n+        if (!isValidProfile(fileProfile)) {\n+          throw new Error('STATE_CORRUPT');\n+        }\n+      } catch (e) {\n+        // If file doesn't exist or is corrupt, use defaults\n+        persistedProfile = canonicalDefaults;\n+      }\n+\n+      // Persist canonical defaults\n+      try {\n+        await writeFileSync(filePath, JSON.stringify(canonicalDefaults, null, 0), 'utf-8');\n+      } catch (e) {\n+        throw new Error('STATE_CORRUPT');\n+      }\n+\n+      // Reload persisted profile\n+      persistedProfile = canonicalDefaults;\n+      return deepClone(persistedProfile);\n+    }\n+  });\n+}\n+\n+// Helper functions\n+function normalizeObject(obj) {\n+  if (!obj || typeof obj !== 'object') return obj;\n+  const normalized = {};\n+  Object.keys(obj).sort().forEach(key => {\n+    normalized[key] = normalizeObject(obj[key]);\n+  });\n+  return normalized;\n+}\n+\n+function isValidProfile(profile) {\n+  if (!profile || typeof profile !== 'object') return false;\n+  for (const key in profile) {\n+    if (key === '__proto__' || key === 'prototype' || key === 'constructor') {\n+      return false;\n+    }\n+    if (typeof profile[key] !== 'object' || profile[key] === null) continue;\n+    if (!isValidProfile(profile[key])) return false;\n+  }\n+  return true;\n+}\n+\n+function deepClone(obj) {\n+  if (!obj || typeof obj !== 'object') return obj;\n+  const clone = {};\n+  Object.keys(obj).sort().forEach(key => {\n+    clone[key] = deepClone(obj[key]);\n+  });\n+  return clone;\n+}\n+\n+function deepMerge(target, source) {\n+  if (!target || typeof target !== 'object') return source;\n+  if (!source || typeof source !== 'object') return target;\n+  const merged = {};\n+  Object.keys(target).sort().forEach(key => {\n+    merged[key] = deepMerge(target[key], source[key]);\n+  });\n+  Object.keys(source).sort().forEach(key => {\n+    if (!merged[key]) merged[key] = source[key];\n+  });\n+  return merged;\n+}\n",
+  "git_status": "training/level-2/L2-022-preferences-profile/preferenceProfile.mjs",
+  "summary": "Repaired L2-022 preferenceProfile.mjs with required imports and error handling.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-2/L2-022-preferences-profile/preferenceProfile.mjs\n+++ b/training/level-2/L2-022-preferences-profile/preferenceProfile.mjs\n@@ -0,0 +1,138 @@\n+// Preference Profile Module\n+// Node ESM stdlib only\n+\n+import { readFileSync, writeFileSync, dirname } from 'node:fs/promises';\n+import { randomUUID } from 'node:crypto';\n+import { resolve } from 'node:path';\n+\n+export function createPreferenceProfile(filePath, { defaults = {} } = {}) {\n+  // Ensure defaults are plain JSON-safe objects with recursively sorted keys\n+  const canonicalDefaults = normalizeObject(defaults);\n+\n+  // Load persisted profile from file\n+  let persistedProfile = null;\n+  try {\n+    const fileContent = await readFileSync(filePath, 'utf-8');\n+    persistedProfile = JSON.parse(fileContent);\n+    // Validate persisted profile\n+    if (!isValidProfile(persistedProfile)) {\n+      throw new Error('STATE_CORRUPT');\n+    }\n+  } catch (e) {\n+    // If file doesn't exist or is corrupt, use defaults\n+    persistedProfile = canonicalDefaults;\n+  }\n+\n+  // Return frozen async API\n+  return Object.freeze({\n+    get: async () => {\n+      // Return deep clone of current effective profile\n+      return deepClone(persistedProfile);\n+    },\n+    patch: async (patchData) => {\n+      // Validate patch data\n+      if (!isValidProfile(patchData)) {\n+        throw new Error('INVALID_PROFILE');\n+      }\n+\n+      // Deep merge patch data onto current profile\n+      const newProfile = deepMerge(persistedProfile, patchData);\n+\n+      // Persist canonical exact JSON\n+      try {\n+        await writeFileSync(filePath, JSON.stringify(newProfile, null, 0), 'utf-8');\n+      } catch (e) {\n+        throw new Error('STATE_CORRUPT');\n+      }\n+\n+      // Reload persisted profile\n+      persistedProfile = newProfile;\n+      return deepClone(persistedProfile);\n+    },\n+    replace: async (newProfile) => {\n+      // Validate new profile\n+      if (!isValidProfile(newProfile)) {\n+        throw new Error('INVALID_PROFILE');\n+      }\n+\n+      // Persist canonical exact JSON\n+      try {\n+        await writeFileSync(filePath, JSON.stringify(newProfile, null, 0), 'utf-8');\n+      } catch (e) {\n+        throw new Error('STATE_CORRUPT');\n+      }\n+\n+      // Reload persisted profile\n+      persistedProfile = newProfile;\n+      return deepClone(persistedProfile);\n+    },\n+    reset: async () => {\n+      // Validate existing file\n+      try {\n+        const fileContent = await readFileSync(filePath, 'utf-8');\n+        const fileProfile = JSON.parse(fileContent);\n+        if (!isValidProfile(fileProfile)) {\n+          throw new Error('STATE_CORRUPT');\n+        }\n+      } catch (e) {\n+        // If file doesn't exist or is corrupt, use defaults\n+        persistedProfile = canonicalDefaults;\n+      }\n+\n+      // Persist canonical defaults\n+      try {\n+        await writeFileSync(filePath, JSON.stringify(canonicalDefaults, null, 0), 'utf-8');\n+      } catch (e) {\n+        throw new Error('STATE_CORRUPT');\n+      }\n+\n+      // Reload persisted profile\n+      persistedProfile = canonicalDefaults;\n+      return deepClone(persistedProfile);\n+    }\n+  });\n+}\n+\n+// Helper functions\n+function normalizeObject(obj) {\n+  if (!obj || typeof obj !== 'object') return obj;\n+  const normalized = {};\n+  Object.keys(obj).sort().forEach(key => {\n+    normalized[key] = normalizeObject(obj[key]);\n+  });\n+  return normalized;\n+}\n+\n+function isValidProfile(profile) {\n+  if (!profile || typeof profile !== 'object') return false;\n+  for (const key in profile) {\n+    if (key === '__proto__' || key === 'prototype' || key === 'constructor') {\n+      return false;\n+    }\n+    if (typeof profile[key] !== 'object' || profile[key] === null) continue;\n+    if (!isValidProfile(profile[key])) return false;\n+  }\n+  return true;\n+}\n+\n+function deepClone(obj) {\n+  if (!obj || typeof obj !== 'object') return obj;\n+  const clone = {};\n+  Object.keys(obj).sort().forEach(key => {\n+    clone[key] = deepClone(obj[key]);\n+  });\n+  return clone;\n+}\n+\n+function deepMerge(target, source) {\n+  if (!target || typeof target !== 'object') return source;\n+  if (!source || typeof source !== 'object') return target;\n+  const merged = {};\n+  Object.keys(target).sort().forEach(key => {\n+    merged[key] = deepMerge(target[key], source[key]);\n+  });\n+  Object.keys(source).sort().forEach(key => {\n+    if (!merged[key]) merged[key] = source[key];\n+  });\n+  return merged;\n+}\n",
+    "git_status": "training/level-2/L2-022-preferences-profile/preferenceProfile.mjs",
+    "tool_trace": [
+      "find_files: training/level-2/L2-022-preferences-profile/preferenceProfile.mjs",
+      "read_file: // Preference Profile Module\n// Node ESM stdlib only\n\nexport function createPreferenceProfile(filePath, { defaults = {} } = {}) {\n  // Ensure defaults are plain JSON-safe objects with recursively sort",
+      "write_file: wrote 4130 chars to training/level-2/L2-022-preferences-profile/preferenceProfile.mjs",
+      "finish: Repaired L2-022 preferenceProfile.mjs with required imports and error handling."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "find_files",
+        "argument_type": "str",
+        "raw_prefix": "{\"query\":\"preferenceProfile.mjs\"}",
+        "raw_suffix": "{\"query\":\"preferenceProfile.mjs\"}",
+        "raw_length": 33,
+        "parsed_keys": [
+          "query"
+        ],
+        "has_path": false,
+        "content_length": 0
+      },
+      {
+        "name": "read_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-2/L2-022-preferences-profile/preferenceProfile.mjs\"}",
+        "raw_suffix": "{\"path\":\"training/level-2/L2-022-preferences-profile/preferenceProfile.mjs\"}",
+        "raw_length": 76,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "write_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-2/L2-022-preferences-profile/preferenceProfile.mjs\",\"content\":\"// Preference Profile Module\\n// Node ESM stdlib only\\n\\nimport { readFileSync, writeFileSync, dirname } from 'node:fs/promises';\\nimport { randomUUID } ",
+        "raw_suffix": "ne[key] = deepClone(obj[key]);\\n  });\\n  return clone;\\n}\\n\\nfunction deepMerge(target, source) {\\n  if (!target || typeof target !== 'object') return source;\\n  if (!source || typeof source !== 'object') return target;\\n  const merged = {};\\n  Object.keys(target).sort().forEach(key => {\\n    merged[key] = deepMerge(target[key], source[key]);\\n  });\\n  Object.keys(source).sort().forEach(key => {\\n    if (!merged[key]) merged[key] = source[key];\\n  });\\n  return merged;\\n}\\n\"}",
+        "raw_length": 4357,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 4130
+      },
+      {
+        "name": "finish",
+        "argument_type": "str",
+        "raw_prefix": "{\"summary\":\"Repaired L2-022 preferenceProfile.mjs with required imports and error handling.\"}",
+        "raw_suffix": "{\"summary\":\"Repaired L2-022 preferenceProfile.mjs with required imports and error handling.\"}",
+        "raw_length": 93,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3-coder-30b",
+    "model": "qwen3-coder:30b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6180",
+      "utilization_pct": "0",
+      "temperature_c": "45",
+      "power_w": "7.46"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6180",
+      "utilization_pct": "0",
+      "temperature_c": "61",
+      "power_w": "81.98"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

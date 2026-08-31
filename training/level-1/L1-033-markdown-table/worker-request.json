@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-033. Create exactly training/level-1/L1-033-markdown-table/markdownTable.mjs. Export markdownTable(records, options={}). records must be an array of plain objects. Empty records returns empty string. Columns default to sorted union of all record keys; options.columns may provide a non-empty array of unique non-empty strings and fixes order. Header labels equal column names. Render Markdown table with header row, separator row of --- cells, then data rows. Cell conversion: null/undefined =\u003e empty; other values String(value). Escape backslash first, then vertical bar as \\|; normalize CRLF/CR/LF inside cell to literal \u003cbr\u003e. Do not trim cell content. Every row must contain every selected column, using empty for missing. Output LF and no trailing newline. Reject nested objects/arrays/functions/symbols as cell values with TypeError. Deterministic, no I/O/network/deps, never mutate input. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-033",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-033-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-033-markdown-table/markdownTable.mjs"
+                      ]
+}

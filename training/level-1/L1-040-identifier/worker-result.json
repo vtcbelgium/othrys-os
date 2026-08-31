@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-040-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788098705.0094085,
+  "completed_at": 1788098728.1799147,
+  "duration_sec": 23.170506238937378,
+  "allowed_paths": [
+    "training/level-1/L1-040-identifier/validateIdentifier.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-040-identifier/validateIdentifier.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-040-identifier/validateIdentifier.mjs\n+++ b/training/level-1/L1-040-identifier/validateIdentifier.mjs\n@@ -0,0 +1,79 @@\n+export function validateIdentifier(input, policy = {}) {\n+  const defaultPolicy = {\n+    minLength: 1,\n+    maxLength: 64,\n+    pattern: '^[A-Za-z_][A-Za-z0-9_.-]*$',\n+    reserved: [],\n+    caseSensitiveReserved: true\n+  };\n+\n+  const mergedPolicy = { ...defaultPolicy, ...policy };\n+\n+  // Validate policy keys\n+  const allowedKeys = ['minLength', 'maxLength', 'pattern', 'reserved', 'caseSensitiveReserved'];\n+  for (const key of Object.keys(mergedPolicy)) {\n+    if (!allowedKeys.includes(key)) {\n+      throw new RangeError(`Unknown policy key: ${key}`);\n+    }\n+  }\n+\n+  // Validate policy values\n+  if (typeof mergedPolicy.minLength !== 'number' || !Number.isInteger(mergedPolicy.minLength) || mergedPolicy.minLength < 1) {\n+    throw new TypeError('minLength must be an integer >= 1');\n+  }\n+  if (typeof mergedPolicy.maxLength !== 'number' || !Number.isInteger(mergedPolicy.maxLength) || mergedPolicy.maxLength < mergedPolicy.minLength) {\n+    throw new RangeError('maxLength must be an integer >= minLength');\n+  }\n+  if (typeof mergedPolicy.pattern !== 'string') {\n+    throw new TypeError('pattern must be a string');\n+  }\n+  try {\n+    new RegExp(mergedPolicy.pattern);\n+  } catch (e) {\n+    throw new RangeError('Invalid regex pattern');\n+  }\n+  if (!Array.isArray(mergedPolicy.reserved)) {\n+    throw new TypeError('reserved must be an array');\n+  }\n+  for (const item of mergedPolicy.reserved) {\n+    if (typeof item !== 'string') {\n+      throw new TypeError('reserved items must be strings');\n+    }\n+  }\n+  if (typeof mergedPolicy.caseSensitiveReserved !== 'boolean') {\n+    throw new TypeError('caseSensitiveReserved must be a boolean');\n+  }\n+\n+  // Validate input type\n+  if (typeof input !== 'string') {\n+    throw new TypeError('input must be a string');\n+  }\n+\n+  const issues = [];\n+\n+  if (input.length === 0) {\n+    issues.push('EMPTY');\n+  } else if (input.length < mergedPolicy.minLength) {\n+    issues.push('TOO_SHORT');\n+  } else if (input.length > mergedPolicy.maxLength) {\n+    issues.push('TOO_LONG');\n+  }\n+\n+  const regex = new RegExp(mergedPolicy.pattern, mergedPolicy.caseSensitiveReserved ? '' : 'i');\n+  if (!regex.test(input)) {\n+    issues.push('PATTERN');\n+  }\n+\n+  const reservedCheck = mergedPolicy.caseSensitiveReserved\n+    ? mergedPolicy.reserved\n+    : mergedPolicy.reserved.map(r => r.toLowerCase());\n+\n+  if (reservedCheck.includes(input)) {\n+    issues.push('RESERVED');\n+  }\n+\n+  return Object.freeze({\n+    valid: issues.length === 0,\n+    issues: Object.freeze(issues)\n+  });\n+}",
+  "git_status": "training/level-1/L1-040-identifier/validateIdentifier.mjs",
+  "summary": "Created training/level-1/L1-040-identifier/validateIdentifier.mjs with validateIdentifier(input, policy={}) function implementing identifier validation with configurable minLength, maxLength, pattern, reserved strings, and caseSensitiveReserved options. Returns frozen {valid, issues} object with issues array containing stable codes in order: EMPTY, TOO_SHORT, TOO_LONG, PATTERN, RESERVED.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-040-identifier/validateIdentifier.mjs\n+++ b/training/level-1/L1-040-identifier/validateIdentifier.mjs\n@@ -0,0 +1,79 @@\n+export function validateIdentifier(input, policy = {}) {\n+  const defaultPolicy = {\n+    minLength: 1,\n+    maxLength: 64,\n+    pattern: '^[A-Za-z_][A-Za-z0-9_.-]*$',\n+    reserved: [],\n+    caseSensitiveReserved: true\n+  };\n+\n+  const mergedPolicy = { ...defaultPolicy, ...policy };\n+\n+  // Validate policy keys\n+  const allowedKeys = ['minLength', 'maxLength', 'pattern', 'reserved', 'caseSensitiveReserved'];\n+  for (const key of Object.keys(mergedPolicy)) {\n+    if (!allowedKeys.includes(key)) {\n+      throw new RangeError(`Unknown policy key: ${key}`);\n+    }\n+  }\n+\n+  // Validate policy values\n+  if (typeof mergedPolicy.minLength !== 'number' || !Number.isInteger(mergedPolicy.minLength) || mergedPolicy.minLength < 1) {\n+    throw new TypeError('minLength must be an integer >= 1');\n+  }\n+  if (typeof mergedPolicy.maxLength !== 'number' || !Number.isInteger(mergedPolicy.maxLength) || mergedPolicy.maxLength < mergedPolicy.minLength) {\n+    throw new RangeError('maxLength must be an integer >= minLength');\n+  }\n+  if (typeof mergedPolicy.pattern !== 'string') {\n+    throw new TypeError('pattern must be a string');\n+  }\n+  try {\n+    new RegExp(mergedPolicy.pattern);\n+  } catch (e) {\n+    throw new RangeError('Invalid regex pattern');\n+  }\n+  if (!Array.isArray(mergedPolicy.reserved)) {\n+    throw new TypeError('reserved must be an array');\n+  }\n+  for (const item of mergedPolicy.reserved) {\n+    if (typeof item !== 'string') {\n+      throw new TypeError('reserved items must be strings');\n+    }\n+  }\n+  if (typeof mergedPolicy.caseSensitiveReserved !== 'boolean') {\n+    throw new TypeError('caseSensitiveReserved must be a boolean');\n+  }\n+\n+  // Validate input type\n+  if (typeof input !== 'string') {\n+    throw new TypeError('input must be a string');\n+  }\n+\n+  const issues = [];\n+\n+  if (input.length === 0) {\n+    issues.push('EMPTY');\n+  } else if (input.length < mergedPolicy.minLength) {\n+    issues.push('TOO_SHORT');\n+  } else if (input.length > mergedPolicy.maxLength) {\n+    issues.push('TOO_LONG');\n+  }\n+\n+  const regex = new RegExp(mergedPolicy.pattern, mergedPolicy.caseSensitiveReserved ? '' : 'i');\n+  if (!regex.test(input)) {\n+    issues.push('PATTERN');\n+  }\n+\n+  const reservedCheck = mergedPolicy.caseSensitiveReserved\n+    ? mergedPolicy.reserved\n+    : mergedPolicy.reserved.map(r => r.toLowerCase());\n+\n+  if (reservedCheck.includes(input)) {\n+    issues.push('RESERVED');\n+  }\n+\n+  return Object.freeze({\n+    valid: issues.length === 0,\n+    issues: Object.freeze(issues)\n+  });\n+}",
+    "git_status": "training/level-1/L1-040-identifier/validateIdentifier.mjs",
+    "tool_trace": [
+      "write_file: wrote 2456 chars to training/level-1/L1-040-identifier/validateIdentifier.mjs",
+      "finish: Created training/level-1/L1-040-identifier/validateIdentifier.mjs with validateIdentifier(input, policy={}) function implementing identifier validation with configurable minLength, maxLength, pattern, reserved strings, and caseSensitiveReserved options. Returns frozen {valid, issues} object with issues array containing stable codes in order: EMPTY, TOO_SHORT, TOO_LONG, PATTERN, RESERVED."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-040-identifier/validateIdentifier.mjs\", \"content\": \"export function validateIdentifier(input, policy = {}) {\\n  const defaultPolicy = {\\n    minLength: 1,\\n    maxLength: 64,\\n    pattern: '^[A-Za-z_][A-Za-z0-9",
+        "raw_suffix": "ex = new RegExp(mergedPolicy.pattern, mergedPolicy.caseSensitiveReserved ? '' : 'i');\\n  if (!regex.test(input)) {\\n    issues.push('PATTERN');\\n  }\\n\\n  const reservedCheck = mergedPolicy.caseSensitiveReserved\\n    ? mergedPolicy.reserved\\n    : mergedPolicy.reserved.map(r => r.toLowerCase());\\n\\n  if (reservedCheck.includes(input)) {\\n    issues.push('RESERVED');\\n  }\\n\\n  return Object.freeze({\\n    valid: issues.length === 0,\\n    issues: Object.freeze(issues)\\n  });\\n}\"}",
+        "raw_length": 2618,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 2456
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/level-1/L1-040-identifier/validateIdentifier.mjs with validateIdentifier(input, policy={}) function implementing identifier validation with configurable minLength, maxLength, pattern, reserved strings, and case",
+        "raw_suffix": "{\"summary\": \"Created training/level-1/L1-040-identifier/validateIdentifier.mjs with validateIdentifier(input, policy={}) function implementing identifier validation with configurable minLength, maxLength, pattern, reserved strings, and caseSensitiveReserved options. Returns frozen {valid, issues} object with issues array containing stable codes in order: EMPTY, TOO_SHORT, TOO_LONG, PATTERN, RESERVED.\"}",
+        "raw_length": 405,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "129",
+      "utilization_pct": "7",
+      "temperature_c": "41",
+      "power_w": "6.78"
+    },
+    "ollama_ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6468",
+      "utilization_pct": "2",
+      "temperature_c": "47",
+      "power_w": "10.18"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

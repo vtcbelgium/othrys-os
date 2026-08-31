@@ -1,0 +1,12 @@
+{
+  "schema_version":"othrys.worker-request.v0.1",
+  "job_id":"TRAIN-L2-021-001",
+  "node_id":"legion",
+  "capability":"engineering.patch",
+  "workspace":"C:/Users/othry/Projects/othrys-v2",
+  "allowed_paths":["training/level-2/L2-021-activity-log/activityLog.mjs"],
+  "deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],
+  "timeout_sec":120,
+  "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-021","forge_builder_id":"local.qwen3.5-9b"},
+  "task":"OTHRYS L2-021 Activity log. Stock-first found Structured event log and Append-only audit/change log evidence; adapt concepts only. Create exactly activityLog.mjs. Export createActivityLog(filePath,{limit=100}={}), frozen async {append,list}. Persist exact canonical JSON {events:[{seq,id,type,data}]}; id unchanged nonempty string, type trimmed nonempty string, data JSON-safe object/array with unsafe keys rejected recursively. append reloads disk, rejects duplicate id DUPLICATE_ID, assigns monotonically increasing seq, appends then retains only newest limit events; limit integer 1..10000. Missing file empty/no write. Corrupt/noncanonical state STATE_CORRUPT preserving bytes. Atomic same-dir unique-temp persist. list reloads and returns ordered deep clones. Node ESM stdlib only, no timestamps, no delete/update/clear, touch no other file."
+}

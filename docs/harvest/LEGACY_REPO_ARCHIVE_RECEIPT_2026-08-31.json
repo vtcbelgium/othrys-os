@@ -1,0 +1,54 @@
+{
+  "schema": "othrys.os.legacy-repo-archive-receipt.v1",
+  "date": "2026-08-31",
+  "externalArchivePath": "C:\\Users\\othry\\Othrys-Recovery\\legacy-repo-archive-2026-08-31",
+  "manifestSha256": "1a669d6f80fbf03946df36dca4a43b75fa620f5420269474c898ae3f55f69f98",
+  "repos": [
+    {
+      "name": "othrys-hub-main",
+      "head": "c7296c0d1e1f18f35da6632c3f38144dc9447571",
+      "branch": "main",
+      "dirtyEntries": 11,
+      "untrackedFiles": 7,
+      "bundleVerified": true,
+      "bundleSha256": "29e97ca825c89b19318225a7b3f86c8716adc60fea0f9ae38c236c999417f2b0",
+      "worktreePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "untrackedZipSha256": "2b95a7304e2ebfc436057a7da22d8d3a863a753fb83c7c4431a4306a6bfe7e5a"
+    },
+    {
+      "name": "othrys-hub",
+      "head": "59fd8385d9b999a2db3eafa7d7d3e25197fbc3c3",
+      "branch": "mission/oros-factory-001",
+      "dirtyEntries": 688,
+      "untrackedFiles": 636,
+      "bundleVerified": true,
+      "bundleSha256": "43520ac5d601d4d9912ebfaaf477f15785c9e2471ed0f52f86c9d8e5f66be812",
+      "worktreePatchSha256": "d257baaa02ebe044fd6819497b30088763b3862aa27e45e246088a2ed1164608",
+      "untrackedZipSha256": "6de4f1ad4fd6f1149adaa6e6acd5814cf545474f79bc934f834721710a7d7172"
+    },
+    {
+      "name": "othrys-core-windows",
+      "head": "5f4d6d014a15ecf8db2ff60ac7647a13e789df52",
+      "branch": "mission/p013-validation-harness",
+      "dirtyEntries": 1,
+      "untrackedFiles": 0,
+      "bundleVerified": true,
+      "bundleSha256": "71da8f6690cc0d5d47923d422013511e8ef5c80df574e6fd3da0fff29219bb89",
+      "worktreePatchSha256": "fadbf27bd1e64b653789d05cec0a405676dae384a0b0c5f0595b4ab9f7e075bf",
+      "untrackedZipSha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85"
+    },
+    {
+      "name": "othrys-studio",
+      "head": "b236b19d1535ad2876db06fc648c9896045975c2",
+      "branch": "mission/studio-mockup-to-block-001",
+      "dirtyEntries": 0,
+      "untrackedFiles": 0,
+      "bundleVerified": true,
+      "bundleSha256": "8906cfc8ab9f058349b7fa9ee64ef8b7f7f6c3f6469b515d4f37ea35f26648a6",
+      "worktreePatchSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "untrackedZipSha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85"
+    }
+  ],
+  "authorityGranted": false,
+  "deletionAuthorizedByOperatorRequest": true
+}

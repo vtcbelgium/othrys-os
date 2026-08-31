@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-028. Create exactly training/level-1/L1-028-schema-check/checkSchema.mjs. Export checkSchema(value,rules). value must be plain object/null-prototype object. rules plain object keyed by field; each rule plain object may contain required:boolean, type one of string|number|boolean|array|object, minLength nonnegative integer, pattern string regex. Unknown rule keys invalid RangeError. Invalid regex RangeError. Return frozen array of frozen issues in rule insertion order; each issue {field,code}; codes MISSING,TYPE,MIN_LENGTH,PATTERN. Missing = absent own property or null/undefined when required true. If missing and not required skip other checks. For type object require non-null plain object and not array. Do not mutate or include values in issues/errors. No I/O/network/deps. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-028",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-028-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-028-schema-check/checkSchema.mjs"
+                      ]
+}

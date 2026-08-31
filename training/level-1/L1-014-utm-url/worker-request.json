@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-014. Create exactly training/level-1/L1-014-utm-url/buildUtmUrl.mjs. Export buildUtmUrl(input, campaign). Require absolute http/https input string. campaign must plain object. Required non-empty utm_source, utm_medium, utm_campaign; optional utm_term, utm_content. Ignore no other campaign keys: unknown keys throw RangeError. Values String then trim; required blank throws RangeError; optional blank removes existing matching param. Preserve unrelated existing query params and path; remove fragment. Replace any existing UTM params with supplied values, do not duplicate. Sort final query params lexical key then value. Return canonical URL. Deterministic no network/I/O/deps. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-014",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-014-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-014-utm-url/buildUtmUrl.mjs"
+                      ]
+}

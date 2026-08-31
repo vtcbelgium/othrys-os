@@ -1,0 +1,47 @@
+{
+  "schema":"othrys.prometheus.forge-watch.v1",
+  "date":"2026-08-31",
+  "operatorNotification":false,
+  "authorityGranted":false,
+  "automaticPaidUsage":false,
+  "discoveries":[
+    {
+      "id":"infra.deepseek-harness",
+      "kind":"builder-infrastructure",
+      "newAgainstForgeRoster":true,
+      "vendor":"DeepSeek AI",
+      "license":"MIT",
+      "availability":"PUBLIC_NPM_AND_SOURCE",
+      "secretBoundary":"LOCAL_HARNESS_POSSIBLE; PROVIDER_BOUNDARY_DEPENDS_ON_PLUGIN",
+      "qualification":"RESEARCH_ONLY_DEVELOPER_PREVIEW",
+      "admitted":false,
+      "reason":"Infrastructure candidate, not a qualified Builder; upstream warns of compatibility-breaking changes"
+    },
+    {
+      "id":"local.qwen3.8-flash-next",
+      "kind":"coding-model",
+      "newAgainstForgeRoster":true,
+      "vendor":"Qwen / Ollama",
+      "license":"OPEN_WEIGHT_VENDOR_CARD",
+      "availability":"OLLAMA_LIBRARY_PRESENT",
+      "qualification":"NOT_ATTEMPTED_RESOURCE_MISMATCH",
+      "admitted":false,
+      "reason":"125B-class weights exceed current Legion practical local-memory envelope; discovery alone cannot admit"
+    }
+  ],  "knownNoiseSuppressed":[
+    "Qwen3.8-27B",
+    "Ornith 1.5 9B",
+    "Granite 4.2 8B",
+    "Muse Glimmer 30B",
+    "Qwen3-Coder-Next",
+    "DeepSeek V4 family",
+    "Nemotron 3.5 Lightning",
+    "GLM-5.3-Flash"
+  ],
+  "result":"NO_ADMISSION",
+  "sources":[
+    "https://github.com/deepseek-ai/deepseek-harness",
+    "https://ollama.com/library/qwen3.8-flash-next",
+    "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+  ]
+}

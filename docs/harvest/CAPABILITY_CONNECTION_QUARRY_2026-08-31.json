@@ -1,0 +1,348 @@
+{
+  "schema": "othrys.harvest.capability-connection-quarry.v1",
+  "date": "2026-08-31",
+  "status": "DOCUMENTARY_QUARRY_ONLY",
+  "authority_granted": false,
+  "edge_semantics": "Candidate edges inferred from current VTC callers and canonical doctrine; must be frozen/proven during actual Block contracts/compositions.",
+  "edges": [
+    {
+      "from": "capability.collection.valuation",
+      "type": "REQUIRES",
+      "to": "capability.collection.tracker",
+      "reason": "owned records",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.collection.valuation",
+      "type": "REQUIRES",
+      "to": "capability.market.price-insight",
+      "reason": "price observations",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.market.price-alert",
+      "type": "REQUIRES",
+      "to": "capability.market.price-insight",
+      "reason": "evaluated market value",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.market.price-alert",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.notification.transactional",
+      "reason": "email channel",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.market.price-alert",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.notification.in-app-feed",
+      "reason": "in-product channel",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.search.saved-query",
+      "type": "REQUIRES",
+      "to": "capability.catalog.search-browse",
+      "reason": "query execution",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.search.saved-query",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.notification.in-app-feed",
+      "reason": "new-match notification",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.wishlist.hunt-list",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.market.price-alert",
+      "reason": "hunt thresholds",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.wishlist.hunt-list",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.marketplace.classified-listing",
+      "reason": "community availability",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.marketplace.classified-listing",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.community.direct-messaging",
+      "reason": "buyer/seller contact",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.marketplace.classified-listing",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.media.image-upload",
+      "reason": "listing media",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.marketplace.classified-listing",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.economy.credit-ledger",
+      "reason": "promotion perks",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.marketplace.classified-listing",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.trust.moderation-queue",
+      "reason": "abuse/removal review",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.community.direct-messaging",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.trust.moderation-queue",
+      "reason": "reports",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.community.direct-messaging",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.privacy.user-blocking",
+      "reason": "peer safety",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.community.threaded-discussion",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.trust.moderation-queue",
+      "reason": "content moderation",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.community.threaded-discussion",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.engagement.gamification",
+      "reason": "verified contribution rewards",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.identity.public-profile-showcase",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.media.image-upload",
+      "reason": "avatar/media",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.identity.public-profile-showcase",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.engagement.gamification",
+      "reason": "badges/flair",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.events.rsvp",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.notification.transactional",
+      "reason": "reminder/delivery channel",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.events.rsvp",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.notification.in-app-feed",
+      "reason": "in-product reminder",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.location.store-directory",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.reputation.store-rating",
+      "reason": "ratings",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.location.store-directory",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.trust.moderation-queue",
+      "reason": "verification/reports",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.catalog.search-browse",
+      "type": "REQUIRES",
+      "to": "capability.catalog.curation-provenance",
+      "reason": "canonical approved catalogue truth",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.catalog.variant-resolution",
+      "type": "REQUIRES",
+      "to": "capability.catalog.curation-provenance",
+      "reason": "canonical item/variant provenance",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.catalog.identification",
+      "type": "REQUIRES",
+      "to": "capability.catalog.search-browse",
+      "reason": "candidate catalogue surface",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.catalog.identification",
+      "type": "OPTIONALLY_USES",
+      "to": "block.media.image-prep",
+      "reason": "bounded media preparation",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.publication.product-seo",
+      "type": "REQUIRES",
+      "to": "capability.catalog.curation-provenance",
+      "reason": "publishable canonical truth",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.publication.product-seo",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.content.editorial-pipeline",
+      "reason": "approved editorial content",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.content.editorial-pipeline",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.media.document-library",
+      "reason": "supporting assets",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.content.editorial-pipeline",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.publication.product-seo",
+      "reason": "publication surface",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.collection.tracker",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.catalog.variant-resolution",
+      "reason": "variant identity",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.collection.tracker",
+      "type": "OPTIONALLY_USES",
+      "to": "capability.media.image-upload",
+      "reason": "user item media",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.trust.moderation-queue",
+      "type": "REQUIRES",
+      "to": "capability.identity.role-policy",
+      "reason": "review authority",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.engagement.gamification",
+      "type": "OPTIONALLY_USES",
+      "to": "block.analytics.visit-tracking",
+      "reason": "bounded visit evidence",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.notification.transactional",
+      "type": "BRIDGED_BY",
+      "to": "bridge.notification.email-provider",
+      "reason": "delivery provider",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.media.image-upload",
+      "type": "BRIDGED_BY",
+      "to": "bridge.storage.object-store",
+      "reason": "storage provider",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.catalog.identification",
+      "type": "BRIDGED_BY",
+      "to": "bridge.ai.vision-provider",
+      "reason": "identification provider",
+      "proven_compatibility": false
+    },
+    {
+      "from": "capability.market.price-insight",
+      "type": "BRIDGED_BY",
+      "to": "bridge.market.price-source",
+      "reason": "price observations",
+      "proven_compatibility": false
+    }
+  ],
+  "suggested_star_domains": {
+    "DISCOVERY": [
+      "capability.catalog.search-browse",
+      "capability.search.saved-query",
+      "capability.location.store-directory",
+      "capability.publication.product-seo"
+    ],
+    "CATALOG": [
+      "capability.collection.tracker",
+      "capability.catalog.curation-provenance",
+      "capability.catalog.variant-resolution"
+    ],
+    "COMMERCE": [
+      "capability.market.price-insight",
+      "capability.market.price-alert",
+      "capability.wishlist.hunt-list",
+      "capability.marketplace.classified-listing",
+      "block.monetization.affiliate-offer"
+    ],
+    "COMMUNICATION": [
+      "capability.community.direct-messaging",
+      "capability.notification.transactional",
+      "capability.notification.in-app-feed"
+    ],
+    "COMMUNITY": [
+      "capability.community.threaded-discussion",
+      "capability.events.rsvp",
+      "capability.reputation.store-rating"
+    ],
+    "TRUST": [
+      "capability.trust.moderation-queue",
+      "capability.identity.role-policy"
+    ],
+    "MEDIA": [
+      "capability.media.image-upload",
+      "capability.media.document-library",
+      "block.media.image-prep"
+    ],
+    "MARKETING": [
+      "capability.content.editorial-pipeline",
+      "capability.content.news-feed",
+      "capability.publication.product-seo"
+    ],
+    "FINANCE": [
+      "capability.collection.valuation",
+      "capability.economy.credit-ledger",
+      "capability.business.light-bookkeeping",
+      "capability.usage.quota-meter"
+    ],
+    "ENGAGEMENT": [
+      "capability.engagement.gamification"
+    ],
+    "EXPERIENCE": [
+      "capability.offline.installable-shell"
+    ],
+    "AI": [
+      "capability.catalog.identification"
+    ]
+  },
+  "laws": [
+    "Star groups operational concern; it does not own Block source",
+    "A Block may emit signals into multiple Stars",
+    "Required edges must resolve or composition fails",
+    "Optional edges require safe absence behavior",
+    "Bridges are exact provider/integration edges, not Block identity"
+  ]
+}

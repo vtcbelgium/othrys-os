@@ -1576,6 +1576,46 @@
       "evidence": "blocks/text/slugify",
       "admitted": false,
       "authorityGranted": false
+    },
+    {
+      "id": "block.text.normalize",
+      "name": "Text Normalizer",
+      "domain": "text",
+      "status": "TRAINING_CANDIDATE",
+      "source": "V2-011K L1-002 / old Prometheus proven stock",
+      "evidence": "blocks/text/normalize",
+      "admitted": false,
+      "authorityGranted": false
+    },
+    {
+      "id": "block.text.line-dedupe",
+      "name": "Line Deduplicator",
+      "domain": "text",
+      "status": "TRAINING_CANDIDATE",
+      "source": "V2-011K L1-003",
+      "evidence": "blocks/text/line-dedupe",
+      "admitted": false,
+      "authorityGranted": false
+    },
+    {
+      "id": "block.text.stats",
+      "name": "Text Statistics",
+      "domain": "text",
+      "status": "TRAINING_CANDIDATE",
+      "source": "V2-011K L1-004",
+      "evidence": "blocks/text/stats",
+      "admitted": false,
+      "authorityGranted": false
+    },
+    {
+      "id": "block.text.case-convert",
+      "name": "Case Converter",
+      "domain": "text",
+      "status": "TRAINING_CANDIDATE",
+      "source": "V2-011K L1-005",
+      "evidence": "blocks/text/case-convert",
+      "admitted": false,
+      "authorityGranted": false
     }
   ],
   "blueprints": [

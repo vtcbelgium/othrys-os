@@ -1,0 +1,85 @@
+{
+  "schema": "othrys.prometheus.forge-watch-receipt.v1",
+  "discovery": {
+    "schema": "othrys.prometheus.forge-discovery.v1",
+    "name": "Qwen Code 0.22.3",
+    "source": "QwenLM official GitHub/docs",
+    "url": "https://github.com/QwenLM/qwen-code",
+    "kind": "AGENT_HARNESS",
+    "freeTier": false,
+    "localCandidate": true,
+    "claimedCapabilities": [
+      "headless coding agent",
+      "local Ollama/OpenAI-compatible providers",
+      "structured JSON output",
+      "tool use",
+      "subagents",
+      "sandbox/approval modes"
+    ],
+    "discoveredAt": "2026-08-30T11:34:00Z",
+    "discoveryId": "PFD-f584756802fc0d36b5c1",
+    "authorityGranted": false,
+    "executionStarted": false
+  },
+  "handoff": {
+    "schema": "othrys.prometheus-hephaestus.handoff.v1",
+    "discoveryId": "PFD-f584756802fc0d36b5c1",
+    "from": "PROMETHEUS",
+    "to": "HEPHAESTUS",
+    "requestedAction": "OLYMPICS_PREFLIGHT",
+    "requiredGates": [
+      "ENDPOINT_OR_LOCAL_AVAILABILITY",
+      "LICENSE_COST",
+      "SECRET_BOUNDARY",
+      "OLYMPICS",
+      "TALOS_QUALIFICATION"
+    ],
+    "autoAddToExecutableForge": false,
+    "authorityGranted": false,
+    "executionStarted": false
+  },
+  "availability": {
+    "npmVersion": "0.22.3",
+    "nodeCompatible": true,
+    "localOllamaCompatible": true
+  },
+  "license": {
+    "code": "Apache-2.0",
+    "source": "official QwenLM source headers/docs"
+  },
+  "cost": {
+    "harness": "ZERO",
+    "testedEngine": "local.qwen3-coder-30b",
+    "engineCost": "ZERO"
+  },
+  "secretBoundary": {
+    "testUsedPlaceholderLocalKey": true,
+    "externalSecretUsed": false
+  },
+  "tests": [
+    {
+      "name": "SPARK",
+      "engine": "qwen3:8b",
+      "result": "PASS_TEXT",
+      "durationMs": 12430
+    },
+    {
+      "name": "BOUNDED_MUTATION",
+      "engine": "qwen3:8b",
+      "result": "FAIL_NO_TOOL_EXECUTION",
+      "reason": "model emitted tool-shaped JSON as text"
+    },
+    {
+      "name": "BOUNDED_MUTATION",
+      "engine": "qwen3-coder:30b",
+      "result": "PASS",
+      "talos": "PASS",
+      "outcome": "candidate.mjs created and add(2,3)=5"
+    }
+  ],
+  "state": "KEEP_TESTING",
+  "admitted": false,
+  "reason": "Promising local zero-cost agent harness, but one successful mutation is insufficient for Builder Olympics/Talos admission. Needs repair/repo/tool-boundary events and OTHRYS worker/allowlist integration before Forge admission.",
+  "authorityGranted": false,
+  "executionStarted": false
+}

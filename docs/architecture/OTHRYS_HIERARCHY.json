@@ -1,0 +1,22 @@
+{
+  "schema": "othrys.os.architecture-hierarchy.v1",
+  "status": "ACTIVE_HOUSE_MAP",
+  "controlPlane": "OTHRYS_OS",
+  "authorityTree": ["OTHRYS_OS", "GREAT_CONSTELLATION", "TITANS", "OROI", "BLUEPRINT", "OROS_RUNTIME", "MICRO_CONSTELLATION", "STARS"],
+  "compositionAxis": ["CAPABILITY_BLOCK", "BRIDGE", "ADAPTER", "PRODUCT_SPECIFIC_CODE"],
+  "executionAxis": ["MISSION", "WORK", "FACTORY", "HEPHAESTUS", "TALOS"],
+  "knowledgeAxis": ["MNEMOSYNE", "ATLAS", "GREAT_LIBRARY"],
+  "connectionAxis": ["MYCELIUM", "HERMES"],
+  "invariants": {
+    "othrysOsIsOros": false,
+    "exactlyOneBlueprintPerOros": true,
+    "orosOwnsRuntimeTruth": true,
+    "blockEqualsStar": false,
+    "titanBelongsToOros": false,
+    "microConstellationPerOros": 1,
+    "starsPerMicroConstellation": "0..N",
+    "blueprintOwnsExactResolvedVersion": false,
+    "lockIsAuthority": false,
+    "normalBlockReuseMinimumMaturity": "REUSABLE"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema":"othrys.prometheus.forge-watch-qualification.v1",
+  "date":"2026-08-30",
+  "candidate":"local.muse-glimmer-30b",
+  "model":"muse-glimmer:30b-q4_K_M",
+  "vendor":"Meta Superintelligence Labs",
+  "discovery":{"newAgainstRoster":true,"released":"2026-08-10","sources":["https://ollama.com/blog/muse-glimmer","https://ollama.com/library/muse-glimmer"],"license":"Apache-2.0","cost":"ZERO/local","secretBoundary":"PASS_LOCAL_NO_PROVIDER_SECRET"},
+  "availability":{"ollamaPublished":true,"localInstallCompleted":false,"nvfp4":"REFUSED_MLX_RUNTIME_REQUIRED","q4kmDownload":"STARTED_NOT_COMPLETED_IN_GATE"},
+  "builderOlympics":{"state":"NOT_RUN_INSTALL_GATE_INCOMPLETE"},
+  "workerQualification":{"state":"NOT_RUN"},
+  "talos":{"state":"NOT_REACHED"},
+  "admission":{"admitted":false,"executionAllowed":false,"authorityGranted":false,"automaticPaidUsage":false},
+  "laws":{"benchmarksDoNotGrantAuthority":true,"qualificationRequired":true,"operatorAuthorityUnchanged":true}
+}

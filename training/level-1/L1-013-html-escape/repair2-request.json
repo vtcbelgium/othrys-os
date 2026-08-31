@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-013 HARD REPAIR. WRITE immediately. In htmlUnescape entity is already text WITHOUT semicolon. Fix exactly: entity === \"#39\" not \"#39;\". For hex apostrophe, do not slice off a final character: const hex = entity.slice(2); and only decode when entity case-insensitively equals #x27; unknown hex entities must remain unchanged because contract decodes only the five declared entities. Minimal patch in training/level-1/L1-013-html-escape/htmlEscape.mjs, then finish.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-013",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-013-003",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-013-html-escape/htmlEscape.mjs"
+                      ]
+}

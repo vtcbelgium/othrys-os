@@ -88,6 +88,35 @@
         "power_w": "23.93"
       },
       "talosBehaviorPass": true
+    },
+    {
+      "builderId": "local.qwen3.8-27b",
+      "workerPass": true,
+      "durationSec": 19.121330499649048,
+      "changedFiles": [
+        "training/forge-qualification/local_qwen3_8-27b/candidate.mjs"
+      ],
+      "outOfScope": [],
+      "model": "qwen3.8:27b",
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "5730",
+        "utilization_pct": "1",
+        "temperature_c": "40",
+        "power_w": "6.47"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "5738",
+        "utilization_pct": "1",
+        "temperature_c": "53",
+        "power_w": "11.14"
+      },
+      "talosBehaviorPass": true
     }
   ],
   "admissionRule": "Olympics candidate + bounded real worker mutation + Talos behavior PASS + zero out-of-scope changes",

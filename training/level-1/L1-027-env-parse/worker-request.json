@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-027. SECURITY-SENSITIVE METADATA ONLY. Create exactly training/level-1/L1-027-env-parse/parseEnvMetadata.mjs. Export parseEnvMetadata(text). Input string else TypeError. Parse dotenv-style lines without ever returning/storing values: ignore blank/comment lines; optional leading `export `; valid names [A-Za-z_][A-Za-z0-9_]* followed by =. Presence means raw value after first =, after trimming surrounding whitespace, has length \u003e0; DO NOT unquote or reveal content. Return frozen array of frozen {name,present} in first-occurrence order; duplicate names collapse to first occurrence only. Malformed non-comment assignment lines (no = or invalid name) are returned as frozen issue objects? NO: contract is names/presence only, so simply skip malformed lines. Under no circumstance include any raw value or secret fragment in output/errors. Deterministic no I/O/network/deps. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-027",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-027-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-027-env-parse/parseEnvMetadata.mjs"
+                      ]
+}

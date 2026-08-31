@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-013 TALOS REPAIR. WRITE exactly training/level-1/L1-013-html-escape/htmlEscape.mjs. First build 6/7. Fix hex apostrophe entity: htmlUnescape(\"\u0026#x27;\") must return apostrophe. Preserve all other passing behavior including nonrecursive decode and unknown entities. Minimal edit only. Touch nothing else.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-013",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-013-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-013-html-escape/htmlEscape.mjs"
+                      ]
+}

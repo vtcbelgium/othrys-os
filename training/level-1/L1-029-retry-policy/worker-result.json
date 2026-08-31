@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-029-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788094753.4647954,
+  "completed_at": 1788094772.1890938,
+  "duration_sec": 18.72429847717285,
+  "allowed_paths": [
+    "training/level-1/L1-029-retry-policy/nextRetry.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-029-retry-policy/nextRetry.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-029-retry-policy/nextRetry.mjs\n+++ b/training/level-1/L1-029-retry-policy/nextRetry.mjs\n@@ -0,0 +1,52 @@\n+export function nextRetry({\n+  attempt,\n+  maxAttempts,\n+  baseDelayMs = 1000,\n+  maxDelayMs = 30000,\n+  multiplier = 2,\n+  jitter = 0\n+}) {\n+  if (typeof attempt !== 'number' || !Number.isFinite(attempt) || attempt < 1) {\n+    throw new TypeError('attempt must be a finite integer >= 1');\n+  }\n+  if (typeof maxAttempts !== 'number' || !Number.isFinite(maxAttempts) || maxAttempts < 1) {\n+    throw new TypeError('maxAttempts must be a finite integer >= 1');\n+  }\n+  if (typeof baseDelayMs !== 'number' || !Number.isFinite(baseDelayMs) || baseDelayMs < 0) {\n+    throw new TypeError('baseDelayMs must be a finite number >= 0');\n+  }\n+  if (typeof maxDelayMs !== 'number' || !Number.isFinite(maxDelayMs) || maxDelayMs < 0) {\n+    throw new TypeError('maxDelayMs must be a finite number >= 0');\n+  }\n+  if (typeof multiplier !== 'number' || !Number.isFinite(multiplier) || multiplier < 1) {\n+    throw new TypeError('multiplier must be a finite number >= 1');\n+  }\n+  if (typeof jitter !== 'number' || !Number.isFinite(jitter) || jitter < 0 || jitter > 1) {\n+    throw new TypeError('jitter must be a finite number in [0, 1]');\n+  }\n+\n+  if (attempt >= maxAttempts) {\n+    return Object.freeze({\n+      retry: false,\n+      nextAttempt: null,\n+      delayMs: null,\n+      reason: 'MAX_ATTEMPTS'\n+    });\n+  }\n+\n+  const exponentialDelay = baseDelayMs * Math.pow(multiplier, attempt - 1);\n+  let delayMs = Math.min(maxDelayMs, exponentialDelay);\n+  \n+  if (jitter > 0) {\n+    delayMs = delayMs * (1 + jitter);\n+  }\n+  \n+  delayMs = Math.round(delayMs);\n+\n+  return Object.freeze({\n+    retry: true,\n+    nextAttempt: attempt + 1,\n+    delayMs,\n+    reason: 'RETRY'\n+  });\n+}",
+  "git_status": "training/level-1/L1-029-retry-policy/nextRetry.mjs",
+  "summary": "Created training/level-1/L1-029-retry-policy/nextRetry.mjs with exponential backoff retry logic, deterministic jitter, and proper error handling for invalid inputs and max attempts reached.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-029-retry-policy/nextRetry.mjs\n+++ b/training/level-1/L1-029-retry-policy/nextRetry.mjs\n@@ -0,0 +1,52 @@\n+export function nextRetry({\n+  attempt,\n+  maxAttempts,\n+  baseDelayMs = 1000,\n+  maxDelayMs = 30000,\n+  multiplier = 2,\n+  jitter = 0\n+}) {\n+  if (typeof attempt !== 'number' || !Number.isFinite(attempt) || attempt < 1) {\n+    throw new TypeError('attempt must be a finite integer >= 1');\n+  }\n+  if (typeof maxAttempts !== 'number' || !Number.isFinite(maxAttempts) || maxAttempts < 1) {\n+    throw new TypeError('maxAttempts must be a finite integer >= 1');\n+  }\n+  if (typeof baseDelayMs !== 'number' || !Number.isFinite(baseDelayMs) || baseDelayMs < 0) {\n+    throw new TypeError('baseDelayMs must be a finite number >= 0');\n+  }\n+  if (typeof maxDelayMs !== 'number' || !Number.isFinite(maxDelayMs) || maxDelayMs < 0) {\n+    throw new TypeError('maxDelayMs must be a finite number >= 0');\n+  }\n+  if (typeof multiplier !== 'number' || !Number.isFinite(multiplier) || multiplier < 1) {\n+    throw new TypeError('multiplier must be a finite number >= 1');\n+  }\n+  if (typeof jitter !== 'number' || !Number.isFinite(jitter) || jitter < 0 || jitter > 1) {\n+    throw new TypeError('jitter must be a finite number in [0, 1]');\n+  }\n+\n+  if (attempt >= maxAttempts) {\n+    return Object.freeze({\n+      retry: false,\n+      nextAttempt: null,\n+      delayMs: null,\n+      reason: 'MAX_ATTEMPTS'\n+    });\n+  }\n+\n+  const exponentialDelay = baseDelayMs * Math.pow(multiplier, attempt - 1);\n+  let delayMs = Math.min(maxDelayMs, exponentialDelay);\n+  \n+  if (jitter > 0) {\n+    delayMs = delayMs * (1 + jitter);\n+  }\n+  \n+  delayMs = Math.round(delayMs);\n+\n+  return Object.freeze({\n+    retry: true,\n+    nextAttempt: attempt + 1,\n+    delayMs,\n+    reason: 'RETRY'\n+  });\n+}",
+    "git_status": "training/level-1/L1-029-retry-policy/nextRetry.mjs",
+    "tool_trace": [
+      "write_file: wrote 1621 chars to training/level-1/L1-029-retry-policy/nextRetry.mjs",
+      "finish: Created training/level-1/L1-029-retry-policy/nextRetry.mjs with exponential backoff retry logic, deterministic jitter, and proper error handling for invalid inputs and max attempts reached."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-029-retry-policy/nextRetry.mjs\", \"content\": \"export function nextRetry({\\n  attempt,\\n  maxAttempts,\\n  baseDelayMs = 1000,\\n  maxDelayMs = 30000,\\n  multiplier = 2,\\n  jitter = 0\\n}) {\\n  if (typeof attempt !=",
+        "raw_suffix": "\\n      retry: false,\\n      nextAttempt: null,\\n      delayMs: null,\\n      reason: 'MAX_ATTEMPTS'\\n    });\\n  }\\n\\n  const exponentialDelay = baseDelayMs * Math.pow(multiplier, attempt - 1);\\n  let delayMs = Math.min(maxDelayMs, exponentialDelay);\\n  \\n  if (jitter > 0) {\\n    delayMs = delayMs * (1 + jitter);\\n  }\\n  \\n  delayMs = Math.round(delayMs);\\n\\n  return Object.freeze({\\n    retry: true,\\n    nextAttempt: attempt + 1,\\n    delayMs,\\n    reason: 'RETRY'\\n  });\\n}\"}",
+        "raw_length": 1749,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1621
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/level-1/L1-029-retry-policy/nextRetry.mjs with exponential backoff retry logic, deterministic jitter, and proper error handling for invalid inputs and max attempts reached.\"}",
+        "raw_suffix": "{\"summary\": \"Created training/level-1/L1-029-retry-policy/nextRetry.mjs with exponential backoff retry logic, deterministic jitter, and proper error handling for invalid inputs and max attempts reached.\"}",
+        "raw_length": 204,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "122",
+      "utilization_pct": "9",
+      "temperature_c": "41",
+      "power_w": "6.33"
+    },
+    "ollama_ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6461",
+      "utilization_pct": "2",
+      "temperature_c": "47",
+      "power_w": "11.06"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "othrys.prometheus.forge-watch.v1",
+  "date": "2026-08-31",
+  "discoveries": [
+    {
+      "name": "GLM-5.3",
+      "source": "Z.ai / Hugging Face",
+      "status": "KNOWN_NOT_ADMITTED",
+      "reason": "Genuine new open-weight coding candidate, but existing GLM-5.3 Flash qualification path returned HTTP 401 and no zero-cost executable endpoint is qualified. Full 753B local model is outside Legion resource envelope."
+    },
+    {
+      "name": "Ornith-1.5-35B-A3B",
+      "source": "Ornith / Ollama",
+      "status": "NEW_HANDOFF_NOT_ADMITTED",
+      "reason": "Official Ollama package exists at ~23GB Q4; not installed locally. Materially larger sibling of admitted Ornith-1.5-9B. Requires availability/resource and full Olympics/Talos qualification before admission."
+    }
+  ],
+  "observed": {
+    "installedKnown": ["local.qwen3.8-27b", "local.ornith-1.5-9b"],
+    "museGlimmer30b": "Olympics protocol/repair/repo passed but tool-use heat refused filesystem action; not admitted"
+  },
+  "admitted": [],
+  "authorityGranted": false,
+  "automaticPromotion": false
+}

@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-020. Create exactly training/level-1/L1-020-time-cost/estimateCost.mjs. Export estimateCost(ratePerHour,duration,unit=\"hours\"). ratePerHour and duration finite numbers \u003e=0. Units exactly hours, minutes, seconds, milliseconds. Convert duration to hours; cost=ratePerHour*hours. Return frozen {ratePerHour,duration,unit,hours,cost}. Normalize -0. No rounding. Invalid type TypeError, invalid range/unit RangeError. Deterministic dependency-free no I/O/network. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-020",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-020-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-020-time-cost/estimateCost.mjs"
+                      ]
+}

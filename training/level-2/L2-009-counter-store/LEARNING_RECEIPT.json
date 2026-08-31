@@ -1,0 +1,9 @@
+{
+  "schema":"othrys.os.training-learning-receipt.v1","jobId":"L2-009","level":2,"title":"Persistent counters","classification":"HIGH_VALUE_OPERATIONAL_LEARNING",
+  "stock":{"disposition":"ADAPT_PROVEN_STATE_PATTERN","reason":"reused proven atomic persistence only after governed repair failed"},
+  "attempts":[{"builder":"local.qwen3.5-9b","outcome":"OK_RECEIPT_SEMANTIC_FAILURE"},{"builder":"local.qwen3-coder-30b","outcome":"TIMEOUT_NO_RESULT"},{"actor":"operator_bounded_recovery","outcome":"TALOS_GREEN"}],
+  "talos":{"source":{"pass":7,"fail":0},"candidateBlock":{"pass":7,"fail":0}},
+  "block":{"id":"block.state.counter-store","disposition":"TRAINING_CANDIDATE","authorityGranted":false},
+  "lessons":["initial build invented recursive filesystem helpers and masked corruption","Talos caught stack overflow and validation gaps","operator recovery is capability debt not builder credit"],
+  "authorityGranted":false
+}

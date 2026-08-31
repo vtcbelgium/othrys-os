@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-024 HARD REPAIR. WRITE immediately. File training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs. Remove only the invalid final line `EXPORT groupDuplicates`. Change `ids: members.map(m =\u003e m.id),` to `ids: Object.freeze(members.map(m =\u003e m.id)),`. Do nothing else and finish.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-024",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-024-003",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs"
+                      ]
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-005-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "qwen3-builder",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788083065.5645936,
+  "completed_at": 1788083087.3763127,
+  "duration_sec": 21.811719179153442,
+  "allowed_paths": [
+    "training/level-1/L1-005-case-convert/convertCase.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-005-case-convert/convertCase.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-005-case-convert/convertCase.mjs\n+++ b/training/level-1/L1-005-case-convert/convertCase.mjs\n@@ -0,0 +1,50 @@\n+export function convertCase(input, mode) {\n+  if (input === null || input === undefined) {\n+    return '';\n+  }\n+  const str = String(input);\n+  const modes = ['lower', 'upper', 'title', 'sentence', 'camel', 'pascal', 'snake', 'kebab'];\n+  if (!modes.includes(mode)) {\n+    throw new RangeError(`Unsupported mode: ${mode}`);\n+  }\n+\n+  switch (mode) {\n+    case 'lower':\n+      return str.toLowerCase();\n+    case 'upper':\n+      return str.toUpperCase();\n+    case 'title':\n+      return str\n+        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\n+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())\n+        .join(' ');\n+    case 'sentence':\n+      return str\n+        .toLowerCase()\n+        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\n+        .map((word, index) => index === 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word)\n+        .join(' ');\n+    case 'camel':\n+      return str\n+        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\n+        .map((word, index) => index === 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())\n+        .join('');\n+    case 'pascal':\n+      return str\n+        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\n+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toUpperCase())\n+        .join('');\n+    case 'snake':\n+      return str\n+        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\n+        .map(word => word.toLowerCase())\n+        .join('_');\n+    case 'kebab':\n+      return str\n+        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\n+        .map(word => word.toLowerCase())\n+        .join('-');\n+    default:\n+      throw new RangeError(`Unsupported mode: ${mode}`);\n+  }\n+}",
+  "git_status": "training/level-1/L1-005-case-convert/convertCase.mjs",
+  "summary": "Created convertCase.mjs with required functionality and error handling.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-005-case-convert/convertCase.mjs\n+++ b/training/level-1/L1-005-case-convert/convertCase.mjs\n@@ -0,0 +1,50 @@\n+export function convertCase(input, mode) {\n+  if (input === null || input === undefined) {\n+    return '';\n+  }\n+  const str = String(input);\n+  const modes = ['lower', 'upper', 'title', 'sentence', 'camel', 'pascal', 'snake', 'kebab'];\n+  if (!modes.includes(mode)) {\n+    throw new RangeError(`Unsupported mode: ${mode}`);\n+  }\n+\n+  switch (mode) {\n+    case 'lower':\n+      return str.toLowerCase();\n+    case 'upper':\n+      return str.toUpperCase();\n+    case 'title':\n+      return str\n+        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\n+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())\n+        .join(' ');\n+    case 'sentence':\n+      return str\n+        .toLowerCase()\n+        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\n+        .map((word, index) => index === 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word)\n+        .join(' ');\n+    case 'camel':\n+      return str\n+        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\n+        .map((word, index) => index === 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())\n+        .join('');\n+    case 'pascal':\n+      return str\n+        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\n+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toUpperCase())\n+        .join('');\n+    case 'snake':\n+      return str\n+        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\n+        .map(word => word.toLowerCase())\n+        .join('_');\n+    case 'kebab':\n+      return str\n+        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\n+        .map(word => word.toLowerCase())\n+        .join('-');\n+    default:\n+      throw new RangeError(`Unsupported mode: ${mode}`);\n+  }\n+}",
+    "git_status": "training/level-1/L1-005-case-convert/convertCase.mjs",
+    "tool_trace": [
+      "write_file: wrote 2237 chars to training/level-1/L1-005-case-convert/convertCase.mjs",
+      "read_file: export function convertCase(input, mode) {\n  if (input === null || input === undefined) {\n    return '';\n  }\n  const str = String(input);\n  const modes = ['lower', 'upper', 'title', 'sentence', 'camel",
+      "finish: Created convertCase.mjs with required functionality and error handling."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-005-case-convert/convertCase.mjs\", \"content\": \"export function convertCase(input, mode) {\\n  if (input === null || input === undefined) {\\n    return '';\\n  }\\n  const str = String(input);\\n  const modes = ['lo",
+        "raw_suffix": "(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\\n        .map(word => word.toLowerCase())\\n        .join('_');\\n    case 'kebab':\\n      return str\\n        .split(/(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])|(?<=[^A-Za-z0-9])(?=[A-Za-z0-9])|(?<=[A-Za-z0-9])(?=[^A-Za-z0-9])/)\\n        .map(word => word.toLowerCase())\\n        .join('-');\\n    default:\\n      throw new RangeError(`Unsupported mode: ${mode}`);\\n  }\\n}\"}",
+        "raw_length": 2365,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 2237
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-005-case-convert/convertCase.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-005-case-convert/convertCase.mjs\"}",
+        "raw_length": 64,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created convertCase.mjs with required functionality and error handling.\"}",
+        "raw_suffix": "{\"summary\": \"Created convertCase.mjs with required functionality and error handling.\"}",
+        "raw_length": 86,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "qwen3-builder",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6134",
+      "utilization_pct": "0",
+      "temperature_c": "40",
+      "power_w": "5.06"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6134",
+      "utilization_pct": "0",
+      "temperature_c": "45",
+      "power_w": "23.52"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

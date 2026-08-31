@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "FORGE-ORNITH15-9B-ADMISSION-SMOKE",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.ornith-1.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788110760.7798874,
+  "completed_at": 1788110770.0719705,
+  "duration_sec": 9.292083024978638,
+  "allowed_paths": [
+    "training/forge-qualification/local_ornith15-9b/admitted-smoke.mjs"
+  ],
+  "changed_files": [
+    "training/forge-qualification/local_ornith15-9b/admitted-smoke.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/forge-qualification/local_ornith15-9b/admitted-smoke.mjs\n+++ b/training/forge-qualification/local_ornith15-9b/admitted-smoke.mjs\n@@ -0,0 +1 @@\n+export const ok=true;",
+  "git_status": "training/forge-qualification/local_ornith15-9b/admitted-smoke.mjs",
+  "summary": "Wrote the required file and completed the task.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/forge-qualification/local_ornith15-9b/admitted-smoke.mjs\n+++ b/training/forge-qualification/local_ornith15-9b/admitted-smoke.mjs\n@@ -0,0 +1 @@\n+export const ok=true;",
+    "git_status": "training/forge-qualification/local_ornith15-9b/admitted-smoke.mjs",
+    "tool_trace": [
+      "write_file: wrote 21 chars to training/forge-qualification/local_ornith15-9b/admitted-smoke.mjs",
+      "finish: Wrote the required file and completed the task."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training\\/forge-qualification\\/local_ornith15-9b\\/admitted-smoke.mjs\",\"content\":\"export const ok=true;\"}",
+        "raw_suffix": "{\"path\":\"training\\/forge-qualification\\/local_ornith15-9b\\/admitted-smoke.mjs\",\"content\":\"export const ok=true;\"}",
+        "raw_length": 113,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 21
+      },
+      {
+        "name": "finish",
+        "argument_type": "str",
+        "raw_prefix": "{\"summary\":\"Wrote the required file and completed the task.\"}",
+        "raw_suffix": "{\"summary\":\"Wrote the required file and completed the task.\"}",
+        "raw_length": 61,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.ornith-1.5-9b",
+    "model": "ornith-1.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6430",
+      "utilization_pct": "7",
+      "temperature_c": "41",
+      "power_w": "6.26"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nornith-1.5:9b    e5df7dcdd8a2    5.5 GB    100% GPU     4096       28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "1",
+      "temperature_c": "45",
+      "power_w": "11.61"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

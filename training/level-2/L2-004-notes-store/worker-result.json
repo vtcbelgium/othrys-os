@@ -1,0 +1,93 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L2-004-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788101881.028739,
+  "completed_at": 1788101916.839019,
+  "duration_sec": 35.810280084609985,
+  "allowed_paths": [
+    "training/level-2/L2-004-notes-store/notesStore.mjs"
+  ],
+  "changed_files": [
+    "training/level-2/L2-004-notes-store/notesStore.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-2/L2-004-notes-store/notesStore.mjs\n+++ b/training/level-2/L2-004-notes-store/notesStore.mjs\n@@ -0,0 +1,178 @@\n+// Export createNotesStore(filePath) with frozen async API list/get/add/update/remove\n+// Use durable JSON-array and atomic temp-file persistence pattern\n+// Missing state is empty and read calls never write\n+// Reject malformed/non-array/invalid persisted notes/duplicate IDs with STATE_CORRUPT\n+// Canonical note: id non-empty string unchanged; title trimmed non-empty string; body trimmed string, empty allowed; tags array of non-empty trimmed strings preserving order\n+// add rejects bad/extra fields as INVALID_NOTE, duplicate as DUPLICATE_ID\n+// get missing returns undefined\n+// update existing accepts non-empty patch only title/body/tags, same validation, otherwise INVALID_PATCH\n+// update/remove missing => NOT_FOUND\n+// Deep-clone outputs\n+// Standard library only\n+\n+export function createNotesStore(filePath) {\n+  return {\n+    async list() {\n+      const tempFilePath = filePath + \".tmp\";\n+      try {\n+        const data = await readFileSync(filePath, \"utf-8\");\n+        const notes = JSON.parse(data);\n+        return notes.map(note => ({ ...note }));\n+      } catch (err) {\n+        if (err.code === \"ENOENT\") {\n+          return [];\n+        } else {\n+          throw new Error(\"STATE_CORRUPT\");\n+        }\n+      } finally {\n+        if (existsSync(tempFilePath)) {\n+          unlinkSync(tempFilePath);\n+        }\n+      }\n+    },\n+\n+    async get(id) {\n+      const tempFilePath = filePath + \".tmp\";\n+      try {\n+        const data = await readFileSync(filePath, \"utf-8\");\n+        const notes = JSON.parse(data);\n+        const note = notes.find(n => n.id === id);\n+        return note ? ({ ...note }) : undefined;\n+      } catch (err) {\n+        if (err.code === \"ENOENT\") {\n+          return undefined;\n+        } else {\n+          throw new Error(\"STATE_CORRUPT\");\n+        }\n+      } finally {\n+        if (existsSync(tempFilePath)) {\n+          unlinkSync(tempFilePath);\n+        }\n+      }\n+    },\n+\n+    async add(note) {\n+      const tempFilePath = filePath + \".tmp\";\n+      try {\n+        const data = await readFileSync(filePath, \"utf-8\");\n+        const notes = JSON.parse(data);\n+\n+        if (!note.id || typeof note.id !== \"string\") {\n+          throw new Error(\"INVALID_NOTE\");\n+        }\n+\n+        if (!note.title || typeof note.title !== \"string\" || note.title.trim() === \"\") {\n+          throw new Error(\"INVALID_NOTE\");\n+        }\n+\n+        if (notes.some(n => n.id === note.id)) {\n+          throw new Error(\"DUPLICATE_ID\");\n+        }\n+\n+        notes.push(note);\n+\n+        await writeFileSync(tempFilePath, JSON.stringify(notes, null, 2), \"utf-8\");\n+        await renameSync(tempFilePath, filePath);\n+      } catch (err) {\n+        if (err.code === \"ENOENT\") {\n+          // File not found, create it\n+          const notes = [note];\n+          await writeFileSync(tempFilePath, JSON.stringify(notes, null, 2), \"utf-8\");\n+          await renameSync(tempFilePath, filePath);\n+        } else {\n+          throw new Error(\"STATE_CORRUPT\");\n+        }\n+      } finally {\n+        if (existsSync(tempFilePath)) {\n+          unlinkSync(tempFilePath);\n+        }\n+      }\n+    },\n+\n+    async update(id, patch) {\n+      const tempFilePath = filePath + \".tmp\";\n+      try {\n+        const data = await readFileSync(filePath, \"utf-8\");\n+        const notes = JSON.parse(data);\n+\n+        const note = notes.find(n => n.id === id);\n+\n+        if (!note) {\n+          throw new Error(\"NOT_FOUND\");\n+        }\n+\n+        if (!patch.title && !patch.body && !patch.tags) {\n+          throw new Error(\"INVALID_PATCH\");\n+        }\n+\n+        if (patch.title) {\n+          if (typeof patch.title !== \"string\" || patch.title.trim() === \"\") {\n+            throw new Error(\"INVALID_PATCH\");\n+          }\n+          note.title = patch.title;\n+        }\n+\n+        if (patch.body) {\n+          if (typeof patch.body !== \"string\") {\n+            throw new Error(\"INVALID_PATCH\");\n+          }\n+          note.body = patch.body;\n+        }\n+\n+        if (patch.tags) {\n+          if (!Array.isArray(patch.tags)) {\n+            throw new Error(\"INVALID_PATCH\");\n+          }\n+          patch.tags.forEach(tag => {\n+            if (typeof tag !== \"string\" || tag.trim() === \"\") {\n+              throw new Error(\"INVALID_PATCH\");\n+            }\n+          });\n+          note.tags = patch.tags;\n+        }\n+\n+        await writeFileSync(tempFilePath, JSON.stringify(notes, null, 2), \"utf-8\");\n+        await renameSync(tempFilePath, filePath);\n+      } catch (err) {\n+        if (err.code === \"ENOENT\") {\n+          throw new Error(\"NOT_FOUND\");\n+        } else {\n+          throw new Error(\"STATE_CORRUPT\");\n+        }\n+      } finally {\n+        if (existsSync(tempFilePath)) {\n+          unlinkSync(tempFilePath);\n+        }\n+      }\n+    },\n+\n+    async remove(id) {\n+      const tempFilePath = filePath + \".tmp\";\n+      try {\n+        const data = await readFileSync(filePath, \"utf-8\");\n+        const notes = JSON.parse(data);\n+\n+        const noteIndex = notes.findIndex(n => n.id === id);\n+\n+        if (noteIndex === -1) {\n+          throw new Error(\"NOT_FOUND\");\n+        }\n+\n+        notes.splice(noteIndex, 1);\n+\n+        await writeFileSync(tempFilePath, JSON.stringify(notes, null, 2), \"utf-8\");\n+        await renameSync(tempFilePath, filePath);\n+      } catch (err) {\n+        if (err.code === \"ENOENT\") {\n+          throw new Error(\"NOT_FOUND\");\n+        } else {\n+          throw new Error(\"STATE_CORRUPT\");\n+        }\n+      } finally {\n+        if (existsSync(tempFilePath)) {\n+          unlinkSync(tempFilePath);\n+        }\n+      }\n+    }\n+  };\n+}\n",
+  "git_status": "training/level-2/L2-004-notes-store/notesStore.mjs",
+  "summary": "Created training/level-2/L2-004-notes-store/notesStore.mjs with the required functionality for a notes store using durable JSON-array and atomic temp-file persistence pattern.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-2/L2-004-notes-store/notesStore.mjs\n+++ b/training/level-2/L2-004-notes-store/notesStore.mjs\n@@ -0,0 +1,178 @@\n+// Export createNotesStore(filePath) with frozen async API list/get/add/update/remove\n+// Use durable JSON-array and atomic temp-file persistence pattern\n+// Missing state is empty and read calls never write\n+// Reject malformed/non-array/invalid persisted notes/duplicate IDs with STATE_CORRUPT\n+// Canonical note: id non-empty string unchanged; title trimmed non-empty string; body trimmed string, empty allowed; tags array of non-empty trimmed strings preserving order\n+// add rejects bad/extra fields as INVALID_NOTE, duplicate as DUPLICATE_ID\n+// get missing returns undefined\n+// update existing accepts non-empty patch only title/body/tags, same validation, otherwise INVALID_PATCH\n+// update/remove missing => NOT_FOUND\n+// Deep-clone outputs\n+// Standard library only\n+\n+export function createNotesStore(filePath) {\n+  return {\n+    async list() {\n+      const tempFilePath = filePath + \".tmp\";\n+      try {\n+        const data = await readFileSync(filePath, \"utf-8\");\n+        const notes = JSON.parse(data);\n+        return notes.map(note => ({ ...note }));\n+      } catch (err) {\n+        if (err.code === \"ENOENT\") {\n+          return [];\n+        } else {\n+          throw new Error(\"STATE_CORRUPT\");\n+        }\n+      } finally {\n+        if (existsSync(tempFilePath)) {\n+          unlinkSync(tempFilePath);\n+        }\n+      }\n+    },\n+\n+    async get(id) {\n+      const tempFilePath = filePath + \".tmp\";\n+      try {\n+        const data = await readFileSync(filePath, \"utf-8\");\n+        const notes = JSON.parse(data);\n+        const note = notes.find(n => n.id === id);\n+        return note ? ({ ...note }) : undefined;\n+      } catch (err) {\n+        if (err.code === \"ENOENT\") {\n+          return undefined;\n+        } else {\n+          throw new Error(\"STATE_CORRUPT\");\n+        }\n+      } finally {\n+        if (existsSync(tempFilePath)) {\n+          unlinkSync(tempFilePath);\n+        }\n+      }\n+    },\n+\n+    async add(note) {\n+      const tempFilePath = filePath + \".tmp\";\n+      try {\n+        const data = await readFileSync(filePath, \"utf-8\");\n+        const notes = JSON.parse(data);\n+\n+        if (!note.id || typeof note.id !== \"string\") {\n+          throw new Error(\"INVALID_NOTE\");\n+        }\n+\n+        if (!note.title || typeof note.title !== \"string\" || note.title.trim() === \"\") {\n+          throw new Error(\"INVALID_NOTE\");\n+        }\n+\n+        if (notes.some(n => n.id === note.id)) {\n+          throw new Error(\"DUPLICATE_ID\");\n+        }\n+\n+        notes.push(note);\n+\n+        await writeFileSync(tempFilePath, JSON.stringify(notes, null, 2), \"utf-8\");\n+        await renameSync(tempFilePath, filePath);\n+      } catch (err) {\n+        if (err.code === \"ENOENT\") {\n+          // File not found, create it\n+          const notes = [note];\n+          await writeFileSync(tempFilePath, JSON.stringify(notes, null, 2), \"utf-8\");\n+          await renameSync(tempFilePath, filePath);\n+        } else {\n+          throw new Error(\"STATE_CORRUPT\");\n+        }\n+      } finally {\n+        if (existsSync(tempFilePath)) {\n+          unlinkSync(tempFilePath);\n+        }\n+      }\n+    },\n+\n+    async update(id, patch) {\n+      const tempFilePath = filePath + \".tmp\";\n+      try {\n+        const data = await readFileSync(filePath, \"utf-8\");\n+        const notes = JSON.parse(data);\n+\n+        const note = notes.find(n => n.id === id);\n+\n+        if (!note) {\n+          throw new Error(\"NOT_FOUND\");\n+        }\n+\n+        if (!patch.title && !patch.body && !patch.tags) {\n+          throw new Error(\"INVALID_PATCH\");\n+        }\n+\n+        if (patch.title) {\n+          if (typeof patch.title !== \"string\" || patch.title.trim() === \"\") {\n+            throw new Error(\"INVALID_PATCH\");\n+          }\n+          note.title = patch.title;\n+        }\n+\n+        if (patch.body) {\n+          if (typeof patch.body !== \"string\") {\n+            throw new Error(\"INVALID_PATCH\");\n+          }\n+          note.body = patch.body;\n+        }\n+\n+        if (patch.tags) {\n+          if (!Array.isArray(patch.tags)) {\n+            throw new Error(\"INVALID_PATCH\");\n+          }\n+          patch.tags.forEach(tag => {\n+            if (typeof tag !== \"string\" || tag.trim() === \"\") {\n+              throw new Error(\"INVALID_PATCH\");\n+            }\n+          });\n+          note.tags = patch.tags;\n+        }\n+\n+        await writeFileSync(tempFilePath, JSON.stringify(notes, null, 2), \"utf-8\");\n+        await renameSync(tempFilePath, filePath);\n+      } catch (err) {\n+        if (err.code === \"ENOENT\") {\n+          throw new Error(\"NOT_FOUND\");\n+        } else {\n+          throw new Error(\"STATE_CORRUPT\");\n+        }\n+      } finally {\n+        if (existsSync(tempFilePath)) {\n+          unlinkSync(tempFilePath);\n+        }\n+      }\n+    },\n+\n+    async remove(id) {\n+      const tempFilePath = filePath + \".tmp\";\n+      try {\n+        const data = await readFileSync(filePath, \"utf-8\");\n+        const notes = JSON.parse(data);\n+\n+        const noteIndex = notes.findIndex(n => n.id === id);\n+\n+        if (noteIndex === -1) {\n+          throw new Error(\"NOT_FOUND\");\n+        }\n+\n+        notes.splice(noteIndex, 1);\n+\n+        await writeFileSync(tempFilePath, JSON.stringify(notes, null, 2), \"utf-8\");\n+        await renameSync(tempFilePath, filePath);\n+      } catch (err) {\n+        if (err.code === \"ENOENT\") {\n+          throw new Error(\"NOT_FOUND\");\n+        } else {\n+          throw new Error(\"STATE_CORRUPT\");\n+        }\n+      } finally {\n+        if (existsSync(tempFilePath)) {\n+          unlinkSync(tempFilePath);\n+        }\n+      }\n+    }\n+  };\n+}\n",
+    "git_status": "training/level-2/L2-004-notes-store/notesStore.mjs",
+    "tool_trace": [
+      "write_file: wrote 5414 chars to training/level-2/L2-004-notes-store/notesStore.mjs",
+      "finish: Created training/level-2/L2-004-notes-store/notesStore.mjs with the required functionality for a notes store using durable JSON-array and atomic temp-file persistence pattern."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-2/L2-004-notes-store/notesStore.mjs\",\"content\":\"// Export createNotesStore(filePath) with frozen async API list/get/add/update/remove\\n// Use durable JSON-array and atomic temp-file persistence pattern\\n// Missing st",
+        "raw_suffix": "notes.splice(noteIndex, 1);\\n\\n        await writeFileSync(tempFilePath, JSON.stringify(notes, null, 2), \"utf-8\");\\n        await renameSync(tempFilePath, filePath);\\n      } catch (err) {\\n        if (err.code === \"ENOENT\") {\\n          throw new Error(\"NOT_FOUND\");\\n        } else {\\n          throw new Error(\"STATE_CORRUPT\");\\n        }\\n      } finally {\\n        if (existsSync(tempFilePath)) {\\n          unlinkSync(tempFilePath);\\n        }\\n      }\\n    }\\n  };\\n}\\n\"}]}",
+        "raw_length": 5668,
+        "parsed_keys": [],
+        "has_path": false,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "str",
+        "raw_prefix": "{\"summary\":\"Created training/level-2/L2-004-notes-store/notesStore.mjs with the required functionality for a notes store using durable JSON-array and atomic temp-file persistence pattern.\"}",
+        "raw_suffix": "{\"summary\":\"Created training/level-2/L2-004-notes-store/notesStore.mjs with the required functionality for a notes store using durable JSON-array and atomic temp-file persistence pattern.\"}",
+        "raw_length": 189,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "6",
+      "temperature_c": "40",
+      "power_w": "7.71"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      25 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "1",
+      "temperature_c": "53",
+      "power_w": "13.24"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

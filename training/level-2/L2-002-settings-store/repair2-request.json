@@ -1,0 +1,6 @@
+{
+ "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-002-REPAIR2","node_id":"legion","capability":"engineering.patch","workspace":"C:/Users/othry/Projects/othrys-v2",
+ "allowed_paths":["training/level-2/L2-002-settings-store/settingsStore.mjs"],"deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":120,
+ "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-002","forge_builder_id":"local.qwen3-coder-30b"},
+ "task":"HARD REPAIR L2-002. Do not search the repo. WRITE exactly the allowed file immediately and finish. Replace it entirely with the contract in the request: createSettingsStore(filePath,defaults), stdlib only, frozen API get/set/all/reset/resetAll; missing overrides {}, reads no-write; corrupt/unknown/wrong-type overrides STATE_CORRUPT; known keys from defaults; deep-cloned outputs; set persists overrides only; reset deletes override; resetAll {}; atomic unique same-dir temp rename. Use global structuredClone, node:fs/promises, node:path, node:crypto. No other file access or mutation."
+}

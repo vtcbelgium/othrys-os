@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L2-008-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788113215.2376735,
+  "completed_at": 1788113239.6130328,
+  "duration_sec": 24.375359296798706,
+  "allowed_paths": [
+    "training/level-2/L2-008-tag-index/tagIndex.mjs"
+  ],
+  "changed_files": [
+    "training/level-2/L2-008-tag-index/tagIndex.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-2/L2-008-tag-index/tagIndex.mjs\n+++ b/training/level-2/L2-008-tag-index/tagIndex.mjs\n@@ -0,0 +1,122 @@\n+// Tag index module\n+\n+export function createTagIndex(filePath) {\n+  let state = { records: {} };\n+\n+  async function set(id, tags) {\n+    if (!id || typeof id !== 'string') {\n+      throw new Error('Invalid id');\n+    }\n+\n+    if (!Array.isArray(tags) || tags.some(tag => !tag || typeof tag !== 'string')) {\n+      throw new Error('Invalid tags');\n+    }\n+\n+    const canonicalTags = tags.map(tag => tag.trim()).filter(tag => tag !== '');\n+\n+    if (canonicalTags.length !== tags.length) {\n+      throw new Error('Duplicate tags');\n+    }\n+\n+    if (canonicalTags.length === 0) {\n+      throw new Error('No tags');\n+    }\n+\n+    if (state.records[id]) {\n+      delete state.records[id];\n+    }\n+\n+    state.records[id] = canonicalTags;\n+\n+    await writeState(filePath);\n+  }\n+\n+  async function remove(id) {\n+    if (!state.records[id]) {\n+      return false;\n+    }\n+\n+    delete state.records[id];\n+    await writeState(filePath);\n+    return true;\n+  }\n+\n+  async function get(tag) {\n+    if (!tag || typeof tag !== 'string') {\n+      throw new Error('Invalid tag');\n+    }\n+\n+    const canonicalTag = tag.trim();\n+    if (canonicalTag === '') {\n+      throw new Error('Invalid tag');\n+    }\n+\n+    const ids = Object.keys(state.records).filter(id => {\n+      return state.records[id].includes(canonicalTag);\n+    });\n+\n+    return ids.sort();\n+  }\n+\n+  async function listTags() {\n+    const tags = new Set();\n+\n+    for (const record of Object.values(state.records)) {\n+      for (const tag of record) {\n+        tags.add(tag);\n+      }\n+    }\n+\n+    return Array.from(tags).sort();\n+  }\n+\n+  async function clear() {\n+    state.records = {};\n+    await writeState(filePath);\n+  }\n+\n+  async function writeState(filePath) {\n+    const dir = path.dirname(filePath);\n+    const tempFilePath = path.join(dir, 'tagIndex.temp');\n+\n+    try {\n+      await fs.promises.mkdir(dir, { recursive: true });\n+      await fs.promises.writeFile(tempFilePath, JSON.stringify(state, null, 2));\n+      await fs.promises.rename(tempFilePath, filePath);\n+    } catch (error) {\n+      console.error('Error writing state:', error);\n+      throw error;\n+    }\n+  }\n+\n+  async function loadState(filePath) {\n+    try {\n+      const data = await fs.promises.readFile(filePath, 'utf-8');\n+      const parsedData = JSON.parse(data);\n+\n+      if (!parsedData || typeof parsedData !== 'object' || parsedData.records === undefined) {\n+        throw new Error('Invalid state');\n+      }\n+\n+      state = parsedData;\n+    } catch (error) {\n+      console.error('Error loading state:', error);\n+      throw error;\n+    }\n+  }\n+\n+  // Load state on initialization\n+  await loadState(filePath);\n+\n+  return {\n+    set,\n+    remove,\n+    get,\n+    listTags,\n+    clear\n+  };\n+}\n+\n+// Helper functions\n+const fs = require('fs').promises;\n+const path = require('path');",
+  "git_status": "training/level-2/L2-008-tag-index/tagIndex.mjs",
+  "summary": "Created tagIndex.mjs with the required functionality for managing tag indices.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-2/L2-008-tag-index/tagIndex.mjs\n+++ b/training/level-2/L2-008-tag-index/tagIndex.mjs\n@@ -0,0 +1,122 @@\n+// Tag index module\n+\n+export function createTagIndex(filePath) {\n+  let state = { records: {} };\n+\n+  async function set(id, tags) {\n+    if (!id || typeof id !== 'string') {\n+      throw new Error('Invalid id');\n+    }\n+\n+    if (!Array.isArray(tags) || tags.some(tag => !tag || typeof tag !== 'string')) {\n+      throw new Error('Invalid tags');\n+    }\n+\n+    const canonicalTags = tags.map(tag => tag.trim()).filter(tag => tag !== '');\n+\n+    if (canonicalTags.length !== tags.length) {\n+      throw new Error('Duplicate tags');\n+    }\n+\n+    if (canonicalTags.length === 0) {\n+      throw new Error('No tags');\n+    }\n+\n+    if (state.records[id]) {\n+      delete state.records[id];\n+    }\n+\n+    state.records[id] = canonicalTags;\n+\n+    await writeState(filePath);\n+  }\n+\n+  async function remove(id) {\n+    if (!state.records[id]) {\n+      return false;\n+    }\n+\n+    delete state.records[id];\n+    await writeState(filePath);\n+    return true;\n+  }\n+\n+  async function get(tag) {\n+    if (!tag || typeof tag !== 'string') {\n+      throw new Error('Invalid tag');\n+    }\n+\n+    const canonicalTag = tag.trim();\n+    if (canonicalTag === '') {\n+      throw new Error('Invalid tag');\n+    }\n+\n+    const ids = Object.keys(state.records).filter(id => {\n+      return state.records[id].includes(canonicalTag);\n+    });\n+\n+    return ids.sort();\n+  }\n+\n+  async function listTags() {\n+    const tags = new Set();\n+\n+    for (const record of Object.values(state.records)) {\n+      for (const tag of record) {\n+        tags.add(tag);\n+      }\n+    }\n+\n+    return Array.from(tags).sort();\n+  }\n+\n+  async function clear() {\n+    state.records = {};\n+    await writeState(filePath);\n+  }\n+\n+  async function writeState(filePath) {\n+    const dir = path.dirname(filePath);\n+    const tempFilePath = path.join(dir, 'tagIndex.temp');\n+\n+    try {\n+      await fs.promises.mkdir(dir, { recursive: true });\n+      await fs.promises.writeFile(tempFilePath, JSON.stringify(state, null, 2));\n+      await fs.promises.rename(tempFilePath, filePath);\n+    } catch (error) {\n+      console.error('Error writing state:', error);\n+      throw error;\n+    }\n+  }\n+\n+  async function loadState(filePath) {\n+    try {\n+      const data = await fs.promises.readFile(filePath, 'utf-8');\n+      const parsedData = JSON.parse(data);\n+\n+      if (!parsedData || typeof parsedData !== 'object' || parsedData.records === undefined) {\n+        throw new Error('Invalid state');\n+      }\n+\n+      state = parsedData;\n+    } catch (error) {\n+      console.error('Error loading state:', error);\n+      throw error;\n+    }\n+  }\n+\n+  // Load state on initialization\n+  await loadState(filePath);\n+\n+  return {\n+    set,\n+    remove,\n+    get,\n+    listTags,\n+    clear\n+  };\n+}\n+\n+// Helper functions\n+const fs = require('fs').promises;\n+const path = require('path');",
+    "git_status": "training/level-2/L2-008-tag-index/tagIndex.mjs",
+    "tool_trace": [
+      "write_file: wrote 2717 chars to training/level-2/L2-008-tag-index/tagIndex.mjs",
+      "finish: Created tagIndex.mjs with the required functionality for managing tag indices."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-2/L2-008-tag-index/tagIndex.mjs\",\"content\":\"// Tag index module\\n\\nexport function createTagIndex(filePath) {\\n  let state = { records: {} };\\n\\n  async function set(id, tags) {\\n    if (!id || typeof id !== 'string'",
+        "raw_suffix": "== 'object' || parsedData.records === undefined) {\\n        throw new Error('Invalid state');\\n      }\\n\\n      state = parsedData;\\n    } catch (error) {\\n      console.error('Error loading state:', error);\\n      throw error;\\n    }\\n  }\\n\\n  // Load state on initialization\\n  await loadState(filePath);\\n\\n  return {\\n    set,\\n    remove,\\n    get,\\n    listTags,\\n    clear\\n  };\\n}\\n\\n// Helper functions\\nconst fs = require('fs').promises;\\nconst path = require('path');\"}",
+        "raw_length": 2908,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 2717
+      },
+      {
+        "name": "finish",
+        "argument_type": "str",
+        "raw_prefix": "{\"summary\":\"Created tagIndex.mjs with the required functionality for managing tag indices.\"}",
+        "raw_suffix": "{\"summary\":\"Created tagIndex.mjs with the required functionality for managing tag indices.\"}",
+        "raw_length": 92,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "5",
+      "temperature_c": "41",
+      "power_w": "5.80"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      27 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "1",
+      "temperature_c": "48",
+      "power_w": "12.73"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

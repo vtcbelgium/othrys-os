@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L2-011-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788114157.94767,
+  "completed_at": 1788114188.9870396,
+  "duration_sec": 31.039369583129883,
+  "allowed_paths": [
+    "training/level-2/L2-011-time-tracker/timeTracker.mjs"
+  ],
+  "changed_files": [
+    "training/level-2/L2-011-time-tracker/timeTracker.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-2/L2-011-time-tracker/timeTracker.mjs\n+++ b/training/level-2/L2-011-time-tracker/timeTracker.mjs\n@@ -0,0 +1,164 @@\n+// Time Tracker Module\n+// Standard Node ESM only\n+// No wall clock/network/deps/secrets\n+\n+import { promises as fs } from 'fs';\n+import { join } from 'path';\n+\n+export function createTimeTracker(filePath) {\n+  return {\n+    filePath,\n+\n+    async start(id, label, startedAt) {\n+      const entries = await this._loadEntries();\n+      const entry = entries.entries.find(e => e.id === id);\n+\n+      if (entry) {\n+        if (entry.stoppedAt) {\n+          throw new Error('ALREADY_STOPPED');\n+        }\n+        if (startedAt && startedAt !== entry.startedAt) {\n+          throw new Error('INVALID_TIME');\n+        }\n+        entry.stoppedAt = null;\n+      } else {\n+        if (startedAt) {\n+          if (startedAt !== Date.toISOString()) {\n+            throw new Error('INVALID_TIME');\n+          }\n+        }\n+        entries.entries.push({\n+          id,\n+          label: label.trim(),\n+          startedAt: startedAt || Date.toISOString(),\n+          stoppedAt: null\n+        });\n+      }\n+\n+      await this._saveEntries(entries);\n+    },\n+\n+    async stop(id, stoppedAt) {\n+      const entries = await this._loadEntries();\n+      const entry = entries.entries.find(e => e.id === id);\n+\n+      if (!entry) {\n+        throw new Error('NOT_FOUND');\n+      }\n+\n+      if (entry.stoppedAt) {\n+        throw new Error('ALREADY_STOPPED');\n+      }\n+\n+      if (stoppedAt && stoppedAt !== Date.toISOString()) {\n+        throw new Error('INVALID_TIME');\n+      }\n+\n+      if (stoppedAt) {\n+        entry.stoppedAt = stoppedAt;\n+      } else {\n+        entry.stoppedAt = Date.toISOString();\n+      }\n+\n+      await this._saveEntries(entries);\n+    },\n+\n+    async get(id) {\n+      const entries = await this._loadEntries();\n+      const entry = entries.entries.find(e => e.id === id);\n+\n+      if (!entry) {\n+        return null;\n+      }\n+\n+      return {\n+        ...entry,\n+        durationMs: entry.stoppedAt ?\n+          Date.parse(entry.stoppedAt) - Date.parse(entry.startedAt) :\n+          null\n+      };\n+    },\n+\n+    async list() {\n+      const entries = await this._loadEntries();\n+      return entries.entries.map(entry => ({\n+        ...entry,\n+        durationMs: entry.stoppedAt ?\n+          Date.parse(entry.stoppedAt) - Date.parse(entry.startedAt) :\n+          null\n+      }));\n+    },\n+\n+    async remove(id) {\n+      const entries = await this._loadEntries();\n+      const entry = entries.entries.find(e => e.id === id);\n+\n+      if (!entry) {\n+        return false;\n+      }\n+\n+      entries.entries = entries.entries.filter(e => e.id !== id);\n+      await this._saveEntries(entries);\n+      return true;\n+    },\n+\n+    _loadEntries() {\n+      try {\n+        const data = JSON.parse(await fs.readFile(this.filePath, 'utf8'));\n+        if (!data || !Array.isArray(data.entries)) {\n+          return { entries: [] };\n+        }\n+\n+        const validEntries = data.entries.filter(entry => {\n+          if (!entry || typeof entry !== 'object') {\n+            return false;\n+          }\n+\n+          if (!entry.id || typeof entry.id !== 'string' || entry.id.trim() === '') {\n+            return false;\n+          }\n+\n+          if (entry.label && typeof entry.label !== 'string') {\n+            return false;\n+          }\n+\n+          if (entry.startedAt && typeof entry.startedAt !== 'string') {\n+            return false;\n+          }\n+\n+          if (entry.stoppedAt && typeof entry.stoppedAt !== 'string') {\n+            return false;\n+          }\n+\n+          if (entry.stoppedAt && entry.startedAt &&\n+              Date.parse(entry.stoppedAt) <= Date.parse(entry.startedAt)) {\n+            return false;\n+          }\n+\n+          return true;\n+        });\n+\n+        return { entries: validEntries };\n+      } catch (err) {\n+        if (err.code === 'ENOENT') {\n+          return { entries: [] };\n+        }\n+        throw err;\n+      }\n+    },\n+\n+    _saveEntries(entries) {\n+      const data = { entries };\n+      const tempFilePath = this.filePath + '.tmp';\n+      const finalFilePath = this.filePath;\n+\n+      try {\n+        await fs.writeFile(tempFilePath, JSON.stringify(data, null, 2), 'utf8');\n+        await fs.rename(tempFilePath, finalFilePath);\n+      } catch (err) {\n+        await fs.unlink(tempFilePath);\n+        throw err;\n+      }\n+    }\n+  };\n+}\n",
+  "git_status": "training/level-2/L2-011-time-tracker/timeTracker.mjs",
+  "summary": "Created timeTracker.mjs with createTimeTracker function and required methods.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-2/L2-011-time-tracker/timeTracker.mjs\n+++ b/training/level-2/L2-011-time-tracker/timeTracker.mjs\n@@ -0,0 +1,164 @@\n+// Time Tracker Module\n+// Standard Node ESM only\n+// No wall clock/network/deps/secrets\n+\n+import { promises as fs } from 'fs';\n+import { join } from 'path';\n+\n+export function createTimeTracker(filePath) {\n+  return {\n+    filePath,\n+\n+    async start(id, label, startedAt) {\n+      const entries = await this._loadEntries();\n+      const entry = entries.entries.find(e => e.id === id);\n+\n+      if (entry) {\n+        if (entry.stoppedAt) {\n+          throw new Error('ALREADY_STOPPED');\n+        }\n+        if (startedAt && startedAt !== entry.startedAt) {\n+          throw new Error('INVALID_TIME');\n+        }\n+        entry.stoppedAt = null;\n+      } else {\n+        if (startedAt) {\n+          if (startedAt !== Date.toISOString()) {\n+            throw new Error('INVALID_TIME');\n+          }\n+        }\n+        entries.entries.push({\n+          id,\n+          label: label.trim(),\n+          startedAt: startedAt || Date.toISOString(),\n+          stoppedAt: null\n+        });\n+      }\n+\n+      await this._saveEntries(entries);\n+    },\n+\n+    async stop(id, stoppedAt) {\n+      const entries = await this._loadEntries();\n+      const entry = entries.entries.find(e => e.id === id);\n+\n+      if (!entry) {\n+        throw new Error('NOT_FOUND');\n+      }\n+\n+      if (entry.stoppedAt) {\n+        throw new Error('ALREADY_STOPPED');\n+      }\n+\n+      if (stoppedAt && stoppedAt !== Date.toISOString()) {\n+        throw new Error('INVALID_TIME');\n+      }\n+\n+      if (stoppedAt) {\n+        entry.stoppedAt = stoppedAt;\n+      } else {\n+        entry.stoppedAt = Date.toISOString();\n+      }\n+\n+      await this._saveEntries(entries);\n+    },\n+\n+    async get(id) {\n+      const entries = await this._loadEntries();\n+      const entry = entries.entries.find(e => e.id === id);\n+\n+      if (!entry) {\n+        return null;\n+      }\n+\n+      return {\n+        ...entry,\n+        durationMs: entry.stoppedAt ?\n+          Date.parse(entry.stoppedAt) - Date.parse(entry.startedAt) :\n+          null\n+      };\n+    },\n+\n+    async list() {\n+      const entries = await this._loadEntries();\n+      return entries.entries.map(entry => ({\n+        ...entry,\n+        durationMs: entry.stoppedAt ?\n+          Date.parse(entry.stoppedAt) - Date.parse(entry.startedAt) :\n+          null\n+      }));\n+    },\n+\n+    async remove(id) {\n+      const entries = await this._loadEntries();\n+      const entry = entries.entries.find(e => e.id === id);\n+\n+      if (!entry) {\n+        return false;\n+      }\n+\n+      entries.entries = entries.entries.filter(e => e.id !== id);\n+      await this._saveEntries(entries);\n+      return true;\n+    },\n+\n+    _loadEntries() {\n+      try {\n+        const data = JSON.parse(await fs.readFile(this.filePath, 'utf8'));\n+        if (!data || !Array.isArray(data.entries)) {\n+          return { entries: [] };\n+        }\n+\n+        const validEntries = data.entries.filter(entry => {\n+          if (!entry || typeof entry !== 'object') {\n+            return false;\n+          }\n+\n+          if (!entry.id || typeof entry.id !== 'string' || entry.id.trim() === '') {\n+            return false;\n+          }\n+\n+          if (entry.label && typeof entry.label !== 'string') {\n+            return false;\n+          }\n+\n+          if (entry.startedAt && typeof entry.startedAt !== 'string') {\n+            return false;\n+          }\n+\n+          if (entry.stoppedAt && typeof entry.stoppedAt !== 'string') {\n+            return false;\n+          }\n+\n+          if (entry.stoppedAt && entry.startedAt &&\n+              Date.parse(entry.stoppedAt) <= Date.parse(entry.startedAt)) {\n+            return false;\n+          }\n+\n+          return true;\n+        });\n+\n+        return { entries: validEntries };\n+      } catch (err) {\n+        if (err.code === 'ENOENT') {\n+          return { entries: [] };\n+        }\n+        throw err;\n+      }\n+    },\n+\n+    _saveEntries(entries) {\n+      const data = { entries };\n+      const tempFilePath = this.filePath + '.tmp';\n+      const finalFilePath = this.filePath;\n+\n+      try {\n+        await fs.writeFile(tempFilePath, JSON.stringify(data, null, 2), 'utf8');\n+        await fs.rename(tempFilePath, finalFilePath);\n+      } catch (err) {\n+        await fs.unlink(tempFilePath);\n+        throw err;\n+      }\n+    }\n+  };\n+}\n",
+    "git_status": "training/level-2/L2-011-time-tracker/timeTracker.mjs",
+    "tool_trace": [
+      "write_file: wrote 4122 chars to training/level-2/L2-011-time-tracker/timeTracker.mjs",
+      "finish: Created timeTracker.mjs with createTimeTracker function and required methods."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-2/L2-011-time-tracker/timeTracker.mjs\",\"content\":\"// Time Tracker Module\\n// Standard Node ESM only\\n// No wall clock/network/deps/secrets\\n\\nimport { promises as fs } from 'fs';\\nimport { join } from 'path';\\n\\nexpo",
+        "raw_suffix": "s: [] };\\n        }\\n        throw err;\\n      }\\n    },\\n\\n    _saveEntries(entries) {\\n      const data = { entries };\\n      const tempFilePath = this.filePath + '.tmp';\\n      const finalFilePath = this.filePath;\\n\\n      try {\\n        await fs.writeFile(tempFilePath, JSON.stringify(data, null, 2), 'utf8');\\n        await fs.rename(tempFilePath, finalFilePath);\\n      } catch (err) {\\n        await fs.unlink(tempFilePath);\\n        throw err;\\n      }\\n    }\\n  };\\n}\\n\"}",
+        "raw_length": 4362,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 4122
+      },
+      {
+        "name": "finish",
+        "argument_type": "str",
+        "raw_prefix": "{\"summary\":\"Created timeTracker.mjs with createTimeTracker function and required methods.\"}",
+        "raw_suffix": "{\"summary\":\"Created timeTracker.mjs with createTimeTracker function and required methods.\"}",
+        "raw_length": 91,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "6",
+      "temperature_c": "41",
+      "power_w": "6.19"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      27 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "1",
+      "temperature_c": "52",
+      "power_w": "12.87"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

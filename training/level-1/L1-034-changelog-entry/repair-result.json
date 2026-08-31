@@ -1,0 +1,65 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-034-003",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": false,
+  "reason": "NO_ATTEMPT_MUTATION",
+  "started_at": 1788097392.9213974,
+  "completed_at": 1788097433.4917374,
+  "duration_sec": 40.5703399181366,
+  "allowed_paths": [
+    "training/level-1/L1-034-changelog-entry/formatChangelogEntry.mjs"
+  ],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-034-changelog-entry/formatChangelogEntry.mjs\n+++ b/training/level-1/L1-034-changelog-entry/formatChangelogEntry.mjs\n@@ -0,0 +1,40 @@\n+export function formatChangelogEntry(change) {\n+  const { type, summary, scope, issue, breaking } = change;\n+  \n+  // Validate type\n+  const allowedTypes = ['added', 'changed', 'fixed', 'removed', 'security', 'deprecated'];\n+  if (!allowedTypes.includes(type)) {\n+    throw new Error('Invalid type');\n+  }\n+  \n+  // Process summary\n+  const trimmedSummary = summary.trim().replace(/\\s+/g, ' ');\n+  if (trimmedSummary === '') {\n+    throw new Error('Summary must be non-empty');\n+  }\n+  \n+  // Process scope\n+  const trimmedScope = scope ? scope.trim().replace(/\\s+/g, ' ') : '';\n+  \n+  // Build the base entry\n+  let entry = `- **${type}`;\n+  if (trimmedScope) {\n+    entry += `(${trimmedScope})`;\n+  }\n+  entry += `:** ${trimmedSummary}`;\n+  \n+  // Add breaking indicator if needed\n+  if (breaking === true) {\n+    entry += ' [BREAKING]';\n+  }\n+  \n+  // Add issue if present\n+  if (issue !== undefined && issue !== null) {\n+    const issueStr = String(issue);\n+    if (issueStr !== '') {\n+      entry += ` (#${issueStr})`;\n+    }\n+  }\n+  \n+  return entry;\n+}",
+  "git_status": "",
+  "summary": "tool turn limit (36) reached; proposed diff collected from workspace mutations",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-034-changelog-entry/formatChangelogEntry.mjs\n+++ b/training/level-1/L1-034-changelog-entry/formatChangelogEntry.mjs\n@@ -0,0 +1,40 @@\n+export function formatChangelogEntry(change) {\n+  const { type, summary, scope, issue, breaking } = change;\n+  \n+  // Validate type\n+  const allowedTypes = ['added', 'changed', 'fixed', 'removed', 'security', 'deprecated'];\n+  if (!allowedTypes.includes(type)) {\n+    throw new Error('Invalid type');\n+  }\n+  \n+  // Process summary\n+  const trimmedSummary = summary.trim().replace(/\\s+/g, ' ');\n+  if (trimmedSummary === '') {\n+    throw new Error('Summary must be non-empty');\n+  }\n+  \n+  // Process scope\n+  const trimmedScope = scope ? scope.trim().replace(/\\s+/g, ' ') : '';\n+  \n+  // Build the base entry\n+  let entry = `- **${type}`;\n+  if (trimmedScope) {\n+    entry += `(${trimmedScope})`;\n+  }\n+  entry += `:** ${trimmedSummary}`;\n+  \n+  // Add breaking indicator if needed\n+  if (breaking === true) {\n+    entry += ' [BREAKING]';\n+  }\n+  \n+  // Add issue if present\n+  if (issue !== undefined && issue !== null) {\n+    const issueStr = String(issue);\n+    if (issueStr !== '') {\n+      entry += ` (#${issueStr})`;\n+    }\n+  }\n+  \n+  return entry;\n+}",
+    "git_status": "",
+    "tool_trace": [],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6208",
+      "utilization_pct": "7",
+      "temperature_c": "48",
+      "power_w": "6.33"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6466",
+      "utilization_pct": "1",
+      "temperature_c": "52",
+      "power_w": "15.85"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

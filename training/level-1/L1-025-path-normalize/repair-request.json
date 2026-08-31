@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-025 ESCALATION after Qwen3.5 no-mutation. WRITE exactly training/level-1/L1-025-path-normalize/normalizePortablePath.mjs. Implement the declared portable path contract with character/string logic only, no filesystem. Required examples: C:\\\\a\\\\..\\\\b =\u003e c:/b; a/./b/../c =\u003e a/c; ../../a preserved; /../../a =\u003e /a; \\\\\\\\server\\\\share\\\\a\\\\.. =\u003e //server/share; a///b/ =\u003e a/b; a/.. =\u003e .; empty input TypeError. Preserve roots as specified. Touch nothing else.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-025",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  120,
+    "job_id":  "TRAIN-L1-025-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-025-path-normalize/normalizePortablePath.mjs"
+                      ]
+}

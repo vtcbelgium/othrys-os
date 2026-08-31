@@ -1,0 +1,56 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L1-005",
+  "level": 1,
+  "title": "Case converter",
+  "classification": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "sourceEvidence": [
+    "repair-result.json",
+    "worker-result.json"
+  ],
+  "sourceTests": [
+    "convertCase.test.mjs"
+  ],
+  "exactPackagedBlock": "blocks\\text\\case-convert",
+  "candidateProof": "blocks/text/case-convert/tests/contract.test.mjs",
+  "attemptsDeclared": null,
+  "buildersObserved": {
+    "qwen3-builder": 2
+  },
+  "failureReasonsObserved": {},
+  "lessons": [
+    "Shared tokenizer removed duplicated mode-specific parsing defects; Talos oracle was reconciled with the declared boundary rule."
+  ],
+  "talos": {
+    "freshLevelProof": "LEVEL_1_MILESTONE.json: 305/305 source and candidate PASS",
+    "runtimeProof": "LEVEL_2_MILESTONE.json: combined L1+L2 486/486 PASS"
+  },
+  "block": {
+    "id": "block.text.case-convert",
+    "disposition": "BLOCK_CANDIDATE",
+    "authorityGranted": false
+  },
+  "organLearning": {
+    "MNEMOSYNE": [
+      "retain source, worker and failure provenance"
+    ],
+    "HEPHAESTUS": [
+      "use task-specific builder outcome evidence"
+    ],
+    "TALOS": [
+      "independent contract proof outranks worker self-report"
+    ],
+    "KRONOS": [
+      "retain measured attempt timing where present"
+    ],
+    "RHEA": [
+      "retain failure/recovery sequence"
+    ],
+    "MYCELIUM": [
+      "route history is recommendation evidence only"
+    ],
+    "SWITCHYARD": [
+      "builder route outcome remains authority-free"
+    ]
+  }
+}

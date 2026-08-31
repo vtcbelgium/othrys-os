@@ -1,0 +1,60 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L1-004",
+  "level": 1,
+  "title": "Text statistics",
+  "classification": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "sourceEvidence": [
+    "rebuild-result.json",
+    "repair-result.json",
+    "worker-result.json"
+  ],
+  "sourceTests": [
+    "textStats.test.mjs"
+  ],
+  "exactPackagedBlock": "blocks\\text\\stats",
+  "candidateProof": "blocks/text/stats/tests/contract.test.mjs",
+  "attemptsDeclared": null,
+  "buildersObserved": {
+    "qwen3-builder": 3
+  },
+  "failureReasonsObserved": {
+    "out_of_scope_changes: ['training/level-1/L1-004-text-stats/repair.log']": 1,
+    "out_of_scope_changes: ['training/level-1/L1-004-text-stats/worker.log']": 1
+  },
+  "lessons": [
+    "Fresh rebuild recovered from stale repair loop; Talos caught both implementation defect and fixture encoding defect."
+  ],
+  "talos": {
+    "freshLevelProof": "LEVEL_1_MILESTONE.json: 305/305 source and candidate PASS",
+    "runtimeProof": "LEVEL_2_MILESTONE.json: combined L1+L2 486/486 PASS"
+  },
+  "block": {
+    "id": "block.text.stats",
+    "disposition": "BLOCK_CANDIDATE",
+    "authorityGranted": false
+  },
+  "organLearning": {
+    "MNEMOSYNE": [
+      "retain source, worker and failure provenance"
+    ],
+    "HEPHAESTUS": [
+      "use task-specific builder outcome evidence"
+    ],
+    "TALOS": [
+      "independent contract proof outranks worker self-report"
+    ],
+    "KRONOS": [
+      "retain measured attempt timing where present"
+    ],
+    "RHEA": [
+      "retain failure/recovery sequence"
+    ],
+    "MYCELIUM": [
+      "route history is recommendation evidence only"
+    ],
+    "SWITCHYARD": [
+      "builder route outcome remains authority-free"
+    ]
+  }
+}

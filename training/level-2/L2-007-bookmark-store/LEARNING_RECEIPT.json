@@ -1,0 +1,119 @@
+{
+  "schema": "othrys.os.training-corpus-receipt.v1",
+  "mission": "V2-011K",
+  "level": 2,
+  "job": {
+    "id": "L2-007",
+    "title": "Bookmark store",
+    "family": "crud",
+    "contract": "CRUD commands -> durable bookmark records",
+    "status": "COMPLETE"
+  },
+  "finalProof": {
+    "testFile": "bookmarkStore.test.mjs",
+    "tests": 8,
+    "pass": 8,
+    "fail": 0,
+    "blockProof": "blocks/state/bookmark-store/tests/contract.test.mjs"
+  },
+  "workerEvidence": [
+    {
+      "file": "worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 32.41871523857117,
+      "changedFiles": [
+        "training/level-2/L2-007-bookmark-store/bookmarkStore.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6262",
+        "utilization_pct": "4",
+        "temperature_c": "41",
+        "power_w": "6.46"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6262",
+        "utilization_pct": "2",
+        "temperature_c": "56",
+        "power_w": "13.59"
+      }
+    },
+    {
+      "file": "repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "model": "qwen3-coder:30b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 24.48712396621704,
+      "changedFiles": [
+        "training/level-2/L2-007-bookmark-store/bookmarkStore.mjs"
+      ],
+      "outOfScopeChanges": [],
+      "gpuBefore": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6262",
+        "utilization_pct": "11",
+        "temperature_c": "41",
+        "power_w": "5.92"
+      },
+      "gpuAfter": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "memory_total_mb": "8151",
+        "memory_used_mb": "6262",
+        "utilization_pct": "1",
+        "temperature_c": "54",
+        "power_w": "13.10"
+      }
+    }
+  ],
+  "semanticLearning": {
+    "lessons": [
+      "stock reuse guidance alone did not prevent malformed stateful implementation",
+      "hard repair leaked builder tool vocabulary into runtime code and failed 0/8",
+      "bounded operator recovery reused the proven local CRUD persistence pattern only after legal repair routes failed",
+      "Talos fixture initially asserted corruption at factory construction although contract detects on operation"
+    ],
+    "talos": {
+      "tests": 8,
+      "pass": 8,
+      "fail": 0,
+      "independent": true,
+      "oracleCorrection": true
+    },
+    "operatorIntervention": {
+      "required": true,
+      "class": "CAPABILITY_DEBT",
+      "scope": "bounded proven-pattern recovery"
+    },
+    "repairRegression": true
+  },
+  "learningOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "laws": {
+    "authorityGranted": false,
+    "autoAdmission": false,
+    "workerOkIsNotTalosSuccess": true,
+    "failuresAreEvidence": true,
+    "operatorInterventionIsCapabilityDebt": true
+  }
+}

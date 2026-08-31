@@ -1,0 +1,65 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-039-002",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3-coder-30b",
+  "ok": false,
+  "reason": "NO_ATTEMPT_MUTATION",
+  "started_at": 1788098627.4673982,
+  "completed_at": 1788098647.6419427,
+  "duration_sec": 20.1745445728302,
+  "allowed_paths": [
+    "training/level-1/L1-039-iso-date/normalizeIsoDate.mjs"
+  ],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-039-iso-date/normalizeIsoDate.mjs\n+++ b/training/level-1/L1-039-iso-date/normalizeIsoDate.mjs\n@@ -0,0 +1,46 @@\n+function normalizeIsoDate(input) {\n+  if (typeof input !== 'string' && !(input instanceof Date)) {\n+    throw new TypeError('Expected Date object or string');\n+  }\n+\n+  let date;\n+  if (input instanceof Date) {\n+    if (isNaN(input.getTime())) {\n+      throw new RangeError('Invalid Date object');\n+    }\n+    date = input;\n+  } else {\n+    const str = input.trim();\n+    const isoRegex = /^(\\d{4})-(\\d{2})-(\\d{2})([T ])(\\d{2}):(\\d{2}):(\\d{2})(\\.\\d{3})(Z|[+-]\\d{2}:?\\d{2})$/;\n+    const match = str.match(isoRegex);\n+\n+    if (!match) {\n+      throw new RangeError('Invalid date string format');\n+    }\n+\n+    const [, year, month, day, separator, hour, minute, second, ms, tz] = match;\n+    const m = parseInt(month, 10) - 1;\n+    const d = parseInt(day, 10);\n+    const y = parseInt(year, 10);\n+    const h = parseInt(hour, 10);\n+    const mi = parseInt(minute, 10);\n+    const s = parseInt(second, 10);\n+\n+    if (m < 0 || m > 11 || d < 1 || d > 31 || h < 0 || h > 23 || mi < 0 || mi > 59 || s < 0 || s > 59) {\n+      throw new RangeError('Invalid date components');\n+    }\n+\n+    const testDate = new Date(Date.UTC(y, m, d, h, mi, s));\n+    if (testDate.getUTCFullYear() !== y || testDate.getUTCMonth() !== m || testDate.getUTCDate() !== d) {\n+      throw new RangeError('Invalid Gregorian date');\n+    }\n+\n+    const timePart = `${h}:${mi}:${s}.${ms}`;\n+    const tzPart = tz === 'Z' ? 'Z' : tz.replace(' ', ':');\n+    date = new Date(Date.UTC(y, m, d, h, mi, s));\n+  }\n+\n+  return date.toISOString();\n+}\n+\n+export { normalizeIsoDate };",
+  "git_status": "",
+  "summary": "",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-039-iso-date/normalizeIsoDate.mjs\n+++ b/training/level-1/L1-039-iso-date/normalizeIsoDate.mjs\n@@ -0,0 +1,46 @@\n+function normalizeIsoDate(input) {\n+  if (typeof input !== 'string' && !(input instanceof Date)) {\n+    throw new TypeError('Expected Date object or string');\n+  }\n+\n+  let date;\n+  if (input instanceof Date) {\n+    if (isNaN(input.getTime())) {\n+      throw new RangeError('Invalid Date object');\n+    }\n+    date = input;\n+  } else {\n+    const str = input.trim();\n+    const isoRegex = /^(\\d{4})-(\\d{2})-(\\d{2})([T ])(\\d{2}):(\\d{2}):(\\d{2})(\\.\\d{3})(Z|[+-]\\d{2}:?\\d{2})$/;\n+    const match = str.match(isoRegex);\n+\n+    if (!match) {\n+      throw new RangeError('Invalid date string format');\n+    }\n+\n+    const [, year, month, day, separator, hour, minute, second, ms, tz] = match;\n+    const m = parseInt(month, 10) - 1;\n+    const d = parseInt(day, 10);\n+    const y = parseInt(year, 10);\n+    const h = parseInt(hour, 10);\n+    const mi = parseInt(minute, 10);\n+    const s = parseInt(second, 10);\n+\n+    if (m < 0 || m > 11 || d < 1 || d > 31 || h < 0 || h > 23 || mi < 0 || mi > 59 || s < 0 || s > 59) {\n+      throw new RangeError('Invalid date components');\n+    }\n+\n+    const testDate = new Date(Date.UTC(y, m, d, h, mi, s));\n+    if (testDate.getUTCFullYear() !== y || testDate.getUTCMonth() !== m || testDate.getUTCDate() !== d) {\n+      throw new RangeError('Invalid Gregorian date');\n+    }\n+\n+    const timePart = `${h}:${mi}:${s}.${ms}`;\n+    const tzPart = tz === 'Z' ? 'Z' : tz.replace(' ', ':');\n+    date = new Date(Date.UTC(y, m, d, h, mi, s));\n+  }\n+\n+  return date.toISOString();\n+}\n+\n+export { normalizeIsoDate };",
+    "git_status": "",
+    "tool_trace": [],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3-coder-30b",
+    "model": "qwen3-coder:30b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6466",
+      "utilization_pct": "9",
+      "temperature_c": "43",
+      "power_w": "6.66"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "129",
+      "utilization_pct": "6",
+      "temperature_c": "44",
+      "power_w": "9.62"
+    },
+    "ollama_ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL"
+  }
+}

@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-035 SECOND TALOS REPAIR. WRITE exactly training/level-1/L1-035-config-merge/safeConfigMerge.mjs. Previous heavy repair regressed the single-file contract by importing missing ./helpers.js. Fix in this file only: remove all imports; define isPlain locally as object non-null non-array with prototype Object.prototype or null. In cloneValue check arrays BEFORE plain-object handling, recursively clone array elements. Call validateValue recursively on every leaf/object/array value, so non-finite number =\u003e RangeError and undefined/function/symbol/bigint =\u003e TypeError. Detect dangerous keys at every object depth. deepFreeze must freeze children and arrays without mutating input. Preserve lexical key sort and deep merge behavior. Touch nothing else.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-035",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-035-003",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-035-config-merge/safeConfigMerge.mjs"
+                      ]
+}

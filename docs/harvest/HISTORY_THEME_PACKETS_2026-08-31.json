@@ -1,0 +1,2181 @@
+{
+  "schema": "othrys.harvest.history-theme-packets.v1",
+  "date": "2026-08-31",
+  "themes": {
+    "MNEMOSYNE_MEMORY": {
+      "count": 55,
+      "by_repo": {
+        "vtc-platform": 30,
+        "othrys-core-windows": 25
+      },
+      "samples": [
+        {
+          "repo": "vtc-platform",
+          "path": "titan/genesis/src/mnemosyne-recall.test.ts",
+          "commit": "874300333aff",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/persistence.test.ts",
+          "commit": "3ed93abbe625",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/titan.ts",
+          "commit": "a01c9f0c18c3",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/persistence.ts",
+          "commit": "6901233e7ba8",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/adr/ADR-0031-mnemosyne-sovereign-memory-office.md",
+          "commit": "bc5652c65e8e",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/index.ts",
+          "commit": "1bc6b4c77b9e",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/book-seeds.ts",
+          "commit": "b4e4d202be35",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/mnemosyne-system.test.ts",
+          "commit": "1ae85b00f450",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/book-sidecar.ts",
+          "commit": "1f49d0e20211",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/callimachus.ts",
+          "commit": "23dfa8a114c0",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/vaults.ts",
+          "commit": "618619325b5f",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/MNEMOSYNE.md",
+          "commit": "0d7834358c0c",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/adr/ADR-0020-titan-mnemosyne.md",
+          "commit": "88a0087d48d3",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/docs/COUNCIL-KNOWLEDGE-DEFINITION.md",
+          "commit": "88a0087d48d3",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/docs/GREAT-LIBRARY-ARCHITECTURE.md",
+          "commit": "88a0087d48d3",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/package.json",
+          "commit": "88a0087d48d3",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/integration.test.ts",
+          "commit": "88a0087d48d3",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/knowledge-model.test.ts",
+          "commit": "88a0087d48d3",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/knowledge-model.ts",
+          "commit": "88a0087d48d3",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/mnemosyne-provider.ts",
+          "commit": "88a0087d48d3",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/mnemosyne.test.ts",
+          "commit": "88a0087d48d3",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/office.ts",
+          "commit": "88a0087d48d3",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/planned/mnemosyne/README.md",
+          "commit": "88a0087d48d3",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/adr/ADR-0021-knowledge-graph.md",
+          "commit": "c511661355ce",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/great-library/src/knowledge-provider.ts",
+          "commit": "686c415e83dd",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/planned/mnemosyne/responsibility.ts",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/bridge/src/infra/InMemoryAdapters.ts",
+          "commit": "e427483a02a1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/MEMORY.md",
+          "commit": "0642389d6adf",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/application/src/infra/InMemoryCommandBus.test.ts",
+          "commit": "40da37f6fdfc",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/application/src/infra/InMemoryCommandBus.ts",
+          "commit": "40da37f6fdfc",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "books/book-of-mnemosyne/05-pentarchy-learning-and-loop-memory.md",
+          "commit": "b066cdcd40a4",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "books/book-of-mnemosyne/05-quintet-learning-and-loop-memory.md",
+          "commit": "268164afea86",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC-HARDEN-07-TRANSITION-MEMORY-DESIGN.md",
+          "commit": "80c95d7bda65",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC_HARDEN_03_MEMORY.md",
+          "commit": "7ad1dec4e6cf",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/adr/ADR-0035-knowledge-source-framework.md",
+          "commit": "5db108360a71",
+          "kind": "KNOWLEDGE_OR_LAW"
+        }
+      ]
+    },
+    "TALOS_ASSURANCE": {
+      "count": 31,
+      "by_repo": {
+        "vtc-platform": 19,
+        "othrys-hub": 2,
+        "othrys-core-windows": 10
+      },
+      "samples": [
+        {
+          "repo": "vtc-platform",
+          "path": ".github/workflows/verify.yml",
+          "commit": "a3cb14c9072a",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/src/index.ts",
+          "commit": "1ec67ed8961f",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/src/library/callimachus-cycle.test.ts",
+          "commit": "a487381774aa",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/src/library/callimachus-cycle.ts",
+          "commit": "e0a3a7a80548",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/src/garden/meliteus-loop.test.ts",
+          "commit": "112c7d7a7d33",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/src/garden/meliteus-loop.ts",
+          "commit": "66eff0f0751b",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "garden/seeds/talos-operations-complex.md",
+          "commit": "3672503f4324",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "docs/operations/talos/README.md",
+          "commit": "8c7d8f1124b8",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/adr/ADR-0024-talos-v1-freeze.md",
+          "commit": "8c7d8f1124b8",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/adr/ADR-0025-output-validation-hitl.md",
+          "commit": "8c7d8f1124b8",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/src/ops/engine.test.ts",
+          "commit": "f95b60b075ef",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/src/ops/engine.ts",
+          "commit": "f95b60b075ef",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/src/ops/hardening.test.ts",
+          "commit": "f95b60b075ef",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/src/ops/assemble.ts",
+          "commit": "fcae0216fb8f",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/src/ops/index.ts",
+          "commit": "138d3f0d1264",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": ".github/workflows/talos.yml",
+          "commit": "4eb5fbba37df",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/adr/ADR-0023-talos-operations-complex.md",
+          "commit": "4eb5fbba37df",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/package-lock.json",
+          "commit": "4eb5fbba37df",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/package.json",
+          "commit": "4eb5fbba37df",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "core/titan/hephaestus/src/host/assuranceTestCentreHost.unknown.test.ts",
+          "commit": "828c2b349f0c",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "hub/talos_surfaces.py",
+          "commit": "ca83571fcb19",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "books/book-of-talos/README.md",
+          "commit": "81e456e0a64c",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "garden/biomimicry/validation-report.md",
+          "commit": "40b4e29786bc",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/validation-report.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/runtime/validation-report.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/application/src/othrys/TalosOperations.test.ts",
+          "commit": "b940c4da42aa",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/application/src/othrys/TalosOperations.ts",
+          "commit": "b940c4da42aa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": ".github/workflows/foundation-verify.yml",
+          "commit": "8fbb88216c65",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "garden/seeds/talos-operations-complex.md",
+          "commit": "3672503f4324",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": ".github/workflows/talos.yml",
+          "commit": "62cf7058d22f",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/talos/package-lock.json",
+          "commit": "62cf7058d22f",
+          "kind": "PLATFORM_CODE"
+        }
+      ]
+    },
+    "HEPHAESTUS_FACTORY": {
+      "count": 53,
+      "by_repo": {
+        "vtc-platform": 33,
+        "othrys-hub": 15,
+        "othrys-core-windows": 5
+      },
+      "samples": [
+        {
+          "repo": "vtc-platform",
+          "path": "titan/genesis/src/hephaestus-plan.test.ts",
+          "commit": "874300333aff",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/executors/plan-report.ts",
+          "commit": "e55ff36b4d11",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/executors/propose.ts",
+          "commit": "e55ff36b4d11",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/titan.json",
+          "commit": "e55ff36b4d11",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/docs/INTELLIGENCE-SEAM.md",
+          "commit": "d8f763e7d5d1",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/executors/consult.ts",
+          "commit": "d8f763e7d5d1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/executors/deps.ts",
+          "commit": "d8f763e7d5d1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/intelligence/consult.ts",
+          "commit": "d8f763e7d5d1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/intelligence/index.ts",
+          "commit": "d8f763e7d5d1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/intelligence/intelligence.test.ts",
+          "commit": "d8f763e7d5d1",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/intelligence/plan.ts",
+          "commit": "d8f763e7d5d1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/intelligence/question.ts",
+          "commit": "d8f763e7d5d1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/titan.ts",
+          "commit": "d8f763e7d5d1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/domain/guardrails.ts",
+          "commit": "9cb6f6ce68d0",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/executors/plan.ts",
+          "commit": "9cb6f6ce68d0",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/executors/review.ts",
+          "commit": "9cb6f6ce68d0",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/forge/compose.ts",
+          "commit": "9cb6f6ce68d0",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/forge/independence.test.ts",
+          "commit": "9cb6f6ce68d0",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/sandbox/integration.test.ts",
+          "commit": "9cb6f6ce68d0",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/PREP-HEPHAESTUS.md",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/package.json",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/schema/mission-envelope.schema.json",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/domain/envelope.ts",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/domain/routing.ts",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/executors/build.ts",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/executors/repair.ts",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/executors/report.ts",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/executors/runBuilder.ts",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/executors/test.ts",
+          "commit": "d8d0fa2d1caa",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/index.ts",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/sandbox/localSandbox.ts",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/sandbox/types.ts",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/src/workers/commandWorker.ts",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "docs/HEPHAESTUS-BLOCK-FORGE-001/CATALOGUE.md",
+          "commit": "26961d2736b6",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "docs/HEPHAESTUS-BLOCK-FORGE-001/EVIDENCE.md",
+          "commit": "26961d2736b6",
+          "kind": "KNOWLEDGE_OR_LAW"
+        }
+      ]
+    },
+    "PROMETHEUS_RESEARCH": {
+      "count": 87,
+      "by_repo": {
+        "vtc-platform": 37,
+        "othrys-hub": 9,
+        "othrys-core-windows": 41
+      },
+      "samples": [
+        {
+          "repo": "vtc-platform",
+          "path": "titan/genesis/src/prometheus-score.test.ts",
+          "commit": "874300333aff",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/executors/capabilities.ts",
+          "commit": "bec9f172e063",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/titan.json",
+          "commit": "bec9f172e063",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/adr/ADR-0019-prometheus-awakening-live-loop.md",
+          "commit": "30102f59caab",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/package.json",
+          "commit": "30102f59caab",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/README.md",
+          "commit": "30102f59caab",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/domain/harvestContract.ts",
+          "commit": "30102f59caab",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/domain/registryMerge.ts",
+          "commit": "30102f59caab",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/executors/harvestCapabilitiesExecutor.ts",
+          "commit": "30102f59caab",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/executors/index.ts",
+          "commit": "30102f59caab",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/index.ts",
+          "commit": "30102f59caab",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/liveHarvest.test.ts",
+          "commit": "30102f59caab",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/node-shims.d.ts",
+          "commit": "30102f59caab",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/adr/ADR-0018-prometheus-intelligence-hardening.md",
+          "commit": "a690507f3bae",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/capability.test.ts",
+          "commit": "a690507f3bae",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/executors/recommendExecutor.ts",
+          "commit": "a690507f3bae",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/executors/reportOutcomeExecutor.ts",
+          "commit": "a690507f3bae",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/harvest.test.ts",
+          "commit": "a690507f3bae",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/adr/ADR-0016-prometheus-across-the-bridge.md",
+          "commit": "092d6fedd174",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/titan.ts",
+          "commit": "8f12d2686603",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/domain/proposal.ts",
+          "commit": "d55cfc5d2b64",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/executors/normalizeExecutor.ts",
+          "commit": "d55cfc5d2b64",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/executors/scoreExecutor.ts",
+          "commit": "d55cfc5d2b64",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/chunk1.sql",
+          "commit": "7d6abc61133b",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/chunk2.sql",
+          "commit": "7d6abc61133b",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/chunk3.sql",
+          "commit": "7d6abc61133b",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/chunk4.sql",
+          "commit": "7d6abc61133b",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/scratch_fresh.sql",
+          "commit": "7d6abc61133b",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/scratch_fresh_a.sql",
+          "commit": "7d6abc61133b",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/scratch_fresh_b.sql",
+          "commit": "7d6abc61133b",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/README.md",
+          "commit": "fc344bda40f4",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/ingest.mjs",
+          "commit": "fc344bda40f4",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/rss.mjs",
+          "commit": "fc344bda40f4",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/score.mjs",
+          "commit": "fc344bda40f4",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/score.test.mjs",
+          "commit": "fc344bda40f4",
+          "kind": "TEST_OR_ORACLE"
+        }
+      ]
+    },
+    "TRUST_BRIDGE": {
+      "count": 52,
+      "by_repo": {
+        "vtc-platform": 15,
+        "othrys-hub": 1,
+        "othrys-core-windows": 34,
+        "othrys-web": 2
+      },
+      "samples": [
+        {
+          "repo": "vtc-platform",
+          "path": "titan/adr/ADR-0016-prometheus-across-the-bridge.md",
+          "commit": "092d6fedd174",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/gateway/README.md",
+          "commit": "092d6fedd174",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/gateway/src/gateway.ts",
+          "commit": "092d6fedd174",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/gateway/src/index.ts",
+          "commit": "092d6fedd174",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/gateway/src/architecture.test.ts",
+          "commit": "e5b027c88a59",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/gateway/src/gateway.test.ts",
+          "commit": "6a8150b5f6e5",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/adr/ADR-0015-othrys-gateway-bridge-slice.md",
+          "commit": "d4c53961ef52",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/gateway/package.json",
+          "commit": "d4c53961ef52",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/book/09-bridge.md",
+          "commit": "0c7588dc0da0",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/bridge/package.json",
+          "commit": "e427483a02a1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/bridge/src/domain/BridgeRuntime.test.ts",
+          "commit": "e427483a02a1",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/bridge/src/domain/BridgeRuntime.ts",
+          "commit": "e427483a02a1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/bridge/src/infra/InMemoryAdapters.ts",
+          "commit": "e427483a02a1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/bridge/src/infra/assemble.ts",
+          "commit": "e427483a02a1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/bridge/src/infra/primitives.ts",
+          "commit": "e427483a02a1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "docs/STUDIO-TO-HUB-BRIDGE-001/SESSION_LOG.md",
+          "commit": "5392b8b7aad2",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC-PHASE-0_CLOSEOUT.md",
+          "commit": "a43bb0012515",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/README.md",
+          "commit": "47a0d071cf3b",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC-04_CLOSEOUT.md",
+          "commit": "47a0d071cf3b",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC-04_MISSION.md",
+          "commit": "47a0d071cf3b",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/research/garden-seeds/trust-canal-v1-post-freeze.md",
+          "commit": "47a0d071cf3b",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/adr/ADR-0076-trust-canal-hephaestus-mission-envelope-bind.md",
+          "commit": "47a0d071cf3b",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC-04-MISSION-ENVELOPE-DESIGN.md",
+          "commit": "5e58c9e885b3",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/control-plane/src/mission-envelope-bind.test.ts",
+          "commit": "5e58c9e885b3",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/control-plane/src/mission-envelope-bind.ts",
+          "commit": "5e58c9e885b3",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/control-plane/src/test-hephaestus-envelope.ts",
+          "commit": "5e58c9e885b3",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/audits/TRUST-CANAL-ARCHITECTURE-AUDIT-POST-HARDEN.md",
+          "commit": "471a3162c10a",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/control-plane/src/tc-harden-07.test.ts",
+          "commit": "8cff796e8219",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC-HARDEN-07-TRANSITION-MEMORY-DESIGN.md",
+          "commit": "80c95d7bda65",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC-HARDEN-07_MISSION.md",
+          "commit": "80c95d7bda65",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/control-plane/src/failure-taxonomy.ts",
+          "commit": "80c95d7bda65",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/control-plane/src/od1-retry.ts",
+          "commit": "80c95d7bda65",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/control-plane/src/transition-ledger.ts",
+          "commit": "80c95d7bda65",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/control-plane/src/transition-record.ts",
+          "commit": "80c95d7bda65",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC_HARDEN_04_RECONCILIATION.md",
+          "commit": "06738a53b68b",
+          "kind": "KNOWLEDGE_OR_LAW"
+        }
+      ]
+    },
+    "ATLAS_ARCHITECTURE": {
+      "count": 29,
+      "by_repo": {
+        "vtc-platform": 8,
+        "othrys-core-windows": 7,
+        "othrys-web": 14
+      },
+      "samples": [
+        {
+          "repo": "vtc-platform",
+          "path": "titan/genesis/src/architecture.test.ts",
+          "commit": "874300333aff",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/INFORMATION-ARCHITECTURE.md",
+          "commit": "0d7834358c0c",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/docs/GREAT-LIBRARY-ARCHITECTURE.md",
+          "commit": "88a0087d48d3",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/gateway/src/architecture.test.ts",
+          "commit": "e5b027c88a59",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/architecture/kernel/CONTRACTS.ts",
+          "commit": "e6db71cd0ca1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/architecture/kernel/KERNEL-CONSTITUTION.md",
+          "commit": "e6db71cd0ca1",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/planned/atlas/README.md",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "docs/titan-os/ARCHITECTURE_BIBLE.md",
+          "commit": "bce68a1578fc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/audits/TRUST-CANAL-ARCHITECTURE-AUDIT-POST-HARDEN.md",
+          "commit": "471a3162c10a",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/atlas-delivery-contract/src/contract.test.ts",
+          "commit": "742b33f8101a",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/coordination-architecture.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/runtime/memory-architecture.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/runtime/runtime-architecture.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/wings/atlas.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/library/reference/phase-2-architecture-inventory.md",
+          "commit": "b940c4da42aa",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/README.md",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/atlas-contract.json",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/contract-manifest.json",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/contract/atlas-contract.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/domain/atlas-model.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/drift/drift.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/index.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/proof/evidence.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/read-model/atlas.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/read-model/traverse.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/render/overlays.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/vendor/capability-registry/domain/capability-record.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/vendor/capability-registry/health/health-vocabulary.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "scripts/sync-atlas-contract.mjs",
+          "commit": "1c6a79e38706",
+          "kind": "CODE_OR_ARTIFACT"
+        }
+      ]
+    },
+    "OROS_BLUEPRINT": {
+      "count": 18,
+      "by_repo": {
+        "vtc-platform": 1,
+        "othrys-hub": 6,
+        "othrys-core-windows": 3,
+        "othrys-web": 8
+      },
+      "samples": [
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/stars/README.md",
+          "commit": "0c7588dc0da0",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "docs/OROS-COMPOSITION-LAW-001/EVIDENCE.md",
+          "commit": "5e758ee95ce4",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "docs/OROS-COMPOSITION-LAW-001/BACKFILLS.md",
+          "commit": "290272202912",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "docs/OROS-COMPOSITION-LAW-001/HEPHAESTUS-BLOCK-FORGE.md",
+          "commit": "290272202912",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "docs/OROS-COMPOSITION-LAW-001/SCHEMAS.md",
+          "commit": "290272202912",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "docs/OROS-COMPOSITION-LAW-001/ACCEPTANCE.md",
+          "commit": "fee6ced460e6",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "docs/OROS-COMPOSITION-LAW-001/CHARTER.md",
+          "commit": "fee6ced460e6",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/adr/ADR-0041-blueprint-family.md",
+          "commit": "1623753c3b06",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/adr/ADR-0043-oros-constellation-ratification.md",
+          "commit": "1623753c3b06",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/adr/ADR-0044-star-topology-clarification.md",
+          "commit": "1623753c3b06",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-web",
+          "path": ".github/workflows/genesis-blueprint.yml",
+          "commit": "a94eded9827d",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "blueprints/genesis/evidence/contract-transport.example.json",
+          "commit": "ed5088495d71",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "scripts/validate_genesis_blueprint.py",
+          "commit": "f964426520cd",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "blueprints/genesis/contract-lock.json",
+          "commit": "0a449d055aab",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "requirements-blueprint.txt",
+          "commit": "1bfe3bc4cd92",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "blueprints/genesis/README.md",
+          "commit": "226066335fbc",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "blueprints/genesis/blueprint.json",
+          "commit": "476e6f335a91",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "oros.yaml",
+          "commit": "cc3563857986",
+          "kind": "CODE_OR_ARTIFACT"
+        }
+      ]
+    },
+    "GREAT_LIBRARY": {
+      "count": 128,
+      "by_repo": {
+        "vtc-platform": 19,
+        "othrys-core-windows": 109
+      },
+      "samples": [
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/README.md",
+          "commit": "a3cb14c9072a",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/book/18-adr-index.md",
+          "commit": "a3cb14c9072a",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/src/library/callimachus-cycle.test.ts",
+          "commit": "a487381774aa",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/talos/src/library/callimachus-cycle.ts",
+          "commit": "e0a3a7a80548",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "garden/seeds/great-library-book.md",
+          "commit": "3672503f4324",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/INFORMATION-ARCHITECTURE.md",
+          "commit": "0d7834358c0c",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/docs/GREAT-LIBRARY-ARCHITECTURE.md",
+          "commit": "88a0087d48d3",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/adr/ADR-0017-living-great-library.md",
+          "commit": "686c415e83dd",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/great-library/package.json",
+          "commit": "686c415e83dd",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/great-library/src/knowledge-provider.ts",
+          "commit": "686c415e83dd",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/EXCEPTION-REGISTER.md",
+          "commit": "3e0e25fff1e7",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": ".github/workflows/great-library.yml",
+          "commit": "8c6560e68eac",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/book/02-constitution.md",
+          "commit": "0c7588dc0da0",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/book/03-glossary.md",
+          "commit": "0c7588dc0da0",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/book/09-bridge.md",
+          "commit": "0c7588dc0da0",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/guides/README.md",
+          "commit": "0c7588dc0da0",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/library/README.md",
+          "commit": "0c7588dc0da0",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/stars/README.md",
+          "commit": "0c7588dc0da0",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "great-library/titans/hermes.md",
+          "commit": "0c7588dc0da0",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/research/garden-seeds/trust-canal-v1-post-freeze.md",
+          "commit": "47a0d071cf3b",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/research/garden-seeds/tc-harden-07-future-reflex.md",
+          "commit": "80c95d7bda65",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/research/garden-seeds/hall-of-titans-seed.md",
+          "commit": "a8b85250893d",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/research/garden-seeds/trust-canal-future-capabilities.md",
+          "commit": "732d9afa1934",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/FREEZE.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/INSTITUTION.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/book/README.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/README.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/anti-patterns.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/coordination-architecture.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/coordination-patterns.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/distributed-intelligence.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/event-signalling.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/feedback-loops.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/memory-coordination.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/operational-examples.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        }
+      ]
+    },
+    "EVENT_COORDINATION": {
+      "count": 31,
+      "by_repo": {
+        "vtc-platform": 9,
+        "othrys-hub": 3,
+        "othrys-core-windows": 19
+      },
+      "samples": [
+        {
+          "repo": "vtc-platform",
+          "path": "src/titan/eventBusCompat.js",
+          "commit": "5e384a50b9c9",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/event-bus/README.md",
+          "commit": "1c94b2997ce5",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/event-bus/package.json",
+          "commit": "1c94b2997ce5",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/event-bus/src/index.ts",
+          "commit": "1c94b2997ce5",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/event-bus/tsconfig.build.json",
+          "commit": "1c94b2997ce5",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "src/titan/eventBusCompat.test.js",
+          "commit": "0524420c483e",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "docs/titan-os/04-EVENT-BUS.md",
+          "commit": "3f620335bcf2",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/event-bus/FREEZE.md",
+          "commit": "96b4962be875",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/event-bus/package-lock.json",
+          "commit": "96b4962be875",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "state/triad_ops_001_1_dogfood/triad/events.jsonl",
+          "commit": "d7fe6b7426c1",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "state/triad_ops_001_2_dogfood/triad/events.jsonl",
+          "commit": "d7fe6b7426c1",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "state/triad_ops_001_2a_dogfood/triad/events.jsonl",
+          "commit": "d7fe6b7426c1",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "garden/biomimicry/collections/nervous-system/05-event-signalling.md",
+          "commit": "40b4e29786bc",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/README.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/anti-patterns.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/coordination-architecture.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/coordination-patterns.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/distributed-intelligence.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/event-signalling.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/feedback-loops.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/memory-coordination.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/operational-examples.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/parallel-processing.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/specialization.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/coordination/validation-report.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/reports/MISSION-005-COORDINATION.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/runtime/event-topology.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/wings/triad/events.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/event-bus/src/othrys/OthrysEventBus.test.ts",
+          "commit": "19b1a9a78d2c",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/event-bus/src/othrys/OthrysEventBus.ts",
+          "commit": "19b1a9a78d2c",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/event-bus/package-lock.json",
+          "commit": "96b4962be875",
+          "kind": "PLATFORM_CODE"
+        }
+      ]
+    },
+    "PROVIDER_AI": {
+      "count": 28,
+      "by_repo": {
+        "vtc-platform": 11,
+        "othrys-core-windows": 13,
+        "othrys-web": 4
+      },
+      "samples": [
+        {
+          "repo": "vtc-platform",
+          "path": "scripts/check-provider-neutrality.mjs",
+          "commit": "874300333aff",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/knowledge-model.test.ts",
+          "commit": "88a0087d48d3",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/knowledge-model.ts",
+          "commit": "88a0087d48d3",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/mnemosyne/src/mnemosyne-provider.ts",
+          "commit": "88a0087d48d3",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/great-library/src/knowledge-provider.ts",
+          "commit": "686c415e83dd",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/fuel/fixtures/model-leaderboard.sample.json",
+          "commit": "c512b7f3faa5",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/fuel/model-adapter.mjs",
+          "commit": "c512b7f3faa5",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/fuel/model-adapter.test.mjs",
+          "commit": "c512b7f3faa5",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/tasks/done/0012-recommend-model-slice-adapters.md",
+          "commit": "c512b7f3faa5",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/tasks/inbox/0012-recommend-model-slice-adapters.md",
+          "commit": "33d258981536",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/application/src/infra/commandBusProvider.ts",
+          "commit": "40da37f6fdfc",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC_HARDEN_05_REFLEX_MODEL.md",
+          "commit": "06738a53b68b",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/adr/ADR-0040-provider-agnostic-expansion-framework.md",
+          "commit": "93c1542f51c6",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/prometheus/src/connectors/nvidia/model.ts",
+          "commit": "66e8ccf9171e",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/adr/ADR-0034-provider-interface-layering.md",
+          "commit": "18a9a78736cf",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/adr/ADR-0033-credential-broker-and-provider-registry.md",
+          "commit": "5ae9e1cad47c",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/runtime/failure-model.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/vault/ai-evaluations.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/fuel/fixtures/model-leaderboard.sample.json",
+          "commit": "9c2a46ad16e8",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/fuel/model-adapter.mjs",
+          "commit": "9c2a46ad16e8",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/fuel/model-adapter.test.mjs",
+          "commit": "9c2a46ad16e8",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/tasks/done/0012-recommend-model-slice-adapters.md",
+          "commit": "9c2a46ad16e8",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/tasks/inbox/0012-recommend-model-slice-adapters.md",
+          "commit": "7509cd908086",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/application/src/infra/commandBusProvider.ts",
+          "commit": "40da37f6fdfc",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/domain/atlas-model.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/read-model/atlas.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/atlas/contract/read-model/traverse.ts",
+          "commit": "2cae4ec2b0b4",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "lib/command/providers/openai-responses.ts",
+          "commit": "f38cfaf75d04",
+          "kind": "CODE_OR_ARTIFACT"
+        }
+      ]
+    },
+    "MISSION_GOVERNANCE": {
+      "count": 32,
+      "by_repo": {
+        "vtc-platform": 4,
+        "othrys-hub": 4,
+        "othrys-core-windows": 23,
+        "othrys-web": 1
+      },
+      "samples": [
+        {
+          "repo": "vtc-platform",
+          "path": "titan/genesis/src/proposal-engine.test.ts",
+          "commit": "874300333aff",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/constitution/src/authority.ts",
+          "commit": "35f82278f015",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/hephaestus/schema/mission-envelope.schema.json",
+          "commit": "d8d0fa2d1caa",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "vtc-platform",
+          "path": "titan/prometheus/src/domain/proposal.ts",
+          "commit": "d55cfc5d2b64",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "hub/mission_authority.py",
+          "commit": "fdd1fb292010",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "tests/test_mission039_wave4_intelligence.py",
+          "commit": "2fabaedae82c",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "docs/mission027/_apply_test_tmp.md",
+          "commit": "136408c54222",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-hub",
+          "path": "hub/mission_planner.py",
+          "commit": "aca42eb9761b",
+          "kind": "CODE_OR_ARTIFACT"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC-04_MISSION.md",
+          "commit": "47a0d071cf3b",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/adr/ADR-0076-trust-canal-hephaestus-mission-envelope-bind.md",
+          "commit": "47a0d071cf3b",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC-04-MISSION-ENVELOPE-DESIGN.md",
+          "commit": "5e58c9e885b3",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/control-plane/src/mission-envelope-bind.test.ts",
+          "commit": "5e58c9e885b3",
+          "kind": "TEST_OR_ORACLE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/control-plane/src/mission-envelope-bind.ts",
+          "commit": "5e58c9e885b3",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC-HARDEN-07_MISSION.md",
+          "commit": "80c95d7bda65",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "docs/trust-canal/TC-EVOL-01_MISSION.md",
+          "commit": "732d9afa1934",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "titan/mission-control/MISSION-001-ENGINEERING-WORKFLOW-V1-PROPOSAL.md",
+          "commit": "01c9931dbaa8",
+          "kind": "PLATFORM_CODE"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/genesis/mission-009.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/reports/MISSION-002-RATIFICATION.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/reports/MISSION-003-TRIAD-OPERATIONAL.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/reports/MISSION-004-RUNTIME.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/reports/MISSION-005-COORDINATION.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/reports/MISSION-008-LEAN-GENESIS.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/reports/MISSION-009-GENESIS.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/reports/MISSION-010-GENESIS-CONTRACT.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/reports/MISSION-011-PROMETHEUS-ALIVE.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/reports/MISSION-012-MNEMOSYNE-ALIVE.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/reports/MISSION-013-CORE-TRIAD.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/reports/MISSION-014-PROPOSAL-ENGINE.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/wings/triad/mission-lifecycle.md",
+          "commit": "40b4e29786bc",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/research/authority-context-ingress-constitutional-enforcement-matrix.md",
+          "commit": "3d62b1ded414",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-core-windows",
+          "path": "great-library/research/authority-access-control-path-audit.md",
+          "commit": "d94a745acb3f",
+          "kind": "KNOWLEDGE_OR_LAW"
+        },
+        {
+          "repo": "othrys-web",
+          "path": "apps/website/src/app/mission-control/page.tsx",
+          "commit": "eddea300bba8",
+          "kind": "CODE_OR_ARTIFACT"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-032-002",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788096818.4594421,
+  "completed_at": 1788096842.6232524,
+  "duration_sec": 24.16381025314331,
+  "allowed_paths": [
+    "training/level-1/L1-032-fixture/generateFixture.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-032-fixture/generateFixture.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-032-fixture/generateFixture.mjs\n+++ b/training/level-1/L1-032-fixture/generateFixture.mjs\n@@ -0,0 +1,78 @@\n+import { createHash } from 'crypto';\n+\n+function generateFixture(schema, seed = 1) {\n+  if (typeof schema !== 'object' || schema === null) {\n+    throw new TypeError('schema must be a plain object');\n+  }\n+\n+  const hashInput = JSON.stringify(schema);\n+  let state = createHash('sha256').update(seed.toString()).digest('hex');\n+  \n+  function next() {\n+    // Simple LCG-based PRNG using first 8 hex chars of hash state\n+    const num = parseInt(state.slice(0, 8), 16) >>> 0;\n+    state = createHash('sha256').update(state).digest('hex');\n+    return num;\n+  }\n+\n+  function nextInt(min, max) {\n+    const range = max - min + 1;\n+    return (next() % range) + min;\n+  }\n+\n+  function nextFloat(min, max) {\n+    const range = max - min;\n+    return (next() / 0x100000000) * range + min;\n+  }\n+\n+  function nextBool() {\n+    return next() % 2 === 0;\n+  }\n+\n+  function nextEnum(values) {\n+    const idx = next() % values.length;\n+    return values[idx];\n+  }\n+\n+  const result = {};\n+  const keys = Object.keys(schema).sort();\n+\n+  for (const key of keys) {\n+    const rule = schema[key];\n+    const type = rule.type;\n+    \n+    if (type === 'string') {\n+      const prefix = rule.prefix || key;\n+      const suffix = nextInt(0, 9999);\n+      result[key] = `${prefix}-${suffix}`;\n+    } else if (type === 'integer') {\n+      const min = rule.min ?? 0;\n+      const max = rule.max ?? 100;\n+      if (min > max) {\n+        throw new RangeError(`min (${min}) cannot be greater than max (${max})`);\n+      }\n+      result[key] = nextInt(min, max);\n+    } else if (type === 'number') {\n+      const min = rule.min ?? 0;\n+      const max = rule.max ?? 1;\n+      if (min > max) {\n+        throw new RangeError(`min (${min}) cannot be greater than max (${max})`);\n+      }\n+      result[key] = nextFloat(min, max);\n+    } else if (type === 'boolean') {\n+      result[key] = nextBool();\n+    } else if (type === 'enum') {\n+      const values = rule.values;\n+      if (!Array.isArray(values) || values.length === 0) {\n+        throw new RangeError('enum values array cannot be empty');\n+      }\n+      result[key] = nextEnum(values);\n+    } else {\n+      throw new TypeError(`Unsupported rule type: ${type}`);\n+    }\n+  }\n+\n+  return Object.freeze(result);\n+}\n+\n+export { generateFixture };",
+  "git_status": "training/level-1/L1-032-fixture/generateFixture.mjs",
+  "summary": "Created training/level-1/L1-032-fixture/generateFixture.mjs with deterministic PRNG-based fixture generation supporting string, integer, number, boolean, and enum rules with validation.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-032-fixture/generateFixture.mjs\n+++ b/training/level-1/L1-032-fixture/generateFixture.mjs\n@@ -0,0 +1,78 @@\n+import { createHash } from 'crypto';\n+\n+function generateFixture(schema, seed = 1) {\n+  if (typeof schema !== 'object' || schema === null) {\n+    throw new TypeError('schema must be a plain object');\n+  }\n+\n+  const hashInput = JSON.stringify(schema);\n+  let state = createHash('sha256').update(seed.toString()).digest('hex');\n+  \n+  function next() {\n+    // Simple LCG-based PRNG using first 8 hex chars of hash state\n+    const num = parseInt(state.slice(0, 8), 16) >>> 0;\n+    state = createHash('sha256').update(state).digest('hex');\n+    return num;\n+  }\n+\n+  function nextInt(min, max) {\n+    const range = max - min + 1;\n+    return (next() % range) + min;\n+  }\n+\n+  function nextFloat(min, max) {\n+    const range = max - min;\n+    return (next() / 0x100000000) * range + min;\n+  }\n+\n+  function nextBool() {\n+    return next() % 2 === 0;\n+  }\n+\n+  function nextEnum(values) {\n+    const idx = next() % values.length;\n+    return values[idx];\n+  }\n+\n+  const result = {};\n+  const keys = Object.keys(schema).sort();\n+\n+  for (const key of keys) {\n+    const rule = schema[key];\n+    const type = rule.type;\n+    \n+    if (type === 'string') {\n+      const prefix = rule.prefix || key;\n+      const suffix = nextInt(0, 9999);\n+      result[key] = `${prefix}-${suffix}`;\n+    } else if (type === 'integer') {\n+      const min = rule.min ?? 0;\n+      const max = rule.max ?? 100;\n+      if (min > max) {\n+        throw new RangeError(`min (${min}) cannot be greater than max (${max})`);\n+      }\n+      result[key] = nextInt(min, max);\n+    } else if (type === 'number') {\n+      const min = rule.min ?? 0;\n+      const max = rule.max ?? 1;\n+      if (min > max) {\n+        throw new RangeError(`min (${min}) cannot be greater than max (${max})`);\n+      }\n+      result[key] = nextFloat(min, max);\n+    } else if (type === 'boolean') {\n+      result[key] = nextBool();\n+    } else if (type === 'enum') {\n+      const values = rule.values;\n+      if (!Array.isArray(values) || values.length === 0) {\n+        throw new RangeError('enum values array cannot be empty');\n+      }\n+      result[key] = nextEnum(values);\n+    } else {\n+      throw new TypeError(`Unsupported rule type: ${type}`);\n+    }\n+  }\n+\n+  return Object.freeze(result);\n+}\n+\n+export { generateFixture };",
+    "git_status": "training/level-1/L1-032-fixture/generateFixture.mjs",
+    "tool_trace": [
+      "write_file: wrote 2201 chars to training/level-1/L1-032-fixture/generateFixture.mjs",
+      "finish: Created training/level-1/L1-032-fixture/generateFixture.mjs with deterministic PRNG-based fixture generation supporting string, integer, number, boolean, and enum rules with validation."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-032-fixture/generateFixture.mjs\", \"content\": \"import { createHash } from 'crypto';\\n\\nfunction generateFixture(schema, seed = 1) {\\n  if (typeof schema !== 'object' || schema === null) {\\n    throw new TypeErro",
+        "raw_suffix": "ax);\\n    } else if (type === 'boolean') {\\n      result[key] = nextBool();\\n    } else if (type === 'enum') {\\n      const values = rule.values;\\n      if (!Array.isArray(values) || values.length === 0) {\\n        throw new RangeError('enum values array cannot be empty');\\n      }\\n      result[key] = nextEnum(values);\\n    } else {\\n      throw new TypeError(`Unsupported rule type: ${type}`);\\n    }\\n  }\\n\\n  return Object.freeze(result);\\n}\\n\\nexport { generateFixture };\"}",
+        "raw_length": 2356,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 2201
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/level-1/L1-032-fixture/generateFixture.mjs with deterministic PRNG-based fixture generation supporting string, integer, number, boolean, and enum rules with validation.\"}",
+        "raw_suffix": "{\"summary\": \"Created training/level-1/L1-032-fixture/generateFixture.mjs with deterministic PRNG-based fixture generation supporting string, integer, number, boolean, and enum rules with validation.\"}",
+        "raw_length": 200,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6250",
+      "utilization_pct": "0",
+      "temperature_c": "41",
+      "power_w": "5.33"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       27 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6468",
+      "utilization_pct": "1",
+      "temperature_c": "48",
+      "power_w": "10.09"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

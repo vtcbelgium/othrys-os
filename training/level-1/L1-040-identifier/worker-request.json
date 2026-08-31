@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 FINAL JOB L1-040. Create exactly training/level-1/L1-040-identifier/validateIdentifier.mjs. Export validateIdentifier(input, policy={}). Input string only. Policy plain object supports optional minLength integer\u003e=1 default1, maxLength integer\u003e=min default64, pattern string regex default ^[A-Za-z_][A-Za-z0-9_.-]*$, reserved array of exact strings default [], caseSensitiveReserved boolean default true. Reject unknown policy keys RangeError; malformed policy values TypeError/RangeError; invalid regex RangeError. Return frozen {valid,issues} where issues is frozen array of stable codes in this order: EMPTY, TOO_SHORT, TOO_LONG, PATTERN, RESERVED. Do not trim or mutate input. Deterministic pure no I/O/deps. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-040",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-040-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-040-identifier/validateIdentifier.mjs"
+                      ]
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-017-003",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3-coder-30b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788092534.9159343,
+  "completed_at": 1788092567.8387814,
+  "duration_sec": 32.922847032547,
+  "allowed_paths": [
+    "training/level-1/L1-017-duration-calc/durationCalc.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-017-duration-calc/durationCalc.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-017-duration-calc/durationCalc.mjs\n+++ b/training/level-1/L1-017-duration-calc/durationCalc.mjs\n@@ -0,0 +1,35 @@\n+export function durationBetween(start, end) {\n+  const s = typeof start === 'string' ? new Date(start) : start;\n+  const e = typeof end === 'string' ? new Date(end) : end;\n+\n+  if (!(s instanceof Date && !isNaN(s.getTime()))) {\n+    throw new TypeError('Invalid start date');\n+  }\n+  if (!(e instanceof Date && !isNaN(e.getTime()))) {\n+    throw new TypeError('Invalid end date');\n+  }\n+\n+  const diffMs = e.getTime() - s.getTime();\n+\n+  return Object.freeze({\n+    milliseconds: diffMs,\n+    seconds: diffMs / 1000,\n+    minutes: diffMs / (1000 * 60),\n+    hours: diffMs / (1000 * 60 * 60),\n+    days: diffMs / (1000 * 60 * 60 * 24),\n+    sign: diffMs === 0 ? 0 : diffMs > 0 ? 1 : -1,\n+  });\n+}\n+\n+export function addDuration(input, milliseconds) {\n+  if (!Number.isFinite(milliseconds)) {\n+    throw new TypeError('milliseconds must be finite');\n+  }\n+\n+  const base = typeof input === 'string' ? new Date(input) : input;\n+  if (!(base instanceof Date && !isNaN(base.getTime()))) {\n+    throw new TypeError('Invalid date input');\n+  }\n+\n+  return new Date(base.getTime() + milliseconds).toISOString();\n+}",
+  "git_status": "training/level-1/L1-017-duration-calc/durationCalc.mjs",
+  "summary": "Changed the sign expression in durationBetween function from diffMs >= 0 ? 1 : diffMs <= 0 ? -1 : 0 to diffMs === 0 ? 0 : diffMs > 0 ? 1 : -1 as requested.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-017-duration-calc/durationCalc.mjs\n+++ b/training/level-1/L1-017-duration-calc/durationCalc.mjs\n@@ -0,0 +1,35 @@\n+export function durationBetween(start, end) {\n+  const s = typeof start === 'string' ? new Date(start) : start;\n+  const e = typeof end === 'string' ? new Date(end) : end;\n+\n+  if (!(s instanceof Date && !isNaN(s.getTime()))) {\n+    throw new TypeError('Invalid start date');\n+  }\n+  if (!(e instanceof Date && !isNaN(e.getTime()))) {\n+    throw new TypeError('Invalid end date');\n+  }\n+\n+  const diffMs = e.getTime() - s.getTime();\n+\n+  return Object.freeze({\n+    milliseconds: diffMs,\n+    seconds: diffMs / 1000,\n+    minutes: diffMs / (1000 * 60),\n+    hours: diffMs / (1000 * 60 * 60),\n+    days: diffMs / (1000 * 60 * 60 * 24),\n+    sign: diffMs === 0 ? 0 : diffMs > 0 ? 1 : -1,\n+  });\n+}\n+\n+export function addDuration(input, milliseconds) {\n+  if (!Number.isFinite(milliseconds)) {\n+    throw new TypeError('milliseconds must be finite');\n+  }\n+\n+  const base = typeof input === 'string' ? new Date(input) : input;\n+  if (!(base instanceof Date && !isNaN(base.getTime()))) {\n+    throw new TypeError('Invalid date input');\n+  }\n+\n+  return new Date(base.getTime() + milliseconds).toISOString();\n+}",
+    "git_status": "training/level-1/L1-017-duration-calc/durationCalc.mjs",
+    "tool_trace": [
+      "read_file: export function durationBetween(start, end) {\n  const s = typeof start === 'string' ? new Date(start) : start;\n  const e = typeof end === 'string' ? new Date(end) : end;\n\n  if (!(s instanceof Date && ",
+      "write_file: wrote 1072 chars to training/level-1/L1-017-duration-calc/durationCalc.mjs",
+      "finish: Changed the sign expression in durationBetween function from diffMs >= 0 ? 1 : diffMs <= 0 ? -1 : 0 to diffMs === 0 ? 0 : diffMs > 0 ? 1 : -1 as requested."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-017-duration-calc/durationCalc.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-017-duration-calc/durationCalc.mjs\"}",
+        "raw_length": 66,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"workspace/training/level-1/L1-017-duration-calc/durationCalc.mjs\", \"content\": \"export function durationBetween(start, end) {\\n  const s = typeof start === 'string' ? new Date(start) : start;\\n  const e = typeof end === 'string' ? ",
+        "raw_suffix": "* 24),\\n    sign: diffMs === 0 ? 0 : diffMs > 0 ? 1 : -1,\\n  });\\n}\\n\\nexport function addDuration(input, milliseconds) {\\n  if (!Number.isFinite(milliseconds)) {\\n    throw new TypeError('milliseconds must be finite');\\n  }\\n\\n  const base = typeof input === 'string' ? new Date(input) : input;\\n  if (!(base instanceof Date && !isNaN(base.getTime()))) {\\n    throw new TypeError('Invalid date input');\\n  }\\n\\n  return new Date(base.getTime() + milliseconds).toISOString();\\n}\"}",
+        "raw_length": 1197,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1072
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Changed the sign expression in durationBetween function from diffMs >= 0 ? 1 : diffMs <= 0 ? -1 : 0 to diffMs === 0 ? 0 : diffMs > 0 ? 1 : -1 as requested.\"}",
+        "raw_suffix": "{\"summary\": \"Changed the sign expression in durationBetween function from diffMs >= 0 ? 1 : diffMs <= 0 ? -1 : 0 to diffMs === 0 ? 0 : diffMs > 0 ? 1 : -1 as requested.\"}",
+        "raw_length": 170,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3-coder-30b",
+    "model": "qwen3-coder:30b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6459",
+      "utilization_pct": "6",
+      "temperature_c": "40",
+      "power_w": "5.60"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6199",
+      "utilization_pct": "1",
+      "temperature_c": "52",
+      "power_w": "19.87"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       29 minutes from now"
+  }
+}

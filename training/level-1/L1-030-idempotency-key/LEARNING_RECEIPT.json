@@ -140,5 +140,6 @@
   "learningMayGrantAuthority": false,
   "authorityGranted": false,
   "executionStarted": false,
-  "receiptDigest": "9ad4334f65e6876cb41f3b715f4b3e1cb86b77666fce301821426924a02b0953"
+  "receiptDigest": "9ad4334f65e6876cb41f3b715f4b3e1cb86b77666fce301821426924a02b0953",
+  "candidateProof": "blocks/developer/idempotency-key/tests/contract.test.mjs"
 }

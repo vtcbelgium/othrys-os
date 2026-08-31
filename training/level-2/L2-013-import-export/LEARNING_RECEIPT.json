@@ -1,0 +1,52 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "mission": "V2-011K",
+  "jobId": "L2-013",
+  "level": 2,
+  "title": "State import/export",
+  "family": "io",
+  "contract": "durable state <-> deterministic JSON export/import",
+  "stockCheck": "Great Library/external harvest + prior stateful patterns",
+  "buildAttempts": [
+    {
+      "builder": "local.qwen3-8b",
+      "ok": true,
+      "durationSec": 20.498810291290283,
+      "talos": "SYNTAX_FAIL"
+    },
+    {
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "failure": "TIMEOUT_NO_RESULT_ARTIFACT",
+      "talos": "NO_USEFUL_MUTATION"
+    },
+    {
+      "builder": "operator-bounded",
+      "talos": "PASS_7_OF_7"
+    }
+  ],
+  "talos": {
+    "tests": 7,
+    "pass": 7,
+    "fail": 0,
+    "independent": true
+  },
+  "blockDisposition": "TRAINING_CANDIDATE",
+  "lessons": [
+    "invalid ESM/import construction in first pass",
+    "hard repair timeout with no result artifact and no useful mutation",
+    "recursive unsafe-key rejection is part of state transfer boundary"
+  ],
+  "organs": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "learningMayGrantAuthority": false,
+  "authorityGranted": false
+}

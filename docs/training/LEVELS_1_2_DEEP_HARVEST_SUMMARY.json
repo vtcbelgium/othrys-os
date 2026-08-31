@@ -1,0 +1,19 @@
+{
+  "jobs": 64,
+  "exactBlockMatchedJobs": 63,
+  "learningReceipts": 64,
+  "workerResultFiles": 127,
+  "measuredDurationSec": 4105.383,
+  "byLevel": {
+    "1": {
+      "jobs": 40,
+      "matched": 40,
+      "receipts": 40
+    },
+    "2": {
+      "jobs": 24,
+      "matched": 23,
+      "receipts": 24
+    }
+  }
+}

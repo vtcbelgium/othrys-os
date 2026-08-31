@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-036 TALOS REPAIR. WRITE exactly training/level-1/L1-036-email-normalize/normalizeEmail.mjs. Current build passes 7/8 original tests but violates type contract and TLD letter rule. If input is not a string, throw TypeError. TLD must match exactly ASCII letters only and length \u003e=2. Preserve all passing normalization/validation behavior. Touch nothing else.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-036",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-036-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-036-email-normalize/normalizeEmail.mjs"
+                      ]
+}

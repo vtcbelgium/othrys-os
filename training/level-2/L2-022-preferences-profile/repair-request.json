@@ -1,0 +1,27 @@
+﻿{
+    "schema_version":  "othrys.worker-request.v0.1",
+    "job_id":  "TRAIN-L2-022-REPAIR-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "allowed_paths":  [
+                          "training/level-2/L2-022-preferences-profile/preferenceProfile.mjs"
+                      ],
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "timeout_sec":  120,
+    "metadata":  {
+                     "training_level":  2,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L2-022",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "task":  "Repair the existing L2-022 preferenceProfile.mjs in place. Independent inspection rejected the prior ok:true artifact. Required fixes: import only node:fs/promises, node:path dirname, node:crypto randomUUID; absolutely no undeclared readFileSync/writeFileSync. Every API call reloads disk. Missing file get returns defaults without write. Parse error, invalid shape, unsafe key, or noncanonical bytes must throw STATE_CORRUPT and preserve bytes; do not swallow corruption as defaults. JSON-safe supports arrays/scalars inside a top-level plain object and rejects cycles, nonfinite numbers, undefined/functions/symbols/bigints, and unsafe keys recursively. Canonicalize object keys recursively sorted while preserving array order. patch deep-merges plain objects; arrays/scalars replace. replace replaces whole effective profile. reset must validate existing file if present, then atomically write canonical defaults. Atomic same-directory unique temp rename with cleanup. Persist exact JSON.stringify(canonicalProfile) only. Return frozen exact async API {get,patch,replace,reset}; outputs deep clones. Invalid caller input INVALID_PROFILE before mutation. Touch exactly the allowed file."
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-022-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788093142.9505079,
+  "completed_at": 1788093165.9885154,
+  "duration_sec": 23.038007497787476,
+  "allowed_paths": [
+    "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs\n+++ b/training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs\n@@ -0,0 +1,96 @@\n+export function sanitizeFilename(input) {\n+  if (typeof input !== 'string') {\n+    throw new TypeError('Input must be a string');\n+  }\n+\n+  // Normalize Unicode to NFC\n+  const normalized = input.normalize('NFC');\n+\n+  // Remove ASCII control chars 0x00-0x1F and 0x7F\n+  let result = '';\n+  for (let i = 0; i < normalized.length; i++) {\n+    const code = normalized.charCodeAt(i);\n+    if ((code >= 0x00 && code <= 0x1F) || code === 0x7F) {\n+      continue;\n+    }\n+    result += normalized[i];\n+  }\n+\n+  // Replace Windows/path reserved chars < > : \" / \\\\ | ? * with hyphen\n+  const reservedChars = ['<', '>', ':', '\"', '/', '\\\\', '|', '?', '*'];\n+  for (const char of reservedChars) {\n+    result = result.replace(new RegExp(escapeRegExp(char), 'g'), '-');\n+  }\n+\n+  // Collapse whitespace runs to single space\n+  result = result.replace(/\\s+/g, ' ');\n+\n+  // Collapse repeated hyphens\n+  result = result.replace(/-+/g, '-');\n+\n+  // Trim\n+  result = result.trim();\n+\n+  // Strip trailing dots/spaces\n+  result = result.replace(/[.\\s]+$/, '');\n+\n+  // Empty result => underscore\n+  if (result === '') {\n+    return '_';\n+  }\n+\n+  // Protect Windows reserved basenames case-insensitively\n+  const reservedBasenames = [\n+    'CON', 'PRN', 'AUX', 'NUL',\n+    'COM1', 'COM2', 'COM3', 'COM4', 'COM5', 'COM6', 'COM7', 'COM8', 'COM9',\n+    'LPT1', 'LPT2', 'LPT3', 'LPT4', 'LPT5', 'LPT6', 'LPT7', 'LPT8', 'LPT9'\n+  ];\n+\n+  const upperResult = result.toUpperCase();\n+  for (const reserved of reservedBasenames) {\n+    if (upperResult === reserved) {\n+      return '_' + result;\n+    }\n+  }\n+\n+  // Check if it's a filename with extension and the base matches reserved\n+  const lastDotIndex = result.lastIndexOf('.');\n+  if (lastDotIndex > 0) {\n+    const base = result.substring(0, lastDotIndex);\n+    const ext = result.substring(lastDotIndex + 1);\n+    const upperBase = base.toUpperCase();\n+    for (const reserved of reservedBasenames) {\n+      if (upperBase === reserved) {\n+        return '_' + result;\n+      }\n+    }\n+  }\n+\n+  // Max 255 UTF-16 code units by truncating safely without ending high surrogate\n+  const maxLen = 255;\n+  let truncated = result.slice(0, maxLen);\n+\n+  // Check for incomplete surrogate pairs at the end\n+  if (truncated.length > 0) {\n+    const lastChar = truncated[truncated.length - 1];\n+    const code = lastChar.charCodeAt(0);\n+    // High surrogate: 0xD800-0xDBFF, Low surrogate: 0xDC00-0xDFFF\n+    if ((code >= 0xD800 && code <= 0xDBFF) || (code >= 0xDC00 && code <= 0xDFFF)) {\n+      // Truncate one more character to avoid incomplete surrogate\n+      truncated = result.slice(0, maxLen - 1);\n+    }\n+  }\n+\n+  // Strip trailing dots/spaces again after truncation\n+  truncated = truncated.replace(/[.\\s]+$/, '');\n+\n+  if (truncated === '') {\n+    return '_';\n+  }\n+\n+  return truncated;\n+}\n+\n+function escapeRegExp(string) {\n+  return string.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\n+}",
+  "git_status": "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs",
+  "summary": "Created sanitizeFilename.mjs in training/level-1/L1-022-filename-sanitizer/ that normalizes Unicode NFC, removes control chars, sanitizes reserved/path characters, collapses whitespace/hyphens, trims, handles Windows reserved names, enforces 255 char limit safely, and returns underscore for empty results.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs\n+++ b/training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs\n@@ -0,0 +1,96 @@\n+export function sanitizeFilename(input) {\n+  if (typeof input !== 'string') {\n+    throw new TypeError('Input must be a string');\n+  }\n+\n+  // Normalize Unicode to NFC\n+  const normalized = input.normalize('NFC');\n+\n+  // Remove ASCII control chars 0x00-0x1F and 0x7F\n+  let result = '';\n+  for (let i = 0; i < normalized.length; i++) {\n+    const code = normalized.charCodeAt(i);\n+    if ((code >= 0x00 && code <= 0x1F) || code === 0x7F) {\n+      continue;\n+    }\n+    result += normalized[i];\n+  }\n+\n+  // Replace Windows/path reserved chars < > : \" / \\\\ | ? * with hyphen\n+  const reservedChars = ['<', '>', ':', '\"', '/', '\\\\', '|', '?', '*'];\n+  for (const char of reservedChars) {\n+    result = result.replace(new RegExp(escapeRegExp(char), 'g'), '-');\n+  }\n+\n+  // Collapse whitespace runs to single space\n+  result = result.replace(/\\s+/g, ' ');\n+\n+  // Collapse repeated hyphens\n+  result = result.replace(/-+/g, '-');\n+\n+  // Trim\n+  result = result.trim();\n+\n+  // Strip trailing dots/spaces\n+  result = result.replace(/[.\\s]+$/, '');\n+\n+  // Empty result => underscore\n+  if (result === '') {\n+    return '_';\n+  }\n+\n+  // Protect Windows reserved basenames case-insensitively\n+  const reservedBasenames = [\n+    'CON', 'PRN', 'AUX', 'NUL',\n+    'COM1', 'COM2', 'COM3', 'COM4', 'COM5', 'COM6', 'COM7', 'COM8', 'COM9',\n+    'LPT1', 'LPT2', 'LPT3', 'LPT4', 'LPT5', 'LPT6', 'LPT7', 'LPT8', 'LPT9'\n+  ];\n+\n+  const upperResult = result.toUpperCase();\n+  for (const reserved of reservedBasenames) {\n+    if (upperResult === reserved) {\n+      return '_' + result;\n+    }\n+  }\n+\n+  // Check if it's a filename with extension and the base matches reserved\n+  const lastDotIndex = result.lastIndexOf('.');\n+  if (lastDotIndex > 0) {\n+    const base = result.substring(0, lastDotIndex);\n+    const ext = result.substring(lastDotIndex + 1);\n+    const upperBase = base.toUpperCase();\n+    for (const reserved of reservedBasenames) {\n+      if (upperBase === reserved) {\n+        return '_' + result;\n+      }\n+    }\n+  }\n+\n+  // Max 255 UTF-16 code units by truncating safely without ending high surrogate\n+  const maxLen = 255;\n+  let truncated = result.slice(0, maxLen);\n+\n+  // Check for incomplete surrogate pairs at the end\n+  if (truncated.length > 0) {\n+    const lastChar = truncated[truncated.length - 1];\n+    const code = lastChar.charCodeAt(0);\n+    // High surrogate: 0xD800-0xDBFF, Low surrogate: 0xDC00-0xDFFF\n+    if ((code >= 0xD800 && code <= 0xDBFF) || (code >= 0xDC00 && code <= 0xDFFF)) {\n+      // Truncate one more character to avoid incomplete surrogate\n+      truncated = result.slice(0, maxLen - 1);\n+    }\n+  }\n+\n+  // Strip trailing dots/spaces again after truncation\n+  truncated = truncated.replace(/[.\\s]+$/, '');\n+\n+  if (truncated === '') {\n+    return '_';\n+  }\n+\n+  return truncated;\n+}\n+\n+function escapeRegExp(string) {\n+  return string.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&');\n+}",
+    "git_status": "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs",
+    "tool_trace": [
+      "write_file: wrote 2823 chars to training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs",
+      "finish: Created sanitizeFilename.mjs in training/level-1/L1-022-filename-sanitizer/ that normalizes Unicode NFC, removes control chars, sanitizes reserved/path characters, collapses whitespace/hyphens, trims, handles Windows reserved names, enforces 255 char limit safely, and returns underscore for empty results."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs\", \"content\": \"export function sanitizeFilename(input) {\\n  if (typeof input !== 'string') {\\n    throw new TypeError('Input must be a string');\\n  }\\n\\n  // Normalize",
+        "raw_suffix": "xD800 && code <= 0xDBFF) || (code >= 0xDC00 && code <= 0xDFFF)) {\\n      // Truncate one more character to avoid incomplete surrogate\\n      truncated = result.slice(0, maxLen - 1);\\n    }\\n  }\\n\\n  // Strip trailing dots/spaces again after truncation\\n  truncated = truncated.replace(/[.\\\\s]+$/, '');\\n\\n  if (truncated === '') {\\n    return '_';\\n  }\\n\\n  return truncated;\\n}\\n\\nfunction escapeRegExp(string) {\\n  return string.replace(/[.*+?^${}()|[\\\\]\\\\\\\\]/g, '\\\\\\\\$&');\\n}\"}",
+        "raw_length": 3022,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 2823
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created sanitizeFilename.mjs in training/level-1/L1-022-filename-sanitizer/ that normalizes Unicode NFC, removes control chars, sanitizes reserved/path characters, collapses whitespace/hyphens, trims, handles Windows reserved n",
+        "raw_suffix": "{\"summary\": \"Created sanitizeFilename.mjs in training/level-1/L1-022-filename-sanitizer/ that normalizes Unicode NFC, removes control chars, sanitizes reserved/path characters, collapses whitespace/hyphens, trims, handles Windows reserved names, enforces 255 char limit safely, and returns underscore for empty results.\"}",
+        "raw_length": 321,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6459",
+      "utilization_pct": "9",
+      "temperature_c": "40",
+      "power_w": "6.12"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6461",
+      "utilization_pct": "1",
+      "temperature_c": "48",
+      "power_w": "29.87"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

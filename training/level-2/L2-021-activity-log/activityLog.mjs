@@ -1,0 +1,11 @@
+import { promises as fs } from 'node:fs';
+import { dirname } from 'node:path';
+import { randomUUID } from 'node:crypto';
+const unsafe=new Set(['__proto__','prototype','constructor']);
+const plain=v=>v&&typeof v==='object'&&!Array.isArray(v)&&Object.getPrototypeOf(v)===Object.prototype;
+function clean(v){if(Array.isArray(v))return v.map(clean);if(plain(v)){const o={};for(const k of Object.keys(v).sort()){if(unsafe.has(k))throw Error('INVALID_EVENT');o[k]=clean(v[k]);}return o;}if(v===null||typeof v==='string'||typeof v==='boolean'||(typeof v==='number'&&Number.isFinite(v)))return v;throw Error('INVALID_EVENT');}
+function event(v,corrupt=false){const bad=()=>{throw Error(corrupt?'STATE_CORRUPT':'INVALID_EVENT')};if(!plain(v)||typeof v.id!=='string'||!v.id.trim()||v.id!==v.id.trim()||typeof v.type!=='string'||!v.type.trim()||v.type!==v.type.trim())bad();let data;try{data=clean(v.data)}catch{bad()}return {id:v.id,type:v.type,data};}
+function state(v){if(!plain(v)||Object.keys(v).length!==1||!Array.isArray(v.events))throw Error('STATE_CORRUPT');let prev=0;const ids=new Set();const events=v.events.map(x=>{if(!plain(x)||!Number.isInteger(x.seq)||x.seq<=prev||ids.has(x.id))throw Error('STATE_CORRUPT');prev=x.seq;ids.add(x.id);const e=event(x,true);return {seq:x.seq,...e};});return {events};}
+async function load(p){try{const raw=await fs.readFile(p,'utf8');let v;try{v=JSON.parse(raw)}catch{throw Error('STATE_CORRUPT')}const s=state(v);if(JSON.stringify(s)!==raw)throw Error('STATE_CORRUPT');return s;}catch(e){if(e.code==='ENOENT')return {events:[]};throw e;}}
+async function save(p,s){await fs.mkdir(dirname(p),{recursive:true});const t=`${p}.${process.pid}.${randomUUID()}.tmp`;try{await fs.writeFile(t,JSON.stringify(s),'utf8');await fs.rename(t,p)}finally{await fs.rm(t,{force:true}).catch(()=>{})}}
+export function createActivityLog(filePath,{limit=100}={}){if(!Number.isInteger(limit)||limit<1||limit>10000)throw Error('INVALID_LIMIT');const api={async append(input){const s=await load(filePath),e=event(input);if(s.events.some(x=>x.id===e.id))throw Error('DUPLICATE_ID');const seq=(s.events.at(-1)?.seq??0)+1;const next={events:[...s.events,{seq,...e}].slice(-limit)};await save(filePath,next);return structuredClone({seq,...e});},async list(){return structuredClone((await load(filePath)).events);}};return Object.freeze(api);}

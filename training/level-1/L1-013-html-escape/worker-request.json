@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-013. Create exactly training/level-1/L1-013-html-escape/htmlEscape.mjs. Export htmlEscape(input) and htmlUnescape(input). Coerce null/undefined to empty string, otherwise String(input). Escape exactly \u0026 \u003c \u003e \" and apostrophe to \u0026amp; \u0026lt; \u0026gt; \u0026quot; and \u0026#39; in that order with ampersand first. Unescape only those five named/numeric entities, including \u0026#x27; as apostrophe; decode ampersand last so one call does not recursively decode newly exposed entities. Unknown entities remain unchanged. Deterministic dependency-free no I/O/network. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-013",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-013-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-013-html-escape/htmlEscape.mjs"
+                      ]
+}

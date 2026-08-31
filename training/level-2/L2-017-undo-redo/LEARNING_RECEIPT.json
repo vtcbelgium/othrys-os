@@ -1,0 +1,82 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L2-017",
+  "level": 2,
+  "title": "Undo/redo state",
+  "classification": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "stock": {
+    "disposition": "BUILD_AFTER_STOCK_CHECK",
+    "notes": [
+      "related archived state evidence",
+      "no admitted direct implementation"
+    ]
+  },
+  "attempts": [
+    {
+      "builder": "local.qwen3.5-9b",
+      "outcome": "TIMEOUT_NO_RESULT_NO_SOURCE"
+    },
+    {
+      "builder": "local.qwen3-coder-30b",
+      "outcome": "TIMEOUT_NO_RESULT_NO_SOURCE"
+    },
+    {
+      "actor": "operator_bounded_recovery",
+      "outcome": "IMPLEMENTED_AFTER_GOVERNED_PATHS_EXHAUSTED"
+    }
+  ],
+  "talos": {
+    "source": {
+      "pass": 8,
+      "fail": 0
+    },
+    "candidateBlock": {
+      "pass": 8,
+      "fail": 0
+    },
+    "oracles": [
+      "restart persistence",
+      "undo/redo symmetry",
+      "redo invalidation",
+      "bounded history",
+      "corruption preservation"
+    ]
+  },
+  "block": {
+    "id": "block.state.undo-redo",
+    "disposition": "TRAINING_CANDIDATE",
+    "authorityGranted": false
+  },
+  "lessons": [
+    "two governed builders timed out without artifacts on bounded history task",
+    "undo/redo needs explicit transition oracles plus bounded-history proof",
+    "operator recovery after builder exhaustion remains capability debt"
+  ],
+  "organLearning": {
+    "MNEMOSYNE": [
+      "store bounded-history semantics and no-artifact timeout lineage"
+    ],
+    "HEPHAESTUS": [
+      "both qualified local routes failed to materialize artifact"
+    ],
+    "TALOS": [
+      "transition-sequence tests catch subtle history drift"
+    ],
+    "PROMETHEUS": [
+      "research smaller/faster state-machine builder strategies"
+    ],
+    "KRONOS": [
+      "repeated long no-artifact attempts are schedule/resource debt"
+    ],
+    "RHEA": [
+      "escalate to bounded operator recovery only after legal routes fail"
+    ],
+    "MYCELIUM": [
+      "weaken timeout-heavy trail for state-history construction"
+    ],
+    "SWITCHYARD": [
+      "remained local/free; no paid escalation"
+    ]
+  },
+  "authorityGranted": false
+}

@@ -1,0 +1,26 @@
+﻿{
+    "task":  "OTHRYS TRAINING L1-006 TALOS REPAIR. Read and WRITE exactly training/level-1/L1-006-json-format/jsonFormat.mjs. Current behavior passes formatting but violates contract because unsupported mode wide is converted to generic Error. Fix so mode validation happens independently and unsupported mode always throws RangeError. JSON.parse invalid input must still propagate SyntaxError. Keep pretty/minify output exactly as specified. Simplest design: validate mode first, then JSON.parse, then stringify. No catch wrapper is needed. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-006"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-006-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-006-json-format/jsonFormat.mjs"
+                      ]
+}

@@ -1,0 +1,6 @@
+{
+ "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-003-REPAIR2","node_id":"legion","capability":"engineering.patch","workspace":"C:/Users/othry/Projects/othrys-v2",
+ "allowed_paths":["training/level-2/L2-003-todo-store/todoStore.mjs"],"deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":120,
+ "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-003","forge_builder_id":"local.qwen3-coder-30b"},
+ "task":"HARD REPAIR L2-003. Do not inspect/search. WRITE exactly training/level-2/L2-003-todo-store/todoStore.mjs immediately. Full replacement: async stdlib createTodoStore with frozen {list,get,add,update,toggle,remove}; strict persisted array validation including exact keys and duplicate IDs; missing reads no-write; get missing undefined; add canonicalizes trimmed text/default false; update patch keys text/done only; missing mutation ids NOT_FOUND; atomic unique same-dir temp persistence and corrupt non-overwrite. Touch nothing else."
+}

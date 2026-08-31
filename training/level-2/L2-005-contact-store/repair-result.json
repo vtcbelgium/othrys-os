@@ -1,0 +1,93 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L2-005-REPAIR1",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788103156.6129277,
+  "completed_at": 1788103173.3937242,
+  "duration_sec": 16.78079652786255,
+  "allowed_paths": [
+    "training/level-2/L2-005-contact-store/contactStore.mjs"
+  ],
+  "changed_files": [
+    "training/level-2/L2-005-contact-store/contactStore.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-2/L2-005-contact-store/contactStore.mjs\n+++ b/training/level-2/L2-005-contact-store/contactStore.mjs\n@@ -0,0 +1,74 @@\n+// contactStore.mjs\n+\n+import { promises as fs } from 'fs';\n+import { dirname } from 'path';\n+import { randomUUID } from 'crypto';\n+\n+const DB_FILE = 'contacts.json';\n+\n+async function loadContacts() {\n+  try {\n+    const data = await fs.readFile(DB_FILE, 'utf-8');\n+    const contacts = JSON.parse(data);\n+    return contacts;\n+  } catch (err) {\n+    if (err.code === 'ENOENT') {\n+      return [];\n+    }\n+    throw err;\n+  }\n+}\n+\n+async function saveContacts(contacts) {\n+  const tempFile = `${DB_FILE}.tmp_${randomUUID()}`;\n+  await fs.writeFile(tempFile, JSON.stringify(contacts, null, 2));\n+  await fs.rename(tempFile, DB_FILE);\n+}\n+\n+export default {\n+  async getContacts() {\n+    return await loadContacts();\n+  },\n+\n+  async addContact(contact) {\n+    const contacts = await loadContacts();\n+    if (contacts.some(c => c.id === contact.id)) {\n+      throw new Error('STATE_CORRUPT');\n+    }\n+    contacts.push(contact);\n+    await saveContacts(contacts);\n+  },\n+\n+  async updateContact(id, updates) {\n+    const contacts = await loadContacts();\n+    const contact = contacts.find(c => c.id === id);\n+    if (!contact) {\n+      throw new Error('STATE_CORRUPT');\n+    }\n+    Object.assign(contact, updates);\n+    await saveContacts(contacts);\n+  },\n+\n+  async deleteContact(id) {\n+    const contacts = await loadContacts();\n+    const contactIndex = contacts.findIndex(c => c.id === id);\n+    if (contactIndex === -1) {\n+      throw new Error('STATE_CORRUPT');\n+    }\n+    contacts.splice(contactIndex, 1);\n+    await saveContacts(contacts);\n+  },\n+\n+  async getContact(id) {\n+    const contacts = await loadContacts();\n+    const contact = contacts.find(c => c.id === id);\n+    if (!contact) {\n+      return [];\n+    }\n+    return [deepClone(contact)];\n+  },\n+\n+  deepClone(obj) {\n+    return JSON.parse(JSON.stringify(obj));\n+  }\n+};",
+  "git_status": "training/level-2/L2-005-contact-store/contactStore.mjs",
+  "summary": "Replaced contactStore.mjs with Node ESM implementation using fs/promises, randomUUID, and deepClone. No dependencies, no extra files.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-2/L2-005-contact-store/contactStore.mjs\n+++ b/training/level-2/L2-005-contact-store/contactStore.mjs\n@@ -0,0 +1,74 @@\n+// contactStore.mjs\n+\n+import { promises as fs } from 'fs';\n+import { dirname } from 'path';\n+import { randomUUID } from 'crypto';\n+\n+const DB_FILE = 'contacts.json';\n+\n+async function loadContacts() {\n+  try {\n+    const data = await fs.readFile(DB_FILE, 'utf-8');\n+    const contacts = JSON.parse(data);\n+    return contacts;\n+  } catch (err) {\n+    if (err.code === 'ENOENT') {\n+      return [];\n+    }\n+    throw err;\n+  }\n+}\n+\n+async function saveContacts(contacts) {\n+  const tempFile = `${DB_FILE}.tmp_${randomUUID()}`;\n+  await fs.writeFile(tempFile, JSON.stringify(contacts, null, 2));\n+  await fs.rename(tempFile, DB_FILE);\n+}\n+\n+export default {\n+  async getContacts() {\n+    return await loadContacts();\n+  },\n+\n+  async addContact(contact) {\n+    const contacts = await loadContacts();\n+    if (contacts.some(c => c.id === contact.id)) {\n+      throw new Error('STATE_CORRUPT');\n+    }\n+    contacts.push(contact);\n+    await saveContacts(contacts);\n+  },\n+\n+  async updateContact(id, updates) {\n+    const contacts = await loadContacts();\n+    const contact = contacts.find(c => c.id === id);\n+    if (!contact) {\n+      throw new Error('STATE_CORRUPT');\n+    }\n+    Object.assign(contact, updates);\n+    await saveContacts(contacts);\n+  },\n+\n+  async deleteContact(id) {\n+    const contacts = await loadContacts();\n+    const contactIndex = contacts.findIndex(c => c.id === id);\n+    if (contactIndex === -1) {\n+      throw new Error('STATE_CORRUPT');\n+    }\n+    contacts.splice(contactIndex, 1);\n+    await saveContacts(contacts);\n+  },\n+\n+  async getContact(id) {\n+    const contacts = await loadContacts();\n+    const contact = contacts.find(c => c.id === id);\n+    if (!contact) {\n+      return [];\n+    }\n+    return [deepClone(contact)];\n+  },\n+\n+  deepClone(obj) {\n+    return JSON.parse(JSON.stringify(obj));\n+  }\n+};",
+    "git_status": "training/level-2/L2-005-contact-store/contactStore.mjs",
+    "tool_trace": [
+      "write_file: wrote 1768 chars to training/level-2/L2-005-contact-store/contactStore.mjs",
+      "finish: Replaced contactStore.mjs with Node ESM implementation using fs/promises, randomUUID, and deepClone. No dependencies, no extra files."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-2/L2-005-contact-store/contactStore.mjs\",\"content\":\"// contactStore.mjs\\n\\nimport { promises as fs } from 'fs';\\nimport { dirname } from 'path';\\nimport { randomUUID } from 'crypto';\\n\\nconst DB_FILE = 'contacts.json",
+        "raw_suffix": "tIndex = contacts.findIndex(c => c.id === id);\n    if (contactIndex === -1) {\n      throw new Error('STATE_CORRUPT');\n    }\n    contacts.splice(contactIndex, 1);\n    await saveContacts(contacts);\n  },\n\\n  async getContact(id) {\n    const contacts = await loadContacts();\n    const contact = contacts.find(c => c.id === id);\n    if (!contact) {\n      return [];\n    }\n    return [deepClone(contact)];\n  },\n\\n  deepClone(obj) {\n    return JSON.parse(JSON.stringify(obj));\n  }\n};\"}]}",
+        "raw_length": 1863,
+        "parsed_keys": [],
+        "has_path": false,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "str",
+        "raw_prefix": "{\"summary\":\"Replaced contactStore.mjs with Node ESM implementation using fs/promises, randomUUID, and deepClone. No dependencies, no extra files.\"}",
+        "raw_suffix": "{\"summary\":\"Replaced contactStore.mjs with Node ESM implementation using fs/promises, randomUUID, and deepClone. No dependencies, no extra files.\"}",
+        "raw_length": 147,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "5",
+      "temperature_c": "40",
+      "power_w": "6.15"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "1",
+      "temperature_c": "47",
+      "power_w": "12.90"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

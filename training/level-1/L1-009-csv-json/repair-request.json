@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING L1-009 TALOS REPAIR. Read and WRITE exactly training/level-1/L1-009-csv-json/csvJson.mjs. Current solution passes 5/7. Fix ONLY contract defects: csvToJson must throw RangeError when header names contain duplicates. jsonToCsv([]) must return exactly empty string. Preserve all already-passing RFC4180 quoting, width mismatch, schema mismatch, frozen record behavior. Re-read file, make minimal bounded patch, finish. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-009",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-009-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-009-csv-json/csvJson.mjs"
+                      ]
+}

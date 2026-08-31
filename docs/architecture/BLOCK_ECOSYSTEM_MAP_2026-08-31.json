@@ -1,0 +1,90 @@
+{
+  "schema": "othrys.architecture.block-ecosystem-map.v1",
+  "date": "2026-08-31",
+  "status": "DOCUMENTARY_ONLY",
+  "authority_granted": false,
+  "species": {
+    "PRIMITIVE": "Bounded operation/helper with direct technical reuse; not product maturity.",
+    "PATTERN": "Proven composition/architecture law; usually no package identity.",
+    "CAPABILITY_BLOCK": "User-meaningful product capability with Passport, boundaries and independent proof.",
+    "BRIDGE": "Provider/integration implementation of a Port.",
+    "WORKFLOW": "Coordinates capabilities without becoming them.",
+    "UI_PRIMITIVE": "Presentation/design-system asset.",
+    "SHARED_SERVICE": "Reusable substrate not itself a product outcome.",
+    "PLATFORM_ONLY": "OTHRYS governance/construction/control-plane capability."
+  },
+  "maturity": [
+    "QUARRY_CANDIDATE",
+    "RAW",
+    "PROVEN",
+    "REUSABLE",
+    "CERTIFIED",
+    "GOLDEN",
+    "DEPRECATED",
+    "RETIRED"
+  ],
+  "normal_composition_eligible": [
+    "REUSABLE",
+    "CERTIFIED",
+    "GOLDEN"
+  ],
+  "current_admitted_capability_blocks": [
+    {
+      "block_id": "block.media.image-prep",
+      "version": "0.1.1",
+      "maturity": "REUSABLE",
+      "admission": "ACTIVE_ADMITTED",
+      "canonical_repo": "othrys-blocks"
+    },
+    {
+      "block_id": "block.monetization.affiliate-offer",
+      "version": "0.1.0",
+      "maturity": "REUSABLE",
+      "admission": "ACTIVE_ADMITTED",
+      "canonical_repo": "othrys-blocks"
+    },
+    {
+      "block_id": "block.analytics.visit-tracking",
+      "version": "0.1.1",
+      "maturity": "RAW",
+      "admission": "ACTIVE_ADMITTED",
+      "canonical_repo": "othrys-blocks"
+    }
+  ],
+  "edge_types": {
+    "PROVIDES": "Block exposes a versioned product contract/Port.",
+    "REQUIRES": "Composition must resolve this dependency or stop at a gap.",
+    "OPTIONALLY_USES": "Dependency may be absent only with explicit safe absence behaviour.",
+    "BRIDGED_BY": "Provider/integration implementation selected for a Port.",
+    "COMPOSED_WITH": "Exact versions have succeeded together in a verified Oros composition.",
+    "CONSUMED_BY": "Exact Block specimen is consumed by an Oros.",
+    "VERIFIED_BY": "Named Talos/acceptance evidence.",
+    "ORIGINATED_FROM": "Provenance to product/repo/commit/source seam.",
+    "OBSERVED_BY_STAR": "Operational signals enter an Oros Star domain.",
+    "SUPERSEDES": "Version lineage; old evidence remains history.",
+    "FAILED_WITH": "Negative compatibility/composition evidence."
+  },
+  "authority_flow": {
+    "Blueprint": "declares desired capability/outcome/constraints/reuse policy/ranges",
+    "Factory": "resolves exact eligible Block and Bridge versions and verifies composition",
+    "oros.lock": "records exact actual composition; no authority",
+    "Oros": "runtime/product truth",
+    "Micro-Constellation": "bounded governed projection over one Oros",
+    "Star": "managed operational domain over 0..N Blocks/services/product-specific modules",
+    "Great Constellation": "cross-Oros governed projection; preserves boundaries",
+    "Hephaestus": "forge/extract/repair/maintain under authority",
+    "Talos": "independent verification",
+    "Mycelium": "moves compatible evidence/claims/artifacts; no permission",
+    "Operator": "reserved promotion/admission gates"
+  },
+  "laws": [
+    "Block != Star",
+    "Block != Workflow",
+    "Block != Bridge",
+    "Oros remains runtime truth",
+    "edge evidence never grants permission",
+    "no silent upgrade or consumer fork",
+    "product-specific glue is allowed and must stay explicit",
+    "training primitives remain valuable even when not Capability Blocks"
+  ]
+}

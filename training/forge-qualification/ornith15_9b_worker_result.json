@@ -1,0 +1,80 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "FORGE-ORNITH15-9B-QUAL1",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.ornith-1.5-9b",
+  "ok": false,
+  "reason": "NO_ATTEMPT_MUTATION",
+  "started_at": 1788110614.5943081,
+  "completed_at": 1788110640.0883932,
+  "duration_sec": 25.49408507347107,
+  "allowed_paths": [
+    "training/forge-qualification/local_ornith15-9b/candidate.mjs"
+  ],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "diff": "",
+  "git_status": "",
+  "summary": "",
+  "runtime_evidence": {
+    "observed_diff": "",
+    "git_status": "",
+    "tool_trace": [
+      "read_file: # OTHRYS V2\n\nClean rebuild. One mission = one bounded change = one proof.\n\n## Blocks\n\n### `blocks/control_feedback`\n\nLets GPT control OTHRYS by reading a machine-readable receipt of every\ndelegated mi"
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"README.md\"}",
+        "raw_suffix": "{\"path\": \"README.md\"}",
+        "raw_length": 21,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "hephaestus_forge_local_qualification",
+    "selected_builder": "local.ornith-1.5-9b",
+    "model": "ornith-1.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6426",
+      "utilization_pct": "7",
+      "temperature_c": "42",
+      "power_w": "6.71"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nornith-1.5:9b    e5df7dcdd8a2    5.5 GB    100% GPU     4096       28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6430",
+      "utilization_pct": "1",
+      "temperature_c": "51",
+      "power_w": "12.53"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nornith-1.5:9b    e5df7dcdd8a2    5.5 GB    100% GPU     4096       29 minutes from now"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L1-002",
+  "level": 1,
+  "title": "Whitespace/text normalizer",
+  "classification": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "sourceEvidence": [
+    "attempt11-result.json",
+    "attempt12-result.json",
+    "attempt13-result.json",
+    "attempt14-result.json",
+    "worker-result.json"
+  ],
+  "sourceTests": [
+    "normalizeText.test.mjs"
+  ],
+  "exactPackagedBlock": "blocks\\text\\normalize",
+  "candidateProof": "blocks/text/normalize/tests/contract.test.mjs",
+  "attemptsDeclared": null,
+  "buildersObserved": {
+    "qwen3-builder": 5
+  },
+  "failureReasonsObserved": {
+    "out_of_scope_changes: ['training/level-1/L1-002-text-normalize/attempt11.log']": 1,
+    "NO_ATTEMPT_MUTATION": 1,
+    "out_of_scope_changes: ['training/level-1/L1-002-text-normalize/attempt13.log']": 1,
+    "out_of_scope_changes: ['training/level-1/L1-002-text-normalize/attempt14.log']": 1
+  },
+  "lessons": [
+    "Bounded qwen task-fit failure triggered proven-stock adaptation; training hardened worker transport, finish enforcement, evidence scoping and oracle review."
+  ],
+  "talos": {
+    "freshLevelProof": "LEVEL_1_MILESTONE.json: 305/305 source and candidate PASS",
+    "runtimeProof": "LEVEL_2_MILESTONE.json: combined L1+L2 486/486 PASS"
+  },
+  "block": {
+    "id": "block.text.normalize",
+    "disposition": "ADAPT_STOCK",
+    "authorityGranted": false
+  },
+  "organLearning": {
+    "MNEMOSYNE": [
+      "retain source, worker and failure provenance"
+    ],
+    "HEPHAESTUS": [
+      "use task-specific builder outcome evidence"
+    ],
+    "TALOS": [
+      "independent contract proof outranks worker self-report"
+    ],
+    "KRONOS": [
+      "retain measured attempt timing where present"
+    ],
+    "RHEA": [
+      "retain failure/recovery sequence"
+    ],
+    "MYCELIUM": [
+      "route history is recommendation evidence only"
+    ],
+    "SWITCHYARD": [
+      "builder route outcome remains authority-free"
+    ]
+  }
+}

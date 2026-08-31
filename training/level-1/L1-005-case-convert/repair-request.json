@@ -1,0 +1,26 @@
+﻿{
+    "schema_version":  "othrys.worker-request.v0.1",
+    "job_id":  "TRAIN-L1-005-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "task":  "OTHRYS TRAINING L1-005 TALOS REPAIR. Read and WRITE exactly training/level-1/L1-005-case-convert/convertCase.mjs. Lower and upper already pass. Rewrite the word-based modes around ONE helper words(s): insert a space between any lowercase letter or digit followed by uppercase letter; replace hyphen and underscore with spaces; trim; split on whitespace; filter empties; lowercase each token. Then title = capitalize every token joined by one space; sentence = lowercase normalized tokens joined by one space then capitalize first character; camel = first lowercase token plus capitalized later tokens; pascal = all capitalized tokens; snake = lowercase tokens joined underscore; kebab = lowercase tokens joined hyphen. Preserve null/undefined empty and RangeError unsupported. Do not finish without write. Touch no other file.",
+    "allowed_paths":  [
+                          "training/level-1/L1-005-case-convert/convertCase.mjs"
+                      ],
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "timeout_sec":  90,
+    "metadata":  {
+                     "training_job":  "L1-005",
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_level":  1
+                 }
+}

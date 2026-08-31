@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-010-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788090029.1265357,
+  "completed_at": 1788090060.5709836,
+  "duration_sec": 31.444447994232178,
+  "allowed_paths": [
+    "training/level-1/L1-010-sort-records/stableSortRecords.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-010-sort-records/stableSortRecords.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-010-sort-records/stableSortRecords.mjs\n+++ b/training/level-1/L1-010-sort-records/stableSortRecords.mjs\n@@ -0,0 +1,112 @@\n+function stableSortRecords(records, keys) {\n+  // Validate inputs\n+  if (!Array.isArray(records)) throw new TypeError('records must be an array');\n+  if (!Array.isArray(keys) || keys.length === 0) throw new RangeError('keys must be a non-empty array');\n+\n+  const keySpecs = [];\n+  for (const k of keys) {\n+    let key;\n+    let direction;\n+    \n+    if (typeof k === 'string') {\n+      key = k;\n+      direction = 'asc';\n+    } else if (k && typeof k === 'object' && !Array.isArray(k)) {\n+      key = k.key;\n+      direction = k.direction || 'asc';\n+    } else {\n+      throw new TypeError('Invalid key entry');\n+    }\n+\n+    if (!key) throw new RangeError('Key cannot be empty or undefined');\n+    if (direction !== 'asc' && direction !== 'desc') throw new RangeError('Direction must be \"asc\" or \"desc\"');\n+\n+    // Freeze the spec object if provided as such, otherwise keep plain\n+    keySpecs.push({ key, direction });\n+  }\n+\n+  // Create a copy of records to avoid mutating input\n+  const result = [];\n+  for (let i = 0; i < records.length; i++) {\n+    const record = records[i];\n+    if (!record) throw new TypeError('Record cannot be null or undefined');\n+    \n+    // Deep freeze the record to prevent mutation\n+    Object.freeze(record);\n+    result.push(record);\n+  }\n+\n+  // Stable sort using a custom comparator\n+  // We need to maintain stability, so we'll use an insertion sort approach \n+  // or rely on the fact that JavaScript's sort is stable in modern engines.\n+  // However, to be explicit and safe across environments, we'll implement a stable sort logic.\n+  \n+  // Actually, let's use a simple stable sort implementation since we need deterministic behavior\n+  // and must not rely on engine-specific stability guarantees if possible.\n+  // But JS Array.sort is guaranteed stable in ES2019+. Let's assume modern environment.\n+  \n+  // We'll implement a custom stable sort to be absolutely sure about the logic\n+  // by using an insertion sort which is inherently stable.\n+  \n+  const sorted = [...result]; // Copy again just in case\n+  \n+  for (let i = 1; i < sorted.length; i++) {\n+    const current = sorted[i];\n+    let j = i - 1;\n+    \n+    while (j >= 0) {\n+      if (compare(current, sorted[j], keySpecs) > 0) {\n+        sorted[j + 1] = sorted[j];\n+        j--;\n+      } else {\n+        break;\n+      }\n+    }\n+    sorted[j + 1] = current;\n+  }\n+\n+  // Freeze the result array and all elements (already frozen, but freeze the array itself)\n+  Object.freeze(sorted);\n+  \n+  return sorted;\n+}\n+\n+function compare(a, b, keySpecs) {\n+  for (const spec of keySpecs) {\n+    const valA = a[spec.key];\n+    const valB = b[spec.key];\n+    \n+    // Handle missing keys\n+    if (valA === undefined && valB === undefined) continue;\n+    if (valA === undefined) return spec.direction === 'asc' ? 1 : -1;\n+    if (valB === undefined) return spec.direction === 'asc' ? -1 : 1;\n+\n+    // Handle null values\n+    if (valA === null && valB === null) continue;\n+    if (valA === null) return spec.direction === 'asc' ? 1 : -1;\n+    if (valB === null) return spec.direction === 'asc' ? -1 : 1;\n+\n+    // Numeric comparison\n+    const numA = Number(valA);\n+    const numB = Number(valB);\n+    \n+    if (!isNaN(numA) && !isNaN(numB)) {\n+      if (numA < numB) return spec.direction === 'asc' ? -1 : 1;\n+      if (numA > numB) return spec.direction === 'asc' ? 1 : -1;\n+      continue; // Equal, fall through to next key\n+    }\n+\n+    // String comparison (locale-independent lexical)\n+    const strA = String(valA);\n+    const strB = String(valB);\n+    \n+    if (strA < strB) return spec.direction === 'asc' ? -1 : 1;\n+    if (strA > strB) return spec.direction === 'asc' ? 1 : -1;\n+    continue; // Equal, fall through to next key\n+  }\n+\n+  // All keys equal, maintain original order (return 0)\n+  return 0;\n+}\n+\n+export { stableSortRecords };",
+  "git_status": "training/level-1/L1-010-sort-records/stableSortRecords.mjs",
+  "summary": "Created training/level-1/L1-010-sort-records/stableSortRecords.mjs with stableSortRecords(records, keys) function that sorts records deterministically without mutating input, handles null/undefined after defined values in asc, numeric comparison for numbers, locale-independent string comparison otherwise, preserves original order for ties, supports missing keys as undefined, returns frozen array of original record references, and throws appropriate errors for invalid inputs.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-010-sort-records/stableSortRecords.mjs\n+++ b/training/level-1/L1-010-sort-records/stableSortRecords.mjs\n@@ -0,0 +1,112 @@\n+function stableSortRecords(records, keys) {\n+  // Validate inputs\n+  if (!Array.isArray(records)) throw new TypeError('records must be an array');\n+  if (!Array.isArray(keys) || keys.length === 0) throw new RangeError('keys must be a non-empty array');\n+\n+  const keySpecs = [];\n+  for (const k of keys) {\n+    let key;\n+    let direction;\n+    \n+    if (typeof k === 'string') {\n+      key = k;\n+      direction = 'asc';\n+    } else if (k && typeof k === 'object' && !Array.isArray(k)) {\n+      key = k.key;\n+      direction = k.direction || 'asc';\n+    } else {\n+      throw new TypeError('Invalid key entry');\n+    }\n+\n+    if (!key) throw new RangeError('Key cannot be empty or undefined');\n+    if (direction !== 'asc' && direction !== 'desc') throw new RangeError('Direction must be \"asc\" or \"desc\"');\n+\n+    // Freeze the spec object if provided as such, otherwise keep plain\n+    keySpecs.push({ key, direction });\n+  }\n+\n+  // Create a copy of records to avoid mutating input\n+  const result = [];\n+  for (let i = 0; i < records.length; i++) {\n+    const record = records[i];\n+    if (!record) throw new TypeError('Record cannot be null or undefined');\n+    \n+    // Deep freeze the record to prevent mutation\n+    Object.freeze(record);\n+    result.push(record);\n+  }\n+\n+  // Stable sort using a custom comparator\n+  // We need to maintain stability, so we'll use an insertion sort approach \n+  // or rely on the fact that JavaScript's sort is stable in modern engines.\n+  // However, to be explicit and safe across environments, we'll implement a stable sort logic.\n+  \n+  // Actually, let's use a simple stable sort implementation since we need deterministic behavior\n+  // and must not rely on engine-specific stability guarantees if possible.\n+  // But JS Array.sort is guaranteed stable in ES2019+. Let's assume modern environment.\n+  \n+  // We'll implement a custom stable sort to be absolutely sure about the logic\n+  // by using an insertion sort which is inherently stable.\n+  \n+  const sorted = [...result]; // Copy again just in case\n+  \n+  for (let i = 1; i < sorted.length; i++) {\n+    const current = sorted[i];\n+    let j = i - 1;\n+    \n+    while (j >= 0) {\n+      if (compare(current, sorted[j], keySpecs) > 0) {\n+        sorted[j + 1] = sorted[j];\n+        j--;\n+      } else {\n+        break;\n+      }\n+    }\n+    sorted[j + 1] = current;\n+  }\n+\n+  // Freeze the result array and all elements (already frozen, but freeze the array itself)\n+  Object.freeze(sorted);\n+  \n+  return sorted;\n+}\n+\n+function compare(a, b, keySpecs) {\n+  for (const spec of keySpecs) {\n+    const valA = a[spec.key];\n+    const valB = b[spec.key];\n+    \n+    // Handle missing keys\n+    if (valA === undefined && valB === undefined) continue;\n+    if (valA === undefined) return spec.direction === 'asc' ? 1 : -1;\n+    if (valB === undefined) return spec.direction === 'asc' ? -1 : 1;\n+\n+    // Handle null values\n+    if (valA === null && valB === null) continue;\n+    if (valA === null) return spec.direction === 'asc' ? 1 : -1;\n+    if (valB === null) return spec.direction === 'asc' ? -1 : 1;\n+\n+    // Numeric comparison\n+    const numA = Number(valA);\n+    const numB = Number(valB);\n+    \n+    if (!isNaN(numA) && !isNaN(numB)) {\n+      if (numA < numB) return spec.direction === 'asc' ? -1 : 1;\n+      if (numA > numB) return spec.direction === 'asc' ? 1 : -1;\n+      continue; // Equal, fall through to next key\n+    }\n+\n+    // String comparison (locale-independent lexical)\n+    const strA = String(valA);\n+    const strB = String(valB);\n+    \n+    if (strA < strB) return spec.direction === 'asc' ? -1 : 1;\n+    if (strA > strB) return spec.direction === 'asc' ? 1 : -1;\n+    continue; // Equal, fall through to next key\n+  }\n+\n+  // All keys equal, maintain original order (return 0)\n+  return 0;\n+}\n+\n+export { stableSortRecords };",
+    "git_status": "training/level-1/L1-010-sort-records/stableSortRecords.mjs",
+    "tool_trace": [
+      "write_file: wrote 3739 chars to training/level-1/L1-010-sort-records/stableSortRecords.mjs",
+      "finish: Created training/level-1/L1-010-sort-records/stableSortRecords.mjs with stableSortRecords(records, keys) function that sorts records deterministically without mutating input, handles null/undefined after defined values in asc, numeric comparison for numbers, locale-independent string comparison otherwise, preserves original order for ties, supports missing keys as undefined, returns frozen array of original record references, and throws appropriate errors for invalid inputs."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-010-sort-records/stableSortRecords.mjs\", \"content\": \"function stableSortRecords(records, keys) {\\n  // Validate inputs\\n  if (!Array.isArray(records)) throw new TypeError('records must be an array');\\n  if (!Ar",
+        "raw_suffix": ";\\n      continue; // Equal, fall through to next key\\n    }\\n\\n    // String comparison (locale-independent lexical)\\n    const strA = String(valA);\\n    const strB = String(valB);\\n    \\n    if (strA < strB) return spec.direction === 'asc' ? -1 : 1;\\n    if (strA > strB) return spec.direction === 'asc' ? 1 : -1;\\n    continue; // Equal, fall through to next key\\n  }\\n\\n  // All keys equal, maintain original order (return 0)\\n  return 0;\\n}\\n\\nexport { stableSortRecords };\"}",
+        "raw_length": 3939,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 3739
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/level-1/L1-010-sort-records/stableSortRecords.mjs with stableSortRecords(records, keys) function that sorts records deterministically without mutating input, handles null/undefined after defined values in asc, ",
+        "raw_suffix": "reated training/level-1/L1-010-sort-records/stableSortRecords.mjs with stableSortRecords(records, keys) function that sorts records deterministically without mutating input, handles null/undefined after defined values in asc, numeric comparison for numbers, locale-independent string comparison otherwise, preserves original order for ties, supports missing keys as undefined, returns frozen array of original record references, and throws appropriate errors for invalid inputs.\"}",
+        "raw_length": 494,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6201",
+      "utilization_pct": "7",
+      "temperature_c": "42",
+      "power_w": "5.87"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6459",
+      "utilization_pct": "1",
+      "temperature_c": "49",
+      "power_w": "13.27"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

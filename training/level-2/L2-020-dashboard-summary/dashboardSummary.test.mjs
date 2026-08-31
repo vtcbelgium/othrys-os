@@ -1,0 +1,10 @@
+import test from 'node:test'; import assert from 'node:assert/strict';
+import {mkdtemp,readFile,writeFile,access} from 'node:fs/promises'; import {tmpdir} from 'node:os'; import {join} from 'node:path';
+import {createDashboardSummary} from './dashboardSummary.mjs';
+async function f(){const d=await mkdtemp(join(tmpdir(),'l220-')); return join(d,'state.json')}
+test('missing summary empty and no write',async()=>{const p=await f(),s=createDashboardSummary(p); assert(Object.isFrozen(s)); assert.deepEqual(await s.summary(),{count:0,byStatus:{},byCategory:{},totalAmount:0}); await assert.rejects(access(p));});
+test('replace persists and restart summarizes deterministically',async()=>{const p=await f(),s=createDashboardSummary(p); await s.replace([{id:'b',status:'open',category:'z',amount:2},{id:'a',status:'done',category:'a',amount:3},{id:'c'}]); assert.deepEqual(await createDashboardSummary(p).summary(),{count:3,byStatus:{'(none)':1,done:1,open:1},byCategory:{'(none)':1,a:1,z:1},totalAmount:5});});
+test('invalid replacement does not mutate',async()=>{const p=await f(),s=createDashboardSummary(p); await s.replace([{id:'a'}]); const before=await readFile(p,'utf8'); await assert.rejects(s.replace([{id:'a'},{id:'a'}]),/INVALID_STATE/); assert.equal(await readFile(p,'utf8'),before);});
+test('corruption fails closed',async()=>{const p=await f(); await writeFile(p,'{bad','utf8'); const before=await readFile(p,'utf8'); await assert.rejects(createDashboardSummary(p).summary(),/STATE_CORRUPT/); assert.equal(await readFile(p,'utf8'),before);});
+test('noncanonical persisted state fails closed',async()=>{const p=await f(); await writeFile(p,'[ {"id":"a"} ]','utf8'); await assert.rejects(createDashboardSummary(p).summary(),/STATE_CORRUPT/);});
+test('outputs cloned and API exact',async()=>{const p=await f(),s=createDashboardSummary(p),r=[{id:'a',category:'x'}]; const out=await s.replace(r); out[0].category='y'; assert.equal((await s.summary()).byCategory.x,1); assert.deepEqual(Object.keys(s).sort(),['replace','summary']);});

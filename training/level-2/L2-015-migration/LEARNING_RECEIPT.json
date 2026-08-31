@@ -1,0 +1,44 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "mission": "V2-011K",
+  "jobId": "L2-015",
+  "level": 2,
+  "title": "State migration",
+  "family": "state",
+  "contract": "versioned state -> deterministic current schema",
+  "stockCheck": "North Star + migration/archive stock + stateful patterns",
+  "buildAttempts": [
+    {
+      "builder": "governed-local",
+      "failure": "TIMEOUT_NO_RESULT_NO_SOURCE"
+    },
+    {
+      "builder": "operator-bounded",
+      "talos": "PASS_8_OF_8"
+    }
+  ],
+  "talos": {
+    "tests": 8,
+    "pass": 8,
+    "fail": 0,
+    "independent": true
+  },
+  "blockDisposition": "TRAINING_CANDIDATE",
+  "lessons": [
+    "governed local build timed out with no result/source artifact",
+    "migration must be all-or-nothing across all steps",
+    "unsafe/non-JSON migration output is a boundary failure"
+  ],
+  "organs": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "learningMayGrantAuthority": false,
+  "authorityGranted": false
+}

@@ -1,0 +1,6 @@
+{
+ "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-006-REPAIR1","node_id":"legion","capability":"engineering.patch","workspace":"C:/Users/othry/Projects/othrys-v2",
+ "allowed_paths":["training/level-2/L2-006-inventory-store/inventoryStore.mjs"],"deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":90,
+ "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-006","forge_builder_id":"local.qwen3.5-9b"},
+ "task":"TALOS REPAIR L2-006. WRITE exactly training/level-2/L2-006-inventory-store/inventoryStore.mjs. Current build fails immediately because it uses CommonJS require in .mjs and also does not actually persist CRUD mutations correctly. Replace with Node ESM standard-library implementation matching original contract. Use fs/promises, dirname, randomUUID; load disk on each operation; missing=[]; malformed/non-array/invalid items/duplicate ids=>STATE_CORRUPT and never overwrite. Atomic same-dir temp+rename. Exact canonical fields id,name,quantity,unit,price. Frozen async API list/get/add/update/remove/adjust. get missing undefined. add/update/adjust/remove persist and return cloned item. adjust finite nonzero delta; negative result=>RANGE. Invalid patch=>INVALID_PATCH. Touch nothing else."
+}

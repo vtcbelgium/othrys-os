@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-035-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788097542.3966725,
+  "completed_at": 1788097558.618942,
+  "duration_sec": 16.222269535064697,
+  "allowed_paths": [
+    "training/level-1/L1-035-config-merge/safeConfigMerge.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-035-config-merge/safeConfigMerge.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-035-config-merge/safeConfigMerge.mjs\n+++ b/training/level-1/L1-035-config-merge/safeConfigMerge.mjs\n@@ -0,0 +1,87 @@\n+export function safeConfigMerge(base, overlay) {\n+  const dangerousKeys = new Set(['__proto__', 'prototype', 'constructor']);\n+\n+  function isAllowedValue(val) {\n+    if (val === null || typeof val === 'boolean' || typeof val === 'string') return true;\n+    if (typeof val === 'number') return Number.isFinite(val);\n+    if (Array.isArray(val)) return val.every(isAllowedValue);\n+    if (typeof val === 'object' && val !== null) {\n+      return Object.getPrototypeOf(val) === Object.prototype;\n+    }\n+    return false;\n+  }\n+\n+  function isPlainObject(val) {\n+    return typeof val === 'object' && val !== null && Object.getPrototypeOf(val) === Object.prototype;\n+  }\n+\n+  function deepFreeze(obj) {\n+    if (!isPlainObject(obj)) return obj;\n+    Object.freeze(obj);\n+    for (const key of Object.keys(obj)) {\n+      const value = obj[key];\n+      if (Array.isArray(value)) {\n+        obj[key] = value.slice().map(deepFreeze);\n+        Object.freeze(obj[key]);\n+      } else if (isPlainObject(value)) {\n+        obj[key] = deepFreeze(value);\n+      }\n+    }\n+    return obj;\n+  }\n+\n+  function merge(base, overlay) {\n+    const result = {};\n+\n+    // Collect all keys from both\n+    const allKeys = new Set([...Object.keys(base), ...Object.keys(overlay)]);\n+\n+    for (const key of allKeys) {\n+      if (dangerousKeys.has(key)) {\n+        throw new RangeError(`Dangerous key rejected: ${key}`);\n+      }\n+\n+      const baseVal = base[key];\n+      const overlayVal = overlay[key];\n+\n+      // Check for unsupported values in overlay first\n+      if (!isAllowedValue(overlayVal)) {\n+        throw new TypeError(`Unsupported value in overlay at key: ${key}`);\n+      }\n+\n+      // Check for unsupported values in base (only if both exist and are objects)\n+      if (baseVal !== undefined && !isAllowedValue(baseVal)) {\n+        throw new TypeError(`Unsupported value in base at key: ${key}`);\n+      }\n+\n+      if (isPlainObject(baseVal) && isPlainObject(overlayVal)) {\n+        // Recursively merge plain objects\n+        result[key] = merge(baseVal, overlayVal);\n+      } else {\n+        // Arrays and scalars replace wholesale\n+        if (!isAllowedValue(overlayVal)) {\n+          throw new TypeError(`Unsupported value in overlay at key: ${key}`);\n+        }\n+        result[key] = Array.isArray(overlayVal) ? overlayVal.slice().map(deepFreeze) : overlayVal;\n+      }\n+    }\n+\n+    // Sort keys lexicographically\n+    const sortedKeys = Object.keys(result).sort();\n+    const sortedResult = {};\n+    for (const key of sortedKeys) {\n+      sortedResult[key] = result[key];\n+    }\n+\n+    return deepFreeze(sortedResult);\n+  }\n+\n+  if (!isAllowedValue(base)) {\n+    throw new TypeError('base must be a plain object or null');\n+  }\n+  if (!isAllowedValue(overlay)) {\n+    throw new TypeError('overlay must be a plain object or null');\n+  }\n+\n+  return merge(base, overlay);\n+}",
+  "git_status": "training/level-1/L1-035-config-merge/safeConfigMerge.mjs",
+  "summary": "Created training/level-1/L1-035-config-merge/safeConfigMerge.mjs with safeConfigMerge(base, overlay) function that merges configs recursively while preserving base keys, rejecting dangerous keys and unsupported values, returning a deeply frozen null-prototype object with sorted keys.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-035-config-merge/safeConfigMerge.mjs\n+++ b/training/level-1/L1-035-config-merge/safeConfigMerge.mjs\n@@ -0,0 +1,87 @@\n+export function safeConfigMerge(base, overlay) {\n+  const dangerousKeys = new Set(['__proto__', 'prototype', 'constructor']);\n+\n+  function isAllowedValue(val) {\n+    if (val === null || typeof val === 'boolean' || typeof val === 'string') return true;\n+    if (typeof val === 'number') return Number.isFinite(val);\n+    if (Array.isArray(val)) return val.every(isAllowedValue);\n+    if (typeof val === 'object' && val !== null) {\n+      return Object.getPrototypeOf(val) === Object.prototype;\n+    }\n+    return false;\n+  }\n+\n+  function isPlainObject(val) {\n+    return typeof val === 'object' && val !== null && Object.getPrototypeOf(val) === Object.prototype;\n+  }\n+\n+  function deepFreeze(obj) {\n+    if (!isPlainObject(obj)) return obj;\n+    Object.freeze(obj);\n+    for (const key of Object.keys(obj)) {\n+      const value = obj[key];\n+      if (Array.isArray(value)) {\n+        obj[key] = value.slice().map(deepFreeze);\n+        Object.freeze(obj[key]);\n+      } else if (isPlainObject(value)) {\n+        obj[key] = deepFreeze(value);\n+      }\n+    }\n+    return obj;\n+  }\n+\n+  function merge(base, overlay) {\n+    const result = {};\n+\n+    // Collect all keys from both\n+    const allKeys = new Set([...Object.keys(base), ...Object.keys(overlay)]);\n+\n+    for (const key of allKeys) {\n+      if (dangerousKeys.has(key)) {\n+        throw new RangeError(`Dangerous key rejected: ${key}`);\n+      }\n+\n+      const baseVal = base[key];\n+      const overlayVal = overlay[key];\n+\n+      // Check for unsupported values in overlay first\n+      if (!isAllowedValue(overlayVal)) {\n+        throw new TypeError(`Unsupported value in overlay at key: ${key}`);\n+      }\n+\n+      // Check for unsupported values in base (only if both exist and are objects)\n+      if (baseVal !== undefined && !isAllowedValue(baseVal)) {\n+        throw new TypeError(`Unsupported value in base at key: ${key}`);\n+      }\n+\n+      if (isPlainObject(baseVal) && isPlainObject(overlayVal)) {\n+        // Recursively merge plain objects\n+        result[key] = merge(baseVal, overlayVal);\n+      } else {\n+        // Arrays and scalars replace wholesale\n+        if (!isAllowedValue(overlayVal)) {\n+          throw new TypeError(`Unsupported value in overlay at key: ${key}`);\n+        }\n+        result[key] = Array.isArray(overlayVal) ? overlayVal.slice().map(deepFreeze) : overlayVal;\n+      }\n+    }\n+\n+    // Sort keys lexicographically\n+    const sortedKeys = Object.keys(result).sort();\n+    const sortedResult = {};\n+    for (const key of sortedKeys) {\n+      sortedResult[key] = result[key];\n+    }\n+\n+    return deepFreeze(sortedResult);\n+  }\n+\n+  if (!isAllowedValue(base)) {\n+    throw new TypeError('base must be a plain object or null');\n+  }\n+  if (!isAllowedValue(overlay)) {\n+    throw new TypeError('overlay must be a plain object or null');\n+  }\n+\n+  return merge(base, overlay);\n+}",
+    "git_status": "training/level-1/L1-035-config-merge/safeConfigMerge.mjs",
+    "tool_trace": [
+      "write_file: wrote 2789 chars to training/level-1/L1-035-config-merge/safeConfigMerge.mjs",
+      "finish: Created training/level-1/L1-035-config-merge/safeConfigMerge.mjs with safeConfigMerge(base, overlay) function that merges configs recursively while preserving base keys, rejecting dangerous keys and unsupported values, returning a deeply frozen null-prototype object with sorted keys."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-035-config-merge/safeConfigMerge.mjs\", \"content\": \"export function safeConfigMerge(base, overlay) {\\n  const dangerousKeys = new Set(['__proto__', 'prototype', 'constructor']);\\n\\n  function isAllowedValue(val)",
+        "raw_suffix": " lexicographically\\n    const sortedKeys = Object.keys(result).sort();\\n    const sortedResult = {};\\n    for (const key of sortedKeys) {\\n      sortedResult[key] = result[key];\\n    }\\n\\n    return deepFreeze(sortedResult);\\n  }\\n\\n  if (!isAllowedValue(base)) {\\n    throw new TypeError('base must be a plain object or null');\\n  }\\n  if (!isAllowedValue(overlay)) {\\n    throw new TypeError('overlay must be a plain object or null');\\n  }\\n\\n  return merge(base, overlay);\\n}\"}",
+        "raw_length": 2958,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 2789
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/level-1/L1-035-config-merge/safeConfigMerge.mjs with safeConfigMerge(base, overlay) function that merges configs recursively while preserving base keys, rejecting dangerous keys and unsupported values, returnin",
+        "raw_suffix": "{\"summary\": \"Created training/level-1/L1-035-config-merge/safeConfigMerge.mjs with safeConfigMerge(base, overlay) function that merges configs recursively while preserving base keys, rejecting dangerous keys and unsupported values, returning a deeply frozen null-prototype object with sorted keys.\"}",
+        "raw_length": 299,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6466",
+      "utilization_pct": "4",
+      "temperature_c": "41",
+      "power_w": "6.01"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6468",
+      "utilization_pct": "1",
+      "temperature_c": "53",
+      "power_w": "13.46"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L1-027",
+  "level": 1,
+  "title": ".env metadata parser",
+  "classification": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "sourceEvidence": [
+    "repair-result.json",
+    "worker-result.json"
+  ],
+  "sourceTests": [
+    "parseEnvMetadata.test.mjs"
+  ],
+  "exactPackagedBlock": "blocks\\developer\\env-metadata",
+  "candidateProof": "blocks/developer/env-metadata/tests/contract.test.mjs",
+  "attemptsDeclared": null,
+  "buildersObserved": {
+    "local.qwen3-coder-30b": 1,
+    "local.qwen3.5-9b": 1
+  },
+  "failureReasonsObserved": {},
+  "lessons": [],
+  "talos": {
+    "freshLevelProof": "LEVEL_1_MILESTONE.json: 305/305 source and candidate PASS",
+    "runtimeProof": "LEVEL_2_MILESTONE.json: combined L1+L2 486/486 PASS"
+  },
+  "block": {
+    "id": "block.developer.env-metadata",
+    "disposition": "TRAINING_CANDIDATE",
+    "authorityGranted": false
+  },
+  "organLearning": {
+    "MNEMOSYNE": [
+      "retain source, worker and failure provenance"
+    ],
+    "HEPHAESTUS": [
+      "use task-specific builder outcome evidence"
+    ],
+    "TALOS": [
+      "independent contract proof outranks worker self-report"
+    ],
+    "KRONOS": [
+      "retain measured attempt timing where present"
+    ],
+    "RHEA": [
+      "retain failure/recovery sequence"
+    ],
+    "MYCELIUM": [
+      "route history is recommendation evidence only"
+    ],
+    "SWITCHYARD": [
+      "builder route outcome remains authority-free"
+    ]
+  }
+}

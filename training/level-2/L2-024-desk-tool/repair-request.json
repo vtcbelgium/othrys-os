@@ -1,0 +1,27 @@
+﻿{
+    "schema_version":  "othrys.worker-request.v0.1",
+    "job_id":  "TRAIN-L2-024-REPAIR-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "allowed_paths":  [
+                          "training/level-2/L2-024-desk-tool/deskTool.mjs"
+                      ],
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "timeout_sec":  120,
+    "metadata":  {
+                     "training_level":  2,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L2-024",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "task":  "Repair existing L2-024 deskTool.mjs in place. Prior ok:true artifact rejected. Actual composed APIs are createSettingsStore(filePath,defaults) =\u003e frozen async {get,set,all,reset,resetAll}; createTodoStore(filePath) =\u003e frozen async {list,get,add,update,toggle,remove}. Use join(rootDir,\"settings.json\") and join(rootDir,\"todos.json\"). Factory synchronous and exact frozen async API {getSettings,setSetting,listTodos,addTodo,updateTodo,removeTodo,exportJson,importJson,summary}. All methods async. getSettings =\u003e settings.all(); setSetting awaits settings.set then returns settings.all(); todo methods delegate add/update/remove/list. summary uses todo.done, not completed. exportJson awaits both and returns JSON.stringify({settings:all,todos:list}) exactly. For importJson: parse string and require exact top-level keys settings,todos; validate atomically before live mutation by creating a unique staging dir under rootDir and staged stores with same defaults; for settings object require exact same keys as defaults and set each through staged settings store; todos must array and add each through staged todo store. Then read staged settings/todos bytes (settings staged file may be absent only if defaults has zero keys; ensure canonical live target {} in that case). Before commit read whether live files exist and their bytes. Commit by writing unique same-dir temp files then rename to live files. On any commit error restore original bytes or remove files that were originally absent. Always cleanup staging/temp. Any parse/shape/staging validation error =\u003e INVALID_IMPORT and live bytes unchanged. Do not call nonexistent validateSettings/validateTodos. Import fs promises: mkdtemp,readFile,writeFile,rename,rm,mkdir; path join; os tmpdir is not needed. No sync APIs. Touch exactly deskTool.mjs."
+}

@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-017. Create exactly training/level-1/L1-017-duration-calc/durationCalc.mjs. Export durationBetween(start,end) and addDuration(input,milliseconds). Dates accept Date or parseable string; invalid date TypeError. durationBetween computes signed end-start milliseconds and returns frozen {milliseconds,seconds,minutes,hours,days,sign} where all units are exact division (not rounded) and sign is -1,0,1. addDuration requires finite numeric milliseconds, adds exactly to epoch time, returns canonical ISO string via toISOString. Never mutate Date inputs. Deterministic timezone-safe no I/O/network/deps. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-017",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-017-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-017-duration-calc/durationCalc.mjs"
+                      ]
+}

@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-037 TALOS REPAIR. WRITE exactly training/level-1/L1-037-phone-normalize/normalizePhone.mjs. Fix contract precisely. Detect prefix BEFORE removing it: trim only allowed separators [space hyphen parentheses dot slash]. If cleaned starts 00 =\u003e international digits cleaned.slice(2); if starts + =\u003e international digits cleaned.slice(1); otherwise local. Reject any remaining char outside digits after prefix handling and reject embedded/multiple plus. International ignores regionHint and requires 8..15 digits. BE local: if starts 0 remove one 0 then prefix +32, else prefix +32. US local: 10 digits =\u003e +1digits; 11 starting 1 =\u003e +digits (retain 1). All valid/invalid returned objects must Object.freeze and valid reason must null. Invalid reasons EMPTY FORMAT LENGTH REGION. Non-string throws TypeError. Touch nothing else.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-037",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-037-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-037-phone-normalize/normalizePhone.mjs"
+                      ]
+}

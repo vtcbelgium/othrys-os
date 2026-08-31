@@ -1,0 +1,317 @@
+{
+  "schema": "othrys.harvest.vtc-official-block-priority.v1",
+  "date": "2026-08-31",
+  "note": "Ranking is quarry guidance only. It grants no extraction or promotion authority.",
+  "ranked": [
+    {
+      "rank": 1,
+      "capability_id": "capability.market.price-insight",
+      "tier": "A-CLEAN",
+      "suggested_star_domain": "COMMERCE",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "next_step": "CONTRACT_AND_SECOND_OROS_PLAN",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 2,
+      "capability_id": "capability.document.collection-export",
+      "tier": "A-CLEAN",
+      "suggested_star_domain": "DATA",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "next_step": "CONTRACT_AND_SECOND_OROS_PLAN",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 3,
+      "capability_id": "capability.offline.installable-shell",
+      "tier": "A-CLEAN",
+      "suggested_star_domain": "EXPERIENCE",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "next_step": "CONTRACT_AND_SECOND_OROS_PLAN",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 4,
+      "capability_id": "capability.search.saved-query",
+      "tier": "A-CLEAN",
+      "suggested_star_domain": "DISCOVERY",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "next_step": "CONTRACT_AND_SECOND_OROS_PLAN",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 5,
+      "capability_id": "capability.wishlist.hunt-list",
+      "tier": "A-CLEAN",
+      "suggested_star_domain": "COMMERCE",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "next_step": "CONTRACT_AND_SECOND_OROS_PLAN",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 6,
+      "capability_id": "capability.catalog.search-browse",
+      "tier": "A-CLEAN",
+      "suggested_star_domain": "DISCOVERY",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "VERY_HIGH",
+      "next_step": "CONTRACT_AND_SECOND_OROS_PLAN",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 7,
+      "capability_id": "capability.events.rsvp",
+      "tier": "A-CLEAN",
+      "suggested_star_domain": "COMMUNITY",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "CONTRACT_AND_SECOND_OROS_PLAN",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 8,
+      "capability_id": "capability.media.image-upload",
+      "tier": "A-CLEAN",
+      "suggested_star_domain": "MEDIA",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "CONTRACT_AND_SECOND_OROS_PLAN",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 9,
+      "capability_id": "capability.catalog.variant-resolution",
+      "tier": "B-STRATEGIC",
+      "suggested_star_domain": "CATALOG",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 10,
+      "capability_id": "capability.collection.valuation",
+      "tier": "B-STRATEGIC",
+      "suggested_star_domain": "FINANCE",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 11,
+      "capability_id": "capability.identity.public-profile-showcase",
+      "tier": "B-STRATEGIC",
+      "suggested_star_domain": "IDENTITY",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 12,
+      "capability_id": "capability.collection.tracker",
+      "tier": "B-STRATEGIC",
+      "suggested_star_domain": "CATALOG",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "VERY_HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 13,
+      "capability_id": "capability.market.price-alert",
+      "tier": "B-STRATEGIC",
+      "suggested_star_domain": "COMMERCE",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 14,
+      "capability_id": "capability.content.editorial-pipeline",
+      "tier": "B-STRATEGIC",
+      "suggested_star_domain": "MARKETING",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "VERY_HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 15,
+      "capability_id": "capability.notification.in-app-feed",
+      "tier": "B-STRATEGIC",
+      "suggested_star_domain": "COMMUNICATION",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 16,
+      "capability_id": "capability.reputation.store-rating",
+      "tier": "B-STRATEGIC",
+      "suggested_star_domain": "TRUST",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "MEDIUM",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 17,
+      "capability_id": "capability.catalog.curation-provenance",
+      "tier": "B-STRATEGIC",
+      "suggested_star_domain": "TRUST",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 18,
+      "capability_id": "capability.media.document-library",
+      "tier": "C-HEAVY",
+      "suggested_star_domain": "MEDIA",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "MEDIUM",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 19,
+      "capability_id": "capability.business.light-bookkeeping",
+      "tier": "C-HEAVY",
+      "suggested_star_domain": "FINANCE",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "MEDIUM",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 20,
+      "capability_id": "capability.notification.transactional",
+      "tier": "C-HEAVY",
+      "suggested_star_domain": "COMMUNICATION",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 21,
+      "capability_id": "capability.marketplace.classified-listing",
+      "tier": "C-HEAVY",
+      "suggested_star_domain": "COMMERCE",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "VERY_HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 22,
+      "capability_id": "capability.location.store-directory",
+      "tier": "C-HEAVY",
+      "suggested_star_domain": "DISCOVERY",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 23,
+      "capability_id": "capability.content.news-feed",
+      "tier": "C-HEAVY",
+      "suggested_star_domain": "MARKETING",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "MEDIUM",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 24,
+      "capability_id": "capability.community.threaded-discussion",
+      "tier": "D-HIGH_AUTHORITY",
+      "suggested_star_domain": "COMMUNITY",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 25,
+      "capability_id": "capability.engagement.gamification",
+      "tier": "D-HIGH_AUTHORITY",
+      "suggested_star_domain": "ENGAGEMENT",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 26,
+      "capability_id": "capability.trust.moderation-queue",
+      "tier": "D-HIGH_AUTHORITY",
+      "suggested_star_domain": "TRUST",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "VERY_HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 27,
+      "capability_id": "capability.community.direct-messaging",
+      "tier": "D-HIGH_AUTHORITY",
+      "suggested_star_domain": "COMMUNICATION",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 28,
+      "capability_id": "capability.economy.credit-ledger",
+      "tier": "D-HIGH_AUTHORITY",
+      "suggested_star_domain": "FINANCE",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 29,
+      "capability_id": "capability.catalog.identification",
+      "tier": "D-HIGH_AUTHORITY",
+      "suggested_star_domain": "AI",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "VERY_HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 30,
+      "capability_id": "capability.identity.role-policy",
+      "tier": "D-HIGH_AUTHORITY",
+      "suggested_star_domain": "SECURITY",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "MEDIUM",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    },
+    {
+      "rank": 31,
+      "capability_id": "capability.usage.quota-meter",
+      "tier": "D-HIGH_AUTHORITY",
+      "suggested_star_domain": "FINANCE",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "HIGH",
+      "next_step": "DECOMPOSE_AND_FREEZE_BOUNDARY",
+      "promotion_authorized": false
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-006-002",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3-8b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788088498.895561,
+  "completed_at": 1788088505.0598798,
+  "duration_sec": 6.164318799972534,
+  "allowed_paths": [
+    "training/level-1/L1-006-json-format/jsonFormat.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-006-json-format/jsonFormat.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-006-json-format/jsonFormat.mjs\n+++ b/training/level-1/L1-006-json-format/jsonFormat.mjs\n@@ -0,0 +1,18 @@\n+export function jsonFormat(input, mode = \"pretty\") {\n+  if (mode !== \"pretty\" && mode !== \"minify\") {\n+    throw new RangeError(\"Unsupported mode\");\n+  }\n+  try {\n+    const value = JSON.parse(input);\n+    if (mode === \"pretty\") {\n+      return JSON.stringify(value, null, 2) + \"\\n\";\n+    } else if (mode === \"minify\") {\n+      return JSON.stringify(value);\n+    }\n+  } catch (error) {\n+    if (error instanceof SyntaxError) {\n+      throw error;\n+    }\n+    throw new Error(\"Invalid JSON\");\n+  }\n+}",
+  "git_status": "training/level-1/L1-006-json-format/jsonFormat.mjs",
+  "summary": "Fixed mode validation to throw RangeError for unsupported modes, while preserving SyntaxError propagation and output formatting.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-006-json-format/jsonFormat.mjs\n+++ b/training/level-1/L1-006-json-format/jsonFormat.mjs\n@@ -0,0 +1,18 @@\n+export function jsonFormat(input, mode = \"pretty\") {\n+  if (mode !== \"pretty\" && mode !== \"minify\") {\n+    throw new RangeError(\"Unsupported mode\");\n+  }\n+  try {\n+    const value = JSON.parse(input);\n+    if (mode === \"pretty\") {\n+      return JSON.stringify(value, null, 2) + \"\\n\";\n+    } else if (mode === \"minify\") {\n+      return JSON.stringify(value);\n+    }\n+  } catch (error) {\n+    if (error instanceof SyntaxError) {\n+      throw error;\n+    }\n+    throw new Error(\"Invalid JSON\");\n+  }\n+}",
+    "git_status": "training/level-1/L1-006-json-format/jsonFormat.mjs",
+    "tool_trace": [
+      "read_file: export function jsonFormat(input, mode = \"pretty\") {\n  try {\n    const value = JSON.parse(input);\n    if (mode === \"pretty\") {\n      return JSON.stringify(value, null, 2) + \"\\n\";\n    } else if (mode =",
+      "write_file: wrote 482 chars to training/level-1/L1-006-json-format/jsonFormat.mjs",
+      "finish: Fixed mode validation to throw RangeError for unsupported modes, while preserving SyntaxError propagation and output formatting."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-006-json-format/jsonFormat.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-006-json-format/jsonFormat.mjs\"}",
+        "raw_length": 62,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-006-json-format/jsonFormat.mjs\", \"content\": \"export function jsonFormat(input, mode = \\\"pretty\\\") {\\n  if (mode !== \\\"pretty\\\" && mode !== \\\"minify\\\") {\\n    throw new RangeError(\\\"Unsupported mode\\\");\\n  }\\n  ",
+        "raw_suffix": " = \\\"pretty\\\") {\\n  if (mode !== \\\"pretty\\\" && mode !== \\\"minify\\\") {\\n    throw new RangeError(\\\"Unsupported mode\\\");\\n  }\\n  try {\\n    const value = JSON.parse(input);\\n    if (mode === \\\"pretty\\\") {\\n      return JSON.stringify(value, null, 2) + \\\"\\\\n\\\";\\n    } else if (mode === \\\"minify\\\") {\\n      return JSON.stringify(value);\\n    }\\n  } catch (error) {\\n    if (error instanceof SyntaxError) {\\n      throw error;\\n    }\\n    throw new Error(\\\"Invalid JSON\\\");\\n  }\\n}\"}",
+        "raw_length": 593,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 482
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Fixed mode validation to throw RangeError for unsupported modes, while preserving SyntaxError propagation and output formatting.\"}",
+        "raw_suffix": "{\"summary\": \"Fixed mode validation to throw RangeError for unsupported modes, while preserving SyntaxError propagation and output formatting.\"}",
+        "raw_length": 143,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3-8b",
+    "model": "qwen3:8b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "5305",
+      "utilization_pct": "0",
+      "temperature_c": "41",
+      "power_w": "5.24"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    5.3 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "5305",
+      "utilization_pct": "2",
+      "temperature_c": "44",
+      "power_w": "20.08"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    5.3 GB    100% GPU     4096       29 minutes from now"
+  }
+}

@@ -1,0 +1,1877 @@
+{
+  "schema": "othrys.harvest.duplicate-topology.v1",
+  "date": "2026-08-31",
+  "groups": 3788,
+  "classification_counts": {
+    "STUDIO_MIRROR_OR_EVIDENCE": 309,
+    "HUB_BRANCH_MIRROR": 1960,
+    "CORE_EMBED_MIRROR": 1425,
+    "EVIDENCE_SNAPSHOT_DUPLICATE": 51,
+    "STALE_EMBED_DUPLICATE": 42,
+    "CROSS_PRODUCT_OR_UNKNOWN_DUPLICATE": 1
+  },
+  "samples": {
+    "STUDIO_MIRROR_OR_EVIDENCE": [
+      {
+        "bytes": 4319459,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/CRITIC_CYCLE3.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/CRITIC_CYCLE3.json"
+          }
+        ]
+      },
+      {
+        "bytes": 4319056,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/CRITIC_CYCLE2.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/CRITIC_CYCLE2.json"
+          }
+        ]
+      },
+      {
+        "bytes": 4312008,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-CONVERGENCE-PUSH-001/CRITIC_CYCLE1.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-CONVERGENCE-PUSH-001/CRITIC_CYCLE1.json"
+          }
+        ]
+      },
+      {
+        "bytes": 4310029,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-REFINE-CYCLE1-GATE-001/CRITIC_CYCLE2.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-REFINE-CYCLE1-GATE-001/CRITIC_CYCLE2.json"
+          }
+        ]
+      },
+      {
+        "bytes": 4309717,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-STEERING-INTEGRATION-001/CYCLE_EVIDENCE.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-STEERING-INTEGRATION-001/CYCLE_EVIDENCE.json"
+          }
+        ]
+      },
+      {
+        "bytes": 4309455,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-CONVERGENCE-PUSH-001/CRITIC_CYCLE2.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-CONVERGENCE-PUSH-001/CRITIC_CYCLE2.json"
+          }
+        ]
+      },
+      {
+        "bytes": 4308238,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/studio_refine_mutation_001/CRITIC_CYCLE1.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/studio_refine_mutation_001/CRITIC_CYCLE1.json"
+          }
+        ]
+      },
+      {
+        "bytes": 4308029,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-REFINE-CYCLE1-GATE-001/CRITIC_CYCLE1.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-REFINE-CYCLE1-GATE-001/CRITIC_CYCLE1.json"
+          }
+        ]
+      },
+      {
+        "bytes": 4307873,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-CONVERGENCE-PUSH-001/CRITIC_CYCLE3.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-CONVERGENCE-PUSH-001/CRITIC_CYCLE3.json"
+          }
+        ]
+      },
+      {
+        "bytes": 237108,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-STEERING-LOOP-DIAGNOSTIC-001/STEERING_TRACE.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-STEERING-LOOP-DIAGNOSTIC-001/STEERING_TRACE.json"
+          }
+        ]
+      },
+      {
+        "bytes": 206306,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-STEERING-INTEGRATION-001/SEARCH_LEDGER.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-STEERING-INTEGRATION-001/SEARCH_LEDGER.json"
+          }
+        ]
+      },
+      {
+        "bytes": 107396,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-STEERING-INTEGRATION-001/run1/SEARCH_LEDGER.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-STEERING-INTEGRATION-001/run1/SEARCH_LEDGER.json"
+          }
+        ]
+      },
+      {
+        "bytes": 35068,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-STEERING-LOOP-DIAGNOSTIC-001/candidate_ranking.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-STEERING-LOOP-DIAGNOSTIC-001/round1/candidate_ranking.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-STEERING-LOOP-DIAGNOSTIC-001/candidate_ranking.json"
+          }
+        ]
+      },
+      {
+        "bytes": 16076,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/schema_cycle1.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/schema_cycle2.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/schema_cycle1.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/schema_cycle2.json"
+          }
+        ]
+      },
+      {
+        "bytes": 43761,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/studio_vision_refine_001/CRITIC_CYCLE1.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/studio_vision_refine_001/CRITIC_CYCLE1.json"
+          }
+        ]
+      },
+      {
+        "bytes": 16073,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/schema_cycle3.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-STEERING-LOOP-DIAGNOSTIC-001/schema_baseline.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/schema_cycle3.json"
+          }
+        ]
+      },
+      {
+        "bytes": 27847,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/PROOF.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/PROOF.json"
+          }
+        ]
+      },
+      {
+        "bytes": 24216,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "hub/shell/mountain_page.py"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "othrys_studio/design_studio/hub_mountain_sandbox/mountain_page.py"
+          }
+        ]
+      },
+      {
+        "bytes": 1370,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-CONVERGENCE-PUSH-001/PROVIDER_ROSTER.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-CONVERGENCE-RESUME-002/PROVIDER_ROSTER.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/STUDIO-REFINE-CYCLE1-GATE-001/PROVIDER_ROSTER.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/studio_refine_mutation_001/PROVIDER_ROSTER.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/studio_vision_decomposition_001/PROVIDER_ROSTER.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/studio_vision_refine_001/PROVIDER_ROSTER.json"
+          }
+        ]
+      },
+      {
+        "bytes": 17780,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "docs/studio_blocks_foundation_acceptance_001/PLAYWRIGHT_FOUNDATION.json"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "docs/studio_blocks_foundation_acceptance_001/PLAYWRIGHT_FOUNDATION.json"
+          }
+        ]
+      }
+    ],
+    "HUB_BRANCH_MIRROR": [
+      {
+        "bytes": 3389928,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/mission031_1/CANDIDATE_LEDGER.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/mission031_1/CANDIDATE_LEDGER.json"
+          }
+        ]
+      },
+      {
+        "bytes": 369302,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/atlas/dist-contract/atlas-contract.json"
+          },
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/atlas/generated/atlas-contract.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "core/titan/atlas/dist-contract/atlas-contract.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "core/titan/atlas/generated/atlas-contract.json"
+          }
+        ]
+      },
+      {
+        "bytes": 465508,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/mission029/05_FALLBACK_MANIFEST.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/mission029/05_FALLBACK_MANIFEST.json"
+          }
+        ]
+      },
+      {
+        "bytes": 424296,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/CHANGELOG.md"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "core/CHANGELOG.md"
+          }
+        ]
+      },
+      {
+        "bytes": 339633,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/atlas/generated/atlas-snapshot.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "core/titan/atlas/generated/atlas-snapshot.json"
+          }
+        ]
+      },
+      {
+        "bytes": 332374,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/atlas/generated/atlas.html"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "core/titan/atlas/generated/atlas.html"
+          }
+        ]
+      },
+      {
+        "bytes": 291648,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/mission026/CORE_STOCK_INVENTORY.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/mission026/CORE_STOCK_INVENTORY.json"
+          }
+        ]
+      },
+      {
+        "bytes": 84034,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/triad_functional_cert_001/CERT_RUNTIME.json"
+          },
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/triad_functional_cert_001/FINAL_REPORT.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/triad_functional_cert_001/CERT_RUNTIME.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/triad_functional_cert_001/FINAL_REPORT.json"
+          }
+        ]
+      },
+      {
+        "bytes": 82788,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/triad_functional_cert_001/archive/pre_001_4_20260809_180721/CERT_RUNTIME.json"
+          },
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/triad_functional_cert_001/archive/pre_001_4_20260809_180721/FINAL_REPORT.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/triad_functional_cert_001/archive/pre_001_4_20260809_180721/CERT_RUNTIME.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/triad_functional_cert_001/archive/pre_001_4_20260809_180721/FINAL_REPORT.json"
+          }
+        ]
+      },
+      {
+        "bytes": 66083,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/triad_functional_cert_001/archive/pre_001_3_20260809_173522/CERT_RUNTIME.json"
+          },
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/triad_functional_cert_001/archive/pre_001_3_20260809_173522/FINAL_REPORT.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/triad_functional_cert_001/archive/pre_001_3_20260809_173522/CERT_RUNTIME.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/triad_functional_cert_001/archive/pre_001_3_20260809_173522/FINAL_REPORT.json"
+          }
+        ]
+      },
+      {
+        "bytes": 61399,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/triad_functional_cert_001/archive/clean_attempt_coverage_20260809_160715/CERT_RUNTIME.json"
+          },
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/triad_functional_cert_001/archive/clean_attempt_coverage_20260809_160715/FINAL_REPORT.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/triad_functional_cert_001/archive/clean_attempt_coverage_20260809_160715/CERT_RUNTIME.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/triad_functional_cert_001/archive/clean_attempt_coverage_20260809_160715/FINAL_REPORT.json"
+          }
+        ]
+      },
+      {
+        "bytes": 89987,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/tiles_pack_review_001/DOGFOOD.json"
+          },
+          {
+            "repo": "othrys-hub-main",
+            "path": "state/tiles_pack_review_001/DOGFOOD.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/tiles_pack_review_001/DOGFOOD.json"
+          }
+        ]
+      },
+      {
+        "bytes": 178403,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "forge/host.mjs"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "forge/host.mjs"
+          }
+        ]
+      },
+      {
+        "bytes": 158908,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/mission031_1/GARDEN_INVENTORY.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/mission031_1/GARDEN_INVENTORY.json"
+          }
+        ]
+      },
+      {
+        "bytes": 135339,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/mission031/ONLINE_SOURCE_INVENTORY.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/mission031/ONLINE_SOURCE_INVENTORY.json"
+          }
+        ]
+      },
+      {
+        "bytes": 64759,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/design_studio_modern_web_001_2/DOGFOOD.json"
+          },
+          {
+            "repo": "othrys-hub-main",
+            "path": "state/design_studio_modern_web_001_2/DOGFOOD.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/design_studio_modern_web_001_2/DOGFOOD.json"
+          }
+        ]
+      },
+      {
+        "bytes": 126651,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "hub/tiles_studio/panel.py"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "hub/tiles_studio/panel.py"
+          }
+        ]
+      },
+      {
+        "bytes": 62619,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/tiles_productization_001/DOGFOOD.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/tiles_productization_001/DOGFOOD.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "state/tiles_productization_001/DOGFOOD.json"
+          }
+        ]
+      },
+      {
+        "bytes": 120106,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "scripts/triad_functional_cert_001.py"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "scripts/triad_functional_cert_001.py"
+          }
+        ]
+      },
+      {
+        "bytes": 38999,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "docs/owner_deliverables_0014/DOGFOOD.json"
+          },
+          {
+            "repo": "othrys-hub-main",
+            "path": "state/owner_deliverables_0014/DOGFOOD.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/owner_deliverables_0014/DOGFOOD.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "state/owner_deliverables_0014/DOGFOOD.json"
+          }
+        ]
+      }
+    ],
+    "CORE_EMBED_MIRROR": [
+      {
+        "bytes": 369175,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/atlas-delivery-contract/src/atlas-contract.json"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "core/titan/atlas-delivery-contract/src/atlas-contract.json"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/atlas-delivery-contract/src/atlas-contract.json"
+          }
+        ]
+      },
+      {
+        "bytes": 221737,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/P2-EXECUTION-LEDGER.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "P2-EXECUTION-LEDGER.md"
+          }
+        ]
+      },
+      {
+        "bytes": 89861,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/KNOWN-ISSUES.md"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "core/KNOWN-ISSUES.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "KNOWN-ISSUES.md"
+          }
+        ]
+      },
+      {
+        "bytes": 100446,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/package-lock.json"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "package-lock.json"
+          }
+        ]
+      },
+      {
+        "bytes": 38453,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/hermes/audit/campaign.test.mjs"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "core/hermes/audit/campaign.test.mjs"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "hermes/audit/campaign.test.mjs"
+          }
+        ]
+      },
+      {
+        "bytes": 76512,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/ENGINEERING_GUIDE.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/ENGINEERING_GUIDE.md"
+          }
+        ]
+      },
+      {
+        "bytes": 75241,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/crown/family.mjs"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "crown/family.mjs"
+          }
+        ]
+      },
+      {
+        "bytes": 66208,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/reviews/SCALABILITY_AUDIT.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/reviews/SCALABILITY_AUDIT.md"
+          }
+        ]
+      },
+      {
+        "bytes": 30401,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/great-library/book/18-adr-index.md"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "core/great-library/book/18-adr-index.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "great-library/book/18-adr-index.md"
+          }
+        ]
+      },
+      {
+        "bytes": 29456,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/adr/README.md"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "core/titan/adr/README.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/adr/README.md"
+          }
+        ]
+      },
+      {
+        "bytes": 56226,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/reviews/ARCHITECTURE_AUDIT.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/reviews/ARCHITECTURE_AUDIT.md"
+          }
+        ]
+      },
+      {
+        "bytes": 55497,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/reviews/AUTOMATION_AUDIT.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/reviews/AUTOMATION_AUDIT.md"
+          }
+        ]
+      },
+      {
+        "bytes": 53869,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/reviews/VTC_PRODUCT_AUDIT.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/reviews/VTC_PRODUCT_AUDIT.md"
+          }
+        ]
+      },
+      {
+        "bytes": 52356,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/hephaestus/PREP-HEPHAESTUS.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/hephaestus/PREP-HEPHAESTUS.md"
+          }
+        ]
+      },
+      {
+        "bytes": 51822,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/reviews/BUSINESS_AUDIT.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/reviews/BUSINESS_AUDIT.md"
+          }
+        ]
+      },
+      {
+        "bytes": 51418,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/reviews/MARKETPLACE_AUDIT.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/reviews/MARKETPLACE_AUDIT.md"
+          }
+        ]
+      },
+      {
+        "bytes": 49241,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/thinktank/2026-07-21-CHATGPT-BUILD-PLAN-V2-PROPOSAL-round1-full.md"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "thinktank/2026-07-21-CHATGPT-BUILD-PLAN-V2-PROPOSAL-round1-full.md"
+          }
+        ]
+      },
+      {
+        "bytes": 48787,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/prometheus/src/sources/source-catalog.json"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/prometheus/src/sources/source-catalog.json"
+          }
+        ]
+      },
+      {
+        "bytes": 24357,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/control-plane/src/control-plane.test.ts"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "core/titan/control-plane/src/control-plane.test.ts"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/control-plane/src/control-plane.test.ts"
+          }
+        ]
+      },
+      {
+        "bytes": 48447,
+        "repos": [
+          "othrys-core-windows",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "core/titan/atlas-delivery-contract/package-lock.json"
+          },
+          {
+            "repo": "othrys-core-windows",
+            "path": "titan/atlas-delivery-contract/package-lock.json"
+          }
+        ]
+      }
+    ],
+    "EVIDENCE_SNAPSHOT_DUPLICATE": [
+      {
+        "bytes": 79825,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "src/App.jsx"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/src_App.jsx"
+          }
+        ]
+      },
+      {
+        "bytes": 40859,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "src/forum/ForumHome.jsx"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/src_forum_ForumHome.jsx"
+          }
+        ]
+      },
+      {
+        "bytes": 39586,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "src/components/ScanFlow.jsx"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/src_components_ScanFlow.jsx"
+          }
+        ]
+      },
+      {
+        "bytes": 29970,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "src/tabs/ModTab.jsx"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/src_tabs_ModTab.jsx"
+          }
+        ]
+      },
+      {
+        "bytes": 27421,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "src/Badges.jsx"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/src_Badges.jsx"
+          }
+        ]
+      },
+      {
+        "bytes": 24198,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "api/scan.js"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/api_scan.js"
+          }
+        ]
+      },
+      {
+        "bytes": 24114,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "src/components/MarketValue.jsx"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/src_components_MarketValue.jsx"
+          }
+        ]
+      },
+      {
+        "bytes": 23896,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "src/Messenger.jsx"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/src_Messenger.jsx"
+          }
+        ]
+      },
+      {
+        "bytes": 21805,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "SCHEMA.md"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/SCHEMA.md"
+          }
+        ]
+      },
+      {
+        "bytes": 17143,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "src/ControlRoom.jsx"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/src_ControlRoom.jsx"
+          }
+        ]
+      },
+      {
+        "bytes": 15561,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "HANDOFF.md"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/HANDOFF.md"
+          }
+        ]
+      },
+      {
+        "bytes": 12664,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "src/EventsCalendar.jsx"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/src_EventsCalendar.jsx"
+          }
+        ]
+      },
+      {
+        "bytes": 11209,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "api/ebay.js"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/api_ebay.js"
+          }
+        ]
+      },
+      {
+        "bytes": 11119,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "MASTER-PLAN.md"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/MASTER-PLAN.md"
+          }
+        ]
+      },
+      {
+        "bytes": 10301,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "src/tabs/FinderTab.jsx"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/src_tabs_FinderTab.jsx"
+          }
+        ]
+      },
+      {
+        "bytes": 9934,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "lib/ssr/page.js"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/lib_ssr_page.js"
+          }
+        ]
+      },
+      {
+        "bytes": 8866,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "src/emails.js"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/src_emails.js"
+          }
+        ]
+      },
+      {
+        "bytes": 6742,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "src/UserChip.jsx"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/src_UserChip.jsx"
+          }
+        ]
+      },
+      {
+        "bytes": 6514,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "api/credits.js"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/api_credits.js"
+          }
+        ]
+      },
+      {
+        "bytes": 6321,
+        "repos": [
+          "othrys-hub",
+          "vtc-platform"
+        ],
+        "files": [
+          {
+            "repo": "vtc-platform",
+            "path": "api/xp.js"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "docs/VTC-BLOCK-QUARRY-001/_raw/api_xp.js"
+          }
+        ]
+      }
+    ],
+    "STALE_EMBED_DUPLICATE": [
+      {
+        "bytes": 40930,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/othrys_studio/design_studio/quality.py"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "othrys_studio/design_studio/quality.py"
+          }
+        ]
+      },
+      {
+        "bytes": 10105,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "hub/design_studio/visual_proof.py"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/othrys_studio/design_studio/visual_proof.py"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "othrys_studio/design_studio/visual_proof.py"
+          }
+        ]
+      },
+      {
+        "bytes": 8600,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "hub/design_studio/browser_quality.py"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/othrys_studio/design_studio/browser_quality.py"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "othrys_studio/design_studio/browser_quality.py"
+          }
+        ]
+      },
+      {
+        "bytes": 14579,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/othrys_studio/design_studio/code_loop.py"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "othrys_studio/design_studio/code_loop.py"
+          }
+        ]
+      },
+      {
+        "bytes": 13875,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/othrys_studio/design_studio/toolkit.py"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "othrys_studio/design_studio/toolkit.py"
+          }
+        ]
+      },
+      {
+        "bytes": 12720,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "hub/design_studio/stack_intel.py"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/othrys_studio/design_studio/stack_intel.py"
+          }
+        ]
+      },
+      {
+        "bytes": 12271,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "hub/design_studio/inspector.py"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/othrys_studio/design_studio/inspector.py"
+          }
+        ]
+      },
+      {
+        "bytes": 11184,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "hub/design_studio/quality_hands.py"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/othrys_studio/design_studio/quality_hands.py"
+          }
+        ]
+      },
+      {
+        "bytes": 10395,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/othrys_studio/design_studio/dom_interaction.py"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "othrys_studio/design_studio/dom_interaction.py"
+          }
+        ]
+      },
+      {
+        "bytes": 7092,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "tests/test_owner_deliverables_stale_precondition_001.py"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "tests/test_owner_deliverables_stale_precondition_001.py"
+          }
+        ]
+      },
+      {
+        "bytes": 6867,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/othrys_studio/design_studio/design_controls.py"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "othrys_studio/design_studio/design_controls.py"
+          }
+        ]
+      },
+      {
+        "bytes": 5569,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/apps/hub-web/src/shell/HubShell.tsx"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "apps/hub-web/src/shell/HubShell.tsx"
+          }
+        ]
+      },
+      {
+        "bytes": 4386,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/apps/hub-web/src/shell/LeftRail.tsx"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "apps/hub-web/src/shell/LeftRail.tsx"
+          }
+        ]
+      },
+      {
+        "bytes": 4041,
+        "repos": [
+          "othrys-hub",
+          "othrys-hub-main"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub-main",
+            "path": "hub/design_project.py"
+          },
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/othrys_studio/design_project.py"
+          }
+        ]
+      },
+      {
+        "bytes": 3787,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/packages/design-system/src/tokens.css"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "packages/design-system/src/tokens.css"
+          }
+        ]
+      },
+      {
+        "bytes": 2911,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/packages/design-system/src/styles.css"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "packages/design-system/src/styles.css"
+          }
+        ]
+      },
+      {
+        "bytes": 2196,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/packages/design-system/src/components/StatusBadge.tsx"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "packages/design-system/src/components/StatusBadge.tsx"
+          }
+        ]
+      },
+      {
+        "bytes": 2172,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/packages/design-system/src/components/ChatInput.tsx"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "packages/design-system/src/components/ChatInput.tsx"
+          }
+        ]
+      },
+      {
+        "bytes": 2126,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/packages/design-system/src/components/Button.tsx"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "packages/design-system/src/components/Button.tsx"
+          }
+        ]
+      },
+      {
+        "bytes": 2062,
+        "repos": [
+          "othrys-hub",
+          "othrys-studio"
+        ],
+        "files": [
+          {
+            "repo": "othrys-hub",
+            "path": "_to_delete/studio_embedded.stale.1786888652/apps/hub-web/src/data/mockConversations.ts"
+          },
+          {
+            "repo": "othrys-studio",
+            "path": "apps/hub-web/src/data/mockConversations.ts"
+          }
+        ]
+      }
+    ],
+    "CROSS_PRODUCT_OR_UNKNOWN_DUPLICATE": [
+      {
+        "bytes": 262,
+        "repos": [
+          "othrys-web",
+          "study-buddy"
+        ],
+        "files": [
+          {
+            "repo": "othrys-web",
+            "path": "next-env.d.ts"
+          },
+          {
+            "repo": "study-buddy",
+            "path": "next-env.d.ts"
+          }
+        ]
+      }
+    ]
+  },
+  "law": "Exact duplicate does not imply wrong ownership. Evidence snapshots and embedded canonical mirrors are distinguished from candidate product duplication."
+}

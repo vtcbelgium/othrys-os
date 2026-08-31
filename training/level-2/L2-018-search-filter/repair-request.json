@@ -1,0 +1,7 @@
+{
+  "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-018-REPAIR1","node_id":"legion","capability":"engineering.patch",
+  "workspace":"C:/Users/othry/Projects/othrys-v2","allowed_paths":["training/level-2/L2-018-search-filter/searchStore.mjs"],
+  "deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":120,
+  "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-018","forge_builder_id":"local.qwen3-coder-30b"},
+  "task":"HARD BUILD L2-018. Create only searchStore.mjs. Export createSearchStore(filePath), frozen async {replace,list,query}. Missing file empty/no write. Persist canonical JSON array of unique-id plain records, exact nonempty trimmed string id, recursively JSON-safe finite values, recursively sorted object keys, preserve record order, unsafe keys rejected. Corrupt/noncanonical/duplicate persisted state => STATE_CORRUPT and preserve bytes. replace validates whole array before atomic write. query spec exact optional text,fields,where; text string trimmed; fields unique nonempty strings and required when text nonempty; where plain object scalar values only. Match where exact top-level scalar equality, then text case-insensitive en-US substring in named top-level string fields; preserve stored order. Invalid spec INVALID_QUERY. Deep clone outputs. Standard Node ESM fs/promises,path,crypto only. No network/deps/secrets/wall clock. Touch nothing else."
+}

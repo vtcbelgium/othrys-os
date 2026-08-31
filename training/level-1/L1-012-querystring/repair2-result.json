@@ -1,0 +1,122 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-012-003",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3-coder-30b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788090926.3779035,
+  "completed_at": 1788090977.497665,
+  "duration_sec": 51.11976146697998,
+  "allowed_paths": [
+    "training/level-1/L1-012-querystring/queryString.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-012-querystring/queryString.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-012-querystring/queryString.mjs\n+++ b/training/level-1/L1-012-querystring/queryString.mjs\n@@ -0,0 +1,58 @@\n+export function parseQuery(input) {\n+  if (input === undefined || input === null || typeof input !== 'string') {\n+    return Object.create(null);\n+  }\n+\n+  const params = new URLSearchParams(input.startsWith('?') ? input : '?' + input);\n+  const result = Object.create(null);\n+\n+  for (const [key, value] of params.entries()) {\n+    if (!(key in result)) {\n+      result[key] = value;\n+    } else if (Array.isArray(result[key])) {\n+      result[key].push(value);\n+    } else {\n+      result[key] = [result[key], value];\n+    }\n+  }\n+\n+  for (const key of Object.keys(result)) {\n+    if (Array.isArray(result[key])) {\n+      result[key] = Object.freeze(result[key]);\n+    }\n+  }\n+\n+  return Object.freeze(result);\n+}\n+\n+export function buildQuery(obj) {\n+  if (obj === null || typeof obj !== 'object') {\n+    throw new TypeError('buildQuery expects a plain object or null-prototype object');\n+  }\n+\n+  const params = new URLSearchParams();\n+\n+  for (const key of Object.keys(obj).sort()) {\n+    const value = obj[key];\n+\n+    if (value === null || value === undefined) {\n+      params.append(key, \"\");\n+    } else if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {\n+      params.append(key, String(value));\n+    } else if (Array.isArray(value)) {\n+      for (const item of value) {\n+        if (item === null || item === undefined) {\n+          params.append(key, \"\");\n+        } else if (typeof item === 'string' || typeof item === 'number' || typeof item === 'boolean') {\n+          params.append(key, String(item));\n+        } else {\n+          throw new TypeError('Nested objects/functions/symbols not allowed');\n+        }\n+      }\n+    } else {\n+      throw new TypeError('Nested objects/functions/symbols not allowed');\n+    }\n+  }\n+\n+  return params.toString();\n+}",
+  "git_status": "training/level-1/L1-012-querystring/queryString.mjs",
+  "summary": "I have completed the HARD REPAIR task for L1-012. The changes made are:",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-012-querystring/queryString.mjs\n+++ b/training/level-1/L1-012-querystring/queryString.mjs\n@@ -0,0 +1,58 @@\n+export function parseQuery(input) {\n+  if (input === undefined || input === null || typeof input !== 'string') {\n+    return Object.create(null);\n+  }\n+\n+  const params = new URLSearchParams(input.startsWith('?') ? input : '?' + input);\n+  const result = Object.create(null);\n+\n+  for (const [key, value] of params.entries()) {\n+    if (!(key in result)) {\n+      result[key] = value;\n+    } else if (Array.isArray(result[key])) {\n+      result[key].push(value);\n+    } else {\n+      result[key] = [result[key], value];\n+    }\n+  }\n+\n+  for (const key of Object.keys(result)) {\n+    if (Array.isArray(result[key])) {\n+      result[key] = Object.freeze(result[key]);\n+    }\n+  }\n+\n+  return Object.freeze(result);\n+}\n+\n+export function buildQuery(obj) {\n+  if (obj === null || typeof obj !== 'object') {\n+    throw new TypeError('buildQuery expects a plain object or null-prototype object');\n+  }\n+\n+  const params = new URLSearchParams();\n+\n+  for (const key of Object.keys(obj).sort()) {\n+    const value = obj[key];\n+\n+    if (value === null || value === undefined) {\n+      params.append(key, \"\");\n+    } else if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {\n+      params.append(key, String(value));\n+    } else if (Array.isArray(value)) {\n+      for (const item of value) {\n+        if (item === null || item === undefined) {\n+          params.append(key, \"\");\n+        } else if (typeof item === 'string' || typeof item === 'number' || typeof item === 'boolean') {\n+          params.append(key, String(item));\n+        } else {\n+          throw new TypeError('Nested objects/functions/symbols not allowed');\n+        }\n+      }\n+    } else {\n+      throw new TypeError('Nested objects/functions/symbols not allowed');\n+    }\n+  }\n+\n+  return params.toString();\n+}",
+    "git_status": "training/level-1/L1-012-querystring/queryString.mjs",
+    "tool_trace": [
+      "read_file: export function parseQuery(input) {\n  if (input === undefined || input === null || typeof input !== 'string') {\n    return Object.create(null);\n  }\n\n  const params = new URLSearchParams(input.startsWi",
+      "write_file: wrote 1755 chars to training/level-1/L1-012-querystring/queryString.mjs",
+      "read_file: export function parseQuery(input) {\n  if (input === undefined || input === null || typeof input !== 'string') {\n    return Object.create(null);\n  }\n\n  const params = new URLSearchParams(input.startsWi",
+      "finish: I have completed the HARD REPAIR task for L1-012. The changes made are:"
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-012-querystring/queryString.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-012-querystring/queryString.mjs\"}",
+        "raw_length": 63,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-012-querystring/queryString.mjs\", \"content\": \"export function parseQuery(input) {\\n  if (input === undefined || input === null || typeof input !== 'string') {\\n    return Object.create(null);\\n  }\\n\\n  const pa",
+        "raw_suffix": "tem === null || item === undefined) {\\n          params.append(key, \\\"\\\");\\n        } else if (typeof item === 'string' || typeof item === 'number' || typeof item === 'boolean') {\\n          params.append(key, String(item));\\n        } else {\\n          throw new TypeError('Nested objects/functions/symbols not allowed');\\n        }\\n      }\\n    } else {\\n      throw new TypeError('Nested objects/functions/symbols not allowed');\\n    }\\n  }\\n\\n  return params.toString();\\n}\"}",
+        "raw_length": 1894,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1755
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-012-querystring/queryString.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-012-querystring/queryString.mjs\"}",
+        "raw_length": 63,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"I have completed the HARD REPAIR task for L1-012. The changes made are:\"}",
+        "raw_suffix": "{\"summary\": \"I have completed the HARD REPAIR task for L1-012. The changes made are:\"}",
+        "raw_length": 86,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3-coder-30b",
+    "model": "qwen3-coder:30b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6459",
+      "utilization_pct": "6",
+      "temperature_c": "41",
+      "power_w": "5.82"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6199",
+      "utilization_pct": "2",
+      "temperature_c": "55",
+      "power_w": "12.82"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       29 minutes from now"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "othrys.prometheus.forge-watch-qualification.v1",
+  "candidateId": "local.granite4.2-8b",
+  "model": "granite4.2:8b",
+  "sourceVerified": true,
+  "releaseDate": "2026-08-25",
+  "license": "Apache-2.0",
+  "costClass": "ZERO",
+  "secretBoundary": "NO_SECRET_REQUIRED_LOCAL",
+  "availability": "OLLAMA_LOCAL_LIVE",
+  "olympics": {
+    "events": 4,
+    "passes": 4,
+    "protocolPasses": 4,
+    "scopeViolations": 0,
+    "state": "QUALIFICATION_CANDIDATE"
+  },
+  "boundedWorkerMutation": {
+    "pass": false,
+    "reason": "NO_ATTEMPT_MUTATION",
+    "outOfScopeChanges": 0
+  },
+  "talosQualification": "NOT_REACHED_WORKER_GATE_FAILED",
+  "admission": "REFUSED_KEEP_TESTING",
+  "executionAllowed": false,
+  "authorityGranted": false
+}

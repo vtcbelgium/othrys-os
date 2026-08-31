@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-031 HARD REPAIR. WRITE immediately. Export the existing generateChecklist as a named export. Enforce exact contract: duplicate ids RangeError; provided required/done non-booleans TypeError; empty normalized text RangeError; invalid item TypeError; no Boolean coercion. Keep allowOptional and original-position generated ids. File training/level-1/L1-031-checklist/generateChecklist.mjs only. Finish after writing.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-031",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-031-003",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-031-checklist/generateChecklist.mjs"
+                      ]
+}

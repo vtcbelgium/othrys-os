@@ -1,0 +1,529 @@
+{
+  "schema": "othrys.harvest.vtc-capability-quarry.v1",
+  "date": "2026-08-31",
+  "source_repo": "C:/Users/othry/Projects/vtc-platform",
+  "source_head": "032a47c",
+  "rules": [
+    "quarry is evidence, not maturity",
+    "Capability Blocks require user-meaningful outcome",
+    "Bridges/workflows/shared services stay separate",
+    "no automatic admission or extraction"
+  ],
+  "count": 34,
+  "candidates": [
+    {
+      "id": "VTC-01",
+      "candidate_id": "capability.media.image-upload",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/uploadImage.js"
+      ],
+      "outcome": "Validate/re-encode/store a user image and return a usable reference",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Contract storage visibility, RLS and host-owned policy; compose with image-prep, never duplicate transform."
+    },
+    {
+      "id": "VTC-02",
+      "candidate_id": "capability.community.threaded-discussion",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/forum/ForumHome.jsx",
+        "src/forum/forumConfig.js"
+      ],
+      "outcome": "Create/read/reply/react in governed threaded discussions",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Moderation, auth, cascade and abuse boundaries make extraction heavy."
+    },
+    {
+      "id": "VTC-03",
+      "candidate_id": "capability.engagement.gamification",
+      "species": "CAPABILITY",
+      "sources": [
+        "api/xp.js",
+        "src/Badges.jsx",
+        "src/Quests.jsx"
+      ],
+      "outcome": "Award bounded XP/badges/quests from verified product actions",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Server-authoritative award path is valuable; duplicated constants expose drift risk."
+    },
+    {
+      "id": "VTC-04",
+      "candidate_id": "capability.location.store-directory",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/tabs/WorldMapTab.jsx",
+        "supabase_worldmap_setup.sql",
+        "supabase/vtc-latam-stores-2026-08-20.sql"
+      ],
+      "outcome": "Discover, rate and verify stores by location",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Split directory core from map/geocoding Bridges and moderation."
+    },
+    {
+      "id": "VTC-05",
+      "candidate_id": "capability.community.direct-messaging",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/Messenger.jsx",
+        "src/MessageReports.jsx"
+      ],
+      "outcome": "Exchange private messages with read/typing/report controls",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "PII, realtime, abuse, retention and user-block policy are high-gravity."
+    },
+    {
+      "id": "VTC-06",
+      "candidate_id": "capability.economy.credit-ledger",
+      "species": "CAPABILITY",
+      "sources": [
+        "api/credits.js",
+        "src/CreditStore.jsx"
+      ],
+      "outcome": "Earn/spend/cap/audit product credits",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Atomic spend path is strong evidence; earn/stipend consistency and fraud invariants need formal proof."
+    },
+    {
+      "id": "VTC-07",
+      "candidate_id": "capability.market.price-insight",
+      "species": "CAPABILITY",
+      "sources": [
+        "api/ebay.js",
+        "src/components/MarketValue.jsx"
+      ],
+      "outcome": "Turn noisy comparable observations into robust price insight",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Split pure robust statistics from eBay OAuth/query/cache Bridge and write-through."
+    },
+    {
+      "id": "VTC-08",
+      "candidate_id": "capability.usage.quota-meter",
+      "species": "CAPABILITY",
+      "sources": [
+        "api/chat.js",
+        "src/components/AdminApiPanel.jsx"
+      ],
+      "outcome": "Enforce tiered usage allowance and account for consumption",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Entitlement, concurrency and fail-open/closed semantics need hard contract."
+    },
+    {
+      "id": "VTC-09",
+      "candidate_id": "capability.events.rsvp",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/tabs/EventsTab.jsx"
+      ],
+      "outcome": "Publish approved events and manage attendance intent",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Timezone, moderation, capacity and cancellation semantics need boundary."
+    },
+    {
+      "id": "VTC-10",
+      "candidate_id": "capability.publication.product-seo",
+      "species": "CAPABILITY",
+      "sources": [
+        "api/render.js",
+        "lib/ssr",
+        "api/sitemap.js"
+      ],
+      "outcome": "Publish canonical crawlable product/content truth",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Separate canonical publication model from framework/render Bridge."
+    },
+    {
+      "id": "VTC-11",
+      "candidate_id": "capability.search.saved-query",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/tabs/FinderTab.jsx"
+      ],
+      "outcome": "Save and replay user searches under entitlement policy",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Good retention primitive; should connect to notifications but not require them."
+    },
+    {
+      "id": "VTC-12",
+      "candidate_id": "capability.document.collection-export",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/pdfExport.js"
+      ],
+      "outcome": "Export user-owned collection data as a portable document",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Separate data projection from layout/PDF/print Bridge."
+    },
+    {
+      "id": "VTC-13",
+      "candidate_id": "capability.notification.transactional",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/emails.js"
+      ],
+      "outcome": "Produce and deliver consent-aware transactional notifications",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Template shell and delivery Bridge currently coupled/incompletely wired."
+    },
+    {
+      "id": "VTC-14",
+      "candidate_id": "capability.collection.tracker",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/tabs/CollectionTab.jsx",
+        "src/App.jsx"
+      ],
+      "outcome": "Maintain owned items, copies, condition/accessories/notes and collection state",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "VERY_HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Central VTC capability; large current component must be decomposed into state core + presentation/workflows."
+    },
+    {
+      "id": "VTC-15",
+      "candidate_id": "capability.wishlist.hunt-list",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/tabs/WishlistTab.jsx",
+        "src/App.jsx"
+      ],
+      "outcome": "Maintain wanted items and discover community overlap",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Strong portable collection-commerce capability; photo and social lookup optional."
+    },
+    {
+      "id": "VTC-16",
+      "candidate_id": "capability.marketplace.classified-listing",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/tabs/MarketplaceTab.jsx"
+      ],
+      "outcome": "Create/search/remove member listings and surface matches",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "VERY_HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Messaging, credits and matching must remain separate dependencies, not bundled."
+    },
+    {
+      "id": "VTC-17",
+      "candidate_id": "capability.identity.public-profile-showcase",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/tabs/ProfileTab.jsx",
+        "src/tabs/PublicProfileTab.jsx",
+        "src/Showcase.jsx",
+        "src/UserChip.jsx"
+      ],
+      "outcome": "Publish a bounded member profile, flair and showcase",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Auth/profile data and privacy settings are dependencies; gamification flair optional."
+    },
+    {
+      "id": "VTC-18",
+      "candidate_id": "capability.trust.moderation-queue",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/tabs/ModTab.jsx",
+        "src/MessageReports.jsx"
+      ],
+      "outcome": "Queue, review, approve/reject and audit user/content reports",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "VERY_HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Broad authority today; candidate should be provider-neutral moderation case/decision core."
+    },
+    {
+      "id": "VTC-19",
+      "candidate_id": "capability.market.price-alert",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/components/MarketValue.jsx",
+        "src/tabs/CollectionTab.jsx",
+        "src/emails.js"
+      ],
+      "outcome": "Register threshold alerts against watched market observations",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Needs scheduler/notification Bridge later; registration/evaluation can be separate."
+    },
+    {
+      "id": "VTC-20",
+      "candidate_id": "capability.catalog.curation-provenance",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/tabs/CuratorTab.jsx",
+        "src/tabs/WikiTab.jsx",
+        "src/tabs/TodoTab.jsx"
+      ],
+      "outcome": "Accept/reject catalogue corrections, photos and wiki contributions with provenance",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Useful for heritage/catalog products; should generalize contribution proposal + review rather than VTC schema."
+    },
+    {
+      "id": "VTC-21",
+      "candidate_id": "capability.catalog.identification",
+      "species": "CAPABILITY",
+      "sources": [
+        "api/scan.js",
+        "src/components/ScanFlow.jsx"
+      ],
+      "outcome": "Identify candidate catalogue items from user media and return bounded matches",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "VERY_HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "AI/provider/embedding/auth/credit dependencies require clean Bridges and confidence contract."
+    },
+    {
+      "id": "VTC-22",
+      "candidate_id": "capability.content.editorial-pipeline",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/components/MediaOfficePanel.jsx",
+        "src/components/BlogHQPanel.jsx",
+        "supabase/media-office-2026-06-28.sql"
+      ],
+      "outcome": "Move content ideas through draft/review/approval/assets/publication with evidence",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "VERY_HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Strong transferable publishing capability; agent execution is Workflow/Bridge, not core identity."
+    },
+    {
+      "id": "VTC-23",
+      "candidate_id": "capability.offline.installable-shell",
+      "species": "CAPABILITY",
+      "sources": [
+        "public/sw.js",
+        "public/manifest.json",
+        "public/offline.html",
+        "src/InstallButton.jsx"
+      ],
+      "outcome": "Provide installable PWA shell with safe offline fallback and static caching",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Service-worker policy is portable; host supplies asset list and navigation strategy."
+    },
+    {
+      "id": "VTC-24",
+      "candidate_id": "capability.notification.in-app-feed",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/App.jsx",
+        "src/tabs/CollectionTab.jsx",
+        "api/scan.js"
+      ],
+      "outcome": "Deliver bounded in-product notifications tied to product events",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Separate notification record/read state from channels."
+    },
+    {
+      "id": "VTC-25",
+      "candidate_id": "capability.reputation.store-rating",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/tabs/WorldMapTab.jsx"
+      ],
+      "outcome": "Collect and aggregate member ratings for directory entities",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "MEDIUM",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Can generalize as reviews/ratings capability; authenticity/moderation critical."
+    },
+    {
+      "id": "VTC-26",
+      "candidate_id": "capability.catalog.variant-resolution",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/components/VariantPicker.jsx",
+        "src/components/VariantReefPanel.jsx",
+        "src/components/FilecardSignature.jsx"
+      ],
+      "outcome": "Represent and resolve variants/signatures of a canonical catalogue item",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Useful for collectibles/parts/catalogs; VTC-specific schema must be abstracted."
+    },
+    {
+      "id": "VTC-27",
+      "candidate_id": "capability.collection.valuation",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/components/MarketValue.jsx",
+        "src/tabs/ProfileTab.jsx"
+      ],
+      "outcome": "Aggregate owned-item observations into collection valuation",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Depends on market-price insight plus collection state; good composition candidate rather than monolith."
+    },
+    {
+      "id": "VTC-28",
+      "candidate_id": "capability.identity.role-policy",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/components/RoleManagerPanel.jsx",
+        "src/tabs/ModTab.jsx",
+        "supabase/toyline-role-ladder-2026-07-02.sql"
+      ],
+      "outcome": "Assign bounded product roles and scopes",
+      "authority_gravity": "VERY_HIGH",
+      "reuse_potential": "MEDIUM",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "High authority; prefer generic RBAC contract, database/auth Bridges."
+    },
+    {
+      "id": "VTC-29",
+      "candidate_id": "capability.business.light-bookkeeping",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/components/Boekhouding.jsx",
+        "src/components/FinancePanel.jsx"
+      ],
+      "outcome": "Track bounded product/business bookkeeping entries and summaries",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "MEDIUM",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Potential generic small-business capability; inspect schema before extraction."
+    },
+    {
+      "id": "VTC-30",
+      "candidate_id": "capability.content.news-feed",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/tabs/NewsTab.jsx",
+        "src/tabs/HomeTab.jsx"
+      ],
+      "outcome": "Publish and consume curated product news items",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "MEDIUM",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "May collapse into editorial-pipeline presentation unless independent behavior proves value."
+    },
+    {
+      "id": "VTC-31",
+      "candidate_id": "capability.media.document-library",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/components/PaperworkTab.jsx"
+      ],
+      "outcome": "Attach and surface product documents/paperwork with provenance",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "MEDIUM",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Generic asset/document attachment seam; storage/publication Bridges separate."
+    },
+    {
+      "id": "VTC-32",
+      "candidate_id": "capability.privacy.user-blocking",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/Messenger.jsx"
+      ],
+      "outcome": "Allow a user to block peer communication",
+      "authority_gravity": "HIGH",
+      "reuse_potential": "MEDIUM",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Likely sub-capability/required Port of messaging rather than standalone official Block."
+    },
+    {
+      "id": "VTC-33",
+      "candidate_id": "product.feature-policy",
+      "species": "SHARED_SERVICE",
+      "sources": [
+        "src/featureFlags.js",
+        "src/components/FeaturesPanel.jsx"
+      ],
+      "outcome": "Resolve feature availability from declared flags and aliases",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Useful substrate, but not user-meaningful enough for official product Block by current doctrine."
+    },
+    {
+      "id": "VTC-34",
+      "candidate_id": "capability.catalog.search-browse",
+      "species": "CAPABILITY",
+      "sources": [
+        "src/tabs/DatabaseTab.jsx",
+        "src/tabs/FinderTab.jsx"
+      ],
+      "outcome": "Search/filter/browse a structured public catalogue",
+      "authority_gravity": "MEDIUM",
+      "reuse_potential": "VERY_HIGH",
+      "status": "QUARRY_CANDIDATE",
+      "official_block_eligible_now": false,
+      "notes": "Broad reuse and central to many Blueprint families; split query contract from UI/storage Bridge."
+    }
+  ]
+}

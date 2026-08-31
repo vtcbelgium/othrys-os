@@ -1,0 +1,135 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-024-003",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3-coder-30b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788093781.7625494,
+  "completed_at": 1788093842.7274108,
+  "duration_sec": 60.96486139297485,
+  "allowed_paths": [
+    "training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs\n+++ b/training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs\n@@ -0,0 +1,70 @@\n+function groupDuplicates(items) {\n+  if (!Array.isArray(items)) {\n+    throw new TypeError('items must be an array');\n+  }\n+\n+  const groups = new Map();\n+\n+  for (const item of items) {\n+    if (typeof item !== 'object' || item === null) {\n+      throw new TypeError('each item must be a plain object');\n+    }\n+\n+    const id = item.id;\n+    const digest = item.digest;\n+    const size = item.size;\n+\n+    if (typeof id !== 'string' || id.length === 0) {\n+      throw new TypeError('id must be a non-empty string');\n+    }\n+\n+    if (typeof digest !== 'string' || digest.length === 0) {\n+      throw new TypeError('digest must be a non-empty string');\n+    }\n+\n+    if (size !== undefined && (!Number.isFinite(size) || size < 0)) {\n+      throw new RangeError('size must be a finite nonnegative number or undefined');\n+    }\n+\n+    const normalizedDigest = digest.trim().toLowerCase();\n+\n+    if (!groups.has(normalizedDigest)) {\n+      groups.set(normalizedDigest, []);\n+    }\n+\n+    const group = groups.get(normalizedDigest);\n+    group.push({ id, size });\n+  }\n+\n+  const result = [];\n+\n+  for (const [digest, members] of groups) {\n+    if (members.length < 2) {\n+      continue;\n+    }\n+\n+    let sizeConsistent = true;\n+    const definedSizes = members.filter(m => m.size !== undefined).map(m => m.size);\n+    if (definedSizes.length > 0) {\n+      const firstDefinedSize = definedSizes[0];\n+      for (const s of definedSizes) {\n+        if (s !== firstDefinedSize) {\n+          sizeConsistent = false;\n+          break;\n+        }\n+      }\n+    } else {\n+      sizeConsistent = true;\n+    }\n+\n+    const groupObj = Object.freeze({\n+      digest,\n+      ids: Object.freeze(members.map(m => m.id)),\n+      sizeConsistent\n+    });\n+\n+    result.push(groupObj);\n+  }\n+\n+  return Object.freeze(result);\n+}",
+  "git_status": "training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs",
+  "summary": "training job complete",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs\n+++ b/training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs\n@@ -0,0 +1,70 @@\n+function groupDuplicates(items) {\n+  if (!Array.isArray(items)) {\n+    throw new TypeError('items must be an array');\n+  }\n+\n+  const groups = new Map();\n+\n+  for (const item of items) {\n+    if (typeof item !== 'object' || item === null) {\n+      throw new TypeError('each item must be a plain object');\n+    }\n+\n+    const id = item.id;\n+    const digest = item.digest;\n+    const size = item.size;\n+\n+    if (typeof id !== 'string' || id.length === 0) {\n+      throw new TypeError('id must be a non-empty string');\n+    }\n+\n+    if (typeof digest !== 'string' || digest.length === 0) {\n+      throw new TypeError('digest must be a non-empty string');\n+    }\n+\n+    if (size !== undefined && (!Number.isFinite(size) || size < 0)) {\n+      throw new RangeError('size must be a finite nonnegative number or undefined');\n+    }\n+\n+    const normalizedDigest = digest.trim().toLowerCase();\n+\n+    if (!groups.has(normalizedDigest)) {\n+      groups.set(normalizedDigest, []);\n+    }\n+\n+    const group = groups.get(normalizedDigest);\n+    group.push({ id, size });\n+  }\n+\n+  const result = [];\n+\n+  for (const [digest, members] of groups) {\n+    if (members.length < 2) {\n+      continue;\n+    }\n+\n+    let sizeConsistent = true;\n+    const definedSizes = members.filter(m => m.size !== undefined).map(m => m.size);\n+    if (definedSizes.length > 0) {\n+      const firstDefinedSize = definedSizes[0];\n+      for (const s of definedSizes) {\n+        if (s !== firstDefinedSize) {\n+          sizeConsistent = false;\n+          break;\n+        }\n+      }\n+    } else {\n+      sizeConsistent = true;\n+    }\n+\n+    const groupObj = Object.freeze({\n+      digest,\n+      ids: Object.freeze(members.map(m => m.id)),\n+      sizeConsistent\n+    });\n+\n+    result.push(groupObj);\n+  }\n+\n+  return Object.freeze(result);\n+}",
+    "git_status": "training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs",
+    "tool_trace": [
+      "read_file: function groupDuplicates(items) {\n  if (!Array.isArray(items)) {\n    throw new TypeError('items must be an array');\n  }\n\n  const groups = new Map();\n\n  for (const item of items) {\n    if (typeof item ",
+      "write_file: wrote 1740 chars to training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs",
+      "read_file: function groupDuplicates(items) {\n  if (!Array.isArray(items)) {\n    throw new TypeError('items must be an array');\n  }\n\n  const groups = new Map();\n\n  for (const item of items) {\n    if (typeof item ",
+      "read_file: function groupDuplicates(items) {\n  if (!Array.isArray(items)) {\n    throw new TypeError('items must be an array');\n  }\n\n  const groups = new Map();\n\n  for (const item of items) {\n    if (typeof item ",
+      "finish: training job complete"
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs\"}",
+        "raw_length": 75,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs\", \"content\": \"function groupDuplicates(items) {\\n  if (!Array.isArray(items)) {\\n    throw new TypeError('items must be an array');\\n  }\\n\\n  const groups = new Map()",
+        "raw_suffix": "zes.length > 0) {\\n      const firstDefinedSize = definedSizes[0];\\n      for (const s of definedSizes) {\\n        if (s !== firstDefinedSize) {\\n          sizeConsistent = false;\\n          break;\\n        }\\n      }\\n    } else {\\n      sizeConsistent = true;\\n    }\\n\\n    const groupObj = Object.freeze({\\n      digest,\\n      ids: Object.freeze(members.map(m => m.id)),\\n      sizeConsistent\\n    });\\n\\n    result.push(groupObj);\\n  }\\n\\n  return Object.freeze(result);\\n}\"}",
+        "raw_length": 1899,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1740
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs\"}",
+        "raw_length": 75,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs\"}",
+        "raw_length": 75,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"training job complete\"}",
+        "raw_suffix": "{\"summary\": \"training job complete\"}",
+        "raw_length": 36,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3-coder-30b",
+    "model": "qwen3-coder:30b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6459",
+      "utilization_pct": "14",
+      "temperature_c": "43",
+      "power_w": "6.98"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6201",
+      "utilization_pct": "1",
+      "temperature_c": "57",
+      "power_w": "19.08"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       29 minutes from now"
+  }
+}

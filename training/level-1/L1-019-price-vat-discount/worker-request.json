@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-019. Create exactly training/level-1/L1-019-price-vat-discount/calculatePrice.mjs. Export calculatePrice(unitPrice, options={}). unitPrice finite \u003e=0. options plain object with only quantity (finite \u003e0 default1), discountPercent (finite 0..100 default0), vatPercent (finite \u003e=0 default0); unknown option RangeError. Compute subtotal=unitPrice*quantity; discount=subtotal*discountPercent/100; net=subtotal-discount; vat=net*vatPercent/100; total=net+vat. Return frozen {subtotal,discount,net,vat,total,quantity,discountPercent,vatPercent}; normalize -0. Do not round. Bad values TypeError/RangeError. Deterministic no deps/I/O/network. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-019",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-019-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-019-price-vat-discount/calculatePrice.mjs"
+                      ]
+}

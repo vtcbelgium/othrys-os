@@ -1,0 +1,2720 @@
+{
+  "schema": "othrys.os.training-worker-evidence.v1",
+  "records": [
+    {
+      "level": 1,
+      "jobId": "L1-002",
+      "family": "text",
+      "title": "Whitespace/text normalizer",
+      "file": "training\\level-1\\L1-002-text-normalize\\attempt11-result.json",
+      "builder": "qwen3-builder",
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/level-1/L1-002-text-normalize/attempt11.log']",
+      "failureClass": "OUT_OF_SCOPE",
+      "durationSec": 13.444809913635254,
+      "changedFiles": [
+        "training/level-1/L1-002-text-normalize/attempt11.log",
+        "training/level-1/L1-002-text-normalize/normalizeText.mjs"
+      ],
+      "outOfScope": [
+        "training/level-1/L1-002-text-normalize/attempt11.log"
+      ],
+      "startedAt": 1788082408.5714204,
+      "completedAt": 1788082422.0162303
+    },
+    {
+      "level": 1,
+      "jobId": "L1-002",
+      "family": "text",
+      "title": "Whitespace/text normalizer",
+      "file": "training\\level-1\\L1-002-text-normalize\\attempt12-result.json",
+      "builder": "qwen3-builder",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 44.13709568977356,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788082523.7811944,
+      "completedAt": 1788082567.9182901
+    },
+    {
+      "level": 1,
+      "jobId": "L1-002",
+      "family": "text",
+      "title": "Whitespace/text normalizer",
+      "file": "training\\level-1\\L1-002-text-normalize\\attempt13-result.json",
+      "builder": "qwen3-builder",
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/level-1/L1-002-text-normalize/attempt13.log']",
+      "failureClass": "OUT_OF_SCOPE",
+      "durationSec": 9.7340669631958,
+      "changedFiles": [
+        "training/level-1/L1-002-text-normalize/attempt13.log",
+        "training/level-1/L1-002-text-normalize/normalizeText.mjs"
+      ],
+      "outOfScope": [
+        "training/level-1/L1-002-text-normalize/attempt13.log"
+      ],
+      "startedAt": 1788082617.8964653,
+      "completedAt": 1788082627.6305323
+    },
+    {
+      "level": 1,
+      "jobId": "L1-002",
+      "family": "text",
+      "title": "Whitespace/text normalizer",
+      "file": "training\\level-1\\L1-002-text-normalize\\attempt14-result.json",
+      "builder": "qwen3-builder",
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/level-1/L1-002-text-normalize/attempt14.log']",
+      "failureClass": "OUT_OF_SCOPE",
+      "durationSec": 10.181252002716064,
+      "changedFiles": [
+        "training/level-1/L1-002-text-normalize/attempt14.log",
+        "training/level-1/L1-002-text-normalize/normalizeText.mjs"
+      ],
+      "outOfScope": [
+        "training/level-1/L1-002-text-normalize/attempt14.log"
+      ],
+      "startedAt": 1788082661.1882758,
+      "completedAt": 1788082671.3695278
+    },
+    {
+      "level": 1,
+      "jobId": "L1-002",
+      "family": "text",
+      "title": "Whitespace/text normalizer",
+      "file": "training\\level-1\\L1-002-text-normalize\\worker-result.json",
+      "builder": "qwen3-builder",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 11.660075187683105,
+      "changedFiles": [
+        "training/level-1/L1-002-text-normalize/normalizeText.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788081662.7124233,
+      "completedAt": 1788081674.3724985
+    },
+    {
+      "level": 1,
+      "jobId": "L1-003",
+      "family": "text",
+      "title": "Line deduplicator",
+      "file": "training\\level-1\\L1-003-line-dedupe\\worker-result.json",
+      "builder": "qwen3-builder",
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/level-1/L1-003-line-dedupe/worker.log']",
+      "failureClass": "OUT_OF_SCOPE",
+      "durationSec": 9.063152074813843,
+      "changedFiles": [
+        "training/level-1/L1-003-line-dedupe/dedupeLines.mjs",
+        "training/level-1/L1-003-line-dedupe/worker.log"
+      ],
+      "outOfScope": [
+        "training/level-1/L1-003-line-dedupe/worker.log"
+      ],
+      "startedAt": 1788082811.475395,
+      "completedAt": 1788082820.538547
+    },
+    {
+      "level": 1,
+      "jobId": "L1-004",
+      "family": "text",
+      "title": "Text statistics",
+      "file": "training\\level-1\\L1-004-text-stats\\rebuild-result.json",
+      "builder": "qwen3-builder",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 4.850867748260498,
+      "changedFiles": [
+        "training/level-1/L1-004-text-stats/textStats.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788083021.0144393,
+      "completedAt": 1788083025.865307
+    },
+    {
+      "level": 1,
+      "jobId": "L1-004",
+      "family": "text",
+      "title": "Text statistics",
+      "file": "training\\level-1\\L1-004-text-stats\\repair-result.json",
+      "builder": "qwen3-builder",
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/level-1/L1-004-text-stats/repair.log']",
+      "failureClass": "OUT_OF_SCOPE",
+      "durationSec": 28.68425941467285,
+      "changedFiles": [
+        "training/level-1/L1-004-text-stats/repair.log"
+      ],
+      "outOfScope": [
+        "training/level-1/L1-004-text-stats/repair.log"
+      ],
+      "startedAt": 1788082942.819399,
+      "completedAt": 1788082971.5036585
+    },
+    {
+      "level": 1,
+      "jobId": "L1-004",
+      "family": "text",
+      "title": "Text statistics",
+      "file": "training\\level-1\\L1-004-text-stats\\worker-result.json",
+      "builder": "qwen3-builder",
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/level-1/L1-004-text-stats/worker.log']",
+      "failureClass": "OUT_OF_SCOPE",
+      "durationSec": 4.96104621887207,
+      "changedFiles": [
+        "training/level-1/L1-004-text-stats/textStats.mjs",
+        "training/level-1/L1-004-text-stats/worker.log"
+      ],
+      "outOfScope": [
+        "training/level-1/L1-004-text-stats/worker.log"
+      ],
+      "startedAt": 1788082874.2632768,
+      "completedAt": 1788082879.224323
+    },
+    {
+      "level": 1,
+      "jobId": "L1-005",
+      "family": "text",
+      "title": "Case converter",
+      "file": "training\\level-1\\L1-005-case-convert\\repair-result.json",
+      "builder": "qwen3-builder",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 17.81173801422119,
+      "changedFiles": [
+        "training/level-1/L1-005-case-convert/convertCase.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788083116.1787462,
+      "completedAt": 1788083133.9904842
+    },
+    {
+      "level": 1,
+      "jobId": "L1-005",
+      "family": "text",
+      "title": "Case converter",
+      "file": "training\\level-1\\L1-005-case-convert\\worker-result.json",
+      "builder": "qwen3-builder",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 21.811719179153442,
+      "changedFiles": [
+        "training/level-1/L1-005-case-convert/convertCase.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788083065.5645936,
+      "completedAt": 1788083087.3763127
+    },
+    {
+      "level": 1,
+      "jobId": "L1-006",
+      "family": "data",
+      "title": "JSON formatter/minifier",
+      "file": "training\\level-1\\L1-006-json-format\\repair-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 6.164318799972534,
+      "changedFiles": [
+        "training/level-1/L1-006-json-format/jsonFormat.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788088498.895561,
+      "completedAt": 1788088505.0598798
+    },
+    {
+      "level": 1,
+      "jobId": "L1-006",
+      "family": "data",
+      "title": "JSON formatter/minifier",
+      "file": "training\\level-1\\L1-006-json-format\\worker-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 7.5541417598724365,
+      "changedFiles": [
+        "training/level-1/L1-006-json-format/jsonFormat.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788088463.1578443,
+      "completedAt": 1788088470.711986
+    },
+    {
+      "level": 1,
+      "jobId": "L1-007",
+      "family": "data",
+      "title": "JSON validator",
+      "file": "training\\level-1\\L1-007-json-validate\\repair-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 8.293697595596313,
+      "changedFiles": [
+        "training/level-1/L1-007-json-validate/jsonValidate.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788088884.324747,
+      "completedAt": 1788088892.6184447
+    },
+    {
+      "level": 1,
+      "jobId": "L1-007",
+      "family": "data",
+      "title": "JSON validator",
+      "file": "training\\level-1\\L1-007-json-validate\\worker-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 5.812146425247192,
+      "changedFiles": [
+        "training/level-1/L1-007-json-validate/jsonValidate.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788088850.3428023,
+      "completedAt": 1788088856.1549487
+    },
+    {
+      "level": 1,
+      "jobId": "L1-008",
+      "family": "data",
+      "title": "CSV row cleaner",
+      "file": "training\\level-1\\L1-008-csv-clean\\repair-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 42.970616579055786,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788089427.7534604,
+      "completedAt": 1788089470.724077
+    },
+    {
+      "level": 1,
+      "jobId": "L1-008",
+      "family": "data",
+      "title": "CSV row cleaner",
+      "file": "training\\level-1\\L1-008-csv-clean\\repair2-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 33.99207425117493,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788089505.5557582,
+      "completedAt": 1788089539.5478325
+    },
+    {
+      "level": 1,
+      "jobId": "L1-008",
+      "family": "data",
+      "title": "CSV row cleaner",
+      "file": "training\\level-1\\L1-008-csv-clean\\worker-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 12.88613772392273,
+      "changedFiles": [
+        "training/level-1/L1-008-csv-clean/csvClean.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788088969.7299628,
+      "completedAt": 1788088982.6161005
+    },
+    {
+      "level": 1,
+      "jobId": "L1-009",
+      "family": "data",
+      "title": "CSV/JSON converter",
+      "file": "training\\level-1\\L1-009-csv-json\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 35.54722881317139,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788089875.552444,
+      "completedAt": 1788089911.0996728
+    },
+    {
+      "level": 1,
+      "jobId": "L1-009",
+      "family": "data",
+      "title": "CSV/JSON converter",
+      "file": "training\\level-1\\L1-009-csv-json\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 70.07438778877258,
+      "changedFiles": [
+        "training/level-1/L1-009-csv-json/csvJson.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788089932.302796,
+      "completedAt": 1788090002.3771837
+    },
+    {
+      "level": 1,
+      "jobId": "L1-009",
+      "family": "data",
+      "title": "CSV/JSON converter",
+      "file": "training\\level-1\\L1-009-csv-json\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 38.26672911643982,
+      "changedFiles": [
+        "training/level-1/L1-009-csv-json/csvJson.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788089672.5413752,
+      "completedAt": 1788089710.8081043
+    },
+    {
+      "level": 1,
+      "jobId": "L1-010",
+      "family": "data",
+      "title": "Stable record sorter",
+      "file": "training\\level-1\\L1-010-sort-records\\repair2-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 34.26639723777771,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788090596.133552,
+      "completedAt": 1788090630.3999493
+    },
+    {
+      "level": 1,
+      "jobId": "L1-010",
+      "family": "data",
+      "title": "Stable record sorter",
+      "file": "training\\level-1\\L1-010-sort-records\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 31.444447994232178,
+      "changedFiles": [
+        "training/level-1/L1-010-sort-records/stableSortRecords.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788090029.1265357,
+      "completedAt": 1788090060.5709836
+    },
+    {
+      "level": 1,
+      "jobId": "L1-011",
+      "family": "web",
+      "title": "URL normalizer",
+      "file": "training\\level-1\\L1-011-url-normalize\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 15.219298601150513,
+      "changedFiles": [
+        "training/level-1/L1-011-url-normalize/urlNormalize.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788090683.0020409,
+      "completedAt": 1788090698.2213395
+    },
+    {
+      "level": 1,
+      "jobId": "L1-012",
+      "family": "web",
+      "title": "Query-string parser/builder",
+      "file": "training\\level-1\\L1-012-querystring\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 28.710548400878906,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788090874.7307172,
+      "completedAt": 1788090903.4412656
+    },
+    {
+      "level": 1,
+      "jobId": "L1-012",
+      "family": "web",
+      "title": "Query-string parser/builder",
+      "file": "training\\level-1\\L1-012-querystring\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 51.11976146697998,
+      "changedFiles": [
+        "training/level-1/L1-012-querystring/queryString.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788090926.3779035,
+      "completedAt": 1788090977.497665
+    },
+    {
+      "level": 1,
+      "jobId": "L1-012",
+      "family": "web",
+      "title": "Query-string parser/builder",
+      "file": "training\\level-1\\L1-012-querystring\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 17.355849504470825,
+      "changedFiles": [
+        "training/level-1/L1-012-querystring/queryString.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788090845.1493428,
+      "completedAt": 1788090862.5051923
+    },
+    {
+      "level": 1,
+      "jobId": "L1-013",
+      "family": "web",
+      "title": "HTML escape/unescape",
+      "file": "training\\level-1\\L1-013-html-escape\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 25.691057205200195,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788091769.2810128,
+      "completedAt": 1788091794.97207
+    },
+    {
+      "level": 1,
+      "jobId": "L1-013",
+      "family": "web",
+      "title": "HTML escape/unescape",
+      "file": "training\\level-1\\L1-013-html-escape\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 47.35716795921326,
+      "changedFiles": [
+        "training/level-1/L1-013-html-escape/htmlEscape.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788091824.3732188,
+      "completedAt": 1788091871.7303867
+    },
+    {
+      "level": 1,
+      "jobId": "L1-013",
+      "family": "web",
+      "title": "HTML escape/unescape",
+      "file": "training\\level-1\\L1-013-html-escape\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 22.003836154937744,
+      "changedFiles": [
+        "training/level-1/L1-013-html-escape/htmlEscape.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788091732.5640266,
+      "completedAt": 1788091754.5678627
+    },
+    {
+      "level": 1,
+      "jobId": "L1-014",
+      "family": "web",
+      "title": "UTM URL builder",
+      "file": "training\\level-1\\L1-014-utm-url\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 19.91388964653015,
+      "changedFiles": [
+        "training/level-1/L1-014-utm-url/buildUtmUrl.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788091907.8350735,
+      "completedAt": 1788091927.748963
+    },
+    {
+      "level": 1,
+      "jobId": "L1-015",
+      "family": "web",
+      "title": "Metadata field checker",
+      "file": "training\\level-1\\L1-015-metadata-check\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 22.992650985717773,
+      "changedFiles": [
+        "training/level-1/L1-015-metadata-check/checkMetadata.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788092067.8499703,
+      "completedAt": 1788092090.8426213
+    },
+    {
+      "level": 1,
+      "jobId": "L1-016",
+      "family": "calculate",
+      "title": "Unit converter",
+      "file": "training\\level-1\\L1-016-unit-converter\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 24.7349054813385,
+      "changedFiles": [
+        "training/level-1/L1-016-unit-converter/convertUnit.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788092244.3989084,
+      "completedAt": 1788092269.1338139
+    },
+    {
+      "level": 1,
+      "jobId": "L1-017",
+      "family": "calculate",
+      "title": "Date/duration calculator",
+      "file": "training\\level-1\\L1-017-duration-calc\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 31.414625644683838,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788092476.764401,
+      "completedAt": 1788092508.1790266
+    },
+    {
+      "level": 1,
+      "jobId": "L1-017",
+      "family": "calculate",
+      "title": "Date/duration calculator",
+      "file": "training\\level-1\\L1-017-duration-calc\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 32.922847032547,
+      "changedFiles": [
+        "training/level-1/L1-017-duration-calc/durationCalc.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788092534.9159343,
+      "completedAt": 1788092567.8387814
+    },
+    {
+      "level": 1,
+      "jobId": "L1-017",
+      "family": "calculate",
+      "title": "Date/duration calculator",
+      "file": "training\\level-1\\L1-017-duration-calc\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 16.032360792160034,
+      "changedFiles": [
+        "training/level-1/L1-017-duration-calc/durationCalc.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788092444.9853365,
+      "completedAt": 1788092461.0176973
+    },
+    {
+      "level": 1,
+      "jobId": "L1-018",
+      "family": "calculate",
+      "title": "Percentage calculator",
+      "file": "training\\level-1\\L1-018-percentage\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 25.678129196166992,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788092633.242532,
+      "completedAt": 1788092658.9206612
+    },
+    {
+      "level": 1,
+      "jobId": "L1-018",
+      "family": "calculate",
+      "title": "Percentage calculator",
+      "file": "training\\level-1\\L1-018-percentage\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 14.403284788131714,
+      "changedFiles": [
+        "training/level-1/L1-018-percentage/percentage.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788092599.960224,
+      "completedAt": 1788092614.3635087
+    },
+    {
+      "level": 1,
+      "jobId": "L1-019",
+      "family": "calculate",
+      "title": "Price/VAT/discount calculator",
+      "file": "training\\level-1\\L1-019-price-vat-discount\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 17.923622131347656,
+      "changedFiles": [
+        "training/level-1/L1-019-price-vat-discount/calculatePrice.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788092878.1393218,
+      "completedAt": 1788092896.062944
+    },
+    {
+      "level": 1,
+      "jobId": "L1-020",
+      "family": "calculate",
+      "title": "Time/cost estimator",
+      "file": "training\\level-1\\L1-020-time-cost\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 42.17150139808655,
+      "changedFiles": [
+        "training/level-1/L1-020-time-cost/estimateCost.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788092963.968798,
+      "completedAt": 1788093006.1402993
+    },
+    {
+      "level": 1,
+      "jobId": "L1-020",
+      "family": "calculate",
+      "title": "Time/cost estimator",
+      "file": "training\\level-1\\L1-020-time-cost\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 11.79255986213684,
+      "changedFiles": [
+        "training/level-1/L1-020-time-cost/estimateCost.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788092934.7856123,
+      "completedAt": 1788092946.5781722
+    },
+    {
+      "level": 1,
+      "jobId": "L1-021",
+      "family": "file",
+      "title": "Checksum calculator",
+      "file": "training\\level-1\\L1-021-checksum\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 14.850059509277344,
+      "changedFiles": [
+        "training/level-1/L1-021-checksum/checksum.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788093040.8792973,
+      "completedAt": 1788093055.7293568
+    },
+    {
+      "level": 1,
+      "jobId": "L1-022",
+      "family": "file",
+      "title": "Filename sanitizer",
+      "file": "training\\level-1\\L1-022-filename-sanitizer\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 29.212074518203735,
+      "changedFiles": [
+        "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788093183.314815,
+      "completedAt": 1788093212.5268896
+    },
+    {
+      "level": 1,
+      "jobId": "L1-022",
+      "family": "file",
+      "title": "Filename sanitizer",
+      "file": "training\\level-1\\L1-022-filename-sanitizer\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 83.99340963363647,
+      "changedFiles": [
+        "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788093242.0466983,
+      "completedAt": 1788093326.040108
+    },
+    {
+      "level": 1,
+      "jobId": "L1-022",
+      "family": "file",
+      "title": "Filename sanitizer",
+      "file": "training\\level-1\\L1-022-filename-sanitizer\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 23.038007497787476,
+      "changedFiles": [
+        "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788093142.9505079,
+      "completedAt": 1788093165.9885154
+    },
+    {
+      "level": 1,
+      "jobId": "L1-023",
+      "family": "file",
+      "title": "File extension/media classifier",
+      "file": "training\\level-1\\L1-023-extension-detect\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 51.048441648483276,
+      "changedFiles": [
+        "training/level-1/L1-023-extension-detect/classifyFile.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788093579.783829,
+      "completedAt": 1788093630.8322706
+    },
+    {
+      "level": 1,
+      "jobId": "L1-023",
+      "family": "file",
+      "title": "File extension/media classifier",
+      "file": "training\\level-1\\L1-023-extension-detect\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 21.594682455062866,
+      "changedFiles": [
+        "training/level-1/L1-023-extension-detect/classifyFile.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788093531.3090634,
+      "completedAt": 1788093552.903746
+    },
+    {
+      "level": 1,
+      "jobId": "L1-024",
+      "family": "file",
+      "title": "Duplicate signature helper",
+      "file": "training\\level-1\\L1-024-duplicate-signature\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 27.828027963638306,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788093725.516955,
+      "completedAt": 1788093753.3449829
+    },
+    {
+      "level": 1,
+      "jobId": "L1-024",
+      "family": "file",
+      "title": "Duplicate signature helper",
+      "file": "training\\level-1\\L1-024-duplicate-signature\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 60.96486139297485,
+      "changedFiles": [
+        "training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788093781.7625494,
+      "completedAt": 1788093842.7274108
+    },
+    {
+      "level": 1,
+      "jobId": "L1-024",
+      "family": "file",
+      "title": "Duplicate signature helper",
+      "file": "training\\level-1\\L1-024-duplicate-signature\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 24.1141095161438,
+      "changedFiles": [
+        "training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788093671.957074,
+      "completedAt": 1788093696.0711834
+    },
+    {
+      "level": 1,
+      "jobId": "L1-025",
+      "family": "file",
+      "title": "Portable path normalizer",
+      "file": "training\\level-1\\L1-025-path-normalize\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 28.314077854156494,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788093918.4194372,
+      "completedAt": 1788093946.733515
+    },
+    {
+      "level": 1,
+      "jobId": "L1-026",
+      "family": "developer",
+      "title": "Semantic-version comparator",
+      "file": "training\\level-1\\L1-026-semver-compare\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 20.686991214752197,
+      "changedFiles": [
+        "training/level-1/L1-026-semver-compare/compareSemver.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788094289.1912365,
+      "completedAt": 1788094309.8782277
+    },
+    {
+      "level": 1,
+      "jobId": "L1-027",
+      "family": "developer",
+      "title": ".env metadata parser",
+      "file": "training\\level-1\\L1-027-env-parse\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 42.44157075881958,
+      "changedFiles": [
+        "training/level-1/L1-027-env-parse/parseEnvMetadata.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788094507.3257763,
+      "completedAt": 1788094549.767347
+    },
+    {
+      "level": 1,
+      "jobId": "L1-027",
+      "family": "developer",
+      "title": ".env metadata parser",
+      "file": "training\\level-1\\L1-027-env-parse\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 15.833583354949951,
+      "changedFiles": [
+        "training/level-1/L1-027-env-parse/parseEnvMetadata.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788094474.7496743,
+      "completedAt": 1788094490.5832577
+    },
+    {
+      "level": 1,
+      "jobId": "L1-028",
+      "family": "developer",
+      "title": "Simple schema checker",
+      "file": "training\\level-1\\L1-028-schema-check\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 19.622469425201416,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788094664.8816237,
+      "completedAt": 1788094684.5040932
+    },
+    {
+      "level": 1,
+      "jobId": "L1-028",
+      "family": "developer",
+      "title": "Simple schema checker",
+      "file": "training\\level-1\\L1-028-schema-check\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 28.874364137649536,
+      "changedFiles": [
+        "training/level-1/L1-028-schema-check/checkSchema.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788094616.853027,
+      "completedAt": 1788094645.7273912
+    },
+    {
+      "level": 1,
+      "jobId": "L1-029",
+      "family": "developer",
+      "title": "Bounded retry calculator",
+      "file": "training\\level-1\\L1-029-retry-policy\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 28.77153992652893,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788094790.123687,
+      "completedAt": 1788094818.895227
+    },
+    {
+      "level": 1,
+      "jobId": "L1-029",
+      "family": "developer",
+      "title": "Bounded retry calculator",
+      "file": "training\\level-1\\L1-029-retry-policy\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 19.931402683258057,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788094849.6737332,
+      "completedAt": 1788094869.605136
+    },
+    {
+      "level": 1,
+      "jobId": "L1-029",
+      "family": "developer",
+      "title": "Bounded retry calculator",
+      "file": "training\\level-1\\L1-029-retry-policy\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 18.72429847717285,
+      "changedFiles": [
+        "training/level-1/L1-029-retry-policy/nextRetry.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788094753.4647954,
+      "completedAt": 1788094772.1890938
+    },
+    {
+      "level": 1,
+      "jobId": "L1-030",
+      "family": "developer",
+      "title": "Idempotency key generator",
+      "file": "training\\level-1\\L1-030-idempotency-key\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 31.642554998397827,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788094998.5992484,
+      "completedAt": 1788095030.2418034
+    },
+    {
+      "level": 1,
+      "jobId": "L1-030",
+      "family": "developer",
+      "title": "Idempotency key generator",
+      "file": "training\\level-1\\L1-030-idempotency-key\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 25.139653205871582,
+      "changedFiles": [
+        "training/level-1/L1-030-idempotency-key/idempotencyKey.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788095062.293987,
+      "completedAt": 1788095087.4336402
+    },
+    {
+      "level": 1,
+      "jobId": "L1-030",
+      "family": "developer",
+      "title": "Idempotency key generator",
+      "file": "training\\level-1\\L1-030-idempotency-key\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 17.752553701400757,
+      "changedFiles": [
+        "training/level-1/L1-030-idempotency-key/idempotencyKey.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788094964.8591356,
+      "completedAt": 1788094982.6116893
+    },
+    {
+      "level": 1,
+      "jobId": "L1-031",
+      "family": "generate",
+      "title": "Checklist generator",
+      "file": "training\\level-1\\L1-031-checklist\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 29.48090696334839,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788096546.9331903,
+      "completedAt": 1788096576.4140973
+    },
+    {
+      "level": 1,
+      "jobId": "L1-031",
+      "family": "generate",
+      "title": "Checklist generator",
+      "file": "training\\level-1\\L1-031-checklist\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 18.04037380218506,
+      "changedFiles": [
+        "training/level-1/L1-031-checklist/generateChecklist.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788096492.5609224,
+      "completedAt": 1788096510.6012962
+    },
+    {
+      "level": 1,
+      "jobId": "L1-032",
+      "family": "generate",
+      "title": "Deterministic fixture generator",
+      "file": "training\\level-1\\L1-032-fixture\\worker-result.json",
+      "builder": "qwen3-builder",
+      "ok": false,
+      "reason": "FileNotFoundError(2, 'No such file or directory')",
+      "failureClass": "FILE_ERROR",
+      "durationSec": null,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": null,
+      "completedAt": 1788096784.6105697
+    },
+    {
+      "level": 1,
+      "jobId": "L1-032",
+      "family": "generate",
+      "title": "Deterministic fixture generator",
+      "file": "training\\level-1\\L1-032-fixture\\worker2-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 24.16381025314331,
+      "changedFiles": [
+        "training/level-1/L1-032-fixture/generateFixture.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788096818.4594421,
+      "completedAt": 1788096842.6232524
+    },
+    {
+      "level": 1,
+      "jobId": "L1-033",
+      "family": "generate",
+      "title": "Markdown table generator",
+      "file": "training\\level-1\\L1-033-markdown-table\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 19.965213537216187,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788097075.9754305,
+      "completedAt": 1788097095.940644
+    },
+    {
+      "level": 1,
+      "jobId": "L1-033",
+      "family": "generate",
+      "title": "Markdown table generator",
+      "file": "training\\level-1\\L1-033-markdown-table\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 14.652314901351929,
+      "changedFiles": [
+        "training/level-1/L1-033-markdown-table/markdownTable.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788097034.5214345,
+      "completedAt": 1788097049.1737494
+    },
+    {
+      "level": 1,
+      "jobId": "L1-034",
+      "family": "generate",
+      "title": "Changelog entry formatter",
+      "file": "training\\level-1\\L1-034-changelog-entry\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 40.5703399181366,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788097392.9213974,
+      "completedAt": 1788097433.4917374
+    },
+    {
+      "level": 1,
+      "jobId": "L1-034",
+      "family": "generate",
+      "title": "Changelog entry formatter",
+      "file": "training\\level-1\\L1-034-changelog-entry\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 1.9302465915679932,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788097231.9189038,
+      "completedAt": 1788097233.8491504
+    },
+    {
+      "level": 1,
+      "jobId": "L1-035",
+      "family": "generate",
+      "title": "Safe config merge",
+      "file": "training\\level-1\\L1-035-config-merge\\repair2-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 85.60711169242859,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788097690.8916802,
+      "completedAt": 1788097776.498792
+    },
+    {
+      "level": 1,
+      "jobId": "L1-035",
+      "family": "generate",
+      "title": "Safe config merge",
+      "file": "training\\level-1\\L1-035-config-merge\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 16.222269535064697,
+      "changedFiles": [
+        "training/level-1/L1-035-config-merge/safeConfigMerge.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788097542.3966725,
+      "completedAt": 1788097558.618942
+    },
+    {
+      "level": 1,
+      "jobId": "L1-036",
+      "family": "validate",
+      "title": "Email normalizer/validator",
+      "file": "training\\level-1\\L1-036-email-normalize\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 36.67223381996155,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788097976.9866838,
+      "completedAt": 1788098013.6589177
+    },
+    {
+      "level": 1,
+      "jobId": "L1-036",
+      "family": "validate",
+      "title": "Email normalizer/validator",
+      "file": "training\\level-1\\L1-036-email-normalize\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 19.24891233444214,
+      "changedFiles": [
+        "training/level-1/L1-036-email-normalize/normalizeEmail.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788097920.8860261,
+      "completedAt": 1788097940.1349385
+    },
+    {
+      "level": 1,
+      "jobId": "L1-037",
+      "family": "validate",
+      "title": "Phone shape normalizer",
+      "file": "training\\level-1\\L1-037-phone-normalize\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 27.906787395477295,
+      "changedFiles": [
+        "training/level-1/L1-037-phone-normalize/normalizePhone.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788098301.5445232,
+      "completedAt": 1788098329.4513106
+    },
+    {
+      "level": 1,
+      "jobId": "L1-038",
+      "family": "validate",
+      "title": "Color parser/converter",
+      "file": "training\\level-1\\L1-038-color\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 22.46787667274475,
+      "changedFiles": [
+        "training/level-1/L1-038-color/parseColor.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788098509.120782,
+      "completedAt": 1788098531.5886586
+    },
+    {
+      "level": 1,
+      "jobId": "L1-039",
+      "family": "validate",
+      "title": "ISO date normalizer",
+      "file": "training\\level-1\\L1-039-iso-date\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 20.1745445728302,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788098627.4673982,
+      "completedAt": 1788098647.6419427
+    },
+    {
+      "level": 1,
+      "jobId": "L1-039",
+      "family": "validate",
+      "title": "ISO date normalizer",
+      "file": "training\\level-1\\L1-039-iso-date\\worker-result.json",
+      "builder": "qwen3-builder",
+      "ok": false,
+      "reason": "FileNotFoundError(2, 'No such file or directory')",
+      "failureClass": "FILE_ERROR",
+      "durationSec": null,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": null,
+      "completedAt": 1788098553.3923082
+    },
+    {
+      "level": 1,
+      "jobId": "L1-039",
+      "family": "validate",
+      "title": "ISO date normalizer",
+      "file": "training\\level-1\\L1-039-iso-date\\worker2-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 12.651259899139404,
+      "changedFiles": [
+        "training/level-1/L1-039-iso-date/normalizeIsoDate.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788098587.421603,
+      "completedAt": 1788098600.0728629
+    },
+    {
+      "level": 1,
+      "jobId": "L1-040",
+      "family": "validate",
+      "title": "Identifier validator",
+      "file": "training\\level-1\\L1-040-identifier\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 32.54615926742554,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788098751.1057093,
+      "completedAt": 1788098783.6518686
+    },
+    {
+      "level": 1,
+      "jobId": "L1-040",
+      "family": "validate",
+      "title": "Identifier validator",
+      "file": "training\\level-1\\L1-040-identifier\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 23.170506238937378,
+      "changedFiles": [
+        "training/level-1/L1-040-identifier/validateIdentifier.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788098705.0094085,
+      "completedAt": 1788098728.1799147
+    },
+    {
+      "level": 2,
+      "jobId": "L2-001",
+      "family": "state",
+      "title": "Local key/value store",
+      "file": "training\\level-2\\L2-001-local-kv\\repair-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 50.86453580856323,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788100285.1238415,
+      "completedAt": 1788100335.9883773
+    },
+    {
+      "level": 2,
+      "jobId": "L2-001",
+      "family": "state",
+      "title": "Local key/value store",
+      "file": "training\\level-2\\L2-001-local-kv\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 109.20847797393799,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788100575.7094154,
+      "completedAt": 1788100684.9178934
+    },
+    {
+      "level": 2,
+      "jobId": "L2-001",
+      "family": "state",
+      "title": "Local key/value store",
+      "file": "training\\level-2\\L2-001-local-kv\\worker-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 31.563801527023315,
+      "changedFiles": [
+        "training/level-2/L2-001-local-kv/localKv.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788100179.2419236,
+      "completedAt": 1788100210.805725
+    },
+    {
+      "level": 2,
+      "jobId": "L2-002",
+      "family": "state",
+      "title": "Settings store",
+      "file": "training\\level-2\\L2-002-settings-store\\repair-result.json",
+      "builder": "qwen3-builder",
+      "ok": false,
+      "reason": "EngineeringError(\"path escapes workspace: '.othrys/runtime/legion-perimeter-links/codex/2026-08-20/referenced-chatgpt-conversation-this-is-an/work/vtc-platform/src/CreditStore.jsx'\")",
+      "failureClass": "PATH_ESCAPE",
+      "durationSec": null,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": null,
+      "completedAt": 1788101061.025035
+    },
+    {
+      "level": 2,
+      "jobId": "L2-002",
+      "family": "state",
+      "title": "Settings store",
+      "file": "training\\level-2\\L2-002-settings-store\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 24.507256507873535,
+      "changedFiles": [
+        "training/level-2/L2-002-settings-store/settingsStore.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788100985.2555974,
+      "completedAt": 1788101009.7628539
+    },
+    {
+      "level": 2,
+      "jobId": "L2-003",
+      "family": "crud",
+      "title": "Todo store",
+      "file": "training\\level-2\\L2-003-todo-store\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 25.395548343658447,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788101500.663847,
+      "completedAt": 1788101526.0593953
+    },
+    {
+      "level": 2,
+      "jobId": "L2-003",
+      "family": "crud",
+      "title": "Todo store",
+      "file": "training\\level-2\\L2-003-todo-store\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 21.659523487091064,
+      "changedFiles": [
+        "training/level-2/L2-003-todo-store/todoStore.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788101567.2065072,
+      "completedAt": 1788101588.8660307
+    },
+    {
+      "level": 2,
+      "jobId": "L2-003",
+      "family": "crud",
+      "title": "Todo store",
+      "file": "training\\level-2\\L2-003-todo-store\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 30.036898374557495,
+      "changedFiles": [
+        "training/level-2/L2-003-todo-store/todoStore.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788101429.5253384,
+      "completedAt": 1788101459.5622368
+    },
+    {
+      "level": 2,
+      "jobId": "L2-004",
+      "family": "crud",
+      "title": "Notes store",
+      "file": "training\\level-2\\L2-004-notes-store\\repair-result.json",
+      "builder": "qwen3-builder",
+      "ok": false,
+      "reason": "EngineeringError(\"path escapes workspace: '.othrys/runtime/legion-perimeter-links/codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/work/othrys-hub/docs/mission022_1/MISSION_STORE.json'\")",
+      "failureClass": "PATH_ESCAPE",
+      "durationSec": null,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": null,
+      "completedAt": 1788101974.0554054
+    },
+    {
+      "level": 2,
+      "jobId": "L2-004",
+      "family": "crud",
+      "title": "Notes store",
+      "file": "training\\level-2\\L2-004-notes-store\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 92.77396583557129,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788102017.7463906,
+      "completedAt": 1788102110.5203564
+    },
+    {
+      "level": 2,
+      "jobId": "L2-004",
+      "family": "crud",
+      "title": "Notes store",
+      "file": "training\\level-2\\L2-004-notes-store\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 35.810280084609985,
+      "changedFiles": [
+        "training/level-2/L2-004-notes-store/notesStore.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788101881.028739,
+      "completedAt": 1788101916.839019
+    },
+    {
+      "level": 2,
+      "jobId": "L2-005",
+      "family": "crud",
+      "title": "Contact store",
+      "file": "training\\level-2\\L2-005-contact-store\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 16.78079652786255,
+      "changedFiles": [
+        "training/level-2/L2-005-contact-store/contactStore.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788103156.6129277,
+      "completedAt": 1788103173.3937242
+    },
+    {
+      "level": 2,
+      "jobId": "L2-005",
+      "family": "crud",
+      "title": "Contact store",
+      "file": "training\\level-2\\L2-005-contact-store\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 28.377864599227905,
+      "changedFiles": [
+        "training/level-2/L2-005-contact-store/contactStore.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788103037.9921138,
+      "completedAt": 1788103066.3699784
+    },
+    {
+      "level": 2,
+      "jobId": "L2-006",
+      "family": "crud",
+      "title": "Inventory store",
+      "file": "training\\level-2\\L2-006-inventory-store\\repair-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 26.027337312698364,
+      "changedFiles": [
+        "training/level-2/L2-006-inventory-store/inventoryStore.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788103633.5350564,
+      "completedAt": 1788103659.5623937
+    },
+    {
+      "level": 2,
+      "jobId": "L2-006",
+      "family": "crud",
+      "title": "Inventory store",
+      "file": "training\\level-2\\L2-006-inventory-store\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/forge-qualification/glm53_flash_olympics.py', 'training/forge-qualification/glm53_flash_olympics_result.json']",
+      "failureClass": "OUT_OF_SCOPE",
+      "durationSec": 50.04857110977173,
+      "changedFiles": [
+        "training/forge-qualification/glm53_flash_olympics.py",
+        "training/forge-qualification/glm53_flash_olympics_result.json"
+      ],
+      "outOfScope": [
+        "training/forge-qualification/glm53_flash_olympics.py",
+        "training/forge-qualification/glm53_flash_olympics_result.json"
+      ],
+      "startedAt": 1788103714.1677628,
+      "completedAt": 1788103764.2163339
+    },
+    {
+      "level": 2,
+      "jobId": "L2-006",
+      "family": "crud",
+      "title": "Inventory store",
+      "file": "training\\level-2\\L2-006-inventory-store\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 35.215437173843384,
+      "changedFiles": [
+        "training/level-2/L2-006-inventory-store/inventoryStore.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788103509.4876616,
+      "completedAt": 1788103544.7030988
+    },
+    {
+      "level": 2,
+      "jobId": "L2-007",
+      "family": "crud",
+      "title": "Bookmark store",
+      "file": "training\\level-2\\L2-007-bookmark-store\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 24.48712396621704,
+      "changedFiles": [
+        "training/level-2/L2-007-bookmark-store/bookmarkStore.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788113045.618611,
+      "completedAt": 1788113070.105735
+    },
+    {
+      "level": 2,
+      "jobId": "L2-007",
+      "family": "crud",
+      "title": "Bookmark store",
+      "file": "training\\level-2\\L2-007-bookmark-store\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 92.54762029647827,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788104118.3518896,
+      "completedAt": 1788104210.89951
+    },
+    {
+      "level": 2,
+      "jobId": "L2-007",
+      "family": "crud",
+      "title": "Bookmark store",
+      "file": "training\\level-2\\L2-007-bookmark-store\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 32.41871523857117,
+      "changedFiles": [
+        "training/level-2/L2-007-bookmark-store/bookmarkStore.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788103909.2991292,
+      "completedAt": 1788103941.7178445
+    },
+    {
+      "level": 2,
+      "jobId": "L2-008",
+      "family": "state",
+      "title": "Tag index",
+      "file": "training\\level-2\\L2-008-tag-index\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 50.75394535064697,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788113318.5572135,
+      "completedAt": 1788113369.311159
+    },
+    {
+      "level": 2,
+      "jobId": "L2-008",
+      "family": "state",
+      "title": "Tag index",
+      "file": "training\\level-2\\L2-008-tag-index\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 24.375359296798706,
+      "changedFiles": [
+        "training/level-2/L2-008-tag-index/tagIndex.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788113215.2376735,
+      "completedAt": 1788113239.6130328
+    },
+    {
+      "level": 2,
+      "jobId": "L2-009",
+      "family": "tracker",
+      "title": "Persistent counters",
+      "file": "training\\level-2\\L2-009-counter-store\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 24.582457065582275,
+      "changedFiles": [
+        "training/level-2/L2-009-counter-store/counterStore.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788113521.5602252,
+      "completedAt": 1788113546.1426823
+    },
+    {
+      "level": 2,
+      "jobId": "L2-010",
+      "family": "tracker",
+      "title": "Habit tracker",
+      "file": "training\\level-2\\L2-010-habit-tracker\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 40.41901350021362,
+      "changedFiles": [
+        "training/level-2/L2-010-habit-tracker/habitTracker.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788113974.8475776,
+      "completedAt": 1788114015.266591
+    },
+    {
+      "level": 2,
+      "jobId": "L2-010",
+      "family": "tracker",
+      "title": "Habit tracker",
+      "file": "training\\level-2\\L2-010-habit-tracker\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 29.72916316986084,
+      "changedFiles": [
+        "training/level-2/L2-010-habit-tracker/habitTracker.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788113806.375085,
+      "completedAt": 1788113836.1042483
+    },
+    {
+      "level": 2,
+      "jobId": "L2-011",
+      "family": "tracker",
+      "title": "Time tracker",
+      "file": "training\\level-2\\L2-011-time-tracker\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 31.039369583129883,
+      "changedFiles": [
+        "training/level-2/L2-011-time-tracker/timeTracker.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788114157.94767,
+      "completedAt": 1788114188.9870396
+    },
+    {
+      "level": 2,
+      "jobId": "L2-012",
+      "family": "tracker",
+      "title": "Expense tracker",
+      "file": "training\\level-2\\L2-012-expense-tracker\\repair-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 36.85194802284241,
+      "changedFiles": [
+        "training/level-2/L2-012-expense-tracker/expenseTracker.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788114945.3229883,
+      "completedAt": 1788114982.1749363
+    },
+    {
+      "level": 2,
+      "jobId": "L2-012",
+      "family": "tracker",
+      "title": "Expense tracker",
+      "file": "training\\level-2\\L2-012-expense-tracker\\worker-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 31.458956956863403,
+      "changedFiles": [
+        "training/level-2/L2-012-expense-tracker/expenseTracker.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788114857.5932841,
+      "completedAt": 1788114889.052241
+    },
+    {
+      "level": 2,
+      "jobId": "L2-013",
+      "family": "io",
+      "title": "State import/export",
+      "file": "training\\level-2\\L2-013-import-export\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/level-2/L2-016-journal/worker-request.json']",
+      "failureClass": "OUT_OF_SCOPE",
+      "durationSec": 76.87373566627502,
+      "changedFiles": [
+        "training/level-2/L2-016-journal/worker-request.json"
+      ],
+      "outOfScope": [
+        "training/level-2/L2-016-journal/worker-request.json"
+      ],
+      "startedAt": 1788121018.3165667,
+      "completedAt": 1788121095.1903024
+    },
+    {
+      "level": 2,
+      "jobId": "L2-013",
+      "family": "io",
+      "title": "State import/export",
+      "file": "training\\level-2\\L2-013-import-export\\worker-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 20.498810291290283,
+      "changedFiles": [
+        "training/level-2/L2-013-import-export/stateTransfer.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788115230.9165194,
+      "completedAt": 1788115251.4153297
+    },
+    {
+      "level": 2,
+      "jobId": "L2-014",
+      "family": "io",
+      "title": "Backup/restore",
+      "file": "training\\level-2\\L2-014-backup-restore\\worker-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 85.78210020065308,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788115578.8692143,
+      "completedAt": 1788115664.6513145
+    },
+    {
+      "level": 2,
+      "jobId": "L2-016",
+      "family": "state",
+      "title": "Append-only journal",
+      "file": "training\\level-2\\L2-016-journal\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "builder repeated the same failing tool call 6 times without adapting: write_file -> path is required",
+      "failureClass": "TOOL_LOOP",
+      "durationSec": 99.60266995429993,
+      "changedFiles": [
+        "training/level-2/L2-016-journal/journal.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788121236.3331344,
+      "completedAt": 1788121335.9358044
+    },
+    {
+      "level": 2,
+      "jobId": "L2-017",
+      "family": "state",
+      "title": "Undo/redo state",
+      "file": "training\\level-2\\L2-017-undo-redo\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 95.21135354042053,
+      "changedFiles": [
+        "training/level-2/L2-017-undo-redo/undoRedo.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788121641.5511882,
+      "completedAt": 1788121736.7625418
+    },
+    {
+      "level": 2,
+      "jobId": "L2-018",
+      "family": "query",
+      "title": "Persistent search/filter",
+      "file": "training\\level-2\\L2-018-search-filter\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 97.48653602600098,
+      "changedFiles": [
+        "training/level-2/L2-018-search-filter/searchStore.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788121975.0831456,
+      "completedAt": 1788122072.5696816
+    },
+    {
+      "level": 2,
+      "jobId": "L2-019",
+      "family": "query",
+      "title": "Persistent sort/page",
+      "file": "training\\level-2\\L2-019-sort-page\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/level-2/L2-019-sort-page/worker-result.json']",
+      "failureClass": "OUT_OF_SCOPE",
+      "durationSec": 86.39568853378296,
+      "changedFiles": [
+        "training/level-2/L2-019-sort-page/worker-result.json"
+      ],
+      "outOfScope": [
+        "training/level-2/L2-019-sort-page/worker-result.json"
+      ],
+      "startedAt": 1788122419.2821453,
+      "completedAt": 1788122505.6778338
+    },
+    {
+      "level": 2,
+      "jobId": "L2-019",
+      "family": "query",
+      "title": "Persistent sort/page",
+      "file": "training\\level-2\\L2-019-sort-page\\worker-result.json",
+      "builder": "local.qwen3-8b",
+      "ok": false,
+      "reason": "out_of_scope_changes: ['training/level-2/L2-019-sort-page/repair-request.json', 'training/level-2/L2-019-sort-page/repair.log', 'training/level-2/L2-019-sort-page/repair.pid']",
+      "failureClass": "OUT_OF_SCOPE",
+      "durationSec": 97.57061290740967,
+      "changedFiles": [
+        "training/level-2/L2-019-sort-page/repair-request.json",
+        "training/level-2/L2-019-sort-page/repair.log",
+        "training/level-2/L2-019-sort-page/repair.pid"
+      ],
+      "outOfScope": [
+        "training/level-2/L2-019-sort-page/repair-request.json",
+        "training/level-2/L2-019-sort-page/repair.log",
+        "training/level-2/L2-019-sort-page/repair.pid"
+      ],
+      "startedAt": 1788122323.799505,
+      "completedAt": 1788122421.370118
+    },
+    {
+      "level": 2,
+      "jobId": "L2-020",
+      "family": "dashboard",
+      "title": "Dashboard summary",
+      "file": "training\\level-2\\L2-020-dashboard-summary\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 8.689264297485352,
+      "changedFiles": [
+        "training/level-2/L2-020-dashboard-summary/dashboardSummary.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788127223.6654963,
+      "completedAt": 1788127232.3547606
+    },
+    {
+      "level": 2,
+      "jobId": "L2-020",
+      "family": "dashboard",
+      "title": "Dashboard summary",
+      "file": "training\\level-2\\L2-020-dashboard-summary\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 75.26316237449646,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788127139.5065274,
+      "completedAt": 1788127214.7696898
+    },
+    {
+      "level": 2,
+      "jobId": "L2-021",
+      "family": "dashboard",
+      "title": "Activity log",
+      "file": "training\\level-2\\L2-021-activity-log\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 61.97423768043518,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788138332.450329,
+      "completedAt": 1788138394.4245667
+    },
+    {
+      "level": 2,
+      "jobId": "L2-021",
+      "family": "dashboard",
+      "title": "Activity log",
+      "file": "training\\level-2\\L2-021-activity-log\\repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 16.3799307346344,
+      "changedFiles": [
+        "training/level-2/L2-021-activity-log/activityLog.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788173098.0567641,
+      "completedAt": 1788173114.4366949
+    },
+    {
+      "level": 2,
+      "jobId": "L2-021",
+      "family": "dashboard",
+      "title": "Activity log",
+      "file": "training\\level-2\\L2-021-activity-log\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "failureClass": "NO_ATTEMPT_MUTATION",
+      "durationSec": 70.44479417800903,
+      "changedFiles": [],
+      "outOfScope": [],
+      "startedAt": 1788138228.786653,
+      "completedAt": 1788138299.2314472
+    },
+    {
+      "level": 2,
+      "jobId": "L2-022",
+      "family": "state",
+      "title": "Preference profile",
+      "file": "training\\level-2\\L2-022-preferences-profile\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 29.88733220100403,
+      "changedFiles": [
+        "training/level-2/L2-022-preferences-profile/preferenceProfile.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788174243.1019733,
+      "completedAt": 1788174272.9893055
+    },
+    {
+      "level": 2,
+      "jobId": "L2-022",
+      "family": "state",
+      "title": "Preference profile",
+      "file": "training\\level-2\\L2-022-preferences-profile\\worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 22.96815538406372,
+      "changedFiles": [
+        "training/level-2/L2-022-preferences-profile/preferenceProfile.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788174191.2890263,
+      "completedAt": 1788174214.2571816
+    },
+    {
+      "level": 2,
+      "jobId": "L2-023",
+      "family": "crud",
+      "title": "Multi-list manager",
+      "file": "training\\level-2\\L2-023-multi-list\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 32.50358462333679,
+      "changedFiles": [
+        "training/level-2/L2-023-multi-list/multiList.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788174406.7102816,
+      "completedAt": 1788174439.2138662
+    },
+    {
+      "level": 2,
+      "jobId": "L2-023",
+      "family": "crud",
+      "title": "Multi-list manager",
+      "file": "training\\level-2\\L2-023-multi-list\\worker-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 26.105647802352905,
+      "changedFiles": [
+        "training/level-2/L2-023-multi-list/multiList.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788174348.8846936,
+      "completedAt": 1788174374.9903414
+    },
+    {
+      "level": 2,
+      "jobId": "L2-024",
+      "family": "composition",
+      "title": "Stateful desk tool",
+      "file": "training\\level-2\\L2-024-desk-tool\\repair-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 26.374720573425293,
+      "changedFiles": [
+        "training/level-2/L2-024-desk-tool/deskTool.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788174596.1568651,
+      "completedAt": 1788174622.5315857
+    },
+    {
+      "level": 2,
+      "jobId": "L2-024",
+      "family": "composition",
+      "title": "Stateful desk tool",
+      "file": "training\\level-2\\L2-024-desk-tool\\worker-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": true,
+      "reason": "",
+      "failureClass": "OK",
+      "durationSec": 27.539801836013794,
+      "changedFiles": [
+        "training/level-2/L2-024-desk-tool/deskTool.mjs"
+      ],
+      "outOfScope": [],
+      "startedAt": 1788174537.9240267,
+      "completedAt": 1788174565.4638286
+    }
+  ],
+  "routeMatrix": {
+    "qwen3-builder|text": {
+      "receipts": 11,
+      "ok": 4,
+      "failed": 7,
+      "durationSec": 176.34,
+      "durationSamples": 11,
+      "failureClasses": {
+        "OUT_OF_SCOPE": 6,
+        "NO_ATTEMPT_MUTATION": 1,
+        "OK": 4
+      },
+      "avgDurationSec": 16.031
+    },
+    "local.qwen3-8b|data": {
+      "receipts": 6,
+      "ok": 5,
+      "failed": 1,
+      "durationSec": 83.681,
+      "durationSamples": 6,
+      "failureClasses": {
+        "OK": 5,
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "avgDurationSec": 13.947
+    },
+    "local.qwen3.5-9b|data": {
+      "receipts": 5,
+      "ok": 2,
+      "failed": 3,
+      "durationSec": 173.517,
+      "durationSamples": 5,
+      "failureClasses": {
+        "NO_ATTEMPT_MUTATION": 3,
+        "OK": 2
+      },
+      "avgDurationSec": 34.703
+    },
+    "local.qwen3-coder-30b|data": {
+      "receipts": 1,
+      "ok": 1,
+      "failed": 0,
+      "durationSec": 70.074,
+      "durationSamples": 1,
+      "failureClasses": {
+        "OK": 1
+      },
+      "avgDurationSec": 70.074
+    },
+    "local.qwen3.5-9b|web": {
+      "receipts": 7,
+      "ok": 5,
+      "failed": 2,
+      "durationSec": 151.887,
+      "durationSamples": 7,
+      "failureClasses": {
+        "OK": 5,
+        "NO_ATTEMPT_MUTATION": 2
+      },
+      "avgDurationSec": 21.698
+    },
+    "local.qwen3-coder-30b|web": {
+      "receipts": 2,
+      "ok": 2,
+      "failed": 0,
+      "durationSec": 98.477,
+      "durationSamples": 2,
+      "failureClasses": {
+        "OK": 2
+      },
+      "avgDurationSec": 49.238
+    },
+    "local.qwen3.5-9b|calculate": {
+      "receipts": 7,
+      "ok": 5,
+      "failed": 2,
+      "durationSec": 141.979,
+      "durationSamples": 7,
+      "failureClasses": {
+        "OK": 5,
+        "NO_ATTEMPT_MUTATION": 2
+      },
+      "avgDurationSec": 20.283
+    },
+    "local.qwen3-coder-30b|calculate": {
+      "receipts": 2,
+      "ok": 2,
+      "failed": 0,
+      "durationSec": 75.094,
+      "durationSamples": 2,
+      "failureClasses": {
+        "OK": 2
+      },
+      "avgDurationSec": 37.547
+    },
+    "local.qwen3.5-9b|file": {
+      "receipts": 7,
+      "ok": 5,
+      "failed": 2,
+      "durationSec": 168.951,
+      "durationSamples": 7,
+      "failureClasses": {
+        "OK": 5,
+        "NO_ATTEMPT_MUTATION": 2
+      },
+      "avgDurationSec": 24.136
+    },
+    "local.qwen3-coder-30b|file": {
+      "receipts": 3,
+      "ok": 3,
+      "failed": 0,
+      "durationSec": 196.007,
+      "durationSamples": 3,
+      "failureClasses": {
+        "OK": 3
+      },
+      "avgDurationSec": 65.336
+    },
+    "local.qwen3.5-9b|developer": {
+      "receipts": 7,
+      "ok": 5,
+      "failed": 2,
+      "durationSec": 162.286,
+      "durationSamples": 7,
+      "failureClasses": {
+        "OK": 5,
+        "NO_ATTEMPT_MUTATION": 2
+      },
+      "avgDurationSec": 23.184
+    },
+    "local.qwen3-coder-30b|developer": {
+      "receipts": 4,
+      "ok": 2,
+      "failed": 2,
+      "durationSec": 107.135,
+      "durationSamples": 4,
+      "failureClasses": {
+        "OK": 2,
+        "NO_ATTEMPT_MUTATION": 2
+      },
+      "avgDurationSec": 26.784
+    },
+    "local.qwen3.5-9b|generate": {
+      "receipts": 8,
+      "ok": 4,
+      "failed": 4,
+      "durationSec": 230.667,
+      "durationSamples": 8,
+      "failureClasses": {
+        "NO_ATTEMPT_MUTATION": 4,
+        "OK": 4
+      },
+      "avgDurationSec": 28.833
+    },
+    "qwen3-builder|generate": {
+      "receipts": 1,
+      "ok": 0,
+      "failed": 1,
+      "durationSec": 0.0,
+      "durationSamples": 0,
+      "failureClasses": {
+        "FILE_ERROR": 1
+      },
+      "avgDurationSec": null
+    },
+    "local.qwen3-coder-30b|generate": {
+      "receipts": 1,
+      "ok": 0,
+      "failed": 1,
+      "durationSec": 19.965,
+      "durationSamples": 1,
+      "failureClasses": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "avgDurationSec": 19.965
+    },
+    "local.qwen3.5-9b|validate": {
+      "receipts": 7,
+      "ok": 5,
+      "failed": 2,
+      "durationSec": 174.664,
+      "durationSamples": 7,
+      "failureClasses": {
+        "NO_ATTEMPT_MUTATION": 2,
+        "OK": 5
+      },
+      "avgDurationSec": 24.952
+    },
+    "local.qwen3-coder-30b|validate": {
+      "receipts": 1,
+      "ok": 0,
+      "failed": 1,
+      "durationSec": 20.175,
+      "durationSamples": 1,
+      "failureClasses": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "avgDurationSec": 20.175
+    },
+    "qwen3-builder|validate": {
+      "receipts": 1,
+      "ok": 0,
+      "failed": 1,
+      "durationSec": 0.0,
+      "durationSamples": 0,
+      "failureClasses": {
+        "FILE_ERROR": 1
+      },
+      "avgDurationSec": null
+    },
+    "local.qwen3-8b|state": {
+      "receipts": 2,
+      "ok": 1,
+      "failed": 1,
+      "durationSec": 82.428,
+      "durationSamples": 2,
+      "failureClasses": {
+        "NO_ATTEMPT_MUTATION": 1,
+        "OK": 1
+      },
+      "avgDurationSec": 41.214
+    },
+    "local.qwen3-coder-30b|state": {
+      "receipts": 5,
+      "ok": 2,
+      "failed": 3,
+      "durationSec": 384.664,
+      "durationSamples": 5,
+      "failureClasses": {
+        "NO_ATTEMPT_MUTATION": 2,
+        "TOOL_LOOP": 1,
+        "OK": 2
+      },
+      "avgDurationSec": 76.933
+    },
+    "qwen3-builder|state": {
+      "receipts": 1,
+      "ok": 0,
+      "failed": 1,
+      "durationSec": 0.0,
+      "durationSamples": 0,
+      "failureClasses": {
+        "PATH_ESCAPE": 1
+      },
+      "avgDurationSec": null
+    },
+    "local.qwen3.5-9b|state": {
+      "receipts": 3,
+      "ok": 3,
+      "failed": 0,
+      "durationSec": 71.851,
+      "durationSamples": 3,
+      "failureClasses": {
+        "OK": 3
+      },
+      "avgDurationSec": 23.95
+    },
+    "local.qwen3.5-9b|crud": {
+      "receipts": 8,
+      "ok": 7,
+      "failed": 1,
+      "durationSec": 230.063,
+      "durationSamples": 8,
+      "failureClasses": {
+        "NO_ATTEMPT_MUTATION": 1,
+        "OK": 7
+      },
+      "avgDurationSec": 28.758
+    },
+    "local.qwen3-coder-30b|crud": {
+      "receipts": 7,
+      "ok": 4,
+      "failed": 3,
+      "durationSec": 340.126,
+      "durationSamples": 7,
+      "failureClasses": {
+        "OK": 4,
+        "NO_ATTEMPT_MUTATION": 2,
+        "OUT_OF_SCOPE": 1
+      },
+      "avgDurationSec": 48.589
+    },
+    "qwen3-builder|crud": {
+      "receipts": 1,
+      "ok": 0,
+      "failed": 1,
+      "durationSec": 0.0,
+      "durationSamples": 0,
+      "failureClasses": {
+        "PATH_ESCAPE": 1
+      },
+      "avgDurationSec": null
+    },
+    "local.qwen3.5-9b|tracker": {
+      "receipts": 3,
+      "ok": 3,
+      "failed": 0,
+      "durationSec": 85.351,
+      "durationSamples": 3,
+      "failureClasses": {
+        "OK": 3
+      },
+      "avgDurationSec": 28.45
+    },
+    "local.qwen3-coder-30b|tracker": {
+      "receipts": 1,
+      "ok": 1,
+      "failed": 0,
+      "durationSec": 40.419,
+      "durationSamples": 1,
+      "failureClasses": {
+        "OK": 1
+      },
+      "avgDurationSec": 40.419
+    },
+    "local.qwen3-8b|tracker": {
+      "receipts": 2,
+      "ok": 2,
+      "failed": 0,
+      "durationSec": 68.311,
+      "durationSamples": 2,
+      "failureClasses": {
+        "OK": 2
+      },
+      "avgDurationSec": 34.155
+    },
+    "local.qwen3-coder-30b|io": {
+      "receipts": 1,
+      "ok": 0,
+      "failed": 1,
+      "durationSec": 76.874,
+      "durationSamples": 1,
+      "failureClasses": {
+        "OUT_OF_SCOPE": 1
+      },
+      "avgDurationSec": 76.874
+    },
+    "local.qwen3-8b|io": {
+      "receipts": 2,
+      "ok": 1,
+      "failed": 1,
+      "durationSec": 106.281,
+      "durationSamples": 2,
+      "failureClasses": {
+        "OK": 1,
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "avgDurationSec": 53.14
+    },
+    "local.qwen3-coder-30b|query": {
+      "receipts": 2,
+      "ok": 1,
+      "failed": 1,
+      "durationSec": 183.882,
+      "durationSamples": 2,
+      "failureClasses": {
+        "OK": 1,
+        "OUT_OF_SCOPE": 1
+      },
+      "avgDurationSec": 91.941
+    },
+    "local.qwen3-8b|query": {
+      "receipts": 1,
+      "ok": 0,
+      "failed": 1,
+      "durationSec": 97.571,
+      "durationSamples": 1,
+      "failureClasses": {
+        "OUT_OF_SCOPE": 1
+      },
+      "avgDurationSec": 97.571
+    },
+    "local.qwen3-coder-30b|dashboard": {
+      "receipts": 3,
+      "ok": 2,
+      "failed": 1,
+      "durationSec": 87.043,
+      "durationSamples": 3,
+      "failureClasses": {
+        "OK": 2,
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "avgDurationSec": 29.014
+    },
+    "local.qwen3.5-9b|dashboard": {
+      "receipts": 2,
+      "ok": 0,
+      "failed": 2,
+      "durationSec": 145.708,
+      "durationSamples": 2,
+      "failureClasses": {
+        "NO_ATTEMPT_MUTATION": 2
+      },
+      "avgDurationSec": 72.854
+    },
+    "local.qwen3-coder-30b|composition": {
+      "receipts": 2,
+      "ok": 2,
+      "failed": 0,
+      "durationSec": 53.915,
+      "durationSamples": 2,
+      "failureClasses": {
+        "OK": 2
+      },
+      "avgDurationSec": 26.957
+    }
+  },
+  "operatorDebtJobs": [
+    "L2-001",
+    "L2-002",
+    "L2-003",
+    "L2-004",
+    "L2-006",
+    "L2-007",
+    "L2-008",
+    "L2-009",
+    "L2-010",
+    "L2-011",
+    "L2-012",
+    "L2-016",
+    "L2-017",
+    "L2-020",
+    "L2-021",
+    "L2-022",
+    "L2-023"
+  ],
+  "firstReceiptOkButMultiAttemptJobs": [
+    "L1-002",
+    "L1-005",
+    "L1-006",
+    "L1-007",
+    "L1-008",
+    "L1-009",
+    "L1-010",
+    "L1-012",
+    "L1-013",
+    "L1-017",
+    "L1-018",
+    "L1-020",
+    "L1-022",
+    "L1-023",
+    "L1-024",
+    "L1-027",
+    "L1-028",
+    "L1-029",
+    "L1-030",
+    "L1-031",
+    "L1-032",
+    "L1-033",
+    "L1-035",
+    "L1-036",
+    "L1-039",
+    "L1-040",
+    "L2-001",
+    "L2-002",
+    "L2-003",
+    "L2-004",
+    "L2-005",
+    "L2-006",
+    "L2-007",
+    "L2-008",
+    "L2-009",
+    "L2-010",
+    "L2-011",
+    "L2-012",
+    "L2-013",
+    "L2-017",
+    "L2-018",
+    "L2-022",
+    "L2-023",
+    "L2-024"
+  ]
+}

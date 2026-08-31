@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "FORGE-QUAL-local.qwen3.5-9b-R2",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788086297.9208536,
+  "completed_at": 1788086305.8649058,
+  "duration_sec": 7.944052219390869,
+  "allowed_paths": [
+    "training/forge-qualification/local_qwen3_5-9b/candidate.mjs"
+  ],
+  "changed_files": [
+    "training/forge-qualification/local_qwen3_5-9b/candidate.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/forge-qualification/local_qwen3_5-9b/candidate.mjs\n+++ b/training/forge-qualification/local_qwen3_5-9b/candidate.mjs\n@@ -0,0 +1,3 @@\n+export function clamp(n, min, max) {\n+  return Math.max(min, Math.min(max, n));\n+}",
+  "git_status": "training/forge-qualification/local_qwen3_5-9b/candidate.mjs",
+  "summary": "Created training/forge-qualification/local_qwen3_5-9b/candidate.mjs with clamp function implementation",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/forge-qualification/local_qwen3_5-9b/candidate.mjs\n+++ b/training/forge-qualification/local_qwen3_5-9b/candidate.mjs\n@@ -0,0 +1,3 @@\n+export function clamp(n, min, max) {\n+  return Math.max(min, Math.min(max, n));\n+}",
+    "git_status": "training/forge-qualification/local_qwen3_5-9b/candidate.mjs",
+    "tool_trace": [
+      "write_file: wrote 80 chars to training/forge-qualification/local_qwen3_5-9b/candidate.mjs",
+      "finish: Created training/forge-qualification/local_qwen3_5-9b/candidate.mjs with clamp function implementation"
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/forge-qualification/local_qwen3_5-9b/candidate.mjs\", \"content\": \"export function clamp(n, min, max) {\\n  return Math.max(min, Math.min(max, n));\\n}\"}",
+        "raw_suffix": "{\"path\": \"training/forge-qualification/local_qwen3_5-9b/candidate.mjs\", \"content\": \"export function clamp(n, min, max) {\\n  return Math.max(min, Math.min(max, n));\\n}\"}",
+        "raw_length": 168,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 80
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/forge-qualification/local_qwen3_5-9b/candidate.mjs with clamp function implementation\"}",
+        "raw_suffix": "{\"summary\": \"Created training/forge-qualification/local_qwen3_5-9b/candidate.mjs with clamp function implementation\"}",
+        "raw_length": 117,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "hephaestus_forge_local_qualification",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "5202",
+      "utilization_pct": "0",
+      "temperature_c": "42",
+      "power_w": "17.63"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    5.3 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6338",
+      "utilization_pct": "0",
+      "temperature_c": "45",
+      "power_w": "37.21"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

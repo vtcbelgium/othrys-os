@@ -7,7 +7,7 @@ const root=resolve(import.meta.dirname,'../..');
 const manifest=JSON.parse(readFileSync(join(root,'.othrys','project.json'),'utf8'));
 const registry=JSON.parse(readFileSync(join(root,'books','BOOK_REGISTRY.json'),'utf8'));
 const required=new Set([
-  'othrys-os','gpt','missions-work','blocks','oroi-projects','models',
+  'othrys-os','gpt','missions-work','blocks','oroi-projects','blueprints','constellations','models',
   ...manifest.authorities.map(x=>x.id),
   ...manifest.systems.map(x=>x.id),
   manifest.knowledgePolicy.service

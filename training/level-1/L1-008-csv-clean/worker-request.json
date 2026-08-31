@@ -1,0 +1,26 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 JOB L1-008. Create exactly training/level-1/L1-008-csv-clean/csvClean.mjs. Export csvClean(input). Implement a dependency-free RFC4180-style parser/serializer sufficient for quoted fields, escaped double quotes, commas and CRLF/LF record endings. Normalize output to LF records, comma delimiter, quote a field only when it contains comma, quote, CR, or LF, escaping quote as double quote. Preserve field text exactly; do not trim. Remove only one terminal empty record caused solely by a final line ending. Empty input returns empty string. Malformed unterminated quoted field throws SyntaxError. Deterministic, no I/O/network. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-008"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-008-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-008-csv-clean/csvClean.mjs"
+                      ]
+}

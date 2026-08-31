@@ -1,0 +1,93 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L2-010-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788113806.375085,
+  "completed_at": 1788113836.1042483,
+  "duration_sec": 29.72916316986084,
+  "allowed_paths": [
+    "training/level-2/L2-010-habit-tracker/habitTracker.mjs"
+  ],
+  "changed_files": [
+    "training/level-2/L2-010-habit-tracker/habitTracker.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-2/L2-010-habit-tracker/habitTracker.mjs\n+++ b/training/level-2/L2-010-habit-tracker/habitTracker.mjs\n@@ -0,0 +1,189 @@\n+// Habit tracker with atomic JSON persistence\n+// Standard Node ESM only; no network/deps/secrets\n+\n+import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'fs';\n+import { join } from 'path';\n+\n+export function createHabitTracker(filePath) {\n+  return {\n+    add(id, name) {\n+      if (!id || !name || name.trim() === '') {\n+        throw new Error('Invalid habit ID or name');\n+      }\n+\n+      if (existsSync(filePath)) {\n+        const data = JSON.parse(readFileSync(filePath, 'utf8'));\n+        if (data.habits.some(h => h.id === id)) {\n+          throw new Error('DUPLICATE_ID');\n+        }\n+      }\n+\n+      const habit = {\n+        id,\n+        name: name.trim(),\n+        dates: []\n+      };\n+\n+      const newData = {\n+        habits: [...(existsSync(filePath) ? JSON.parse(readFileSync(filePath, 'utf8')).habits : []), habit]\n+      };\n+\n+      if (existsSync(filePath)) {\n+        const tempPath = filePath + '.tmp';\n+        writeFileSync(tempPath, JSON.stringify(newData, null, 2), 'utf8');\n+        rmSync(filePath);\n+        renameSync(tempPath, filePath);\n+      } else {\n+        writeFileSync(filePath, JSON.stringify(newData, null, 2), 'utf8');\n+      }\n+    },\n+\n+    checkIn(id, date) {\n+      if (!id || !date || !/\\d{4}-\\d{2}-\\d{2}/.test(date)) {\n+        throw new Error('Invalid habit ID or date');\n+      }\n+\n+      if (!existsSync(filePath)) {\n+        throw new Error('NOT_FOUND');\n+      }\n+\n+      const data = JSON.parse(readFileSync(filePath, 'utf8'));\n+      const habit = data.habits.find(h => h.id === id);\n+      if (!habit) {\n+        throw new Error('NOT_FOUND');\n+      }\n+\n+      const dateObj = new Date(date);\n+      if (dateObj.toString() === 'Invalid Date') {\n+        throw new Error('Invalid date');\n+      }\n+\n+      const existingDate = habit.dates.find(d => d === date);\n+      if (existingDate) {\n+        return false;\n+      }\n+\n+      habit.dates.push(date);\n+      habit.dates.sort();\n+\n+      const tempPath = filePath + '.tmp';\n+      writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf8');\n+      rmSync(filePath);\n+      renameSync(tempPath, filePath);\n+      return true;\n+    },\n+\n+    uncheck(id, date) {\n+      if (!id || !date || !/\\d{4}-\\d{2}-\\d{2}/.test(date)) {\n+        throw new Error('Invalid habit ID or date');\n+      }\n+\n+      if (!existsSync(filePath)) {\n+        throw new Error('NOT_FOUND');\n+      }\n+\n+      const data = JSON.parse(readFileSync(filePath, 'utf8'));\n+      const habit = data.habits.find(h => h.id === id);\n+      if (!habit) {\n+        throw new Error('NOT_FOUND');\n+      }\n+\n+      const dateObj = new Date(date);\n+      if (dateObj.toString() === 'Invalid Date') {\n+        throw new Error('Invalid date');\n+      }\n+\n+      const existingDate = habit.dates.find(d => d === date);\n+      if (!existingDate) {\n+        return false;\n+      }\n+\n+      habit.dates = habit.dates.filter(d => d !== date);\n+\n+      const tempPath = filePath + '.tmp';\n+      writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf8');\n+      rmSync(filePath);\n+      renameSync(tempPath, filePath);\n+      return true;\n+    },\n+\n+    get(id) {\n+      if (!id) {\n+        throw new Error('Invalid habit ID');\n+      }\n+\n+      if (!existsSync(filePath)) {\n+        return undefined;\n+      }\n+\n+      const data = JSON.parse(readFileSync(filePath, 'utf8'));\n+      const habit = data.habits.find(h => h.id === id);\n+      if (!habit) {\n+        return undefined;\n+      }\n+\n+      const clonedHabit = JSON.parse(JSON.stringify(habit));\n+      clonedHabit.currentStreak = 0;\n+      clonedHabit.longestStreak = 0;\n+      let currentStreak = 0;\n+      let longestStreak = 0;\n+      let lastDate = null;\n+\n+      for (let i = clonedHabit.dates.length - 1; i >= 0; i--) {\n+        const date = clonedHabit.dates[i];\n+        const dateObj = new Date(date);\n+        const today = new Date();\n+        today.setHours(0, 0, 0, 0);\n+        dateObj.setHours(0, 0, 0, 0);\n+\n+        if (lastDate && dateObj.getTime() !== lastDate.getTime()) {\n+          currentStreak = 0;\n+        }\n+\n+        currentStreak++;\n+        lastDate = dateObj;\n+\n+        if (currentStreak > longestStreak) {\n+          longestStreak = currentStreak;\n+        }\n+      }\n+\n+      clonedHabit.currentStreak = currentStreak;\n+      clonedHabit.longestStreak = longestStreak;\n+      return clonedHabit;\n+    },\n+\n+    list() {\n+      if (!existsSync(filePath)) {\n+        return [];\n+      }\n+\n+      const data = JSON.parse(readFileSync(filePath, 'utf8'));\n+      return data.habits.map(habit => JSON.parse(JSON.stringify(habit)));\n+    },\n+\n+    remove(id) {\n+      if (!id) {\n+        throw new Error('Invalid habit ID');\n+      }\n+\n+      if (!existsSync(filePath)) {\n+        return false;\n+      }\n+\n+      const data = JSON.parse(readFileSync(filePath, 'utf8'));\n+      const habit = data.habits.find(h => h.id === id);\n+      if (!habit) {\n+        return false;\n+      }\n+\n+      data.habits = data.habts.filter(h => h.id !== id);\n+\n+      const tempPath = filePath + '.tmp';\n+      writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf8');\n+      rmSync(filePath);\n+      renameSync(tempPath, filePath);\n+      return true;\n+    }\n+  };\n+}\n",
+  "git_status": "training/level-2/L2-010-habit-tracker/habitTracker.mjs",
+  "summary": "Created habitTracker.mjs with the specified functionality and error handling.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-2/L2-010-habit-tracker/habitTracker.mjs\n+++ b/training/level-2/L2-010-habit-tracker/habitTracker.mjs\n@@ -0,0 +1,189 @@\n+// Habit tracker with atomic JSON persistence\n+// Standard Node ESM only; no network/deps/secrets\n+\n+import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'fs';\n+import { join } from 'path';\n+\n+export function createHabitTracker(filePath) {\n+  return {\n+    add(id, name) {\n+      if (!id || !name || name.trim() === '') {\n+        throw new Error('Invalid habit ID or name');\n+      }\n+\n+      if (existsSync(filePath)) {\n+        const data = JSON.parse(readFileSync(filePath, 'utf8'));\n+        if (data.habits.some(h => h.id === id)) {\n+          throw new Error('DUPLICATE_ID');\n+        }\n+      }\n+\n+      const habit = {\n+        id,\n+        name: name.trim(),\n+        dates: []\n+      };\n+\n+      const newData = {\n+        habits: [...(existsSync(filePath) ? JSON.parse(readFileSync(filePath, 'utf8')).habits : []), habit]\n+      };\n+\n+      if (existsSync(filePath)) {\n+        const tempPath = filePath + '.tmp';\n+        writeFileSync(tempPath, JSON.stringify(newData, null, 2), 'utf8');\n+        rmSync(filePath);\n+        renameSync(tempPath, filePath);\n+      } else {\n+        writeFileSync(filePath, JSON.stringify(newData, null, 2), 'utf8');\n+      }\n+    },\n+\n+    checkIn(id, date) {\n+      if (!id || !date || !/\\d{4}-\\d{2}-\\d{2}/.test(date)) {\n+        throw new Error('Invalid habit ID or date');\n+      }\n+\n+      if (!existsSync(filePath)) {\n+        throw new Error('NOT_FOUND');\n+      }\n+\n+      const data = JSON.parse(readFileSync(filePath, 'utf8'));\n+      const habit = data.habits.find(h => h.id === id);\n+      if (!habit) {\n+        throw new Error('NOT_FOUND');\n+      }\n+\n+      const dateObj = new Date(date);\n+      if (dateObj.toString() === 'Invalid Date') {\n+        throw new Error('Invalid date');\n+      }\n+\n+      const existingDate = habit.dates.find(d => d === date);\n+      if (existingDate) {\n+        return false;\n+      }\n+\n+      habit.dates.push(date);\n+      habit.dates.sort();\n+\n+      const tempPath = filePath + '.tmp';\n+      writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf8');\n+      rmSync(filePath);\n+      renameSync(tempPath, filePath);\n+      return true;\n+    },\n+\n+    uncheck(id, date) {\n+      if (!id || !date || !/\\d{4}-\\d{2}-\\d{2}/.test(date)) {\n+        throw new Error('Invalid habit ID or date');\n+      }\n+\n+      if (!existsSync(filePath)) {\n+        throw new Error('NOT_FOUND');\n+      }\n+\n+      const data = JSON.parse(readFileSync(filePath, 'utf8'));\n+      const habit = data.habits.find(h => h.id === id);\n+      if (!habit) {\n+        throw new Error('NOT_FOUND');\n+      }\n+\n+      const dateObj = new Date(date);\n+      if (dateObj.toString() === 'Invalid Date') {\n+        throw new Error('Invalid date');\n+      }\n+\n+      const existingDate = habit.dates.find(d => d === date);\n+      if (!existingDate) {\n+        return false;\n+      }\n+\n+      habit.dates = habit.dates.filter(d => d !== date);\n+\n+      const tempPath = filePath + '.tmp';\n+      writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf8');\n+      rmSync(filePath);\n+      renameSync(tempPath, filePath);\n+      return true;\n+    },\n+\n+    get(id) {\n+      if (!id) {\n+        throw new Error('Invalid habit ID');\n+      }\n+\n+      if (!existsSync(filePath)) {\n+        return undefined;\n+      }\n+\n+      const data = JSON.parse(readFileSync(filePath, 'utf8'));\n+      const habit = data.habits.find(h => h.id === id);\n+      if (!habit) {\n+        return undefined;\n+      }\n+\n+      const clonedHabit = JSON.parse(JSON.stringify(habit));\n+      clonedHabit.currentStreak = 0;\n+      clonedHabit.longestStreak = 0;\n+      let currentStreak = 0;\n+      let longestStreak = 0;\n+      let lastDate = null;\n+\n+      for (let i = clonedHabit.dates.length - 1; i >= 0; i--) {\n+        const date = clonedHabit.dates[i];\n+        const dateObj = new Date(date);\n+        const today = new Date();\n+        today.setHours(0, 0, 0, 0);\n+        dateObj.setHours(0, 0, 0, 0);\n+\n+        if (lastDate && dateObj.getTime() !== lastDate.getTime()) {\n+          currentStreak = 0;\n+        }\n+\n+        currentStreak++;\n+        lastDate = dateObj;\n+\n+        if (currentStreak > longestStreak) {\n+          longestStreak = currentStreak;\n+        }\n+      }\n+\n+      clonedHabit.currentStreak = currentStreak;\n+      clonedHabit.longestStreak = longestStreak;\n+      return clonedHabit;\n+    },\n+\n+    list() {\n+      if (!existsSync(filePath)) {\n+        return [];\n+      }\n+\n+      const data = JSON.parse(readFileSync(filePath, 'utf8'));\n+      return data.habits.map(habit => JSON.parse(JSON.stringify(habit)));\n+    },\n+\n+    remove(id) {\n+      if (!id) {\n+        throw new Error('Invalid habit ID');\n+      }\n+\n+      if (!existsSync(filePath)) {\n+        return false;\n+      }\n+\n+      const data = JSON.parse(readFileSync(filePath, 'utf8'));\n+      const habit = data.habits.find(h => h.id === id);\n+      if (!habit) {\n+        return false;\n+      }\n+\n+      data.habits = data.habts.filter(h => h.id !== id);\n+\n+      const tempPath = filePath + '.tmp';\n+      writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf8');\n+      rmSync(filePath);\n+      renameSync(tempPath, filePath);\n+      return true;\n+    }\n+  };\n+}\n",
+    "git_status": "training/level-2/L2-010-habit-tracker/habitTracker.mjs",
+    "tool_trace": [
+      "write_file: wrote 5042 chars to training/level-2/L2-010-habit-tracker/habitTracker.mjs",
+      "finish: Created habitTracker.mjs with the specified functionality and error handling."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-2/L2-010-habit-tracker/habitTracker.mjs\",\"content\":\"// Habit tracker with atomic JSON persistence\n// Standard Node ESM only; no network/deps/secrets\n\nimport { readFileSync, writeFileSync, mkdirSync, existsSync, rmSyn",
+        "raw_suffix": "(filePath)) {\n        return false;\n      }\n\n      const data = JSON.parse(readFileSync(filePath, 'utf8'));\n      const habit = data.habits.find(h => h.id === id);\n      if (!habit) {\n        return false;\n      }\n\n      data.habits = data.habts.filter(h => h.id !== id);\n\n      const tempPath = filePath + '.tmp';\n      writeFileSync(tempPath, JSON.stringify(data, null, 2), 'utf8');\n      rmSync(filePath);\n      renameSync(tempPath, filePath);\n      return true;\n    }\n  };\n}\n\"",
+        "raw_length": 5119,
+        "parsed_keys": [],
+        "has_path": false,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "str",
+        "raw_prefix": "{\"summary\":\"Created habitTracker.mjs with the specified functionality and error handling.\"}",
+        "raw_suffix": "{\"summary\":\"Created habitTracker.mjs with the specified functionality and error handling.\"}",
+        "raw_length": 91,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "8",
+      "temperature_c": "42",
+      "power_w": "5.97"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "1",
+      "temperature_c": "56",
+      "power_w": "12.90"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

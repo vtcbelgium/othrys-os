@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-026-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788094289.1912365,
+  "completed_at": 1788094309.8782277,
+  "duration_sec": 20.686991214752197,
+  "allowed_paths": [
+    "training/level-1/L1-026-semver-compare/compareSemver.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-026-semver-compare/compareSemver.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-026-semver-compare/compareSemver.mjs\n+++ b/training/level-1/L1-026-semver-compare/compareSemver.mjs\n@@ -0,0 +1,55 @@\n+export function compareSemver(a, b) {\n+  if (typeof a !== 'string' || typeof b !== 'string') {\n+    throw new TypeError('Arguments must be strings');\n+  }\n+\n+  const parse = (s) => {\n+    const match = s.match(/^(\\d+)\\.(\\d+)\\.(\\d+)(?:-([^\\+]*))?/);\n+    if (!match) {\n+      throw new RangeError('Invalid SemVer string');\n+    }\n+    return {\n+      major: parseInt(match[1], 10),\n+      minor: parseInt(match[2], 10),\n+      patch: parseInt(match[3], 10),\n+      prerelease: match[4] || null\n+    };\n+  };\n+\n+  const pa = parse(a);\n+  const pb = parse(b);\n+\n+  if (pa.major !== pb.major) return pa.major - pb.major;\n+  if (pa.minor !== pb.minor) return pa.minor - pb.minor;\n+  if (pa.patch !== pb.patch) return pa.patch - pb.patch;\n+\n+  // Prerelease comparison\n+  if (!pa.prerelease && !pb.prerelease) return 0;\n+  if (!pa.prerelease) return 1;\n+  if (!pb.prerelease) return -1;\n+\n+  const compareIdent = (aId, bId) => {\n+    const aNum = /^\\d+$/.test(aId);\n+    const bNum = /^\\d+$/.test(bId);\n+\n+    if (aNum && bNum) {\n+      return parseInt(aId, 10) - parseInt(bId, 10);\n+    }\n+    if (aNum) return -1;\n+    if (bNum) return 1;\n+    return aId < bId ? -1 : aId > bId ? 1 : 0;\n+  };\n+\n+  const aIds = pa.prerelease.split('.');\n+  const bIds = pb.prerelease.split('.');\n+\n+  const len = Math.max(aIds.length, bIds.length);\n+  for (let i = 0; i < len; i++) {\n+    if (i >= aIds.length) return -1;\n+    if (i >= bIds.length) return 1;\n+    const cmp = compareIdent(aIds[i], bIds[i]);\n+    if (cmp !== 0) return cmp;\n+  }\n+\n+  return 0;\n+}",
+  "git_status": "training/level-1/L1-026-semver-compare/compareSemver.mjs",
+  "summary": "Created training/level-1/L1-026-semver-compare/compareSemver.mjs implementing strict SemVer 2.0.0 comparison with prerelease handling, numeric/nonnumeric identifier rules, and proper error throwing for invalid inputs.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-026-semver-compare/compareSemver.mjs\n+++ b/training/level-1/L1-026-semver-compare/compareSemver.mjs\n@@ -0,0 +1,55 @@\n+export function compareSemver(a, b) {\n+  if (typeof a !== 'string' || typeof b !== 'string') {\n+    throw new TypeError('Arguments must be strings');\n+  }\n+\n+  const parse = (s) => {\n+    const match = s.match(/^(\\d+)\\.(\\d+)\\.(\\d+)(?:-([^\\+]*))?/);\n+    if (!match) {\n+      throw new RangeError('Invalid SemVer string');\n+    }\n+    return {\n+      major: parseInt(match[1], 10),\n+      minor: parseInt(match[2], 10),\n+      patch: parseInt(match[3], 10),\n+      prerelease: match[4] || null\n+    };\n+  };\n+\n+  const pa = parse(a);\n+  const pb = parse(b);\n+\n+  if (pa.major !== pb.major) return pa.major - pb.major;\n+  if (pa.minor !== pb.minor) return pa.minor - pb.minor;\n+  if (pa.patch !== pb.patch) return pa.patch - pb.patch;\n+\n+  // Prerelease comparison\n+  if (!pa.prerelease && !pb.prerelease) return 0;\n+  if (!pa.prerelease) return 1;\n+  if (!pb.prerelease) return -1;\n+\n+  const compareIdent = (aId, bId) => {\n+    const aNum = /^\\d+$/.test(aId);\n+    const bNum = /^\\d+$/.test(bId);\n+\n+    if (aNum && bNum) {\n+      return parseInt(aId, 10) - parseInt(bId, 10);\n+    }\n+    if (aNum) return -1;\n+    if (bNum) return 1;\n+    return aId < bId ? -1 : aId > bId ? 1 : 0;\n+  };\n+\n+  const aIds = pa.prerelease.split('.');\n+  const bIds = pb.prerelease.split('.');\n+\n+  const len = Math.max(aIds.length, bIds.length);\n+  for (let i = 0; i < len; i++) {\n+    if (i >= aIds.length) return -1;\n+    if (i >= bIds.length) return 1;\n+    const cmp = compareIdent(aIds[i], bIds[i]);\n+    if (cmp !== 0) return cmp;\n+  }\n+\n+  return 0;\n+}",
+    "git_status": "training/level-1/L1-026-semver-compare/compareSemver.mjs",
+    "tool_trace": [
+      "write_file: wrote 1487 chars to training/level-1/L1-026-semver-compare/compareSemver.mjs",
+      "finish: Created training/level-1/L1-026-semver-compare/compareSemver.mjs implementing strict SemVer 2.0.0 comparison with prerelease handling, numeric/nonnumeric identifier rules, and proper error throwing for invalid inputs."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-026-semver-compare/compareSemver.mjs\", \"content\": \"export function compareSemver(a, b) {\\n  if (typeof a !== 'string' || typeof b !== 'string') {\\n    throw new TypeError('Arguments must be strings');\\n  }\\n\\n ",
+        "raw_suffix": "Int(bId, 10);\\n    }\\n    if (aNum) return -1;\\n    if (bNum) return 1;\\n    return aId < bId ? -1 : aId > bId ? 1 : 0;\\n  };\\n\\n  const aIds = pa.prerelease.split('.');\\n  const bIds = pb.prerelease.split('.');\\n\\n  const len = Math.max(aIds.length, bIds.length);\\n  for (let i = 0; i < len; i++) {\\n    if (i >= aIds.length) return -1;\\n    if (i >= bIds.length) return 1;\\n    const cmp = compareIdent(aIds[i], bIds[i]);\\n    if (cmp !== 0) return cmp;\\n  }\\n\\n  return 0;\\n}\"}",
+        "raw_length": 1632,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1487
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/level-1/L1-026-semver-compare/compareSemver.mjs implementing strict SemVer 2.0.0 comparison with prerelease handling, numeric/nonnumeric identifier rules, and proper error throwing for invalid inputs.\"}",
+        "raw_suffix": "{\"summary\": \"Created training/level-1/L1-026-semver-compare/compareSemver.mjs implementing strict SemVer 2.0.0 comparison with prerelease handling, numeric/nonnumeric identifier rules, and proper error throwing for invalid inputs.\"}",
+        "raw_length": 232,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6245",
+      "utilization_pct": "0",
+      "temperature_c": "41",
+      "power_w": "5.37"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6459",
+      "utilization_pct": "2",
+      "temperature_c": "47",
+      "power_w": "10.39"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

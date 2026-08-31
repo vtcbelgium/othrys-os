@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-025 TALOS REPAIR. Current implementation passes 6/8. WRITE exactly training/level-1/L1-025-path-normalize/normalizePortablePath.mjs. Two defects only: Windows drive root must canonicalize to lowercase forward-slash form, e.g. C:\\\\ -\u003e c:/; UNC root must canonicalize backslashes to forward slashes preserving exactly //server/share. Keep substring lengths/path resolution unchanged. Touch nothing else.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-025",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-025-003",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-025-path-normalize/normalizePortablePath.mjs"
+                      ]
+}

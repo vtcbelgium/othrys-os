@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-024 TALOS REPAIR. WRITE exactly training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs. Remove invalid trailing text `EXPORT groupDuplicates`; function is already exported. Also freeze each ids array in returned duplicate group with Object.freeze(members.map(...)). Preserve all other logic. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-024",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-024-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-024-duplicate-signature/groupDuplicates.mjs"
+                      ]
+}

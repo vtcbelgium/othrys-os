@@ -1,0 +1,27 @@
+﻿{
+    "schema_version":  "othrys.worker-request.v0.1",
+    "job_id":  "TRAIN-L2-021-REPAIR-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "allowed_paths":  [
+                          "training/level-2/L2-021-activity-log/activityLog.mjs"
+                      ],
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "timeout_sec":  120,
+    "metadata":  {
+                     "training_level":  2,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L2-021",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "task":  "Hard repair L2-021 after first builder NO_ATTEMPT_MUTATION caused by touch-allow path mistakes. Create only the exact allowed path activityLog.mjs. Export createActivityLog(filePath,{limit=100}={}), frozen async append/list. Exact durable {events:[{seq,id,type,data}]}, bounded newest limit, seq monotonic, duplicate ID rejected, JSON-safe data, unsafe keys rejected recursively, missing empty/no write, corrupt/noncanonical STATE_CORRUPT preserving bytes, reload every op, atomic same-dir unique-temp persistence, deep clones, Node ESM only. Do not touch any other path. IMPORTANT TOOL SCOPE: when calling write_file, use the exact workspace-relative path training/level-2/L2-021-activity-log/activityLog.mjs, not bare activityLog.mjs."
+}

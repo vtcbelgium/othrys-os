@@ -1,0 +1,6 @@
+{
+ "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-004-REPAIR1","node_id":"legion","capability":"engineering.patch","workspace":"C:/Users/othry/Projects/othrys-v2",
+ "allowed_paths":["training/level-2/L2-004-notes-store/notesStore.mjs"],"deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":120,
+ "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-004","forge_builder_id":"local.qwen3.5-9b"},
+ "task":"TALOS REPAIR L2-004. Replace only the allowed module. Current build uses undefined fs functions and collapses domain errors into STATE_CORRUPT. Implement async stdlib createNotesStore exactly: frozen list/get/add/update/remove; missing [] no-write; strict persisted array canonical note validation + duplicate ids => STATE_CORRUPT; atomic mkdir+unique same-dir temp+rename; add canonicalizes trimmed title/body/tags and rejects bad/extra fields INVALID_NOTE; duplicate DUPLICATE_ID; get missing undefined; update non-empty patch only title/body/tags, trim values, INVALID_PATCH; update/remove missing NOT_FOUND; remove returns removed clone; list/get/add/update/remove return deep clones where applicable. No repo search, touch only allowed file, write immediately."
+}

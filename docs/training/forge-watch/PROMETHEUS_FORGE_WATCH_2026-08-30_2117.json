@@ -1,0 +1,10 @@
+{
+  "schema":"othrys.prometheus.forge-watch.v1",
+  "date":"2026-08-30","operatorNotification":false,"authorityGranted":false,"automaticPaidUsage":false,
+  "discoveries":[
+    {"id":"local.qwen3-coder-next","kind":"coding-model","newAgainstRoster":true,"model":"qwen3-coder-next","vendor":"Qwen","license":"Apache-2.0","cost":"ZERO/local","secretBoundary":"PASS_LOCAL_NO_PROVIDER_SECRET","availability":"OLLAMA_PUBLIC_NOT_INSTALLED","resourceGate":"52GB Q4 package; not pulled during this watch run","builderOlympics":"NOT_RUN_RESOURCE_GATE","talos":"NOT_RUN","admitted":false},
+    {"id":"local.muse-glimmer-30b","kind":"coding-model","newAgainstRoster":true,"model":"muse-glimmer:30b-q4_K_M","vendor":"Meta Superintelligence Labs","license":"Apache-2.0","cost":"ZERO/local","secretBoundary":"PASS_LOCAL_NO_PROVIDER_SECRET","availability":"OLLAMA_LOCAL_LIVE","builderOlympics":"STARTED_RUNTIME_TIMEOUT_NO_RECEIPT","talos":"NOT_RUN_NO_OLYMPICS_RECEIPT","admitted":false}
+  ],
+  "knownNoiseSuppressed":["Qwen3.5-9B","Qwen3-Coder-30B","Qwen3.8-27B","Ornith 1.5 9B","Granite 4.2 8B","DeepSeek V4 family","Nemotron 3.5 Lightning"],
+  "result":"NO_ADMISSION"
+}

@@ -1,0 +1,9 @@
+{
+  "schema":"othrys.os.training-learning-receipt.v1","jobId":"L2-024","level":2,"title":"Stateful desk tool","classification":"HIGH_VALUE_COMPOSITION_LEARNING",
+  "stock":{"disposition":"PHYSICAL_COMPOSITION","candidates":["block.state.settings-store","block.state.todo-store"],"reason":"final Level-2 exercise composes proven persistence blocks instead of rebuilding their cores"},
+  "attempts":[{"builder":"local.qwen3-coder-30b","outcome":"OK_RECEIPT_CONTRACT_FAILURE"},{"builder":"local.qwen3-coder-30b","outcome":"FALSE_SUCCESS_ZERO_BYTE_MUTATION"},{"actor":"operator_bounded_recovery","outcome":"TALOS_GREEN"}],
+  "talos":{"source":{"pass":6,"fail":0},"candidateBlock":{"pass":6,"fail":0},"oracles":["physical composition/API boundary","delegated CRUD/settings","canonical export/restart","staged import validation","rollback byte identity","delegated validation"]},
+  "block":{"id":"block.composition.desk-tool","disposition":"TRAINING_CANDIDATE","authorityGranted":false},
+  "lessons":["composition requires reading the actual child APIs before wiring","a zero-byte write followed by finish is a critical false-success class","cross-file import needs staging and rollback proof","physical reuse is stronger evidence than conceptual duplication"],
+  "organLearning":{"MNEMOSYNE":["retain zero-byte false-success incident as high-value training evidence"],"HEPHAESTUS":["composition builders must inspect exact child contracts before mutation"],"TALOS":["verify child delegation, import atomicity and rollback separately"],"PROMETHEUS":["composition stock should prefer proven blocks over generic app examples"],"KRONOS":["two governed routes exhausted before bounded recovery"],"RHEA":["summary remains read-only; import is transaction-like"],"MYCELIUM":["penalize false finish after zero-byte mutation heavily"],"SWITCHYARD":["local-only route retained"]}
+}

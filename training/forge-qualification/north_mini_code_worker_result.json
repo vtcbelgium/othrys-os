@@ -1,0 +1,75 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "FORGE-QUAL-local.north-mini-code-1.0-R1",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.north-mini-code-1.0",
+  "ok": false,
+  "reason": "out_of_scope_changes: ['docs/training/LEVELS_1_2_BLOCK_INVENTORY.json', 'docs/training/LEVELS_1_2_DEEP_HARVEST.json', 'docs/training/LEVELS_1_2_DEEP_HARVEST_SUMMARY.json', 'docs/training/_deep_harvest.py']",
+  "started_at": 1788179970.5887055,
+  "completed_at": 1788180068.3455575,
+  "duration_sec": 97.7568519115448,
+  "allowed_paths": [
+    "training/forge-qualification/local_north-mini-code-1.0/candidate.mjs"
+  ],
+  "changed_files": [
+    "docs/training/LEVELS_1_2_BLOCK_INVENTORY.json",
+    "docs/training/LEVELS_1_2_DEEP_HARVEST.json",
+    "docs/training/LEVELS_1_2_DEEP_HARVEST_SUMMARY.json",
+    "docs/training/_deep_harvest.py"
+  ],
+  "out_of_scope_changes": [
+    "docs/training/LEVELS_1_2_BLOCK_INVENTORY.json",
+    "docs/training/LEVELS_1_2_DEEP_HARVEST.json",
+    "docs/training/LEVELS_1_2_DEEP_HARVEST_SUMMARY.json",
+    "docs/training/_deep_harvest.py"
+  ],
+  "diff": "",
+  "git_status": "docs/training/LEVELS_1_2_BLOCK_INVENTORY.json\ndocs/training/LEVELS_1_2_DEEP_HARVEST.json\ndocs/training/LEVELS_1_2_DEEP_HARVEST_SUMMARY.json\ndocs/training/_deep_harvest.py",
+  "summary": "",
+  "runtime_evidence": {
+    "observed_diff": "",
+    "git_status": "docs/training/LEVELS_1_2_BLOCK_INVENTORY.json\ndocs/training/LEVELS_1_2_DEEP_HARVEST.json\ndocs/training/LEVELS_1_2_DEEP_HARVEST_SUMMARY.json\ndocs/training/_deep_harvest.py",
+    "tool_trace": [],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "hephaestus_forge_local_qualification",
+    "selected_builder": "local.north-mini-code-1.0",
+    "model": "north-mini-code-1.0",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6074",
+      "utilization_pct": "0",
+      "temperature_c": "38",
+      "power_w": "5.21"
+    },
+    "ollama_ps": "NAME                          ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nnorth-mini-code-1.0:latest    d8b269ad5c7c    19 GB    69%/31% CPU/GPU    4096       28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6090",
+      "utilization_pct": "0",
+      "temperature_c": "60",
+      "power_w": "44.37"
+    },
+    "ollama_ps": "NAME                          ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nnorth-mini-code-1.0:latest    d8b269ad5c7c    19 GB    69%/31% CPU/GPU    4096       29 minutes from now"
+  }
+}

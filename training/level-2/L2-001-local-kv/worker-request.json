@@ -1,0 +1,7 @@
+{
+  "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-001-001","node_id":"legion","capability":"engineering.patch",
+  "workspace":"C:/Users/othry/Projects/othrys-v2","allowed_paths":["training/level-2/L2-001-local-kv/localKv.mjs"],
+  "deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":90,
+  "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-001"},
+  "task":"OTHRYS TRAINING LEVEL 2 L2-001. Create exactly training/level-2/L2-001-local-kv/localKv.mjs. Export createLocalKv(filePath). Node ESM, standard library only. Return frozen API {get,set,delete,has,list,clear}. Keys must be non-empty strings; values must be JSON-serializable and undefined/function/symbol/bigint rejected TypeError. State file is a JSON object. Missing file means empty store. Existing malformed JSON, non-object, or array must fail closed with Error code/state message STATE_CORRUPT and never overwrite it. set/delete/clear persist atomically using same-directory temp file then rename; create parent directory if needed. get returns stored value or undefined; has boolean; list returns a new plain object with keys sorted lexicographically. No secrets/network/dependencies. Never write until a mutation method is called. Touch no other file. Keep implementation compact and deterministic."
+}

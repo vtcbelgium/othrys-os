@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-035 TALOS HARD REPAIR. Read and WRITE exactly training/level-1/L1-035-config-merge/safeConfigMerge.mjs. Current build is 2/8. Reimplement exact contract simply. Use helpers isPlain, validateValue, cloneValue, mergeObjects, deepFreeze. Both inputs plain objects. Dangerous keys __proto__, prototype, constructor anywhere =\u003e RangeError. Allowed leaves null,string,boolean,finite number; non-finite number RangeError; undefined/function/symbol/bigint TypeError. Arrays clone each element recursively, replace wholesale. Plain objects clone/merge recursively into Object.create(null), with lexical sorted union of keys. If both base and overlay values for a key are plain objects, merge them; otherwise overlay replaces when present, else base cloned. Freeze recursively only after children built, never mutate caller data. Return deeply frozen null-prototype result. No imports/I/O/network. Touch nothing else.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-035",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-035-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-035-config-merge/safeConfigMerge.mjs"
+                      ]
+}

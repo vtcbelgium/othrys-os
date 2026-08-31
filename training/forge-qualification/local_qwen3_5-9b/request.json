@@ -1,0 +1,26 @@
+{
+  "schema_version": "othrys.worker-request.v0.1",
+  "job_id": "FORGE-QUAL-local.qwen3.5-9b-R2",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "workspace": "C:/Users/othry/Projects/othrys-v2",
+  "task": "Hephaestus Forge qualification. Create exactly this JavaScript ESM file and no other file: training/forge-qualification/local_qwen3_5-9b/candidate.mjs. The file must export function clamp(n,min,max) that returns n bounded inclusively between min and max. Use JavaScript, not Python. No dependencies, no filesystem, no network, no prose. Finish only after that exact file exists.",
+  "allowed_paths": [
+    "training/forge-qualification/local_qwen3_5-9b/candidate.mjs"
+  ],
+  "deny_paths": [
+    ".git",
+    ".othrys",
+    "missions",
+    "runtime",
+    "blocks",
+    "docs"
+  ],
+  "timeout_sec": 120,
+  "metadata": {
+    "mission_id": "V2-011K",
+    "forge_builder_id": "local.qwen3.5-9b",
+    "forge_qualification": true,
+    "authorityGranted": false
+  }
+}

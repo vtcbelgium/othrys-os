@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-021-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788093040.8792973,
+  "completed_at": 1788093055.7293568,
+  "duration_sec": 14.850059509277344,
+  "allowed_paths": [
+    "training/level-1/L1-021-checksum/checksum.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-021-checksum/checksum.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-021-checksum/checksum.mjs\n+++ b/training/level-1/L1-021-checksum/checksum.mjs\n@@ -0,0 +1,28 @@\n+import { createHash } from 'node:crypto';\n+\n+export function checksum(input, algorithm = 'sha256', encoding = 'hex') {\n+  if (typeof input !== 'string' && !(input instanceof Uint8Array)) {\n+    throw new TypeError('Input must be a string or Uint8Array');\n+  }\n+  \n+  const validAlgorithms = ['sha256', 'sha512'];\n+  const validEncodings = ['hex', 'base64'];\n+  \n+  if (!validAlgorithms.includes(algorithm)) {\n+    throw new RangeError('Unsupported algorithm. Use \"sha256\" or \"sha512\".');\n+  }\n+  \n+  if (!validEncodings.includes(encoding)) {\n+    throw new RangeError('Unsupported encoding. Use \"hex\" or \"base64\".');\n+  }\n+\n+  const hash = createHash(algorithm);\n+  \n+  if (typeof input === 'string') {\n+    hash.update(input, 'utf8');\n+  } else {\n+    hash.update(input);\n+  }\n+  \n+  return hash.digest(encoding);\n+}",
+  "git_status": "training/level-1/L1-021-checksum/checksum.mjs",
+  "summary": "Created training/level-1/L1-021-checksum/checksum.mjs with checksum(input,algorithm=\"sha256\",encoding=\"hex\") export using node:crypto.createHash, supporting sha256/sha512 and hex/base64 encodings with proper error handling.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-021-checksum/checksum.mjs\n+++ b/training/level-1/L1-021-checksum/checksum.mjs\n@@ -0,0 +1,28 @@\n+import { createHash } from 'node:crypto';\n+\n+export function checksum(input, algorithm = 'sha256', encoding = 'hex') {\n+  if (typeof input !== 'string' && !(input instanceof Uint8Array)) {\n+    throw new TypeError('Input must be a string or Uint8Array');\n+  }\n+  \n+  const validAlgorithms = ['sha256', 'sha512'];\n+  const validEncodings = ['hex', 'base64'];\n+  \n+  if (!validAlgorithms.includes(algorithm)) {\n+    throw new RangeError('Unsupported algorithm. Use \"sha256\" or \"sha512\".');\n+  }\n+  \n+  if (!validEncodings.includes(encoding)) {\n+    throw new RangeError('Unsupported encoding. Use \"hex\" or \"base64\".');\n+  }\n+\n+  const hash = createHash(algorithm);\n+  \n+  if (typeof input === 'string') {\n+    hash.update(input, 'utf8');\n+  } else {\n+    hash.update(input);\n+  }\n+  \n+  return hash.digest(encoding);\n+}",
+    "git_status": "training/level-1/L1-021-checksum/checksum.mjs",
+    "tool_trace": [
+      "write_file: wrote 790 chars to training/level-1/L1-021-checksum/checksum.mjs",
+      "finish: Created training/level-1/L1-021-checksum/checksum.mjs with checksum(input,algorithm=\"sha256\",encoding=\"hex\") export using node:crypto.createHash, supporting sha256/sha512 and hex/base64 encodings with proper error handling."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-021-checksum/checksum.mjs\", \"content\": \"import { createHash } from 'node:crypto';\\n\\nexport function checksum(input, algorithm = 'sha256', encoding = 'hex') {\\n  if (typeof input !== 'string' && !(input instanc",
+        "raw_suffix": "'base64'];\\n  \\n  if (!validAlgorithms.includes(algorithm)) {\\n    throw new RangeError('Unsupported algorithm. Use \\\"sha256\\\" or \\\"sha512\\\".');\\n  }\\n  \\n  if (!validEncodings.includes(encoding)) {\\n    throw new RangeError('Unsupported encoding. Use \\\"hex\\\" or \\\"base64\\\".');\\n  }\\n\\n  const hash = createHash(algorithm);\\n  \\n  if (typeof input === 'string') {\\n    hash.update(input, 'utf8');\\n  } else {\\n    hash.update(input);\\n  }\\n  \\n  return hash.digest(encoding);\\n}\"}",
+        "raw_length": 897,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 790
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/level-1/L1-021-checksum/checksum.mjs with checksum(input,algorithm=\\\"sha256\\\",encoding=\\\"hex\\\") export using node:crypto.createHash, supporting sha256/sha512 and hex/base64 encodings with proper error handling.",
+        "raw_suffix": "{\"summary\": \"Created training/level-1/L1-021-checksum/checksum.mjs with checksum(input,algorithm=\\\"sha256\\\",encoding=\\\"hex\\\") export using node:crypto.createHash, supporting sha256/sha512 and hex/base64 encodings with proper error handling.\"}",
+        "raw_length": 242,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6199",
+      "utilization_pct": "0",
+      "temperature_c": "40",
+      "power_w": "5.34"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6459",
+      "utilization_pct": "2",
+      "temperature_c": "45",
+      "power_w": "11.91"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

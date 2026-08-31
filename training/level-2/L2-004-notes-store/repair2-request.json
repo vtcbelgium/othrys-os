@@ -1,0 +1,6 @@
+{
+ "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-004-REPAIR2","node_id":"legion","capability":"engineering.patch","workspace":"C:/Users/othry/Projects/othrys-v2",
+ "allowed_paths":["training/level-2/L2-004-notes-store/notesStore.mjs"],"deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":120,
+ "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-004","forge_builder_id":"local.qwen3-coder-30b"},
+ "task":"HARD REPAIR L2-004. Do not search or inspect unrelated files. Replace exactly the allowed module now. Implement async createNotesStore(filePath) with frozen list/get/add/update/remove; strict canonical persisted note validation and duplicate-id STATE_CORRUPT; missing read no-write; atomic unique temp persistence; canonical note id/title/body/tags with trimmed values; add INVALID_NOTE/DUPLICATE_ID; get missing undefined; update only non-empty title/body/tags patch with INVALID_PATCH; update/remove missing NOT_FOUND; deep-clone outputs. Use only node:fs/promises, node:path dirname, node:crypto randomUUID. Touch nothing else."
+}

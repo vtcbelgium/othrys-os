@@ -1,0 +1,88 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L2-001",
+  "level": 2,
+  "title": "Local key/value store",
+  "family": "state",
+  "contract": "commands + local JSON file -> durable key/value state",
+  "stockCheck": {
+    "decision": "BUILD_AFTER_STOCK_PREFLIGHT",
+    "matches": [
+      "candidate.data.crud",
+      "Great Harvest state stock"
+    ]
+  },
+  "buildAttempts": [
+    {
+      "attempt": 1,
+      "builder": "local.qwen3-8b",
+      "durationSec": 31.563801527023315,
+      "workerOk": true,
+      "talos": "PARSE_FAIL",
+      "failure": "RESERVED_DELETE_SYNTAX_AND_PERSISTENCE_SEMANTICS"
+    },
+    {
+      "attempt": 2,
+      "builder": "local.qwen3-8b",
+      "durationSec": 50.86453580856323,
+      "workerOk": false,
+      "talos": "NO_CHANGE",
+      "failure": "NO_ATTEMPT_MUTATION"
+    },
+    {
+      "attempt": 3,
+      "builder": "local.qwen3-coder-30b",
+      "durationSec": 109.20847797393799,
+      "workerOk": false,
+      "talos": "NO_CHANGE",
+      "failure": "NO_ATTEMPT_MUTATION"
+    },
+    {
+      "attempt": 4,
+      "builder": "operator-bounded",
+      "durationSec": null,
+      "workerOk": null,
+      "talos": "PASS_9_OF_9",
+      "failure": null,
+      "note": "contract recovery after governed repair paths exhausted"
+    }
+  ],
+  "talos": {
+    "tests": 9,
+    "pass": 9,
+    "fail": 0,
+    "independent": true,
+    "focus": [
+      "restart persistence",
+      "corruption fail-closed",
+      "no read-side write",
+      "atomic mutation",
+      "serialization failure"
+    ]
+  },
+  "blockDisposition": {
+    "id": "block.state.local-kv",
+    "status": "TRAINING_CANDIDATE",
+    "autoAdmitted": false
+  },
+  "nextJob": "L2-002",
+  "organs": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "learningDataClass": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "learningMayGrantAuthority": false,
+  "authorityGranted": false,
+  "lessons": [
+    "stateful work exposed syntax/transport failures absent from atomic Level 1",
+    "worker success is not semantic persistence proof",
+    "repair transport can fail independently of model intent",
+    "operator recovery after governed repair exhaustion is capability debt"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-031-002",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": false,
+  "reason": "NO_ATTEMPT_MUTATION",
+  "started_at": 1788096546.9331903,
+  "completed_at": 1788096576.4140973,
+  "duration_sec": 29.48090696334839,
+  "allowed_paths": [
+    "training/level-1/L1-031-checklist/generateChecklist.mjs"
+  ],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-031-checklist/generateChecklist.mjs\n+++ b/training/level-1/L1-031-checklist/generateChecklist.mjs\n@@ -0,0 +1,56 @@\n+function generateChecklist(items, options) {\n+  const opts = {\n+    allowOptional: options?.allowOptional ?? true\n+  };\n+\n+  const normalizedItems = items.map((item, index) => {\n+    if (typeof item === 'string') {\n+      return {\n+        text: item.trim().replace(/\\s+/g, ' '),\n+        required: true,\n+        done: false,\n+        id: `item-${index + 1}`\n+      };\n+    } else if (typeof item === 'object' && item !== null) {\n+      const { id, text, required, done } = item;\n+      if (!text || typeof text !== 'string') {\n+        throw new Error('Invalid item: text is required and must be a string');\n+      }\n+      const normalizedText = text.trim().replace(/\\s+/g, ' ');\n+      if (normalizedText === '') {\n+        throw new Error('Invalid item: text cannot be empty after normalization');\n+      }\n+      return {\n+        id: id ?? `item-${index + 1}`,\n+        text: normalizedText,\n+        required: required ?? true,\n+        done: done ?? false\n+      };\n+    } else {\n+      throw new Error('Invalid item: must be a string or plain object');\n+    }\n+  });\n+\n+  const seenIds = new Set();\n+  const filteredItems = normalizedItems.filter((item) => {\n+    if (seenIds.has(item.id)) {\n+      return false;\n+    }\n+    seenIds.add(item.id);\n+    return true;\n+  });\n+\n+  const finalItems = filteredItems.map((item) => {\n+    if (!opts.allowOptional && !item.required) {\n+      return false;\n+    }\n+    return item;\n+  }).filter(Boolean);\n+\n+  return Object.freeze(finalItems.map(item => Object.freeze({\n+    id: item.id,\n+    text: item.text,\n+    required: Boolean(item.required),\n+    done: Boolean(item.done)\n+  })));\n+}",
+  "git_status": "",
+  "summary": "tool turn limit (36) reached; proposed diff collected from workspace mutations",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-031-checklist/generateChecklist.mjs\n+++ b/training/level-1/L1-031-checklist/generateChecklist.mjs\n@@ -0,0 +1,56 @@\n+function generateChecklist(items, options) {\n+  const opts = {\n+    allowOptional: options?.allowOptional ?? true\n+  };\n+\n+  const normalizedItems = items.map((item, index) => {\n+    if (typeof item === 'string') {\n+      return {\n+        text: item.trim().replace(/\\s+/g, ' '),\n+        required: true,\n+        done: false,\n+        id: `item-${index + 1}`\n+      };\n+    } else if (typeof item === 'object' && item !== null) {\n+      const { id, text, required, done } = item;\n+      if (!text || typeof text !== 'string') {\n+        throw new Error('Invalid item: text is required and must be a string');\n+      }\n+      const normalizedText = text.trim().replace(/\\s+/g, ' ');\n+      if (normalizedText === '') {\n+        throw new Error('Invalid item: text cannot be empty after normalization');\n+      }\n+      return {\n+        id: id ?? `item-${index + 1}`,\n+        text: normalizedText,\n+        required: required ?? true,\n+        done: done ?? false\n+      };\n+    } else {\n+      throw new Error('Invalid item: must be a string or plain object');\n+    }\n+  });\n+\n+  const seenIds = new Set();\n+  const filteredItems = normalizedItems.filter((item) => {\n+    if (seenIds.has(item.id)) {\n+      return false;\n+    }\n+    seenIds.add(item.id);\n+    return true;\n+  });\n+\n+  const finalItems = filteredItems.map((item) => {\n+    if (!opts.allowOptional && !item.required) {\n+      return false;\n+    }\n+    return item;\n+  }).filter(Boolean);\n+\n+  return Object.freeze(finalItems.map(item => Object.freeze({\n+    id: item.id,\n+    text: item.text,\n+    required: Boolean(item.required),\n+    done: Boolean(item.done)\n+  })));\n+}",
+    "git_status": "",
+    "tool_trace": [],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6459",
+      "utilization_pct": "7",
+      "temperature_c": "41",
+      "power_w": "6.37"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6466",
+      "utilization_pct": "1",
+      "temperature_c": "55",
+      "power_w": "13.26"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

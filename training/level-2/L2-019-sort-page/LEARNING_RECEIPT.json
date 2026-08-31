@@ -1,0 +1,84 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L2-019",
+  "level": 2,
+  "title": "Persistent sort/page",
+  "classification": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "stock": {
+    "disposition": "ADAPT_CONCEPT_REJECT_DIRECT_REUSE",
+    "candidates": [
+      "candidate.data.search",
+      "block.data.sort-records"
+    ],
+    "reason": "sort-records training candidate mutates caller object state by freezing records"
+  },
+  "attempts": [
+    {
+      "builder": "local.qwen3.5-9b",
+      "outcome": "TIMEOUT_NO_RESULT_NO_SOURCE"
+    },
+    {
+      "builder": "local.qwen3-coder-30b",
+      "outcome": "TIMEOUT_NO_RESULT_NO_SOURCE"
+    },
+    {
+      "actor": "operator_bounded_recovery",
+      "outcome": "ADAPTED_PROVEN_COMPARATOR_IDEA_ONLY"
+    }
+  ],
+  "talos": {
+    "source": {
+      "pass": 8,
+      "fail": 0
+    },
+    "candidateBlock": {
+      "pass": 8,
+      "fail": 0
+    },
+    "oracles": [
+      "stable ties",
+      "multi-key order",
+      "nullish direction",
+      "mixed-type rank",
+      "pagination after sort",
+      "no query mutation"
+    ]
+  },
+  "block": {
+    "id": "block.state.sort-page",
+    "disposition": "TRAINING_CANDIDATE",
+    "authorityGranted": false
+  },
+  "lessons": [
+    "direct reuse of L1 sort candidate rejected because it freezes caller records",
+    "both qualified builder routes timed out without artifacts",
+    "stock-first can still adapt a proven comparator idea without importing unsafe candidate code"
+  ],
+  "organLearning": {
+    "MNEMOSYNE": [
+      "record unsafe stock candidate and safe adaptation decision"
+    ],
+    "HEPHAESTUS": [
+      "builder timeout remains dominant on richer state/query jobs"
+    ],
+    "TALOS": [
+      "non-mutation must include avoiding Object.freeze on caller records"
+    ],
+    "PROMETHEUS": [
+      "research faster bounded state/query builders and repair strategies"
+    ],
+    "KRONOS": [
+      "two long attempts yielded no artifact before bounded recovery"
+    ],
+    "RHEA": [
+      "stock can be rejected for side effects even when tests are green"
+    ],
+    "MYCELIUM": [
+      "weaken direct-reuse trail for block.data.sort-records until repaired"
+    ],
+    "SWITCHYARD": [
+      "local/free path retained; no paid escalation"
+    ]
+  },
+  "authorityGranted": false
+}

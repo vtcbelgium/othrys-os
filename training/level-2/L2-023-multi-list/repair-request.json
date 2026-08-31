@@ -1,0 +1,27 @@
+﻿{
+    "schema_version":  "othrys.worker-request.v0.1",
+    "job_id":  "TRAIN-L2-023-REPAIR-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "allowed_paths":  [
+                          "training/level-2/L2-023-multi-list/multiList.mjs"
+                      ],
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "timeout_sec":  120,
+    "metadata":  {
+                     "training_level":  2,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L2-023",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "task":  "Repair existing L2-023 multiList.mjs in place. Prior ok:true artifact rejected. Required: createMultiListStore must be synchronous factory returning Object.freeze exact API snapshot/createList/renameList/deleteList/addItem/updateItem/removeItem. Use node:fs/promises, node:path dirname, node:crypto randomUUID. Validate exact canonical persisted shape {lists:[{id,name,items:[{id,text,done}]}]}; no extra keys; ids/names/text trimmed nonempty; done boolean; unique list ids and unique item ids per list; preserve order. snapshot deep clone. Missing snapshot empty no write. Parse/shape/noncanonical bytes STATE_CORRUPT preserving bytes. createList accepts exactly {id,name} only and starts items []; invalid list =\u003e INVALID_LIST before mutation. addItem accepts exact {id,text,done?}; default false; INVALID_ITEM. updateItem patch exact nonempty subset {text,done}; INVALID_ITEM. rename validates name. deleteList returns removed list clone. removeItem returns removed item clone, not list. DUPLICATE_ID/NOT_FOUND exact. Atomic same-dir unique temp JSON.stringify compact, every op reload disk, no other file touched."
+}

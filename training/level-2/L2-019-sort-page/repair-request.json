@@ -1,0 +1,7 @@
+{
+  "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-019-REPAIR1","node_id":"legion","capability":"engineering.patch",
+  "workspace":"C:/Users/othry/Projects/othrys-v2","allowed_paths":["training/level-2/L2-019-sort-page/sortPageStore.mjs"],
+  "deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":120,
+  "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-019","forge_builder_id":"local.qwen3-coder-30b"},
+  "task":"HARD BUILD L2-019. Create only sortPageStore.mjs. Do not import L1 sort block because it freezes caller records. Export createSortPageStore(filePath), frozen async replace/page. Canonical persisted unique-id record array, safe values, unsafe keys rejected, missing empty/read-only, corrupt/noncanonical state STATE_CORRUPT. replace validates then atomic write. page exact optional sort/offset/limit; offset>=0 default0; limit1..100 default20; sort unique exact key/direction specs asc|desc. Stable multi-key top-level scalar compare: null/missing after defined asc and before defined desc; number numeric; string lexical; boolean false<true; mixed types number<string<boolean; object/array at requested key INVALID_QUERY. Empty sort stored order. Return cloned {items,total,offset,limit}; page never mutates/freezes records or writes. Node ESM stdlib only. Touch nothing else."
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-009-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788089672.5413752,
+  "completed_at": 1788089710.8081043,
+  "duration_sec": 38.26672911643982,
+  "allowed_paths": [
+    "training/level-1/L1-009-csv-json/csvJson.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-009-csv-json/csvJson.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-009-csv-json/csvJson.mjs\n+++ b/training/level-1/L1-009-csv-json/csvJson.mjs\n@@ -0,0 +1,118 @@\n+export function csvToJson(input) {\n+  if (!input || input.length === 0) return [];\n+\n+  const lines = input.replace(/\\r\\n/g, '\\n').replace(/\\r/g, '\\n').split('\\n');\n+  if (lines.length === 0) return [];\n+\n+  const headers = parseLine(lines[0]);\n+  if (headers.length === 0) throw new RangeError('Empty header row');\n+\n+  const records = [];\n+  for (let i = 1; i < lines.length; i++) {\n+    if (lines[i] === '') continue;\n+    const fields = parseLine(lines[i]);\n+    if (fields.length !== headers.length) {\n+      throw new RangeError(`Row ${i + 1} has ${fields.length} fields, expected ${headers.length}`);\n+    }\n+    const record = {};\n+    for (let j = 0; j < headers.length; j++) {\n+      const header = headers[j];\n+      let value = fields[j];\n+      if (value === null || value === undefined) {\n+        value = '';\n+      } else {\n+        value = String(value);\n+      }\n+      record[header] = value;\n+    }\n+    records.push(Object.freeze(record));\n+  }\n+\n+  return records;\n+}\n+\n+function parseLine(line) {\n+  const fields = [];\n+  let current = '';\n+  let inQuotes = false;\n+  let i = 0;\n+\n+  while (i < line.length) {\n+    const char = line[i];\n+\n+    if (inQuotes) {\n+      if (char === '\"') {\n+        if (line[i + 1] === '\"') {\n+          current += '\"';\n+          i += 2;\n+        } else {\n+          inQuotes = false;\n+          i++;\n+        }\n+      } else {\n+        current += char;\n+        i++;\n+      }\n+    } else {\n+      if (char === '\"') {\n+        inQuotes = true;\n+        i++;\n+      } else if (char === ',') {\n+        fields.push(current);\n+        current = '';\n+        i++;\n+      } else {\n+        current += char;\n+        i++;\n+      }\n+    }\n+  }\n+\n+  fields.push(current);\n+  return fields;\n+}\n+\n+export function jsonToCsv(records) {\n+  if (records.length === 0) return ';';\n+\n+  const firstRecord = records[0];\n+  const headers = Object.keys(firstRecord);\n+\n+  for (let i = 1; i < records.length; i++) {\n+    const record = records[i];\n+    const keys = Object.keys(record);\n+    if (keys.length !== headers.length) {\n+      throw new RangeError(`Row ${i + 1} has ${keys.length} keys, expected ${headers.length}`);\n+    }\n+    for (let j = 0; j < headers.length; j++) {\n+      if (!record.hasOwnProperty(headers[j])) {\n+        throw new RangeError(`Row ${i + 1} missing key '${headers[j]}'`);\n+      }\n+    }\n+  }\n+\n+  const lines = [];\n+  lines.push(headers.join(','));\n+\n+  for (const record of records) {\n+    const fields = headers.map(header => {\n+      let value = record[header];\n+      if (value === null || value === undefined) {\n+        value = '';\n+      } else {\n+        value = String(value);\n+      }\n+      return quoteField(value);\n+    });\n+    lines.push(fields.join(','));\n+  }\n+\n+  return lines.join('\\n');\n+}\n+\n+function quoteField(field) {\n+  if (field.includes(',') || field.includes('\"') || field.includes('\\n') || field.includes('\\r')) {\n+    return '\"' + field.replace(/\"/g, '\"\"') + '\"';\n+  }\n+  return field;\n+}",
+  "git_status": "training/level-1/L1-009-csv-json/csvJson.mjs",
+  "summary": "Created training/level-1/L1-009-csv-json/csvJson.mjs with csvToJson and jsonToCsv functions implementing RFC4180 CSV parsing/generation, frozen record objects, header validation, field-count checks, null/undefined handling, deterministic string-only output, no I/O/network, and zero side effects.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-009-csv-json/csvJson.mjs\n+++ b/training/level-1/L1-009-csv-json/csvJson.mjs\n@@ -0,0 +1,118 @@\n+export function csvToJson(input) {\n+  if (!input || input.length === 0) return [];\n+\n+  const lines = input.replace(/\\r\\n/g, '\\n').replace(/\\r/g, '\\n').split('\\n');\n+  if (lines.length === 0) return [];\n+\n+  const headers = parseLine(lines[0]);\n+  if (headers.length === 0) throw new RangeError('Empty header row');\n+\n+  const records = [];\n+  for (let i = 1; i < lines.length; i++) {\n+    if (lines[i] === '') continue;\n+    const fields = parseLine(lines[i]);\n+    if (fields.length !== headers.length) {\n+      throw new RangeError(`Row ${i + 1} has ${fields.length} fields, expected ${headers.length}`);\n+    }\n+    const record = {};\n+    for (let j = 0; j < headers.length; j++) {\n+      const header = headers[j];\n+      let value = fields[j];\n+      if (value === null || value === undefined) {\n+        value = '';\n+      } else {\n+        value = String(value);\n+      }\n+      record[header] = value;\n+    }\n+    records.push(Object.freeze(record));\n+  }\n+\n+  return records;\n+}\n+\n+function parseLine(line) {\n+  const fields = [];\n+  let current = '';\n+  let inQuotes = false;\n+  let i = 0;\n+\n+  while (i < line.length) {\n+    const char = line[i];\n+\n+    if (inQuotes) {\n+      if (char === '\"') {\n+        if (line[i + 1] === '\"') {\n+          current += '\"';\n+          i += 2;\n+        } else {\n+          inQuotes = false;\n+          i++;\n+        }\n+      } else {\n+        current += char;\n+        i++;\n+      }\n+    } else {\n+      if (char === '\"') {\n+        inQuotes = true;\n+        i++;\n+      } else if (char === ',') {\n+        fields.push(current);\n+        current = '';\n+        i++;\n+      } else {\n+        current += char;\n+        i++;\n+      }\n+    }\n+  }\n+\n+  fields.push(current);\n+  return fields;\n+}\n+\n+export function jsonToCsv(records) {\n+  if (records.length === 0) return ';';\n+\n+  const firstRecord = records[0];\n+  const headers = Object.keys(firstRecord);\n+\n+  for (let i = 1; i < records.length; i++) {\n+    const record = records[i];\n+    const keys = Object.keys(record);\n+    if (keys.length !== headers.length) {\n+      throw new RangeError(`Row ${i + 1} has ${keys.length} keys, expected ${headers.length}`);\n+    }\n+    for (let j = 0; j < headers.length; j++) {\n+      if (!record.hasOwnProperty(headers[j])) {\n+        throw new RangeError(`Row ${i + 1} missing key '${headers[j]}'`);\n+      }\n+    }\n+  }\n+\n+  const lines = [];\n+  lines.push(headers.join(','));\n+\n+  for (const record of records) {\n+    const fields = headers.map(header => {\n+      let value = record[header];\n+      if (value === null || value === undefined) {\n+        value = '';\n+      } else {\n+        value = String(value);\n+      }\n+      return quoteField(value);\n+    });\n+    lines.push(fields.join(','));\n+  }\n+\n+  return lines.join('\\n');\n+}\n+\n+function quoteField(field) {\n+  if (field.includes(',') || field.includes('\"') || field.includes('\\n') || field.includes('\\r')) {\n+    return '\"' + field.replace(/\"/g, '\"\"') + '\"';\n+  }\n+  return field;\n+}",
+    "git_status": "training/level-1/L1-009-csv-json/csvJson.mjs",
+    "tool_trace": [
+      "write_file: wrote 2870 chars to training/level-1/L1-009-csv-json/csvJson.mjs",
+      "finish: Created training/level-1/L1-009-csv-json/csvJson.mjs with csvToJson and jsonToCsv functions implementing RFC4180 CSV parsing/generation, frozen record objects, header validation, field-count checks, null/undefined handling, deterministic string-only output, no I/O/network, and zero side effects."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-009-csv-json/csvJson.mjs\", \"content\": \"export function csvToJson(input) {\\n  if (!input || input.length === 0) return [];\\n\\n  const lines = input.replace(/\\\\r\\\\n/g, '\\\\n').replace(/\\\\r/g, '\\\\n').split('\\\\n');\\",
+        "raw_suffix": "record[header];\\n      if (value === null || value === undefined) {\\n        value = '';\\n      } else {\\n        value = String(value);\\n      }\\n      return quoteField(value);\\n    });\\n    lines.push(fields.join(','));\\n  }\\n\\n  return lines.join('\\\\n');\\n}\\n\\nfunction quoteField(field) {\\n  if (field.includes(',') || field.includes('\\\"') || field.includes('\\\\n') || field.includes('\\\\r')) {\\n    return '\\\"' + field.replace(/\\\"/g, '\\\"\\\"') + '\\\"';\\n  }\\n  return field;\\n}\"}",
+        "raw_length": 3077,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 2870
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/level-1/L1-009-csv-json/csvJson.mjs with csvToJson and jsonToCsv functions implementing RFC4180 CSV parsing/generation, frozen record objects, header validation, field-count checks, null/undefined handling, det",
+        "raw_suffix": "{\"summary\": \"Created training/level-1/L1-009-csv-json/csvJson.mjs with csvToJson and jsonToCsv functions implementing RFC4180 CSV parsing/generation, frozen record objects, header validation, field-count checks, null/undefined handling, deterministic string-only output, no I/O/network, and zero side effects.\"}",
+        "raw_length": 311,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6193",
+      "utilization_pct": "25",
+      "temperature_c": "63",
+      "power_w": "48.19"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6461",
+      "utilization_pct": "1",
+      "temperature_c": "48",
+      "power_w": "20.25"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

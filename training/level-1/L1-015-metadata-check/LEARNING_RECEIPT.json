@@ -1,0 +1,53 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L1-015",
+  "level": 1,
+  "title": "Metadata field checker",
+  "classification": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "sourceEvidence": [
+    "worker-result.json"
+  ],
+  "sourceTests": [
+    "checkMetadata.test.mjs"
+  ],
+  "exactPackagedBlock": "blocks\\data\\metadata-check",
+  "candidateProof": "blocks/data/metadata-check/tests/contract.test.mjs",
+  "attemptsDeclared": null,
+  "buildersObserved": {
+    "local.qwen3.5-9b": 1
+  },
+  "failureReasonsObserved": {},
+  "lessons": [],
+  "talos": {
+    "freshLevelProof": "LEVEL_1_MILESTONE.json: 305/305 source and candidate PASS",
+    "runtimeProof": "LEVEL_2_MILESTONE.json: combined L1+L2 486/486 PASS"
+  },
+  "block": {
+    "id": "block.data.metadata-check",
+    "disposition": "TRAINING_CANDIDATE",
+    "authorityGranted": false
+  },
+  "organLearning": {
+    "MNEMOSYNE": [
+      "retain source, worker and failure provenance"
+    ],
+    "HEPHAESTUS": [
+      "use task-specific builder outcome evidence"
+    ],
+    "TALOS": [
+      "independent contract proof outranks worker self-report"
+    ],
+    "KRONOS": [
+      "retain measured attempt timing where present"
+    ],
+    "RHEA": [
+      "retain failure/recovery sequence"
+    ],
+    "MYCELIUM": [
+      "route history is recommendation evidence only"
+    ],
+    "SWITCHYARD": [
+      "builder route outcome remains authority-free"
+    ]
+  }
+}

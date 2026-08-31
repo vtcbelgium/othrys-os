@@ -1,0 +1,12 @@
+{
+  "schema_version":"othrys.worker-request.v0.1",
+  "job_id":"TRAIN-L2-016-001",
+  "node_id":"legion",
+  "capability":"engineering.patch",
+  "workspace":"C:/Users/othry/Projects/othrys-v2",
+  "allowed_paths":["training/level-2/L2-016-journal/journal.mjs"],
+  "deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],
+  "timeout_sec":120,
+  "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-016"},
+  "task":"OTHRYS L2-016 Append-only journal. Create exactly journal.mjs. Export createJournal(filePath) returning frozen async API {append,list,at,count}. Standard Node ESM only. Persist JSONL, one canonical event per line. append(event): event must be plain object with exact keys id,type,at,data; id/type non-empty trimmed strings; at canonical ISO UTC string; data any JSON-safe value except undefined/function/symbol/bigint/cycles/non-finite numbers; reject unsafe keys __proto__/prototype/constructor recursively. Missing file means empty and reads must not write. Existing malformed line, duplicate id, non-canonical event, or unsafe value => STATE_CORRUPT and never overwrite. append duplicate id => DUPLICATE_ID. Append must preserve prior bytes and add exactly canonical JSON + newline; create parent dir if needed. list returns deep-cloned array in file order; at(index) returns clone or undefined; count integer. No wall clock/network/deps/secrets. Touch no other file." 
+}

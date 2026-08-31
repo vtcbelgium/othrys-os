@@ -1,0 +1,1581 @@
+{
+  "schema": "othrys.os.training-deep-harvest.v1",
+  "rows": [
+    {
+      "level": 1,
+      "id": "L1-001",
+      "key": "slugify",
+      "title": "Text slugifier",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-001-slugify",
+      "sourceFiles": [
+        "slugify.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\text\\slugify"
+      ],
+      "workerResultFiles": 0,
+      "builders": {},
+      "failureReasons": {},
+      "measuredDurationSec": 0.0,
+      "learningReceipt": true,
+      "manifestBlockId": "block.text.slugify",
+      "manifestProof": "blocks/text/slugify/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-002",
+      "key": "text-normalize",
+      "title": "Whitespace/text normalizer",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-002-text-normalize",
+      "sourceFiles": [
+        "normalizeText.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\text\\normalize"
+      ],
+      "workerResultFiles": 5,
+      "builders": {
+        "qwen3-builder": 5
+      },
+      "failureReasons": {
+        "out_of_scope_changes: ['training/level-1/L1-002-text-normalize/attempt11.log']": 1,
+        "NO_ATTEMPT_MUTATION": 1,
+        "out_of_scope_changes: ['training/level-1/L1-002-text-normalize/attempt13.log']": 1,
+        "out_of_scope_changes: ['training/level-1/L1-002-text-normalize/attempt14.log']": 1
+      },
+      "measuredDurationSec": 89.157,
+      "learningReceipt": true,
+      "manifestBlockId": "block.text.normalize",
+      "manifestProof": "blocks/text/normalize/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-003",
+      "key": "line-dedupe",
+      "title": "Line deduplicator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-003-line-dedupe",
+      "sourceFiles": [
+        "dedupeLines.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\text\\line-dedupe"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "qwen3-builder": 1
+      },
+      "failureReasons": {
+        "out_of_scope_changes: ['training/level-1/L1-003-line-dedupe/worker.log']": 1
+      },
+      "measuredDurationSec": 9.063,
+      "learningReceipt": true,
+      "manifestBlockId": "block.text.line-dedupe",
+      "manifestProof": "blocks/text/line-dedupe/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-004",
+      "key": "word-count",
+      "title": "Text statistics",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-004-text-stats",
+      "sourceFiles": [
+        "textStats.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\text\\stats"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "qwen3-builder": 3
+      },
+      "failureReasons": {
+        "out_of_scope_changes: ['training/level-1/L1-004-text-stats/repair.log']": 1,
+        "out_of_scope_changes: ['training/level-1/L1-004-text-stats/worker.log']": 1
+      },
+      "measuredDurationSec": 38.496,
+      "learningReceipt": true,
+      "manifestBlockId": "block.text.stats",
+      "manifestProof": "blocks/text/stats/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-005",
+      "key": "case-convert",
+      "title": "Case converter",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-005-case-convert",
+      "sourceFiles": [
+        "convertCase.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\text\\case-convert"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "qwen3-builder": 2
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 39.623,
+      "learningReceipt": true,
+      "manifestBlockId": "block.text.case-convert",
+      "manifestProof": "blocks/text/case-convert/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-006",
+      "key": "json-format",
+      "title": "JSON formatter/minifier",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-006-json-format",
+      "sourceFiles": [
+        "jsonFormat.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\data\\json-format"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-8b": 2
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 13.718,
+      "learningReceipt": true,
+      "manifestBlockId": "block.data.json-format",
+      "manifestProof": "blocks/data/json-format/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-007",
+      "key": "json-validate",
+      "title": "JSON validator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-007-json-validate",
+      "sourceFiles": [
+        "jsonValidate.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\data\\json-validate"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-8b": 2
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 14.106,
+      "learningReceipt": true,
+      "manifestBlockId": "block.data.json-validate",
+      "manifestProof": "blocks/data/json-validate/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-008",
+      "key": "csv-clean",
+      "title": "CSV row cleaner",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-008-csv-clean",
+      "sourceFiles": [
+        "csvClean.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\data\\csv-clean"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3-8b": 2,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 2
+      },
+      "measuredDurationSec": 89.849,
+      "learningReceipt": true,
+      "manifestBlockId": "block.data.csv-clean",
+      "manifestProof": "blocks/data/csv-clean/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-009",
+      "key": "csv-json",
+      "title": "CSV/JSON converter",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-009-csv-json",
+      "sourceFiles": [
+        "csvJson.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\data\\csv-json"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3.5-9b": 2,
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 143.888,
+      "learningReceipt": true,
+      "manifestBlockId": "block.data.csv-json",
+      "manifestProof": "blocks/data/csv-json/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-010",
+      "key": "sort-records",
+      "title": "Stable record sorter",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-010-sort-records",
+      "sourceFiles": [
+        "stableSortRecords.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\data\\sort-records"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3.5-9b": 2
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 65.711,
+      "learningReceipt": true,
+      "manifestBlockId": "block.data.sort-records",
+      "manifestProof": "blocks/data/sort-records/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-011",
+      "key": "url-normalize",
+      "title": "URL normalizer",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-011-url-normalize",
+      "sourceFiles": [
+        "urlNormalize.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\web\\url-normalize"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 15.219,
+      "learningReceipt": true,
+      "manifestBlockId": "block.web.url-normalize",
+      "manifestProof": "blocks/web/url-normalize/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-012",
+      "key": "querystring",
+      "title": "Query-string parser/builder",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-012-querystring",
+      "sourceFiles": [
+        "queryString.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\web\\querystring"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3.5-9b": 2,
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 97.186,
+      "learningReceipt": true,
+      "manifestBlockId": "block.web.querystring",
+      "manifestProof": "blocks/web/querystring/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-013",
+      "key": "html-escape",
+      "title": "HTML escape/unescape",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-013-html-escape",
+      "sourceFiles": [
+        "htmlEscape.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\web\\html-escape"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3.5-9b": 2,
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 95.052,
+      "learningReceipt": true,
+      "manifestBlockId": "block.web.html-escape",
+      "manifestProof": "blocks/web/html-escape/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-014",
+      "key": "utm-builder",
+      "title": "UTM URL builder",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-014-utm-url",
+      "sourceFiles": [
+        "buildUtmUrl.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\web\\utm-url"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 19.914,
+      "learningReceipt": true,
+      "manifestBlockId": "block.web.utm-url",
+      "manifestProof": "blocks/web/utm-url/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-015",
+      "key": "meta-check",
+      "title": "Metadata field checker",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-015-metadata-check",
+      "sourceFiles": [
+        "checkMetadata.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\data\\metadata-check"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 22.993,
+      "learningReceipt": true,
+      "manifestBlockId": "block.data.metadata-check",
+      "manifestProof": "blocks/data/metadata-check/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-016",
+      "key": "unit-convert",
+      "title": "Unit converter",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-016-unit-converter",
+      "sourceFiles": [
+        "convertUnit.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\utility\\unit-converter"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 24.735,
+      "learningReceipt": true,
+      "manifestBlockId": "block.utility.unit-converter",
+      "manifestProof": "blocks/utility/unit-converter/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-017",
+      "key": "duration-calc",
+      "title": "Date/duration calculator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-017-duration-calc",
+      "sourceFiles": [
+        "durationCalc.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\utility\\duration-calc"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3.5-9b": 2,
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 80.37,
+      "learningReceipt": true,
+      "manifestBlockId": "block.utility.duration-calc",
+      "manifestProof": "blocks/utility/duration-calc/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-018",
+      "key": "percent-calc",
+      "title": "Percentage calculator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-018-percentage",
+      "sourceFiles": [
+        "percentage.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\utility\\percentage"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3.5-9b": 2
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 40.081,
+      "learningReceipt": true,
+      "manifestBlockId": "block.utility.percentage",
+      "manifestProof": "blocks/utility/percentage/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-019",
+      "key": "price-calc",
+      "title": "Price/VAT/discount calculator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-019-price-vat-discount",
+      "sourceFiles": [
+        "calculatePrice.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\utility\\price-vat-discount"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 17.924,
+      "learningReceipt": true,
+      "manifestBlockId": "block.utility.price-vat-discount",
+      "manifestProof": "blocks/utility/price-vat-discount/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-020",
+      "key": "time-cost",
+      "title": "Time/cost estimator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-020-time-cost",
+      "sourceFiles": [
+        "estimateCost.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\utility\\time-cost"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 53.964,
+      "learningReceipt": true,
+      "manifestBlockId": "block.utility.time-cost",
+      "manifestProof": "blocks/utility/time-cost/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-021",
+      "key": "checksum",
+      "title": "Checksum calculator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-021-checksum",
+      "sourceFiles": [
+        "checksum.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\utility\\checksum"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 14.85,
+      "learningReceipt": true,
+      "manifestBlockId": "block.utility.checksum",
+      "manifestProof": "blocks/utility/checksum/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-022",
+      "key": "filename-sanitize",
+      "title": "Filename sanitizer",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-022-filename-sanitizer",
+      "sourceFiles": [
+        "sanitizeFilename.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\storage\\filename-sanitizer"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3.5-9b": 2,
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 136.243,
+      "learningReceipt": true,
+      "manifestBlockId": "block.storage.filename-sanitizer",
+      "manifestProof": "blocks/storage/filename-sanitizer/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-023",
+      "key": "extension-detect",
+      "title": "File extension/media classifier",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-023-extension-detect",
+      "sourceFiles": [
+        "classifyFile.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\file\\extension-classifier"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 72.643,
+      "learningReceipt": true,
+      "manifestBlockId": "block.file.extension-classifier",
+      "manifestProof": "blocks/file/extension-classifier/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-024",
+      "key": "duplicate-signature",
+      "title": "Duplicate signature helper",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-024-duplicate-signature",
+      "sourceFiles": [
+        "groupDuplicates.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\file\\duplicate-signature"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3.5-9b": 2,
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 112.907,
+      "learningReceipt": true,
+      "manifestBlockId": "block.file.duplicate-signature",
+      "manifestProof": "blocks/file/duplicate-signature/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-025",
+      "key": "path-normalize",
+      "title": "Portable path normalizer",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-025-path-normalize",
+      "sourceFiles": [
+        "normalizePortablePath.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\file\\path-normalize"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 28.314,
+      "learningReceipt": true,
+      "manifestBlockId": "block.file.path-normalize",
+      "manifestProof": "blocks/file/path-normalize/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-026",
+      "key": "semver-compare",
+      "title": "Semantic-version comparator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-026-semver-compare",
+      "sourceFiles": [
+        "compareSemver.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\developer\\semver-compare"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 20.687,
+      "learningReceipt": true,
+      "manifestBlockId": "block.developer.semver-compare",
+      "manifestProof": "blocks/developer/semver-compare/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-027",
+      "key": "env-parse",
+      "title": ".env metadata parser",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-027-env-parse",
+      "sourceFiles": [
+        "parseEnvMetadata.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\developer\\env-metadata"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 58.275,
+      "learningReceipt": true,
+      "manifestBlockId": "block.developer.env-metadata",
+      "manifestProof": "blocks/developer/env-metadata/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-028",
+      "key": "schema-check",
+      "title": "Simple schema checker",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-028-schema-check",
+      "sourceFiles": [
+        "checkSchema.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\developer\\schema-check"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 48.497,
+      "learningReceipt": true,
+      "manifestBlockId": "block.developer.schema-check",
+      "manifestProof": "blocks/developer/schema-check/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-029",
+      "key": "retry-policy",
+      "title": "Bounded retry calculator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-029-retry-policy",
+      "sourceFiles": [
+        "nextRetry.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\developer\\retry-policy"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3.5-9b": 2,
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 2
+      },
+      "measuredDurationSec": 67.427,
+      "learningReceipt": true,
+      "manifestBlockId": "block.developer.retry-policy",
+      "manifestProof": "blocks/developer/retry-policy/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-030",
+      "key": "idempotency-key",
+      "title": "Idempotency key generator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-030-idempotency-key",
+      "sourceFiles": [
+        "idempotencyKey.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\developer\\idempotency-key"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3.5-9b": 2,
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 74.535,
+      "learningReceipt": true,
+      "manifestBlockId": "block.developer.idempotency-key",
+      "manifestProof": "blocks/developer/idempotency-key/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-031",
+      "key": "checklist",
+      "title": "Checklist generator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-031-checklist",
+      "sourceFiles": [
+        "generateChecklist.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\generate\\checklist"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3.5-9b": 2
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 47.521,
+      "learningReceipt": true,
+      "manifestBlockId": "block.generate.checklist",
+      "manifestProof": "blocks/generate/checklist/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-032",
+      "key": "fixture",
+      "title": "Deterministic fixture generator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-032-fixture",
+      "sourceFiles": [
+        "generateFixture.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\generate\\fixture"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "qwen3-builder": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {
+        "FileNotFoundError(2, 'No such file or directory')": 1
+      },
+      "measuredDurationSec": 24.164,
+      "learningReceipt": true,
+      "manifestBlockId": "block.generate.fixture",
+      "manifestProof": "blocks/generate/fixture/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-033",
+      "key": "table-markdown",
+      "title": "Markdown table generator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-033-markdown-table",
+      "sourceFiles": [
+        "markdownTable.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\generate\\markdown-table"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 34.618,
+      "learningReceipt": true,
+      "manifestBlockId": "block.generate.markdown-table",
+      "manifestProof": "blocks/generate/markdown-table/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-034",
+      "key": "changelog-entry",
+      "title": "Changelog entry formatter",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-034-changelog-entry",
+      "sourceFiles": [
+        "formatChangelogEntry.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\generate\\changelog-entry"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3.5-9b": 2
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 2
+      },
+      "measuredDurationSec": 42.501,
+      "learningReceipt": true,
+      "manifestBlockId": "block.generate.changelog-entry",
+      "manifestProof": "blocks/generate/changelog-entry/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-035",
+      "key": "config-merge",
+      "title": "Safe config merge",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-035-config-merge",
+      "sourceFiles": [
+        "safeConfigMerge.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\generate\\config-merge"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3.5-9b": 2
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 101.829,
+      "learningReceipt": true,
+      "manifestBlockId": "block.generate.config-merge",
+      "manifestProof": "blocks/generate/config-merge/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-036",
+      "key": "email-normalize",
+      "title": "Email normalizer/validator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-036-email-normalize",
+      "sourceFiles": [
+        "normalizeEmail.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\validate\\email-normalize"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3.5-9b": 2
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 55.921,
+      "learningReceipt": true,
+      "manifestBlockId": "block.validate.email-normalize",
+      "manifestProof": "blocks/validate/email-normalize/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-037",
+      "key": "phone-normalize",
+      "title": "Phone shape normalizer",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-037-phone-normalize",
+      "sourceFiles": [
+        "normalizePhone.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\validate\\phone-normalize"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 27.907,
+      "learningReceipt": true,
+      "manifestBlockId": "block.validate.phone-normalize",
+      "manifestProof": "blocks/validate/phone-normalize/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-038",
+      "key": "hex-color",
+      "title": "Color parser/converter",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-038-color",
+      "sourceFiles": [
+        "parseColor.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\validate\\color-parse"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 22.468,
+      "learningReceipt": true,
+      "manifestBlockId": "block.validate.color-parse",
+      "manifestProof": "blocks/validate/color-parse/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-039",
+      "key": "date-iso",
+      "title": "ISO date normalizer",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-039-iso-date",
+      "sourceFiles": [
+        "normalizeIsoDate.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\validate\\iso-date"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3-coder-30b": 1,
+        "qwen3-builder": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1,
+        "FileNotFoundError(2, 'No such file or directory')": 1
+      },
+      "measuredDurationSec": 32.826,
+      "learningReceipt": true,
+      "manifestBlockId": "block.validate.iso-date",
+      "manifestProof": "blocks/validate/iso-date/tests/contract.test.mjs"
+    },
+    {
+      "level": 1,
+      "id": "L1-040",
+      "key": "identifier",
+      "title": "Identifier validator",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-1\\L1-040-identifier",
+      "sourceFiles": [
+        "validateIdentifier.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\validate\\identifier"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3.5-9b": 2
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 55.717,
+      "learningReceipt": true,
+      "manifestBlockId": "block.validate.identifier",
+      "manifestProof": "blocks/validate/identifier/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-001",
+      "key": "local-kv",
+      "title": "Local key/value store",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-001-local-kv",
+      "sourceFiles": [
+        "localKv.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\local-kv"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3-8b": 2,
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 2
+      },
+      "measuredDurationSec": 191.637,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.local-kv",
+      "manifestProof": "blocks/state/local-kv/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-002",
+      "key": "settings-store",
+      "title": "Settings store",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-002-settings-store",
+      "sourceFiles": [
+        "settingsStore.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\settings-store"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "qwen3-builder": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {
+        "EngineeringError(\"path escapes workspace: '.othrys/runtime/legion-perimeter-links/codex/2026-08-20/referenced-chatgpt-conversation-this-is-an/work/vtc-platform/src/CreditStore.jsx'\")": 1
+      },
+      "measuredDurationSec": 24.507,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.settings-store",
+      "manifestProof": "blocks/state/settings-store/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-003",
+      "key": "todo-store",
+      "title": "Todo store",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-003-todo-store",
+      "sourceFiles": [
+        "todoStore.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\todo-store"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3.5-9b": 2,
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 77.092,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.todo-store",
+      "manifestProof": "blocks/state/todo-store/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-004",
+      "key": "notes-store",
+      "title": "Notes store",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-004-notes-store",
+      "sourceFiles": [
+        "notesStore.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\notes-store"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "qwen3-builder": 1,
+        "local.qwen3-coder-30b": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {
+        "EngineeringError(\"path escapes workspace: '.othrys/runtime/legion-perimeter-links/codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/work/othrys-hub/docs/mission022_1/MISSION_STORE.json'\")": 1,
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 128.584,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.notes-store",
+      "manifestProof": "blocks/state/notes-store/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-005",
+      "key": "contact-store",
+      "title": "Contact store",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-005-contact-store",
+      "sourceFiles": [
+        "contactStore.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\contact-store"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3.5-9b": 2
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 45.159,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.contact-store",
+      "manifestProof": "blocks/state/contact-store/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-006",
+      "key": "inventory-store",
+      "title": "Inventory store",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-006-inventory-store",
+      "sourceFiles": [
+        "inventoryStore.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\inventory-store"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3.5-9b": 2,
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {
+        "out_of_scope_changes: ['training/forge-qualification/glm53_flash_olympics.py', 'training/forge-qualification/glm53_flash_olympics_result.json']": 1
+      },
+      "measuredDurationSec": 111.291,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.inventory-store",
+      "manifestProof": "blocks/state/inventory-store/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-007",
+      "key": "bookmark-store",
+      "title": "Bookmark store",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-007-bookmark-store",
+      "sourceFiles": [
+        "bookmarkStore.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\bookmark-store"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3-coder-30b": 2,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 149.453,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.bookmark-store",
+      "manifestProof": "blocks/state/bookmark-store/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-008",
+      "key": "tag-index",
+      "title": "Tag index",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-008-tag-index",
+      "sourceFiles": [
+        "tagIndex.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\tag-index"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 75.129,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.tag-index",
+      "manifestProof": "blocks/state/tag-index/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-009",
+      "key": "counter-store",
+      "title": "Persistent counters",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-009-counter-store",
+      "sourceFiles": [
+        "counterStore.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\counter-store"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 24.582,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.counter-store",
+      "manifestProof": "blocks/state/counter-store/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-010",
+      "key": "habit-tracker",
+      "title": "Habit tracker",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-010-habit-tracker",
+      "sourceFiles": [
+        "habitTracker.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\habit-tracker"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 70.148,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.habit-tracker",
+      "manifestProof": "blocks/state/habit-tracker/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-011",
+      "key": "time-tracker",
+      "title": "Time tracker",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-011-time-tracker",
+      "sourceFiles": [
+        "timeTracker.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\time-tracker"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 31.039,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.time-tracker",
+      "manifestProof": "blocks/state/time-tracker/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-012",
+      "key": "expense-tracker",
+      "title": "Expense tracker",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-012-expense-tracker",
+      "sourceFiles": [
+        "expenseTracker.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\expense-tracker"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-8b": 2
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 68.311,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.expense-tracker",
+      "manifestProof": "blocks/state/expense-tracker/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-013",
+      "key": "import-export",
+      "title": "State import/export",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-013-import-export",
+      "sourceFiles": [
+        "stateTransfer.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\state-transfer"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 1,
+        "local.qwen3-8b": 1
+      },
+      "failureReasons": {
+        "out_of_scope_changes: ['training/level-2/L2-016-journal/worker-request.json']": 1
+      },
+      "measuredDurationSec": 97.373,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.state-transfer",
+      "manifestProof": "blocks/state/state-transfer/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-014",
+      "key": "backup-restore",
+      "title": "Backup/restore",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-014-backup-restore",
+      "sourceFiles": [
+        "backupRestore.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\backup-restore"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3-8b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 85.782,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.backup-restore",
+      "manifestProof": "blocks/state/backup-restore/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-015",
+      "key": "migration",
+      "title": "State migration",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-015-migration",
+      "sourceFiles": [
+        "stateMigrator.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\state-migrator"
+      ],
+      "workerResultFiles": 0,
+      "builders": {},
+      "failureReasons": {},
+      "measuredDurationSec": 0.0,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.state-migrator",
+      "manifestProof": "blocks/state/state-migrator/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-016",
+      "key": "journal",
+      "title": "Append-only journal",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-016-journal",
+      "sourceFiles": [
+        "journal.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\journal"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {
+        "builder repeated the same failing tool call 6 times without adapting: write_file -> path is required": 1
+      },
+      "measuredDurationSec": 99.603,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.journal",
+      "manifestProof": "blocks/state/journal/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-017",
+      "key": "undo-redo",
+      "title": "Undo/redo state",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-017-undo-redo",
+      "sourceFiles": [
+        "undoRedo.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\undo-redo"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 95.211,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.undo-redo",
+      "manifestProof": "blocks/state/undo-redo/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-018",
+      "key": "search-filter",
+      "title": "Persistent search/filter",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-018-search-filter",
+      "sourceFiles": [
+        "searchStore.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\search-filter"
+      ],
+      "workerResultFiles": 1,
+      "builders": {
+        "local.qwen3-coder-30b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 97.487,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.search-filter",
+      "manifestProof": "blocks/state/search-filter/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-019",
+      "key": "sort-page",
+      "title": "Persistent sort/page",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-019-sort-page",
+      "sourceFiles": [
+        "sortPageStore.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\sort-page"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 1,
+        "local.qwen3-8b": 1
+      },
+      "failureReasons": {
+        "out_of_scope_changes: ['training/level-2/L2-019-sort-page/worker-result.json']": 1,
+        "out_of_scope_changes: ['training/level-2/L2-019-sort-page/repair-request.json', 'training/level-2/L2-019-sort-page/repair.log', 'training/level-2/L2-019-sort-page/repair.pid']": 1
+      },
+      "measuredDurationSec": 183.966,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.sort-page",
+      "manifestProof": "blocks/state/sort-page/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-020",
+      "key": "dashboard-summary",
+      "title": "Dashboard summary",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-020-dashboard-summary",
+      "sourceFiles": [
+        "dashboardSummary.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\dashboard-summary"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 1
+      },
+      "measuredDurationSec": 83.952,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.dashboard-summary",
+      "manifestProof": "blocks/state/dashboard-summary/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-021",
+      "key": "activity-log",
+      "title": "Activity log",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-021-activity-log",
+      "sourceFiles": [
+        "activityLog.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\activity-log"
+      ],
+      "workerResultFiles": 3,
+      "builders": {
+        "local.qwen3-coder-30b": 2,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {
+        "NO_ATTEMPT_MUTATION": 2
+      },
+      "measuredDurationSec": 148.799,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.activity-log",
+      "manifestProof": "blocks/state/activity-log/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-022",
+      "key": "preferences-profile",
+      "title": "Preference profile",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-022-preferences-profile",
+      "sourceFiles": [
+        "preferenceProfile.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\preference-profile"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 1,
+        "local.qwen3.5-9b": 1
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 52.855,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.preference-profile",
+      "manifestProof": "blocks/state/preference-profile/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-023",
+      "key": "multi-list",
+      "title": "Multi-list manager",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-023-multi-list",
+      "sourceFiles": [
+        "multiList.mjs"
+      ],
+      "exactBlockMatches": [
+        "blocks\\state\\multi-list"
+      ],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 2
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 58.609,
+      "learningReceipt": true,
+      "manifestBlockId": "block.state.multi-list",
+      "manifestProof": "blocks/state/multi-list/tests/contract.test.mjs"
+    },
+    {
+      "level": 2,
+      "id": "L2-024",
+      "key": "desk-tool",
+      "title": "Stateful desk tool",
+      "status": "COMPLETE",
+      "trainingDir": "training\\level-2\\L2-024-desk-tool",
+      "sourceFiles": [
+        "deskTool.mjs"
+      ],
+      "exactBlockMatches": [],
+      "workerResultFiles": 2,
+      "builders": {
+        "local.qwen3-coder-30b": 2
+      },
+      "failureReasons": {},
+      "measuredDurationSec": 53.915,
+      "learningReceipt": true,
+      "manifestBlockId": "block.composition.desk-tool",
+      "manifestProof": "blocks/composition/desk-tool/tests/contract.test.mjs"
+    }
+  ]
+}

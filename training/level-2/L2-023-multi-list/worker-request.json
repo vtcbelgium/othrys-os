@@ -1,0 +1,27 @@
+﻿{
+    "schema_version":  "othrys.worker-request.v0.1",
+    "job_id":  "TRAIN-L2-023-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "allowed_paths":  [
+                          "training/level-2/L2-023-multi-list/multiList.mjs"
+                      ],
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "timeout_sec":  120,
+    "metadata":  {
+                     "training_level":  2,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L2-023",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "task":  "OTHRYS L2-023 Multi-list manager. Stock-first found validated CRUD patterns; adapt concepts only. Create exactly training/level-2/L2-023-multi-list/multiList.mjs. Node ESM stdlib only. Export createMultiListStore(filePath) returning frozen async API {snapshot,createList,renameList,deleteList,addItem,updateItem,removeItem}. Durable exact canonical JSON {lists:[{id,name,items:[{id,text,done}]}]}. List and item ids are caller-supplied trimmed nonempty strings, unique globally within their scope; names/text trimmed nonempty; done boolean default false. Preserve list/item order. Missing file snapshot=\u003e{lists:[]} no write. Every op reloads. Corrupt or noncanonical bytes =\u003e STATE_CORRUPT preserving bytes. Invalid caller shape/value =\u003e INVALID_LIST or INVALID_ITEM before mutation. Duplicate list or item id =\u003e DUPLICATE_ID; missing list/item =\u003e NOT_FOUND. updateItem patch exact nonempty subset {text,done}; rename only name. deleteList returns removed deep clone; add/update/remove return deep clones. Atomic same-dir unique-temp persist, no timestamps, exact API, touch no other file."
+}

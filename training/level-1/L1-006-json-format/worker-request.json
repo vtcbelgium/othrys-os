@@ -1,0 +1,26 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 JOB L1-006. Create exactly training/level-1/L1-006-json-format/jsonFormat.mjs. Export jsonFormat(input, mode=\"pretty\"). Input must be a string containing JSON. Parse with JSON.parse. Supported modes exactly pretty and minify; unsupported mode throws RangeError. pretty returns JSON.stringify(value, null, 2) plus one trailing newline. minify returns JSON.stringify(value) with no trailing newline. Preserve JSON array/object key insertion order as parsed; do not sort keys. Invalid JSON must propagate SyntaxError. Deterministic, dependency-free, no I/O/network. Re-read before finish. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-006"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-006-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-006-json-format/jsonFormat.mjs"
+                      ]
+}

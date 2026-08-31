@@ -1,0 +1,65 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-036-002",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": false,
+  "reason": "NO_ATTEMPT_MUTATION",
+  "started_at": 1788097976.9866838,
+  "completed_at": 1788098013.6589177,
+  "duration_sec": 36.67223381996155,
+  "allowed_paths": [
+    "training/level-1/L1-036-email-normalize/normalizeEmail.mjs"
+  ],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-036-email-normalize/normalizeEmail.mjs\n+++ b/training/level-1/L1-036-email-normalize/normalizeEmail.mjs\n@@ -0,0 +1,71 @@\n+export function normalizeEmail(input) {\n+  if (typeof input !== 'string') {\n+    return Object.freeze({ normalized: '', valid: false, reason: 'FORMAT' });\n+  }\n+\n+  const trimmed = input.trim();\n+  if (trimmed === '') {\n+    return Object.freeze({ normalized: '', valid: false, reason: 'EMPTY' });\n+  }\n+\n+  const parts = trimmed.split('@');\n+  if (parts.length !== 2) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'FORMAT' });\n+  }\n+\n+  const [local, domain] = parts;\n+  if (local === '' || domain === '') {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: local === '' ? 'LOCAL' : 'DOMAIN' });\n+  }\n+\n+  if (trimmed.length > 254) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'LENGTH' });\n+  }\n+\n+  if (local.length > 64) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'LOCAL' });\n+  }\n+\n+  const lowerDomain = domain.toLowerCase();\n+  if (lowerDomain !== domain && !/^[a-z0-9.-]+$/.test(lowerDomain)) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'DOMAIN' });\n+  }\n+\n+  const labels = lowerDomain.split('.');\n+  if (labels.length < 2) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'DOMAIN' });\n+  }\n+\n+  for (const label of labels) {\n+    if (label.length === 0 || label.length > 63) {\n+      return Object.freeze({ normalized: trimmed, valid: false, reason: 'DOMAIN' });\n+    }\n+    if (!/^[a-z0-9-]+$/.test(label)) {\n+      return Object.freeze({ normalized: trimmed, valid: false, reason: 'DOMAIN' });\n+    }\n+    if (label.startsWith('-') || label.endsWith('-')) {\n+      return Object.freeze({ normalized: trimmed, valid: false, reason: 'DOMAIN' });\n+    }\n+  }\n+\n+  const tld = labels[labels.length - 1];\n+  if (tld.length < 2) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'DOMAIN' });\n+  }\n+\n+  const localChars = /^[a-z0-9._%+\\-]+$/i.test(local);\n+  if (!localChars) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'LOCAL' });\n+  }\n+\n+  if (local.startsWith('.') || local.endsWith('.')) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'LOCAL' });\n+  }\n+\n+  if (local.includes('..')) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'LOCAL' });\n+  }\n+\n+  const normalized = `${local}@${lowerDomain}`;\n+  return Object.freeze({ normalized, valid: true, reason: null });\n+}",
+  "git_status": "",
+  "summary": "tool turn limit (36) reached; proposed diff collected from workspace mutations",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-036-email-normalize/normalizeEmail.mjs\n+++ b/training/level-1/L1-036-email-normalize/normalizeEmail.mjs\n@@ -0,0 +1,71 @@\n+export function normalizeEmail(input) {\n+  if (typeof input !== 'string') {\n+    return Object.freeze({ normalized: '', valid: false, reason: 'FORMAT' });\n+  }\n+\n+  const trimmed = input.trim();\n+  if (trimmed === '') {\n+    return Object.freeze({ normalized: '', valid: false, reason: 'EMPTY' });\n+  }\n+\n+  const parts = trimmed.split('@');\n+  if (parts.length !== 2) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'FORMAT' });\n+  }\n+\n+  const [local, domain] = parts;\n+  if (local === '' || domain === '') {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: local === '' ? 'LOCAL' : 'DOMAIN' });\n+  }\n+\n+  if (trimmed.length > 254) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'LENGTH' });\n+  }\n+\n+  if (local.length > 64) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'LOCAL' });\n+  }\n+\n+  const lowerDomain = domain.toLowerCase();\n+  if (lowerDomain !== domain && !/^[a-z0-9.-]+$/.test(lowerDomain)) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'DOMAIN' });\n+  }\n+\n+  const labels = lowerDomain.split('.');\n+  if (labels.length < 2) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'DOMAIN' });\n+  }\n+\n+  for (const label of labels) {\n+    if (label.length === 0 || label.length > 63) {\n+      return Object.freeze({ normalized: trimmed, valid: false, reason: 'DOMAIN' });\n+    }\n+    if (!/^[a-z0-9-]+$/.test(label)) {\n+      return Object.freeze({ normalized: trimmed, valid: false, reason: 'DOMAIN' });\n+    }\n+    if (label.startsWith('-') || label.endsWith('-')) {\n+      return Object.freeze({ normalized: trimmed, valid: false, reason: 'DOMAIN' });\n+    }\n+  }\n+\n+  const tld = labels[labels.length - 1];\n+  if (tld.length < 2) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'DOMAIN' });\n+  }\n+\n+  const localChars = /^[a-z0-9._%+\\-]+$/i.test(local);\n+  if (!localChars) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'LOCAL' });\n+  }\n+\n+  if (local.startsWith('.') || local.endsWith('.')) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'LOCAL' });\n+  }\n+\n+  if (local.includes('..')) {\n+    return Object.freeze({ normalized: trimmed, valid: false, reason: 'LOCAL' });\n+  }\n+\n+  const normalized = `${local}@${lowerDomain}`;\n+  return Object.freeze({ normalized, valid: true, reason: null });\n+}",
+    "git_status": "",
+    "tool_trace": [],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6468",
+      "utilization_pct": "13",
+      "temperature_c": "41",
+      "power_w": "6.28"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6468",
+      "utilization_pct": "1",
+      "temperature_c": "51",
+      "power_w": "15.83"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

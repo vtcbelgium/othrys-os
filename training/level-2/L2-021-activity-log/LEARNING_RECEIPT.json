@@ -1,0 +1,9 @@
+{
+  "schema":"othrys.os.training-learning-receipt.v1","jobId":"L2-021","level":2,"title":"Activity log","classification":"HIGH_VALUE_OPERATIONAL_LEARNING",
+  "stock":{"disposition":"ADAPT_CONCEPT_REJECT_DIRECT_REUSE","candidates":["Structured event log","Append-only audit/change log"],"reason":"reuse bounded append/audit concepts without importing incompatible timestamp or authority assumptions"},
+  "attempts":[{"builder":"local.qwen3.5-9b","outcome":"NO_ATTEMPT_MUTATION_TOOL_PATH"},{"builder":"local.qwen3-coder-30b","outcome":"NO_ATTEMPT_MUTATION_TOOL_PATH"},{"builder":"local.qwen3-coder-30b","outcome":"OK_RECEIPT_CONTRACT_FAILURE"},{"actor":"operator_bounded_recovery","outcome":"TALOS_GREEN"}],
+  "talos":{"source":{"pass":6,"fail":0},"candidateBlock":{"pass":6,"fail":0},"oracles":["missing read no-write","canonical exact schema","monotonic bounded sequencing","duplicate/invalid atomicity","corruption byte preservation","clone/API boundary"]},
+  "block":{"id":"block.state.activity-log","disposition":"TRAINING_CANDIDATE","authorityGranted":false},
+  "lessons":["tool path adherence is a builder capability separate from semantic coding","ok:true must never outrank independent contract verification","bounded logs need sequence continuity after truncation","operator recovery is capability debt not builder credit"],
+  "organLearning":{"MNEMOSYNE":["retain malformed-tool-path and false-success evidence"],"HEPHAESTUS":["penalize builders that cannot preserve exact allowed path"],"TALOS":["verify runtime/API/schema independently of worker receipt"],"PROMETHEUS":["harvest durable audit-log patterns without authority baggage"],"KRONOS":["three governed attempts consumed before recovery"],"RHEA":["activity reads never mutate durable state"],"MYCELIUM":["weaken trail from this task shape to current freeform tool-call behavior"],"SWITCHYARD":["no paid escalation used"]}
+}

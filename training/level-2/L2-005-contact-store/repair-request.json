@@ -1,0 +1,6 @@
+{
+ "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-005-REPAIR1","node_id":"legion","capability":"engineering.patch","workspace":"C:/Users/othry/Projects/othrys-v2",
+ "allowed_paths":["training/level-2/L2-005-contact-store/contactStore.mjs"],"deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":90,
+ "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-005","forge_builder_id":"local.qwen3.5-9b"},
+ "task":"TALOS REPAIR L2-005. WRITE exactly training/level-2/L2-005-contact-store/contactStore.mjs. Current build does not parse: imports deepClone from nonexistent ./utils.js then redeclares it, and incorrectly uses Deno. Replace with Node ESM standard-library implementation satisfying original contract. Follow proven notes-store persistence pattern: fs/promises + dirname + randomUUID; load each operation; malformed/non-array/invalid contacts/duplicate ids => STATE_CORRUPT; missing => []; atomic same-dir temp write+rename; canonical exact contact fields; frozen API; deep cloned outputs; remove returns removed record. No dependencies, no extra files. Touch nothing else."
+}

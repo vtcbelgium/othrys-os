@@ -1,0 +1,9 @@
+{
+  "schema":"othrys.os.training-learning-receipt.v1","jobId":"L2-022","level":2,"title":"Preference profile","classification":"HIGH_VALUE_OPERATIONAL_LEARNING",
+  "stock":{"disposition":"ADAPT_CONCEPT_REJECT_DIRECT_REUSE","candidates":["Level-2 settings store","canonical JSON state patterns"],"reason":"adapt validated preference/default concepts while adding recursive canonical profile semantics"},
+  "attempts":[{"builder":"local.qwen3.5-9b","outcome":"OK_RECEIPT_CONTRACT_FAILURE"},{"builder":"local.qwen3-coder-30b","outcome":"OK_RECEIPT_CONTRACT_FAILURE"},{"actor":"operator_bounded_recovery","outcome":"TALOS_GREEN"}],
+  "talos":{"source":{"pass":6,"fail":0},"candidateBlock":{"pass":6,"fail":0},"oracles":["defaults no-write","deep merge and array replacement","restart reload","invalid-input atomicity","noncanonical corruption preservation","deep clone/API boundary"]},
+  "block":{"id":"block.state.preference-profile","disposition":"TRAINING_CANDIDATE","authorityGranted":false},
+  "lessons":["imports and async boundaries must be executable not merely plausible","corruption must never be converted silently to defaults","recursive canonicalization needs explicit array semantics","operator recovery remains capability debt"],
+  "organLearning":{"MNEMOSYNE":["retain repeated false-positive receipts"],"HEPHAESTUS":["require import/runtime smoke before accepting state builders"],"TALOS":["pin noncanonical-byte and restart oracles"],"PROMETHEUS":["prefer small proven canonical-state patterns"],"KRONOS":["two governed attempts exhausted"],"RHEA":["profile reads are pure and restart-safe"],"MYCELIUM":["decrease trust for unsupported sync-API hallucination"],"SWITCHYARD":["local routes only"]}
+}

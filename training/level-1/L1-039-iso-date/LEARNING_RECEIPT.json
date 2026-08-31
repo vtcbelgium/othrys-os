@@ -148,5 +148,6 @@
   "learningMayGrantAuthority": false,
   "authorityGranted": false,
   "executionStarted": false,
-  "receiptDigest": "2da94c1d7fb8c5539678bfb6fb13239c11abfaac8151681981a815c99cc6b816"
+  "receiptDigest": "2da94c1d7fb8c5539678bfb6fb13239c11abfaac8151681981a815c99cc6b816",
+  "candidateProof": "blocks/validate/iso-date/tests/contract.test.mjs"
 }

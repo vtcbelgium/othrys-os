@@ -1,0 +1,7 @@
+{
+  "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-017-REPAIR1","node_id":"legion","capability":"engineering.patch",
+  "workspace":"C:/Users/othry/Projects/othrys-v2","allowed_paths":["training/level-2/L2-017-undo-redo/undoRedo.mjs"],
+  "deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":120,
+  "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-017","forge_builder_id":"local.qwen3-coder-30b"},
+  "task":"HARD BUILD L2-017. Create exactly undoRedo.mjs, no searching unrelated files. Export createUndoRedoStore(filePath,{limit=20}={}); frozen async current/commit/undo/redo/canUndo/canRedo. Missing is {current:null,past:[],future:[]} read-only. limit integer 1..100. commit recursively canonical JSON-safe state, push prior current to bounded past, set current, clear future, atomic persist. undo/redo move states symmetrically and return restored clone, false/no write if unavailable. Persisted state exact keys current,past,future, each JSON-safe canonical, arrays <= limit; malformed/noncanonical/unsafe => STATE_CORRUPT and never overwrite. Reject unsafe keys recursively. Standard Node ESM fs/promises/path/crypto only. No network/deps/secrets/wall clock. Touch nothing else."
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-022-002",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788093183.314815,
+  "completed_at": 1788093212.5268896,
+  "duration_sec": 29.212074518203735,
+  "allowed_paths": [
+    "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs\n+++ b/training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs\n@@ -0,0 +1,7 @@\n+export function sanitizeFilename(filename) {\n+  let sanitized = filename.replace(/[<>:\"|?*]/g, \"-\");\n+  if (sanitized.trim() === \"\") {\n+    return \"_\";\n+  }\n+  return sanitized;\n+}",
+  "git_status": "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs",
+  "summary": "tool turn limit (36) reached; proposed diff collected from workspace mutations",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs\n+++ b/training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs\n@@ -0,0 +1,7 @@\n+export function sanitizeFilename(filename) {\n+  let sanitized = filename.replace(/[<>:\"|?*]/g, \"-\");\n+  if (sanitized.trim() === \"\") {\n+    return \"_\";\n+  }\n+  return sanitized;\n+}",
+    "git_status": "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs",
+    "tool_trace": [
+      "write_file: wrote 174 chars to training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs"
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs\", \"content\": \"export function sanitizeFilename(filename) {\\n  let sanitized = filename.replace(/[<>:\\\"|?*]/g, \\\"-\\\");\\n  if (sanitized.trim() === \\\"\\\") {\\n    return ",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs\", \"content\": \"export function sanitizeFilename(filename) {\\n  let sanitized = filename.replace(/[<>:\\\"|?*]/g, \\\"-\\\");\\n  if (sanitized.trim() === \\\"\\\") {\\n    return \\\"_\\\";\\n  }\\n  return sanitized;\\n}\"}",
+        "raw_length": 277,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 174
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6461",
+      "utilization_pct": "0",
+      "temperature_c": "43",
+      "power_w": "5.60"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6461",
+      "utilization_pct": "1",
+      "temperature_c": "55",
+      "power_w": "59.58"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

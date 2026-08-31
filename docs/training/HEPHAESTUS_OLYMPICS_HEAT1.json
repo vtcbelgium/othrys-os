@@ -1,0 +1,245 @@
+{
+  "schema": "othrys.hephaestus.olympics-heat.v1",
+  "rows": [
+    {
+      "builderId": "local.qwen3.5-9b",
+      "eventId": "PROTOCOL",
+      "pass": true,
+      "latencyMs": 5507,
+      "finish": "stop",
+      "chars": 27,
+      "error": null,
+      "preview": "{\"ok\":true,\"items\":[1,2,3]}"
+    },
+    {
+      "builderId": "local.qwen3.5-9b",
+      "eventId": "REPAIR",
+      "pass": false,
+      "latencyMs": 563,
+      "finish": "stop",
+      "chars": 92,
+      "error": null,
+      "preview": "function clamp(n, min, max) {\n  return Math.min(Math.max(n, min), max);\n}\n\nexport { clamp };"
+    },
+    {
+      "builderId": "local.qwen3.5-9b",
+      "eventId": "REPO",
+      "pass": true,
+      "latencyMs": 430,
+      "finish": "stop",
+      "chars": 61,
+      "error": null,
+      "preview": "{\"file\":\"a.mjs\",\"replacement\":\"export const add=(a,b)=>a+b;\"}"
+    },
+    {
+      "builderId": "local.qwen3.5-9b",
+      "eventId": "TOOLS",
+      "pass": true,
+      "latencyMs": 392,
+      "finish": "stop",
+      "chars": 68,
+      "error": null,
+      "preview": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"x.txt\",\"content\":\"hello\"}}"
+    },
+    {
+      "builderId": "local.qwen3-8b",
+      "eventId": "PROTOCOL",
+      "pass": true,
+      "latencyMs": 4106,
+      "finish": "stop",
+      "chars": 27,
+      "error": null,
+      "preview": "{\"ok\":true,\"items\":[1,2,3]}"
+    },
+    {
+      "builderId": "local.qwen3-8b",
+      "eventId": "REPAIR",
+      "pass": true,
+      "latencyMs": 556,
+      "finish": "stop",
+      "chars": 90,
+      "error": null,
+      "preview": "```js\nexport function clamp(n, min, max) {\n  return Math.min(max, Math.max(min, n));\n}\n```"
+    },
+    {
+      "builderId": "local.qwen3-8b",
+      "eventId": "REPO",
+      "pass": true,
+      "latencyMs": 415,
+      "finish": "stop",
+      "chars": 61,
+      "error": null,
+      "preview": "{\"file\":\"a.mjs\",\"replacement\":\"export const add=(a,b)=>a+b;\"}"
+    },
+    {
+      "builderId": "local.qwen3-8b",
+      "eventId": "TOOLS",
+      "pass": true,
+      "latencyMs": 361,
+      "finish": "stop",
+      "chars": 68,
+      "error": null,
+      "preview": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"x.txt\",\"content\":\"hello\"}}"
+    },
+    {
+      "builderId": "local.qwen3-coder-30b",
+      "eventId": "PROTOCOL",
+      "pass": true,
+      "latencyMs": 14971,
+      "finish": "stop",
+      "chars": 27,
+      "error": null,
+      "preview": "{\"ok\":true,\"items\":[1,2,3]}"
+    },
+    {
+      "builderId": "local.qwen3-coder-30b",
+      "eventId": "REPAIR",
+      "pass": true,
+      "latencyMs": 1109,
+      "finish": "stop",
+      "chars": 112,
+      "error": null,
+      "preview": "```javascript\nfunction clamp(n, min, max) {\n    return Math.max(min, Math.min(max, n));\n}\n\nexport { clamp };\n```"
+    },
+    {
+      "builderId": "local.qwen3-coder-30b",
+      "eventId": "REPO",
+      "pass": true,
+      "latencyMs": 860,
+      "finish": "stop",
+      "chars": 61,
+      "error": null,
+      "preview": "{\"file\":\"a.mjs\",\"replacement\":\"export const add=(a,b)=>a+b;\"}"
+    },
+    {
+      "builderId": "local.qwen3-coder-30b",
+      "eventId": "TOOLS",
+      "pass": true,
+      "latencyMs": 705,
+      "finish": "stop",
+      "chars": 68,
+      "error": null,
+      "preview": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"x.txt\",\"content\":\"hello\"}}"
+    },
+    {
+      "builderId": "nvidia.kimi-k3",
+      "eventId": "PROTOCOL",
+      "pass": true,
+      "latencyMs": 6271,
+      "finish": "stop",
+      "chars": 27,
+      "error": null,
+      "preview": "{\"ok\":true,\"items\":[1,2,3]}"
+    },
+    {
+      "builderId": "nvidia.kimi-k3",
+      "eventId": "REPAIR",
+      "pass": true,
+      "latencyMs": 12004,
+      "finish": "stop",
+      "chars": 70,
+      "error": null,
+      "preview": "export function clamp(n,min,max){return Math.min(max,Math.max(min,n))}"
+    },
+    {
+      "builderId": "nvidia.kimi-k3",
+      "eventId": "REPO",
+      "pass": false,
+      "latencyMs": 169,
+      "finish": null,
+      "chars": 0,
+      "error": "HTTPError:HTTP Error 429: Too Many Requests",
+      "preview": ""
+    },
+    {
+      "builderId": "nvidia.kimi-k3",
+      "eventId": "TOOLS",
+      "pass": false,
+      "latencyMs": 173,
+      "finish": null,
+      "chars": 0,
+      "error": "HTTPError:HTTP Error 429: Too Many Requests",
+      "preview": ""
+    },
+    {
+      "builderId": "nvidia.minimax-m3",
+      "eventId": "PROTOCOL",
+      "pass": true,
+      "latencyMs": 2642,
+      "finish": "stop",
+      "chars": 27,
+      "error": null,
+      "preview": "{\"ok\":true,\"items\":[1,2,3]}"
+    },
+    {
+      "builderId": "nvidia.minimax-m3",
+      "eventId": "REPAIR",
+      "pass": true,
+      "latencyMs": 4021,
+      "finish": "stop",
+      "chars": 98,
+      "error": null,
+      "preview": "```javascript\nexport function clamp(n, min, max) {\n  return Math.min(max, Math.max(min, n));\n}\n```"
+    },
+    {
+      "builderId": "nvidia.minimax-m3",
+      "eventId": "REPO",
+      "pass": false,
+      "latencyMs": 170,
+      "finish": null,
+      "chars": 0,
+      "error": "HTTPError:HTTP Error 429: Too Many Requests",
+      "preview": ""
+    },
+    {
+      "builderId": "nvidia.minimax-m3",
+      "eventId": "TOOLS",
+      "pass": false,
+      "latencyMs": 115,
+      "finish": null,
+      "chars": 0,
+      "error": "HTTPError:HTTP Error 429: Too Many Requests",
+      "preview": ""
+    },
+    {
+      "builderId": "nvidia.deepseek-v4-flash",
+      "eventId": "PROTOCOL",
+      "pass": true,
+      "latencyMs": 20118,
+      "finish": "stop",
+      "chars": 27,
+      "error": null,
+      "preview": "{\"ok\":true,\"items\":[1,2,3]}"
+    },
+    {
+      "builderId": "nvidia.deepseek-v4-flash",
+      "eventId": "REPAIR",
+      "pass": true,
+      "latencyMs": 30164,
+      "finish": "stop",
+      "chars": 80,
+      "error": null,
+      "preview": "export function clamp(n, min, max) {\n  return Math.max(min, Math.min(max, n));\n}"
+    },
+    {
+      "builderId": "nvidia.deepseek-v4-flash",
+      "eventId": "REPO",
+      "pass": true,
+      "latencyMs": 52292,
+      "finish": "stop",
+      "chars": 61,
+      "error": null,
+      "preview": "{\"file\":\"a.mjs\",\"replacement\":\"export const add=(a,b)=>a+b;\"}"
+    },
+    {
+      "builderId": "nvidia.deepseek-v4-flash",
+      "eventId": "TOOLS",
+      "pass": true,
+      "latencyMs": 31154,
+      "finish": "stop",
+      "chars": 68,
+      "error": null,
+      "preview": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"x.txt\",\"content\":\"hello\"}}"
+    }
+  ]
+}

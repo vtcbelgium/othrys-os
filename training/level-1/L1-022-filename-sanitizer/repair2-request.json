@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-022 HARD REPAIR after regression. REPLACE exactly training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs. Restore full declared contract: string only TypeError; NFC; remove ASCII controls; replace runs of \u003c\u003e:\"/\\\\|?* with hyphen; collapse whitespace to one space; collapse hyphens; trim; strip trailing dots/spaces; if result is empty OR consists only of hyphens then underscore; protect Windows reserved basenames CON PRN AUX NUL COM1..COM9 LPT1..LPT9 even with extension by prefix underscore; max 255 UTF-16 code units without ending on a high surrogate; re-strip trailing dots/spaces and fallback underscore. Must satisfy existing 9-test Talos suite. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-022",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  120,
+    "job_id":  "TRAIN-L1-022-003",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs"
+                      ]
+}

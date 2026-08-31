@@ -1,0 +1,9 @@
+import test from 'node:test'; import assert from 'node:assert/strict';
+import {mkdtemp,readFile,writeFile,access,mkdir} from 'node:fs/promises'; import {tmpdir} from 'node:os'; import {join,dirname} from 'node:path';
+import {createAtomicJsonFile} from '../src/index.mjs';
+const fresh=async()=>join(await mkdtemp(join(tmpdir(),'atomic-json-')),'state/data.json');
+test('missing read returns clone and does not write',async()=>{const p=await fresh(),s=createAtomicJsonFile(p,{missingValue:{x:[]}});const v=await s.read();v.x.push(1);assert.deepEqual(await s.read(),{x:[]});await assert.rejects(access(p));assert(Object.isFrozen(s));});
+test('replace persists compact JSON and restart reads',async()=>{const p=await fresh(),s=createAtomicJsonFile(p,{validate:v=>Array.isArray(v)});await s.replace([{id:'a'}]);assert.equal(await readFile(p,'utf8'),'[{"id":"a"}]');assert.deepEqual(await createAtomicJsonFile(p,{validate:Array.isArray}).read(),[{id:'a'}]);});
+test('invalid replacement never mutates',async()=>{const p=await fresh(),s=createAtomicJsonFile(p,{validate:v=>Array.isArray(v)});await s.replace([]);const before=await readFile(p,'utf8');await assert.rejects(s.replace({}),/INVALID_STATE/);assert.equal(await readFile(p,'utf8'),before);});
+test('corruption fails closed and preserves bytes',async()=>{const p=await fresh();await mkdir(dirname(p),{recursive:true});await writeFile(p,'{bad');const s=createAtomicJsonFile(p);await assert.rejects(s.read(),/STATE_CORRUPT/);assert.equal(await readFile(p,'utf8'),'{bad');});
+test('schema corruption fails closed',async()=>{const p=await fresh();await mkdir(dirname(p),{recursive:true});await writeFile(p,'{}');const s=createAtomicJsonFile(p,{validate:Array.isArray});await assert.rejects(s.read(),/STATE_CORRUPT/);assert.equal(await readFile(p,'utf8'),'{}');});

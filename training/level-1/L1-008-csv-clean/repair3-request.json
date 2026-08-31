@@ -1,0 +1,27 @@
+﻿{
+    "task":  "HARD REPAIR L1-008. WRITE the allowed file immediately; do not spend turns inspecting. Replace it entirely. Implement csvClean(input) with char-state variables rows,row,field,inQuotes,justClosed. For each char: inside quotes, doubled quote appends quote and skips next; single quote closes; all else appends including newline. Outside: quote allowed at field start enters quotes; comma pushes field; CRLF or LF pushes field+row; ordinary char appends. At EOF if inQuotes throw SyntaxError; push final field/row unless input ended with record ending. Serialize each field independently: if /[,\"\\r\\n]/ then double quotes and wrap. Join fields comma, rows newline. Empty input =\u003e empty. WRITE EXACTLY training/level-1/L1-008-csv-clean/csvClean.mjs, then finish. Touch nothing else.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-008",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  120,
+    "job_id":  "TRAIN-L1-008-004",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-008-csv-clean/csvClean.mjs"
+                      ]
+}

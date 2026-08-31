@@ -1,0 +1,26 @@
+﻿{
+    "schema_version":  "othrys.worker-request.v0.1",
+    "job_id":  "TRAIN-L1-004-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "task":  "OTHRYS TRAINING LEVEL 1 JOB L1-004. Create exactly training/level-1/L1-004-text-stats/textStats.mjs. Export function textStats(input). null/undefined =\u003e empty string else String(input). Return frozen plain object {chars,words,lines}. chars counts Unicode code points using Array.from(text).length. words is 0 for trimmed-empty else count of whitespace-separated tokens. lines is 0 for empty string else count after normalizing CRLF and CR to LF and splitting on LF. Deterministic, dependency-free, no I/O/network. Do not mutate anything. Re-read before finish. Touch no other file.",
+    "allowed_paths":  [
+                          "training/level-1/L1-004-text-stats/textStats.mjs"
+                      ],
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "timeout_sec":  90,
+    "metadata":  {
+                     "training_job":  "L1-004",
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_level":  1
+                 }
+}

@@ -1,0 +1,6 @@
+{
+ "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-013-REPAIR1","node_id":"legion","capability":"engineering.patch","workspace":"C:/Users/othry/Projects/othrys-v2",
+ "allowed_paths":["training/level-2/L2-013-import-export/stateTransfer.mjs"],"deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":120,
+ "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-013","forge_builder_id":"local.qwen3-coder-30b"},
+ "task":"HARD REPAIR L2-013. Replace exactly the allowed module now. Export createStateTransfer(filePath) frozen async API exportJson/importJson/read. Node ESM only with node:fs/promises, node:path dirname, node:crypto randomUUID. Missing state = {} with no write. Persisted malformed/scalar => STATE_CORRUPT. importJson malformed/scalar/non-string/unsafe keys __proto__,prototype,constructor recursively => INVALID_IMPORT and no disk mutation. Canonicalize recursively sorted object keys preserving array order. exportJson reads disk and returns compact canonical JSON. importJson atomically mkdir+same-directory unique temp+rename. read deep clone. No wall clock/network/deps. Touch nothing else."
+}

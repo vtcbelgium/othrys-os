@@ -1,0 +1,93 @@
+{
+  "schema": "othrys.harvest.master-index.v1",
+  "date": "2026-08-31",
+  "status": "EVIDENCE_ONLY",
+  "authority_granted": false,
+  "artifacts": [
+    {
+      "path": "docs/harvest/GREAT_ESTATE_HARVEST_2026-08-31.md",
+      "bytes": 9604,
+      "purpose": "GREAT ESTATE HARVEST 2026-08-31"
+    },
+    {
+      "path": "docs/harvest/VTC_CAPABILITY_QUARRY_2026-08-31.json",
+      "bytes": 19851,
+      "purpose": "VTC CAPABILITY QUARRY 2026-08-31"
+    },
+    {
+      "path": "docs/harvest/VTC_OFFICIAL_BLOCK_PRIORITY_2026-08-31.json",
+      "bytes": 10488,
+      "purpose": "VTC OFFICIAL BLOCK PRIORITY 2026-08-31"
+    },
+    {
+      "path": "docs/harvest/OLD_CODE_BLOB_CENSUS.json",
+      "bytes": 17023,
+      "purpose": "OLD CODE BLOB CENSUS"
+    },
+    {
+      "path": "docs/harvest/HISTORY_UNIQUE_ASSET_INDEX_2026-08-31.json",
+      "bytes": 214612,
+      "purpose": "HISTORY UNIQUE ASSET INDEX 2026-08-31"
+    },
+    {
+      "path": "docs/harvest/HISTORY_THEME_PACKETS_2026-08-31.json",
+      "bytes": 70436,
+      "purpose": "HISTORY THEME PACKETS 2026-08-31"
+    },
+    {
+      "path": "docs/harvest/ESTATE_ASSET_LEDGER_2026-08-31.json",
+      "bytes": 27017,
+      "purpose": "ESTATE ASSET LEDGER 2026-08-31"
+    },
+    {
+      "path": "docs/harvest/CURRENT_ESTATE_COVERAGE_2026-08-31.json",
+      "bytes": 988,
+      "purpose": "CURRENT ESTATE COVERAGE 2026-08-31"
+    },
+    {
+      "path": "docs/harvest/CURRENT_ESTATE_FILE_INDEX_2026-08-31.jsonl",
+      "bytes": 2277579,
+      "purpose": "CURRENT ESTATE FILE INDEX 2026-08-31"
+    },
+    {
+      "path": "docs/harvest/CURRENT_ESTATE_SYMBOL_INDEX_2026-08-31.jsonl",
+      "bytes": 1935526,
+      "purpose": "CURRENT ESTATE SYMBOL INDEX 2026-08-31"
+    },
+    {
+      "path": "docs/harvest/CROSS_REPO_EXACT_DUPLICATES_2026-08-31.json",
+      "bytes": 1914459,
+      "purpose": "CROSS REPO EXACT DUPLICATES 2026-08-31"
+    },
+    {
+      "path": "docs/harvest/DUPLICATE_TOPOLOGY_2026-08-31.json",
+      "bytes": 48738,
+      "purpose": "DUPLICATE TOPOLOGY 2026-08-31"
+    },
+    {
+      "path": "docs/harvest/CAPABILITY_CONNECTION_QUARRY_2026-08-31.json",
+      "bytes": 11281,
+      "purpose": "CAPABILITY CONNECTION QUARRY 2026-08-31"
+    },
+    {
+      "path": "docs/architecture/OFFICIAL_BLOCK_OROS_CONSTELLATION_MODEL.md",
+      "bytes": 8172,
+      "purpose": "OFFICIAL BLOCK OROS CONSTELLATION MODEL"
+    },
+    {
+      "path": "docs/architecture/BLOCK_ECOSYSTEM_MAP_2026-08-31.json",
+      "bytes": 3738,
+      "purpose": "BLOCK ECOSYSTEM MAP 2026-08-31"
+    }
+  ],
+  "headline_counts": {
+    "current_files_indexed": 11673,
+    "symbols_indexed": 14982,
+    "history_unique_assets": 610,
+    "cross_repo_duplicate_groups": 3788,
+    "vtc_quarry_records": 34,
+    "candidate_connection_edges": 39,
+    "candidate_star_domains": 12,
+    "curated_estate_assets": 16
+  }
+}

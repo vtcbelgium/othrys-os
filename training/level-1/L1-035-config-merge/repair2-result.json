@@ -1,0 +1,65 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-035-003",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": false,
+  "reason": "NO_ATTEMPT_MUTATION",
+  "started_at": 1788097690.8916802,
+  "completed_at": 1788097776.498792,
+  "duration_sec": 85.60711169242859,
+  "allowed_paths": [
+    "training/level-1/L1-035-config-merge/safeConfigMerge.mjs"
+  ],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-035-config-merge/safeConfigMerge.mjs\n+++ b/training/level-1/L1-035-config-merge/safeConfigMerge.mjs\n@@ -0,0 +1,69 @@\n+import { isPlain } from './helpers.js';\n+\n+function validateValue(value) {\n+  if (value === undefined || typeof value === 'function' || typeof value === 'symbol' || typeof value === 'bigint') {\n+    throw new TypeError('Invalid value type');\n+  }\n+  if (typeof value === 'number' && (!Number.isFinite(value))) {\n+    throw new RangeError('Non-finite number value');\n+  }\n+}\n+\n+function cloneValue(value) {\n+  if (value === null || !isPlain(value)) return value;\n+  if (Array.isArray(value)) {\n+    return value.map(cloneValue);\n+  }\n+  const cloned = Object.create(null);\n+  const keys = Object.keys(value).sort();\n+  for (const key of keys) {\n+    cloned[key] = cloneValue(value[key]);\n+  }\n+  return cloned;\n+}\n+\n+function mergeObjects(base, overlay) {\n+  if (!isPlain(base) || !isPlain(overlay)) {\n+    throw new RangeError('Both inputs must be plain objects');\n+  }\n+\n+  const result = Object.create(null);\n+  const allKeys = [...new Set([...Object.keys(base), ...Object.keys(overlay)])].sort();\n+\n+  for (const key of allKeys) {\n+    if (key === '__proto__' || key === 'prototype' || key === 'constructor') {\n+      throw new RangeError('Dangerous key detected');\n+    }\n+\n+    const baseValue = base[key];\n+    const overlayValue = overlay[key];\n+\n+    if (isPlain(baseValue) && isPlain(overlayValue)) {\n+      result[key] = mergeObjects(baseValue, overlayValue);\n+    } else if (overlayValue !== undefined) {\n+      result[key] = cloneValue(overlayValue);\n+    } else {\n+      result[key] = cloneValue(baseValue);\n+    }\n+  }\n+\n+  return result;\n+}\n+\n+function deepFreeze(obj) {\n+  if (obj === null || typeof obj !== 'object') return obj;\n+  Object.freeze(obj);\n+  for (const key of Object.keys(obj)) {\n+    deepFreeze(obj[key]);\n+  }\n+  return obj;\n+}\n+\n+export function safeConfigMerge(base, overlay) {\n+  if (!isPlain(base) || !isPlain(overlay)) {\n+    throw new RangeError('Both inputs must be plain objects');\n+  }\n+\n+  const merged = mergeObjects(base, overlay);\n+  return deepFreeze(merged);\n+}",
+  "git_status": "",
+  "summary": "tool turn limit (36) reached; proposed diff collected from workspace mutations",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-035-config-merge/safeConfigMerge.mjs\n+++ b/training/level-1/L1-035-config-merge/safeConfigMerge.mjs\n@@ -0,0 +1,69 @@\n+import { isPlain } from './helpers.js';\n+\n+function validateValue(value) {\n+  if (value === undefined || typeof value === 'function' || typeof value === 'symbol' || typeof value === 'bigint') {\n+    throw new TypeError('Invalid value type');\n+  }\n+  if (typeof value === 'number' && (!Number.isFinite(value))) {\n+    throw new RangeError('Non-finite number value');\n+  }\n+}\n+\n+function cloneValue(value) {\n+  if (value === null || !isPlain(value)) return value;\n+  if (Array.isArray(value)) {\n+    return value.map(cloneValue);\n+  }\n+  const cloned = Object.create(null);\n+  const keys = Object.keys(value).sort();\n+  for (const key of keys) {\n+    cloned[key] = cloneValue(value[key]);\n+  }\n+  return cloned;\n+}\n+\n+function mergeObjects(base, overlay) {\n+  if (!isPlain(base) || !isPlain(overlay)) {\n+    throw new RangeError('Both inputs must be plain objects');\n+  }\n+\n+  const result = Object.create(null);\n+  const allKeys = [...new Set([...Object.keys(base), ...Object.keys(overlay)])].sort();\n+\n+  for (const key of allKeys) {\n+    if (key === '__proto__' || key === 'prototype' || key === 'constructor') {\n+      throw new RangeError('Dangerous key detected');\n+    }\n+\n+    const baseValue = base[key];\n+    const overlayValue = overlay[key];\n+\n+    if (isPlain(baseValue) && isPlain(overlayValue)) {\n+      result[key] = mergeObjects(baseValue, overlayValue);\n+    } else if (overlayValue !== undefined) {\n+      result[key] = cloneValue(overlayValue);\n+    } else {\n+      result[key] = cloneValue(baseValue);\n+    }\n+  }\n+\n+  return result;\n+}\n+\n+function deepFreeze(obj) {\n+  if (obj === null || typeof obj !== 'object') return obj;\n+  Object.freeze(obj);\n+  for (const key of Object.keys(obj)) {\n+    deepFreeze(obj[key]);\n+  }\n+  return obj;\n+}\n+\n+export function safeConfigMerge(base, overlay) {\n+  if (!isPlain(base) || !isPlain(overlay)) {\n+    throw new RangeError('Both inputs must be plain objects');\n+  }\n+\n+  const merged = mergeObjects(base, overlay);\n+  return deepFreeze(merged);\n+}",
+    "git_status": "",
+    "tool_trace": [],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6208",
+      "utilization_pct": "9",
+      "temperature_c": "45",
+      "power_w": "6.80"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6468",
+      "utilization_pct": "1",
+      "temperature_c": "56",
+      "power_w": "13.18"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

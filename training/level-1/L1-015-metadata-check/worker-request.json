@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-015. Create exactly training/level-1/L1-015-metadata-check/checkMetadata.mjs. Export checkMetadata(metadata, schema). metadata and schema plain objects. schema values are rule objects {required?:boolean,type?:\"string\"|\"number\"|\"boolean\"|\"array\"|\"object\",minLength?:nonnegative integer,maxLength?:nonnegative integer,pattern?:string}. Unknown metadata fields allowed. Return frozen {valid:boolean,missing:frozen string[],invalid:frozen array of frozen {field,reason}}. Missing means required field absent or null/undefined. Invalid checks type, string/array length, regex pattern on string. Deterministic field order follows Object.keys(schema). Bad schema/rules throw TypeError/RangeError. Never mutate inputs. No deps/I/O/network. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-015",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-015-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-015-metadata-check/checkMetadata.mjs"
+                      ]
+}

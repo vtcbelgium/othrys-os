@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-009. Stock exists immediately adjacent: blocks/data/csv-clean is a TRAINING_CANDIDATE but do not modify/import it; reuse its proven CSV state-machine design concept. Create exactly training/level-1/L1-009-csv-json/csvJson.mjs. Export csvToJson(input) and jsonToCsv(records). CSV first row is headers; parse RFC4180-style quoted comma, doubled quote, embedded CR/LF; normalize CRLF. csvToJson returns array of frozen plain record objects, strings only; duplicate headers throw RangeError; row field-count mismatch throws RangeError; empty input returns []. jsonToCsv accepts array of plain objects; empty array returns \u0027; header order is Object.keys(first record); every later record must have exactly same keys in same set or RangeError; null/undefined serialize empty, all other values String(value); quote fields independently when comma/quote/CR/LF, double quotes; output LF no trailing newline. Deterministic, no I/O/network. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-009",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-009-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-009-csv-json/csvJson.mjs"
+                      ]
+}

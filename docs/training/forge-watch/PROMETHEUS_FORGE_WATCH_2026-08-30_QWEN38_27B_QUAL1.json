@@ -1,0 +1,10 @@
+{
+  "schema":"othrys.prometheus.forge-watch-qualification.v1","date":"2026-08-30","candidate":"local.qwen3.8-27b","model":"qwen3.8:27b","vendor":"Qwen / Alibaba","provider":"Ollama local",
+  "discovery":{"newAgainstRoster":true,"released":"2026-08-14","sources":["https://github.com/QwenLM/Qwen3.8","https://ollama.com/library/qwen3.8"],"license":"Apache-2.0","cost":"ZERO/local","secretBoundary":"PASS_LOCAL_NO_PROVIDER_SECRET"},
+  "availability":{"installed":true,"endpointAvailable":true,"ollamaDigest":"22130167c4c2","quantSize":"18GB","observedPlacement":"75% CPU / 25% GPU"},
+  "builderOlympics":{"protocol":true,"repair":true,"repoSemantic":true,"repoStrictProtocol":false,"tools":true,"candidate":true,"note":"Direct REPO event added a markdown fence; actual marker-protocol worker qualification produced valid tool calls."},
+  "workerQualification":{"ok":true,"durationSec":19.121330499649048,"changedFiles":["training/forge-qualification/local_qwen3_8-27b/candidate.mjs"],"outOfScope":[]},
+  "talos":{"behaviorPass":true,"tests":5,"fail":0},
+  "admission":{"admitted":true,"forge":"forge.code.local","readiness":"QUALIFIED_LOCAL_HEAVY","executionAllowed":true,"authorityGranted":false,"automaticPaidUsage":false},
+  "laws":{"benchmarksDoNotGrantAuthority":true,"qualificationRequired":true,"operatorAuthorityUnchanged":true}
+}

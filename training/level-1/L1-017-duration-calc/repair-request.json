@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-017 TALOS REPAIR. WRITE exactly training/level-1/L1-017-duration-calc/durationCalc.mjs. First build 6/7. Fix sign only: if milliseconds===0 sign must be 0; positive 1; negative -1. Preserve all other passing behavior. Minimal edit, touch nothing else.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-017",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-017-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-017-duration-calc/durationCalc.mjs"
+                      ]
+}

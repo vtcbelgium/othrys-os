@@ -1,0 +1,26 @@
+﻿{
+    "schema_version":  "othrys.worker-request.v0.1",
+    "job_id":  "TRAIN-L1-004-003",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-004 FRESH REBUILD. Create exactly training/level-1/L1-004-text-stats/textStats.mjs. Export textStats(input). null/undefined are treated as empty text, NOT returned directly. Always return Object.freeze({chars,words,lines}). chars counts Unicode code points with Array.from. words is zero for trimmed empty, otherwise whitespace token count. lines is zero for empty else normalize CRLF/CR to LF and count lines. Deterministic, dependency-free. Re-read before finish. Touch no other file.",
+    "allowed_paths":  [
+                          "training/level-1/L1-004-text-stats/textStats.mjs"
+                      ],
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "timeout_sec":  90,
+    "metadata":  {
+                     "training_job":  "L1-004",
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_level":  1
+                 }
+}

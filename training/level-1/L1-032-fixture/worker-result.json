@@ -1,0 +1,28 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "UNKNOWN",
+  "node_id": "legion",
+  "capability": "UNKNOWN",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "qwen3-builder",
+  "ok": false,
+  "reason": "FileNotFoundError(2, 'No such file or directory')",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\othry\\Projects\\othrys-v2\\runtime\\workers\\legion_qwen_worker_v01.py\", line 398, in main\n    req = json.loads(req_path.read_text(encoding=\"utf-8-sig\"))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\othry\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pathlib.py\", line 1058, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\othry\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\pathlib.py\", line 1044, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\othry\\\\Projects\\\\othrys-v2\\\\training\\\\level-1\\\\L1-032-fixture\\\\worker-request.json'\n",
+  "completed_at": 1788096784.6105697,
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6250",
+      "utilization_pct": "0",
+      "temperature_c": "41",
+      "power_w": "5.28"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       28 minutes from now"
+  }
+}

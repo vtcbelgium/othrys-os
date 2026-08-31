@@ -1,0 +1,77 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L2-005",
+  "level": 2,
+  "title": "Contact store",
+  "family": "crud",
+  "contract": "CRUD commands -> durable contact collection",
+  "stockCheck": {
+    "decision": "ADAPT_PROVEN_CRUD_PATTERN",
+    "reused": [
+      "L2-001 persistence",
+      "L2-003 collection validation",
+      "L2-004 CRUD structure"
+    ]
+  },
+  "buildAttempts": [
+    {
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "durationSec": 28.377864599227905,
+      "talos": "PARSE_FAIL",
+      "failure": "DENO_AND_DUPLICATE_DEEPCLONE_DECLARATION"
+    },
+    {
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "durationSec": 16.78079652786255,
+      "talos": "CONTRACT_FAIL",
+      "failure": "WRONG_API_FIXED_PATH_NO_VALIDATION"
+    },
+    {
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "durationSec": null,
+      "talos": "NO_RESULT",
+      "failure": "WORKER_TIMEOUT"
+    },
+    {
+      "builder": "operator-bounded",
+      "ok": true,
+      "durationSec": null,
+      "talos": "PASS_8_OF_8",
+      "failure": null
+    }
+  ],
+  "talos": {
+    "tests": 8,
+    "pass": 8,
+    "fail": 0,
+    "independent": true
+  },
+  "blockDisposition": {
+    "id": "block.state.contact-store",
+    "status": "TRAINING_CANDIDATE",
+    "autoAdmitted": false
+  },
+  "nextJob": "L2-006",
+  "organs": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "learningDataClass": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "learningMayGrantAuthority": false,
+  "authorityGranted": false,
+  "lessons": [
+    "first build incorrectly used Deno and a nonexistent helper import",
+    "bounded repair mutated to wrong API and ignored filePath contract",
+    "heavy repair timed out without producing evidence",
+    "operator recovery after governed repair exhaustion is capability debt"
+  ]
+}

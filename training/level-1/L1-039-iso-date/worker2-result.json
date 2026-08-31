@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-039-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788098587.421603,
+  "completed_at": 1788098600.0728629,
+  "duration_sec": 12.651259899139404,
+  "allowed_paths": [
+    "training/level-1/L1-039-iso-date/normalizeIsoDate.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-039-iso-date/normalizeIsoDate.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-039-iso-date/normalizeIsoDate.mjs\n+++ b/training/level-1/L1-039-iso-date/normalizeIsoDate.mjs\n@@ -0,0 +1,46 @@\n+function normalizeIsoDate(input) {\n+  if (typeof input !== 'string' && !(input instanceof Date)) {\n+    throw new TypeError('Expected Date object or string');\n+  }\n+\n+  let date;\n+  if (input instanceof Date) {\n+    if (isNaN(input.getTime())) {\n+      throw new RangeError('Invalid Date object');\n+    }\n+    date = input;\n+  } else {\n+    const str = input.trim();\n+    const isoRegex = /^(\\d{4})-(\\d{2})-(\\d{2})([T ])(\\d{2}):(\\d{2}):(\\d{2})(\\.\\d{3})(Z|[+-]\\d{2}:?\\d{2})$/;\n+    const match = str.match(isoRegex);\n+\n+    if (!match) {\n+      throw new RangeError('Invalid date string format');\n+    }\n+\n+    const [, year, month, day, separator, hour, minute, second, ms, tz] = match;\n+    const m = parseInt(month, 10) - 1;\n+    const d = parseInt(day, 10);\n+    const y = parseInt(year, 10);\n+    const h = parseInt(hour, 10);\n+    const mi = parseInt(minute, 10);\n+    const s = parseInt(second, 10);\n+\n+    if (m < 0 || m > 11 || d < 1 || d > 31 || h < 0 || h > 23 || mi < 0 || mi > 59 || s < 0 || s > 59) {\n+      throw new RangeError('Invalid date components');\n+    }\n+\n+    const testDate = new Date(Date.UTC(y, m, d, h, mi, s));\n+    if (testDate.getUTCFullYear() !== y || testDate.getUTCMonth() !== m || testDate.getUTCDate() !== d) {\n+      throw new RangeError('Invalid Gregorian date');\n+    }\n+\n+    const timePart = `${h}:${mi}:${s}.${ms}`;\n+    const tzPart = tz === 'Z' ? 'Z' : tz.replace(' ', ':');\n+    date = new Date(Date.UTC(y, m, d, h, mi, s));\n+  }\n+\n+  return date.toISOString();\n+}\n+\n+export { normalizeIsoDate };",
+  "git_status": "training/level-1/L1-039-iso-date/normalizeIsoDate.mjs",
+  "summary": "Created training/level-1/L1-039-iso-date/normalizeIsoDate.mjs with normalizeIsoDate function that accepts Date objects or valid ISO strings (YYYY-MM-DD or with explicit Z/offset), validates Gregorian dates, normalizes to ISO format, and throws appropriate errors for invalid inputs.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-039-iso-date/normalizeIsoDate.mjs\n+++ b/training/level-1/L1-039-iso-date/normalizeIsoDate.mjs\n@@ -0,0 +1,46 @@\n+function normalizeIsoDate(input) {\n+  if (typeof input !== 'string' && !(input instanceof Date)) {\n+    throw new TypeError('Expected Date object or string');\n+  }\n+\n+  let date;\n+  if (input instanceof Date) {\n+    if (isNaN(input.getTime())) {\n+      throw new RangeError('Invalid Date object');\n+    }\n+    date = input;\n+  } else {\n+    const str = input.trim();\n+    const isoRegex = /^(\\d{4})-(\\d{2})-(\\d{2})([T ])(\\d{2}):(\\d{2}):(\\d{2})(\\.\\d{3})(Z|[+-]\\d{2}:?\\d{2})$/;\n+    const match = str.match(isoRegex);\n+\n+    if (!match) {\n+      throw new RangeError('Invalid date string format');\n+    }\n+\n+    const [, year, month, day, separator, hour, minute, second, ms, tz] = match;\n+    const m = parseInt(month, 10) - 1;\n+    const d = parseInt(day, 10);\n+    const y = parseInt(year, 10);\n+    const h = parseInt(hour, 10);\n+    const mi = parseInt(minute, 10);\n+    const s = parseInt(second, 10);\n+\n+    if (m < 0 || m > 11 || d < 1 || d > 31 || h < 0 || h > 23 || mi < 0 || mi > 59 || s < 0 || s > 59) {\n+      throw new RangeError('Invalid date components');\n+    }\n+\n+    const testDate = new Date(Date.UTC(y, m, d, h, mi, s));\n+    if (testDate.getUTCFullYear() !== y || testDate.getUTCMonth() !== m || testDate.getUTCDate() !== d) {\n+      throw new RangeError('Invalid Gregorian date');\n+    }\n+\n+    const timePart = `${h}:${mi}:${s}.${ms}`;\n+    const tzPart = tz === 'Z' ? 'Z' : tz.replace(' ', ':');\n+    date = new Date(Date.UTC(y, m, d, h, mi, s));\n+  }\n+\n+  return date.toISOString();\n+}\n+\n+export { normalizeIsoDate };",
+    "git_status": "training/level-1/L1-039-iso-date/normalizeIsoDate.mjs",
+    "tool_trace": [
+      "write_file: wrote 1496 chars to training/level-1/L1-039-iso-date/normalizeIsoDate.mjs",
+      "finish: Created training/level-1/L1-039-iso-date/normalizeIsoDate.mjs with normalizeIsoDate function that accepts Date objects or valid ISO strings (YYYY-MM-DD or with explicit Z/offset), validates Gregorian dates, normalizes to ISO format, and throws appropriate errors for invalid inputs."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-039-iso-date/normalizeIsoDate.mjs\", \"content\": \"function normalizeIsoDate(input) {\\n  if (typeof input !== 'string' && !(input instanceof Date)) {\\n    throw new TypeError('Expected Date object or string');\\n  ",
+        "raw_suffix": "nts');\\n    }\\n\\n    const testDate = new Date(Date.UTC(y, m, d, h, mi, s));\\n    if (testDate.getUTCFullYear() !== y || testDate.getUTCMonth() !== m || testDate.getUTCDate() !== d) {\\n      throw new RangeError('Invalid Gregorian date');\\n    }\\n\\n    const timePart = `${h}:${mi}:${s}.${ms}`;\\n    const tzPart = tz === 'Z' ? 'Z' : tz.replace(' ', ':');\\n    date = new Date(Date.UTC(y, m, d, h, mi, s));\\n  }\\n\\n  return date.toISOString();\\n}\\n\\nexport { normalizeIsoDate };\"}",
+        "raw_length": 1631,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1496
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/level-1/L1-039-iso-date/normalizeIsoDate.mjs with normalizeIsoDate function that accepts Date objects or valid ISO strings (YYYY-MM-DD or with explicit Z/offset), validates Gregorian dates, normalizes to ISO fo",
+        "raw_suffix": "{\"summary\": \"Created training/level-1/L1-039-iso-date/normalizeIsoDate.mjs with normalizeIsoDate function that accepts Date objects or valid ISO strings (YYYY-MM-DD or with explicit Z/offset), validates Gregorian dates, normalizes to ISO format, and throws appropriate errors for invalid inputs.\"}",
+        "raw_length": 297,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6466",
+      "utilization_pct": "5",
+      "temperature_c": "41",
+      "power_w": "5.62"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6466",
+      "utilization_pct": "1",
+      "temperature_c": "51",
+      "power_w": "13.32"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

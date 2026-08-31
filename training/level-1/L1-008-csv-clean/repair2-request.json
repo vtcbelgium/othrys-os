@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING L1-008 HARD REPAIR after incumbent failed to mutate. Read and REPLACE exactly training/level-1/L1-008-csv-clean/csvClean.mjs with a small deterministic state-machine parser plus serializer. Required tests: CRLF normalization; spaces preserved; quoted comma remains one field; doubled quote decodes and re-encodes; newline inside quotes preserved; empty input empty; EOF inside quote throws SyntaxError. Parse character-by-character, not split lines. Serializer quotes each field independently only if it contains comma/quote/CR/LF and doubles quotes. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-008",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-008-003",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-008-csv-clean/csvClean.mjs"
+                      ]
+}

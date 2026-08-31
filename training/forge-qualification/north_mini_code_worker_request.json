@@ -1,0 +1,12 @@
+{
+  "schema_version":"othrys.worker-request.v0.1",
+  "job_id":"FORGE-QUAL-local.north-mini-code-1.0-R1",
+  "node_id":"legion",
+  "capability":"engineering.patch",
+  "workspace":"C:/Users/othry/Projects/othrys-v2",
+  "task":"Hephaestus Forge qualification. Create exactly training/forge-qualification/local_north-mini-code-1.0/candidate.mjs and no other file. Export function clamp(n,min,max) returning n bounded inclusively between min and max. JavaScript ESM only; no dependencies, filesystem, network, markdown or prose. Finish only after the exact file exists.",
+  "allowed_paths":["training/forge-qualification/local_north-mini-code-1.0/candidate.mjs"],
+  "deny_paths":[".git",".othrys","missions","runtime","blocks","docs"],
+  "timeout_sec":180,
+  "metadata":{"mission_id":"V2-011K","forge_builder_id":"local.north-mini-code-1.0","forge_qualification":true,"authorityGranted":false}
+}

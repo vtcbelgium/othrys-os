@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-016. Create exactly training/level-1/L1-016-unit-converter/convertUnit.mjs. Export convertUnit(value,from,to). value finite number. Support length units mm cm m km in ft yd mi; mass mg g kg oz lb; temperature C F K. Unit names case-sensitive exactly as listed. Cross-dimension conversion throws RangeError. Length/mass use exact conversion factors through SI base; temperature use affine formulas. Invalid unit RangeError, nonfinite/nonnumber TypeError. Return finite Number, normalize -0 to 0. Deterministic dependency-free no I/O/network. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-016",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-016-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-016-unit-converter/convertUnit.mjs"
+                      ]
+}

@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-022. Stock preflight found no direct reusable filename primitive, so build atomic. Create exactly training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs. Export sanitizeFilename(input). Require string else TypeError. Normalize Unicode NFC. Remove ASCII control chars 0x00-0x1F and 0x7F. Replace each run of Windows/path reserved chars \u003c \u003e : \" / \\\\ | ? * with hyphen. Collapse whitespace runs to single space; collapse repeated hyphens; trim; strip trailing dots/spaces. Empty result =\u003e underscore. Protect Windows reserved basenames case-insensitively CON PRN AUX NUL COM1..COM9 LPT1..LPT9 even with extension by prefix underscore. Preserve extension/text otherwise. Max 255 UTF-16 code units by truncating safely without ending high surrogate, then strip trailing dots/spaces; fallback underscore. Deterministic no I/O/network/deps. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-022",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-022-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-022-filename-sanitizer/sanitizeFilename.mjs"
+                      ]
+}

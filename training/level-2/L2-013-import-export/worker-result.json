@@ -1,0 +1,110 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L2-013-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3-8b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788115230.9165194,
+  "completed_at": 1788115251.4153297,
+  "duration_sec": 20.498810291290283,
+  "allowed_paths": [
+    "training/level-2/L2-013-import-export/stateTransfer.mjs"
+  ],
+  "changed_files": [
+    "training/level-2/L2-013-import-export/stateTransfer.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-2/L2-013-import-export/stateTransfer.mjs\n+++ b/training/level-2/L2-013-import-export/stateTransfer.mjs\n@@ -0,0 +1,99 @@\n+// State transfer module\n+\n+export function createStateTransfer(filePath) {\n+  return {\n+    exportJson(state) {\n+      try {\n+        if (typeof state !== 'object' || state === null) {\n+          return '{}';\n+        }\n+\n+        // Recursively sort object keys lexically\n+        const sortedState = JSON.parse(JSON.stringify(state, (key, value) => {\n+          if (typeof value === 'object' && value !== null) {\n+            return Object.keys(value).sort().reduce((acc, key) => {\n+              acc[key] = value[key];\n+              return acc;\n+            }, {});\n+          }\n+          return value;\n+        }));\n+\n+        // Compact deterministic JSON\n+        return JSON.stringify(sortedState, null, 0);\n+      } catch (e) {\n+        return '{}';\n+      }\n+    },\n+\n+    importJson(text) {\n+      try {\n+        const parsed = JSON.parse(text);\n+\n+        // Check if parsed is an object or array\n+        if (typeof parsed !== 'object' || parsed === null) {\n+          throw new Error('INVALID_IMPORT');\n+        }\n+\n+        // Check for unsafe keys\n+        if (Object.keys(parsed).some(key => ['__proto__', 'prototype', 'constructor'].includes(key))) {\n+          throw new Error('INVALID_IMPORT');\n+        }\n+\n+        // Recursively sort object keys\n+        const canonicalized = JSON.parse(JSON.stringify(parsed, (key, value) => {\n+          if (typeof value === 'object' && value !== null) {\n+            return Object.keys(value).sort().reduce((acc, key) => {\n+              acc[key] = value[key];\n+              return acc;\n+            }, {});\n+          }\n+          return value;\n+        }));\n+\n+        // Write to file\n+        const tempFilePath = filePath + '.tmp';\n+        const dir = path.dirname(tempFilePath);\n+        if (!fs.existsSync(dir)) {\n+          fs.mkdirSync(dir, { recursive: true });\n+        }\n+\n+        fs.writeFileSync(tempFilePath, JSON.stringify(canonicalized, null, 0));\n+        fs.renameSync(tempFilePath, filePath);\n+\n+        return JSON.parse(JSON.stringify(canonicalized));\n+      } catch (e) {\n+        if (e.message === 'INVALID_IMPORT') {\n+          throw new Error('INVALID_IMPORT');\n+        }\n+        throw new Error('STATE_CORRUPT');\n+      }\n+    },\n+\n+    read() {\n+      try {\n+        const data = fs.readFileSync(filePath, 'utf-8');\n+        const parsed = JSON.parse(data);\n+\n+        // Check if parsed is an object or array\n+        if (typeof parsed !== 'object' || parsed === null) {\n+          return {};\n+        }\n+\n+        // Check for unsafe keys\n+        if (Object.keys(parsed).some(key => ['__proto__', 'prototype', 'constructor'].includes(key))) {\n+          return {};\n+        }\n+\n+        // Return deep clone\n+        return JSON.parse(JSON.stringify(parsed));\n+      } catch (e) {\n+        return {};\n+      }\n+    }\n+  };\n+}\n+\n+// Ensure Node ESM stdlib only\n+import { fs, path } from 'node:fs';\n+import { path } from 'node:path';\n",
+  "git_status": "training/level-2/L2-013-import-export/stateTransfer.mjs",
+  "summary": "Created training/level-2/L2-013-import-export/stateTransfer.mjs with createStateTransfer function implementing exportJson, importJson, and read methods as specified.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-2/L2-013-import-export/stateTransfer.mjs\n+++ b/training/level-2/L2-013-import-export/stateTransfer.mjs\n@@ -0,0 +1,99 @@\n+// State transfer module\n+\n+export function createStateTransfer(filePath) {\n+  return {\n+    exportJson(state) {\n+      try {\n+        if (typeof state !== 'object' || state === null) {\n+          return '{}';\n+        }\n+\n+        // Recursively sort object keys lexically\n+        const sortedState = JSON.parse(JSON.stringify(state, (key, value) => {\n+          if (typeof value === 'object' && value !== null) {\n+            return Object.keys(value).sort().reduce((acc, key) => {\n+              acc[key] = value[key];\n+              return acc;\n+            }, {});\n+          }\n+          return value;\n+        }));\n+\n+        // Compact deterministic JSON\n+        return JSON.stringify(sortedState, null, 0);\n+      } catch (e) {\n+        return '{}';\n+      }\n+    },\n+\n+    importJson(text) {\n+      try {\n+        const parsed = JSON.parse(text);\n+\n+        // Check if parsed is an object or array\n+        if (typeof parsed !== 'object' || parsed === null) {\n+          throw new Error('INVALID_IMPORT');\n+        }\n+\n+        // Check for unsafe keys\n+        if (Object.keys(parsed).some(key => ['__proto__', 'prototype', 'constructor'].includes(key))) {\n+          throw new Error('INVALID_IMPORT');\n+        }\n+\n+        // Recursively sort object keys\n+        const canonicalized = JSON.parse(JSON.stringify(parsed, (key, value) => {\n+          if (typeof value === 'object' && value !== null) {\n+            return Object.keys(value).sort().reduce((acc, key) => {\n+              acc[key] = value[key];\n+              return acc;\n+            }, {});\n+          }\n+          return value;\n+        }));\n+\n+        // Write to file\n+        const tempFilePath = filePath + '.tmp';\n+        const dir = path.dirname(tempFilePath);\n+        if (!fs.existsSync(dir)) {\n+          fs.mkdirSync(dir, { recursive: true });\n+        }\n+\n+        fs.writeFileSync(tempFilePath, JSON.stringify(canonicalized, null, 0));\n+        fs.renameSync(tempFilePath, filePath);\n+\n+        return JSON.parse(JSON.stringify(canonicalized));\n+      } catch (e) {\n+        if (e.message === 'INVALID_IMPORT') {\n+          throw new Error('INVALID_IMPORT');\n+        }\n+        throw new Error('STATE_CORRUPT');\n+      }\n+    },\n+\n+    read() {\n+      try {\n+        const data = fs.readFileSync(filePath, 'utf-8');\n+        const parsed = JSON.parse(data);\n+\n+        // Check if parsed is an object or array\n+        if (typeof parsed !== 'object' || parsed === null) {\n+          return {};\n+        }\n+\n+        // Check for unsafe keys\n+        if (Object.keys(parsed).some(key => ['__proto__', 'prototype', 'constructor'].includes(key))) {\n+          return {};\n+        }\n+\n+        // Return deep clone\n+        return JSON.parse(JSON.stringify(parsed));\n+      } catch (e) {\n+        return {};\n+      }\n+    }\n+  };\n+}\n+\n+// Ensure Node ESM stdlib only\n+import { fs, path } from 'node:fs';\n+import { path } from 'node:path';\n",
+    "git_status": "training/level-2/L2-013-import-export/stateTransfer.mjs",
+    "tool_trace": [
+      "write_file: wrote 0 chars to training/level-2/L2-013-import-export/stateTransfer.mjs",
+      "write_file: wrote 2832 chars to training/level-2/L2-013-import-export/stateTransfer.mjs",
+      "finish: Created training/level-2/L2-013-import-export/stateTransfer.mjs with createStateTransfer function implementing exportJson, importJson, and read methods as specified."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-2/L2-013-import-export/stateTransfer.mjs\",\"content\":\"\"}",
+        "raw_suffix": "{\"path\":\"training/level-2/L2-013-import-export/stateTransfer.mjs\",\"content\":\"\"}",
+        "raw_length": 79,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "write_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-2/L2-013-import-export/stateTransfer.mjs\",\"content\":\"// State transfer module\\n\\nexport function createStateTransfer(filePath) {\\n  return {\\n    exportJson(state) {\\n      try {\\n        if (typeof state !== 'object",
+        "raw_suffix": "d === null) {\\n          return {};\\n        }\\n\\n        // Check for unsafe keys\\n        if (Object.keys(parsed).some(key => ['__proto__', 'prototype', 'constructor'].includes(key))) {\\n          return {};\\n        }\\n\\n        // Return deep clone\\n        return JSON.parse(JSON.stringify(parsed));\\n      } catch (e) {\\n        return {};\\n      }\\n    }\\n  };\\n}\\n\\n// Ensure Node ESM stdlib only\\nimport { fs, path } from 'node:fs';\\nimport { path } from 'node:path';\\n\"}",
+        "raw_length": 3010,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 2832
+      },
+      {
+        "name": "finish",
+        "argument_type": "str",
+        "raw_prefix": "{\"summary\":\"Created training/level-2/L2-013-import-export/stateTransfer.mjs with createStateTransfer function implementing exportJson, importJson, and read methods as specified.\"}",
+        "raw_suffix": "{\"summary\":\"Created training/level-2/L2-013-import-export/stateTransfer.mjs with createStateTransfer function implementing exportJson, importJson, and read methods as specified.\"}",
+        "raw_length": 179,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3-8b",
+    "model": "qwen3:8b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "7",
+      "temperature_c": "41",
+      "power_w": "6.61"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      25 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "1",
+      "temperature_c": "53",
+      "power_w": "13.18"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

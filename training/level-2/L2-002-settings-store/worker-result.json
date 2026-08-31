@@ -1,0 +1,93 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L2-002-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788100985.2555974,
+  "completed_at": 1788101009.7628539,
+  "duration_sec": 24.507256507873535,
+  "allowed_paths": [
+    "training/level-2/L2-002-settings-store/settingsStore.mjs"
+  ],
+  "changed_files": [
+    "training/level-2/L2-002-settings-store/settingsStore.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-2/L2-002-settings-store/settingsStore.mjs\n+++ b/training/level-2/L2-002-settings-store/settingsStore.mjs\n@@ -0,0 +1,136 @@\n+// OTHRYSL2-002: Settings Store\n+// Export createSettingsStore(filePath, defaults)\n+// Node ESM stdlib only\n+// defaults must be a plain JSON-safe object and is never mutated.\n+// Return frozen API {get, set, all, reset, resetAll}\n+\n+// Missing override file means {} and read calls must not write.\n+// Existing malformed JSON/non-object/array, unknown override keys, or override values whose broad type differs from the corresponding default must throw Error('STATE_CORRUPT') and mutations must not overwrite it.\n+// Allowed keys are exactly Object.keys(defaults).\n+// Type classes: array, null, string, number(finite), boolean, object(plain);\n+// set unknown key => Error('UNKNOWN_SETTING'), type mismatch/non-JSON/cycle => Error('SETTING_TYPE')\n+// get/all return deep clones so caller mutation cannot mutate defaults or persisted state.\n+// set persists only overrides, not merged defaults.\n+// reset(key) deletes that override and persists; resetAll persists {}.\n+// All mutations atomically mkdir dirname, write UTF8 JSON to unique same-directory temp, rename, cleanup temp on failure.\n+// Deterministic, no network/deps/secrets.\n+// Touch no other file.\n+\n+import { existsSync, mkdirSync, writeFileSync, renameSync, rmSync } from 'fs';\n+import { join } from 'path';\n+import { deepClone } from 'util';\n+\n+export function createSettingsStore(filePath, defaults) {\n+  const allowedKeys = Object.keys(defaults);\n+  const defaultValues = Object.fromEntries(allowedKeys.map(key => [key, defaults[key]]));\n+  const defaultTypeMap = Object.fromEntries(allowedKeys.map(key => [key, typeof defaults[key]]));\n+  const defaultDeepClone = deepClone(defaultValues);\n+  const defaultDeepCloneTypeMap = deepClone(defaultTypeMap);\n+\n+  function validateValue(key, value) {\n+    if (!allowedKeys.includes(key)) {\n+      throw new Error('UNKNOWN_SETTING');\n+    }\n+    const expectedType = defaultTypeMap[key];\n+    if (value === null) {\n+      if (expectedType !== 'object' && expectedType !== 'null') {\n+        throw new Error('SETTING_TYPE');\n+      }\n+    } else if (typeof value === 'object' && value !== null) {\n+      if (expectedType !== 'object') {\n+        throw new Error('SETTING_TYPE');\n+      }\n+      // Check if the value is a plain object\n+      if (Object.getPrototypeOf(value) !== Object.prototype) {\n+        throw new Error('SETTING_TYPE');\n+      }\n+    } else if (typeof value === 'number') {\n+      if (Number.isNaN(value)) {\n+        throw new Error('SETTING_TYPE');\n+      }\n+      if (expectedType !== 'number') {\n+        throw new Error('SETTING_TYPE');\n+      }\n+    } else if (typeof value === 'string') {\n+      if (expectedType !== 'string') {\n+        throw new Error('SETTING_TYPE');\n+      }\n+    } else if (typeof value === 'boolean') {\n+      if (expectedType !== 'boolean') {\n+        throw new Error('SETTING_TYPE');\n+      }\n+    } else {\n+      if (expectedType !== 'undefined') {\n+        throw new Error('SETTING_TYPE');\n+      }\n+    }\n+  }\n+\n+  function readState() {\n+    if (!existsSync(filePath)) {\n+      return defaultDeepClone;\n+    }\n+    try {\n+      const fileContent = readFileSync(filePath, 'utf-8');\n+      const parsedContent = JSON.parse(fileContent);\n+      const clonedParsedContent = deepClone(parsedContent);\n+      return clonedParsedContent;\n+    } catch (error) {\n+      if (error instanceof SyntaxError) {\n+        throw new Error('STATE_CORRUPT');\n+      }\n+      throw error;\n+    }\n+  }\n+\n+  function writeState(state) {\n+    const dirPath = join(...filePath.split('/').slice(0, -1));\n+    if (!existsSync(dirPath)) {\n+      mkdirSync(dirPath, { recursive: true });\n+    }\n+    const tempFilePath = filePath + '.tmp';\n+    try {\n+      writeFileSync(tempFilePath, JSON.stringify(state, null, 2), 'utf-8');\n+      renameSync(tempFilePath, filePath);\n+    } catch (error) {\n+      rmSync(tempFilePath, { force: true });\n+      throw error;\n+    }\n+  }\n+\n+  function get(key) {\n+    const state = readState();\n+    const value = state[key];\n+    if (value === undefined) {\n+      return deepClone(defaultDeepClone[key]);\n+    }\n+    return deepClone(value);\n+  }\n+\n+  function set(key, value) {\n+    validateValue(key, value);\n+    const state = readState();\n+    state[key] = value;\n+    writeState(state);\n+  }\n+\n+  function all() {\n+    const state = readState();\n+    return deepClone(state);\n+  }\n+\n+  function reset(key) {\n+    const state = readState();\n+    if (state[key] === undefined) {\n+      throw new Error('UNKNOWN_SETTING');\n+    }\n+    delete state[key];\n+    writeState(state);\n+  }\n+\n+  function resetAll() {\n+    writeState(defaultDeepClone);\n+  }\n+\n+  return Object.freeze({ get, set, all, reset, resetAll });\n+}\n",
+  "git_status": "training/level-2/L2-002-settings-store/settingsStore.mjs",
+  "summary": "Created training/level-2/L2-002-settings-store/settingsStore.mjs with the required functionality.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-2/L2-002-settings-store/settingsStore.mjs\n+++ b/training/level-2/L2-002-settings-store/settingsStore.mjs\n@@ -0,0 +1,136 @@\n+// OTHRYSL2-002: Settings Store\n+// Export createSettingsStore(filePath, defaults)\n+// Node ESM stdlib only\n+// defaults must be a plain JSON-safe object and is never mutated.\n+// Return frozen API {get, set, all, reset, resetAll}\n+\n+// Missing override file means {} and read calls must not write.\n+// Existing malformed JSON/non-object/array, unknown override keys, or override values whose broad type differs from the corresponding default must throw Error('STATE_CORRUPT') and mutations must not overwrite it.\n+// Allowed keys are exactly Object.keys(defaults).\n+// Type classes: array, null, string, number(finite), boolean, object(plain);\n+// set unknown key => Error('UNKNOWN_SETTING'), type mismatch/non-JSON/cycle => Error('SETTING_TYPE')\n+// get/all return deep clones so caller mutation cannot mutate defaults or persisted state.\n+// set persists only overrides, not merged defaults.\n+// reset(key) deletes that override and persists; resetAll persists {}.\n+// All mutations atomically mkdir dirname, write UTF8 JSON to unique same-directory temp, rename, cleanup temp on failure.\n+// Deterministic, no network/deps/secrets.\n+// Touch no other file.\n+\n+import { existsSync, mkdirSync, writeFileSync, renameSync, rmSync } from 'fs';\n+import { join } from 'path';\n+import { deepClone } from 'util';\n+\n+export function createSettingsStore(filePath, defaults) {\n+  const allowedKeys = Object.keys(defaults);\n+  const defaultValues = Object.fromEntries(allowedKeys.map(key => [key, defaults[key]]));\n+  const defaultTypeMap = Object.fromEntries(allowedKeys.map(key => [key, typeof defaults[key]]));\n+  const defaultDeepClone = deepClone(defaultValues);\n+  const defaultDeepCloneTypeMap = deepClone(defaultTypeMap);\n+\n+  function validateValue(key, value) {\n+    if (!allowedKeys.includes(key)) {\n+      throw new Error('UNKNOWN_SETTING');\n+    }\n+    const expectedType = defaultTypeMap[key];\n+    if (value === null) {\n+      if (expectedType !== 'object' && expectedType !== 'null') {\n+        throw new Error('SETTING_TYPE');\n+      }\n+    } else if (typeof value === 'object' && value !== null) {\n+      if (expectedType !== 'object') {\n+        throw new Error('SETTING_TYPE');\n+      }\n+      // Check if the value is a plain object\n+      if (Object.getPrototypeOf(value) !== Object.prototype) {\n+        throw new Error('SETTING_TYPE');\n+      }\n+    } else if (typeof value === 'number') {\n+      if (Number.isNaN(value)) {\n+        throw new Error('SETTING_TYPE');\n+      }\n+      if (expectedType !== 'number') {\n+        throw new Error('SETTING_TYPE');\n+      }\n+    } else if (typeof value === 'string') {\n+      if (expectedType !== 'string') {\n+        throw new Error('SETTING_TYPE');\n+      }\n+    } else if (typeof value === 'boolean') {\n+      if (expectedType !== 'boolean') {\n+        throw new Error('SETTING_TYPE');\n+      }\n+    } else {\n+      if (expectedType !== 'undefined') {\n+        throw new Error('SETTING_TYPE');\n+      }\n+    }\n+  }\n+\n+  function readState() {\n+    if (!existsSync(filePath)) {\n+      return defaultDeepClone;\n+    }\n+    try {\n+      const fileContent = readFileSync(filePath, 'utf-8');\n+      const parsedContent = JSON.parse(fileContent);\n+      const clonedParsedContent = deepClone(parsedContent);\n+      return clonedParsedContent;\n+    } catch (error) {\n+      if (error instanceof SyntaxError) {\n+        throw new Error('STATE_CORRUPT');\n+      }\n+      throw error;\n+    }\n+  }\n+\n+  function writeState(state) {\n+    const dirPath = join(...filePath.split('/').slice(0, -1));\n+    if (!existsSync(dirPath)) {\n+      mkdirSync(dirPath, { recursive: true });\n+    }\n+    const tempFilePath = filePath + '.tmp';\n+    try {\n+      writeFileSync(tempFilePath, JSON.stringify(state, null, 2), 'utf-8');\n+      renameSync(tempFilePath, filePath);\n+    } catch (error) {\n+      rmSync(tempFilePath, { force: true });\n+      throw error;\n+    }\n+  }\n+\n+  function get(key) {\n+    const state = readState();\n+    const value = state[key];\n+    if (value === undefined) {\n+      return deepClone(defaultDeepClone[key]);\n+    }\n+    return deepClone(value);\n+  }\n+\n+  function set(key, value) {\n+    validateValue(key, value);\n+    const state = readState();\n+    state[key] = value;\n+    writeState(state);\n+  }\n+\n+  function all() {\n+    const state = readState();\n+    return deepClone(state);\n+  }\n+\n+  function reset(key) {\n+    const state = readState();\n+    if (state[key] === undefined) {\n+      throw new Error('UNKNOWN_SETTING');\n+    }\n+    delete state[key];\n+    writeState(state);\n+  }\n+\n+  function resetAll() {\n+    writeState(defaultDeepClone);\n+  }\n+\n+  return Object.freeze({ get, set, all, reset, resetAll });\n+}\n",
+    "git_status": "training/level-2/L2-002-settings-store/settingsStore.mjs",
+    "tool_trace": [
+      "write_file: wrote 4556 chars to training/level-2/L2-002-settings-store/settingsStore.mjs",
+      "finish: Created training/level-2/L2-002-settings-store/settingsStore.mjs with the required functionality."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-2/L2-002-settings-store/settingsStore.mjs\",\"content\":\"// OTHRYSL2-002: Settings Store\n// Export createSettingsStore(filePath, defaults)\n// Node ESM stdlib only\n// defaults must be a plain JSON-safe object and is neve",
+        "raw_suffix": "nst state = readState();\n    state[key] = value;\n    writeState(state);\n  }\n\n  function all() {\n    const state = readState();\n    return deepClone(state);\n  }\n\n  function reset(key) {\n    const state = readState();\n    if (state[key] === undefined) {\n      throw new Error('UNKNOWN_SETTING');\n    }\n    delete state[key];\n    writeState(state);\n  }\n\n  function resetAll() {\n    writeState(defaultDeepClone);\n  }\n\n  return Object.freeze({ get, set, all, reset, resetAll });\n}\n\"}]}",
+        "raw_length": 4638,
+        "parsed_keys": [],
+        "has_path": false,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "str",
+        "raw_prefix": "{\"summary\":\"Created training/level-2/L2-002-settings-store/settingsStore.mjs with the required functionality.\"}",
+        "raw_suffix": "{\"summary\":\"Created training/level-2/L2-002-settings-store/settingsStore.mjs with the required functionality.\"}",
+        "raw_length": 111,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "6",
+      "temperature_c": "41",
+      "power_w": "6.54"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      24 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "1",
+      "temperature_c": "54",
+      "power_w": "13.31"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

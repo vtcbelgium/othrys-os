@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-033-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788097034.5214345,
+  "completed_at": 1788097049.1737494,
+  "duration_sec": 14.652314901351929,
+  "allowed_paths": [
+    "training/level-1/L1-033-markdown-table/markdownTable.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-033-markdown-table/markdownTable.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-033-markdown-table/markdownTable.mjs\n+++ b/training/level-1/L1-033-markdown-table/markdownTable.mjs\n@@ -0,0 +1,31 @@\n+export function markdownTable(records, options = {}) {\n+  const columns = options.columns || Object.keys(records[0]).sort();\n+\n+  if (records.length === 0) return '';\n+\n+  const headerRow = columns.map(col => col);\n+  const separatorRow = columns.map(() => '---');\n+\n+  const escapeCell = (value) => {\n+    let str = String(value);\n+    str = str.replace(/\\\\/g, '\\\\\\\\').replace(/\\|/g, '\\\\|');\n+    str = str.replace(/\\r\\n/g, '<br>').replace(/\\r/g, '<br>').replace(/\\n/g, '<br>');\n+    return str;\n+  };\n+\n+  const dataRows = records.map(record =>\n+    columns.map(col => {\n+      let val = record[col];\n+      if (val === null || val === undefined) {\n+        return '';\n+      }\n+      if (typeof val !== 'object' || Array.isArray(val)) {\n+        throw new TypeError('Nested objects/arrays not allowed');\n+      }\n+      return escapeCell(val);\n+    })\n+  );\n+\n+  const lines = [headerRow.join('|'), separatorRow.join('|'), ...dataRows.map(row => row.join('|'))];\n+  return lines.join('\\n');\n+}",
+  "git_status": "training/level-1/L1-033-markdown-table/markdownTable.mjs",
+  "summary": "Created training/level-1/L1-033-markdown-table/markdownTable.mjs with markdown table rendering logic per spec.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-033-markdown-table/markdownTable.mjs\n+++ b/training/level-1/L1-033-markdown-table/markdownTable.mjs\n@@ -0,0 +1,31 @@\n+export function markdownTable(records, options = {}) {\n+  const columns = options.columns || Object.keys(records[0]).sort();\n+\n+  if (records.length === 0) return '';\n+\n+  const headerRow = columns.map(col => col);\n+  const separatorRow = columns.map(() => '---');\n+\n+  const escapeCell = (value) => {\n+    let str = String(value);\n+    str = str.replace(/\\\\/g, '\\\\\\\\').replace(/\\|/g, '\\\\|');\n+    str = str.replace(/\\r\\n/g, '<br>').replace(/\\r/g, '<br>').replace(/\\n/g, '<br>');\n+    return str;\n+  };\n+\n+  const dataRows = records.map(record =>\n+    columns.map(col => {\n+      let val = record[col];\n+      if (val === null || val === undefined) {\n+        return '';\n+      }\n+      if (typeof val !== 'object' || Array.isArray(val)) {\n+        throw new TypeError('Nested objects/arrays not allowed');\n+      }\n+      return escapeCell(val);\n+    })\n+  );\n+\n+  const lines = [headerRow.join('|'), separatorRow.join('|'), ...dataRows.map(row => row.join('|'))];\n+  return lines.join('\\n');\n+}",
+    "git_status": "training/level-1/L1-033-markdown-table/markdownTable.mjs",
+    "tool_trace": [
+      "write_file: wrote 966 chars to training/level-1/L1-033-markdown-table/markdownTable.mjs",
+      "finish: Created training/level-1/L1-033-markdown-table/markdownTable.mjs with markdown table rendering logic per spec."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-033-markdown-table/markdownTable.mjs\", \"content\": \"export function markdownTable(records, options = {}) {\\n  const columns = options.columns || Object.keys(records[0]).sort();\\n\\n  if (records.length === 0) ret",
+        "raw_suffix": "ows = records.map(record =>\\n    columns.map(col => {\\n      let val = record[col];\\n      if (val === null || val === undefined) {\\n        return '';\\n      }\\n      if (typeof val !== 'object' || Array.isArray(val)) {\\n        throw new TypeError('Nested objects/arrays not allowed');\\n      }\\n      return escapeCell(val);\\n    })\\n  );\\n\\n  const lines = [headerRow.join('|'), separatorRow.join('|'), ...dataRows.map(row => row.join('|'))];\\n  return lines.join('\\\\n');\\n}\"}",
+        "raw_length": 1093,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 966
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/level-1/L1-033-markdown-table/markdownTable.mjs with markdown table rendering logic per spec.\"}",
+        "raw_suffix": "{\"summary\": \"Created training/level-1/L1-033-markdown-table/markdownTable.mjs with markdown table rendering logic per spec.\"}",
+        "raw_length": 125,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6208",
+      "utilization_pct": "0",
+      "temperature_c": "41",
+      "power_w": "5.34"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6468",
+      "utilization_pct": "2",
+      "temperature_c": "46",
+      "power_w": "9.90"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  }
+}

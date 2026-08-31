@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-030. Create exactly training/level-1/L1-030-idempotency-key/idempotencyKey.mjs. Export idempotencyKey(value,{namespace=\"othrys\"}={}). value must be JSON-compatible object/array/scalars with no undefined/function/symbol/BigInt/non-finite numbers/cycles; invalid TypeError or RangeError. Canonicalize recursively: object keys ASCII lexical sorted, arrays preserve order, JSON scalar semantics. namespace non-empty string trimmed else TypeError/RangeError. Compute SHA-256 hex of canonical UTF-8 using node:crypto createHash. Return `${namespace}:${64hex}`. Same semantic object key order must produce same key; different data must differ. Do not expose raw field values except via digest. No network/filesystem. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-030",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-030-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-030-idempotency-key/idempotencyKey.mjs"
+                      ]
+}

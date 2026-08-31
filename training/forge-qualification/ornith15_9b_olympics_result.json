@@ -1,0 +1,22 @@
+﻿[
+  {
+    "eventId": "PROTOCOL",
+    "latencyMs": 2993,
+    "text": "{\"ok\":true,\"items\":[1,2,3]}"
+  },
+  {
+    "eventId": "REPAIR",
+    "latencyMs": 366,
+    "text": "function clamp(n,min,max){return Math.min(max,Math.max(min,n))}"
+  },
+  {
+    "eventId": "REPO",
+    "latencyMs": 681,
+    "text": "```json\n{\n  \"file\": \"a.mjs\",\n  \"replacement\": \"export const add=(a,b)=>a+b;\"\n}\n```"
+  },
+  {
+    "eventId": "TOOLS",
+    "latencyMs": 411,
+    "text": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"x.txt\",\"content\":\"hello\"}}"
+  }
+]

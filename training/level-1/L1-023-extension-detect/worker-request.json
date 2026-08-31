@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-023. Create exactly training/level-1/L1-023-extension-detect/classifyFile.mjs. Export classifyFile(name). Input non-empty string else TypeError. Use basename only from either / or \\\\ path separators. Hidden file like .env has extension \"\". Multi-dot file archive.tar.gz =\u003e extension \"gz\". Lowercase extension. Return frozen {extension,category}. Categories: image jpg,jpeg,png,gif,webp,bmp,svg; video mp4,mov,avi,mkv,webm; audio mp3,wav,flac,aac,ogg,m4a; document pdf,doc,docx,txt,md,rtf; data csv,json,xml,yaml,yml; archive zip,rar,7z,tar,gz,bz2; code js,mjs,cjs,ts,tsx,jsx,py,java,c,cpp,h,css,html,htm,sh,ps1; otherwise other. No I/O/network/deps. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-023",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-023-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-023-extension-detect/classifyFile.mjs"
+                      ]
+}

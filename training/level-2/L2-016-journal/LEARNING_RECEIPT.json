@@ -1,0 +1,82 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L2-016",
+  "level": 2,
+  "title": "Append-only journal",
+  "classification": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "contract": "events -> durable append-only local journal",
+  "stock": {
+    "disposition": "BUILD_AFTER_STOCK_CHECK",
+    "notable": "archived JOURNAL_SCHEMA evidence; no admitted direct implementation"
+  },
+  "attempts": [
+    {
+      "builder": "local.qwen3.5-9b",
+      "outcome": "TIMEOUT_NO_RESULT_NO_SOURCE",
+      "usefulMutation": false
+    },
+    {
+      "builder": "local.qwen3-coder-30b",
+      "outcome": "TIMEOUT_NO_RESULT_NO_SOURCE",
+      "usefulMutation": false
+    },
+    {
+      "actor": "operator_bounded_recovery",
+      "outcome": "IMPLEMENTED_AFTER_GOVERNED_PATHS_EXHAUSTED"
+    }
+  ],
+  "talos": {
+    "source": {
+      "pass": 7,
+      "fail": 0
+    },
+    "candidateBlock": {
+      "pass": 7,
+      "fail": 0
+    },
+    "keyProperties": [
+      "append preserves prior bytes",
+      "duplicate ids rejected",
+      "corruption fail closed",
+      "recursive JSON safety",
+      "deep-clone outputs"
+    ]
+  },
+  "block": {
+    "id": "block.state.journal",
+    "disposition": "TRAINING_CANDIDATE",
+    "authorityGranted": false
+  },
+  "lessons": [
+    "timeout with no artifact must be distinct from failed mutation",
+    "append-only persistence benefits from byte-preservation oracles",
+    "operator recovery is capability debt, never builder success"
+  ],
+  "organLearning": {
+    "MNEMOSYNE": [
+      "preserve timeout/no-artifact provenance and append-only pattern"
+    ],
+    "HEPHAESTUS": [
+      "stateful append task produced two no-artifact timeouts"
+    ],
+    "TALOS": [
+      "byte-prefix preservation is a high-value append-only oracle"
+    ],
+    "PROMETHEUS": [
+      "investigate builder reliability on bounded stateful filesystem tasks"
+    ],
+    "KRONOS": [
+      "two 120s-class governed attempts produced no artifact"
+    ],
+    "RHEA": [
+      "after repeated no-artifact timeouts, bounded intervention threshold was reached"
+    ],
+    "MYCELIUM": [
+      "route qwen3.5 -> qwen3-coder -> bounded recovery; strengthen only proven outcome trail"
+    ],
+    "SWITCHYARD": [
+      "all routes remained local/free/legal; no paid escalation"
+    ]
+  },
+  "authorityGranted": false
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "othrys.os.training-corpus-summary.v1",
+  "mission": "V2-011K",
+  "level": 2,
+  "dataClass": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "jobs": {"total":24,"complete":24,"queued":0},
+  "liveProof": {"testFiles":24,"tests":181,"pass":181,"fail":0},
+  "candidateProof": {"testFiles":24,"tests":181,"pass":181,"fail":0},
+  "runtimeProof": {"testFiles":75,"tests":346,"pass":346,"fail":0},
+  "combinedLevel1Level2SourceProof": {"testFiles":64,"tests":486,"pass":486,"fail":0},
+  "combinedCandidateProof": {"testFiles":64,"tests":486,"pass":486,"fail":0},
+  "workerEvidence": {
+    "receiptFiles": 46,
+    "totalMeasuredDurationSec": 2054.4861059188843,
+    "durationSamples": 44,
+    "noAttemptMutation": 10,
+    "outOfScopeChangesObserved": 7,
+    "byBuilder": {
+      "local.qwen3-8b": {"receipts":7,"ok":4,"failed":3,"durationSec":354.5907657146454,"avgDurationSec":50.65582367352077},
+      "local.qwen3.5-9b": {"receipts":16,"ok":13,"failed":3,"durationSec":532.9725952148438,"avgDurationSec":33.310787200927734},
+      "local.qwen3-coder-30b": {"receipts":21,"ok":12,"failed":9,"durationSec":1166.9227449893951,"avgDurationSec":55.56774976139977},
+      "qwen3-builder": {"receipts":2,"ok":0,"failed":2,"durationSamples":0}
+    }
+  },
+  "learningOrgans": ["MNEMOSYNE","HEPHAESTUS","TALOS","PROMETHEUS","KRONOS","RHEA","MYCELIUM","SWITCHYARD"],
+  "learningDimensions": ["durable state contract","stock/reuse decision","builder/model route","attempt and repair outcome","Talos independent verification","canonical serialization","restart persistence","corruption preservation","operator intervention debt","composition provenance"],
+  "notableFailureClasses": ["NO_ATTEMPT_MUTATION","malformed or ungrounded tool paths","path escape through stale perimeter links","worker ok:true with semantic contract failure","unsupported filesystem/API hallucination","out-of-scope mutation","zero-byte mutation followed by false finish"],
+  "laws": {
+    "learningMayGrantAuthority": false,
+    "trainingMayAutoAdmitBlocks": false,
+    "trainingMayAutoAdvanceLevel": false,
+    "failuresAreEvidence": true,
+    "operatorInterventionMustNotBeCreditedToBuilder": true,
+    "workerReceiptSuccessIsNotSemanticSuccess": true
+  },
+  "caveats": [
+    "Worker ok:true is execution evidence only and was repeatedly rejected by independent Talos inspection.",
+    "Operator bounded recovery was used only after governed builder routes were exhausted and remains capability debt.",
+    "All packaged outputs remain TRAINING_CANDIDATE and create no runtime authority.",
+    "Level 3 remains locked after Level 2 completion."
+  ]
+}

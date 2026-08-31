@@ -1,0 +1,81 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L2-004",
+  "level": 2,
+  "title": "Notes store",
+  "family": "crud",
+  "contract": "CRUD commands -> durable notes collection",
+  "stockCheck": {
+    "decision": "ADAPT_STATEFUL_CRUD_PATTERN",
+    "reused": [
+      "L2-001 atomic persistence pattern",
+      "L2-003 collection validation pattern"
+    ]
+  },
+  "buildAttempts": [
+    {
+      "file": "worker-result.json",
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "reason": "",
+      "durationSec": 35.810280084609985,
+      "outOfScope": []
+    },
+    {
+      "file": "repair-result.json",
+      "builder": "qwen3-builder",
+      "ok": false,
+      "reason": "EngineeringError(\"path escapes workspace: '.othrys/runtime/legion-perimeter-links/codex/2026-08-13/referenced-chatgpt-conversation-this-is-an/work/othrys-hub/docs/mission022_1/MISSION_STORE.json'\")",
+      "durationSec": null,
+      "outOfScope": []
+    },
+    {
+      "file": "repair2-result.json",
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "reason": "NO_ATTEMPT_MUTATION",
+      "durationSec": 92.77396583557129,
+      "outOfScope": []
+    },
+    {
+      "file": null,
+      "builder": "operator-bounded",
+      "ok": true,
+      "reason": "",
+      "durationSec": null,
+      "talos": "PASS_8_OF_8",
+      "note": "completed exact declared contract after governed repairs exhausted"
+    }
+  ],
+  "talos": {
+    "tests": 8,
+    "pass": 8,
+    "fail": 0,
+    "independent": true
+  },
+  "blockDisposition": {
+    "id": "block.state.notes-store",
+    "status": "TRAINING_CANDIDATE",
+    "autoAdmitted": false
+  },
+  "nextJob": "L2-005",
+  "organs": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "learningDataClass": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "learningMayGrantAuthority": false,
+  "authorityGranted": false,
+  "lessons": [
+    "first build wrote a broken implementation despite worker ok",
+    "legacy repair escaped workspace through stale perimeter-linked evidence",
+    "heavy repair targeted a hallucinated hub path and was blocked by touch_allow",
+    "operator completion after governed repair exhaustion is explicit capability debt"
+  ]
+}

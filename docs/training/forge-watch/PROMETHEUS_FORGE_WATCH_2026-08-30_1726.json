@@ -1,0 +1,9 @@
+{
+  "schema":"othrys.prometheus.forge-watch.v1","date":"2026-08-30","operatorNotification":false,"authorityGranted":false,"automaticPaidUsage":false,
+  "discoveries":[
+    {"id":"ollama.glm-5.3-flash-cloud","kind":"coding-model","newAgainstRoster":true,"model":"glm-5.3-flash:cloud","vendor":"Z.ai via Ollama Cloud","license":"MIT (open weights)","cost":"Ollama Free tier supports cloud-model light usage","secretBoundary":"Ollama account auth required; no new provider secret exposed to builder","availability":"MANIFEST_AVAILABLE_RUNTIME_UNAUTHORIZED","availabilityEvidence":"ollama pull succeeded; four /api/chat Olympics probes returned HTTP 401","builderOlympics":"BLOCKED_AUTH","talos":"NOT_RUN_NO_LIVE_OUTPUT","admitted":false,"sources":["https://ollama.com/library/glm-5.3-flash","https://ollama.com/pricing","https://huggingface.co/zai-org/GLM-5.3-Flash"]},
+    {"id":"runtime.freetoken","kind":"inference-runtime","newAgainstRoster":true,"vendor":"FlashML-org","license":"Apache-2.0","cost":"ZERO/open-source","availability":"PUBLIC_WINDOWS_LINUX","secretBoundary":"FAIL_CURRENT_POSTURE: public issue reports no API-key/auth configuration for API access","builderOlympics":"NOT_RUN_GATE_FAILED","talos":"NOT_RUN_GATE_FAILED","admitted":false,"sources":["https://github.com/FlashML-org/FreeToken","https://github.com/FlashML-org/FreeToken/issues/152"]}
+  ],
+  "knownNoiseSuppressed":["DeepSeek-V4-Flash already rostered","Qwen3.5-9B already rostered","Granite 4.2 8B already watched/qualified","Ornith 1.5 9B already watched"],
+  "result":"NO_ADMISSION"
+}

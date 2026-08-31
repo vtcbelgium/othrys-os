@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-032. Create exactly training/level-1/L1-032-fixture/generateFixture.mjs. Export generateFixture(schema, seed=1). schema must be plain object mapping field names to rule objects. Supported rule types: string, integer, number, boolean, enum. Optional rule fields: prefix for string, min/max for numeric, values array for enum. Use a deterministic dependency-free uint32 PRNG seeded by finite integer seed; identical schema+seed =\u003e identical frozen null-prototype object. Field iteration order must be Object.keys(schema) sorted lexical so source object order cannot affect output. string =\u003e prefix (default field name) plus hyphen plus deterministic unsigned integer; integer =\u003e inclusive integer min(default0)..max(default100); number =\u003e deterministic finite value min(default0)..max(default1); boolean deterministic; enum choose deterministic element preserving values order. Validate bad schema/rules/min\u003emax/empty enum with TypeError or RangeError. Do not mutate inputs. No I/O/network. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-032",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-032-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-032-fixture/generateFixture.mjs"
+                      ]
+}

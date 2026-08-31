@@ -35,7 +35,9 @@
       ],
       "candidates": [
         "local.qwen3-coder-30b",
-        "local.gpt-oss-20b"
+        "local.gpt-oss-20b",
+        "local.qwen3.8-27b",
+        "local.ornith-1.5-9b"
       ]
     },
     {
@@ -156,6 +158,27 @@
       "executionAllowed": true,
       "hardwareNote": "18GB quant exceeds 8GB VRAM; expect CPU/RAM offload",
       "qualificationEvidence": "docs/training/HEPHAESTUS_LOCAL_FORGE_QUALIFICATION.json"
+    },
+    {
+      "id": "local.qwen3.8-27b",
+      "model": "qwen3.8:27b",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "coding",
+        "agentic-code",
+        "long-context",
+        "tool-use",
+        "multimodal"
+      ],
+      "readiness": "QUALIFIED_LOCAL_HEAVY",
+      "qualificationPriority": 1,
+      "executionAllowed": true,
+      "hardwareNote": "18GB quant exceeds 8GB VRAM; observed 75% CPU / 25% GPU split on Legion qualification",
+      "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-08-30_QWEN38_27B_QUAL1.json"
     },
     {
       "id": "local.gpt-oss-20b",
@@ -307,6 +330,26 @@
       "qualificationPriority": 99,
       "executionAllowed": false,
       "operatorApprovalRequired": true
+    },
+    {
+      "id": "local.ornith-1.5-9b",
+      "model": "ornith-1.5:9b",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "agentic-code",
+        "tool-use",
+        "long-context",
+        "fast-local"
+      ],
+      "readiness": "QUALIFIED_LOCAL_FAST_AGENTIC",
+      "qualificationPriority": 1,
+      "executionAllowed": true,
+      "hardwareNote": "6.6GB Ollama package; observed 100% GPU on Legion qualification",
+      "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-08-30_ORNITH15_9B_QUAL1.json"
     }
   ],
   "authorityGranted": false,

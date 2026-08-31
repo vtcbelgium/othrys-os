@@ -1,0 +1,27 @@
+﻿{
+    "schema":  "othrys.prometheus.forge-watch.v1",
+    "date":  "2026-08-31",
+    "discoveries":  [
+                        {
+                            "name":  "North Mini Code 1.0",
+                            "candidateId":  "local.north-mini-code-1.0",
+                            "status":  "HANDOFF_IN_PROGRESS_NOT_ADMITTED",
+                            "reason":  "Official Apache-2.0 + Cohere Labs AUP, zero-cost local candidate. Ollama Q4_K_M 19GB pull resumed; qualification awaits completed local availability. No admission or authority."
+                        },
+                        {
+                            "name":  "DeepSeek Harness 0.1.1",
+                            "status":  "KNOWN_NOISE_SUPPRESSED",
+                            "reason":  "Already present in prior Forge Watch evidence; developer-preview MIT agent harness, no new admission this run."
+                        },
+                        {
+                            "name":  "GLM-5.3-Flash",
+                            "status":  "KNOWN_NOISE_SUPPRESSED",
+                            "reason":  "Already watched; local/cloud authorization/resource gates not passed."
+                        }
+                    ],
+    "admitted":  [
+
+                 ],
+    "authorityGranted":  false,
+    "automaticPromotion":  false
+}

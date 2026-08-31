@@ -1,0 +1,22 @@
+{
+  "schema": "othrys.prometheus.forge-watch.v1",
+  "date": "2026-08-31",
+  "discoveries": [
+    {
+      "name": "Qwen3.8-Flash-Next",
+      "source": "Qwen official / Ollama",
+      "status": "NEW_HANDOFF_NOT_ADMITTED",
+      "reason": "Released 2026-08-26; open-weight 125B MoE / 6B active with strong agentic coding and tool-use claims. Official Ollama package currently exposes a 105GB 125b-mlx build, which is outside the Legion 31.3GB RAM resource envelope and is not installed. No Builder Olympics or Talos qualification was executed because local availability/resource gate failed."
+    }
+  ],
+  "knownNoNoise": [
+    "local.qwen3.8-27b",
+    "local.ornith-1.5-9b",
+    "nvidia.laguna-xs-2.1",
+    "GLM-5.3 / GLM-5.3-Flash",
+    "muse-glimmer:30b-q4_K_M"
+  ],
+  "admitted": [],
+  "authorityGranted": false,
+  "automaticPromotion": false
+}

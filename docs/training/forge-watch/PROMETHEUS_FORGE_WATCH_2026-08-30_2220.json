@@ -1,0 +1,26 @@
+{
+  "schema":"othrys.prometheus.forge-watch.v1",
+  "date":"2026-08-30",
+  "operatorNotification":false,
+  "authorityGranted":false,
+  "automaticPaidUsage":false,
+  "discoveries":[
+    {
+      "id":"remote.glm-5.3-flash",
+      "kind":"coding-model",
+      "newAgainstForgeRoster":true,
+      "model":"glm-5.3-flash:cloud",
+      "vendor":"Z.ai via Ollama Cloud",
+      "license":"MIT open weights",
+      "cost":"Ollama Free plan supports light cloud usage; no paid usage enabled",
+      "secretBoundary":"BLOCKED_NO_OLLAMA_CLOUD_AUTH",
+      "availability":"OLLAMA_POINTER_PRESENT_BUT_API_401",
+      "builderOlympics":"FAIL_4_OF_4_HTTP_401_UNAUTHORIZED",
+      "talos":"NOT_RUN_NO_OLYMPICS_PASS",
+      "admitted":false,
+      "evidence":"training/forge-qualification/glm53_flash_olympics.py"
+    }
+  ],
+  "knownNoiseSuppressed":["Qwen3.8-27B","Ornith 1.5 9B","Granite 4.2 8B","Muse Glimmer 30B","Qwen3-Coder-Next","DeepSeek V4 family","Nemotron 3.5 Lightning"],
+  "result":"NO_ADMISSION"
+}

@@ -137,5 +137,6 @@
   "learningMayGrantAuthority": false,
   "authorityGranted": false,
   "executionStarted": false,
-  "receiptDigest": "2884c8583d69a870195fe7df5f65b01410faf690cbb4c72c933128f1d4b8625f"
+  "receiptDigest": "2884c8583d69a870195fe7df5f65b01410faf690cbb4c72c933128f1d4b8625f",
+  "candidateProof": "blocks/validate/phone-normalize/tests/contract.test.mjs"
 }

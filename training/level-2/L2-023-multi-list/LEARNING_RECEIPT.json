@@ -1,0 +1,9 @@
+{
+  "schema":"othrys.os.training-learning-receipt.v1","jobId":"L2-023","level":2,"title":"Multi-list manager","classification":"HIGH_VALUE_OPERATIONAL_LEARNING",
+  "stock":{"disposition":"ADAPT_CONCEPT_REJECT_DIRECT_REUSE","candidates":["Validated CRUD","Level-2 todo store"],"reason":"reuse CRUD invariants while adding grouped durable state and nested identity scopes"},
+  "attempts":[{"builder":"local.qwen3-coder-30b","outcome":"OK_RECEIPT_CONTRACT_FAILURE"},{"builder":"local.qwen3-coder-30b","outcome":"OK_RECEIPT_CONTRACT_FAILURE"},{"actor":"operator_bounded_recovery","outcome":"TALOS_GREEN"}],
+  "talos":{"source":{"pass":6,"fail":0},"candidateBlock":{"pass":6,"fail":0},"oracles":["missing no-write","ordered grouped CRUD","removed-entity returns","invalid/duplicate atomicity","corruption byte preservation","canonical clone boundary"]},
+  "block":{"id":"block.state.multi-list","disposition":"TRAINING_CANDIDATE","authorityGranted":false},
+  "lessons":["self-reported success cannot compensate for nonexistent fs APIs","nested CRUD needs exact return semantics and identity scopes","pretty JSON is not canonical when compact bytes are the contract","operator recovery is explicit capability debt"],
+  "organLearning":{"MNEMOSYNE":["retain two consecutive semantic false successes"],"HEPHAESTUS":["test actual async fs API usage before credit"],"TALOS":["pin exact API, return entity, compact bytes and corruption oracles"],"PROMETHEUS":["validated CRUD remains useful concept stock"],"KRONOS":["two bounded governed attempts exhausted"],"RHEA":["nested state ordering and read purity preserved"],"MYCELIUM":["weaken builder trail for nested persistent CRUD until runtime smoke improves"],"SWITCHYARD":["no paid escalation"]}
+}

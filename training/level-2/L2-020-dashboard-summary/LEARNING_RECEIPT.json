@@ -1,0 +1,9 @@
+{
+  "schema":"othrys.os.training-learning-receipt.v1","jobId":"L2-020","level":2,"title":"Dashboard summary","classification":"HIGH_VALUE_OPERATIONAL_LEARNING",
+  "stock":{"disposition":"ADAPT_CONCEPT_REJECT_DIRECT_REUSE","candidates":["archived Keymaster dashboard evidence"],"reason":"use dashboard aggregation concept without importing legacy authority/state assumptions"},
+  "attempts":[{"builder":"local.qwen3.5-9b","outcome":"TIMEOUT_NO_USEFUL_ARTIFACT"},{"builder":"local.qwen3-coder-30b","outcome":"OK_RECEIPT_CONTRACT_FAILURE"},{"actor":"operator_bounded_recovery","outcome":"TALOS_GREEN"}],
+  "talos":{"source":{"pass":6,"fail":0},"candidateBlock":{"pass":6,"fail":0},"oracles":["deterministic aggregation","restart persistence","invalid replacement atomicity","corruption preservation","canonical bytes","clone/API boundary"]},
+  "block":{"id":"block.state.dashboard-summary","disposition":"TRAINING_CANDIDATE","authorityGranted":false},
+  "lessons":["worker ok is not semantic success","heavy repair can introduce unavailable dependencies and wrong APIs","deterministic dashboards are pure projections over validated durable state","operator recovery is debt not builder credit"],
+  "organLearning":{"MNEMOSYNE":["retain timeout and false-success evidence"],"HEPHAESTUS":["penalize heavy repair on small deterministic state modules when contract drift occurs"],"TALOS":["verify API shape and canonical corruption boundary independently"],"PROMETHEUS":["study smaller constrained state-builder patterns"],"KRONOS":["first attempt consumed timeout with no useful artifact"],"RHEA":["dashboard reads must not mutate durable state"],"MYCELIUM":["weaken trails from this task shape to current heavy repair route"],"SWITCHYARD":["local/free route retained; no paid escalation"]}
+}

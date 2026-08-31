@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-039. Create exactly training/level-1/L1-039-iso-date/normalizeIsoDate.mjs. Export normalizeIsoDate(input). Accept Date object or string. String forms allowed exactly YYYY-MM-DD or ISO date-time with explicit Z or numeric timezone offset. Reject locale/ambiguous strings and date-time without timezone. YYYY-MM-DD normalizes to YYYY-MM-DDT00:00:00.000Z after validating real Gregorian date (no rollover). Explicit zoned date-time normalizes through Date toISOString(). Date input cloned semantically/not mutated and must be valid. Return ISO string. Non Date/string TypeError; invalid/unsupported RangeError. Deterministic timezone-independent. No deps/I/O. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-039",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-039-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-039-iso-date/normalizeIsoDate.mjs"
+                      ]
+}

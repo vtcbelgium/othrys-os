@@ -1,0 +1,201 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-027-002",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3-coder-30b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788094507.3257763,
+  "completed_at": 1788094549.767347,
+  "duration_sec": 42.44157075881958,
+  "allowed_paths": [
+    "training/level-1/L1-027-env-parse/parseEnvMetadata.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-027-env-parse/parseEnvMetadata.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\n+++ b/training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\n@@ -0,0 +1,26 @@\n+import { createRequire } from 'module';\n+const require = createRequire(import.meta.url);\n+const fs = require('fs');\n+\n+export function parseEnvMetadata(content) {\n+  const seenNames = new Set();\n+  const result = [];\n+  \n+  const lines = content.split('\\n');\n+  for (const line of lines) {\n+    const trimmedLine = line.trim();\n+    if (!trimmedLine) continue;\n+    \n+    // Match optional 'export' followed by whitespace and then variable name\n+    const match = trimmedLine.match(/^export\\s*(\\w+)/);\n+    if (!match) continue;\n+    \n+    const varName = match[1];\n+    if (seenNames.has(varName)) continue;\n+    \n+    seenNames.add(varName);\n+    result.push({ name: varName, present: true });\n+  }\n+  \n+  return result;\n+}",
+  "git_status": "training/level-1/L1-027-env-parse/parseEnvMetadata.mjs",
+  "summary": "Created parseEnvMetadata.mjs with function that parses environment metadata, trims whitespace, handles optional 'export' keyword, tracks seen names to avoid duplicates, and preserves only variable names without secrets.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\n+++ b/training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\n@@ -0,0 +1,26 @@\n+import { createRequire } from 'module';\n+const require = createRequire(import.meta.url);\n+const fs = require('fs');\n+\n+export function parseEnvMetadata(content) {\n+  const seenNames = new Set();\n+  const result = [];\n+  \n+  const lines = content.split('\\n');\n+  for (const line of lines) {\n+    const trimmedLine = line.trim();\n+    if (!trimmedLine) continue;\n+    \n+    // Match optional 'export' followed by whitespace and then variable name\n+    const match = trimmedLine.match(/^export\\s*(\\w+)/);\n+    if (!match) continue;\n+    \n+    const varName = match[1];\n+    if (seenNames.has(varName)) continue;\n+    \n+    seenNames.add(varName);\n+    result.push({ name: varName, present: true });\n+  }\n+  \n+  return result;\n+}",
+    "git_status": "training/level-1/L1-027-env-parse/parseEnvMetadata.mjs",
+    "tool_trace": [
+      "write_file: wrote 700 chars to training/level-1/L1-027-env-parse/parseEnvMetadata.mjs",
+      "read_file: import { createRequire } from 'module';\nconst require = createRequire(import.meta.url);\nconst fs = require('fs');\n\nexport function parseEnvMetadata(content) {\n  const seenNames = new Set();\n  const re",
+      "read_file: import { createRequire } from 'module';\nconst require = createRequire(import.meta.url);\nconst fs = require('fs');\n\nexport function parseEnvMetadata(content) {\n  const seenNames = new Set();\n  const re",
+      "read_file: import { createRequire } from 'module';\nconst require = createRequire(import.meta.url);\nconst fs = require('fs');\n\nexport function parseEnvMetadata(content) {\n  const seenNames = new Set();\n  const re",
+      "read_file: import { createRequire } from 'module';\nconst require = createRequire(import.meta.url);\nconst fs = require('fs');\n\nexport function parseEnvMetadata(content) {\n  const seenNames = new Set();\n  const re",
+      "read_file: import { createRequire } from 'module';\nconst require = createRequire(import.meta.url);\nconst fs = require('fs');\n\nexport function parseEnvMetadata(content) {\n  const seenNames = new Set();\n  const re",
+      "read_file: import { createRequire } from 'module';\nconst require = createRequire(import.meta.url);\nconst fs = require('fs');\n\nexport function parseEnvMetadata(content) {\n  const seenNames = new Set();\n  const re",
+      "write_file: wrote 700 chars to training/level-1/L1-027-env-parse/parseEnvMetadata.mjs",
+      "read_file: import { createRequire } from 'module';\nconst require = createRequire(import.meta.url);\nconst fs = require('fs');\n\nexport function parseEnvMetadata(content) {\n  const seenNames = new Set();\n  const re",
+      "finish: Created parseEnvMetadata.mjs with function that parses environment metadata, trims whitespace, handles optional 'export' keyword, tracks seen names to avoid duplicates, and preserves only variable names without secrets."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"workspace/training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\", \"content\": \"import { createRequire } from 'module';\\nconst require = createRequire(import.meta.url);\\nconst fs = require('fs');\\n\\nexport function parseEnvMetadata",
+        "raw_suffix": "t('\\\\n');\\n  for (const line of lines) {\\n    const trimmedLine = line.trim();\\n    if (!trimmedLine) continue;\\n    \\n    // Match optional 'export' followed by whitespace and then variable name\\n    const match = trimmedLine.match(/^export\\\\s*(\\\\w+)/);\\n    if (!match) continue;\\n    \\n    const varName = match[1];\\n    if (seenNames.has(varName)) continue;\\n    \\n    seenNames.add(varName);\\n    result.push({ name: varName, present: true });\\n  }\\n  \\n  return result;\\n}\"}",
+        "raw_length": 819,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 700
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_length": 66,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_length": 66,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_length": 66,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_length": 66,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_length": 66,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_length": 66,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\", \"content\": \"import { createRequire } from 'module';\\nconst require = createRequire(import.meta.url);\\nconst fs = require('fs');\\n\\nexport function parseEnvMetadata(content) ",
+        "raw_suffix": "t('\\\\n');\\n  for (const line of lines) {\\n    const trimmedLine = line.trim();\\n    if (!trimmedLine) continue;\\n    \\n    // Match optional 'export' followed by whitespace and then variable name\\n    const match = trimmedLine.match(/^export\\\\s*(\\\\w+)/);\\n    if (!match) continue;\\n    \\n    const varName = match[1];\\n    if (seenNames.has(varName)) continue;\\n    \\n    seenNames.add(varName);\\n    result.push({ name: varName, present: true });\\n  }\\n  \\n  return result;\\n}\"}",
+        "raw_length": 809,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 700
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-027-env-parse/parseEnvMetadata.mjs\"}",
+        "raw_length": 66,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created parseEnvMetadata.mjs with function that parses environment metadata, trims whitespace, handles optional 'export' keyword, tracks seen names to avoid duplicates, and preserves only variable names without secrets.\"}",
+        "raw_suffix": "{\"summary\": \"Created parseEnvMetadata.mjs with function that parses environment metadata, trims whitespace, handles optional 'export' keyword, tracks seen names to avoid duplicates, and preserves only variable names without secrets.\"}",
+        "raw_length": 234,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3-coder-30b",
+    "model": "qwen3-coder:30b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6461",
+      "utilization_pct": "8",
+      "temperature_c": "43",
+      "power_w": "6.05"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6243",
+      "utilization_pct": "1",
+      "temperature_c": "54",
+      "power_w": "16.21"
+    },
+    "ollama_ps": "NAME               ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3-coder:30b    06c1097efce0    19 GB    67%/33% CPU/GPU    4096       29 minutes from now"
+  }
+}

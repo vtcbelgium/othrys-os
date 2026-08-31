@@ -1,0 +1,10 @@
+{
+  "schema":"othrys.prometheus.forge-watch-qualification.v1","date":"2026-08-30","candidate":"local.ornith-1.5-9b","model":"ornith-1.5:9b","vendor":"Ornith AI","provider":"Ollama local",
+  "discovery":{"newAgainstRoster":true,"released":"2026-08-20","sources":["https://ollama.com/library/ornith-1.5","https://ornith.ai/ornith_1_5.html"],"license":"MIT","cost":"ZERO/local","secretBoundary":"PASS_LOCAL_NO_PROVIDER_SECRET"},
+  "availability":{"installed":true,"endpointAvailable":true,"ollamaDigest":"e5df7dcdd8a2","quantSize":"6.6GB","observedPlacement":"100% GPU on Legion"},
+  "builderOlympics":{"protocol":true,"repair":true,"repoSemantic":true,"repoStrictProtocol":false,"tools":true,"candidate":true,"note":"Direct REPO event added a markdown fence; marker-protocol worker qualification produced valid write_file tool use."},
+  "workerQualification":{"attempts":2,"first":{"ok":false,"reason":"NO_ATTEMPT_MUTATION"},"second":{"ok":true,"durationSec":5.013845682144165,"changedFiles":["training/forge-qualification/local_ornith15-9b/candidate.mjs"],"outOfScope":[]}},
+  "talos":{"behaviorPass":true,"tests":5,"fail":0},
+  "admission":{"admitted":true,"forge":"forge.code.local","readiness":"QUALIFIED_LOCAL_FAST_AGENTIC","executionAllowed":true,"authorityGranted":false,"automaticPaidUsage":false},
+  "laws":{"benchmarksDoNotGrantAuthority":true,"qualificationRequired":true,"operatorAuthorityUnchanged":true}
+}

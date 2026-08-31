@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import argparse
 import json
@@ -73,7 +73,7 @@ def validate_issue(issue: dict) -> dict:
     return cmd
 
 
-def run_probe(command_id: str, hub_path: str) -> dict:
+def run_probe(command_id: str, os_path: str) -> dict:
     root = Path(tempfile.mkdtemp(prefix="othrys_lifeline_"))
     try:
         _run(["git", "init", "-q"], cwd=str(root))
@@ -82,43 +82,41 @@ def run_probe(command_id: str, hub_path: str) -> dict:
         (root / "PROBE.txt").write_text("BEFORE\n", encoding="utf-8", newline="\n")
         _run(["git", "add", "PROBE.txt"], cwd=str(root))
         _run(["git", "commit", "-q", "-m", "seed"], cwd=str(root))
-        if hub_path not in sys.path:
-            sys.path.insert(0, hub_path)
-        from hub.builders import Qwen3BuilderMind
-        from hub.engineering_platform import PlatformRequest, run_engineering_mission
-        builder = Qwen3BuilderMind()
-        status = builder.status()
+        workers = Path(os_path) / "runtime" / "workers"
+        if str(workers) not in sys.path:
+            sys.path.insert(0, str(workers))
+        import local_engineering
+        from legion_qwen_worker_v01 import _ollama_model_ready, _training_marker_protocol_chat_turn
+        model = "qwen3.5:9b"
+        status = "ready" if _ollama_model_ready(model) else "not ready"
         if status != "ready":
             raise RuntimeError(f"BUILDER_NOT_READY:{status}")
-        result = run_engineering_mission(PlatformRequest(
-            mission_id=command_id,
-            task=TASK,
-            workspace=str(root), repo_dir=str(root), roster=[builder], builder=builder,
-            operator_touch_allow=ALLOWED_TOUCH, policy="direct", emit_events=False,
-            allow_engine_fallback=False, timeout_sec=120.0,
-        ))
+        result = local_engineering.run_engineering_loop(
+            task=TASK, workspace=root,
+            chat_turn=lambda messages, tools: _training_marker_protocol_chat_turn(messages, tools, model),
+            touch_allow=ALLOWED_TOUCH,
+        )
         names = [x for x in _run(["git", "diff", "--name-only"], cwd=str(root)).stdout.splitlines() if x]
         diff = _run(["git", "diff", "--", "PROBE.txt"], cwd=str(root)).stdout
         content = (root / "PROBE.txt").read_text(encoding="utf-8")
-        evidence = getattr(getattr(result, "structured", None), "evidence", None)
         passed = bool(result.ok) and names == ALLOWED_TOUCH and content == EXPECTED
         return {
-            "schema": "othrys.v2.lifeline.result.v1", "command_id": command_id,
+            "schema": "othrys.v2.lifeline.result.v2", "command_id": command_id,
             "verdict": "PASS" if passed else "FAIL", "transport": "private_github_relay",
-            "builder": ALLOWED_BUILDER, "builder_status": status, "hub_stage": result.stage,
-            "hub_verification": getattr(evidence, "verification", "UNKNOWN"),
+            "builder": ALLOWED_BUILDER, "builder_status": status, "os_stage": result.stage,
             "changed_files": names, "content_exact": content == EXPECTED, "diff": diff,
             "workspace": "DISPOSABLE_TEMP_REPO", "live_repo_mutated": False,
+            "legacy_repo_dependency": False,
         }
     finally:
         shutil.rmtree(root, ignore_errors=True)
 
 
-def process_issue(number: int, hub_path: str) -> dict:
+def process_issue(number: int, os_path: str) -> dict:
     endpoint = f"repos/{REPO}/issues/{number}"
     try:
         cmd = validate_issue(_gh_json(endpoint))
-        result = run_probe(cmd["command_id"], hub_path)
+        result = run_probe(cmd["command_id"], os_path)
     except Exception as exc:
         result = {"schema": "othrys.v2.lifeline.result.v1", "verdict": "FAIL", "reason": f"{type(exc).__name__}:{exc}"}
     comment = "LIFELINE_RESULT\n```json\n" + json.dumps(result, indent=2) + "\n```"
@@ -133,7 +131,7 @@ def open_commands() -> list[int]:
     return sorted(int(i["number"]) for i in issues if "pull_request" not in i and str(i.get("title", "")).startswith(TITLE_PREFIX))
 
 
-def watch(hub_path: str, interval: int) -> int:
+def watch(os_path: str, interval: int) -> int:
     guard = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
         guard.bind(("127.0.0.1", MUTEX_PORT))
@@ -144,7 +142,7 @@ def watch(hub_path: str, interval: int) -> int:
     while True:
         try:
             for number in open_commands():
-                process_issue(number, hub_path)
+                process_issue(number, os_path)
         except Exception as exc:
             _log(f"watch_error={type(exc).__name__}:{exc}")
         time.sleep(max(5, interval))
@@ -156,11 +154,11 @@ def main() -> int:
     group.add_argument("--issue", type=int)
     group.add_argument("--watch", action="store_true")
     ap.add_argument("--interval", type=int, default=15)
-    ap.add_argument("--hub-path", default=r"C:\Users\othry\Projects\othrys-hub")
+    ap.add_argument("--os-path", default=str(Path(__file__).resolve().parents[2]))
     args = ap.parse_args()
     if args.watch:
-        return watch(args.hub_path, args.interval)
-    result = process_issue(args.issue, args.hub_path)
+        return watch(args.os_path, args.interval)
+    result = process_issue(args.issue, args.os_path)
     print(json.dumps(result, indent=2))
     return 0 if result.get("verdict") == "PASS" else 2
 

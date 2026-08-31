@@ -1,0 +1,81 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L2-006",
+  "level": 2,
+  "title": "Inventory store",
+  "family": "crud",
+  "contract": "CRUD commands -> durable inventory records",
+  "stockCheck": {
+    "decision": "ADAPT_PROVEN_CRUD_PATTERN",
+    "reused": [
+      "L2-001 atomic persistence",
+      "L2-003 collection state",
+      "L2-005 canonical CRUD validation"
+    ]
+  },
+  "buildAttempts": [
+    {
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "durationSec": 35.215437173843384,
+      "talos": "MODULE_FAIL",
+      "failure": "COMMONJS_IN_ESM_AND_NO_PERSISTENCE"
+    },
+    {
+      "builder": "local.qwen3.5-9b",
+      "ok": true,
+      "durationSec": 26.027337312698364,
+      "talos": "CONTRACT_FAIL",
+      "failure": "WRONG_API_FIXED_PATH"
+    },
+    {
+      "builder": "local.qwen3-coder-30b",
+      "ok": false,
+      "durationSec": 50.04857110977173,
+      "talos": "OUT_OF_SCOPE_INVALIDATED",
+      "failure": "out_of_scope_changes: ['training/forge-qualification/glm53_flash_olympics.py', 'training/forge-qualification/glm53_flash_olympics_result.json']",
+      "outOfScope": [
+        "training/forge-qualification/glm53_flash_olympics.py",
+        "training/forge-qualification/glm53_flash_olympics_result.json"
+      ]
+    },
+    {
+      "builder": "operator-bounded",
+      "ok": true,
+      "durationSec": null,
+      "talos": "PASS_9_OF_9",
+      "failure": null
+    }
+  ],
+  "talos": {
+    "tests": 9,
+    "pass": 9,
+    "fail": 0,
+    "independent": true
+  },
+  "blockDisposition": {
+    "id": "block.state.inventory-store",
+    "status": "TRAINING_CANDIDATE",
+    "autoAdmitted": false
+  },
+  "nextJob": "L2-007",
+  "organs": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "learningDataClass": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "learningMayGrantAuthority": false,
+  "authorityGranted": false,
+  "lessons": [
+    "first build mixed ESM with CommonJS and never persisted mutations",
+    "bounded repair changed API shape and ignored caller filePath",
+    "heavy repair was invalidated by unrelated out-of-scope Forge qualification mutations",
+    "operator recovery after governed repair exhaustion is capability debt"
+  ]
+}

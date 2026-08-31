@@ -1,0 +1,111 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-003-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "qwen3-builder",
+  "ok": false,
+  "reason": "out_of_scope_changes: ['training/level-1/L1-003-line-dedupe/worker.log']",
+  "started_at": 1788082811.475395,
+  "completed_at": 1788082820.538547,
+  "duration_sec": 9.063152074813843,
+  "allowed_paths": [
+    "training/level-1/L1-003-line-dedupe/dedupeLines.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-003-line-dedupe/dedupeLines.mjs",
+    "training/level-1/L1-003-line-dedupe/worker.log"
+  ],
+  "out_of_scope_changes": [
+    "training/level-1/L1-003-line-dedupe/worker.log"
+  ],
+  "diff": "--- a/training/level-1/L1-003-line-dedupe/dedupeLines.mjs\n+++ b/training/level-1/L1-003-line-dedupe/dedupeLines.mjs\n@@ -0,0 +1,40 @@\n+/**\n+ * Deduplicates lines from an array, preserving the first occurrence order.\n+ * @param {Array} lines - The array of lines to deduplicate.\n+ * @param {Object} [options={}] - Options for deduplication.\n+ * @param {boolean} [options.trim=false] - Whether to trim each line before comparison/output.\n+ * @param {boolean} [options.ignoreEmpty=false] - Whether to skip empty lines after optional trim.\n+ * @param {boolean} [options.caseSensitive=true] - Whether to compare lines case-sensitively.\n+ * @returns {Array} A new array of deduplicated lines.\n+ * @throws {TypeError} If input is not an array.\n+ */\n+export function dedupeLines(lines, options = {}) {\n+  if (!Array.isArray(lines)) {\n+    throw new TypeError('Input must be an array.');\n+  }\n+\n+  const { trim = false, ignoreEmpty = false, caseSensitive = true } = options;\n+  const seen = new Set();\n+  const result = [];\n+\n+  for (const line of lines) {\n+    let processedLine = String(line);\n+\n+    if (trim) {\n+      processedLine = processedLine.trim();\n+    }\n+\n+    if (ignoreEmpty && processedLine === '') {\n+      continue;\n+    }\n+\n+    const key = caseSensitive ? processedLine : processedLine.toLowerCase();\n+\n+    if (!seen.has(key)) {\n+      seen.add(key);\n+      result.push(processedLine);\n+    }\n+  }\n+\n+  return result;\n+}",
+  "git_status": "training/level-1/L1-003-line-dedupe/dedupeLines.mjs\ntraining/level-1/L1-003-line-dedupe/worker.log",
+  "summary": "Created dedupeLines.mjs with deduplication logic as specified.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-003-line-dedupe/dedupeLines.mjs\n+++ b/training/level-1/L1-003-line-dedupe/dedupeLines.mjs\n@@ -0,0 +1,40 @@\n+/**\n+ * Deduplicates lines from an array, preserving the first occurrence order.\n+ * @param {Array} lines - The array of lines to deduplicate.\n+ * @param {Object} [options={}] - Options for deduplication.\n+ * @param {boolean} [options.trim=false] - Whether to trim each line before comparison/output.\n+ * @param {boolean} [options.ignoreEmpty=false] - Whether to skip empty lines after optional trim.\n+ * @param {boolean} [options.caseSensitive=true] - Whether to compare lines case-sensitively.\n+ * @returns {Array} A new array of deduplicated lines.\n+ * @throws {TypeError} If input is not an array.\n+ */\n+export function dedupeLines(lines, options = {}) {\n+  if (!Array.isArray(lines)) {\n+    throw new TypeError('Input must be an array.');\n+  }\n+\n+  const { trim = false, ignoreEmpty = false, caseSensitive = true } = options;\n+  const seen = new Set();\n+  const result = [];\n+\n+  for (const line of lines) {\n+    let processedLine = String(line);\n+\n+    if (trim) {\n+      processedLine = processedLine.trim();\n+    }\n+\n+    if (ignoreEmpty && processedLine === '') {\n+      continue;\n+    }\n+\n+    const key = caseSensitive ? processedLine : processedLine.toLowerCase();\n+\n+    if (!seen.has(key)) {\n+      seen.add(key);\n+      result.push(processedLine);\n+    }\n+  }\n+\n+  return result;\n+}",
+    "git_status": "training/level-1/L1-003-line-dedupe/dedupeLines.mjs\ntraining/level-1/L1-003-line-dedupe/worker.log",
+    "tool_trace": [
+      "write_file: wrote 1258 chars to training/level-1/L1-003-line-dedupe/dedupeLines.mjs",
+      "read_file: /**\n * Deduplicates lines from an array, preserving the first occurrence order.\n * @param {Array} lines - The array of lines to deduplicate.\n * @param {Object} [options={}] - Options for deduplication",
+      "finish: Created dedupeLines.mjs with deduplication logic as specified."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-003-line-dedupe/dedupeLines.mjs\", \"content\": \"/**\\n * Deduplicates lines from an array, preserving the first occurrence order.\\n * @param {Array} lines - The array of lines to deduplicate.\\n * @param {Object} [",
+        "raw_suffix": " = options;\\n  const seen = new Set();\\n  const result = [];\\n\\n  for (const line of lines) {\\n    let processedLine = String(line);\\n\\n    if (trim) {\\n      processedLine = processedLine.trim();\\n    }\\n\\n    if (ignoreEmpty && processedLine === '') {\\n      continue;\\n    }\\n\\n    const key = caseSensitive ? processedLine : processedLine.toLowerCase();\\n\\n    if (!seen.has(key)) {\\n      seen.add(key);\\n      result.push(processedLine);\\n    }\\n  }\\n\\n  return result;\\n}\"}",
+        "raw_length": 1375,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1258
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-003-line-dedupe/dedupeLines.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-003-line-dedupe/dedupeLines.mjs\"}",
+        "raw_length": 63,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created dedupeLines.mjs with deduplication logic as specified.\"}",
+        "raw_suffix": "{\"summary\": \"Created dedupeLines.mjs with deduplication logic as specified.\"}",
+        "raw_length": 77,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "qwen3-builder",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6134",
+      "utilization_pct": "0",
+      "temperature_c": "39",
+      "power_w": "8.03"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      27 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6134",
+      "utilization_pct": "0",
+      "temperature_c": "43",
+      "power_w": "20.20"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

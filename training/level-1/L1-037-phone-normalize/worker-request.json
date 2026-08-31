@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-037. Create exactly training/level-1/L1-037-phone-normalize/normalizePhone.mjs. Export normalizePhone(input, regionHint=null). Input string only. Strip spaces, hyphens, parentheses, dots. Preserve a single leading +. Reject letters or malformed punctuation. If input starts 00, convert to +. If input starts +, normalized must be + followed by 8..15 digits. If no international prefix, regionHint may be BE or US only: BE =\u003e leading 0 local becomes +32 plus digits after 0; otherwise prefix +32. US =\u003e allow 10 digits and prefix +1, or 11 digits starting 1 and prefix +. Without regionHint and no international prefix return frozen invalid result reason REGION. Return frozen {normalized,valid,reason}; invalid strings never throw except non-string TypeError. Reasons from EMPTY,FORMAT,LENGTH,REGION. Deterministic, no I/O/network/deps. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-037",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-037-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-037-phone-normalize/normalizePhone.mjs"
+                      ]
+}

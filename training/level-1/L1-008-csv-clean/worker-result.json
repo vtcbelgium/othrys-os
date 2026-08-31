@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-008-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3-8b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788088969.7299628,
+  "completed_at": 1788088982.6161005,
+  "duration_sec": 12.88613772392273,
+  "allowed_paths": [
+    "training/level-1/L1-008-csv-clean/csvClean.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-008-csv-clean/csvClean.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-008-csv-clean/csvClean.mjs\n+++ b/training/level-1/L1-008-csv-clean/csvClean.mjs\n@@ -0,0 +1,90 @@\n+export function csvClean(input) {\n+  if (input === '') return '';\n+  \n+  const lines = input.split('\\n');\n+  let result = '';\n+  let inQuote = false;\n+  let currentField = '';\n+  let currentLine = '';\n+  let currentRecord = [];\n+  \n+  for (let i = 0; i < lines.length; i++) {\n+    const line = lines[i];\n+    let j = 0;\n+    \n+    while (j < line.length) {\n+      if (line[j] === '\"') {\n+        inQuote = !inQuote;\n+        j++;\n+        continue;\n+      }\n+      \n+      if (inQuote) {\n+        if (line[j] === '\"') {\n+          currentField += '\"';\n+          j++;\n+        } else if (line[j] === '\\r') {\n+          // Skip CR if inside quote\n+          j++;\n+        } else {\n+          currentField += line[j];\n+          j++;\n+        }\n+      } else {\n+        if (line[j] === ',') {\n+          currentRecord.push(currentField);\n+          currentField = '';\n+          j++;\n+        } else if (line[j] === '\\r') {\n+          // Skip CR if not in quote\n+          j++;\n+        } else {\n+          currentField += line[j];\n+          j++;\n+        }\n+      }\n+    }\n+    \n+    if (!inQuote) {\n+      if (currentField !== '') {\n+        currentRecord.push(currentField);\n+        currentField = '';\n+      }\n+      \n+      if (currentRecord.length > 0) {\n+        const fieldHasSpecial = currentRecord.some(field => \n+          field.includes(',') || field.includes('\"') || \n+          field.includes('\\r') || field.includes('\\n')\n+        );\n+        \n+        if (fieldHasSpecial) {\n+          result += '\"';\n+        }\n+        \n+        for (let k = 0; k < currentRecord.length; k++) {\n+          if (k > 0) result += ',';\n+          result += currentRecord[k];\n+          \n+          if (fieldHasSpecial && currentRecord[k].includes('\"')) {\n+            result += '\"';\n+          }\n+        }\n+        \n+        if (fieldHasSpecial) {\n+          result += '\"';\n+        }\n+        \n+        result += '\\n';\n+      }\n+      \n+      currentRecord = [];\n+    }\n+  }\n+  \n+  // Remove terminal empty record\n+  if (result.endsWith('\\n')) {\n+    result = result.slice(0, -1);\n+  }\n+  \n+  return result;\n+}",
+  "git_status": "training/level-1/L1-008-csv-clean/csvClean.mjs",
+  "summary": "Created csvClean.mjs with RFC4180-style parser/serializer as specified.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-008-csv-clean/csvClean.mjs\n+++ b/training/level-1/L1-008-csv-clean/csvClean.mjs\n@@ -0,0 +1,90 @@\n+export function csvClean(input) {\n+  if (input === '') return '';\n+  \n+  const lines = input.split('\\n');\n+  let result = '';\n+  let inQuote = false;\n+  let currentField = '';\n+  let currentLine = '';\n+  let currentRecord = [];\n+  \n+  for (let i = 0; i < lines.length; i++) {\n+    const line = lines[i];\n+    let j = 0;\n+    \n+    while (j < line.length) {\n+      if (line[j] === '\"') {\n+        inQuote = !inQuote;\n+        j++;\n+        continue;\n+      }\n+      \n+      if (inQuote) {\n+        if (line[j] === '\"') {\n+          currentField += '\"';\n+          j++;\n+        } else if (line[j] === '\\r') {\n+          // Skip CR if inside quote\n+          j++;\n+        } else {\n+          currentField += line[j];\n+          j++;\n+        }\n+      } else {\n+        if (line[j] === ',') {\n+          currentRecord.push(currentField);\n+          currentField = '';\n+          j++;\n+        } else if (line[j] === '\\r') {\n+          // Skip CR if not in quote\n+          j++;\n+        } else {\n+          currentField += line[j];\n+          j++;\n+        }\n+      }\n+    }\n+    \n+    if (!inQuote) {\n+      if (currentField !== '') {\n+        currentRecord.push(currentField);\n+        currentField = '';\n+      }\n+      \n+      if (currentRecord.length > 0) {\n+        const fieldHasSpecial = currentRecord.some(field => \n+          field.includes(',') || field.includes('\"') || \n+          field.includes('\\r') || field.includes('\\n')\n+        );\n+        \n+        if (fieldHasSpecial) {\n+          result += '\"';\n+        }\n+        \n+        for (let k = 0; k < currentRecord.length; k++) {\n+          if (k > 0) result += ',';\n+          result += currentRecord[k];\n+          \n+          if (fieldHasSpecial && currentRecord[k].includes('\"')) {\n+            result += '\"';\n+          }\n+        }\n+        \n+        if (fieldHasSpecial) {\n+          result += '\"';\n+        }\n+        \n+        result += '\\n';\n+      }\n+      \n+      currentRecord = [];\n+    }\n+  }\n+  \n+  // Remove terminal empty record\n+  if (result.endsWith('\\n')) {\n+    result = result.slice(0, -1);\n+  }\n+  \n+  return result;\n+}",
+    "git_status": "training/level-1/L1-008-csv-clean/csvClean.mjs",
+    "tool_trace": [
+      "write_file: wrote 2020 chars to training/level-1/L1-008-csv-clean/csvClean.mjs",
+      "finish: Created csvClean.mjs with RFC4180-style parser/serializer as specified."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-008-csv-clean/csvClean.mjs\", \"content\": \"export function csvClean(input) {\\n  if (input === '') return '';\\n  \\n  const lines = input.split('\\\\n');\\n  let result = '';\\n  let inQuote = false;\\n  let currentFiel",
+        "raw_suffix": "        result += currentRecord[k];\\n          \\n          if (fieldHasSpecial && currentRecord[k].includes('\\\"')) {\\n            result += '\\\"';\\n          }\\n        }\\n        \\n        if (fieldHasSpecial) {\\n          result += '\\\"';\\n        }\\n        \\n        result += '\\\\n';\\n      }\\n      \\n      currentRecord = [];\\n    }\\n  }\\n  \\n  // Remove terminal empty record\\n  if (result.endsWith('\\\\n')) {\\n    result = result.slice(0, -1);\\n  }\\n  \\n  return result;\\n}\"}",
+        "raw_length": 2197,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 2020
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created csvClean.mjs with RFC4180-style parser/serializer as specified.\"}",
+        "raw_suffix": "{\"summary\": \"Created csvClean.mjs with RFC4180-style parser/serializer as specified.\"}",
+        "raw_length": 86,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3-8b",
+    "model": "qwen3:8b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "5305",
+      "utilization_pct": "0",
+      "temperature_c": "40",
+      "power_w": "5.28"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    5.3 GB    100% GPU     4096       28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "5305",
+      "utilization_pct": "2",
+      "temperature_c": "45",
+      "power_w": "21.61"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    5.3 GB    100% GPU     4096       29 minutes from now"
+  }
+}

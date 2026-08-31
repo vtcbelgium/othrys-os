@@ -1,0 +1,9 @@
+{
+  "schema":"othrys.os.training-learning-receipt.v1","jobId":"L2-010","level":2,"title":"Habit tracker","classification":"HIGH_VALUE_OPERATIONAL_LEARNING",
+  "stock":{"disposition":"ADAPT_PROVEN_STATE_PATTERN","reason":"reused proven persistence and deterministic date arithmetic after governed repair still failed semantics"},
+  "attempts":[{"builder":"local.qwen3.5-9b","outcome":"OK_RECEIPT_CONTRACT_FAILURE"},{"builder":"local.qwen3-coder-30b","outcome":"OK_RECEIPT_TALOS_FAILURE"},{"actor":"operator_bounded_recovery","outcome":"TALOS_GREEN"}],
+  "talos":{"source":{"pass":8,"fail":0},"candidateBlock":{"pass":8,"fail":0}},
+  "block":{"id":"block.state.habit-tracker","disposition":"TRAINING_CANDIDATE","authorityGranted":false},
+  "lessons":["first build failed most contract cases","repair reported success while Talos still failed most cases","worker ok is never semantic verification"],
+  "authorityGranted":false
+}

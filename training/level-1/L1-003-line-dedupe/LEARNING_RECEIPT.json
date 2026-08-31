@@ -1,0 +1,57 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L1-003",
+  "level": 1,
+  "title": "Line deduplicator",
+  "classification": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "sourceEvidence": [
+    "worker-result.json"
+  ],
+  "sourceTests": [
+    "dedupeLines.test.mjs"
+  ],
+  "exactPackagedBlock": "blocks\\text\\line-dedupe",
+  "candidateProof": "blocks/text/line-dedupe/tests/contract.test.mjs",
+  "attemptsDeclared": null,
+  "buildersObserved": {
+    "qwen3-builder": 1
+  },
+  "failureReasonsObserved": {
+    "out_of_scope_changes: ['training/level-1/L1-003-line-dedupe/worker.log']": 1
+  },
+  "lessons": [
+    "First clean one-shot currency cycle after marker transport/evidence containment repairs."
+  ],
+  "talos": {
+    "freshLevelProof": "LEVEL_1_MILESTONE.json: 305/305 source and candidate PASS",
+    "runtimeProof": "LEVEL_2_MILESTONE.json: combined L1+L2 486/486 PASS"
+  },
+  "block": {
+    "id": "block.text.line-dedupe",
+    "disposition": "BLOCK_CANDIDATE",
+    "authorityGranted": false
+  },
+  "organLearning": {
+    "MNEMOSYNE": [
+      "retain source, worker and failure provenance"
+    ],
+    "HEPHAESTUS": [
+      "use task-specific builder outcome evidence"
+    ],
+    "TALOS": [
+      "independent contract proof outranks worker self-report"
+    ],
+    "KRONOS": [
+      "retain measured attempt timing where present"
+    ],
+    "RHEA": [
+      "retain failure/recovery sequence"
+    ],
+    "MYCELIUM": [
+      "route history is recommendation evidence only"
+    ],
+    "SWITCHYARD": [
+      "builder route outcome remains authority-free"
+    ]
+  }
+}

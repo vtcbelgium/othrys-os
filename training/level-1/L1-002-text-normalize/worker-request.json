@@ -1,0 +1,26 @@
+﻿{
+    "schema_version":  "othrys.worker-request.v0.1",
+    "job_id":  "TRAIN-L1-002-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "task":  "OTHRYS TRAINING LEVEL 1 JOB L1-002. Create exactly one file: training/level-1/L1-002-text-normalize/normalizeText.mjs. Export function normalizeText(input, options={}). Deterministic, dependency-free, no filesystem/network. Contract: convert null/undefined to empty string otherwise String(input); normalize CRLF and CR to LF; optionally trim trailing spaces/tabs per line (default true); collapse runs of spaces/tabs within each line to one space by default, controlled by options.collapseHorizontalWhitespace !== false; collapse 3+ consecutive newlines to exactly 2 by default, controlled by options.collapseBlankLines !== false; trim whole result by default, controlled by options.trim !== false. Preserve single newlines. Do not touch any other file. Valid ESM JavaScript only.",
+    "allowed_paths":  [
+                          "training/level-1/L1-002-text-normalize/normalizeText.mjs"
+                      ],
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "timeout_sec":  90,
+    "metadata":  {
+                     "training_job":  "L1-002",
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_level":  1
+                 }
+}

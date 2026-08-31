@@ -1,0 +1,26 @@
+﻿{
+    "task":  "OTHRYS TRAINING L1-007 TALOS REPAIR. Read and WRITE exactly training/level-1/L1-007-json-validate/jsonValidate.mjs. Talos found both valid and invalid returned result objects are not frozen, violating the contract. Return Object.freeze(...) on every normal result. Also when a native SyntaxError contains position N, compute line and column from the ORIGINAL input and that zero-based offset, rather than trusting message line/column. Invalid JSON must never throw. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-007"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-007-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-007-json-validate/jsonValidate.mjs"
+                      ]
+}

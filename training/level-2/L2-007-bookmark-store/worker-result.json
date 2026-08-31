@@ -1,0 +1,107 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L2-007-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788103909.2991292,
+  "completed_at": 1788103941.7178445,
+  "duration_sec": 32.41871523857117,
+  "allowed_paths": [
+    "training/level-2/L2-007-bookmark-store/bookmarkStore.mjs"
+  ],
+  "changed_files": [
+    "training/level-2/L2-007-bookmark-store/bookmarkStore.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-2/L2-007-bookmark-store/bookmarkStore.mjs\n+++ b/training/level-2/L2-007-bookmark-store/bookmarkStore.mjs\n@@ -0,0 +1,204 @@\n+// Import required modules\n+import { join } from 'path';\n+import { promises as fs } from 'fs';\n+import { URL } from 'url';\n+\n+// Define constants\n+const STATE_CORRUPT = 'STATE_CORRUPT';\n+const INVALID_BOOKMARK = 'INVALID_BOOKMARK';\n+const DUPLICATE_ID = 'DUPLICATE_ID';\n+const INVALID_PATCH = 'INVALID_PATCH';\n+const NOT_FOUND = 'NOT_FOUND';\n+\n+// Helper function to normalize URL\n+function normalizeUrl(url) {\n+  try {\n+    const parsed = new URL(url);\n+    return parsed.toString().replace(/#.*/, '');\n+  } catch (e) {\n+    throw new Error('Invalid URL');\n+  }\n+}\n+\n+// Helper function to validate bookmark\n+function validateBookmark(bookmark) {\n+  if (!bookmark || typeof bookmark !== 'object') {\n+    throw new Error(INVALID_BOOKMARK);\n+  }\n+\n+  const { id, title, url, tags } = bookmark;\n+\n+  if (typeof id !== 'string' || id.trim() === '') {\n+    throw new Error(DUPLICATE_ID);\n+  }\n+\n+  if (typeof title !== 'string' || title.trim() === '') {\n+    throw new Error(INVALID_BOOKMARK);\n+  }\n+\n+  if (typeof url !== 'string' || url.trim() === '') {\n+    throw new Error(INVALID_BOOKMARK);\n+  }\n+\n+  try {\n+    normalizeUrl(url);\n+  } catch (e) {\n+    throw new Error(INVALID_BOOKMARK);\n+  }\n+\n+  if (!Array.isArray(tags) || tags.some(tag => typeof tag !== 'string' || tag.trim() === '')) {\n+    throw new Error(INVALID_BOOKMARK);\n+  }\n+}\n+\n+// Helper function to deep clone\n+function deepClone(obj) {\n+  return JSON.parse(JSON.stringify(obj));\n+}\n+\n+// CreateBookmarkStore function\n+async function createBookmarkStore(filePath) {\n+  // Ensure the directory exists\n+  const dirPath = join(...filePath.split('/').slice(0, -1));\n+  try {\n+    await fs.mkdir(dirPath, { recursive: true });\n+  } catch (e) {\n+    if (e.code !== 'EEXIST') {\n+      throw e;\n+    }\n+  }\n+\n+  // Load existing bookmarks\n+  let bookmarks = [];\n+  try {\n+    const data = await fs.readFile(filePath, 'utf-8');\n+    bookmarks = JSON.parse(data);\n+  } catch (e) {\n+    if (e.code !== 'ENOENT') {\n+      throw e;\n+    }\n+  }\n+\n+  // Validate bookmarks\n+  if (!Array.isArray(bookmarks)) {\n+    throw new Error(STATE_CORRUPT);\n+  }\n+\n+  // Create a temporary file for writing\n+  const tempFilePath = filePath + '.tmp';\n+\n+  // List all bookmarks\n+  async function list() {\n+    return deepClone(bookmarks);\n+  }\n+\n+  // Get a bookmark by ID\n+  async function get(id) {\n+    const bookmark = bookmarks.find(b => b.id === id);\n+    if (!bookmark) {\n+      throw new Error(NOT_FOUND);\n+    }\n+    return deepClone(bookmark);\n+  }\n+\n+  // Add a new bookmark\n+  async function add(bookmark) {\n+    validateBookmark(bookmark);\n+\n+    if (bookmarks.some(b => b.id === bookmark.id)) {\n+      throw new Error(DUPLICATE_ID);\n+    }\n+\n+    bookmarks.push(bookmark);\n+\n+    // Write to temporary file\n+    await fs.writeFile(tempFilePath, JSON.stringify(bookmarks, null, 2), 'utf-8');\n+\n+    // Rename temporary file to the original\n+    await fs.rename(tempFilePath, filePath);\n+\n+    return deepClone(bookmark);\n+  }\n+\n+  // Update an existing bookmark\n+  async function update(id, patch) {\n+    const bookmark = bookmarks.find(b => b.id === id);\n+    if (!bookmark) {\n+      throw new Error(NOT_FOUND);\n+    }\n+\n+    // Validate patch\n+    if (typeof patch !== 'object' || patch === null) {\n+      throw new Error(INVALID_PATCH);\n+    }\n+\n+    const updatedBookmark = { ...bookmark };\n+\n+    if (patch.title !== undefined) {\n+      if (typeof patch.title !== 'string' || patch.title.trim() === '') {\n+        throw new Error(INVALID_PATCH);\n+      }\n+      updatedBookmark.title = patch.title.trim();\n+    }\n+\n+    if (patch.url !== undefined) {\n+      if (typeof patch.url !== 'string' || patch.url.trim() === '') {\n+        throw new Error(INVALID_PATCH);\n+      }\n+      try {\n+        updatedBookmark.url = normalizeUrl(patch.url);\n+      } catch (e) {\n+        throw new Error(INVALID_PATCH);\n+      }\n+    }\n+\n+    if (patch.tags !== undefined) {\n+      if (!Array.isArray(patch.tags) || patch.tags.some(tag => typeof tag !== 'string' || tag.trim() === '')) {\n+        throw new Error(INVALID_PATCH);\n+      }\n+      updatedBookmark.tags = patch.tags;\n+    }\n+\n+    // Update the bookmark\n+    const index = bookmarks.findIndex(b => b.id === id);\n+    bookmarks[index] = updatedBookmark;\n+\n+    // Write to temporary file\n+    await fs.writeFile(tempFilePath, JSON.stringify(bookmarks, null, 2), 'utf-8');\n+\n+    // Rename temporary file to the original\n+    await fs.rename(tempFilePath, filePath);\n+\n+    return deepClone(updatedBookmark);\n+  }\n+\n+  // Remove a bookmark by ID\n+  async function remove(id) {\n+    const index = bookmarks.findIndex(b => b.id === id);\n+    if (index === -1) {\n+      throw new Error(NOT_FOUND);\n+    }\n+\n+    const removedBookmark = bookmarks.splice(index, 1)[0];\n+\n+    // Write to temporary file\n+    await fs.writeFile(tempFilePath, JSON.stringify(bookmarks, null, 2), 'utf-8');\n+\n+    // Rename temporary file to the original\n+    await fs.rename(tempFilePath, filePath);\n+\n+    return deepClone(removedBookmark);\n+  }\n+\n+  // Export the API\n+  return {\n+    list,\n+    get,\n+    add,\n+    update,\n+    remove\n+  };\n+}\n+\n+// Export the createBookmarkStore function\n+export { createBookmarkStore };",
+  "git_status": "training/level-2/L2-007-bookmark-store/bookmarkStore.mjs",
+  "summary": "Created bookmarkStore.mjs with createBookmarkStore function implementing durable JSON array persistence with CRUD operations and validation as specified.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-2/L2-007-bookmark-store/bookmarkStore.mjs\n+++ b/training/level-2/L2-007-bookmark-store/bookmarkStore.mjs\n@@ -0,0 +1,204 @@\n+// Import required modules\n+import { join } from 'path';\n+import { promises as fs } from 'fs';\n+import { URL } from 'url';\n+\n+// Define constants\n+const STATE_CORRUPT = 'STATE_CORRUPT';\n+const INVALID_BOOKMARK = 'INVALID_BOOKMARK';\n+const DUPLICATE_ID = 'DUPLICATE_ID';\n+const INVALID_PATCH = 'INVALID_PATCH';\n+const NOT_FOUND = 'NOT_FOUND';\n+\n+// Helper function to normalize URL\n+function normalizeUrl(url) {\n+  try {\n+    const parsed = new URL(url);\n+    return parsed.toString().replace(/#.*/, '');\n+  } catch (e) {\n+    throw new Error('Invalid URL');\n+  }\n+}\n+\n+// Helper function to validate bookmark\n+function validateBookmark(bookmark) {\n+  if (!bookmark || typeof bookmark !== 'object') {\n+    throw new Error(INVALID_BOOKMARK);\n+  }\n+\n+  const { id, title, url, tags } = bookmark;\n+\n+  if (typeof id !== 'string' || id.trim() === '') {\n+    throw new Error(DUPLICATE_ID);\n+  }\n+\n+  if (typeof title !== 'string' || title.trim() === '') {\n+    throw new Error(INVALID_BOOKMARK);\n+  }\n+\n+  if (typeof url !== 'string' || url.trim() === '') {\n+    throw new Error(INVALID_BOOKMARK);\n+  }\n+\n+  try {\n+    normalizeUrl(url);\n+  } catch (e) {\n+    throw new Error(INVALID_BOOKMARK);\n+  }\n+\n+  if (!Array.isArray(tags) || tags.some(tag => typeof tag !== 'string' || tag.trim() === '')) {\n+    throw new Error(INVALID_BOOKMARK);\n+  }\n+}\n+\n+// Helper function to deep clone\n+function deepClone(obj) {\n+  return JSON.parse(JSON.stringify(obj));\n+}\n+\n+// CreateBookmarkStore function\n+async function createBookmarkStore(filePath) {\n+  // Ensure the directory exists\n+  const dirPath = join(...filePath.split('/').slice(0, -1));\n+  try {\n+    await fs.mkdir(dirPath, { recursive: true });\n+  } catch (e) {\n+    if (e.code !== 'EEXIST') {\n+      throw e;\n+    }\n+  }\n+\n+  // Load existing bookmarks\n+  let bookmarks = [];\n+  try {\n+    const data = await fs.readFile(filePath, 'utf-8');\n+    bookmarks = JSON.parse(data);\n+  } catch (e) {\n+    if (e.code !== 'ENOENT') {\n+      throw e;\n+    }\n+  }\n+\n+  // Validate bookmarks\n+  if (!Array.isArray(bookmarks)) {\n+    throw new Error(STATE_CORRUPT);\n+  }\n+\n+  // Create a temporary file for writing\n+  const tempFilePath = filePath + '.tmp';\n+\n+  // List all bookmarks\n+  async function list() {\n+    return deepClone(bookmarks);\n+  }\n+\n+  // Get a bookmark by ID\n+  async function get(id) {\n+    const bookmark = bookmarks.find(b => b.id === id);\n+    if (!bookmark) {\n+      throw new Error(NOT_FOUND);\n+    }\n+    return deepClone(bookmark);\n+  }\n+\n+  // Add a new bookmark\n+  async function add(bookmark) {\n+    validateBookmark(bookmark);\n+\n+    if (bookmarks.some(b => b.id === bookmark.id)) {\n+      throw new Error(DUPLICATE_ID);\n+    }\n+\n+    bookmarks.push(bookmark);\n+\n+    // Write to temporary file\n+    await fs.writeFile(tempFilePath, JSON.stringify(bookmarks, null, 2), 'utf-8');\n+\n+    // Rename temporary file to the original\n+    await fs.rename(tempFilePath, filePath);\n+\n+    return deepClone(bookmark);\n+  }\n+\n+  // Update an existing bookmark\n+  async function update(id, patch) {\n+    const bookmark = bookmarks.find(b => b.id === id);\n+    if (!bookmark) {\n+      throw new Error(NOT_FOUND);\n+    }\n+\n+    // Validate patch\n+    if (typeof patch !== 'object' || patch === null) {\n+      throw new Error(INVALID_PATCH);\n+    }\n+\n+    const updatedBookmark = { ...bookmark };\n+\n+    if (patch.title !== undefined) {\n+      if (typeof patch.title !== 'string' || patch.title.trim() === '') {\n+        throw new Error(INVALID_PATCH);\n+      }\n+      updatedBookmark.title = patch.title.trim();\n+    }\n+\n+    if (patch.url !== undefined) {\n+      if (typeof patch.url !== 'string' || patch.url.trim() === '') {\n+        throw new Error(INVALID_PATCH);\n+      }\n+      try {\n+        updatedBookmark.url = normalizeUrl(patch.url);\n+      } catch (e) {\n+        throw new Error(INVALID_PATCH);\n+      }\n+    }\n+\n+    if (patch.tags !== undefined) {\n+      if (!Array.isArray(patch.tags) || patch.tags.some(tag => typeof tag !== 'string' || tag.trim() === '')) {\n+        throw new Error(INVALID_PATCH);\n+      }\n+      updatedBookmark.tags = patch.tags;\n+    }\n+\n+    // Update the bookmark\n+    const index = bookmarks.findIndex(b => b.id === id);\n+    bookmarks[index] = updatedBookmark;\n+\n+    // Write to temporary file\n+    await fs.writeFile(tempFilePath, JSON.stringify(bookmarks, null, 2), 'utf-8');\n+\n+    // Rename temporary file to the original\n+    await fs.rename(tempFilePath, filePath);\n+\n+    return deepClone(updatedBookmark);\n+  }\n+\n+  // Remove a bookmark by ID\n+  async function remove(id) {\n+    const index = bookmarks.findIndex(b => b.id === id);\n+    if (index === -1) {\n+      throw new Error(NOT_FOUND);\n+    }\n+\n+    const removedBookmark = bookmarks.splice(index, 1)[0];\n+\n+    // Write to temporary file\n+    await fs.writeFile(tempFilePath, JSON.stringify(bookmarks, null, 2), 'utf-8');\n+\n+    // Rename temporary file to the original\n+    await fs.rename(tempFilePath, filePath);\n+\n+    return deepClone(removedBookmark);\n+  }\n+\n+  // Export the API\n+  return {\n+    list,\n+    get,\n+    add,\n+    update,\n+    remove\n+  };\n+}\n+\n+// Export the createBookmarkStore function\n+export { createBookmarkStore };",
+    "git_status": "training/level-2/L2-007-bookmark-store/bookmarkStore.mjs",
+    "tool_trace": [
+      "write_file: wrote 0 chars to training/level-2/L2-007-bookmark-store/bookmarkStore.mjs",
+      "append_file: appended 4999 chars to training/level-2/L2-007-bookmark-store/bookmarkStore.mjs",
+      "finish: Created bookmarkStore.mjs with createBookmarkStore function implementing durable JSON array persistence with CRUD operations and validation as specified."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-2/L2-007-bookmark-store/bookmarkStore.mjs\",\"content\":\"\"}",
+        "raw_suffix": "{\"path\":\"training/level-2/L2-007-bookmark-store/bookmarkStore.mjs\",\"content\":\"\"}",
+        "raw_length": 80,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "append_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-2/L2-007-bookmark-store/bookmarkStore.mjs\",\"text\":\"// Import required modules\\nimport { join } from 'path';\\nimport { promises as fs } from 'fs';\\nimport { URL } from 'url';\\n\\n// Define constants\\nconst STATE_CORRUP",
+        "raw_suffix": "kmark = bookmarks.splice(index, 1)[0];\\n\\n    // Write to temporary file\\n    await fs.writeFile(tempFilePath, JSON.stringify(bookmarks, null, 2), 'utf-8');\\n\\n    // Rename temporary file to the original\\n    await fs.rename(tempFilePath, filePath);\\n\\n    return deepClone(removedBookmark);\\n  }\\n\\n  // Export the API\\n  return {\\n    list,\\n    get,\\n    add,\\n    update,\\n    remove\\n  };\\n}\\n\\n// Export the createBookmarkStore function\\nexport { createBookmarkStore };\"}]}",
+        "raw_length": 5281,
+        "parsed_keys": [],
+        "has_path": false,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "str",
+        "raw_prefix": "{\"summary\":\"Created bookmarkStore.mjs with createBookmarkStore function implementing durable JSON array persistence with CRUD operations and validation as specified.\"}",
+        "raw_suffix": "{\"summary\":\"Created bookmarkStore.mjs with createBookmarkStore function implementing durable JSON array persistence with CRUD operations and validation as specified.\"}",
+        "raw_length": 167,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen3.5-9b",
+    "model": "qwen3.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "4",
+      "temperature_c": "41",
+      "power_w": "6.46"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      27 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6262",
+      "utilization_pct": "2",
+      "temperature_c": "56",
+      "power_w": "13.59"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

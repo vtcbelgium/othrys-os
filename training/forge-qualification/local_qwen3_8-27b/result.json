@@ -1,0 +1,109 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "FORGE-QUAL-local.qwen3.8-27b-R1",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3.8-27b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788107146.7997599,
+  "completed_at": 1788107165.9210904,
+  "duration_sec": 19.121330499649048,
+  "allowed_paths": [
+    "training/forge-qualification/local_qwen3_8-27b/candidate.mjs"
+  ],
+  "changed_files": [
+    "training/forge-qualification/local_qwen3_8-27b/candidate.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/forge-qualification/local_qwen3_8-27b/candidate.mjs\n+++ b/training/forge-qualification/local_qwen3_8-27b/candidate.mjs\n@@ -0,0 +1,3 @@\n+export function clamp(n, min, max) {\n+  return Math.min(Math.max(n, min), max);\n+}",
+  "git_status": "training/forge-qualification/local_qwen3_8-27b/candidate.mjs",
+  "summary": "Created training/forge-qualification/local_qwen3_8-27b/candidate.mjs exporting clamp(n,min,max) as ESM with no dependencies; verified contents.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/forge-qualification/local_qwen3_8-27b/candidate.mjs\n+++ b/training/forge-qualification/local_qwen3_8-27b/candidate.mjs\n@@ -0,0 +1,3 @@\n+export function clamp(n, min, max) {\n+  return Math.min(Math.max(n, min), max);\n+}",
+    "git_status": "training/forge-qualification/local_qwen3_8-27b/candidate.mjs",
+    "tool_trace": [
+      "write_file: wrote 80 chars to training/forge-qualification/local_qwen3_8-27b/candidate.mjs",
+      "read_file: export function clamp(n, min, max) {\n  return Math.min(Math.max(n, min), max);\n}",
+      "finish: Created training/forge-qualification/local_qwen3_8-27b/candidate.mjs exporting clamp(n,min,max) as ESM with no dependencies; verified contents."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/forge-qualification/local_qwen3_8-27b/candidate.mjs\", \"content\": \"export function clamp(n, min, max) {\\n  return Math.min(Math.max(n, min), max);\\n}\"}",
+        "raw_suffix": "{\"path\": \"training/forge-qualification/local_qwen3_8-27b/candidate.mjs\", \"content\": \"export function clamp(n, min, max) {\\n  return Math.min(Math.max(n, min), max);\\n}\"}",
+        "raw_length": 169,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 80
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/forge-qualification/local_qwen3_8-27b/candidate.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/forge-qualification/local_qwen3_8-27b/candidate.mjs\"}",
+        "raw_length": 72,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/forge-qualification/local_qwen3_8-27b/candidate.mjs exporting clamp(n,min,max) as ESM with no dependencies; verified contents.\"}",
+        "raw_suffix": "{\"summary\": \"Created training/forge-qualification/local_qwen3_8-27b/candidate.mjs exporting clamp(n,min,max) as ESM with no dependencies; verified contents.\"}",
+        "raw_length": 158,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "hephaestus_forge_local_qualification",
+    "selected_builder": "local.qwen3.8-27b",
+    "model": "qwen3.8:27b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "5730",
+      "utilization_pct": "1",
+      "temperature_c": "40",
+      "power_w": "6.47"
+    },
+    "ollama_ps": "NAME           ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3.8:27b    22130167c4c2    18 GB    75%/25% CPU/GPU    4096       28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "5738",
+      "utilization_pct": "1",
+      "temperature_c": "53",
+      "power_w": "11.14"
+    },
+    "ollama_ps": "NAME           ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nqwen3.8:27b    22130167c4c2    18 GB    75%/25% CPU/GPU    4096       29 minutes from now"
+  }
+}

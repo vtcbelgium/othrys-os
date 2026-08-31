@@ -1,6 +1,6 @@
 {
   "schema": "othrys.os.book-registry.v1",
-  "status": "HOUSEKEEPING_BASELINE",
+  "status": "CURRENT_OS_ARCHITECTURE_ALIGNED",
   "laws": [
     "Books synthesize evidence; they do not replace code, tests, ADRs, missions, receipts or history.",
     "Every current house authority/system/service/structural surface has exactly one Book target.",
@@ -341,6 +341,38 @@
       ],
       "boundary": "Visual Control observes and compares explicit frame evidence; it does not capture screens, inject input, route nodes, verify execution or grant authority.",
       "path": "books/book-of-visual-control/README.md",
+      "status": "CURRENT_OS_EDITION"
+    },
+    {
+      "id": "blueprints",
+      "title": "The Book of Blueprints",
+      "role": "Single canonical desired-state product contract for one Oros.",
+      "evidence": [
+        "docs/architecture/OTHRYS_HIERARCHY.md",
+        "docs/architecture/OFFICIAL_BLOCK_OROS_CONSTELLATION_MODEL.md",
+        "harvested Block Composition Law"
+      ],
+      "legacy": [
+        "harvested ADR-0048 Blueprint family evidence"
+      ],
+      "boundary": "Blueprint declares desired capability and constraints; Factory resolves; the Oros owns runtime truth.",
+      "path": "books/book-of-blueprints/README.md",
+      "status": "CURRENT_OS_EDITION"
+    },
+    {
+      "id": "constellations",
+      "title": "The Book of Constellations and Stars",
+      "role": "Governed management/intelligence projection over Oros runtime reality.",
+      "evidence": [
+        "docs/architecture/OTHRYS_HIERARCHY.md",
+        "harvested ADR-0050",
+        "harvested ADR-0051"
+      ],
+      "legacy": [
+        "Great Constellation / Star doctrine in harvested estate"
+      ],
+      "boundary": "Constellation observes and manages; it does not become the Oros. Block is not Star.",
+      "path": "books/book-of-constellations/README.md",
       "status": "CURRENT_OS_EDITION"
     }
   ],

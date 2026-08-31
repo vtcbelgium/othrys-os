@@ -16,7 +16,6 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
-HUB_ROOT = Path(r"C:\Users\othry\Projects\othrys-hub-main")
 WORKER_ID = "worker.legion.qwen3-builder.v0.1"
 CAPABILITY = "engineering.patch"
 ES_CONTINUOUS = 0x80000000
@@ -25,7 +24,10 @@ FORGE_LOCAL_MODELS = {
     "local.qwen3-8b": "qwen3:8b",
     "local.qwen3.5-9b": "qwen3.5:9b",
     "local.qwen3-coder-30b": "qwen3-coder:30b",
+    "local.qwen3.8-27b": "qwen3.8:27b",
+    "local.ornith-1.5-9b": "ornith-1.5:9b",
     "local.qwen2.5-coder-7b": "qwen2.5-coder:7b",
+    "local.granite4.2-8b": "granite4.2:8b",
 }
 
 
@@ -70,6 +72,14 @@ def _node_snapshot() -> dict[str, Any]:
         "gpu": _gpu_snapshot(),
         "ollama_ps": _run_text("ollama", "ps"),
     }
+
+
+def _ollama_model_ready(model: str) -> bool:
+    raw = _run_text("ollama", "list")
+    if not raw:
+        return False
+    wanted = model.strip().lower()
+    return any(line.split()[0].strip().lower() == wanted for line in raw.splitlines()[1:] if line.split())
 
 
 def _safe_rel_paths(values: list[str]) -> list[str]:
@@ -126,8 +136,8 @@ def _repair_single_path_tool_calls(response: dict[str, Any], allowed: list[str])
             continue
         args = fn.get("arguments")
         try:
-            from hub import engineering as hub_engineering
-            obj = hub_engineering._parse_arguments(args)
+            import local_engineering
+            obj = local_engineering._parse_arguments(args)
         except Exception:
             try:
                 obj = json.loads(args) if isinstance(args, str) else dict(args or {})
@@ -160,8 +170,8 @@ def _tool_call_diagnostics(response: dict[str, Any]) -> list[dict[str, Any]]:
         fn = call.get("function") or {}
         raw = fn.get("arguments", call.get("arguments"))
         try:
-            from hub import engineering as hub_engineering
-            parsed = hub_engineering._parse_arguments(raw)
+            import local_engineering
+            parsed = local_engineering._parse_arguments(raw)
         except Exception:
             parsed = {}
         raw_text = raw if isinstance(raw, str) else json.dumps(raw, ensure_ascii=False, default=str)
@@ -309,15 +319,16 @@ Never wrap file content in JSON or markdown fences. Use only tool names offered 
 
 def run_job(req: dict[str, Any]) -> dict[str, Any]:
     workspace, allowed, deny = _validate_request(req)
-    sys.path.insert(0, str(HUB_ROOT))
-    from hub.builders import Qwen3BuilderMind
-    from hub import engineering as hub_engineering
+    # The worker is self-contained inside OTHRYS OS. Legacy Hub was harvested
+    # into runtime/workers/local_engineering.py so governed execution no longer
+    # depends on a parallel repository being present.
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import local_engineering
 
     # Bound all engineering evidence to the request allowlist. This prevents
     # dirty unrelated files (including prior worker results) from recursively
     # entering the next result artifact.
-    hub_engineering.workspace_diff = lambda _workspace: _scoped_workspace_diff(workspace, allowed)
-    builder = Qwen3BuilderMind()
+    local_engineering.workspace_diff = lambda _workspace: _scoped_workspace_diff(workspace, allowed)
     tool_call_diagnostics: list[dict[str, Any]] = []
     dirty_before = _dirty_snapshot(workspace)
     metadata=req.get("metadata") or {}
@@ -330,11 +341,12 @@ def run_job(req: dict[str, Any]) -> dict[str, Any]:
             raise ValueError("FORGE_QUALIFICATION_PATH_REQUIRED")
     elif not _forge_execution_allowed(workspace, forge_builder_id):
         raise ValueError("FORGE_BUILDER_NOT_QUALIFIED_FOR_GOVERNED_EXECUTION")
-    if metadata.get("training_level") == 1 or metadata.get("forge_qualification") is True:
-        selected_model=FORGE_LOCAL_MODELS[forge_builder_id]
-        builder.chat_turn = lambda messages, tools: _training_marker_protocol_chat_turn(messages, tools, selected_model)
+    selected_model=FORGE_LOCAL_MODELS[forge_builder_id]
+    # Marker transport avoids nested JSON escaping failures observed during the
+    # L1/L2 corpus while preserving the same governed tool executor and allowlist.
+    chat_turn = lambda messages, tools: _training_marker_protocol_chat_turn(messages, tools, selected_model)
     if len(allowed) == 1:
-        original_chat_turn = builder.chat_turn
+        original_chat_turn = chat_turn
         def traced_chat_turn(messages, tools):
             mutated = bool(_changed_since(dirty_before, _dirty_snapshot(workspace)))
             effective_tools = _gate_finish_tool(tools, mutated)
@@ -350,9 +362,9 @@ def run_job(req: dict[str, Any]) -> dict[str, Any]:
                 if len(calls) != len(response.get("tool_calls") or []):
                     response={**response,"tool_calls":calls,"content":response.get("content") or "finish refused before mutation"}
             return _repair_single_path_tool_calls(response, allowed)
-        builder.chat_turn = traced_chat_turn
-    if builder.status() != "ready":
-        raise RuntimeError(f"qwen3-builder not ready: {builder.status()}")
+        chat_turn = traced_chat_turn
+    if not _ollama_model_ready(selected_model):
+        raise RuntimeError(f"local builder model not ready: {selected_model}")
 
     for path in allowed:
         if any(path == d or path.startswith(d.rstrip("/") + "/") for d in deny):
@@ -360,8 +372,8 @@ def run_job(req: dict[str, Any]) -> dict[str, Any]:
 
     started = time.time()
     before = _node_snapshot()
-    eng = hub_engineering.run_engineering_loop(
-        task=req["task"], workspace=workspace, chat_turn=builder.chat_turn,
+    eng = local_engineering.run_engineering_loop(
+        task=req["task"], workspace=workspace, chat_turn=chat_turn,
         touch_allow=allowed,
     )
     dirty_after = _dirty_snapshot(workspace)

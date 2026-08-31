@@ -1,0 +1,149 @@
+{
+  "schema": "othrys.hephaestus.olympics-heat.v1",
+  "rows": [
+    {
+      "builderId": "nvidia.kimi-k3",
+      "eventId": "PROTOCOL",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 8141,
+      "providerThrottleObserved": false,
+      "error": null,
+      "finish": "stop",
+      "chars": 27,
+      "preview": "{\"ok\":true,\"items\":[1,2,3]}"
+    },
+    {
+      "builderId": "nvidia.kimi-k3",
+      "eventId": "REPAIR",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 20463,
+      "providerThrottleObserved": false,
+      "error": null,
+      "finish": "stop",
+      "chars": 70,
+      "preview": "export function clamp(n,min,max){return Math.min(max,Math.max(min,n))}"
+    },
+    {
+      "builderId": "nvidia.kimi-k3",
+      "eventId": "REPO",
+      "talosPass": false,
+      "protocolPass": false,
+      "latencyMs": 20320,
+      "providerThrottleObserved": true,
+      "error": "HTTPError:429",
+      "finish": null,
+      "chars": 0,
+      "preview": ""
+    },
+    {
+      "builderId": "nvidia.kimi-k3",
+      "eventId": "TOOLS",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 4730,
+      "providerThrottleObserved": false,
+      "error": null,
+      "finish": "stop",
+      "chars": 68,
+      "preview": "{\"tool\":\"write_file\",\"arguments\":{\"path\":\"x.txt\",\"content\":\"hello\"}}"
+    },
+    {
+      "builderId": "nvidia.minimax-m3",
+      "eventId": "PROTOCOL",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 1771,
+      "providerThrottleObserved": false,
+      "error": null,
+      "finish": "stop",
+      "chars": 27,
+      "preview": "{\"ok\":true,\"items\":[1,2,3]}"
+    },
+    {
+      "builderId": "nvidia.minimax-m3",
+      "eventId": "REPAIR",
+      "talosPass": false,
+      "protocolPass": true,
+      "latencyMs": 2091,
+      "providerThrottleObserved": false,
+      "error": null,
+      "finish": "stop",
+      "chars": 98,
+      "preview": "function clamp(n, min, max) {\n  return Math.min(Math.max(n, min), max);\n}\n\nmodule.exports = clamp;"
+    },
+    {
+      "builderId": "nvidia.minimax-m3",
+      "eventId": "REPO",
+      "talosPass": false,
+      "protocolPass": false,
+      "latencyMs": 20307,
+      "providerThrottleObserved": true,
+      "error": "HTTPError:429",
+      "finish": null,
+      "chars": 0,
+      "preview": ""
+    },
+    {
+      "builderId": "nvidia.minimax-m3",
+      "eventId": "TOOLS",
+      "talosPass": false,
+      "protocolPass": false,
+      "latencyMs": 20339,
+      "providerThrottleObserved": true,
+      "error": "HTTPError:429",
+      "finish": null,
+      "chars": 0,
+      "preview": ""
+    },
+    {
+      "builderId": "nvidia.deepseek-v4-flash",
+      "eventId": "PROTOCOL",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 17436,
+      "providerThrottleObserved": false,
+      "error": null,
+      "finish": "stop",
+      "chars": 27,
+      "preview": "{\"ok\":true,\"items\":[1,2,3]}"
+    },
+    {
+      "builderId": "nvidia.deepseek-v4-flash",
+      "eventId": "REPAIR",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 51483,
+      "providerThrottleObserved": false,
+      "error": null,
+      "finish": "stop",
+      "chars": 80,
+      "preview": "export function clamp(n, min, max) {\n  return Math.min(max, Math.max(min, n));\n}"
+    },
+    {
+      "builderId": "nvidia.deepseek-v4-flash",
+      "eventId": "REPO",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 48729,
+      "providerThrottleObserved": false,
+      "error": null,
+      "finish": "stop",
+      "chars": 61,
+      "preview": "{\"file\":\"a.mjs\",\"replacement\":\"export const add=(a,b)=>a+b;\"}"
+    },
+    {
+      "builderId": "nvidia.deepseek-v4-flash",
+      "eventId": "TOOLS",
+      "talosPass": false,
+      "protocolPass": false,
+      "latencyMs": 8806,
+      "providerThrottleObserved": false,
+      "error": "HTTPError:529",
+      "finish": null,
+      "chars": 0,
+      "preview": ""
+    }
+  ]
+}

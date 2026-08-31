@@ -1,0 +1,6 @@
+{
+ "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-014-RETRY1","node_id":"legion","capability":"engineering.patch","workspace":"C:/Users/othry/Projects/othrys-v2",
+ "allowed_paths":["training/level-2/L2-014-backup-restore/backupRestore.mjs"],"deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":120,
+ "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-014","forge_builder_id":"local.qwen3.5-9b"},
+ "task":"L2-014 retry after prior timeout/no artifact. Create exactly allowed backupRestore.mjs now. Frozen async createBackupRestore(statePath): create(backupPath),verify(backupPath),restore(backupPath). Deterministic envelope schema/sha256/state; recursively sorted canonical JSON; SHA-256 hex of canonical state JSON; missing source {}; malformed/scalar source STATE_CORRUPT; exact envelope validation/hash and recursive unsafe-key rejection BACKUP_INVALID; restore verifies before atomic state mutation; atomic unique temp+mkdir+rename; no timestamps/wall clock/network/deps. Node ESM stdlib only. Touch nothing else."
+}

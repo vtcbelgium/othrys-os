@@ -1,0 +1,164 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-002-012",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "qwen3-builder",
+  "ok": false,
+  "reason": "NO_ATTEMPT_MUTATION",
+  "started_at": 1788082523.7811944,
+  "completed_at": 1788082567.9182901,
+  "duration_sec": 44.13709568977356,
+  "allowed_paths": [
+    "training/level-1/L1-002-text-normalize/normalizeText.mjs"
+  ],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-1/L1-002-text-normalize/normalizeText.mjs\n+++ b/training/level-1/L1-002-text-normalize/normalizeText.mjs\n@@ -0,0 +1,73 @@\n+export function normalizeText(input, options = {}) {\n+  if (input === null || input === undefined) {\n+    return '';\n+  }\n+\n+  // Default options\n+  const defaultOptions = {\n+    trimTrailing: true,\n+    collapseHorizontalWhitespace: true,\n+    collapseBlankLines: true,\n+    trim: true\n+  };\n+\n+  const { trimTrailing, collapseHorizontalWhitespace, collapseBlankLines, trim } = {\n+    ...defaultOptions,\n+    ...options\n+  };\n+\n+  // Normalize CRLF and CR to LF\n+  let normalized = String(input).replace(/\n+/g, '\n+').replace(/\n+/g, '\n+');\n+\n+  // Split into lines\n+  const lines = normalized.split('\n+');\n+\n+  // Process each line\n+  const processedLines = lines.map(line => {\n+    // Trim trailing spaces/tabs if trimTrailing is true\n+    if (trimTrailing) {\n+      line = line.replace(/\\s+$/g, '');\n+    }\n+\n+    // Collapse runs of spaces/tabs inside each line to one space if collapseHorizontalWhitespace is true\n+    if (collapseHorizontalWhitespace) {\n+      line = line.replace(/\\s+/g, ' ');\n+    }\n+\n+    return line;\n+  });\n+\n+  // Collapse 3+ newlines to exactly 2 if collapseBlankLines is true\n+  if (collapseBlankLines) {\n+    processedLines.forEach((line, index) => {\n+      if (line === '') {\n+        // Check if the previous line is also blank\n+        if (processedLines[index - 1] === '') {\n+          // Check if the next line is also blank\n+          if (processedLines[index + 1] === '') {\n+            // Replace with two newlines\n+            processedLines[index] = '\n+\n+';\n+          }\n+        }\n+      }\n+    });\n+  }\n+\n+  // Join lines back together\n+  normalized = processedLines.join('\n+');\n+\n+  // Trim entire result if trim is true\n+  if (trim) {\n+    normalized = normalized.trim();\n+  }\n+\n+  return normalized;\n+}",
+  "git_status": "",
+  "summary": "",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-1/L1-002-text-normalize/normalizeText.mjs\n+++ b/training/level-1/L1-002-text-normalize/normalizeText.mjs\n@@ -0,0 +1,73 @@\n+export function normalizeText(input, options = {}) {\n+  if (input === null || input === undefined) {\n+    return '';\n+  }\n+\n+  // Default options\n+  const defaultOptions = {\n+    trimTrailing: true,\n+    collapseHorizontalWhitespace: true,\n+    collapseBlankLines: true,\n+    trim: true\n+  };\n+\n+  const { trimTrailing, collapseHorizontalWhitespace, collapseBlankLines, trim } = {\n+    ...defaultOptions,\n+    ...options\n+  };\n+\n+  // Normalize CRLF and CR to LF\n+  let normalized = String(input).replace(/\n+/g, '\n+').replace(/\n+/g, '\n+');\n+\n+  // Split into lines\n+  const lines = normalized.split('\n+');\n+\n+  // Process each line\n+  const processedLines = lines.map(line => {\n+    // Trim trailing spaces/tabs if trimTrailing is true\n+    if (trimTrailing) {\n+      line = line.replace(/\\s+$/g, '');\n+    }\n+\n+    // Collapse runs of spaces/tabs inside each line to one space if collapseHorizontalWhitespace is true\n+    if (collapseHorizontalWhitespace) {\n+      line = line.replace(/\\s+/g, ' ');\n+    }\n+\n+    return line;\n+  });\n+\n+  // Collapse 3+ newlines to exactly 2 if collapseBlankLines is true\n+  if (collapseBlankLines) {\n+    processedLines.forEach((line, index) => {\n+      if (line === '') {\n+        // Check if the previous line is also blank\n+        if (processedLines[index - 1] === '') {\n+          // Check if the next line is also blank\n+          if (processedLines[index + 1] === '') {\n+            // Replace with two newlines\n+            processedLines[index] = '\n+\n+';\n+          }\n+        }\n+      }\n+    });\n+  }\n+\n+  // Join lines back together\n+  normalized = processedLines.join('\n+');\n+\n+  // Trim entire result if trim is true\n+  if (trim) {\n+    normalized = normalized.trim();\n+  }\n+\n+  return normalized;\n+}",
+    "git_status": "",
+    "tool_trace": [
+      "read_file: export function normalizeText(input, options = {}) {\n  if (input === null || input === undefined) {\n    return '';\n  }\n\n  // Default options\n  const defaultOptions = {\n    trimTrailing: true,\n    coll",
+      "write_file: blocked by touch_allow: workspace/training/level-1/L1-002-text-normalize/normalizeText.mjs",
+      "write_file: blocked by touch_allow: workspace/training/level-1/L1-002-text-normalize/normalizeText.mjs",
+      "loop-guard: nudged after 3x write_file:blocked by touch_allow: workspace/training/level-1/L1-002-t",
+      "write_file: blocked by touch_allow: workspace/training/level-1/L1-002-text-normalize/normalizeText.mjs",
+      "write_file: blocked by touch_allow: workspace/training/level-1/L1-002-text-normalize/normalizeText.mjs",
+      "write_file: blocked by touch_allow: workspace/training/level-1/L1-002-text-normalize/normalizeText.mjs",
+      "loop-guard: aborted after 6x write_file:blocked by touch_allow: workspace/training/level-1/L1-002-t"
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/level-1/L1-002-text-normalize/normalizeText.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/level-1/L1-002-text-normalize/normalizeText.mjs\"}",
+        "raw_length": 68,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"workspace/training/level-1/L1-002-text-normalize/normalizeText.mjs\", \"content\": \"export function normalizeText(input, options = {}) {\\n  if (input === null || input === undefined) {\\n    return '';\\n  }\\n\\n  // Default options\\n  ",
+        "raw_suffix": "(processedLines[index - 1] === '') {\\n          // Check if the next line is also blank\\n          if (processedLines[index + 1] === '') {\\n            // Replace with two newlines\\n            processedLines[index] = '\\\\n\\\\n';\\n          }\\n        }\\n      }\\n    });\\n  }\\n\\n  // Join lines back together\\n  normalized = processedLines.join('\\\\n');\\n\\n  // Trim entire result if trim is true\\n  if (trim) {\\n    normalized = normalized.trim();\\n  }\\n\\n  return normalized;\\n}\"}",
+        "raw_length": 1834,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1666
+      },
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"workspace/training/level-1/L1-002-text-normalize/normalizeText.mjs\", \"content\": \"export function normalizeText(input, options = {}) {\\n  if (input === null || input === undefined) {\\n    return '';\\n  }\\n\\n  // Default options\\n  ",
+        "raw_suffix": "(processedLines[index - 1] === '') {\\n          // Check if the next line is also blank\\n          if (processedLines[index + 1] === '') {\\n            // Replace with two newlines\\n            processedLines[index] = '\\\\n\\\\n';\\n          }\\n        }\\n      }\\n    });\\n  }\\n\\n  // Join lines back together\\n  normalized = processedLines.join('\\\\n');\\n\\n  // Trim entire result if trim is true\\n  if (trim) {\\n    normalized = normalized.trim();\\n  }\\n\\n  return normalized;\\n}\"}",
+        "raw_length": 1854,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1686
+      },
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"workspace/training/level-1/L1-002-text-normalize/normalizeText.mjs\", \"content\": \"export function normalizeText(input, options = {}) {\\n  if (input === null || input === undefined) {\\n    return '';\\n  }\\n\\n  // Default options\\n  ",
+        "raw_suffix": "(processedLines[index - 1] === '') {\\n          // Check if the next line is also blank\\n          if (processedLines[index + 1] === '') {\\n            // Replace with two newlines\\n            processedLines[index] = '\\\\n\\\\n';\\n          }\\n        }\\n      }\\n    });\\n  }\\n\\n  // Join lines back together\\n  normalized = processedLines.join('\\\\n');\\n\\n  // Trim entire result if trim is true\\n  if (trim) {\\n    normalized = normalized.trim();\\n  }\\n\\n  return normalized;\\n}\"}",
+        "raw_length": 1854,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1686
+      },
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"workspace/training/level-1/L1-002-text-normalize/normalizeText.mjs\", \"content\": \"export function normalizeText(input, options = {}) {\\n  if (input === null || input === undefined) {\\n    return '';\\n  }\\n\\n  // Default options\\n  ",
+        "raw_suffix": "(processedLines[index - 1] === '') {\\n          // Check if the next line is also blank\\n          if (processedLines[index + 1] === '') {\\n            // Replace with two newlines\\n            processedLines[index] = '\\\\n\\\\n';\\n          }\\n        }\\n      }\\n    });\\n  }\\n\\n  // Join lines back together\\n  normalized = processedLines.join('\\\\n');\\n\\n  // Trim entire result if trim is true\\n  if (trim) {\\n    normalized = normalized.trim();\\n  }\\n\\n  return normalized;\\n}\"}",
+        "raw_length": 1834,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1666
+      },
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"workspace/training/level-1/L1-002-text-normalize/normalizeText.mjs\", \"content\": \"export function normalizeText(input, options = {}) {\\n  if (input === null || input === undefined) {\\n    return '';\\n  }\\n\\n  // Default options\\n  ",
+        "raw_suffix": "(processedLines[index - 1] === '') {\\n          // Check if the next line is also blank\\n          if (processedLines[index + 1] === '') {\\n            // Replace with two newlines\\n            processedLines[index] = '\\\\n\\\\n';\\n          }\\n        }\\n      }\\n    });\\n  }\\n\\n  // Join lines back together\\n  normalized = processedLines.join('\\\\n');\\n\\n  // Trim entire result if trim is true\\n  if (trim) {\\n    normalized = normalized.trim();\\n  }\\n\\n  return normalized;\\n}\"}",
+        "raw_length": 1834,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1666
+      },
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"workspace/training/level-1/L1-002-text-normalize/normalizeText.mjs\", \"content\": \"export function normalizeText(input, options = {}) {\\n  if (input === null || input === undefined) {\\n    return '';\\n  }\\n\\n  // Default options\\n  ",
+        "raw_suffix": "(processedLines[index - 1] === '') {\\n          // Check if the next line is also blank\\n          if (processedLines[index + 1] === '') {\\n            // Replace with two newlines\\n            processedLines[index] = '\\\\n\\\\n';\\n          }\\n        }\\n      }\\n    });\\n  }\\n\\n  // Join lines back together\\n  normalized = processedLines.join('\\\\n');\\n\\n  // Trim entire result if trim is true\\n  if (trim) {\\n    normalized = normalized.trim();\\n  }\\n\\n  return normalized;\\n}\"}",
+        "raw_length": 1834,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 1666
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "qwen3-builder",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6134",
+      "utilization_pct": "0",
+      "temperature_c": "39",
+      "power_w": "5.18"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6134",
+      "utilization_pct": "0",
+      "temperature_c": "57",
+      "power_w": "64.67"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

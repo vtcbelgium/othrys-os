@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-027 TALOS REPAIR. WRITE exactly training/level-1/L1-027-env-parse/parseEnvMetadata.mjs. First build 6/8. Before parsing a line, trim surrounding whitespace; then allow optional leading `export` plus at least one whitespace before the variable name, while still permitting whitespace around the name and =. Track a Set of seen names and ignore later duplicates, preserving first occurrence only. Keep names/presence only and zero secret leakage. Touch nothing else.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-027",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-027-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-027-env-parse/parseEnvMetadata.mjs"
+                      ]
+}

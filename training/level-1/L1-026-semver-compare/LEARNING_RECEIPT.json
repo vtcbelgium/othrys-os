@@ -1,0 +1,53 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L1-026",
+  "level": 1,
+  "title": "Semantic-version comparator",
+  "classification": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "sourceEvidence": [
+    "worker-result.json"
+  ],
+  "sourceTests": [
+    "compareSemver.test.mjs"
+  ],
+  "exactPackagedBlock": "blocks\\developer\\semver-compare",
+  "candidateProof": "blocks/developer/semver-compare/tests/contract.test.mjs",
+  "attemptsDeclared": null,
+  "buildersObserved": {
+    "local.qwen3.5-9b": 1
+  },
+  "failureReasonsObserved": {},
+  "lessons": [],
+  "talos": {
+    "freshLevelProof": "LEVEL_1_MILESTONE.json: 305/305 source and candidate PASS",
+    "runtimeProof": "LEVEL_2_MILESTONE.json: combined L1+L2 486/486 PASS"
+  },
+  "block": {
+    "id": "block.developer.semver-compare",
+    "disposition": "TRAINING_CANDIDATE",
+    "authorityGranted": false
+  },
+  "organLearning": {
+    "MNEMOSYNE": [
+      "retain source, worker and failure provenance"
+    ],
+    "HEPHAESTUS": [
+      "use task-specific builder outcome evidence"
+    ],
+    "TALOS": [
+      "independent contract proof outranks worker self-report"
+    ],
+    "KRONOS": [
+      "retain measured attempt timing where present"
+    ],
+    "RHEA": [
+      "retain failure/recovery sequence"
+    ],
+    "MYCELIUM": [
+      "route history is recommendation evidence only"
+    ],
+    "SWITCHYARD": [
+      "builder route outcome remains authority-free"
+    ]
+  }
+}

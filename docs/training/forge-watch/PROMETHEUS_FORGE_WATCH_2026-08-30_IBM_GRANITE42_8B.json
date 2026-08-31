@@ -1,0 +1,30 @@
+{
+    "schema":  "othrys.prometheus.forge-watch-candidate.v1",
+    "discoveredAt":  "2026-08-30",
+    "candidateId":  "ibm.granite-4.2-8b",
+    "model":  "granite4.2:8b",
+    "source":  "IBM Granite 4.2 official release 2026-08-25",
+    "license":  "Apache-2.0",
+    "locality":  "LOCAL",
+    "installed":  true,
+    "rosterKnown":  false,
+    "availability":  "OLLAMA_LOCAL_LIVE",
+    "costClass":  "ZERO",
+    "secretBoundary":  "NO_SECRET_REQUIRED_LOCAL",
+    "spark":  {
+                  "output":  "export function add(a, b) { return a + b }",
+                  "status":  "PASS",
+                  "latencyMs":  6690,
+                  "protocolClean":  true
+              },
+    "requiredGates":  [
+                          "BUILDER_OLYMPICS",
+                          "TALOS_QUALIFICATION",
+                          "BOUNDED_WORKER_MUTATION",
+                          "FORGE_ADMISSION"
+                      ],
+    "state":  "KEEP_TESTING",
+    "authorityGranted":  false,
+    "executionAllowed":  false,
+    "autoAdmit":  false
+}

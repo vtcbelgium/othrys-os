@@ -1,0 +1,52 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "mission": "V2-011K",
+  "jobId": "L2-012",
+  "level": 2,
+  "title": "Expense tracker",
+  "family": "tracker",
+  "contract": "expense CRUD -> durable totals/categories",
+  "stockCheck": "canonical library + prior stateful patterns",
+  "buildAttempts": [
+    {
+      "builder": "local.qwen3-8b",
+      "ok": true,
+      "durationSec": 31.458956956863403,
+      "talos": "SYNTAX_FAIL"
+    },
+    {
+      "builder": "local.qwen3-8b",
+      "ok": true,
+      "durationSec": 36.85194802284241,
+      "talos": "SYNTAX_FAIL"
+    },
+    {
+      "builder": "operator-bounded",
+      "talos": "PASS_8_OF_8"
+    }
+  ],
+  "talos": {
+    "tests": 8,
+    "pass": 8,
+    "fail": 0,
+    "independent": true
+  },
+  "blockDisposition": "TRAINING_CANDIDATE",
+  "lessons": [
+    "invalid async placement survived builder repair",
+    "Deno/runtime drift in Node-only stateful tasks",
+    "operator bounded recovery after governed repair failure"
+  ],
+  "organs": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "learningMayGrantAuthority": false,
+  "authorityGranted": false
+}

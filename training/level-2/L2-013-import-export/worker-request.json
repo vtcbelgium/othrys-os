@@ -1,0 +1,7 @@
+{
+  "schema_version":"othrys.worker-request.v0.1","job_id":"TRAIN-L2-013-001","node_id":"legion","capability":"engineering.patch",
+  "workspace":"C:/Users/othry/Projects/othrys-v2","allowed_paths":["training/level-2/L2-013-import-export/stateTransfer.mjs"],
+  "deny_paths":[".git",".othrys","missions","blocks","runtime","docs"],"timeout_sec":90,
+  "metadata":{"training_level":2,"authorityGranted":false,"mission_id":"V2-011K","training_job":"L2-013"},
+  "task":"Create exactly training/level-2/L2-013-import-export/stateTransfer.mjs. Export createStateTransfer(filePath), frozen async API exportJson/importJson/read. State must be JSON object or array only. Missing state reads as {} and exportJson returns '{}'; read-only calls never write. Existing malformed JSON or scalar => STATE_CORRUPT. exportJson must recursively sort object keys lexically at every depth, preserve array order, compact deterministic JSON, and never mutate stored values. importJson(text) accepts string only, parses object/array only, rejects malformed/scalar with INVALID_IMPORT, rejects unsafe object keys __proto__/prototype/constructor anywhere, canonicalizes recursively sorted keys, persists atomically via same-directory unique temp + rename with mkdir parent, returns deep-cloned canonical state. read returns deep clone. On invalid import existing disk unchanged. Node ESM stdlib only, no wall clock/network/deps/secrets. Touch no other file."
+}

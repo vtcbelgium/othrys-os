@@ -1,0 +1,48 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "mission": "V2-011K",
+  "jobId": "L2-014",
+  "level": 2,
+  "title": "Backup/restore",
+  "family": "io",
+  "contract": "state -> timestamp-free backup -> verified restore",
+  "stockCheck": "Great Library backup/restore evidence + current stateful patterns",
+  "buildAttempts": [
+    {
+      "builder": "governed-local",
+      "failure": "TIMEOUT_NO_RESULT_NO_SOURCE"
+    },
+    {
+      "builder": "local.qwen3.5-9b",
+      "failure": "TIMEOUT_NO_RESULT_NO_SOURCE"
+    },
+    {
+      "builder": "operator-bounded",
+      "talos": "PASS_7_OF_7"
+    }
+  ],
+  "talos": {
+    "tests": 7,
+    "pass": 7,
+    "fail": 0,
+    "independent": true
+  },
+  "blockDisposition": "TRAINING_CANDIDATE",
+  "lessons": [
+    "two governed builder attempts timed out with no result artifact",
+    "no-artifact timeout differs from failed mutation",
+    "hash verification must complete before restore mutation"
+  ],
+  "organs": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "PROMETHEUS",
+    "KRONOS",
+    "RHEA",
+    "MYCELIUM",
+    "SWITCHYARD"
+  ],
+  "learningMayGrantAuthority": false,
+  "authorityGranted": false
+}

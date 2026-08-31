@@ -128,5 +128,6 @@
   "learningMayGrantAuthority": false,
   "authorityGranted": false,
   "executionStarted": false,
-  "receiptDigest": "5add2f5b036bec435820efea97296c9d97b6b842a53e75c7013cc0038d1c545b"
+  "receiptDigest": "5add2f5b036bec435820efea97296c9d97b6b842a53e75c7013cc0038d1c545b",
+  "candidateProof": "blocks/generate/fixture/tests/contract.test.mjs"
 }

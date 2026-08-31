@@ -1,0 +1,90 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "TRAIN-L1-002-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "qwen3-builder",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788081662.7124233,
+  "completed_at": 1788081674.3724985,
+  "duration_sec": 11.660075187683105,
+  "allowed_paths": [
+    "training/level-1/L1-002-text-normalize/normalizeText.mjs"
+  ],
+  "changed_files": [
+    "training/level-1/L1-002-text-normalize/normalizeText.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "diff --git a/training/level-1/L1-002-text-normalize/normalizeText.mjs b/training/level-1/L1-002-text-normalize/normalizeText.mjs\nnew file mode 100644\nindex 0000000..13bc133\n--- /dev/null\n+++ b/training/level-1/L1-002-text-normalize/normalizeText.mjs\n@@ -0,0 +1,49 @@\n+// Export function normalizeText(input, options={})\n+export function normalizeText(input, options = {}) {\n+  // Convert null/undefined to empty string\n+  const text = String(input || '');\n+\n+  // Normalize CRLF and CR to LF\n+  let normalized = text.replace(/\n+/g, '\n+').replace(/\n+/g, '\n+');\n+\n+  // Split into lines\n+  const lines = normalized.split('\n+');\n+\n+  // Process each line\n+  const processedLines = lines.map(line => {\n+    // Trim trailing spaces/tabs per line if options.trimTrailing is true\n+    let trimmedLine = line;\n+    if (options.trimTrailing !== false) {\n+      trimmedLine = trimmedLine.replace(/\\s+$/g, '');\n+    }\n+\n+    // Collapse runs of spaces/tabs within each line to one space if options.collapseHorizontalWhitespace is not false\n+    if (options.collapseHorizontalWhitespace !== false) {\n+      trimmedLine = trimmedLine.replace(/\\s+/g, ' ');\n+    }\n+\n+    return trimmedLine;\n+  });\n+\n+  // Collapse 3+ consecutive newlines to exactly 2 if options.collapseBlankLines is not false\n+  let finalText = processedLines.join('\n+');\n+  if (options.collapseBlankLines !== false) {\n+    finalText = finalText.replace(/\n+{3,}/g, '\n+\n+');\n+  }\n+\n+  // Trim whole result if options.trim is not false\n+  if (options.trim !== false) {\n+    finalText = finalText.trim();\n+  }\n+\n+  return finalText;\n+}\n\\ No newline at end of file\ndiff --git a/training/level-1/L1-002-text-normalize/worker-request.json b/training/level-1/L1-002-text-normalize/worker-request.json\nnew file mode 100644\nindex 0000000..9ea926b\n--- /dev/null\n+++ b/training/level-1/L1-002-text-normalize/worker-request.json\n@@ -0,0 +1,26 @@\n+﻿{\n+    \"schema_version\":  \"othrys.worker-request.v0.1\",\n+    \"job_id\":  \"TRAIN-L1-002-001\",\n+    \"node_id\":  \"legion\",\n+    \"capability\":  \"engineering.patch\",\n+    \"workspace\":  \"C:/Users/othry/Projects/othrys-v2\",\n+    \"task\":  \"OTHRYS TRAINING LEVEL 1 JOB L1-002. Create exactly one file: training/level-1/L1-002-text-normalize/normalizeText.mjs. Export function normalizeText(input, options={}). Deterministic, dependency-free, no filesystem/network. Contract: convert null/undefined to empty string otherwise String(input); normalize CRLF and CR to LF; optionally trim trailing spaces/tabs per line (default true); collapse runs of spaces/tabs within each line to one space by default, controlled by options.collapseHorizontalWhitespace !== false; collapse 3+ consecutive newlines to exactly 2 by default, controlled by options.collapseBlankLines !== false; trim whole result by default, controlled by options.trim !== false. Preserve single newlines. Do not touch any other file. Valid ESM JavaScript only.\",\n+    \"allowed_paths\":  [\n+                          \"training/level-1/L1-002-text-normalize/normalizeText.mjs\"\n+                      ],\n+    \"deny_paths\":  [\n+                       \".git\",\n+                       \".othrys\",\n+                       \"missions\",\n+                       \"blocks\",\n+                       \"runtime\",\n+                       \"docs\"\n+                   ],\n+    \"timeout_sec\":  90,\n+    \"metadata\":  {\n+                     \"training_job\":  \"L1-002\",\n+                     \"authorityGranted\":  false,\n+                     \"mission_id\":  \"V2-011K\",\n+                     \"training_level\":  1\n+                 }\n+}\ndiff --git a/training/level-1/L1-002-text-normalize/worker.log b/training/level-1/L1-002-text-normalize/worker.log\nnew file mode 100644\nindex 0000000..e69de29\ndiff --git a/training/level-1/L1-002-text-normalize/worker.pid b/training/level-1/L1-002-text-normalize/worker.pid\nnew file mode 100644\nindex 0000000..b11948b\n--- /dev/null\n+++ b/training/level-1/L1-002-text-normalize/worker.pid\n@@ -0,0 +1 @@\n+6828",
+  "git_status": "?? training/level-1/L1-002-text-normalize/\n",
+  "summary": "Created normalizeText.mjs with the specified text normalization functionality.",
+  "runtime_evidence": {
+    "observed_diff": "diff --git a/training/level-1/L1-002-text-normalize/normalizeText.mjs b/training/level-1/L1-002-text-normalize/normalizeText.mjs\nnew file mode 100644\nindex 0000000..13bc133\n--- /dev/null\n+++ b/training/level-1/L1-002-text-normalize/normalizeText.mjs\n@@ -0,0 +1,49 @@\n+// Export function normalizeText(input, options={})\n+export function normalizeText(input, options = {}) {\n+  // Convert null/undefined to empty string\n+  const text = String(input || '');\n+\n+  // Normalize CRLF and CR to LF\n+  let normalized = text.replace(/\n+/g, '\n+').replace(/\n+/g, '\n+');\n+\n+  // Split into lines\n+  const lines = normalized.split('\n+');\n+\n+  // Process each line\n+  const processedLines = lines.map(line => {\n+    // Trim trailing spaces/tabs per line if options.trimTrailing is true\n+    let trimmedLine = line;\n+    if (options.trimTrailing !== false) {\n+      trimmedLine = trimmedLine.replace(/\\s+$/g, '');\n+    }\n+\n+    // Collapse runs of spaces/tabs within each line to one space if options.collapseHorizontalWhitespace is not false\n+    if (options.collapseHorizontalWhitespace !== false) {\n+      trimmedLine = trimmedLine.replace(/\\s+/g, ' ');\n+    }\n+\n+    return trimmedLine;\n+  });\n+\n+  // Collapse 3+ consecutive newlines to exactly 2 if options.collapseBlankLines is not false\n+  let finalText = processedLines.join('\n+');\n+  if (options.collapseBlankLines !== false) {\n+    finalText = finalText.replace(/\n+{3,}/g, '\n+\n+');\n+  }\n+\n+  // Trim whole result if options.trim is not false\n+  if (options.trim !== false) {\n+    finalText = finalText.trim();\n+  }\n+\n+  return finalText;\n+}\n\\ No newline at end of file\ndiff --git a/training/level-1/L1-002-text-normalize/worker-request.json b/training/level-1/L1-002-text-normalize/worker-request.json\nnew file mode 100644\nindex 0000000..9ea926b\n--- /dev/null\n+++ b/training/level-1/L1-002-text-normalize/worker-request.json\n@@ -0,0 +1,26 @@\n+﻿{\n+    \"schema_version\":  \"othrys.worker-request.v0.1\",\n+    \"job_id\":  \"TRAIN-L1-002-001\",\n+    \"node_id\":  \"legion\",\n+    \"capability\":  \"engineering.patch\",\n+    \"workspace\":  \"C:/Users/othry/Projects/othrys-v2\",\n+    \"task\":  \"OTHRYS TRAINING LEVEL 1 JOB L1-002. Create exactly one file: training/level-1/L1-002-text-normalize/normalizeText.mjs. Export function normalizeText(input, options={}). Deterministic, dependency-free, no filesystem/network. Contract: convert null/undefined to empty string otherwise String(input); normalize CRLF and CR to LF; optionally trim trailing spaces/tabs per line (default true); collapse runs of spaces/tabs within each line to one space by default, controlled by options.collapseHorizontalWhitespace !== false; collapse 3+ consecutive newlines to exactly 2 by default, controlled by options.collapseBlankLines !== false; trim whole result by default, controlled by options.trim !== false. Preserve single newlines. Do not touch any other file. Valid ESM JavaScript only.\",\n+    \"allowed_paths\":  [\n+                          \"training/level-1/L1-002-text-normalize/normalizeText.mjs\"\n+                      ],\n+    \"deny_paths\":  [\n+                       \".git\",\n+                       \".othrys\",\n+                       \"missions\",\n+                       \"blocks\",\n+                       \"runtime\",\n+                       \"docs\"\n+                   ],\n+    \"timeout_sec\":  90,\n+    \"metadata\":  {\n+                     \"training_job\":  \"L1-002\",\n+                     \"authorityGranted\":  false,\n+                     \"mission_id\":  \"V2-011K\",\n+                     \"training_level\":  1\n+                 }\n+}\ndiff --git a/training/level-1/L1-002-text-normalize/worker.log b/training/level-1/L1-002-text-normalize/worker.log\nnew file mode 100644\nindex 0000000..e69de29\ndiff --git a/training/level-1/L1-002-text-normalize/worker.pid b/training/level-1/L1-002-text-normalize/worker.pid\nnew file mode 100644\nindex 0000000..b11948b\n--- /dev/null\n+++ b/training/level-1/L1-002-text-normalize/worker.pid\n@@ -0,0 +1 @@\n+6828",
+    "git_status": "?? training/level-1/L1-002-text-normalize/\n",
+    "tool_trace": [
+      "write_file: wrote 1271 chars to training/level-1/L1-002-text-normalize/normalizeText.mjs",
+      "finish: Created normalizeText.mjs with the specified text normalization functionality."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "str",
+        "raw_prefix": "{\"path\":\"training/level-1/L1-002-text-normalize/normalizeText.mjs\",\"content\":\"// Export function normalizeText(input, options={})\\nexport function normalizeText(input, options = {}) {\\n  // Convert null/undefined to empty string\\n  const te",
+        "raw_length": 1399,
+        "parsed_keys": [],
+        "has_path": false,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "str",
+        "raw_prefix": "{\"summary\":\"Created normalizeText.mjs with the specified text normalization functionality.\"}",
+        "raw_length": 92,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "qwen3-builder",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6134",
+      "utilization_pct": "0",
+      "temperature_c": "41",
+      "power_w": "8.22"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      22 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6134",
+      "utilization_pct": "0",
+      "temperature_c": "47",
+      "power_w": "69.32"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    6.3 GB    100% GPU     16384      29 minutes from now"
+  }
+}

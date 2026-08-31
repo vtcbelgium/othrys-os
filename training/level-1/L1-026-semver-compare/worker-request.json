@@ -1,0 +1,27 @@
+﻿{
+    "task":  "OTHRYS TRAINING LEVEL 1 L1-026. Create exactly training/level-1/L1-026-semver-compare/compareSemver.mjs. Export compareSemver(a,b) returning -1/0/1. Strict SemVer 2.0.0 strings only: major.minor.patch, optional -prerelease identifiers, optional +build ignored for ordering. Numeric identifiers no leading zeros except 0; core integers same rule. Prerelease lower precedence than release; compare prerelease identifiers left-to-right, numeric numerically, numeric \u003c nonnumeric, nonnumeric ASCII lexical, shorter list lower if equal prefix. Invalid input TypeError for non-string, RangeError for invalid SemVer. No deps/I/O/network. Touch no other file.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-026",
+                     "forge_builder_id":  "local.qwen3.5-9b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-026-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-026-semver-compare/compareSemver.mjs"
+                      ]
+}

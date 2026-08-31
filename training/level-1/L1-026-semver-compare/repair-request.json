@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-026 TALOS REPAIR. WRITE exactly training/level-1/L1-026-semver-compare/compareSemver.mjs. First build 5/8. Fix: comparator must normalize every nonzero result to exactly -1 or 1, never raw subtraction. Validate SemVer strictly: core numeric identifiers must be 0 or nonzero-leading digits; prerelease numeric identifiers same no-leading-zero law. Preserve build metadata ignored and SemVer precedence. Touch nothing else.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-026",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-026-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-026-semver-compare/compareSemver.mjs"
+                      ]
+}

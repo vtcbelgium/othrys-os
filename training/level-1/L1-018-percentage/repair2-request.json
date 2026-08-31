@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-018 HARD REPAIR. WRITE immediately. Add a helper norm=n=\u003eObject.is(n,-0)?0:n and wrap every computed numeric return from percentOf, percentChange, portion with norm(...). Make no other behavior changes. File training/level-1/L1-018-percentage/percentage.mjs. Finish after write.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-018",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-018-003",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-018-percentage/percentage.mjs"
+                      ]
+}

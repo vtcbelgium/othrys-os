@@ -1,0 +1,156 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L2-002",
+  "level": 2,
+  "title": "Settings store",
+  "family": "state",
+  "contract": "defaults + overrides -> durable validated settings",
+  "startedAt": "2026-08-30T14:43:05.255Z",
+  "completedAt": "2026-08-30T14:48:57.842Z",
+  "stockCheck": {
+    "decision": "BUILD_AFTER_STOCK_PREFLIGHT",
+    "matches": [
+      "historical settings/state evidence",
+      "L2-001 persistence lessons"
+    ]
+  },
+  "buildAttempts": [
+    {
+      "attempt": 1,
+      "builder": "local.qwen3.5-9b",
+      "model": "qwen3.5:9b",
+      "durationSec": 24.507256507873535,
+      "ok": true,
+      "talos": "MODULE_LOAD_FAIL",
+      "failure": "nonexistent util.deepClone + persisted defaults semantic error"
+    },
+    {
+      "attempt": 2,
+      "builder": "qwen3-builder",
+      "ok": false,
+      "talos": "REJECTED_BEFORE_MUTATION",
+      "failure": "EngineeringError(\"path escapes workspace: '.othrys/runtime/legion-perimeter-links/codex/2026-08-20/referenced-chatgpt-conversation-this-is-an/work/vtc-platform/src/CreditStore.jsx'\")"
+    },
+    {
+      "attempt": 3,
+      "builder": "local.qwen3-coder-30b",
+      "model": "qwen3-coder:30b",
+      "durationSec": 120,
+      "ok": false,
+      "talos": "TIMEOUT_NO_MUTATION",
+      "failure": "WORKER_TIMEOUT"
+    },
+    {
+      "attempt": 4,
+      "builder": "operator-bounded",
+      "model": null,
+      "durationSec": null,
+      "ok": true,
+      "talos": "PASS_9_OF_9",
+      "note": "bounded recovery after governed repair paths failed"
+    }
+  ],
+  "talos": {
+    "tests": 9,
+    "pass": 9,
+    "fail": 0,
+    "fixtures": [
+      "defaults no-write",
+      "restart persistence",
+      "merge semantics",
+      "pre-write validation",
+      "reset semantics",
+      "corruption preservation",
+      "override validation",
+      "deep clone isolation",
+      "frozen API/default immutability"
+    ]
+  },
+  "blockDisposition": {
+    "status": "TRAINING_CANDIDATE",
+    "blockId": "block.state.settings-store",
+    "automaticAdmission": false
+  },
+  "nextJob": "L2-003",
+  "lessons": [
+    "module-load validity is an immediate Talos gate",
+    "stateful defaults and persisted overrides are separate truths",
+    "workspace escape protection correctly rejected a repair path",
+    "heavy-builder timeout is distinct from semantic failure",
+    "operator intervention remains explicit debt"
+  ],
+  "organs": {
+    "MNEMOSYNE": {
+      "learn": [
+        "task contract",
+        "stock matches",
+        "final artifact",
+        "failure/repair lessons",
+        "provenance"
+      ]
+    },
+    "HEPHAESTUS": {
+      "learn": [
+        "builder chosen",
+        "prompt contract",
+        "attempt count",
+        "repair cause",
+        "first-pass success"
+      ]
+    },
+    "TALOS": {
+      "learn": [
+        "oracle fixtures",
+        "failure class",
+        "repair verification",
+        "final pass rate"
+      ]
+    },
+    "PROMETHEUS": {
+      "learn": [
+        "knowledge gaps",
+        "research need",
+        "external-tech opportunity"
+      ]
+    },
+    "KRONOS": {
+      "learn": [
+        "wall time",
+        "attempt timing",
+        "timeouts",
+        "sequence progression"
+      ]
+    },
+    "RHEA": {
+      "learn": [
+        "failure streak",
+        "recovery after repair",
+        "latency/resource regression",
+        "care signal"
+      ]
+    },
+    "MYCELIUM": {
+      "learn": [
+        "route/model/device",
+        "resource before/after",
+        "latency",
+        "throttle/pressure",
+        "successful trail"
+      ]
+    },
+    "SWITCHYARD": {
+      "learn": [
+        "eligible route",
+        "selected builder",
+        "cost/locality",
+        "route outcome"
+      ]
+    }
+  },
+  "trainingDataClass": "HIGH_VALUE_OPERATIONAL_LEARNING",
+  "learningMayInformFutureRecommendations": true,
+  "learningMayGrantAuthority": false,
+  "authorityGranted": false,
+  "executionStarted": false,
+  "receiptDigest": "cc7b9e79a751e1546e74cd733e8474e07b7958e7998d602c31391bb8c2e2aee6"
+}

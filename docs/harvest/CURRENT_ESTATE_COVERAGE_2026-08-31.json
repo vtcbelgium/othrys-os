@@ -1,0 +1,54 @@
+{
+  "schema": "othrys.harvest.current-estate-coverage.v1",
+  "date": "2026-08-31",
+  "files_indexed": 11673,
+  "symbols_indexed": 14982,
+  "repos": {
+    "vtc-platform": 273,
+    "othrys-hub-main": 3633,
+    "othrys-hub": 5373,
+    "othrys-core-windows": 1537,
+    "othrys-studio": 503,
+    "othrys-web": 189,
+    "othrys-blocks": 90,
+    "study-buddy": 70,
+    "othrys-tools": 5
+  },
+  "kinds": {
+    "SCHEMA_OR_DATA": 2295,
+    "DOC": 4396,
+    "CODE": 3506,
+    "TEST": 1476
+  },
+  "exact_cross_repo_duplicate_groups": 3788,
+  "indexed_extensions": [
+    ".cjs",
+    ".css",
+    ".html",
+    ".js",
+    ".json",
+    ".jsx",
+    ".md",
+    ".mjs",
+    ".py",
+    ".sql",
+    ".ts",
+    ".tsx",
+    ".yaml",
+    ".yml"
+  ],
+  "excluded_dirs": [
+    ".cache",
+    ".git",
+    ".next",
+    ".pytest_cache",
+    ".venv",
+    "__pycache__",
+    "build",
+    "coverage",
+    "dist",
+    "node_modules",
+    "test-results",
+    "venv"
+  ]
+}

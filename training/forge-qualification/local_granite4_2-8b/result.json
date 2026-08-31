@@ -1,0 +1,65 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "FORGE-QUAL-local.granite4.2-8b-R1",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.granite4.2-8b",
+  "ok": false,
+  "reason": "NO_ATTEMPT_MUTATION",
+  "started_at": 1788096300.4960623,
+  "completed_at": 1788096348.2156184,
+  "duration_sec": 47.71955609321594,
+  "allowed_paths": [
+    "training/forge-qualification/local_granite4_2-8b/candidate.mjs"
+  ],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "diff": "",
+  "git_status": "",
+  "summary": "",
+  "runtime_evidence": {
+    "observed_diff": "",
+    "git_status": "",
+    "tool_trace": [],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "hephaestus_forge_local_qualification",
+    "selected_builder": "local.granite4.2-8b",
+    "model": "granite4.2:8b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "5579",
+      "utilization_pct": "0",
+      "temperature_c": "40",
+      "power_w": "5.26"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \ngranite4.2:8b    f586c02fdecd    5.6 GB    100% GPU     4096       28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "5587",
+      "utilization_pct": "96",
+      "temperature_c": "65",
+      "power_w": "114.73"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \ngranite4.2:8b    f586c02fdecd    5.6 GB    100% GPU     4096       29 minutes from now"
+  }
+}

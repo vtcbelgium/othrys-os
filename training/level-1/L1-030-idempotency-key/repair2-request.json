@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-030 HARD REPAIR. WRITE immediately. File training/level-1/L1-030-idempotency-key/idempotencyKey.mjs. In canonicalize(value), before the branch that JSON.stringify handles number/boolean/null, add: if (typeof value === \"number\" \u0026\u0026 !Number.isFinite(value)) throw new RangeError(\"number must be finite\"); Do nothing else. Finish.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-030",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-030-003",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-030-idempotency-key/idempotencyKey.mjs"
+                      ]
+}

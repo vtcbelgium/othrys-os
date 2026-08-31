@@ -1,0 +1,181 @@
+﻿{
+  "schema": "othrys.os.training-job-preflight.v1",
+  "level": 1,
+  "job": {
+    "id": "L1-022",
+    "key": "filename-sanitize",
+    "family": "file",
+    "title": "Filename sanitizer",
+    "contract": "name -> portable safe filename",
+    "sequence": 22,
+    "status": "QUEUED",
+    "targetDisposition": "BLOCK_OR_MERGE",
+    "quality": [
+      "deterministic",
+      "pure or bounded filesystem-free core",
+      "edge cases",
+      "stable serialization where relevant",
+      "no secrets",
+      "authority-free"
+    ],
+    "authorityGranted": false
+  },
+  "cycle": "INTAKE -> ATLAS/MNEMOSYNE STOCK CHECK -> PLAN -> BUILD/REUSE -> TALOS -> REPEAT/FAULT -> BLOCK DISPOSITION -> INDEX -> LESSON",
+  "stockMatches": [
+    {
+      "id": "source-training-manifest",
+      "title": "OTHRYS Training Manifest",
+      "classification": "CANONICAL TRAINING / GATED",
+      "status": "DECLARED",
+      "score": 1,
+      "source": {
+        "kind": "PROJECT_FILE",
+        "path": "docs/training/TRAINING_MANIFEST.json"
+      }
+    },
+    {
+      "id": "atlas-training-job:l1-022",
+      "title": "Filename sanitizer",
+      "classification": "ATLAS_TRAINING-JOB",
+      "status": "REVIEWED",
+      "score": 0.75,
+      "source": {
+        "kind": "ATLAS",
+        "ref": "training-job:l1-022"
+      }
+    },
+    {
+      "id": "estate-00d33539779e84f7292a57fd",
+      "title": "othrys-hub-hephaestus-block-forge-001/docs/studio_mockup_to_block_operator_acceptance_001c/TRACE.md",
+      "classification": "DOCUMENT",
+      "status": "ARCHIVED",
+      "score": 0.625,
+      "source": {
+        "kind": "ESTATE_ARCHIVE",
+        "sha256": "00d33539779e84f7292a57fda09368a4e8cbeac71ddd5dbae9a6424c8d20e166",
+        "refs": [
+          {
+            "lineage": "local:othrys-hub-hephaestus-block-forge-001",
+            "path": "docs/studio_mockup_to_block_operator_acceptance_001c/TRACE.md",
+            "repo": "othrys-hub-hephaestus-block-forge-001"
+          },
+          {
+            "lineage": "local:othrys-hub-oros-composition-law-001",
+            "path": "docs/studio_mockup_to_block_operator_acceptance_001c/TRACE.md",
+            "repo": "othrys-hub-oros-composition-law-001"
+          },
+          {
+            "lineage": "local:othrys-hub-study-buddy-spaced-review-contract-001",
+            "path": "docs/studio_mockup_to_block_operator_acceptance_001c/TRACE.md",
+            "repo": "othrys-hub-study-buddy-spaced-review-contract-001"
+          }
+        ],
+        "sourceCount": 3
+      }
+    },
+    {
+      "id": "estate-01eb487890a7685e0ed76ac4",
+      "title": "othrys-hub-hephaestus-block-forge-001/docs/VTC-BLOCK-CONTRACT-001/CANDIDATE-BOUNDARY.md",
+      "classification": "DOCUMENT",
+      "status": "ARCHIVED",
+      "score": 0.625,
+      "source": {
+        "kind": "ESTATE_ARCHIVE",
+        "sha256": "01eb487890a7685e0ed76ac44cb52f2a6e07d4436e7760918911b6dd9db39bfe",
+        "refs": [
+          {
+            "lineage": "local:othrys-hub-hephaestus-block-forge-001",
+            "path": "docs/VTC-BLOCK-CONTRACT-001/CANDIDATE-BOUNDARY.md",
+            "repo": "othrys-hub-hephaestus-block-forge-001"
+          },
+          {
+            "lineage": "local:othrys-hub-oros-composition-law-001",
+            "path": "docs/VTC-BLOCK-CONTRACT-001/CANDIDATE-BOUNDARY.md",
+            "repo": "othrys-hub-oros-composition-law-001"
+          },
+          {
+            "lineage": "local:othrys-hub-study-buddy-spaced-review-contract-001",
+            "path": "docs/VTC-BLOCK-CONTRACT-001/CANDIDATE-BOUNDARY.md",
+            "repo": "othrys-hub-study-buddy-spaced-review-contract-001"
+          }
+        ],
+        "sourceCount": 3
+      }
+    },
+    {
+      "id": "atlas-block:candidate.storage.secure-file-download",
+      "title": "Authorized source file delivery",
+      "classification": "ATLAS_BLOCK",
+      "status": "REVIEWED",
+      "score": 0.5,
+      "source": {
+        "kind": "ATLAS",
+        "ref": "block:candidate.storage.secure-file-download"
+      }
+    },
+    {
+      "id": "atlas-block:candidate.storage.user-upload",
+      "title": "User file/image upload",
+      "classification": "ATLAS_BLOCK",
+      "status": "REVIEWED",
+      "score": 0.5,
+      "source": {
+        "kind": "ATLAS",
+        "ref": "block:candidate.storage.user-upload"
+      }
+    },
+    {
+      "id": "atlas-training-job:l1-023",
+      "title": "File extension/media classifier",
+      "classification": "ATLAS_TRAINING-JOB",
+      "status": "REVIEWED",
+      "score": 0.5,
+      "source": {
+        "kind": "ATLAS",
+        "ref": "training-job:l1-023"
+      }
+    },
+    {
+      "id": "source-build-backlog",
+      "title": "V2 Build Backlog",
+      "classification": "CONTROL / ROADMAP",
+      "status": "DECLARED",
+      "score": 0.5,
+      "source": {
+        "kind": "PROJECT_FILE",
+        "path": "V2_BUILD_BACKLOG.md"
+      }
+    },
+    {
+      "id": "source-build-plan",
+      "title": "OTHRYS OS Build Plan",
+      "classification": "CONTROL / BUILD NAVIGATION",
+      "status": "DECLARED",
+      "score": 0.5,
+      "source": {
+        "kind": "PROJECT_FILE",
+        "path": "OTHRYS_OS_BUILD_PLAN.md"
+      }
+    },
+    {
+      "id": "source-external-harvest",
+      "title": "OTHRYS OS External Harvest",
+      "classification": "QUARRY / GATED",
+      "status": "DECLARED",
+      "score": 0.5,
+      "source": {
+        "kind": "PROJECT_FILE",
+        "path": "OTHRYS_OS_EXTERNAL_HARVEST.md"
+      }
+    }
+  ],
+  "requiredOrgans": [
+    "MNEMOSYNE",
+    "HEPHAESTUS",
+    "TALOS",
+    "SWITCHYARD"
+  ],
+  "dispositionRequired": true,
+  "authorityGranted": false,
+  "executionStarted": false
+}

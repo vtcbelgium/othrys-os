@@ -1,0 +1,27 @@
+﻿{
+    "task":  "L1-033 TALOS HARD REPAIR. Read and WRITE exactly training/level-1/L1-033-markdown-table/markdownTable.mjs. First build is 0/8 due inverted scalar test, wrong column derivation, and missing Markdown delimiters. Implement exact contract: validate records array first; empty =\u003e \u0027\u0027. Every record plain object. Columns = options.columns when supplied (non-empty unique non-empty strings) else sorted union of Object.keys across ALL records. Scalar cells allowed only null/undefined/string/number/boolean/bigint; object,array,function,symbol reject TypeError. null/undefined/missing =\u003e \u0027\u0027. Escape backslash first, then | as \\|, normalize CRLF/CR/LF to \u003cbr\u003e. Render each row exactly `| cell | cell |`; separator cells `---`; LF no trailing newline. Never mutate. Touch nothing else.",
+    "schema_version":  "othrys.worker-request.v0.1",
+    "workspace":  "C:/Users/othry/Projects/othrys-v2",
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "metadata":  {
+                     "training_level":  1,
+                     "authorityGranted":  false,
+                     "mission_id":  "V2-011K",
+                     "training_job":  "L1-033",
+                     "forge_builder_id":  "local.qwen3-coder-30b"
+                 },
+    "timeout_sec":  90,
+    "job_id":  "TRAIN-L1-033-002",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "allowed_paths":  [
+                          "training/level-1/L1-033-markdown-table/markdownTable.mjs"
+                      ]
+}
