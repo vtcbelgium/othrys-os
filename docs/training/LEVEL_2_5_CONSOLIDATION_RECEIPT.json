@@ -1,0 +1,54 @@
+{
+  "schema": "othrys.training.level-2.5.consolidation-closeout.v1",
+  "status": "COMPLETE",
+  "closedAt": "2026-08-31T23:09:47+02:00",
+  "repoRevisions": {
+    "othrys-os": "32de3637515597954d1a753c24087154a998d99d",
+    "othrys-blocks": "908b1950e62481c438da59ea313a26ff278119d3",
+    "othrys-web": "3c63ecd7e5cdeae6fcc08d144e504ea88dbbe399",
+    "vtc-platform": "f155340de38276fc90967b74903c531b52a13756"
+  },
+  "currentLevel": 2,
+  "level3Status": "LOCKED",
+  "authorityGranted": false,
+  "automaticAdmission": false,
+  "automaticLevelAdvance": false,
+  "exitGates": {
+    "canonicalBlockOwnership": "PASS",
+    "duplicateAdmittedBlockImplementations": "PASS",
+    "trainingJobsTerminal64of64": "PASS",
+    "hephaestusFailureGuards": "PASS",
+    "gardenRdCanonicalIntake": "PASS",
+    "externalQuarry43Terminal": "PASS",
+    "cleanRoomFourRepoReconstruction": "PASS",
+    "tinyProjectCreation": "PASS",
+    "independentTalosVerification": "PASS",
+    "trustCanalGating": "PASS",
+    "currentCodeCrossRepoExactDuplicatesZero": "PASS",
+    "estatePruneRemovalAndPreservation": "PASS",
+    "offMachineRecoveryReplica": "PASS",
+    "restoreDrill": "PASS",
+    "retiredControlMapSiblingSeamRemoved": "PASS",
+    "t590CanonicalServiceCheckout": "PASS"
+  },
+  "testEvidence": {
+    "othrysOsRuntime": "366/366",
+    "trainingSource": "486/486",
+    "blockContracts": "536/536",
+    "trainingCore": "3/3",
+    "webCurrentFresh": "196 passed, 3 skipped; typecheck PASS; build PASS",
+    "vtcFresh": "17/17; build PASS",
+    "blocksBrowser": "29/29 image-prep; 5/5 affiliate"
+  },
+  "recovery": {
+    "target": "VTC-t590:/home/jeroen/OTHRYS-Cold-Recovery/OTHRYS-Cold-Recovery-2026-08-31.tar",
+    "bytes": 11888896000,
+    "sha256": "4fed4884492dbede7ad5120f129d0ce6acca3da5510ef823b7d85d7a98f54cc7",
+    "restoreDrill": "PASS"
+  },
+  "knownNonBlockingDebt": [
+    "othrys-web retains Next/PostCSS npm advisories whose full npm automatic remediation requires a breaking Next 16 upgrade.",
+    "Legion NVIDIA nvlddmkm / VIDEO_TDR_FAILURE stability issue is not declared repaired."
+  ],
+  "nextLevelUnlock": "operator command only; this receipt does not unlock or start Level 3"
+}

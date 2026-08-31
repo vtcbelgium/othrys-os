@@ -1,9 +1,9 @@
-# OTHRYS OS — Level 2.5 Consolidation Plan
+# OTHRYS OS - Level 2.5 Consolidation Plan
 
-**Status:** PLANNED / REQUIRED BEFORE LEVEL 3  
-**Authority:** operator decision 2026-08-31  
-**Purpose:** close transition debt after Levels 1–2 and the Great Harvest before unlocking Level 3.  
-**Level law:** this is a consolidation gate, not a new numbered training level and grants no authority. Level 3 remains LOCKED until every required exit gate below is proven.
+**Status:** COMPLETE / GATE SATISFIED; LEVEL 3 STILL LOCKED
+**Authority:** operator decision 2026-08-31
+**Purpose:** close transition debt after Levels 1-2 and the Great Harvest before any operator-authorized Level 3 activation.
+**Level law:** this is a consolidation gate, not a new numbered training level and grants no authority. Level 3 remains LOCKED until a separate explicit operator command.
 
 ## Mission objective
 
@@ -151,3 +151,10 @@ Level 3 may be proposed for explicit operator activation only when Workstreams A
 - `automaticLevelAdvance=false`, `automaticAdmission=false`, `authorityGranted=false` preserved.
 
 **Unlock law:** completion of Level 2.5 does not itself activate Level 3. It only makes Level 3 eligible for a separate explicit operator decision.
+
+
+## Closeout evidence ? 2026-08-31
+
+All A?I workstreams and exit gates are satisfied by repository evidence. The four-repo clean-room reconstruction passed; a tiny Oros was materialized through the real OTHRYS OS project materializer and independently Talos-verified; the final quarry has 43 terminally classified candidates; all 64 Level 1?2 training jobs have terminal dispositions; the current-code duplicate census found zero cross-repository exact groups; the retired Web Control Map sibling-generator seam was removed; and the T590 command-deck services were migrated from the obsolete `othrys-v2-verify` checkout to a current `othrys-os` checkout before that stale checkout was removed.
+
+Recovery evidence includes a verified 11,888,896,000-byte cold archive on the T590 with SHA-256 `4fed4884492dbede7ad5120f129d0ce6acca3da5510ef823b7d85d7a98f54cc7` and a successful Git bundle restore/fsck drill. None of these receipts grant authority, automatic admission, automatic advancement, or Level 3 unlock.

@@ -1,6 +1,6 @@
-# CURRENT EXECUTION GATE — LEVEL 2.5
+# CURRENT EXECUTION GATE - LEVEL 2.5 COMPLETE
 
-The historical backlog below is retained as chronology. As of 2026-08-31, docs/training/LEVEL_2_5_CONSOLIDATION_PLAN.md is the sole legal pre-Level-3 execution gate. No historical RUNNING or NEXT marker overrides it. Level 3 requires a separate explicit operator activation after Level 2.5 graduation.
+The historical backlog below is retained as chronology. As of 2026-08-31, `docs/training/LEVEL_2_5_CONSOLIDATION_PLAN.md` is COMPLETE. No historical RUNNING or NEXT marker is current. Level 3 remains LOCKED and requires a separate explicit operator activation.
 
 # OTHRYS V2 BUILD BACKLOG
 

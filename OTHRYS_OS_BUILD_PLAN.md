@@ -1,6 +1,6 @@
-# CURRENT OVERRIDE — LEVEL 2.5 CONSOLIDATION
+# CURRENT OVERRIDE - LEVEL 2.5 CONSOLIDATION COMPLETE
 
-As of 2026-08-31 the sole current pre-Level-3 work is docs/training/LEVEL_2_5_CONSOLIDATION_PLAN.md. Level 2 is complete; Level 3 remains operator-locked. Older sections labelled Current phase, RUNNING, or NEXT below are historical mission chronology unless explicitly referenced by the Level 2.5 plan. The active estate is exactly othrys-os, othrys-blocks, othrys-web, and tc-platform.
+As of 2026-08-31, `docs/training/LEVEL_2_5_CONSOLIDATION_PLAN.md` is COMPLETE. Level 2 is complete; Level 2.5 is complete; Level 3 remains operator-locked and has not started. Older sections labelled Current phase, RUNNING, or NEXT below are historical mission chronology only. The active estate is exactly `othrys-os`, `othrys-blocks`, `othrys-web`, and `vtc-platform`.
 
 # OTHRYS OS BUILD PLAN
 

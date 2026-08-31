@@ -1,0 +1,59 @@
+{
+  "schema": "othrys.training.level-2.5.creation-rehearsal.v1",
+  "status": "PASS",
+  "performedAt": "2026-08-31T23:09:47+02:00",
+  "cleanRoomRoot": "C:\\Users\\othry\\Othrys-Level25-Rehearsal",
+  "repoRevisions": {
+    "othrys-os": "32de3637515597954d1a753c24087154a998d99d",
+    "othrys-blocks": "908b1950e62481c438da59ea313a26ff278119d3",
+    "othrys-web": "3c63ecd7e5cdeae6fcc08d144e504ea88dbbe399",
+    "vtc-platform": "f155340de38276fc90967b74903c531b52a13756"
+  },
+  "reconstruction": {
+    "fourRepoClone": "PASS",
+    "othrysOsRuntimeTests": 366,
+    "trainingSourceTests": 486,
+    "blockContractTests": 536,
+    "trainingCoreTests": 3,
+    "blocksBrowserImagePrep": 29,
+    "blocksBrowserAffiliateOffer": 5,
+    "vtcTests": 17,
+    "webTestsPassed": 196,
+    "webTestsSkipped": 3
+  },
+  "tinyProject": {
+    "projectId": "level25-tiny-oros",
+    "templateId": "oros-software",
+    "materializationStatus": "MATERIALIZED",
+    "authorityGranted": false,
+    "executionStarted": false,
+    "approvalAuthority": "trust-canal",
+    "evidenceAuthority": "talos"
+  },
+  "independentTalosVerification": {
+    "verdict": "PASS",
+    "projectDigest": "41a03fb0fa8709d31a69485160c1534dae81ebd220eedb852d3daef79d619f12",
+    "verifier": "independent-post-materialization",
+    "producerReused": false,
+    "checks": [
+      "projectId",
+      "authorityFalse",
+      "executionFalse",
+      "trust",
+      "talos",
+      "dirs",
+      "readme"
+    ]
+  },
+  "reworkObserved": [
+    "Windows BOM/CRLF contract-digest portability defect discovered by clean-room Web verification and repaired.",
+    "Retired Control Map sibling-generator seam discovered during final Web sweep and removed in favor of canonical OTHRYS OS Atlas."
+  ],
+  "redundancyEvidence": {
+    "authoredCodeFilesScanned": 1338,
+    "crossRepoExactDuplicateGroups": 0
+  },
+  "grantsAuthority": false,
+  "automaticLevelAdvance": false,
+  "level3Unlocked": false
+}

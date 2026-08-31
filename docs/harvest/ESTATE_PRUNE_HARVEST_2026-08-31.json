@@ -50,5 +50,14 @@
     }
   ],
   "authorityGranted": false,
-  "closeout": "All listed source repos were preserved in cold Recovery, harvested, and removed from the active four-repo estate before Level 2.5. Current product application requires re-verification against canonical repos."
+  "closeout": "All listed source repos were preserved in cold Recovery, harvested, and removed from the active four-repo estate before Level 2.5. Current product application requires re-verification against canonical repos.",
+  "completedAt": "2026-08-31T23:09:47+02:00",
+  "closureVerification": {
+    "removedFromActiveProjects": true,
+    "preservationBundlesVerified": true,
+    "currentEstateFourRepos": true,
+    "offMachineColdReplicaVerified": true,
+    "restoreDrill": "PASS",
+    "authorityGranted": false
+  }
 }

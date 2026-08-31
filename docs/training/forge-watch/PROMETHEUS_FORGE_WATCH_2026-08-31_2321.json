@@ -1,0 +1,31 @@
+{
+  "schema": "othrys.prometheus.forge-watch.v1",
+  "date": "2026-08-31",
+  "runLocalTime": "23:21 Europe/Brussels",
+  "result": "NO_NEW_ADMISSION",
+  "rosterComparedAgainst": "runtime/hephaestus/data/forge_roster.json",
+  "discoveries": [
+    {
+      "name": "Tencent Hy4 preview",
+      "candidateId": "tencent.hy4-preview",
+      "class": "OPEN_WEIGHT_AGENTIC_BUILDER_CANDIDATE",
+      "released": "2026-08-28",
+      "availability": "OPEN_WEIGHTS_BUT_NOT_FEASIBLE_ON_CURRENT_LOCAL_HARDWARE",
+      "license": "Apache-2.0",
+      "softwareCost": "ZERO_WEIGHTS; REMOTE_SERVICE_NOT_ENABLED",
+      "secretBoundary": "LOCAL_NOT_FEASIBLE; REMOTE_ENDPOINT WOULD REQUIRE SEPARATE SECRET/PRIVACY QUALIFICATION",
+      "builderOlympics": "NOT_RUN_UNAVAILABLE_ON_CURRENT_8GB_LEGION/T590_CLASS_HARDWARE",
+      "talosQualification": "NOT_RUN_NO_GATED_BUILDER_EXECUTION",
+      "reason": "770B total / 49B active; official serving examples target multi-GPU TP=8. Discovery alone grants no execution authority."
+    }
+  ],
+  "publicSourcesChecked": [
+    "https://www.tencent.com/tencent-releases-and-open-sources-tencent-hy4-preview/",
+    "https://huggingface.co/tencent/Hy4-preview"
+  ],
+  "knownNoiseSuppressed": ["Qwen3.8-27B", "Ornith-1.5-9B", "Muse Glimmer", "Nemotron 3.5 Lightning", "Granite 4.2", "GLM-5.3/Flash", "North Mini Code"],
+  "authorityGranted": false,
+  "automaticPaidUsage": false,
+  "admitted": [],
+  "operatorNotification": false
+}

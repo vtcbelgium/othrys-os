@@ -1,0 +1,25 @@
+{
+  "schema": "othrys.prometheus.forge-watch.v1",
+  "date": "2026-08-31",
+  "result": "NO_NEW_ADMISSION",
+  "rosterComparedAgainst": "runtime/hephaestus/data/forge_roster.json",
+  "discoveries": [
+    {
+      "name": "DeepSeek Harness",
+      "source": "https://github.com/deepseek-ai/deepseek-harness",
+      "class": "BUILDER_INFRASTRUCTURE",
+      "status": "HEPHAESTUS_ARCHITECTURE_WATCH_NOT_ADMITTED",
+      "availability": "npm @deepseek-ai/dsh 0.1.1-rc.2 available on Legion",
+      "license": "MIT",
+      "softwareCost": "ZERO",
+      "secretBoundary": "NOT_QUALIFIED: developer preview, unaudited, can access network/processes/credentials/files exposed to it",
+      "builderOlympics": "NOT_APPLICABLE: harness is infrastructure, not a builder/model candidate",
+      "talosQualification": "NOT_RUN: no builder admission path opened",
+      "reason": "Genuinely new official agent harness with plugin architecture, but not itself a Hephaestus builder and its documented security boundary is unsuitable for direct privileged integration without isolation design."
+    }
+  ],
+  "authorityGranted": false,
+  "automaticPaidUsage": false,
+  "admitted": [],
+  "operatorNotification": false
+}

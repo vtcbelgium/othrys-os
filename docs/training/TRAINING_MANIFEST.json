@@ -1920,7 +1920,7 @@
   },
   "level2_5DispositionLaw": "Level 1-2 completion creates Forge Primitives/Patterns by default, never admitted reusable Blocks. Any later Block promotion is a separate explicit qualification/admission mission.",
   "level2_5Consolidation": {
-    "status": "IN_PROGRESS",
+    "status": "COMPLETE",
     "plan": "docs/training/LEVEL_2_5_CONSOLIDATION_PLAN.md",
     "requiredBeforeLevel3": true,
     "grantsAuthority": false,
