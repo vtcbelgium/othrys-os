@@ -1,0 +1,16 @@
+{
+  "schema": "othrys.os.knowledge-item.v1",
+  "id": "inbox-2ca9ca6656fdb8ea0cec3134",
+  "title": "Retire temporary GPT inbox",
+  "classification": "INBOX",
+  "status": "AWAITING_REVIEW",
+  "source": {
+    "kind": "CAPTURE",
+    "ref": "operator-direction:2026-08-23"
+  },
+  "content": "Replace GPT_INBOX.md as an active intake mechanism with the canonical Mnemosyne capture/review lifecycle once the control foundation is stable.",
+  "contentDigest": "660364be7db22f56b92c40b7fd11d4296c43fdaa09c0f01ff64b484f84aedecc",
+  "capturedAt": "2026-08-23T12:01:00.000Z",
+  "authorityGranted": false,
+  "promoted": false
+}

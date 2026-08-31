@@ -1,0 +1,28 @@
+﻿{
+    "schema":  "othrys.prometheus.forge-watch.v1",
+    "date":  "2026-08-31",
+    "runLocalTime":  "21:32 Europe/Brussels",
+    "result":  "NO_NEW_ADMISSION",
+    "publicSourcesChecked":  [
+                                 "https://ollama.com/blog/nemotron-3-5-lightning",
+                                 "https://qwenlm.github.io/qwen-code-docs/en/blog/updates/",
+                                 "https://github.github.com/gh-aw/blog/2026-08-31-weekly-update/",
+                                 "https://freedom.tech/posts/2026-08-31-openclaw-2026-8-1/",
+                                 "https://github.com/ggml-org/llama.cpp"
+                             ],
+    "findings":  [
+                     "NVIDIA Nemotron 3.5 Lightning is already present in the Forge roster as nvidia.nemotron-3.5-lightning; duplicate suppressed.",
+                     "Qwen Code and GitHub Agentic Workflows shipped material orchestration/tool-schema improvements, but these are builder infrastructure rather than a new qualified Hephaestus builder; no roster admission triggered.",
+                     "OpenClaw 2026.8.1 adds distributed sessions, durable progress, structured agent responses and masked credential requests; relevant architecture evidence only, not a builder admission.",
+                     "llama.cpp continues fresh release activity; runtime infrastructure alone does not satisfy Builder Olympics/Talos gates.",
+                     "Known unadmitted candidates including Ornith-1.5-35B-A3B, Granite 4.2, North Mini Code, Muse Glimmer and GLM-5.3 were suppressed from duplicate qualification noise.",
+                     "No paid endpoint was enabled; discovery granted no authority."
+                 ],
+    "rosterComparedAgainst":  "runtime/hephaestus/data/forge_roster.json",
+    "admitted":  [
+
+                 ],
+    "authorityGranted":  false,
+    "automaticPaidUsage":  false,
+    "operatorNotification":  false
+}

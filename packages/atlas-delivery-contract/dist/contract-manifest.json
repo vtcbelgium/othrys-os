@@ -1,0 +1,82 @@
+{
+  "publishedBy": "titan/atlas/scripts/publish-contract.mjs",
+  "contractVersion": 2,
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-27T08:26:41.853Z",
+  "revision": {
+    "repository": "othrys-core",
+    "commit": "0741cade681533f53b37275df82c5a0a864be8d5",
+    "shortCommit": "0741cad",
+    "branch": "mission/p2-adr0049-ratify",
+    "dirty": false
+  },
+  "files": [
+    {
+      "path": "atlas-contract.json",
+      "source": "titan/atlas/generated/atlas-contract.json",
+      "sha256": "5a209e8005068f05bb3ee3f619030bacee3e97992fe93160dadbf195d18b5e4f",
+      "bytes": 361172
+    },
+    {
+      "path": "contract/atlas-contract.ts",
+      "source": "titan/atlas/src/contract/atlas-contract.ts",
+      "sha256": "187d45e4d61c4458357f3b3c848b1cdf719ee6c4da6093f4ea5af95174e9c6e8",
+      "bytes": 26647
+    },
+    {
+      "path": "domain/atlas-model.ts",
+      "source": "titan/atlas/src/domain/atlas-model.ts",
+      "sha256": "80607545e4d11c60643a71c9e5998a64e45aa5f48e84bbf6bf66f8f000526bee",
+      "bytes": 13931
+    },
+    {
+      "path": "drift/drift.ts",
+      "source": "titan/atlas/src/drift/drift.ts",
+      "sha256": "0fb1385ba30885114f2ce3549dd56dcb752c708228abe431eeec8a2b53fadb81",
+      "bytes": 9921
+    },
+    {
+      "path": "index.ts",
+      "source": "titan/atlas/scripts/publish-contract.mjs (generated barrel)",
+      "sha256": "7d6e3e408e0cb108803996fb5a44dccacabefcd8e6d67e27f09ab60246461d73",
+      "bytes": 1886
+    },
+    {
+      "path": "proof/evidence.ts",
+      "source": "titan/atlas/src/proof/evidence.ts",
+      "sha256": "ba5f4b2de9857a9656c30156a53c0e6d76d6270e0ebbc2d434dbebf92b87c9b3",
+      "bytes": 21452
+    },
+    {
+      "path": "read-model/atlas.ts",
+      "source": "titan/atlas/src/read-model/atlas.ts",
+      "sha256": "8b8d23a703ded8f418f5f7a78261c050707cf8514e6382cedd75201e03412c31",
+      "bytes": 6063
+    },
+    {
+      "path": "read-model/traverse.ts",
+      "source": "titan/atlas/src/read-model/traverse.ts",
+      "sha256": "5841cbfc8f2e3adeea774a12b865066828b46ce432580c5c967afad7147ad215",
+      "bytes": 7010
+    },
+    {
+      "path": "render/overlays.ts",
+      "source": "titan/atlas/src/render/overlays.ts",
+      "sha256": "514e9e1041a2a135b4fb2b70587e97fc0cffc1db223c9106104e307224afc7d5",
+      "bytes": 6915
+    },
+    {
+      "path": "vendor/capability-registry/domain/capability-record.ts",
+      "source": "titan/capability-registry/src/domain/capability-record.ts",
+      "sha256": "dbc8c4159a7e03255c4e9fdb4ebe4f2dac6512cd6e570924792522e816e99888",
+      "bytes": 17042
+    },
+    {
+      "path": "vendor/capability-registry/health/health-vocabulary.ts",
+      "source": "titan/capability-registry/src/health/health-vocabulary.ts",
+      "sha256": "7b49f0b3116e5eb27b889ba396cfc4683cd074cb4c73b3094435778a21cf69a6",
+      "bytes": 16759
+    }
+  ],
+  "totalBytes": 488798
+}

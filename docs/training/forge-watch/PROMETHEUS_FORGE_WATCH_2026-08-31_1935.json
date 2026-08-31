@@ -1,0 +1,24 @@
+{
+  "schema": "othrys.prometheus.forge-watch.v1",
+  "date": "2026-08-31",
+  "runLocalTime": "19:35 Europe/Brussels",
+  "result": "NO_NEW_ADMISSION",
+  "publicSourcesChecked": [
+    "https://ollama.com/blog",
+    "https://huggingface.co/models",
+    "https://qwenlm.github.io/qwen-code-docs/en/blog/updates/",
+    "https://qwenlm.github.io/qwen-code-docs/en/users/features/arena/"
+  ],
+  "findings": [
+    "No new official free/local coding model emerged beyond candidates already tracked by Forge Watch today.",
+    "Qwen Code current agent infrastructure remains known and suppressed from duplicate noise.",
+    "Qwen3.8-27B and Ornith-1.5-9B remain admitted local builders; North Mini Code remains KEEP_TESTING_NOT_ADMITTED after NO_ATTEMPT_MUTATION.",
+    "Muse Glimmer remains tested but not admitted after tool-use heat failure; Ornith-1.5-35B-A3B remains a known handoff requiring full local qualification before any admission.",
+    "No paid endpoint was enabled and discovery granted no authority."
+  ],
+  "rosterComparedAgainst": "runtime/hephaestus/data/forge_roster.json",
+  "admitted": [],
+  "authorityGranted": false,
+  "automaticPaidUsage": false,
+  "operatorNotification": false
+}

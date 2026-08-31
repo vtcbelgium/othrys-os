@@ -1,0 +1,31 @@
+{
+  "schema": "othrys.os.level-2.5-block-ownership.v1",
+  "status": "CANONICAL_OWNER_DECLARED",
+  "canonicalRepository": "vtcbelgium/othrys-blocks",
+  "canonicalLocalSibling": "../othrys-blocks",
+  "osImplementationOwnership": false,
+  "authorityGranted": false,
+  "blocks": [
+    {
+      "path": "blocks/media/image-prep",
+      "package": "@othrys-blocks/media-image-prep",
+      "version": "0.1.1",
+      "trackedFiles": 14,
+      "treeDigest": "41300b365a30e70414a76dee451b6ab785ba9b04c2b141d93800cd5a1bc0fa04"
+    },
+    {
+      "path": "blocks/monetization/affiliate-offer",
+      "package": "@othrys-blocks/monetization-affiliate-offer",
+      "version": "0.1.0",
+      "trackedFiles": 18,
+      "treeDigest": "70ea6c33d29976bcf103bbbea694823f26a5bb24d4adb8a665ba8adc86e04b7f"
+    },
+    {
+      "path": "blocks/analytics/visit-tracking",
+      "package": "@othrys-blocks/analytics-visit-tracking",
+      "version": "0.1.1",
+      "trackedFiles": 21,
+      "treeDigest": "11e13f64255f6b997057aaf7a119efa446ed4b8a9f54365ab5528a6fbdd84576"
+    }
+  ]
+}

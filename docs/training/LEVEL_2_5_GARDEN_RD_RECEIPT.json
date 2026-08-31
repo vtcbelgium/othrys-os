@@ -1,0 +1,48 @@
+{
+  "schema": "othrys.os.knowledge-zone-index.v1",
+  "garden": [
+    {
+      "id": "inbox-bf44bcabf1528aebef4ce4f8",
+      "title": "Conversation intelligence sensor",
+      "zone": "GARDEN",
+      "source": {
+        "kind": "CAPTURE",
+        "ref": "operator-direction:2026-08-23"
+      },
+      "reviewId": "review-7df706cb527bf0e8ccff3a89",
+      "evidence": "Level 2.5 canonical intake migration; idea retained as zero-authority Garden stock.",
+      "authorityGranted": false
+    }
+  ],
+  "researchAndDevelopment": [
+    {
+      "id": "inbox-a5821f8d7a9f6d65fb7b034e",
+      "title": "PandaOS experience harvest continuation",
+      "zone": "R_AND_D",
+      "source": {
+        "kind": "CAPTURE",
+        "ref": "pandaos-observation:2026-08-27"
+      },
+      "reviewId": "review-84fe0a0743c77cf9322767a2",
+      "evidence": "Level 2.5 migration of previously logged Panda research; bounded research only, no Panda dependency or authority.",
+      "authorityGranted": false
+    },
+    {
+      "id": "inbox-cc73e3f2f89c185c325391e8",
+      "title": "Panda Atlas service boundary",
+      "zone": "R_AND_D",
+      "source": {
+        "kind": "CAPTURE",
+        "ref": "othrys-panda-lab/.pandaos/rules/pandaos-config.md:Connected Apps"
+      },
+      "reviewId": "review-a2b5a801ab4239ba83141044",
+      "evidence": "V2-010E Panda structural quarry",
+      "authorityGranted": false
+    }
+  ],
+  "rejected": 1,
+  "authorityGranted": false,
+  "mutationsPerformed": 0,
+  "status": "CANONICAL_INTAKE_WIRED",
+  "temporaryGptInboxRetired": true
+}

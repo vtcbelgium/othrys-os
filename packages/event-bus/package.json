@@ -1,0 +1,33 @@
+{
+  "name": "@othrys-os/event-bus",
+  "version": "0.1.1",
+  "private": false,
+  "description": "OTHRYS OS canonical event bus distribution package, migrated from retired othrys-core lineage.",
+  "type": "module",
+  "scripts": {},
+  "license": "UNLICENSED",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtcbelgium/othrys-os.git",
+    "directory": "packages/event-bus"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

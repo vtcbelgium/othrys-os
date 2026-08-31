@@ -1,0 +1,661 @@
+{
+  "schema": "othrys.os.level-2.5-training-disposition.v1",
+  "status": "COMPLETE",
+  "jobs": 64,
+  "counts": {
+    "FORGE_PRIMITIVE": 63,
+    "PATTERN": 1
+  },
+  "terminalCategories": [
+    "FORGE_PRIMITIVE",
+    "PATTERN",
+    "BLOCK_CANDIDATE",
+    "MERGE_EXISTING",
+    "REFERENCE",
+    "REJECT"
+  ],
+  "entries": [
+    {
+      "jobId": "L1-001",
+      "level": 1,
+      "title": "Text slugifier",
+      "family": "text",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-002",
+      "level": 1,
+      "title": "Whitespace/text normalizer",
+      "family": "text",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-003",
+      "level": 1,
+      "title": "Line deduplicator",
+      "family": "text",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-004",
+      "level": 1,
+      "title": "Text statistics",
+      "family": "text",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-005",
+      "level": 1,
+      "title": "Case converter",
+      "family": "text",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-006",
+      "level": 1,
+      "title": "JSON formatter/minifier",
+      "family": "data",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-007",
+      "level": 1,
+      "title": "JSON validator",
+      "family": "data",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-008",
+      "level": 1,
+      "title": "CSV row cleaner",
+      "family": "data",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-009",
+      "level": 1,
+      "title": "CSV/JSON converter",
+      "family": "data",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-010",
+      "level": 1,
+      "title": "Stable record sorter",
+      "family": "data",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-011",
+      "level": 1,
+      "title": "URL normalizer",
+      "family": "web",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-012",
+      "level": 1,
+      "title": "Query-string parser/builder",
+      "family": "web",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-013",
+      "level": 1,
+      "title": "HTML escape/unescape",
+      "family": "web",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-014",
+      "level": 1,
+      "title": "UTM URL builder",
+      "family": "web",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-015",
+      "level": 1,
+      "title": "Metadata field checker",
+      "family": "web",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-016",
+      "level": 1,
+      "title": "Unit converter",
+      "family": "calculate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-017",
+      "level": 1,
+      "title": "Date/duration calculator",
+      "family": "calculate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-018",
+      "level": 1,
+      "title": "Percentage calculator",
+      "family": "calculate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-019",
+      "level": 1,
+      "title": "Price/VAT/discount calculator",
+      "family": "calculate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-020",
+      "level": 1,
+      "title": "Time/cost estimator",
+      "family": "calculate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-021",
+      "level": 1,
+      "title": "Checksum calculator",
+      "family": "file",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-022",
+      "level": 1,
+      "title": "Filename sanitizer",
+      "family": "file",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-023",
+      "level": 1,
+      "title": "File extension/media classifier",
+      "family": "file",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-024",
+      "level": 1,
+      "title": "Duplicate signature helper",
+      "family": "file",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-025",
+      "level": 1,
+      "title": "Portable path normalizer",
+      "family": "file",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-026",
+      "level": 1,
+      "title": "Semantic-version comparator",
+      "family": "developer",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-027",
+      "level": 1,
+      "title": ".env metadata parser",
+      "family": "developer",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-028",
+      "level": 1,
+      "title": "Simple schema checker",
+      "family": "developer",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-029",
+      "level": 1,
+      "title": "Bounded retry calculator",
+      "family": "developer",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-030",
+      "level": 1,
+      "title": "Idempotency key generator",
+      "family": "developer",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-031",
+      "level": 1,
+      "title": "Checklist generator",
+      "family": "generate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-032",
+      "level": 1,
+      "title": "Deterministic fixture generator",
+      "family": "generate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-033",
+      "level": 1,
+      "title": "Markdown table generator",
+      "family": "generate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-034",
+      "level": 1,
+      "title": "Changelog entry formatter",
+      "family": "generate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-035",
+      "level": 1,
+      "title": "Safe config merge",
+      "family": "generate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-036",
+      "level": 1,
+      "title": "Email normalizer/validator",
+      "family": "validate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-037",
+      "level": 1,
+      "title": "Phone shape normalizer",
+      "family": "validate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-038",
+      "level": 1,
+      "title": "Color parser/converter",
+      "family": "validate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-039",
+      "level": 1,
+      "title": "ISO date normalizer",
+      "family": "validate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L1-040",
+      "level": 1,
+      "title": "Identifier validator",
+      "family": "validate",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-001",
+      "level": 2,
+      "title": "Local key/value store",
+      "family": "state",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-002",
+      "level": 2,
+      "title": "Settings store",
+      "family": "state",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-003",
+      "level": 2,
+      "title": "Todo store",
+      "family": "crud",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-004",
+      "level": 2,
+      "title": "Notes store",
+      "family": "crud",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-005",
+      "level": 2,
+      "title": "Contact store",
+      "family": "crud",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-006",
+      "level": 2,
+      "title": "Inventory store",
+      "family": "crud",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-007",
+      "level": 2,
+      "title": "Bookmark store",
+      "family": "crud",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-008",
+      "level": 2,
+      "title": "Tag index",
+      "family": "state",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-009",
+      "level": 2,
+      "title": "Persistent counters",
+      "family": "tracker",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-010",
+      "level": 2,
+      "title": "Habit tracker",
+      "family": "tracker",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-011",
+      "level": 2,
+      "title": "Time tracker",
+      "family": "tracker",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-012",
+      "level": 2,
+      "title": "Expense tracker",
+      "family": "tracker",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-013",
+      "level": 2,
+      "title": "State import/export",
+      "family": "io",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-014",
+      "level": 2,
+      "title": "Backup/restore",
+      "family": "io",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-015",
+      "level": 2,
+      "title": "State migration",
+      "family": "state",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-016",
+      "level": 2,
+      "title": "Append-only journal",
+      "family": "state",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-017",
+      "level": 2,
+      "title": "Undo/redo state",
+      "family": "state",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-018",
+      "level": 2,
+      "title": "Persistent search/filter",
+      "family": "query",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-019",
+      "level": 2,
+      "title": "Persistent sort/page",
+      "family": "query",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-020",
+      "level": 2,
+      "title": "Dashboard summary",
+      "family": "dashboard",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-021",
+      "level": 2,
+      "title": "Activity log",
+      "family": "dashboard",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-022",
+      "level": 2,
+      "title": "Preference profile",
+      "family": "state",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-023",
+      "level": 2,
+      "title": "Multi-list manager",
+      "family": "crud",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "FORGE_PRIMITIVE",
+      "reason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+      "authorityGranted": false
+    },
+    {
+      "jobId": "L2-024",
+      "level": 2,
+      "title": "Stateful desk tool",
+      "family": "composition",
+      "historicalBlockDisposition": "TRAINING_CANDIDATE",
+      "finalTrainingDisposition": "PATTERN",
+      "reason": "Composition exercise retained as a proven wiring pattern; no reusable Block admission.",
+      "authorityGranted": false
+    }
+  ],
+  "automaticBlockAdmission": false,
+  "authorityGranted": false
+}

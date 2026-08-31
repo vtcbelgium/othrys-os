@@ -1,0 +1,11 @@
+{
+  "schema": "othrys.os.knowledge-review.v1",
+  "reviewId": "review-84fe0a0743c77cf9322767a2",
+  "itemId": "inbox-a5821f8d7a9f6d65fb7b034e",
+  "decision": "PROMOTE",
+  "classification": "R_AND_D",
+  "evidence": "Level 2.5 migration of previously logged Panda research; bounded research only, no Panda dependency or authority.",
+  "reviewedAt": "2026-08-31T21:45:00.000Z",
+  "promoted": false,
+  "authorityGranted": false
+}

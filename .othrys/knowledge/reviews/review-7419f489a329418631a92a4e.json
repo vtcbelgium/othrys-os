@@ -1,0 +1,11 @@
+{
+  "schema": "othrys.os.knowledge-review.v1",
+  "reviewId": "review-7419f489a329418631a92a4e",
+  "itemId": "inbox-2ca9ca6656fdb8ea0cec3134",
+  "decision": "REJECT",
+  "classification": null,
+  "evidence": "Completed by Level 2.5 canonical intake migration; temporary mechanism is now retired.",
+  "reviewedAt": "2026-08-31T21:45:00.000Z",
+  "promoted": false,
+  "authorityGranted": false
+}

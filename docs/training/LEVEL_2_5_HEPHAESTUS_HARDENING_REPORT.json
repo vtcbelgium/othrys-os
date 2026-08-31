@@ -1,0 +1,56 @@
+{
+  "schema": "othrys.training.level-2.5.hephaestus-hardening.v1",
+  "status": "REGRESSION_GUARDS_IMPLEMENTED",
+  "sourceEvidence": [
+    "docs/training/LEVELS_1_2_WORKER_EVIDENCE.json",
+    "docs/training/LEVELS_1_2_DEEP_HARVEST.json",
+    "docs/training/LEVELS_1_2_HARVEST_REPORT.md"
+  ],
+  "workerEvidence": {
+    "receipts": 127,
+    "builderOkReceipts": 79,
+    "operatorDebtJobs": 17,
+    "failureClasses": {
+      "NO_ATTEMPT_MUTATION": 33,
+      "OUT_OF_SCOPE": 10,
+      "FILE_ERROR": 2,
+      "PATH_ESCAPE": 2,
+      "TOOL_LOOP": 1
+    }
+  },
+  "curatedRecurrentLessons": {
+    "TIMEOUT": 12,
+    "CONTRACT_SEMANTICS": 11,
+    "PATH_TOOL": 10,
+    "REPAIR_EXHAUSTION": 9,
+    "NO_ATTEMPT_MUTATION": 5,
+    "FALSE_SUCCESS": 5,
+    "DEPENDENCY": 2
+  },
+  "hardening": {
+    "module": "runtime/hephaestus/failure_guard.mjs",
+    "regressionTest": "runtime/hephaestus/failure_guard.test.mjs",
+    "preflight": [
+      "reject missing path scope",
+      "reject requested path outside allowed scope",
+      "reject unavailable required dependency before builder invocation"
+    ],
+    "postAttempt": [
+      "timeout without mutation/artifact is explicit",
+      "zero mutation cannot be accepted as success",
+      "builder ok claim cannot override failed contract",
+      "contract proof plus mutation is required for success",
+      "repair exhaustion is a terminal failure class"
+    ]
+  },
+  "beforeAfter": {
+    "recurrentFailureFamiliesWithDedicatedDeterministicGuardBefore": 0,
+    "recurrentFailureFamiliesWithDedicatedDeterministicGuardAfter": 7,
+    "familiesCovered": 7,
+    "familiesTotal": 7,
+    "claim": "Detection and classification coverage improved; this does not claim the underlying models became more capable."
+  },
+  "authorityGranted": false,
+  "automaticRoutingAuthority": false,
+  "automaticAdmission": false
+}

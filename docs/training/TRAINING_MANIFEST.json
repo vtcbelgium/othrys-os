@@ -119,7 +119,10 @@
           "worker watchdog required",
           "malformed single-path tool writes require bounded recovery",
           "test fixtures must be encoding-stable"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-002",
@@ -144,7 +147,10 @@
         "completedEvidence": "training/level-1/L1-002-text-normalize/ATTEMPT_SUMMARY.json",
         "lesson": "Bounded qwen task-fit failure triggered proven-stock adaptation; training hardened worker transport, finish enforcement, evidence scoping and oracle review.",
         "blockDisposition": "TRAINING_CANDIDATE",
-        "proof": "blocks/text/normalize/tests/contract.test.mjs"
+        "proof": "blocks/text/normalize/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-003",
@@ -169,7 +175,10 @@
         "completedEvidence": "training/level-1/L1-003-line-dedupe/worker-result.json",
         "lesson": "First clean one-shot currency cycle after marker transport/evidence containment repairs.",
         "blockDisposition": "TRAINING_CANDIDATE",
-        "proof": "blocks/text/line-dedupe/tests/contract.test.mjs"
+        "proof": "blocks/text/line-dedupe/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-004",
@@ -194,7 +203,10 @@
         "completedEvidence": "training/level-1/L1-004-text-stats/rebuild-result.json",
         "lesson": "Fresh rebuild recovered from stale repair loop; Talos caught both implementation defect and fixture encoding defect.",
         "blockDisposition": "TRAINING_CANDIDATE",
-        "proof": "blocks/text/stats/tests/contract.test.mjs"
+        "proof": "blocks/text/stats/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-005",
@@ -219,7 +231,10 @@
         "completedEvidence": "training/level-1/L1-005-case-convert/repair-result.json",
         "lesson": "Shared tokenizer removed duplicated mode-specific parsing defects; Talos oracle was reconciled with the declared boundary rule.",
         "blockDisposition": "TRAINING_CANDIDATE",
-        "proof": "blocks/text/case-convert/tests/contract.test.mjs"
+        "proof": "blocks/text/case-convert/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-006",
@@ -241,7 +256,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.data.json-format",
-        "proof": "blocks/data/json-format/tests/contract.test.mjs"
+        "proof": "blocks/data/json-format/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-007",
@@ -263,7 +281,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.data.json-validate",
-        "proof": "blocks/data/json-validate/tests/contract.test.mjs"
+        "proof": "blocks/data/json-validate/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-008",
@@ -285,7 +306,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.data.csv-clean",
-        "proof": "blocks/data/csv-clean/tests/contract.test.mjs"
+        "proof": "blocks/data/csv-clean/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-009",
@@ -307,7 +331,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.data.csv-json",
-        "proof": "blocks/data/csv-json/tests/contract.test.mjs"
+        "proof": "blocks/data/csv-json/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-010",
@@ -329,7 +356,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.data.sort-records",
-        "proof": "blocks/data/sort-records/tests/contract.test.mjs"
+        "proof": "blocks/data/sort-records/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-011",
@@ -351,7 +381,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.web.url-normalize",
-        "proof": "blocks/web/url-normalize/tests/contract.test.mjs"
+        "proof": "blocks/web/url-normalize/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-012",
@@ -373,7 +406,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.web.querystring",
-        "proof": "blocks/web/querystring/tests/contract.test.mjs"
+        "proof": "blocks/web/querystring/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-013",
@@ -395,7 +431,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.web.html-escape",
-        "proof": "blocks/web/html-escape/tests/contract.test.mjs"
+        "proof": "blocks/web/html-escape/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-014",
@@ -417,7 +456,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.web.utm-url",
-        "proof": "blocks/web/utm-url/tests/contract.test.mjs"
+        "proof": "blocks/web/utm-url/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-015",
@@ -439,7 +481,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.data.metadata-check",
-        "proof": "blocks/data/metadata-check/tests/contract.test.mjs"
+        "proof": "blocks/data/metadata-check/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-016",
@@ -461,7 +506,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.utility.unit-converter",
-        "proof": "blocks/utility/unit-converter/tests/contract.test.mjs"
+        "proof": "blocks/utility/unit-converter/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-017",
@@ -483,7 +531,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.utility.duration-calc",
-        "proof": "blocks/utility/duration-calc/tests/contract.test.mjs"
+        "proof": "blocks/utility/duration-calc/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-018",
@@ -505,7 +556,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.utility.percentage",
-        "proof": "blocks/utility/percentage/tests/contract.test.mjs"
+        "proof": "blocks/utility/percentage/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-019",
@@ -527,7 +581,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.utility.price-vat-discount",
-        "proof": "blocks/utility/price-vat-discount/tests/contract.test.mjs"
+        "proof": "blocks/utility/price-vat-discount/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-020",
@@ -549,7 +606,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.utility.time-cost",
-        "proof": "blocks/utility/time-cost/tests/contract.test.mjs"
+        "proof": "blocks/utility/time-cost/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-021",
@@ -571,7 +631,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.utility.checksum",
-        "proof": "blocks/utility/checksum/tests/contract.test.mjs"
+        "proof": "blocks/utility/checksum/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-022",
@@ -593,7 +656,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.storage.filename-sanitizer",
-        "proof": "blocks/storage/filename-sanitizer/tests/contract.test.mjs"
+        "proof": "blocks/storage/filename-sanitizer/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-023",
@@ -615,7 +681,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.file.extension-classifier",
-        "proof": "blocks/file/extension-classifier/tests/contract.test.mjs"
+        "proof": "blocks/file/extension-classifier/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-024",
@@ -637,7 +706,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.file.duplicate-signature",
-        "proof": "blocks/file/duplicate-signature/tests/contract.test.mjs"
+        "proof": "blocks/file/duplicate-signature/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-025",
@@ -659,7 +731,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.file.path-normalize",
-        "proof": "blocks/file/path-normalize/tests/contract.test.mjs"
+        "proof": "blocks/file/path-normalize/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-026",
@@ -681,7 +756,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.developer.semver-compare",
-        "proof": "blocks/developer/semver-compare/tests/contract.test.mjs"
+        "proof": "blocks/developer/semver-compare/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-027",
@@ -703,7 +781,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.developer.env-metadata",
-        "proof": "blocks/developer/env-metadata/tests/contract.test.mjs"
+        "proof": "blocks/developer/env-metadata/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-028",
@@ -725,7 +806,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.developer.schema-check",
-        "proof": "blocks/developer/schema-check/tests/contract.test.mjs"
+        "proof": "blocks/developer/schema-check/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-029",
@@ -747,7 +831,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.developer.retry-policy",
-        "proof": "blocks/developer/retry-policy/tests/contract.test.mjs"
+        "proof": "blocks/developer/retry-policy/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-030",
@@ -769,7 +856,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.developer.idempotency-key",
-        "proof": "blocks/developer/idempotency-key/tests/contract.test.mjs"
+        "proof": "blocks/developer/idempotency-key/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-031",
@@ -791,7 +881,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.generate.checklist",
-        "proof": "blocks/generate/checklist/tests/contract.test.mjs"
+        "proof": "blocks/generate/checklist/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-032",
@@ -813,7 +906,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.generate.fixture",
-        "proof": "blocks/generate/fixture/tests/contract.test.mjs"
+        "proof": "blocks/generate/fixture/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-033",
@@ -835,7 +931,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.generate.markdown-table",
-        "proof": "blocks/generate/markdown-table/tests/contract.test.mjs"
+        "proof": "blocks/generate/markdown-table/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-034",
@@ -857,7 +956,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.generate.changelog-entry",
-        "proof": "blocks/generate/changelog-entry/tests/contract.test.mjs"
+        "proof": "blocks/generate/changelog-entry/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-035",
@@ -879,7 +981,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.generate.config-merge",
-        "proof": "blocks/generate/config-merge/tests/contract.test.mjs"
+        "proof": "blocks/generate/config-merge/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-036",
@@ -901,7 +1006,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.validate.email-normalize",
-        "proof": "blocks/validate/email-normalize/tests/contract.test.mjs"
+        "proof": "blocks/validate/email-normalize/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-037",
@@ -923,7 +1031,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.validate.phone-normalize",
-        "proof": "blocks/validate/phone-normalize/tests/contract.test.mjs"
+        "proof": "blocks/validate/phone-normalize/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-038",
@@ -945,7 +1056,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.validate.color-parse",
-        "proof": "blocks/validate/color-parse/tests/contract.test.mjs"
+        "proof": "blocks/validate/color-parse/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-039",
@@ -967,7 +1081,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.validate.iso-date",
-        "proof": "blocks/validate/iso-date/tests/contract.test.mjs"
+        "proof": "blocks/validate/iso-date/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L1-040",
@@ -989,7 +1106,10 @@
         "authorityGranted": false,
         "blockDisposition": "TRAINING_CANDIDATE",
         "blockId": "block.validate.identifier",
-        "proof": "blocks/validate/identifier/tests/contract.test.mjs"
+        "proof": "blocks/validate/identifier/tests/contract.test.mjs",
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       }
     ],
     "completedJobs": 1
@@ -1040,7 +1160,10 @@
           "worker success is not semantic persistence proof",
           "repair transport can fail independently of model intent",
           "operator recovery after governed repair exhaustion is capability debt"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-002",
@@ -1071,7 +1194,10 @@
           "Qwen3-Coder hard repair timed out without mutation",
           "operator bounded recovery required after governed repair paths failed",
           "stateful settings verification must distinguish defaults from persisted overrides and protect caller mutation"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-003",
@@ -1102,7 +1228,10 @@
           "qwen3-coder repair regressed export/path/id/persistence semantics",
           "operator bounded recovery required after governed repair paths failed",
           "stateful CRUD needs strict persisted-record validation and restart-safe mutation tests"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-004",
@@ -1132,7 +1261,10 @@
           "legacy repair escaped workspace through stale perimeter-linked evidence",
           "heavy repair targeted a hallucinated hub path and was blocked by touch_allow",
           "operator completion after governed repair exhaustion is explicit capability debt"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-005",
@@ -1162,7 +1294,10 @@
           "bounded repair regressed API and ignored filePath",
           "hard repair timed out without receipt but left valid bounded artifact",
           "Talos must inspect post-timeout workspace before classifying failure"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-006",
@@ -1192,7 +1327,10 @@
           "bounded repair changed API shape and ignored caller filePath",
           "heavy repair was invalidated by unrelated out-of-scope Forge qualification mutations",
           "operator recovery after governed repair exhaustion is capability debt"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-007",
@@ -1222,7 +1360,10 @@
           "hard repair leaked tool concepts into runtime and failed all Talos fixtures",
           "operator bounded recovery adapted proven CRUD persistence after legal repair paths failed",
           "Talos oracle itself needed correction for lazy corruption detection"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-008",
@@ -1251,7 +1392,10 @@
           "initial build mixed CommonJS and ESM and used illegal await in synchronous factory",
           "Qwen3-Coder hard repair produced NO_ATTEMPT_MUTATION after writing an unchanged invalid artifact",
           "operator bounded recovery reused proven atomic persistence after governed builder routes failed"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-009",
@@ -1281,7 +1425,10 @@
           "Talos exposed stack overflow, validation gaps and corruption swallowing",
           "hard repair timed out without result",
           "operator bounded recovery reused proven atomic persistence after governed routes failed"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-010",
@@ -1310,7 +1457,10 @@
           "initial build failed 7/8 with sync API, missing mkdir, weak dates and incorrect streaks",
           "Qwen3-Coder reported successful repair but Talos still failed 7/8: worker ok is not verification success",
           "operator bounded recovery reused proven persistence and deterministic date arithmetic after governed repair routes failed"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-011",
@@ -1339,7 +1489,10 @@
           "initial build did not parse and used nonexistent Date.toISOString static/wall-clock fallback",
           "Qwen3-Coder hard repair timed out with no result artifact",
           "operator bounded recovery used explicit timestamps and proven persistence only after governed repair route failed"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-012",
@@ -1368,7 +1521,10 @@
           "invalid async placement survived builder repair",
           "Deno/runtime drift in Node-only stateful tasks",
           "operator bounded recovery after governed repair failure"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-013",
@@ -1397,7 +1553,10 @@
           "invalid ESM/import construction in first pass",
           "hard repair timeout with no result artifact and no useful mutation",
           "recursive unsafe-key rejection is part of state transfer boundary"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-014",
@@ -1426,7 +1585,10 @@
           "two governed builder attempts timed out with no result artifact",
           "no-artifact timeout differs from failed mutation",
           "hash verification must complete before restore mutation"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-015",
@@ -1455,7 +1617,10 @@
           "governed local build timed out with no result/source artifact",
           "migration must be all-or-nothing across all steps",
           "unsafe/non-JSON migration output is a boundary failure"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-016",
@@ -1484,7 +1649,10 @@
           "timeout with no artifact must be distinct from failed mutation",
           "append-only persistence benefits from byte-preservation oracles",
           "operator recovery is capability debt, never builder success"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-017",
@@ -1513,7 +1681,10 @@
           "two governed builders timed out without artifacts on bounded history task",
           "undo/redo needs explicit transition oracles plus bounded-history proof",
           "operator recovery after builder exhaustion remains capability debt"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-018",
@@ -1542,7 +1713,10 @@
           "both qualified builders timed out without artifacts on persistent search construction",
           "Talos fixture initially over-constrained fields-only query and was corrected against contract",
           "search/filter preserves stored order and must remain read-only"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-019",
@@ -1571,7 +1745,10 @@
           "direct reuse of L1 sort candidate rejected because it freezes caller records",
           "both qualified builder routes timed out without artifacts",
           "stock-first can still adapt a proven comparator idea without importing unsafe candidate code"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-020",
@@ -1601,7 +1778,10 @@
           "heavy repair returned ok:true but violated contract and imported unavailable dependency",
           "bounded operator recovery required after governed routes exhausted",
           "dashboard aggregation must remain deterministic and authority-free"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-021",
@@ -1631,7 +1811,10 @@
           "path-pinned builder returned ok:true with Node/API contract failure",
           "monotonic sequence must survive bounded truncation",
           "operator recovery after governed exhaustion remains capability debt"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-022",
@@ -1661,7 +1844,10 @@
           "corruption must never be silently converted to defaults",
           "recursive canonicalization needs explicit object/array semantics",
           "operator recovery after governed exhaustion remains capability debt"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-023",
@@ -1691,7 +1877,10 @@
           "nested CRUD requires exact identity, order and return-value oracles",
           "canonical persistence is compact exact JSON",
           "operator recovery after governed exhaustion remains capability debt"
-        ]
+        ],
+        "finalTrainingDisposition": "FORGE_PRIMITIVE",
+        "finalDispositionReason": "Training-sized capability retained as Forge currency; reusable Block admission requires a separate promotion mission and second-consumer proof.",
+        "promotionAuthorityGranted": false
       },
       {
         "id": "L2-024",
@@ -1721,9 +1910,20 @@
           "repair falsely finished after a zero-byte mutation",
           "staged validation plus rollback is required for cross-file import",
           "physical reuse is stronger evidence than conceptual duplication"
-        ]
+        ],
+        "finalTrainingDisposition": "PATTERN",
+        "finalDispositionReason": "Composition exercise retained as a proven wiring pattern; no reusable Block admission.",
+        "promotionAuthorityGranted": false
       }
     ],
     "completedJobs": 24
+  },
+  "level2_5DispositionLaw": "Level 1-2 completion creates Forge Primitives/Patterns by default, never admitted reusable Blocks. Any later Block promotion is a separate explicit qualification/admission mission.",
+  "level2_5Consolidation": {
+    "status": "IN_PROGRESS",
+    "plan": "docs/training/LEVEL_2_5_CONSOLIDATION_PLAN.md",
+    "requiredBeforeLevel3": true,
+    "grantsAuthority": false,
+    "automaticLevelAdvance": false
   }
 }

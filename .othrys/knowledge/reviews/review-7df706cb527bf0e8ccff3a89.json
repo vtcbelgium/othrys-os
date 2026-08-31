@@ -1,0 +1,11 @@
+{
+  "schema": "othrys.os.knowledge-review.v1",
+  "reviewId": "review-7df706cb527bf0e8ccff3a89",
+  "itemId": "inbox-bf44bcabf1528aebef4ce4f8",
+  "decision": "PROMOTE",
+  "classification": "GARDEN",
+  "evidence": "Level 2.5 canonical intake migration; idea retained as zero-authority Garden stock.",
+  "reviewedAt": "2026-08-31T21:45:00.000Z",
+  "promoted": false,
+  "authorityGranted": false
+}

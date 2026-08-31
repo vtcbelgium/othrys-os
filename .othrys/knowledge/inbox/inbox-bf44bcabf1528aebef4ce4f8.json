@@ -1,0 +1,16 @@
+{
+  "schema": "othrys.os.knowledge-item.v1",
+  "id": "inbox-bf44bcabf1528aebef4ce4f8",
+  "title": "Conversation intelligence sensor",
+  "classification": "INBOX",
+  "status": "AWAITING_REVIEW",
+  "source": {
+    "kind": "CAPTURE",
+    "ref": "operator-direction:2026-08-23"
+  },
+  "content": "Treat operator conversation as an intelligence sensor: connect useful new signals to existing Titans, Blocks, Oroi, products and decisions before creating duplicates.",
+  "contentDigest": "b005b8f1b5edaedcf8283ad9fdd4aece15f343e3b75680611d640c58034e418a",
+  "capturedAt": "2026-08-23T12:00:00.000Z",
+  "authorityGranted": false,
+  "promoted": false
+}

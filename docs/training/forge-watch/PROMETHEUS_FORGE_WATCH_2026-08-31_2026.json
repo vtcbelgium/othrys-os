@@ -1,0 +1,25 @@
+{
+  "schema": "othrys.prometheus.forge-watch.v1",
+  "date": "2026-08-31",
+  "runLocalTime": "20:26 Europe/Brussels",
+  "result": "NO_NEW_ADMISSION",
+  "publicSourcesChecked": [
+    "https://www.ibm.com/granite/docs/models/granite4-2",
+    "https://research.ibm.com/blog/introducing-granite-4-2",
+    "https://huggingface.co/ibm-granite/granite-4.2-3b",
+    "https://ollama.com/library",
+    "https://github.com/ggml-org/llama.cpp"
+  ],
+  "findings": [
+    "Granite 4.2 is already a known Forge Watch family; 8B qualification remains REFUSED_KEEP_TESTING after worker gate NO_ATTEMPT_MUTATION, so no duplicate handoff was opened.",
+    "Granite 4.2-3B is Apache-2.0 and relevant for code/tool-use/structured output, but is same tracked family and not separately admitted without a fresh qualification need.",
+    "llama.cpp has fresh release activity, but this is runtime infrastructure rather than a new qualified Hephaestus builder and does not alter the builder roster by itself.",
+    "North Mini Code, Muse Glimmer, GLM-5.3/Flash and other same-day discoveries remain known and suppressed from duplicate noise.",
+    "No paid endpoint was enabled and discovery granted no authority."
+  ],
+  "rosterComparedAgainst": "runtime/hephaestus/data/forge_roster.json",
+  "admitted": [],
+  "authorityGranted": false,
+  "automaticPaidUsage": false,
+  "operatorNotification": false
+}

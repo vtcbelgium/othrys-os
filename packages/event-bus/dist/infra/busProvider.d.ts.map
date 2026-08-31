@@ -1,0 +1,1 @@
+{"version":3,"file":"busProvider.d.ts","sourceRoot":"","sources":["../../src/infra/busProvider.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,QAAQ,EAAE,MAAM,uBAAuB,CAAC;AAatD,wBAAgB,MAAM,IAAI,QAAQ,CAIjC;AAED,yCAAyC;AACzC,wBAAgB,MAAM,CAAC,IAAI,EAAE,QAAQ,GAAG,IAAI,CAE3C;AAED,mCAAmC;AACnC,wBAAgB,gBAAgB,IAAI,IAAI,CAEvC"}
