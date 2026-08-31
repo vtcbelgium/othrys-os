@@ -1,0 +1,55 @@
+{
+    "schema":  "othrys.harvest.oros-estate.v1",
+    "date":  "2026-08-31",
+    "archive":  "C:\\Users\\othry\\Othrys-Recovery\\estate-prune-2026-08-31\\oros\\oros-authored-source.tgz",
+    "specimens":  [
+                      {
+                          "name":  "oros-zero",
+                          "disposition":  "ARCHITECTURE_PROOF_HARVESTED",
+                          "lessons":  [
+                                          "Oros identity, Blueprint capability identity, Talos execution capability and Block identity are distinct layers.",
+                                          "A disposable proving Oros should stay deliberately tiny and non-product.",
+                                          "Explicit Block resolution can stand in for a future resolver without inventing registry authority.",
+                                          "Visual boundaries must not pretend to be executable plan steps."
+                                      ]
+                      },
+                      {
+                          "name":  "oros-image-prep-transplant",
+                          "disposition":  "REUSE_PROOF_ALREADY_BOUND_TO_ADMISSION",
+                          "lessons":  [
+                                          "Second consumer uses canonical source rather than a copy.",
+                                          "Transplant/browser proof is evidence toward reuse maturity."
+                                      ]
+                      },
+                      {
+                          "name":  "oros-affiliate-offer-transplant",
+                          "disposition":  "REUSE_PROOF_ALREADY_BOUND_TO_ADMISSION",
+                          "lessons":  [
+                                          "Second consumer proof exists and is already cited by V2 admission evidence."
+                                      ]
+                      },
+                      {
+                          "name":  "office-buddy-mini",
+                          "disposition":  "PRODUCT_SPECIMEN_COLD_ARCHIVE",
+                          "lessons":  [
+                                          "Small extension Oroi remain useful as Factory dogfood and Level-3 composition examples.",
+                                          "Minimal-permission MV3 extension is a valid small-application archetype."
+                                      ]
+                      },
+                      {
+                          "name":  "eu-capitals-travel-log",
+                          "disposition":  "PRODUCT_SPECIMEN_COLD_ARCHIVE",
+                          "lessons":  [
+                                          "Local-first searchable/filterable progress tracker is a reusable app composition archetype; product content itself is not a Block."
+                                      ]
+                      },
+                      {
+                          "name":  "factory probes",
+                          "disposition":  "DISPOSABLE_EVIDENCE",
+                          "lessons":  [
+                                          "Factory probes are proof fixtures, not products or reusable capability."
+                                      ]
+                      }
+                  ],
+    "authorityGranted":  false
+}

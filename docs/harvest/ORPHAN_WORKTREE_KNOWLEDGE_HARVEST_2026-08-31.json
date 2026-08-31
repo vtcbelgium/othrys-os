@@ -1,0 +1,40 @@
+{
+    "schema":  "othrys.harvest.orphan-worktree.v1",
+    "date":  "2026-08-31",
+    "status":  "HARVESTED",
+    "findings":  [
+                     {
+                         "source":  "BLUEPRINT-STUDIO-001 dogfood",
+                         "disposition":  "KNOWLEDGE_HARVEST",
+                         "laws":  [
+                                      "Preview/design interaction must not imply production mutation.",
+                                      "Shared Titans are references and are never cloned into an Oros.",
+                                      "Proposal overlays are not canonical relationships.",
+                                      "Visible navigation/preview evidence can prove interaction while authority remains false."
+                                  ]
+                     },
+                     {
+                         "source":  "BLUEPRINT-STUDIO-001.1 dogfood",
+                         "disposition":  "KNOWLEDGE_HARVEST",
+                         "laws":  [
+                                      "Restart proof must use a genuinely different process when persistence is claimed.",
+                                      "Interaction certification distinguishes REAL_MOUSE_CLICK and REAL_PROCESS_RESTART from same-process reconstruction.",
+                                      "Restart survival is evidence; it is not authority."
+                                  ]
+                     },
+                     {
+                         "source":  "TILES-PACK-REVIEW-001.2",
+                         "disposition":  "KNOWLEDGE_HARVEST",
+                         "laws":  [
+                                      "Effective readiness may be demoted by current proposal lifecycle even when intrinsic artifact readiness remains audit-true.",
+                                      "Historical confirmations remain historical after rejection and cannot silently reopen a rejected proposal.",
+                                      "A new revision requires a new proposal identity/version/digest; prior rejected evidence stays immutable.",
+                                      "Confirmation is not apply approval. Commercial/export action remains blocked without the correct authority.",
+                                      "Structured status should be primary UX; raw manifests are optional diagnostics."
+                                  ]
+                     }
+                 ],
+    "rawUniqueEvidenceArchive":  "C:\\Users\\othry\\Othrys-Recovery\\legacy-repo-archive-2026-08-31\\orphan-worktree-unique-evidence",
+    "trackedPreservation":  "Legacy Hub/Core Git bundles preserve all reachable tracked history; blob-match audit records exceptions.",
+    "authorityGranted":  false
+}

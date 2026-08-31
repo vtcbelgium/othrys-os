@@ -1,0 +1,3997 @@
+[
+  {
+    "worktree": "othrys-core-mission036-adr",
+    "archive": "core",
+    "files": 1560,
+    "exact": 10,
+    "crlf_normalized": 1550,
+    "unmatched": 0,
+    "unmatched_files": []
+  },
+  {
+    "worktree": "othrys-hub-blueprint-studio-001",
+    "archive": "hub",
+    "files": 3853,
+    "exact": 237,
+    "crlf_normalized": 3607,
+    "unmatched": 9,
+    "unmatched_files": [
+      {
+        "path": ".pytest_cache\\.gitignore",
+        "size": 37,
+        "blob": "bc1a1f6167d09c909aad37280b760bb715d0f1da"
+      },
+      {
+        "path": ".pytest_cache\\CACHEDIR.TAG",
+        "size": 191,
+        "blob": "fce15ad7eaa74e5682b644c84efb75334c112f95"
+      },
+      {
+        "path": ".pytest_cache\\README.md",
+        "size": 302,
+        "blob": "b89018ced91c0a8af7f3f23ce8901870da89f3a0"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\lastfailed",
+        "size": 2,
+        "blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\nodeids",
+        "size": 8327,
+        "blob": "f7d5f64afada6834b466c19650456bbbc6ea19c4"
+      },
+      {
+        "path": "docs\\blueprint_studio_001\\DOGFOOD.json",
+        "size": 29833,
+        "blob": "130c2001303283210d0668b1a71ea17f412d2ada"
+      },
+      {
+        "path": "docs\\blueprint_studio_001_1\\DOGFOOD.json",
+        "size": 12497,
+        "blob": "600263f25b595a9142ed27306423d04e9639da90"
+      },
+      {
+        "path": "state\\blueprint_studio_001\\DOGFOOD.json",
+        "size": 29833,
+        "blob": "130c2001303283210d0668b1a71ea17f412d2ada"
+      },
+      {
+        "path": "state\\blueprint_studio_001_1\\DOGFOOD.json",
+        "size": 12497,
+        "blob": "600263f25b595a9142ed27306423d04e9639da90"
+      }
+    ]
+  },
+  {
+    "worktree": "othrys-hub-design-studio-modern-web-001",
+    "archive": "hub",
+    "files": 3827,
+    "exact": 237,
+    "crlf_normalized": 3590,
+    "unmatched": 0,
+    "unmatched_files": []
+  },
+  {
+    "worktree": "othrys-hub-hephaestus-block-forge-001",
+    "archive": "hub",
+    "files": 6201,
+    "exact": 6201,
+    "crlf_normalized": 0,
+    "unmatched": 0,
+    "unmatched_files": []
+  },
+  {
+    "worktree": "othrys-hub-obsidian-always-sync-001",
+    "archive": "hub",
+    "files": 4073,
+    "exact": 4068,
+    "crlf_normalized": 0,
+    "unmatched": 5,
+    "unmatched_files": [
+      {
+        "path": ".pytest_cache\\.gitignore",
+        "size": 39,
+        "blob": "08a7f458f1f002823bc794c47ca1996a57e72c86"
+      },
+      {
+        "path": ".pytest_cache\\CACHEDIR.TAG",
+        "size": 191,
+        "blob": "fce15ad7eaa74e5682b644c84efb75334c112f95"
+      },
+      {
+        "path": ".pytest_cache\\README.md",
+        "size": 310,
+        "blob": "c7526af2448672de4537dfed042ed74daadb17bf"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\lastfailed",
+        "size": 2,
+        "blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\nodeids",
+        "size": 2739,
+        "blob": "99feecc7fd6c892be06e76f8f6fbe25986987d34"
+      }
+    ]
+  },
+  {
+    "worktree": "othrys-hub-oros-composition-law-001",
+    "archive": "hub",
+    "files": 6191,
+    "exact": 6191,
+    "crlf_normalized": 0,
+    "unmatched": 0,
+    "unmatched_files": []
+  },
+  {
+    "worktree": "othrys-hub-study-buddy-spaced-review-contract-001",
+    "archive": "hub",
+    "files": 6201,
+    "exact": 6201,
+    "crlf_normalized": 0,
+    "unmatched": 0,
+    "unmatched_files": []
+  },
+  {
+    "worktree": "othrys-hub-system-map",
+    "archive": "hub",
+    "files": 3776,
+    "exact": 212,
+    "crlf_normalized": 3560,
+    "unmatched": 4,
+    "unmatched_files": [
+      {
+        "path": ".pytest_cache\\.gitignore",
+        "size": 37,
+        "blob": "bc1a1f6167d09c909aad37280b760bb715d0f1da"
+      },
+      {
+        "path": ".pytest_cache\\CACHEDIR.TAG",
+        "size": 191,
+        "blob": "fce15ad7eaa74e5682b644c84efb75334c112f95"
+      },
+      {
+        "path": ".pytest_cache\\README.md",
+        "size": 302,
+        "blob": "b89018ced91c0a8af7f3f23ce8901870da89f3a0"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\nodeids",
+        "size": 3190,
+        "blob": "e262b8b2988abb9cfe33c1ddec9d030f78b8b44b"
+      }
+    ]
+  },
+  {
+    "worktree": "othrys-hub-tiles-hub-cutover-001",
+    "archive": "hub",
+    "files": 4846,
+    "exact": 424,
+    "crlf_normalized": 3682,
+    "unmatched": 740,
+    "unmatched_files": [
+      {
+        "path": ".pytest_cache\\.gitignore",
+        "size": 37,
+        "blob": "bc1a1f6167d09c909aad37280b760bb715d0f1da"
+      },
+      {
+        "path": ".pytest_cache\\CACHEDIR.TAG",
+        "size": 191,
+        "blob": "fce15ad7eaa74e5682b644c84efb75334c112f95"
+      },
+      {
+        "path": ".pytest_cache\\README.md",
+        "size": 302,
+        "blob": "b89018ced91c0a8af7f3f23ce8901870da89f3a0"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\lastfailed",
+        "size": 2,
+        "blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\nodeids",
+        "size": 7468,
+        "blob": "f5848d5db517da8e370730c0d2199f127d1a89a7"
+      },
+      {
+        "path": "state\\digest_probe\\window_geometry.json",
+        "size": 237,
+        "blob": "cc1b6c6c1a92631e719198b610ff7e7a3114a684"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\History",
+        "size": 159744,
+        "blob": "ac74ad9b8f25e84cb00304499b021c4cf75f36ef"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Network Persistent State",
+        "size": 111,
+        "blob": "2590bec5fd2b2b3057e735e81b734f9ca666fb1a"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "986b2050116f6dd853eb0dcf13f2df26a6fad6f4"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "7e3aed9472a82e6d6fceba5264e3a87e9c158759"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "8b22c3054c36195aa57573c7137692e90549f304"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "ba33961bac79c0e3aac37089c724da0759e756a4"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "cb4877103261e7fe2946f578219340381eaa98c1"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 337,
+        "blob": "1f9a532df36f150726b4abe8c023045d94c7b10e"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Session Storage\\000003.log",
+        "size": 61,
+        "blob": "9cc173498096087151fce16add469cafb44c5637"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Session Storage\\LOG",
+        "size": 325,
+        "blob": "10d659598fede2e9ce7a436fe7ad486e2c2487e6"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\digest_probe\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "f888f0f2df5a2d34b378b038b7fbcbe48087ace9"
+      },
+      {
+        "path": "state\\digest_probe\\cache\\runtime_capability_roster.json",
+        "size": 127,
+        "blob": "9c8921df87f59338d08493491f2623ef4b4fa9a9"
+      },
+      {
+        "path": "state\\digest_probe\\chats\\8f880a9675904da8a87718a7b8428055.json",
+        "size": 181,
+        "blob": "3653806b7d078076dd9d2502f13a2a528c6b75cd"
+      },
+      {
+        "path": "state\\digest_probe\\design_studio\\6da5765076224028be7640c8c25ec002.json",
+        "size": 279,
+        "blob": "9d9b3daac3313876e97b7879e8a7a5924ce57cb6"
+      },
+      {
+        "path": "state\\digest_probe\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "8a2fd20fc9a84a318e430c5343c70ea34c5f83fc"
+      },
+      {
+        "path": "state\\digest_probe\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "a7312e3f96d5462d12ef271bc2f8756423b52786"
+      },
+      {
+        "path": "state\\digest_probe\\sessions\\tiles_studio_location.json",
+        "size": 418,
+        "blob": "1a382999ca3db93fd0dde40c700ec6b4bc2cad7a"
+      },
+      {
+        "path": "state\\digest_probe\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "3952e4b15081a2f654abe25a0240c127f6ae6caf"
+      },
+      {
+        "path": "state\\pack_probe\\window_geometry.json",
+        "size": 238,
+        "blob": "f798d5d00f730819803616d6b81a8ebb920730de"
+      },
+      {
+        "path": "state\\pack_probe\\blueprint_studio\\history.jsonl",
+        "size": 7844,
+        "blob": "43b48d8cfb6eec3eb65f1be5aed634867a98e9b5"
+      },
+      {
+        "path": "state\\pack_probe\\blueprint_studio\\proposals\\f784f92d35e240e1877258855cf52e1a\\proposal.json",
+        "size": 21734,
+        "blob": "a53fddb9a48f4be333534bd37a64113e0e6c857f"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Cookies",
+        "size": 20480,
+        "blob": "903fbb8021e2f52617c17168d464b6e9b5d841b8"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\History",
+        "size": 159744,
+        "blob": "ac74ad9b8f25e84cb00304499b021c4cf75f36ef"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Network Persistent State",
+        "size": 111,
+        "blob": "2590bec5fd2b2b3057e735e81b734f9ca666fb1a"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "986b2050116f6dd853eb0dcf13f2df26a6fad6f4"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "b0f24edef88a318f029f2ff9ec5aef8d98f58155"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "4fe7a2e8dec0ae4dc68c6bba2276f9b3b7193b46"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "c426fccd7e0d56c0344d8abf1c17877d88d7447a"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "9f821b5ccd44d0fbe39f91ccf5de01814d3e432c"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "2391abf9b5c6077d9fb84c5b2c2e6272b708e21e"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "604cf9d0aec1866b8693ba83f453d323ee47ff33"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "59a977a49e813c47a81a4066ddb5c270bdbf41f3"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 333,
+        "blob": "08e943008decf1017018f477d4c1ebdcc80c897f"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Session Storage\\000003.log",
+        "size": 61,
+        "blob": "9cc173498096087151fce16add469cafb44c5637"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Session Storage\\LOG",
+        "size": 321,
+        "blob": "776b62626c600c062e7f047d530a56c043339d06"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\pack_probe\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "9f8e19c790e04c87c4239bc53431b61907d4258c"
+      },
+      {
+        "path": "state\\pack_probe\\cache\\runtime_capability_roster.json",
+        "size": 128,
+        "blob": "13a08e675291a027e527a38259b0ad6104759bcb"
+      },
+      {
+        "path": "state\\pack_probe\\chats\\295a035950294d1f8fc811db3649a6e7.json",
+        "size": 181,
+        "blob": "5f462b26d499d435f6abf717bccae48faa506479"
+      },
+      {
+        "path": "state\\pack_probe\\design_studio\\0bf28fb0e1e8411fb352e9a878b4b2df.json",
+        "size": 279,
+        "blob": "363874933fe09fbc0e874b52bda31e4084fe663c"
+      },
+      {
+        "path": "state\\pack_probe\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "a3de91753a885c1c6d798a2d643aabd23d6e7e4f"
+      },
+      {
+        "path": "state\\pack_probe\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "66e411f62f340a0ae62949ab1d9f22c4d0913ee4"
+      },
+      {
+        "path": "state\\pack_probe\\sessions\\tiles_studio_location.json",
+        "size": 423,
+        "blob": "fcfb0710d55a7b995112d18629d6b48abda47e8a"
+      },
+      {
+        "path": "state\\pack_probe\\tiles_studio\\packs\\68964c61e904485cbc90b572a52a1dbb\\manifest.json",
+        "size": 25223,
+        "blob": "f55cdd7e7b7d01d2c1f0f536eb74de2d4001ff43"
+      },
+      {
+        "path": "state\\pack_probe\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "21cf3af535a83b312621293518ea4400dbf4a503"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\window_geometry.json",
+        "size": 238,
+        "blob": "af5d11a6b96ac529255897272162c214de5a9d38"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Cookies",
+        "size": 20480,
+        "blob": "903fbb8021e2f52617c17168d464b6e9b5d841b8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\History",
+        "size": 159744,
+        "blob": "cb1f2b5b9d4d67aef6052f8c449d01df9b392a89"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Network Persistent State",
+        "size": 111,
+        "blob": "2590bec5fd2b2b3057e735e81b734f9ca666fb1a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\SharedStorage",
+        "size": 4096,
+        "blob": "4410bda55bad27954e72ab65919e742875d57998"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "c6f4570eb3ee5605fd6c14cf201ce582412ad32d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "f3bb5c7e2807237ff00818a126c8e8987e34a4e4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "4fe7a2e8dec0ae4dc68c6bba2276f9b3b7193b46"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "59c3cd5661c45157daeae6012061a59b28324127"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "35f4977d9597056a294a567010d5792194ab4cee"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "2548ff6353a3b2535a56849a4b0ae70ec5f1bc5d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "5f73b6910ebf51d5952f8bd01639ff9647db37d7"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "2e7ef89a13c602852f645e904205438a1bdc0dff"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "e067dbe41ce2b868219ac5048999ff4409fea9ae"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "9351748eae3d6b04805e1ca1e27240602dfaeb33"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "fa99d9d5990b3ffa284a7cb43fc6971200186740"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Local Storage\\leveldb\\000003.log",
+        "size": 57,
+        "blob": "1d4f29d62db88b4b458a2f4720cb5b1107599dfe"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 400,
+        "blob": "a5f86a74261107672fca83297a8a7483bf3ac067"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Local Storage\\leveldb\\LOG.old",
+        "size": 400,
+        "blob": "d12a7d31828ab669a64d6559863662928a017935"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Session Storage\\000003.log",
+        "size": 99,
+        "blob": "dd3a2235809b3138e9602ec7cba7e6818cdc01fd"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Session Storage\\LOG",
+        "size": 388,
+        "blob": "b3eab4bf41fd2e45d12502969a1ca6700c7337d8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Session Storage\\LOG.old",
+        "size": 388,
+        "blob": "15b33d8f809282c76b2ad64b519faef915963a95"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "319517af26ce6bcc4536ca44b58d91380d585ac7"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\cache\\runtime_capability_roster.json",
+        "size": 128,
+        "blob": "080e5f1b5660293229bbcb1dd2433385b12a8e4d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\chats\\5184f2be1803419ea5b820bbae03a35e.json",
+        "size": 181,
+        "blob": "a1f1b68bba91927bebbb1e3489f35728521dd2fc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\design_studio\\5e784d8ce64a40bbb4399254227d391d.json",
+        "size": 279,
+        "blob": "731122d03b2b8c214baad505c8829acdb86f614d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "df9cbe3103eefa917065c7e4bcf17b67c02d5a98"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "d2138e9d9ea81070aa95ab2f2ca6db7ad9f7d6c7"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\sessions\\tiles_studio_location.json",
+        "size": 418,
+        "blob": "cbcb6c4a7d83a5909349afdb252f3869dababbdd"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "2a3ca4a663d612cc7945cb804c8866c8ca34f7e3"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\window_geometry.json",
+        "size": 238,
+        "blob": "f798d5d00f730819803616d6b81a8ebb920730de"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cookies",
+        "size": 20480,
+        "blob": "35c26cf4d689fedcbfb856543f7f4f551383e3fa"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Favicons",
+        "size": 24576,
+        "blob": "b3f0bb49f0164aeb68bcefd54ddee86bbe314310"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\History",
+        "size": 159744,
+        "blob": "be0d66786296dea9716168b38df62850066bd618"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Network Persistent State",
+        "size": 509,
+        "blob": "b1d2d263e0e3b520f50e14c1890ff63f57b44f25"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\SharedStorage",
+        "size": 4096,
+        "blob": "4410bda55bad27954e72ab65919e742875d57998"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\TransportSecurity",
+        "size": 356,
+        "blob": "dc026c148cdcc10f2562de60705f1e3fde8ad025"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "c6f4570eb3ee5605fd6c14cf201ce582412ad32d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "f61b49d584cd11d988f1f85beb19c0b0e325b6f7"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "e4a9d54b0c29f50ff23977d3306b620b6663c2c3"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "de8d5e4200f4626566da945c363db763fd56991f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 1056768,
+        "blob": "bd76ee8204108505bf17b3d87c87531c40780366"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 4202496,
+        "blob": "1cc1d21c799a3d7d99d2fee6828cd817243c4a64"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\f_000002",
+        "size": 393230,
+        "blob": "9b220f405afbe3226fbc789a17393822d496f961"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\f_000003",
+        "size": 19833,
+        "blob": "75a7b0a45d5f2a0de4c20b70b703213ade5a7b20"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\f_000004",
+        "size": 20325,
+        "blob": "82027998dc6a2d460047631c5dfccd56cde33d23"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\f_000005",
+        "size": 20104,
+        "blob": "3b469b41be601c9ebbea99485e554a12e2af4a5c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\f_000007",
+        "size": 88547,
+        "blob": "335ff285189cc4c7eb027ce856012b474493852b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\f_000008",
+        "size": 48872,
+        "blob": "3882bde028e4fd1395ae9be9efea5508116628f1"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\f_000009",
+        "size": 102226,
+        "blob": "0636d6f68f7503cb1081d6fec9a3317e7fa269f8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\f_00000a",
+        "size": 85873,
+        "blob": "da06110b9f6f953b7e63a54223f157a79f96e9be"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\f_00000b",
+        "size": 17355,
+        "blob": "355be33c3998bc130027e2a7209bea74a64eb03b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\f_00000c",
+        "size": 52122,
+        "blob": "b623c9fb8c98e78ec458d6db5abc612647528a96"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\f_00000d",
+        "size": 28522,
+        "blob": "abc9c6d878112e57f2388872d0fc5b06ad536a2d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "bd70b5cc6d1b7d2bbaafeb69f47d0102acfc0a15"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "244a0196b90fa8dac0e098ff92e3305438bf508f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "06ffa530a6ec94bcd8a9cae0ecef1ed1d65f5682"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "71f60164af719931ff6f2d04dcbd1374304f1fbe"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "febf4ab51ebc6c787b46428d172b5ea621d3b63c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "40ce5618cc485eda03ec5031c627f0d8cce7562a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "1d40d9e2ba9fd43552ab6a0635f62d94fabfa251"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Local Storage\\leveldb\\000003.log",
+        "size": 8045,
+        "blob": "4e2ab721c167a95c6a721a2baedfcddc4203c996"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 412,
+        "blob": "3d65d0300822f193da2af596674b75b6ad0dc9c7"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Local Storage\\leveldb\\LOG.old",
+        "size": 412,
+        "blob": "f450a2503fedf563fdbb5b20b95be021a90b6f17"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Session Storage\\000003.log",
+        "size": 2649,
+        "blob": "781234b58777eb51be5f3caba68eec1218e97a43"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Session Storage\\LOG",
+        "size": 400,
+        "blob": "b9f0a76faffcb64d0a27db9423760f63db4667d1"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Session Storage\\LOG.old",
+        "size": 397,
+        "blob": "6c6eb1f7b5bf3aa1ed364a3190c428a76ec8c2bc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "f3f9dc2b943a691e139e77dc18c0f8d15688ad34"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Shared Dictionary\\cache\\611e94ba964b9663_0",
+        "size": 185546,
+        "blob": "9dd9a89d1d5ee8e731ab0d160d1f87a961ecfcae"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 72,
+        "blob": "7ade39de4d5e49720016ba714c5edbb2787ab999"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\cache\\runtime_capability_roster.json",
+        "size": 128,
+        "blob": "e46a8e0a8467c1ea047794198f6d26574e659105"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\chats\\65f4f65d84584f6e8b36591646c20915.json",
+        "size": 181,
+        "blob": "89fa9c4f7d346669357ad24ca2264197eb08d974"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\design_studio\\b4afb81454084291bfff719332f7c5bd.json",
+        "size": 279,
+        "blob": "63c6aa19e977444c34723d86f00ae05d050d79ca"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "b2d67fa94732185ba27bd247e7ddf8e1ed74dd9e"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "5489f299a4c94df89d63c35e1faf3f8abc72b39d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\sessions\\tiles_studio_location.json",
+        "size": 418,
+        "blob": "42fe9a8305f81a949fdb091f4e3ba31e54474db0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_click\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "146102419c88bee055b4b8a3065b6d498299951f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\window_geometry.json",
+        "size": 237,
+        "blob": "cc1b6c6c1a92631e719198b610ff7e7a3114a684"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Cookies",
+        "size": 20480,
+        "blob": "903fbb8021e2f52617c17168d464b6e9b5d841b8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\History",
+        "size": 159744,
+        "blob": "48e7823c44c30a2337c7fd482309d90000345232"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Network Persistent State",
+        "size": 111,
+        "blob": "2590bec5fd2b2b3057e735e81b734f9ca666fb1a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\SharedStorage",
+        "size": 4096,
+        "blob": "4410bda55bad27954e72ab65919e742875d57998"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "c6f4570eb3ee5605fd6c14cf201ce582412ad32d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "a4b45fb50b7f7529e7586493ea6b1f97837e0549"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "4fe7a2e8dec0ae4dc68c6bba2276f9b3b7193b46"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "69ebb25c597e7c9958ab37210a9a493a3624106e"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "dbdf2cf90e126a0eca43ae67acc99f803b25cb7f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "1a55b5a6303a6beb31cf072f259a563e370648e3"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "4541e0675412584cee72acee936eb80696f1078f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "e6a085f38b92cf5c1d2acbf98bebd3554776760f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "fb523eacc07221fb950546ae8a25e13ed3573a77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "0b69738233f7d6ae77edb644229cc784467dfba4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "9b2cd73fcee4201ffa5cc966388ddd5b8b7eed83"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Local Storage\\leveldb\\000003.log",
+        "size": 57,
+        "blob": "1d4f29d62db88b4b458a2f4720cb5b1107599dfe"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 408,
+        "blob": "f8b67ad2bee721c62f64828186dfcf776a3d5a69"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Local Storage\\leveldb\\LOG.old",
+        "size": 408,
+        "blob": "4c9d39864bccb38ee0f26aa36cd215782665c0dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Session Storage\\000003.log",
+        "size": 99,
+        "blob": "dd3a2235809b3138e9602ec7cba7e6818cdc01fd"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Session Storage\\LOG",
+        "size": 396,
+        "blob": "a46a9d456b4e1ff10520383e45aac7bdc473bba9"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Session Storage\\LOG.old",
+        "size": 396,
+        "blob": "2d0dbf8914e0cfdc9f6da723addaffda9140a03e"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "4d4cfc4c9ff56cdd40aeb8b976c89d1bd3854cda"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\cache\\runtime_capability_roster.json",
+        "size": 128,
+        "blob": "61e123ec0b051819d61e8c66a592be68838a0b9c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\chats\\cfce2adf7f01497e811226e26922e849.json",
+        "size": 181,
+        "blob": "c758c648108ebb61540531ec6569b900a7124783"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\design_studio\\14e436d6dc3a45abb5f23d39966a4c81.json",
+        "size": 279,
+        "blob": "c727584e541b8d08cf70d0815cb398ae08a27d20"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "e7bed6285baa2c049a3a4b999ea95a18d6805236"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "9090f417ca05331007b3ff9a74c84a1af78d5674"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\sessions\\tiles_studio_location.json",
+        "size": 418,
+        "blob": "1d64d00caba1821442b30233c6b2ba4b64db8294"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_a_map\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "641133bbe4da6380c52b0ebc10608367a844a476"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\window_geometry.json",
+        "size": 238,
+        "blob": "f798d5d00f730819803616d6b81a8ebb920730de"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\blueprint_studio\\history.jsonl",
+        "size": 39220,
+        "blob": "a65537f55836e3e00b8739460476e130ccbe3671"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\blueprint_studio\\proposals\\5e733a5005a249ab88179d0823efda79\\proposal.json",
+        "size": 21734,
+        "blob": "b34900fc05d1e8fb0de93c4a8a7a43b739755860"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\blueprint_studio\\proposals\\7531fc1f352442cc8b9c8be70e4af41f\\proposal.json",
+        "size": 21734,
+        "blob": "d518939cd9be40e007f32a571ef240ead2016828"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\blueprint_studio\\proposals\\8a6f0a90de31414caa98204220c9fa42\\proposal.json",
+        "size": 21734,
+        "blob": "95a6b33242ce74c43734cae686d21bc16a6e1408"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\blueprint_studio\\proposals\\8b4d6bb6f85c4028b1a7ebfff86cdb6d\\proposal.json",
+        "size": 21734,
+        "blob": "d833861fdae2b34726a541a02629e36755345b99"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\blueprint_studio\\proposals\\e90918f00c40480e83617d6b96905f20\\proposal.json",
+        "size": 21734,
+        "blob": "ea27b648bf930bd7b3eecfc1eaa2a53aa24b17c1"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Cookies",
+        "size": 20480,
+        "blob": "903fbb8021e2f52617c17168d464b6e9b5d841b8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\History",
+        "size": 159744,
+        "blob": "c7c99fe24cb68ebee1ace8babd56f145bcc740a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Network Persistent State",
+        "size": 111,
+        "blob": "2590bec5fd2b2b3057e735e81b734f9ca666fb1a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\SharedStorage",
+        "size": 4096,
+        "blob": "4410bda55bad27954e72ab65919e742875d57998"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "c6f4570eb3ee5605fd6c14cf201ce582412ad32d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "e23098b04fea1834762d6f8018ce0d49d1e116ae"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "4fe7a2e8dec0ae4dc68c6bba2276f9b3b7193b46"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "e35c426a6ebe042ffb8ed54035fc3d8c2ae3b3d8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "d5a11f964a67a3c865247c7f2de0d5a6a27ce68c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "73e5e22ba73f8874d5abf7b058695ffd7b4f75da"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "7de44962b71dd7fb09927880feca7c46c06b7cd2"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "9995240fbc8f8505ab78aa68ba36b46a3b2c318c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "187ebf62d15379774c47decf7caf8dcc9bc2fd7b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "900cfb0852ccd6ede5242299789a8cd06323586d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "caac4a25ee70be3ec370adc209e60403269a7d94"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Local Storage\\leveldb\\000003.log",
+        "size": 57,
+        "blob": "1d4f29d62db88b4b458a2f4720cb5b1107599dfe"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 400,
+        "blob": "fd7fbfadd576222824ee9384e9139019b08f2bbc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Local Storage\\leveldb\\LOG.old",
+        "size": 400,
+        "blob": "1d7d507a829d42a88eb62a649f282a46b01581e1"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Session Storage\\000003.log",
+        "size": 137,
+        "blob": "eff14ab4232ca500fca686e4a74fa994b8028fa8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Session Storage\\LOG",
+        "size": 388,
+        "blob": "a8c61308987846aad35ae3eac2174e11fe6e39da"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Session Storage\\LOG.old",
+        "size": 388,
+        "blob": "082167ca1f84329a48c4d0ddab20408c3a2d1963"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "041e45a3fe80dd42d2c9f8b4da49c448a9c903d4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\cache\\runtime_capability_roster.json",
+        "size": 128,
+        "blob": "4b8fc22c8e999b77f54ffbcb169ce09086f090da"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\chats\\70f8a49bfdc545229f762a394f07ff6c.json",
+        "size": 181,
+        "blob": "e4b39f1d74b0548d05fa7b826f7073491e3f0d6b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\design_studio\\47d75afb174845289292f4fce74dc5e8.json",
+        "size": 279,
+        "blob": "382c907a80295dd3e3d22d0647cec5219794eaf1"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "da26afc32e9660906c6b83f9b4199bba5b409a56"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "50b53e8410df397d1c2cf90707d90f120070a492"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\sessions\\tiles_studio_location.json",
+        "size": 654,
+        "blob": "0e872aad7b0e423dcac88b477b91c25608908ccf"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\tiles_studio\\packs\\47317a2366284cf18b3ec6740b9147db\\manifest.json",
+        "size": 25223,
+        "blob": "7ab674ea4f9d664c3e615d7e64573d748d74d8a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\tiles_studio\\packs\\4e393a9bb2bb41c8ab32e73b8e323855\\manifest.json",
+        "size": 25223,
+        "blob": "bc8a51f64cf0a5b8d620c8a575c02e77e089ad76"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\tiles_studio\\packs\\c8329222e05d47b0b3ef588fea88f5c6\\manifest.json",
+        "size": 25223,
+        "blob": "a03316a039f5de350086b194b2e44c58052a8659"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\tiles_studio\\packs\\de9cd17089f8484c893f8e194cb33d02\\manifest.json",
+        "size": 25223,
+        "blob": "8554503577261970928311dbdf5acc2826dee013"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\tiles_studio\\packs\\f85ee796ef03496ab6e6541adad02b6d\\manifest.json",
+        "size": 25223,
+        "blob": "86f3eb0387e5057e039d9405534d21de1f41a058"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_b\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "7b64c22ed98f4ebbfb6b575ac9afc6e4fc151312"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\window_geometry.json",
+        "size": 237,
+        "blob": "cc1b6c6c1a92631e719198b610ff7e7a3114a684"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Cookies",
+        "size": 20480,
+        "blob": "903fbb8021e2f52617c17168d464b6e9b5d841b8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\History",
+        "size": 159744,
+        "blob": "b5c30db019691049f405040b9f751c035c14f4a5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Network Persistent State",
+        "size": 111,
+        "blob": "2590bec5fd2b2b3057e735e81b734f9ca666fb1a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\SharedStorage",
+        "size": 4096,
+        "blob": "4410bda55bad27954e72ab65919e742875d57998"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "986b2050116f6dd853eb0dcf13f2df26a6fad6f4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "a5df8d9ccf1545ea99c72fb2bb70a17c4259b554"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "4fe7a2e8dec0ae4dc68c6bba2276f9b3b7193b46"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "9216aff75ed4e17202a2aa85b5b95d88c6ebc15b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "39d92813c0332952f333579ace361a6482413aff"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "e4107353cc4720c08a6125e6c008c4f3825be874"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "a0bb985d804420ca12343bd9c76e96c0a83b1c61"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "45af32c02b54b454b32e620b5b2e2cf9f94e8e64"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "5cfe136c9edfc5300efa1c53298a891e1e81be64"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "13b29474f66d3c15b60136edf1b15b1855c29373"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "52abcdb76ce1876be9d10f65de84faff2063694c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Local Storage\\leveldb\\000003.log",
+        "size": 19,
+        "blob": "bd876bead4e46e9f55bfa9823f15c6c88cd29470"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 381,
+        "blob": "341b23ad4d90713119226af8a309a860b0928cb9"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Session Storage\\000003.log",
+        "size": 61,
+        "blob": "9cc173498096087151fce16add469cafb44c5637"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Session Storage\\LOG",
+        "size": 369,
+        "blob": "a40f9705cf73a4d501e0b59131c387ef24e423e1"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "9a41245d6687fa1364962a57907e1b7d4422ce7f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\cache\\runtime_capability_roster.json",
+        "size": 128,
+        "blob": "48f7c558067748975141234172959a075d7b730c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\chats\\6d76cd1e065f47d9b340573c5a4280ed.json",
+        "size": 181,
+        "blob": "6a4aa2bde168f6a2a6eb75cb8bade6be16a72bb4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\design_studio\\b7385576c4c64e9ea4b66a3c185a9e6f.json",
+        "size": 279,
+        "blob": "f4fe2d74a287146826987989f2b6c8efa2ae2b4a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "fb59a5c74680aabc3083750fcae49ade81b7f53d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "174c286eee7aedbbbf9341e491c0592412fdf7d5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\sessions\\tiles_studio_location.json",
+        "size": 418,
+        "blob": "ce301bfb870842e96d274327915fb18c36430cb3"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_failclosed\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "a7a4e9ebb304c2dc8b0c4b5174046e83f82989a9"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\window_geometry.json",
+        "size": 237,
+        "blob": "2db50863fb8568ba5d8316e6fd6437e95ee24247"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cookies",
+        "size": 20480,
+        "blob": "3460a90a63adcf156fdc462b2ef29169c16299c2"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\History",
+        "size": 159744,
+        "blob": "ac74ad9b8f25e84cb00304499b021c4cf75f36ef"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Network Persistent State",
+        "size": 432,
+        "blob": "cac60a21fb658a45c38b434f32b77b1d7f6bb983"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\TransportSecurity",
+        "size": 189,
+        "blob": "d16aed5e0db9a5c351c35e97bf98b523222aa097"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "986b2050116f6dd853eb0dcf13f2df26a6fad6f4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "2d253e3fb02ae9615970f048a5037baa156a1c49"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "285fdcaacf653a13320c7c6031bca7d56bb9c577"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "c8ea7ae975fd00212db4038d337374f217ac62f5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 1056768,
+        "blob": "bbab2bd0bd1abcb19ac26ac66331d7675bfade80"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 4202496,
+        "blob": "4b841393a198ee3c2d0fce5b56fc270e8b8b7ffd"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\f_000001",
+        "size": 85795,
+        "blob": "1ca2ef27038f3defe0667f12e9dc3fe5cb549f2a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\f_000002",
+        "size": 392974,
+        "blob": "8ebf0ba0f08f3297e18e10973017554567e65fba"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\f_000003",
+        "size": 19833,
+        "blob": "75a7b0a45d5f2a0de4c20b70b703213ade5a7b20"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\f_000004",
+        "size": 20325,
+        "blob": "82027998dc6a2d460047631c5dfccd56cde33d23"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\f_000005",
+        "size": 20104,
+        "blob": "3b469b41be601c9ebbea99485e554a12e2af4a5c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\f_000006",
+        "size": 88547,
+        "blob": "335ff285189cc4c7eb027ce856012b474493852b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\f_000007",
+        "size": 48872,
+        "blob": "3882bde028e4fd1395ae9be9efea5508116628f1"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\f_000008",
+        "size": 102264,
+        "blob": "fa0fe2e48f66a0b8c2c413733a4f6dded062e7d2"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "15a2cb6a3d153dc251f9ce4a40ac02f501515337"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "2b02cb76af6fe5df2373fa78ea1112333991b17f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "e58091bfc0f0fdcde3df33c03223479364e034be"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "81cdacf6b67ea92f55fdcf9a93e10f76548376b6"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Local Storage\\leveldb\\000003.log",
+        "size": 126,
+        "blob": "be596543b0e646b306899968c2848ae9e60f95e6"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 373,
+        "blob": "477cedcea2b7086e2dca26a775d7d39e76e6dd52"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Session Storage\\000003.log",
+        "size": 763,
+        "blob": "8e30285eb93195aaf99aa2c3a0d34388ac77e888"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Session Storage\\LOG",
+        "size": 361,
+        "blob": "540a78057c1236b538ab1940d679e9559d416779"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "bccf547293636ae546baa87baa66445b5d39fedc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\cache\\runtime_capability_roster.json",
+        "size": 127,
+        "blob": "3d609669895f6143f3beda53f1ffc12aae6b3e44"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\chats\\8fb567441d3b4440b4eccd955c1a596a.json",
+        "size": 181,
+        "blob": "f8856f7953de2953147a9ca2ee944e4929fc5989"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\design_studio\\dde4dd504ba54ce7b23a853b6eed88bc.json",
+        "size": 279,
+        "blob": "58fb553fa91408df7ddf35af0dfa0588c8bcb3d2"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "afcca87df5dc768d9f6c9d65d4a0583a0912f413"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "9553948022430d527cec0099e976d0d878e5e4f2"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\sessions\\tiles_studio_location.json",
+        "size": 418,
+        "blob": "f4b14f0f6b61b4bf3bc438d8e54a4ecb8a84b2c1"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_layout\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "1de6ea25083e9a52c566befdf235dd774ac9a300"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\window_geometry.json",
+        "size": 238,
+        "blob": "af5d11a6b96ac529255897272162c214de5a9d38"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Cookies",
+        "size": 20480,
+        "blob": "903fbb8021e2f52617c17168d464b6e9b5d841b8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\History",
+        "size": 159744,
+        "blob": "ac74ad9b8f25e84cb00304499b021c4cf75f36ef"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Network Persistent State",
+        "size": 265,
+        "blob": "50652cc9d5c3115680af63fca56aae7b0172b3c1"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\TransportSecurity",
+        "size": 189,
+        "blob": "2a47543ef9d043b31106ad172e40d78117bc2667"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "986b2050116f6dd853eb0dcf13f2df26a6fad6f4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "3acbe4e11af8be5ec4ef630219812f4210cd0297"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "4fe7a2e8dec0ae4dc68c6bba2276f9b3b7193b46"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "536add9ef5962eb96b1ea280d81aa9c6091a8033"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "aecb56d2ee0c9a92d9eb5ce61a8a852ae343417c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "9064c18a3db1764ea36170da22fa26e4b939d42b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "47bfbfa441805eec3d6c606582bf9f49a9a4961f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "14b0663483434f61873b2ea72ae787cb82537781"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "a76769559bc353a83fd4fd360a59b61c1290c5e9"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "4fdd7dbb2b6c0697a39a793765943e2d334b6a69"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "240a89e474d542dc12e1d91461da4a20e2c2155c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Local Storage\\leveldb\\000003.log",
+        "size": 19,
+        "blob": "bd876bead4e46e9f55bfa9823f15c6c88cd29470"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 416,
+        "blob": "7050104f4a1e2efbacc25eeb39dde5f3b8fff044"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Local Storage\\leveldb\\LOG.old",
+        "size": 416,
+        "blob": "ab15564c251c77b9f7617dfd4398b3f762ae37c4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Session Storage\\000003.log",
+        "size": 593,
+        "blob": "f8fc8f0311f9493ab208ddf68ec1650f05c130d6"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Session Storage\\LOG",
+        "size": 404,
+        "blob": "50c556d85144a90cdf2949c07dc0b505a8e211fc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Session Storage\\LOG.old",
+        "size": 404,
+        "blob": "efb6605e059ff844ad28266fde786ea558508561"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "bb146e5ea1ee1b61dbb3d9f54f91e0a62efbe31b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\cache\\runtime_capability_roster.json",
+        "size": 128,
+        "blob": "7148d89a03500d8034eef0c851d6fd50b5722fc9"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\chats\\fe6cf312630b45f3987d120fbd0af1aa.json",
+        "size": 181,
+        "blob": "d7449649b8bec25b5e73d674e0cd270a246b121f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\design_studio\\bdb7c8821a72408c8d530fa6d593da17.json",
+        "size": 279,
+        "blob": "bb5752e8c99b85689aba1bf2cb4433255d470787"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "5d39e28dbf99ee4b495eb0f36087b13e57cfaadb"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "ec26e2620c5e073c8ccdd8daaed15e7cd08e26dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\sessions\\tiles_studio_location.json",
+        "size": 418,
+        "blob": "daaab821f6d27e3af8451e37b57e39ed7640d17d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "db5a87edee3df57fdf8c2000a9188cb1327ac9ff"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\window_geometry.json",
+        "size": 237,
+        "blob": "cc1b6c6c1a92631e719198b610ff7e7a3114a684"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Cookies",
+        "size": 20480,
+        "blob": "903fbb8021e2f52617c17168d464b6e9b5d841b8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\History",
+        "size": 159744,
+        "blob": "ac74ad9b8f25e84cb00304499b021c4cf75f36ef"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Network Persistent State",
+        "size": 111,
+        "blob": "2590bec5fd2b2b3057e735e81b734f9ca666fb1a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "c6f4570eb3ee5605fd6c14cf201ce582412ad32d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "8c2771fd13dca68a0ec6f10d7ae98fdadebfc9a2"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "4fe7a2e8dec0ae4dc68c6bba2276f9b3b7193b46"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "c32302215d5b90ea3739e98481839fe580be7f68"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "0e27cc818f3abd78281e1bdedc0561992a025f6d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "8bbae21ee8ed135063ec17c86b7acf8e8c27c4a2"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "6f0b11d394cf7af9266f6e56fe9830b034aaee26"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "9c61f2ab11536a5bf839ab390c4dccc793993f28"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "7e3ed3bf08143c4d515e714fe1f8253c38a56d38"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "23798722aa1fc5f7b1967de6023b6371b390869f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "d1c85429e43a736a48ae46a1cf5b1ba91c1c0f45"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 428,
+        "blob": "6dec0db5674c86b22ecf128a9d17c974cea0c837"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Local Storage\\leveldb\\LOG.old",
+        "size": 387,
+        "blob": "9580978fd8bb8eb23a9e8945a7b71d3a0fa0b008"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Session Storage\\000003.log",
+        "size": 137,
+        "blob": "eff14ab4232ca500fca686e4a74fa994b8028fa8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Session Storage\\LOG",
+        "size": 416,
+        "blob": "c67576824d052aca1639ae16ada70a106d57f3a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Session Storage\\LOG.old",
+        "size": 416,
+        "blob": "91d051506fd4322d21ac9fbe0cdc72c2891771e4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "212da4e28bf6a1d0396256514980a9d35b67f574"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\cache\\runtime_capability_roster.json",
+        "size": 128,
+        "blob": "63eb590af1efe2b30be3f960782bce88244f1018"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\chats\\35b2c0a7613f4c6382208cd7f8644887.json",
+        "size": 181,
+        "blob": "39a8d76fecc58104289d2d17dc68cb4c01eb0ef8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\design_studio\\3ab1717685df45579bf3a35cad4cf450.json",
+        "size": 279,
+        "blob": "80e2f912fdcc6f57b87fde5a3ed6c09c77165b9d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "d6b80bd418e0434c8cdc141249c5ef028527126e"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "1be01eedf7bd1c7d4b62b37b92206d404e9e3402"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\sessions\\tiles_studio_location.json",
+        "size": 418,
+        "blob": "c7c9eea3f6d239d0a3363f1267a83217ee689592"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_restore_probe\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "4aac007eef4960fdbe268bb0fbcc1f5c0ca17c1d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_history\\sessions\\tiles_studio_location.json",
+        "size": 351,
+        "blob": "65898d963ff86242fc8838ae6e1b21b3250276bf"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_kind\\sessions\\tiles_studio_location.json",
+        "size": 316,
+        "blob": "ff326e12727bdac3138a2323c6349c8481b355f4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_malformed\\sessions\\tiles_studio_location.json",
+        "size": 325,
+        "blob": "336cd0011b24dfc8732a5ab9f7ed5ce075fcc56d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_missing\\sessions\\tiles_studio_location.json",
+        "size": 285,
+        "blob": "fad8874a0e49ee4f5b986f939816b562adc5fd4e"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\window_geometry.json",
+        "size": 237,
+        "blob": "cc1b6c6c1a92631e719198b610ff7e7a3114a684"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Cookies",
+        "size": 20480,
+        "blob": "6a347be868cb7e825a8eb4556ee6c1c1c67e74c8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\History",
+        "size": 159744,
+        "blob": "ac74ad9b8f25e84cb00304499b021c4cf75f36ef"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Network Persistent State",
+        "size": 186,
+        "blob": "ee375064074500594fd2a5a44bdefb42776b89b2"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\TransportSecurity",
+        "size": 189,
+        "blob": "e8161c03b1c914f68e392e4099937366a2dd3ff3"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "986b2050116f6dd853eb0dcf13f2df26a6fad6f4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "784b443a0b2e0e0d1f80feb0336179f2d0cc249a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "3ce52da3713077a091dd7d78f0a88fe53dec793e"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "a00c53e0d61fade20fd66ef49d2196609159fb37"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 1056768,
+        "blob": "a255f21ab69041c5cd445bff1ddc1fd74e3c39f7"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 4202496,
+        "blob": "0e67021f3964583a6cd5f1cd17116cc02d705227"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Cache\\Cache_Data\\f_000001",
+        "size": 85359,
+        "blob": "5f099809ca0762079b9ad2d1b5debddeb14f61e8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Cache\\Cache_Data\\f_000002",
+        "size": 392974,
+        "blob": "8ebf0ba0f08f3297e18e10973017554567e65fba"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "9eb053bb6bbb4fc119774f7cb9f2257ed1d4b5fc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "e88655fadc8bb97e9e04388ab0707aa693eb5f27"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "16de99fc9527d2ffa602585944d06189085c0e8b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "47b3d3fe3b08a6770a2f2b2a84e659edd58c121a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "14291744866c867855e480d507b93515e3bc5926"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "78ff25b0b5db28cbe65aff47816b21b007d3c5f7"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "dcc26817abb736ed604a7dca89cc6662f62ddca2"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 383,
+        "blob": "2cbfb870ee26f70b7c151cb0b93146f4eb83cbef"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Session Storage\\000003.log",
+        "size": 241,
+        "blob": "3708a0b9b0884a87d3fd822bc4c72610481d7ab8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Session Storage\\LOG",
+        "size": 371,
+        "blob": "0de07a650c6ef2500c650202cef63625d9537e9c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "014739ae601c2990c41b76074a3f5d1181dab2ff"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\cache\\runtime_capability_roster.json",
+        "size": 128,
+        "blob": "d78e312cf1b6b2ce428b9f9f8e9f5f4a3b527560"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\chats\\165cdab3f49d47bd964275fc2a842dea.json",
+        "size": 181,
+        "blob": "3fa949877d777bed5497f8d094f00bd3866955f8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\design_studio\\97f3c164e6534829aede6f64bc724e67.json",
+        "size": 279,
+        "blob": "ed05442056bd1719955a5f7144c16ad4b2e20398"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "e54d678de1cafb8ad5d6df4e105731e8fa3b3b28"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "866911ef521d6fa94b398e1d0e6bce02100cefe1"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\sessions\\tiles_studio_location.json",
+        "size": 418,
+        "blob": "d9bcaad37ab096e1f640155c65424e56be0cf6f6"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_pack\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "9ac2619c060417637c081b28713f83a22a8e49e4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\window_geometry.json",
+        "size": 237,
+        "blob": "cc1b6c6c1a92631e719198b610ff7e7a3114a684"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Cookies",
+        "size": 20480,
+        "blob": "903fbb8021e2f52617c17168d464b6e9b5d841b8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\History",
+        "size": 159744,
+        "blob": "4c235e85ef7207c54bf743acdb198bb0fe93728a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Network Persistent State",
+        "size": 111,
+        "blob": "2590bec5fd2b2b3057e735e81b734f9ca666fb1a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\SharedStorage",
+        "size": 4096,
+        "blob": "4410bda55bad27954e72ab65919e742875d57998"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "986b2050116f6dd853eb0dcf13f2df26a6fad6f4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "93e2e9ce9d8436d56dadddd5413e46114e7c709f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "4fe7a2e8dec0ae4dc68c6bba2276f9b3b7193b46"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "d39d39ba091440fe1f0ce0b0ba83feacee657999"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "5ee955c9e434c72ec499e2648455486d0b980dbb"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "dde9c0ed405303c10c68a2e3b189fe9ae41f32f8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "40dc2d3db79205ff506c4a18b26eb6bd6946e897"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "4d2fe40f2da661915e74471566c329f1b4ee1dec"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "f3ab9d70d1ade87c2d911329ab549f4a417c49cb"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "ba0882a5a79edae1649cd249b68ab25834c3fa61"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "114ca7e1778be8585ef88c6f997daafaf64cbeaf"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Local Storage\\leveldb\\000003.log",
+        "size": 19,
+        "blob": "bd876bead4e46e9f55bfa9823f15c6c88cd29470"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 399,
+        "blob": "b760924d16892ed4a69b8792fd2bcf0f1c028c1b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Session Storage\\000003.log",
+        "size": 61,
+        "blob": "9cc173498096087151fce16add469cafb44c5637"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Session Storage\\LOG",
+        "size": 387,
+        "blob": "5a8d13c07603cfc1fd1cfe6a8c7d30ce890c7e10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "cc44660fb811945a6e2101c6c0b90bd7be3767cf"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\cache\\runtime_capability_roster.json",
+        "size": 127,
+        "blob": "35eb469eb7a24f5f34f58f36dc70dbfa0217c8c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\chats\\20c527e7a90846e0a6edcaa24d1679ee.json",
+        "size": 181,
+        "blob": "daa24f1c62bd6dc3ceb9b012e2a9ed7fa58d5599"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\design_studio\\284493e8b257412b857e9d5b80524708.json",
+        "size": 279,
+        "blob": "693722abeae1409b8a4c55f03058ce579504fb57"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "1e1d91f839981942cd234245c4ab025abb4041a0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "77e797ad0f628c9465d9431a4799ad527b028912"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\sessions\\tiles_studio_location.json",
+        "size": 418,
+        "blob": "1543ccbd247773e45f2b2366463b518d0069eb7b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_restore_flag\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "16d8b418a221227030324980b104e181304d0ccf"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_c_tamper_schema\\sessions\\tiles_studio_location.json",
+        "size": 317,
+        "blob": "75c038d99481c9c33b3fb0ffbacf1a4558a3df4f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\window_geometry.json",
+        "size": 242,
+        "blob": "7fc18cb4e0a04b7c68b3b1548c39400e2f2d4b84"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Cookies",
+        "size": 20480,
+        "blob": "903fbb8021e2f52617c17168d464b6e9b5d841b8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\History",
+        "size": 159744,
+        "blob": "ac74ad9b8f25e84cb00304499b021c4cf75f36ef"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Network Persistent State",
+        "size": 111,
+        "blob": "2590bec5fd2b2b3057e735e81b734f9ca666fb1a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "986b2050116f6dd853eb0dcf13f2df26a6fad6f4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "06921647f12b8e326bc254c735ff36d2037ffe18"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "4888ff5fefa23b0054f5cd943b3533a0aa79ebc2"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "bb806dce1156fb6b574b4d69c712b27af300b3ea"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "48ddf5b2d4989fee4bf898938984c1c295f67a72"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 371,
+        "blob": "71e48135c583972ef482c93159778113f0c0d33c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Session Storage\\000003.log",
+        "size": 61,
+        "blob": "9cc173498096087151fce16add469cafb44c5637"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Session Storage\\LOG",
+        "size": 359,
+        "blob": "0a1854ba8afdd9c336d3d32d136c95ed4cc6e4d4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "6af701fe4e7a70a23eb809769004886491ff79a8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\cache\\runtime_capability_roster.json",
+        "size": 128,
+        "blob": "45723810447235060bb3554089ac5e2196414ad5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\chats\\9c8af2db55b04692ac8e79ffe33b55eb.json",
+        "size": 181,
+        "blob": "35d2ea93d453e22ba4f3b9a8607aa8930f7d0467"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\design_studio\\cd7048b11c4a417a9bcdfac615d9009b.json",
+        "size": 279,
+        "blob": "90d546c08eb9e7d7d2c75b5c030a42188fe2d0d5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "edb93e154be8efd73ffae858fb4cd74ec913e879"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_inspect\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "c5a752e5457948537f5ae5035a09d382b5e0161c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\window_geometry.json",
+        "size": 238,
+        "blob": "dd8a74214e56515b9c14b8ea5733218ba5a39b4d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Cookies",
+        "size": 20480,
+        "blob": "903fbb8021e2f52617c17168d464b6e9b5d841b8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\History",
+        "size": 159744,
+        "blob": "ac74ad9b8f25e84cb00304499b021c4cf75f36ef"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Network Persistent State",
+        "size": 111,
+        "blob": "2590bec5fd2b2b3057e735e81b734f9ca666fb1a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "c6f4570eb3ee5605fd6c14cf201ce582412ad32d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "74bacbe04158d071858edbc0eb6ed34db454f20c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "4fe7a2e8dec0ae4dc68c6bba2276f9b3b7193b46"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "c426fccd7e0d56c0344d8abf1c17877d88d7447a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "da57ff182b428a7f6950955dd93865c418ca62ef"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "06b7e7dcb24b90d3e86d3f07b0ef60a8e18cd362"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "8126bf28c089afa6693d634e8dabd2b8fb0f1e22"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "5ca81a540ac5e78d5981aac5c08bdffba2ddb9ab"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 422,
+        "blob": "cf16fab4b596762a3f5810abef09b277892268ee"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Local Storage\\leveldb\\LOG.old",
+        "size": 381,
+        "blob": "ddec631e543006298757f05f82159152c2267234"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Session Storage\\000003.log",
+        "size": 80,
+        "blob": "85c73cbc0e075c86614f95e8588a956e349b6523"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Session Storage\\LOG",
+        "size": 410,
+        "blob": "26332ab4a8e83c72ebdf05ad8611f99ecbc09f7a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Session Storage\\LOG.old",
+        "size": 369,
+        "blob": "7a573bc62f6d5e2cfb5b33e415efddbaa648ff7c"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "9433485a1a7e66b5267028e0496baa235a18d543"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\cache\\runtime_capability_roster.json",
+        "size": 128,
+        "blob": "b3c2611df9cb3cd635de9ec47e75570266619b16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\chats\\cba238917b6640d88eed0f6fd27cbd15.json",
+        "size": 181,
+        "blob": "dc75e475851b236cdcc8b914e4cdf6da7c8347eb"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\design_studio\\4565fe66bc0d4799940f1b5aa57af08b.json",
+        "size": 279,
+        "blob": "8d1a174924cca4bf5493e794ef645e8326c7c89d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "11d44325dff7a5ea37615bfb7f7dcf3138f5b5e5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "91f1e745bc4962c52fa52127e47e3fb2a955e8ca"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\sessions\\tiles_studio_location.json",
+        "size": 418,
+        "blob": "ab7b8148d754a00c6c90f404a4ae0c669129e905"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "78070f6c52757a934ed66bd8cc44148efeae0ed1"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\window_geometry.json",
+        "size": 238,
+        "blob": "dd8a74214e56515b9c14b8ea5733218ba5a39b4d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Cookies",
+        "size": 20480,
+        "blob": "903fbb8021e2f52617c17168d464b6e9b5d841b8"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Favicons",
+        "size": 20480,
+        "blob": "e589db839ea344b75072a96b49275ef0d63e87a4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\History",
+        "size": 159744,
+        "blob": "ac74ad9b8f25e84cb00304499b021c4cf75f36ef"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Network Persistent State",
+        "size": 111,
+        "blob": "2590bec5fd2b2b3057e735e81b734f9ca666fb1a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Trust Tokens",
+        "size": 36864,
+        "blob": "986b2050116f6dd853eb0dcf13f2df26a6fad6f4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\user_prefs.json",
+        "size": 84,
+        "blob": "112f835eee69333d2445991931cd1f328fa94f16"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Visited Links",
+        "size": 131072,
+        "blob": "6ad6c6c084e9b30625e03c9590cdaa26fc10549f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Cache\\Cache_Data\\data_0",
+        "size": 45056,
+        "blob": "4fe7a2e8dec0ae4dc68c6bba2276f9b3b7193b46"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Cache\\Cache_Data\\data_1",
+        "size": 270336,
+        "blob": "c426fccd7e0d56c0344d8abf1c17877d88d7447a"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Cache\\Cache_Data\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Cache\\Cache_Data\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Cache\\Cache_Data\\index",
+        "size": 524656,
+        "blob": "4604f180b6c6bba47e9c97622b11b9f94f77af97"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\DawnGraphiteCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\DawnGraphiteCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\DawnGraphiteCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\DawnGraphiteCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\DawnGraphiteCache\\index",
+        "size": 262512,
+        "blob": "6a9af6585836c5d8214bac35401dde7c8b5d189d"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\DawnWebGPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\DawnWebGPUCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\DawnWebGPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\DawnWebGPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\DawnWebGPUCache\\index",
+        "size": 262512,
+        "blob": "691a699615ab6213ccbb00bf86e202396d9d6bea"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\GPUCache\\data_0",
+        "size": 8192,
+        "blob": "d76fb77e93ac8a536b5dbade616d63abd00626c5"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\GPUCache\\data_1",
+        "size": 270336,
+        "blob": "dcaafa9740ee97afbdf50792612ef9f379e292dc"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\GPUCache\\data_2",
+        "size": 8192,
+        "blob": "c7e2eb9adcfb2d3313ec85f5c28cedda950a3f9b"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\GPUCache\\data_3",
+        "size": 8192,
+        "blob": "5eec97358cf550862fd343fc9a73c159d4c0ab10"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\GPUCache\\index",
+        "size": 262512,
+        "blob": "2f582ce91d6a1b4064d306488c3e04f0b82c2a61"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Local Storage\\leveldb\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Local Storage\\leveldb\\LOG",
+        "size": 381,
+        "blob": "303ada4e49b0838c24413bca9e78e58c12a7f777"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Local Storage\\leveldb\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Session Storage\\000003.log",
+        "size": 61,
+        "blob": "9cc173498096087151fce16add469cafb44c5637"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Session Storage\\CURRENT",
+        "size": 16,
+        "blob": "7ed683d17118b70e46011ddc3562b455d0a4f866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Session Storage\\LOG",
+        "size": 371,
+        "blob": "cd4b7542ef6d217ae0ce11bd52c2a1ca6accebb9"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Session Storage\\MANIFEST-000001",
+        "size": 41,
+        "blob": "18e5cab72c1550d8dc398e3413eea91bee24db77"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Shared Dictionary\\db",
+        "size": 45056,
+        "blob": "625714a08d91748623c1547ba38625613ed47424"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Shared Dictionary\\cache\\index",
+        "size": 24,
+        "blob": "79bd403ac665228853dd8fa54b8f4427af1721c0"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\browser\\Shared Dictionary\\cache\\index-dir\\the-real-index",
+        "size": 48,
+        "blob": "1cbe0f3946fb1d83a8754351cab62a6a7c248d85"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\cache\\runtime_capability_roster.json",
+        "size": 127,
+        "blob": "5b4b8a6771b98d71c55cdcbd565a84f94d059350"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\chats\\b0a60dbc6eca4f51b6d84bf62e9e1fe9.json",
+        "size": 181,
+        "blob": "a793fa5d07a147dbbc7a3f5ac90fb0f95a335fec"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\design_studio\\0d2d3516eb0c4d1aa57b552c060846e2.json",
+        "size": 279,
+        "blob": "a0cc2720bd2547e1d4967bcc42820adb07d9d571"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\prometheus_research\\daily_scan.json",
+        "size": 486,
+        "blob": "6a763cffc9fc484adea1bea718f2377ef9a83ca4"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\sessions\\hub_workspace_session.json",
+        "size": 153,
+        "blob": "0289fbe4d58ac9d27ff05a16c8d672f2bb5be866"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\sessions\\tiles_studio_location.json",
+        "size": 418,
+        "blob": "86353f31d7d9b67ead177734dce6f84e934d476f"
+      },
+      {
+        "path": "state\\tiles_hub_cutover_001_layout_probe2\\triad\\briefing\\operator_briefing.json",
+        "size": 5632,
+        "blob": "d90a56c5be013af627df618eb1baff07910886ff"
+      }
+    ]
+  },
+  {
+    "worktree": "othrys-hub-tiles-pack-review-001",
+    "archive": "hub",
+    "files": 3968,
+    "exact": 305,
+    "crlf_normalized": 3655,
+    "unmatched": 8,
+    "unmatched_files": [
+      {
+        "path": ".pytest_cache\\.gitignore",
+        "size": 37,
+        "blob": "bc1a1f6167d09c909aad37280b760bb715d0f1da"
+      },
+      {
+        "path": ".pytest_cache\\CACHEDIR.TAG",
+        "size": 191,
+        "blob": "fce15ad7eaa74e5682b644c84efb75334c112f95"
+      },
+      {
+        "path": ".pytest_cache\\README.md",
+        "size": 302,
+        "blob": "b89018ced91c0a8af7f3f23ce8901870da89f3a0"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\lastfailed",
+        "size": 122,
+        "blob": "c0f1f56ded80fbe922b1ef57790e2d98524fd190"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\nodeids",
+        "size": 13167,
+        "blob": "a8c5bb76de6bd4159d2fa2a9d00354189a14d674"
+      },
+      {
+        "path": "docs\\blueprint_studio_001\\DOGFOOD.json",
+        "size": 30472,
+        "blob": "dfd5c53d4112e27d17f26263fab3c96fa32d525f"
+      },
+      {
+        "path": "docs\\tiles_pack_review_001\\README.md",
+        "size": 2322,
+        "blob": "15882abf91baabc7504b97b7bf017eee61233af8"
+      },
+      {
+        "path": "state\\blueprint_studio_001\\DOGFOOD.json",
+        "size": 30472,
+        "blob": "dfd5c53d4112e27d17f26263fab3c96fa32d525f"
+      }
+    ]
+  },
+  {
+    "worktree": "othrys-hub-tiles-productization-001",
+    "archive": "hub",
+    "files": 3899,
+    "exact": 249,
+    "crlf_normalized": 3645,
+    "unmatched": 5,
+    "unmatched_files": [
+      {
+        "path": ".pytest_cache\\.gitignore",
+        "size": 37,
+        "blob": "bc1a1f6167d09c909aad37280b760bb715d0f1da"
+      },
+      {
+        "path": ".pytest_cache\\CACHEDIR.TAG",
+        "size": 191,
+        "blob": "fce15ad7eaa74e5682b644c84efb75334c112f95"
+      },
+      {
+        "path": ".pytest_cache\\README.md",
+        "size": 302,
+        "blob": "b89018ced91c0a8af7f3f23ce8901870da89f3a0"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\lastfailed",
+        "size": 2,
+        "blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\nodeids",
+        "size": 9217,
+        "blob": "bd91619e6795b4c54f29b6c544a9f296e1188f29"
+      }
+    ]
+  },
+  {
+    "worktree": "othrys-hub-tiles-studio-001",
+    "archive": "hub",
+    "files": 3880,
+    "exact": 241,
+    "crlf_normalized": 3634,
+    "unmatched": 5,
+    "unmatched_files": [
+      {
+        "path": ".pytest_cache\\.gitignore",
+        "size": 37,
+        "blob": "bc1a1f6167d09c909aad37280b760bb715d0f1da"
+      },
+      {
+        "path": ".pytest_cache\\CACHEDIR.TAG",
+        "size": 191,
+        "blob": "fce15ad7eaa74e5682b644c84efb75334c112f95"
+      },
+      {
+        "path": ".pytest_cache\\README.md",
+        "size": 302,
+        "blob": "b89018ced91c0a8af7f3f23ce8901870da89f3a0"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\lastfailed",
+        "size": 2,
+        "blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b"
+      },
+      {
+        "path": ".pytest_cache\\v\\cache\\nodeids",
+        "size": 3616,
+        "blob": "becc06c5dc9c44732b727c65aa3397337a3e744c"
+      }
+    ]
+  }
+]

@@ -1,0 +1,68 @@
+{
+    "schema":  "othrys.harvest.pandaos-internal.v1",
+    "date":  "2026-08-31",
+    "source":  "orphaned V2 worktree .pandaos/.claude material",
+    "status":  "HARVESTED_NO_AUTHORITY",
+    "adopt":  [
+                  {
+                      "pattern":  "scale-aware planning",
+                      "mapping":  "Planner/Mission preflight",
+                      "detail":  "Classify quick/standard/epic before spending planning effort."
+                  },
+                  {
+                      "pattern":  "UI design gate",
+                      "mapping":  "Blueprint/Factory/Studio",
+                      "detail":  "UI-bearing work requires explicit design evidence before build; backend-only work may skip."
+                  },
+                  {
+                      "pattern":  "ordered role handoffs",
+                      "mapping":  "Planner -\u003e Designer when needed -\u003e Builder -\u003e Talos/Reviewer",
+                      "detail":  "Each role closes with artifacts and returns control instead of silently assuming the next authority."
+                  },
+                  {
+                      "pattern":  "task-order discipline",
+                      "mapping":  "Work/Mission execution",
+                      "detail":  "Do not silently reorder, skip or invent planned tasks; record scope change first."
+                  },
+                  {
+                      "pattern":  "judgment review after mechanical checks",
+                      "mapping":  "Talos + reviewer",
+                      "detail":  "Tests/scans are necessary but do not replace requirements fit, architectural fitness, integration and accessibility review."
+                  },
+                  {
+                      "pattern":  "blocker visibility",
+                      "mapping":  "Training/Factory",
+                      "detail":  "Record blockers and stop dependent work rather than silently working around them."
+                  }
+              ],
+    "heuristics":  [
+                       {
+                           "name":  "max_file_lines",
+                           "value":  300,
+                           "disposition":  "NON_CONSTITUTIONAL_WARNING_ONLY"
+                       },
+                       {
+                           "name":  "max_function_lines",
+                           "value":  50,
+                           "disposition":  "NON_CONSTITUTIONAL_WARNING_ONLY"
+                       },
+                       {
+                           "name":  "max_params",
+                           "value":  4,
+                           "disposition":  "NON_CONSTITUTIONAL_WARNING_ONLY"
+                       },
+                       {
+                           "name":  "max_nesting",
+                           "value":  3,
+                           "disposition":  "NON_CONSTITUTIONAL_WARNING_ONLY"
+                       }
+                   ],
+    "reject":  [
+                   "Panda-specific agent activation protocol",
+                   "Panda-specific storage/layout as a second authority",
+                   "automatic copying of Panda roles/skills",
+                   "rigid line limits as correctness gates"
+               ],
+    "conclusion":  "PandaOS ideas converge with current OTHRYS architecture; harvest workflow ergonomics, not a parallel operating system.",
+    "authorityGranted":  false
+}

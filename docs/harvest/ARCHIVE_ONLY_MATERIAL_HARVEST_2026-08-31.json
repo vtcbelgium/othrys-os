@@ -1,0 +1,47 @@
+{
+    "schema":  "othrys.harvest.archive-material.v1",
+    "date":  "2026-08-31",
+    "items":  [
+                  {
+                      "source":  "_othrys_deliverables_2026-08-12",
+                      "disposition":  "COLD_ARCHIVE",
+                      "harvest":  [
+                                      "One-repo-one-truth and no unversioned best-code remain foundational cleanliness laws.",
+                                      "Verification must report the same endpoint/config the runtime actually uses; configuration knobs that only diagnostics read are false confidence.",
+                                      "Fresh-clone survival matters: runtime capabilities cannot depend on hidden sibling checkouts or state-only registrations.",
+                                      "PASS do-not-merge queues need bounded closure; verified work stranded outside canonical Git is operational debt.",
+                                      "External numeric claims require verified source/freshness, reinforced independently by othrys-tools."
+                                  ]
+                  },
+                  {
+                      "source":  "_othrys_snapshot",
+                      "disposition":  "COLD_ARCHIVE_REDUNDANT",
+                      "harvest":  [
+                                      "Historical tarballs are recovery evidence, not active development source."
+                                  ]
+                  },
+                  {
+                      "source":  "_xfer",
+                      "disposition":  "COLD_ARCHIVE_REDUNDANT",
+                      "harvest":  [
+                                      "Transfer tarballs are transport artifacts, not canonical source."
+                                  ]
+                  },
+                  {
+                      "source":  "_to_delete",
+                      "disposition":  "DISPOSABLE_DEBRIS",
+                      "harvest":  [
+                                      "Old locks/dedupe staging belong outside active Projects."
+                                  ]
+                  },
+                  {
+                      "source":  "othrys-panda-lab",
+                      "disposition":  "COLD_ARCHIVE_AFTER_PANDA_HARVEST",
+                      "harvest":  [
+                                      "Panda lab confirms the already-harvested scale-aware Planner, explicit design gate, Builder/Reviewer separation, blocker visibility and non-constitutional complexity heuristics.",
+                                      "Its dependency payload is tooling/vendor state, not OTHRYS source."
+                                  ]
+                  }
+              ],
+    "authorityGranted":  false
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "othrys.prometheus.forge-watch.v1",
+  "date": "2026-08-31",
+  "runLocalTime": "17:24 Europe/Brussels",
+  "result": "NO_NEW_ADMISSION",
+  "publicSourcesChecked": [
+    "https://ollama.com/search",
+    "https://ollama.com/blog",
+    "https://ollama.com/library/qwen3.8-flash-next",
+    "https://ollama.com/library/glm-5.3-flash",
+    "https://ollama.com/library/muse-glimmer",
+    "https://qwenlm.github.io/qwen-code-docs/en/blog/updates/weekly-update-2026-08-06/"
+  ],
+  "findings": [
+    "Qwen3.8-Flash-Next is already tracked as NEW_HANDOFF_NOT_ADMITTED; current Ollama local tag is 125b-mlx at 105GB and unsuitable for Legion qualification.",
+    "GLM-5.3/GLM-5.3-Flash are already tracked; no zero-cost qualified executable endpoint exists in the Forge.",
+    "Muse Glimmer 30B is already installed and previously tested but failed the tool-use heat; not admitted.",
+    "North Mini Code 1.0 is already tracked and still not admitted.",
+    "Nemotron 3.5 Lightning, Ornith, Qwen3.8-27B, and current Qwen Code infrastructure are known and suppressed from duplicate noise."
+  ],
+  "rosterComparedAgainst": "runtime/hephaestus/data/forge_roster.json",
+  "admitted": [],
+  "authorityGranted": false,
+  "automaticPaidUsage": false,
+  "operatorNotification": false
+}

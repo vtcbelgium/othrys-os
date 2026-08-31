@@ -1,0 +1,53 @@
+{
+    "schema":  "othrys.harvest.estate-prune.v1",
+    "date":  "2026-08-31",
+    "status":  "IN_PROGRESS",
+    "sources":  [
+                    {
+                        "repo":  "study-buddy",
+                        "archive":  "C:\\Users\\othry\\Othrys-Recovery\\estate-prune-2026-08-31\\study-buddy",
+                        "disposition":  "COLD_ARCHIVE_AFTER_HARVEST",
+                        "harvest":  [
+                                        "Seven proven Study Buddy capability seams already exist as RAW canonical Block passports: source extraction, grounded retrieval, provider router, mastery ledger, gap engine, event log, Supabase session boundary.",
+                                        "Transcription provider interface remains UNPROVEN Garden stock; do not promote.",
+                                        "Knowledge-domain law: private/course knowledge stays Oros-scoped; promotion to Mnemosyne is explicit, provenance-preserving and governed.",
+                                        "Learning loop: CAPTURE -\u003e GROUND -\u003e MAP -\u003e GAP -\u003e LEARN -\u003e RECALL -\u003e APPLY -\u003e PROVE -\u003e RETEST -\u003e ADAPT.",
+                                        "Automation law: durable Work owns process state; Loop Laws constrain repetition; Talos verifies outcomes rather than becoming the workflow engine.",
+                                        "Useful verified repeated traces should collapse into deterministic recipes/Patterns/Blocks, reducing future AI turns."
+                                    ]
+                    },
+                    {
+                        "repo":  "othrys-tools",
+                        "archive":  "C:\\Users\\othry\\Othrys-Recovery\\estate-prune-2026-08-31\\othrys-tools",
+                        "disposition":  "COLD_ARCHIVE_AFTER_HARVEST",
+                        "harvest":  [
+                                        "Micro-tool absorption manifest is a useful Blueprint/Oros packaging pattern: identity, path, data feed, maintenance verification and monetisation are explicit.",
+                                        "Static single-purpose tools should remain self-contained and provider-neutral.",
+                                        "Dynamic refresh behavior belongs in declared scripts/jobs, not hidden operational habits.",
+                                        "Asserted external numbers/rates require source and verified-at freshness metadata."
+                                    ]
+                    },
+                    {
+                        "repo":  "vtc-block-extract branches",
+                        "archive":  "C:\\Users\\othry\\Othrys-Recovery\\estate-prune-2026-08-31",
+                        "disposition":  "PRESERVE_INTEGRATION_RECIPES_REBASE_LATER",
+                        "harvest":  [
+                                        "image-prep consumption removed product-local image plumbing in favor of canonical Block import.",
+                                        "affiliate-offer consumption separated host affiliate configuration/disclosure from Block logic and removed local duplicate affiliate helper.",
+                                        "visit-tracking consumption split Block ingest/beacon logic from VTC-owned configuration and Supabase storage Bridge.",
+                                        "All three prove the desired Block boundary: Block owns generic capability; Oros owns configuration, storage/provider Bridge, schema compatibility and policy.",
+                                        "Branches diverge from current VTC and must be rebased/re-verified before product application; branch success is not current-product proof."
+                                    ]
+                    },
+                    {
+                        "repo":  "_tc_scratch",
+                        "archive":  "C:\\Users\\othry\\Othrys-Recovery\\estate-prune-2026-08-31\\_tc_scratch",
+                        "disposition":  "REDUNDANT_SNAPSHOT_COLD_ARCHIVE",
+                        "harvest":  [
+                                        "hub_review_20260809.tgz is an old Hub code snapshot now superseded by verified legacy Hub bundle/history harvest.",
+                                        "note.txt demonstrates Trust Canal mutation evidence but adds no capability beyond preserved Trust Canal history."
+                                    ]
+                    }
+                ],
+    "authorityGranted":  false
+}
