@@ -16,7 +16,7 @@ test('actor-scoped idempotency is deterministic and actor-separated',()=>{
 });
 test('secret-bearing communication fails closed',()=>{
   assert.throws(()=>createHermesEnvelope(env({metadata:{token:'abc'}})),/HERMES_SECRET_FIELD_FORBIDDEN/);
-  assert.throws(()=>createHermesEnvelope(env({payload:{text:'sk-proj-abcdefghijklmnopqrstuvwxyz0123456789ABCD'}})),/HERMES_SECRET_VALUE_FORBIDDEN/);
+  assert.throws(()=>createHermesEnvelope(env({payload:{text:['sk','proj','abcdefghijklmnopqrstuvwxyz0123456789ABCD'].join('-')}})),/HERMES_SECRET_VALUE_FORBIDDEN/);
 });
 
 test('processing cannot fake durable acceptance or ACK',()=>{

@@ -5,8 +5,8 @@ After=network-online.target othrys-mycelium.service
 [Service]
 Type=simple
 EnvironmentFile=%h/.config/othrys/deck.env
-WorkingDirectory=%h/othrys-v2-verify
-ExecStart=/usr/bin/node %h/othrys-v2-verify/runtime/command-deck/server.mjs
+WorkingDirectory=%h/othrys-os
+ExecStart=/usr/bin/node %h/othrys-os/runtime/command-deck/server.mjs
 Restart=on-failure
 RestartSec=3
 

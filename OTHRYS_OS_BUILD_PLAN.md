@@ -6,7 +6,7 @@ As of 2026-08-31, `docs/training/LEVEL_2_5_CONSOLIDATION_PLAN.md` is COMPLETE. L
 
 **Front-door plan.** Read after `BOOK_OF_GPT.md` and current `GPT_STATE.json`.
 
-## Current phase -- V2-011G HERMES HOUSE ADMISSION CLOSEOUT
+## Historical phase -- V2-011G HERMES HOUSE ADMISSION CLOSEOUT
 
 Milestone `M-OS-FOUNDATION-HARVEST-001` is achieved. V2-010Q proved native verified Artifact reuse and V2-010R formalized the VTC-proven Block extraction/extinction method. V2-010S completed the smallest safe 061D/061H Experience/Rhizomorph layer: immutable observations, holdouts, transparent Pareto preference, hysteresis/decay and sparse reinforcement among predeclared legal routes only. PandaOS remains a clarity/UX quarry, never routing or authority truth.
 

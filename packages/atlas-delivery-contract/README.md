@@ -1,77 +1,21 @@
-# @othrys-core/atlas-delivery-contract
+# @othrys-os/atlas-delivery-contract
 
-The Othrys **Atlas delivery contract**: versioned graph schema, validation, read model,
-traversals, drift detection, proof ledger, and the pinned architecture snapshot.
-**This is the package products consume** — the second supported seam between othrys-core
-and product repositories (othrys-web).
+Canonical OTHRYS OS Atlas projection delivery package. It carries the versioned graph contract, validation helpers, read-model/traversal logic, drift/freshness helpers, and the pinned projection payload consumed by web surfaces.
 
-Contract-only: no collector, no filesystem access, no vault, no broker, no runtime business
-logic. othrys-core generates truth; products validate and render it.
+This package was migrated from the retired `othrys-core` lineage during Level 2.5. Historical contract provenance remains preserved inside the delivered artifacts, but current ownership lives in `vtcbelgium/othrys-os` under `packages/atlas-delivery-contract`.
 
-## Why this package exists
+## Consume
 
-Before it, othrys-web vendored `dist-contract/` via git sync (`npm run atlas:sync`).
-That worked but duplicated truth, required a sibling checkout, and had no npm boundary test.
-This package is the swap — same contract, canonical npm distribution.
-
-## Install and use
-
-```bash
-npm install @othrys-core/atlas-delivery-contract
-```
+Current first-party consumers use a checksum-pinned vendored tarball carrying package identity `@othrys-os/atlas-delivery-contract@0.1.1`. Public registry publication is not assumed by this README.
 
 ```ts
-import contractJson from "@othrys-core/atlas-delivery-contract/atlas-contract.json";
-import manifestJson from "@othrys-core/atlas-delivery-contract/contract-manifest.json";
-import {
-  validateContract,
-  freshness,
-  Atlas,
-  dependencies,
-  type AtlasContract,
-} from "@othrys-core/atlas-delivery-contract";
-
-const result = validateContract(contractJson);
-if (!result.ok) throw new Error(result.issues.join("; "));
-
-const atlas = new Atlas({
-  generatedAt: result.contract.generatedAt,
-  nodes: result.contract.nodes,
-  edges: result.contract.edges,
-  schemaVersion: result.contract.schemaVersion,
-  summary: { /* derived from contract */ },
-});
-
-const deps = dependencies(atlas, "othrys:othrys");
+import contractJson from "@othrys-os/atlas-delivery-contract/atlas-contract.json";
+import manifestJson from "@othrys-os/atlas-delivery-contract/contract-manifest.json";
+import { Atlas, freshness, validateContract } from "@othrys-os/atlas-delivery-contract";
 ```
 
-## What ships
-
-| Export | Contents |
-|---|---|
-| `.` | Types, validation, read model, traversals, drift, proof, overlays |
-| `./atlas-contract.json` | Pinned architecture snapshot (~329 KB graph + summaries) |
-| `./contract-manifest.json` | sha256 manifest + othrys-core revision provenance |
-
-## Commands
-
-```bash
-npm run sync       # refresh src/ from ../atlas/dist-contract/ (after atlas:publish)
-npm run build      # tsc → dist/ + copy JSON
-npm test           # vitest — contract consumer tests
-npm run typecheck  # strict, noEmit
-```
-
-Run `npm run sync` in othrys-core after every `npm run atlas:publish`, then bump version
-and release. The sync script is mechanical — never hand-edit `src/`.
+Consumers validate and render this delivery contract. They do not regenerate institutional truth, reach into retired sibling repositories, or treat the package as execution authority.
 
 ## Boundary
 
-- **In scope:** shared types, schemas, validation, serialization, read model, pinned data.
-- **Out of scope:** collector, generator, HTML renderer, vault, broker, application UI.
-
-Products must not copy Othrys Atlas source or maintain a vendored `lib/atlas/contract/`.
-
----
-
-*Part of [othrys-core](../../README.md). ADR: [ADR-0046](../adr/ADR-0046-atlas-delivery-contract.md).*
+Contract-only distribution: no collector, filesystem authority, secret broker, mission execution, or product mutation. Current package identity: `@othrys-os/atlas-delivery-contract@0.1.1`.

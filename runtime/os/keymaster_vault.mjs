@@ -10,7 +10,7 @@ const sha=v=>createHash('sha256').update(String(v),'utf8').digest('hex');
 const envName=v=>typeof v==='string'&&/^[A-Z][A-Z0-9_]{2,127}$/.test(v)?v:null;
 
 export function discoverKeymasterEnvSource({home=homedir(),override=process.env.OTHRYS_KEYMASTER_ENV_FILE}={}){
-  const candidates=[override,join(home,'jarvis','brain','.env')].filter(Boolean);
+  const candidates=[override,join(home,'.config','othrys','keymaster.env')].filter(Boolean);
   const path=candidates.find(p=>existsSync(p))??null;
   return Object.freeze({schema:'othrys.os.keymaster-env-source.v1',sourceId:'central-bootstrap-env',available:Boolean(path),path,pathDigest:path?sha(path):null,readOnly:true,authorityGranted:false,executionStarted:false});
 }

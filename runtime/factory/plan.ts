@@ -1,4 +1,4 @@
-﻿import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { FACTORY_MATURITY_ALLOWED, type ExactBlockRef, type OrosBrief, type ResolvedFactoryBlock } from "./contracts.ts";
 
@@ -40,8 +40,14 @@ export function resolveExactBlocks(v2Root: string, brief: Readonly<OrosBrief>): 
     if (a.block_id !== ref.blockId || a.block_version !== ref.blockVersion) throw new FactoryRejectedError("BLOCK_IDENTITY_MISMATCH");
     const maturity = String(a.maturity_at_admission || "");
     if (!FACTORY_MATURITY_ALLOWED.includes(maturity)) throw new FactoryRejectedError("BLOCK_MATURITY_INELIGIBLE");
-    const canonicalPath = String(a.current_canonical_home?.path || a.source?.canonical_path || a.reconstruction?.path || "");
-    if (!canonicalPath || !existsSync(resolve(v2Root, canonicalPath))) throw new FactoryRejectedError("BLOCK_SOURCE_MISSING");
+    const ownershipFile = resolve(v2Root, "docs", "training", "LEVEL_2_5_BLOCK_OWNERSHIP.json");
+    if (!existsSync(ownershipFile)) throw new FactoryRejectedError("BLOCK_OWNERSHIP_MISSING");
+    const ownership = JSON.parse(readFileSync(ownershipFile, "utf8"));
+    const owned = (ownership.blocks || []).find((b: any) => b.package === String(a.package || "") && b.version === ref.blockVersion);
+    if (!owned || ownership.canonicalRepository !== "vtcbelgium/othrys-blocks") throw new FactoryRejectedError("BLOCK_OWNERSHIP_MISSING");
+    const canonicalPath = String(owned.path || "");
+    const canonicalRoot = resolve(v2Root, String(ownership.canonicalLocalSibling || "../othrys-blocks"));
+    if (!canonicalPath || !existsSync(resolve(canonicalRoot, canonicalPath))) throw new FactoryRejectedError("BLOCK_SOURCE_MISSING");
     return Object.freeze({
       blockId: ref.blockId,
       blockVersion: ref.blockVersion,

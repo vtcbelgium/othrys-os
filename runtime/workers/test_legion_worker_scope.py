@@ -103,7 +103,7 @@ def test_malformed_single_path_write_recovery_discards_stray_json_tail():
     import importlib.util
     mod_path=Path(__file__).with_name("legion_qwen_worker_v01.py")
     spec=importlib.util.spec_from_file_location("worker_mod_tail",mod_path);mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
-    raw='{"path":"x.mjs","content":"export const x = 1;\n"}]}]}\n\ No newline at end of file'
+    raw=r'{"path":"x.mjs","content":"export const x = 1;\n"}]}]}\n\ No newline at end of file'
     got=mod._recover_malformed_write_args(raw,"content")
     assert got=={"path":"x.mjs","content":"export const x = 1;\n"}
 
@@ -127,7 +127,7 @@ def test_worker_source_refuses_finish_before_mutation():
 def test_worker_evidence_is_allowlist_scoped():
     text=Path(__file__).with_name("legion_qwen_worker_v01.py").read_text(encoding="utf-8")
     assert '_scoped_workspace_diff(workspace, allowed)' in text
-    assert 'hub_engineering.workspace_diff = lambda _workspace' in text
+    assert 'local_engineering.workspace_diff = lambda _workspace' in text
 
 
 def test_single_path_repair_normalizes_workspace_prefix_without_widening_scope():

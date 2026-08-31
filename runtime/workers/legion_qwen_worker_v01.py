@@ -135,20 +135,22 @@ def _repair_single_path_tool_calls(response: dict[str, Any], allowed: list[str])
         if fn.get("name") not in {"write_file", "append_file"}:
             continue
         args = fn.get("arguments")
+        parsed_exactly = False
         try:
-            import local_engineering
-            obj = local_engineering._parse_arguments(args)
-        except Exception:
+            obj = json.loads(args) if isinstance(args, str) else dict(args or {})
+            parsed_exactly = isinstance(obj, dict)
+        except (json.JSONDecodeError, TypeError, ValueError):
             try:
-                obj = json.loads(args) if isinstance(args, str) else dict(args or {})
-            except (json.JSONDecodeError, TypeError, ValueError):
+                import local_engineering
+                obj = local_engineering._parse_arguments(args)
+            except Exception:
                 obj = {}
         field = "text" if fn.get("name") == "append_file" else "content"
         if not obj:
             recovered = _recover_malformed_write_args(args, field)
             if recovered.get("path") == allowed[0] and isinstance(recovered.get(field), str) and recovered.get(field):
                 obj = recovered
-        if not obj.get("path") and isinstance(obj.get(field), str) and obj.get(field):
+        if parsed_exactly and not obj.get("path") and isinstance(obj.get(field), str) and obj.get(field):
             obj["path"] = allowed[0]
         if obj.get("path") == "workspace/" + allowed[0]:
             obj["path"] = allowed[0]

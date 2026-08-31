@@ -7,8 +7,8 @@ Type=simple
 EnvironmentFile=%h/.config/othrys/deck.env
 Environment=OTHRYS_ADMISSION_POLL_MS=5000
 Environment=OTHRYS_ADMISSION_ERROR_FILE=%h/.local/state/othrys/admission-watcher-last-error.txt
-WorkingDirectory=%h/othrys-v2-verify
-ExecStart=/usr/bin/node %h/othrys-v2-verify/runtime/command-deck/admission_watcher.ts
+WorkingDirectory=%h/othrys-os
+ExecStart=/usr/bin/node %h/othrys-os/runtime/command-deck/admission_watcher.ts
 Restart=on-failure
 RestartSec=3
 
