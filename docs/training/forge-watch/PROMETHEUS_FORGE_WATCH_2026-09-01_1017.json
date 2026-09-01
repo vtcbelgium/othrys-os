@@ -1,0 +1,40 @@
+﻿{
+    "schema":  "othrys.prometheus.forge-watch-scan.v1",
+    "date":  "2026-09-01",
+    "discoveries":  [
+                        {
+                            "admitted":  false,
+                            "publicEvidence":  [
+                                                   "https://ollama.com/library/qwen3.8-flash-next"
+                                               ],
+                            "finding":  "Materially improved open-weight agentic/coding preview, already discovered in prior Forge Watch; current official Ollama local artifact is 105GB and remains outside Legion resource envelope. Duplicate suppressed; no qualification run.",
+                            "kind":  "MODEL",
+                            "candidate":  "qwen3.8-flash-next",
+                            "newAgainstRoster":  false
+                        },
+                        {
+                            "admitted":  false,
+                            "publicEvidence":  [
+                                                   "https://ollama.com/blog/claude-desktop"
+                                               ],
+                            "finding":  "Released 2026-08-25; useful local-model gateway infrastructure, already observed in prior watch. Not a builder admission candidate.",
+                            "kind":  "BUILDER_INFRASTRUCTURE",
+                            "candidate":  "ollama.claude-desktop-gateway",
+                            "newAgainstRoster":  false
+                        },
+                        {
+                            "admitted":  false,
+                            "publicEvidence":  [
+                                                   "https://huggingface.co/allenai/SERA-14B"
+                                               ],
+                            "finding":  "Apache-2.0 open coding-agent family, but released months earlier and not a newly released/materially improved discovery in this watch window. No noise/admission.",
+                            "kind":  "CODING_AGENT_MODEL_FAMILY",
+                            "candidate":  "allenai.SERA",
+                            "newAgainstRoster":  false
+                        }
+                    ],
+    "rosterChanged":  false,
+    "authorityGranted":  false,
+    "automaticPaidUsage":  false,
+    "note":  "No genuinely new candidate cleared discovery-to-qualification gates in this run."
+}

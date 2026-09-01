@@ -1,0 +1,139 @@
+{
+    "schema":  "othrys.os.training-level-3.5-hub-to-web.v1",
+    "name":  "HubToWeb",
+    "level":  3.5,
+    "status":  "PLANNED_LOCKED",
+    "purpose":  "Retire the historical Hub/Command Deck human interface by moving all retained operator surfaces into othrys-web while keeping othrys-os as the sole runtime and authority source.",
+    "entryGate":  [
+                      "Level 3 status COMPLETE",
+                      "24/24 Level 3 jobs COMPLETE",
+                      "Level 3 graduation receipt PASS",
+                      "explicit operator transition"
+                  ],
+    "exitGate":  [
+                     "Web parity matrix 100% terminal",
+                     "all retained control surfaces verified in othrys-web",
+                     "OS gateway extracted from Deck UI",
+                     "tablet/phone/Legion operator path verified",
+                     "old Deck UI disabled",
+                     "othrys-command-deck.service retired or replaced by othrys-os-gateway.service",
+                     "no live Hub UI route or authority owner",
+                     "whole-body tests PASS",
+                     "Level 4 still LOCKED until separate operator command"
+                 ],
+    "laws":  {
+                 "othrysOsIsMachine":  true,
+                 "othrysWebIsHumanInterface":  true,
+                 "noDuplicateAuthority":  true,
+                 "noDuplicateState":  true,
+                 "webProjectsOsTruth":  true,
+                 "webRequestsRemainGoverned":  true,
+                 "commandDeckSurvivesUntilParity":  true,
+                 "deleteOnlyAfterIndependentProof":  true,
+                 "automaticAdmission":  false,
+                 "automaticAdvance":  false,
+                 "authorityGranted":  false,
+                 "level4UnlockAllowed":  false
+             },
+    "migration":  [
+                      {
+                          "source":  "Deck shell/UI",
+                          "target":  "othrys-web /control",
+                          "action":  "MERGE_AND_REPLACE",
+                          "proof":  "desktop/tablet/mobile parity"
+                      },
+                      {
+                          "source":  "/api/status",
+                          "target":  "Web system/status adapter",
+                          "action":  "RETAIN_OS_API_EXTRACT_GATEWAY",
+                          "proof":  "contract + auth + read-only"
+                      },
+                      {
+                          "source":  "/api/atlas",
+                          "target":  "othrys-web /othrys/atlas",
+                          "action":  "MERGE",
+                          "proof":  "graph parity + no authority"
+                      },
+                      {
+                          "source":  "/api/knowledge-search + /api/knowledge-export",
+                          "target":  "othrys-web Garden/knowledge surfaces",
+                          "action":  "MERGE",
+                          "proof":  "search/export parity"
+                      },
+                      {
+                          "source":  "/api/mission",
+                          "target":  "othrys-web missions/control",
+                          "action":  "MERGE",
+                          "proof":  "mission evidence parity"
+                      },
+                      {
+                          "source":  "/api/work",
+                          "target":  "othrys-web work",
+                          "action":  "MERGE",
+                          "proof":  "durable Work parity"
+                      },
+                      {
+                          "source":  "/api/model-selection",
+                          "target":  "othrys-web execution/Forge",
+                          "action":  "MERGE",
+                          "proof":  "selection preview parity"
+                      },
+                      {
+                          "source":  "/api/build-route",
+                          "target":  "othrys-web execution",
+                          "action":  "MERGE",
+                          "proof":  "route preview parity"
+                      },
+                      {
+                          "source":  "/api/chat + /api/intent",
+                          "target":  "othrys-web control ingress",
+                          "action":  "MERGE",
+                          "proof":  "authenticated non-executing ingress parity"
+                      },
+                      {
+                          "source":  "othrys-command-deck.service",
+                          "target":  "othrys-os-gateway.service",
+                          "action":  "RENAME_AFTER_UI_EXTINCTION",
+                          "proof":  "T590 service migration + rollback drill"
+                      }
+                  ],
+    "phases":  [
+                   {
+                       "id":  "3.5-A",
+                       "name":  "Inventory and freeze",
+                       "gate":  "enumerate every Deck surface, endpoint, caller, service and Web counterpart"
+                   },
+                   {
+                       "id":  "3.5-B",
+                       "name":  "Gateway extraction",
+                       "gate":  "separate OS API/auth/telemetry from Deck HTML without contract drift"
+                   },
+                   {
+                       "id":  "3.5-C",
+                       "name":  "Web parity",
+                       "gate":  "implement missing operator surfaces in othrys-web only"
+                   },
+                   {
+                       "id":  "3.5-D",
+                       "name":  "Device proof",
+                       "gate":  "Legion + Samsung tablet + phone/browser viewport proof"
+                   },
+                   {
+                       "id":  "3.5-E",
+                       "name":  "Cutover",
+                       "gate":  "Web becomes canonical operator interface; old Deck UI read path removed"
+                   },
+                   {
+                       "id":  "3.5-F",
+                       "name":  "Extinction",
+                       "gate":  "retire command-deck UI/service naming, scan live estate for Hub UI dependencies"
+                   },
+                   {
+                       "id":  "3.5-G",
+                       "name":  "Seal",
+                       "gate":  "fresh clone/build/test plus T590 service proof and rollback receipt"
+                   }
+               ],
+    "authorityGranted":  false,
+    "executionStarted":  false
+}
