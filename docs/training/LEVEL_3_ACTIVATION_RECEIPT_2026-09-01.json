@@ -1,0 +1,28 @@
+{
+  "schema": "othrys.os.training-level-activation.v1",
+  "date": "2026-09-01T09:58:00+02:00",
+  "mission": "V2-011K",
+  "level": 3,
+  "name": "Small Applications",
+  "operatorAuthorized": true,
+  "sourceCommand": "Go ahead",
+  "preparedTag": "level3-prepared-locked-2026-09-01",
+  "preparedCommit": "d72de0e4c26c5f23a3a697cd12b160f7f3639116",
+  "level2MilestoneTag": "milestone-level2-solid-foundation-2026-09-01",
+  "transition": {
+    "fromCurrentLevel": 2,
+    "toCurrentLevel": 3,
+    "level3Status": "ACTIVE",
+    "queuedJobs": 24,
+    "firstQueuedJob": "L3-001",
+    "level4Status": "LOCKED"
+  },
+  "authorityGranted": false,
+  "automaticLevelAdvance": false,
+  "automaticAdmission": false,
+  "executionStarted": false,
+  "productionMutationAllowed": false,
+  "paidUsageAllowed": false,
+  "externalServicesAllowed": false,
+  "conclusion": "Explicit operator authorization activated Level 3 only. No job execution, authority, automatic admission, Level 4 unlock or external-service permission was granted by this transition."
+}

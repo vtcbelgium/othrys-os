@@ -1,0 +1,28 @@
+{
+  "schema": "othrys.prometheus.forge-watch-scan.v1",
+  "date": "2026-09-01",
+  "discoveries": [
+    {
+      "candidate": "poolside.laguna-xs-2.1-local",
+      "kind": "MODEL_LOCAL_AVAILABILITY",
+      "publicEvidence": [
+        "https://ollama.com/library?c=code",
+        "https://huggingface.co/poolside/Laguna-XS-2.1-NVFP4"
+      ],
+      "finding": "Official local-ready 33B-A3B agentic coding model, but the same Laguna XS 2.1 model family is already present in the Forge roster as nvidia.laguna-xs-2.1.",
+      "newAgainstRoster": false,
+      "admitted": false
+    },
+    {
+      "candidate": "ollama.claude-desktop-gateway",
+      "kind": "BUILDER_INFRASTRUCTURE",
+      "publicEvidence": ["https://ollama.com/blog/claude-desktop"],
+      "finding": "New local-model gateway integration released 2026-08-25; infrastructure signal only, not a new builder candidate and therefore no admission gate run.",
+      "newAgainstRoster": true,
+      "admitted": false
+    }
+  ],
+  "rosterChanged": false,
+  "authorityGranted": false,
+  "automaticPaidUsage": false
+}

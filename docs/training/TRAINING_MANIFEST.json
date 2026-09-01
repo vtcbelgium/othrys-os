@@ -2,7 +2,7 @@
   "schema": "othrys.os.training-manifest.v1",
   "missionId": "V2-011K",
   "mode": "TRAINING",
-  "currentLevel": 2,
+  "currentLevel": 3,
   "levelLaw": "Levels execute in order. Additions are allowed but never silently reorder completed currency.",
   "currencyLaw": "Level 1 jobs are fast-moving polished currency: small, deterministic, reusable, independently tested and cheap to repeat.",
   "cycleLaw": "INTAKE -> ATLAS/MNEMOSYNE STOCK CHECK -> PLAN -> BUILD/REUSE -> TALOS -> REPEAT/FAULT -> BLOCK DISPOSITION -> INDEX -> LESSON",
@@ -28,7 +28,7 @@
       "level": 3,
       "name": "Small Applications",
       "goal": "Complete single-purpose apps, static sites, extensions and local-first tools.",
-      "status": "LOCKED",
+      "status": "ACTIVE",
       "entryGate": "Level 2 graduation receipt",
       "authorityGranted": false
     },
@@ -1925,5 +1925,640 @@
     "requiredBeforeLevel3": true,
     "grantsAuthority": false,
     "automaticLevelAdvance": false
+  },
+  "level3": {
+    "status": "ACTIVE",
+    "targetJobs": 24,
+    "completedJobs": 0,
+    "jobs": [
+      {
+        "id": "L3-001",
+        "key": "static-info-page",
+        "family": "web",
+        "title": "Static information page",
+        "contract": "semantic HTML + CSS -> responsive static page",
+        "sequence": 1,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L1-013 html-escape",
+          "L1-015 metadata-check"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-002",
+        "key": "responsive-landing",
+        "family": "web",
+        "title": "Responsive landing page",
+        "contract": "content + layout rules -> responsive landing page",
+        "sequence": 2,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L1-038 color-parse",
+          "L1-015 metadata-check"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-003",
+        "key": "validated-form-app",
+        "family": "web",
+        "title": "Validated form app",
+        "contract": "form schema + input -> accessible validated local form",
+        "sequence": 3,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L1-028 schema-check",
+          "L1-036 email-normalize",
+          "L1-037 phone-normalize"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-004",
+        "key": "searchable-table-app",
+        "family": "web",
+        "title": "Searchable table app",
+        "contract": "local records -> searchable sortable paginated table UI",
+        "sequence": 4,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-018 search-filter",
+          "L2-019 sort-page"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-005",
+        "key": "settings-panel-app",
+        "family": "local-app",
+        "title": "Settings panel app",
+        "contract": "settings Block -> durable responsive settings UI",
+        "sequence": 5,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-002 settings-store"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-006",
+        "key": "todo-dashboard",
+        "family": "local-app",
+        "title": "Todo dashboard",
+        "contract": "todo Block -> complete local task dashboard",
+        "sequence": 6,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-003 todo-store",
+          "L2-020 dashboard-summary"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-007",
+        "key": "habit-dashboard",
+        "family": "local-app",
+        "title": "Habit dashboard",
+        "contract": "habit Block -> streak/history application",
+        "sequence": 7,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-010 habit-tracker",
+          "L2-020 dashboard-summary"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-008",
+        "key": "time-tracker-app",
+        "family": "local-app",
+        "title": "Time tracker app",
+        "contract": "time ledger Block -> start/stop dashboard application",
+        "sequence": 8,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-011 time-tracker",
+          "L2-020 dashboard-summary"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-009",
+        "key": "expense-dashboard",
+        "family": "local-app",
+        "title": "Expense dashboard",
+        "contract": "expense Block -> local expense entry + summary application",
+        "sequence": 9,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-012 expense-tracker",
+          "L2-020 dashboard-summary"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-010",
+        "key": "notes-app",
+        "family": "local-app",
+        "title": "Notes application",
+        "contract": "notes + tag Blocks -> searchable tagged notes application",
+        "sequence": 10,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-004 notes-store",
+          "L2-008 tag-index",
+          "L2-018 search-filter"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-011",
+        "key": "multi-list-app",
+        "family": "local-app",
+        "title": "Multi-list application",
+        "contract": "multi-list Block -> grouped CRUD application",
+        "sequence": 11,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-023 multi-list"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-012",
+        "key": "import-export-console",
+        "family": "local-app",
+        "title": "Import/export console",
+        "contract": "state-transfer Block -> operator-visible import/export application",
+        "sequence": 12,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-013 state-transfer"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-013",
+        "key": "backup-restore-console",
+        "family": "local-app",
+        "title": "Backup/restore console",
+        "contract": "backup Block -> local backup/restore application",
+        "sequence": 13,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-014 backup-restore"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-014",
+        "key": "activity-dashboard",
+        "family": "local-app",
+        "title": "Activity dashboard",
+        "contract": "activity-log Block -> bounded durable activity feed UI",
+        "sequence": 14,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-021 activity-log",
+          "L2-020 dashboard-summary"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-015",
+        "key": "preference-profile-app",
+        "family": "local-app",
+        "title": "Preference profile app",
+        "contract": "preference-profile Block -> validated profile editor",
+        "sequence": 15,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-022 preference-profile"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-016",
+        "key": "desk-tool-ui",
+        "family": "composition",
+        "title": "Desk tool UI",
+        "contract": "desk-tool composition -> complete local-first desk application",
+        "sequence": 16,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-024 desk-tool"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-017",
+        "key": "extension-popup",
+        "family": "extension",
+        "title": "Browser extension popup",
+        "contract": "bounded local capability -> MV3 popup application",
+        "sequence": 17,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L1-031 checklist",
+          "L2-002 settings-store"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable",
+          "MV3 manifest",
+          "minimum permissions",
+          "no remote code"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-018",
+        "key": "extension-options",
+        "family": "extension",
+        "title": "Browser extension options",
+        "contract": "MV3 extension + settings -> durable options application",
+        "sequence": 18,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-002 settings-store"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable",
+          "MV3 manifest",
+          "minimum permissions",
+          "no remote code"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-019",
+        "key": "extension-content-script",
+        "family": "extension",
+        "title": "Bounded content-script tool",
+        "contract": "explicit page transform -> permission-minimal MV3 content tool",
+        "sequence": 19,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L1-013 html-escape",
+          "L1-028 schema-check"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable",
+          "MV3 manifest",
+          "minimum permissions",
+          "no remote code"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-020",
+        "key": "offline-app-shell",
+        "family": "pwa",
+        "title": "Offline application shell",
+        "contract": "static local app -> installable offline-first shell",
+        "sequence": 20,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L1-030 idempotency-key",
+          "L2-013 state-transfer"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-021",
+        "key": "local-file-tool",
+        "family": "local-app",
+        "title": "Local file utility",
+        "contract": "user-selected local file -> bounded inspect/transform/download UI",
+        "sequence": 21,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L1-021 checksum",
+          "L1-022 filename-sanitize",
+          "L1-023 extension-classifier"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-022",
+        "key": "multi-view-app",
+        "family": "composition",
+        "title": "Multi-view composed app",
+        "contract": "proven local Blocks -> routed multi-view application",
+        "sequence": 22,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L2-024 desk-tool",
+          "L2-021 activity-log"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-023",
+        "key": "polish-accessibility",
+        "family": "quality",
+        "title": "Application polish pass",
+        "contract": "working app -> keyboard/mobile/a11y/performance verified app",
+        "sequence": 23,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "L3 prior completed app under test; no new product capability"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      },
+      {
+        "id": "L3-024",
+        "key": "local-first-capstone",
+        "family": "composition",
+        "title": "Local-first capstone",
+        "contract": "multiple proven Blocks -> packaged single-purpose application",
+        "sequence": 24,
+        "status": "QUEUED",
+        "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+        "authorityGranted": false,
+        "sourceStock": [
+          "multiple proven Level 2 primitives",
+          "at least one completed earlier Level 3 app pattern"
+        ],
+        "executionStarted": false,
+        "automaticAdmission": false,
+        "qualityGates": [
+          "contract tests",
+          "Talos visible/behavior proof",
+          "failure preservation",
+          "learning receipt",
+          "responsive surface where applicable",
+          "keyboard/a11y smoke where applicable"
+        ],
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+      }
+    ]
   }
 }
