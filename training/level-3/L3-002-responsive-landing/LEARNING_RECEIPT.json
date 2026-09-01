@@ -1,0 +1,90 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "level": 3,
+  "jobId": "L3-002",
+  "key": "responsive-landing",
+  "title": "Responsive landing page",
+  "status": "COMPLETE",
+  "contract": "content + layout rules -> responsive landing page",
+  "sourceStock": [
+    "L1-038 color-parse",
+    "L1-015 metadata-check"
+  ],
+  "sourceDisposition": "ADAPT_LEVEL1_STOCK_TO_APPLICATION_SURFACE",
+  "builderAttempt": {
+    "builder": "local.qwen2.5-coder-7b",
+    "ok": false,
+    "reason": "NO_ATTEMPT_MUTATION",
+    "changedFiles": []
+  },
+  "operatorRecovery": {
+    "used": true,
+    "reason": "governed output did not satisfy full deterministic + browser-visible Talos gate"
+  },
+  "talos": {
+    "status": "PASS",
+    "schema": "othrys.talos.level3-app-proof.v1",
+    "checks": [
+      {
+        "name": "surface-file",
+        "ok": true,
+        "detail": "HTML surface present"
+      },
+      {
+        "name": "no-remote-assets",
+        "ok": true,
+        "detail": "no remote HTML assets"
+      },
+      {
+        "name": "no-network-js",
+        "ok": true,
+        "detail": "no remote/network runtime"
+      },
+      {
+        "name": "no-secret-shape",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "semantic-main",
+        "ok": true,
+        "detail": "main landmark"
+      },
+      {
+        "name": "responsive-css",
+        "ok": true,
+        "detail": "responsive rule"
+      },
+      {
+        "name": "desktop-visible",
+        "ok": true,
+        "detail": "body visible 1280x800"
+      },
+      {
+        "name": "no-page-errors",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "keyboard-focus",
+        "ok": true,
+        "detail": "A"
+      },
+      {
+        "name": "mobile-no-horizontal-overflow",
+        "ok": true,
+        "detail": "390px viewport"
+      }
+    ]
+  },
+  "finalTrainingDisposition": "APPLICATION_PATTERN",
+  "lessons": [
+    "governed builder failure remained explicit: NO_ATTEMPT_MUTATION",
+    "deterministic bounded operator recovery completed the application only after governed output failed the application gate",
+    "application-visible proof is stronger than worker ok:true",
+    "Level 3 keeps remote services and authority outside the application boundary"
+  ],
+  "authorityGranted": false,
+  "automaticAdmission": false,
+  "promotionAuthorityGranted": false
+}

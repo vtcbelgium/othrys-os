@@ -1,0 +1,42 @@
+{
+  "model": "granite4.2:3b",
+  "rows": [
+    {
+      "eventId": "PROTOCOL",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 3689,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "detail": "{\"status\":\"ok\",\"value\":7}"
+    },
+    {
+      "eventId": "REPAIR",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 284,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "detail": "const clamp=(n,min,max)=>Math.min(max,Math.max(min,n));"
+    },
+    {
+      "eventId": "REPO",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 109,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "detail": "src/parser.mjs"
+    },
+    {
+      "eventId": "TOOLS",
+      "talosPass": true,
+      "protocolPass": true,
+      "latencyMs": 587,
+      "scopeViolations": 0,
+      "repairs": 0,
+      "detail": "[{'id': 'g8BinZsg0FI0ZeDN3E7FQSHmuNgVKPtd', 'function': {'index': 0, 'name': 'write_file', 'arguments': {'path': 'candidate.txt', 'content': 'granite-ok'}}}]"
+    }
+  ],
+  "passed": 4
+}

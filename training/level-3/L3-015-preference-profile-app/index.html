@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preference Profile Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header role="banner">
+        <h1>Preference Profile Editor</h1>
+        <p class="subtitle">Local-only application. Data stored in your browser.</p>
+    </header>
+
+    <main role="main">
+        <section id="profile-form" aria-labelledby="form-heading">
+            <h2 id="form-heading">Edit Your Profile</h2>
+            <form id="preference-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="theme">Preferred Theme</label>
+                    <select id="theme" name="theme">
+                        <option value="light">Light Mode</option>
+                        <option value="dark">Dark Mode</option>
+                        <option value="system">System Default</option>
+                    </select>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label for="notifications">Enable Notifications</label>
+                    <input type="checkbox" id="notifications" name="notifications">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label for="newsletter">Subscribe to Newsletter</label>
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                </div>
+
+                <div class="actions">
+                    <button type="submit" id="save-btn">Save Profile</button>
+                    <button type="reset" id="reset-btn">Reset Form</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="status-area" aria-live="polite" class="status-area">
+            <p id="status-message">Ready to save your preferences.</p>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2023 Preference Profile App. All data remains local.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

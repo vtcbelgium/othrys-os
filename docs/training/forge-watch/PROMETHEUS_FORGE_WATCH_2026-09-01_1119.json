@@ -1,0 +1,20 @@
+{
+  "schema": "othrys.prometheus.forge-watch-scan.v1",
+  "date": "2026-09-01",
+  "candidate": "local.granite4.2-3b",
+  "model": "granite4.2:3b",
+  "sources": ["https://huggingface.co/ibm-granite/granite-4.2-3b", "https://ollama.com/library/granite4.2"],
+  "newAgainstRoster": true,
+  "license": "Apache-2.0",
+  "cost": "ZERO/local",
+  "secretBoundary": "PASS_LOCAL_NO_PROVIDER_SECRET",
+  "availability": {"installed": true, "size": "2.2GB"},
+  "builderOlympics": {"events": 4, "passes": 4, "scopeViolations": 0},
+  "governedWorkerQualification": {"passed": false, "reason": "bounded qualification produced no result within 120 seconds and was terminated"},
+  "talosQualification": {"passed": false, "reason": "not reached because governed worker gate did not pass"},
+  "admitted": false,
+  "executionAllowed": false,
+  "authorityGranted": false,
+  "automaticPaidUsage": false,
+  "note": "Discovery and direct benchmarks do not grant admission. Candidate remains unadmitted."
+}

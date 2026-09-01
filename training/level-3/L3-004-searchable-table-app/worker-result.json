@@ -1,0 +1,69 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "L3-004",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.ornith-1.5-9b",
+  "ok": false,
+  "reason": "NO_ATTEMPT_MUTATION",
+  "started_at": 1788252625.697094,
+  "completed_at": 1788252638.1658833,
+  "duration_sec": 12.468789339065552,
+  "allowed_paths": [
+    "training/level-3/L3-004-searchable-table-app/index.html",
+    "training/level-3/L3-004-searchable-table-app/styles.css",
+    "training/level-3/L3-004-searchable-table-app/app.js"
+  ],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "diff": "",
+  "git_status": "",
+  "summary": "",
+  "runtime_evidence": {
+    "observed_diff": "",
+    "git_status": "",
+    "tool_trace": [
+      "find_files: training/level-3/L3-001-static-info-page/attempt-1-worker-request.json\ntraining/level-3/L3-001-static-info-page/attempt-1-worker-result.json\ntraining/level-3/L3-001-static-info-page/attempt-2-worker-r"
+    ],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.ornith-1.5-9b",
+    "model": "ornith-1.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6340",
+      "utilization_pct": "0",
+      "temperature_c": "58",
+      "power_w": "11.72"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6302",
+      "utilization_pct": "23",
+      "temperature_c": "62",
+      "power_w": "58.68"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nornith-1.5:9b    e5df7dcdd8a2    5.5 GB    100% GPU     4096       29 minutes from now"
+  }
+}

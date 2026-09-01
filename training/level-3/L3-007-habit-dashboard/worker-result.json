@@ -1,0 +1,72 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "L3-007",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.ornith-1.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788252893.2791064,
+  "completed_at": 1788252955.0530212,
+  "duration_sec": 61.77391481399536,
+  "allowed_paths": [
+    "training/level-3/L3-007-habit-dashboard/index.html",
+    "training/level-3/L3-007-habit-dashboard/styles.css",
+    "training/level-3/L3-007-habit-dashboard/app.js"
+  ],
+  "changed_files": [
+    "training/level-3/L3-007-habit-dashboard/index.html"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-3/L3-007-habit-dashboard/index.html\n+++ b/training/level-3/L3-007-habit-dashboard/index.html\n@@ -0,0 +1,83 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+  <meta charset=\"UTF-8\" />\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n+  <title>Habit Dashboard</title>\n+  <link rel=\"stylesheet\" href=\"styles.css\" />\n+</head>\n+<body>\n+  <header class=\"app-header\">\n+    <h1 class=\"app-title\">Habit Dashboard</h1>\n+    <button id=\"add-habit-btn\" class=\"btn btn-primary\" type=\"button\">+ Add Habit</button>\n+  </header>\n+\n+  <main class=\"app-main\">\n+    <section id=\"habit-list\" class=\"habit-list\" aria-live=\"polite\" aria-label=\"Your habits\">\n+      <p id=\"empty-state\" class=\"empty-state\">No habits yet. Add one to get started.</p>\n+    </section>\n+\n+    <section id=\"habit-detail\" class=\"habit-detail\" hidden>\n+      <div class=\"detail-header\">\n+        <input\n+          id=\"habit-name\"\n+          class=\"habit-name-input\"\n+          type=\"text\"\n+          autocomplete=\"off\"\n+          aria-label=\"Habit name\"\n+          spellcheck=\"false\"\n+        />\n+        <div class=\"detail-actions\">\n+          <button id=\"delete-habit-btn\" class=\"btn btn-danger\" type=\"button\">Delete</button>\n+        </div>\n+      </div>\n+\n+      <div class=\"detail-body\">\n+        <div class=\"streak-row\">\n+          <span class=\"streak-label\">Current streak</span>\n+          <span id=\"streak-value\" class=\"streak-value\">0 days</span>\n+        </div>\n+\n+        <div class=\"history-row\">\n+          <label for=\"history-toggle\" class=\"history-toggle-label\">History</label>\n+          <button id=\"history-toggle\" class=\"history-toggle\" type=\"button\" aria-expanded=\"false\" aria-controls=\"history-panel\">\n+            <span class=\"history-toggle-text\">Show</span>\n+          </button>\n+          <div id=\"history-panel\" class=\"history-panel\" hidden>\n+            <ul id=\"history-list\" class=\"history-list\" aria-label=\"Daily history\"></ul>\n+          </div>\n+        </div>\n+\n+        <div class=\"action-row\">\n+          <button id=\"log-today-btn\" class=\"btn btn-primary\" type=\"button\">Log today</button>\n+          <button id=\"skip-today-btn\" class=\"btn\" type=\"button\">Skip today</button>\n+        </div>\n+      </div>\n+    </section>\n+  </main>\n+\n+  <dialog id=\"add-habit-dialog\" class=\"add-habit-dialog\">\n+    <form id=\"add-habit-form\" class=\"dialog-form\">\n+      <h2 class=\"dialog-title\">Add a habit</h2>\n+      <label class=\"form-label\" for=\"new-habit-name\">Habit name</label>\n+      <input\n+        id=\"new-habit-name\"\n+        class=\"form-input\"\n+        type=\"text\"\n+        autocomplete=\"off\"\n+        required\n+        maxlength=\"60\"\n+        spellcheck=\"false\"\n+        aria-required=\"true\"\n+      />\n+      <p class=\"form-help\">Tip: pick something small and consistent.</p>\n+      <div class=\"dialog-actions\">\n+        <button id=\"cancel-add-btn\" class=\"btn\" type=\"button\">Cancel</button>\n+        <button id=\"confirm-add-btn\" class=\"btn btn-primary\" type=\"submit\">Add</button>\n+      </div>\n+    </form>\n+  </dialog>\n+\n+  <script src=\"app.js\"></script>\n+</body>\n+</html>",
+  "git_status": "training/level-3/L3-007-habit-dashboard/index.html",
+  "summary": "tool turn limit (36) reached; proposed diff collected from workspace mutations",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-3/L3-007-habit-dashboard/index.html\n+++ b/training/level-3/L3-007-habit-dashboard/index.html\n@@ -0,0 +1,83 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+  <meta charset=\"UTF-8\" />\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n+  <title>Habit Dashboard</title>\n+  <link rel=\"stylesheet\" href=\"styles.css\" />\n+</head>\n+<body>\n+  <header class=\"app-header\">\n+    <h1 class=\"app-title\">Habit Dashboard</h1>\n+    <button id=\"add-habit-btn\" class=\"btn btn-primary\" type=\"button\">+ Add Habit</button>\n+  </header>\n+\n+  <main class=\"app-main\">\n+    <section id=\"habit-list\" class=\"habit-list\" aria-live=\"polite\" aria-label=\"Your habits\">\n+      <p id=\"empty-state\" class=\"empty-state\">No habits yet. Add one to get started.</p>\n+    </section>\n+\n+    <section id=\"habit-detail\" class=\"habit-detail\" hidden>\n+      <div class=\"detail-header\">\n+        <input\n+          id=\"habit-name\"\n+          class=\"habit-name-input\"\n+          type=\"text\"\n+          autocomplete=\"off\"\n+          aria-label=\"Habit name\"\n+          spellcheck=\"false\"\n+        />\n+        <div class=\"detail-actions\">\n+          <button id=\"delete-habit-btn\" class=\"btn btn-danger\" type=\"button\">Delete</button>\n+        </div>\n+      </div>\n+\n+      <div class=\"detail-body\">\n+        <div class=\"streak-row\">\n+          <span class=\"streak-label\">Current streak</span>\n+          <span id=\"streak-value\" class=\"streak-value\">0 days</span>\n+        </div>\n+\n+        <div class=\"history-row\">\n+          <label for=\"history-toggle\" class=\"history-toggle-label\">History</label>\n+          <button id=\"history-toggle\" class=\"history-toggle\" type=\"button\" aria-expanded=\"false\" aria-controls=\"history-panel\">\n+            <span class=\"history-toggle-text\">Show</span>\n+          </button>\n+          <div id=\"history-panel\" class=\"history-panel\" hidden>\n+            <ul id=\"history-list\" class=\"history-list\" aria-label=\"Daily history\"></ul>\n+          </div>\n+        </div>\n+\n+        <div class=\"action-row\">\n+          <button id=\"log-today-btn\" class=\"btn btn-primary\" type=\"button\">Log today</button>\n+          <button id=\"skip-today-btn\" class=\"btn\" type=\"button\">Skip today</button>\n+        </div>\n+      </div>\n+    </section>\n+  </main>\n+\n+  <dialog id=\"add-habit-dialog\" class=\"add-habit-dialog\">\n+    <form id=\"add-habit-form\" class=\"dialog-form\">\n+      <h2 class=\"dialog-title\">Add a habit</h2>\n+      <label class=\"form-label\" for=\"new-habit-name\">Habit name</label>\n+      <input\n+        id=\"new-habit-name\"\n+        class=\"form-input\"\n+        type=\"text\"\n+        autocomplete=\"off\"\n+        required\n+        maxlength=\"60\"\n+        spellcheck=\"false\"\n+        aria-required=\"true\"\n+      />\n+      <p class=\"form-help\">Tip: pick something small and consistent.</p>\n+      <div class=\"dialog-actions\">\n+        <button id=\"cancel-add-btn\" class=\"btn\" type=\"button\">Cancel</button>\n+        <button id=\"confirm-add-btn\" class=\"btn btn-primary\" type=\"submit\">Add</button>\n+      </div>\n+    </form>\n+  </dialog>\n+\n+  <script src=\"app.js\"></script>\n+</body>\n+</html>",
+    "git_status": "training/level-3/L3-007-habit-dashboard/index.html",
+    "tool_trace": [
+      "find_files: training/level-3/L3-007-habit-dashboard/worker-request.json",
+      "write_file: wrote 2885 chars to training/level-3/L3-007-habit-dashboard/index.html"
+    ],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.ornith-1.5-9b",
+    "model": "ornith-1.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6340",
+      "utilization_pct": "0",
+      "temperature_c": "59",
+      "power_w": "42.91"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6298",
+      "utilization_pct": "81",
+      "temperature_c": "66",
+      "power_w": "109.61"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nornith-1.5:9b    e5df7dcdd8a2    5.5 GB    100% GPU     4096       29 minutes from now"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "level": 3,
+  "jobId": "L3-021",
+  "key": "local-file-tool",
+  "title": "Local file utility",
+  "status": "COMPLETE",
+  "contract": "user-selected local file -> bounded inspect/transform/download UI",
+  "sourceStock": [
+    "L1-021 checksum",
+    "L1-022 filename-sanitize",
+    "L1-023 extension-classifier"
+  ],
+  "sourceDisposition": "COMPOSE_PRIOR_LEVEL3_APPLICATION_PATTERNS",
+  "builderAttempt": {
+    "builder": "local.qwen3.5-9b",
+    "ok": true,
+    "reason": "",
+    "changedFiles": [
+      "training/level-3/L3-021-local-file-tool/app.js",
+      "training/level-3/L3-021-local-file-tool/index.html",
+      "training/level-3/L3-021-local-file-tool/styles.css"
+    ]
+  },
+  "operatorRecovery": {
+    "used": true,
+    "reason": "governed output did not satisfy full deterministic + browser-visible Talos gate"
+  },
+  "talos": {
+    "status": "PASS",
+    "schema": "othrys.talos.level3-app-proof.v1",
+    "checks": [
+      {
+        "name": "surface-file",
+        "ok": true,
+        "detail": "HTML surface present"
+      },
+      {
+        "name": "no-remote-assets",
+        "ok": true,
+        "detail": "no remote HTML assets"
+      },
+      {
+        "name": "no-network-js",
+        "ok": true,
+        "detail": "no remote/network runtime"
+      },
+      {
+        "name": "no-secret-shape",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "semantic-main",
+        "ok": true,
+        "detail": "main landmark"
+      },
+      {
+        "name": "responsive-css",
+        "ok": true,
+        "detail": "responsive rule"
+      },
+      {
+        "name": "file-contract",
+        "ok": true,
+        "detail": "file input + local transform"
+      },
+      {
+        "name": "desktop-visible",
+        "ok": true,
+        "detail": "body visible 1280x800"
+      },
+      {
+        "name": "no-page-errors",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "keyboard-focus",
+        "ok": true,
+        "detail": "A"
+      },
+      {
+        "name": "file-interaction",
+        "ok": true,
+        "detail": "local file accepted"
+      },
+      {
+        "name": "mobile-no-horizontal-overflow",
+        "ok": true,
+        "detail": "390px viewport"
+      }
+    ]
+  },
+  "finalTrainingDisposition": "APPLICATION_PATTERN",
+  "lessons": [
+    "deterministic bounded operator recovery completed the application only after governed output failed the application gate",
+    "application-visible proof is stronger than worker ok:true",
+    "Level 3 keeps remote services and authority outside the application boundary"
+  ],
+  "authorityGranted": false,
+  "automaticAdmission": false,
+  "promotionAuthorityGranted": false
+}

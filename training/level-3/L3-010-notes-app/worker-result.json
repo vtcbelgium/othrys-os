@@ -1,0 +1,72 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "L3-010",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.ornith-1.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788253220.6469874,
+  "completed_at": 1788253244.213534,
+  "duration_sec": 23.56654667854309,
+  "allowed_paths": [
+    "training/level-3/L3-010-notes-app/index.html",
+    "training/level-3/L3-010-notes-app/styles.css",
+    "training/level-3/L3-010-notes-app/app.js"
+  ],
+  "changed_files": [
+    "training/level-3/L3-010-notes-app/index.html"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-3/L3-010-notes-app/index.html\n+++ b/training/level-3/L3-010-notes-app/index.html\n@@ -0,0 +1,80 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+  <meta charset=\"UTF-8\">\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+  <title>Notes</title>\n+  <link rel=\"stylesheet\" href=\"styles.css\">\n+</head>\n+<body>\n+  <header class=\"app-header\">\n+    <h1 class=\"app-title\">Notes</h1>\n+    <div class=\"search-box\">\n+      <input\n+        type=\"search\"\n+        id=\"search-input\"\n+        class=\"search-input\"\n+        placeholder=\"Search notes and tags…\"\n+        autocomplete=\"off\"\n+        aria-label=\"Search notes and tags\"\n+      >\n+    </div>\n+  </header>\n+\n+  <main class=\"app-main\">\n+    <section class=\"composer\" aria-labelledby=\"composer-heading\">\n+      <h2 id=\"composer-heading\" class=\"sr-only\">New note</h2>\n+      <form id=\"note-form\" class=\"note-form\" autocomplete=\"off\">\n+        <label class=\"field\">\n+          <span class=\"field-label\">Title</span>\n+          <input\n+            type=\"text\"\n+            id=\"note-title\"\n+            class=\"field-input\"\n+            placeholder=\"Note title\"\n+            required\n+            aria-required=\"true\"\n+          >\n+        </label>\n+\n+        <label class=\"field\">\n+          <span class=\"field-label\">Content</span>\n+          <textarea\n+            id=\"note-content\"\n+            class=\"field-input note-content\"\n+            placeholder=\"Write something…\"\n+            rows=\"4\"\n+            required\n+            aria-required=\"true\"\n+          ></textarea>\n+        </label>\n+\n+        <fieldset class=\"tags-field\">\n+          <legend class=\"field-label\">Tags</legend>\n+          <input\n+            type=\"text\"\n+            id=\"tag-input\"\n+            class=\"field-input tag-input\"\n+            placeholder=\"Add a tag and press Enter\"\n+            aria-label=\"Add a tag\"\n+            autocomplete=\"off\"\n+          >\n+          <ul id=\"tag-suggestions\" class=\"tag-suggestions\" aria-label=\"Available tags\"></ul>\n+        </fieldset>\n+\n+        <div class=\"form-actions\">\n+          <button type=\"submit\" class=\"btn btn-primary\">Save note</button>\n+          <button type=\"reset\" class=\"btn btn-secondary\">Clear</button>\n+        </div>\n+      </form>\n+    </section>\n+\n+    <section class=\"note-list\" aria-labelledby=\"list-heading\">\n+      <h2 id=\"list-heading\" class=\"list-heading\">Notes</h2>\n+      <ul id=\"note-list\" class=\"note-list-items\" aria-live=\"polite\"></ul>\n+    </section>\n+  </main>\n+\n+  <script src=\"app.js\"></script>\n+</body>\n+</html>",
+  "git_status": "training/level-3/L3-010-notes-app/index.html",
+  "summary": "tool turn limit (36) reached; proposed diff collected from workspace mutations",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-3/L3-010-notes-app/index.html\n+++ b/training/level-3/L3-010-notes-app/index.html\n@@ -0,0 +1,80 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+  <meta charset=\"UTF-8\">\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+  <title>Notes</title>\n+  <link rel=\"stylesheet\" href=\"styles.css\">\n+</head>\n+<body>\n+  <header class=\"app-header\">\n+    <h1 class=\"app-title\">Notes</h1>\n+    <div class=\"search-box\">\n+      <input\n+        type=\"search\"\n+        id=\"search-input\"\n+        class=\"search-input\"\n+        placeholder=\"Search notes and tags…\"\n+        autocomplete=\"off\"\n+        aria-label=\"Search notes and tags\"\n+      >\n+    </div>\n+  </header>\n+\n+  <main class=\"app-main\">\n+    <section class=\"composer\" aria-labelledby=\"composer-heading\">\n+      <h2 id=\"composer-heading\" class=\"sr-only\">New note</h2>\n+      <form id=\"note-form\" class=\"note-form\" autocomplete=\"off\">\n+        <label class=\"field\">\n+          <span class=\"field-label\">Title</span>\n+          <input\n+            type=\"text\"\n+            id=\"note-title\"\n+            class=\"field-input\"\n+            placeholder=\"Note title\"\n+            required\n+            aria-required=\"true\"\n+          >\n+        </label>\n+\n+        <label class=\"field\">\n+          <span class=\"field-label\">Content</span>\n+          <textarea\n+            id=\"note-content\"\n+            class=\"field-input note-content\"\n+            placeholder=\"Write something…\"\n+            rows=\"4\"\n+            required\n+            aria-required=\"true\"\n+          ></textarea>\n+        </label>\n+\n+        <fieldset class=\"tags-field\">\n+          <legend class=\"field-label\">Tags</legend>\n+          <input\n+            type=\"text\"\n+            id=\"tag-input\"\n+            class=\"field-input tag-input\"\n+            placeholder=\"Add a tag and press Enter\"\n+            aria-label=\"Add a tag\"\n+            autocomplete=\"off\"\n+          >\n+          <ul id=\"tag-suggestions\" class=\"tag-suggestions\" aria-label=\"Available tags\"></ul>\n+        </fieldset>\n+\n+        <div class=\"form-actions\">\n+          <button type=\"submit\" class=\"btn btn-primary\">Save note</button>\n+          <button type=\"reset\" class=\"btn btn-secondary\">Clear</button>\n+        </div>\n+      </form>\n+    </section>\n+\n+    <section class=\"note-list\" aria-labelledby=\"list-heading\">\n+      <h2 id=\"list-heading\" class=\"list-heading\">Notes</h2>\n+      <ul id=\"note-list\" class=\"note-list-items\" aria-live=\"polite\"></ul>\n+    </section>\n+  </main>\n+\n+  <script src=\"app.js\"></script>\n+</body>\n+</html>",
+    "git_status": "training/level-3/L3-010-notes-app/index.html",
+    "tool_trace": [
+      "find_files: No matching files.",
+      "write_file: wrote 2350 chars to training/level-3/L3-010-notes-app/index.html"
+    ],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.ornith-1.5-9b",
+    "model": "ornith-1.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6340",
+      "utilization_pct": "0",
+      "temperature_c": "59",
+      "power_w": "16.23"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6298",
+      "utilization_pct": "0",
+      "temperature_c": "61",
+      "power_w": "11.82"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nornith-1.5:9b    e5df7dcdd8a2    5.5 GB    100% GPU     4096       29 minutes from now"
+  }
+}

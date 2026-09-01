@@ -1,0 +1,71 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "L3-013",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.ornith-1.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788253495.0853143,
+  "completed_at": 1788253523.7745552,
+  "duration_sec": 28.6892409324646,
+  "allowed_paths": [
+    "training/level-3/L3-013-backup-restore-console/index.html",
+    "training/level-3/L3-013-backup-restore-console/styles.css",
+    "training/level-3/L3-013-backup-restore-console/app.js"
+  ],
+  "changed_files": [
+    "training/level-3/L3-013-backup-restore-console/index.html"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-3/L3-013-backup-restore-console/index.html\n+++ b/training/level-3/L3-013-backup-restore-console/index.html\n@@ -0,0 +1,93 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+  <meta charset=\"UTF-8\">\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+  <title>Backup/Restore Console</title>\n+  <link rel=\"stylesheet\" href=\"styles.css\">\n+</head>\n+<body>\n+  <a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n+\n+  <header class=\"app-header\">\n+    <h1 class=\"app-title\">Backup/Restore Console</h1>\n+    <p class=\"app-subtitle\">Local training application &mdash; data stays in this browser</p>\n+  </header>\n+\n+  <main id=\"main\" class=\"app-main\">\n+    <section class=\"panel\" aria-labelledby=\"capture-heading\">\n+      <h2 id=\"capture-heading\">1. Capture a block</h2>\n+      <form id=\"capture-form\" class=\"capture-form\" autocomplete=\"off\">\n+        <label class=\"field\">\n+          <span class=\"field-label\">Block name</span>\n+          <input\n+            id=\"block-name\"\n+            type=\"text\"\n+            class=\"field-input\"\n+            required\n+            maxlength=\"120\"\n+            placeholder=\"e.g. level-3-chapter-1\"\n+            aria-describedby=\"block-name-help\"\n+          >\n+          <span id=\"block-name-help\" class=\"field-help\">A short label for this block.</span>\n+        </label>\n+\n+        <label class=\"field\">\n+          <span class=\"field-label\">Content</span>\n+          <textarea\n+            id=\"block-content\"\n+            class=\"field-input block-content\"\n+            rows=\"6\"\n+            required\n+            aria-describedby=\"block-content-help\"\n+          >Welcome to your first backup. Type or paste the content you want to protect.</textarea>\n+          <span id=\"block-content-help\" class=\"field-help\">Plain text. This is a training demo.</span>\n+        </label>\n+\n+        <div class=\"field\">\n+          <span class=\"field-label\">Tags (comma separated)</span>\n+          <input\n+            id=\"block-tags\"\n+            type=\"text\"\n+            class=\"field-input\"\n+            aria-describedby=\"block-tags-help\"\n+          >\n+          <span id=\"block-tags-help\" class=\"field-help\">e.g. notes, draft, chapter</span>\n+        </div>\n+\n+        <button id=\"capture-btn\" type=\"submit\" class=\"btn btn-primary\">Capture block</button>\n+      </form>\n+    </section>\n+\n+    <section class=\"panel\" aria-labelledby=\"inventory-heading\">\n+      <div class=\"panel-head\">\n+        <h2 id=\"inventory-heading\">Inventory</h2>\n+        <p id=\"inventory-count\" class=\"inventory-count\" aria-live=\"polite\"></p>\n+      </div>\n+\n+      <div class=\"toolbar\">\n+        <label class=\"search\">\n+          <span class=\"search-label\">Search</span>\n+          <input id=\"search-input\" type=\"search\" class=\"search-input\" placeholder=\"Filter blocks…\" aria-label=\"Search blocks\">\n+        </label>\n+        <div class=\"toolbar-actions\">\n+          <button id=\"export-btn\" type=\"button\" class=\"btn btn-secondary\" disabled>Export JSON</button>\n+          <button id=\"import-btn\" type=\"button\" class=\"btn btn-secondary\" disabled>Import JSON</button>\n+          <input id=\"import-file\" type=\"file\" accept=\"application/json\" class=\"visually-hidden\" aria-hidden=\"true\">\n+        </div>\n+      </div>\n+\n+      <ul id=\"block-list\" class=\"block-list\" aria-labelledby=\"inventory-heading\">\n+        <li id=\"empty-state\" class=\"empty-state\" hidden>\n+          <p>No blocks captured yet.</p>\n+          <p class=\"muted\">Use the form above to capture your first block.</p>\n+        </li>\n+      </ul>\n+    </section>\n+  </main>\n+\n+  <div id=\"toast-region\" class=\"visually-hidden\" aria-live=\"assertive\" aria-atomic=\"true\"></div>\n+\n+  <script src=\"app.js\"></script>\n+</body>\n+</html>",
+  "git_status": "training/level-3/L3-013-backup-restore-console/index.html",
+  "summary": "tool turn limit (36) reached; proposed diff collected from workspace mutations",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-3/L3-013-backup-restore-console/index.html\n+++ b/training/level-3/L3-013-backup-restore-console/index.html\n@@ -0,0 +1,93 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+  <meta charset=\"UTF-8\">\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+  <title>Backup/Restore Console</title>\n+  <link rel=\"stylesheet\" href=\"styles.css\">\n+</head>\n+<body>\n+  <a class=\"skip-link\" href=\"#main\">Skip to main content</a>\n+\n+  <header class=\"app-header\">\n+    <h1 class=\"app-title\">Backup/Restore Console</h1>\n+    <p class=\"app-subtitle\">Local training application &mdash; data stays in this browser</p>\n+  </header>\n+\n+  <main id=\"main\" class=\"app-main\">\n+    <section class=\"panel\" aria-labelledby=\"capture-heading\">\n+      <h2 id=\"capture-heading\">1. Capture a block</h2>\n+      <form id=\"capture-form\" class=\"capture-form\" autocomplete=\"off\">\n+        <label class=\"field\">\n+          <span class=\"field-label\">Block name</span>\n+          <input\n+            id=\"block-name\"\n+            type=\"text\"\n+            class=\"field-input\"\n+            required\n+            maxlength=\"120\"\n+            placeholder=\"e.g. level-3-chapter-1\"\n+            aria-describedby=\"block-name-help\"\n+          >\n+          <span id=\"block-name-help\" class=\"field-help\">A short label for this block.</span>\n+        </label>\n+\n+        <label class=\"field\">\n+          <span class=\"field-label\">Content</span>\n+          <textarea\n+            id=\"block-content\"\n+            class=\"field-input block-content\"\n+            rows=\"6\"\n+            required\n+            aria-describedby=\"block-content-help\"\n+          >Welcome to your first backup. Type or paste the content you want to protect.</textarea>\n+          <span id=\"block-content-help\" class=\"field-help\">Plain text. This is a training demo.</span>\n+        </label>\n+\n+        <div class=\"field\">\n+          <span class=\"field-label\">Tags (comma separated)</span>\n+          <input\n+            id=\"block-tags\"\n+            type=\"text\"\n+            class=\"field-input\"\n+            aria-describedby=\"block-tags-help\"\n+          >\n+          <span id=\"block-tags-help\" class=\"field-help\">e.g. notes, draft, chapter</span>\n+        </div>\n+\n+        <button id=\"capture-btn\" type=\"submit\" class=\"btn btn-primary\">Capture block</button>\n+      </form>\n+    </section>\n+\n+    <section class=\"panel\" aria-labelledby=\"inventory-heading\">\n+      <div class=\"panel-head\">\n+        <h2 id=\"inventory-heading\">Inventory</h2>\n+        <p id=\"inventory-count\" class=\"inventory-count\" aria-live=\"polite\"></p>\n+      </div>\n+\n+      <div class=\"toolbar\">\n+        <label class=\"search\">\n+          <span class=\"search-label\">Search</span>\n+          <input id=\"search-input\" type=\"search\" class=\"search-input\" placeholder=\"Filter blocks…\" aria-label=\"Search blocks\">\n+        </label>\n+        <div class=\"toolbar-actions\">\n+          <button id=\"export-btn\" type=\"button\" class=\"btn btn-secondary\" disabled>Export JSON</button>\n+          <button id=\"import-btn\" type=\"button\" class=\"btn btn-secondary\" disabled>Import JSON</button>\n+          <input id=\"import-file\" type=\"file\" accept=\"application/json\" class=\"visually-hidden\" aria-hidden=\"true\">\n+        </div>\n+      </div>\n+\n+      <ul id=\"block-list\" class=\"block-list\" aria-labelledby=\"inventory-heading\">\n+        <li id=\"empty-state\" class=\"empty-state\" hidden>\n+          <p>No blocks captured yet.</p>\n+          <p class=\"muted\">Use the form above to capture your first block.</p>\n+        </li>\n+      </ul>\n+    </section>\n+  </main>\n+\n+  <div id=\"toast-region\" class=\"visually-hidden\" aria-live=\"assertive\" aria-atomic=\"true\"></div>\n+\n+  <script src=\"app.js\"></script>\n+</body>\n+</html>",
+    "git_status": "training/level-3/L3-013-backup-restore-console/index.html",
+    "tool_trace": [
+      "write_file: wrote 3482 chars to training/level-3/L3-013-backup-restore-console/index.html"
+    ],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.ornith-1.5-9b",
+    "model": "ornith-1.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6340",
+      "utilization_pct": "0",
+      "temperature_c": "59",
+      "power_w": "36.95"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3.5:9b    6488c96fa5fa    5.4 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6298",
+      "utilization_pct": "32",
+      "temperature_c": "63",
+      "power_w": "68.16"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nornith-1.5:9b    e5df7dcdd8a2    5.5 GB    100% GPU     4096       29 minutes from now"
+  }
+}

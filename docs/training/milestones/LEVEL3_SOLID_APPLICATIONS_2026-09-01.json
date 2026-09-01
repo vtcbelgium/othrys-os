@@ -1,0 +1,94 @@
+{
+    "schema":  "othrys.os.level3-solid-applications.v1",
+    "date":  "2026-09-01",
+    "status":  "SEALED_PENDING_LEVEL3_5_TRANSITION",
+    "currentLevel":  3,
+    "level3Status":  "COMPLETE",
+    "completedJobs":  24,
+    "level3_5Status":  "PLANNED_LOCKED",
+    "level4Status":  "LOCKED",
+    "verification":  {
+                         "runtime":  "385/385 PASS",
+                         "trainingSource":  "486/486 PASS",
+                         "blockContracts":  "536/536 PASS",
+                         "trainingGovernance":  "3/3 PASS"
+                     },
+    "talosIntelligence":  {
+                              "jobs":  24,
+                              "finalPassRate":  1,
+                              "operatorRecoveryRate":  0.75,
+                              "adaptationDigest":  "8034db9963c116867b02acc610caf53e299fe0e3682fe241f4e54b0430359f67",
+                              "builderEvidence":  {
+                                                      "local.qwen2.5-coder-7b":  {
+                                                                                     "jobs":  2,
+                                                                                     "firstPassRate":  0,
+                                                                                     "recoveryRate":  1,
+                                                                                     "attemptFailureRate":  1,
+                                                                                     "timeoutRate":  0,
+                                                                                     "noMutationRate":  1,
+                                                                                     "medianLatencyMs":  25456.079244613647
+                                                                                 },
+                                                      "local.qwen3.5-9b":  {
+                                                                               "jobs":  11,
+                                                                               "firstPassRate":  0.4545,
+                                                                               "recoveryRate":  0.5455,
+                                                                               "attemptFailureRate":  0,
+                                                                               "timeoutRate":  0,
+                                                                               "noMutationRate":  0,
+                                                                               "medianLatencyMs":  90486.25326156616
+                                                                           },
+                                                      "local.ornith-1.5-9b":  {
+                                                                                  "jobs":  4,
+                                                                                  "firstPassRate":  0,
+                                                                                  "recoveryRate":  1,
+                                                                                  "attemptFailureRate":  0.25,
+                                                                                  "timeoutRate":  0,
+                                                                                  "noMutationRate":  0.25,
+                                                                                  "medianLatencyMs":  26127.893805503845
+                                                                              },
+                                                      "local.gemma4-12b":  {
+                                                                               "jobs":  4,
+                                                                               "firstPassRate":  0,
+                                                                               "recoveryRate":  1,
+                                                                               "attemptFailureRate":  0,
+                                                                               "timeoutRate":  0,
+                                                                               "noMutationRate":  0,
+                                                                               "medianLatencyMs":  null
+                                                                           },
+                                                      "local.qwen3-coder-30b":  {
+                                                                                    "jobs":  3,
+                                                                                    "firstPassRate":  0.3333,
+                                                                                    "recoveryRate":  0.6667,
+                                                                                    "attemptFailureRate":  0,
+                                                                                    "timeoutRate":  0,
+                                                                                    "noMutationRate":  0,
+                                                                                    "medianLatencyMs":  70385.4911327362
+                                                                                }
+                                                  },
+                              "careSignals":  [
+                                                  {
+                                                      "subject":  "local.qwen2.5-coder-7b",
+                                                      "severity":  "DEGRADED",
+                                                      "reason":  "REPEATED_NO_MUTATION"
+                                                  },
+                                                  {
+                                                      "subject":  "local.ornith-1.5-9b",
+                                                      "severity":  "DEGRADED",
+                                                      "reason":  "REPEATED_NO_MUTATION"
+                                                  }
+                                              ],
+                              "researchQuestions":  [
+                                                        "Why does local.qwen2.5-coder-7b require operator recovery on 100% of observed jobs?",
+                                                        "Why does local.qwen3.5-9b require operator recovery on 55% of observed jobs?",
+                                                        "Why does local.ornith-1.5-9b require operator recovery on 100% of observed jobs?",
+                                                        "Why does local.gemma4-12b require operator recovery on 100% of observed jobs?",
+                                                        "Why does local.qwen3-coder-30b require operator recovery on 67% of observed jobs?"
+                                                    ]
+                          },
+    "learningLaw":  "OBSERVE -\u003e TALOS VERIFY -\u003e SYNTHESIZE -\u003e CROSS-ORGAN ADAPT -\u003e RE-VERIFY",
+    "authorityGranted":  false,
+    "automaticAdmission":  false,
+    "automaticLevelAdvance":  false,
+    "level4Unlocked":  false,
+    "conclusion":  "Level 3 is complete and independently verified. Talos now converts verified training evidence into bounded cross-organ adaptation; logging alone is insufficient."
+}

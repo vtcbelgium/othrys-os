@@ -1,0 +1,13 @@
+{
+  "schema": "othrys.os.level3-campaign-receipt.v1",
+  "status": "COMPLETE_PENDING_WHOLE_BODY_SEAL",
+  "completedJobs": 24,
+  "level3Status": "COMPLETE",
+  "currentLevel": 3,
+  "level4Status": "LOCKED",
+  "level3_5Status": "PLANNED_LOCKED",
+  "authorityGranted": false,
+  "automaticAdmission": false,
+  "automaticLevelAdvance": false,
+  "generatedAt": "2026-09-01T09:20:25Z"
+}

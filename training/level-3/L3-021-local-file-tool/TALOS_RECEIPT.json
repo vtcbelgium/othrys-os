@@ -1,0 +1,70 @@
+{
+  "schema": "othrys.talos.level3-app-proof.v1",
+  "key": "local-file-tool",
+  "family": "local-app",
+  "ok": true,
+  "checks": [
+    {
+      "name": "surface-file",
+      "ok": true,
+      "detail": "HTML surface present"
+    },
+    {
+      "name": "no-remote-assets",
+      "ok": true,
+      "detail": "no remote HTML assets"
+    },
+    {
+      "name": "no-network-js",
+      "ok": true,
+      "detail": "no remote/network runtime"
+    },
+    {
+      "name": "no-secret-shape",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "semantic-main",
+      "ok": true,
+      "detail": "main landmark"
+    },
+    {
+      "name": "responsive-css",
+      "ok": true,
+      "detail": "responsive rule"
+    },
+    {
+      "name": "file-contract",
+      "ok": true,
+      "detail": "file input + local transform"
+    },
+    {
+      "name": "desktop-visible",
+      "ok": true,
+      "detail": "body visible 1280x800"
+    },
+    {
+      "name": "no-page-errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "keyboard-focus",
+      "ok": true,
+      "detail": "A"
+    },
+    {
+      "name": "file-interaction",
+      "ok": true,
+      "detail": "local file accepted"
+    },
+    {
+      "name": "mobile-no-horizontal-overflow",
+      "ok": true,
+      "detail": "390px viewport"
+    }
+  ],
+  "authorityGranted": false,
+  "verifiedAt": "2026-09-01T09:16:41.513Z"
+}

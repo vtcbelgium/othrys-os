@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline App Shell</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%</text></svg>">
+</head>
+<body>
+    <header role="banner">
+        <h1>Offline Shell Demo</h1>
+        <p id="status-indicator" aria-live="polite">Status: Checking connectivity...</p>
+    </header>
+
+    <main role="main">
+        <section class="card">
+            <h2>Welcome</h2>
+            <p>This is a fully offline-first application. It uses local storage for state and does not require any network connection.</p>
+            <button id="toggle-theme" type="button">Toggle Theme</button>
+            <button id="clear-storage" type="button" class="danger">Clear Local Storage</button>
+        </section>
+
+        <section class="card">
+            <h2>State Management</h2>
+            <div id="state-display">
+                <p><strong>Theme:</strong> <span id="theme-value">System</span></p>
+                <p><strong>Last Updated:</strong> <span id="last-updated">Never</span></p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Notes</h2>
+            <textarea id="notes-area" rows="5" placeholder="Type your notes here..."></textarea>
+            <button id="save-notes" type="button">Save Notes</button>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>Built with Othrys Hub L3-020 | No external dependencies</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

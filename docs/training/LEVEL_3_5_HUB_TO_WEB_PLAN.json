@@ -8,7 +8,8 @@
                       "Level 3 status COMPLETE",
                       "24/24 Level 3 jobs COMPLETE",
                       "Level 3 graduation receipt PASS",
-                      "explicit operator transition"
+                      "explicit operator transition",
+                      "Talos Level 3 intelligence synthesis finalPassRate 1.0 with verified adaptation digest"
                   ],
     "exitGate":  [
                      "Web parity matrix 100% terminal",
@@ -19,7 +20,8 @@
                      "othrys-command-deck.service retired or replaced by othrys-os-gateway.service",
                      "no live Hub UI route or authority owner",
                      "whole-body tests PASS",
-                     "Level 4 still LOCKED until separate operator command"
+                     "Level 4 still LOCKED until separate operator command",
+                     "Talos re-synthesizes HubToWeb evidence and at least one downstream route/quality decision changes from verified learning"
                  ],
     "laws":  {
                  "othrysOsIsMachine":  true,
@@ -33,7 +35,10 @@
                  "automaticAdmission":  false,
                  "automaticAdvance":  false,
                  "authorityGranted":  false,
-                 "level4UnlockAllowed":  false
+                 "level4UnlockAllowed":  false,
+                 "talosIsCentralVerificationLearningNexus":  true,
+                 "loggingWithoutAdaptationIsInsufficient":  true,
+                 "verifiedLearningFeedsEveryOrgan":  true
              },
     "migration":  [
                       {
@@ -132,6 +137,11 @@
                        "id":  "3.5-G",
                        "name":  "Seal",
                        "gate":  "fresh clone/build/test plus T590 service proof and rollback receipt"
+                   },
+                   {
+                       "id":  "3.5-H",
+                       "name":  "Intelligence seal",
+                       "gate":  "Talos synthesizes migration evidence, emits cross-organ adaptations, and re-verifies an observable downstream change without granting authority"
                    }
                ],
     "authorityGranted":  false,

@@ -1,0 +1,437 @@
+{
+  "schema": "othrys.talos.training-intelligence.v1",
+  "learning": {
+    "schema": "othrys.talos.learning-core.v1",
+    "level": 3,
+    "jobs": 24,
+    "finalPassRate": 1,
+    "operatorRecoveryRate": 0.75,
+    "totalAttempts": 20,
+    "builderEvidence": {
+      "local.qwen2.5-coder-7b": {
+        "jobs": 2,
+        "firstPassRate": 0,
+        "recoveryRate": 1,
+        "attemptFailureRate": 1,
+        "timeoutRate": 0,
+        "noMutationRate": 1,
+        "medianLatencyMs": 25456.079244613647
+      },
+      "local.qwen3.5-9b": {
+        "jobs": 11,
+        "firstPassRate": 0.4545,
+        "recoveryRate": 0.5455,
+        "attemptFailureRate": 0,
+        "timeoutRate": 0,
+        "noMutationRate": 0,
+        "medianLatencyMs": 90486.25326156616
+      },
+      "local.ornith-1.5-9b": {
+        "jobs": 4,
+        "firstPassRate": 0,
+        "recoveryRate": 1,
+        "attemptFailureRate": 0.25,
+        "timeoutRate": 0,
+        "noMutationRate": 0.25,
+        "medianLatencyMs": 26127.893805503845
+      },
+      "local.gemma4-12b": {
+        "jobs": 4,
+        "firstPassRate": 0,
+        "recoveryRate": 1,
+        "attemptFailureRate": 0,
+        "timeoutRate": 0,
+        "noMutationRate": 0,
+        "medianLatencyMs": null
+      },
+      "local.qwen3-coder-30b": {
+        "jobs": 3,
+        "firstPassRate": 0.3333,
+        "recoveryRate": 0.6667,
+        "attemptFailureRate": 0,
+        "timeoutRate": 0,
+        "noMutationRate": 0,
+        "medianLatencyMs": 70385.4911327362
+      }
+    },
+    "checkEvidence": {
+      "surface-file": {
+        "observed": 23,
+        "finalPass": 23,
+        "finalPassRate": 1
+      },
+      "no-remote-assets": {
+        "observed": 23,
+        "finalPass": 23,
+        "finalPassRate": 1
+      },
+      "no-network-js": {
+        "observed": 23,
+        "finalPass": 23,
+        "finalPassRate": 1
+      },
+      "no-secret-shape": {
+        "observed": 23,
+        "finalPass": 23,
+        "finalPassRate": 1
+      },
+      "semantic-main": {
+        "observed": 20,
+        "finalPass": 20,
+        "finalPassRate": 1
+      },
+      "responsive-css": {
+        "observed": 20,
+        "finalPass": 20,
+        "finalPassRate": 1
+      },
+      "desktop-visible": {
+        "observed": 23,
+        "finalPass": 23,
+        "finalPassRate": 1
+      },
+      "no-page-errors": {
+        "observed": 23,
+        "finalPass": 23,
+        "finalPassRate": 1
+      },
+      "keyboard-focus": {
+        "observed": 23,
+        "finalPass": 23,
+        "finalPassRate": 1
+      },
+      "mobile-no-horizontal-overflow": {
+        "observed": 23,
+        "finalPass": 23,
+        "finalPassRate": 1
+      },
+      "form-contract": {
+        "observed": 1,
+        "finalPass": 1,
+        "finalPassRate": 1
+      },
+      "form-invalid-visible": {
+        "observed": 1,
+        "finalPass": 1,
+        "finalPassRate": 1
+      },
+      "table-contract": {
+        "observed": 1,
+        "finalPass": 1,
+        "finalPassRate": 1
+      },
+      "search-interaction": {
+        "observed": 1,
+        "finalPass": 1,
+        "finalPassRate": 1
+      },
+      "local-first-state": {
+        "observed": 14,
+        "finalPass": 14,
+        "finalPassRate": 1
+      },
+      "mv3": {
+        "observed": 3,
+        "finalPass": 3,
+        "finalPassRate": 1
+      },
+      "minimum-permissions": {
+        "observed": 3,
+        "finalPass": 3,
+        "finalPassRate": 1
+      },
+      "no-remote-code": {
+        "observed": 3,
+        "finalPass": 3,
+        "finalPassRate": 1
+      },
+      "webmanifest": {
+        "observed": 1,
+        "finalPass": 1,
+        "finalPassRate": 1
+      },
+      "service-worker": {
+        "observed": 1,
+        "finalPass": 1,
+        "finalPassRate": 1
+      },
+      "file-contract": {
+        "observed": 1,
+        "finalPass": 1,
+        "finalPassRate": 1
+      },
+      "file-interaction": {
+        "observed": 1,
+        "finalPass": 1,
+        "finalPassRate": 1
+      },
+      "multi-view-contract": {
+        "observed": 2,
+        "finalPass": 2,
+        "finalPassRate": 1
+      },
+      "view-controls": {
+        "observed": 2,
+        "finalPass": 2,
+        "finalPassRate": 1
+      },
+      "a11y-contract": {
+        "observed": 1,
+        "finalPass": 1,
+        "finalPassRate": 1
+      }
+    },
+    "familyEvidence": {
+      "unknown": {
+        "jobs": 1,
+        "recoveries": 1,
+        "finalPass": 1,
+        "recoveryRate": 1,
+        "finalPassRate": 1
+      },
+      "landing": {
+        "jobs": 1,
+        "recoveries": 1,
+        "finalPass": 1,
+        "recoveryRate": 1,
+        "finalPassRate": 1
+      },
+      "app": {
+        "jobs": 8,
+        "recoveries": 7,
+        "finalPass": 8,
+        "recoveryRate": 0.875,
+        "finalPassRate": 1
+      },
+      "dashboard": {
+        "jobs": 4,
+        "recoveries": 2,
+        "finalPass": 4,
+        "recoveryRate": 0.5,
+        "finalPassRate": 1
+      },
+      "console": {
+        "jobs": 2,
+        "recoveries": 1,
+        "finalPass": 2,
+        "recoveryRate": 0.5,
+        "finalPassRate": 1
+      },
+      "ui": {
+        "jobs": 1,
+        "recoveries": 1,
+        "finalPass": 1,
+        "recoveryRate": 1,
+        "finalPassRate": 1
+      },
+      "popup": {
+        "jobs": 1,
+        "recoveries": 1,
+        "finalPass": 1,
+        "recoveryRate": 1,
+        "finalPassRate": 1
+      },
+      "options": {
+        "jobs": 1,
+        "recoveries": 1,
+        "finalPass": 1,
+        "recoveryRate": 1,
+        "finalPassRate": 1
+      },
+      "script": {
+        "jobs": 1,
+        "recoveries": 0,
+        "finalPass": 1,
+        "recoveryRate": 0,
+        "finalPassRate": 1
+      },
+      "shell": {
+        "jobs": 1,
+        "recoveries": 0,
+        "finalPass": 1,
+        "recoveryRate": 0,
+        "finalPassRate": 1
+      },
+      "tool": {
+        "jobs": 1,
+        "recoveries": 1,
+        "finalPass": 1,
+        "recoveryRate": 1,
+        "finalPassRate": 1
+      },
+      "accessibility": {
+        "jobs": 1,
+        "recoveries": 1,
+        "finalPass": 1,
+        "recoveryRate": 1,
+        "finalPassRate": 1
+      },
+      "capstone": {
+        "jobs": 1,
+        "recoveries": 1,
+        "finalPass": 1,
+        "recoveryRate": 1,
+        "finalPassRate": 1
+      }
+    },
+    "evidenceDigest": "01d0058462866ab1a59b044d5f566f3f9bfd34c6664276210b3178b390eb7b19",
+    "authorityGranted": false,
+    "automaticAdmission": false,
+    "automaticLevelAdvance": false
+  },
+  "adaptations": {
+    "schema": "othrys.talos.adaptation-plan.v1",
+    "sourceDigest": "01d0058462866ab1a59b044d5f566f3f9bfd34c6664276210b3178b390eb7b19",
+    "HEPHAESTUS": {
+      "forgeEvidence": {
+        "local.qwen2.5-coder-7b": {
+          "firstPassRate": 0,
+          "medianLatencyMs": 25456.079244613647,
+          "recoveryRate": 1,
+          "attemptFailureRate": 1
+        },
+        "local.qwen3.5-9b": {
+          "firstPassRate": 0.4545,
+          "medianLatencyMs": 90486.25326156616,
+          "recoveryRate": 0.5455,
+          "attemptFailureRate": 0
+        },
+        "local.ornith-1.5-9b": {
+          "firstPassRate": 0,
+          "medianLatencyMs": 26127.893805503845,
+          "recoveryRate": 1,
+          "attemptFailureRate": 0.25
+        },
+        "local.gemma4-12b": {
+          "firstPassRate": 0,
+          "medianLatencyMs": null,
+          "recoveryRate": 1,
+          "attemptFailureRate": 0
+        },
+        "local.qwen3-coder-30b": {
+          "firstPassRate": 0.3333,
+          "medianLatencyMs": 70385.4911327362,
+          "recoveryRate": 0.6667,
+          "attemptFailureRate": 0
+        }
+      },
+      "action": "USE_VERIFIED_FIRST_PASS_AND_LATENCY_EVIDENCE_IN_RANKING"
+    },
+    "SWITCHYARD": {
+      "routeEvidence": {
+        "local.qwen2.5-coder-7b": {
+          "firstPassRate": 0,
+          "medianLatencyMs": 25456.079244613647,
+          "recoveryRate": 1,
+          "attemptFailureRate": 1
+        },
+        "local.qwen3.5-9b": {
+          "firstPassRate": 0.4545,
+          "medianLatencyMs": 90486.25326156616,
+          "recoveryRate": 0.5455,
+          "attemptFailureRate": 0
+        },
+        "local.ornith-1.5-9b": {
+          "firstPassRate": 0,
+          "medianLatencyMs": 26127.893805503845,
+          "recoveryRate": 1,
+          "attemptFailureRate": 0.25
+        },
+        "local.gemma4-12b": {
+          "firstPassRate": 0,
+          "medianLatencyMs": null,
+          "recoveryRate": 1,
+          "attemptFailureRate": 0
+        },
+        "local.qwen3-coder-30b": {
+          "firstPassRate": 0.3333,
+          "medianLatencyMs": 70385.4911327362,
+          "recoveryRate": 0.6667,
+          "attemptFailureRate": 0
+        }
+      },
+      "action": "PREFER_PROVEN_LOW_RECOVERY_ROUTES_WITHIN_EXISTING_POLICY"
+    },
+    "KRONOS": {
+      "builderTimingHints": {},
+      "action": "ADAPT_BOUNDED_TIMEOUT_RECOMMENDATIONS_ONLY"
+    },
+    "RHEA": {
+      "careSignals": [
+        {
+          "subject": "local.qwen2.5-coder-7b",
+          "severity": "DEGRADED",
+          "reason": "REPEATED_NO_MUTATION"
+        },
+        {
+          "subject": "local.ornith-1.5-9b",
+          "severity": "DEGRADED",
+          "reason": "REPEATED_NO_MUTATION"
+        }
+      ],
+      "action": "OPEN_DIAGNOSTIC_SIGNAL_ONLY"
+    },
+    "MNEMOSYNE": {
+      "lessonSummary": {
+        "jobs": 24,
+        "recoveryRate": 0.75,
+        "weakChecks": []
+      },
+      "action": "INDEX_VERIFIED_LESSONS_WITH_PROVENANCE"
+    },
+    "PROMETHEUS": {
+      "researchQuestions": [
+        "Why does local.qwen2.5-coder-7b require operator recovery on 100% of observed jobs?",
+        "Why does local.qwen3.5-9b require operator recovery on 55% of observed jobs?",
+        "Why does local.ornith-1.5-9b require operator recovery on 100% of observed jobs?",
+        "Why does local.gemma4-12b require operator recovery on 100% of observed jobs?",
+        "Why does local.qwen3-coder-30b require operator recovery on 67% of observed jobs?"
+      ],
+      "action": "RESEARCH_REPEATED_VERIFIED_GAPS"
+    },
+    "MYCELIUM": {
+      "placementEvidence": {
+        "local.qwen2.5-coder-7b": {
+          "firstPassRate": 0,
+          "medianLatencyMs": 25456.079244613647,
+          "recoveryRate": 1,
+          "attemptFailureRate": 1
+        },
+        "local.qwen3.5-9b": {
+          "firstPassRate": 0.4545,
+          "medianLatencyMs": 90486.25326156616,
+          "recoveryRate": 0.5455,
+          "attemptFailureRate": 0
+        },
+        "local.ornith-1.5-9b": {
+          "firstPassRate": 0,
+          "medianLatencyMs": 26127.893805503845,
+          "recoveryRate": 1,
+          "attemptFailureRate": 0.25
+        },
+        "local.gemma4-12b": {
+          "firstPassRate": 0,
+          "medianLatencyMs": null,
+          "recoveryRate": 1,
+          "attemptFailureRate": 0
+        },
+        "local.qwen3-coder-30b": {
+          "firstPassRate": 0.3333,
+          "medianLatencyMs": 70385.4911327362,
+          "recoveryRate": 0.6667,
+          "attemptFailureRate": 0
+        }
+      },
+      "action": "USE_LATENCY_AND_SUCCESS_TRAILS_AS_PLACEMENT_HINTS"
+    },
+    "TALOS": {
+      "weakChecks": [],
+      "action": "EXPAND_ORACLE_COVERAGE_WHERE_FAILURES_ESCAPE_FIRST_PASS"
+    },
+    "authorityGranted": false,
+    "executionAuthorityGranted": false,
+    "automaticAdmission": false,
+    "adaptationDigest": "8034db9963c116867b02acc610caf53e299fe0e3682fe241f4e54b0430359f67"
+  },
+  "authorityGranted": false
+}

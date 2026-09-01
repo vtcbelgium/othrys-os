@@ -1,0 +1,1 @@
+localStorage.setItem('l3-polish-last-open',new Date().toISOString());document.querySelector('#announce').onclick=()=>document.querySelector('#live').textContent='Accessibility controls are responding.';document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>document.querySelector('#live').textContent=`${b.dataset.view} view selected.`);

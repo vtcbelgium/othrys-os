@@ -1,0 +1,41 @@
+{
+  "schema_version": "othrys.worker-request.v0.1",
+  "job_id": "L3-020",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "workspace": "C:/Users/othry/Projects/othrys-os",
+  "allowed_paths": [
+    "training/level-3/L3-020-offline-app-shell/index.html",
+    "training/level-3/L3-020-offline-app-shell/styles.css",
+    "training/level-3/L3-020-offline-app-shell/app.js",
+    "training/level-3/L3-020-offline-app-shell/manifest.webmanifest",
+    "training/level-3/L3-020-offline-app-shell/sw.js"
+  ],
+  "deny_paths": [
+    ".git",
+    ".othrys",
+    "missions",
+    "blocks",
+    "runtime",
+    "docs",
+    "tools",
+    "admissions",
+    "books",
+    "contracts",
+    "inventory",
+    "logs",
+    "packages",
+    "qa",
+    "quarry",
+    "receipts",
+    "scratch",
+    "temp"
+  ],
+  "timeout_sec": 100,
+  "metadata": {
+    "forge_builder_id": "local.qwen3.5-9b",
+    "training_level": 3,
+    "authorityGranted": false
+  },
+  "task": "LEVEL 3 TRAINING JOB L3-020 â€” Offline application shell. Contract: static local app -> installable offline-first shell.\nSource stock to honor conceptually: L1-030 idempotency-key, L2-013 state-transfer. This is a bounded local training application, not production.\nWRITE ALL of these exact allowed paths immediately, using paths exactly as given and never prefixing them with workspace/: training/level-3/L3-020-offline-app-shell/index.html, training/level-3/L3-020-offline-app-shell/styles.css, training/level-3/L3-020-offline-app-shell/app.js, training/level-3/L3-020-offline-app-shell/manifest.webmanifest, training/level-3/L3-020-offline-app-shell/sw.js.\nCreate a complete accessible responsive application. Use only local HTML/CSS/vanilla JS and browser localStorage where durable state is required. No remote assets, no fetch/XHR/WebSocket, no secrets, no external auth/database/API, no paid service.\nFor extension jobs use MV3, local code only and minimum permissions. For PWA use a local manifest and service worker. Do not inspect unrelated repository files. Touch no file outside allowed paths. Finish only after all required files are written."
+}

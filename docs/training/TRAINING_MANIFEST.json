@@ -28,7 +28,7 @@
                        "level":  3,
                        "name":  "Small Applications",
                        "goal":  "Complete single-purpose apps, static sites, extensions and local-first tools.",
-                       "status":  "ACTIVE",
+                       "status":  "COMPLETE",
                        "entryGate":  "Level 2 graduation receipt",
                        "authorityGranted":  false
                    },
@@ -1927,9 +1927,9 @@
                                   "automaticLevelAdvance":  false
                               },
     "level3":  {
-                   "status":  "ACTIVE",
+                   "status":  "COMPLETE",
                    "targetJobs":  24,
-                   "completedJobs":  1,
+                   "completedJobs":  24,
                    "jobs":  [
                                 {
                                     "id":  "L3-001",
@@ -1945,7 +1945,7 @@
                                                         "L1-013 html-escape",
                                                         "L1-015 metadata-check"
                                                     ],
-                                    "executionStarted":  true,
+                                    "executionStarted":  false,
                                     "automaticAdmission":  false,
                                     "qualityGates":  [
                                                          "contract tests",
@@ -1971,7 +1971,7 @@
                                     "title":  "Responsive landing page",
                                     "contract":  "content + layout rules -\u003e responsive landing page",
                                     "sequence":  2,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -1988,7 +1988,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen2.5-coder-7b",
+                                    "builderResult":  "NO_ATTEMPT_MUTATION",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-002-responsive-landing/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-003",
@@ -1997,7 +2005,7 @@
                                     "title":  "Validated form app",
                                     "contract":  "form schema + input -\u003e accessible validated local form",
                                     "sequence":  3,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2015,7 +2023,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-003-validated-form-app/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-004",
@@ -2024,7 +2040,7 @@
                                     "title":  "Searchable table app",
                                     "contract":  "local records -\u003e searchable sortable paginated table UI",
                                     "sequence":  4,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2041,7 +2057,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.ornith-1.5-9b",
+                                    "builderResult":  "NO_ATTEMPT_MUTATION",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-004-searchable-table-app/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-005",
@@ -2050,7 +2074,7 @@
                                     "title":  "Settings panel app",
                                     "contract":  "settings Block -\u003e durable responsive settings UI",
                                     "sequence":  5,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2066,7 +2090,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.gemma4-12b",
+                                    "builderResult":  "CAMPAIGN_WORKER_TIMEOUT",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-005-settings-panel-app/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-006",
@@ -2075,7 +2107,7 @@
                                     "title":  "Todo dashboard",
                                     "contract":  "todo Block -\u003e complete local task dashboard",
                                     "sequence":  6,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2092,7 +2124,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  false,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-006-todo-dashboard/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-007",
@@ -2101,7 +2141,7 @@
                                     "title":  "Habit dashboard",
                                     "contract":  "habit Block -\u003e streak/history application",
                                     "sequence":  7,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2118,7 +2158,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.ornith-1.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-007-habit-dashboard/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-008",
@@ -2127,7 +2175,7 @@
                                     "title":  "Time tracker app",
                                     "contract":  "time ledger Block -\u003e start/stop dashboard application",
                                     "sequence":  8,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2144,7 +2192,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.gemma4-12b",
+                                    "builderResult":  "CAMPAIGN_WORKER_TIMEOUT",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-008-time-tracker-app/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-009",
@@ -2153,7 +2209,7 @@
                                     "title":  "Expense dashboard",
                                     "contract":  "expense Block -\u003e local expense entry + summary application",
                                     "sequence":  9,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2170,7 +2226,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  false,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-009-expense-dashboard/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-010",
@@ -2179,7 +2243,7 @@
                                     "title":  "Notes application",
                                     "contract":  "notes + tag Blocks -\u003e searchable tagged notes application",
                                     "sequence":  10,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2197,7 +2261,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.ornith-1.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-010-notes-app/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-011",
@@ -2206,7 +2278,7 @@
                                     "title":  "Multi-list application",
                                     "contract":  "multi-list Block -\u003e grouped CRUD application",
                                     "sequence":  11,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2222,7 +2294,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.gemma4-12b",
+                                    "builderResult":  "CAMPAIGN_WORKER_TIMEOUT",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-011-multi-list-app/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-012",
@@ -2231,7 +2311,7 @@
                                     "title":  "Import/export console",
                                     "contract":  "state-transfer Block -\u003e operator-visible import/export application",
                                     "sequence":  12,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2247,7 +2327,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  false,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-012-import-export-console/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-013",
@@ -2256,7 +2344,7 @@
                                     "title":  "Backup/restore console",
                                     "contract":  "backup Block -\u003e local backup/restore application",
                                     "sequence":  13,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2272,7 +2360,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.ornith-1.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-013-backup-restore-console/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-014",
@@ -2281,7 +2377,7 @@
                                     "title":  "Activity dashboard",
                                     "contract":  "activity-log Block -\u003e bounded durable activity feed UI",
                                     "sequence":  14,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2298,7 +2394,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.gemma4-12b",
+                                    "builderResult":  "CAMPAIGN_WORKER_TIMEOUT",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-014-activity-dashboard/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-015",
@@ -2307,7 +2411,7 @@
                                     "title":  "Preference profile app",
                                     "contract":  "preference-profile Block -\u003e validated profile editor",
                                     "sequence":  15,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2323,7 +2427,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  false,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-015-preference-profile-app/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-016",
@@ -2332,7 +2444,7 @@
                                     "title":  "Desk tool UI",
                                     "contract":  "desk-tool composition -\u003e complete local-first desk application",
                                     "sequence":  16,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2348,7 +2460,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-016-desk-tool-ui/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-017",
@@ -2357,7 +2477,7 @@
                                     "title":  "Browser extension popup",
                                     "contract":  "bounded local capability -\u003e MV3 popup application",
                                     "sequence":  17,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2377,7 +2497,15 @@
                                                          "minimum permissions",
                                                          "no remote code"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3-coder-30b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-017-extension-popup/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-018",
@@ -2386,7 +2514,7 @@
                                     "title":  "Browser extension options",
                                     "contract":  "MV3 extension + settings -\u003e durable options application",
                                     "sequence":  18,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2405,7 +2533,15 @@
                                                          "minimum permissions",
                                                          "no remote code"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3-coder-30b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-018-extension-options/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-019",
@@ -2414,7 +2550,7 @@
                                     "title":  "Bounded content-script tool",
                                     "contract":  "explicit page transform -\u003e permission-minimal MV3 content tool",
                                     "sequence":  19,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2434,7 +2570,15 @@
                                                          "minimum permissions",
                                                          "no remote code"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3-coder-30b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  false,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-019-extension-content-script/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-020",
@@ -2443,7 +2587,7 @@
                                     "title":  "Offline application shell",
                                     "contract":  "static local app -\u003e installable offline-first shell",
                                     "sequence":  20,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2460,7 +2604,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  false,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-020-offline-app-shell/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-021",
@@ -2469,7 +2621,7 @@
                                     "title":  "Local file utility",
                                     "contract":  "user-selected local file -\u003e bounded inspect/transform/download UI",
                                     "sequence":  21,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2487,7 +2639,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-021-local-file-tool/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-022",
@@ -2496,7 +2656,7 @@
                                     "title":  "Multi-view composed app",
                                     "contract":  "proven local Blocks -\u003e routed multi-view application",
                                     "sequence":  22,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2513,7 +2673,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-022-multi-view-app/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-023",
@@ -2522,7 +2690,7 @@
                                     "title":  "Application polish pass",
                                     "contract":  "working app -\u003e keyboard/mobile/a11y/performance verified app",
                                     "sequence":  23,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2538,7 +2706,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-023-polish-accessibility/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 },
                                 {
                                     "id":  "L3-024",
@@ -2547,7 +2723,7 @@
                                     "title":  "Local-first capstone",
                                     "contract":  "multiple proven Blocks -\u003e packaged single-purpose application",
                                     "sequence":  24,
-                                    "status":  "QUEUED",
+                                    "status":  "COMPLETE",
                                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
                                     "authorityGranted":  false,
                                     "sourceStock":  [
@@ -2564,7 +2740,15 @@
                                                          "responsive surface where applicable",
                                                          "keyboard/a11y smoke where applicable"
                                                      ],
-                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+                                    "builderPolicy":  "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+                                    "attempts":  1,
+                                    "builderAttempt":  "local.qwen3.5-9b",
+                                    "builderResult":  "PASS",
+                                    "operatorRecovery":  true,
+                                    "talos":  "PASS",
+                                    "learningReceipt":  "training/level-3/L3-024-local-first-capstone/LEARNING_RECEIPT.json",
+                                    "finalTrainingDisposition":  "APPLICATION_PATTERN",
+                                    "promotionAuthorityGranted":  false
                                 }
                             ]
                },

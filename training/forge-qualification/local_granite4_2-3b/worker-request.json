@@ -1,0 +1,12 @@
+{
+  "schema_version": "othrys.worker-request.v0.1",
+  "job_id": "FORGE-QUAL-GRANITE42-3B",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "workspace": "C:/Users/othry/Projects/othrys-os",
+  "allowed_paths": ["training/forge-qualification/local_granite4_2-3b/candidate.mjs"],
+  "deny_paths": [".git", ".othrys", "missions", "runtime", "docs", "blocks"],
+  "timeout_sec": 90,
+  "metadata": {"forge_builder_id":"local.granite4.2-3b","forge_qualification":true,"authorityGranted":false},
+  "task": "Qualification task. Write exactly training/forge-qualification/local_granite4_2-3b/candidate.mjs and no other file. Export function normalizeTags(input): for non-array return []; otherwise keep strings only, trim, lowercase, remove empty values, deduplicate, and return sorted ascending. Export function countTags(input): use normalizeTags(input), return a plain object mapping each normalized tag to 1. No dependencies, no network, deterministic. Finish after the one file is written."
+}

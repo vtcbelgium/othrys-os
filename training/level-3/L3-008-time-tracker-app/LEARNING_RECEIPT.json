@@ -1,0 +1,95 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "level": 3,
+  "jobId": "L3-008",
+  "key": "time-tracker-app",
+  "title": "Time tracker app",
+  "status": "COMPLETE",
+  "contract": "time ledger Block -> start/stop dashboard application",
+  "sourceStock": [
+    "L2-011 time-tracker",
+    "L2-020 dashboard-summary"
+  ],
+  "sourceDisposition": "ADAPT_LEVEL2_STATE_CONTRACT_TO_BROWSER_LOCAL_FIRST_RUNTIME",
+  "builderAttempt": {
+    "builder": "local.gemma4-12b",
+    "ok": false,
+    "reason": "CAMPAIGN_WORKER_TIMEOUT",
+    "changedFiles": []
+  },
+  "operatorRecovery": {
+    "used": true,
+    "reason": "governed output did not satisfy full deterministic + browser-visible Talos gate"
+  },
+  "talos": {
+    "status": "PASS",
+    "schema": "othrys.talos.level3-app-proof.v1",
+    "checks": [
+      {
+        "name": "surface-file",
+        "ok": true,
+        "detail": "HTML surface present"
+      },
+      {
+        "name": "no-remote-assets",
+        "ok": true,
+        "detail": "no remote HTML assets"
+      },
+      {
+        "name": "no-network-js",
+        "ok": true,
+        "detail": "no remote/network runtime"
+      },
+      {
+        "name": "no-secret-shape",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "semantic-main",
+        "ok": true,
+        "detail": "main landmark"
+      },
+      {
+        "name": "responsive-css",
+        "ok": true,
+        "detail": "responsive rule"
+      },
+      {
+        "name": "local-first-state",
+        "ok": true,
+        "detail": "localStorage persistence"
+      },
+      {
+        "name": "desktop-visible",
+        "ok": true,
+        "detail": "body visible 1280x800"
+      },
+      {
+        "name": "no-page-errors",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "keyboard-focus",
+        "ok": true,
+        "detail": "A"
+      },
+      {
+        "name": "mobile-no-horizontal-overflow",
+        "ok": true,
+        "detail": "390px viewport"
+      }
+    ]
+  },
+  "finalTrainingDisposition": "APPLICATION_PATTERN",
+  "lessons": [
+    "governed builder failure remained explicit: CAMPAIGN_WORKER_TIMEOUT",
+    "deterministic bounded operator recovery completed the application only after governed output failed the application gate",
+    "application-visible proof is stronger than worker ok:true",
+    "Level 3 keeps remote services and authority outside the application boundary"
+  ],
+  "authorityGranted": false,
+  "automaticAdmission": false,
+  "promotionAuthorityGranted": false
+}

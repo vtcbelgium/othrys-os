@@ -63,3 +63,11 @@ No Level 4 feature is pulled forward to make this migration easier: no new exter
 Level 3.5 is complete only when the parity matrix is terminal, Web is the proven canonical operator interface, OS gateway behavior survives independently of Deck UI code, T590 runs the canonical gateway service, old Hub/Deck UI paths are extinct, all four repos are clean and reproducible, and Level 4 remains locked pending a separate operator command.
 
 Planning Level 3.5 grants no authority and does not interrupt Level 3 execution.
+
+## Intelligence requirement
+
+HubToWeb may not become a mechanical migration. Talos is the central verification-and-learning nexus for Level 3.5. Every migration slice must feed verified behavior, failure, latency, routing, recovery and parity evidence back through `TALOS_INTELLIGENCE_LAW.md`.
+
+A phase is not considered learned merely because its receipt exists. Talos must synthesize the evidence and produce a bounded downstream adaptation for Hephaestus, Switchyard, Kronos, Rhea, Mnemosyne, Prometheus, Mycelium or its own oracle coverage. At least one observable future decision must change because of verified evidence before the Level 3.5 seal can pass.
+
+Authority, admission, paid usage, Trust Canal policy and level progression remain operator-gated. Intelligence changes preference and diagnosis; it does not create permission.

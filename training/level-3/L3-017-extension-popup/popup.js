@@ -1,0 +1,1 @@
+const n=document.querySelector('#note'),m=document.querySelector('#msg');globalThis.chrome?.storage?.local?.get(['note'],x=>n.value=x.note||'');document.querySelector('#save').onclick=()=>globalThis.chrome.storage.local.set({note:n.value},()=>m.textContent='Saved.');

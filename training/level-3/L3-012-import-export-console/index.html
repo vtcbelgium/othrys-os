@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L3-012 Import/Export Console</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header role="banner">
+        <h1>Import/Export Console</h1>
+        <p class="subtitle">State Transfer Application (Local Only)</p>
+    </header>
+
+    <main role="main">
+        <section class="controls" aria-label="Data Controls">
+            <div class="control-group">
+                <label for="import-file">Import JSON Data:</label>
+                <input type="file" id="import-file" accept=".json" aria-describedby="import-hint">
+                <span id="import-hint" class="hint">Upload a .json file to restore state.</span>
+            </div>
+
+            <div class="control-group">
+                <label for="export-format">Export Format:</label>
+                <select id="export-format" aria-label="Select export format">
+                    <option value="json">JSON</option>
+                    <option value="csv">CSV</option>
+                </select>
+            </div>
+
+            <button type="button" id="export-btn" class="btn btn-primary">Export Data</button>
+            <button type="button" id="clear-btn" class="btn btn-danger">Clear Local Storage</button>
+        </section>
+
+        <section class="status-panel" aria-live="polite">
+            <h2>Status</h2>
+            <div id="status-display">Ready. No data loaded.</div>
+        </section>
+
+        <section class="data-preview" aria-label="Data Preview">
+            <h2>Data Preview</h2>
+            <pre id="preview-output" aria-live="polite"></pre>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>L3-012 Training Application &copy; 2024. Local execution only.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

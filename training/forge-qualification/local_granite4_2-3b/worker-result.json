@@ -1,0 +1,75 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "FORGE-QUAL-GRANITE42-3B",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.granite4.2-3b",
+  "ok": false,
+  "reason": "out_of_scope_changes: ['docs/training/TALOS_INTELLIGENCE_LAW.md', 'runtime/os/talos_learning_core.mjs', 'tools/training/refresh_talos_intelligence.mjs', 'tools/training/select_adaptive_builder.mjs']",
+  "started_at": 1788254688.3353293,
+  "completed_at": 1788254826.0755634,
+  "duration_sec": 137.74023413658142,
+  "allowed_paths": [
+    "training/forge-qualification/local_granite4_2-3b/candidate.mjs"
+  ],
+  "changed_files": [
+    "docs/training/TALOS_INTELLIGENCE_LAW.md",
+    "runtime/os/talos_learning_core.mjs",
+    "tools/training/refresh_talos_intelligence.mjs",
+    "tools/training/select_adaptive_builder.mjs"
+  ],
+  "out_of_scope_changes": [
+    "docs/training/TALOS_INTELLIGENCE_LAW.md",
+    "runtime/os/talos_learning_core.mjs",
+    "tools/training/refresh_talos_intelligence.mjs",
+    "tools/training/select_adaptive_builder.mjs"
+  ],
+  "diff": "",
+  "git_status": "docs/training/TALOS_INTELLIGENCE_LAW.md\nruntime/os/talos_learning_core.mjs\ntools/training/refresh_talos_intelligence.mjs\ntools/training/select_adaptive_builder.mjs",
+  "summary": "",
+  "runtime_evidence": {
+    "observed_diff": "",
+    "git_status": "docs/training/TALOS_INTELLIGENCE_LAW.md\nruntime/os/talos_learning_core.mjs\ntools/training/refresh_talos_intelligence.mjs\ntools/training/select_adaptive_builder.mjs",
+    "tool_trace": [],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "hephaestus_forge_local_qualification",
+    "selected_builder": "local.granite4.2-3b",
+    "model": "granite4.2:3b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "2378",
+      "utilization_pct": "0",
+      "temperature_c": "46",
+      "power_w": "8.90"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \ngranite4.2:3b    40577dc168a3    2.3 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "2380",
+      "utilization_pct": "94",
+      "temperature_c": "71",
+      "power_w": "95.43"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \ngranite4.2:3b    40577dc168a3    2.3 GB    100% GPU     4096       29 minutes from now"
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>Local Todo Dashboard</h1>
+        <button id="add-btn" class="btn-primary">+ Add Task</button>
+    </header>
+
+    <main class="dashboard-container">
+        <section class="stats-panel">
+            <div class="stat-card">
+                <span class="stat-label">Total Tasks</span>
+                <span id="total-count" class="stat-value">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Pending</span>
+                <span id="pending-count" class="stat-value">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Completed</span>
+                <span id="completed-count" class="stat-value">0</span>
+            </div>
+        </section>
+
+        <section class="todo-list">
+            <ul id="todo-items" aria-label="Task list"></ul>
+            <p id="empty-state" class="empty-state">No tasks yet. Add one above!</p>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+const f=document.querySelector('#options'),m=document.querySelector('#mode'),x=document.querySelector('#msg');globalThis.chrome?.storage?.local?.get(['mode'],v=>m.value=v.mode||'quiet');f.onsubmit=e=>{e.preventDefault();globalThis.chrome.storage.local.set({mode:m.value},()=>x.textContent='Saved.')};

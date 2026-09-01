@@ -1,0 +1,99 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "level": 3,
+  "jobId": "L3-019",
+  "key": "extension-content-script",
+  "title": "Bounded content-script tool",
+  "status": "COMPLETE",
+  "contract": "explicit page transform -> permission-minimal MV3 content tool",
+  "sourceStock": [
+    "L1-013 html-escape",
+    "L1-028 schema-check"
+  ],
+  "sourceDisposition": "COMPOSE_PROVEN_WEB_PATTERNS_WITH_LEVEL3_BOUNDARIES",
+  "builderAttempt": {
+    "builder": "local.qwen3-coder-30b",
+    "ok": true,
+    "reason": "",
+    "changedFiles": [
+      "training/level-3/L3-019-extension-content-script/content.css",
+      "training/level-3/L3-019-extension-content-script/content.js",
+      "training/level-3/L3-019-extension-content-script/manifest.json",
+      "training/level-3/L3-019-extension-content-script/popup.css",
+      "training/level-3/L3-019-extension-content-script/popup.html"
+    ]
+  },
+  "operatorRecovery": {
+    "used": false,
+    "reason": ""
+  },
+  "talos": {
+    "status": "PASS",
+    "schema": "othrys.talos.level3-app-proof.v1",
+    "checks": [
+      {
+        "name": "surface-file",
+        "ok": true,
+        "detail": "HTML surface present"
+      },
+      {
+        "name": "no-remote-assets",
+        "ok": true,
+        "detail": "no remote HTML assets"
+      },
+      {
+        "name": "no-network-js",
+        "ok": true,
+        "detail": "no remote/network runtime"
+      },
+      {
+        "name": "no-secret-shape",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "mv3",
+        "ok": true,
+        "detail": "Manifest V3"
+      },
+      {
+        "name": "minimum-permissions",
+        "ok": true,
+        "detail": "no broad tabs/all_urls"
+      },
+      {
+        "name": "no-remote-code",
+        "ok": true,
+        "detail": "local extension code"
+      },
+      {
+        "name": "desktop-visible",
+        "ok": true,
+        "detail": "body visible 1280x800"
+      },
+      {
+        "name": "no-page-errors",
+        "ok": true,
+        "detail": ""
+      },
+      {
+        "name": "keyboard-focus",
+        "ok": true,
+        "detail": "BUTTON"
+      },
+      {
+        "name": "mobile-no-horizontal-overflow",
+        "ok": true,
+        "detail": "390px viewport"
+      }
+    ]
+  },
+  "finalTrainingDisposition": "APPLICATION_PATTERN",
+  "lessons": [
+    "application-visible proof is stronger than worker ok:true",
+    "Level 3 keeps remote services and authority outside the application boundary"
+  ],
+  "authorityGranted": false,
+  "automaticAdmission": false,
+  "promotionAuthorityGranted": false
+}
