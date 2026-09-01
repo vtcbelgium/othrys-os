@@ -1,0 +1,66 @@
+{
+    "schema":  "othrys.training.level2-solid-foundation.v1",
+    "date":  "2026-09-01",
+    "status":  "SEALED_PENDING_OPERATOR_ADVANCE_ONLY",
+    "currentLevel":  2,
+    "level3Status":  "LOCKED",
+    "authorityGranted":  false,
+    "automaticLevelAdvance":  false,
+    "automaticAdmission":  false,
+    "revisions":  {
+                      "othrys-os-parent":  "980b7907905ade87e18e1731a2d8af2fb6880fdd",
+                      "othrys-web":  "a4a82f864efa3e1d11883b8ebcc2f3482d164180",
+                      "othrys-blocks":  "908b1950e62481c438da59ea313a26ff278119d3",
+                      "vtc-platform":  "73fd6c98600f0e5ebb9f893599bb2876710a9cde"
+                  },
+    "freshRoot":  {
+                      "root":  "C:/Users/othry/Othrys-Level2-Milestone-Fresh",
+                      "fourReposOnly":  true,
+                      "allClonesClean":  true,
+                      "osRuntime":  "371/371 PASS",
+                      "trainingSource":  "486/486 PASS",
+                      "blockContracts":  "536/536 PASS",
+                      "trainingGovernance":  "3/3 PASS",
+                      "web":  "184 PASS / 1 SKIP; typecheck PASS; production build PASS",
+                      "blocksBrowser":  "image-prep 29/29 PASS; affiliate-offer 5/5 PASS",
+                      "vtc":  "17/17 PASS; production build PASS"
+                  },
+    "governedRoutedBuild":  {
+                                "selector":  "Hephaestus rankForgeBuilders",
+                                "selectedBuilder":  "local.qwen3.5-9b",
+                                "model":  "qwen3.5:9b",
+                                "workerPolicy":  "v2_direct_low_level_loop",
+                                "changedFiles":  [
+                                                     "docs/training/milestones/LEVEL2_ROUTED_BUILD_ARTIFACT.mjs"
+                                                 ],
+                                "outOfScopeChanges":  [
+
+                                                      ],
+                                "durationSec":  38.64114284515381,
+                                "workerResult":  "PASS",
+                                "talos":  "PASS",
+                                "artifactContract":  "level2Milestone() === SOLID_LEVEL_2"
+                            },
+    "forge":  {
+                  "executionEnabledLocalBuilders":  10,
+                  "keepTestingLocalBuilders":  [
+                                                   "local.gpt-oss-20b",
+                                                   "local.granite4.2-8b",
+                                                   "local.north-mini-code-1.0"
+                                               ],
+                  "failedQualificationNeverGrantsExecution":  true
+              },
+    "estate":  {
+                   "activeAuthoredRepos":  [
+                                               "othrys-os",
+                                               "othrys-web",
+                                               "othrys-blocks",
+                                               "vtc-platform"
+                                           ],
+                   "legacyExecutableHits":  0,
+                   "t590CanonicalOsHeadMatches":  true,
+                   "t590RequiredServicesActive":  true
+               },
+    "conclusion":  "Level 2 is reproducible, governed, routed and independently verifiable. No Level 3 authority is granted by this receipt.",
+    "postSealRuntime":  "373/373 PASS"
+}

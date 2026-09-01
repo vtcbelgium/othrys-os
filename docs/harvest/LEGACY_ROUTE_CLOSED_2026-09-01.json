@@ -1,0 +1,27 @@
+{
+  "schema": "othrys.harvest.legacy-route-closed.v1",
+  "date": "2026-09-01",
+  "status": "CLOSED",
+  "authorityGranted": false,
+  "level3Unlocked": false,
+  "activeEstate": ["othrys-os", "othrys-web", "othrys-blocks", "vtc-platform"],
+  "legion": {
+    "projectsDirectoryContainsOnlyActiveRepos": true,
+    "liveExecutableLegacyDependencyHits": 0,
+    "freshCloneReconstructionPass": true
+  },
+  "t590": {
+    "canonicalCheckout": "/home/jeroen/othrys-os",
+    "head": "980b7907905ade87e18e1731a2d8af2fb6880fdd",
+    "retiredCheckoutRootsFound": 0,
+    "legacyUnitConfigHits": 0,
+    "commandDeckActive": true,
+    "admissionWatcherActive": true,
+    "myceliumNodeActive": true,
+    "remoteCommanderActive": true,
+    "commandDeckPort8780Listening": true
+  },
+  "historicalReferencesPolicy": "Retired names may remain only as provenance, tests, archaeology or explicit anti-regression assertions; they are not live authority or runtime dependencies.",
+  "broadLegacyQuarry": "CLOSED unless a named capability gap justifies a bounded revisit",
+  "conclusion": "The retired Hub/Core/Jarvis/V2 checkout route is extinct as a live dependency on the active estate and T590 runtime."
+}

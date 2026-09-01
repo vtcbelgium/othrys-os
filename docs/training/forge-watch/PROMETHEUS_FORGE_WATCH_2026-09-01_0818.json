@@ -1,0 +1,34 @@
+﻿{
+    "schema":  "othrys.prometheus.forge-watch.v1",
+    "date":  "2026-09-01T08:18:00+02:00",
+    "roster":  "runtime/hephaestus/data/forge_roster.json",
+    "publicScan":  [
+                       {
+                           "candidate":  "nvidia.nemotron-3.5-lightning-30b-a3b",
+                           "source":  "official Hugging Face/Ollama",
+                           "decision":  "KNOWN_ALREADY_QUALIFIED_LOCAL"
+                       },
+                       {
+                           "candidate":  "qwen3-coder",
+                           "source":  "official Ollama",
+                           "decision":  "KNOWN_ALREADY_QUALIFIED_LOCAL"
+                       },
+                       {
+                           "candidate":  "ollama-claude-desktop-gateway",
+                           "source":  "official Ollama blog 2026-08-25",
+                           "decision":  "INFRASTRUCTURE_ONLY_NOT_NEW_BUILDER"
+                       },
+                       {
+                           "candidate":  "minimax-m2.7-cloud",
+                           "source":  "official Ollama model page",
+                           "decision":  "NOT_NEW_ENOUGH_AND_REMOTE_CLOUD; roster already has newer minimax-m3 remote candidate"
+                       }
+                   ],
+    "localInstalledAudit":  "ollama list matched roster; qwen3-fast/qwen3-think are legacy aliases, not new Forge admissions",
+    "admitted":  [
+
+                 ],
+    "rosterChanged":  false,
+    "authorityGranted":  false,
+    "automaticPaidUsage":  false
+}
