@@ -1,0 +1,55 @@
+{
+  "schema": "othrys.os.training-level3-prep-receipt.v1",
+  "date": "2026-09-01",
+  "status": "PREPARED_LOCKED",
+  "preparedAgainstLevel2Seal": "7669d3b3da305fc17aee46b2f3010ebc7bf8320e",
+  "milestoneTag": "milestone-level2-solid-foundation-2026-09-01",
+  "currentLevel": 2,
+  "level3Status": "LOCKED",
+  "level4Status": "LOCKED",
+  "authorityGranted": false,
+  "automaticLevelAdvance": false,
+  "automaticAdmission": false,
+  "executionStarted": false,
+  "curriculum": {
+    "jobs": 24,
+    "prepared": 24,
+    "queued": 0,
+    "complete": 0,
+    "externalServicesAllowed": false,
+    "productionMutationAllowed": false,
+    "paidUsageAllowed": false
+  },
+  "preflight": {
+    "readiness": "PASS",
+    "activationProjection": "PASS_PURE_NO_WRITE",
+    "runtime": "377/377 PASS",
+    "trainingSource": "486/486 PASS",
+    "trainingBlockContracts": "536/536 PASS",
+    "trainingGovernance": "3/3 PASS"
+  },
+  "environment": {
+    "chromiumHeadlessSmoke": "PASS",
+    "forgeSurfacePreference": [
+      "local.qwen2.5-coder-7b",
+      "local.qwen3.5-9b",
+      "local.qwen3-8b",
+      "local.ornith-1.5-9b"
+    ],
+    "forgeAppPreference": [
+      "local.qwen3-coder-30b",
+      "local.nemotron3.5-lightning-30b-a3b",
+      "local.ornith-1.5-9b",
+      "local.qwen3.8-27b",
+      "local.gemma4-12b"
+    ],
+    "forgeKeepTestingNeverRouted": [
+      "local.gpt-oss-20b",
+      "local.granite4.2-8b",
+      "local.north-mini-code-1.0"
+    ]
+  },
+  "activationLaw": "Only a separate explicit operator transition may materialize jobs, set currentLevel=3 and set Level 3 ACTIVE. The transition starts no builder and grants no authority.",
+  "firstJobAfterActivation": "L3-001 static-info-page",
+  "conclusion": "Level 3 is fully staged and testable without being started."
+}

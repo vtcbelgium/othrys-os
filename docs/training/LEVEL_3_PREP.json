@@ -1,310 +1,727 @@
 {
-    "schema":  "othrys.os.training-level-prep.v1",
-    "mission":  "V2-011K",
-    "level":  3,
-    "name":  "Small Applications",
-    "status":  "PREPARED_LOCKED",
-    "goal":  "Complete single-purpose apps, static sites, extensions and local-first tools.",
-    "entryGate":  [
-                      "LEVEL_2_MILESTONE status COMPLETE",
-                      "24/24 Level 2 jobs COMPLETE",
-                      "Level 1+2 source 486/486 PASS",
-                      "candidate contracts 486/486 PASS",
-                      "runtime 346/346 PASS",
-                      "explicit operator activation required"
-                  ],
-    "activationEffects":  [
-                              "set Level 3 status ACTIVE",
-                              "set currentLevel 3",
-                              "materialize Level 3 jobs as QUEUED",
-                              "grant no authority",
-                              "admit no Block automatically"
-                          ],
-    "laws":  {
-                 "automaticLevelAdvance":  false,
-                 "automaticAdmission":  false,
-                 "authorityGranted":  false,
-                 "externalServicesAllowed":  false,
-                 "operatorActivationRequired":  true
-             },
-    "quality":  [
-                    "stock-first preflight",
-                    "composition before invention",
-                    "deterministic state core",
-                    "browser-visible proof",
-                    "responsive phone/tablet/desktop where applicable",
-                    "keyboard/accessibility smoke",
-                    "no external auth/database/API",
-                    "no secrets",
-                    "bounded filesystem/browser permissions",
-                    "independent Talos verification",
-                    "repair evidence preserved",
-                    "authority-free"
-                ],
-    "jobs":  [
-                 {
-                     "id":  "L3-001",
-                     "key":  "static-info-page",
-                     "family":  "web",
-                     "title":  "Static information page",
-                     "contract":  "semantic HTML + CSS -\u003e responsive static page",
-                     "sequence":  1,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-002",
-                     "key":  "responsive-landing",
-                     "family":  "web",
-                     "title":  "Responsive landing page",
-                     "contract":  "content + layout rules -\u003e responsive landing page",
-                     "sequence":  2,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-003",
-                     "key":  "validated-form-app",
-                     "family":  "web",
-                     "title":  "Validated form app",
-                     "contract":  "form schema + input -\u003e accessible validated local form",
-                     "sequence":  3,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-004",
-                     "key":  "searchable-table-app",
-                     "family":  "web",
-                     "title":  "Searchable table app",
-                     "contract":  "local records -\u003e searchable sortable paginated table UI",
-                     "sequence":  4,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-005",
-                     "key":  "settings-panel-app",
-                     "family":  "local-app",
-                     "title":  "Settings panel app",
-                     "contract":  "settings Block -\u003e durable responsive settings UI",
-                     "sequence":  5,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-006",
-                     "key":  "todo-dashboard",
-                     "family":  "local-app",
-                     "title":  "Todo dashboard",
-                     "contract":  "todo Block -\u003e complete local task dashboard",
-                     "sequence":  6,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-007",
-                     "key":  "habit-dashboard",
-                     "family":  "local-app",
-                     "title":  "Habit dashboard",
-                     "contract":  "habit Block -\u003e streak/history application",
-                     "sequence":  7,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-008",
-                     "key":  "time-tracker-app",
-                     "family":  "local-app",
-                     "title":  "Time tracker app",
-                     "contract":  "time ledger Block -\u003e start/stop dashboard application",
-                     "sequence":  8,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-009",
-                     "key":  "expense-dashboard",
-                     "family":  "local-app",
-                     "title":  "Expense dashboard",
-                     "contract":  "expense Block -\u003e local expense entry + summary application",
-                     "sequence":  9,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-010",
-                     "key":  "notes-app",
-                     "family":  "local-app",
-                     "title":  "Notes application",
-                     "contract":  "notes + tag Blocks -\u003e searchable tagged notes application",
-                     "sequence":  10,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-011",
-                     "key":  "multi-list-app",
-                     "family":  "local-app",
-                     "title":  "Multi-list application",
-                     "contract":  "multi-list Block -\u003e grouped CRUD application",
-                     "sequence":  11,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-012",
-                     "key":  "import-export-console",
-                     "family":  "local-app",
-                     "title":  "Import/export console",
-                     "contract":  "state-transfer Block -\u003e operator-visible import/export application",
-                     "sequence":  12,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-013",
-                     "key":  "backup-restore-console",
-                     "family":  "local-app",
-                     "title":  "Backup/restore console",
-                     "contract":  "backup Block -\u003e local backup/restore application",
-                     "sequence":  13,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-014",
-                     "key":  "activity-dashboard",
-                     "family":  "local-app",
-                     "title":  "Activity dashboard",
-                     "contract":  "activity-log Block -\u003e bounded durable activity feed UI",
-                     "sequence":  14,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-015",
-                     "key":  "preference-profile-app",
-                     "family":  "local-app",
-                     "title":  "Preference profile app",
-                     "contract":  "preference-profile Block -\u003e validated profile editor",
-                     "sequence":  15,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-016",
-                     "key":  "desk-tool-ui",
-                     "family":  "composition",
-                     "title":  "Desk tool UI",
-                     "contract":  "desk-tool composition -\u003e complete local-first desk application",
-                     "sequence":  16,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-017",
-                     "key":  "extension-popup",
-                     "family":  "extension",
-                     "title":  "Browser extension popup",
-                     "contract":  "bounded local capability -\u003e MV3 popup application",
-                     "sequence":  17,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-018",
-                     "key":  "extension-options",
-                     "family":  "extension",
-                     "title":  "Browser extension options",
-                     "contract":  "MV3 extension + settings -\u003e durable options application",
-                     "sequence":  18,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-019",
-                     "key":  "extension-content-script",
-                     "family":  "extension",
-                     "title":  "Bounded content-script tool",
-                     "contract":  "explicit page transform -\u003e permission-minimal MV3 content tool",
-                     "sequence":  19,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-020",
-                     "key":  "offline-app-shell",
-                     "family":  "pwa",
-                     "title":  "Offline application shell",
-                     "contract":  "static local app -\u003e installable offline-first shell",
-                     "sequence":  20,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-021",
-                     "key":  "local-file-tool",
-                     "family":  "local-app",
-                     "title":  "Local file utility",
-                     "contract":  "user-selected local file -\u003e bounded inspect/transform/download UI",
-                     "sequence":  21,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-022",
-                     "key":  "multi-view-app",
-                     "family":  "composition",
-                     "title":  "Multi-view composed app",
-                     "contract":  "proven local Blocks -\u003e routed multi-view application",
-                     "sequence":  22,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-023",
-                     "key":  "polish-accessibility",
-                     "family":  "quality",
-                     "title":  "Application polish pass",
-                     "contract":  "working app -\u003e keyboard/mobile/a11y/performance verified app",
-                     "sequence":  23,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 },
-                 {
-                     "id":  "L3-024",
-                     "key":  "local-first-capstone",
-                     "family":  "composition",
-                     "title":  "Local-first capstone",
-                     "contract":  "multiple proven Blocks -\u003e packaged single-purpose application",
-                     "sequence":  24,
-                     "status":  "PREPARED",
-                     "targetDisposition":  "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
-                     "authorityGranted":  false
-                 }
-             ]
+  "schema": "othrys.os.training-level-prep.v2",
+  "mission": "V2-011K",
+  "level": 3,
+  "name": "Small Applications",
+  "status": "PREPARED_LOCKED",
+  "goal": "Complete single-purpose apps, static sites, extensions and local-first tools.",
+  "entryGate": [
+    "Level 2 solid-foundation milestone SEALED_PENDING_OPERATOR_ADVANCE_ONLY",
+    "Level 2 = 24/24 COMPLETE",
+    "fresh-root OS runtime 371/371 PASS; post-seal runtime 373/373 PASS",
+    "training source 486/486 PASS",
+    "training Block contracts 536/536 PASS",
+    "training governance 3/3 PASS",
+    "fresh-root Web 184 PASS / 1 SKIP + typecheck/build PASS",
+    "fresh-root VTC 17/17 + build PASS",
+    "fresh-root canonical Blocks browser 29/29 + 5/5 PASS",
+    "legacy executable routes = 0",
+    "explicit operator activation required"
+  ],
+  "activationEffects": [
+    "materialize this exact prepared curriculum into TRAINING_MANIFEST level3",
+    "set Level 3 summary status ACTIVE",
+    "set currentLevel to 3",
+    "materialized jobs start QUEUED, never ACTIVE automatically",
+    "leave Level 4 LOCKED",
+    "grant no authority",
+    "admit no Block automatically",
+    "start no builder automatically"
+  ],
+  "laws": {
+    "automaticLevelAdvance": false,
+    "automaticAdmission": false,
+    "authorityGranted": false,
+    "externalServicesAllowed": false,
+    "operatorActivationRequired": true,
+    "productionMutationAllowed": false,
+    "paidUsageAllowed": false,
+    "level4UnlockAllowed": false,
+    "builderExecutionDuringPrep": false
+  },
+  "quality": [
+    "stock-first preflight",
+    "composition before invention",
+    "deterministic state core",
+    "browser-visible proof",
+    "responsive phone/tablet/desktop where applicable",
+    "keyboard/accessibility smoke",
+    "no external auth/database/API",
+    "no secrets",
+    "bounded filesystem/browser permissions",
+    "independent Talos verification",
+    "repair evidence preserved",
+    "authority-free"
+  ],
+  "jobs": [
+    {
+      "id": "L3-001",
+      "key": "static-info-page",
+      "family": "web",
+      "title": "Static information page",
+      "contract": "semantic HTML + CSS -> responsive static page",
+      "sequence": 1,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L1-013 html-escape",
+        "L1-015 metadata-check"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-002",
+      "key": "responsive-landing",
+      "family": "web",
+      "title": "Responsive landing page",
+      "contract": "content + layout rules -> responsive landing page",
+      "sequence": 2,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L1-038 color-parse",
+        "L1-015 metadata-check"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-003",
+      "key": "validated-form-app",
+      "family": "web",
+      "title": "Validated form app",
+      "contract": "form schema + input -> accessible validated local form",
+      "sequence": 3,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L1-028 schema-check",
+        "L1-036 email-normalize",
+        "L1-037 phone-normalize"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-004",
+      "key": "searchable-table-app",
+      "family": "web",
+      "title": "Searchable table app",
+      "contract": "local records -> searchable sortable paginated table UI",
+      "sequence": 4,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-018 search-filter",
+        "L2-019 sort-page"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-005",
+      "key": "settings-panel-app",
+      "family": "local-app",
+      "title": "Settings panel app",
+      "contract": "settings Block -> durable responsive settings UI",
+      "sequence": 5,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-002 settings-store"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-006",
+      "key": "todo-dashboard",
+      "family": "local-app",
+      "title": "Todo dashboard",
+      "contract": "todo Block -> complete local task dashboard",
+      "sequence": 6,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-003 todo-store",
+        "L2-020 dashboard-summary"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-007",
+      "key": "habit-dashboard",
+      "family": "local-app",
+      "title": "Habit dashboard",
+      "contract": "habit Block -> streak/history application",
+      "sequence": 7,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-010 habit-tracker",
+        "L2-020 dashboard-summary"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-008",
+      "key": "time-tracker-app",
+      "family": "local-app",
+      "title": "Time tracker app",
+      "contract": "time ledger Block -> start/stop dashboard application",
+      "sequence": 8,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-011 time-tracker",
+        "L2-020 dashboard-summary"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-009",
+      "key": "expense-dashboard",
+      "family": "local-app",
+      "title": "Expense dashboard",
+      "contract": "expense Block -> local expense entry + summary application",
+      "sequence": 9,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-012 expense-tracker",
+        "L2-020 dashboard-summary"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-010",
+      "key": "notes-app",
+      "family": "local-app",
+      "title": "Notes application",
+      "contract": "notes + tag Blocks -> searchable tagged notes application",
+      "sequence": 10,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-004 notes-store",
+        "L2-008 tag-index",
+        "L2-018 search-filter"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-011",
+      "key": "multi-list-app",
+      "family": "local-app",
+      "title": "Multi-list application",
+      "contract": "multi-list Block -> grouped CRUD application",
+      "sequence": 11,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-023 multi-list"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-012",
+      "key": "import-export-console",
+      "family": "local-app",
+      "title": "Import/export console",
+      "contract": "state-transfer Block -> operator-visible import/export application",
+      "sequence": 12,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-013 state-transfer"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-013",
+      "key": "backup-restore-console",
+      "family": "local-app",
+      "title": "Backup/restore console",
+      "contract": "backup Block -> local backup/restore application",
+      "sequence": 13,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-014 backup-restore"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-014",
+      "key": "activity-dashboard",
+      "family": "local-app",
+      "title": "Activity dashboard",
+      "contract": "activity-log Block -> bounded durable activity feed UI",
+      "sequence": 14,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-021 activity-log",
+        "L2-020 dashboard-summary"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-015",
+      "key": "preference-profile-app",
+      "family": "local-app",
+      "title": "Preference profile app",
+      "contract": "preference-profile Block -> validated profile editor",
+      "sequence": 15,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-022 preference-profile"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-016",
+      "key": "desk-tool-ui",
+      "family": "composition",
+      "title": "Desk tool UI",
+      "contract": "desk-tool composition -> complete local-first desk application",
+      "sequence": 16,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-024 desk-tool"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-017",
+      "key": "extension-popup",
+      "family": "extension",
+      "title": "Browser extension popup",
+      "contract": "bounded local capability -> MV3 popup application",
+      "sequence": 17,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L1-031 checklist",
+        "L2-002 settings-store"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable",
+        "MV3 manifest",
+        "minimum permissions",
+        "no remote code"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-018",
+      "key": "extension-options",
+      "family": "extension",
+      "title": "Browser extension options",
+      "contract": "MV3 extension + settings -> durable options application",
+      "sequence": 18,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-002 settings-store"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable",
+        "MV3 manifest",
+        "minimum permissions",
+        "no remote code"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-019",
+      "key": "extension-content-script",
+      "family": "extension",
+      "title": "Bounded content-script tool",
+      "contract": "explicit page transform -> permission-minimal MV3 content tool",
+      "sequence": 19,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L1-013 html-escape",
+        "L1-028 schema-check"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable",
+        "MV3 manifest",
+        "minimum permissions",
+        "no remote code"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-020",
+      "key": "offline-app-shell",
+      "family": "pwa",
+      "title": "Offline application shell",
+      "contract": "static local app -> installable offline-first shell",
+      "sequence": 20,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L1-030 idempotency-key",
+        "L2-013 state-transfer"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-021",
+      "key": "local-file-tool",
+      "family": "local-app",
+      "title": "Local file utility",
+      "contract": "user-selected local file -> bounded inspect/transform/download UI",
+      "sequence": 21,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L1-021 checksum",
+        "L1-022 filename-sanitize",
+        "L1-023 extension-classifier"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-022",
+      "key": "multi-view-app",
+      "family": "composition",
+      "title": "Multi-view composed app",
+      "contract": "proven local Blocks -> routed multi-view application",
+      "sequence": 22,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L2-024 desk-tool",
+        "L2-021 activity-log"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-023",
+      "key": "polish-accessibility",
+      "family": "quality",
+      "title": "Application polish pass",
+      "contract": "working app -> keyboard/mobile/a11y/performance verified app",
+      "sequence": 23,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "L3 prior completed app under test; no new product capability"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    },
+    {
+      "id": "L3-024",
+      "key": "local-first-capstone",
+      "family": "composition",
+      "title": "Local-first capstone",
+      "contract": "multiple proven Blocks -> packaged single-purpose application",
+      "sequence": 24,
+      "status": "PREPARED",
+      "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
+      "authorityGranted": false,
+      "sourceStock": [
+        "multiple proven Level 2 primitives",
+        "at least one completed earlier Level 3 app pattern"
+      ],
+      "executionStarted": false,
+      "automaticAdmission": false,
+      "qualityGates": [
+        "contract tests",
+        "Talos visible/behavior proof",
+        "failure preservation",
+        "learning receipt",
+        "responsive surface where applicable",
+        "keyboard/a11y smoke where applicable"
+      ],
+      "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+    }
+  ],
+  "preparedAgainst": {
+    "level2Milestone": "docs/training/milestones/LEVEL2_SOLID_FOUNDATION_2026-09-01.json",
+    "milestoneTag": "milestone-level2-solid-foundation-2026-09-01",
+    "othrysOsSealCommit": "7669d3b3da305fc17aee46b2f3010ebc7bf8320e",
+    "legacyClosure": "docs/harvest/LEGACY_ROUTE_CLOSED_2026-09-01.json"
+  },
+  "level3Law": "A Level 3 job is a complete bounded application. It must compose proven stock first, expose a usable surface, preserve state/failure semantics, and pass independent Talos application proof. Builder success alone never completes a job.",
+  "applicationGate": {
+    "required": [
+      "stock preflight",
+      "declared app contract",
+      "bounded package/workspace",
+      "deterministic core tests",
+      "visible interaction proof",
+      "responsive check when visual",
+      "keyboard/a11y smoke when visual",
+      "failure-state proof",
+      "Talos independent verdict",
+      "learning receipt",
+      "final disposition"
+    ],
+    "forbidden": [
+      "external auth",
+      "remote database",
+      "email delivery",
+      "remote API dependency",
+      "paid provider",
+      "secret requirement",
+      "production deployment",
+      "automatic Block admission",
+      "self-verification by builder"
+    ]
+  },
+  "graduationGate": {
+    "jobsComplete": "24/24",
+    "allLearningReceipts": true,
+    "allTalosFinalVerdicts": "PASS",
+    "unresolvedOutOfScopeMutations": 0,
+    "automaticLevelAdvance": false,
+    "level4RemainsLockedUntilSeparateOperatorTransition": true
+  }
 }
