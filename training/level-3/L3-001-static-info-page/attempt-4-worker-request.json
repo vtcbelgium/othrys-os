@@ -1,0 +1,12 @@
+{
+  "schema_version": "othrys.worker-request.v0.1",
+  "job_id": "L3-001-REPAIR-CSS-2",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "workspace": "C:/Users/othry/Projects/othrys-os",
+  "allowed_paths": ["training/level-3/L3-001-static-info-page/styles.css"],
+  "deny_paths": [".git", ".othrys", "missions", "runtime", "docs", "blocks"],
+  "timeout_sec": 90,
+  "metadata": {"forge_builder_id": "local.qwen3.5-9b", "training_level": 3, "authorityGranted": false},
+  "task": "WRITE THIS FILE NOW and nothing else: training/level-3/L3-001-static-info-page/styles.css. Do not read, search, inspect, or use workspace/ prefixes. Create polished dark responsive CSS for classes site-header, site-nav, nav-link, section, badge, card-grid, card, site-footer. Add body/base typography and layout, strong contrast, a visible :focus-visible outline for links, a responsive card grid, and at least one @media (max-width: 700px) rule. No @import, url(), remote asset, external font, JavaScript, tracker, or network dependency. Finish immediately after the single write."
+}

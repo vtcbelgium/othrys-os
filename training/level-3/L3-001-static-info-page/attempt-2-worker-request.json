@@ -1,0 +1,26 @@
+﻿{
+    "schema_version":  "othrys.worker-request.v0.1",
+    "job_id":  "L3-001",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "workspace":  "C:/Users/othry/Projects/othrys-os",
+    "allowed_paths":  [
+                          "training/level-3/L3-001-static-info-page/index.html",
+                          "training/level-3/L3-001-static-info-page/styles.css"
+                      ],
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "runtime",
+                       "docs",
+                       "blocks"
+                   ],
+    "timeout_sec":  120,
+    "metadata":  {
+                     "forge_builder_id":  "local.ornith-1.5-9b",
+                     "training_level":  3,
+                     "authorityGranted":  false
+                 },
+    "task":  "LEVEL 3 L3-001 RETRY. Do not inspect the repo. WRITE the exact allowed paths, not workspace/index.html. Create training/level-3/L3-001-static-info-page/index.html and training/level-3/L3-001-static-info-page/styles.css only. Build a polished responsive static information page about OTHRYS Level 3 Small Applications. Include semantic header/nav/main/three sections/footer, three anchor links, one h1, useful h2 hierarchy, a capability card grid, visible badge LEVEL 3 ACTIVE, viewport meta, local stylesheet link, keyboard focus-visible styles, strong contrast, and at least one responsive media query. No JavaScript, remote assets, external fonts, trackers, forms, network calls, or secrets. Touch no other file and finish immediately after both writes."
+}

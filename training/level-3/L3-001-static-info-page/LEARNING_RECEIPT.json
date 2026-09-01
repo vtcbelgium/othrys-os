@@ -1,0 +1,63 @@
+{
+  "schema": "othrys.os.training-learning-receipt.v1",
+  "jobId": "L3-001",
+  "level": 3,
+  "title": "Static information page",
+  "status": "COMPLETE",
+  "contract": "semantic HTML + CSS -> responsive static page",
+  "stockUsed": [
+    "L1-013 html-escape",
+    "L1-015 metadata-check"
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "builder": "local.qwen2.5-coder-7b",
+      "result": "NO_ATTEMPT_MUTATION",
+      "lesson": "builder used workspace/index.html instead of the exact bounded path; touch_allow correctly blocked it"
+    },
+    {
+      "attempt": 2,
+      "builder": "local.ornith-1.5-9b",
+      "result": "PARTIAL_MUTATION",
+      "lesson": "worker ok:true is insufficient: HTML was created but required CSS was omitted"
+    },
+    {
+      "attempt": 3,
+      "builder": "local.nemotron3.5-lightning-30b-a3b",
+      "result": "NO_ATTEMPT_MUTATION",
+      "lesson": "agent inspected a missing bounded target instead of creating it"
+    },
+    {
+      "attempt": 4,
+      "builder": "local.qwen3.5-9b",
+      "result": "PASS",
+      "lesson": "single-file exact-path repair produced the missing CSS with zero out-of-scope mutation"
+    },
+    {
+      "attempt": 5,
+      "builder": "local.ornith-1.5-9b",
+      "result": "NO_ATTEMPT_MUTATION",
+      "lesson": "semantic repair read the file but produced no mutation"
+    }
+  ],
+  "talos": {
+    "result": "PASS",
+    "tests": "3/3",
+    "proof": "training/level-3/L3-001-static-info-page/talos.test.mjs",
+    "desktopVisibleProof": true,
+    "mobileResponsiveProof": true,
+    "keyboardFocusProof": true,
+    "semanticLegacyTruthProof": true
+  },
+  "finalTrainingDisposition": "APP_PATTERN",
+  "automaticAdmission": false,
+  "promotionAuthorityGranted": false,
+  "authorityGranted": false,
+  "operatorRecovery": {
+    "used": true,
+    "scope": "three exact text replacements in index.html",
+    "reason": "semantic truth repair after governed builder no-mutation",
+    "capabilityDebt": true
+  }
+}

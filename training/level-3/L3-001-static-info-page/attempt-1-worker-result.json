@@ -1,0 +1,68 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "L3-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen2.5-coder-7b",
+  "ok": false,
+  "reason": "NO_ATTEMPT_MUTATION",
+  "started_at": 1788249837.0580468,
+  "completed_at": 1788249862.2020373,
+  "duration_sec": 25.143990516662598,
+  "allowed_paths": [
+    "training/level-3/L3-001-static-info-page/index.html",
+    "training/level-3/L3-001-static-info-page/styles.css"
+  ],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "diff": "",
+  "git_status": "",
+  "summary": "",
+  "runtime_evidence": {
+    "observed_diff": "",
+    "git_status": "",
+    "tool_trace": [
+      "write_file: blocked by touch_allow: workspace/index.html"
+    ],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.qwen2.5-coder-7b",
+    "model": "qwen2.5-coder:7b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "0",
+      "utilization_pct": "0",
+      "temperature_c": "48",
+      "power_w": "13.66"
+    },
+    "ollama_ps": "NAME    ID    SIZE    PROCESSOR    CONTEXT    UNTIL"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "4568",
+      "utilization_pct": "93",
+      "temperature_c": "71",
+      "power_w": "99.67"
+    },
+    "ollama_ps": "NAME                ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen2.5-coder:7b    dae161e27b0e    4.6 GB    100% GPU     4096       29 minutes from now"
+  }
+}

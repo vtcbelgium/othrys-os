@@ -1929,7 +1929,7 @@
   "level3": {
     "status": "ACTIVE",
     "targetJobs": 24,
-    "completedJobs": 0,
+    "completedJobs": 1,
     "jobs": [
       {
         "id": "L3-001",
@@ -1938,14 +1938,14 @@
         "title": "Static information page",
         "contract": "semantic HTML + CSS -> responsive static page",
         "sequence": 1,
-        "status": "QUEUED",
+        "status": "COMPLETE",
         "targetDisposition": "APP_OR_BLUEPRINT_OR_BLOCK_CANDIDATE",
         "authorityGranted": false,
         "sourceStock": [
           "L1-013 html-escape",
           "L1-015 metadata-check"
         ],
-        "executionStarted": false,
+        "executionStarted": true,
         "automaticAdmission": false,
         "qualityGates": [
           "contract tests",
@@ -1955,7 +1955,14 @@
           "responsive surface where applicable",
           "keyboard/a11y smoke where applicable"
         ],
-        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue"
+        "builderPolicy": "Hephaestus selects only executionAllowed qualified builders; failed candidates remain in qualification queue",
+        "attempts": 5,
+        "finalTrainingDisposition": "APP_PATTERN",
+        "promotionAuthorityGranted": false,
+        "proof": "training/level-3/L3-001-static-info-page/talos.test.mjs",
+        "completedEvidence": "training/level-3/L3-001-static-info-page/LEARNING_RECEIPT.json",
+        "lesson": "Application-level training proved visible Talos verification must reject worker ok:true when a required surface file is missing; semantic review also caught stale legacy wording. Exact-path bounded repair plus recorded operator recovery completed the app without out-of-scope mutation.",
+        "operatorRecovery": true
       },
       {
         "id": "L3-002",

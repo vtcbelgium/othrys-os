@@ -1,0 +1,70 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "L3-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.ornith-1.5-9b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788249910.2250466,
+  "completed_at": 1788249934.8505764,
+  "duration_sec": 24.625529766082764,
+  "allowed_paths": [
+    "training/level-3/L3-001-static-info-page/index.html",
+    "training/level-3/L3-001-static-info-page/styles.css"
+  ],
+  "changed_files": [
+    "training/level-3/L3-001-static-info-page/index.html"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/level-3/L3-001-static-info-page/index.html\n+++ b/training/level-3/L3-001-static-info-page/index.html\n@@ -0,0 +1,53 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+  <meta charset=\"UTF-8\">\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+  <title>Othrys Level 3 Small Applications</title>\n+  <link rel=\"stylesheet\" href=\"styles.css\">\n+</head>\n+<body>\n+  <header class=\"site-header\">\n+    <nav class=\"site-nav\" aria-label=\"Primary\">\n+      <a href=\"#overview\" class=\"nav-link\">Overview</a>\n+      <a href=\"#capabilities\" class=\"nav-link\">Capabilities</a>\n+      <a href=\"#guidance\" class=\"nav-link\">Guidance</a>\n+    </nav>\n+  </header>\n+\n+  <main>\n+    <section id=\"overview\" class=\"section\">\n+      <h1>Othrys Level 3 Small Applications</h1>\n+      <p>Level 3 is the tier for small, self-contained applications that run inside the Othrys Hub. These projects are scoped, focused, and built to ship quickly without external dependencies.</p>\n+      <span class=\"badge\" aria-label=\"Status\">LEVEL 3 ACTIVE</span>\n+    </section>\n+\n+    <section id=\"capabilities\" class=\"section\">\n+      <h2>Capabilities</h2>\n+      <ul class=\"card-grid\">\n+        <li class=\"card\">\n+          <h3>Scoped Scope</h3>\n+          <p>Keep each application small and cohesive. One clear purpose per project keeps builds fast and reviews simple.</p>\n+        </li>\n+        <li class=\"card\">\n+          <h3>Static First</h3>\n+          <p>Prefer static assets and local stylesheets. No remote assets, external fonts, or network calls are required.</p>\n+        </li>\n+        <li class=\"card\">\n+          <h3>Accessible Markup</h3>\n+          <p>Use semantic elements, visible focus states, and strong contrast so every visitor can navigate comfortably.</p>\n+        </li>\n+      </ul>\n+    </section>\n+\n+    <section id=\"guidance\" class=\"section\">\n+      <h2>Guidance</h2>\n+      <p>Build with intent: ship the smallest change that completes the task. Avoid JavaScript, trackers, forms, and secrets. Keep the page responsive and readable across every viewport.</p>\n+    </section>\n+  </main>\n+\n+  <footer class=\"site-footer\">\n+    <p>&copy; Othrys Hub &mdash; Level 3 Small Applications.</p>\n+  </footer>\n+</body>\n+</html>",
+  "git_status": "training/level-3/L3-001-static-info-page/index.html",
+  "summary": "tool turn limit (36) reached; proposed diff collected from workspace mutations",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/level-3/L3-001-static-info-page/index.html\n+++ b/training/level-3/L3-001-static-info-page/index.html\n@@ -0,0 +1,53 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+  <meta charset=\"UTF-8\">\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+  <title>Othrys Level 3 Small Applications</title>\n+  <link rel=\"stylesheet\" href=\"styles.css\">\n+</head>\n+<body>\n+  <header class=\"site-header\">\n+    <nav class=\"site-nav\" aria-label=\"Primary\">\n+      <a href=\"#overview\" class=\"nav-link\">Overview</a>\n+      <a href=\"#capabilities\" class=\"nav-link\">Capabilities</a>\n+      <a href=\"#guidance\" class=\"nav-link\">Guidance</a>\n+    </nav>\n+  </header>\n+\n+  <main>\n+    <section id=\"overview\" class=\"section\">\n+      <h1>Othrys Level 3 Small Applications</h1>\n+      <p>Level 3 is the tier for small, self-contained applications that run inside the Othrys Hub. These projects are scoped, focused, and built to ship quickly without external dependencies.</p>\n+      <span class=\"badge\" aria-label=\"Status\">LEVEL 3 ACTIVE</span>\n+    </section>\n+\n+    <section id=\"capabilities\" class=\"section\">\n+      <h2>Capabilities</h2>\n+      <ul class=\"card-grid\">\n+        <li class=\"card\">\n+          <h3>Scoped Scope</h3>\n+          <p>Keep each application small and cohesive. One clear purpose per project keeps builds fast and reviews simple.</p>\n+        </li>\n+        <li class=\"card\">\n+          <h3>Static First</h3>\n+          <p>Prefer static assets and local stylesheets. No remote assets, external fonts, or network calls are required.</p>\n+        </li>\n+        <li class=\"card\">\n+          <h3>Accessible Markup</h3>\n+          <p>Use semantic elements, visible focus states, and strong contrast so every visitor can navigate comfortably.</p>\n+        </li>\n+      </ul>\n+    </section>\n+\n+    <section id=\"guidance\" class=\"section\">\n+      <h2>Guidance</h2>\n+      <p>Build with intent: ship the smallest change that completes the task. Avoid JavaScript, trackers, forms, and secrets. Keep the page responsive and readable across every viewport.</p>\n+    </section>\n+  </main>\n+\n+  <footer class=\"site-footer\">\n+    <p>&copy; Othrys Hub &mdash; Level 3 Small Applications.</p>\n+  </footer>\n+</body>\n+</html>",
+    "git_status": "training/level-3/L3-001-static-info-page/index.html",
+    "tool_trace": [
+      "write_file: wrote 2050 chars to training/level-3/L3-001-static-info-page/index.html"
+    ],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.ornith-1.5-9b",
+    "model": "ornith-1.5:9b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "4568",
+      "utilization_pct": "0",
+      "temperature_c": "42",
+      "power_w": "8.82"
+    },
+    "ollama_ps": "NAME                ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen2.5-coder:7b    dae161e27b0e    4.6 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6298",
+      "utilization_pct": "0",
+      "temperature_c": "56",
+      "power_w": "11.70"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nornith-1.5:9b    e5df7dcdd8a2    5.5 GB    100% GPU     4096       29 minutes from now"
+  }
+}

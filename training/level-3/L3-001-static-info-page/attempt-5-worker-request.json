@@ -1,0 +1,12 @@
+{
+  "schema_version": "othrys.worker-request.v0.1",
+  "job_id": "L3-001-SEMANTIC-REPAIR",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "workspace": "C:/Users/othry/Projects/othrys-os",
+  "allowed_paths": ["training/level-3/L3-001-static-info-page/index.html"],
+  "deny_paths": [".git", ".othrys", "missions", "runtime", "docs", "blocks"],
+  "timeout_sec": 90,
+  "metadata": {"forge_builder_id": "local.ornith-1.5-9b", "training_level": 3, "authorityGranted": false},
+  "task": "L3-001 semantic truth repair. Modify only training/level-3/L3-001-static-info-page/index.html. Preserve the existing structure and all features. Replace the sentence claiming Level 3 applications run inside the Othrys Hub with accurate wording that they are built within the OTHRYS training environment. Replace heading 'Scoped Scope' with 'Focused Scope'. Replace footer wording 'Othrys Hub' with 'OTHRYS'. Do not change CSS or any other file. No new dependencies. Finish after this one-file repair."
+}

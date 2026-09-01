@@ -1,0 +1,16 @@
+{
+  "schema_version": "othrys.worker-request.v0.1",
+  "job_id": "L3-001-REPAIR-CSS",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "workspace": "C:/Users/othry/Projects/othrys-os",
+  "allowed_paths": ["training/level-3/L3-001-static-info-page/styles.css"],
+  "deny_paths": [".git", ".othrys", "missions", "runtime", "docs", "blocks"],
+  "timeout_sec": 90,
+  "metadata": {
+    "forge_builder_id": "local.nemotron3.5-lightning-30b-a3b",
+    "training_level": 3,
+    "authorityGranted": false
+  },
+  "task": "L3-001 bounded repair. Do not inspect or modify any other file. WRITE exactly training/level-3/L3-001-static-info-page/styles.css. Style the existing semantic static page with a polished dark OTHRYS-like local design, strong contrast, centered bounded content, responsive nav, card grid, status badge, footer, and visible :focus-visible keyboard outline. Include at least one @media rule under 700px. No imports, remote URLs, external fonts, JavaScript, trackers, or network dependencies. Touch only this CSS file and finish."
+}

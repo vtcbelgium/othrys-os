@@ -1,0 +1,19 @@
+{
+  "schema_version": "othrys.worker-request.v0.1",
+  "job_id": "L3-001",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "workspace": "C:/Users/othry/Projects/othrys-os",
+  "allowed_paths": [
+    "training/level-3/L3-001-static-info-page/index.html",
+    "training/level-3/L3-001-static-info-page/styles.css"
+  ],
+  "deny_paths": [".git", ".othrys", "missions", "runtime", "docs", "blocks"],
+  "timeout_sec": 120,
+  "metadata": {
+    "forge_builder_id": "local.qwen2.5-coder-7b",
+    "training_level": 3,
+    "authorityGranted": false
+  },
+  "task": "LEVEL 3 L3-001. Build a polished responsive static information page using only semantic HTML and CSS. Write exactly the two allowed files. Page topic: OTHRYS Level 3 Small Applications. Include header, nav with three anchor links, main with at least three semantic sections, a concise capability card grid, a visible status badge saying LEVEL 3 ACTIVE, and footer. Include viewport metadata, one h1, useful h2 hierarchy, descriptive text, visible keyboard focus styles, good contrast, responsive layout with at least one media query, and no JavaScript, remote assets, external fonts, trackers, forms, network calls, or secrets. Use only local CSS. Touch no other file, then finish."
+}

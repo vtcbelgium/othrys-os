@@ -22,13 +22,16 @@ test('pre-activation readiness closes after the one explicit transition',()=>{
   assert.throws(()=>projectLevel3Activation(root),/LEVEL3_NOT_READY/);
 });
 
-test('active manifest queues exact prepared curriculum and keeps Level 4 locked',()=>{
+test('active manifest preserves exact curriculum while verified progress advances',()=>{
   const prep=read('docs/training/LEVEL_3_PREP.json');
   const m=read('docs/training/TRAINING_MANIFEST.json');
   assert.equal(m.currentLevel,3);
   assert.equal(m.level3.status,'ACTIVE');
   assert.deepEqual(m.level3.jobs.map(x=>x.id),prep.jobs.map(x=>x.id));
-  assert.ok(m.level3.jobs.every(x=>x.status==='QUEUED'&&x.authorityGranted===false&&x.executionStarted===false));
+  assert.equal(m.level3.completedJobs,1);
+  assert.equal(m.level3.jobs[0].status,'COMPLETE');
+  assert.equal(m.level3.jobs[0].finalTrainingDisposition,'APP_PATTERN');
+  assert.ok(m.level3.jobs.slice(1).every(x=>x.status==='QUEUED'&&x.executionStarted===false));
   assert.equal(m.levels.find(x=>x.level===4).status,'LOCKED');
   assert.equal(m.automaticLevelAdvance,false);
   assert.equal(m.automaticAdmission,false);
