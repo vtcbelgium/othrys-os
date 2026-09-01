@@ -1,0 +1,65 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "FORGE-AUDIT-local_north-mini-code-1.0",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.north-mini-code-1.0",
+  "ok": false,
+  "reason": "NO_ATTEMPT_MUTATION",
+  "started_at": 1788242687.5412245,
+  "completed_at": 1788242782.061685,
+  "duration_sec": 94.52046060562134,
+  "allowed_paths": [
+    "training/forge-qualification/local_north-mini-code-1.0/candidate.mjs"
+  ],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "diff": "",
+  "git_status": "",
+  "summary": "",
+  "runtime_evidence": {
+    "observed_diff": "",
+    "git_status": "",
+    "tool_trace": [],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "hephaestus_forge_local_qualification",
+    "selected_builder": "local.north-mini-code-1.0",
+    "model": "north-mini-code-1.0:latest",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "5466",
+      "utilization_pct": "0",
+      "temperature_c": "57",
+      "power_w": "40.09"
+    },
+    "ollama_ps": "NAME             ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \ngranite4.2:8b    f586c02fdecd    5.6 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6088",
+      "utilization_pct": "15",
+      "temperature_c": "62",
+      "power_w": "47.76"
+    },
+    "ollama_ps": "NAME                          ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nnorth-mini-code-1.0:latest    d8b269ad5c7c    19 GB    69%/31% CPU/GPU    4096       29 minutes from now"
+  }
+}

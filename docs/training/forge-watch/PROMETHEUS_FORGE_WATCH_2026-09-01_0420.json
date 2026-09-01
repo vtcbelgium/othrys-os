@@ -1,0 +1,23 @@
+{
+  "schema": "othrys.prometheus.forge-watch.v1",
+  "date": "2026-09-01",
+  "result": "NO_NEW_ADMISSION",
+  "rosterComparedAgainst": "runtime/hephaestus/data/forge_roster.json",
+  "publicSourcesChecked": [
+    "https://ollama.com/blog/nemotron-3-5-lightning",
+    "https://ollama.com/blog/claude-desktop",
+    "https://ollama.com/blog",
+    "https://vllm.ai/blog/2026-08-20-verl-omni-v0-2-0"
+  ],
+  "observations": [
+    "Fresh official-source checks found no genuinely new builder candidate that cleared all Forge gates in this pass.",
+    "NVIDIA Nemotron 3.5 Lightning remains already represented in the Hephaestus roster; duplicate discovery noise suppressed.",
+    "Meta Muse Glimmer and Qwen3.8 are already known from prior Forge Watch passes and were not re-enqueued.",
+    "Ollama Claude Desktop gateway support is materially relevant builder infrastructure but is not itself a Hephaestus builder candidate and received no authority.",
+    "No paid usage was enabled and no candidate bypassed availability, license/cost, secret-boundary, Builder Olympics, or Talos qualification."
+  ],
+  "authorityGranted": false,
+  "automaticPaidUsage": false,
+  "admitted": [],
+  "operatorNotification": false
+}

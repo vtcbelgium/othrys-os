@@ -1,0 +1,65 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "FORGE-AUDIT-local_gpt-oss-20b",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.gpt-oss-20b",
+  "ok": false,
+  "reason": "NO_ATTEMPT_MUTATION",
+  "started_at": 1788242985.6768544,
+  "completed_at": 1788243010.9646566,
+  "duration_sec": 25.28780221939087,
+  "allowed_paths": [
+    "training/forge-qualification/local_gpt-oss-20b/candidate.mjs"
+  ],
+  "changed_files": [],
+  "out_of_scope_changes": [],
+  "diff": "",
+  "git_status": "",
+  "summary": "",
+  "runtime_evidence": {
+    "observed_diff": "",
+    "git_status": "",
+    "tool_trace": [],
+    "tool_call_diagnostics": []
+  },
+  "capability_selection": {
+    "policy": "hephaestus_forge_local_qualification",
+    "selected_builder": "local.gpt-oss-20b",
+    "model": "gpt-oss:20b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "2902",
+      "utilization_pct": "33",
+      "temperature_c": "62",
+      "power_w": "90.02"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:4b    359d7dd4bcda    2.9 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6140",
+      "utilization_pct": "0",
+      "temperature_c": "54",
+      "power_w": "46.00"
+    },
+    "ollama_ps": "NAME           ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \ngpt-oss:20b    17052f91a42e    14 GB    56%/44% CPU/GPU    4096       29 minutes from now"
+  }
+}

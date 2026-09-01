@@ -27,7 +27,13 @@ FORGE_LOCAL_MODELS = {
     "local.qwen3.8-27b": "qwen3.8:27b",
     "local.ornith-1.5-9b": "ornith-1.5:9b",
     "local.qwen2.5-coder-7b": "qwen2.5-coder:7b",
+    "local.qwen3-4b": "qwen3:4b",
+    "local.gpt-oss-20b": "gpt-oss:20b",
     "local.granite4.2-8b": "granite4.2:8b",
+    "local.north-mini-code-1.0": "north-mini-code-1.0:latest",
+    "local.muse-glimmer-30b": "muse-glimmer:30b-q4_K_M",
+    "local.gemma4-12b": "gemma4:12b",
+    "local.nemotron3.5-lightning-30b-a3b": "nemotron-3.5-lightning:30b-a3b",
 }
 
 

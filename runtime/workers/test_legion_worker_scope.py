@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from legion_qwen_worker_v01 import _changed_since, _dirty_snapshot, _repair_single_path_tool_calls, _recover_malformed_write_args, _gate_finish_tool
+from legion_qwen_worker_v01 import FORGE_LOCAL_MODELS, _changed_since, _dirty_snapshot, _repair_single_path_tool_calls, _recover_malformed_write_args, _gate_finish_tool
 
 
 def git(root: Path, *args: str) -> None:
@@ -150,3 +150,20 @@ def test_forge_execution_reads_roster_permission(tmp_path):
     assert mod._forge_execution_allowed(tmp_path,"a") is True
     assert mod._forge_execution_allowed(tmp_path,"b") is False
     assert mod._forge_execution_allowed(tmp_path,"missing") is False
+
+
+def test_all_executable_local_roster_builders_have_worker_model_mapping():
+    import json
+    root=Path(__file__).resolve().parents[2]
+    roster=json.loads((root/"runtime"/"hephaestus"/"data"/"forge_roster.json").read_text(encoding="utf-8"))
+    executable={b["id"] for b in roster["builders"] if b.get("locality")=="LOCAL" and b.get("executionAllowed") is True}
+    assert executable <= set(FORGE_LOCAL_MODELS)
+
+def test_failed_recent_local_candidates_remain_non_executable():
+    import json
+    root=Path(__file__).resolve().parents[2]
+    roster=json.loads((root/"runtime"/"hephaestus"/"data"/"forge_roster.json").read_text(encoding="utf-8"))
+    by={b["id"]:b for b in roster["builders"]}
+    for builder_id in ["local.granite4.2-8b","local.north-mini-code-1.0","local.gpt-oss-20b"]:
+        assert by[builder_id]["executionAllowed"] is False
+    assert by["local.muse-glimmer-30b"]["executionAllowed"] is True

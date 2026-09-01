@@ -1,6 +1,6 @@
 {
   "schema": "othrys.hephaestus.forge-roster.v1",
-  "generatedAt": "2026-08-30",
+  "generatedAt": "2026-09-01",
   "laws": [
     "rank is advisory; qualification gates execution",
     "Talos owns independent correctness evidence",
@@ -37,7 +37,12 @@
         "local.qwen3-coder-30b",
         "local.gpt-oss-20b",
         "local.qwen3.8-27b",
-        "local.ornith-1.5-9b"
+        "local.ornith-1.5-9b",
+        "local.gemma4-12b",
+        "local.nemotron3.5-lightning-30b-a3b",
+        "local.granite4.2-8b",
+        "local.north-mini-code-1.0",
+        "local.muse-glimmer-30b"
       ]
     },
     {
@@ -55,7 +60,8 @@
         "nvidia.nemotron-3.5-lightning",
         "nvidia.laguna-xs-2.1",
         "nvidia.minimax-m3",
-        "nvidia.kimi-k2.6"
+        "nvidia.kimi-k2.6",
+        "ollama.glm-5.3-flash-cloud"
       ]
     },
     {
@@ -102,9 +108,10 @@
         "code",
         "small-patch"
       ],
-      "readiness": "LOADED_UNQUALIFIED",
+      "readiness": "QUALIFIED_LOCAL",
       "qualificationPriority": 2,
-      "executionAllowed": false
+      "executionAllowed": true,
+      "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-09-01_LOCAL_ROSTER_AUDIT.json"
     },
     {
       "id": "local.qwen3-8b",
@@ -118,12 +125,13 @@
         "general",
         "code"
       ],
-      "readiness": "CERTIFIED_LEGACY_SCAFFOLD",
+      "readiness": "QUALIFIED_LOCAL_LEGACY_LIMITS",
       "qualificationPriority": 3,
       "executionAllowed": true,
       "knownLimitations": [
         "Level-1 training exposed repeated logic and JSON-write failures under legacy scaffold"
-      ]
+      ],
+      "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-09-01_LOCAL_ROSTER_AUDIT.json"
     },
     {
       "id": "local.qwen3-4b",
@@ -136,9 +144,13 @@
       "specialties": [
         "tiny-fast"
       ],
-      "readiness": "LOADED_UNQUALIFIED",
-      "qualificationPriority": 7,
-      "executionAllowed": false
+      "readiness": "QUALIFIED_LOCAL_TINY",
+      "qualificationPriority": 6,
+      "executionAllowed": true,
+      "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-09-01_LOCAL_ROSTER_AUDIT.json",
+      "knownLimitations": [
+        "Direct spark format quality is weaker than governed worker behavior; prefer for tiny bounded work only"
+      ]
     },
     {
       "id": "local.qwen3-coder-30b",
@@ -192,9 +204,13 @@
         "reasoning",
         "code"
       ],
-      "readiness": "LOADED_UNQUALIFIED_HEAVY",
+      "readiness": "KEEP_TESTING_NO_MUTATION",
       "qualificationPriority": 4,
-      "executionAllowed": false
+      "executionAllowed": false,
+      "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-09-01_LOCAL_ROSTER_AUDIT.json",
+      "knownLimitations": [
+        "2026-09-01 bounded worker qualification produced NO_ATTEMPT_MUTATION"
+      ]
     },
     {
       "id": "nvidia.kimi-k3",
@@ -350,6 +366,134 @@
       "executionAllowed": true,
       "hardwareNote": "6.6GB Ollama package; observed 100% GPU on Legion qualification",
       "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-08-30_ORNITH15_9B_QUAL1.json"
+    },
+    {
+      "id": "local.gemma4-12b",
+      "model": "gemma4:12b",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "coding",
+        "agentic-code",
+        "tool-use",
+        "structured-output"
+      ],
+      "readiness": "QUALIFIED_LOCAL_AGENTIC",
+      "qualificationPriority": 1,
+      "executionAllowed": true,
+      "hardwareNote": "7.6GB Ollama package; observed 30% CPU / 70% GPU on Legion qualification",
+      "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-09-01_GEMMA4_12B_QUAL1.json"
+    },
+    {
+      "id": "local.nemotron3.5-lightning-30b-a3b",
+      "model": "nemotron-3.5-lightning:30b-a3b",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "agentic-code",
+        "tool-use",
+        "structured-output",
+        "long-context"
+      ],
+      "readiness": "QUALIFIED_LOCAL_AGENTIC",
+      "qualificationPriority": 1,
+      "executionAllowed": true,
+      "hardwareNote": "25GB Q4_K_M; observed 81% CPU / 19% GPU on Legion qualification",
+      "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-09-01_NEMOTRON35_LIGHTNING_QUAL1.json"
+    },
+    {
+      "id": "local.granite4.2-8b",
+      "model": "granite4.2:8b",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "code",
+        "structured-output",
+        "tool-use"
+      ],
+      "readiness": "KEEP_TESTING_NO_MUTATION",
+      "qualificationPriority": 4,
+      "executionAllowed": false,
+      "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-09-01_LOCAL_ROSTER_AUDIT.json",
+      "knownLimitations": [
+        "Direct Olympics 4/4 pass, but bounded worker qualification still produced NO_ATTEMPT_MUTATION"
+      ]
+    },
+    {
+      "id": "local.north-mini-code-1.0",
+      "model": "north-mini-code-1.0:latest",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "agentic-code",
+        "tool-use",
+        "long-context"
+      ],
+      "readiness": "KEEP_TESTING_NO_MUTATION",
+      "qualificationPriority": 4,
+      "executionAllowed": false,
+      "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-09-01_LOCAL_ROSTER_AUDIT.json",
+      "hardwareNote": "18GB package; observed CPU/GPU split on Legion",
+      "knownLimitations": [
+        "Direct Olympics repair heat returned no final answer; bounded worker qualification produced NO_ATTEMPT_MUTATION"
+      ]
+    },
+    {
+      "id": "local.muse-glimmer-30b",
+      "model": "muse-glimmer:30b-q4_K_M",
+      "provider": "ollama",
+      "locality": "LOCAL",
+      "installed": true,
+      "endpointAvailable": true,
+      "costClass": "ZERO",
+      "specialties": [
+        "coding",
+        "agentic-code",
+        "repo-patch",
+        "tool-use",
+        "structured-output"
+      ],
+      "readiness": "QUALIFIED_LOCAL_SLOW_AGENTIC",
+      "qualificationPriority": 5,
+      "executionAllowed": true,
+      "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-09-01_LOCAL_ROSTER_AUDIT.json",
+      "hardwareNote": "18GB class package; observed CPU/GPU split on Legion",
+      "knownLimitations": [
+        "Direct prompt tool heat refused synthetic write request, but governed worker mutation passed; slow (~139s qualification)"
+      ]
+    },
+    {
+      "id": "ollama.glm-5.3-flash-cloud",
+      "model": "glm-5.3-flash:cloud",
+      "provider": "ollama-cloud",
+      "locality": "REMOTE",
+      "installed": true,
+      "endpointAvailable": false,
+      "costClass": "UNVERIFIED",
+      "specialties": [
+        "coding",
+        "agentic-code",
+        "long-context"
+      ],
+      "readiness": "BLOCKED_AUTH",
+      "qualificationPriority": 8,
+      "executionAllowed": false,
+      "qualificationEvidence": "docs/training/forge-watch/PROMETHEUS_FORGE_WATCH_2026-09-01_LOCAL_ROSTER_AUDIT.json",
+      "knownLimitations": [
+        "2026-09-01 Olympics returned HTTP 401 on all four probes; no unauthorized or paid path enabled"
+      ]
     }
   ],
   "authorityGranted": false,

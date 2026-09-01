@@ -1,21 +1,178 @@
 {
   "schema": "othrys.hephaestus.forge-spark-evidence.v1",
-  "capturedAt": "2026-08-30",
+  "capturedAt": "2026-09-01",
   "local": [
-    {"id":"local.qwen3.5-9b","status":"PASS","latencyMs":3886,"format":"EXACT","profile":{"think":false,"temperature":0}},
-    {"id":"local.qwen2.5-coder-7b","status":"PASS_WITH_FENCE","latencyMs":3869,"format":"MARKDOWN_FENCE","profile":{"temperature":0}},
-    {"id":"local.qwen3-8b","status":"PASS","latencyMs":3129,"format":"EXACT","profile":{"think":false,"temperature":0}},
-    {"id":"local.qwen3-4b","status":"FAIL_FORMAT","latencyMs":3365,"format":"RAMBLE_TOKEN_LIMIT","profile":{"think":false,"temperature":0}},
-    {"id":"local.qwen3-coder-30b","status":"PASS","latencyMs":14603,"format":"EXACT","profile":{"think":false,"temperature":0}},
-    {"id":"local.gpt-oss-20b","status":"PASS_WITH_THINKING","latencyMs":16303,"format":"EXACT","profile":{"temperature":0}}
-  ],  "remoteFree": [
-    {"id":"nvidia.kimi-k3","status":"PASS","latencyMs":5689,"format":"EXACT"},
-    {"id":"nvidia.deepseek-v4-pro","status":"TIMEOUT","latencyMs":35116},
-    {"id":"nvidia.deepseek-v4-flash","status":"PASS","latencyMs":9071,"format":"EXACT"},
-    {"id":"nvidia.nemotron-3.5-lightning","status":"PASS_FORMAT_VIOLATION","latencyMs":13390,"format":"PROSE_PLUS_CODE"},
-    {"id":"nvidia.laguna-xs-2.1","status":"PASS","latencyMs":19725,"format":"EXACT"},
-    {"id":"nvidia.minimax-m3","status":"PASS","latencyMs":4101,"format":"EXACT"},
-    {"id":"nvidia.kimi-k2.6","status":"HTTP_404","latencyMs":296}
+    {
+      "id": "local.qwen3.5-9b",
+      "status": "PASS",
+      "latencyMs": 3886,
+      "format": "EXACT",
+      "profile": {
+        "think": false,
+        "temperature": 0
+      }
+    },
+    {
+      "id": "local.qwen2.5-coder-7b",
+      "status": "PASS_WITH_FENCE",
+      "latencyMs": 3869,
+      "format": "MARKDOWN_FENCE",
+      "profile": {
+        "temperature": 0
+      }
+    },
+    {
+      "id": "local.qwen3-8b",
+      "status": "PASS",
+      "latencyMs": 3129,
+      "format": "EXACT",
+      "profile": {
+        "think": false,
+        "temperature": 0
+      }
+    },
+    {
+      "id": "local.qwen3-4b",
+      "status": "FAIL_FORMAT",
+      "latencyMs": 3365,
+      "format": "RAMBLE_TOKEN_LIMIT",
+      "profile": {
+        "think": false,
+        "temperature": 0
+      }
+    },
+    {
+      "id": "local.qwen3-coder-30b",
+      "status": "PASS",
+      "latencyMs": 14603,
+      "format": "EXACT",
+      "profile": {
+        "think": false,
+        "temperature": 0
+      }
+    },
+    {
+      "id": "local.gpt-oss-20b",
+      "status": "PASS_WITH_THINKING",
+      "latencyMs": 16303,
+      "format": "EXACT",
+      "profile": {
+        "temperature": 0
+      }
+    },
+    {
+      "id": "local.qwen3.8-27b",
+      "status": "PASS",
+      "latencyMs": 3096,
+      "format": "REPO_FENCED_OTHER_EXACT",
+      "profile": {
+        "think": false,
+        "temperature": 0
+      }
+    },
+    {
+      "id": "local.ornith-1.5-9b",
+      "status": "PASS",
+      "latencyMs": 512,
+      "format": "REPO_FENCED_OTHER_EXACT",
+      "profile": {
+        "think": false,
+        "temperature": 0
+      }
+    },
+    {
+      "id": "local.gemma4-12b",
+      "status": "PASS",
+      "latencyMs": 1825,
+      "format": "REPO_FENCED_OTHER_EXACT",
+      "profile": {
+        "think": false,
+        "temperature": 0
+      }
+    },
+    {
+      "id": "local.nemotron3.5-lightning-30b-a3b",
+      "status": "PASS",
+      "latencyMs": 1570,
+      "format": "EXACT",
+      "profile": {
+        "think": false,
+        "temperature": 0
+      }
+    },
+    {
+      "id": "local.granite4.2-8b",
+      "status": "PASS",
+      "latencyMs": 545,
+      "format": "EXACT",
+      "profile": {
+        "think": false,
+        "temperature": 0
+      },
+      "note": "Direct Olympics 4/4; governed worker gate still failed, so execution remains disabled"
+    },
+    {
+      "id": "local.north-mini-code-1.0",
+      "status": "PARTIAL_NO_FINAL",
+      "latencyMs": 5733,
+      "format": "3_OF_4",
+      "profile": {
+        "temperature": 0
+      },
+      "note": "Repair heat returned no final answer; governed worker gate failed"
+    },
+    {
+      "id": "local.muse-glimmer-30b",
+      "status": "PARTIAL_POLICY_REFUSAL",
+      "latencyMs": 33140,
+      "format": "3_OF_4",
+      "profile": {
+        "temperature": 0
+      },
+      "note": "Synthetic direct tool heat refused; governed worker mutation and Talos behavior passed; route with penalty"
+    }
+  ],
+  "remoteFree": [
+    {
+      "id": "nvidia.kimi-k3",
+      "status": "PASS",
+      "latencyMs": 5689,
+      "format": "EXACT"
+    },
+    {
+      "id": "nvidia.deepseek-v4-pro",
+      "status": "TIMEOUT",
+      "latencyMs": 35116
+    },
+    {
+      "id": "nvidia.deepseek-v4-flash",
+      "status": "PASS",
+      "latencyMs": 9071,
+      "format": "EXACT"
+    },
+    {
+      "id": "nvidia.nemotron-3.5-lightning",
+      "status": "PASS_FORMAT_VIOLATION",
+      "latencyMs": 13390,
+      "format": "PROSE_PLUS_CODE"
+    },
+    {
+      "id": "nvidia.laguna-xs-2.1",
+      "status": "PASS",
+      "latencyMs": 19725,
+      "format": "EXACT"
+    },
+    {
+      "id": "nvidia.minimax-m3",
+      "status": "PASS",
+      "latencyMs": 4101,
+      "format": "EXACT"
+    },
+    {
+      "id": "nvidia.kimi-k2.6",
+      "status": "HTTP_404",
+      "latencyMs": 296
+    }
   ],
   "laws": [
     "spark evidence is not builder certification",

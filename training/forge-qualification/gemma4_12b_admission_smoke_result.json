@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "FORGE-GEMMA4-12B-ADMIT-SMOKE",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.gemma4-12b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788226419.9169621,
+  "completed_at": 1788226426.790224,
+  "duration_sec": 6.87326192855835,
+  "allowed_paths": [
+    "training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs"
+  ],
+  "changed_files": [
+    "training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs\n+++ b/training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs\n@@ -0,0 +1 @@\n+export const forgeAdmissionSmoke=true",
+  "git_status": "training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs",
+  "summary": "Created training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs with the specified content.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs\n+++ b/training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs\n@@ -0,0 +1 @@\n+export const forgeAdmissionSmoke=true",
+    "git_status": "training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs",
+    "tool_trace": [
+      "write_file: wrote 37 chars to training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs",
+      "finish: Created training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs with the specified content."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs\", \"content\": \"export const forgeAdmissionSmoke=true\"}",
+        "raw_suffix": "{\"path\": \"training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs\", \"content\": \"export const forgeAdmissionSmoke=true\"}",
+        "raw_length": 128,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 37
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs with the specified content.\"}",
+        "raw_suffix": "{\"summary\": \"Created training/forge-qualification/local_gemma4-12b/admitted-smoke.mjs with the specified content.\"}",
+        "raw_length": 115,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "selected_builder": "local.gemma4-12b",
+    "model": "gemma4:12b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6282",
+      "utilization_pct": "0",
+      "temperature_c": "47",
+      "power_w": "9.47"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR          CONTEXT    UNTIL               \ngemma4:12b    4eb23ef187e2    8.7 GB    30%/70% CPU/GPU    4096       28 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6282",
+      "utilization_pct": "44",
+      "temperature_c": "54",
+      "power_w": "38.57"
+    },
+    "ollama_ps": "NAME          ID              SIZE      PROCESSOR          CONTEXT    UNTIL               \ngemma4:12b    4eb23ef187e2    8.7 GB    30%/70% CPU/GPU    4096       29 minutes from now"
+  }
+}

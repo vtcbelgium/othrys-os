@@ -1,0 +1,22 @@
+{
+  "schema": "othrys.prometheus.forge-watch.v1",
+  "date": "2026-09-01",
+  "result": "NO_NEW_ADMISSION",
+  "rosterComparedAgainst": "runtime/hephaestus/data/forge_roster.json",
+  "publicSourcesChecked": [
+    "https://github.com/vllm-project/vllm/releases",
+    "https://github.com/anomalyco/opencode",
+    "https://github.com/QwenLM/qwen-code",
+    "https://developers.openai.com/codex/changelog",
+    "https://github.com/ollama/ollama"
+  ],
+  "observations": [
+    "vLLM current release line was reviewed as infrastructure, not a new Hephaestus builder admission.",
+    "OpenCode, Qwen Code and Codex harness updates were reviewed; no newly qualified zero-cost builder candidate emerged beyond the current roster/watch queue.",
+    "Known candidates Qwen3.8-27B and Ornith-1.5-9B were suppressed as already admitted; Hy4, GLM-5.3, Ornith-1.5-35B-A3B, Muse Glimmer and other prior watch candidates remain non-admitted or gated."
+  ],
+  "authorityGranted": false,
+  "automaticPaidUsage": false,
+  "admitted": [],
+  "operatorNotification": false
+}

@@ -1,0 +1,159 @@
+{
+  "schema": "othrys.prometheus.forge-watch-local-roster-audit.v1",
+  "date": "2026-09-01",
+  "scope": "all installed local Forge builders plus same-cycle watched local candidates",
+  "authorityGranted": false,
+  "automaticPromotion": false,
+  "automaticPaidUsage": false,
+  "results": [
+    {
+      "id": "local.granite4.2-8b",
+      "installed": true,
+      "directOlympics": "PASS_4_OF_4",
+      "workerQualification": {
+        "ok": false,
+        "reason": "NO_ATTEMPT_MUTATION",
+        "durationSec": 115.39832711219788
+      },
+      "executionAllowed": false,
+      "disposition": "KEEP_TESTING"
+    },
+    {
+      "id": "local.north-mini-code-1.0",
+      "installed": true,
+      "directOlympics": "PASS_3_OF_4_REPAIR_NO_FINAL",
+      "workerQualification": {
+        "ok": false,
+        "reason": "NO_ATTEMPT_MUTATION",
+        "durationSec": 94.52046060562134
+      },
+      "executionAllowed": false,
+      "disposition": "KEEP_TESTING"
+    },
+    {
+      "id": "local.muse-glimmer-30b",
+      "installed": true,
+      "directOlympics": "PASS_3_OF_4_SYNTHETIC_TOOL_REFUSAL",
+      "workerQualification": {
+        "ok": true,
+        "durationSec": 138.5676076412201,
+        "changedFiles": [
+          "training/forge-qualification/local_muse-glimmer-30b/candidate.mjs"
+        ],
+        "outOfScope": []
+      },
+      "talos": {
+        "behaviorPass": true,
+        "tests": 4,
+        "fail": 0
+      },
+      "executionAllowed": true,
+      "disposition": "QUALIFIED_LOCAL_SLOW_AGENTIC"
+    },
+    {
+      "id": "local.qwen2.5-coder-7b",
+      "installed": true,
+      "priorSpark": "PASS_WITH_FENCE",
+      "workerQualification": {
+        "ok": true,
+        "durationSec": 29.008163690567017,
+        "changedFiles": [
+          "training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs"
+        ],
+        "outOfScope": []
+      },
+      "talos": {
+        "behaviorPass": true,
+        "tests": 4,
+        "fail": 0
+      },
+      "executionAllowed": true,
+      "disposition": "QUALIFIED_LOCAL"
+    },
+    {
+      "id": "local.qwen3-4b",
+      "installed": true,
+      "priorSpark": "FAIL_FORMAT",
+      "workerQualification": {
+        "ok": true,
+        "durationSec": 34.6823570728302,
+        "changedFiles": [
+          "training/forge-qualification/local_qwen3-4b/candidate.mjs"
+        ],
+        "outOfScope": []
+      },
+      "talos": {
+        "behaviorPass": true,
+        "tests": 4,
+        "fail": 0
+      },
+      "executionAllowed": true,
+      "disposition": "QUALIFIED_LOCAL_TINY_WITH_FORMAT_LIMIT"
+    },
+    {
+      "id": "local.gpt-oss-20b",
+      "installed": true,
+      "priorSpark": "PASS_WITH_THINKING",
+      "workerQualification": {
+        "ok": false,
+        "reason": "NO_ATTEMPT_MUTATION",
+        "durationSec": 25.28780221939087
+      },
+      "executionAllowed": false,
+      "disposition": "KEEP_TESTING"
+    },
+    {
+      "id": "ollama.glm-5.3-flash-cloud",
+      "installedPointer": true,
+      "directOlympics": "BLOCKED_4_OF_4_HTTP_401",
+      "executionAllowed": false,
+      "disposition": "BLOCKED_AUTH_NO_UNAUTHORIZED_ENABLE"
+    },
+    {
+      "id": "local.qwen3.8-27b",
+      "executionAllowed": true,
+      "status": "QUALIFIED_EXISTING_RETEST_PASS"
+    },
+    {
+      "id": "local.ornith-1.5-9b",
+      "executionAllowed": true,
+      "status": "QUALIFIED_EXISTING_RETEST_PASS"
+    },
+    {
+      "id": "local.gemma4-12b",
+      "executionAllowed": true,
+      "status": "QUALIFIED_EXISTING_RETEST_PASS"
+    },
+    {
+      "id": "local.nemotron3.5-lightning-30b-a3b",
+      "executionAllowed": true,
+      "status": "QUALIFIED_EXISTING_RETEST_PASS"
+    },
+    {
+      "id": "local.qwen3-8b",
+      "installed": true,
+      "priorSpark": "PASS",
+      "workerQualification": {
+        "ok": true,
+        "durationSec": 7.316235542297363,
+        "changedFiles": [
+          "training/forge-qualification/local_qwen3-8b/candidate.mjs"
+        ],
+        "outOfScope": []
+      },
+      "talos": {
+        "behaviorPass": true,
+        "tests": 4,
+        "fail": 0
+      },
+      "executionAllowed": true,
+      "disposition": "QUALIFIED_LOCAL_LEGACY_LIMITS"
+    }
+  ],
+  "laws": {
+    "failedQualificationNeverRoutes": true,
+    "governedWorkerEvidenceOverridesSyntheticPromptOnlyForGovernedExecution": true,
+    "operatorAuthorityUnchanged": true,
+    "level3Unaffected": true
+  }
+}

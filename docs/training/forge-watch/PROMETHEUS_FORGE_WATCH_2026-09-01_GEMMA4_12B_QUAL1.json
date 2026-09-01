@@ -1,0 +1,69 @@
+﻿{
+    "schema":  "othrys.prometheus.forge-watch-qualification.v1",
+    "date":  "2026-09-01",
+    "candidate":  "local.gemma4-12b",
+    "model":  "gemma4:12b",
+    "vendor":  "Google",
+    "provider":  "Ollama local",
+    "discovery":  {
+                      "newAgainstRoster":  true,
+                      "materialImprovement":  "official local Ollama availability for Gemma 4 12B Unified",
+                      "sources":  [
+                                      "https://ai.google.dev/gemma/docs/releases",
+                                      "https://huggingface.co/google/gemma-4-12B",
+                                      "https://ollama.com/library/gemma4"
+                                  ],
+                      "license":  "Apache-2.0",
+                      "cost":  "ZERO/local",
+                      "secretBoundary":  "PASS_LOCAL_NO_PROVIDER_SECRET"
+                  },
+    "availability":  {
+                         "installed":  true,
+                         "endpointAvailable":  true,
+                         "ollamaDigest":  "4eb23ef187e2",
+                         "quantSize":  "7.6GB",
+                         "observedPlacement":  "30% CPU / 70% GPU on Legion"
+                     },
+    "builderOlympics":  {
+                            "protocol":  true,
+                            "repair":  true,
+                            "repoSemantic":  true,
+                            "repoStrictProtocol":  false,
+                            "tools":  true,
+                            "candidate":  true
+                        },
+    "workerQualification":  {
+                                "ok":  true,
+                                "durationSec":  7.510545969009399,
+                                "changedFiles":  [
+                                                     "training/forge-qualification/local_gemma4-12b/candidate.mjs"
+                                                 ],
+                                "outOfScope":  [
+
+                                               ]
+                            },
+    "talos":  {
+                  "behaviorPass":  true,
+                  "tests":  4,
+                  "fail":  0
+              },
+    "admission":  {
+                      "admitted":  true,
+                      "forge":  "forge.code.local",
+                      "readiness":  "QUALIFIED_LOCAL_AGENTIC",
+                      "executionAllowed":  true,
+                      "authorityGranted":  false,
+                      "automaticPaidUsage":  false
+                  },
+    "laws":  {
+                 "benchmarksDoNotGrantAuthority":  true,
+                 "qualificationRequired":  true,
+                 "operatorAuthorityUnchanged":  true
+             },
+    "admissionSmoke":  {
+                           "pass":  true,
+                           "governedExecution":  true,
+                           "authorityGranted":  false,
+                           "result":  "training/forge-qualification/gemma4_12b_admission_smoke_result.json"
+                       }
+}

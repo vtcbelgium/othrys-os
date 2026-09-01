@@ -1,0 +1,14 @@
+{
+  "schema":"othrys.prometheus.forge-watch-qualification.v1",
+  "date":"2026-09-01",
+  "candidate":"local.nemotron3.5-lightning-30b-a3b",
+  "model":"nemotron-3.5-lightning:30b-a3b",
+  "vendor":"NVIDIA",
+  "discovery":{"newAgainstRoster":true,"released":"2026-08-11","sources":["https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16","https://ollama.com/library/nemotron-3.5-lightning:30b-a3b"],"license":"OpenMDW-1.1 / NVIDIA model terms","cost":"ZERO/local","secretBoundary":"PASS_LOCAL_NO_PROVIDER_SECRET"},
+  "availability":{"ollamaPublished":true,"localInstallCompleted":false,"downloadState":"STARTED"},
+  "builderOlympics":{"state":"NOT_RUN_INSTALL_INCOMPLETE"},
+  "workerQualification":{"state":"NOT_RUN"},
+  "talos":{"state":"NOT_REACHED"},
+  "admission":{"admitted":false,"executionAllowed":false,"authorityGranted":false,"automaticPaidUsage":false},
+  "laws":{"benchmarksDoNotGrantAuthority":true,"qualificationRequired":true,"operatorAuthorityUnchanged":true}
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "othrys.prometheus.forge-watch.v1",
+  "date": "2026-09-01",
+  "result": "NO_NEW_ADMISSION",
+  "rosterComparedAgainst": "runtime/hephaestus/data/forge_roster.json",
+  "publicSourcesChecked": [
+    "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+    "https://ollama.com/library/glm-5.3",
+    "https://zcode.z.ai/en/changelog",
+    "https://zcode.z.ai/en",
+    "https://github.com/openclaw/openclaw/releases",
+    "https://github.com/agno-agi/agno",
+    "https://github.com/mudler/LocalAI"
+  ],
+  "observations": [
+    "Fresh searches found no candidate that newly cleared all Forge gates since the previous watch pass.",
+    "GLM-5.3 remains genuinely relevant for coding and long-horizon agentic work, but it is already in the Forge Watch candidate queue and prior qualification is blocked by endpoint authorization; no paid or unauthorized path was enabled.",
+    "Nemotron-3.5 Lightning is already represented in the roster as an unqualified remote zero-cost candidate; duplicate noise suppressed.",
+    "OpenClaw, Agno and LocalAI were reviewed as agent/runtime infrastructure, not automatically promoted to Hephaestus builders.",
+    "No candidate completed availability, license/cost, secret-boundary, Builder Olympics and Talos qualification gates in this run."
+  ],
+  "authorityGranted": false,
+  "automaticPaidUsage": false,
+  "admitted": [],
+  "operatorNotification": false
+}

@@ -1,0 +1,25 @@
+﻿{
+    "schema_version":  "othrys.worker-request.v0.1",
+    "job_id":  "FORGE-AUDIT-local_qwen2_5-coder-7b",
+    "node_id":  "legion",
+    "capability":  "engineering.patch",
+    "workspace":  "C:/Users/othry/Projects/othrys-os",
+    "allowed_paths":  [
+                          "training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs"
+                      ],
+    "deny_paths":  [
+                       ".git",
+                       ".othrys",
+                       "missions",
+                       "blocks",
+                       "runtime",
+                       "docs"
+                   ],
+    "timeout_sec":  150,
+    "metadata":  {
+                     "forge_qualification":  true,
+                     "forge_builder_id":  "local.qwen2.5-coder-7b",
+                     "authorityGranted":  false
+                 },
+    "task":  "HEPHAESTUS FORGE QUALIFICATION. Create exactly training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs containing exactly: export function clamp(n,min,max){return Math.min(max,Math.max(min,n))}\n Touch no other file. Finish only after the exact file exists."
+}

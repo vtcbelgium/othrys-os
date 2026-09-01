@@ -1,0 +1,11 @@
+﻿{
+  "schema": "othrys.prometheus.forge-watch-preflight.v1",
+  "date": "2026-09-01",
+  "discoveries": [
+    {"candidate":"zai.glm-5.3-flash","kind":"MODEL","newAgainstRoster":true,"availability":"OLLAMA_CLOUD_METADATA_PRESENT","license":"MIT","cost":"UNVERIFIED_CLOUD","secretBoundary":"NOT_PROVEN","builderOlympics":"NOT_RUN_COST_GATE","talos":"NOT_REACHED","admitted":false},
+    {"candidate":"deepseek.harness","kind":"AGENT_HARNESS","newAgainstRoster":true,"availability":"PUBLIC_SOURCE","license":"MIT","cost":"ZERO_SOFTWARE","secretBoundary":"REQUIRES_SECURITY_REVIEW","safety":"VENDOR_MARKS_EXPERIMENTAL_NOT_AUDITED_NOT_PRODUCTION_READY","builderOlympics":"NOT_APPLICABLE_AS_MODEL_BUILDER","talos":"NOT_REACHED","admitted":false}
+  ],
+  "rosterChanged": false,
+  "authorityGranted": false,
+  "automaticPaidUsage": false
+}

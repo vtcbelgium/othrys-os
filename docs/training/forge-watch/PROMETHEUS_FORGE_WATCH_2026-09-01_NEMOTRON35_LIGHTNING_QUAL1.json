@@ -1,0 +1,68 @@
+﻿{
+    "schema":  "othrys.prometheus.forge-watch-qualification.v1",
+    "date":  "2026-09-01",
+    "candidate":  "local.nemotron3.5-lightning-30b-a3b",
+    "model":  "nemotron-3.5-lightning:30b-a3b",
+    "vendor":  "NVIDIA",
+    "provider":  "Ollama local",
+    "discovery":  {
+                      "newAgainstRoster":  true,
+                      "materialImprovement":  "official local 30B-A3B always-on agent model with 1M context and tool capability",
+                      "sources":  [
+                                      "https://ollama.com/library/nemotron-3.5-lightning",
+                                      "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4"
+                                  ],
+                      "license":  "NVIDIA Open Model License Agreement",
+                      "cost":  "ZERO/local",
+                      "secretBoundary":  "PASS_LOCAL_NO_PROVIDER_SECRET"
+                  },
+    "availability":  {
+                         "installed":  true,
+                         "endpointAvailable":  true,
+                         "ollamaDigest":  "e7a64ff15fb1",
+                         "quantSize":  "25GB",
+                         "observedPlacement":  "81% CPU / 19% GPU on Legion"
+                     },
+    "builderOlympics":  {
+                            "protocol":  true,
+                            "repair":  true,
+                            "repoSemantic":  true,
+                            "repoStrictProtocol":  true,
+                            "tools":  true,
+                            "candidate":  true
+                        },
+    "workerQualification":  {
+                                "ok":  true,
+                                "durationSec":  5.7261130809783936,
+                                "changedFiles":  [
+                                                     "training/forge-qualification/local_nemotron3_5-lightning-30b-a3b/candidate.mjs"
+                                                 ],
+                                "outOfScope":  [
+
+                                               ]
+                            },
+    "talos":  {
+                  "behaviorPass":  true,
+                  "tests":  4,
+                  "fail":  0
+              },
+    "admission":  {
+                      "admitted":  true,
+                      "forge":  "forge.code.local",
+                      "readiness":  "QUALIFIED_LOCAL_AGENTIC",
+                      "executionAllowed":  true,
+                      "authorityGranted":  false,
+                      "automaticPaidUsage":  false
+                  },
+    "laws":  {
+                 "benchmarksDoNotGrantAuthority":  true,
+                 "qualificationRequired":  true,
+                 "operatorAuthorityUnchanged":  true
+             },
+    "admissionSmoke":  {
+                           "pass":  true,
+                           "governedExecution":  true,
+                           "authorityGranted":  false,
+                           "result":  "training/forge-qualification/nemotron35_lightning_admission_smoke_result.json"
+                       }
+}

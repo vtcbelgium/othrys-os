@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "FORGE-AUDIT-local_qwen2_5-coder-7b",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen2.5-coder-7b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788242921.4434779,
+  "completed_at": 1788242950.4516416,
+  "duration_sec": 29.008163690567017,
+  "allowed_paths": [
+    "training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs"
+  ],
+  "changed_files": [
+    "training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs\n+++ b/training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs\n@@ -0,0 +1 @@\n+export function clamp(n,min,max){return Math.min(max,Math.max(min,n))}",
+  "git_status": "training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs",
+  "summary": "tool turn limit (36) reached; proposed diff collected from workspace mutations",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs\n+++ b/training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs\n@@ -0,0 +1 @@\n+export function clamp(n,min,max){return Math.min(max,Math.max(min,n))}",
+    "git_status": "training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs",
+    "tool_trace": [
+      "write_file: wrote 70 chars to training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs",
+      "read_file: export function clamp(n,min,max){return Math.min(max,Math.max(min,n))}"
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs\", \"content\": \"export function clamp(n,min,max){return Math.min(max,Math.max(min,n))}\"}",
+        "raw_suffix": "{\"path\": \"training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs\", \"content\": \"export function clamp(n,min,max){return Math.min(max,Math.max(min,n))}\"}",
+        "raw_length": 162,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 70
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs\"}",
+        "raw_suffix": "{\"path\": \"training/forge-qualification/local_qwen2_5-coder-7b/candidate.mjs\"}",
+        "raw_length": 77,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "hephaestus_forge_local_qualification",
+    "selected_builder": "local.qwen2.5-coder-7b",
+    "model": "qwen2.5-coder:7b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "6244",
+      "utilization_pct": "0",
+      "temperature_c": "50",
+      "power_w": "15.19"
+    },
+    "ollama_ps": "NAME                       ID              SIZE     PROCESSOR          CONTEXT    UNTIL               \nmuse-glimmer:30b-q4_K_M    de878ce33ad8    17 GB    71%/29% CPU/GPU    4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "4568",
+      "utilization_pct": "96",
+      "temperature_c": "60",
+      "power_w": "90.18"
+    },
+    "ollama_ps": "NAME                ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen2.5-coder:7b    dae161e27b0e    4.6 GB    100% GPU     4096       29 minutes from now"
+  }
+}

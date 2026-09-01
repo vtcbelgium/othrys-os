@@ -1,0 +1,26 @@
+{
+  "schema": "othrys.prometheus.forge-watch.v1",
+  "date": "2026-09-01",
+  "result": "NO_NEW_ADMISSION",
+  "rosterComparedAgainst": "runtime/hephaestus/data/forge_roster.json",
+  "publicSourcesChecked": [
+    "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+    "https://huggingface.co/zai-org/GLM-5.3",
+    "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
+    "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+    "https://huggingface.co/tencent/Hy4-preview",
+    "https://github.com/vllm-project/vllm/releases"
+  ],
+  "observations": [
+    "Qwen3.8-Flash-Next is materially new but far beyond current Legion-local fit and was not admitted.",
+    "GLM-5.3/GLM-5.3-Flash were already in the Forge Watch candidate queue; prior qualification remains blocked by unauthorized endpoint access, so no retest/admission occurred.",
+    "DeepSeek-V4-Flash-0731 is already represented by the existing nvidia.deepseek-v4-flash roster candidate; duplicate noise suppressed.",
+    "DeepSeek-V4-Flash-Vision-Exp is new and MIT-licensed but 305B and has no current inference-provider deployment; it did not pass availability/local-fit gates.",
+    "Hy4-preview is already tracked as a non-admitted candidate; no new executable zero-cost path was established.",
+    "No candidate completed availability, license/cost, secret-boundary, Builder Olympics and Talos qualification gates in this run."
+  ],
+  "authorityGranted": false,
+  "automaticPaidUsage": false,
+  "admitted": [],
+  "operatorNotification": false
+}

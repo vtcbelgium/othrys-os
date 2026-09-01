@@ -1,0 +1,96 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "job_id": "FORGE-AUDIT-local_qwen3-4b",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "local.qwen3-4b",
+  "ok": true,
+  "reason": "",
+  "started_at": 1788242950.7013237,
+  "completed_at": 1788242985.3836808,
+  "duration_sec": 34.6823570728302,
+  "allowed_paths": [
+    "training/forge-qualification/local_qwen3-4b/candidate.mjs"
+  ],
+  "changed_files": [
+    "training/forge-qualification/local_qwen3-4b/candidate.mjs"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/training/forge-qualification/local_qwen3-4b/candidate.mjs\n+++ b/training/forge-qualification/local_qwen3-4b/candidate.mjs\n@@ -0,0 +1 @@\n+export function clamp(n,min,max){return Math.min(max,Math.max(min,n))}",
+  "git_status": "training/forge-qualification/local_qwen3-4b/candidate.mjs",
+  "summary": "Created candidate.mjs",
+  "runtime_evidence": {
+    "observed_diff": "--- a/training/forge-qualification/local_qwen3-4b/candidate.mjs\n+++ b/training/forge-qualification/local_qwen3-4b/candidate.mjs\n@@ -0,0 +1 @@\n+export function clamp(n,min,max){return Math.min(max,Math.max(min,n))}",
+    "git_status": "training/forge-qualification/local_qwen3-4b/candidate.mjs",
+    "tool_trace": [
+      "write_file: wrote 70 chars to training/forge-qualification/local_qwen3-4b/candidate.mjs",
+      "finish: Created candidate.mjs"
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"training/forge-qualification/local_qwen3-4b/candidate.mjs\", \"content\": \"export function clamp(n,min,max){return Math.min(max,Math.max(min,n))}\"}",
+        "raw_suffix": "{\"path\": \"training/forge-qualification/local_qwen3-4b/candidate.mjs\", \"content\": \"export function clamp(n,min,max){return Math.min(max,Math.max(min,n))}\"}",
+        "raw_length": 154,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 70
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created candidate.mjs\"}",
+        "raw_suffix": "{\"summary\": \"Created candidate.mjs\"}",
+        "raw_length": 36,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "hephaestus_forge_local_qualification",
+    "selected_builder": "local.qwen3-4b",
+    "model": "qwen3:4b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "4568",
+      "utilization_pct": "0",
+      "temperature_c": "51",
+      "power_w": "82.08"
+    },
+    "ollama_ps": "NAME                ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen2.5-coder:7b    dae161e27b0e    4.6 GB    100% GPU     4096       29 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "2902",
+      "utilization_pct": "33",
+      "temperature_c": "62",
+      "power_w": "90.02"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:4b    359d7dd4bcda    2.9 GB    100% GPU     4096       29 minutes from now"
+  }
+}
