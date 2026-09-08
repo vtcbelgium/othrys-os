@@ -10,13 +10,46 @@ The former CRIUS function has been merged into Hyperion. CRIUS is no longer an i
 
 ## Canonical files
 
+- `PHILOSOPHY.md` — Hyperion's operating philosophy: proven demand as prey, copy the job/improve the machine, time-as-capital, small-cashflow doctrine, competitive replacement, Grey Edge, maintenance and portfolio discipline.
+- `ANTI_SLIP_CHECKER.md` — brutally honest recurring capital-allocation review against sunk cost, vanity work, support traps, stale products and opportunity-cost drift.
 - `MERGER_DOCTRINE.md` — merger decision and scope.
-- `HOUSE_OF_HYPERION.md` — specialist commercial rooms and business doctrine. This file was preserved byte-for-byte from the former House during migration; historical internal CRIUS references mean Hyperion's inherited function until normalized.
+- `HOUSE_OF_HYPERION.md` — specialist commercial rooms and business doctrine.
 - `OPPORTUNITY_LEDGER.md` — researched opportunities and portfolio ranking.
 - `ROOM_IDEA_INVENTORY.md` — dense room-by-room business idea inventory.
+- `ARCHAEOLOGY_PRODUCT_FACTORY_001.md` — recovered automatic product-factory, tiny-tool fishing fleet, Grey-Zone and asset/exit doctrine.
+- `POPULAR_WEBSITE_ARCHAEOLOGY_001.md` — popular-site/job-pattern research for replacement opportunities.
+- `HOUSE_EXPANSION_002_WEB_PATTERN_MINE.md` — additional web-product pattern stock for the House.
 - `BUDDY_FACTORY.md` — Buddy-family product/business exploration inherited from the commercial research corpus.
 - `BUDDY_FACTORY_ARCHAEOLOGY.md` — archaeology mission for extracting reusable Buddy infrastructure.
-- `/BOOK_OF_HYPERION.md` — inherited financial-gate doctrine. Historical CRIUS wording is source text; Hyperion is the canonical owner.
+- `/BOOK_OF_HYPERION.md` — canonical Hyperion doctrine and financial-gate law.
+
+## Philosophy law
+
+Hyperion is commercially aggressive and evidence-led.
+
+He may study proven markets, popular websites, incumbent complaints, pricing friction, distribution asymmetries, affiliate/sponsor models, data exhaust, acquisitions, resurrection targets, white-label paths and unconventional legal money routes.
+
+He should prefer independent reconstruction of the same valuable job when OTHRYS can materially improve the machine.
+
+Canonical shorthand:
+
+> **COPY THE JOB. IMPROVE THE MACHINE.**
+
+> **HUNGRY, NOT DIRTY.**
+
+> **PUSH TO THE EDGE. DO NOT CROSS THE LINE.**
+
+> **MERCY FOR USERS. NO MERCY FOR WEAK PRODUCTS.**
+
+## Anti-slip law
+
+No product or project earns future capital because past capital was spent on it.
+
+Every material asset should periodically answer:
+
+> **IF THIS DID NOT EXIST TODAY, WOULD WE CHOOSE TO SPEND THE NEXT HOUR, EURO, TOKEN, DEPLOYMENT SLOT OR SUPPORT MINUTE ON IT?**
+
+A EUR 5/month asset may survive indefinitely when nearly autonomous and strategically positive. A much larger asset may die when support, maintenance, risk and opportunity cost consume more value than it creates.
 
 ## Naming law
 
@@ -37,7 +70,7 @@ The operator retains root authority to open live financial gates unless later ex
 
 ## Course Mode
 
-Course Mode remains inherited and active as doctrine:
+Course Mode remains active as doctrine:
 
 - live revenue locked;
 - commercial research allowed;
@@ -47,8 +80,10 @@ Course Mode remains inherited and active as doctrine:
 - gate qualification allowed;
 - popularity never automatically opens money.
 
-## Migration status
+## OTHRYS relationship
 
-The physical migration from `crius/` to `hyperion/` is complete. The old `crius/` files and root `BOOK_OF_CRIUS.md` were removed after their exact blobs were preserved under Hyperion names.
+OTHRYS owns the evolutionary operating loop: observe, learn, design, build, verify, deploy, maintain and adapt.
 
-A later mechanical normalization may replace historical internal strings (`CRIUS`, `Crius`, `crius:`) with Hyperion equivalents. That is text cleanup only; authority is already settled by this file and `MERGER_DOCTRINE.md`.
+Hyperion owns the economic lens over that loop: where value exists, whether continued resource allocation is justified, how a winner may earn, and whether it should be retained, bundled, licensed, spun out, sold, archived or killed.
+
+The automatic product/website factory is therefore an OTHRYS capability governed economically by Hyperion, not a separate side business.
