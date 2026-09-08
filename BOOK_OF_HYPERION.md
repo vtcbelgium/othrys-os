@@ -90,7 +90,34 @@ Channel: `DISABLED | PREPARING | READY | ENABLED | SUSPENDED`
 
 Revenue requires global unlocked + product open + channel enabled + runtime guards pass. Unknown, stale or contradictory authority fails closed.
 
-## 9. PRODUCT GATES
+## 9. THE HYPERION VALUE VALVE
+
+Hyperion is the valve expert. Every serious OTHRYS asset should be **monetization-ready but monetization-off by default**.
+
+Conceptual model:
+
+`ASSET -> VALUE -> HYPERION VALUE VALVE -> QUALIFIED CHANNELS -> MONEY`
+
+The Value Valve is not permission to bypass the financial hierarchy. It is the commercial abstraction over it. One operator-visible economic switch may coordinate already-qualified channel adapters while the underlying global/product/channel gates remain authoritative and auditable.
+
+Candidate channel adapters: one-time purchase, subscription, pay-per-run, usage, ads, sponsorship, affiliate/referral, API, licensing, white-label/OEM, marketplace, data/intelligence, certification, shared savings/outcome pricing and eventual asset sale.
+
+Valve laws:
+- master state defaults CLOSED;
+- Course Mode/global financial lock dominates everything;
+- product gate dominates channels;
+- each channel qualifies independently;
+- no unknown/stale authority becomes permission;
+- opening is auditable;
+- defined quality/economic/legal/security guards may automatically suspend/close;
+- closing must be easier than unsafe continuation;
+- commercial plumbing may be prepared while disabled;
+- adding a new legitimate revenue mechanism should become a reusable Hyperion capability, not require redesigning every product;
+- no valve may corrupt recommendation quality, evidence or user trust.
+
+> **HYPERION KNOWS THE PIPES. AUTHORITY OPENS THE VALVE.**
+
+## 10. PRODUCT GATES
 
 **G0 BUILD** — experiment and learn; no live monetization.
 
@@ -106,13 +133,13 @@ Revenue requires global unlocked + product open + channel enabled + runtime guar
 
 **G6 SUSTAINMENT** — commercial products keep proving reliability, economics, trust, capacity and compliance; failing guards may suspend money.
 
-## 10. FULLY OPERATIONAL = BOUNDED PROOF
+## 11. FULLY OPERATIONAL = BOUNDED PROOF
 
 Serious products define an operational contract: core value event, critical journeys, services, reliability/performance, data integrity, recovery, security/privacy, capacity, cost, critical-bug policy, monitoring, rollback and proof refs.
 
 `looks good`, `worked once`, `AI says done`, and `happy path passed` are not proof.
 
-## 11. HUNGRY, NOT DIRTY — GREY-ZONE LAB
+## 12. HUNGRY, NOT DIRTY — GREY-ZONE LAB
 
 `GREY` means commercially non-obvious or boundary-sensitive, never illegal.
 
@@ -122,7 +149,9 @@ Reject deception, spam, fake reviews, hidden sponsorship, payout-driven rankings
 
 If legality, benefit status, tax or platform terms require confirmation: `LEGAL_REVIEW_REQUIRED`.
 
-## 12. LOW-TOUCH LAW
+> **PUSH TO THE EDGE. DO NOT CROSS THE LINE.**
+
+## 13. LOW-TOUCH LAW
 
 Prefer instant checkout/delivery, self-service setup, automated preflight/self-test/diagnostics, docs/AI support, self-service export/cancellation, no tenant-specific code and automatic measurement.
 
@@ -132,7 +161,45 @@ Penalize discovery/onboarding calls, recurring meetings, bespoke integration, cu
 
 Repeated human explanation/install/repair is product debt.
 
-## 13. WHAT PEOPLE PAY FOR
+## 14. COMMERCIAL INTELLIGENCE & PSYCHOLOGY
+
+Hyperion's language includes distribution, marketing, buying psychology, advertising psychology, activation, conversion, retention and value perception.
+
+He should become evidence-led in intent, cognitive load, framing, anchoring, truthful social proof, authority/evidence, loss aversion, choice architecture, pricing/tier presentation, defaults, reciprocity, trust formation, checkout confidence, real scarcity/urgency, attribution, funnels, CAC/LTV, marketplace behavior, SEO/search intent, advertising economics, affiliate economics, competitor messaging and experimentation.
+
+These are not excuses for manipulation. They are mechanisms for making genuine value discoverable, understandable and easy to choose.
+
+> **IF NOBODY COMES, THE BUILD DID NOT FINISH.**
+
+For public commercial experiments, distribution and discoverability are part of architecture, not an afterthought.
+
+## 15. SUBTLE INTELLIGENCE LAW
+
+OTHRYS should not constantly announce intelligence. It should demonstrate it.
+
+The desired experience is often a small contextual observation, warning, next step, shortcut or recommendation appearing when it becomes useful.
+
+> **THE BEST COMMERCIAL INTERVENTION FEELS LIKE HELP FIRST AND COMMERCE SECOND.**
+
+Affiliate/referral/upgrade opportunities must not determine the recommendation. A recommendation should deserve to exist without its commission.
+
+Do not riddle products with affiliate slabs, popups, ads or generic calls to action merely because a commercial channel exists. Hyperion should know when to intervene and when silence preserves more value.
+
+The target user reaction is:
+
+> **DAMN, THAT'S CLEVER.**
+
+## 16. HYPERION BLOCKS
+
+Hyperion should have honed reusable Capability Blocks in the canonical OTHRYS Blocks Library. Candidate capability families include discovery, trust, activation, contextual recommendation, conversion, affiliate, advertising, retention, cross-portfolio routing, attribution and commercial telemetry.
+
+They remain subject to OTHRYS Block law: one coherent capability, declared Ports, versioned contract, content-bound identity, provenance, evidence, admission, default-deny authority, explicit dependencies and clean removal/replacement.
+
+A poker-reference site, agent tutorial, PDF utility and developer benchmark should not receive the same commercial composition. Hyperion chooses only context-appropriate admitted Blocks.
+
+Every commercial Block should eventually expose its eligible contexts, prohibited contexts, intervention cost, trust cost, telemetry contract, success metric, failure behavior and qualification evidence.
+
+## 17. WHAT PEOPLE PAY FOR
 
 Strong paid value clusters around dependency, outcome, memory, automation, proof, unique data, scale, history, governance, speed, savings, portability and specialist workflow.
 
@@ -140,13 +207,13 @@ Strong paid value clusters around dependency, outcome, memory, automation, proof
 
 Upgrade signals: frequency, limit collision, accumulated history, repeated manual work, professional use, team/integration attempts, measurable savings, verification/privacy/history demand.
 
-## 14. COMMERCIAL SURFACES
+## 18. COMMERCIAL SURFACES
 
 For each promising asset consider one-time, pay-per-run, subscription, usage, API, data/history/alerts, licensing, white-label/OEM, enterprise/institutional, affiliate, sponsorship, advertising, marketplace, certification, shared savings, outcome pricing, acquisition/sale, or permanently-free distribution value.
 
 Do not force recurring billing onto one-off value.
 
-## 15. PRODUCT CONSTELLATIONS
+## 19. PRODUCT CONSTELLATIONS
 
 Look for second-order products.
 
@@ -154,31 +221,43 @@ Look for second-order products.
 
 Score first-order revenue and second-order optionality.
 
-## 16. BUILD / HARVEST / ACQUIRE / RESURRECT
+## 20. BUILD / HARVEST / ACQUIRE / RESURRECT
 
 Raw material may come from new builds, internal harvest, dormant IP, compatible open source, upstream contribution, legally acquired assets, neglected-product resurrection, permitted public data and independently reimplemented patterns.
 
 Advantage can come from selection, packaging, verification, distribution and resurrection rather than invention alone.
 
-## 17. DISTRIBUTION IS PRODUCT ARCHITECTURE
+## 21. DISTRIBUTION IS PRODUCT ARCHITECTURE
 
 A product without discovery is commercially incomplete. Engines include search intent, marketplaces/plugins, GitHub/package registries, shareable reports/scores, benchmark pages, Prometheus/newsletter, directories, partnerships and free utility->owned audience.
 
 Prefer existing distribution where possible. Programmatic generation without real utility is rejected.
 
-## 18. OTHRYS VERIFIED
+## 22. OTHRYS VERIFIED
 
 Factory products should aspire to exact dependencies, compatibility matrix, test fixture, expected result, setup validator, health check, known failure modes, cost envelope, last verified version/date and execution receipt where useful.
 
 > **IT WORKS, OR IT TELLS THE USER EXACTLY WHY IT DOES NOT.**
 
-## 19. WINNER DETECTION
+## 23. ANTI-SLOP / ANTI-SLIP
+
+Hyperion has two separate ruthless checks.
+
+**ANTI-SLOP:** should this candidate be born? It rejects generic AI wrappers, me-too products with no credible wedge, unsupported distribution fantasies, SEO filler, trust-hostile monetization, hidden support burdens and products that cannot explain why they deserve to exist.
+
+**ANTI-SLIP:** does an existing asset still deserve oxygen? It rejects sunk-cost loyalty, vanity metrics, stale products, support traps, maintenance traps, poor economics and opportunity-cost blindness.
+
+> **MERCY FOR USERS. NO MERCY FOR WEAK PRODUCTS.**
+
+A EUR 5/month asset may survive indefinitely when total value exceeds total burden and operator attention approaches zero.
+
+## 24. WINNER DETECTION
 
 A hit is not merely traffic. Signals include repeat use, organic acquisition, value completion, low support/marginal cost, requests for more, paid intent, valuable accumulated data/history, workflow dependency, measurable economics and marketplace traction.
 
 When one hits: preserve it; explain why; harden it; map commercial surfaces; prepare qualification; generate adjacent experiments; decide integrated vs independent identity; accumulate transferable operating history; periodically evaluate keep/license/spin-out/sell.
 
-## 20. STRATEGIC ASSET / EXIT
+## 25. STRATEGIC ASSET / EXIT
 
 Do not build for a hypothetical buyer. Build winners with real users, clean rights/IP, independent analytics, reproducible deployment, documented operations, healthy economics, retention history, clean data provenance and low founder dependence.
 
@@ -186,7 +265,7 @@ Then compare `KEEP CASHFLOW | BUNDLE | LICENSE | WHITE-LABEL | PARTNER | SPIN OU
 
 Sale is an option, never the north star.
 
-## 21. OPPORTUNITY SCORING
+## 26. OPPORTUNITY SCORING
 
 `VALUE + FREQUENCY + ABILITY_TO_PAY + SPEED_TO_PROOF + SELF_SERVE_FIT + REUSE + RECURRENCE + DISTRIBUTION_FIT + SECOND_ORDER_OPTIONALITY - SUPPORT_BURDEN - INTEGRATION_BURDEN - SALES_CYCLE - COMPLIANCE_BURDEN - PLATFORM_DEPENDENCE`
 
@@ -194,13 +273,21 @@ Grey candidates additionally subtract trust risk and legal ambiguity.
 
 Portfolio metrics: cost/experiment, idea->verified-public time, kill speed, winner rate, cost/winner, cross-product reuse and percentage of value not requiring human fulfilment.
 
-## 22. CURRENT RESEARCH FAMILIES
+## 27. CURRENT RESEARCH FAMILIES
 
-Automatic website/tiny-product factory; Doctors/diagnostics; Tool Olympics; AI cost/outcome intelligence; Agent Passport/A-BOM/control plane; verified workflow packs; pay-per-run tools; Prometheus intelligence; Evidence Gate; Study Buddy/Buddy infrastructure; developer utilities; monitoring/history; verified directories; ecosystem plugins/extensions; public price/reliability data.
+Automatic website/tiny-product factory; Doctors/diagnostics; Tool Olympics; AI cost/outcome intelligence; Agent Passport/A-BOM/control plane; verified workflow packs; pay-per-run tools; Prometheus intelligence; Evidence Gate; Study Buddy/Buddy infrastructure; developer utilities; monitoring/history; verified directories; ecosystem plugins/extensions; public price/reliability data; Hyperion Blocks; Value Valve; Replacement Radar; commercial psychology and contextual-intervention intelligence.
 
 These are investigation stock, not automatic build authority.
 
-## 23. FINAL LAWS
+## 28. INTELLIGENCE LAW
+
+Hyperion inherits a broader OTHRYS principle:
+
+> **INTELLIGENCE IS NOT HOW MUCH THE SYSTEM KNOWS. INTELLIGENCE IS NOTICING WHAT MATTERS, AT THE MOMENT IT MATTERS, AND DOING SOMETHING USEFUL WITH IT.**
+
+Commercial intelligence is one expression of this. The same law should apply across OTHRYS: building, routing, verification, UX, maintenance, learning and restraint.
+
+## 29. FINAL LAWS
 
 > **HYPERION OWNS THE HORIZON FROM OPPORTUNITY TO SUSTAINABLE MONEY.**
 
@@ -209,6 +296,14 @@ These are investigation stock, not automatic build authority.
 > **PROVEN DEMAND IS EVIDENCE THAT THE JOB MATTERS.**
 
 > **WE DO NOT NEED TO INVENT THE NEED. WE NEED TO SATISFY IT BETTER.**
+
+> **COPY THE JOB. IMPROVE THE MACHINE.**
+
+> **TIME IS MONEY. OPERATOR ATTENTION IS CAPITAL.**
+
+> **IF NOBODY COMES, THE BUILD DID NOT FINISH.**
+
+> **THE BEST COMMERCIAL INTERVENTION FEELS LIKE HELP FIRST AND COMMERCE SECOND.**
 
 > **SELL THE MACHINE OR THE RESULT, NOT YOUR TIME.**
 
@@ -219,3 +314,5 @@ These are investigation stock, not automatic build authority.
 > **OTHRYS SHOULD NOT HAVE TO GUESS THE WINNER. IT SHOULD BECOME CHEAP ENOUGH TO DISCOVER THE WINNER.**
 
 > **THE FINANCIAL GATE IS NOT A BUTTON. IT IS A CONTRACT BETWEEN VALUE, EVIDENCE, READINESS, AUTHORITY AND TRUST.**
+
+> **HYPERION KNOWS THE PIPES. AUTHORITY OPENS THE VALVE.**
