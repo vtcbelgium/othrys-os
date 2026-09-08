@@ -11,7 +11,8 @@ The former CRIUS function has been merged into Hyperion. CRIUS is no longer an i
 ## Canonical files
 
 - `PHILOSOPHY.md` — Hyperion's operating philosophy: proven demand as prey, copy the job/improve the machine, time-as-capital, small-cashflow doctrine, competitive replacement, Grey Edge, maintenance and portfolio discipline.
-- `ANTI_SLIP_CHECKER.md` — brutally honest recurring capital-allocation review against sunk cost, vanity work, support traps, stale products and opportunity-cost drift.
+- `ANTI_SLOP_CHECKER.md` — vicious pre-public product filter against generic wrappers, SEO sludge, weak differentiation, support traps, no-distribution products, maintenance debt and worse copies of incumbents.
+- `ANTI_SLIP_CHECKER.md` — recurring capital-allocation review against sunk cost, vanity work, stale products and opportunity-cost drift after an asset exists.
 - `MERGER_DOCTRINE.md` — merger decision and scope.
 - `HOUSE_OF_HYPERION.md` — specialist commercial rooms and business doctrine.
 - `OPPORTUNITY_LEDGER.md` — researched opportunities and portfolio ranking.
@@ -40,6 +41,16 @@ Canonical shorthand:
 > **PUSH TO THE EDGE. DO NOT CROSS THE LINE.**
 
 > **MERCY FOR USERS. NO MERCY FOR WEAK PRODUCTS.**
+
+## Anti-slop law
+
+Cheap generation is not value.
+
+Before a candidate becomes public, Hyperion must ask whether it deserves to exist at all. A generated page, AI wrapper or utility is rejected when it has no material advantage, no plausible distribution path, no real user value, or creates more support/maintenance burden than expected value.
+
+A candidate should beat an incumbent on at least one meaningful dimension and preferably several: speed, price, friction, privacy, portability, batch processing, evidence, automation, specialization, reliability or distribution.
+
+If the incumbent is already better and OTHRYS has no credible path to beat it, do not ship a worse copy.
 
 ## Anti-slip law
 
