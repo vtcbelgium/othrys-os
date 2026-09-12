@@ -22,6 +22,7 @@ The former CRIUS function has been merged into Hyperion. CRIUS is no longer an i
 - `HOUSE_EXPANSION_002_WEB_PATTERN_MINE.md` — additional web-product pattern stock for the House.
 - `BUDDY_FACTORY.md` — Buddy-family product/business exploration inherited from the commercial research corpus.
 - `BUDDY_FACTORY_ARCHAEOLOGY.md` — archaeology mission for extracting reusable Buddy infrastructure.
+- `NURSERY_INCUBATOR.md` — canonical Nursery/Incubator lifecycle for cheap training experiments, evidence collection, composting, ICE preservation, commercial capsules, thaw protocol and inherited fail-closed financial gates.
 - `/BOOK_OF_HYPERION.md` — canonical Hyperion doctrine and financial-gate law.
 
 ## Philosophy law
@@ -90,6 +91,8 @@ Course Mode remains active as doctrine:
 - disabled/sandbox revenue machinery allowed;
 - gate qualification allowed;
 - popularity never automatically opens money.
+
+Course Mode is operationalized through `NURSERY_INCUBATOR.md`: train cheaply, validate with evidence, compost weak specimens, preserve promising winners on ICE, and keep every financial channel fail-closed until Hyperion qualification and operator authority permit otherwise.
 
 ## OTHRYS relationship
 
