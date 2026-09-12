@@ -1,262 +1,495 @@
 # HYPERION NURSERY & INCUBATOR
 
-> **LEARN CHEAPLY. GROW VALUE. FREEZE WINNERS. OPEN MONEY DELIBERATELY.**
+> **LEARN CHEAPLY. PROVE VALUE. FREEZE WINNERS. COMPOST FAILURES. OPEN MONEY DELIBERATELY.**
 
-The Hyperion Nursery is the controlled environment in which OTHRYS turns learning, research, harvested capabilities and small experiments into evidence-bearing product candidates without forcing them to earn money prematurely.
+The **Nursery** is OTHRYS' bounded experimental environment. The **Incubator** is Hyperion's governance layer over it.
 
-The Nursery is where specimens grow. The Incubator is the governance system that decides how they progress, what resources they may consume, when they should be killed or composted, when a winner should be preserved on ICE, and when a commercially qualified asset may eventually approach the Hyperion Value Valve.
+The distinction is deliberate:
 
-This doctrine is especially important during Course Mode, but it is permanent OTHRYS architecture. Cheap experimentation remains valuable after Course Mode ends.
+- **Nursery = where specimens are allowed to grow.**
+- **Incubator = the rules that decide admission, resources, evidence, promotion, ICE, compost, thaw and commercial qualification.**
 
-## 1. PURPOSE
+The Nursery exists permanently, not only for Course Mode. Course Mode simply makes its financial containment stricter.
 
-OTHRYS should not finish a learning period with only exercises. It should finish with reusable capabilities, measured experiments, public proof where appropriate, and a shelf of commercially legible assets.
+It solves two problems at once:
 
-The Nursery converts:
+1. learning should compound into reusable OTHRYS capability rather than disposable exercises;
+2. promising experiments must not accidentally become businesses before they are operationally, economically and legally ready.
 
-`LESSON / IDEA / HARVEST / PAIN / OPPORTUNITY -> SPECIMEN -> EVIDENCE -> REUSABLE CAPABILITY OR COMMERCIAL CANDIDATE`
+The Nursery therefore sits between discovery/building and Hyperion's existing commercial qualification machinery.
 
-A SYNTRA assignment, Prometheus discovery, harvested pattern, new model/API, operator idea or user pain may all enter the Nursery. Entry grants permission to investigate and learn, not permission to commercialize.
+`DISCOVERY / LESSON / IDEA -> NURSERY -> EVIDENCE -> COMPOST / CAPABILITY / ICE -> HYPERION QUALIFICATION -> VALUE VALVE`
 
-## 2. LIFECYCLE
+---
 
-Canonical lifecycle:
+## 1. FIRST PRINCIPLE — AN EXPERIMENT IS NOT A PRODUCT
 
-`SEED -> NURSERY -> TRAIN -> VERIFY -> EXPOSE -> VALIDATE -> COMPOST | CONTINUE | ICE -> COMMERCIAL QUALIFICATION -> FINANCIAL GATE -> PRODUCT`
+Entry into the Nursery grants permission to **learn and test**, not permission to ship forever, consume unlimited resources, enter canon or earn money.
 
-The lifecycle is reversible. Evidence may move a specimen backward. No graduation is permanent merely because it happened once.
+Every specimen begins as a bounded hypothesis:
+
+```yaml
+specimen:
+  problem: "What real job or question are we testing?"
+  hypothesis: "What do we believe?"
+  learning_goal: "What must become known?"
+  proof: "What evidence would support it?"
+  falsifier: "What evidence would kill it?"
+  budget:
+    money: bounded
+    time: bounded
+    compute: bounded
+  next_gate: defined
+```
+
+A specimen without a learning goal, proof target or kill condition is not a Nursery experiment. It is drift.
+
+---
+
+## 2. CANONICAL LIFECYCLE
+
+`SEED -> ADMIT -> GROW -> TRAIN -> VERIFY -> EXPOSE -> VALIDATE -> HARVEST -> COMPOST | CONTINUE | ICE -> QUALIFY -> THAW -> FINANCIAL GATE -> PRODUCT`
+
+These are **experiment states**, not replacements for Hyperion's existing G0-G6 product gates. The Nursery feeds those gates.
 
 ### SEED
-A bounded hypothesis with a real job, learning objective or opportunity signal.
+An idea, lesson, pain signal, harvested pattern, Prometheus discovery or market opportunity.
 
-### NURSERY
-A cheap experimental implementation. Scope is deliberately small. Reuse existing OTHRYS Blocks and infrastructure before creating bespoke machinery.
+### ADMIT
+Hyperion applies a lightweight anti-slop check. The experiment needs a real learning purpose, plausible user job or strategic capability. Cheap generation alone is not a reason to build.
+
+### GROW
+Build the smallest specimen capable of answering the question. Reuse admitted OTHRYS Blocks and infrastructure before creating bespoke machinery.
 
 ### TRAIN
-The specimen is used to learn a capability, exercise a course concept, test an architecture, compare providers, or prove a user journey.
+Use the specimen to learn a course concept, architecture, provider, workflow, model, user journey or commercial hypothesis.
 
 ### VERIFY
-The specimen must produce evidence. `worked once`, `looks good`, and `AI says done` are not proof.
+Produce evidence. `worked once`, `looks good`, and `AI says done` are explicitly insufficient.
 
 ### EXPOSE
-When normal OTHRYS gates allow it, the specimen may be exposed to real users for free to collect legitimate demand, reliability and usability evidence.
+Where normal OTHRYS gates permit, expose the specimen free to real users or realistic workloads. Exposure is optional when the experiment can be answered without public deployment.
 
 ### VALIDATE
-Hyperion distinguishes attention from value. Signals include repeat use, completed value events, organic discovery, requests, retention, low support burden, low marginal cost, paid intent and useful accumulated data/history.
+Separate attention from value. Measure the actual value event and the burden required to deliver it.
+
+### HARVEST
+Before any terminal decision, extract reusable capability and knowledge.
 
 ### COMPOST
-A weak specimen is killed without shame. Useful code, Blocks, prompts, datasets, tests, telemetry patterns, UX lessons and failure knowledge are harvested back into OTHRYS. The product may die while its organs survive.
+Kill the packaging when expected future value no longer justifies continued resources.
+
+### CONTINUE
+Continue only when the next experiment is explicit. `CONTINUE` is not an indefinite holding state.
 
 ### ICE
-A promising specimen is deliberately preserved as a commercial candidate. ICE is success containment, not failure and not abandonment.
+Preserve a promising asset and stop unnecessary development. ICE is **success containment**.
 
-### COMMERCIAL QUALIFICATION
-Hyperion models economics, legal/admin requirements, channel fit, capacity, support, rights, tax/VAT/accounting requirements where relevant, payment architecture, terms, privacy, fraud/abuse controls and operational proof.
+### QUALIFY
+Hyperion evaluates commercial readiness using the existing Book of Hyperion gates.
+
+### THAW
+Re-activate an iced asset only after its recorded thaw conditions pass.
 
 ### FINANCIAL GATE
-Only existing Hyperion authority may open money. Nursery success never overrides the global/product/channel lock hierarchy.
+Existing Hyperion authority governs money. Nursery state can never override it.
 
-## 3. THE ICE DOCTRINE
+---
 
-> **A WINNER DOES NOT AUTOMATICALLY BECOME A STARTUP. A WINNER EARNS PRESERVATION.**
+## 3. THREE OUTPUTS, NOT ONE
 
-When an experiment becomes unusually promising, the default response is:
+The Nursery does not exist only to create startups. A specimen can produce three independent kinds of value:
 
-`WINNER_SIGNAL -> VERIFY -> EXPLAIN -> HARDEN ENOUGH TO PRESERVE -> ICE -> RECORD THAW CONDITIONS`
+### A. KNOWLEDGE
+Negative or positive evidence, benchmarks, market observations, operational lessons and failure knowledge.
 
-Never:
+### B. CAPABILITY
+Reusable Blocks, tests, datasets, prompts, adapters, workflows, deployment patterns, UI components and operational contracts.
 
-`WINNER_SIGNAL -> FEATURE SPIRAL -> SUPPORT BURDEN -> ACCIDENTAL BUSINESS`
+### C. ASSET
+A coherent product candidate with evidence that people use or value it.
 
-ICE prevents a successful experiment from consuming the learning environment. It allows OTHRYS to keep training while preserving economic optionality.
+A failed product may therefore be a successful experiment. A commercially weak specimen may still create a strategically valuable OTHRYS Block. An excellent lesson may produce no product at all.
 
-Every iced specimen receives a Commercial Capsule containing, where relevant:
+This prevents Hyperion from confusing **commercial survival** with **learning value**.
 
-- product purpose and core value event;
-- last known working commit/build;
-- operational contract and proof refs;
-- tests and known failure modes;
-- deployment/recovery instructions;
-- dependencies and provider assumptions;
-- current infrastructure cost and estimated scaled cost;
-- usage, retention and demand evidence;
-- distribution evidence;
-- commercial surfaces and pricing hypotheses;
-- legal/admin/tax/accounting blockers requiring confirmation;
-- rights/IP/data provenance;
-- support burden;
-- estimated commercial potential;
-- adjacent opportunities;
-- explicit thaw conditions;
-- explicit kill/expiry review conditions.
+---
 
-The capsule exists so that an asset can be understood and restarted months later without archaeology.
+## 4. RESOURCE LAW — BUY INFORMATION
 
-## 4. COURSE MODE NURSERY
+Course Mode defaults to:
 
-During Course Mode, the Nursery defaults to free, local, open-source, sandboxed or legitimately available free-tier infrastructure wherever that produces adequate evidence.
+`REUSE OTHRYS -> LOCAL -> OPEN SOURCE -> LEGITIMATE FREE TIER -> SANDBOX -> PAID WHEN THE PAYMENT BUYS MATERIAL INFORMATION`
 
-Preferred resource order:
+The goal is not absolute zero cost. The goal is high **information yield per scarce resource**.
 
-`REUSE OTHRYS -> LOCAL -> OPEN SOURCE -> FREE TIER -> SANDBOX -> PAID ONLY WHEN EXPLICITLY JUSTIFIED`
+Hyperion should ask:
 
-Frugality is not the goal by itself. The goal is **cheap information**: maximum learning and commercial evidence per euro, token, hour and support minute.
+`WHAT WILL THIS EURO / TOKEN / HOUR TEACH US THAT THE CHEAPER OPTION CANNOT?`
 
-Course Mode specimens may be built, tested, deployed free where allowed, gain users, collect appropriate telemetry, build an audience, validate demand, prepare commercial plumbing in disabled/sandbox form and become `GATE_ELIGIBLE` beneath the global lock.
+Paid infrastructure is justified when it materially tests scale, reliability, a required provider, real economics or another question that cannot be answered cheaply. Paying merely to make an experiment feel production-like is rejected.
 
-Live financial behavior remains governed by the Book of Hyperion and current legal/benefit/tax constraints. The Nursery is not a mechanism for disguised income, nominee ownership, deferred-payment tricks or other attempts to make economic activity invisible.
+Nursery budgets should be explicit enough that one runaway specimen cannot quietly consume the portfolio.
 
-If legality, benefit status, tax treatment or platform terms are unclear: `LEGAL_REVIEW_REQUIRED`.
+---
 
-## 5. FINANCIAL-GATE INHERITANCE
+## 5. COURSE MODE — COMMERCIAL CONTAINMENT
 
-Every Nursery specimen inherits fail-closed financial state from birth.
-
-Recommended manifest:
+Course Mode is inherited from the Book of Hyperion.
 
 ```yaml
 hyperion:
-  nursery_state: NURSERY
   course_mode: true
+  global_financial_lock: LOCKED
+  nursery_default: ACTIVE
+  live_revenue: forbidden
+  commercial_analysis: allowed
+  demand_validation: allowed
+  commercial_preparation: allowed
+  sandbox_revenue_machinery: allowed
+  gate_qualification: allowed
+  operator_opening: blocked_by_global_lock
+```
+
+Course Mode should be economically ambitious while financially contained.
+
+A specimen may become fully operational, public/free where permitted, popular, measured, commercially modeled and technically ready for future monetization. It may prepare disabled channel adapters. It may reach `GATE_ELIGIBLE` beneath the global lock.
+
+It may not infer permission to earn from technical readiness, traffic, customer requests, configured credentials, a payment-provider account or the existence of monetization code.
+
+If benefit status, tax, legal, platform or administrative treatment is unclear:
+
+`LEGAL_REVIEW_REQUIRED`
+
+The Nursery is never a mechanism for disguised income, nominee ownership, deferred-payment tricks or concealing economic activity.
+
+---
+
+## 6. FINANCIAL INHERITANCE — BORN CLOSED
+
+Every specimen is born financially closed.
+
+```yaml
+hyperion:
+  nursery_state: SEED
+  course_mode: INHERIT
   commercial_candidate: false
-  ice_state: ACTIVE
   global_financial_lock: INHERIT
   product_financial_gate: CLOSED
   channels:
+    purchase: DISABLED
+    subscription: DISABLED
+    usage: DISABLED
+    paid_api: DISABLED
     ads: DISABLED
     affiliate: DISABLED
-    subscription: DISABLED
-    purchase: DISABLED
-    paid_api: DISABLED
     sponsorship: DISABLED
     licensing: DISABLED
+    white_label: DISABLED
+    marketplace: DISABLED
   operator_open_required: true
 ```
 
-A specimen may contain disabled adapters for future channels. Presence of code, credentials, provider configuration or UI does not constitute authority to transact.
+Disabled adapters may exist and may be tested in sandbox mode. They remain incapable of authorizing live revenue.
+
+The hierarchy remains:
+
+`GLOBAL LOCK -> PRODUCT GATE -> CHANNEL GATE -> RUNTIME GUARDS -> REVENUE EVENT`
 
 > **MONETIZATION-READY IS NOT MONETIZATION-ON.**
 
-VTC's existing gate pattern is a reference ancestor for this architecture. The Nursery standardizes the principle across future OTHRYS products rather than leaving each product to invent its own economic safety boundary.
+VTC's existing gate is a **reference ancestor**, not a special exception. The Nursery generalizes the principle so future OTHRYS products inherit a common economic safety boundary.
 
-## 6. TRAINING AS PRODUCT RESEARCH
+---
 
-Course work should compound.
+## 7. THE ICE DOCTRINE — SUCCESS CONTAINMENT
 
-`RAG LESSON -> NURSERY RAG SPECIMEN -> VERIFIED BLOCK -> FUTURE PRODUCTS`
+> **A WINNER DOES NOT AUTOMATICALLY BECOME A STARTUP. A WINNER EARNS PRESERVATION.**
 
-`AGENT LESSON -> NURSERY AGENT SPECIMEN -> VERIFIED PATTERN -> FUTURE PRODUCTS`
+A strong signal should produce:
 
-`AUTOMATION LESSON -> NURSERY WORKFLOW -> VERIFIED BLOCK -> FUTURE PRODUCTS`
+`WINNER SIGNAL -> VERIFY -> EXPLAIN -> PRESERVE -> ICE -> RECORD THAW CONDITIONS`
 
-`DATABASE LESSON -> NURSERY DATA MODEL -> VERIFIED PATTERN -> FUTURE PRODUCTS`
+Not:
 
-`API LESSON -> NURSERY SERVICE -> VERIFIED CONTRACT -> FUTURE PRODUCTS`
+`WINNER SIGNAL -> FEATURE SPIRAL -> SUPPORT BURDEN -> ACCIDENTAL COMPANY`
 
-`FRONTEND LESSON -> NURSERY INTERFACE -> VERIFIED UX PATTERN -> FUTURE PRODUCTS`
+ICE exists because success is dangerous to a learning system. A popular experiment can steal time from the course, create maintenance obligations and tempt premature monetization.
 
-An assignment may remain only an assignment. Promotion is earned. The Nursery prevents course work from polluting canon while making valuable discoveries harvestable.
+ICE deliberately stops that spiral while preserving optionality.
 
-## 7. PORTFOLIO STATES
+An iced asset should normally be **stable enough to understand and restart**, not polished indefinitely.
 
-Hyperion should maintain a visible Nursery portfolio with at least:
+---
 
-`SEED | NURSERY | TRAINING | VERIFYING | PUBLIC_FREE | VALIDATING | ICE | GATE_ELIGIBLE | COMMERCIAL | COMPOSTED | RETIRED`
+## 8. COMMERCIAL CAPSULE
 
-Each entry should expose owner, purpose, current cost, next proof, last evidence date, financial-gate state and kill/thaw condition.
+Every iced asset receives a compact, machine-readable and human-readable **Commercial Capsule**.
 
-Prometheus may nominate seeds. Atlas/Mnem may provide evidence and memory. Forge may build. Themis/Talos/Evidence Gate may verify. Hyperion owns economic classification and commercial readiness. No upstream system inherits authority to open money.
+Minimum capsule:
 
-## 8. WINNER DETECTION
+```yaml
+capsule:
+  identity: product/version/commit
+  core_value_event: defined
+  evidence:
+    operational: refs
+    demand: refs
+    distribution: refs
+  economics:
+    current_cost: known
+    scaled_cost: estimate
+    revenue_hypotheses: []
+  burden:
+    support: estimate
+    maintenance: estimate
+  provenance:
+    code: known
+    data: known
+    rights: known
+  blockers: []
+  thaw_conditions: []
+  expiry_review: date_or_trigger
+  kill_conditions: []
+```
 
-A specimen becomes an ICE candidate when multiple signals converge, not merely because traffic spikes.
+The full capsule may additionally include deployment/recovery instructions, tests, dependencies, provider assumptions, known failures, retention, user requests, pricing hypotheses, channel fit, legal/admin/tax/accounting requirements, adjacent opportunities and strategic reuse.
 
-Useful signals include:
+A capsule fails if future Jeroen or an OTHRYS agent must perform archaeology merely to understand what was frozen.
 
-- repeat use and retention;
-- completed value events;
-- organic acquisition;
-- low support and marginal cost;
-- requests for more capability;
-- explicit paid intent without collecting unauthorized payment;
-- professional or organizational use;
-- valuable accumulated history/data;
-- workflow dependency;
-- strong distribution fit;
-- clear commercial surfaces;
-- credible economics;
-- strategic reuse across OTHRYS.
+---
 
-Hyperion should record **why** the specimen appears to be winning. That explanation becomes input to adjacent experiments and future product selection.
+## 9. WINNER DETECTION — SIGNAL STACKS
 
-## 9. COMPOST LAW
+Traffic alone is weak evidence. Hyperion looks for **converging signals**.
 
-> **FAILED PRODUCTS MAY STILL BE SUCCESSFUL EXPERIMENTS.**
+Four signal families:
 
-Composting must salvage reusable value before deletion. At minimum ask:
+**VALUE** — completed value events, repeat use, retention, workflow dependency, user requests.
 
-- What did we learn?
+**DISTRIBUTION** — organic acquisition, sharing, search/marketplace traction, low acquisition friction.
+
+**ECONOMICS** — low marginal cost, bounded support, plausible channel fit, credible willingness to pay or strategic portfolio value.
+
+**STRATEGY** — reusable capability, unique data/history, cross-product leverage, defensibility, second-order optionality.
+
+ICE should normally require evidence from more than one family.
+
+Hyperion must record **why the specimen appears to win**. Winner explanations feed adjacent experiments and future opportunity scoring.
+
+---
+
+## 10. COMPOST — HARVEST BEFORE DEATH
+
+> **COMPOST THE PRODUCT. HARVEST THE ORGANS.**
+
+Before retirement, ask:
+
 - Which assumption failed?
+- Was the failure product, distribution, economics, execution or timing?
+- What evidence should Atlas/Mnem retain?
 - Which code is genuinely reusable?
-- Did a Block or pattern earn admission evidence?
-- Is there useful negative evidence?
-- Did distribution fail while product value survived, or vice versa?
-- Is there a smaller product hiding inside the failed one?
-- Should any dataset, benchmark, test fixture or operational lesson enter Atlas/Mnem?
+- Did any Block/pattern earn admission evidence?
+- Are benchmarks, fixtures or datasets worth preserving?
+- Is there a smaller useful product inside the failed packaging?
+- Did we discover a better adjacent problem?
 
-Do not preserve dead products merely to avoid admitting failure. Do not discard proven capability merely because its first packaging failed.
+Do not preserve dead products because effort was spent. Do not discard proven capability because its first packaging failed.
 
-## 10. THAW PROTOCOL
+Composted assets should stop consuming routine deployment, monitoring and support unless a retained capability explicitly requires them.
 
-An iced asset may thaw when its recorded conditions are satisfied or Hyperion has new evidence justifying review.
+---
 
-Thaw review asks:
+## 11. COURSE-TO-CAPABILITY LOOP
 
-1. Does the user problem still exist?
-2. Does the specimen still work or can it be restored cheaply?
-3. Is its evidence still relevant?
-4. Has the market moved?
-5. Are rights and dependencies clean?
-6. Is the intended revenue channel still appropriate?
-7. Are legal/admin/tax/accounting requirements understood?
-8. Is Course Mode/global financial authority compatible with opening?
-9. Does expected value exceed restart, maintenance, support and opportunity cost?
-10. Does the operator explicitly authorize the next economic state?
+Course work should compound without forcing every lesson into a startup.
 
-Only then may the candidate progress toward the existing Hyperion commercial qualification and financial gates.
+```text
+LESSON
+  -> NURSERY SPECIMEN
+  -> EVIDENCE
+  -> KNOWLEDGE / VERIFIED PATTERN / BLOCK
+  -> REUSE IN LATER LESSONS AND PRODUCTS
+```
 
-## 11. NURSERY METRICS
+Examples:
 
-Hyperion should care about:
+`RAG -> specimen -> retrieval benchmark -> admitted pattern`
 
-- cost per experiment;
+`AGENTS -> specimen -> orchestration evidence -> reusable agent contract`
+
+`N8N/AUTOMATION -> workflow -> failure tests -> reusable automation Block`
+
+`DATABASES -> model -> migration/recovery proof -> reusable data pattern`
+
+`APIs -> integration -> contract/error evidence -> reusable adapter`
+
+`FRONTEND -> interaction -> usability evidence -> reusable interface pattern`
+
+An assignment may remain an assignment. Promotion is earned.
+
+---
+
+## 12. PORTFOLIO CONTROL PLANE
+
+Hyperion should maintain one portfolio view rather than scattered experiment notes.
+
+Canonical states:
+
+`SEED | ADMITTED | GROWING | TRAINING | VERIFYING | PUBLIC_FREE | VALIDATING | ICE | GATE_ELIGIBLE | COMMERCIAL | COMPOSTED | RETIRED`
+
+Every active specimen should expose at least:
+
+- purpose / hypothesis;
+- learning goal;
+- state;
+- current resource burn;
+- next proof;
+- last evidence date;
+- reusable output discovered so far;
+- financial state;
+- kill condition;
+- ICE/thaw condition where relevant.
+
+Prometheus may nominate. Atlas/Mnem remember. Forge may build. Tool Olympics/Switchyard may select machinery. Themis/Talos/Evidence Gate may verify. **Hyperion owns economic classification.** None of those systems inherit authority to open money.
+
+---
+
+## 13. WIP LIMIT — THE NURSERY MUST NOT BECOME A ZOO
+
+The Nursery must constrain simultaneous active specimens.
+
+Too many experiments create fake optionality, stale deployments and maintenance debt. Hyperion should prefer a small number of active experiments with explicit next proofs and a larger shelf of seeds/iced assets.
+
+A new specimen should compete for scarce active slots against existing work.
+
+When capacity is full, the choices are:
+
+`FINISH | ICE | COMPOST | DEFER`
+
+—not silently add another permanent project.
+
+Exact WIP limits are policy/configuration, not hard-coded doctrine, but **unbounded WIP is prohibited**.
+
+---
+
+## 14. STALENESS & EXPIRY
+
+Experiments decay.
+
+Every active or iced specimen should have a review trigger based on time or evidence. Hyperion should flag specimens whose assumptions, dependencies, market evidence or operational proof have become stale.
+
+Staleness does not automatically kill an asset. It removes confidence.
+
+`STALE EVIDENCE != VALID EVIDENCE`
+
+An iced asset with stale evidence must revalidate the affected assumptions during thaw.
+
+---
+
+## 15. THAW PROTOCOL
+
+Thaw is a new decision, not continuation by inertia.
+
+Review:
+
+1. Does the problem still exist?
+2. Does the asset still work or restore cheaply?
+3. Which evidence remains valid?
+4. What became stale?
+5. Has the market or incumbent changed?
+6. Are provenance, rights and dependencies clean?
+7. Is the intended revenue channel still appropriate?
+8. Are economics still credible?
+9. Are legal/admin/tax/accounting requirements understood?
+10. Is current Course Mode/global financial authority compatible?
+11. Does expected value exceed restart, maintenance, support and opportunity cost?
+12. Does the operator authorize progression?
+
+Possible outcomes:
+
+`RE-ICE | REVALIDATE | QUALIFY | COMPOST | RETIRE`
+
+Only qualification plus existing Hyperion financial authority can progress toward live money.
+
+---
+
+## 16. NURSERY METRICS
+
+Measure the Nursery as an **information and asset factory**, not by raw experiment count.
+
+Useful portfolio metrics:
+
+- cost per answered hypothesis;
 - time from seed to evidence;
-- percentage killed quickly;
-- percentage producing reusable Blocks/patterns;
+- kill speed;
+- percentage producing reusable knowledge/capability;
 - percentage reaching real-user validation;
 - winner rate;
 - cost per winner;
 - support burden per specimen;
-- infrastructure cost per active user/value event;
+- infrastructure cost per value event;
+- active WIP;
+- stale-specimen count;
 - number and quality of iced assets;
-- time required to understand/restart an iced asset;
+- time to understand/restart an iced asset;
 - cross-product reuse;
 - commercial optionality created without premature obligations.
 
-A Nursery with many living experiments and no kills is unhealthy. A Nursery that kills everything before reality sees it is also unhealthy.
+A Nursery with many experiments and no kills is unhealthy. A Nursery that kills everything before meaningful evidence is also unhealthy.
 
-## 12. CORE LAWS
+---
+
+## 17. FAILURE MODES
+
+Hyperion should actively detect:
+
+**DEMO GRAVEYARD** — many half-working experiments, no harvested evidence.
+
+**ZOO** — too many active specimens.
+
+**PET PROJECT** — continued resources without new evidence.
+
+**FREE-TIER WORSHIP** — choosing a bad architecture solely because it costs zero.
+
+**PRODUCTION COSPLAY** — paying for scale/reliability before the experiment requires it.
+
+**ACCIDENTAL STARTUP** — a winner becomes an operational burden before deliberate graduation.
+
+**MONETIZATION LEAK** — a live channel bypasses inherited financial authority.
+
+**ICE MORGUE** — frozen assets without capsules, review triggers or realistic thaw paths.
+
+**COMPOST LOSS** — killing packaging before harvesting reusable value.
+
+**COURSE HIJACK** — product maintenance begins displacing the learning mission.
+
+These are portfolio incidents, not merely aesthetic problems.
+
+---
+
+## 18. CORE LAWS
 
 > **LEARNING MAY CREATE VALUE WITHOUT BEING FORCED TO EXTRACT VALUE.**
 
-> **TRAIN ON CHEAP SERVICES. SPEND MONEY TO BUY INFORMATION, NOT TO FEED VANITY.**
+> **AN EXPERIMENT MUST ANSWER A QUESTION OR CREATE VERIFIED CAPABILITY. OTHERWISE IT IS DRIFT.**
+
+> **BUY INFORMATION, NOT VANITY.**
+
+> **FREE IS A RESOURCE STRATEGY, NOT A RELIGION.**
 
 > **A SUCCESSFUL SPECIMEN TRIGGERS REVIEW AND POSSIBLY ICE — NEVER AUTOMATIC MONETIZATION.**
+
+> **SUCCESS IS CONTAINED BEFORE IT IS COMMERCIALIZED.**
 
 > **MONETIZATION-READY IS NOT MONETIZATION-ON.**
 
 > **COMPOST THE PRODUCT; HARVEST THE ORGANS.**
 
-> **THE NURSERY PRODUCES EVIDENCE. HYPERION DECIDES ECONOMIC READINESS. AUTHORITY OPENS THE VALVE.**
+> **UNBOUNDED WIP IS PROHIBITED.**
 
-> **THE COURSE SHOULD END WITH MORE THAN KNOWLEDGE: IT SHOULD END WITH PROVEN CAPABILITIES AND A SHELF OF EXPLAINABLE OPTIONS.**
+> **STALE EVIDENCE LOSES AUTHORITY.**
+
+> **THE NURSERY PRODUCES EVIDENCE AND CAPABILITY. HYPERION DECIDES ECONOMIC READINESS. AUTHORITY OPENS THE VALVE.**
+
+> **THE COURSE SHOULD END WITH MORE THAN KNOWLEDGE: IT SHOULD END WITH VERIFIED CAPABILITIES, EXPLAINABLE ASSETS AND A SHELF OF DELIBERATE OPTIONS.**
