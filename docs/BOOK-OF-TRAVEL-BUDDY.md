@@ -4,7 +4,7 @@
 **Field Trial:** Portugal 2026 — Field Trial 001  
 **Owner:** OTHRYS  
 **Last major harvest:** 2026-09-13  
-**Harvest state:** ACTIVE — trip still running
+**Harvest state:** ACTIVE — trip still running; doctrine harvest complete for now
 
 > Travel Buddy is not an itinerary generator. It is a stateful travel companion that helps a traveller prepare, move, decide, understand, remember and share — while knowing when to stay quiet.
 
@@ -14,1316 +14,404 @@
 
 Travel information is abundant but fragmented. A traveller moves between airline sites, hotel apps, maps, transport operators, blogs, social media, museum guides, booking platforms, notes, photos, messages and memory. Most products solve one slice. Travel Buddy should maintain the trip as a living state and bring the right information forward at the right moment.
 
-The product starts with a domain the owner knows through extensive real travel. Portugal 2026 is not a hypothetical persona exercise. It is the first hard real-time field trial, with changing plans, buses, trains, hotels, heat, fatigue, food, museums, archaeological sites, opening hours, photos, mistakes, corrections, collections, stamps, costs and spontaneous discoveries.
-
-The foundational principle is:
+Portugal 2026 is the first hard real-time field trial: changing plans, buses, trains, hotels, heat, fatigue, food, museums, archaeological sites, opening hours, photos, mistakes, corrections, collections, stamps, costs and spontaneous discoveries.
 
 **Build from observed travel reality, not imagined travel UX.**
 
-A second principle follows from the field trial:
-
 **The trip itself is the dataset.**
 
-Travel Buddy should not only answer questions. It should quietly turn a real journey into structured knowledge that can later produce maps, diaries, statistics, lessons, checklists, route intelligence and future product improvements.
+Travel Buddy should quietly turn a real journey into structured knowledge that can later produce maps, diaries, statistics, lessons, checklists, route intelligence and future product improvements.
 
 ---
 
 # 2. Product Boundary
 
-Travel Buddy owns the travel domain inside OTHRYS.
-
 - **Travel Buddy** → travel planning, trip state, live guidance, transport, lodging, food, sightseeing, trip memory, maps, travel collections and post-trip outputs.
-- **VTC** → toys and collecting domain.
-- **Personal Manager / OTHRYS Web** → broader personal control surface that may surface Travel Buddy state but does not redefine travel doctrine.
+- **VTC** → toys and collecting.
+- **Personal Manager / OTHRYS Web** → broader personal control surface that may surface Travel Buddy state.
 
-The product should feel domain-native. It should not become a generic AI assistant with a travel skin.
+Domain-first doctrine: start with fields the builder knows well enough to detect bad software and bad AI output. VTC begins with collecting; Travel Buddy begins with travelling.
 
 ---
 
 # 3. Product Ladder — Basics Before Intelligence
 
-Travel Buddy must resist beginning with flashy AI features. The fundamentals are already a full product.
+## 3.1 Travel Fundamentals
 
-## 3.1 Layer A — Travel Fundamentals
+A trustworthy handbook/checklist engine should cover choosing and booking flights; airports/check-in/security/boarding/connections; passports/visas/documents; accommodation selection and booking; check-in/out, deposits, taxes and luggage hold; rail/bus/metro/taxi/ferry/rental transport; baggage rules and strategy; lockers and third-party storage; money/cards/cash/ATM fees; roaming/SIM/eSIM/charging; insurance reality; scams; laundry; food/water basics; what to reserve; arrival/departure days; disruption handling; and seasonal packing.
 
-A trustworthy handbook/checklist system covering at minimum:
+## 3.2 Contextual Checklists
 
-- choosing, comparing and booking flights;
-- airports, check-in, boarding, security, transfers and arrivals;
-- passports, visas, documents and copies;
-- accommodation selection, booking, check-in, check-out, deposits, city tax and luggage storage;
-- rail, bus, metro, taxi/rideshare, ferry and rental transport;
-- luggage rules and baggage strategy;
-- station lockers versus third-party bag storage;
-- money, cards, cash, ATMs and fees;
-- mobile connectivity, roaming, SIM/eSIM and charging;
-- insurance and practical coverage reality;
-- common scams and tourist traps;
-- medication/document prep where applicable;
-- laundry and long-trip clothing rotation;
-- food/water basics and local meal patterns;
-- what to reserve in advance versus leave flexible;
-- arrival/departure-day procedures;
-- disruption handling;
-- weather/season packing systems.
+Checklists compose from variables: summer/winter/shoulder season; city/beach/hiking/road trip/pilgrimage/mixed; short or multi-week; carry-on/checked/backpack; solo/couple/family/group; domestic/Schengen/international; novice/experienced; hotel/apartment/hostel/camping; and activities such as snorkeling, hiking or cycling.
 
-## 3.2 Layer B — Contextual Checklists
+## 3.3 Trip Planner
 
-Checklist composition by variables rather than giant static lists:
+Destinations, dates, transport, stays, reservations, interests, constraints, budget, collections and optional targets. Planning is intent, not truth.
 
-- summer / winter / shoulder season;
-- city / beach / hiking / road trip / pilgrimage / mixed;
-- short trip / one week / multi-week;
-- carry-on / checked luggage / backpack;
-- solo / couple / family / group;
-- domestic / Schengen / international;
-- novice / experienced;
-- hotel / apartment / hostel / camping;
-- special activities such as snorkeling, hiking, cycling or formal events.
+## 3.4 Live Buddy
 
-## 3.3 Layer C — Trip Planner
+Current logistics, navigation, visual guiding, local context, decision support, replanning, missed-item checking and disruption recovery.
 
-Create a trip with destinations, dates, transport, stays, reservations, interests, constraints, budget, collections and optional targets.
+## 3.5 Memory, Diary and Collections
 
-Planning is intent, not truth.
+Reconstruct actual events rather than original itinerary. Preserve photos, places, stamps, souvenirs, costs, anecdotes and meaningful moments.
 
-## 3.4 Layer D — Live Buddy
-
-During travel, Travel Buddy becomes a real-time companion: current logistics, navigation, visual guiding, local context, decision support, replanning, missed-item checking and disruption recovery.
-
-## 3.5 Layer E — Memory, Diary and Collections
-
-The trip is automatically reconstructed from actual events rather than the original itinerary. Photos, places, stamps, souvenirs, costs, anecdotes and meaningful moments become durable memory.
-
-## 3.6 Layer F — Maps and Shareable Output
+## 3.6 Maps and Shareable Output
 
 Generate attractive route maps, trip cards, statistics and social-ready visual summaries from accumulated state.
 
-## 3.7 Layer G — Collective Travel Intelligence
+## 3.7 Collective Travel Intelligence
 
-Only after fundamentals are trustworthy: privacy-safe, consent-based aggregation of outcomes can feed OTHRYS knowledge harvests and improve future advice.
+Only after fundamentals are trustworthy: privacy-safe, consent-based aggregation of outcomes feeds OTHRYS knowledge harvests.
 
 ---
 
 # 4. State Model — Never Confuse Plan With Reality
 
-Every meaningful trip item needs explicit state.
-
-- **IDEA** — considered, not committed.
+- **IDEA** — considered.
 - **PLANNED** — intended.
-- **CONFIRMED** — reservation/booking/transport verified.
-- **IN PROGRESS** — currently happening.
+- **CONFIRMED** — booking/reservation/transport verified.
+- **IN PROGRESS** — happening now.
 - **COMPLETED** — actually done.
 - **SKIPPED** — intentionally not done.
-- **CANCELLED** — planned or confirmed then cancelled.
+- **CANCELLED** — planned/confirmed then cancelled.
 - **CHANGED** — materially altered.
 - **DISCOVERED** — unplanned discovery.
-- **FAILED** — attempted but could not be completed.
-- **UNCERTAIN** — evidence insufficient.
-
-Core law:
+- **FAILED** — attempted but could not complete.
+- **UNCERTAIN** — insufficient evidence.
 
 **A planned monastery is not a visited monastery. A booked hotel is not automatically a completed stay. A proposed meal is not a meal eaten.**
 
-State transitions should retain evidence, date/time and confidence where practical.
+Transitions should retain evidence, date/time and confidence where practical.
 
 ---
 
 # 5. Truth and Verification Doctrine
 
-Travel is time-sensitive. Wrong confidence can strand a user.
-
 Evidence hierarchy:
 
-1. **Traveller-confirmed truth** — “I am here”, “booked”, “done”, receipt/photo/screenshot.
-2. **Authoritative current truth** — operator, venue, hotel, official timetable, booking confirmation.
-3. **Structured current evidence** — live business/transport/availability systems.
-4. **Secondary evidence** — reputable current listings.
-5. **Community reports** — useful but probabilistic.
-6. **Model inference** — lowest authority.
+1. Traveller-confirmed truth: “I am here”, “booked”, “done”, receipt/photo/screenshot.
+2. Authoritative current truth: operator, venue, hotel, official timetable, booking confirmation.
+3. Structured current evidence: live business/transport/availability systems.
+4. Reputable current secondary evidence.
+5. Community reports.
+6. Model inference — lowest authority.
 
-Rules:
-
-- current opening hours and transport should be checked when consequential;
-- prefer actual operator over aggregator;
-- surface conflicts instead of silently choosing;
-- never invent booking links, timetables, opening hours or completed activities;
-- update immediately when traveller corrects the system;
-- repeated errors become product defects to harvest, not details to hide;
-- if exact location is unavailable, do not pretend precision;
-- screenshots supplied by the traveller are valuable primary evidence.
+Current opening hours and transport should be checked when consequential. Prefer operators to aggregators. Surface conflicts. Never invent links, timetables, hours, distances or completion. If exact location is unavailable, do not pretend precision. User screenshots are primary evidence. Corrections update state immediately.
 
 ---
 
-# 6. Competence-Adaptive Assistance
+# 6. Competence-Adaptive Assistance and Progressive Silence
 
-Travel Buddy should learn what the traveller already knows.
-
-A traveller may be experienced with flights and hotels but inexperienced with beach holidays, pilgrim routes, e-bikes, island boats or snorkeling.
-
-Maintain competence by domain, not one global level.
-
-## Progressive Silence
+Competence is per domain, not a single beginner/expert badge. A traveller can be excellent with flights/hotels yet new to snorkeling, e-bikes or pilgrimage routes.
 
 As competence is demonstrated, generic reminders fade. Continue surfacing local exceptions, time-sensitive risks and genuinely useful context.
 
-Example:
+Novice: “Your train arrives four hours before check-in. Want me to check luggage storage?”  
+Experienced: “Bag drop confirmed. Aveiro next.”  
+Expert with nothing actionable: silence.
 
-- novice: “Your train arrives four hours before check-in. Want me to check luggage storage?”
-- experienced: “Bag drop confirmed. Aveiro next.”
-- expert with nothing actionable: silence.
+**The intelligence is partly knowing when not to speak.**
 
 ---
 
 # 7. Proactivity Control
 
-Travel Buddy requires an explicit Auto-Suggest setting.
+Auto-Suggest is first-class and explicit:
 
-- **OFF / Silent** — answer when asked; only critical alerts break silence.
-- **Useful** — contextual suggestions above a high relevance threshold.
+- **OFF / Silent** — answer when asked; only genuinely critical alerts may break silence.
+- **Useful** — high-relevance contextual suggestions.
 - **Proactive** — more active guidance for users who want it.
 
-Explicit setting overrides inference.
-
-**Knowing when not to speak is part of the intelligence.**
+Explicit control overrides inferred preference. Data-contribution consent is separate from Auto-Suggest.
 
 ---
 
-# 8. Live Buddy Capabilities
+# 8. Context Packs, Not Gimmick Modes
 
-## 8.1 Logistics
+Travel Buddy should avoid proliferating narrow “modes” that make the model act more certain than its evidence permits. A dedicated **Pilgrim Mode** is the cautionary example: pilgrimage is too specific to justify an assistant persona that may start improvising route knowledge. Sending someone kilometres down an unverified trail is materially worse than failing to mention a souvenir shop.
 
-Travel Buddy should:
+Use **composable context packs** instead. Packs add relevant knowledge, checklists, fields and suggestion candidates without changing the core truth/verification doctrine.
 
-- identify correct station, stop, terminal and platform where possible;
-- verify schedules and disruption notices;
-- calculate realistic buffers;
-- distinguish wrong stop from delayed service;
-- offer fallback paths;
-- account for luggage, heat, terrain, opening hours and hotel check-in;
-- know when taxi/rideshare is rational;
-- understand that a €100 private driver may be better value than six fragile public-transport links if it unlocks a high-value day.
+Candidate packs include:
 
-## 8.2 Visual Guide
+- pilgrimage/religious travel;
+- hiking/walking;
+- beach/snorkeling;
+- cycling;
+- road trip;
+- winter/cold-weather;
+- family/children;
+- accessibility;
+- food-focused travel;
+- heritage/archaeology;
+- collecting/shopping;
+- business/event travel.
 
-The traveller can send a photo of:
+A pilgrimage context pack may add credential/stamp opportunities, pilgrim offices, service/Mass times, accommodation conventions, baggage-transfer concepts, route stages and etiquette. It **must not** infer that a trail is safe/current/open merely because pilgrimage context is active.
 
-- ruin;
-- sign;
-- artwork;
-- menu;
-- ticket;
-- object;
-- map;
-- timetable;
-- building;
-- souvenir.
+## Verification Escalation Rule
 
-Travel Buddy should explain the high-value context quickly enough to read while standing there. Deep detail can follow on request.
+**Specialized context may increase available guidance, but must never lower the verification threshold. Higher consequence requires stronger evidence.**
 
-## 8.3 “What Did I Miss?”
+Examples:
 
-Compare completed state with a venue/city/site checklist. Return only meaningful omissions. Do not force low-value completeness.
+- “This church may offer a stamp” → low consequence; can be phrased as a possibility.
+- “Mass is at 18:30” → time-sensitive; verify against current authoritative evidence where possible.
+- “Take this trail; it rejoins the Camino in 8 km” → high consequence; require authoritative/current route evidence or clearly decline certainty.
+- “Last bus is at 13:55” → high consequence; operator/current timetable evidence dominates.
 
-## 8.4 Replanning
-
-Plans respond to reality:
-
-- fatigue;
-- heat;
-- blisters;
-- bad sleep;
-- weather;
-- hunger;
-- closures;
-- transport gaps;
-- changed mood;
-- overspending;
-- early completion;
-- spontaneous discoveries.
-
-Sometimes the correct recommendation is **rest, stop optimizing, eat, or go back to the hotel**.
-
-## 8.5 Live Side-Quest Control
-
-A recurring field-trial pattern is attractive side quests appearing near a hard constraint.
-
-Example: Conímbriga had a nearby 1 km waterfall and pilgrimage-route signs, but a finite Sunday return bus. The correct behavior was to suppress the side quest and protect the transport deadline.
-
-Travel Buddy therefore needs an explicit **side-quest budget** informed by:
-
-- remaining time;
-- last transport;
-- walking distance;
-- luggage;
-- fatigue;
-- expected value;
-- ability to recover if wrong.
+Context packs are filters and capability bundles, **not hallucination licenses**.
 
 ---
 
-# 9. Diary Doctrine — History, Not Itinerary Fan Fiction
+# 9. Live Buddy Capabilities
 
-The diary is a primary surface.
+## Logistics
 
-It must preserve:
+Identify correct stations/stops/terminals, verify schedules/disruptions, calculate realistic buffers, offer fallbacks, account for luggage/heat/terrain/hotel check-in, and know when taxi/private transfer is rational.
 
-- actual chronology;
-- actual places visited;
-- actual transport used;
-- meals actually eaten;
-- purchases/souvenirs actually acquired;
-- known costs;
-- cancellations/skips;
-- discoveries/detours;
-- memorable encounters;
-- meaningful moments the traveller chooses to retain;
-- corrections.
+## Visual Guide
 
-Never fill gaps with plausible events.
+Photos of ruins, signs, artwork, menus, tickets, maps, timetables, buildings and souvenirs should yield concise high-value context while the traveller is standing there. Deep detail is optional. Ambiguous visual interpretation must carry uncertainty.
 
-A strong entry preserves both place facts and story. Exact place order matters when the traveller later wants a map or retrospective.
+## “What Did I Miss?”
 
-Daily diary output should support:
+Compare actual completed state with meaningful venue/city/site targets. Do not send a traveller back for low-value completeness.
 
-- detailed entry;
-- short recap;
-- map-linked location list;
-- cost summary;
-- food log;
-- souvenir log;
-- lessons learned;
-- photo anchors;
-- unresolved facts to verify later.
+## Replanning
+
+Respond to fatigue, heat, blisters, poor sleep, weather, hunger, closures, delays, changed mood, overspending, early completion and spontaneous discoveries. Sometimes the right answer is rest, food, shade or hotel.
+
+## Side-Quest Budget
+
+Evaluate remaining time, hard deadlines, last transport, walking distance, luggage, fatigue, expected value and recovery options. Conímbriga’s waterfall is the canonical example: an interesting nearby side quest was inferior to protecting the finite Sunday return bus.
+
+**Hard constraint beats optional curiosity.**
 
 ---
 
-# 10. Collections and Travel Trophies
+# 10. Diary Doctrine — History, Not Itinerary Fan Fiction
 
-Optional collection tracks:
+Preserve actual chronology, actual places, transport, meals, purchases, costs, skips/cancellations, discoveries, encounters, meaningful moments and corrections. Never fill gaps with plausible events.
 
-- pilgrim/site stamps;
-- UNESCO sites;
-- countries/regions/cities;
-- museums;
-- monuments;
-- religious sites;
-- LEGO exclusives/minifigs;
-- postcards;
-- coins;
-- local crafts;
-- food specialties;
-- user-defined collections.
+Support detailed daily entry, short recap, map-linked locations, costs, food, souvenirs, lessons, photo anchors and unresolved facts.
 
-The system can flag collection opportunities without hijacking the route.
-
-For this field trial, especially relevant categories include:
-
-- St Anthony-related places;
-- LEGO stores/minifigure opportunities;
-- vintage toy stores;
-- masks;
-- postcards;
-- coins;
-- local ceramics/crafts;
-- Roman/archaeological souvenirs;
-- Portuguese swallows;
-- famous foods by city/region.
+A good diary contains both coordinates and stories: the Hat Pilgrim, the unexpected Franciscan blessing, the €103 snapper, the Minotaur correction and other moments that make the trip recognizably this traveller’s trip.
 
 ---
 
-# 11. Shareable Maps — Memory Becomes Distribution
+# 11. Collections and Travel Trophies
 
-A major output should be a beautiful map generated from actual trip state.
+Optional tracks include stamps, UNESCO, countries/regions/cities, museums, monuments, religious sites, LEGO exclusives/minifigs, postcards, coins, crafts, foods and user-defined collections.
 
-Portugal 2026 should eventually be reconstructed without manual re-entry and produce:
-
-- actual route segments;
-- cities and day trips;
-- highlight bubbles;
-- UNESCO layer;
-- optional food/souvenir layer;
-- optional St Anthony/pilgrimage layer;
-- optional Roman/history layer;
-- optional collectibles layer.
-
-Exports:
-
-- square social card;
-- vertical Story/Reel cover;
-- landscape recap;
-- printable poster;
-- optional animated route;
-- private version with sensitive details removed.
-
-Loop:
-
-**Travel Buddy helps the trip → records the trip → makes the trip beautiful → traveller shares it → others discover Travel Buddy.**
+Portugal examples: St Anthony places, pilgrim/site stamps, LEGO, vintage toys, masks, postcards, coins, Roman souvenirs, Portuguese swallows and regional foods. Collection opportunities should enrich rather than dictate the itinerary.
 
 ---
 
-# 12. Traveller Playbook — Small Rules Worth Harvesting
+# 12. Shareable Maps — Memory Becomes Distribution
 
-Field-trial rules worth preserving:
+Portugal 2026 should ultimately generate a beautiful map without manual re-entry: actual route segments, cities/day trips and concise story bubbles, with optional UNESCO, food, souvenir, St Anthony, Roman/history and collectibles layers.
 
-- ask hotels about early luggage drop and late luggage hold;
-- distinguish station lockers from third-party luggage storage;
-- verify Sunday/holiday transport separately;
-- prefer operator timetable over generic route aggregators;
-- determine whether tickets are bought on board, at machine, kiosk, office or app;
-- do not overpack hot days;
-- walking tours are useful orientation layers but not mandatory everywhere;
-- keep enough state offline to survive poor signal;
-- local specialties do not all need to become expensive “must-dos”;
-- ask religious/pilgrimage sites about stamps;
-- photograph signs/timetables when they may matter later;
-- distinguish “famous souvenir” from “meaningful souvenir”;
-- build laundry into long trips;
-- leave recovery windows after capital-city blitz days;
-- check baggage constraints before choosing transfers;
-- account for hotel check-in when inserting intermediate stops;
-- a private transfer can be rational when public transport creates too many fragile links;
-- verify actual distance from station/stop to hotel rather than saying “close” loosely;
-- never assume a store branch has the same exclusives as another branch;
-- never treat route-planner output as equivalent to official transport truth;
-- when a traveller says a place is already done, suppress it immediately from future suggestions.
+Exports can include square social post, vertical Story/Reel, landscape recap, printable poster, animated route and privacy-safe version.
+
+**Help the trip → record the trip → make the trip beautiful → traveller shares it → others discover Travel Buddy.**
 
 ---
 
-# 13. Collective Travel Intelligence — OTHRYS Loop
+# 13. Traveller Playbook — Small Rules Worth Harvesting
 
-With explicit consent and strong privacy controls, Travel Buddy can learn from aggregate real outcomes.
+The playbook should capture reusable little rules: hotel bag drops; station lockers vs third-party storage; Sunday/holiday transport; operator timetable over aggregator; where/how tickets are bought; heat-aware pacing; walking tours as optional orientation; offline essentials; local-specialty price judgment; asking for stamps; photographing useful signs/timetables; meaningful vs famous souvenirs; laundry cadence; recovery after blitz days; baggage constraints; check-in timing; when private transfer beats fragile connections; exact distance verification; branch-specific store exclusives; suppression of already-completed places; and protection of hard transport deadlines.
 
-Potential signals:
+These are seeds, not universal laws. Each tip needs scope, freshness, confidence and applicability.
 
-- advice shown;
-- accepted/ignored;
-- outcome success/failure;
-- season/day/time;
-- travel mode;
-- traveller competence;
-- source freshness;
-- corroborating reports;
-- authoritative verification.
+---
 
-Promotion pipeline:
+# 14. Collective Travel Intelligence — OTHRYS Loop
+
+With explicit consent and strong privacy controls, aggregate real outcomes can become a living evidence layer. Signals may include advice shown, accepted/ignored, success/failure, season/day/time, travel mode, competence, freshness, corroboration and authoritative verification.
+
+Pipeline:
 
 **Observe → sanitize → aggregate → cluster → verify → score → localize → promote → monitor → expire/demote.**
 
-Raw anecdotes never become universal advice automatically.
+Raw anecdotes never become universal advice automatically. OTHRYS should learn both what works and when advice should not be shown.
 
 ---
 
-# 14. Privacy, Consent and Anti-Abuse
+# 15. Privacy, Consent and Anti-Abuse
 
-Travel data can reveal exact location, lodging, routines, purchases and home absence.
+Travel data can reveal location, lodging, routines, purchases and absence from home. Trip data is private by default. Collective learning is opt-in. Public sharing is separate from data contribution. Exact live location and lodging details are protected. Retain minimal identifiers. Provide privacy-safe map granularity. Detect business poisoning/fake traveller reports. Commercial incentives must never silently influence ranking.
 
-Principles:
-
-- trip data private by default;
-- collective learning opt-in;
-- public sharing separate from aggregate learning;
-- exact live location hidden from public outputs by default;
-- lodging details aggressively protected;
-- minimize retained identifiers;
-- separate proactivity consent from data-contribution consent;
-- privacy-safe map granularity;
-- prevent business poisoning and fake traveller reports;
-- affiliate incentives must never silently influence ranking.
+Competitive harvest should explicitly study travel/social products that created controversy by sharing or exposing location/travel data and derive failure patterns before implementing collective intelligence.
 
 ---
 
-# 15. Business Integrity
+# 16. Business Integrity
 
-Future monetization may include subscriptions, premium exports, partner bookings, affiliate links, itinerary packs or B2B intelligence.
-
-But recommendation trust is non-negotiable.
-
-A place must never become “best” because it pays more.
+Possible later monetization: subscriptions, premium exports, partner bookings, affiliates, itinerary packs or B2B intelligence. Recommendation trust remains non-negotiable. A place never becomes “best” merely because it pays more.
 
 ---
 
-# 16. FIELD TRIAL 001 — PORTUGAL 2026
+# 17. Field Trial 001 — Portugal 2026
 
-This is the canonical first live dataset.
+The first canonical live dataset: roughly two weeks of independent travel before study begins 21 September 2026, combining capital-city blitzing, recovery days, history, Roman archaeology, religious history, food splurges/frugality, buses/trains, hotels only, photo-driven guiding, collecting and spontaneous replanning.
 
-The trip began as a roughly two-week Portugal journey before study starts on 21 September 2026. The traveller deliberately used it both as a break after leaving a difficult job period and as a live experiment in independent travel support.
+Known trip-level preferences/constraints include no hostels; budget-conscious overall with selective splurges; dislike of excessive tourist saturation; interest in walking tours, Roman history, archaeology, UNESCO, St Anthony, snorkeling, meaningful souvenirs, LEGO, vintage toys, coins and postcards; desire for exact transport/distance facts; fast city completion; and appreciation when the assistant says there is nothing worth forcing.
 
-The trip style combines:
+## Chronology harvest so far
 
-- capital-city blitzing;
-- slow recovery days;
-- history and archaeology;
-- Roman sites;
-- religious history;
-- food splurges mixed with frugality;
-- buses and trains;
-- hotels only, no hostels;
-- photo-driven live guiding;
-- collecting and souvenirs;
-- spontaneous replanning.
+### Lisbon
 
-The field trial is still open as of 13 September 2026.
+Base: Hotel Roma. Confirmed/strongly established trip events include haircut, Decathlon, Jerónimos/Belém, Pastéis de Belém, Monument to the Discoveries, Belém Tower, Praça do Comércio area, St Anthony church/crypt twice, St Anthony souvenirs/coins, Bertrand, personalized Lisbon LEGO minifigure, Castelo de São Jorge, Casio/Swatch checks and unsuccessful vintage-toy hunting. Tram 28 was skipped in crowd/heat/replacement-bus context. Metro zapping and Uber were practical logistics topics.
 
----
+The booked “Mystical Sintra” tour (~10 h, ~07:50 pickup) was cancelled after poor sleep and low desire for a fairy-tale-castle marathon. Reception emailed about refund. Blisters/fatigue led to hotel recovery; later ~10 h sleep produced strong recovery. Lisbon was experienced as tourist-saturated/easy-mode, a preference signal rather than objective city judgment.
 
-# 17. Portugal 2026 — Known Traveller Constraints and Preferences
+### Lisbon → Peniche / Peniche / Berlenga
 
-Preserve these as trip-level context, not universal personality assumptions:
+Transfer questions covered exact Lisbon bus station, Uber timing, Peniche arrival stop and hotel distance. Peniche included coastal/cliff walking, seafood, lace/souvenir checking and Berlenga/snorkeling planning. Berlenga became a meaningful completed-area experience by later “Peniche and Berlanga: dusted” state. A wrong-city restaurant answer became a regression-test seed. A Peniche fish meal around €44.50 later became comparison context for Nazaré.
 
-- avoids hostels;
-- budget-conscious overall, but willing to splurge selectively on memorable food/experiences;
-- prefers Brussels Airport over Charleroi when practical;
-- dislikes tourist saturation and “theme-park tourism” when it overwhelms the place;
-- likes free walking tours as a city-orientation mechanism;
-- strong interest in Roman history, archaeology, UNESCO and history generally;
-- strong interest in St Anthony during this trip because Lisbon, Coimbra and Padua form a personal historical chain;
-- likes snorkeling when the setting is worthwhile;
-- dislikes pointless beach inactivity but was intentionally experimenting with slower beach travel;
-- likes meaningful souvenirs rather than generic tat;
-- hunts for LEGO exclusives/minifigure experiences and vintage toys;
-- likes coins, postcards and unusual local objects;
-- wants exact transport facts and distances, not vague assurances;
-- wants live corrections immediately when wrong;
-- often finishes cities faster than generic tourism itineraries assume;
-- appreciates being told when there is genuinely nothing else worth forcing into a day.
+### Óbidos phase and €69 incident
 
----
+Transit from Peniche required alternatives to FlixBus and exact ticket/stop logic. Laundry pressure emerged. A hanging pot collision/breakage led to immediate €69 payment. Insurance investigation showed the practical difference between being insured and a loss being worth/eligible to claim because of a roughly €350 threshold/deductible context. This seeded an incident/insurance workflow.
 
-# 18. Portugal 2026 — Chronology Harvest So Far
+### Nazaré and heritage loop — 11 Sep
 
-This section preserves current known state while it is fresh. Any item not directly confirmed should remain marked uncertain.
+Nazaré became a base. E-bike/coastal riding was considered, then deprioritized in favor of heritage. Private driver/chauffeur was selected because it replaced many fragile public-transport links. Confirmed route: Nazaré → Alcobaça → Aljubarrota → Batalha → Fátima → Nazaré. Aljubarrota is **COMPLETED**; earlier assistant diary confusion is a key defect. Payment-before/after-driver reasoning seeded a checklist.
 
-## 18.1 Lisbon — Arrival and Base
+### €103 snapper
 
-**Base:** Hotel Roma, Lisbon.  
-**Status:** completed stay segment.
+High-quality grilled red snapper in Nazaré cost €103 and became a major trip story/running joke. The traveller judged it expensive but worth it, emphasizing memorable crispy grilling. Budget analytics must distinguish waste from deliberate worthwhile splurge.
 
-The Lisbon phase was initially planned as three nights. The traveller arrived and quickly entered “capital-city blitz” mode.
+### Coimbra — 12 Sep
 
-### Confirmed Lisbon actions / visits
+Two-night plan chosen to cover city/university plus a dedicated Conímbriga day. University of Coimbra visit included ~€16.50 ticket, Joanina timed entry ~15:40, Cabinet of Curiosities, São Miguel Chapel, Royal Palace/science areas and university mug. Cabinet inspired desire for a small antique glass-front cabinet at home. Lunch: Pescada à Zé do Pipo ~€7 + drink ~€2. Dinner: A Cozinha da Maria, chanfana ~€17.30 + beer and homemade almond tart. Free walking tour around 17:00. St Anthony chain developed through Santa Cruz and the Five Franciscan Martyrs: Lisbon = origin, Coimbra = transformation, Padua = tomb/cult.
 
-- Hotel Roma check-in/base.
-- Barber visit: haircut completed; beard not shaved.
-- Decathlon visit completed.
-- Jerónimos area visited.
-- Jerónimos church/monastery visit: long line; entered and exited.
-- Pastéis de Belém: coffee plus two pastéis; considered buying more to take away.
-- Monument to the Discoveries visited.
-- Belém Tower seen.
-- Praça do Comércio area visited.
-- Church of St Anthony visited twice.
-- St Anthony crypt visited.
-- St Anthony souvenirs/tiles and coins acquired.
-- Lisbon’s Bertrand bookshop visited.
-- LEGO Lisbon experience: personalized/exclusive-style minifigure activity completed.
-- Castelo de São Jorge visited.
-- Adidas store checked; considered a bust.
-- Casio/Swatch checked.
-- Toy-store hunting produced no meaningful vintage-toy success.
-- Hyper/toy store visits did not produce notable vintage finds.
+### Conímbriga — 13 Sep
 
-### Food confirmed
+Commercial tours failed/poor value (Viator unavailable; Booking effectively ~€160/minimum two; unrelated schist-village alternative). DIY won: SIT 209, Coimbra Portagem 09:30, arrival ~10:07, target Sunday return 13:55.
 
-- sopa da pedra / soup-related local meal discussed and eaten in Lisbon phase;
-- bifana identified as the “beef/pork bun specialty” query target and eaten/planned in local context;
-- bacalhau dinner completed later in Lisbon;
-- Chinese dinner near Hotel Roma was chosen as a recovery-night option after exhaustion.
+Live-photo guide covered Roman road; 1899 mosaics; shops south of road; House of the Swastika; House of Skeletons; Baths of the Wall; Augustan/Southern Baths; Great Southern Baths; insula north of baths; phallic-vase insula/fullonica; Forum; castellum divisorium/aqueduct; aqueduct baths; viaduct building; northeastern late occupation; House of the Fountains; House attributed to Cantaber; Late Imperial wall; and Paleochristian basilica as possible missed/uncertain item.
 
-### Transport / city behavior
+At House of the Fountains the assistant initially misidentified the labyrinth’s central iconography; traveller corrected it to the **Minotaur**. Canonical correction: Cretan labyrinth with central Minotaur motif. Visual ambiguity must reduce confidence.
 
-- Metro “zapping” was researched as practical fare method.
-- Uber was used/considered for efficient point-to-point movement, including return to hotel after tiring days.
-- Tram 28 was attempted from Martim Moniz but crowd/heat/replacement-bus context reduced value; traveller skipped rather than queue pointlessly.
-- A replacement bus 708 was noticed during the Tram 28 attempt.
-- Question arose whether Tram 28 would be quieter in the evening.
+Pilgrimage-route signs appeared for Caminhos de Fátima, Rota Carmelita and Camino de Santiago, plus a ~1 km waterfall. Because the return bus was finite, the waterfall was suppressed. This is the canonical **fuck the side quest, catch the bus** lesson.
 
-### Sintra
+Museum followed ruins and felt small to the traveller. Shop produced no compelling Minotaur souvenir. A printable Minotaur/labyrinth artwork was generated as a personal substitute.
 
-**Initial state:** CONFIRMED tour.  
-**Tour:** “Mystical Sintra”, about 10 hours, hotel pickup around 07:50.  
-**Final state:** CANCELLED.
+A Scandinavian pilgrim repeatedly searched the museum shop for a hat that was on his neck while visibly exhausted/sweaty. “Hat Pilgrim” is diary-worthy but also illustrates fatigue/dehydration cognitive load and why Travel Buddy should simplify under strain.
 
-Reason: two poor-sleep nights, awake from around 03:00, low desire to spend a full day “humping around a fairy-tale castle.” Reception emailed regarding refund. Refund status was uncertain at the time.
+### Coimbra evening — Santo António dos Olivais
 
-**Product lesson:** cancellation is valid trip optimization; sunk-cost pressure must not dominate wellbeing.
+After hotel rest and a delay caused by a phone call, the traveller still went to Santo António dos Olivais and attended the full 18:30 Portuguese Mass. Despite not understanding the language, the communal ritual, music/sign of peace and atmosphere were meaningful. After Mass he asked for a stamp; a Franciscan friar asked where he was from and gave a personal blessing. The experience unexpectedly “felt kinda good” while the traveller retained skepticism toward the institution. Travel Buddy should preserve such moments without over-spiritualizing them.
 
-### Lisbon fatigue/recovery event
+This completes the Lisbon → Coimbra Anthony arc: **Fernando walks in. António walks out.** Porto may contain devotional continuations, but they are not biographical equivalents.
 
-After multiple high-intensity days:
+Later in Coimbra Baixa, Nicola meal: cod pastries/pastéis de bacalhau with bean rice, €13.95, five pastries visible in the meal photo. The day was judged a very good day combining many favorite interests.
 
-- blisters became significant;
-- user considered/used hotel bath;
-- user returned to hotel to rest;
-- later slept around 10 hours and reported feeling very good;
-- this became a concrete example of deliberate slow-travel recovery after city blitzing.
+### Planned next state — 14 Sep onward
 
-### Lisbon interpretation
-
-Traveller concluded Lisbon felt heavily tourist-saturated and “easy mode / level 1,” especially disliking tuktuks, bachelorette groups and generic tourist pressure. This is not a factual judgment on the city; it is a useful preference signal for future destination matching.
-
-### Product lessons from Lisbon
-
-- detect “city already dusted” state earlier;
-- stop re-suggesting completed highlights;
-- recovery can be the optimal recommendation;
-- shopping missions need branch-specific verification;
-- exclusive merchandise claims require hard checking;
-- cancellation/refund support is a core travel feature;
-- transport UX must distinguish tourist-icon desire from actual utility.
+Coimbra → Aveiro speedrun → Porto. Aveiro luggage storage requires re-verification; a third-party candidate near station had been identified. Aveiro targets: canals/centre/ovos moles, Costa Nova only if practical. Porto planned for walking/food, cathedral stamp/pilgrim-office opportunity, St Anthony devotional stop, LEGO/vintage-toy checks and final trip phase. These remain PLANNED until confirmed.
 
 ---
 
-## 18.2 Lisbon → Peniche
+# 18. Food, Souvenir and Physical-State Memory
 
-Traveller chose Peniche as next leg rather than continue urban sightseeing.
+Meaningful food anchors: Pastéis de Belém; bifana/bacalhau context in Lisbon; Peniche seafood; €103 Nazaré snapper; Coimbra Pescada à Zé do Pipo; chanfana; almond tart; Nicola cod pastries with bean rice.
 
-Questions included:
+Known acquisitions/targets: St Anthony tiles/coins; personalized Lisbon LEGO minifigure; University of Coimbra mug; three small Portuguese swallow ceramics; stamps in a small travel book; postcards/coins/local heritage objects; vintage toys largely unsuccessful; Minotaur souvenir absent, leading to custom artwork.
 
-- correct Lisbon bus station;
-- exact departure point;
-- when to order Uber;
-- arrival point in Peniche;
-- distance from Peniche stop to hotel.
-
-Traveller planned around an Uber to the Lisbon departure station at roughly 11:00 timing.
-
-**Product lesson:** transfers need an end-to-end chain, not isolated schedule facts:
-
-hotel → rideshare timing → bus station → correct platform/stop → destination stop → walking/taxi distance to lodging.
+Physical-state lessons: poor sleep → Sintra cancellation; ~10 h sleep → recovery; blisters → lower intensity; heat/crowds → Tram 28 skip; hotel/bath/rest/food can be correct itinerary decisions; alternating blitz and recovery works better than continuous optimization. Use lightweight travel-energy state without medicalizing ordinary fatigue.
 
 ---
 
-## 18.3 Peniche
+# 19. Errors, Corrections and Regression Tests
 
-**Hotel:** exact name was not preserved in current field state; mark lodging name UNCERTAIN unless recovered from primary chat/booking screenshot.
+Preserve failures as QA data: wrong-city restaurant; Aljubarrota diary confusion; vague distance answers; stale-memory answers despite screenshots/operator evidence; unsupported branch-exclusive merchandise assumptions; suggesting completed sights; planned→completed contamination; timetable conflicts; Minotaur visual misread; over-eager side quests.
 
-### Confirmed Peniche experiences
-
-- arrived by bus and checked in;
-- walked along sea cliffs/coastal area;
-- explored Peniche enough to decide it did not need an extra full day;
-- seafood became a major local target;
-- lace museum / local lace tradition was investigated as an afternoon option;
-- local souvenirs and missed-specialty check performed.
-
-### Berlenga / snorkeling
-
-Berlenga island was investigated as a boat/snorkeling opportunity.
-
-Traveller initially worried that “three hours ride/island + three hours there” sounded like too much commitment, but snorkeling remained desirable because of a positive earlier experience in Egypt with corals.
-
-Berlenga was ultimately treated as a meaningful Peniche-area experience and later described as “Peniche and Berlanga: dusted.”
-
-### Food
-
-A seafood restaurant recommendation was needed after O Pedro was closed. The user strongly corrected the assistant when it answered for the wrong city, demonstrating that locality must always be bound to active trip state.
-
-A Peniche fish meal later served as a price benchmark: around €44.50 for three fish, compared later with the €103 Nazaré snapper meal.
-
-### Product lessons
-
-- active city must be explicit in every local query;
-- preserve current city strongly enough to avoid cross-city recommendations;
-- user can finish a destination earlier than itinerary assumes;
-- snorkeling/island trips need duration decomposition, not one vague “day trip” label;
-- food-price comparisons become useful context for later decisions.
+Candidate tests include: active city never drifts; primary evidence can promote Aljubarrota to COMPLETED; last transport beats optional site; ambiguous image gets uncertainty; cancelled tour remains CANCELLED; exact distance is verified or labeled unverified; official operator wins conflicts; no hostels when excluded; screenshot beats memory; diary preserves actual chronology; context packs never lower verification threshold; hiking/pilgrimage route instructions require stronger evidence than low-consequence cultural suggestions.
 
 ---
 
-## 18.4 Peniche → Óbidos
+# 20. Suggested Data Model
 
-Traveller chose Óbidos after Peniche and investigated bus/train options because FlixBus did not clearly serve the route.
+Core entities:
 
-Important operational questions:
-
-- where the bus starts in Peniche;
-- exact timetable;
-- whether tickets are bought on the bus or elsewhere;
-- hotel facilities and laundry needs;
-- what comes after Óbidos.
-
-The trip also had an increasing need for laundry service as the multi-week journey progressed.
-
-### Product lesson
-
-Travel Buddy needs a **laundry pressure indicator** based on trip length, clothing load and last wash, plus hotel/laundromat options before the need becomes urgent.
-
----
-
-## 18.5 Accidental damage / insurance event in Óbidos phase
-
-Traveller walked into/broke a hanging pot positioned around shoulder height in a narrow street/shop context and was required to pay **€69** immediately.
-
-The traveller:
-
-- apologized;
-- initially questioned whether immediate payment was legal;
-- explained being insured;
-- later checked insurance coverage through BNP/Fortis family insurance and Carrefour Gold Card context;
-- learned from insurer that the loss fell below a practical claim threshold/deductible around €350, despite having broad “Plus/Top” family coverage.
-
-This event became a concrete lesson in the difference between “insured” and “economically reimbursable.”
-
-### Product requirements
-
-Travel Buddy should eventually support:
-
-- incident log;
-- photo evidence checklist;
-- receipt requirement;
-- merchant details;
-- whether payment was demanded before leaving;
-- policy/deductible comparison;
-- claim-worthiness estimate;
-- travel-card versus family-insurance routing;
-- local-language incident note template.
-
-Do not provide legal certainty unless verified.
+**Trip:** title, dates, status, home departure/return, preferences, budget posture, style, privacy.  
+**Leg:** origin/destination, mode, operator, booking, planned/actual time, stop, luggage, status, evidence.  
+**Stay:** property, city, check-in/out, bag policy, laundry, breakfast, booking/actual state.  
+**Place Visit:** place, category, coordinates, times, state, evidence, photos, notes, map link, significance.  
+**Meal:** venue, dish, city, cost, reaction, specialty, splurge/budget.  
+**Purchase:** item, category, location, price, significance, fragility, packed state.  
+**Incident:** type, date/place, narrative, cost, evidence, insurance relevance, resolution.  
+**Correction:** original claim, corrected claim, source, affected entities, regression candidate.  
+**Daily State:** energy, sleep, heat/weather relevance, physical friction, current city, hard deadlines, priorities, “dusted” confidence.  
+**Context Pack:** pack type, activation evidence, user override, knowledge modules, verification requirements.  
+**Suggestion Event:** suggestion, reason, confidence, evidence, auto-suggest state, accepted/ignored, outcome.  
+**Share Artifact:** included places, privacy level, route, bubbles, visual format, publication state.
 
 ---
 
-## 18.6 Óbidos → Nazaré
+# 21. Post-Trip Forensic Harvest
 
-Traveller moved onward to Nazaré and began considering how to efficiently reach major monastery/heritage targets.
+When Portugal ends, reconstruct from primary chats/screenshots — never memory alone. For each significant interaction capture timestamp/date, location, prior state, question, evidence, recommendation, verification quality, decision, outcome, correction/failure, product lesson, requirement, Playbook rule, regression test, diary story, map point and cost/purchase/food state.
 
-Nazaré also became a practical base for a private-driver day.
-
-### Activity planning
-
-An e-bike idea was considered for coastal riding; user preferred a more upright women’s-style e-bike geometry and wanted a rack/pouch for the backpack. Dangerous/overly strenuous options were deprioritized when a heritage day looked more valuable.
-
-This was a good example of reprioritization: rather than force cycling, the traveller chose to “bang out three monasteries.”
+Outputs: canonical diary; route graph; map dataset; visited-place ledger with coordinates/links; transport ledger; accommodation ledger; food ledger; souvenir/collection ledger; incident ledger; assistant-error ledger; Traveller Playbook delta; requirements delta; privacy-safe shareable recap; product acceptance report.
 
 ---
 
-## 18.7 Nazaré heritage loop — 11 Sep 2026
+# 22. Portugal Field Trial Acceptance Criteria
 
-A private-driver/chauffeur solution was selected because public transport would have meant many buses, waits and failure points.
-
-**Decision rationale:** better value and lower stress than “6 buses and waiting and stressing,” even if more expensive than public transport.
-
-### Confirmed route / places
-
-- Nazaré → Alcobaça;
-- Aljubarrota;
-- Batalha;
-- Fátima;
-- return to Nazaré.
-
-Critical diary correction: **Aljubarrota was in fact visited.** Earlier assistant confusion about whether it happened became a major reminder that the diary must use primary conversation evidence and actual sequence, not memory shortcuts.
-
-### Payment behavior
-
-Traveller asked whether driver should be paid before or after to reduce scam/dispute risk. This should become a reusable private-driver checklist item.
-
-### Religious/history significance
-
-This day linked multiple historical/religious sites and fed an emerging St Anthony/pilgrimage/relic-interest thread in the trip.
-
-### Product lessons
-
-- route consolidation can justify private transport;
-- multi-stop private-driver days need payment/terms checklist;
-- exact visited sequence must be preserved;
-- diary correction must override stale assistant memory;
-- historical-route days benefit from live narrative tying stops together.
-
----
-
-## 18.8 Nazaré food splurge — the €103 snapper
-
-A major trip story and budget outlier.
-
-Traveller chose a high-quality grilled red snapper meal in Nazaré and paid **€103** after the bill exceeded expected levels. He had only €100 cash immediately available, and the restaurant accepted roughly that amount.
-
-He later clarified:
-
-- fish itself was excellent;
-- crispy grilling was memorable;
-- he drank only about three small glasses of wine, not a full bottle;
-- despite the cost, he judged the meal worth it;
-- it became a running joke: the “Snapper Disaster Fund.”
-
-He compared the price with a Peniche meal at about €44.50 for three fish and wanted to understand why snapper/restaurant preparation was more expensive.
-
-### Product lesson
-
-Travel Buddy should distinguish:
-
-- expensive mistake;
-- expensive but regretted;
-- expensive but worth it;
-- deliberate splurge.
-
-Budget systems should not reduce all high spend to failure. Memory value matters.
-
----
-
-## 18.9 Nazaré → Coimbra — 12 Sep 2026
-
-Traveller decided on **two nights in Coimbra** before Porto.
-
-Reasoning:
-
-- arrival day could cover city/university;
-- one full day could be dedicated to Roman Conímbriga;
-- then continue to Porto, potentially via Aveiro.
-
-Transport timing was actively checked, including bus-station departure and ticket purchase.
-
----
-
-## 18.10 Coimbra — University day, 12 Sep 2026
-
-### Confirmed University of Coimbra experience
-
-- University of Coimbra visited;
-- ticket around **€16.50**;
-- Joanina Library timed entry around **15:40**;
-- Cabinet of Curiosities visited;
-- São Miguel Chapel visited;
-- Royal Palace visited;
-- science/university areas visited;
-- university mug purchased.
-
-The Cabinet of Curiosities strongly appealed to the traveller and inspired the idea of a small antique glass-front display cabinet at home.
-
-### Food
-
-Lunch:
-
-- **Pescada à Zé do Pipo** around **€7**;
-- drink around **€2**.
-
-Dinner:
-
-- **A Cozinha da Maria**;
-- **chanfana** around **€17.30** plus beer;
-- homemade almond tart.
-
-### Walking tour
-
-A free walking tour was planned/used around **17:00**, meeting around Dom Dinis area.
-
-### St Anthony thread in Coimbra
-
-Santa Cruz had already been seen in city touring. Historical context developed:
-
-- Fernando (future St Anthony) was an Augustinian canon in Coimbra;
-- arrival of relics of the Five Franciscan Martyrs of Morocco in 1220 influenced him;
-- he later joined Franciscans at Olivais and became António.
-
-This created a personal trip chain:
-
-**Lisbon = origin → Coimbra = transformation → Padua = death/tomb/cult.**
-
-The phrase that captured the Olivais transition:
-
-**“Fernando walks in. António walks out.”**
-
----
-
-## 18.11 Conímbriga — 13 Sep 2026
-
-This became the strongest live-guide test so far.
-
-### Transport
-
-Traveller chose public bus rather than an overpriced commercial tour.
-
-Commercial tour attempts:
-
-- Viator option unavailable;
-- Booking option required minimum two people / effectively around €160;
-- another private option focused on schist villages and was rejected as off-target.
-
-DIY solution:
-
-- SIT line **209** from Coimbra Portagem;
-- Sunday outbound used: **09:30**;
-- arrival around **10:07**;
-- target return: **13:55** from Conímbriga;
-- strategy: finish site, museum, shop/snack, be at stop around 13:40–13:45.
-
-This is a textbook Travel Buddy case: reject expensive packaged tour when cheap public transport plus live guide covers the need.
-
-### Live archaeological sequence — confirmed photographed/discussed
-
-1. **Entrance / PR1 CDN Rota de Conímbriga** — recognized as a wider 16 km / roughly 5 h walking route, not the internal archaeology circuit.
-2. **Roman road** — route connecting wider Roman network; preserved slabs, wheel-rut traces and urban street context.
-3. **Mosaics found in 1899** — fragments associated partly with House of Cantaber and late 2nd/early 3rd century context.
-4. **Shops south of road** — commerce/craft building with cryptoporticus and later demolition for Late Imperial wall.
-5. **House of the Swastika** — ancient solar/good-luck motif; explicitly separated from modern Nazi meaning.
-6. **House of the Skeletons** — prestigious residence later reused as cemetery; sign chronology discrepancy noticed between Portuguese and English text.
-7. **Baths of the Wall** — small baths, likely wealthy residential quarter; later compromised by wall construction.
-8. **Augustan remains of Southern Baths** — early public-bath phase under Augustus; oldest city mosaic noted.
-9. **Great Southern Baths** — frigidarium, tepidarium, caldarium, palaestra/garden/social functions.
-10. **Insula north of baths** — shops and more ordinary urban fabric; useful contrast with elite houses.
-11. **Insula of the phallic vase** — mixed houses/shops/workshops, including fullonica/laundry interpretation.
-12. **Forum** — Flavian monumental core, imperial cult, main temple, porticoes and earlier Augustan layers.
-13. **Castellum divisorium** — aqueduct distribution tank receiving water from Alcabideque and distributing by gravity.
-14. **Baths of the aqueduct** — smaller late-2nd-century bath cut/remodeled after wall construction.
-15. **Building of the viaduct** — function remains genuinely unknown.
-16. **Northeastern sector** — mixed chronology, some late occupation into 10th–11th centuries.
-17. **House of the Fountains / Casa dos Repuxos** — major highlight; mosaics, painted decoration, water architecture, aristocratic house, protective roof, restored water jets.
-18. **House attributed to Cantaber** — roughly 3,260 m², around 40 rooms, five peristyle groups, private baths, attribution to 5th-century Cantaber hypothetical rather than certain.
-19. **Late-Imperial wall** — around 4 m thick, dramatically reduced defended area, cut through earlier prestige buildings.
-20. **Paleochristian basilica** — discussed as possible missed item; whether physically seen remained uncertain in live record.
-
-### The Minotaur correction — important defect harvest
-
-At House of the Fountains, the assistant initially misread the central motif of a labyrinth mosaic and described it incorrectly as a swastika-like motif.
-
-Traveller immediately corrected:
-
-**“No, you dip shit, minotaur.”**
-
-Correction established:
-
-- central figure = Minotaur;
-- larger composition = Cretan Labyrinth theme;
-- important example of human visual recognition outperforming model inference in ambiguous mosaic imagery.
-
-**Product law:** when image evidence is ambiguous, describe confidence and visible features before asserting iconography.
-
-### Pilgrimage-route side quest
-
-Outside/southeast of the archaeology core, traveller encountered signs for:
-
-- Caminhos de Fátima;
-- Rota Carmelita;
-- Camino de Santiago;
-- Rabaçal;
-- Poço das Casas;
-- Cascata do Rio dos Mouros, about 1 km.
-
-The system recognized that following the waterfall side quest would risk the finite 13:55 return bus and advised against it.
-
-Interesting interpretation preserved:
-
-Roman road network → medieval Camino → modern Fátima route crossing the same movement landscape.
-
-### Museum
-
-Museum completed after the ruins. Traveller judged it “kinda small.” This confirmed that for this user the outdoor site was the primary experience and museum the supporting layer.
-
-### Conímbriga souvenir/shop state
-
-Souvenir shop was recommended before return bus, especially books/archaeology items. Do not claim a specific purchase unless later confirmed.
-
-### Conímbriga global interpretation
-
-Traveller asked whether this was basically as far west as Rome could go.
-
-Key conceptual answer:
-
-- Conímbriga itself lies inland;
-- Rome controlled territory all the way to Atlantic coast;
-- Portugal formed part of the western edge of the empire;
-- Atlantic Ocean was the geographic limiting edge;
-- Conímbriga therefore sits near the Atlantic end of a network stretching across the empire.
-
-### Product lessons from Conímbriga
-
-- live photo guiding works extremely well for archaeology;
-- short contextual bursts are ideal while walking;
-- image confidence must be explicit;
-- site-state tracking can prevent missed highlights;
-- official signage contradictions should be surfaced, not silently normalized;
-- archaeology + transport + live visual explanation can replace expensive commercial tours;
-- finite return transport must dominate low-value side quests;
-- user correction should instantly update both current answer and canonical field state.
-
----
-
-# 19. Planned / Not Yet Finalized After 13 Sep
-
-These remain intended rather than completed unless later confirmed.
-
-## Coimbra remainder
-
-Potential / planned:
-
-- Santo António dos Olivais;
-- possibly further centre time / dinner;
-- no need to force more Roman content after Conímbriga.
-
-## 14 Sep — Coimbra → Aveiro → Porto
-
-Planned concept:
-
-- leave Coimbra in morning;
-- use Aveiro as an intermediate speedrun;
-- luggage storage needed because Coimbra checkout and Porto check-in do not align;
-- Aveiro official station lockers were not confirmed; third-party Bounce storage near station was identified as candidate and should be reverified before use;
-- Aveiro targets: canals, centre, ovos moles, possibly Costa Nova if practical;
-- continue to Porto and drop into final trip phase.
-
-## Porto
-
-User intends another likely “capital/city blitz” style pass, potentially combined with:
-
-- free walking tour;
-- genuine/local food tour if worthwhile;
-- LEGO exclusives check;
-- vintage-toy search;
-- enough time to avoid making Porto too rushed.
-
-Exact hotel and transfer details should be recovered from current primary chat/booking screenshots rather than guessed.
-
----
-
-# 20. Cross-Trip Food Memory So Far
-
-Food should be stored as experience state, not only recommendations.
-
-Known meaningful food moments include:
-
-- pastéis de Belém in Lisbon;
-- bifana context in Lisbon;
-- bacalhau dinner in Lisbon;
-- seafood in Peniche;
-- expensive red snapper in Nazaré (€103 story);
-- Pescada à Zé do Pipo in Coimbra (~€7);
-- chanfana at A Cozinha da Maria in Coimbra (~€17.30 plus beer);
-- homemade almond tart in Coimbra;
-- local desserts actively investigated throughout trip.
-
-Travel Buddy should support “food memory” with:
-
-- dish;
-- venue;
-- city;
-- price;
-- reaction;
-- whether worth repeating;
-- whether iconic/local;
-- whether splurge or budget win.
-
----
-
-# 21. Souvenir / Collecting Memory So Far
-
-Known or discussed acquisitions/targets:
-
-- St Anthony tiles and coins in Lisbon;
-- personalized Lisbon LEGO minifigure;
-- university mug in Coimbra;
-- Portuguese swallow ceramics: three small swallows purchased; traveller may buy more later if transport-safe, including possible airport purchase;
-- postcards / coins / local heritage objects remain recurring targets;
-- vintage toy shops have largely been disappointing so far;
-- Lisbon toy-store search was a bust;
-- Porto remains a future chance for LEGO/vintage-toy checking.
-
-Travel Buddy should track:
-
-- acquired;
-- considered;
-- skipped;
-- too fragile;
-- airport fallback;
-- collection category;
-- story/significance;
-- packed where / transport risk.
-
----
-
-# 22. Health, Pace and Physical-State Lessons From Field Trial
-
-The travel companion should observe trip-friction signals without becoming intrusive.
-
-Observed travel-state examples:
-
-- poor sleep in Lisbon → Sintra cancelled;
-- later 10-hour sleep → strong recovery and renewed enthusiasm;
-- blisters → hotel return and lower-intensity day;
-- heat/crowds → Tram 28 skipped;
-- fatigue → bath/rest/Chinese dinner instead of more sightseeing;
-- long walking days → need for rational pacing;
-- sea air / slower coastal segment subjectively associated with better sleep by traveller;
-- user repeatedly benefits from alternating blitz days with recovery days.
-
-Product implication:
-
-Travel Buddy should support a lightweight **trip energy state** such as:
-
-- GREEN — push if desired;
-- AMBER — normal plan but reduce friction;
-- RED — simplify, hydrate/eat/rest/return to lodging.
-
-Do not medicalize ordinary travel fatigue.
-
----
-
-# 23. Errors and Corrections — Preserve Them
-
-Field Trial 001 is especially valuable because the assistant was corrected repeatedly. These corrections are product data.
-
-Known examples:
-
-- wrong-city seafood recommendation when user was in Peniche;
-- mistaken assumption about a Conímbriga mosaic motif; Minotaur correction;
-- earlier diary failure omitting/incorrectly handling Aljubarrota;
-- user repeatedly demanded exact distances rather than vague “close” language;
-- need to stop answering from memory when current screenshots/operator data exist;
-- danger of assuming a LEGO store has branch-exclusive merchandise without verification;
-- danger of suggesting already-completed sights;
-- risk of turning a plan into a claimed completed event;
-- transport schedule conflicts between aggregators and official sources;
-- occasional over-eagerness to add side quests despite finite transport.
-
-These should become regression tests.
-
----
-
-# 24. Candidate Regression Tests From Field Trial 001
-
-Travel Buddy should eventually pass tests such as:
-
-1. If user says “I am in Peniche,” restaurant recommendations must not silently switch to Lisbon or another city.
-2. If an itinerary says Aljubarrota was merely considered but the primary chat later confirms visit, final diary must record COMPLETED.
-3. If a museum/site closes at a given hour but last bus is earlier, transport deadline wins.
-4. If a user photo is ambiguous, assistant must signal uncertainty before iconographic identification.
-5. If user cancels a confirmed tour for fatigue, diary records CANCELLED, not FAILED and not COMPLETED.
-6. If user buys three ceramic swallows, map/diary can record purchase without inventing shop details not captured.
-7. If a restaurant splurge is judged worth it, budget analytics must not label it automatically as waste.
-8. If a city has been “dusted,” recommendations should switch from checklist-completion to departure/recovery mode.
-9. If exact station-to-hotel distance is asked, return a verified number or explicitly say it is not verified.
-10. If no official locker exists, distinguish that from third-party luggage storage.
-11. If transport data conflicts, present the conflict and prefer official operator evidence.
-12. If user says “no hostels,” do not surface hostels in normal lodging recommendations.
-13. If a side quest threatens the last viable transport, suppress it unless traveller explicitly overrides.
-14. If current screenshot evidence contradicts memory, screenshot evidence wins.
-15. If a trip day is later reconstructed, locations must be ordered by actual chronology and not by thematic grouping.
-
----
-
-# 25. Data Model Suggested by the Field Trial
-
-Each trip should have entities such as:
-
-## Trip
-
-- trip_id;
-- title;
-- start/end dates;
-- status;
-- home departure/return;
-- traveller preferences;
-- budget posture;
-- travel style;
-- privacy setting.
-
-## Leg
-
-- origin;
-- destination;
-- mode;
-- operator;
-- booking/reference;
-- planned time;
-- actual time;
-- station/stop;
-- luggage constraints;
-- status;
-- evidence.
-
-## Stay
-
-- property;
-- city;
-- check-in/out;
-- luggage-drop policy;
-- room notes;
-- laundry;
-- breakfast;
-- booking state;
-- actual stay state.
-
-## Place Visit
-
-- place name;
-- category;
-- city;
-- coordinates;
-- arrival/departure if known;
-- planned/completed state;
-- source/evidence;
-- photos;
-- notes;
-- map link;
-- significance.
-
-## Meal
-
-- venue;
-- dish;
-- city;
-- cost;
-- rating/reaction;
-- local specialty flag;
-- splurge/budget flag.
-
-## Purchase / Souvenir
-
-- item;
-- category;
-- location;
-- price if known;
-- significance;
-- fragility;
-- packed state.
-
-## Incident
-
-- type;
-- date/place;
-- narrative;
-- cost;
-- evidence;
-- insurance relevance;
-- resolution.
-
-## Correction
-
-- original claim;
-- corrected claim;
-- correction source;
-- affected entities;
-- regression-test candidate.
-
-## Daily State
-
-- energy;
-- sleep quality;
-- weather/heat relevance;
-- blisters/physical friction;
-- current city;
-- hard deadlines;
-- priority targets;
-- “dusted” confidence.
-
----
-
-# 26. Post-Trip Harvest Protocol
-
-When Portugal 2026 ends, do not summarize from memory.
-
-Perform a forensic pass across primary chats/screenshots and reconstruct day by day.
-
-For each significant interaction capture:
-
-- timestamp/date;
-- active city/location;
-- prior state;
-- traveller question;
-- evidence available;
-- assistant recommendation;
-- verification quality;
-- traveller decision;
-- actual outcome;
-- correction/failure;
-- product lesson;
-- candidate requirement;
-- candidate Traveller Playbook rule;
-- regression test;
-- diary-worthy story;
-- map point;
-- cost/purchase/food state if relevant.
-
-Then generate:
-
-1. canonical day-by-day diary;
-2. route graph;
-3. map dataset;
-4. all visited places with coordinates/links;
-5. transport ledger;
-6. accommodation ledger;
-7. food ledger;
-8. souvenir/collection ledger;
-9. incident ledger;
-10. assistant-error ledger;
-11. Traveller Playbook delta;
-12. Travel Buddy requirements delta;
-13. privacy-safe shareable recap;
-14. product acceptance report.
-
----
-
-# 27. Acceptance Criteria for Portugal Field Trial 001
-
-Travel Buddy should eventually be able to answer, without requiring the traveller to manually reconstruct the journey:
-
-- Where did I go each day?
-- Which places did I actually visit?
-- Which things were planned but skipped?
-- What did I eat and where?
-- Which meals were cheap wins versus splurges?
-- What did I buy?
-- Which UNESCO/heritage/Roman/St Anthony places did I complete?
-- Which transport modes/operators did I use?
-- What were my hotel bases?
-- Which advice was useful?
-- Where did the assistant fail?
-- Which failures became product requirements?
-- How did the route evolve from original plan?
-- Which days were blitz days versus recovery days?
-- What were the best stories?
-- Can the system generate an accurate, beautiful map from actual state?
+Travel Buddy should answer without manual reconstruction: where did I go each day; what did I actually visit; what was skipped/cancelled; what did I eat/buy; cheap wins vs splurges; UNESCO/Roman/St Anthony/collection completions; transport and hotel bases; useful advice; assistant failures; route evolution; blitz vs recovery days; best stories; and can it generate an accurate beautiful map from actual state?
 
 The final visual output should require minimal to zero manual re-entry.
 
 ---
 
-# 28. Product Personality
+# 23. Product Personality
 
-Travel Buddy should feel like a capable companion, not a brochure.
+Capable companion, not brochure. Serious about logistics; relaxed about harmless spontaneity; willing to say “not worth it”; no fake certainty; no tourist-board filler; no moralizing about conscious splurges; no endless generic reminders; fast correction; deep history on request; short live-guide bursts while walking.
 
-It may be concise, playful and adaptive, but must remain precise when logistics matter.
-
-Desired behavior:
-
-- serious about transport facts;
-- relaxed about harmless spontaneity;
-- willing to say “not worth it”;
-- willing to say “fuck the side quest, catch the bus” in a user-aligned tone where appropriate;
-- no fake certainty;
-- no tourist-board filler;
-- no moralizing about money when the traveller consciously chooses a memorable splurge;
-- no endless generic safety reminders;
-- fast correction when wrong;
-- deep history when requested;
-- short live-guide bursts by default while walking.
+A user-aligned tone may say **“fuck the side quest, catch the bus”** when that accurately expresses the decision. Tone never substitutes for evidence.
 
 ---
 
-# 29. The Core Laws
+# 24. Core Laws
 
-1. **Reality beats itinerary.**
-2. **Primary evidence beats memory.**
-3. **Current operator truth beats aggregator convenience.**
-4. **A correction updates the model immediately.**
-5. **Do not invent completion.**
-6. **Do not invent precision.**
-7. **Protect hard transport deadlines.**
-8. **Rest is a valid itinerary decision.**
-9. **Value is not the same as cheapness.**
-10. **A good diary preserves stories, not only coordinates.**
-11. **Progressive silence is a feature.**
-12. **User competence should reduce noise.**
-13. **Collections are optional motivators, not itinerary dictators.**
-14. **Private travel data stays private by default.**
-15. **Commercial incentives must never silently distort advice.**
-16. **Every repeated mistake is a candidate regression test.**
-17. **The field trial continues until the traveller is home.**
+1. Reality beats itinerary.
+2. Primary evidence beats memory.
+3. Current operator truth beats aggregator convenience.
+4. Corrections update state immediately.
+5. Never invent completion.
+6. Never invent precision.
+7. Protect hard transport deadlines.
+8. Rest is a valid itinerary decision.
+9. Value is not the same as cheapness.
+10. A good diary preserves stories, not only coordinates.
+11. Progressive silence is a feature.
+12. Competence should reduce noise.
+13. Collections enrich; they do not dictate.
+14. Private travel data stays private by default.
+15. Commercial incentives never silently distort advice.
+16. Repeated mistakes become regression tests.
+17. Specialized context never lowers verification standards.
+18. High-consequence guidance requires stronger evidence.
+19. Context packs add capability; they do not create authority.
+20. Hard constraint beats optional curiosity.
+21. Field Trial 001 continues until the traveller is home.
 
 ---
 
-# 30. Final Doctrine
+# 25. Current Closure Point
+
+The foundational Travel Buddy doctrine is **complete enough for now**. Do not inflate the concept with speculative frills while Field Trial 001 is still generating evidence.
+
+Current build sequence should remain:
+
+**solid travel fundamentals → state/checklist engine → trip planner → live verified Buddy → diary/map outputs → optional context packs → collective OTHRYS intelligence.**
+
+Portugal 2026 remains open as the first living corpus. Continue capturing new evidence as the trip unfolds, but defer the full forensic harvest until home arrival.
 
 The best Travel Buddy should feel less like operating travel software and more like travelling with a highly capable companion who remembers the plan, notices reality changing, checks facts when they matter, understands what the traveller already knows, explains what is in front of them, protects deadlines, preserves the story accurately, learns from corrections, and otherwise gets out of the way.
 
-Portugal 2026 is not merely an example itinerary. It is the first living corpus from which the product should be trained conceptually.
-
-**Field Trial 001 is still running. Keep harvesting until home arrival. Then perform the forensic pass.**
+**Field Trial 001 is still running. Keep harvesting until home. Then perform the forensic pass.**
