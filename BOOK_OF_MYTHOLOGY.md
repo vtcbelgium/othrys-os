@@ -1,1019 +1,1769 @@
 # BOOK OF MYTHOLOGY
 
-## The Canonical Mythological, Naming, and Technical Translation Reference of OTHRYS
+## The Canonical Mythological, Genealogical, Spatial, and Technical Reference of OTHRYS
 
 **Status:** CANONICAL REFERENCE  
-**Scope:** Greek mythological naming layer, current OTHRYS mappings, reserved names, candidate mappings, technical mirror, naming governance  
-**Authority:** OTHRYS architecture remains authoritative over metaphor. Mythology explains and strengthens the architecture; it does not override technical truth.
+**Purpose:** explain the Greek mythological naming layer, preserve the real genealogy, index current OTHRYS mappings, reserve future names, and mirror every mythological concept into ordinary technical language.  
+**Authority:** technical architecture remains authoritative over metaphor. Mythology may clarify architecture; it may never override technical truth.  
+**Primary classical backbone:** Hesiodic genealogy, with important variants noted rather than flattened into false certainty.
 
 > **MYTHOLOGY PROVIDES THE LANGUAGE. OTHRYS PROVIDES THE MEANING. THE TECHNICAL MIRROR PROVIDES THE PROOF.**
 
+> **THE MOUNTAIN MAY BE MYTHOLOGICAL. THE MACHINE MUST BE TECHNICALLY LEGIBLE.**
+
 ---
 
-# 0. PURPOSE
+# 0. WHY THIS BOOK EXISTS
 
-OTHRYS deliberately uses Greek mythology as a human-readable semantic layer over technical architecture. The names are not decoration. A good mythological name should compress a role, relationship, boundary, or operating principle into something memorable.
+OTHRYS uses Greek mythology as a mnemonic ontology: a memorable semantic layer over a technical operating system.
 
-This book exists so that OTHRYS can always answer three questions:
+The names are not intended as decorative aliases. A good mythological name should compress several things at once:
 
-1. **What is this called inside OTHRYS?**
-2. **Why is that mythological name appropriate?**
-3. **What is it in ordinary technical language?**
+- role;
+- boundary;
+- relationship;
+- authority;
+- direction of information flow;
+- failure mode;
+- operating principle;
+- place in the larger system.
 
-The third question is mandatory. OTHRYS must never become dependent on mythology to be understandable.
+This book exists so that OTHRYS can always answer four questions:
 
-A teacher, engineer, auditor, collaborator, or future maintainer who knows nothing about Greek mythology must be able to place the mythological tree beside the technical tree and understand the system.
+1. **Who or what is this in mythology?**
+2. **What does that name mean inside OTHRYS?**
+3. **How is it related to the other OTHRYS entities?**
+4. **What is the same thing called in ordinary engineering language?**
 
-This book therefore maintains three synchronized views:
+A teacher, engineer, auditor, collaborator, future maintainer, or the operator himself must be able to place the mythological view beside the technical view and understand the same machine.
+
+The long-term vision is therefore not one diagram but one canonical relationship graph rendered through multiple views:
 
 ```text
-MYTHOLOGICAL TREE
-      ||
-      || semantic mapping
-      \/
-OTHRYS TREE
-      ||
-      || technical translation
-      \/
-TECHNICAL TREE
+                    ONE CANONICAL RELATIONSHIP GRAPH
+                                  │
+             ┌────────────────────┼────────────────────┐
+             │                    │                    │
+             ▼                    ▼                    ▼
+      MYTHOLOGICAL VIEW       OTHRYS VIEW        TECHNICAL VIEW
+      family + stories       names + roles       architecture
+             │                    │                    │
+             └────────────────────┼────────────────────┘
+                                  ▼
+                         MOUNT OTHRYS VIEW
+                    spatial / explorable system map
 ```
 
-The mythology is a mnemonic ontology. The technical tree is the architectural ontology.
+The mythology is a human learning interface. The technical mirror is the audit trail back to reality.
 
 ---
 
 # 1. REFERENCE DISCIPLINE
 
-Greek mythology has no single perfectly consistent canon. Hesiod, Homer, Apollodorus, Diodorus, tragedians, later mythographers, Roman writers, and local cult traditions sometimes disagree about parentage, functions, spellings, and interpretation.
+Greek mythology is not one perfectly consistent canon. Hesiod, Homer, Apollodorus, tragedians, local cult traditions, later mythographers, and Roman authors may disagree on parentage, spelling, function, or interpretation.
 
-OTHRYS therefore separates:
+OTHRYS therefore maintains explicit layers.
 
-- **MYTHOLOGICAL CANON** — what ancient sources or established classical references say;
-- **ETYMOLOGY / NAME MEANING** — literal, traditional, or scholarly interpretations, with uncertainty retained where appropriate;
-- **OTHRYS CANON** — what the name means inside this system;
-- **POTENTIAL** — a non-canonical future mapping;
-- **TECHNICAL MIRROR** — the plain engineering/organizational term.
+## 1.1 Mythological canon
 
-No OTHRYS reinterpretation may be presented as an ancient mythological fact.
+What ancient sources or established classical references state about genealogy, stories, attributes, and relationships.
 
-No uncertain etymology may be promoted to architectural law merely because it sounds useful.
+## 1.2 Etymology / name meaning
 
-## 1.1 Naming statuses
+Literal, traditional, or scholarly interpretations of a name. Uncertain etymology must remain uncertain.
 
-Every mythological name should be classifiable as one of:
+## 1.3 OTHRYS canon
 
-- **ACTIVE** — canonical OTHRYS component or authority;
-- **ACTIVE_SUPPORTING** — canonical but not a top-level Titan/domain authority;
-- **CONCEPTUAL** — established in doctrine but not equally represented in current runtime/project registry;
-- **RESERVED** — intentionally held for a strong future mapping;
-- **CANDIDATE** — promising but unassigned;
-- **ABSORBED** — former function incorporated into another component;
-- **RETIRED** — intentionally no longer used;
-- **UNUSED** — available without a current strong mapping;
-- **COLLISION_RISK** — mythological meaning is attractive but overlaps an existing authority.
+The meaning assigned to a name inside the software architecture.
 
-## 1.2 Naming law
+## 1.4 Technical mirror
 
-> **KEEP AN EMPTY THRONE EMPTY UNTIL A REAL ARCHITECTURAL DOMAIN DESERVES IT.**
+The same role translated into plain engineering terminology.
 
-Names are not objectives. Architecture comes first.
+## 1.5 Potential map
+
+A non-canonical future use. Potential mappings must never silently become current architecture.
+
+## 1.6 Visualization layer
+
+A future rendering of the same data as genealogy, dependency graph, learning map, or Mount Othrys spatial map.
+
+### Core law
+
+> **MYTHOLOGICAL FACT, OTHRYS INTERPRETATION, AND FUTURE CANDIDATE MUST NEVER BE CONFUSED.**
 
 ---
 
-# 2. THE MYTHOLOGICAL ROOT
+# 2. STATUS VOCABULARY
 
-The primary classical backbone used by this book is Hesiod's *Theogony*. In the familiar Hesiodic genealogy, Gaia (Earth) and Ouranos/Uranus (Sky) produce the twelve elder Titans:
+Every mythological name in this reference should use one of these statuses.
 
-### Male Uranides
+- **ACTIVE** — canonical current OTHRYS component or authority.
+- **ACTIVE_SUPPORTING** — canonical and active but not a top-level domain authority.
+- **CONCEPTUAL** — established in OTHRYS doctrine but not equally represented in the current runtime registry.
+- **RESERVED** — intentionally held because a strong future mapping exists.
+- **CANDIDATE** — promising but unassigned.
+- **ABSORBED** — former function incorporated into another component.
+- **RETIRED** — intentionally no longer used.
+- **UNUSED** — available and not currently mapped.
+- **COLLISION_RISK** — attractive meaning but overlaps an existing authority.
+- **NEGATIVE_ARCHETYPE** — intentionally names a failure pattern rather than a productive subsystem.
 
-1. Oceanus / Okeanos
-2. Coeus / Koios
-3. Crius / Krios
-4. Hyperion
-5. Iapetus / Iapetos
-6. Cronus / Kronos
+### Naming laws
 
-### Female Uranides / Titanesses
+> **KEEP AN EMPTY THRONE EMPTY UNTIL A REAL ARCHITECTURAL DOMAIN DESERVES IT.**
 
-7. Theia
-8. Rhea / Rheia
-9. Themis
-10. Mnemosyne
-11. Phoebe / Phoibe
-12. Tethys
+> **NOT EVERY SYSTEM NEEDS A GOD.**
 
-They are siblings, children of Earth and Sky.
+> **A GOOD NAME SHOULD REDUCE EXPLANATION, NOT CREATE MORE OF IT.**
 
-The mythology then branches into families highly relevant to OTHRYS:
+---
+
+# 3. THE FOUR REFERENCE VIEWS
+
+OTHRYS mythology should eventually be rendered through four synchronized interfaces.
+
+## 3.1 The Pantheon — WHO EXISTS?
+
+The Pantheon is the entity registry.
+
+It answers:
+
+- which mythological names exist in OTHRYS;
+- which are active, reserved, unused, absorbed, or retired;
+- which names are available;
+- what each name means;
+- what technical role it maps to.
+
+## 3.2 The Theogony — WHERE DID THEY COME FROM AND HOW ARE THEY RELATED?
+
+The Theogony is the genealogy and relationship map.
+
+It contains both:
+
+- true mythological bloodlines;
+- clearly separated OTHRYS operational relationships.
+
+It must never imply that an operational dependency is a mythological genealogy.
+
+## 3.3 Mount Othrys — WHERE DO THEY LIVE AND HOW DOES THE MACHINE MOVE?
+
+Mount Othrys is the future spatial architecture view.
+
+The mythological mountain is an especially appropriate setting because classical tradition places the Titans on Mount Othrys during the Titanomachy.
+
+The mountain should not become a decorative game map. It should visualize real architecture.
+
+Potential locations:
+
+```text
+                            SUMMIT / CONTROL
+                         authority, policy, operator
+                                  │
+                 ┌────────────────┼────────────────┐
+                 │                │                │
+             OBSERVATORY       LIBRARY           FORGE
+           perception/watch   memory/map       engineering
+                 │                │                │
+                 ├────── roads / messages / traces ──────┤
+                 │                │                │
+             LABYRINTH         NURSERY          MARKET EDGE
+             execution       incubation       Hyperion/world
+               traces          products          interface
+                 │                │                │
+                VAULT          GATES            HARBOR/FLOWS
+               assets         admission        integrations
+```
+
+The exact placement is future design work. The principle is canonical: **space should reflect architecture.**
+
+## 3.4 The Technical Mirror — WHAT IS THIS WITHOUT THE MYTHOLOGY?
+
+Every mythological node must translate cleanly.
+
+Example:
+
+```text
+PROMETHEUS
+Myth: forethought, intelligence, fire brought to humanity
+OTHRYS: intelligence / evidence discovery
+Tech: external research and evidence-discovery pipeline
+```
+
+If a mythological term cannot be translated into technical language, the architecture is not sufficiently clear.
+
+---
+
+# 4. CLASSICAL ROOT — THE FAMILY OF OURANOS AND GAIA
+
+The canonical backbone begins with Gaia (Earth) and Ouranos/Uranus (Sky).
+
+In the familiar Hesiodic genealogy they produce the Twelve elder Titans as well as the Cyclopes and Hecatoncheires.
+
+```text
+GAIA (EARTH) + OURANOS (SKY)
+│
+├── THE TWELVE TITANS
+│   ├── OCEANUS / OKEANOS
+│   ├── COEUS / KOIOS
+│   ├── CRIUS / KRIOS
+│   ├── HYPERION
+│   ├── IAPETUS / IAPETOS
+│   ├── CRONUS / KRONOS
+│   ├── THEIA
+│   ├── RHEA / RHEIA
+│   ├── THEMIS
+│   ├── MNEMOSYNE
+│   ├── PHOEBE / PHOIBE
+│   └── TETHYS
+│
+├── CYCLOPES
+│   ├── BRONTES
+│   ├── STEROPES
+│   └── ARGES
+│
+└── HECATONCHEIRES / HUNDRED-HANDERS
+    ├── BRIAREUS / AEGAEON
+    ├── COTTUS
+    └── GYGES / GYES
+```
+
+Important: Prometheus, Atlas, Epimetheus and Menoetius are **not** members of the original Twelve. They are children of Iapetus and therefore second-generation Titan-descended figures. Hephaestus and Hermes are Olympian gods. Talos, Chiron, Ariadne, Daedalus and Argus belong to other mythological families and story cycles.
+
+OTHRYS is therefore a Greek mythological naming system, not a Titan-only naming system.
+
+---
+
+# 5. THE TWELVE TITANS — COMPLETE OTHRYS INDEX
+
+| Titan | Mythological association / meaning | Important family | Current OTHRYS status | Current or potential OTHRYS meaning | Plain technical mirror |
+|---|---|---|---|---|---|
+| **Oceanus / Okeanos** | World-encircling river/ocean | With Tethys fathers rivers and Oceanids | RESERVED/CANDIDATE | External flows, integration fabric, world interface | API/data integration, feeds, streaming, synchronization |
+| **Coeus / Koios** | Titan; later associations often emphasize inquiry/intellect but etymology is not firm enough for law | With Phoebe fathers Leto and Asteria | CANDIDATE | Deep inquiry / epistemic method | reasoning/research methodology layer |
+| **Crius / Krios** | Elder Titan; exact domain less distinct in surviving myth | With Eurybia fathers Astraeus, Pallas, Perses | ABSORBED | Former commercial concept absorbed into Hyperion | legacy commercial/business subsystem |
+| **Hyperion** | Heavenly height/light/watchfulness associations | With Theia fathers Helios, Selene, Eos | ACTIVE | Business, money, opportunity, commercial qualification | business/venture/product intelligence control plane |
+| **Iapetus / Iapetos** | Elder Titan; father of the Iapetionids | Atlas, Prometheus, Epimetheus, Menoetius | RESERVED | Capability evolution, lineage and succession | evolutionary capability/version lineage authority |
+| **Cronus / Kronos** | Titan ruler; father of Olympian generation | With Rhea fathers Hestia, Demeter, Hera, Hades, Poseidon, Zeus | ACTIVE | Lifecycle / heartbeat / supervision | scheduler, lifecycle manager, watchdog/supervisor |
+| **Theia** | Sight/heavenly light; mother of sun, moon and dawn | Helios, Selene, Eos | RESERVED/CANDIDATE | Perception / visual intelligence | computer vision and multimodal observation layer |
+| **Rhea / Rheia** | Mother of Olympian generation; maternal continuity | Major Olympians | ACTIVE | Care / vitality stewardship | reliability, health, resource vitality and care policies |
+| **Themis** | Divine law, custom, order; also prophetic associations | Mother of Hours/Moirai in common traditions | CONCEPTUAL / DOCTRINAL | Governance, law, trust philosophy | policy, authorization, admission and constitutional governance |
+| **Mnemosyne** | Memory/remembrance | Mother of the Muses by Zeus | ACTIVE | Institutional memory / knowledge governance | durable knowledge management and memory governance |
+| **Phoebe / Phoibe** | Bright/radiant; prophetic lineage | Mother of Leto and Asteria | UNUSED / COLLISION_RISK | Possible prediction/foresight | forecasting/scenario intelligence, but overlaps Oracle/Prometheus |
+| **Tethys** | Maternal water figure | With Oceanus mothers rivers and Oceanids | UNUSED / CANDIDATE | Sources/provisioning/flow origins | data/resource source management; overlaps Oceanus/Rhea |
+
+## 5.1 Twelve-Titan occupancy snapshot
+
+**Active:**
+- Hyperion
+- Mnemosyne
+- Rhea
+- Kronos
+
+**Conceptually present:**
+- Themis
+
+**Absorbed:**
+- Crius
+
+**Strongly reserved:**
+- Iapetus
+- Theia
+- Oceanus
+
+**Available / candidate / collision-prone:**
+- Coeus
+- Phoebe
+- Tethys
+
+This is not a checklist to fill twelve seats.
+
+---
+
+# 6. CURRENT OTHRYS PANTHEON — WHAT EXISTS NOW
+
+This section is the primary census of current mythological names already present in OTHRYS architecture or doctrine.
+
+## 6.1 Hyperion — ACTIVE
+
+**Mythological class:** original Titan.  
+**OTHRYS class:** major economic/business Titan.  
+**Canonical role:** business, money, opportunity, commercial qualification, financial gates, product/media value loops.  
+**Technical mirror:** business intelligence + venture/product portfolio + commercialization control plane.
+
+Hyperion asks:
+
+> Where does value exist, what could become a business, how should it be tested, when is it ready to earn, and should it be kept, expanded, licensed, spun out, sold, or killed?
+
+### Hyperion's canonical Arms
+
+```text
+HYPERION
+│
+├── PROSPECTOR       opportunity discovery
+├── STORY FORGE      narrative / original IP formation
+├── FISHING FLEET    rapid product experiments
+├── MEDIA FACTORY    media production and packaging
+├── DISTRIBUTOR      reach, discovery and routing
+├── LABORATORY       experiment design
+├── ORACLE           signal interpretation / winner detection
+├── MAGNIFIER        scaling and compounding
+├── MERCHANT         pricing / commercial intelligence
+├── VALVE            financial gates / revenue airlocks
+├── PORTFOLIO        resource allocation
+└── VAULT            IP / provenance / transferable asset preservation
+```
+
+Technical mirror:
+
+```text
+BUSINESS / VENTURE / PRODUCT INTELLIGENCE CONTROL PLANE
+├── market research
+├── narrative and IP development
+├── rapid product validation
+├── content/media production
+├── distribution/growth
+├── experimentation
+├── analytics/winner detection
+├── scaling
+├── pricing/monetization design
+├── revenue authorization
+├── portfolio allocation
+└── asset/IP management
+```
+
+Boundary: Hyperion evaluates economic value. He does not replace technical verification, engineering, memory, or policy authority.
+
+---
+
+## 6.2 Prometheus — ACTIVE
+
+**Mythological class:** son of Iapetus; second-generation Titan-descended figure.  
+**Name meaning:** traditionally “Forethought.”  
+**OTHRYS role:** intelligence / evidence discovery and evaluation.  
+**Technical mirror:** external intelligence, research automation, evidence discovery, technology/opportunity radar.
+
+Prometheus asks:
+
+- What exists outside OTHRYS?
+- What changed?
+- What can we learn?
+- What evidence supports the discovery?
+- What deserves deeper investigation?
+
+Boundary:
+
+> **PROMETHEUS DISCOVERS. HE DOES NOT BECOME MEMORY, BUILD AUTHORITY, OR ECONOMIC AUTHORITY.**
+
+---
+
+## 6.3 Atlas — ACTIVE
+
+**Mythological class:** son of Iapetus; brother of Prometheus, Epimetheus and Menoetius.  
+**Mythological association:** bearer/supporter of the heavens; Homeric tradition also attributes deep geographical/cosmic knowledge.  
+**OTHRYS role:** derived knowledge and system map workspace.  
+**Technical mirror:** knowledge graph, architecture map, derived system model, semantic map.
+
+Atlas asks:
+
+> What does the world/system look like, and how do its parts relate?
+
+Boundary with Mnemosyne:
+
+```text
+MNEMOSYNE = durable memory / governed record
+ATLAS      = derived model / map / relationships
+```
+
+---
+
+## 6.4 Mnemosyne — ACTIVE
+
+**Mythological class:** original Titaness.  
+**Meaning:** memory/remembrance.  
+**OTHRYS role:** knowledge governance / institutional memory.  
+**Technical mirror:** persistent knowledge management, memory governance, provenance-aware long-term store.
+
+Mnemosyne asks:
+
+- What must survive this session?
+- What has become institutional knowledge?
+- What is canonical versus temporary?
+- Where did this knowledge come from?
+- When should knowledge be corrected, superseded, or retained historically?
+
+She is not merely a database. She is the governance of remembrance.
+
+---
+
+## 6.5 Rhea — ACTIVE
+
+**Mythological class:** original Titaness; mother of major Olympians.  
+**OTHRYS role:** care / vitality stewardship.  
+**Technical mirror:** system health, reliability, sustainable resource use, care policies, vitality management.
+
+Rhea concerns whether the system can remain healthy enough to continue functioning rather than merely whether a single task succeeded.
+
+Potential technical concerns:
+
+- host health;
+- sustainable load;
+- degraded operation;
+- recovery posture;
+- resource exhaustion;
+- maintenance needs;
+- operational wellbeing.
+
+Boundary: Rhea cares for health. Kronos supervises lifecycle. Argus, if ever activated, would observe. Talos verifies claims.
+
+---
+
+## 6.6 Kronos — ACTIVE
+
+**Mythological class:** original Titan.  
+**Spelling note:** OTHRYS currently uses **Kronos**. Classical English often uses Cronus. Kronos/Cronus must not be casually conflated with **Chronos**, the personification of time, even though later traditions and modern usage often blur them.  
+**OTHRYS role:** lifecycle / heartbeat / supervision contracts.  
+**Technical mirror:** scheduler, heartbeat supervisor, watchdog, lifecycle orchestration.
+
+Kronos asks:
+
+- Is it alive?
+- Should it still be running?
+- When does the next cycle occur?
+- Did the heartbeat arrive?
+- What happens on missed supervision?
+- What lifecycle state is this component in?
+
+The time-like technical mapping works, but this book preserves the mythological distinction honestly.
+
+---
+
+## 6.7 Themis — CONCEPTUAL / DOCTRINAL
+
+**Mythological class:** original Titaness.  
+**Association:** divine law, custom, order, rightful procedure; also prophecy in some traditions.  
+**OTHRYS doctrine:** intelligent trust canal, governance, law/order metaphor.  
+**Current technical registry:** concrete approval/admission authority is represented by **Trust Canal**.  
+**Technical mirror:** policy engine, governance framework, authorization/admission control, constitutional rules.
+
+Important boundary:
+
+```text
+THEMIS / TRUST CANAL = may this action enter / is it allowed?
+TALOS                = is the evidence/claim actually verified?
+```
+
+Themis should not be promoted merely to make the mythological tree look complete. Her canonical doctrinal role must stay aligned with the concrete Trust Canal implementation.
+
+---
+
+## 6.8 Hephaestus — ACTIVE AUTHORITY
+
+**Mythological class:** Olympian god, not an original Titan.  
+**Association:** fire, smithing, craftsmanship, fabrication, invention.  
+**OTHRYS role:** engineering authority.  
+**Technical mirror:** engineering/build authority and implementation control plane.
+
+This mapping is unusually direct.
+
+Potential internal metaphor:
+
+> **HYPERION HAS ARMS. HEPHAESTUS HAS HANDS.**
+
+A Hand should be a specialization or execution slot, not a permanent model identity.
+
+Potential Hands:
+
+```text
+HEPHAESTUS
+├── Architecture Hand
+├── Coding Hand
+├── Refactor Hand
+├── Test Hand
+├── Integration Hand
+├── Repair Hand
+├── Migration Hand
+├── Infrastructure Hand
+├── UI Hand
+└── Documentation Hand
+```
+
+Model selection remains external/dynamic through qualification and routing. The mythological authority is stable; individual models are replaceable labor.
+
+---
+
+## 6.9 Talos — ACTIVE AUTHORITY
+
+**Mythological class:** bronze automaton/guardian in later Greek mythic tradition; not one of the Twelve Titans.  
+**OTHRYS role:** independent verification / evidence authority.  
+**Technical mirror:** independent verifier, quality/evidence gate, claims validation authority.
+
+Talos asks:
+
+- Did the claimed work actually happen?
+- Is the evidence sufficient?
+- Does the result satisfy the contract?
+- Can this state be promoted as verified?
+
+Boundary:
+
+```text
+HEPHAESTUS BUILDS.
+TALOS VERIFIES.
+THEMIS/TRUST CANAL ADMITS.
+```
+
+Those responsibilities must remain separable.
+
+---
+
+## 6.10 Hermes — ACTIVE SUPPORTING
+
+**Mythological class:** Olympian messenger god; travel, boundaries, exchange and communication associations.  
+**OTHRYS role:** universal communications contracts / message lifecycle.  
+**Technical mirror:** messaging, event transport, communications protocol, message lifecycle.
+
+Hermes should transport information without inheriting authority over the truth or meaning of the information.
+
+Boundary:
+
+```text
+HERMES MOVES THE MESSAGE.
+MNEMOSYNE MAY PRESERVE IT.
+ATLAS MAY RELATE IT.
+TALOS MAY VERIFY IT.
+```
+
+---
+
+## 6.11 Hecatoncheires — ACTIVE SUPPORTING / SECURITY POSTURE
+
+**Mythological class:** Hundred-Handed sons of Gaia and Ouranos; siblings in generation to Titans/Cyclopes.  
+**Association:** overwhelming many-handed force.  
+**OTHRYS current use:** security posture concept/reference.  
+**Technical mirror:** broad defensive capability, containment/security posture, many-point control/response.
+
+Because the Hundred-Handers are an actual collective mythological class, Hecatoncheires works better for a distributed/multi-action security posture than as one monolithic agent.
+
+---
+
+# 7. CURRENT NON-MYTHOLOGICAL SYSTEMS — DO NOT FORCE THEM INTO GREEK NAMES
+
+Current OTHRYS architecture also contains deliberately technical or metaphorical names:
+
+- Trust Canal — authority/admission;
+- Factory — Oros build/refine;
+- Mycelium — colony routing;
+- Command Deck — operator workstation;
+- Switchyard — deterministic capability/model-labor selection;
+- Keymaster — credential custody/health/bootstrap access;
+- Visual Control — visual observation/evidence contracts.
+
+These names do not need Greek replacements merely for aesthetic consistency.
+
+Their technical clarity is a feature.
+
+Possible future mythological umbrellas should only appear when the underlying domain becomes genuinely larger than the existing system.
+
+---
+
+# 8. THE TRUE GENEALOGICAL TREE — IMPORTANT FAMILIES
+
+This tree is **mythological genealogy**, not software topology.
 
 ```text
 GAIA + OURANOS
 │
-├── THE TWELVE TITANS
-│   ├── OCEANUS
-│   ├── COEUS
-│   ├── CRIUS
-│   ├── HYPERION
-│   ├── IAPETUS
-│   ├── KRONOS
-│   ├── THEIA
-│   ├── RHEA
-│   ├── THEMIS
-│   ├── MNEMOSYNE
-│   ├── PHOEBE
-│   └── TETHYS
+├── OCEANUS ───── TETHYS
+│   └── rivers + Oceanids
 │
-├── CYCLOPES
-│   ├── Brontes
-│   ├── Steropes
-│   └── Arges
+├── COEUS ─────── PHOEBE
+│   ├── LETO
+│   │   ├── APOLLO
+│   │   └── ARTEMIS
+│   └── ASTERIA
+│       └── HECATE
 │
-└── HECATONCHEIRES
-    ├── Briareus / Aegaeon
-    ├── Cottus
-    └── Gyges
+├── CRIUS ─────── EURYBIA
+│   ├── ASTRAEUS
+│   ├── PALLAS
+│   └── PERSES
+│
+├── HYPERION ──── THEIA
+│   ├── HELIOS      Sun
+│   ├── SELENE      Moon
+│   └── EOS         Dawn
+│
+├── IAPETUS ───── CLYMENE/ASIA (traditions vary)
+│   ├── ATLAS
+│   ├── PROMETHEUS
+│   ├── EPIMETHEUS
+│   └── MENOETIUS
+│
+├── KRONOS ─────── RHEA
+│   ├── HESTIA
+│   ├── DEMETER
+│   ├── HERA
+│   ├── HADES
+│   ├── POSEIDON
+│   └── ZEUS
+│
+├── THEMIS
+│   └── important later divine-order descendants vary by tradition
+│
+└── MNEMOSYNE
+    └── THE NINE MUSES (with Zeus)
 ```
 
-Later generations include Prometheus, Atlas, Olympians such as Hephaestus and Hermes, and beings such as Talos. OTHRYS is therefore not a "Titan-only" naming system.
+This family tree is a source of semantic possibilities, not a demand to instantiate every descendant.
 
 ---
 
-# 3. THE TWELVE TITANS — MASTER INDEX
+# 9. THE IAPETIONID FAMILY — OTHRYS' NATURAL LEARNING FAMILY
 
-| Titan | Common meaning / association | Mythological family or domain | OTHRYS status | OTHRYS mapping | Plain technical mirror | Future potential |
-|---|---|---|---|---|---|---|
-| **Oceanus** | Ocean/world-encircling stream | Primordial river encircling world; father of river gods/Oceanids | RESERVED/CANDIDATE | None | Potential integration/data-flow domain | External data fabric, feeds, APIs, synchronization, streaming |
-| **Coeus** | Often associated with inquiry/intellect; name etymology not architecturally certain | Titan; father of Leto and Asteria | CANDIDATE | None | Potential reasoning/research-method domain | Deep inquiry, epistemology, hypothesis systems, reasoning architecture |
-| **Crius** | Name often rendered Krios; exact functional meaning obscure/contested | Titan; father of Astraeus, Pallas, Perses in common genealogy | ABSORBED | Former commercial function absorbed into Hyperion | Legacy business/commercial subsystem | Keep absorbed unless a genuinely distinct domain emerges |
-| **Hyperion** | "He who goes above/on high"; heavenly light/watchfulness associations | Titan; with Theia father of Helios, Selene, Eos | ACTIVE | Economic intelligence, opportunity, business, media, commercial qualification | Business intelligence + venture/product portfolio + growth/commercial control plane | Mature active Titan; already decomposed into Arms |
-| **Iapetus** | Traditionally linked to mortality; name sometimes interpreted as "piercer" | Titan; father of Atlas, Prometheus, Epimetheus, Menoetius | RESERVED | None | Potential capability-evolution/lineage authority | Evolution, inheritance, agent/capability generations, extinction, mutation |
-| **Kronos/Cronus** | Titan king; distinct mythological figure from Chronos, though later traditions/conflation connect them | Titan; father of major Olympians with Rhea | ACTIVE | Lifecycle / heartbeat / supervision contracts | Scheduler, lifecycle manager, watchdog, supervisory runtime | Pulses, clocks, lifecycle policies, temporal orchestration |
-| **Theia** | Goddess/Titaness of sight and heavenly light; source-family of sun/moon/dawn | Titaness; mother of Helios, Selene, Eos | RESERVED/CANDIDATE | None | Potential computer-vision/perception domain | Visual intelligence, multimodal perception, UI observation, image/video evidence |
-| **Rhea** | Mother of Olympian generation; name anciently associated by some with flow | Titaness; mother of Zeus, Hera, Poseidon, etc. | ACTIVE | Care / vitality stewardship | Reliability/wellbeing/resource-health stewardship | System vitality, sustainability, care policies |
-| **Themis** | Divine law, custom, order; also prophecy/oracular association | Titaness; law/order | CONCEPTUAL/ACTIVE DOCTRINE | Trust, rules, authority/control philosophy; concrete admission currently represented by Trust Canal | Policy engine, governance, authorization/admission rules | Constitutional/policy layer; avoid collision with Talos verification |
-| **Mnemosyne** | Memory/remembrance | Titaness; mother of the Muses by Zeus | ACTIVE | Knowledge governance / institutional memory | Knowledge management, durable memory, provenance-aware institutional store | Museums/libraries, long-term memory governance, knowledge lifecycle |
-| **Phoebe** | Bright/radiant; associated with prophetic/oracular lineage | Titaness; mother of Leto and Asteria | UNUSED/COLLISION_RISK | None | Potential predictive/foresight service | Forecasting, weak-signal prediction, scenario intelligence — but Oracle already overlaps |
-| **Tethys** | Sea/water maternal figure; mother of rivers/Oceanids with Oceanus | Titaness | UNUSED/CANDIDATE | None | Potential source/supply/data-origin domain | Resource sources, data springs, provisioning — but overlaps Oceanus/Rhea |
-
-## 3.1 Current score
-
-Strictly within the original Twelve:
-
-- **ACTIVE:** Hyperion, Mnemosyne, Rhea, Kronos
-- **CONCEPTUAL / strong doctrine:** Themis
-- **ABSORBED:** Crius
-- **RESERVED / strong candidates:** Oceanus, Iapetus, Theia
-- **AVAILABLE but collision-prone or weakly justified:** Coeus, Phoebe, Tethys
-
-This is not a completion checklist.
-
----
-
-# 4. THE IAPETIONIDS — THE FORETHOUGHT FAMILY
-
-Iapetus is one of the most strategically valuable unused Titans because his family already maps unusually well onto an intelligent adaptive system.
-
-In Hesiod, Iapetus and Clymene produce:
-
-- Atlas
-- Menoetius
-- Prometheus
-- Epimetheus
-
-Other traditions name Asia as the mother. OTHRYS should preserve the variant rather than pretend one genealogy is universal.
+The Iapetus branch is unusually compatible with OTHRYS because its four sons map naturally onto foresight, structure, hindsight and dangerous excess.
 
 ```text
 IAPETUS
 │
-├── ATLAS
-│   Myth: bearer/supporter of heaven; knowledge associations
-│   OTHRYS: derived knowledge + system map workspace
-│   Tech: knowledge graph / architecture map / derived system model
+├── PROMETHEUS  = FORETHOUGHT
+│   ACTIVE: intelligence / evidence discovery
 │
-├── PROMETHEUS
-│   Myth/name: forethought; cunning intelligence; fire brought to humanity
-│   OTHRYS: intelligence / evidence discovery and evaluation
-│   Tech: research + discovery + external intelligence pipeline
+├── ATLAS       = BEARER / STRUCTURAL KNOWLEDGE
+│   ACTIVE: derived knowledge / system map
 │
-├── EPIMETHEUS
-│   Myth/name: afterthought
-│   OTHRYS: AVAILABLE — strong candidate
-│   Tech candidate: retrospectives / postmortems / outcome-learning engine
+├── EPIMETHEUS  = AFTERTHOUGHT
+│   RESERVED: retrospective / outcome learning
 │
-└── MENOETIUS
-    Myth: violent pride/rash presumption; struck down by Zeus
-    OTHRYS: AVAILABLE — strong negative/sentinel archetype
-    Tech candidate: recklessness / runaway-autonomy / overconfidence detector
+└── MENOETIUS   = RASH EXCESS / HUBRIS ARCHETYPE
+    RESERVED NEGATIVE: runaway autonomy / reckless confidence
 ```
 
-## 4.1 Prometheus
+## 9.1 Prometheus — before action
 
-**Greek/transliterated forms:** Prometheus / Promêtheus.  
-**Traditional meaning:** Forethought.  
-**OTHRYS:** Intelligence / evidence discovery and evaluation.  
-**Technical mirror:** external intelligence, research automation, evidence discovery, opportunity/technology radar.
+Question:
 
-Prometheus should discover. He should not become the universal memory store, builder, verifier, or commercial authority.
+> What can we discover or anticipate before acting?
 
-## 4.2 Atlas
+## 9.2 Atlas — model of the world
 
-**Meaning/association:** bearer/supporter; mythologically holds up the heavens; Homeric material also associates him with knowledge of the sea's depths.  
-**OTHRYS:** Derived knowledge and system map workspace.  
-**Technical mirror:** architecture map + derived knowledge graph + system model.
+Question:
 
-Atlas answers: **What does the world/system look like and how do its parts relate?**
+> What does the system/world currently look like and how is it connected?
 
-Mnemosyne answers: **What must OTHRYS remember?**
+## 9.3 Epimetheus — RESERVED
 
-The distinction is essential.
+**Meaning:** afterthought.  
+**Potential OTHRYS role:** structured hindsight.  
+**Technical synonyms:** retrospective engine, after-action review, postmortem system, outcome-learning service, lessons-learned pipeline.
 
-## 4.3 Epimetheus — RESERVED CANDIDATE
-
-**Traditional meaning:** Afterthought.  
-**Potential OTHRYS meaning:** structured hindsight.
-
-Potential remit:
+Potential pipeline:
 
 ```text
-ACTION -> OUTCOME -> RETROSPECTIVE -> CAUSAL REVIEW -> LESSON -> MEMORY -> FUTURE POLICY
+ACTION
+  ↓
+OBSERVED OUTCOME
+  ↓
+EPIMETHEUS
+  ├── expectation vs reality
+  ├── causal review
+  ├── failure/success explanation
+  ├── surprising side effects
+  ├── reusable lesson
+  └── confidence update
+  ↓
+MNEMOSYNE
+  ↓
+ATLAS
+  ↓
+PROMETHEUS / FUTURE PLANNING
 ```
 
-Technical synonyms:
+Boundary:
 
-- retrospective engine
-- postmortem system
-- after-action review
-- outcome-learning service
-- lessons-learned pipeline
-- incident-learning layer
+> **TALOS ASKS WHETHER THE CLAIM IS VERIFIED. EPIMETHEUS ASKS WHAT REALITY TAUGHT US AFTERWARD.**
 
 Potential law:
 
 > **PROMETHEUS LOOKS BEFORE. EPIMETHEUS LEARNS AFTER.**
 
-Epimetheus must not duplicate Talos. Talos verifies evidence/claims; Epimetheus studies what reality taught after execution.
+This is one of the strongest future candidates in the entire Pantheon.
 
-## 4.4 Menoetius — RESERVED NEGATIVE ARCHETYPE
+## 9.4 Menoetius — RESERVED NEGATIVE ARCHETYPE
 
-Menoetius is described in the Hesiodic tradition as outrageous/presumptuous and destroyed for excessive pride.
+Potential use should probably be a named hazard class rather than an authority.
 
-Potential OTHRYS role is therefore not necessarily a productive authority. He may be more useful as a named failure class:
+Possible MENOETIUS conditions:
 
-- runaway autonomy
-- reckless escalation
-- confidence without evidence
-- uncontrolled resource use
-- destructive persistence
-- refusal to stop after failed evidence
+- escalating despite failed evidence;
+- confidence without proof;
+- uncontrolled autonomy;
+- runaway resource use;
+- refusal to terminate;
+- repeated destructive retry;
+- dangerous optimization pressure;
+- ignoring stop conditions;
+- power without restraint.
 
-Possible technical term: **autonomy hazard detector / hubris sentinel**.
+Technical mirror: autonomy hazard detector / hubris sentinel / runaway-policy class.
 
-## 4.5 Iapetus — RESERVED TITAN
+## 9.5 Iapetus — RESERVED TITAN
 
-Potential future domain:
+Iapetus becomes compelling only when OTHRYS has true capability generations.
 
-**Capability evolution, lineage, inheritance, survival and extinction.**
+Potential domain:
 
-Technical mirror:
+**evolution, inheritance, lineage, mutation, selection, succession and extinction of capabilities.**
 
-- evolutionary capability manager
-- agent lineage registry
-- capability genealogy
-- version fitness system
-- model/tool succession authority
-- evolutionary architecture layer
-
-Potential questions:
-
-- Which capabilities survive?
-- Which should be deprecated?
-- Which traits should be inherited?
-- Which successful patterns should reproduce?
-- Which variants should compete?
-- When should a capability become extinct?
-
-Do not activate Iapetus merely because the metaphor is attractive. This becomes useful when OTHRYS actually manages capability generations at autonomy scale.
-
----
-
-# 5. HYPERION AND THE HYPERIONIDES
-
-Hyperion is already canonical as the Titan of business, money, opportunity, commercial qualification, and financial gates.
-
-Mythologically Hyperion and Theia are parents of:
-
-- **Helios** — Sun
-- **Selene** — Moon
-- **Eos** — Dawn
-
-These names are currently available unless separately claimed elsewhere.
-
-Potential semantic reserve:
-
-- **Helios:** broad illumination / full-market visibility / public-facing illumination; potential collision with observability.
-- **Selene:** night-cycle, quiet/batch intelligence, periodic observation; likely too metaphorical unless a real domain emerges.
-- **Eos:** dawn/new beginnings; potentially launch/readiness/emergence, but generic and therefore best left unused.
-
-Hyperion's current technical domain is already sufficiently represented through his **Arms**, so his children must not be invented merely to decorate the hierarchy.
-
-## 5.1 Hyperion's canonical Arms
-
-1. **Prospector** — opportunity discovery
-2. **Story Forge** — narrative and original IP formation
-3. **Fishing Fleet** — rapid product experiments
-4. **Media Factory** — media production and packaging
-5. **Distributor** — discovery, reach and routing
-6. **Laboratory** — experiment design
-7. **Oracle** — signal interpretation and winner detection
-8. **Magnifier** — scaling and compounding
-9. **Merchant** — commercial intelligence and pricing
-10. **Valve** — financial gates and revenue airlocks
-11. **Portfolio** — resource allocation
-12. **Vault** — IP/provenance/transferable asset preservation
-
-Technical translation:
+Technical tree:
 
 ```text
-HYPERION
-= BUSINESS / VENTURE / PRODUCT INTELLIGENCE CONTROL PLANE
-
-├── Market & opportunity research
-├── Narrative/IP development
-├── Product experimentation
-├── Content/media production
-├── Distribution/growth
-├── Experimentation
-├── Analytics & winner detection
-├── Scaling
-├── Pricing & monetization design
-├── Revenue authorization
-├── Portfolio/resource allocation
-└── IP/asset management
+IAPETUS
+= CAPABILITY EVOLUTION & LINEAGE
+│
+├── ancestry / provenance
+├── version genealogy
+├── mutation record
+├── benchmark fitness
+├── inheritance rules
+├── specialization
+├── merge/fork history
+├── deprecation
+├── extinction
+└── succession
 ```
 
-> **ONE TITAN. MANY ARMS. ONE VALUE LOOP.**
-
----
-
-# 6. THEIA — SIGHT, LIGHT, PERCEPTION
-
-Theia is one of the strongest unused original Twelve names.
-
-Classical tradition associates Theia with sight/heavenly light, and she is mother of Helios, Selene and Eos.
-
-OTHRYS already has a canonical **Visual Control** system described as visual observation/evidence contracts. Therefore Theia is not free of architectural context; she is a potential future umbrella if perception becomes large enough to deserve Titan-level authority.
-
-Potential technical tree:
+Potential example:
 
 ```text
-THEIA (future only)
-= PERCEPTION / MULTIMODAL OBSERVATION DOMAIN
-
-├── Screen perception
-├── UI state observation
-├── Image understanding
-├── Video understanding
-├── Camera/world observation
-├── Visual anomaly detection
-├── Visual evidence extraction
-└── Multimodal fusion
+coding-hand-v1
+      │
+      ├── prompt mutation A → failed
+      │
+      └── coding-hand-v2
+             │
+             ├── tool-use trait inherited
+             ├── benchmark +14%
+             └── coding-hand-v3
 ```
 
-Possible synonyms:
+This would allow OTHRYS to maintain a literal phylogenetic tree of capabilities.
 
-- perception layer
-- computer vision authority
-- multimodal sensing
-- visual intelligence
-- observation fabric
-
-Boundary:
-
-**Theia would perceive. Talos would verify. Atlas would model. Mnemosyne would remember.**
-
-Do not promote Visual Control to Theia until the domain is actually large enough.
+Do not activate before the architecture needs it.
 
 ---
 
-# 7. OCEANUS AND TETHYS — FLOW AND SOURCES
+# 10. THE HYPERION-THEIA FAMILY — LIGHT, PERCEPTION AND VALUE
 
-Oceanus and Tethys are paired in mythology and associated with the great waters and generation of rivers/Oceanids.
-
-This makes them attractive to distributed computing metaphors, but also dangerous because "flow" can mean almost anything.
-
-## 7.1 Oceanus — RESERVED
-
-Potential future technical domain:
-
-**External data and integration fabric.**
+Mythologically:
 
 ```text
-OUTSIDE WORLD
-    ↓
-feeds / APIs / webhooks / streams / imports
-    ↓
+HYPERION + THEIA
+├── HELIOS  = Sun
+├── SELENE  = Moon
+└── EOS     = Dawn
+```
+
+OTHRYS must not force these children into Hyperion's business architecture merely because they are his mythological children.
+
+Potential reserve meanings only:
+
+- **Helios:** global illumination / broad visibility / system or market illumination.
+- **Selene:** nocturnal/batch observation, background cycles, quiet scanning.
+- **Eos:** emergence, launch, readiness, first-light state.
+
+These are currently weaker than existing technical terminology and remain unused.
+
+## 10.1 Theia — RESERVED PERCEPTION TITAN
+
+Theia is one of the strongest unused original Twelve.
+
+Potential domain:
+
+```text
+THEIA
+= PERCEPTION / MULTIMODAL OBSERVATION
+│
+├── screen perception
+├── UI-state understanding
+├── image understanding
+├── video understanding
+├── camera/world observation
+├── visual anomaly detection
+├── visual evidence extraction
+├── OCR/document vision when needed
+└── multimodal fusion
+```
+
+Existing **Visual Control** could remain the concrete subsystem beneath this umbrella if perception ever becomes Titan-sized.
+
+Boundary law:
+
+> **THEIA PERCEIVES. ARGUS WATCHES. TALOS VERIFIES. ATLAS MODELS. MNEMOSYNE REMEMBERS.**
+
+The distinction matters:
+
+- perception = interpret sensory input;
+- observability = continuously watch system state;
+- verification = prove a claim;
+- modeling = relate knowledge;
+- memory = preserve knowledge.
+
+---
+
+# 11. OCEANUS + TETHYS — THE WORLD OF FLOWS
+
+Mythologically Oceanus and Tethys are parents of the rivers and Oceanids.
+
+This creates an obvious but potentially dangerous architectural metaphor because OTHRYS already has Hermes, Mycelium and integration mechanisms.
+
+## 11.1 Oceanus — RESERVED/CANDIDATE
+
+Potential meaning:
+
+**the external data/integration ocean surrounding Mount Othrys.**
+
+Technical tree:
+
+```text
 OCEANUS
-    ↓
-normalization / routing / synchronization / flow control
-    ↓
-OTHRYS SYSTEMS
+= EXTERNAL FLOW / INTEGRATION FABRIC
+│
+├── APIs
+├── feeds
+├── webhooks
+├── streams
+├── synchronization
+├── connectors
+├── imports
+├── exports
+└── external data boundaries
 ```
 
-Potential synonyms:
-
-- integration fabric
-- data plane
-- event/data bus
-- ingestion layer
-- synchronization fabric
-- external interface mesh
-- streaming backbone
-
-Collision check:
-
-Hermes already owns universal communications contracts/message lifecycle. Therefore a future Oceanus must be sharply separated:
-
-- **Hermes:** message semantics, communication contracts, delivery lifecycle.
-- **Oceanus:** continuous movement of external/internal data streams and integration flow.
-
-If that distinction never becomes operationally necessary, Oceanus stays empty.
-
-## 7.2 Tethys — AVAILABLE
-
-Potential interpretations:
-
-- source provisioning
-- resource springs
-- origin registry
-- feed/source stewardship
-
-But these currently overlap Oceanus, Rhea, Keymaster, and ordinary resource management. No activation recommended.
-
----
-
-# 8. COEUS AND PHOEBE — INQUIRY AND FORESIGHT
-
-Coeus and Phoebe are a Titan pair and parents, in common genealogy, of Leto and Asteria.
-
-## 8.1 Coeus — CANDIDATE
-
-Modern mythological summaries often associate Coeus with intellect/inquiry, but OTHRYS must not turn a loose interpretive association into fake certainty.
-
-Potential technical remit if a real gap emerges:
-
-- reasoning methodology
-- research design
-- hypothesis formation
-- epistemic discipline
-- question generation
-- deep inquiry
-
-Collision risk is high:
-
-- Prometheus discovers/evaluates external intelligence.
-- Atlas builds derived understanding.
-- Mnemosyne governs memory.
-- Hyperion Laboratory handles experiments.
-
-Coeus therefore remains unassigned.
-
-## 8.2 Phoebe — AVAILABLE / COLLISION RISK
-
-Associations include brightness and prophetic/oracular lineage. Potential technical use would be forecasting, prediction, scenario analysis, or weak-signal foresight.
-
-But Hyperion already has an **Oracle** Arm for signal interpretation and winner detection.
-
-Potential future distinction only if needed:
-
-- Oracle = interpretation of observed evidence.
-- Phoebe = explicit probabilistic forecasting of future states.
-
-Until such a forecasting domain exists, Phoebe remains empty.
-
----
-
-# 9. CRIUS — ABSORBED
-
-Crius/Krios is one of the original Twelve. His ancient individual domain is comparatively obscure, and later reconstructions vary.
-
-OTHRYS previously used Crius for a commercial/business function. That function is now deliberately absorbed into Hyperion.
-
-Status:
-
-**ABSORBED — DO NOT RESURRECT FOR NUMERICAL COMPLETENESS.**
-
-Technical meaning:
+Boundary candidates:
 
 ```text
-legacy commercial subsystem
-        ↓
-merged into
-        ↓
-Hyperion economic intelligence domain
+OCEANUS = sustained external flows / integration fabric
+HERMES  = messages / communication contracts
+MYCELIUM = internal routing trails
 ```
 
-A name becoming unused after consolidation is not architectural waste. It is evidence that the architecture became cleaner.
+If these cannot be cleanly separated in implementation, Oceanus should remain unused.
+
+## 11.2 Tethys — UNUSED/CANDIDATE
+
+Possible meaning: origin/provisioning/source of flows.
+
+Potential technical synonyms:
+
+- source registry;
+- provisioning layer;
+- source-of-data management;
+- resource supply graph.
+
+Current collision risk with Oceanus and Rhea is high. Keep unused.
 
 ---
 
-# 10. RHEA — VITALITY AND CARE
+# 12. COEUS + PHOEBE — INQUIRY AND PROPHECY POTENTIAL
 
-Rhea is canonical in OTHRYS as **Care / vitality stewardship**.
+Mythologically Coeus and Phoebe are parents of Leto and Asteria, placing them in a lineage that reaches Apollo, Artemis and Hecate.
 
-Mythologically she is one of the Twelve and mother of the principal Olympian generation by Kronos.
+## 12.1 Coeus — CANDIDATE
 
-Technical mirror:
+Modern summaries often associate Coeus with intellect/inquiry, but the etymological/domain evidence is not strong enough to build architecture merely from that convenient interpretation.
 
-- system health stewardship
-- sustainable operation
-- resource wellbeing
-- reliability care layer
-- degradation awareness
-- recovery-support policy
+If a real OTHRYS need emerges, possible domain:
 
-Rhea should not become generic monitoring. Her semantic center is **continued healthy existence**, not merely measurement.
+- epistemology;
+- question decomposition;
+- research methodology;
+- hypothesis formation;
+- uncertainty discipline;
+- reasoning quality.
 
-Potential subordinate concepts should be added only when real mechanisms exist: health budgets, recovery policies, fatigue/resource pressure, maintenance windows, graceful degradation.
+Technical mirror: epistemic/reasoning-method layer.
+
+Collision risk: Prometheus already owns discovery; Atlas owns derived knowledge; Mnemosyne owns memory.
+
+## 12.2 Phoebe — UNUSED / COLLISION_RISK
+
+Possible domain: prediction, foresight, scenario planning, probabilistic forecast.
+
+Collision risk:
+
+- Hyperion Oracle already interprets signals;
+- Prometheus already discovers weak external signals;
+- a future forecasting engine might not deserve Titan status.
+
+Keep the throne empty.
 
 ---
 
-# 11. KRONOS / CRONUS — LIFECYCLE AND TIME
+# 13. CRIUS — ABSORBED
 
-OTHRYS currently uses **Kronos** for lifecycle / heartbeat / supervision contracts.
+Crius/Krios belongs to the original Twelve but currently does not justify a separate OTHRYS authority.
 
-Important mythological/linguistic caution:
+Former commercial concepts have been absorbed into Hyperion.
 
-**Kronos/Cronus the Titan is not originally identical to Chronos, the personification of Time.** Ancient and later traditions sometimes associate or conflate the names, but OTHRYS must retain the distinction in this reference.
+Canonical rule:
 
-The OTHRYS mapping intentionally uses the temporal/lifecycle resonance while naming the Titan Kronos.
+> **DO NOT RESURRECT CRIUS JUST TO COMPLETE THE TWELVE.**
 
-Technical mirror:
+If a truly independent future domain emerges, it can be reconsidered only after proving that Hyperion cannot own it cleanly.
+
+---
+
+# 14. OBVIOUS HIGH-VALUE NON-TITAN CANDIDATES
+
+These names are not original Twelve Titans, but their stories map naturally to real technical problems.
+
+## 14.1 Ariadne — STRONG RESERVED CANDIDATE
+
+**Mythic association:** Ariadne's thread enables navigation through the Labyrinth and return from it.  
+**Potential OTHRYS role:** end-to-end traceability, provenance and explainability.  
+**Technical mirror:** distributed tracing + execution provenance + causal path reconstruction.
+
+Potential law:
+
+> **ARIADNE — NEVER LOSE THE THREAD.**
+
+Example execution trace:
 
 ```text
-KRONOS
-= LIFECYCLE + SCHEDULING + HEARTBEAT + SUPERVISION
-
-├── heartbeat contracts
-├── scheduled pulses
-├── lifecycle transitions
-├── timeout/expiry
-├── supervision
-├── recurring jobs
-├── liveness checks
-└── temporal policy
+operator request
+   ↓
+mission
+   ↓
+planner decision
+   ↓
+Trust Canal admission
+   ↓
+Switchyard selection
+   ↓
+model/tool invocation
+   ↓
+Hephaestus mutation
+   ↓
+Talos verification
+   ↓
+outcome
 ```
 
-Synonyms:
+Example knowledge trace:
 
-- scheduler
-- lifecycle manager
-- watchdog
-- supervisor
-- temporal orchestrator
-- heartbeat service
+```text
+answer
+  ↓
+Atlas relation
+  ↓
+Mnemosyne canonical record
+  ↓
+Prometheus discovery
+  ↓
+source evidence
+```
 
-Boundary:
+Potential scope:
 
-Kronos says **when / whether something remains alive**. He does not decide whether its output is true; that is Talos/evidence authority.
+- trace IDs;
+- parent/child task chains;
+- provenance;
+- source ancestry;
+- decision explanation;
+- execution replay;
+- causal debugging;
+- mission lineage;
+- evidence lineage.
+
+Ariadne is one of the strongest candidates because the metaphor and technical requirement are both independently valid.
 
 ---
 
-# 12. THEMIS — LAW, POLICY, ADMISSION
+## 14.2 Argus Panoptes — STRONG RESERVED CANDIDATE
 
-Themis is one of the Twelve and strongly associated with divine law, custom, order and oracular judgment.
-
-OTHRYS uses Themis conceptually for intelligent trust/control philosophy. The current project registry represents concrete authority/admission through the **Trust Canal**.
-
-Technical mirror:
-
-- policy engine
-- governance layer
-- authorization policy
-- admission control
-- trust policy
-- constitutional constraints
+**Mythic association:** the “all-seeing” many-eyed watcher.  
+**Potential OTHRYS role:** continuous observability.  
+**Technical mirror:** metrics/logs/traces/health/telemetry aggregation + alerting/anomaly observation.
 
 Potential tree:
 
 ```text
-THEMIS — GOVERNANCE / POLICY DOCTRINE
-       ↓
-TRUST CANAL — ADMISSION / AUTHORITY MECHANISM
-       ↓
-EXECUTION PERMISSION
-```
-
-Boundary with Talos:
-
-- **Themis / Trust Canal:** Is this permitted/admitted?
-- **Talos:** Is this verified/supported by evidence?
-
-Permission is not proof. Proof is not permission.
-
----
-
-# 13. MNEMOSYNE — MEMORY
-
-Mnemosyne literally/traditionally represents memory/remembrance and is mother of the Muses in the familiar genealogy.
-
-OTHRYS mapping is exceptionally direct:
-
-**Knowledge governance / institutional memory.**
-
-Technical mirror:
-
-- durable knowledge store
-- institutional memory
-- knowledge governance
-- provenance-aware archive
-- canonical knowledge lifecycle
-- memory retention and retrieval policy
-
-Potential internal metaphor:
-
-**Museums / Libraries** may be used for collections if they remain technically clear.
-
-Boundary:
-
-- Mnemosyne remembers and governs knowledge.
-- Atlas derives maps/models from knowledge.
-- Vault preserves commercially transferable assets/provenance under Hyperion.
-- Epimetheus, if activated, would generate structured lessons from outcomes and hand them into memory.
-
----
-
-# 14. HEPHAESTUS — ENGINEERING AUTHORITY
-
-Hephaestus is an Olympian, not one of the Twelve Titans. Traditions vary on whether Hera bears him alone or whether Zeus is also named as father.
-
-His mythological association with smithing, fire, craft, metalwork and divine fabrication makes the OTHRYS mapping unusually strong.
-
-**OTHRYS:** Engineering authority.  
-**Technical mirror:** build system / engineering control plane / implementation authority.
-
-Canonical project capability: `engineering.build`.
-
-## 14.1 Hands model
-
-Hyperion has **Arms** because he reaches across economic capability families.
-
-Hephaestus may naturally have **Hands** because he makes.
-
-Potential Hands — architectural pattern, not automatically canonical implementation:
-
-- Architecture Hand
-- Coding Hand
-- Refactor Hand
-- Test Hand
-- Integration Hand
-- Repair Hand
-- Migration Hand
-- Infrastructure Hand
-- UI Hand
-- Documentation Hand
-
-Technical translation:
-
-```text
-HEPHAESTUS
-= ENGINEERING AUTHORITY
-
-HAND
-= QUALIFIED ENGINEERING ROLE / EXECUTION SLOT
-
-MODEL / AGENT / TOOL
-= CURRENTLY SELECTED EXECUTOR
-```
-
-This separates the durable role from the temporary model occupying it.
-
-Switchyard can select a qualified executor for a Hand; Talos independently verifies results.
-
-> **THE SMITH IS AN AUTHORITY. THE HAMMER IS REPLACEABLE.**
-
----
-
-# 15. HERMES — COMMUNICATION
-
-Hermes is an Olympian messenger god with broad associations including travel, boundaries, exchange, heralding and communication.
-
-OTHRYS canonical mapping:
-
-**Universal communications contracts / message lifecycle.**
-
-Technical mirror:
-
-- messaging abstraction
-- communication bus/contracts
-- notification lifecycle
-- delivery state machine
-- protocol/interface messaging layer
-
-Potential responsibilities:
-
-- message envelopes
-- sender/recipient semantics
-- retries
-- delivery status
-- channel adapters
-- notification policy
-- inter-system communication contracts
-
-Boundary with Oceanus candidate:
-
-**Hermes communicates discrete messages/contracts. Oceanus, if ever activated, would govern broader data/integration flow.**
-
----
-
-# 16. TALOS — VERIFICATION
-
-Talos is not one of the Twelve. In myth he is the bronze guardian associated with Crete, patrolling and defending it.
-
-OTHRYS canonical mapping:
-
-**Verification / evidence authority.**
-
-Technical mirror:
-
-- independent verifier
-- evidence gate
-- test/review authority
-- validation service
-- quality/evidence control plane
-
-Canonical capability: `verification.independent`.
-
-Talos is intentionally independent of Hephaestus:
-
-```text
-HEPHAESTUS BUILDS
-       ↓
-ARTIFACT / CLAIM
-       ↓
-TALOS VERIFIES
-```
-
-> **THE BUILDER DOES NOT CERTIFY HIS OWN SWORD.**
-
----
-
-# 17. HECATONCHEIRES — SECURITY / MANY-HANDED DEFENSE
-
-The Hecatoncheires are the Hundred-Handed giants — Briareus, Cottus and Gyges — children of Gaia and Ouranos in Hesiodic tradition.
-
-OTHRYS already has a canonical knowledge entry for **Hecatoncheires Security Posture**.
-
-The metaphor is strong:
-
-- many hands
-- overwhelming defensive capacity
-- guarding Tartarus after the Titanomachy in classical tradition
-
-Technical mirror:
-
-- defense-in-depth security posture
-- multi-control security system
-- containment perimeter
-- security guardrails
-- layered defensive controls
-
-The name should describe a coordinated security posture, not a generic monster-themed bucket.
-
----
-
-# 18. OTHER CURRENT GREEK-LAYER NAMES
-
-## 18.1 OTHRYS / OTHRYS OS
-
-Mount Othrys is mythologically associated with the Titans and commonly represented as their stronghold during the Titanomachy.
-
-OTHRYS technical mirror:
-
-**The operating environment / control plane / ecosystem in which the named authorities and systems live.**
-
-It is the mountain, not another worker.
-
-## 18.2 Olympus
-
-Potentially useful only as a contrast or deployment/environment metaphor. Do not create an Olympus component merely because OTHRYS exists.
-
-## 18.3 Muse / Muses
-
-Because the Muses are daughters of Mnemosyne, they are attractive names for specialized knowledge/cultural outputs. But this should not become an excuse for nine unnecessary services. Reserve until real specialization exists.
-
-## 18.4 Cyclopes
-
-The elder Cyclopes are divine smiths associated with forging divine weapons. They may have potential as specialized fabrication/tooling workers under Hephaestus, but the concept overlaps Hands/builders. Candidate only.
-
-Possible technical mapping:
-
-**specialized deterministic fabrication workers / toolsmiths**.
-
-## 18.5 Athena
-
-Potential associations: strategy, craft, disciplined intelligence. High collision risk with planning, Themis, Hephaestus and GPT control. Leave unused unless a precise domain emerges.
-
-## 18.6 Metis
-
-Association: cunning wisdom/counsel; swallowed by Zeus in common myth. Potential for strategic reasoning, but high collision with planning/Prometheus/Coeus. Reserve only as a name pool entry.
-
-## 18.7 Argus Panoptes
-
-"All-seeing" guardian with many eyes. Strong candidate for observability/monitoring if Visual Control/Theia do not own that space. Collision risk is significant.
-
-## 18.8 Chiron
-
-Wise centaur and teacher of heroes. Excellent potential name for tutoring/training/mentorship systems. For OTHRYS education or Study Buddy architecture this is a semantically strong reserve.
-
-Technical mirror candidate: **adaptive tutor / training authority / curriculum mentor**.
-
-## 18.9 Daedalus
-
-Master craftsman/inventor. Attractive for design/prototyping, but overlaps Hephaestus and carries a cautionary mythological story about creations and escape. Candidate for specialized design/prototyping only.
-
-## 18.10 Ariadne
-
-Thread through the labyrinth. Excellent potential for navigation, traceability, debugging paths, dependency traversal or guided workflows.
-
-Technical mirror candidate: **trace/navigation/explainability path service**.
-
-## 18.11 Janus — NOT GREEK
-
-Janus is Roman, not Greek. If ever considered, the book must mark the cultural boundary explicitly. OTHRYS should not silently mix pantheons.
-
----
-
-# 19. THE CURRENT OTHRYS MYTHOLOGICAL INDEX
-
-This section mirrors the current canonical project registry and established Hyperion doctrine.
-
-| OTHRYS name | Myth class | Current OTHRYS role | Technical term |
-|---|---|---|---|
-| **Hyperion** | Original Titan | Economic intelligence/business/opportunity/commercial domain | Venture/product/business intelligence control plane |
-| **Mnemosyne** | Original Titaness | Knowledge governance / institutional memory | Knowledge-management and durable-memory authority |
-| **Rhea** | Original Titaness | Care / vitality stewardship | System-health/sustainability stewardship |
-| **Kronos** | Original Titan | Lifecycle / heartbeat / supervision contracts | Scheduler/lifecycle/watchdog authority |
-| **Themis** | Original Titaness | Trust/order/policy doctrine | Governance/policy/admission-control layer |
-| **Prometheus** | Iapetionid, Titan-descendant | Intelligence / evidence discovery and evaluation | Research/discovery/intelligence pipeline |
-| **Atlas** | Iapetionid, Titan-descendant | Derived knowledge and system map workspace | Knowledge graph/system model/architecture map |
-| **Hephaestus** | Olympian | Engineering authority | Build/implementation authority |
-| **Hermes** | Olympian | Universal communications contracts / message lifecycle | Messaging/communication abstraction |
-| **Talos** | Bronze guardian | Verification / evidence authority | Independent verification/evidence gate |
-| **Hecatoncheires** | Primordial giants | Security posture | Defense-in-depth / layered security posture |
-| **Othrys** | Mythic mountain | Ecosystem identity / OS | Overall control plane/ecosystem |
-
-### Non-Greek canonical systems that deliberately coexist
-
-- Trust Canal
-- Factory
-- Mycelium
-- Command Deck
-- Switchyard
-- Keymaster
-- Visual Control
-
-This is healthy. Not every system needs a mythological name.
-
----
-
-# 20. AVAILABLE / RESERVED NAME BANK
-
-## Tier A — strongest future matches
-
-### Iapetus
-**Reserve for:** capability evolution, lineage, inheritance, extinction.
-
-### Epimetheus
-**Reserve for:** retrospectives, postmortems, outcome learning.
-
-### Theia
-**Reserve for:** perception/computer vision/multimodal observation if Visual Control grows into a major domain.
-
-### Oceanus
-**Reserve for:** integration/data-flow fabric if Hermes alone becomes insufficient.
-
-### Chiron
-**Reserve for:** adaptive teaching/training/mentoring.
-
-### Ariadne
-**Reserve for:** traceability, guided paths, dependency/debug navigation.
-
-## Tier B — promising but collision-prone
-
-### Coeus
-Reasoning/inquiry/epistemology.
-
-### Phoebe
-Forecasting/scenario intelligence.
-
-### Argus Panoptes
-Observability/all-seeing monitoring.
-
-### Cyclopes
-Specialized fabrication/tool workers.
-
-### Daedalus
-Design/prototyping/invention.
-
-### Muses
-Specialized knowledge/creative disciplines under Mnemosyne.
-
-## Tier C — keep available
-
-### Tethys
-Source/provisioning metaphor; no compelling gap yet.
-
-### Helios
-Illumination/public visibility; broad and collision-prone.
-
-### Selene
-Periodic/night/batch cycle; weak need currently.
-
-### Eos
-Launch/emergence/dawn; attractive but generic.
-
-### Leto / Asteria / Hecate / Astraeus / Pallas / Perses
-Rich mythological names, but no current architectural need. Do not preassign.
-
----
-
-# 21. THE THREE MIRRORED TREES
-
-This is the central teaching view.
-
-## 21.1 Tree A — Mythological genealogy
-
-```text
-GAIA + OURANOS
+ARGUS
+= OBSERVABILITY
 │
-├── TWELVE TITANS
-│   │
-│   ├── HYPERION + THEIA
-│   │   ├── HELIOS
-│   │   ├── SELENE
-│   │   └── EOS
-│   │
-│   ├── IAPETUS + CLYMENE/ASIA [variant traditions]
-│   │   ├── ATLAS
-│   │   ├── PROMETHEUS
-│   │   ├── EPIMETHEUS
-│   │   └── MENOETIUS
-│   │
-│   ├── KRONOS + RHEA
-│   │   └── major Olympian generation
-│   │       ├── ZEUS
-│   │       ├── HERA
-│   │       ├── POSEIDON
-│   │       ├── HADES
-│   │       ├── DEMETER
-│   │       └── HESTIA
-│   │
-│   ├── OCEANUS + TETHYS
-│   │   └── Rivers / Oceanids
-│   │
-│   ├── COEUS + PHOEBE
-│   │   ├── LETO
-│   │   └── ASTERIA
-│   │
-│   ├── CRIUS
-│   │   ├── ASTRAEUS
-│   │   ├── PALLAS
-│   │   └── PERSES
-│   │
-│   ├── THEMIS
-│   └── MNEMOSYNE
-│       └── MUSES [with Zeus]
-│
-├── CYCLOPES
-└── HECATONCHEIRES
-
-Later Olympian layer includes HEPHAESTUS and HERMES.
-Other mythic beings include TALOS.
+├── host health
+├── service health
+├── provider health
+├── model health
+├── mission state
+├── latency
+├── resource use
+├── errors
+├── alerts
+├── anomaly observation
+└── dashboards
 ```
 
-## 21.2 Tree B — OTHRYS semantic tree
+Boundary law:
 
-This tree describes OTHRYS concepts, not literal mythological parentage.
+> **ARGUS SEES. TALOS JUDGES. HEPHAESTUS REPAIRS.**
+
+Argus should not authorize action simply because he observed a condition.
+
+---
+
+## 14.3 Chiron — STRONG FUTURE CANDIDATE
+
+**Mythic association:** exceptional teacher and trainer of heroes.  
+**Potential OTHRYS role:** adaptive education and capability training.  
+**Technical mirror:** tutoring engine + competency graph + assessment/adaptive curriculum.
+
+Potential tree:
+
+```text
+CHIRON
+= LEARNING / TRAINING
+│
+├── learner model
+├── competency graph
+├── curriculum planning
+├── lesson generation
+├── exercises
+├── assessment
+├── gap detection
+├── spaced repetition
+├── adaptation
+└── mastery evidence
+```
+
+This could eventually become the architecture behind Study Buddy rather than merely a product name.
+
+Question Chiron answers:
+
+> What does this learner need to master next, and how do we prove they mastered it?
+
+---
+
+## 14.4 Daedalus — CANDIDATE WITH REAL TECHNICAL VACANCY
+
+**Mythic association:** master craftsman, designer, inventor and architect.  
+**Potential OTHRYS role:** design/prototyping authority before implementation.  
+**Technical mirror:** solution architecture + prototyping + design authority.
+
+Natural chain:
+
+```text
+DAEDALUS   designs
+    ↓
+HEPHAESTUS builds
+    ↓
+TALOS      verifies
+```
+
+The current OTHRYS project model already distinguishes a designer role from builder/reviewer concepts. That makes Daedalus structurally interesting.
+
+Do not activate until it is decided whether design deserves persistent authority or remains a dynamic role.
+
+---
+
+## 14.5 Charon — CANDIDATE
+
+**Mythic association:** ferryman controlling passage across a boundary to the underworld.  
+**Potential OTHRYS role:** controlled transitions across hard environment/trust boundaries.  
+**Technical mirror:** deployment promotion, environment transition, quarantine release, secure crossing gateway.
+
+Possible transitions:
+
+```text
+DEV → TEST → STAGING → PROD
+UNTRUSTED → QUARANTINE → QUALIFIED
+LOCAL → REMOTE
+DRAFT → CANONICAL
+```
+
+Collision risk with Trust Canal is high. Charon may be better used as a specific crossing mechanism rather than authority.
+
+---
+
+## 14.6 Hecate — CANDIDATE
+
+**Mythic association:** crossroads, thresholds, liminal spaces, torches; later magical associations.  
+**Potential OTHRYS role:** multi-path decision junctions or boundary navigation.  
+**Technical mirror:** routing decision point / policy-based branch selector.
+
+Collision risk with Switchyard and Trust Canal is significant. Keep unused unless a unique threshold role appears.
+
+---
+
+## 14.7 Cyclopes — CANDIDATE CLASS, NOT NECESSARILY ONE SYSTEM
+
+The Cyclopes are divine craftsmen in important traditions and natural associates of forging/weapon construction.
+
+Potential OTHRYS use:
+
+**specialized fabrication workers under Hephaestus**, especially deterministic/tool-heavy builders.
+
+Possible metaphor:
+
+```text
+HEPHAESTUS = engineering authority
+CYCLOPES   = specialized forge workers
+HANDS      = capability slots / specializations
+MODELS     = replaceable labor occupying qualified slots
+```
+
+Do not over-layer the metaphor unless it improves actual orchestration.
+
+---
+
+# 15. THE CURRENT OTHRYS RELATIONSHIP GRAPH
+
+This is not genealogy. It is operational architecture expressed in OTHRYS names.
+
+```text
+                        OPERATOR / CONTROL
+                              │
+                              ▼
+                       THEMIS DOCTRINE
+                        TRUST CANAL
+                    policy / admission
+                              │
+                              ▼
+                         WORK / MISSION
+                              │
+               ┌──────────────┼──────────────┐
+               │              │              │
+               ▼              ▼              ▼
+         PROMETHEUS       SWITCHYARD      HYPERION
+       discovery/evidence labor routing  value/economics
+               │              │              │
+               │              ▼              │
+               │         HEPHAESTUS           │
+               │            build             │
+               │              │              │
+               └───────┐      ▼      ┌───────┘
+                       │    TALOS     │
+                       │ verification│
+                       └──────┬───────┘
+                              │
+               ┌──────────────┼──────────────┐
+               ▼              ▼              ▼
+           MNEMOSYNE         ATLAS           RHEA
+             memory        system map       vitality
+               │              │              │
+               └──────────────┼──────────────┘
+                              │
+                            KRONOS
+                     lifecycle / heartbeat
+                              │
+                    HERMES / MYCELIUM
+                 communications / routing
+```
+
+This is a conceptual system relationship graph, not a claim that every arrow is currently implemented as one concrete runtime call.
+
+---
+
+# 16. THE FUTURE LEARNING LOOP — POTENTIAL, NOT CURRENT CANON
+
+The strongest natural extension discovered through the genealogy is a closed experience-learning loop.
+
+```text
+                ┌─────────────────────────────┐
+                │                             │
+                ▼                             │
+          PROMETHEUS                          │
+      discover / anticipate                   │
+                │                             │
+                ▼                             │
+       PLAN / BUILD / ACT                     │
+                │                             │
+                ▼                             │
+              TALOS                           │
+         verify evidence                      │
+                │                             │
+                ▼                             │
+             REALITY                          │
+                │                             │
+                ▼                             │
+          EPIMETHEUS                          │
+       learn from outcome                     │
+                │                             │
+                ▼                             │
+          MNEMOSYNE                           │
+         preserve lesson                      │
+                │                             │
+                ▼                             │
+             ATLAS                            │
+       integrate relationships                │
+                │                             │
+                ▼                             │
+           IAPETUS ?                          │
+   evolve capability if required              │
+                │                             │
+                └─────────────────────────────┘
+```
+
+Surrounding services could eventually be:
+
+```text
+ARGUS     watches the loop
+ARIADNE   traces the loop
+THEMIS    constrains the loop
+RHEA      keeps the loop healthy
+KRONOS    supervises its lifecycle
+HERMES    carries messages
+HEPHAESTUS implements changes
+HYPERION  evaluates economic value
+MENOETIUS flags dangerous excess
+```
+
+This is a **potential architecture map**, not authorization to build all of these systems.
+
+---
+
+# 17. THE TECHNICAL MIRROR — FULL PLAIN-LANGUAGE TREE
+
+This section is deliberately stripped of mythology.
+
+A teacher should be able to read only this section and understand the architecture direction.
 
 ```text
 OTHRYS OS
 │
-├── GOVERNANCE / AUTHORITY
-│   ├── THEMIS [doctrine]
-│   │   └── Trust Canal [admission mechanism]
-│   └── TALOS [independent evidence authority]
+├── OPERATOR / CONTROL PLANE
+│   ├── policy and admission control
+│   ├── work/mission lifecycle
+│   └── operating-mode governance
 │
-├── ENGINEERING
-│   └── HEPHAESTUS
-│       └── Hands [qualified engineering roles; pattern]
+├── INTELLIGENCE & KNOWLEDGE
+│   ├── external research / evidence discovery
+│   ├── persistent institutional memory
+│   ├── derived knowledge graph / architecture map
+│   └── [future] retrospective outcome learning
+│
+├── ENGINEERING & VERIFICATION
+│   ├── build / implementation authority
+│   ├── model/tool capability routing
+│   ├── independent evidence verification
+│   └── [future] design/prototyping authority
+│
+├── OPERATIONS
+│   ├── lifecycle / heartbeat supervision
+│   ├── system vitality / resource health
+│   ├── communication/message lifecycle
+│   ├── internal routing
+│   ├── credential custody
+│   ├── visual observation
+│   └── [future] unified observability
+│
+├── BUSINESS / PRODUCT INTELLIGENCE
+│   ├── opportunity discovery
+│   ├── product experiments
+│   ├── narrative/IP development
+│   ├── media production
+│   ├── distribution/growth
+│   ├── experiment design
+│   ├── signal interpretation
+│   ├── scaling
+│   ├── pricing/monetization design
+│   ├── revenue gating
+│   ├── portfolio allocation
+│   └── IP/asset management
+│
+├── SECURITY & TRUST
+│   ├── admission/policy boundary
+│   ├── evidence verification
+│   ├── credential boundaries
+│   └── distributed security posture
+│
+└── FUTURE EVOLUTION / LEARNING
+    ├── execution traceability / provenance
+    ├── post-action retrospectives
+    ├── capability lineage/evolution
+    ├── adaptive education/training
+    ├── multimodal perception
+    ├── external integration fabric
+    └── autonomy hazard detection
+```
+
+---
+
+# 18. MYTHOLOGY ↔ OTHRYS ↔ TECHNICAL TRANSLATION TABLE
+
+| Mythological name | OTHRYS meaning | Technical translation | Status |
+|---|---|---|---|
+| Hyperion | value/business/opportunity | business & venture intelligence control plane | ACTIVE |
+| Prometheus | discovery/forethought | external research & evidence discovery | ACTIVE |
+| Atlas | system/world map | derived knowledge graph / architecture map | ACTIVE |
+| Mnemosyne | institutional memory | knowledge governance / persistent memory | ACTIVE |
+| Rhea | vitality/care | reliability & resource-health stewardship | ACTIVE |
+| Kronos | lifecycle/heartbeat | supervisor / scheduler / lifecycle manager | ACTIVE |
+| Themis | law/trust doctrine | policy / admission / governance | CONCEPTUAL |
+| Hephaestus | forge/build | engineering authority | ACTIVE |
+| Talos | guardian/verification | independent verifier / evidence authority | ACTIVE |
+| Hermes | messenger | communications/message lifecycle | ACTIVE_SUPPORTING |
+| Hecatoncheires | many-handed defensive force | distributed security posture | ACTIVE_SUPPORTING |
+| Iapetus | lineage/evolution | capability evolution/version genealogy | RESERVED |
+| Epimetheus | hindsight | retrospective/outcome-learning engine | RESERVED |
+| Menoetius | reckless excess | autonomy hazard/hubris sentinel | NEGATIVE_ARCHETYPE |
+| Theia | sight/perception | multimodal perception/computer vision | RESERVED |
+| Oceanus | surrounding flow | external integration/data-flow fabric | CANDIDATE |
+| Coeus | inquiry/intellect association | epistemic/reasoning-method layer | CANDIDATE |
+| Phoebe | prophetic/radiant association | prediction/forecasting | UNUSED/COLLISION_RISK |
+| Tethys | source/maternal waters | source/provisioning management | UNUSED/CANDIDATE |
+| Ariadne | thread through labyrinth | tracing/provenance/explainability | RESERVED CANDIDATE |
+| Argus Panoptes | all-seeing watcher | observability/telemetry | RESERVED CANDIDATE |
+| Chiron | trainer/teacher | adaptive tutoring/competency system | CANDIDATE |
+| Daedalus | designer/inventor | design/prototyping/solution architecture | CANDIDATE |
+| Charon | controlled crossing | boundary/environment transition gateway | CANDIDATE |
+| Hecate | crossroads/threshold | branch/routing/threshold decision | COLLISION_RISK |
+| Cyclopes | divine craftsmen | specialized build workers | CANDIDATE CLASS |
+
+---
+
+# 19. RELATION TYPES FOR THE FUTURE KNOWLEDGE GRAPH
+
+The Theogony must eventually model different edge types rather than drawing every relationship as the same line.
+
+Canonical relation vocabulary should include at least:
+
+## 19.1 Mythological relations
+
+- `PARENT_OF`
+- `CHILD_OF`
+- `SIBLING_OF`
+- `CONSORT_OF`
+- `DESCENDED_FROM`
+- `MYTHICALLY_ASSOCIATED_WITH`
+
+## 19.2 OTHRYS architectural relations
+
+- `GOVERNS`
+- `ADMITS`
+- `BUILDS`
+- `VERIFIES`
+- `OBSERVES`
+- `INFORMS`
+- `REMEMBERS`
+- `MAPS`
+- `ROUTES`
+- `COMMUNICATES`
+- `CARES_FOR`
+- `SUPERVISES_LIFECYCLE_OF`
+- `EVALUATES_VALUE_OF`
+- `TRACES`
+- `LEARNS_FROM`
+- `EVOLVES`
+- `DEPENDS_ON`
+- `PRODUCES_EVIDENCE_FOR`
+
+## 19.3 Status and semantic fields
+
+Every graph node should eventually support:
+
+```yaml
+id:
+mythological_name:
+alternate_names: []
+greek_transliteration:
+mythological_class:
+mythological_domain:
+mythological_family: []
+etymology_or_meaning:
+etymology_confidence:
+othrys_status:
+othrys_role:
+technical_role:
+authority_class:
+current_evidence:
+relations: []
+mount_location:
+collision_risks: []
+future_potential: []
+notes:
+```
+
+One graph should generate the Pantheon, Theogony, technical tree and Mount Othrys visualization.
+
+---
+
+# 20. MOUNT OTHRYS — FUTURE VISUAL ARCHITECTURE
+
+The eventual visualization should be explorable rather than a static family-tree image.
+
+## 20.1 View modes
+
+### GENEALOGY
+Shows actual mythological descent and family relationships.
+
+### MYTHOLOGY
+Shows stories, domains, name meanings, symbols, allies, enemies, variants.
+
+### OTHRYS
+Shows current components, authorities, candidate concepts and architectural relations.
+
+### MACHINE
+Replaces mythological names with ordinary engineering terminology.
+
+### FLOW
+Animates actual information/work paths.
+
+### STATUS
+Shows active, degraded, gated, offline, candidate, experimental or unavailable systems.
+
+### HISTORY
+Shows when systems appeared, were renamed, absorbed, retired, or evolved.
+
+## 20.2 Proposed spatial vocabulary
+
+These are visualization concepts, not runtime hierarchy.
+
+- **Summit:** operator/control/policy.
+- **Forge:** Hephaestus and engineering.
+- **Library / Museums:** Mnemosyne durable memory.
+- **Atlas Chamber / Map Room:** derived system knowledge.
+- **Observatory:** future Argus/Theia observation domains.
+- **Labyrinth:** execution graph and Ariadne traces.
+- **Nursery / Incubator:** immature Oros/products before release/monetization.
+- **Gates:** Trust Canal / admission boundaries.
+- **Roads:** Hermes communication paths.
+- **Trails / roots:** Mycelium internal routing.
+- **Clock towers / beacons:** Kronos heartbeat/lifecycle.
+- **Sanctuary / care spaces:** Rhea system vitality.
+- **Vault:** protected IP/assets and secrets as appropriate to separate systems.
+- **Market-facing cliffs/harbor:** Hyperion's external economic horizon.
+- **Ocean:** external APIs/data/services if Oceanus ever becomes canonical.
+
+## 20.3 Interaction example
+
+Clicking Prometheus could reveal:
+
+```text
+PROMETHEUS
+Son of Iapetus · Brother of Atlas, Epimetheus, Menoetius
+Traditional name meaning: Forethought
+
+OTHRYS
+Intelligence / evidence discovery and evaluation
+
+TECHNICAL
+External research and evidence-discovery pipeline
+
+RELATIONSHIPS
+→ sends qualified discoveries toward knowledge/evaluation
+→ informs Mnemosyne/Atlas
+→ supplies candidate opportunities to Hyperion
+→ may trigger engineering investigation through governed work
+← receives lessons from future retrospective loop
+```
+
+Switching to MACHINE view would display the same node as:
+
+```text
+EXTERNAL INTELLIGENCE PIPELINE
+research / evidence discovery / technology radar
+```
+
+Same graph. Different vocabulary.
+
+---
+
+# 21. POTENTIAL MAP — PRIORITY BY NATURAL FIT
+
+This map ranks candidates by **semantic fit + real architectural need**, not mythological fame.
+
+## Tier A — natural, high-value future fits
+
+### Ariadne
+Need: end-to-end traceability/provenance.  
+Why natural: thread through labyrinth is almost exactly the debugging/trace metaphor.  
+Promotion condition: OTHRYS has enough distributed missions/agents that causal reconstruction becomes difficult.
+
+### Epimetheus
+Need: post-action learning.  
+Why natural: explicit counterpart of Prometheus/Forethought.  
+Promotion condition: OTHRYS routinely executes missions and has enough outcome history to learn from them.
+
+### Argus Panoptes
+Need: unified observability.  
+Why natural: many-eyed watcher.  
+Promotion condition: host/model/service/mission telemetry becomes fragmented enough to require one observation plane.
+
+### Iapetus
+Need: capability lineage/evolution.  
+Why natural: father of Prometheus/Atlas/Epimetheus/Menoetius and clean genealogy metaphor.  
+Promotion condition: OTHRYS manages competing generations of agents, prompts, tools, workflows or capability packs.
+
+### Chiron
+Need: adaptive learning/training.  
+Why natural: teacher/trainer of heroes.  
+Promotion condition: Study Buddy/OTHRYS learning becomes a generalized competency engine rather than one product.
+
+## Tier B — strong but dependent on architecture growth
+
+### Theia
+Potential: multimodal perception/computer vision.  
+Promotion condition: Visual Control expands into a full perception platform.
+
+### Daedalus
+Potential: design/prototyping authority.  
+Promotion condition: designer authority becomes a persistent independent role rather than temporary reasoning work.
+
+### Oceanus
+Potential: integration/external data fabric.  
+Promotion condition: clean separation from Hermes/Mycelium and sufficient connector/stream complexity.
+
+## Tier C — useful name bank, no current need
+
+- Coeus — epistemic/reasoning methodology.
+- Charon — controlled boundary crossing.
+- Cyclopes — specialized engineering workers.
+- Helios — broad illumination.
+- Selene — periodic/background/night-cycle observation.
+- Eos — emergence/launch/readiness.
+
+## Tier D — collision-prone / keep unused
+
+- Phoebe — forecasting overlaps existing discovery/Oracle functions.
+- Tethys — source/provisioning overlaps Oceanus/Rhea.
+- Hecate — crossroads/routing overlaps Switchyard/Trust Canal.
+- Apollo — knowledge/light/prophecy/music is too broad and would collide with multiple domains.
+- Athena — strategy/wisdom/craft is too broad and likely collides with planner/design/engineering roles.
+- Zeus — supreme authority metaphor is undesirable unless OTHRYS ever has a precisely defined constitutional root authority; avoid casual use.
+
+---
+
+# 22. WHAT SHOULD REMAIN NON-MYTHOLOGICAL
+
+The mythology is useful only while it improves cognition.
+
+Names such as these are already excellent technical metaphors:
+
+- Switchyard
+- Trust Canal
+- Factory
+- Command Deck
+- Keymaster
+- Visual Control
+- Mycelium
+- Nursery / Incubator
+- Garden
+- Quarry
+
+They should not be translated into Greek names simply for consistency.
+
+A mixed vocabulary is acceptable when each term is strong and understandable.
+
+---
+
+# 23. SEMANTIC BOUNDARIES — PREVENTING GOD-SOUP
+
+OTHRYS must protect conceptual separation.
+
+```text
+PROMETHEUS  discovers
+EPIMETHEUS  learns after action       [future]
+MNEMOSYNE   remembers
+ATLAS       relates/maps
+THEIA       perceives                  [future]
+ARGUS       continuously observes      [future]
+ARIADNE     traces                     [future]
+THEMIS      governs/admission doctrine
+HEPHAESTUS  builds
+DAEDALUS    designs                    [future]
+TALOS       verifies
+HERMES      communicates
+KRONOS      supervises lifecycle
+RHEA        protects vitality
+HYPERION    evaluates economic value
+IAPETUS     evolves capabilities       [future]
+CHIRON      trains/teaches             [future]
+MENOETIUS   names dangerous excess     [future hazard class]
+```
+
+If two names cannot be distinguished in one sentence, at least one probably does not deserve a separate component.
+
+---
+
+# 24. TEACHER TRANSLATION — “WHAT THE HELL IS OTHRYS?”
+
+## 24.1 Thirty-second mythological version
+
+OTHRYS is a personal AI/software operating architecture whose components use Greek mythological names as a memory system. Prometheus discovers information, Mnemosyne preserves institutional memory, Atlas maps knowledge, Hephaestus builds, Talos verifies, Kronos supervises lifecycle, Rhea watches system vitality, Hermes handles communications, and Hyperion evaluates business value. The mythology makes a large architecture easier to remember, but every name has a plain technical equivalent.
+
+## 24.2 Thirty-second technical version
+
+OTHRYS is a modular AI-assisted control plane for research, knowledge management, engineering, verification, model/tool routing, lifecycle supervision, communications, product experimentation and business intelligence. It separates discovery, memory, derived knowledge, implementation, verification, policy, operations and economic evaluation so each can evolve independently and be audited.
+
+## 24.3 One-line version
+
+> **OTHRYS IS A MODULAR AI OPERATING ARCHITECTURE WITH A GREEK-MYTHOLOGY MNEMONIC LAYER AND A ONE-TO-ONE TECHNICAL MIRROR.**
+
+---
+
+# 25. NAMING DECISION TEST
+
+Before adding another Greek name, answer all of these:
+
+1. What exact architectural problem needs a name?
+2. Is that problem large and durable enough to deserve a persistent identity?
+3. Does an existing component already own it?
+4. What is the plain technical term?
+5. What does the mythological figure actually represent in classical tradition?
+6. Are we relying on dubious etymology because it conveniently fits?
+7. Does the family/story relationship add useful semantics?
+8. Can a teacher understand it after one sentence of translation?
+9. Does it create an authority collision?
+10. Would a plain technical name actually be better?
+
+Promotion law:
+
+> **ARCHITECTURAL NEED → TECHNICAL DEFINITION → BOUNDARY CHECK → MYTHOLOGICAL FIT → CANONICAL NAME.**
+
+Never reverse that order.
+
+---
+
+# 26. POTENTIAL CANONICAL GRAPH OBJECT
+
+If/when the visual Theogony is implemented, mythology should move from prose-only documentation into a machine-readable graph while this book remains the human canonical reference.
+
+Possible conceptual object:
+
+```yaml
+entity:
+  id: prometheus
+  display_name: Prometheus
+  alternate_names:
+    - Promêtheus
+  class: iapetionid
+  mythology:
+    parents:
+      - iapetus
+      - clymene
+    siblings:
+      - atlas
+      - epimetheus
+      - menoetius
+    meaning:
+      label: Forethought
+      confidence: high
+  othrys:
+    status: ACTIVE
+    role: Intelligence / evidence discovery and evaluation
+    technical_role: External research and evidence-discovery pipeline
+  relations:
+    - type: INFORMS
+      target: mnemosyne
+    - type: INFORMS
+      target: atlas
+    - type: SUPPLIES_CANDIDATES_TO
+      target: hyperion
+  visualization:
+    region: intelligence
+    mountain_location: null
+```
+
+The schema is potential only. It is not implementation authority.
+
+---
+
+# 27. CURRENT / AVAILABLE / MISSING SUMMARY
+
+## Current and clearly established
+
+- Hyperion — economic/business intelligence
+- Prometheus — discovery/intelligence
+- Atlas — derived knowledge/system map
+- Mnemosyne — institutional memory
+- Rhea — vitality/care
+- Kronos — lifecycle/heartbeat
+- Hephaestus — engineering/build authority
+- Talos — independent verification
+- Hermes — communications
+- Hecatoncheires — security posture concept
+- Themis — doctrinal governance/trust layer, concretely represented through Trust Canal
+
+## Strong missing capabilities that naturally click with mythology
+
+- **Ariadne — traceability/provenance**
+- **Epimetheus — post-action learning**
+- **Argus — observability**
+- **Chiron — adaptive teaching/training**
+- **Iapetus — capability lineage/evolution**
+
+## Plausible later domains
+
+- Theia — perception
+- Daedalus — design/prototyping
+- Oceanus — integration fabric
+- Charon — controlled transitions
+
+## Intentionally unfilled / weak need
+
+- Coeus
+- Phoebe
+- Tethys
+- Crius remains absorbed
+- Hyperion's children remain unused unless a real architectural need emerges
+
+---
+
+# 28. THE GREAT POTENTIAL TREE
+
+This is the complete current + candidate map in one view. Square brackets denote status, not genealogy certainty.
+
+```text
+MOUNT OTHRYS / OTHRYS OS
+│
+├── GOVERNANCE / TRUST
+│   ├── Themis [CONCEPTUAL]
+│   │   └── Trust Canal [ACTIVE TECHNICAL SYSTEM]
+│   ├── Talos [ACTIVE] — evidence verification
+│   └── Hecatoncheires [ACTIVE SUPPORTING] — security posture
 │
 ├── INTELLIGENCE / KNOWLEDGE
-│   ├── PROMETHEUS — discovery/evaluation
-│   ├── MNEMOSYNE — institutional memory
-│   └── ATLAS — derived map/model
+│   ├── Prometheus [ACTIVE] — discovery / forethought
+│   ├── Mnemosyne [ACTIVE] — institutional memory
+│   ├── Atlas [ACTIVE] — derived knowledge / map
+│   ├── Epimetheus [RESERVED] — retrospective learning
+│   ├── Ariadne [RESERVED CANDIDATE] — traceability / provenance
+│   └── Coeus [CANDIDATE] — epistemic/reasoning method
 │
-├── ECONOMIC / PRODUCT
-│   └── HYPERION
+├── ENGINEERING
+│   ├── Hephaestus [ACTIVE] — build authority
+│   │   ├── Hands [POTENTIAL INTERNAL METAPHOR]
+│   │   └── Cyclopes [CANDIDATE worker class]
+│   ├── Daedalus [CANDIDATE] — design/prototyping
+│   └── Switchyard [ACTIVE TECHNICAL] — capability/model labor selection
+│
+├── OBSERVATION / OPERATIONS
+│   ├── Kronos [ACTIVE] — lifecycle/heartbeat
+│   ├── Rhea [ACTIVE] — vitality/care
+│   ├── Hermes [ACTIVE] — communications
+│   ├── Visual Control [ACTIVE TECHNICAL]
+│   ├── Theia [RESERVED] — perception umbrella
+│   ├── Argus [RESERVED] — observability
+│   ├── Keymaster [ACTIVE TECHNICAL] — credentials
+│   └── Mycelium [ACTIVE TECHNICAL] — routing trails
+│
+├── EVOLUTION / LEARNING
+│   ├── Iapetus [RESERVED] — capability lineage
+│   │   ├── Prometheus [ACTIVE]
+│   │   ├── Atlas [ACTIVE]
+│   │   ├── Epimetheus [RESERVED]
+│   │   └── Menoetius [NEGATIVE ARCHETYPE]
+│   └── Chiron [CANDIDATE] — adaptive training
+│
+├── EXTERNAL FLOWS
+│   ├── Oceanus [CANDIDATE] — integration fabric
+│   ├── Tethys [CANDIDATE] — sources/provisioning
+│   ├── Hermes [ACTIVE] — message transport
+│   └── Charon [CANDIDATE] — controlled boundary crossing
+│
+├── BUSINESS / PRODUCTS
+│   └── Hyperion [ACTIVE]
 │       ├── Prospector
 │       ├── Story Forge
 │       ├── Fishing Fleet
@@ -1027,339 +1777,109 @@ OTHRYS OS
 │       ├── Portfolio
 │       └── Vault
 │
-├── OPERATIONS
-│   ├── KRONOS — lifecycle/heartbeat/supervision
-│   ├── RHEA — vitality/care
-│   ├── HERMES — communications
-│   ├── Keymaster — credential boundary
-│   ├── Switchyard — capability/model selection
-│   └── Mycelium — routing
-│
-├── SECURITY
-│   └── HECATONCHEIRES — defense posture
-│
-└── PERCEPTION
-    └── Visual Control
-        └── THEIA [reserved potential umbrella]
+└── UNUSED / HOLD
+    ├── Crius [ABSORBED]
+    ├── Phoebe [COLLISION RISK]
+    ├── Helios [UNUSED]
+    ├── Selene [UNUSED]
+    ├── Eos [UNUSED]
+    ├── Hecate [COLLISION RISK]
+    └── other Greek names [UNCLAIMED UNTIL NEEDED]
 ```
 
-## 21.3 Tree C — Original technical architecture
+This tree is deliberately a **potential map**, not a build plan.
 
-This tree deliberately removes all mythology.
+---
+
+# 29. OPTIMIZATION OBSERVATIONS
+
+Several architectural improvements become visible when the mythology and technical tree are placed side by side.
+
+## 29.1 The biggest natural missing loop is hindsight
+
+Prometheus gives OTHRYS foresight/discovery. There is no equally explicit named owner for structured learning after reality happens. Epimetheus is therefore more than a clever name: it reveals a potential architectural gap.
+
+## 29.2 Traceability deserves first-class thought before autonomy increases
+
+As OTHRYS becomes more distributed, the ability to answer **why did this happen?** becomes increasingly important. Ariadne may eventually become critical infrastructure rather than optional visualization.
+
+## 29.3 Observation, perception and verification should remain separate
+
+Potential future split:
 
 ```text
-OTHRYS OS
-= AI-ASSISTED MODULAR CONTROL PLANE / OPERATING ECOSYSTEM
-│
-├── GOVERNANCE & TRUST PLANE
-│   ├── Policy / constitutional rules
-│   ├── Admission control / authorization
-│   └── Independent verification / evidence gates
-│
-├── ENGINEERING PLANE
-│   ├── Engineering authority
-│   ├── Builder/tool selection
-│   ├── Build execution
-│   ├── Testing
-│   ├── Integration
-│   ├── Repair/refactoring
-│   └── Artifact production
-│
-├── INTELLIGENCE & KNOWLEDGE PLANE
-│   ├── External research / evidence discovery
-│   ├── Institutional memory / knowledge governance
-│   ├── Derived knowledge graph
-│   ├── Architecture/system map
-│   └── [future] outcome-learning/postmortem engine
-│
-├── PRODUCT & ECONOMIC INTELLIGENCE PLANE
-│   ├── Opportunity discovery
-│   ├── IP/narrative development
-│   ├── Rapid product experimentation
-│   ├── Media/content production
-│   ├── Distribution/growth
-│   ├── Experiment design
-│   ├── Analytics/winner detection
-│   ├── Scaling/localization
-│   ├── Pricing/commercial design
-│   ├── Financial authorization/gating
-│   ├── Portfolio/resource allocation
-│   └── IP/provenance/asset preservation
-│
-├── OPERATIONS & RUNTIME PLANE
-│   ├── Scheduler/lifecycle manager
-│   ├── Heartbeat/watchdog/supervision
-│   ├── Health/vitality stewardship
-│   ├── Messaging/communications
-│   ├── Credential custody
-│   ├── Capability/model routing
-│   └── Work/colony routing
-│
-├── SECURITY PLANE
-│   ├── Defense in depth
-│   ├── Containment
-│   ├── Credential boundaries
-│   ├── Runtime guards
-│   └── Security posture evidence
-│
-├── PERCEPTION / OBSERVATION PLANE
-│   ├── Visual state observation
-│   ├── Screenshot/UI evidence
-│   └── [future] multimodal perception
-│
-└── [FUTURE, NOT ACTIVE]
-    ├── Capability evolution / lineage
-    ├── Structured hindsight / postmortems
-    ├── Runaway-autonomy / hubris detection
-    ├── Integration/data-flow fabric
-    ├── Explicit forecasting
-    └── Adaptive tutoring/training
+ARGUS = continuous system observation
+THEIA = interpretation of visual/multimodal sensory input
+TALOS = verification of claims/evidence
 ```
 
----
+Combining these would create an overpowered and hard-to-audit “watcher/judge” subsystem.
 
-# 22. THE TEACHER TRANSLATION TABLE
+## 29.4 Capability evolution should wait for actual generations
 
-If someone asks, **"What the hell is OTHRYS?"**, start here.
+Iapetus is powerful precisely because it should not be rushed. It becomes meaningful when OTHRYS can compare ancestry, mutations and fitness across capability generations.
 
-| OTHRYS term | Say this to an engineer/teacher |
-|---|---|
-| OTHRYS OS | Modular AI-assisted control plane and operating ecosystem |
-| Titan | Large durable domain authority / bounded architectural domain |
-| Arm | Major capability family inside a domain authority |
-| Hephaestus Hand | Qualified engineering execution role/slot |
-| Prometheus | Research, discovery and evidence-intelligence subsystem |
-| Mnemosyne | Institutional memory and knowledge-governance subsystem |
-| Atlas | Derived knowledge graph/system map workspace |
-| Hyperion | Business/product/venture intelligence and commercial control domain |
-| Kronos | Lifecycle, scheduler, heartbeat and supervision subsystem |
-| Rhea | Health/vitality/sustainable-operation stewardship |
-| Themis | Governance/policy doctrine |
-| Trust Canal | Admission-control/authority mechanism |
-| Hephaestus | Engineering/build authority |
-| Talos | Independent verification/evidence authority |
-| Hermes | Messaging and communication-contract subsystem |
-| Hecatoncheires | Layered security/defense posture |
-| Keymaster | Credential custody and secret-access boundary |
-| Switchyard | Deterministic capability/model/tool selector |
-| Mycelium | Work/routing fabric |
-| Visual Control | Visual observation/evidence subsystem |
-| Hyperion Prospector | Market/opportunity discovery |
-| Hyperion Story Forge | Narrative/IP generation system |
-| Hyperion Fishing Fleet | Rapid micro-product experimentation |
-| Hyperion Media Factory | Media production pipeline |
-| Hyperion Distributor | Distribution/growth routing |
-| Hyperion Laboratory | Experiment-design system |
-| Hyperion Oracle | Analytics/signal interpretation/winner detection |
-| Hyperion Magnifier | Scaling/localization/replication |
-| Hyperion Merchant | Pricing/commercial intelligence |
-| Hyperion Valve | Revenue authorization/financial gating |
-| Hyperion Portfolio | Resource allocation and bet management |
-| Hyperion Vault | IP/provenance/transferable asset management |
+## 29.5 The mythology itself can become a teaching interface
 
-### Thirty-second explanation
-
-**Mythological version:**
-
-OTHRYS is the mountain. Large domains are represented by mythological authorities. Prometheus scouts for knowledge, Mnemosyne remembers it, Atlas maps it, Hephaestus builds, Talos verifies, Kronos keeps lifecycle and heartbeat, Rhea protects vitality, Hermes communicates, Themis supplies governance doctrine, and Hyperion investigates and develops economic opportunity through specialized Arms.
-
-**Technical version:**
-
-OTHRYS is a modular AI-assisted control plane combining research, knowledge management, engineering orchestration, independent verification, lifecycle supervision, communications, security, product experimentation, analytics, commercial gating, and human-governed autonomy. Mythological names are aliases for bounded technical responsibilities.
-
----
-
-# 23. SYNONYM AND MEANING REGISTER
-
-Names should be searchable by both mythological and technical vocabulary.
-
-| Mythological name | Alternate spelling / synonym | Mythological semantic keyword | OTHRYS technical synonyms |
-|---|---|---|---|
-| Okeanos | Oceanus | encircling water, river/ocean | integration fabric, data flow, stream layer |
-| Koios | Coeus | inquiry/intellect association | reasoning, epistemology, hypothesis engine |
-| Krios | Crius | obscure Titan domain | absorbed legacy commercial function |
-| Hyperion | Hyperion | high/above, heavenly light | economic intelligence, venture intelligence, product/business control |
-| Iapetos | Iapetus | mortality/piercer interpretations | evolution, lineage, inheritance, succession |
-| Kronos | Cronus | Titan king | lifecycle, scheduler, heartbeat, supervisor |
-| Theia | Thea | sight/heavenly light | perception, computer vision, multimodal observation |
-| Rheia | Rhea | mother/flow associations | vitality, care, health stewardship |
-| Themis | Themis | law, custom, order | governance, policy, admission rules |
-| Mnemosyne | Mnemosyne | memory | institutional memory, knowledge governance |
-| Phoibe | Phoebe | bright/radiant, oracle lineage | forecasting, prediction, scenarios |
-| Tethys | Tethys | waters/source maternity | source provisioning, resource origins |
-| Prometheus | Promêtheus | forethought | research, discovery, intelligence |
-| Epimetheus | Epimêtheus | afterthought | retrospective, postmortem, hindsight |
-| Atlas | Atlas | bearer/supporter | knowledge graph, architecture map, system model |
-| Menoetius | Menoitios | rash force/pride | hubris sentinel, autonomy-risk detector |
-| Hephaestus | Hephaistos | smith/craft/fire | engineering/build authority |
-| Hermes | Hermes | messenger/boundaries/exchange | communications, messaging, protocol lifecycle |
-| Talos | Talus | bronze guardian | verifier, evidence gate, validation authority |
-| Hecatoncheires | Hekatonkheires | hundred-handed | defense-in-depth, layered security |
-| Chiron | Kheiron | wise teacher/healer | tutor, mentor, training system |
-| Ariadne | Ariadne | labyrinth thread | traceability, guided navigation, dependency path |
-| Argus Panoptes | Argos Panoptes | all-seeing guardian | observability, monitoring, visual surveillance of system state |
-
----
-
-# 24. ARCHITECTURAL RANKS — MYTH VS TECH
-
-OTHRYS mythology should communicate scale.
-
-| OTHRYS metaphor | Architectural meaning |
-|---|---|
-| **Mountain / Othrys** | Entire ecosystem/control plane |
-| **Titan / major deity authority** | Large durable bounded domain authority |
-| **Arm** | Major capability family inside a Titan |
-| **Hand** | Execution specialization/qualified role |
-| **System / organ** | Operational subsystem |
-| **Block** | Reusable capability/component |
-| **Agent / worker / builder** | Replaceable executor |
-| **Artifact** | Produced output/evidence/code/document/media |
-
-Important: mythological genealogy does **not** automatically determine software ownership.
-
-Prometheus and Atlas may be mythological sons of Iapetus while technically remaining peer systems until Iapetus is ever activated. Mythological parentage is a semantic relationship, not an automatic runtime dependency.
-
----
-
-# 25. NAMING GOVERNANCE
-
-Before introducing a new mythological name:
-
-1. Identify the real architectural gap.
-2. Write its plain technical name first.
-3. Define authority and boundaries.
-4. Search current OTHRYS for collisions.
-5. Check this mythology index.
-6. Research the mythological figure from reliable classical/reference sources.
-7. Record variant spellings and uncertain etymology.
-8. Explain why the metaphor fits.
-9. Explain where it does **not** fit.
-10. Produce the technical mirror.
-11. Decide rank: Titan, supporting authority, Arm, Hand, system, Block, worker, or merely a codename.
-12. Only then promote the name to canonical use.
-
-## 25.1 Anti-patterns
-
-Reject:
-
-- filling all Twelve Titans for symmetry;
-- naming a tiny utility after a Titan;
-- inventing fake Greek meanings;
-- treating modern pop-mythology summaries as primary canon;
-- assigning the same semantic domain to several gods;
-- changing architecture to fit genealogy;
-- mixing Greek and Roman identities without marking the distinction;
-- using mythology when a plain technical name is clearer;
-- creating new authorities because a cool name is available.
-
-## 25.2 Naming test
-
-A mythological name is good when all three statements are true:
+The eventual Mount Othrys visualization can teach both Greek mythology and software architecture simultaneously:
 
 ```text
-THE MYTH MAKES IT MEMORABLE.
-THE BOUNDARY MAKES IT SAFE.
-THE TECHNICAL MIRROR MAKES IT EXPLAINABLE.
+MYTH NAME
+   ↕
+STORY / FAMILY
+   ↕
+OTHRYS ROLE
+   ↕
+TECHNICAL CONCEPT
+   ↕
+LIVE IMPLEMENTATION / EVIDENCE
 ```
 
----
-
-# 26. POTENTIAL MAP — FUTURE DESTINATIONS
-
-This map is explicitly **non-canonical** until promoted.
-
-| Future technical need | Best mythological candidate | Why | Collision to resolve first |
-|---|---|---|---|
-| Capability evolution / agent lineage | **Iapetus** | Father of Prometheus, Atlas, Epimetheus, Menoetius; strong ancestry metaphor | Existing model registry/Switchyard |
-| Retrospectives / postmortems / lessons | **Epimetheus** | "Afterthought" is unusually exact | Talos, Mnemosyne |
-| Runaway autonomy / overconfidence detector | **Menoetius** | Mythic rashness/excessive pride | Themis/Talos/runtime guards |
-| Multimodal perception / computer vision | **Theia** | Sight/heavenly light | Visual Control, Talos |
-| Integration / external data fabric | **Oceanus** | World-encircling flow | Hermes, Mycelium |
-| Explicit forecasting/scenarios | **Phoebe** | Oracular/bright associations | Hyperion Oracle |
-| Deep inquiry / epistemology | **Coeus** | Traditional intellect/inquiry association | Prometheus, Atlas, Laboratory |
-| Adaptive tutoring/training | **Chiron** | Archetypal teacher of heroes | Study Buddy architecture |
-| Traceability/debug/dependency navigation | **Ariadne** | Thread through labyrinth | Atlas, observability tooling |
-| Full observability/watch layer | **Argus Panoptes** | All-seeing guardian | Theia/Visual Control |
-| Specialized fabrication workers | **Cyclopes** | Divine smiths | Hephaestus Hands |
-| Design/prototyping | **Daedalus** | Master inventor/craftsman | Hephaestus |
-
-Priority reservation recommendation:
-
-```text
-1. IAPETUS      — capability evolution
-2. EPIMETHEUS   — hindsight / outcome learning
-3. THEIA        — perception
-4. OCEANUS      — integration flow
-5. CHIRON       — education/training
-6. ARIADNE      — traceability/navigation
-```
-
-These are reservations, not a build plan.
+That makes the mythology useful rather than ornamental.
 
 ---
 
-# 27. SOURCE AND ETYMOLOGY POLICY
+# 30. FINAL LAWS
 
-For mythological facts, prefer:
+> **MYTHOLOGY PROVIDES THE LANGUAGE. OTHRYS PROVIDES THE MEANING. THE TECHNICAL MIRROR PROVIDES THE PROOF.**
 
-1. Primary ancient texts where available — especially Hesiod, Homer, Apollodorus, relevant hymns/tragedians/historians.
-2. Reputable classical reference works that expose their ancient citations.
-3. Modern secondary summaries only for orientation.
+> **KEEP THE EMPTY THRONES EMPTY UNTIL OTHRYS GROWS A PROBLEM LARGE ENOUGH TO DESERVE ONE.**
 
-For etymology:
+> **NOT EVERY SYSTEM NEEDS A GOD.**
 
-- distinguish literal Greek translation from later allegorical interpretation;
-- mark disputed/uncertain etymologies;
-- never retrofit an attractive English meaning and call it ancient fact;
-- preserve transliteration variants where useful.
+> **FAMILY IS NOT ARCHITECTURE; RELATIONSHIPS MUST BE TYPED.**
 
-Core research anchors used when establishing this edition include Hesiod's *Theogony* for the Uranides and Iapetionids, classical-reference material for Prometheus/Atlas/Iapetus/Themis/Theia, and the established Hecatoncheires tradition.
+> **PROMETHEUS LOOKS BEFORE. EPIMETHEUS LEARNS AFTER.**
 
----
+> **ARGUS SEES. TALOS JUDGES. HEPHAESTUS REPAIRS.**
 
-# 28. REFERENCE LAWS
+> **ARIADNE NEVER LOSES THE THREAD.**
 
-1. **MYTHOLOGY PROVIDES THE LANGUAGE. OTHRYS PROVIDES THE MEANING. THE TECHNICAL MIRROR PROVIDES THE PROOF.**
-2. **KEEP AN EMPTY THRONE EMPTY UNTIL A REAL ARCHITECTURAL DOMAIN DESERVES IT.**
-3. **MYTHOLOGICAL PARENTAGE DOES NOT AUTOMATICALLY CREATE SOFTWARE AUTHORITY.**
-4. **A NAME MUST NEVER BE MORE PRECISE THAN ITS ARCHITECTURE.**
-5. **DO NOT INVENT ETYMOLOGY TO JUSTIFY A DESIGN.**
-6. **PERMISSION IS NOT PROOF. PROOF IS NOT PERMISSION.**
-7. **THE SMITH IS AN AUTHORITY. THE HAMMER IS REPLACEABLE.**
-8. **PROMETHEUS LOOKS BEFORE. EPIMETHEUS LEARNS AFTER.**
-9. **THE BUILDER DOES NOT CERTIFY HIS OWN SWORD.**
-10. **NOT EVERY SYSTEM NEEDS A GOD.**
-11. **NAMES MAY BE RETIRED OR ABSORBED WHEN ARCHITECTURE IMPROVES.**
-12. **THE MYTH MUST REMAIN TRANSLATABLE INTO ORDINARY ENGINEERING LANGUAGE.**
+> **THEIA PERCEIVES. ATLAS MODELS. MNEMOSYNE REMEMBERS.**
 
----
+> **HEPHAESTUS BUILDS. TALOS VERIFIES. TRUST CANAL ADMITS.**
 
-# 29. FINAL REFERENCE
-
-The mythology layer exists because OTHRYS is easier to reason about when durable responsibilities have memorable identities.
-
-But the architecture must survive removal of every mythological name.
-
-If all Greek names were stripped away tomorrow, the technical mirror in this book should still describe a coherent system:
-
-- governance and admission control;
-- independent verification;
-- engineering authority and replaceable executors;
-- research and evidence discovery;
-- institutional memory and derived system knowledge;
-- lifecycle supervision and vitality;
-- communications;
-- security;
-- visual observation;
-- product, media and economic intelligence;
-- experimentation and analytics;
-- financial gating;
-- asset preservation;
-- and future room for evolution, hindsight, perception and integration fabrics.
-
-That is the test of the mythology.
-
-The names should make OTHRYS easier to remember, easier to navigate, and more meaningful — never harder to explain.
+> **A MYTHOLOGICAL NAME MUST ALWAYS HAVE A TECHNICAL TRANSLATION.**
 
 > **THE MOUNTAIN MAY BE MYTHOLOGICAL. THE MACHINE MUST BE TECHNICALLY LEGIBLE.**
+
+---
+
+# 31. REFERENCE INTENT
+
+`BOOK_OF_MYTHOLOGY.md` is the canonical human reference for the OTHRYS mythological naming layer.
+
+Future work may derive from it:
+
+- a machine-readable Pantheon/Theogony graph;
+- an interactive Mount Othrys map;
+- technical-only architecture diagrams;
+- genealogy visualizations;
+- status overlays;
+- live relationship overlays;
+- teaching material;
+- architecture onboarding material.
+
+Those derived views must point back to technical evidence and current OTHRYS registries rather than becoming a parallel source of architectural truth.
+
+**The mythology helps humans remember the mountain. The evidence tells us whether the machine actually works.**
