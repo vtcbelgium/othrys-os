@@ -1,0 +1,1 @@
+Temporary recovery marker: restore `BOOK_OF_FLIPSETS.md` to blob `f5ca8dd0ea903dff967e4d0962de5f64bbff0e1c` after an accidental full-file replacement on the feature branch. Delete this marker after recovery verification.
