@@ -382,7 +382,7 @@ Example:
 
 Another loop:
 
-    MIPI STORY FORGE
+    PEMBERTON STORY FORGE
           -> EXPLAINER FACULTIES
           -> HELIOS primary episode
           -> CLIPPING/REPURPOSING ARM
@@ -889,7 +889,7 @@ Signal ladder:
       -> PAY / REQUEST / DEPEND
 
 Not every property needs the last rung.
-Mipi may prove value through return/affection/series demand before any transaction.
+Pemberton may prove value through return/affection/series demand before any transaction.
 A practical explainer may prove value through search completion and successful task outcomes.
 
 ---
@@ -1130,7 +1130,7 @@ Reject:
 
 > **A CHILD'S ATTENTION IS NOT A RESOURCE TO MINE. EARN IT WITH SOMETHING WORTH WATCHING.**
 
-Mipi inherits this law.
+Pemberton inherits this law.
 
 ---
 
@@ -1252,38 +1252,54 @@ Detailed semantics and future admission criteria live in `theia/THEIA_CHILDREN_F
 
 ---
 
-## 30. STARTER PROPERTY A — INTERNAL CODENAME MIPI
+## 30. STARTER PROPERTY A — PEMBERTON
 
-**Mipi** is the internal working codename for Theia's first character/IP starter. The character concept is active; the public character/property name is deliberately unresolved and must not be treated as brand canon.
+**Pemberton** is Theia's first canonical original character/IP starter.
 
-Canonical concept seed:
+Canonical seed:
+- property ID: `theia.pemberton`;
 - species: cat;
 - gender/pronouns: he/him;
-- defining contradiction: extremely curious and extremely lazy;
-- adventure engine: curiosity gets him moving; laziness keeps trying to stop him;
-- recurring comic law: Mipi may fall asleep during an adventure, including at inconvenient moments;
-- tone: warm, funny, curious, adventurous;
+- coat: tuxedo cat;
+- body: chubby/round-bodied;
+- self-image: gentleman explorer;
+- defining contradiction: intensely curious and intensely lazy;
+- adventure engine: curiosity gets him moving; conservation of effort keeps trying to stop him;
+- secondary comic engine: dignity repeatedly collides with unmistakable cat behavior;
+- recurring pleasures: warmth, naps, comfortable surfaces, food and cola;
+- tone: warm, funny, curious, adventurous, mildly pompous;
 - educational potential: very high;
-- originality rule: inspired by broad European adventure-story mechanics, never copied characters/plots/expression.
+- originality rule: inspired by broad adventure/story mechanics, never copied characters, plots or expression.
 
-> **MIPI WANTS TO KNOW WHAT IS AROUND THE CORNER. MIPI ALSO VERY MUCH WANTS A NAP.**
+> **PEMBERTON MUST KNOW WHAT IS AROUND THE CORNER. HE WOULD SIMPLY PREFER THE CORNER TO COME TO HIM.**
 
-The irony is the engine.
+His tuxedo coat provides the visual formality naturally. Do not over-costume the joke.
 
-Mipi can support:
+The cola trait is canonical, with two hard boundaries:
+- the John Stith Pemberton/Coca-Cola connection is a historical easter egg, not an affiliation or brand dependency;
+- real caffeinated cola is not presented as appropriate for real cats. When Pemberton visibly drinks cola, it is a fictional cat-safe in-world analogue.
+
+Pemberton can support:
 - factual adventures;
 - geography;
 - history;
 - science;
+- engineering;
+- archaeology;
 - everyday-object mysteries;
 - folklore-with-evidence;
 - travel;
 - nature;
-- gentle emotional learning.
+- museums;
+- gentle critical thinking.
 
-The nap must remain character behavior, not a rigid every-episode template.
+The nap remains character behavior, not a rigid every-episode template.
 
-A dedicated starter bible lives in theia/properties/MIPI.md.
+Canonical property bible:
+- `theia/properties/PEMBERTON.md`
+
+Historical internal codename:
+- `theia/properties/MIPI.md` — retired compatibility pointer only.
 
 ---
 
