@@ -440,7 +440,24 @@ That would slowly reconstruct Media Factory inside Hyperion through side doors.
 
 ---
 
-## 19. REVIEW CONCLUSION
+## 19. LOCALIZATION INVESTMENT BOUNDARY — FIXED
+
+### Finding
+
+Theia's localization chapter still mixed two questions:
+- should OTHRYS invest in a language/market?
+- how should the media be localized well?
+
+### Refinement
+
+Hyperion/Magnifier owns the market/investment choice.
+Theia owns localization feasibility, adaptation, QA, rights/disclosure differences and derivative production.
+
+> **HYPERION CHOOSES THE MARKET. THEIA MAKES THE MEDIA NATIVE TO IT.**
+
+---
+
+## 20. REVIEW CONCLUSION
 
 The first refactor had the right central idea:
 
