@@ -37,12 +37,24 @@ Hyperion owns whether the experiment deserves oxygen, which commercial surfaces 
 
 ## 3. Primary economic flow
 
-    PROMETHEUS
+    PROMETHEUS / REALITY
       -> PROSPECTOR
-      -> [FISHING FLEET | THEIA | OTHER BUILD PATH]
-      -> DISTRIBUTOR / LABORATORY
-      -> ORACLE
-      -> MAGNIFIER
+      -> LABORATORY defines bounded experiment where needed
+      -> [FISHING FLEET | THEIA | OTHER BUILD PATH] executes domain work
+      -> domain evidence returns
+      -> DISTRIBUTOR interprets discovery economics where relevant
+      -> ORACLE interprets signal / winner state
+      -> MAGNIFIER proposes bounded expansion
+      -> PORTFOLIO allocates oxygen
+
+For Theia media specifically:
+
+    HYPERION opportunity + experiment contract
+      -> THEIA production
+      -> THEIA media evidence
+      -> HYPERION Distributor / Oracle / Portfolio interpretation
+
+Hyperion Arms do not call Theia's internal Story Forge, renderer, publisher or property state directly.
 
 Supporting economic path:
 
@@ -67,10 +79,12 @@ Hyperion Distributor owns:
 
 Theia owns media-specific:
 - file/platform packaging;
-- publishing workflow;
+- authorized publishing workflow;
 - title/thumbnail production tests as media artifacts;
-- cross-format media routing;
+- derivative/cross-format artifact production;
 - media telemetry collection.
+
+Distributor owns **audience/economic routing**. Theia owns **artifact derivation and native packaging**.
 
 Neither should duplicate the other.
 
