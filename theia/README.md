@@ -12,7 +12,7 @@ Canonical entry: ../BOOK_OF_THEIA.md
 - arms/BOOK_OF_CLIPPING.md — clipping/repurposing.
 - arms/BOOK_OF_EXPLAINER.md — animated/instructional explainers.
 - arms/BOOK_OF_STORY_FORGE.md — story, character and original IP.
-- properties/MIPI.md — first original character/IP starter.
+- properties/PEMBERTON.md — first original character/IP starter; canonical Book of Pemberton.
 - properties/CARTOON_DAD.md — first utility-first explainer property.
 - research/MEDIA_AUTOMATION_STUDY_2026-09-18.md — dated clipping/explainer automation, platform and monetization study.
 - research/ARCHITECTURE_REVIEW_2026-09-18.md — second-pass boundary/policy/IP audit and resolved findings.
