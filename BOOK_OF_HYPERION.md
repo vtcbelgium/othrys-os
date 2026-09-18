@@ -913,3 +913,80 @@ The target is not an autonomous spam cannon. The target is an **institutional me
 > **AUTOMATION SHOULD MAKE ORIGINAL, VERIFIED WORK CHEAPER TO PRODUCE — NOT MAKE GARBAGE CHEAPER TO DISTRIBUTE.**
 
 > **THE MEDIA FACTORY EXISTS TO DISCOVER DURABLE VALUE, NOT TO FEED AN ALGORITHM.**
+
+## 31. THEIA MEDIA-DOMAIN CANDIDATE BOUNDARY
+
+A new architectural pressure has emerged from the Pemberton animation work: recurring media production is becoming large enough to justify evaluating **Theia** as a dedicated media/perception/creative-production domain.
+
+This is a **candidate boundary**, not current authority.
+
+Current truth remains:
+- Hyperion owns the media opportunity/economic horizon;
+- Story Forge is currently a Hyperion Arm;
+- Media Factory is currently a Hyperion Arm;
+- Distributor and Vault remain Hyperion Arms;
+- BOOK_OF_MYTHOLOGY currently reserves Theia for multimodal perception/computer vision;
+- no admitted Theia runtime/service currently exists in repo truth.
+
+Therefore no current Hyperion authority is silently moved.
+
+### 31.1 Why the candidate exists
+
+The economic question and the creative-production question are becoming distinct:
+
+**Hyperion asks:**
+- Is this audience/property worth testing?
+- What evidence qualifies scale?
+- What does production cost?
+- Which distribution surface fits?
+- Is the property economically promising?
+- Should capital, attention or distribution increase?
+
+A future admitted media-domain Theia could ask:
+- How is the property canon expressed consistently?
+- How do script, storyboard, animatic, assets, audio and master relate?
+- Which creative dependencies changed?
+- Is a derivative faithful to the property?
+- How does production evidence map back to creative decisions?
+
+The separation may become useful because economic selection and creative manufacture have different failure modes.
+
+### 31.2 Proposed seam if Theia is ever admitted
+
+A future migration should preserve these boundaries:
+
+```text
+HYPERION
+opportunity + economics + commercial experiment + distribution intelligence + portfolio/scale
+        ↓
+THEIA [candidate]
+creative/media production control domain
+        ↓
+STORY / SCRIPT / STORYBOARD / ANIMATIC / ASSETS / MASTER / DERIVATIVES
+```
+
+Prometheus, Mnemosyne, Hephaestus, Talos, Trust Canal, Switchyard, Keymaster, Mycelium, Kronos, Rhea, Hermes and Atlas retain their own existing authority boundaries.
+
+Theia must not become a monolith that absorbs research, memory, build authority, verification, credentials, scheduling, node routing or economic authority.
+
+### 31.3 Migration law
+
+If Theia is admitted later:
+
+1. define the exact technical surface first;
+2. identify which current Hyperion Arm responsibilities actually migrate;
+3. preserve history/provenance;
+4. update BOOK_OF_MYTHOLOGY and the current house shelf through normal admission;
+5. prevent duplicate Story Forge / Media Factory implementations;
+6. keep Hyperion as the economic/venture intelligence owner;
+7. require separate evidence for any new runtime or Block.
+
+Until then, the Pemberton property uses the existing Hyperion Story Forge + Media Factory structure.
+
+The reference property Book is:
+
+`hyperion/media/BOOK_OF_PEMBERTON.md`
+
+> **DO NOT CREATE A SECOND MEDIA FACTORY TO PRETEND THEIA ALREADY EXISTS.**
+
+> **SEPARATE ECONOMIC INTELLIGENCE FROM CREATIVE PRODUCTION ONLY WHEN THE ARCHITECTURE HAS EARNED THE SEAM.**
