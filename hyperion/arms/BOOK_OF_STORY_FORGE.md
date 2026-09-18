@@ -97,3 +97,77 @@ Original worlds, characters, story banks, scripts and pilots may be developed an
 > **FORMULA SHOULD CREATE RELIABILITY, NOT PREDICTABILITY.**
 
 > **A STORY GENERATOR THAT DOES NOT LEARN BECOMES A SLOP GENERATOR.**
+
+## 16. Property-Grade Script Room
+
+The generic Story Forge remains the narrative authority for media properties. A recurring animated property may add a **property profile** rather than invent a second story engine.
+
+The reference profile is `hyperion/media/BOOK_OF_PEMBERTON.md`.
+
+For property-grade episodic work, use a staged script room:
+
+`CANON LOAD -> PREMISE -> STORY ENGINE -> CHARACTER PASS -> EMBODIMENT PASS -> CHILD-CLARITY PASS -> ADULT-LAYER PASS -> COMEDY PASS -> ARC PASS -> RIGHTS PASS -> DIALOGUE REDUCTION -> TABLE READ -> HUMAN LOCK`
+
+The passes are separable so a weak script can be repaired at the layer that failed instead of randomly regenerated.
+
+### 16.1 Canon / Working / Fossil
+
+A recurring property benefits from three explicit creative-memory states:
+
+- **CANON** — approved truths that may not silently drift;
+- **WORKING** — mutable development material;
+- **FOSSIL** — rejected ideas retained with rejection reasons.
+
+Fossil memory prevents models and humans from repeatedly rediscovering ideas already rejected for character, rights, tone or continuity reasons.
+
+This does not replace Mnemosyne. Story Forge maintains property-local creative state; durable institutional knowledge remains subject to normal OTHRYS memory governance.
+
+### 16.2 Character Embodiment Test
+
+A character should not merely sound distinctive. The **physical solution space** should also be character-specific.
+
+For every episode ask:
+
+- Could a generic protagonist perform exactly the same actions?
+- Does the character's body, habits, limitations, preferences or blind spots materially shape the plot?
+- Does the visual behavior carry information that dialogue need not repeat?
+
+For Pemberton specifically, a feline-action pass rejects human-like problem solving when a believable cat action can carry the beat.
+
+### 16.3 Gag Ledger
+
+Recurring comedy is continuity and should be tracked deliberately.
+
+At minimum record:
+- gag ID;
+- first use;
+- last use;
+- variant used;
+- escalation state;
+- cooldown;
+- intended future payoff.
+
+A running joke should evolve rather than repeat identical wording.
+
+### 16.4 Arc Knowledge Split
+
+For serialized mystery, track separately:
+- what the audience knows;
+- what each protagonist knows;
+- what the antagonist knows;
+- what supporting characters know;
+- which promises remain unpaid.
+
+This prevents accidental premature reveals and fake mystery created by characters forgetting facts they already learned.
+
+## 17. Pemberton Reference Property
+
+Pemberton is the first detailed test of the Story Forge property profile.
+
+Its property Book intentionally reuses the existing Story Forge mechanics and the Suske-en-Wiske harvest rather than creating another narrative system.
+
+Specific laws, Season One beats, running gags, feline-action constraints and the Seven Doors arc live in:
+
+`hyperion/media/BOOK_OF_PEMBERTON.md`
+
+> **PROPERTY BIBLES SPECIALIZE STORY FORGE. THEY DO NOT FORK IT.**
