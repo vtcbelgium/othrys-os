@@ -453,7 +453,7 @@ Theia owns:
 - explainer/video production;
 - rights/provenance;
 - quality;
-- media packaging/publishing;
+- media packaging and publishing execution when separately authorized;
 - media production telemetry.
 
 Theia returns a **Media Evidence Packet**. Hyperion then evaluates:
