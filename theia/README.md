@@ -12,6 +12,8 @@ Canonical entry: ../BOOK_OF_THEIA.md
 - arms/BOOK_OF_STORY_FORGE.md — story, character and original IP.
 - properties/MIPI.md — first original character/IP starter.
 - properties/CARTOON_DAD.md — first utility-first explainer property.
+- research/MEDIA_AUTOMATION_STUDY_2026-09-18.md — dated clipping/explainer automation, platform and monetization study.
+- research/VANDERSTEEN_HARVEST_100_VIDEO_IDEAS.md — preserved adventure-mechanics research inventory.
 
 ## Ownership law
 Hyperion owns economic opportunity/portfolio decisions.
