@@ -698,6 +698,8 @@ Platform policy:
 - European Commission Article 50 guidance: https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems
 - European Commission IP Helpdesk AI/IP FAQ: https://intellectual-property-helpdesk.ec.europa.eu/regional-helpdesks/european-ip-helpdesk/europe-frequently-asked-questions_en
 - U.S. Copyright Office AI/copyrightability: https://www.copyright.gov/ai/
+- Preliminary MIPI trademark result (technology classes; non-exhaustive): https://trademarks.justia.com/888/91/mipi-88891803.html
+- Prior published pet-story use of "Mipi" as a puppy name: https://www.prweb.com/releases/Author_Diana_Rosendale_s_Newly_Released_Pet_Tales_Featuring_Chester_Lady_and_Mipi_Shares_the_Stories_of_Three_Pets_and_the_Blessings_They_Experience/prweb15712443.htm
 - TikTok Creator Rewards support: https://support.tiktok.com/en/business-and-creator/creator-rewards-program/
 
 Current tool research examples:
