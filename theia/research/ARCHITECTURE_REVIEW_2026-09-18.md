@@ -415,7 +415,32 @@ Helios, Eos and Selene remain media-role foundations, not extra runtime gods.
 
 ---
 
-## 18. REVIEW CONCLUSION
+## 18. HYPERION SUB-ARMS STILL HAD HIDDEN MEDIA OWNERSHIP — FIXED
+
+### Finding
+
+The top-level Hyperion split was correct, but several specialist Arm books still carried old assumptions:
+- Distributor owned native media packaging;
+- Laboratory's media tests did not state who produces variants;
+- Oracle fed Story Forge directly;
+- Magnifier could read as executing media localization;
+- Vault duplicated character bibles and rights ledgers.
+
+That would slowly reconstruct Media Factory inside Hyperion through side doors.
+
+### Refinement
+
+- **Distributor** now owns distribution strategy/economics; Theia packages and publishes media.
+- **Laboratory** owns experiment contracts; Theia produces media variants under its gates.
+- **Oracle** interprets media evidence economically and returns conclusions through the sibling contract.
+- **Magnifier** chooses where economic scale deserves testing; Theia executes media/IP localization/expansion.
+- **Vault** preserves transferable commercial asset packets and links to Theia's canonical property/provenance records instead of duplicating them.
+
+> **A CLEAN TOP-LEVEL BOUNDARY IS USELESS IF SUBSYSTEMS QUIETLY RECREATE THE OLD BLOB.**
+
+---
+
+## 19. REVIEW CONCLUSION
 
 The first refactor had the right central idea:
 
@@ -430,6 +455,7 @@ After refinement, the seam is substantially stronger:
 - stronger IP chain of title;
 - more distinctive Mipi;
 - safer practical-dad pilot;
+- cleaner Hyperion sub-arm seams;
 - cleaner future standalone contract.
 
 The next useful evidence should come from **pilots**, not more ontology.
