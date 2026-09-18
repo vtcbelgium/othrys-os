@@ -1009,44 +1009,441 @@ A recurring short may be **Eos + Selene**.
 
 ## 16. WORLD MODEL
 
-Do not overbuild the world before pilots.
+Pemberton's world is built on one permanent asymmetry:
 
-Locked:
-- Pemberton can explore real or reality-anchored places;
-- real facts matter;
-- his adventures may use heightened cartoon logic;
-- the world supports travel and discovery;
-- Pemberton's character continuity matters across episodes.
+> **THE WORLD IS MODERN. PEMBERTON IS MENTALLY ON GRAND TOUR IN THE 1870s.**
 
-Unresolved:
-- fixed home;
-- human owner/guardian;
-- whether humans understand his speech;
-- whether other animals speak;
-- degree of anthropomorphism;
-- fixed companion;
-- permanent rival;
-- magical elements;
-- larger mystery/quest.
+The household has:
+- phones;
+- chargers;
+- robot vacuums;
+- cars;
+- takeaway food;
+- delivery boxes;
+- modern shoes and clothing;
+- contemporary museums and transport.
 
-### 16.1 Anthropomorphism ladder to test
+Pemberton interprets these through the worldview of a late-19th-century gentleman explorer.
 
-**A. Mostly-cat**
-- realistic body;
-- narrator provides most language;
-- human world remains normal.
+He is not confused about facts.
 
-**B. Stylized cat**
-- expressive gestures;
-- Pemberton speaks;
-- still interacts with environments largely as a cat.
+He is magnificently confused about **his social position and the dignity of modern objects**.
 
-**C. Story-world anthropomorphic**
-- greater agency, travel and tool use;
-- more freedom for adventure;
-- higher risk of generic cartoon-animal territory.
+A robot vacuum is not a cleaning appliance.
+It is his motor carriage.
 
-Start near **B**, then let pilots decide.
+A food delivery is not takeaway.
+It is catering.
+
+A lift is not an elevator.
+It is a vertical carriage.
+
+A phone map is not GPS.
+It is a portable cartographic instrument of impressive efficiency.
+
+This double-reading should create jokes continuously without making Pemberton stupid.
+
+> **HIS STATUS IS IMAGINARY. HIS KNOWLEDGE IS NOT.**
+
+### 16.1 Camera law — the humans are legs
+
+Pemberton's owners exist.
+
+The audience **never sees their faces**.
+
+Default framing keeps humans:
+- from roughly the knees down;
+- as shoes, trousers, skirts, socks, slippers and movement;
+- entering and leaving frame at Pemberton height.
+
+Hands may enter where needed to:
+- put down food;
+- open a door;
+- pick up an object;
+- straighten his collar;
+- remove something dangerous;
+- deliver his cup;
+- place a carrier.
+
+But the visual grammar does not rise to conventional adult eye level.
+
+This creates four advantages:
+1. the camera belongs to Pemberton;
+2. humans remain affectionate but slightly mysterious environmental forces;
+3. their modernity can be shown through clothing, shoes and objects;
+4. the joke that Pemberton believes they are servants stays alive.
+
+Do **not** plan a later "face reveal."
+The missing faces are part of the property's identity.
+
+> **WE SEE THE WORLD FROM PEMBERTON'S HEIGHT, NOT THE HUMANS' STATUS.**
+
+### 16.2 The household-staff delusion
+
+The audience understands:
+**these are Pemberton's owners.**
+
+Pemberton understands:
+**these are Pemberton's staff.**
+
+He may categorize them as:
+- the household staff;
+- the driver;
+- the kitchen;
+- the porter;
+- the night staff;
+- domestic service;
+- "my people."
+
+They do not need canonical personal names.
+
+The joke works because ordinary cat ownership provides Pemberton with remarkably good evidence for his theory:
+
+- he makes a noise and food arrives;
+- he waits by a door and someone opens it;
+- he sits beside his carrier and transport is arranged;
+- he knocks something down and somebody cleans it;
+- he occupies the best chair and humans relocate;
+- he presents himself beside an empty cup and refreshments eventually appear;
+- he disappears for hours and no salary deductions occur.
+
+From his perspective the estate is adequately staffed.
+
+He is never cruel to them.
+He can be demanding, surprised by delays and generous with praise he assumes they desperately value.
+
+> **A CAT WHO IS FED, TRANSPORTED, CLEANED UP AFTER AND GIVEN THE BEST CHAIR HAS REASONABLE EVIDENCE THAT HE EMPLOYS PEOPLE.**
+
+### 16.3 Communication asymmetry
+
+The audience understands Pemberton's speech/thought.
+
+The owners do not demonstrably understand his sentences.
+
+To them he may:
+- meow;
+- chirp;
+- stare;
+- paw;
+- sit beside something;
+- lead them somewhere;
+- knock an object down with apparent intent.
+
+They respond as loving owners would.
+
+Pemberton interprets useful responses as successful management.
+
+Never resolve whether they understand more than they let on.
+
+### 16.4 Pemberton House — expedition headquarters
+
+Pemberton has a permanent base: **Pemberton House**.
+
+To the humans it is an elaborate cat house / cat-condo / absurdly overdecorated piece of pet furniture.
+
+To Pemberton it is:
+- ancestral residence;
+- gentleman's club;
+- expedition office;
+- library;
+- map room;
+- wardrobe;
+- sleeping quarters;
+- refreshment room;
+- archive;
+- museum;
+- departure terminal.
+
+Visual grammar:
+- dark wood / mahogany feel;
+- brass details;
+- maps;
+- miniature globe;
+- ticket stubs;
+- postcards;
+- stamps;
+- coins;
+- luggage labels;
+- expedition notebooks;
+- tiny shelves;
+- travel trunk;
+- pocket-watch/clock motifs;
+- warm sleeping compartment;
+- porcelain teacup and saucer;
+- dedicated modern takeaway-cup holder;
+- robot-vacuum "carriage house" nearby.
+
+The House may contain impossible mechanisms, but should still feel physically connected to the modern home.
+
+It should look as though an intelligent cat has built an 1870s explorer's club from:
+- household objects;
+- travel souvenirs;
+- things stolen from drawers;
+- gifts;
+- miniature furniture;
+- mechanisms nobody remembers installing.
+
+> **EVERY GREAT EXPEDITION BEGINS AT HOME. PEMBERTON'S HOME JUST HAS BETTER CONNECTIONS.**
+
+### 16.5 The Motor Carriage — robot vacuum transport
+
+Pemberton's preferred local transport is the household's **generic robot vacuum**.
+
+Pemberton calls it:
+- **the Motor Carriage** in formal speech;
+- **the Carriage** when the context is obvious.
+
+To the audience it is unmistakably a robot vacuum.
+
+To Pemberton it is a perfectly acceptable autonomous conveyance supplied by the household staff.
+
+Uses:
+- room-to-room travel;
+- crossing long hallways;
+- following a human;
+- carrying Pemberton and his expedition cup;
+- slow pursuit;
+- accidental detours;
+- delivery of small objects;
+- scouting under furniture;
+- comic entrances/exits.
+
+Its charging dock is:
+**the Carriage House.**
+
+Possible visual details:
+- tiny removable cushion or nonslip pad added by Pemberton;
+- brass-looking luggage tag;
+- miniature cup holder;
+- small expedition satchel clipped to the side;
+- perhaps one useless decorative pennant on special occasions.
+
+Do not over-customize the vacuum until it stops reading as a normal modern appliance.
+
+The comedy is the contrast.
+
+#### Carriage laws
+
+The Carriage:
+- has no human-like personality by default;
+- follows ordinary robot-vacuum logic;
+- may disobey Pemberton only because its sensors/routing disagree;
+- may return to dock at an inconvenient moment;
+- may refuse stairs because reality remains reality;
+- may get stuck;
+- may begin cleaning during an important speech;
+- may rotate Pemberton slowly away from whoever he is addressing.
+
+Pemberton treats these as:
+- route disputes;
+- labour issues;
+- mechanical temperament;
+- timetable irregularities.
+
+He rarely walks somewhere if the Carriage can plausibly take him.
+
+This is not only a gag.
+It expresses his **conservation-of-effort intelligence**.
+
+> **WHY WALK WHEN THE ESTATE MAINTAINS TRANSPORT?**
+
+### 16.6 The cola cup on the Carriage
+
+The modern takeaway cup becomes especially strong when paired with the Carriage.
+
+Pemberton may ride:
+- sitting upright;
+- one paw resting near the cup;
+- straw angled precisely;
+- cravat slightly crooked;
+- expression entirely serious.
+
+A tiny cup holder may be one of his proudest "engineering improvements."
+
+Potential recurring physical gags:
+- cup rotates away as the vacuum turns;
+- straw passes just beyond reach;
+- sudden stop creates foam;
+- cup is perfectly secure while Pemberton slides slightly;
+- he adjusts wardrobe and loses the straw;
+- vacuum enters cleaning mode beneath an important map.
+
+The cup remains generic and unbranded.
+
+> **THE CARRIAGE MOVES. THE COLA MUST NOT.**
+
+### 16.7 The Grand Tour Door — long-range expedition transport
+
+For true expeditions Pemberton House contains a hidden travel mechanism:
+
+**THE GRAND TOUR DOOR**
+
+The Door can take Pemberton from the House to:
+- real present-day locations;
+- distant countries;
+- museums;
+- ruins;
+- landscapes;
+- bounded historical windows;
+- deliberately marked visualized spaces when a concept cannot literally be visited.
+
+It should feel:
+- brass-and-map;
+- tactile;
+- mechanical;
+- slightly impossible;
+- comprehensible without technobabble.
+
+The Door is **not** just a glowing science-fiction portal.
+
+Its ritual may involve:
+1. a travel anchor;
+2. a map/dial/selector;
+3. a destination lock;
+4. opening the Door;
+5. Pemberton checking his cup;
+6. departure.
+
+Possible travel anchors:
+- postcard;
+- stamp;
+- coin;
+- ticket;
+- museum leaflet;
+- map;
+- photograph;
+- object fragment;
+- book page;
+- label;
+- recorded clue;
+- question card.
+
+The travel anchor gives the story a reason to go somewhere.
+
+### 16.8 Grand Tour Door laws
+
+The Door is transport, not solution.
+
+It may:
+- take Pemberton to the question;
+- produce an adjacent/wrong destination if the clue is ambiguous;
+- open a historical window;
+- strand him temporarily when the return mechanism is unavailable;
+- connect clues across places;
+- create a deadline when a window is unstable.
+
+It may not:
+- answer the factual mystery;
+- produce arbitrary plot objects;
+- rescue Pemberton automatically at the climax;
+- erase consequences;
+- become "magic does whatever today's script needs."
+
+Pemberton carries a **Return Token** connected to the House.
+
+Exact final form is not locked.
+Good candidates:
+- brass luggage tag;
+- calling card;
+- tiny key;
+- pocket-watch token.
+
+Losing it may create an occasional story.
+It must not become the weekly formula.
+
+> **THE HOUSE OPENS THE WORLD. PEMBERTON STILL HAS TO UNDERSTAND IT.**
+
+### 16.9 Time and history
+
+The Grand Tour Door may support historical adventures, but factual history remains governed.
+
+Three allowed modes:
+
+**Present-day visit**
+- ruins, museum, city, landscape;
+- history reconstructed through evidence.
+
+**Historical window**
+- Pemberton temporarily observes/enters a bounded past setting;
+- period details are researched;
+- uncertainty is marked where relevant.
+
+**Explanatory visualization**
+- stylized cutaway/diagram/story space;
+- clearly not presented as literal time travel evidence.
+
+Do not use time travel as permission to invent certainty about disputed history.
+
+### 16.10 Adventure-plot mechanics harvested from classic European serial adventure
+
+Pemberton may use **abstract adventure mechanics** that have long existed across comics, novels, folklore and serial storytelling.
+
+Useful mechanics preserved from the existing Vandersteen/Suske-en-Wiske research harvest include:
+
+- strange object arrives at the House;
+- postcard/map/coin/ticket contains a clue;
+- ordinary object becomes travel trigger;
+- destination reached through a recurring transport mechanism;
+- apparent supernatural event receives investigation;
+- folklore opens a mystery but evidence closes it honestly;
+- mistaken villain / false culprit;
+- rival seeker wants the same object;
+- helper encountered at destination;
+- rescue caused by a simple understandable stake;
+- broken mechanism creates detour;
+- wrong destination reveals a better clue;
+- past event explains present mystery;
+- historical figure/context appears without becoming the entire lesson;
+- lost invention;
+- hidden room;
+- secret symbol;
+- underground passage;
+- miniature/scale shift only when independently justified;
+- deadline tied to train/tide/sunset/closing window;
+- clue collected in one episode pays off later;
+- object returns to the House archive;
+- one mystery closes while another small question opens.
+
+These are **story genes**, not copied plots.
+
+Forbidden:
+- reproducing a specific Suske en Wiske album plot;
+- using recognizable characters or relationships;
+- copying signature inventions/devices;
+- recreating distinctive dialogue or visual compositions;
+- using titles or branded fictional objects;
+- mapping Pemberton characters one-to-one onto Vandersteen characters.
+
+> **HARVEST THE ADVENTURE GRAMMAR. PEMBERTON MUST OWN THE JOURNEY.**
+
+### 16.11 Default episode departure/return rhythm
+
+A strong recurring rhythm may be:
+
+```text
+MODERN HOUSEHOLD DETAIL
+  -> PEMBERTON REINTERPRETS IT GRANDLY
+  -> QUESTION / STRANGE OBJECT
+  -> HOUSE RESEARCH
+  -> MOTOR CARRIAGE PREPARATION
+  -> GRAND TOUR DOOR
+  -> DESTINATION / ADVENTURE
+  -> SIMPLE COMIC OBSTACLE
+  -> REAL DISCOVERY
+  -> RETURN TO PEMBERTON HOUSE
+  -> OBJECT ENTERS ARCHIVE / MAP / COLLECTION
+  -> COLA / NAP / NEXT SMALL QUESTION
+```
+
+Do not use every beat every time.
+
+The purpose is to give the property:
+- a recognizable home;
+- a launch ritual;
+- freedom to visit anywhere;
+- continuity;
+- a natural archive;
+- and a reason to come home.
 
 ---
 
