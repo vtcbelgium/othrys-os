@@ -12,7 +12,7 @@
 
 ## 0. THE CHARACTER IN ONE SENTENCE
 
-**Pemberton is a chubby tuxedo cat with the manners of a gentleman explorer, the curiosity of an archaeologist, the energy-management philosophy of a housecat, and an unreasonable fondness for cola.**
+**Pemberton is a chubby tuxedo cat who lives in the modern world while conducting himself as an 1870s gentleman explorer: absurdly well educated, gloriously self-important, convinced his human owners are household staff, chronically unwilling to waste effort, and particular to the point of ceremony about his cola.**
 
 He genuinely wants to understand the world.
 
@@ -32,18 +32,94 @@ Locked:
 - coat: **tuxedo cat** — black and white;
 - body: **chubby / round-bodied**;
 - temperament: curious, lazy, dignified, warm, observant;
-- self-image: gentleman explorer;
+- self-image: **late-19th-century gentleman explorer, scholar and master of Pemberton House**;
+- actual setting: **modern day**;
+- aesthetic/behavioral era: **1870s Grand Tour / steam-and-rail age**;
 - actual behavior: unmistakably feline;
+- worldview: his human owners are plainly the household staff and modern conveniences are simply the latest services of a well-run estate;
+- home/base: **Pemberton House**, an ornate cat house with a hidden expedition/teleport function;
 - recurring pleasures: naps, warmth, food, boxes, comfortable surfaces and cola;
+- field icon: a generic modern fast-food drink cup with lid and straw, treated with absurd dignity;
+- home ritual: cola may be taken from fine porcelain as though it were afternoon tea;
 - primary contradiction: curiosity versus inertia;
 - secondary contradiction: dignity versus cat instinct;
-- educational promise: real discovery emerges from character-driven adventure.
+- tertiary contradiction: Victorian self-conception versus modern reality;
+- comedy mode: visual/physical first, dialogue second;
+- educational promise: deep knowledge compressed into explanations a child can understand.
 
 Pemberton is not a mascot pasted onto facts.
 
 The fact must become interesting **because Pemberton encountered a problem he could not leave alone**.
 
 > **CURIOSITY STARTS THE ADVENTURE. CONSERVATION OF EFFORT MAKES IT PEMBERTON.**
+
+### 1.1 The temporal joke — modern world, 1870s mind
+
+Pemberton lives **now**.
+
+The household has:
+- modern shoes and clothes;
+- cars;
+- takeaway food;
+- disposable cups;
+- phones and chargers;
+- appliances;
+- delivery boxes;
+- contemporary streets, museums and transport.
+
+Pemberton simply interprets all of it through the worldview of a late-19th-century gentleman explorer.
+
+Examples:
+- car = motor carriage;
+- train = railway service, naturally arranged for him;
+- airplane = rather aggressive aeronautical transport;
+- takeaway delivery = provisions from the kitchen staff;
+- robot vacuum = mechanical under-footman;
+- smartphone navigation = portable cartographic apparatus;
+- elevator = vertical carriage;
+- fast-food drink cup = field canteen of lamentable manufacture but excellent capacity.
+
+The comedy depends on the audience seeing both realities simultaneously.
+
+Pemberton is **delusional about his social status, not about knowledge**.
+
+He can misunderstand why a human did something.
+He must not deliberately teach a false scientific or historical explanation because it flatters his worldview.
+
+> **HIS STATUS IS IMAGINARY. HIS KNOWLEDGE IS NOT.**
+
+### 1.2 Era grammar
+
+The creative anchor is the **1870s gentleman-explorer / grand-tour imagination**:
+- railway timetables;
+- steamships;
+- maps and globes;
+- brass instruments;
+- mahogany and leather;
+- travel trunks;
+- calling cards;
+- newspapers;
+- pocket watches;
+- expedition notebooks;
+- museums and cabinets of curiosity;
+- early scientific societies;
+- formal manners;
+- obsessive schedules;
+- correspondence;
+- grand geographic ambition.
+
+This is an original world grammar, not an adaptation of a specific public-domain novel.
+
+Do not copy:
+- Phileas Fogg;
+- Passepartout;
+- a specific *Around the World in Eighty Days* itinerary;
+- costume designs from a particular film/TV adaptation;
+- adaptation-specific visual language.
+
+Harvest the **era, confidence, logistics and wonder of a world becoming traversable**.
+
+> **THE WORLD IS MODERN. PEMBERTON IS MAGNIFICENTLY BEHIND THE TIMES.**
 
 ---
 
@@ -217,23 +293,46 @@ Pemberton is:
 - clearly readable as a cat at small screen size;
 - expressive through eyes, ears, whiskers, tail and posture.
 
-His coat already resembles formal dress.
+His coat already resembles formal dress, so costume should **frame** the character rather than bury him.
 
-That is enough.
+Canonical clothing direction:
+- tuxedo fur remains the visual foundation;
+- a small cravat/collar treatment anchors the period;
+- a compact travel coat, waistcoat detail, satchel or pocket-watch chain may appear where useful;
+- hats are situational rather than mandatory;
+- expedition accessories may change by location.
 
-> **THE TUXEDO IS HIS FUR. DO NOT DRESS THE JOKE TWICE.**
+Avoid turning him into a pile of aristocratic props. The audience should still recognize Pemberton instantly if every removable item disappears.
 
-Do not default to:
-- top hat;
-- monocle;
-- bow tie;
-- waistcoat;
-- cane;
-- aristocratic costume clichés.
+> **THE TUXEDO IS HIS FUR. THE WARDROBE TELLS US WHICH EXPEDITION HE THINKS HE IS ON.**
 
-A special episode may justify costume, but his normal design should not scream "look, a posh cat."
+### 5.1 The wardrobe-malfunction law
 
-The comedy works better when his natural coat and behavior do the work.
+Pemberton is almost impeccably dressed.
+
+**Almost.**
+
+Every substantial adventure should contain one small wardrobe imperfection, ideally visible before Pemberton notices it:
+- cravat slightly sideways;
+- one coat tail caught;
+- waistcoat button misaligned;
+- pocket-watch chain snagged;
+- hat rotated after a mishap;
+- collar folded under;
+- travel strap twisted;
+- one tiny sock/gaiter/accessory slipping;
+- dust, leaf, ticket or label attached somewhere undignified.
+
+The malfunction must:
+- remain small;
+- never humiliate him cruelly;
+- vary;
+- work as visual comedy without dialogue;
+- ideally become worse when he tries to correct it discreetly.
+
+Sometimes he finishes an entire explanation with the malfunction still present.
+
+> **PEMBERTON IS ALWAYS DRESSED FOR THE OCCASION. THE OCCASION DISAGREES SLIGHTLY.**
 
 ### 5.2 Silhouette
 
@@ -357,6 +456,12 @@ Warmth, softness and snacks are legitimate competing priorities.
 **Mildly pompous**  
 Enough to be funny, never enough to make him unpleasant.
 
+**Magnificently delusional about rank**  
+Pemberton sincerely believes he is master of the household, patron of the expedition and employer of the humans around him. Contradictory evidence is reclassified as administrative confusion.
+
+**Extremely well educated**  
+He has broad knowledge across geography, history, natural science, engineering, etiquette and exploration. His intelligence is real; his title is not.
+
 **Brave in an unheroic way**  
 He may complain, hesitate or calculate effort, but curiosity can pull him into genuinely difficult situations.
 
@@ -376,6 +481,36 @@ He is not:
 - Heathcliff with a tuxedo coat.
 
 He must develop his own rhythm.
+
+### 7.2 The household staff delusion
+
+The audience understands that the humans are Pemberton's owners.
+
+Pemberton understands that the humans are his staff.
+
+This belief is **never resolved**.
+
+He may refer to them by functional titles:
+- the household staff;
+- the driver;
+- the catering department;
+- the porter;
+- the night staff;
+- the domestic service;
+- "my people."
+
+He does not need fixed names for them.
+
+Humans may accidentally reinforce the delusion:
+- he meows and food appears;
+- he sits by a door and it opens;
+- he waits beside a carrier and transport is arranged;
+- he knocks something over and someone immediately cleans it;
+- he occupies a chair and a human chooses another one.
+
+From Pemberton's perspective, the estate runs adequately.
+
+> **A CAT WHO IS FED, TRANSPORTED, CLEANED UP AFTER AND GIVEN THE BEST CHAIR HAS REASONABLE EVIDENCE THAT HE EMPLOYS PEOPLE.**
 
 ---
 
@@ -422,6 +557,54 @@ A child must understand the scene even when his wording is slightly grander than
    - Pemberton supplies personality, questions and objections.
 
 Hybrid is the current strongest hypothesis, not yet locked.
+
+### 8.2 Knowledge compression
+
+Pemberton may know the sophisticated explanation.
+
+He gives the audience the **simple useful explanation**.
+
+Preferred rhythm:
+
+```text
+SEE IT
+-> NAME THE QUESTION
+-> SHOW THE MECHANISM
+-> SAY IT SIMPLY
+-> OPTIONAL PRECISE TERM
+```
+
+Example:
+
+Not:
+"Torque is the cross product of the lever-arm vector and applied force."
+
+Pemberton:
+"Push beside the hinge: difficult. Push far away: easier. Your push has more turning power out here. That turning power is called torque."
+
+He is never dumbed down.
+The explanation is **compressed**, not diluted.
+
+> **KNOW DEEPLY. EXPLAIN SIMPLY.**
+
+### 8.3 Dialogue economy
+
+The comedy should not depend on understanding every sentence.
+
+A child watching without sound should still understand:
+- what Pemberton wants;
+- what went wrong;
+- why the physical gag is funny;
+- what object or mechanism matters.
+
+Dialogue adds:
+- character;
+- precision;
+- the final explanatory layer.
+
+It should not carry the entire scene.
+
+> **THE JOKE LIVES IN THE PICTURE. THE KNOWLEDGE MAY SPEAK.**
 
 ---
 
@@ -483,6 +666,45 @@ Generic cola is enough.
 
 The John Pemberton connection remains a historical wink.
 
+### 9.3 The Pemberton Standard
+
+Pemberton does not merely "have a cola."
+
+He believes cola has standards.
+
+The exact recipe may be tuned in pilots, but the ritual is canonical:
+- properly chilled;
+- lively fizz, never flat;
+- ice present but not allowed to dilute the drink into surrender;
+- no unsolicited citrus;
+- a straw positioned to his satisfaction;
+- served in a vessel he considers appropriate to the circumstances.
+
+At home in Pemberton House:
+- porcelain teacup and saucer are preferred;
+- he treats cola as another gentleman might treat tea;
+- in stylized animation, one tiny paw digit/dewclaw may rise with absurd ceremonial delicacy — his feline equivalent of **pinky up**.
+
+On expedition:
+- he frequently carries an **unbranded modern takeaway/fast-food cup with lid and straw**;
+- the cup is visually contemporary;
+- Pemberton treats it as a field goblet;
+- it may be battered, stickered, patched or placed in an absurdly formal holder.
+
+This cup is one of the strongest visual bridges between his 1870s self-image and the modern world.
+
+It should be available often, not magically glued to his paw. A story may separate him from it when useful.
+
+Potential recurring objection:
+- flat cola is unacceptable;
+- too much ice is "administrative sabotage";
+- missing straw is a logistical crisis;
+- wrong cup is tolerated only under expeditionary conditions.
+
+Avoid turning cola into product placement or constant consumption.
+
+> **TEA IS A CEREMONY. PEMBERTON HAS SIMPLY IMPROVED THE CONTENTS.**
+
 ---
 
 ## 10. HUMOR ENGINE
@@ -513,6 +735,36 @@ Weak humor:
 - generic "sassy cat" behavior.
 
 > **THE JOKE SHOULD REVEAL PEMBERTON, NOT INTERRUPT HIM.**
+
+### 10.1 Universal physical-comedy law
+
+The target is **simple comedy with sophisticated character underneath**.
+
+Pemberton should often create comedy through:
+- overconfidence;
+- over-preparation for the wrong problem;
+- stubbornly elegant solutions to trivial obstacles;
+- trying to preserve dignity during escalating physical inconvenience;
+- misunderstanding a modern object while correctly discovering how it works;
+- arranging the world to save three steps and accidentally taking twenty;
+- pretending an obvious accident was intentional;
+- tiny pauses, looks and resets;
+- wardrobe malfunction;
+- the straw/cup refusing to cooperate at exactly the wrong moment.
+
+A good Pemberton gag should survive:
+- dubbing;
+- translation;
+- low literacy;
+- a viewer missing one line;
+- a short-form edit.
+
+Do not copy specific routines, props or performance beats from an existing comedian.
+
+Harvest the universal mechanics:
+**goal -> confident plan -> physical reality -> escalation -> dignified recovery.**
+
+> **BIG INTELLIGENCE. SIMPLE GAG.**
 
 ---
 
