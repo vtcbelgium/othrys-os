@@ -2,10 +2,10 @@
 
 ## Canonical Mythological, Genealogical, Spatial, and Technical Reference of OTHRYS
 
-**Status:** CANONICAL REFERENCE — V1 CLOSED  
+**Status:** CANONICAL REFERENCE — V1.1 THEIA ACTIVATION  
 **Authority rule:** technical architecture outranks metaphor. Mythology may clarify the machine; it may never falsify it.  
 **Classical backbone:** primarily Hesiodic genealogy; important variants are retained where they matter.  
-**Maintenance mode:** closed reference. Reopen only when a real architectural need, recovered legacy evidence, or material mythological correction requires it.
+**Maintenance mode:** reopened on 2026-09-18 for a real architectural need: Theia became an independent media Titan and her Hyperionid children received reserved technical foundations.
 
 > **MYTHOLOGY PROVIDES THE LANGUAGE. OTHRYS PROVIDES THE MEANING. THE TECHNICAL MIRROR PROVIDES THE PROOF.**
 
@@ -123,7 +123,7 @@ Mount Othrys itself is appropriate: in Titanomachy tradition it is the Titans' s
 | **Hyperion** | heavenly height/light; father of Helios, Selene, Eos | ACTIVE | business/venture/product/economic intelligence |
 | **Iapetus** | father of Atlas, Menoetius, Prometheus, Epimetheus | RESERVED | capability evolution, lineage, succession |
 | **Kronos/Cronus** | Titan ruler; father of elder Olympians | ACTIVE | lifecycle, heartbeat, supervision |
-| **Theia** | sight/heavenly light; mother of sun/moon/dawn | RESERVED | multimodal perception/computer vision |
+| **Theia** | sight/heavenly light; mother of sun/moon/dawn | ACTIVE | visual media/video production, creative media systems, media automation |
 | **Rhea** | mother of Olympian generation | ACTIVE | vitality, reliability, care stewardship |
 | **Themis** | custom/order/law; mother of Horae/Moirai in Hesiod | CONCEPTUAL | governance/policy/trust doctrine |
 | **Mnemosyne** | memory; mother of nine Muses | ACTIVE | institutional memory/knowledge governance |
@@ -138,25 +138,50 @@ The Twelve are not a completion checklist.
 
 ## Hyperion — ACTIVE
 
-**Myth:** original Titan; father of Helios, Selene and Eos with Theia.  
+**Myth:** original Titan; paired with Theia; father of Helios, Selene and Eos.  
 **OTHRYS:** business, money, opportunity, commercial qualification and financial gates.  
 **Tech:** business/venture/product intelligence control plane.
 
-```text
-HYPERION
-├── Prospector       opportunity discovery
-├── Story Forge      narrative/original IP
-├── Fishing Fleet    rapid product experiments
-├── Media Factory    media production
-├── Distributor      reach/discovery/routing
-├── Laboratory       experiment design
-├── Oracle           signal interpretation/winner detection
-├── Magnifier        scaling/compounding
-├── Merchant         pricing/commercial intelligence
-├── Valve            financial gates/revenue airlocks
-├── Portfolio        resource allocation
-└── Vault            IP/provenance/transferable assets
-```
+Hyperion no longer owns media production or Story Forge. Those moved to sibling Titan Theia.
+
+    HYPERION
+    ├── Prospector       opportunity discovery
+    ├── Fishing Fleet    rapid product experiments
+    ├── Distributor      distribution economics/strategy
+    ├── Laboratory       experiment design
+    ├── Oracle           signal interpretation/winner detection
+    ├── Magnifier        scaling/compounding
+    ├── Merchant         pricing/commercial intelligence
+    ├── Valve            financial gates/revenue airlocks
+    ├── Portfolio        resource allocation
+    ├── Vault            transferable economic asset/IP state
+    └── Theia Gate       typed sibling handoff, not ownership
+
+> **HYPERION OWNS THE ECONOMIC BET. HE DOES NOT OWN THE MEDIA MACHINE.**
+
+## Theia — ACTIVE
+
+**Myth:** original Titaness associated with sight and shining light; paired with Hyperion; mother of Helios, Selene and Eos.  
+**OTHRYS:** independent Titan of visual media, video production, creative media systems, character/IP media and media automation.  
+**Tech:** domain-specific media production control plane with Opsis as proposed media orchestration runtime.
+
+    THEIA
+    ├── Opsis             domain media orchestration
+    ├── Clipping Arm      lawful repurposing/derivatives
+    ├── Explainer Arm     animated/instructional media
+    ├── Story Forge       story, character, continuity and original IP
+    ├── Shared Faculties  voice/assets/captions/render/QA/publish/telemetry
+    └── Children foundations
+        ├── Helios        flagship/canonical illumination
+        ├── Eos           discovery/first-light media
+        └── Selene        continuity/cycles/story-world return
+
+Boundary:
+- Hyperion decides whether a media bet deserves economic oxygen.
+- Theia decides how an approved media intent becomes a governed media artifact.
+- Neither silently inherits the other's authority.
+
+> **THEIA OWNS THE MEDIA MACHINE. OPSIS RUNS THE PRODUCTION GRAPH.**
 
 ## Prometheus — ACTIVE
 
@@ -259,16 +284,34 @@ PROMETHEUS → ACTION → TALOS → REALITY → EPIMETHEUS
 
 Mnemosyne and Talos are operational participants, not genealogical members.
 
-## 5.2 Hyperion + Theia — illumination/perception family
+## 5.2 Hyperion + Theia — economics + media family
 
-```text
-HYPERION + THEIA
-├── HELIOS
-├── SELENE
-└── EOS
-```
+    HYPERION + THEIA
+    ├── HELIOS
+    ├── SELENE
+    └── EOS
 
-Potential only: Helios = global illumination/visibility; Selene = quiet/night/batch cycles; Eos = emergence/launch/readiness. All remain unused because stronger existing technical names currently cover most needs.
+This family is now architecturally active at the parent level.
+
+**Hyperion** — economic opportunity, portfolio and money gates.  
+**Theia** — media production, visual systems, character/IP media and media automation.
+
+The children are **RESERVED FOUNDATIONS**, not independent current Titans:
+
+- **Helios** — full illumination: flagship/canonical/long-form primary media.
+- **Eos** — dawn/first light: discovery, hooks, Shorts/Reels/TikTok, launch/clip entry points.
+- **Selene** — moon/cycle/return: continuity, serialized story worlds, recurring/evergreen/calm media and audience return.
+
+Technical family loop:
+
+    HYPERION opportunity
+       -> THEIA production
+       -> HELIOS / EOS / SELENE expression
+       -> audience/reality evidence
+       -> THEIA media learning
+       -> HYPERION economic interpretation
+
+Genealogy does not create hidden runtime dependencies. The children become separate services/books only if real operational boundaries earn them.
 
 ## 5.3 Oceanus + Tethys — flows and sources
 
@@ -423,10 +466,6 @@ REQUEST → MISSION → ADMISSION → SELECTION → EXECUTION → MUTATION → E
 
 ## Tier B — strong when a real domain grows
 
-### THEIA — RESERVED TITAN
-**Potential:** multimodal perception/computer vision/UI observation.  
-**Boundary:** Theia perceives; Argus observes operational state; Talos verifies; Atlas models; Mnemosyne remembers.
-
 ### DAEDALUS — CANDIDATE
 **Myth:** master inventor/architect.  
 **Potential:** architecture, design and prototyping authority before implementation.  
@@ -455,9 +494,9 @@ REQUEST → MISSION → ADMISSION → SELECTION → EXECUTION → MUTATION → E
 - **Coeus** — deep inquiry/epistemic methodology; collision with Prometheus/Atlas.
 - **Phoebe** — forecasting/prophetic intelligence; collision with Oracle/Prometheus.
 - **Tethys** — source/provisioning semantics; collision with Oceanus/Rhea.
-- **Helios** — global illumination/visibility; collision with Argus/Theia.
-- **Selene** — night/quiet/batch cycles; currently too metaphorical.
-- **Eos** — emergence/dawn/launch readiness; attractive but generic.
+- **Helios** — RESERVED FOUNDATION under Theia: flagship/canonical primary media.
+- **Selene** — RESERVED FOUNDATION under Theia: continuity/cycles/story-world return.
+- **Eos** — RESERVED FOUNDATION under Theia: discovery/first-light media and launch/clip entry points.
 - **Astraeus** — external/celestial signal maps, forecasting inputs.
 - **Nike** — verified success/victory state; better as state/badge than authority.
 - **Eunomia** — policy conformance/good order.
@@ -470,7 +509,6 @@ REQUEST → MISSION → ADMISSION → SELECTION → EXECUTION → MUTATION → E
 - **Metis** — cunning/wisdom/strategy; likely collision with planning/intelligence.
 - **Asteria** — stars/night/oracular signals; likely collision with forecasting/perception.
 - **Nike, Kratos, Bia, Zelus** — success/power/force/zeal vocabulary; more useful for states or policies than systems.
-- **Helios/Selene/Eos** — time/illumination vocabulary if a concrete need appears.
 
 ## Tier D — negative archetypes and failure vocabulary
 
@@ -516,64 +554,64 @@ These names are especially useful because architecture also needs memorable name
 
 # 8. THE TECHNICAL MIRROR — NO MYTHOLOGY REQUIRED
 
-```text
-OTHRYS OS
-│
-├── GOVERNANCE / ADMISSION
-│   ├── policy and constitutional doctrine          [Themis concept]
-│   └── admission/trust mechanism                   [Trust Canal]
-│
-├── ENGINEERING
-│   ├── implementation/build authority              [Hephaestus]
-│   ├── worker/capability selection                 [Switchyard]
-│   └── independent evidence verification           [Talos]
-│
-├── INTELLIGENCE & KNOWLEDGE
-│   ├── external research/evidence discovery        [Prometheus]
-│   ├── governed institutional memory               [Mnemosyne]
-│   ├── derived knowledge/system map                [Atlas]
-│   ├── future outcome-learning                     [Epimetheus]
-│   └── future capability evolution/lineage         [Iapetus]
-│
-├── OPERATIONS
-│   ├── lifecycle/heartbeat/supervision             [Kronos]
-│   ├── vitality/reliability stewardship            [Rhea]
-│   ├── communications/message lifecycle            [Hermes]
-│   ├── future observability                        [Argus]
-│   ├── future traceability/provenance              [Ariadne]
-│   └── future perception                           [Theia]
-│
-├── BUSINESS / PRODUCT
-│   └── economic/product/venture control plane      [Hyperion]
-│       ├── opportunity research
-│       ├── IP/story formation
-│       ├── rapid product validation
-│       ├── media production
-│       ├── distribution
-│       ├── experimentation
-│       ├── analytics
-│       ├── scaling
-│       ├── pricing
-│       ├── revenue gates
-│       ├── portfolio allocation
-│       └── asset/IP custody
-│
-├── FUTURE LEARNING
-│   └── adaptive tutoring/competency system         [Chiron]
-│
-├── FUTURE DESIGN
-│   └── architecture/prototyping authority          [Daedalus]
-│
-├── FUTURE INTEGRATION
-│   └── external API/feed/data-flow fabric          [Oceanus]
-│
-└── FUTURE KNOWLEDGE EXPRESSION
-    └── specialist expression/presentation family  [Muses, potential]
-```
+    OTHRYS OS
+    |
+    +-- GOVERNANCE / ADMISSION
+    |   +-- policy and constitutional doctrine          [Themis concept]
+    |   +-- admission/trust mechanism                   [Trust Canal]
+    |
+    +-- ENGINEERING
+    |   +-- implementation/build authority              [Hephaestus]
+    |   +-- worker/capability selection                 [Switchyard]
+    |   +-- independent evidence verification           [Talos]
+    |
+    +-- INTELLIGENCE & KNOWLEDGE
+    |   +-- external research/evidence discovery        [Prometheus]
+    |   +-- governed institutional memory               [Mnemosyne]
+    |   +-- derived knowledge/system map                [Atlas]
+    |   +-- future outcome-learning                     [Epimetheus]
+    |   +-- future capability evolution/lineage         [Iapetus]
+    |
+    +-- OPERATIONS
+    |   +-- lifecycle/heartbeat/supervision             [Kronos]
+    |   +-- vitality/reliability stewardship            [Rhea]
+    |   +-- communications/message lifecycle            [Hermes]
+    |   +-- future observability                        [Argus]
+    |   +-- future traceability/provenance              [Ariadne]
+    |
+    +-- MEDIA & VISUAL PRODUCTION
+    |   +-- media production control plane              [Theia]
+    |   +-- media-domain orchestration                  [Opsis]
+    |   +-- flagship/canonical media foundation         [Helios, reserved]
+    |   +-- discovery/short-entry media foundation      [Eos, reserved]
+    |   +-- continuity/return media foundation          [Selene, reserved]
+    |
+    +-- BUSINESS / PRODUCT
+    |   +-- economic/product/venture control plane      [Hyperion]
+    |       +-- opportunity research
+    |       +-- rapid product validation
+    |       +-- distribution economics
+    |       +-- experiment economics
+    |       +-- winner/kill interpretation
+    |       +-- scaling
+    |       +-- pricing
+    |       +-- revenue gates
+    |       +-- portfolio allocation
+    |       +-- transferable asset economics
+    |
+    +-- FUTURE LEARNING
+    |   +-- adaptive tutoring/competency system         [Chiron]
+    |
+    +-- FUTURE DESIGN
+    |   +-- architecture/prototyping authority          [Daedalus]
+    |
+    +-- FUTURE INTEGRATION
+    |   +-- external API/feed/data-flow fabric          [Oceanus]
+    |
+    +-- FUTURE KNOWLEDGE EXPRESSION
+        +-- specialist expression/presentation family  [Muses, potential]
 
 A teacher can ignore every bracketed mythological name and still understand the architecture.
-
----
 
 # 9. RELATIONSHIP GRAPH CONTRACT
 
@@ -633,35 +671,33 @@ Every edge must declare whether it is **MYTHOLOGICAL**, **OTHRYS_OPERATIONAL**, 
 
 # 10. MOUNT OTHRYS — FUTURE VISUALIZATION
 
-```text
-                              SUMMIT
-                     governance / operator
-                          Themis / gates
-                              │
-             ┌────────────────┼────────────────┐
-             │                │                │
-        OBSERVATORY         LIBRARY           FORGE
-      Prometheus/Argus    Mnemosyne/Atlas    Hephaestus
-       Theia potential     Muses potential     Cyclopes?
-             │                │                │
-             └─────── HERMES ROADS ───────────┘
-                       ARIADNE THREADS
-                              │
-                         LABYRINTH
-                    execution / trace graph
-                              │
-              ┌───────────────┼───────────────┐
-              │               │               │
-           NURSERY          VAULT          MARKET EDGE
-        incubated Oros       assets          Hyperion
-              │                               │
-            GATES                         OUTSIDE WORLD
-                                              │
-                                         OCEANUS FLOWS
-```
+                                  SUMMIT
+                         governance / operator
+                              Themis / gates
+                                  |
+                +-----------------+------------------+
+                |                 |                  |
+           OBSERVATORY          LIBRARY             FORGE
+        Prometheus/Argus     Mnemosyne/Atlas      Hephaestus
+                |                 |                  |
+                +------- HERMES ROADS --------------+
+                                  |
+                           THEIA STUDIO
+                     visual/media production
+                    Opsis + media capabilities
+                        /      |       \
+                    Helios    Eos     Selene
+                                  |
+                             MARKET EDGE
+                              Hyperion
+                                  |
+                             OUTSIDE WORLD
+
+Theia Studio and Hyperion Market Edge are adjacent peers, not parent/child rooms:
+- Theia manufactures and learns media.
+- Hyperion interprets economic value and portfolio action.
 
 Possible overlays:
-
 - genealogy;
 - operational flow;
 - authority;
@@ -671,14 +707,13 @@ Possible overlays:
 - economics;
 - communication;
 - trace/provenance;
+- media production;
 - current vs potential;
 - technical-only teacher mode.
 
 Clicking a node should reveal myth, etymology, OTHRYS role, technical translation, relations, status and evidence. Switching **MYTH ↔ MACHINE** should preserve topology while changing vocabulary.
 
 > **THE MOUNTAIN IS THE INTERFACE. THE GRAPH IS THE TRUTH. THE MACHINE IS THE PROOF.**
-
----
 
 # 11. CANONICAL BOUNDARY LAWS
 
@@ -687,26 +722,28 @@ Clicking a node should reveal myth, etymology, OTHRYS role, technical translatio
 3. **Hermes transports; he does not decide truth or permission.**
 4. **Themis expresses governance; Trust Canal performs concrete admission.**
 5. **Kronos supervises lifecycle; Rhea stewards vitality.**
-6. **Hyperion evaluates economic value; he does not inherit engineering authority.**
-7. **Future Argus observes; future Theia perceives; Talos still verifies.**
-8. **Future Ariadne traces; she does not authorize.**
-9. **Future Epimetheus learns from outcomes; he does not replace verification.**
-10. **Future Iapetus governs lineage only when capability evolution becomes real.**
-11. **Potential Muses express/interpret governed knowledge; Mnemosyne remains memory authority.**
-12. **Negative archetypes describe hazards; they do not become authorities.**
-13. **A mythological family relationship never automatically creates a software dependency.**
-14. **A software dependency never rewrites mythology.**
-15. **No empty mythological seat creates an architectural requirement.**
-
----
+6. **Hyperion evaluates economic value, portfolio oxygen and money gates.**
+7. **Theia owns media production, visual systems and media-domain automation.**
+8. **Hyperion owns the bet; Theia owns the media machine.**
+9. **Opsis orchestrates Theia's media domain; it does not replace Mission/Work or Trust Canal.**
+10. **Helios, Eos and Selene are reserved Theia foundations, not current independent Titans.**
+11. **Future Argus observes operational state; Talos still verifies.**
+12. **Future Ariadne traces; she does not authorize.**
+13. **Future Epimetheus learns from outcomes; he does not replace verification.**
+14. **Future Iapetus governs lineage only when capability evolution becomes real.**
+15. **Potential Muses express/interpret governed knowledge; Mnemosyne remains memory authority.**
+16. **Negative archetypes describe hazards; they do not become authorities.**
+17. **A mythological family relationship never automatically creates a software dependency.**
+18. **A software dependency never rewrites mythology.**
+19. **No empty mythological seat creates an architectural requirement.**
 
 # 12. TEACHER TRANSLATION
 
 ### Thirty-second explanation
 
-**Mythological:** OTHRYS is represented as a mountain populated by named Greek mythological roles. Prometheus discovers, Mnemosyne remembers, Atlas maps, Hephaestus builds, Talos verifies, Kronos supervises, Rhea protects vitality, Hermes communicates, Themis represents governance, and Hyperion evaluates economic opportunity.
+**Mythological:** OTHRYS is represented as a mountain populated by named Greek mythological roles. Prometheus discovers, Mnemosyne remembers, Atlas maps, Hephaestus builds, Talos verifies, Kronos supervises, Rhea protects vitality, Hermes communicates, Themis represents governance, Hyperion evaluates economic opportunity, and Theia turns approved ideas and source material into governed visual media.
 
-**Technical:** OTHRYS is a modular AI/software control plane separating external research, knowledge management, system modeling, implementation, independent verification, lifecycle supervision, reliability, messaging, governance and business/product intelligence into explicit bounded responsibilities.
+**Technical:** OTHRYS is a modular AI/software control plane separating external research, knowledge management, system modeling, implementation, independent verification, lifecycle supervision, reliability, messaging, governance, media production and business/product intelligence into explicit bounded responsibilities.
 
 The mythology is the mnemonic interface. The second paragraph is the architecture.
 
