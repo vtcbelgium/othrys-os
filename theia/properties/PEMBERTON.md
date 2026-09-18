@@ -1476,6 +1476,33 @@ The first pilots may work best with Pemberton + narrator + episodic encounters.
 
 These are hypotheses, not a production queue.
 
+### 0. The Motor Carriage
+Pemberton emerges from the House prepared for an expedition, takeaway cola secured, cravat very slightly wrong. Rather than walk across the modern home, he boards the household robot vacuum and commands his "Motor Carriage" to depart.
+
+The Carriage:
+- initially chooses the wrong route;
+- cleans beneath furniture during Pemberton's important briefing;
+- rotates him away mid-sentence;
+- refuses the stairs;
+- eventually returns itself to the "Carriage House."
+
+Pemberton investigates why his transport behaves this way.
+
+**Fact:** how basic robot vacuums navigate using combinations of sensors, bump detection, cliff sensors, mapping and charging-dock return behavior.
+
+**Character job:** introduce the entire Pemberton grammar in one story:
+- modern world / 1870s interpretation;
+- humans as staff;
+- conservation of effort;
+- cola ritual;
+- physical comedy;
+- wardrobe malfunction;
+- genuine simple explanation.
+
+This is a particularly strong **Episode Zero / character-introduction candidate**.
+
+> **THE FIRST GREAT JOURNEY MAY BE ACROSS THE HALLWAY.**
+
 ### 1. The Perfect Warm Bed
 Pemberton discovers a sun-warmed round manhole cover and intends to sleep on it. Curiosity interrupts the nap: why are so many covers round?
 
