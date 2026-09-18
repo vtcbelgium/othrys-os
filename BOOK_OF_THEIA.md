@@ -1272,6 +1272,9 @@ Canonical seed:
 - involuntary state switches: Gentleman Mode, feather-triggered Play Mode and chin-scratch-triggered Pet Mode;
 - permanent household nemesis: the ordinary spray bottle, interpreted as the Infernal Atomizer;
 - recurring pleasures: warmth, naps, comfortable surfaces, food, highly ritualized cola and excellent chin scratches;
+- automated-estate delusion: feeder as Loyal Steward, self-cleaning litter box as Sanitation Bureau, and human responses interpreted as successful staff training;
+- signature disgust gesture: one crisp hind-paw dismissal flick while exiting;
+- preferred full-adventure ending: Weekend Spa debrief with affection, simple conclusion and wind-down toward sleep;
 - comedy: simple visual/physical comedy over a very well-educated character;
 - tone: whimsical, warm, funny, adventurous, mildly pompous and slightly delusional;
 - educational potential: very high;
