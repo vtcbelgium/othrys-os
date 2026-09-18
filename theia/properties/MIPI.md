@@ -217,30 +217,60 @@ Localization should remain possible.
 
 Avoid a celebrity-imitation voice.
 
-## 12. First 20 episode seeds
+## 12. Episode seeds — the question must emerge from Mipi
 
-1. Why do cats' eyes glow at night?
-2. Why do old city streets twist?
-3. Why are manhole covers round?
-4. Why do clocks turn clockwise?
-5. Why does popcorn pop?
-6. Why does soap remove grease?
-7. Why do airplane windows have rounded corners?
-8. Why do birds migrate?
-9. Why do bees dance?
-10. Why do mirrors seem to flip us?
-11. Why do old books sometimes have chains?
-12. Why do lighthouses shine so far?
-13. Why do we see faces in clouds?
-14. Why do doors have handles far from hinges?
-15. Why do leaves change color?
-16. Why do Portuguese streets use patterned stone?
-17. Why do Belgian towns have belfries?
-18. Why do echoes answer back?
-19. Why did people use wax seals?
-20. Why do some rocks float?
+A weak Mipi episode is a generic FAQ with a cat pasted on top.
 
-The old Vandersteen/Suske-en-Wiske mechanics harvest remains research inventory and is moved under Theia research.
+A strong Mipi episode makes the factual question arise naturally from his character, location or mistake.
+
+> **MIPI DOES NOT VISIT A FACT. MIPI STUMBLES INTO A PROBLEM THAT REVEALS THE FACT.**
+
+### First pilot candidates — character-first
+
+1. **The Eyes in the Dark** — Mipi wakes from a nap and sees two glowing eyes staring back at him. He investigates before realizing he is looking at another cat. Fact: tapetum lucidum and low-light vision.
+2. **The World's Worst Shortcut** — Mipi refuses to walk the long way through an old city, chooses the "obvious shortcut", and becomes hopelessly lost in twisting streets. Fact: how medieval/organic street patterns evolved.
+3. **The Perfect Warm Bed** — Mipi decides a round manhole cover warmed by the sun is an excellent nap spot, then becomes curious why every one seems round. Fact: practical/engineering reasons for round covers.
+4. **The Snack That Attacked Him** — Mipi falls asleep beside unpopped corn and is rudely awakened by popping. Fact: steam pressure inside popcorn kernels.
+5. **Why Would Anyone Fly That Far?** — Mipi watches migrating birds and finds the amount of effort personally offensive. Curiosity wins. Fact: migration and navigation.
+6. **The Door That Refuses to Cooperate** — Mipi pushes beside a hinge because walking to the handle feels unnecessarily far. It barely moves. Fact: torque/leverage and handle placement.
+7. **The Rock Boat** — Mipi steps onto a floating piece of pumice because it looks like a wonderfully lazy way to cross water. Fact: trapped gas, density and pumice.
+8. **The Cat in the Cave** — an echo appears to copy Mipi. He searches for the rude invisible cat answering him. Fact: reflected sound.
+9. **The Mirror Accusation** — Mipi becomes convinced a mirror has swapped his sides. Fact: front-back reflection and perception.
+10. **The Lighthouse Nap** — a sweeping beam keeps waking Mipi, so he climbs toward the source to make it stop. Fact: lighthouse optics and navigation.
+11. **The Dancing Lunch Map** — Mipi watches bees "dance" and assumes they are celebrating food; the dance turns out to point somewhere. Fact: waggle dance communication.
+12. **The Chained Book** — Mipi wants to drag a huge old book to a more comfortable sleeping place and discovers it is chained down. Fact: the value/security of historic chained libraries.
+
+### Expansion inventory after the first format proves itself
+
+Potential subjects retained from the earlier research harvest:
+- clocks and sundials;
+- soap and grease;
+- rounded airplane windows;
+- leaves changing color;
+- wax seals;
+- belfries;
+- Portuguese calçada;
+- lighthouses;
+- clouds/pareidolia;
+- birds;
+- engineering of everyday objects;
+- folklore-vs-evidence mysteries;
+- historical places;
+- nature adaptations.
+
+The old Vandersteen/Suske-en-Wiske mechanics harvest remains **research inventory**, not Mipi's production queue.
+
+### Episode admission test
+
+Before a Mipi seed becomes a script, ask:
+- Would Mipi's curiosity plausibly pull him into this?
+- Can laziness create a funny obstacle, shortcut or point of view without becoming the same gag again?
+- Is there a visual discovery rather than a lecture?
+- Is the factual payoff worth the journey?
+- Does Mipi make the episode more distinctive than a generic narrator would?
+- Is the premise materially different from recent episodes?
+
+If not, return the fact to the research pool.
 
 ## 13. Long arc
 
@@ -298,10 +328,12 @@ Before any **public** pilot:
 - use private/unlisted/internal prototypes if those gates are not yet resolved.
 
 Batch 1:
-- 5–10 shorts with materially different topics;
-- 2–3 fuller episodes;
-- one or two visual styles, not ten;
-- measure production burden and audience retention.
+- storyboard/script the 12 character-first candidates;
+- select 5–8 that create the strongest Mipi-specific situations;
+- produce 5–8 Shorts/compact episodes with materially different mechanics;
+- produce only 1–2 fuller episodes initially, derived from the strongest short-form concepts;
+- test one primary visual grammar plus at most one controlled variant;
+- measure production burden, retention, replay/return signals and whether viewers respond to **Mipi**, not only the fact.
 
 Questions:
 - Does Mipi himself improve retention over a generic narrator?
