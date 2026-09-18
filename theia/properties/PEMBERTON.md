@@ -38,7 +38,9 @@ Locked:
 - actual behavior: unmistakably feline;
 - worldview: his human owners are plainly the household staff and modern conveniences are simply the latest services of a well-run estate;
 - home/base: **Pemberton House**, an ornate cat house with a hidden expedition/teleport function;
-- recurring pleasures: naps, warmth, food, boxes, comfortable surfaces and cola;
+- recurring pleasures: naps, warmth, food, boxes, comfortable surfaces, cola and excellent chin scratches;
+- hygiene attitude: mildly appalled by human dirt, fingerprints, crumbs and "cooties";
+- touch contradiction: treats casual human contact as a contamination risk, then melts under competent petting;
 - field icon: a generic modern fast-food drink cup with lid and straw, treated with absurd dignity;
 - home ritual: cola may be taken from fine porcelain as though it were afternoon tea;
 - primary contradiction: curiosity versus inertia;
@@ -453,6 +455,15 @@ Once the question gets him, he has to know.
 **Comfort-seeking**  
 Warmth, softness and snacks are legitimate competing priorities.
 
+**Fastidious**  
+Pemberton considers humans surprisingly poor at remaining clean. He notices crumbs, sticky fingers, damp sleeves, floor dirt, fingerprints and suspiciously handled objects.
+
+**Touch-denying**  
+He behaves as though unsolicited human contact is a breach of hygiene protocol.
+
+**Affection-vulnerable**  
+Despite all declarations of contamination, Pemberton is extremely susceptible to competent petting — especially under the chin.
+
 **Mildly pompous**  
 Enough to be funny, never enough to make him unpleasant.
 
@@ -511,6 +522,93 @@ Humans may accidentally reinforce the delusion:
 From Pemberton's perspective, the estate runs adequately.
 
 > **A CAT WHO IS FED, TRANSPORTED, CLEANED UP AFTER AND GIVEN THE BEST CHAIR HAS REASONABLE EVIDENCE THAT HE EMPLOYS PEOPLE.**
+
+### 7.3 The cooties doctrine
+
+Pemberton believes humans are **useful but hygienically adventurous**.
+
+His objection is not hatred.
+It is fastidious theatrical disgust.
+
+He may use:
+- napkins;
+- handkerchiefs;
+- folded paper;
+- tiny cloth covers;
+- seat protectors;
+- paw barriers;
+- improvised liners;
+- a small expedition cloth;
+- a napkin beneath a cup;
+- a clean square of fabric before sitting somewhere "questionable."
+
+He may:
+- inspect a chair before sitting;
+- wipe a human-touched object before handling it;
+- place a napkin between himself and a public surface;
+- recoil from a sticky child hand;
+- watch a human eat messily with silent horror;
+- cover a suspicious patch of floor before stepping across it;
+- sterilize nothing scientifically while acting as though ceremony itself solved the problem.
+
+The word **"cooties"** may be used in child-friendly dialogue as Pemberton's own unserious label for vaguely disgusting human residue.
+
+Do not imply:
+- obsessive-compulsive disorder;
+- contamination fear as pathology;
+- real-world germ misinformation;
+- that ordinary affectionate touch is dangerous.
+
+This is a character ritual and visual gag.
+
+> **PEMBERTON DOES NOT FEAR HUMANS. HE SIMPLY QUESTIONS THEIR STANDARDS.**
+
+### 7.4 The affection betrayal
+
+Pemberton's hygiene doctrine collapses under sufficiently good affection.
+
+Strong triggers:
+- under-chin scratches;
+- cheek rubs;
+- behind-the-ear scratches;
+- slow forehead strokes;
+- warm lap plus gentle petting.
+
+His sequence may be:
+
+```text
+HUMAN HAND APPROACHES
+  -> PEMBERTON DISAPPROVES
+  -> TOKEN HYGIENE OBJECTION
+  -> CHIN SCRATCH BEGINS
+  -> EYES SOFTEN
+  -> HEAD LIFTS
+  -> WHISKERS SWEEP FORWARD
+  -> BODY LEANS INTO HAND
+  -> DIGNITY COLLAPSES QUIETLY
+  -> SCRATCHING STOPS
+  -> PEMBERTON IMMEDIATELY RESTORES FORMALITY
+```
+
+For Pemberton specifically, **forward-pointing whiskers** are a canonical visual shorthand for:
+- intense interest;
+- delighted anticipation;
+- involuntary enjoyment during chin scratches.
+
+This is animation language for the character, not a universal veterinary rule for all cats.
+
+Possible recovery behavior:
+- sudden grooming;
+- straightening cravat;
+- inspecting paw as though nothing happened;
+- looking away;
+- issuing a formal complaint that the service ended too soon.
+
+He may then place a napkin on the human's lap **before climbing onto it again**.
+
+> **CONTACT IS UNACCEPTABLE. CONTINUE.**
+
+> **HIS HYGIENE STANDARDS ARE PRINCIPLED. HIS CHIN IS NOT.**
 
 ---
 
@@ -750,7 +848,10 @@ Pemberton should often create comedy through:
 - pretending an obvious accident was intentional;
 - tiny pauses, looks and resets;
 - wardrobe malfunction;
-- the straw/cup refusing to cooperate at exactly the wrong moment.
+- the straw/cup refusing to cooperate at exactly the wrong moment;
+- elaborate napkin barriers defeated by affection;
+- recoiling from a dirty hand, then involuntarily leaning back when that same hand finds the correct chin spot;
+- resetting his dignity immediately after obvious purring/leaning enjoyment.
 
 A good Pemberton gag should survive:
 - dubbing;
@@ -1696,6 +1797,10 @@ Each script should preserve:
 - Pemberton has cat instincts.
 - Pemberton likes comfort.
 - Pemberton likes cola.
+- Pemberton is fastidious about human mess and "cooties."
+- Pemberton uses napkins/barriers theatrically when surfaces or humans seem dirty.
+- Pemberton cannot convincingly resist good chin scratches.
+- forward whiskers are his canonical affection/interest cue during strong chin-scratch enjoyment.
 - Pemberton is warm enough to care about others.
 
 **May vary**
@@ -1883,6 +1988,12 @@ Do not rewrite the entire character after one weak artifact.
 > **PEMBERTON MAY LOVE COLA. REAL CATS DO NOT GET COLA.**
 
 > **THE REFERENCE IS A WINK, NOT A DEPENDENCY.**
+
+> **PEMBERTON DOES NOT FEAR HUMANS. HE SIMPLY QUESTIONS THEIR STANDARDS.**
+
+> **CONTACT IS UNACCEPTABLE. CONTINUE.**
+
+> **HIS HYGIENE STANDARDS ARE PRINCIPLED. HIS CHIN IS NOT.**
 
 > **THE ADVENTURE EARNS ATTENTION. THE EXPLANATION EARNS TRUST.**
 
