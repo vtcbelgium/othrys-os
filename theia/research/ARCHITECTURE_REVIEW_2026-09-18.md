@@ -355,18 +355,19 @@ Vendor/platform/legal specifics stay in dated evidence.
 
 These are intentionally not decided by this refactor:
 
-1. Is Mipi ultimately child-directed or genuinely general-audience family animation?
-2. What is Mipi's final visual design?
-3. Is Mipi narrator-led, voiced, or hybrid?
-4. Does Mipi need a companion/foil character?
-5. Does any long arc deserve canon?
-6. What SaaS should be used for the first animation proof?
-7. When does programmatic rendering beat SaaS?
-8. What is the first authorized clipping dataset/source?
-9. Does "Practical Cartoon Dad" need a permanent property, or is it just the first Explainer test?
-10. Which Theia Blocks are worth admitting after pilots?
-11. Does Opsis earn runtime implementation at all, or can existing Mission/Work + composition satisfy the need initially?
-12. At what evidence threshold does Theia become a standalone service/Star?
+1. Is the cat property ultimately child-directed or genuinely general-audience family animation?
+2. What is the cat property's final public character/series name?
+3. What is the cat property's final visual design?
+4. Is the cat narrator-led, voiced, or hybrid?
+5. Does the cat need a companion/foil character?
+6. Does any long arc deserve canon?
+7. What SaaS should be used for the first animation proof?
+8. When does programmatic rendering beat SaaS?
+9. What is the first authorized clipping dataset/source?
+10. Does "Practical Cartoon Dad" need a permanent property, or is it just the first Explainer test?
+11. Which Theia Blocks are worth admitting after pilots?
+12. Does Opsis earn runtime implementation at all, or can existing Mission/Work + composition satisfy the need initially?
+13. At what evidence threshold does Theia become a standalone service/Star?
 
 These are experiment questions, not missing architecture.
 
@@ -457,7 +458,133 @@ Theia owns localization feasibility, adaptation, QA, rights/disclosure differenc
 
 ---
 
-## 20. REVIEW CONCLUSION
+## 20. THEIA NEEDED A CANONICAL LAYER MODEL — FIXED
+
+### Finding
+
+The design was coherent conceptually but still mixed several abstraction levels in the main Book:
+- Titan/domain doctrine;
+- Opsis orchestration;
+- Arms;
+- reusable faculties;
+- properties;
+- children;
+- providers.
+
+Without a canonical layer model, implementation could turn those into peer services or duplicate responsibility.
+
+### Refinement
+
+Created `theia/ARCHITECTURE.md` with the canonical topology:
+
+    THEIA DOMAIN
+      -> OPSIS CONTROL PLANE
+          -> ARMS
+          -> SHARED FACULTIES
+              -> ADAPTERS
+                  -> ARTIFACTS / EVIDENCE
+
+Cross-cutting:
+- properties = portable identity/canon;
+- Helios/Eos/Selene = expression roles;
+- rights/policy/QA/audience = gates;
+- Hyperion contract = economic seam.
+
+> **DO NOT ADD A COMPONENT WHEN A CONTRACT OR LABEL WILL DO.**
+
+---
+
+## 21. OPSIS WAS TOO LINEAR — FIXED
+
+### Finding
+
+The original Opsis state model implied one artifact moving through one long sequence.
+
+Real media work fans out:
+- one source can create several derivatives;
+- one episode can create several Eos artifacts;
+- localization can branch;
+- one failed derivative should not invalidate the successful primary artifact.
+
+### Refinement
+
+Opsis is now modelled as a **production-graph control plane** with separate:
+- run;
+- graph;
+- artifact lifecycle;
+- independent gate vector.
+
+Rights, audience, policy, disclosure, evidence, budget and authority are gates, not fake sequential milestones.
+
+> **ONE RUN MAY HAVE MANY ARTIFACTS. EVERY ARTIFACT KEEPS ITS OWN EVIDENCE.**
+
+---
+
+## 22. SIBLING CONTRACT WAS SINGLE-ARTIFACT — FIXED
+
+### Finding
+
+The Hyperion↔Theia production contract still contained one singular `artifact`, contradicting the new graph model.
+
+### Refinement
+
+The production and evidence schemas moved to v2:
+- `requested_artifacts[]`;
+- contract-local artifact keys;
+- explicit derivative lineage;
+- optional Helios/Eos/Selene expression roles;
+- artifact-level receipts and telemetry;
+- run-level aggregate evidence.
+
+Hyperion receives the aggregate without losing distinctions between artifacts.
+
+---
+
+## 23. CHILDREN WERE TOO EASY TO MISREAD AS PIPELINES — FIXED
+
+### Finding
+
+Helios, Eos and Selene were correctly bounded but still visually resembled three parallel format systems.
+
+That is inaccurate because Selene is orthogonal to Helios/Eos.
+
+### Refinement
+
+The children are now explicitly **composable audience-facing expression roles**:
+- Helios = full/canonical expression;
+- Eos = first-contact/discovery;
+- Selene = continuity/return.
+
+A flagship recurring episode may be Helios + Selene.
+A recurring short may be Eos + Selene.
+
+Property-level duration targets are pilot hypotheses, not definitions of the children.
+
+---
+
+## 24. MIPI NAME STATE WAS TOO STRONG — FIXED
+
+### Finding
+
+The character concept was useful, but prior wording made `Mipi` sound like a locked public brand even while name collision research remained active.
+
+### Refinement
+
+`Mipi` is now only the stable **internal property codename/ID**.
+
+The character concept remains canon:
+- curious;
+- lazy;
+- warm;
+- adventure/learning engine.
+
+The public character/property name is deliberately unresolved and the naming search is parked until the property has enough evidence to deserve clearance effort.
+
+> **THE CHARACTER IS CANON. THE PUBLIC NAME IS NOT.**
+
+---
+
+## 25. REVIEW CONCLUSION
 
 The first refactor had the right central idea:
 
@@ -470,7 +597,7 @@ After refinement, the seam is substantially stronger:
 - current child-content constraints;
 - current EU AI-transparency reality;
 - stronger IP chain of title;
-- more distinctive Mipi;
+- stronger character concept without premature public-name lock;
 - safer practical-dad pilot;
 - cleaner Hyperion sub-arm seams;
 - cleaner future standalone contract.
