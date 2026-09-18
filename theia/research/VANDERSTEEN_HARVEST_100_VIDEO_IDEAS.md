@@ -640,3 +640,27 @@ Each seed must still pass:
 During Course Mode, all resulting channels and videos remain subject to the global financial lock. A video becoming popular is a signal to preserve, study and expand the asset—not permission to enable revenue.
 
 > **POPULARITY MAY OPEN THE RESEARCH THROTTLE. IT DOES NOT OPEN THE MONEY VALVE.**
+
+---
+
+# PEMBERTON PROPERTY RECONCILIATION
+
+The earlier **Lost Atlas** concept in this harvest remains a valid generic Story Gene. It is not a second Pemberton transport system.
+
+For the Pemberton property, the concept has been specialized as follows:
+
+- **Pemberton House** remains the stable home/teleport base.
+- The **Grand Tour Door** remains the actual portal mechanism.
+- The **Atlas of Seven Doors** is the Season One navigation/key/qualification device that interfaces with the Grand Tour Door.
+- Seven continental routes activate seven seals and reveal an eighth home coordinate.
+- The robot vacuum remains the recurring **Motor Carriage** and gains bounded expedition configurations through the Atlas/Grand Tour Door.
+- Pemberton remains strongly feline; story problems must be solved through cat behavior rather than generic humanoid adventure action.
+- The Suske en Wiske influence remains strictly structural: mystery, travel, history, folklore, recurring devices, rival seeker, clues and return. Protected expression remains outside the property.
+
+The full property canon and Season One rough book live in:
+
+`theia/properties/PEMBERTON.md`
+
+This specialization prevents the generic Lost Atlas experiment inventory from drifting into a competing property canon.
+
+> **ONE STORY GENE MAY SERVE MANY PROPERTIES. EACH PROPERTY GETS ONE CANON.**
