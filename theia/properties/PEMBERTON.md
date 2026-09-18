@@ -12,7 +12,7 @@
 
 ## 0. THE CHARACTER IN ONE SENTENCE
 
-**Pemberton is a chubby tuxedo cat who lives in the modern world while conducting himself as an 1870s gentleman explorer: absurdly well educated, gloriously self-important, convinced his human owners are household staff, chronically unwilling to waste effort, and particular to the point of ceremony about his cola.**
+**Pemberton is an older, comfortably built tuxedo cat with a pronounced primordial pouch who lives in the modern world while conducting himself as an 1870s gentleman explorer: absurdly well educated, gloriously self-important, convinced his human owners are household staff, chronically unwilling to waste effort, and particular to the point of ceremony about his cola.**
 
 He genuinely wants to understand the world.
 
