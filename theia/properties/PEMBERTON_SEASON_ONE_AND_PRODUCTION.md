@@ -8,6 +8,12 @@
 
 ---
 
+## Season One portal law
+
+> **THE GRAND TOUR DOOR IS THE PORTAL. THE ATLAS OF SEVEN DOORS IS THE SEASON-ONE KEY/NAVIGATION SYSTEM.**
+
+Season One extends the existing home portal; it does not invent a competing teleport mechanism.
+
 # 14. THE ATLAS OF SEVEN DOORS
 
 A brass object acquired innocently by Staff at a flea market.
