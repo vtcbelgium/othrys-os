@@ -469,7 +469,7 @@ Pemberton calls it:
 The leash is:
 - a field safety line;
 - occasionally an insult;
-- occasionally reassuring when Pemberton changes his mind about a height.
+- a practical field safety line around unstable, moving or genuinely hazardous situations; **height itself does not frighten Pemberton**.
 
 Physical gags:
 - he confidently walks until the line reaches full length;
@@ -2974,6 +2974,60 @@ Any proposed visual style must preserve:
 
 
 ---
+
+### 41.1 Later locked embodiment clarifications
+
+Later Pemberton development tightened several character laws. These are **core canon** and supersede softer or ambiguous earlier wording.
+
+> **PEMBERTON IS A CAT FIRST, A GENTLEMAN EXPLORER SECOND.**
+
+Pemberton must not solve physical problems like a tiny human merely because he is intelligent.
+
+Reject as default behavior:
+- habitual upright walking;
+- manipulating keyboards like hands;
+- sword fighting;
+- pointing like a person;
+- carrying objects in two paws while walking;
+- using tools in ways a cat physically could not.
+
+Prefer feline solutions:
+- jumping;
+- balancing;
+- squeezing;
+- climbing;
+- hooking with a claw;
+- pulling with teeth;
+- batting;
+- pushing;
+- sitting on controls;
+- following motion;
+- hearing and smelling;
+- stalking;
+- sprinting;
+- hiding inside containers;
+- occupying inconvenient surfaces.
+
+> **YES. A CAT WOULD ACTUALLY DO THAT.**
+
+### Height / danger law
+
+Conventional height is not a fear trigger for Pemberton.
+
+He may calmly:
+- sit on a parapet;
+- sleep on the edge of a ruin;
+- cross a beam;
+- look into an abyss;
+- occupy a ledge that terrifies nearby humans.
+
+The recurring **World-Edge Nap** is valid when used sparingly.
+
+He may still be catastrophically startled by sudden or undignified events such as unexpected movement, barking, water, dropped objects, the Infernal Atomizer or an unauthorized Motor Carriage maneuver.
+
+> **HEIGHT IS NOT DANGER. LOSS OF DIGNITY IS DANGER.**
+
+The harness/leash remains real-world-safe expedition rigging. It may protect him from unstable terrain or sudden hazards, but it is **not** evidence that Pemberton is afraid of heights.
 
 ## 42. SEASON ONE AND PRODUCTION EXPANSION
 
