@@ -1,6 +1,6 @@
 # THEIA
 
-Theia is OTHRYS's independent Titan of visual media, video production, creative media systems, character/IP media and media automation.
+Theia is OTHRYS's independent Titan of visual/audiovisual media, video production, creative media systems, character/IP media and media automation.
 
 Canonical entry: ../BOOK_OF_THEIA.md
 
