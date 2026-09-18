@@ -555,6 +555,9 @@ Stillness lets him notice things active characters miss.
 **Warm**  
 He is not aloof cruelty wrapped in sophistication.
 
+**Innocent toward his people**  
+Pemberton may call the humans staff, question their standards and complain about their administration, but he fundamentally trusts them. He assumes affection, feeding, transport and household order are evidence of loyalty. When they upset him, he prefers explanations such as incompetence, misunderstanding, bad policy or corrupt equipment over "my humans are cruel."
+
 **Stubborn**  
 Once the question gets him, he has to know.
 
@@ -660,9 +663,200 @@ Humans may accidentally reinforce the delusion:
 
 From Pemberton's perspective, the estate runs adequately.
 
+He is also quietly attached to them.
+
+He may act as though affection is a service obligation, but:
+- he waits for familiar footsteps;
+- sleeps near them while claiming the location was strategically warm;
+- checks where they are;
+- follows them between rooms while insisting he had business in the same direction;
+- misses them when they are away;
+- forgives almost everything after sufficient chin scratches.
+
+Pemberton's delusion must never erase the emotional truth:
+**they are his family.**
+
 > **A CAT WHO IS FED, TRANSPORTED, CLEANED UP AFTER AND GIVEN THE BEST CHAIR HAS REASONABLE EVIDENCE THAT HE EMPLOYS PEOPLE.**
 
-### 7.3 The cooties doctrine
+> **THE STAFF MAY BE INCOMPETENT. THEY ARE STILL HIS PEOPLE.**
+
+### 7.3 The Infernal Atomizer — permanent household nemesis
+
+There is one household object Pemberton considers **pure evil**:
+
+**the spray bottle.**
+
+The humans know it as an ordinary trigger spray bottle.
+
+Pemberton knows it as:
+
+**THE INFERNAL ATOMIZER**
+
+Informal alternatives he may use when agitated:
+- The Bottle;
+- that wretched device;
+- the aqueous menace;
+- the skull flask;
+- "it."
+
+Its design is ordinary at first glance, but from Pemberton's eye level:
+- the rounded reservoir;
+- trigger head;
+- nozzle;
+- molded grip/recesses
+
+create a **subtle skull-like silhouette**.
+
+Do not print a literal skull graphic on it.
+The joke is that Pemberton sees malevolence in normal industrial design.
+
+#### The punishment ritual
+
+When Pemberton is doing something the owners consider naughty:
+- climbing somewhere forbidden;
+- attacking a houseplant;
+- pawing at food;
+- pushing an object toward an edge;
+- ignoring repeated redirection;
+
+a human voice may sharply say:
+
+**"NO!"**
+
+Then the Atomizer appears.
+
+The sight alone may be enough.
+
+If it sprays, use only a tiny cartoon mist/spritz as part of the fictional household gag. The property must not present spray-bottle punishment as pet-training instruction or recommend it to viewers.
+
+The comedy is about **Pemberton's interpretation**, not about teaching animal discipline.
+
+#### Why he hates it
+
+Pemberton objects on every possible level.
+
+It:
+- makes him wet;
+- disturbs his fur;
+- threatens his bow;
+- violates personal space;
+- arrives without invitation;
+- makes a humiliating little sound;
+- is wielded by his own staff;
+- appears precisely when he is conducting what he regards as legitimate research.
+
+This is therefore not ordinary dislike.
+
+It is **betrayal by bureaucracy made plastic**.
+
+#### Owner innocence law
+
+Pemberton does **not** conclude:
+"My owner is evil."
+
+Instead he may conclude:
+- the staff have been badly advised;
+- household policy has become unreasonable;
+- the Atomizer has somehow influenced them;
+- they do not understand the device's true nature;
+- a junior member of staff has exceeded authority;
+- "NO!" must be some primitive emergency procedure.
+
+If a human puts the bottle away and later offers affection, Pemberton may forgive almost instantly while continuing to glare at the bottle across the room.
+
+> **THE HAND MAY BE FORGIVEN. THE BOTTLE IS NOT.**
+
+#### The NO cue
+
+"NO!" becomes one of the few human words Pemberton recognizes with complete clarity.
+
+He may react before consciously deciding to:
+- ears flatten slightly;
+- pupils widen;
+- body freezes;
+- paw withdraws from forbidden object;
+- head turns toward likely Atomizer location;
+- one guilty beat;
+- tactical retreat.
+
+If no bottle appears, he may recover quickly and behave as though he stopped voluntarily.
+
+Possible Pemberton response:
+- "I had concluded the experiment."
+- "The matter was already settled."
+- "There is no need for theatrics."
+
+#### Nemesis sound language — the Spritz Alarm
+
+The Atomizer gets its own audio signature.
+
+Canonical production shorthand:
+
+`NO! -> tiny trigger CREEK -> TSSK! -> low comic sting`
+
+The exact sting should be short and recognizable:
+- muted bassoon;
+- low plucked cello;
+- tiny doom chord;
+- never horror-movie scary.
+
+The bottle itself may produce:
+**tssk!**
+
+That sound can trigger Pemberton even off-screen.
+
+A single off-screen **tssk** during a serious speech may cause:
+- instant freeze;
+- huge eyes;
+- slow glance toward camera edge;
+- composure breaking;
+- retreat behind the Motor Carriage.
+
+#### Water distinction
+
+Pemberton does not irrationally fear all water.
+
+He can:
+- drink normally;
+- observe fountains;
+- discuss rivers;
+- travel by boat;
+- investigate rain;
+- understand hydraulics.
+
+His problem is **unexpected water applied directly to Pemberton**.
+
+Rain may be uncivilized.
+A bath is an administrative catastrophe.
+The Atomizer is war.
+
+This keeps the joke specific rather than making him scientifically absurd.
+
+> **WATER IS A SUBJECT. BEING WET IS A PERSONAL ATTACK.**
+
+#### Recurring war
+
+The Atomizer should function like a forever enemy:
+- it appears in the background and Pemberton notices;
+- he attempts to have it "removed from service";
+- he may cover it with a napkin;
+- hide it behind books;
+- push it into a cupboard;
+- move it onto the robot vacuum for disposal;
+- discover it has returned;
+- accidentally knock it so the nozzle points at him;
+- become trapped between it and the feather wand, forcing Play Mode and Nemesis panic to compete.
+
+The humans repeatedly put it back where it belongs.
+
+To Pemberton this proves it possesses **unnatural institutional influence**.
+
+Do not overuse it.
+The bottle remains funny because its appearance feels consequential.
+
+> **SOME ENEMIES SEEK POWER. SOME ENEMIES CONTAIN 300 MILLILITRES OF WATER.**
+
+### 7.4 The cooties doctrine
 
 Pemberton believes humans are **useful but hygienically adventurous**.
 
@@ -702,7 +896,7 @@ This is a character ritual and visual gag.
 
 > **PEMBERTON DOES NOT FEAR HUMANS. HE SIMPLY QUESTIONS THEIR STANDARDS.**
 
-### 7.4 The affection betrayal
+### 7.5 The affection betrayal
 
 Pemberton's hygiene doctrine collapses under sufficiently good affection.
 
@@ -750,7 +944,7 @@ He may then place a napkin on the human's lap **before climbing onto it again**.
 
 > **HIS HYGIENE STANDARDS ARE PRINCIPLED. HIS CHIN IS NOT.**
 
-### 7.5 The three Pemberton modes
+### 7.6 The three Pemberton modes
 
 Pemberton has three recurring behavioral states.
 
@@ -863,7 +1057,7 @@ Play Mode is:
 Pet Mode is:
 **dignified collapse.**
 
-### 7.6 Mode-switch sound language
+### 7.7 Mode-switch sound language
 
 The switches should have **short, language-independent audio signatures** so children can recognize the state before dialogue.
 
@@ -924,7 +1118,7 @@ Do not use the same spoken line every time.
 
 > **THE SOUND TELLS US THE CAT HAS TAKEN OVER BEFORE PEMBERTON ADMITS IT.**
 
-### 7.7 The basic-instinct law
+### 7.8 The basic-instinct law
 
 Pemberton's intelligence never removes his animal nature.
 
@@ -1194,7 +1388,12 @@ Pemberton should often create comedy through:
 - hindquarter wiggle betraying the pounce before Pemberton consciously commits;
 - Pet Mode melting him immediately after a speech about human cooties;
 - the Chirrup Sting or Purr Bloom arriving before Pemberton can preserve appearances;
-- "Silly me" followed by an absurdly fast return to scholarly seriousness.
+- "Silly me" followed by an absurdly fast return to scholarly seriousness;
+- the mere silhouette of the Infernal Atomizer ruining Pemberton's confidence;
+- hearing "NO!" and withdrawing a paw before pretending the experiment was already complete;
+- forgiving the human immediately after chin scratches while continuing a lifelong feud with the spray bottle;
+- attempting to dispose of the Atomizer via Motor Carriage and finding it returned to its shelf;
+- serious water-science explanations contrasted with total outrage at one tiny personal spritz.
 
 A good Pemberton gag should survive:
 - dubbing;
@@ -1478,6 +1677,9 @@ It is his motor carriage.
 
 A cat harness and leash are not pet-control equipment.
 They are expedition rigging and a field safety line.
+
+A household spray bottle is not a cleaning/training object.
+It is the Infernal Atomizer, a recurring institutional enemy.
 
 A food delivery is not takeaway.
 It is catering.
@@ -2147,6 +2349,10 @@ Each script should preserve:
 - Pemberton likes cola.
 - Pemberton is fastidious about human mess and "cooties."
 - Pemberton uses napkins/barriers theatrically when surfaces or humans seem dirty.
+- Pemberton fundamentally loves/trusts his owners despite calling them staff.
+- the spray bottle is his permanent household nemesis: the Infernal Atomizer.
+- "NO!" is a strongly recognized human cue associated with stopping naughty behavior and possible Atomizer appearance.
+- Pemberton blames the bottle/policy before blaming his people.
 - Pemberton's ordinary pet collar with bow-tie front is his default neckwear.
 - outdoor leash attachment uses a normal cat harness; Pemberton interprets it as expedition rigging.
 - Pemberton cannot convincingly resist good chin scratches.
@@ -2345,6 +2551,14 @@ Do not rewrite the entire character after one weak artifact.
 > **THE REFERENCE IS A WINK, NOT A DEPENDENCY.**
 
 > **PEMBERTON DOES NOT FEAR HUMANS. HE SIMPLY QUESTIONS THEIR STANDARDS.**
+
+> **THE STAFF MAY BE INCOMPETENT. THEY ARE STILL HIS PEOPLE.**
+
+> **THE HAND MAY BE FORGIVEN. THE BOTTLE IS NOT.**
+
+> **WATER IS A SUBJECT. BEING WET IS A PERSONAL ATTACK.**
+
+> **SOME ENEMIES SEEK POWER. SOME ENEMIES CONTAIN 300 MILLILITRES OF WATER.**
 
 > **CONTACT IS UNACCEPTABLE. CONTINUE.**
 
