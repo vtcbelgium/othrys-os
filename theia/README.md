@@ -14,6 +14,7 @@ Canonical entry: ../BOOK_OF_THEIA.md
 - properties/MIPI.md — first original character/IP starter.
 - properties/CARTOON_DAD.md — first utility-first explainer property.
 - research/MEDIA_AUTOMATION_STUDY_2026-09-18.md — dated clipping/explainer automation, platform and monetization study.
+- research/ARCHITECTURE_REVIEW_2026-09-18.md — second-pass boundary/policy/IP audit and resolved findings.
 - research/VANDERSTEEN_HARVEST_100_VIDEO_IDEAS.md — preserved adventure-mechanics research inventory.
 
 ## Ownership law
