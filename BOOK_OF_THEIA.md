@@ -4,6 +4,8 @@
 
 **Status:** CANONICAL STRATEGIC TITAN — doctrine and boundaries are active; runtime implementation is intentionally incomplete.
 
+Canonical structural topology and layer/admission rules live in `theia/ARCHITECTURE.md`. This Book owns doctrine and boundaries; it should not become a duplicate runtime specification.
+
 Theia is an independent Titan. She is not an Arm of Hyperion, not a media room inside Hyperion, and not a synonym for a video editor.
 
 In mythology Theia is one of the elder Titans, paired with Hyperion and mother of Helios, Selene and Eos. In OTHRYS, the relationship is deliberately useful: **Hyperion owns the economic bet; Theia owns the media machine.**
@@ -109,7 +111,7 @@ Theia and Hyperion are peers with a high-bandwidth interface. Neither owns the o
 
 > **MAKE ORIGINAL, VERIFIED, NATIVE MEDIA CHEAP ENOUGH TO EXPERIMENT WITH — WITHOUT MAKING GARBAGE CHEAP ENOUGH TO FLOOD PLATFORMS.**
 
-Canonical loop:
+Canonical media loop:
 
     INTENT
       -> SOURCE
@@ -120,10 +122,13 @@ Canonical loop:
       -> VERIFY
       -> PACKAGE
       -> APPROVE
-      -> DISTRIBUTE
+      -> DISTRIBUTE IF AUTHORIZED
       -> OBSERVE
       -> LEARN
-      -> ITERATE / SCALE / PIVOT / KILL / ARCHIVE
+      -> REPAIR / REFINE / ARCHIVE
+      -> RETURN MEDIA EVIDENCE
+
+Theia may iterate media execution inside granted authority. Hyperion/Portfolio interprets the returned evidence when the question is whether the economic bet should scale, pivot, pause or die.
 
 Theia optimizes for:
 - useful or enjoyable audience outcomes;
@@ -291,14 +296,17 @@ Conceptual flow:
            v
           OPSIS
            |
-           +-- choose Arm
            +-- resolve production contract
-           +-- call admitted capabilities
-           +-- checkpoint
-           +-- collect evidence
+           +-- build typed production graph
+           +-- route Arm(s) and faculties
+           +-- checkpoint expensive/authority stages
+           +-- collect artifact-level evidence
            +-- route review
            +-- package outputs
-           +-- return receipt
+           +-- execute side effects only if authorized
+           +-- return production receipt
+
+A run may fan out into several artifacts and may compose several Arms. Opsis is therefore a production-graph control plane, not a single fixed assembly line.
 
 A detailed Opsis contract lives in the Book of Opsis.
 
@@ -333,14 +341,24 @@ Initial Arms:
    - educational adventure;
    - original IP formation.
 
-Candidate later Arms only when evidence justifies them:
-- product demo/onboarding;
-- long-form documentary/essay;
-- localization;
-- live/stream packaging;
-- interactive/video branching;
-- synthetic presenter/avatar;
-- branded B2B explainers.
+Current Arm types are intentionally different:
+- Clipping is a **transformation Arm**;
+- Explainer is an **instructional-production Arm**;
+- Story Forge is a **narrative/IP-development Arm** that commonly feeds another production path.
+
+Candidate future Arms only when evidence proves a distinct reusable source-to-output workflow. Plausible candidates include:
+- documentary/essay production;
+- live/stream production;
+- interactive/branching media.
+
+These are **not automatically Arms**:
+- product demo/onboarding — usually an Explainer class;
+- localization — cross-cutting faculty/workflow;
+- synthetic presenter/avatar — rendering modality/faculty;
+- branded B2B explainers — Explainer contract/property variant;
+- a platform or vendor — adapter/surface.
+
+Arm admission requires distinct semantics, a reusable end-to-end contract, meaningful domain-specific QA/evidence, multiple consumers and a boundary that is clearer than modelling the capability as a faculty, genome, property variant or adapter.
 
 Do not instantiate an Arm merely because a vendor offers a feature.
 
@@ -380,15 +398,21 @@ The clipping derivative must still be edited as a native artifact. It is not aut
 
 Arms reuse common faculties instead of rebuilding them.
 
-Candidate shared faculties:
+Candidate shared faculties are grouped so Theia does not become a flat bag of tools.
+
+**Intake & knowledge**
 - Source Ingestor;
 - Transcript Engine;
-- Research/Fact Pack Adapter;
+- Research/Fact Pack Adapter.
+
+**Creative planning**
 - Script Builder;
 - Story/Beat Planner;
 - Scene Planner;
 - Visual Grammar Resolver;
-- Character/World Bible Manager;
+- Character/World Bible Manager.
+
+**Asset & render**
 - Asset Library;
 - Asset Generator Router;
 - Diagram/Chart/Map Renderer;
@@ -396,21 +420,33 @@ Candidate shared faculties:
 - Music/SFX Rights Checker;
 - Subtitle/Caption Generator;
 - Video Assembler;
-- Render Farm Adapter;
-- Thumbnail/Title Lab;
+- Render Farm Adapter.
+
+**Trust & gates**
 - Rights/Provenance Ledger;
-- Fact/Evidence Gate;
+- Fact/Evidence QA Gate;
 - Media Quality Gate;
-- Platform Packager;
 - Policy/Disclosure Adapter;
-- Audience Classification Gate;
-- Scheduler/Publisher;
+- Audience Classification Gate.
+
+Theia's Fact/Evidence QA is domain QA. It does not replace Talos or separately required independent verification.
+
+**Package & side effects**
+- Platform Packager;
+- Packaging Variant Generator;
+- Localization Engine;
+- Scheduler/Publisher.
+
+Packaging does not imply publication authority.
+
+**Evidence & learning**
 - Analytics Collector;
 - Retention Analyzer;
 - Comment/Question Miner;
-- Experiment Ledger;
-- Localization Engine;
+- Media Production Experiment Ledger;
 - Archive/Resurrection Manager.
+
+The Media Production Experiment Ledger stores Theia-local production evidence. Hyperion Laboratory remains canonical owner of cross-domain/economic experiment contracts.
 
 Each faculty must expose:
 - input contract;
@@ -1192,62 +1228,35 @@ No separation merely for architectural elegance.
 
 ---
 
-## 29. THE THREE CHILDREN — FOUNDATIONS
+## 29. THE THREE CHILDREN — EXPRESSION FOUNDATIONS
 
-The children are foundations, not independent Titans today.
+Helios, Eos and Selene are **composable audience-facing expression roles**, not three services and not mutually exclusive routing buckets.
 
-### HELIOS — primary illumination
+- **Helios** — full/canonical primary expression.  
+  > **HELIOS CARRIES THE FULL LIGHT.**
 
-Candidate role:
-- flagship/canonical public media;
-- long-form;
-- main episodes;
-- definitive explainers;
-- hero content;
-- search/evergreen authority.
+- **Eos** — first-contact/discovery expression.  
+  > **EOS EARNS THE FIRST LOOK; SHE DOES NOT FAKE THE SUNRISE.**
 
-Law:
-> **HELIOS CARRIES THE FULL LIGHT.**
+- **Selene** — continuity/return/cycle expression.  
+  > **SELENE TURNS A VIEW INTO A RHYTHM OF RETURN.**
 
-### EOS — first light / discovery
+One artifact may carry more than one role:
+- flagship recurring episode = Helios + Selene;
+- recurring discovery short = Eos + Selene;
+- one-off definitive explainer = Helios.
 
-Candidate role:
-- Shorts;
-- Reels;
-- TikTok/native discovery;
-- hooks;
-- teasers;
-- launch tests;
-- clipping derivatives;
-- first-contact media.
+Not every artifact requires a child label. None of the children becomes runtime authority merely because a format maps neatly to the mythology.
 
-Law:
-> **EOS EARNS THE FIRST LOOK; SHE DOES NOT FAKE THE SUNRISE.**
-
-### SELENE — cycles / continuity / return
-
-Candidate role:
-- serialized continuity;
-- story worlds;
-- playlists/cycles;
-- calm/bedtime/reflective formats;
-- recurring character attachment;
-- evergreen resurfacing;
-- archive and re-entry;
-- long-term IP continuity.
-
-Law:
-> **SELENE TURNS A VIEW INTO A RHYTHM OF RETURN.**
-
-Detailed boundaries live in THEIA_CHILDREN_FOUNDATIONS.md.
+Detailed semantics and future admission criteria live in `theia/THEIA_CHILDREN_FOUNDATIONS.md`.
 
 ---
 
-## 30. STARTER PROPERTY A — MIPI
+## 30. STARTER PROPERTY A — INTERNAL CODENAME MIPI
 
-**Mipi** is the first named Theia character/IP starter.
+**Mipi** is the internal working codename for Theia's first character/IP starter. The character concept is active; the public character/property name is deliberately unresolved and must not be treated as brand canon.
 
-Canonical seed:
+Canonical concept seed:
 - species: cat;
 - gender/pronouns: he/him;
 - defining contradiction: extremely curious and extremely lazy;
