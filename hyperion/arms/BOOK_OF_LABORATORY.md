@@ -18,8 +18,20 @@ A/B; sequential bounded batches; prototype usability; pricing simulation; channe
 ## 4. Causal Humility
 Not every real-world experiment permits clean causality. Label evidence strength. Correlation may guide another test but should not masquerade as proof.
 
-## 5. Media Testing
-Possible variables: topic, hook, title, thumbnail, duration, narrator, visual style, story genome, posting surface, language and CTA. Avoid changing everything simultaneously when learning matters.
+## 5. Media Testing — Theia Interface
+Possible variables: topic, hook, title, thumbnail, duration, narrator, visual style, story genome, posting surface, language and CTA.
+
+Laboratory owns the **experiment contract**:
+- hypothesis;
+- variable;
+- population/context;
+- budget;
+- success/failure evidence;
+- stopping rule.
+
+Theia owns production of the media variants and media-domain quality/rights gates.
+
+Laboratory must not demand a "cleaner" experiment by weakening Theia's safety, rights, audience-classification or disclosure rules.
 
 ## 6. Product Testing
 Activation, task completion, return use, failure rate, time-to-value, support burden, willingness-to-pay signals, performance and cost.
