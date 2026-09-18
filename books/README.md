@@ -7,7 +7,6 @@ A Book is institutional memory, not execution authority. Current code/tests/miss
 ## Current shelf
 - **The Book of OTHRYS OS** — `books/book-of-othrys-os/README.md` — The current house: one operating surface over proven V2 machinery.
 - **The Book of GPT Control** — `BOOK_OF_GPT.md` — Roadmap/control owner that issues bounded missions and preserves the next legal action.
-- **The Book of Theia** — `books/book-of-theia/README.md` — Active Titan for creative/media production, original IP, authored audiovisual form and property continuity through Opsis.
 - **The Book of Hephaestus** — `books/book-of-hephaestus/README.md` — Engineering authority for bounded construction under mission scope.
 - **The Book of Talos** — `books/book-of-talos/README.md` — Independent verification and evidence authority.
 - **The Book of Trust Canal** — `books/book-of-trust-canal/README.md` — Admission and authority boundary for intents and execution progression.

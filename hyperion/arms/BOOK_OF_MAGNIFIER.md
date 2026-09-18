@@ -19,10 +19,22 @@ More volume; deeper product; adjacent problem; derivative format; new audience; 
 First harden the winning core. Then test one adjacency cheaply. Only then replicate broadly. Scaling a fragile pipeline multiplies incidents.
 
 ## 5. Localization
-Translate winners, not noise. Adapt language, idiom, units, examples, voice, visuals and metadata. Preserve canonical lineage.
+Translate winners, not noise.
+
+Magnifier decides **whether localization deserves investment and which market/audience is the next economic test**.
+
+When the winner is a Theia property, Theia owns the localization production contract: language, idiom, units, examples, voice, visuals, metadata, rights and canonical derivative lineage.
 
 ## 6. IP Expansion
 For character/story winners, test whether audience affinity attaches to topic, format, character or world before expensive universe expansion.
+
+Magnifier may propose:
+- more episodes;
+- new format;
+- localization;
+- book/game/app/licensing exploration.
+
+Theia decides how the media/IP production is executed; Hyperion keeps the investment thesis and budget decision.
 
 ## 7. Product Expansion
 Avoid feature bloat. Adjacent features must strengthen the value mechanism or unlock a proven neighboring job.

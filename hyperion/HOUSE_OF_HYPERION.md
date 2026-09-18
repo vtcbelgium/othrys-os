@@ -433,27 +433,37 @@ Long-term possibility: OTHRYS becomes known for evidence-backed autonomy qualifi
 
 ---
 
-## 17. THE MEDIA ROOM — TURN RESEARCH INTO DISTRIBUTION
+## 17. THE THEIA GATE — TURN COMMERCIAL SIGNAL INTO MEDIA WORK
 
-Every expensive investigation should be checked for a publishable derivative that does not expose secrets.
+Hyperion no longer owns a Media Room.
 
-Formats:
+When research or an asset suggests a media opportunity, Hyperion prepares a **Media Opportunity Packet** for sibling Titan Theia.
 
-- benchmark articles;
-- technical explainers;
-- failure postmortems;
-- AI tool radar;
-- newsletters;
-- video scripts/demos;
-- annual reports;
-- public dashboards;
-- case studies;
-- comparison pages;
-- searchable reference pages.
+Hyperion contributes:
+- audience/job hypothesis;
+- commercial/distribution hypothesis;
+- bounded budget;
+- decision point;
+- possible economic surfaces;
+- kill/pivot criteria.
 
-Commercial possibilities: sponsors, affiliates, leads, paid reports, paid newsletter tier, job board, event partnerships, licensing charts/data.
+Theia owns:
+- story/media design;
+- clipping;
+- explainer/video production;
+- rights/provenance;
+- quality;
+- media packaging and publishing execution when separately authorized;
+- media production telemetry.
 
-Media is not separate from product discovery: it can reveal which topics attract qualified demand.
+Theia returns a **Media Evidence Packet**. Hyperion then evaluates:
+- qualified demand;
+- audience quality;
+- production economics;
+- sponsor/affiliate/product/licensing optionality;
+- whether the property deserves more oxygen.
+
+> **THE HOUSE MAY ASK FOR MEDIA. IT DOES NOT OWN THE STUDIO.**
 
 ---
 

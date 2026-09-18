@@ -10,8 +10,7 @@
     "knowledge": "docs",
     "runtime": "runtime",
     "work": ".othrys/work",
-    "knowledgeStore": ".othrys/knowledge",
-    "creative": "theia"
+    "knowledgeStore": ".othrys/knowledge"
   },
   "work": {
     "phases": [
@@ -123,18 +122,6 @@
       "label": "Visual Control",
       "role": "Visual observation / evidence contracts",
       "statusEvidence": "V2-011H"
-    },
-    {
-      "id": "theia",
-      "label": "Theia",
-      "role": "Creative/media production, original IP and authored visual/audiovisual form",
-      "statusEvidence": "books/book-of-theia/README.md"
-    },
-    {
-      "id": "opsis",
-      "label": "Opsis",
-      "role": "Theia production control plane / artifact dependency graph",
-      "statusEvidence": "theia/opsis/README.md"
     }
   ],
   "capabilities": [
@@ -418,15 +405,13 @@
     },
     {
       "role": "designer",
-      "authority": "theia",
-      "authorityClass": "TITAN",
+      "authority": null,
+      "authorityClass": "UNASSIGNED",
       "capabilities": [
-        "design.prototype",
-        "media.story",
-        "media.production"
+        "design.prototype"
       ],
       "modelRequest": "HIGH_REASONING",
-      "status": "BOUND"
+      "status": "GATED"
     },
     {
       "role": "builder",
@@ -490,23 +475,6 @@
     "secretFree": true,
     "deterministicDigest": true,
     "semanticGates": "NINE_MUSES",
-    "declarativeGrant": false
-  },
-  "theiaPolicy": {
-    "service": "theia",
-    "controlPlane": "opsis",
-    "propertyCanon": "THEIA_LOCAL_CANON_WITH_MNEMOSYNE_ADMISSION_FOR_INSTITUTIONAL_KNOWLEDGE",
-    "creativeLocks": [
-      "PROPERTY_CANON",
-      "SCRIPT",
-      "CHARACTER_DESIGN",
-      "ANIMATIC",
-      "MASTER",
-      "PUBLISH_APPROVAL"
-    ],
-    "economicAuthority": "hyperion",
-    "verificationAuthority": "talos",
-    "executionAuthority": "trust-canal",
     "declarativeGrant": false
   }
 }

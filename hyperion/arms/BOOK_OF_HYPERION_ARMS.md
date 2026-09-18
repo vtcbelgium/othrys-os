@@ -1,100 +1,111 @@
 # BOOK OF HYPERION ARMS
 
-**Status:** CURRENT HYPERION DOMAIN MAP  
-**Boundary:** Theia now owns Story Forge and Media Factory. Hyperion owns economic discovery, distribution, experimentation, interpretation, scaling, commercialization and transferable-value strategy.
+**Canonical architecture for Hyperion's specialized economic capability arms**
 
-> **HYPERION OWNS THE ECONOMIC HORIZON. THEIA OWNS CREATIVE FORM.**
+Hyperion remains one Titan. The Arms are not new Titans and do not compete with OTHRYS governance.
+
+**Media Factory and Story Forge have left Hyperion. They are now Theia capabilities.**
+
+> **ONE TITAN. MANY ECONOMIC ARMS. ONE VALUE LOOP.**
 
 ## 1. The Ten Arms
 
 1. **Prospector** — Opportunity Discovery and Candidate Formation.
 2. **Fishing Fleet** — Rapid Product Experiments and Tiny Useful Products.
-3. **Distributor** — Discovery, Reach, Routing and Owned Audience.
+3. **Distributor** — Discovery Economics, Reach Strategy, Routing and Owned-Audience Strategy.
 4. **Laboratory** — Experiment Design and Causal Learning.
 5. **Oracle** — Signal Interpretation and Winner Detection.
 6. **Magnifier** — Winner Expansion and Compounding.
 7. **Merchant** — Commercial Intelligence and Revenue Design.
 8. **Valve** — Financial Gates and Revenue Airlocks.
 9. **Portfolio** — Resource Allocation and Bet Management.
-10. **Vault** — IP, Rights, Provenance and Transferable Asset Memory.
+10. **Vault** — Economic Asset/IP/Provenance Preservation and Transferability.
 
-Story Forge and Media Factory are no longer Hyperion Arms. They are Theia Arms.
+## 2. Sibling boundary with Theia
 
-## 2. Primary Flow
+Theia is not Arm 11.
 
-For media/IP:
+    HYPERION
+      -> opportunity/economic packet
+      -> THEIA
+      -> media evidence packet
+      -> HYPERION
 
-`PROMETHEUS -> HYPERION/PROSPECTOR -> THEIA/STORY FORGE -> THEIA/MEDIA FACTORY -> HYPERION/DISTRIBUTOR -> LABORATORY -> ORACLE -> MAGNIFIER`
+Theia owns media production, clipping, explainer production, character/story media, platform packaging and media-domain production learning.
 
-For non-media products:
+Hyperion owns whether the experiment deserves oxygen, which commercial surfaces are attractive, and whether a validated property should be kept, expanded, bundled, licensed, spun out, sold, suspended or killed.
 
-`PROMETHEUS -> PROSPECTOR -> [FISHING FLEET | FACTORY | OTHER GOVERNED BUILD PATH] -> DISTRIBUTOR -> LABORATORY -> ORACLE -> MAGNIFIER`
+## 3. Primary economic flow
 
-Economic path:
+    PROMETHEUS / REALITY
+      -> PROSPECTOR
+      -> LABORATORY defines bounded experiment where needed
+      -> [FISHING FLEET | THEIA | OTHER BUILD PATH] executes domain work
+      -> domain evidence returns
+      -> DISTRIBUTOR interprets discovery economics where relevant
+      -> ORACLE interprets signal / winner state
+      -> MAGNIFIER proposes bounded expansion
+      -> PORTFOLIO allocates oxygen
 
-`ORACLE/ASSET -> MERCHANT -> VALVE -> QUALIFIED MONEY FLOW`
+For Theia media specifically:
 
-Persistent allocation:
+    HYPERION opportunity + experiment contract
+      -> THEIA production
+      -> THEIA media evidence
+      -> HYPERION Distributor / Oracle / Portfolio interpretation
 
-`PORTFOLIO ALLOCATES OXYGEN`
+Hyperion Arms do not call Theia's internal Story Forge, renderer, publisher or property state directly.
 
-Transferable value:
+Supporting economic path:
 
-`VAULT PRESERVES ECONOMIC/IP ASSET STATE`
+    ORACLE / ASSET
+      -> MERCHANT
+      -> VALVE
+      -> QUALIFIED MONEY FLOW
 
-## 3. Theia handoff
+Persistent:
+- Portfolio allocates oxygen.
+- Vault preserves transferable economic value.
 
-Hyperion may originate an opportunity hypothesis and define:
-- audience hypothesis;
-- distribution surface;
-- experiment budget;
-- economic question;
-- continuation/kill condition.
+## 4. Distribution split
 
-Theia receives the creative brief and owns:
-- property formation;
-- canon;
-- story;
-- script;
-- visual development;
-- production;
-- master;
-- derivative package;
-- creative audience evidence.
+Hyperion Distributor owns:
+- channel economics;
+- discovery hypotheses;
+- audience-surface strategy;
+- owned-audience strategy;
+- acquisition economics;
+- commercial routing.
 
-Hyperion receives back:
-- production cost;
-- release package;
-- audience signals;
-- property/asset evidence;
-- rights/provenance status;
-- creative learning relevant to economic decisions.
+Theia owns media-specific:
+- file/platform packaging;
+- authorized publishing workflow;
+- title/thumbnail production tests as media artifacts;
+- derivative/cross-format artifact production;
+- media telemetry collection.
 
-Hyperion does not rewrite creative canon merely to defend an economic thesis.
+Distributor owns **audience/economic routing**. Theia owns **artifact derivation and native packaging**.
 
-Theia does not allocate capital or open financial gates.
+Neither should duplicate the other.
 
-## 4. Distributor boundary
+## 5. Vault split
 
-Distributor remains Hyperion.
+Hyperion Vault asks:
+- is the asset transferable?
+- commercially clean?
+- valuable to keep/license/sell?
+- what is the economic history?
 
-Theia makes a truthful native package.
+Theia's Rights/Provenance Ledger asks:
+- can this media asset be used?
+- what are its source/licence/model/voice/font/music obligations?
+- what transformations and lineage produced it?
 
-Distributor decides where/how to route and discover it.
-
-Packaging truth belongs to Theia; reach strategy belongs to Hyperion.
-
-## 5. Vault boundary
-
-Theia stores working production provenance and property canon.
-
-Vault preserves transferable/commercial IP state, rights evidence and reproducibility needed for licensing, spin-out, partnership or sale.
-
-Neither duplicates Mnemosyne institutional memory.
+Theia provides evidence; Hyperion assesses economic optionality.
 
 ## 6. Common Arm Contract
 
-Every mature Hyperion Arm should expose:
+Every mature Arm should expose:
 - mission;
 - inputs;
 - outputs;
@@ -111,26 +122,21 @@ Every mature Hyperion Arm should expose:
 - escalation paths;
 - operator controls.
 
-## 7. Children's media example
+## 7. Course Mode
 
-```text
-Prospector: identifies promising audience/problem/theme
-Theia Story Forge: develops original property/story
-Theia Media Factory: produces episode/Short/package
-Distributor: routes/discovers it
-Laboratory: tests bounded economic/distribution hypothesis
-Oracle: interprets retention/return/share/value signals
-Magnifier: expands only when evidence supports scale
-Vault: preserves transferable IP/rights state
-Merchant: models commercial options
-Valve: remains governed by financial lock
-Portfolio: decides oxygen
-```
+The Arms may discover, test, model economics, preserve assets and prepare commercial machinery.
+Valve enforces the global financial lock.
+Theia may publish permitted free media under her own governance, but popularity never opens Hyperion's money valve.
 
-## 8. Anti-blob law
+## 8. Anti-Blob Law
 
-Hyperion must not absorb creative production merely because media can make money.
+No Hyperion Arm may silently absorb Theia.
+No Theia capability may silently absorb Hyperion.
 
-Theia must not absorb economic allocation merely because creative work generates audience signals.
+## 9. Final Laws
 
-> **SPECIALIZE AUTHORITY. STANDARDIZE HANDOFFS.**
+> **SPECIALIZE AUTHORITY. STANDARDIZE HANDOFFS. PRESERVE EVIDENCE.**
+
+> **THEIA IS A SIBLING TITAN, NOT A MEDIA ARM.**
+
+> **HYPERION OWNS THE BET; THEIA OWNS THE MEDIA MACHINE.**
