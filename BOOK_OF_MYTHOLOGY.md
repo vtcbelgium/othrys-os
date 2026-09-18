@@ -424,8 +424,61 @@ REQUEST → MISSION → ADMISSION → SELECTION → EXECUTION → MUTATION → E
 ## Tier B — strong when a real domain grows
 
 ### THEIA — RESERVED TITAN
-**Potential:** multimodal perception/computer vision/UI observation.  
+**Current potential:** multimodal perception/computer vision/UI observation.  
 **Boundary:** Theia perceives; Argus observes operational state; Talos verifies; Atlas models; Mnemosyne remembers.
+
+**New architectural pressure — media/creative-production candidate:** Pemberton animation work has exposed a second strong interpretation of Theia: not merely machine perception, but the governed domain where visual/audiovisual form is created, maintained and expressed. Mythologically this remains plausible through Theia's association with sight/heavenly light, but technical fit must outrank aesthetics.
+
+This is **not canonical activation** and does not currently move any authority.
+
+Current repo truth still places Story Forge, Media Factory, Distributor and Vault under Hyperion. A future Theia admission would therefore require an explicit responsibility migration rather than a duplicate creative stack.
+
+A candidate future boundary would be:
+
+```text
+HYPERION
+economic/opportunity/portfolio/distribution intelligence
+
+THEIA [candidate]
+creative media/property production control
+  └── animation as one production arm
+
+PROMETHEUS
+external evidence/research
+
+MNEMOSYNE
+institutional memory
+
+ATLAS
+derived read-only relationship/system map
+
+HEPHAESTUS
+engineering/build authority
+
+TALOS
+independent verification
+```
+
+If admitted, Theia must not absorb:
+- Hyperion's economic authority;
+- Prometheus research;
+- Mnemosyne memory governance;
+- Atlas mapping;
+- Hephaestus build authority;
+- Talos verification;
+- Trust Canal authority;
+- Switchyard labor selection;
+- Keymaster credentials;
+- Mycelium routing;
+- Kronos lifecycle;
+- Rhea vitality;
+- Hermes communications.
+
+The Pemberton property is deliberately implemented today as a specialization of the existing Hyperion Story Forge + Media Factory, with the candidate seam recorded for future admission.
+
+Reference: `hyperion/media/BOOK_OF_PEMBERTON.md` and `BOOK_OF_HYPERION.md#31-theia-media-domain-candidate-boundary`.
+
+> **DO NOT PROMOTE THEIA BY METAPHOR. DEFINE THE TECHNICAL SURFACE, RESOLVE THE HYPERION COLLISION, THEN ADMIT OR REJECT IT.**
 
 ### DAEDALUS — CANDIDATE
 **Myth:** master inventor/architect.  
