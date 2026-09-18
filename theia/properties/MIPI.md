@@ -162,22 +162,27 @@ Sensitive lanes require stronger review:
 
 ## 8. Mipi + Theia children
 
+These are **initial property-level format hypotheses**, not definitions of Helios/Eos/Selene.
+
 **Helios**
-- 3–8 minute fuller adventure/episode;
-- definitive version of a story.
+- fuller/canonical adventure expression;
+- initial pilot target may be roughly 3–8 minutes;
+- definitive version of a story when a fuller version exists.
 
 **Eos**
-- 15–60 second discovery short;
-- funniest reveal;
-- one compact fact;
-- teaser leading to fuller episode where useful.
+- first-contact/discovery expression;
+- initial pilot target may be roughly 15–60 seconds;
+- funniest reveal or one compact fact;
+- may route to fuller value where useful.
 
 **Selene**
-- continuity;
+- continuity/return role across either Helios or Eos artifacts;
 - playlists;
 - gentle recurring story world;
 - return behavior;
 - possible calmer/bedtime variants later.
+
+A recurring fuller episode may be **Helios + Selene**. A recurring short may be **Eos + Selene**.
 
 ## 9. The nap mechanic
 
