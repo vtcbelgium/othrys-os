@@ -212,7 +212,7 @@ The goal is **human-authored IP with AI-assisted production**.
 
 ---
 
-## 10. MIPI NAME IS NOT GLOBALLY BLANK — GATED, NOT REJECTED
+## 10. MIPI NAME WAS NOT GLOBALLY BLANK — HISTORICAL GATE, LATER SUPERSEDED
 
 ### Finding
 
@@ -224,16 +224,13 @@ This does not establish a conflicting entertainment trademark or require a renam
 
 ### Refinement
 
-Mipi remains the canonical internal name.
+At this stage of the review, Mipi remained the internal codename while public naming stayed unresolved.
 
-Before public brand lock, merchandise, licensing or filing:
-- EU/Benelux/international trademark search;
-- entertainment/publishing/toy/software class review;
-- channel/book/app/domain/social collision review.
+This step was later superseded when **Pemberton** was selected as the canonical creative character name. Formal trademark clearance remains a separate gate.
 
-### Law
+### Historical law
 
-> **MIPI'S NAME IS CANON; COMMERCIAL CLEARANCE IS A GATE.**
+> **THE CHARACTER CAN SURVIVE A CODENAME CHANGE. IDENTITY MUST NOT DEPEND ON A TEMPORARY LABEL.**
 
 ---
 
@@ -356,18 +353,17 @@ Vendor/platform/legal specifics stay in dated evidence.
 These are intentionally not decided by this refactor:
 
 1. Is the cat property ultimately child-directed or genuinely general-audience family animation?
-2. What is the cat property's final public character/series name?
-3. What is the cat property's final visual design?
-4. Is the cat narrator-led, voiced, or hybrid?
-5. Does the cat need a companion/foil character?
-6. Does any long arc deserve canon?
-7. What SaaS should be used for the first animation proof?
-8. When does programmatic rendering beat SaaS?
-9. What is the first authorized clipping dataset/source?
-10. Does "Practical Cartoon Dad" need a permanent property, or is it just the first Explainer test?
-11. Which Theia Blocks are worth admitting after pilots?
-12. Does Opsis earn runtime implementation at all, or can existing Mission/Work + composition satisfy the need initially?
-13. At what evidence threshold does Theia become a standalone service/Star?
+2. What is Pemberton's final visual design?
+3. Is Pemberton narrator-led, voiced, or hybrid?
+4. Does Pemberton need a companion/foil character?
+5. Does any long arc deserve canon?
+6. What SaaS should be used for the first animation proof?
+7. When does programmatic rendering beat SaaS?
+8. What is the first authorized clipping dataset/source?
+9. Does "Practical Cartoon Dad" need a permanent property, or is it just the first Explainer test?
+10. Which Theia Blocks are worth admitting after pilots?
+11. Does Opsis earn runtime implementation at all, or can existing Mission/Work + composition satisfy the need initially?
+12. At what evidence threshold does Theia become a standalone service/Star?
 
 These are experiment questions, not missing architecture.
 
@@ -570,21 +566,48 @@ The character concept was useful, but prior wording made `Mipi` sound like a loc
 
 ### Refinement
 
-`Mipi` is now only the stable **internal property codename/ID**.
+`Mipi` was demoted to a temporary internal codename so the character could continue evolving without forcing premature brand lock.
 
-The character concept remains canon:
-- curious;
-- lazy;
-- warm;
-- adventure/learning engine.
-
-The public character/property name is deliberately unresolved and the naming search is parked until the property has enough evidence to deserve clearance effort.
-
-> **THE CHARACTER IS CANON. THE PUBLIC NAME IS NOT.**
+That decision worked as intended.
 
 ---
 
-## 25. REVIEW CONCLUSION
+## 25. PEMBERTON SELECTED — CHARACTER NAME NOW CANONICAL
+
+### Finding
+
+The naming search eventually produced a stronger route: use a dignified human surname rather than another invented preschool-style phonetic blob.
+
+### Refinement
+
+**Pemberton** is now the canonical creative name of Theia's first original cat property.
+
+Canonical identity now includes:
+- chubby tuxedo cat;
+- gentleman-explorer self-image;
+- curious + lazy contradiction;
+- dignity versus cat instinct;
+- warm, mildly pompous tone;
+- fondness for cola;
+- educational adventure engine.
+
+The historical John Stith Pemberton/Coca-Cola connection is an intentional easter egg only. It creates no affiliation or permission to use Coca-Cola branding.
+
+The property Book explicitly separates:
+- creative name lock;
+- formal trademark clearance;
+- cola character trait;
+- real-animal caffeine safety;
+- third-party brand/trade-dress boundaries.
+
+`theia/properties/PEMBERTON.md` is canonical.
+`theia/properties/MIPI.md` is a retired compatibility/history pointer.
+
+> **THE CODENAME DID ITS JOB. PEMBERTON IS THE CHARACTER.**
+
+---
+
+## 26. REVIEW CONCLUSION
 
 The first refactor had the right central idea:
 
@@ -597,7 +620,7 @@ After refinement, the seam is substantially stronger:
 - current child-content constraints;
 - current EU AI-transparency reality;
 - stronger IP chain of title;
-- stronger character concept without premature public-name lock;
+- Pemberton locked as the creative character name without pretending formal trademark clearance is complete;
 - safer practical-dad pilot;
 - cleaner Hyperion sub-arm seams;
 - cleaner future standalone contract.
