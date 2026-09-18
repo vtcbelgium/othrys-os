@@ -42,6 +42,8 @@ Locked:
 - hygiene attitude: mildly appalled by human dirt, fingerprints, crumbs and "cooties";
 - touch contradiction: treats casual human contact as a contamination risk, then melts under competent petting;
 - field icon: a generic modern fast-food drink cup with lid and straw, treated with absurd dignity;
+- canonical neckwear: an ordinary pet collar with a soft bow-tie front that Pemberton regards as formal dress;
+- outdoor walking gear: a normal cat harness and leash, interpreted by Pemberton as expedition rigging;
 - home ritual: cola may be taken from fine porcelain as though it were afternoon tea;
 - primary contradiction: curiosity versus inertia;
 - secondary contradiction: dignity versus cat instinct;
@@ -299,7 +301,8 @@ His coat already resembles formal dress, so costume should **frame** the charact
 
 Canonical clothing direction:
 - tuxedo fur remains the visual foundation;
-- a small cravat/collar treatment anchors the period;
+- his **regular pet collar carries a soft bow-tie front** and is his default formal neckwear;
+- humans see "cute cat collar"; Pemberton sees impeccably correct evening/expedition dress;
 - a compact travel coat, waistcoat detail, satchel or pocket-watch chain may appear where useful;
 - hats are situational rather than mandatory;
 - expedition accessories may change by location.
@@ -308,21 +311,69 @@ Avoid turning him into a pile of aristocratic props. The audience should still r
 
 > **THE TUXEDO IS HIS FUR. THE WARDROBE TELLS US WHICH EXPEDITION HE THINKS HE IS ON.**
 
-### 5.1 The wardrobe-malfunction law
+### 5.1 The bow-collar law
+
+Pemberton's signature neckwear is deliberately ordinary.
+
+To a human it is:
+- a normal breakaway-style cat collar;
+- with a small soft fabric bow at the front.
+
+To Pemberton it is:
+- his cravat;
+- his formal neckwear;
+- evidence that standards have not entirely collapsed.
+
+The bow should:
+- sit slightly below the chin;
+- remain readable at thumbnail scale;
+- be small enough not to swallow his face;
+- move when he moves;
+- visibly shift when he is scratched, squeezed, carried, tangled or napping.
+
+The collar may carry a small identity tag.
+
+Pemberton may interpret that tag as:
+- family medallion;
+- expedition credential;
+- house insignia.
+
+It should still look unmistakably like an ordinary pet tag to the audience.
+
+The bow collar is **not** the load-bearing walking point.
+
+When Pemberton is taken outdoors by the household staff, the leash attaches to a properly fitted cat harness. This keeps the visual language grounded in normal pet equipment and avoids implying that a walking lead should pull on a cat's neck.
+
+Pemberton calls the harness:
+- expedition rigging;
+- field harness;
+- safety apparatus;
+- "the staff's excessive precautions."
+
+He regards the leash as:
+- a safety line;
+- occasionally an insult;
+- occasionally extremely useful when he changes his mind about a height.
+
+> **THE HUMANS BOUGHT A PET COLLAR. PEMBERTON RECEIVED FORMAL NECKWEAR.**
+
+### 5.2 The wardrobe-malfunction law
 
 Pemberton is almost impeccably dressed.
 
 **Almost.**
 
 Every substantial adventure should contain one small wardrobe imperfection, ideally visible before Pemberton notices it:
-- cravat slightly sideways;
+- bow collar rotated slightly sideways;
+- one wing of the bow folded under;
+- bow pushed upward by a chin scratch;
+- identity tag flipped to the front at an undignified angle;
 - one coat tail caught;
 - waistcoat button misaligned;
 - pocket-watch chain snagged;
 - hat rotated after a mishap;
-- collar folded under;
-- travel strap twisted;
-- one tiny sock/gaiter/accessory slipping;
+- harness strap twisted;
+- travel strap crossed over the bow;
 - dust, leaf, ticket or label attached somewhere undignified.
 
 The malfunction must:
@@ -336,7 +387,7 @@ Sometimes he finishes an entire explanation with the malfunction still present.
 
 > **PEMBERTON IS ALWAYS DRESSED FOR THE OCCASION. THE OCCASION DISAGREES SLIGHTLY.**
 
-### 5.2 Silhouette
+### 5.3 Silhouette
 
 The silhouette should communicate:
 - round body;
@@ -348,7 +399,7 @@ The silhouette should communicate:
 
 He should look capable of moving quickly while making it clear that he would rather not.
 
-### 5.3 Tuxedo pattern
+### 5.4 Tuxedo pattern
 
 Final markings are not yet locked.
 
@@ -367,7 +418,7 @@ The final pattern must:
 - avoid looking too similar to an existing famous cat character;
 - work in monochrome line art for books/comics.
 
-### 5.4 Chubbiness
+### 5.5 Chubbiness
 
 Pemberton is canonically chubby.
 
@@ -599,7 +650,8 @@ This is animation language for the character, not a universal veterinary rule fo
 
 Possible recovery behavior:
 - sudden grooming;
-- straightening cravat;
+- discovering that the bow collar has been shoved sideways by the scratch;
+- straightening the bow with intense seriousness;
 - inspecting paw as though nothing happened;
 - looking away;
 - issuing a formal complaint that the service ended too soon.
@@ -851,7 +903,10 @@ Pemberton should often create comedy through:
 - the straw/cup refusing to cooperate at exactly the wrong moment;
 - elaborate napkin barriers defeated by affection;
 - recoiling from a dirty hand, then involuntarily leaning back when that same hand finds the correct chin spot;
-- resetting his dignity immediately after obvious purring/leaning enjoyment.
+- resetting his dignity immediately after obvious purring/leaning enjoyment;
+- confidently choosing a route until the expedition leash reaches full length;
+- walking around a chair leg and blaming the staff when the "safety line" becomes entangled;
+- the harness remaining perfectly practical while Pemberton treats it like ceremonial expedition gear.
 
 A good Pemberton gag should survive:
 - dubbing;
@@ -1132,6 +1187,9 @@ He is magnificently confused about **his social position and the dignity of mode
 
 A robot vacuum is not a cleaning appliance.
 It is his motor carriage.
+
+A cat harness and leash are not pet-control equipment.
+They are expedition rigging and a field safety line.
 
 A food delivery is not takeaway.
 It is catering.
@@ -1799,6 +1857,8 @@ Each script should preserve:
 - Pemberton likes cola.
 - Pemberton is fastidious about human mess and "cooties."
 - Pemberton uses napkins/barriers theatrically when surfaces or humans seem dirty.
+- Pemberton's ordinary pet collar with bow-tie front is his default neckwear.
+- outdoor leash attachment uses a normal cat harness; Pemberton interprets it as expedition rigging.
 - Pemberton cannot convincingly resist good chin scratches.
 - forward whiskers are his canonical affection/interest cue during strong chin-scratch enjoyment.
 - Pemberton is warm enough to care about others.
