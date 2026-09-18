@@ -963,29 +963,34 @@ When a bet is killed or paused, Theia archives the media-domain learning:
 
 ---
 
-## 22. LOCALIZATION
+## 22. LOCALIZATION — MAGNIFIER INTERFACE
 
 Localization multiplies winners, not noise.
 
-For validated properties evaluate:
-- audience size;
-- competition;
-- cultural fit;
-- voice quality;
-- language quality;
-- platform behavior;
-- marginal cost.
+Hyperion/Magnifier decides **whether a language/market deserves investment** using audience size, competition, commercial optionality and portfolio economics.
 
-Adapt:
+Theia evaluates **localization production feasibility**:
+- cultural adaptation risk;
+- voice availability/quality;
+- language QA capacity;
+- text-layout impact;
+- asset changes;
+- rights/disclosure differences;
+- marginal production cost.
+
+When localization is authorized, Theia adapts:
 - idiom;
 - units;
 - pronunciation;
 - text layout;
 - cultural references;
 - thumbnails/titles;
-- platform metadata.
+- platform metadata;
+- voice/visual assets where necessary.
 
-Maintain a canonical source artifact and derivative lineage.
+Maintain a canonical source artifact and explicit derivative lineage.
+
+> **HYPERION CHOOSES THE MARKET. THEIA MAKES THE MEDIA NATIVE TO IT.**
 
 ---
 
