@@ -5,6 +5,7 @@ Theia is OTHRYS's independent Titan of visual/audiovisual media, video productio
 Canonical entry: ../BOOK_OF_THEIA.md
 
 ## Current doctrine
+- ARCHITECTURE.md — canonical structural layers, topology, Arm admission rules and dependency laws.
 - BOOK_OF_OPSIS.md — Theia's media-domain orchestration runtime.
 - THEIA_HYPERION_CONTRACT.md — typed sibling packets and standalone separation seam.
 - THEIA_CHILDREN_FOUNDATIONS.md — Helios, Eos and Selene foundations.
