@@ -121,19 +121,27 @@ Country/product differences must be stated when material.
 
 ## 6. Format system
 
+These are **property-level starting hypotheses**, not definitions of Theia's children.
+
 **Helios**
-- 3–8 minute complete tutorial;
-- searchable evergreen video.
+- complete/canonical tutorial expression;
+- initial pilot target may be roughly 3–8 minutes;
+- searchable evergreen video where appropriate.
 
 **Eos**
-- 15–45 second single tip or "before you start";
+- first-contact/discovery expression;
+- initial pilot target may be roughly 15–45 seconds;
+- single tip or "before you start";
 - route to full tutorial when useful.
 
 **Selene**
+- continuity/return role;
 - maintenance calendars;
 - recurring seasonal series;
 - "things to check this month";
 - saved evergreen playlists.
+
+A recurring complete tutorial can be **Helios + Selene**.
 
 ## 7. Production architecture
 
