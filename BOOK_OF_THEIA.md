@@ -1,6 +1,6 @@
 # BOOK OF THEIA
 
-**Titan of Visual Media, Video Production, Creative Media Systems, Character/IP Media, and Media Automation**
+**Titan of Visual & Audiovisual Media, Video Production, Creative Media Systems, Character/IP Media, and Media Automation**
 
 **Status:** CANONICAL STRATEGIC TITAN — doctrine and boundaries are active; runtime implementation is intentionally incomplete.
 
@@ -47,7 +47,7 @@ A serious media system now needs:
 
 That is too coherent and too important to remain a collection of commercial sub-functions inside Hyperion.
 
-Theia therefore owns a bounded media domain that can later:
+Theia therefore owns a bounded **visual/audiovisual media** domain that can later:
 1. serve OTHRYS internally;
 2. serve many Oroi through stable contracts;
 3. expose reusable media Blocks;
@@ -56,6 +56,25 @@ Theia therefore owns a bounded media domain that can later:
 6. or eventually graduate into an independently deployed machine without changing the conceptual contract.
 
 Theia is designed for that future separation from the first day.
+
+### 0.1 Scope firewall
+
+Theia is **not the owner of all content or all vision-related computing**.
+
+Theia owns media artifacts and the machinery that produces them.
+
+She does not automatically own:
+- generic computer vision;
+- screen observation;
+- UI visual verification;
+- operational observability;
+- all text publishing/newsletters;
+- generic messaging;
+- all creative writing.
+
+Existing Visual Control keeps its own observation/comparison boundary. Future Argus, if activated, keeps observability. Hermes keeps communications contracts. Prometheus keeps research. Text-only publishing that is not part of a Theia media property remains outside Theia unless explicitly admitted.
+
+> **MYTHOLOGICAL SIGHT DOES NOT GRANT SOFTWARE OWNERSHIP OF EVERYTHING THAT CAN SEE.**
 
 ---
 
@@ -158,7 +177,10 @@ Theia does **not** own:
 - global admission/authority — Trust Canal / governance;
 - secrets — Keymaster;
 - provider-neutral communications — Hermes;
-- general OTHRYS mission/work orchestration — Mission/Work law.
+- general OTHRYS mission/work orchestration — Mission/Work law;
+- generic computer vision/screen observation/visual verification — existing Visual Control or future explicitly admitted perception systems;
+- general messaging/communications — Hermes;
+- text-only editorial/newsletter systems unless they are explicit derivatives of a Theia media property.
 
 Theia may propose media work. She does not grant herself global execution authority.
 
@@ -230,6 +252,23 @@ Hyperion then interprets economic value:
 - or kill.
 
 > **THEIA DOES NOT CHASE MONEY BY CORRUPTING MEDIA. HYPERION DOES NOT CHASE MEDIA BY BECOMING A STUDIO.**
+
+The typed packet definitions are canonicalized separately in `theia/THEIA_HYPERION_CONTRACT.md`.
+
+The full learning loop is:
+
+    PROMETHEUS discovers external evidence
+      -> MNEMOSYNE preserves reviewed evidence
+      -> ATLAS exposes relationships/context
+      -> HYPERION forms and scores the economic bet
+      -> THEIA produces and tests media
+      -> AUDIENCE / REALITY responds
+      -> THEIA records production/media evidence
+      -> HYPERION interprets economic value
+      -> MNEMOSYNE preserves the decision/learning
+      -> next bounded experiment
+
+No arrow grants the next component's authority.
 
 ---
 
@@ -417,11 +456,16 @@ Minimum provenance:
 - asset-level rights for images/music/voice/fonts;
 - commercial-use state;
 - attribution requirements;
-- territory/time restrictions where material.
+- territory/time restrictions where material;
+- provider/model/tool used for generated assets where material;
+- provider plan/terms revision or evidence snapshot when commercial rights depend on it;
+- human-authored contributions and material edits where IP ownership/protectability may matter.
 
 Unknown material is not silently treated as permission.
 
 > **POPULARITY IS NEVER A LICENCE.**
+
+> **PERMISSION SOLVES A RIGHTS QUESTION. IT DOES NOT GUARANTEE PLATFORM MONETIZATION.**
 
 For clipping:
 - captions + crop do not create ownership;
@@ -438,6 +482,29 @@ For original properties:
 - names/trademark searches when warranted;
 - and derivative lineage
 must be kept sufficiently clean for future licensing or sale.
+
+### 9.1 Chain-of-title and human-authorship moat
+
+For properties intended to become valuable IP, Theia should maximize inspectable human creative contribution:
+- original character/world bible;
+- human-approved story choices;
+- original scripts or substantive human editorial control;
+- curated visual design;
+- meaningful arrangement/editing;
+- recorded creative decisions.
+
+Do not assume that a raw model output is automatically protectable or exclusively owned. Copyright treatment varies by jurisdiction and provider terms. The current EU IP Helpdesk describes protection of AI-assisted outputs as dependent on sufficient human creative contribution and tool terms; the U.S. Copyright Office likewise states that wholly AI-generated material lacks copyright protection while human-authored selection, arrangement or modification may qualify.
+
+This is not a reason to avoid AI. It is a reason to build **human-authored IP with AI-assisted production**.
+
+Before major licensing, merchandising or sale:
+- run name/trademark clearance;
+- verify chain of title;
+- verify provider commercial-use terms;
+- verify contributor/contractor assignments;
+- preserve evidence.
+
+> **GENERATE FAST. OWN CLEANLY.**
 
 ---
 
@@ -698,7 +765,15 @@ Current platform rules change. Policy adapters must be reviewed before relying o
 - music licensing;
 - affiliate/sponsorship disclosure.
 
-The Book stores durable law; provider specifics live in dated adapter evidence.
+Durable consequences already proven by current policy research:
+
+1. **Copyright permission and monetization eligibility are separate gates.** YouTube's reused-content policy can reject minimally transformed third-party material even when the uploader has the original creator's permission.
+2. **Child-directed classification changes the product.** On YouTube, content set as made for kids loses or restricts features including personalized ads, comments, notifications and several engagement/commerce surfaces. Theia must classify honestly; it must never choose an audience label merely to preserve monetization or engagement features.
+3. **AI transparency is now an EU operational concern.** Article 50 transparency rules under the EU AI Act apply from 2 August 2026. Provider/deployer responsibilities differ. Theia's platform/compliance adapter must determine whether machine-readable marking, disclosure or both apply to the specific production.
+4. **Platform AI labels are not automatically a monetization penalty.** YouTube currently states that required AI disclosure itself does not reduce monetization eligibility; the underlying content still must satisfy other policies.
+5. **TikTok treats cartoons/anime as potentially AI-generated content for labeling purposes and requires labeling for realistic AIGC; its Creator Rewards rules, where available, require original high-quality qualifying videos longer than one minute.**
+
+The Book stores durable law; provider specifics and jurisdictional detail live in dated adapter evidence.
 
 ---
 
@@ -932,6 +1007,28 @@ Autonomy can be revoked automatically when:
 ## 25. CHILDREN AND YOUNG AUDIENCES
 
 Children's media receives stricter treatment.
+
+### 25.1 Audience-classification gate
+
+Before a child/family property is publicly launched, declare one of:
+- `CHILD_DIRECTED`;
+- `GENERAL_AUDIENCE_FAMILY_SAFE`;
+- `MIXED/UNCERTAIN_REVIEW_REQUIRED`.
+
+Classification follows the actual intended audience and applicable platform/legal factors, not the desired monetization outcome.
+
+For `CHILD_DIRECTED` properties:
+- model the loss/restriction of platform features as part of the economics;
+- do not depend on comments, personalized ads, notifications or other unavailable surfaces;
+- collect no unnecessary child data;
+- keep sponsorship/affiliate handling exceptionally clear;
+- prefer parent/educator-facing owned surfaces where useful and lawful.
+
+For `MIXED/UNCERTAIN_REVIEW_REQUIRED`, publication and monetization may be blocked until classification is resolved.
+
+> **DO NOT DESIGN A CHILDREN'S BRAND AROUND FEATURES THE PLATFORM IS REQUIRED TO TURN OFF.**
+
+
 
 Prioritize:
 - age appropriateness;
@@ -1232,8 +1329,13 @@ Durable observations:
 - YouTube monetization requires original/authentic value and scrutinizes generic, repetitive or mass-produced output.
 - Recurring characters and formats can be compatible with monetization when episodes materially differ and provide real value.
 - YouTube explicitly expects commercial rights to visual/audio elements.
+- YouTube reused-content review is independent of copyright permission; permission alone does not guarantee YPP eligibility.
+- YouTube made-for-kids classification restricts personalized ads, comments, notifications and other features.
+- YouTube currently requires disclosure for meaningfully altered/generated realistic media and says disclosure itself does not reduce monetization eligibility.
 - TikTok Creator Rewards, where available, requires original high-quality videos longer than one minute for qualifying reward content.
-- Automation/templates are therefore not the enemy; interchangeable content is.
+- TikTok includes cartoons/anime in its broad AIGC definition and provides creator/automatic AI labels.
+- EU AI Act Article 50 transparency rules apply from 2 August 2026 and create provider/deployer obligations around synthetic-content marking/disclosure.
+- Automation/templates are therefore not the enemy; interchangeable or deceptive content is.
 
 These are dated external rules. Platform adapters must refresh them before relying on them.
 
@@ -1275,5 +1377,7 @@ Vendor names are research examples, not canonical dependencies.
 > **KILL THE BET. KEEP THE LEARNING.**
 
 > **A CHILD'S ATTENTION IS NOT A RESOURCE TO MINE.**
+
+> **CLASSIFY THE AUDIENCE HONESTLY; DESIGN THE ECONOMICS AROUND THE CLASSIFICATION.**
 
 > **THEIA SHOULD BE ABLE TO LEAVE HOME ONE DAY WITHOUT LOSING HER IDENTITY.**
