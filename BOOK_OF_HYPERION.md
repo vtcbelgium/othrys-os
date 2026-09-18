@@ -353,7 +353,7 @@ Theia owns:
 Canonical sibling loop:
 
     PROMETHEUS / REALITY
-          -> HYPERION forms/scorers opportunity
+          -> HYPERION forms/scores opportunity
           -> MEDIA OPPORTUNITY PACKET
           -> THEIA produces/tests/distributes under governance
           -> MEDIA EVIDENCE PACKET
@@ -377,3 +377,66 @@ Detailed media doctrine has moved to:
 - theia/properties/**
 
 Theia's eventual ability to operate as a standalone media automation machine is intentional. Hyperion should therefore communicate through stable packets/contracts rather than hidden internal coupling.
+
+### 30.1 MEDIA OPPORTUNITY SCORE — RETAINED BY HYPERION
+
+Hyperion still decides which media bets deserve economic oxygen.
+
+Candidate score:
+
+`AUDIENCE_NEED/INTEREST + DISTINCTIVENESS + REPEATABILITY + FORMAT_FIT + DISCOVERY_FIT + RETENTION_POTENTIAL + IP_OPTIONALITY + CROSS_FORMAT_REUSE + LOCALIZATION_OPTIONALITY + OWNED_ASSET_POTENTIAL + COMMERCIAL_OPTIONALITY - PRODUCTION_COST - REVIEW_BURDEN - RIGHTS_RISK - POLICY_RISK - MODERATION_BURDEN - PLATFORM_DEPENDENCE`
+
+For child-directed properties, add explicit penalties for:
+- regulatory/platform ambiguity;
+- reduced monetization/distribution features;
+- commercial-pressure risk;
+- insufficient review capacity.
+
+The score ranks experiments. It does not create publication or financial authority.
+
+### 30.2 MEDIA ECONOMIC SIGNALS
+
+Theia measures media behavior. Hyperion interprets economic consequences.
+
+Useful progression:
+
+`IMPRESSION -> STOP/CLICK -> WATCH -> COMPLETE -> REWATCH -> SAVE -> SHARE -> FOLLOW -> RETURN -> SEEK_MORE -> OWNED_ASSET -> REQUEST/PAY/DEPEND`
+
+Not every property must reach the final rung.
+
+Hyperion asks:
+- is the attention repeatable?
+- is the audience valuable for the stated purpose?
+- does production burden fall as the system learns?
+- is there IP, product, sponsor, affiliate, licensing or service optionality?
+- does the property create an owned asset or only rented-platform reach?
+- is platform concentration acceptable?
+
+### 30.3 MONETIZATION SURFACES — RETAINED BY HYPERION
+
+After legal/admin/operator gates permit, validated media may support:
+- platform advertising;
+- sponsorship;
+- disclosed affiliate/referral;
+- memberships/subscriptions;
+- paid archives/depth;
+- books/publishing;
+- educational packs;
+- software/tools;
+- licensing;
+- character/IP licensing;
+- merchandise after real affinity;
+- B2B production;
+- white-label media systems;
+- API;
+- syndication;
+- commissioned institutional versions;
+- spin-out/sale.
+
+Permission to use source material does **not** imply that a platform will monetize minimally transformed reused content. Rights, originality, platform monetization and commercial permission remain separate checks.
+
+### 30.4 COMPOUNDING LOOP
+
+`PROMETHEUS DISCOVERS -> MNEMOSYNE PRESERVES -> ATLAS CONTEXTUALIZES -> HYPERION CHOOSES BET -> THEIA PRODUCES -> REALITY RESPONDS -> THEIA RETURNS MEDIA EVIDENCE -> HYPERION INTERPRETS ECONOMICS -> MNEMOSYNE RETAINS -> NEXT BOUNDED EXPERIMENT`
+
+> **THE SIBLINGS SHARE EVIDENCE, NOT AUTHORITY.**
