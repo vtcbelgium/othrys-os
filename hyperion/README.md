@@ -25,6 +25,7 @@ The former CRIUS function has been merged into Hyperion. CRIUS is no longer an i
 - `NURSERY_INCUBATOR.md` — bounded Frugal-First experiment/incubation lifecycle, evidence, compost, ICE, thaw and inherited financial gates.
 - `BOOK_OF_FRUGALITY.md` — canonical Frugal First doctrine: cheapest passing route, cost per verified outcome, Frugal Ladder, escalation evidence, Auto-Frugal and cheapness challenge.
 - `/BOOK_OF_HYPERION.md` — canonical Hyperion doctrine and financial-gate law.
+- `/BOOK_OF_THEIA.md` — independent sibling Titan for visual/media production; Hyperion interfaces with Theia through opportunity/evidence packets.
 
 ## Frugal First law
 
@@ -107,3 +108,14 @@ OTHRYS owns the evolutionary loop: observe, learn, design, build, verify, deploy
 Hyperion owns the economic lens: where value exists, what resources it deserves, how cheaply it can be proven/delivered, whether continued allocation is justified, how a winner may earn, and whether it should be retained, bundled, licensed, spun out, sold, archived or killed.
 
 The automatic product/website factory and Auto-Frugal execution are therefore OTHRYS capabilities governed economically by Hyperion, not separate side systems.
+
+
+## Theia sibling boundary
+
+Media production is no longer a Hyperion Arm.
+
+Route:
+- media production, clipping, explainers, character/story media, media orchestration -> **Theia**;
+- opportunity economics, distribution economics, portfolio allocation, monetization and financial gates -> **Hyperion**.
+
+> **HYPERION OWNS THE ECONOMIC BET. THEIA OWNS THE MEDIA MACHINE.**
