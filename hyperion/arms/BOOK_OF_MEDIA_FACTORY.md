@@ -219,3 +219,25 @@ Pemberton is the current detailed animation reference because it stresses:
 Its property-specific rules remain in `hyperion/media/BOOK_OF_PEMBERTON.md`; generic reusable production law remains here.
 
 > **THE PROPERTY SPECIALIZES THE FACTORY. THE PROPERTY DOES NOT BECOME THE FACTORY.**
+
+
+## 15. Cartoon Production Specialization
+
+Scripted cartoon production now has a dedicated specialization:
+
+`hyperion/media/BOOK_OF_CARTOON_PRODUCTION.md`
+
+That Book contains:
+- hybrid 2D/3D/generative production routing;
+- local/free-first tooling strategy;
+- character-consistency doctrine;
+- storyboard/animatic/motion routing;
+- near-mute visual-storytelling doctrine;
+- sound/music responsibilities;
+- animation QA;
+- derivative production;
+- Pemberton as reference implementation.
+
+This does not create a second Media Factory. It specializes this Factory for cartoons.
+
+> **MEDIA FACTORY OWNS THE GENERAL PIPELINE. CARTOON PRODUCTION OWNS THE SPECIALIZED METHOD.**
