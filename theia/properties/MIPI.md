@@ -1,10 +1,14 @@
 # MIPI — THEIA STARTER PROPERTY BIBLE
 
-**Status:** ORIGINAL IP STARTER — concept locked at seed level; public brand clearance, audience classification, visual identity and world details remain unresolved.
+**Status:** INTERNAL WORKING PROPERTY CODENAME — character concept locked at seed level; public character/property name is deliberately unresolved. Audience classification, visual identity and world details also remain unresolved.
+
+`Mipi` is retained only as the stable internal property ID/codename so the concept can evolve without forcing an early public-brand decision.
 
 ## 1. Canonical seed
 
-Name: **Mipi**
+Internal codename: **Mipi**
+
+Public character/property name: **UNRESOLVED**
 
 Species: cat
 
@@ -51,23 +55,26 @@ Value:
 - recurring character attachment;
 - international/localizable subject matter.
 
-## 3. Name and IP clearance
+## 3. Public name state
 
-**Mipi remains the canonical internal character name.**
+The character concept is **not dependent on the public name**.
 
-A preliminary web search found:
-- active MIPI Alliance trademarks in technology-related classes;
-- an older published pet-story book using "Mipi" as the name of a puppy.
+Current rule:
+- `Mipi` = internal codename/property ID;
+- public character name = unresolved;
+- public series/property brand = unresolved.
 
-Neither result by itself proves that a cat entertainment/education brand is blocked. The search is not exhaustive.
+The naming search is intentionally parked. Previous collision research showed that short child-friendly names can already occupy technology, games, preschool media, toys or pet categories. Do not keep spending architecture time on name mutation.
 
-Before public brand lock, merchandising, licensing or trademark filing:
-- run EU/Benelux/international trademark clearance for relevant entertainment/publishing/toy/software classes;
-- search character/book/channel/app names;
-- check domains/social handles;
-- document counsel/clearance outcome where value justifies it.
+Before any public launch:
+- choose a small finalist set;
+- run preliminary character/book/channel/app/domain/social collision checks;
+- run appropriate EU/Benelux/international trademark clearance when commercial value justifies it;
+- lock the public name only after the character/format has survived enough testing to deserve the cost.
 
-Do not rename Mipi pre-emptively. Treat this as a **clearance gate**, not a rejection.
+Internal scripts and tests may continue to use `Mipi` until that gate is crossed.
+
+> **THE CHARACTER IS CANON. THE PUBLIC NAME IS NOT.**
 
 ## 4. Originality firewall
 
@@ -352,6 +359,6 @@ Questions:
 
 > **MAKE CHILDREN WANT THE NEXT ADVENTURE, NOT THE NEXT DOPAMINE HIT.**
 
-> **MIPI'S NAME IS CANON; COMMERCIAL CLEARANCE IS A GATE.**
+> **MIPI IS AN INTERNAL CODENAME; THE PUBLIC NAME IS A LATER GATE.**
 
 > **AUDIENCE CLASSIFICATION FOLLOWS THE REAL AUDIENCE, NOT THE BETTER REVENUE SETTINGS.**
