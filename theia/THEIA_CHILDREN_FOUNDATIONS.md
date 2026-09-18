@@ -14,7 +14,7 @@ OTHRYS family:
 
 Potential domain:
 - flagship media;
-- canonical long-form;
+- canonical/full primary expression (often long-form, but not defined by duration);
 - main episodes;
 - definitive explainer;
 - hero asset;
@@ -75,9 +75,10 @@ Potential domain:
 - calm/bedtime/reflective media;
 - playlists/cycles;
 - evergreen resurfacing;
-- archive/resurrection;
 - gentle companion media;
-- long-term IP memory.
+- long-term continuity signals.
+
+Selene does **not** replace Mnemosyne or Theia's archive/provenance systems. She names the audience-facing cycle/return function, not canonical storage.
 
 Selene is especially relevant to Mipi because character affection and return can matter more than one-off utility.
 
