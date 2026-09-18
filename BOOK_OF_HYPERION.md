@@ -317,7 +317,9 @@ Commercial intelligence is one expression of this. The same law should apply acr
 
 > **HYPERION KNOWS THE PIPES. AUTHORITY OPENS THE VALVE.**
 
-## 30. MEDIA, YOUTUBE & SOCIAL DISTRIBUTION FACTORY
+## 30. MEDIA ECONOMICS, DISTRIBUTION & EXPERIMENTATION
+
+**Ownership update:** Theia is now the active creative/media production Titan. Story Forge and Media Factory have moved to Theia. This section governs Hyperion's economic, audience, distribution, experiment, monetization and scaling lens over media; where older wording implies Hyperion owns creative manufacture, the Book of Theia controls.
 
 Media is not decoration around an OTHRYS product. Media can itself be the product, the laboratory, the distribution system, the audience sensor, the intellectual-property seed, or the front door into a larger constellation.
 
@@ -695,7 +697,7 @@ Hyperion may identify recurring questions, requested sequels, misunderstood sect
 
 ### 30.21 AUTOMATION ARCHITECTURE
 
-The long-term Media Factory should be composable rather than one giant autonomous posting agent.
+The long-term Theia production system should be composable rather than one giant autonomous posting agent.
 
 Candidate capability blocks:
 - Opportunity Scout;
@@ -739,7 +741,7 @@ Hyperion may recommend increased autonomy based on evidence; governance grants i
 
 ### 30.23 COURSE MODE FOR MEDIA
 
-During Course Mode, the Media Factory may:
+During Course Mode, Theia may perform creative/media production while Hyperion may:
 - research audiences and platforms;
 - build production infrastructure;
 - develop original IP;
@@ -914,79 +916,43 @@ The target is not an autonomous spam cannon. The target is an **institutional me
 
 > **THE MEDIA FACTORY EXISTS TO DISCOVER DURABLE VALUE, NOT TO FEED AN ALGORITHM.**
 
-## 31. THEIA MEDIA-DOMAIN CANDIDATE BOUNDARY
+## 31. THEIA COLLABORATION BOUNDARY — ACTIVE
 
-A new architectural pressure has emerged from the Pemberton animation work: recurring media production is becoming large enough to justify evaluating **Theia** as a dedicated media/perception/creative-production domain.
-
-This is a **candidate boundary**, not current authority.
-
-Current truth remains:
-- Hyperion owns the media opportunity/economic horizon;
-- Story Forge is currently a Hyperion Arm;
-- Media Factory is currently a Hyperion Arm;
-- Distributor and Vault remain Hyperion Arms;
-- BOOK_OF_MYTHOLOGY currently reserves Theia for multimodal perception/computer vision;
-- no admitted Theia runtime/service currently exists in repo truth.
-
-Therefore no current Hyperion authority is silently moved.
-
-### 31.1 Why the candidate exists
-
-The economic question and the creative-production question are becoming distinct:
-
-**Hyperion asks:**
-- Is this audience/property worth testing?
-- What evidence qualifies scale?
-- What does production cost?
-- Which distribution surface fits?
-- Is the property economically promising?
-- Should capital, attention or distribution increase?
-
-A future admitted media-domain Theia could ask:
-- How is the property canon expressed consistently?
-- How do script, storyboard, animatic, assets, audio and master relate?
-- Which creative dependencies changed?
-- Is a derivative faithful to the property?
-- How does production evidence map back to creative decisions?
-
-The separation may become useful because economic selection and creative manufacture have different failure modes.
-
-### 31.2 Proposed seam if Theia is ever admitted
-
-A future migration should preserve these boundaries:
+Theia is an **ACTIVE OTHRYS TITAN** and Hyperion's sibling in the media/IP value loop.
 
 ```text
 HYPERION
-opportunity + economics + commercial experiment + distribution intelligence + portfolio/scale
-        ↓
-THEIA [candidate]
-creative/media production control domain
-        ↓
-STORY / SCRIPT / STORYBOARD / ANIMATIC / ASSETS / MASTER / DERIVATIVES
+opportunity + economics + distribution strategy + experiment + portfolio/scale
+        ↓ creative brief / economic constraints
+THEIA
+property + story + script + visual plan + production + master + derivatives
+        ↓ production/audience evidence
+HYPERION
+interpret economic signal + allocate oxygen + commercial qualification
 ```
 
-Prometheus, Mnemosyne, Hephaestus, Talos, Trust Canal, Switchyard, Keymaster, Mycelium, Kronos, Rhea, Hermes and Atlas retain their own existing authority boundaries.
+Story Forge and Media Factory now belong to Theia.
 
-Theia must not become a monolith that absorbs research, memory, build authority, verification, credentials, scheduling, node routing or economic authority.
+Hyperion retains Distributor and Vault under the boundaries defined in `hyperion/arms/BOOK_OF_HYPERION_ARMS.md`.
 
-### 31.3 Migration law
+Theia does not absorb Hyperion's:
+- economic authority;
+- portfolio allocation;
+- financial gates;
+- commercial qualification;
+- distribution strategy.
 
-If Theia is admitted later:
+Hyperion does not absorb Theia's:
+- property canon;
+- story authority;
+- visual/media production;
+- animatic/master locks;
+- creative continuity.
 
-1. define the exact technical surface first;
-2. identify which current Hyperion Arm responsibilities actually migrate;
-3. preserve history/provenance;
-4. update BOOK_OF_MYTHOLOGY and the current house shelf through normal admission;
-5. prevent duplicate Story Forge / Media Factory implementations;
-6. keep Hyperion as the economic/venture intelligence owner;
-7. require separate evidence for any new runtime or Block.
+Reference:
+- `books/book-of-theia/README.md`
+- `theia/opsis/README.md`
+- `theia/arms/BOOK_OF_STORY_FORGE.md`
+- `theia/arms/BOOK_OF_MEDIA_FACTORY.md`
 
-Until then, the Pemberton property uses the existing Hyperion Story Forge + Media Factory structure.
-
-The reference property Book is:
-
-`hyperion/media/BOOK_OF_PEMBERTON.md`
-
-> **DO NOT CREATE A SECOND MEDIA FACTORY TO PRETEND THEIA ALREADY EXISTS.**
-
-> **SEPARATE ECONOMIC INTELLIGENCE FROM CREATIVE PRODUCTION ONLY WHEN THE ARCHITECTURE HAS EARNED THE SEAM.**
+> **HYPERION DECIDES WHETHER TO SCALE THE BET. THEIA DECIDES HOW THE WORK TAKES FORM.**
