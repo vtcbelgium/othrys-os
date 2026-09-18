@@ -36,7 +36,7 @@ Blocked by default:
     -> QA
     -> REVIEW
     -> PACKAGE
-    -> PUBLISH
+    -> PUBLISH IF AUTHORIZED
     -> MEASURE
 
 ## 3. Candidate scoring
@@ -83,7 +83,7 @@ Preferred:
       -> automated quality filter
       -> operator sees top 2–5
       -> approve/reject/repair
-      -> automated package/publish
+      -> automated package; publish only under declared authority
 
 Measure:
 - operator seconds/minutes per published clip;
@@ -109,6 +109,7 @@ Strong recurring low-touch model:
 Good low-friction experiment:
 - no creator acquisition required when marketplace/campaign supplies rights and terms;
 - campaign terms, caps, allowed platforms and payment rules must be recorded per run;
+- record whether the licence permits only campaign posting, broader portfolio display, account monetization, archive/reuse or none of those;
 - never fake views.
 
 ### D. B2B internal repurposing
@@ -152,13 +153,28 @@ Current research examples include OpusClip/Vizard-class SaaS and WhisperX/faster
 
 ## 9. Platform/reuse gate
 
+There are **four separate questions**:
+
+1. Do we have the legal/licensed right to publish?
+2. Does the platform allow the upload?
+3. Is the artifact sufficiently original/transformative for the intended platform monetization program?
+4. Does the specific campaign/client agreement permit us to monetize or reuse it?
+
+A yes to one is not a yes to the others.
+
+YouTube's current reused-content policy explicitly states that minimal third-party reuse may be ineligible for monetization **even with the original creator's permission**.
+
 Before publishing:
 - rights clear;
+- licence scope recorded;
 - platform allows use;
-- content is original/authorized enough for intended monetization;
+- reused-content/originality risk assessed separately;
 - derivative has genuine value;
 - metadata truthful;
+- required disclosure/tags present;
 - no spam/mass-upload behavior.
+
+> **PERMISSION IS NOT A YPP PASS.**
 
 ## 10. Learning
 
