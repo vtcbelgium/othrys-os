@@ -89,7 +89,7 @@ Potential domain:
 
 Selene does **not** replace Mnemosyne or Theia's archive/provenance systems. She names the audience-facing cycle/return function, not canonical storage.
 
-Selene is especially relevant to Mipi because character affection and return can matter more than one-off utility.
+Selene is especially relevant to Pemberton because character affection and return can matter more than one-off utility.
 
 Possible metrics:
 - returning viewers;
