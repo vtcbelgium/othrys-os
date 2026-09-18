@@ -57,6 +57,8 @@ Suggested domain states:
     RECEIVED
     -> PREFLIGHT
     -> RIGHTS_CLEAR
+    -> AUDIENCE_CLASSIFIED
+    -> POLICY_PREFLIGHT_CLEAR
     -> INPUT_READY
     -> PLAN_READY
     -> PRODUCING
@@ -65,6 +67,7 @@ Suggested domain states:
     -> REVIEW_PENDING
     -> APPROVED
     -> PACKAGED
+    -> EXTERNAL_SIDE_EFFECT_AUTHORIZED
     -> PUBLISH_PENDING
     -> PUBLISHED
     -> TELEMETRY_ACTIVE
@@ -73,6 +76,8 @@ Suggested domain states:
 Failure states:
 - BLOCKED_RIGHTS;
 - BLOCKED_POLICY;
+- BLOCKED_AUDIENCE_CLASSIFICATION;
+- BLOCKED_DISCLOSURE;
 - BLOCKED_EVIDENCE;
 - FAILED_PROVIDER;
 - FAILED_RENDER;
@@ -190,7 +195,11 @@ It never stores raw API keys in production records.
 
 ## 12. Publishing
 
-Publishing should use:
+Packaging and publishing are separate powers.
+
+If the governing Mission/Work does not include an authorized external publication side effect, Opsis stops at `PACKAGED` and returns the artifact for later use.
+
+When publication is authorized, publishing should use:
 - official provider/platform APIs where feasible;
 - explicit authenticated adapters;
 - platform-specific policy preflight;
@@ -209,7 +218,7 @@ It records raw metrics with:
 - observation time;
 - metric definition/version.
 
-Hyperion/Theia analytics interpret; raw history remains traceable.
+Hyperion/Theia analytics interpret; raw history remains traceable. For child-directed surfaces, metrics that the platform does not expose or features it disables must not be fabricated or treated as missing implementation work.
 
 ## 14. Autonomy
 
