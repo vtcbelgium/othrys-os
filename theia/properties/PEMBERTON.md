@@ -2971,3 +2971,18 @@ Any proposed visual style must preserve:
 10. ability to animate Pemberton consistently at scale.
 
 > **STYLE MAY CHANGE THE SURFACE. IT MUST NOT ERASE THE CHARACTER ENGINE.**
+
+
+---
+
+## 42. SEASON ONE AND PRODUCTION EXPANSION
+
+The mature character/world canon above remains the primary Pemberton property bible.
+
+Later development added the Atlas of Seven Doors, bounded Chariot expedition modes, the full Season One arc, episode timing, story/attention/storyboard contracts, derivative packaging, analytics back-mapping and the visual-first near-mute production hypothesis.
+
+Those additions live in:
+
+`theia/properties/PEMBERTON_SEASON_ONE_AND_PRODUCTION.md`
+
+If the addendum conflicts with this core character bible, this file controls enduring character identity and world law. The addendum controls Season One and its production specialization unless material is explicitly promoted back into core canon.
