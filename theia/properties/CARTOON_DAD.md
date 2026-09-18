@@ -166,7 +166,11 @@ Hyperion evaluates:
 
 Recommendation must not be commission-driven.
 
-## 9. First 20 episodes
+## 9. Episode inventory and risk tiers
+
+The first public batch should deliberately avoid high-consequence instructions. We want to learn the media machine before asking it to teach tasks where one bad frame can hurt someone.
+
+### Tier A — preferred first pilots
 
 1. Tie a simple necktie knot.
 2. Sew a button back on.
@@ -174,29 +178,57 @@ Recommendation must not be commission-driven.
 4. Pick the right screwdriver bit.
 5. Use a tape measure correctly.
 6. Use a spirit level.
-7. Choose a wall plug/anchor conceptually.
-8. Unclog a simple sink trap safely.
-9. Understand a running toilet.
-10. Bleed a radiator where system type permits.
-11. Check tire pressure.
-12. Read tire sidewall basics.
-13. Replace windshield wipers.
-14. Check engine oil safely.
-15. Jump-start basics with strong model/manual warnings.
-16. Reset a tripped breaker and know when not to.
-17. Locate common home water shutoff.
-18. Use a drill without destroying the screw head.
-19. Build a basic home maintenance checklist.
-20. What five tools should a first apartment actually have?
+7. Read common screw-head types.
+8. Build a sensible first-apartment tool kit.
+9. Explain what common pliers/wrenches are for.
+10. Replace simple removable furniture/cabinet hardware.
+
+These are visually clear, useful, low-consequence and excellent tests of animated hands, close-ups, arrows and step sequencing.
+
+### Tier B — after the instructional QA system proves itself
+
+11. Choose a wall plug/anchor conceptually.
+12. Unclog a simple accessible sink trap safely.
+13. Understand why a toilet keeps running.
+14. Check tire pressure.
+15. Read basic tire sidewall information.
+16. Replace windshield wipers.
+17. Check engine oil using the specific vehicle/manual procedure.
+18. Locate common water shutoff concepts.
+19. Bleed a radiator only for explicitly supported system types.
+20. Drill/screw basics on known test material.
+
+### Tier C — explain principles / route to authoritative procedure, not generic autopilot
+
+- jump-starting vehicles;
+- mains electrical work/reset diagnosis beyond a simple user-safe breaker action;
+- gas;
+- structural work;
+- roofing/heights;
+- high-pressure systems;
+- hazardous chemicals;
+- model-specific automotive repair.
+
+Tier C can still make useful videos, but the goal is often "understand the situation and know when/how to use the manual or professional", not "follow this generic cartoon and perform the repair."
 
 ## 10. Pilot
+
+**First five recommended tests:**
+1. tie a tie;
+2. sew a button;
+3. choose the correct screwdriver bit;
+4. use a tape measure;
+5. use a spirit level.
+
+These give five different visual/instruction problems without introducing electrical, gas, structural or vehicle-starting risk.
 
 Start with tasks that are:
 - visually explainable;
 - low risk;
 - frequently searched;
 - international or easy to localize;
-- cheap to animate.
+- cheap to animate;
+- easy to verify against authoritative references or ordinary physical reality.
 
 Measure:
 - search impressions;
