@@ -2821,3 +2821,153 @@ Do not distort Pemberton to fit a product category.
 > **HARVEST MECHANICS. OWN THE EXPRESSION.**
 
 > **FIRST MAKE PEMBERTON WORTH CARING ABOUT. THEN ASK WHAT THE PROPERTY CAN BECOME.**
+
+
+---
+
+## 41. CANON IDEA REGISTER
+
+This section is an audit index, not a second source of truth. Detailed law remains in the sections above.
+
+### Character
+- older tuxedo cat;
+- comfortably built;
+- pronounced primordial pouch;
+- subtle side-to-side pouch sway;
+- owners call him old; he hears seniority;
+- highly educated;
+- explains simply;
+- curious;
+- effort-conscious/lazy;
+- whimsical;
+- warm;
+- mildly pompous;
+- gloriously delusional about rank;
+- basic cat instincts repeatedly defeat dignity.
+
+### Era and worldview
+- lives in the modern day;
+- mentally/socially frames life through an 1870s gentleman-explorer world;
+- Around-the-World-in-Eighty-Days-era travel/logistics mood without copying characters or plot;
+- modern technology is understood functionally but reclassified socially;
+- humans are household staff in his mind;
+- emotionally, those humans are still his family.
+
+### Human presentation
+- owner faces are never shown;
+- legs/feet/clothing/hands carry modern-human presence;
+- Pemberton is proud of “training” humans through repeated cat behaviours;
+- familiar human responses are interpreted as successful household management.
+
+### Dress
+- tuxedo fur is the foundation;
+- ordinary pet collar with soft bow-tie front = formal cravat in his mind;
+- ID tag = medallion/credential;
+- outdoor lead attaches to real harness;
+- harness/leash = expedition rigging;
+- one small wardrobe malfunction is a recurring visual joke.
+
+### Cola
+- Pemberton loves fictional cat-safe cola;
+- John Stith Pemberton connection is a historical easter egg only;
+- home: porcelain teacup and saucer, ceremonial “pinky up” equivalent;
+- field: generic modern takeaway cup with lid/straw;
+- he has exact serving standards;
+- no third-party cola branding dependency.
+
+### Cat modes
+- Gentleman Mode = default;
+- Play Mode = prey/play override;
+- Pet Mode = affection override;
+- feather wand is a major Play Mode trigger;
+- Play Mode: pupil bloom, low stance, hindquarter wiggle, pounce;
+- “Silly me” is an optional dignity reset;
+- chin scratches are a major Pet Mode trigger;
+- Pet Mode: head lifts, whiskers forward, lean-in, purr;
+- Chirrup Sting = Play Mode sound concept;
+- Purr Bloom = Pet Mode sound concept.
+
+### Hygiene and disgust
+- humans are considered slightly dirty/cootie-ridden;
+- napkins/cloth barriers are used theatrically;
+- affection can instantly defeat the hygiene doctrine;
+- hind-paw dismissal flick = silent sign of disgust when leaving a situation.
+
+### Household nemesis
+- ordinary spray bottle = Infernal Atomizer;
+- subtle skull-like silhouette from Pemberton eye level;
+- human “NO!” cue is immediately understood;
+- he blames the device/policy before blaming his humans;
+- he is not irrationally afraid of water as a subject;
+- unexpected water on Pemberton = personal outrage;
+- spray-bottle gag is not real pet-training advice.
+
+### Automated estate
+- robot vacuum = Motor Carriage;
+- charging dock = Carriage House;
+- feeder = Loyal Steward / Provisioning Office;
+- self-cleaning litter box = Sanitation Bureau / Sanitary Works;
+- water fountain = Estate Spring;
+- smart-home automation reinforces his belief that the estate is becoming civilized;
+- automated feeder is regarded as the most reliable member of staff.
+
+### Home and travel
+- Pemberton House = ornate cat-house expedition headquarters;
+- map room/library/archive/wardrobe/rest quarters;
+- Motor Carriage handles local movement;
+- Grand Tour Door handles true expeditions;
+- Door uses travel anchors;
+- Door is transport, never automatic plot solution;
+- adventures may visit modern places, bounded historical windows or explicit explanatory spaces.
+
+### Story grammar
+- curiosity creates the quest;
+- conservation of effort complicates it;
+- physical comedy must reveal character;
+- educational truth survives the fiction;
+- abstract European serial-adventure mechanics may be harvested;
+- no copied Suske en Wiske plots, characters, devices or visual expression;
+- simple comedy should work across language;
+- “Big intelligence. Simple gag.”
+
+### Weekend Spa ending
+- human arms/lap are interpreted as a formal restorative spa service;
+- preferred coda for fuller adventures;
+- return home;
+- archive expedition object;
+- cola;
+- token cooties precaution;
+- chin scratch;
+- Pet Mode;
+- one simple factual conclusion;
+- final joke;
+- sleep;
+- variation is required so the ending does not become mechanically identical.
+
+### Visual-style gate — intentionally unresolved
+
+The following are **not yet canon**:
+- final drawing style;
+- exact line weight;
+- exact eye construction;
+- degree of stylization versus anatomical realism;
+- final coat-marking pattern;
+- final palette;
+- texture level;
+- background rendering style;
+- animation frame economy;
+- exact visual age band.
+
+Any proposed visual style must preserve:
+1. instantly readable tuxedo-cat silhouette;
+2. primordial-pouch secondary motion;
+3. expressive pupils/eyes;
+4. whisker readability;
+5. bow-collar readability;
+6. tiny wardrobe malfunctions;
+7. simple physical comedy;
+8. owners-at-cat-height camera grammar;
+9. modern/Belle-Époque visual contrast;
+10. ability to animate Pemberton consistently at scale.
+
+> **STYLE MAY CHANGE THE SURFACE. IT MUST NOT ERASE THE CHARACTER ENGINE.**
