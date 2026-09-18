@@ -1,6 +1,6 @@
 # BOOK OF VAULT
 
-**Hyperion Arm of IP Preservation, Rights Provenance, and Transferable Asset Memory**
+**Hyperion Arm of Transferable Asset Preservation, Commercial Provenance, and Exit Readiness**
 
 Vault makes sure OTHRYS does not create value and then lose the evidence, rights, source material or operating knowledge that made it valuable.
 
@@ -12,14 +12,40 @@ Vault makes sure OTHRYS does not create value and then lose the evidence, rights
 ## 2. Asset Classes
 Code; domains; names/brands; characters/worlds; scripts; research; datasets; prompts/workflows where valuable; designs; generated/commissioned media; licenses; model/tool provenance; analytics; experiment history; production recipes; deployment knowledge; customer-independent operating history.
 
-## 3. IP Bible
-For original properties preserve canonical identity, character/world bible, visual/tone rules, chronology, episode lineage, unresolved continuity, localization rules and known collision/trademark checks where warranted.
+## 3. Domain-Source Boundary
 
-## 4. Rights Ledger
-Record origin, creator/tool, license, restrictions, attribution, commercial-use status where known, transformations and uncertainty. Unknown rights are explicit rather than silently upgraded to owned.
+Vault does not become the canonical editor of every domain asset.
+
+For Theia properties:
+- Theia owns the property/world bible;
+- Theia owns media source/asset provenance and rights ledger;
+- Theia owns episode/derivative lineage.
+
+Vault references those canonical records and preserves the **commercially transferable asset packet**:
+- what exists;
+- who/what owns it;
+- evidence that rights are clean enough for the proposed transaction;
+- reproducibility;
+- operating history;
+- dependencies;
+- commercial history;
+- known restrictions/collisions.
+
+For code/products, use the corresponding domain's canonical source/provenance.
+
+## 4. Commercial Rights Readiness
+Vault should be able to answer:
+- what can OTHRYS legally transfer/license/sell?
+- what needs consent/assignment?
+- what provider terms matter?
+- what trademarks/names remain uncleared?
+- what third-party assets must be replaced?
+- what evidence would a buyer/licensee reasonably request?
+
+Unknown rights remain explicit.
 
 ## 5. Provenance
-Important artifacts should be traceable from source evidence through transformations to final output. This is especially important for factual media, datasets, AI-generated assets and licensed inputs.
+Vault links to canonical domain provenance rather than copying it into a second truth. Important assets remain traceable from source evidence through transformations to final output.
 
 ## 6. Reproducibility
 Preserve enough recipe/version information to reproduce or migrate valuable assets without dependence on one disappearing vendor or operator memory.
