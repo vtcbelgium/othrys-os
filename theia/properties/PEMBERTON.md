@@ -30,7 +30,8 @@ Locked:
 - species: cat;
 - pronouns: he/him;
 - coat: **tuxedo cat** — black and white;
-- body: **chubby / round-bodied**;
+- body: **older, comfortably built tuxedo cat with a pronounced primordial pouch**;
+- age framing: owners describe him simply as **"an old cat"**; exact age is not yet locked;
 - temperament: curious, lazy, dignified, warm, observant;
 - self-image: **late-19th-century gentleman explorer, scholar and master of Pemberton House**;
 - actual setting: **modern day**;
@@ -418,29 +419,61 @@ The final pattern must:
 - avoid looking too similar to an existing famous cat character;
 - work in monochrome line art for books/comics.
 
-### 5.5 Chubbiness
+### 5.5 The primordial pouch / older-cat silhouette
 
-Pemberton is canonically chubby.
+Pemberton is **not defined as an obese cat**.
 
-The humor does **not** come from mocking his body.
+His lower-belly fullness is primarily a pronounced **primordial pouch**: the normal loose flap of skin/fat many cats carry along the underside of the abdomen.
 
-His roundness contributes:
+For Pemberton it is visually emphasized enough to become part of his silhouette.
+
+Canonical read:
+- mature/older cat;
+- comfortably built;
+- broad, soft body;
+- pronounced lower belly pouch;
+- not frail;
+- not comically spherical;
+- still capable of sudden, startling feline speed.
+
+When he walks at his normal dignified pace, the pouch may move with a subtle **side-to-side pendulum wobble**.
+
+The wobble should:
+- be small;
+- follow the body with a slight delay;
+- feel soft and physical;
+- be funniest when everything above it is extremely composed;
+- become more pronounced during a brisk trot;
+- never turn into grotesque body deformation.
+
+In Play Mode, the pouch may lag a fraction behind the rest of him during:
+- the pre-pounce wiggle;
+- sudden acceleration;
+- an emergency stop;
+- a sharp turn.
+
+That delayed motion is an animation asset, not a fat joke.
+
+His body contributes:
 - warmth;
 - softness;
-- visual comfort;
-- slower resting poses;
-- contrast with sudden feline speed;
-- recognizability.
+- age;
+- recognizability;
+- physical comedy;
+- contrast between stately movement and explosive cat reflexes.
 
 Avoid:
 - humiliation about weight;
 - diet jokes;
 - disgust;
-- equating body size with laziness or stupidity.
+- equating age, body size or pouch with stupidity/laziness;
+- treating the pouch as a medical problem.
 
 His laziness is personality.
-His body is appearance.
-They are not a moral equation.
+His pouch is anatomy.
+His age is character texture.
+
+> **THE GENTLEMAN MOVES WITH DIGNITY. THE POUCH FOLLOWS A MOMENT LATER.**
 
 ---
 
@@ -449,7 +482,8 @@ They are not a moral equation.
 Pemberton's movement should tell jokes before dialogue does.
 
 Default:
-- measured walk;
+- measured older-cat walk;
+- subtle side-to-side primordial-pouch sway beneath an otherwise dignified posture;
 - economical turns;
 - long assessment before unnecessary jumping;
 - strategic use of furniture, bags, ledges and moving objects;
@@ -550,6 +584,36 @@ He has broad knowledge across geography, history, natural science, engineering, 
 
 **Brave in an unheroic way**  
 He may complain, hesitate or calculate effort, but curiosity can pull him into genuinely difficult situations.
+
+**Seasoned**  
+The owners describe Pemberton as an **old cat**. He does not regard himself as old. He regards himself as experienced, established and entirely past the age at which one should be expected to rush unnecessarily.
+
+He may interpret comments such as:
+- "old boy";
+- "senior cat";
+- "he's getting old";
+- "take it easy";
+
+as recognition of:
+- rank;
+- field experience;
+- wisdom;
+- deserved privileges.
+
+Age may explain why he values:
+- warmth;
+- naps;
+- efficient transport;
+- predictable rituals;
+- comfortable surfaces.
+
+It must never erase:
+- curiosity;
+- Play Mode;
+- athletic bursts;
+- willingness to explore.
+
+> **OLD, ACCORDING TO THE STAFF. SEASONED, ACCORDING TO PEMBERTON.**
 
 ### 7.1 What Pemberton is not
 
@@ -2077,6 +2141,8 @@ Each script should preserve:
 - Pemberton values dignity.
 - Pemberton is genuinely capable of learning.
 - Pemberton has cat instincts.
+- Pemberton is an older/mature cat with a pronounced primordial pouch and subtle walking sway.
+- his owners describe him as an old cat; Pemberton interprets this as seniority and experience.
 - Pemberton likes comfort.
 - Pemberton likes cola.
 - Pemberton is fastidious about human mess and "cooties."
@@ -2287,6 +2353,10 @@ Do not rewrite the entire character after one weak artifact.
 > **HE KNOWS IT IS A TOY. HIS HIND LEGS HAVE NOT BEEN INFORMED.**
 
 > **PEMBERTON CAN EXPLAIN THE INSTINCT. HE CANNOT ALWAYS NEGOTIATE WITH IT.**
+
+> **OLD, ACCORDING TO THE STAFF. SEASONED, ACCORDING TO PEMBERTON.**
+
+> **THE GENTLEMAN MOVES WITH DIGNITY. THE POUCH FOLLOWS A MOMENT LATER.**
 
 > **THE SOUND TELLS US THE CAT HAS TAKEN OVER BEFORE PEMBERTON ADMITS IT.**
 
