@@ -53,7 +53,8 @@ Greek mythology is not one perfectly consistent canon. Hesiod, Homer, Apollodoru
 
 ## Status vocabulary
 
-- **ACTIVE** — canonical current component/authority.
+- **ACTIVE** — canonical current component/authority with admitted current house/runtime representation.
+- **ACTIVE_STRATEGIC** — canonically instantiated domain/Titan whose doctrine and boundary are active while runtime admission is incomplete.
 - **ACTIVE_SUPPORTING** — canonical supporting component.
 - **CONCEPTUAL** — doctrine exists, runtime representation is incomplete/different.
 - **RESERVED** — strong future fit intentionally held.
@@ -123,7 +124,7 @@ Mount Othrys itself is appropriate: in Titanomachy tradition it is the Titans' s
 | **Hyperion** | heavenly height/light; father of Helios, Selene, Eos | ACTIVE | business/venture/product/economic intelligence |
 | **Iapetus** | father of Atlas, Menoetius, Prometheus, Epimetheus | RESERVED | capability evolution, lineage, succession |
 | **Kronos/Cronus** | Titan ruler; father of elder Olympians | ACTIVE | lifecycle, heartbeat, supervision |
-| **Theia** | sight/heavenly light; mother of sun/moon/dawn | ACTIVE | visual media/video production, creative media systems, media automation |
+| **Theia** | sight/heavenly light; mother of sun/moon/dawn | ACTIVE_STRATEGIC | visual/audiovisual media production, creative media systems, media automation |
 | **Rhea** | mother of Olympian generation | ACTIVE | vitality, reliability, care stewardship |
 | **Themis** | custom/order/law; mother of Horae/Moirai in Hesiod | CONCEPTUAL | governance/policy/trust doctrine |
 | **Mnemosyne** | memory; mother of nine Muses | ACTIVE | institutional memory/knowledge governance |
@@ -159,11 +160,11 @@ Hyperion no longer owns media production or Story Forge. Those moved to sibling 
 
 > **HYPERION OWNS THE ECONOMIC BET. HE DOES NOT OWN THE MEDIA MACHINE.**
 
-## Theia — ACTIVE
+## Theia — ACTIVE_STRATEGIC
 
 **Myth:** original Titaness associated with sight and shining light; paired with Hyperion; mother of Helios, Selene and Eos.  
-**OTHRYS:** independent Titan of visual media, video production, creative media systems, character/IP media and media automation.  
-**Tech:** domain-specific media production control plane with Opsis as proposed media orchestration runtime.
+**OTHRYS:** independent Titan of visual/audiovisual media, video production, creative media systems, character/IP media and media automation.  
+**Tech:** strategic media-production control plane with Opsis as proposed media orchestration runtime; runtime admission remains incomplete.
 
     THEIA
     ├── Opsis             domain media orchestration
@@ -179,7 +180,9 @@ Hyperion no longer owns media production or Story Forge. Those moved to sibling 
 Boundary:
 - Hyperion decides whether a media bet deserves economic oxygen.
 - Theia decides how an approved media intent becomes a governed media artifact.
-- Neither silently inherits the other's authority.
+- Visual Control retains visual observation/comparison; Theia does not inherit generic computer vision or UI verification merely because her myth concerns sight.
+- Future Argus, if activated, retains observability.
+- Neither sibling silently inherits the other's authority.
 
 > **THEIA OWNS THE MEDIA MACHINE. OPSIS RUNS THE PRODUCTION GRAPH.**
 
