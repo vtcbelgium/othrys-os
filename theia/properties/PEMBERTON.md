@@ -464,6 +464,27 @@ When curiosity spikes:
 - sudden efficient movement;
 - almost embarrassing athletic ability.
 
+When **Play Mode** triggers:
+- pupils enlarge dramatically;
+- head drops;
+- shoulders lower;
+- rear rises slightly;
+- hindquarters begin the unmistakable pre-pounce wiggle;
+- tail may twitch;
+- bow collar shifts with the movement;
+- all gentlemanly stillness disappears;
+- Pemberton may launch before remembering who he is.
+
+When **Pet Mode** triggers:
+- eyes soften;
+- head lifts toward the hand;
+- chin presents itself;
+- whiskers sweep forward as Pemberton's canonical affection cue;
+- body leans into contact;
+- purr/comfort response overwhelms the hygiene doctrine;
+- bow collar may be pushed sideways;
+- dignity returns only after the hand stops.
+
 When dignity is threatened:
 - freeze;
 - grooming reset;
@@ -514,6 +535,9 @@ He behaves as though unsolicited human contact is a breach of hygiene protocol.
 
 **Affection-vulnerable**  
 Despite all declarations of contamination, Pemberton is extremely susceptible to competent petting — especially under the chin.
+
+**Instinct-vulnerable**  
+Pemberton can explain animal behavior, optics, mechanics and history with formidable clarity. None of this prevents a feather on a string from temporarily switching off the gentleman explorer.
 
 **Mildly pompous**  
 Enough to be funny, never enough to make him unpleasant.
@@ -661,6 +685,200 @@ He may then place a napkin on the human's lap **before climbing onto it again**.
 > **CONTACT IS UNACCEPTABLE. CONTINUE.**
 
 > **HIS HYGIENE STANDARDS ARE PRINCIPLED. HIS CHIN IS NOT.**
+
+### 7.5 The three Pemberton modes
+
+Pemberton has three recurring behavioral states.
+
+They are **animation/comedy states**, not separate personalities.
+
+#### GENTLEMAN MODE — default
+
+Visual:
+- upright posture;
+- controlled tail;
+- small economical gestures;
+- bow reasonably straight;
+- cup positioned correctly;
+- measured blinking;
+- formal speech.
+
+Mental state:
+- explorer;
+- scholar;
+- estate master;
+- lecturer;
+- critic of modern standards.
+
+This is the Pemberton he believes is permanent.
+
+#### PLAY MODE — prey/play override
+
+Trigger examples:
+- feather wand;
+- string;
+- ribbon;
+- dangling luggage tag;
+- fast-moving reflection;
+- skittering object;
+- something disappearing behind furniture;
+- toy mouse;
+- dangling museum label;
+- tassel on an otherwise important historical object.
+
+Canonical visual switch:
+
+```text
+SERIOUS PEMBERTON
+  -> MOVEMENT ENTERS PERIPHERAL VISION
+  -> MICRO-FREEZE
+  -> PUPILS BLOOM
+  -> HEAD TRACKS
+  -> BODY LOWERS
+  -> HINDQUARTER WIGGLE
+  -> POUNCE / NEAR-POUNCE
+  -> SELF-AWARENESS RETURNS
+  -> FROZEN EMBARRASSMENT
+  -> FORMAL RESET
+```
+
+Pemberton may know perfectly well that the object is a toy.
+
+Knowledge does not cancel the reflex.
+
+A feather wand is especially powerful because the owners can deploy it at the worst possible moment:
+- during a lecture;
+- while he is inspecting an artifact;
+- during pre-expedition briefing;
+- while he is riding the Motor Carriage;
+- immediately after he criticized humans for childish behavior.
+
+If he catches himself **before** pouncing, he may perform a tiny recovery:
+- blink;
+- straighten bow;
+- clear throat;
+- quietly say: **"Silly me."**
+- continue exactly where he stopped.
+
+If he already pounced, he may inspect the feather afterward as though the attack were part of a rigorous scientific test.
+
+> **HE KNOWS IT IS A TOY. HIS HIND LEGS HAVE NOT BEEN INFORMED.**
+
+#### PET MODE — affection override
+
+Trigger examples:
+- chin scratches;
+- cheek rubs;
+- behind-ear scratches;
+- slow forehead strokes;
+- warm lap;
+- gentle brushing.
+
+Canonical visual switch:
+
+```text
+FASTIDIOUS PEMBERTON
+  -> HAND APPROACHES
+  -> DISAPPROVING LOOK
+  -> CONTACT AT CORRECT SPOT
+  -> EYES SOFTEN
+  -> CHIN RISES
+  -> WHISKERS FORWARD
+  -> BODY LEANS
+  -> PURR BUILDS
+  -> SCRATCHING STOPS
+  -> ONE BEAT OF BETRAYED SILENCE
+  -> FORMAL RESET
+```
+
+Pet Mode is slower, softer and more helpless than Play Mode.
+
+Play Mode is:
+**predatory ignition.**
+
+Pet Mode is:
+**dignified collapse.**
+
+### 7.6 Mode-switch sound language
+
+The switches should have **short, language-independent audio signatures** so children can recognize the state before dialogue.
+
+These are sound-design motifs, not mandatory spoken catchphrases.
+
+#### Play Mode cue — **the Chirrup Sting**
+
+Structure:
+- one tiny involuntary feline chirrup: **"prrt!"**
+- immediately followed by a very short two- or three-note pizzicato/string snap;
+- optional soft whip/feather swish as the visual object crosses frame.
+
+Feel:
+- instant;
+- bright;
+- spring-loaded;
+- under one second.
+
+Use sparingly.
+The pupil bloom and hindquarter wiggle should still work without sound.
+
+Canonical shorthand in production notes:
+
+`PRRT! -> pizzicato SNAP -> PLAY MODE`
+
+#### Pet Mode cue — **the Purr Bloom**
+
+Structure:
+- tiny involuntary **"mrrp..."** or breathy purr onset;
+- low warm purr swells for a beat;
+- optional delicate porcelain **ting** when the full melt lands.
+
+Feel:
+- warm;
+- ridiculous;
+- luxurious;
+- slightly too pleased with itself.
+
+Canonical shorthand:
+
+`MRRP... -> PURR BLOOM -> PET MODE`
+
+The porcelain ting links Pet Mode subtly to Pemberton's teacup/cola ritual without requiring a cup to be visible.
+
+#### Gentleman reset cue
+
+After either involuntary mode:
+- tiny throat-clear;
+- bow/collar fabric flick;
+- one dry little click or restrained string pluck.
+
+Pemberton may then say:
+- **"Silly me."**
+- **"As I was saying..."**
+- or nothing at all.
+
+Do not use the same spoken line every time.
+
+> **THE SOUND TELLS US THE CAT HAS TAKEN OVER BEFORE PEMBERTON ADMITS IT.**
+
+### 7.7 The basic-instinct law
+
+Pemberton's intelligence never removes his animal nature.
+
+He may:
+- understand that a feather wand is artificial and still stalk it;
+- explain why moving prey triggers pursuit and then immediately demonstrate the point involuntarily;
+- lecture about reflection and then chase a moving light;
+- know a box contains nothing and still get into it;
+- understand gravity and still knock an object from a table to inspect the result;
+- object to a dangling tassel while staring at it with rapidly expanding pupils.
+
+These switches must not make him look stupid.
+
+They reveal that **knowledge and instinct can coexist**.
+
+The funniest version often has Pemberton providing the explanation **after his own body just supplied the demonstration**.
+
+> **PEMBERTON CAN EXPLAIN THE INSTINCT. HE CANNOT ALWAYS NEGOTIATE WITH IT.**
 
 ---
 
@@ -906,7 +1124,13 @@ Pemberton should often create comedy through:
 - resetting his dignity immediately after obvious purring/leaning enjoyment;
 - confidently choosing a route until the expedition leash reaches full length;
 - walking around a chair leg and blaming the staff when the "safety line" becomes entangled;
-- the harness remaining perfectly practical while Pemberton treats it like ceremonial expedition gear.
+- the harness remaining perfectly practical while Pemberton treats it like ceremonial expedition gear;
+- Play Mode detonating in the middle of a serious explanation;
+- pupils becoming enormous while his voice remains formal for one last second;
+- hindquarter wiggle betraying the pounce before Pemberton consciously commits;
+- Pet Mode melting him immediately after a speech about human cooties;
+- the Chirrup Sting or Purr Bloom arriving before Pemberton can preserve appearances;
+- "Silly me" followed by an absurdly fast return to scholarly seriousness.
 
 A good Pemberton gag should survive:
 - dubbing;
@@ -1861,6 +2085,11 @@ Each script should preserve:
 - outdoor leash attachment uses a normal cat harness; Pemberton interprets it as expedition rigging.
 - Pemberton cannot convincingly resist good chin scratches.
 - forward whiskers are his canonical affection/interest cue during strong chin-scratch enjoyment.
+- fast prey-like movement can trigger Play Mode: pupil bloom, low stance and hindquarter wiggle.
+- feather-on-a-stick play is one of the strongest Play Mode triggers.
+- Play Mode and Pet Mode are involuntary betrayals of Gentleman Mode, not changes of personality.
+- "Silly me" is an available reset line, not a mandatory catchphrase.
+- the Chirrup Sting and Purr Bloom are canonical sound-design concepts to test.
 - Pemberton is warm enough to care about others.
 
 **May vary**
@@ -2054,6 +2283,12 @@ Do not rewrite the entire character after one weak artifact.
 > **CONTACT IS UNACCEPTABLE. CONTINUE.**
 
 > **HIS HYGIENE STANDARDS ARE PRINCIPLED. HIS CHIN IS NOT.**
+
+> **HE KNOWS IT IS A TOY. HIS HIND LEGS HAVE NOT BEEN INFORMED.**
+
+> **PEMBERTON CAN EXPLAIN THE INSTINCT. HE CANNOT ALWAYS NEGOTIATE WITH IT.**
+
+> **THE SOUND TELLS US THE CAT HAS TAKEN OVER BEFORE PEMBERTON ADMITS IT.**
 
 > **THE ADVENTURE EARNS ATTENTION. THE EXPLANATION EARNS TRUST.**
 
