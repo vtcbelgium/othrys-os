@@ -1265,11 +1265,13 @@ Canonical seed:
 - self-image: 1870s gentleman explorer living in the modern world;
 - home/base: Pemberton House, an ornate cat-house expedition headquarters with the Grand Tour Door;
 - local transport: household robot vacuum, interpreted as his Motor Carriage;
-- human owners: visually shown from roughly the knees down and understood by Pemberton as household staff;
+- human owners: visually shown from roughly the knees down; Pemberton calls them staff but fundamentally loves/trusts them as his people;
 - defining contradiction: intensely curious and intensely lazy;
 - adventure engine: curiosity gets him moving; conservation of effort keeps trying to stop him;
 - secondary comic engines: dignity versus cat instinct, 1870s worldview versus modern reality, and a small recurring wardrobe malfunction;
-- recurring pleasures: warmth, naps, comfortable surfaces, food and highly ritualized cola;
+- involuntary state switches: Gentleman Mode, feather-triggered Play Mode and chin-scratch-triggered Pet Mode;
+- permanent household nemesis: the ordinary spray bottle, interpreted as the Infernal Atomizer;
+- recurring pleasures: warmth, naps, comfortable surfaces, food, highly ritualized cola and excellent chin scratches;
 - comedy: simple visual/physical comedy over a very well-educated character;
 - tone: whimsical, warm, funny, adventurous, mildly pompous and slightly delusional;
 - educational potential: very high;
