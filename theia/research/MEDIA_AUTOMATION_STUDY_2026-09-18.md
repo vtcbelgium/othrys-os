@@ -18,7 +18,7 @@ Two starter properties:
 
 ## 2. Executive findings
 
-1. **The highest-leverage automation target is 90–95% machine work plus a short human approval gate, not zero humans immediately.**
+1. **A useful engineering target is to push most mechanical work to the machine while retaining a short human approval gate; the earlier 90–95% figure is a design aspiration to test, not a measured industry fact.**
 2. **Rights must be solved before scale.** Own/source-authorized media is structurally safer than random reposting.
 3. **Recurring characters/templates are compatible with platform monetization only when each artifact has materially different substance and real value.**
 4. **Clipping is easiest to validate commercially through authorized creator/client/campaign footage.**
@@ -348,6 +348,33 @@ Architectural consequence:
 - 60–90 second explainers may be strategically more useful than ultra-short loops for some monetization tests;
 - availability and current local rules must be refreshed before economic planning.
 
+### Reused-content separation
+
+A critical correction from current YouTube policy: **copyright permission and YPP reused-content eligibility are different tests**. YouTube states that minimally transformed reuse can violate its monetization rules even when the uploader has permission from the original creator.
+
+Therefore licensed clipping may be legally publishable yet still be a poor platform-ad-revenue strategy. Service/campaign revenue and channel monetization must be modeled separately.
+
+### Child-directed YouTube implications
+
+If Mipi or another property is actually directed to children, YouTube requires accurate audience designation. Made-for-kids content has restrictions including no personalized advertising and disabled/restricted comments, notifications and several engagement/commerce features.
+
+This changes:
+- telemetry;
+- community strategy;
+- ad economics;
+- CTA design;
+- owned-surface strategy.
+
+Do not solve this by misclassifying the audience.
+
+### AI transparency — EU and platforms
+
+As of 2 August 2026, EU AI Act Article 50 transparency rules apply. Depending on Theia's role as provider or deployer and the media involved, machine-readable marking and/or disclosure may be required. Deepfake disclosure duties are especially relevant to realistic synthetic people/events; creative/fictional works have a proportionate disclosure route rather than an exemption from all transparency.
+
+YouTube separately requires disclosure for meaningfully altered/generated realistic media and currently states that disclosure itself does not reduce monetization eligibility.
+
+TikTok's AIGC guidance includes cartoon/anime content in its broad definition, requires labels for realistic AIGC and can apply automatic labels using Content Credentials/C2PA.
+
 ### General
 
 Platform rules are external dependencies.
@@ -480,6 +507,16 @@ Commercial priority:
 ---
 
 ## 11. Mipi — thesis
+
+### Name-clearance finding
+
+"Mipi" is not a blank global name. Preliminary research found active MIPI Alliance marks in technology categories and an older pet-story publication with a puppy called Mipi. This is **not a conclusion that the entertainment property cannot use Mipi**. It means formal EU/Benelux/international clearance should happen before public brand lock, merchandise or licensing.
+
+Mipi remains the internal canonical name.
+
+### Audience-classification finding
+
+The current concept likely has meaningful child appeal. Before launch, deliberately decide whether it is child-directed or broader family/general-audience content based on the actual creative positioning and platform/legal factors. Economics must follow that classification.
 
 Mipi's contradiction:
 - curiosity is maximum;
@@ -624,7 +661,24 @@ Phase 6 — standalone option
 
 ---
 
-## 15. External references checked
+## 15. IP / AI authorship finding
+
+For a property expected to become valuable IP, preserve human creative authorship.
+
+Current authoritative guidance is not identical across jurisdictions, but both the European Commission's IP Helpdesk and the U.S. Copyright Office emphasize meaningful human creative contribution. Provider terms can also affect exploitation rights.
+
+Theia should therefore preserve:
+- human-authored character/world bible;
+- original scripts/editorial decisions;
+- art direction;
+- selection/arrangement/modification;
+- provider terms snapshots;
+- contractor assignments;
+- prompt/output lineage where useful.
+
+This strengthens chain of title and avoids depending on raw machine output as the moat.
+
+## 16. External references checked
 
 Mythology:
 - Theoi — Theia: https://www.theoi.com/Titan/TitanisTheia.html
@@ -638,6 +692,12 @@ Platform policy:
 - YouTube monetizable content/rights: https://support.google.com/youtube/answer/2490020
 - YouTube spam policy: https://support.google.com/youtube/answer/2801973
 - YouTube YPP overview: https://support.google.com/youtube/answer/72851
+- YouTube made-for-kids audience/features: https://support.google.com/youtube/answer/9528076 and https://support.google.com/youtube/answer/9632097
+- YouTube AI disclosure: https://support.google.com/youtube/answer/14328491
+- EU AI Act Article 50 current text: https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng
+- European Commission Article 50 guidance: https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems
+- European Commission IP Helpdesk AI/IP FAQ: https://intellectual-property-helpdesk.ec.europa.eu/regional-helpdesks/european-ip-helpdesk/europe-frequently-asked-questions_en
+- U.S. Copyright Office AI/copyrightability: https://www.copyright.gov/ai/
 - TikTok Creator Rewards support: https://support.tiktok.com/en/business-and-creator/creator-rewards-program/
 
 Current tool research examples:
@@ -652,7 +712,7 @@ These links are dated research evidence. Recheck before implementation or commer
 
 ---
 
-## 16. Final study verdict
+## 17. Final study verdict
 
 The technically easiest money is not "AI YouTube automation."
 
