@@ -32,3 +32,10 @@ Opsis is a domain orchestrator only. It does not bypass Mission/Work, Trust Cana
 Theia is **canonical strategic / pre-runtime**. Her Book is intentionally not added to `books/BOOK_REGISTRY.json` yet because that registry is for current admitted house/runtime surfaces. Opsis and Theia enter that registry only after inspectable implementation/admission evidence exists.
 
 This prevents doctrine from pretending to be runtime proof.
+
+
+## Scripted animation
+
+- `theia/media/BOOK_OF_CARTOON_PRODUCTION.md` — cartoon/animation production doctrine.
+- `theia/properties/PEMBERTON.md` — canonical Pemberton character/world bible.
+- `theia/properties/PEMBERTON_SEASON_ONE_AND_PRODUCTION.md` — Seven Doors season and production expansion.
