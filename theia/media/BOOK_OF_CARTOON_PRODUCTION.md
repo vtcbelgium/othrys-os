@@ -224,6 +224,19 @@ The router chooses the route.
 
 The property never depends on one vendor.
 
+### Keyframe-first motion law
+
+For generative character shots, establish and approve the visual identity **before** asking the motion model to improvise it.
+
+Preferred flow:
+
+`APPROVED STORYBOARD/KEYFRAME -> HUMAN FIX IF NEEDED -> IMAGE-TO-VIDEO / CONTROLLED MOTION -> TAKE SELECTION -> RECEIPT`
+
+This is especially important for Pemberton, recurring props and continuity-heavy shots.
+
+> **APPROVED IMAGE FIRST. MOTION SECOND.**
+
+
 ---
 
 # 4. FREE / LOCAL-FIRST REFERENCE STACK
