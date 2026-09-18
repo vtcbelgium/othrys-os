@@ -148,7 +148,7 @@ Characters need:
 
 Characters should generate plot naturally.
 
-Mipi's curiosity/laziness contradiction is a model example: one trait starts the quest, the other creates resistance and comedy.
+Pemberton's curiosity/laziness contradiction is a model example: one trait starts the quest, while his conservation-of-effort instinct creates resistance, shortcuts and comedy.
 
 ## 9. Long arcs
 
