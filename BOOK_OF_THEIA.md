@@ -344,6 +344,36 @@ Candidate later Arms only when evidence justifies them:
 
 Do not instantiate an Arm merely because a vendor offers a feature.
 
+### 6.1 Arm collaboration
+
+Arms are composable, not mutually exclusive silos.
+
+Important loop:
+
+    AUTHORIZED LONG-FORM SOURCE
+          -> CLIPPING ARM
+          -> strong concept/moment discovered
+          -> EXPLAINER ARM
+          -> original explanatory derivative
+          -> EOS / HELIOS packaging as appropriate
+
+Example:
+- Clipping extracts a speaker's concise claim from a long interview.
+- Theia separately creates an original diagram/cartoon explainer of the underlying concept using verified research.
+- The two artifacts have different source/rights/provenance lineages even when they address the same idea.
+
+Another loop:
+
+    MIPI STORY FORGE
+          -> EXPLAINER FACULTIES
+          -> HELIOS primary episode
+          -> CLIPPING/REPURPOSING ARM
+          -> EOS-native derivative
+
+The clipping derivative must still be edited as a native artifact. It is not automatically the first 30 seconds of the Helios episode.
+
+> **ARMS SHARE FACULTIES AND EVIDENCE. THEY DO NOT ERASE EACH OTHER'S RIGHTS OR QUALITY CONTRACTS.**
+
 ---
 
 ## 7. SHARED FACULTIES
@@ -372,6 +402,8 @@ Candidate shared faculties:
 - Fact/Evidence Gate;
 - Media Quality Gate;
 - Platform Packager;
+- Policy/Disclosure Adapter;
+- Audience Classification Gate;
 - Scheduler/Publisher;
 - Analytics Collector;
 - Retention Analyzer;
@@ -1323,32 +1355,27 @@ Commercial recommendation must not corrupt editorial truth.
 
 ---
 
-## 34. CURRENT RESEARCH BASIS — 2026-09-18
+## 34. DATED RESEARCH & POLICY EVIDENCE
 
-Durable observations:
-- YouTube monetization requires original/authentic value and scrutinizes generic, repetitive or mass-produced output.
-- Recurring characters and formats can be compatible with monetization when episodes materially differ and provide real value.
-- YouTube explicitly expects commercial rights to visual/audio elements.
-- YouTube reused-content review is independent of copyright permission; permission alone does not guarantee YPP eligibility.
-- YouTube made-for-kids classification restricts personalized ads, comments, notifications and other features.
-- YouTube currently requires disclosure for meaningfully altered/generated realistic media and says disclosure itself does not reduce monetization eligibility.
-- TikTok Creator Rewards, where available, requires original high-quality videos longer than one minute for qualifying reward content.
-- TikTok includes cartoons/anime in its broad AIGC definition and provides creator/automatic AI labels.
-- EU AI Act Article 50 transparency rules apply from 2 August 2026 and create provider/deployer obligations around synthetic-content marking/disclosure.
-- Automation/templates are therefore not the enemy; interchangeable or deceptive content is.
+The canonical Book deliberately avoids treating today's vendors, thresholds or platform wording as permanent architecture.
 
-These are dated external rules. Platform adapters must refresh them before relying on them.
+Current dated research lives in:
+- `theia/research/MEDIA_AUTOMATION_STUDY_2026-09-18.md`;
+- future dated provider/platform/legal dossiers.
 
-Tool observations:
-- programmatic video (for example Remotion-class systems) is attractive for deterministic repeatable visual grammar;
-- cartoon SaaS (for example Vyond-class systems) is attractive for early proof before custom infrastructure;
-- modern TTS can provide timing useful for captions/animation;
-- generative video is valuable as a scene generator but currently should not be assumed to provide stable character continuity or deterministic diagrams;
-- clipping SaaS is useful for proving economics before local replacement.
+Before implementation or commercial reliance, refresh:
+- platform monetization/reuse rules;
+- child-directed-content rules;
+- AI/synthetic-media disclosure rules;
+- provider commercial-use terms;
+- API/publishing access;
+- relevant IP/trademark clearance;
+- jurisdiction-specific legal requirements.
 
-Vendor names are research examples, not canonical dependencies.
+Durable architecture belongs here.
+Volatile external facts belong in dated evidence.
 
----
+> **POLICY MEMORY NEEDS A DATE. ARCHITECTURE NEEDS A BOUNDARY.**
 
 ## 35. FINAL LAWS
 
