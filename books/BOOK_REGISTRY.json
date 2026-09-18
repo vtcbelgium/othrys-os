@@ -40,6 +40,26 @@
       "status": "CURRENT_OS_EDITION"
     },
     {
+      "id": "theia",
+      "title": "The Book of Theia",
+      "role": "Active Titan for creative/media production, original IP, authored audiovisual form and property continuity through Opsis.",
+      "evidence": [
+        "BOOK_OF_MYTHOLOGY.md#Theia",
+        ".othrys/project.json#systems/theia",
+        "theia/README.md",
+        "theia/opsis/README.md"
+      ],
+      "legacy": [
+        "hyperion/arms/BOOK_OF_STORY_FORGE.md",
+        "hyperion/arms/BOOK_OF_MEDIA_FACTORY.md",
+        "hyperion/media/BOOK_OF_CARTOON_PRODUCTION.md",
+        "hyperion/media/BOOK_OF_PEMBERTON.md"
+      ],
+      "boundary": "Theia owns creative form and production state; it does not absorb Hyperion economics, Mnemosyne memory governance, Hephaestus build authority, Talos verification, Trust Canal authority or Visual Control operational observation.",
+      "path": "books/book-of-theia/README.md",
+      "status": "CURRENT_OS_EDITION"
+    },
+    {
       "id": "hephaestus",
       "title": "The Book of Hephaestus",
       "role": "Engineering authority for bounded construction under mission scope.",
