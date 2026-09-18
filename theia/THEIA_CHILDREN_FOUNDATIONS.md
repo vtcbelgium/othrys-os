@@ -8,7 +8,16 @@ Mythological family:
 OTHRYS family:
 - Theia owns media production.
 - Hyperion supplies/receives economic intelligence through the sibling contract.
-- The three children name recurring media roles only when useful.
+- The three children name recurring **audience-facing expression roles** only when useful.
+
+They are **composable labels, not mutually exclusive pipelines**.
+
+Examples:
+- flagship recurring episode = Helios + Selene;
+- recurring discovery short = Eos + Selene;
+- one-off definitive explainer = Helios.
+
+Not every artifact needs a child label. A label does not create runtime authority.
 
 ## HELIOS — Sun / full illumination
 
@@ -96,6 +105,12 @@ Law:
 ## CHILD GOVERNANCE
 
 Do not create separate services just to fit mythology.
+
+The children are not a second routing taxonomy beside Arms:
+- Arms describe **how work is transformed**;
+- children describe **what role the resulting media plays for the audience**.
+
+Selene is intentionally orthogonal to Helios/Eos: continuity/return can apply to either full or discovery media.
 
 A child earns a separate Book/runtime only when:
 - its production contract is materially distinct;
