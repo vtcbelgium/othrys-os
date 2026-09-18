@@ -555,6 +555,45 @@ When tired:
 - slide gradually into sleep;
 - use inappropriate objects as pillows.
 
+### 7.5 The dismissal flick
+
+Pemberton has a small, distinctly feline gesture of disgust.
+
+When a cat steps in something wet or unpleasant, it may sharply flick a paw as if shaking the offending substance away.
+
+Pemberton turns that physical vocabulary into a **social punctuation mark**.
+
+When leaving a situation he finds:
+- dirty;
+- undignified;
+- badly managed;
+- offensively wet;
+- beneath further discussion;
+- administratively hopeless;
+
+he may walk away and give **one crisp backward flick of a hind paw**.
+
+The gesture reads as:
+
+**“I am removing the residue of this entire situation from my person.”**
+
+Rules:
+- usually one flick;
+- occasionally two when the offence is extraordinary;
+- no dialogue required;
+- never become a repetitive tic in every scene;
+- strongest when Pemberton otherwise remains completely composed;
+- may dislodge a tiny drop, crumb, leaf or speck when physically justified;
+- may be followed by a brief bow adjustment without looking back.
+
+The audience should eventually understand the gesture before a child could name it.
+
+Possible production shorthand:
+
+`TURN AWAY -> WALK -> HIND-PAW FLICK -> EXIT`
+
+> **PEMBERTON DOES NOT STORM OUT. HE REMOVES THE SITUATION FROM HIS PAW.**
+
 > **EVERY SURFACE IS A QUESTION. SOME QUESTIONS ARE ALSO BEDS.**
 
 ---
@@ -866,6 +905,43 @@ He:
 His delusion must never erase the emotional truth:
 
 **they are his family.**
+
+### 11.2 The staff-training delusion
+
+Pemberton is quietly proud that he has taught the humans several reliable “commands.”
+
+In audience reality these are ordinary pet-owner responses.
+
+In Pemberton’s interpretation, they are evidence of successful household management.
+
+Examples:
+
+- sit by a door -> human opens door;
+- stare at bowl -> provisioning inquiry begins;
+- specific meow -> staff attention increases;
+- walk toward a room and look back -> human follows;
+- sit beside carrier -> transport may be arranged;
+- present chin -> grooming/affection service begins;
+- occupy a lap -> spa service becomes available;
+- paw at a closed door -> access procedure starts;
+- appear beside an empty cup -> refreshment request has been filed.
+
+Pemberton may test whether a command still works, then show visible satisfaction when the human responds.
+
+He should never read as maliciously manipulative.
+
+His attitude is closer to:
+
+**“The training programme is finally producing results.”**
+
+If the human does not respond, he may:
+- repeat the command more clearly;
+- change position;
+- increase vocal emphasis;
+- consult the person as though troubleshooting a malfunction;
+- eventually walk away with the dismissal flick.
+
+> **WHEN THE HUMANS RESPOND, PEMBERTON RECORDS THIS AS SUCCESSFUL STAFF TRAINING.**
 
 > **THE STAFF MAY BE INCOMPETENT. THEY ARE STILL HIS PEOPLE.**
 
@@ -1224,7 +1300,8 @@ Modern object → Pemberton interpretation:
 | Cat carrier | First-class travelling compartment — until the door closes |
 | Cat harness/leash | Expedition rigging / field safety line |
 | Smart speaker | Wireless Secretary / House Butler |
-| Automatic feeder | Mechanical Steward |
+| Automatic feeder | **Loyal Steward / Provisioning Office** |
+| Self-cleaning litter box | **Sanitation Bureau / Sanitary Works** |
 | Pet water fountain | Estate Spring |
 | Cat flap | Private Entrance |
 | Food-delivery app | Telegraphic Catering Service |
@@ -1273,6 +1350,74 @@ evidence that civilization occasionally makes sensible decisions.
 Stairs remain suspicious.
 
 > **WHY WALK WHEN THE ESTATE MAINTAINS TRANSPORT?**
+
+### 16.1 The automated-estate delusion
+
+Pemberton lives in a world where many household processes happen automatically.
+
+He does not interpret this as:
+“smart-home technology.”
+
+He interprets it as:
+**proof that Pemberton House is finally becoming a civilized estate.**
+
+Important systems:
+
+#### The Loyal Steward — automatic feeder
+
+The automatic food dispenser is one of the few members of staff Pemberton considers genuinely dependable.
+
+It:
+- observes the timetable;
+- dispenses provisions without argument;
+- does not become distracted;
+- rarely requires repeated instruction.
+
+When it works:
+Pemberton may look at a nearby human as though inviting them to learn from a professional.
+
+When it jams:
+the household is facing a **provisioning crisis**.
+
+Potential line:
+> “The mechanical steward is punctual. A rare virtue.”
+
+#### The Sanitation Bureau — self-cleaning litter box
+
+Pemberton uses the litter box.
+
+He exits.
+
+The machine activates.
+
+From his perspective:
+**the sanitation department has been automatically notified of his departure.**
+
+He may not even look back.
+
+Possible line:
+> “The conservancy office has the matter in hand.”
+
+The machine should remain recognizably mundane in audience reality.
+
+#### The Estate Spring — water fountain
+
+Pemberton treats the pet fountain as a private household water service.
+
+If it stops:
+- he inspects it;
+- summons staff;
+- questions maintenance.
+
+#### Automation law
+
+Every automated process reinforces his central delusion:
+
+**the estate responds to Pemberton because the estate is well managed by Pemberton.**
+
+> **EVERY AUTOMATED DEVICE IS FURTHER EVIDENCE THAT THE ESTATE IS BECOMING CIVILIZED.**
+
+> **THE FOOD DISPENSER IS THE MOST RELIABLE MEMBER OF STAFF.**
 
 ---
 
@@ -1838,6 +1983,102 @@ as the default solution.
 
 > **THE NAP IS CHARACTER, NOT PLOT AUTOMATION.**
 
+### 26.1 The Weekend Spa — expedition coda
+
+Pemberton interprets being held, cuddled or allowed to sleep in a human’s arms as a **formal restorative service of the estate**.
+
+To the audience:
+- an older cat is curled up on his owner;
+- he is warm;
+- safe;
+- being scratched;
+- falling asleep.
+
+To Pemberton:
+- the expedition leader has entered the **Weekend Spa**;
+- reclining support has been provided;
+- thermal treatment is underway;
+- chin service is available;
+- debriefing may proceed.
+
+The spa should become the **default emotional landing zone** for fuller adventures.
+
+It is not required to appear identically after every episode.
+
+Its function is to:
+- reduce energy after the adventure;
+- restore intimacy with the humans;
+- give Pemberton a place to summarize what was learned;
+- allow one reflective sentence;
+- show that he is home and safe;
+- provide Pet Mode or nap comedy;
+- end on warmth rather than another plot beat.
+
+Possible coda rhythm:
+
+```text
+RETURN TO PEMBERTON HOUSE
+  -> expedition object archived
+  -> cola prepared
+  -> Pemberton boards human lap/arms
+  -> token cooties precaution
+  -> chin scratch
+  -> PET MODE / PURR BLOOM
+  -> one simple conclusion from the adventure
+  -> one small final joke
+  -> nap / eyes close
+```
+
+The conclusion should be simple enough for a child to repeat.
+
+Example:
+
+> “Push farther from the hinge and the door turns more easily. Torque. Useful word.”
+
+Then chin scratch.
+
+Whiskers forward.
+
+Tiny purr.
+
+> “Continue.”
+
+Eyes close.
+
+### 26.2 Spa variation law
+
+Do not make every ending identical.
+
+Possible Spa variants:
+- arms/chest cuddle;
+- lap;
+- warm blanket beside owner;
+- couch;
+- sunny window while a human hand scratches him;
+- Motor Carriage parked beside the sofa;
+- porcelain cola nearby;
+- takeaway cup from the expedition;
+- owner gently correcting his crooked bow.
+
+Some episodes may end elsewhere when story demands it.
+
+But for flagship/full adventures, the Spa is the preferred **Selene-style return ritual**.
+
+This recurring ending can create:
+- familiarity;
+- emotional safety;
+- reflection;
+- character attachment;
+- a recognizable final soundscape.
+
+Potential final audio pattern:
+
+`PURR BLOOM -> soft porcelain TING -> quiet closing motif`
+
+> **EVERY EXPEDITION DESERVES A DEBRIEF. PEMBERTON PREFERS HIS WITH CHIN SCRATCHES.**
+
+> **THE ADVENTURE ENDS WHEN PEMBERTON IS HOME ENOUGH TO FALL ASLEEP.**
+
 ---
 
 ## 27. RECURRING OBJECTS
@@ -2109,7 +2350,9 @@ MODERN HOUSEHOLD DETAIL
 → explanation  
 → return to Pemberton House  
 → object enters archive/map/collection  
-→ cola / nap / next question
+→ Weekend Spa / expedition debrief  
+→ simple conclusion  
+→ Pet Mode / cola / nap / final joke
 
 Do not use every beat every time.
 
@@ -2257,7 +2500,12 @@ Test at minimum:
 - Atomizer freeze;
 - bow straightening;
 - leash full-extension stop;
-- dignified recovery.
+- dignified recovery;
+- hind-paw dismissal flick;
+- self-cleaning litter-box exit;
+- feeder-demand posture;
+- human-arm Spa curl;
+- Spa debrief + chin-scratch transition.
 
 ---
 
@@ -2293,6 +2541,11 @@ Every Pemberton script should preserve:
 - Play and Pet Mode are involuntary betrayals of Gentleman Mode.
 - “Silly me” is available but not mandatory.
 - Chirrup Sting and Purr Bloom are sound concepts to test.
+- one crisp hind-paw flick can signal disgust/dismissal when he exits a situation.
+- he is proud of “training” humans to respond to his recurring requests.
+- automated household devices reinforce his belief that Pemberton House is a civilized estate.
+- the automatic feeder is the Loyal Steward; the self-cleaning litter box is the Sanitation Bureau.
+- the Weekend Spa is the preferred decompression/debrief coda for fuller adventures, but must allow variation.
 - The Infernal Atomizer is his permanent household nemesis.
 - “NO!” is a strongly recognized cue.
 - Pemberton blames the bottle/policy before blaming his people.
@@ -2544,6 +2797,18 @@ Do not distort Pemberton to fit a product category.
 > **THE HOUSE OPENS THE WORLD. PEMBERTON STILL HAS TO UNDERSTAND IT.**
 
 > **THE FIRST GREAT JOURNEY MAY BE ACROSS THE HALLWAY.**
+
+> **PEMBERTON DOES NOT STORM OUT. HE REMOVES THE SITUATION FROM HIS PAW.**
+
+> **WHEN THE HUMANS RESPOND, PEMBERTON RECORDS THIS AS SUCCESSFUL STAFF TRAINING.**
+
+> **EVERY AUTOMATED DEVICE IS FURTHER EVIDENCE THAT THE ESTATE IS BECOMING CIVILIZED.**
+
+> **THE FOOD DISPENSER IS THE MOST RELIABLE MEMBER OF STAFF.**
+
+> **EVERY EXPEDITION DESERVES A DEBRIEF. PEMBERTON PREFERS HIS WITH CHIN SCRATCHES.**
+
+> **THE ADVENTURE ENDS WHEN PEMBERTON IS HOME ENOUGH TO FALL ASLEEP.**
 
 > **THE JOKE LIVES IN THE PICTURE. THE KNOWLEDGE MAY SPEAK.**
 
