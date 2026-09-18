@@ -6,6 +6,7 @@ Canonical entry: ../BOOK_OF_THEIA.md
 
 ## Current doctrine
 - BOOK_OF_OPSIS.md — Theia's media-domain orchestration runtime.
+- THEIA_HYPERION_CONTRACT.md — typed sibling packets and standalone separation seam.
 - THEIA_CHILDREN_FOUNDATIONS.md — Helios, Eos and Selene foundations.
 - arms/BOOK_OF_CLIPPING.md — clipping/repurposing.
 - arms/BOOK_OF_EXPLAINER.md — animated/instructional explainers.
@@ -22,3 +23,10 @@ They exchange typed opportunity/evidence packets.
 
 ## Runtime law
 Opsis is a domain orchestrator only. It does not bypass Mission/Work, Trust Canal, Talos, Keymaster or financial gates.
+
+
+## Admission status
+
+Theia is **canonical strategic / pre-runtime**. Her Book is intentionally not added to `books/BOOK_REGISTRY.json` yet because that registry is for current admitted house/runtime surfaces. Opsis and Theia enter that registry only after inspectable implementation/admission evidence exists.
+
+This prevents doctrine from pretending to be runtime proof.
