@@ -39,7 +39,7 @@ Story Forge may serve:
 
 **Story Bible** — characters, motives, relationships, world rules, chronology, recurring objects, unresolved clues, tone, vocabulary, age band, visual constraints and forbidden contradictions.
 
-**Story Laboratory** — bounded variants and learning from retention, comprehension, emotion, return behavior and production difficulty.
+**Story Bench** — bounded creative variants and story-specific learning from comprehension, emotion, return behavior and production difficulty. Formal causal/economic experiment contracts remain owned by Hyperion Laboratory.
 
 ## 3. Story Genes
 
@@ -163,15 +163,18 @@ Do not make standalone episodes incomprehensible without lore homework.
 
 ## 10. Feedback
 
-Store:
-- retention drops;
-- rewatches;
-- comments/questions;
-- comprehension problems;
-- favorite characters;
-- successful reveals;
-- recurring requests;
-- production difficulty.
+Story Forge may record **story-domain observations**:
+- where comprehension failed;
+- which reveals landed;
+- character-affinity signals;
+- recurring audience questions;
+- continuity problems;
+- production difficulty;
+- candidate story hypotheses.
+
+Raw platform/media telemetry remains traceable through Theia evidence systems.
+
+When a question becomes a formal causal or portfolio experiment, Hyperion Laboratory owns the experiment contract; Story Forge supplies the creative variants through Opsis.
 
 Never infer a universal story law from one viral episode.
 
