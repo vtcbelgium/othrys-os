@@ -1452,3 +1452,18 @@ Volatile external facts belong in dated evidence.
 > **CLASSIFY THE AUDIENCE HONESTLY; DESIGN THE ECONOMICS AROUND THE CLASSIFICATION.**
 
 > **THEIA SHOULD BE ABLE TO LEAVE HOME ONE DAY WITHOUT LOSING HER IDENTITY.**
+
+
+---
+
+## CURRENT SCRIPTED-ANIMATION SPECIALIZATION
+
+Theia now has a dedicated scripted-animation production doctrine:
+
+- `theia/media/BOOK_OF_CARTOON_PRODUCTION.md`
+- `theia/properties/PEMBERTON.md`
+- `theia/properties/PEMBERTON_SEASON_ONE_AND_PRODUCTION.md`
+
+Pemberton is the first detailed animation benchmark. This expands Theia's strategic doctrine; it does **not** by itself change Theia/Opsis runtime admission status.
+
+> **THEIA OWNS THE MEDIA MACHINE. CARTOON PRODUCTION IS ONE SPECIALIZED PRODUCTION GRAMMAR INSIDE IT.**
