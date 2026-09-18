@@ -2,8 +2,8 @@
 
 ## OTHRYS / THEIA — scripted animation production doctrine
 
-**Status:** ACTIVE THEIA SPECIALIZATION — scripted animation production doctrine.  
-**Parent surfaces:** Story Forge + Media Factory.  
+**Status:** ACTIVE STRATEGIC THEIA SPECIALIZATION — doctrine active; runtime admission still follows Theia/Opsis governance.  
+**Parent surfaces:** Theia + Opsis + Story Forge + shared production faculties.  
 **Reference property:** Pemberton.  
 **Authority:** this Book specializes Theia media production; it does not bypass Trust Canal or duplicate Hephaestus, Talos, Mnemosyne, Hyperion or other OTHRYS responsibilities.
 
@@ -359,7 +359,7 @@ CLOUD EVERYTHING
 → no reproducible pipeline
 ```
 
-Theia/Media Factory should record:
+Opsis should record:
 - model;
 - model version;
 - workflow version;
@@ -1254,8 +1254,8 @@ Current responsibility split remains:
 ## STORY FORGE
 Story architecture, canon profile, continuity, script.
 
-## MEDIA FACTORY
-Storyboard, animatic, assets, motion, edit, derivatives.
+## THEIA / OPSIS
+Theia owns creative media production. Opsis coordinates the production graph, locks, artifact lineage, assets, motion, edit, derivatives and receipts.
 
 ## PROMETHEUS
 External production/tool research and factual reference.
@@ -1296,7 +1296,7 @@ Economic thesis, distribution intelligence, scale/kill decisions.
 ## HUMAN
 Taste, humor, canon acceptance, final master approval.
 
-Theia is the active creative-production Titan. Opsis coordinates production state while the other OTHRYS systems retain their own authority boundaries.
+Theia is the canonical strategic media Titan. Opsis is her production-graph control plane; runtime admission remains separately governed, exactly as defined in BOOK_OF_THEIA.md and theia/BOOK_OF_OPSIS.md.
 
 ---
 
@@ -1349,3 +1349,162 @@ It does not remove taste.
 > **THE BEST PEMBERTON JOKE MAY BE ONE LOOK, ONE PAW, AND TWO SECONDS OF SILENCE.**
 
 > **THE FACTORY SHOULD MAKE CARE CHEAPER, NOT CARE OPTIONAL.**
+
+
+---
+
+# 37. OPSIS ANIMATION ARTIFACT PROFILE
+
+Animation is a specialized Theia production profile coordinated through Opsis, not a separate Titan or Arm.
+
+The reference property is `theia/properties/PEMBERTON.md`.
+
+For scripted animation, the preferred pipeline is:
+
+`SCRIPT LOCK -> STORYBOARD -> SCRATCH AUDIO -> ANIMATIC -> ANIMATIC LOCK -> FINAL PERFORMANCE -> LAYOUT -> ASSET PREP -> ANIMATION -> COMPOSITE -> SOUND/MUSIC -> EDIT -> MASTER REVIEW -> MASTER LOCK -> PACKAGING`
+
+The expensive stages start only after the story works in timed form.
+
+> **SPEND INTELLIGENCE BEFORE COMPUTE.**
+
+## 37.1 Animatic Gate
+
+The animatic is the first timed movie.
+
+It should combine:
+- storyboard frames;
+- real shot durations;
+- scratch dialogue/narration;
+- temporary SFX/music;
+- rough camera motion;
+- transitions.
+
+Review it for:
+- comprehension without explanation;
+- opening strength;
+- character behavior;
+- geography;
+- pacing;
+- midpoint change;
+- payoff;
+- ending;
+- runtime.
+
+A weak animatic is repaired before expensive rendering.
+
+## 37.2 Structured Shot Record
+
+A storyboard/shot should be represented as data as well as imagery.
+
+Suggested fields:
+
+```text
+episode_id
+scene_id
+beat_id
+shot_id
+start_time
+duration
+story_function
+attention_function
+comedy_function
+location
+characters
+props
+camera
+framing
+movement
+pose_start
+pose_end
+expression
+action
+dialogue
+vocalization
+sfx
+music
+child_read
+adult_read
+gag_id
+arc_id
+continuity_in
+continuity_out
+asset_dependencies
+source_references
+rights_state
+generation_receipt
+review_state
+```
+
+This makes continuity, dependencies, QA and analytics addressable without treating an image folder as production state.
+
+## 37.3 Attention Map
+
+Do not confuse attention design with frantic editing.
+
+For family animation, testable production heuristics may include:
+- a readable visual question in the opening seconds;
+- clear immediate problem by roughly the first 30 seconds;
+- meaningful perceptual change approximately every 6–12 seconds where appropriate;
+- clue, obstacle, payoff, joke or answer approximately every 25–40 seconds;
+- material story-state change approximately every 60–90 seconds.
+
+These are hypotheses to test against real audience data, not universal cognitive laws.
+
+## 37.4 Storyboard Lint
+
+A property may define property-specific lint rules before animatic lock.
+
+Generic checks include:
+- hook absent;
+- objective unclear;
+- long visual inactivity without purpose;
+- contradictory continuity;
+- unexplained prop;
+- asset/version mismatch;
+- repeated running gag with no variation;
+- adult layer obscuring child comprehension;
+- unknown-rights dependency;
+- scene exists only to fill runtime.
+
+## 37.5 Asset Reuse Law
+
+Reuse rigs, locations, effects, camera setups and recurring behavior.
+
+Do not reuse plots by changing nouns.
+
+Production reuse lowers cost.
+
+Narrative reuse without variation creates slop.
+
+## 37.6 Episode Derivative Bundle
+
+A long-form episode may deliberately produce:
+- main episode;
+- hook Short;
+- character Short;
+- cute/emotional Short;
+- story/lore Short;
+- still pack;
+- native vertical recompositions;
+- several truthful title candidates;
+- several materially different thumbnail candidates;
+- subtitle master;
+- dub-ready audio separation where practical;
+- provenance package.
+
+A Short is a designed artifact, not automatically a random excerpt.
+
+## 37.7 Analytics Back-Mapping
+
+Because storyboard shots have timestamps and IDs, post-release signals may be mapped to:
+- scene;
+- beat;
+- shot;
+- gag;
+- character behavior;
+- runtime segment;
+- packaging version.
+
+Keep **observation**, **hypothesis**, **test**, and **result** separate.
+
+One retention dip does not become permanent creative law.
