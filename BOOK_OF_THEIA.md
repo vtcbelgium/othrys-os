@@ -1261,7 +1261,7 @@ Canonical seed:
 - species: cat;
 - gender/pronouns: he/him;
 - coat: tuxedo cat;
-- body: chubby/round-bodied;
+- body: older, comfortably built cat with a pronounced primordial pouch and subtle walking sway;
 - self-image: 1870s gentleman explorer living in the modern world;
 - home/base: Pemberton House, an ornate cat-house expedition headquarters with the Grand Tour Door;
 - local transport: household robot vacuum, interpreted as his Motor Carriage;
