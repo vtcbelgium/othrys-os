@@ -69,7 +69,7 @@ Before public brand lock, merchandising, licensing or trademark filing:
 
 Do not rename Mipi pre-emptively. Treat this as a **clearance gate**, not a rejection.
 
-## 5. Originality firewall
+## 4. Originality firewall
 
 The property may harvest broad adventure mechanics from European comics, children's serials, travel stories and mystery structures.
 
@@ -275,7 +275,7 @@ Potential later surfaces:
 
 Hyperion evaluates which deserve opening.
 
-## 16. Safety
+## 15. Safety
 
 Because Mipi is likely child/family-facing:
 - no manipulative urgency;
@@ -290,7 +290,12 @@ Because Mipi is likely child/family-facing:
 
 If `CHILD_DIRECTED`, assume some platform features and personalized advertising will be unavailable and make that part of Hyperion's economic model rather than a problem for Theia to circumvent.
 
-## 17. Pilot plan
+## 16. Pilot plan
+
+Before any **public** pilot:
+- resolve the audience classification for each intended surface;
+- complete at least a preliminary public-name/channel collision check;
+- use private/unlisted/internal prototypes if those gates are not yet resolved.
 
 Batch 1:
 - 5–10 shorts with materially different topics;
@@ -305,7 +310,7 @@ Questions:
 - Which educational lane fits best?
 - Can the animation be produced cheaply enough?
 
-## 18. Mipi laws
+## 17. Mipi laws
 
 > **CURIOSITY STARTS THE ADVENTURE. LAZINESS MAKES IT MIPI.**
 
