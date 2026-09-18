@@ -1262,12 +1262,16 @@ Canonical seed:
 - gender/pronouns: he/him;
 - coat: tuxedo cat;
 - body: chubby/round-bodied;
-- self-image: gentleman explorer;
+- self-image: 1870s gentleman explorer living in the modern world;
+- home/base: Pemberton House, an ornate cat-house expedition headquarters with the Grand Tour Door;
+- local transport: household robot vacuum, interpreted as his Motor Carriage;
+- human owners: visually shown from roughly the knees down and understood by Pemberton as household staff;
 - defining contradiction: intensely curious and intensely lazy;
 - adventure engine: curiosity gets him moving; conservation of effort keeps trying to stop him;
-- secondary comic engine: dignity repeatedly collides with unmistakable cat behavior;
-- recurring pleasures: warmth, naps, comfortable surfaces, food and cola;
-- tone: warm, funny, curious, adventurous, mildly pompous;
+- secondary comic engines: dignity versus cat instinct, 1870s worldview versus modern reality, and a small recurring wardrobe malfunction;
+- recurring pleasures: warmth, naps, comfortable surfaces, food and highly ritualized cola;
+- comedy: simple visual/physical comedy over a very well-educated character;
+- tone: whimsical, warm, funny, adventurous, mildly pompous and slightly delusional;
 - educational potential: very high;
 - originality rule: inspired by broad adventure/story mechanics, never copied characters, plots or expression.
 
