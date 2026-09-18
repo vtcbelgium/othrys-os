@@ -778,12 +778,14 @@ Platforms are habitats, not identical upload sockets.
 
 Theia must package natively.
 
-General roles:
-- long-form video: depth, trust, search, evergreen value;
-- Shorts/Reels/TikTok: discovery, hooks, compact stories, rapid format learning;
-- static/carousel: durable visual reference and shareable knowledge;
-- professional feeds: technical/business evidence and case studies;
-- owned web/email/archive: portability and direct continuity.
+Format affordances, not channel-allocation authority:
+- long-form video can support depth, trust, search and evergreen value;
+- Shorts/Reels/TikTok-native video can support discovery, hooks and compact stories;
+- static/carousel can support durable visual reference and shareable knowledge;
+- professional-feed media can support technical/business evidence and case studies;
+- owned web/archive surfaces can support portability and direct continuity.
+
+Hyperion Distributor decides which audience/surface route deserves testing economically. Theia packages the media natively for the surfaces included in the authorized production/experiment contract.
 
 Do not require every property to exist on every platform.
 
@@ -856,105 +858,108 @@ A practical explainer may prove value through search completion and successful t
 
 ---
 
-## 19. EXPERIMENT DESIGN
+## 19. MEDIA EXPERIMENT EXECUTION — LABORATORY INTERFACE
 
-Change one meaningful variable at a time when causal learning matters.
+Hyperion's **Laboratory** owns the cross-domain experiment contract when the question is economic, causal or portfolio-level.
 
-Candidate variables:
-- topic;
-- audience;
-- language;
-- hook;
-- title;
-- thumbnail;
+Theia owns execution of media variants inside that contract and may run **production-local optimization tests** that do not change the economic bet.
+
+Laboratory may define:
+- hypothesis;
+- target population/context;
+- variable;
+- success/failure evidence;
+- batch/time budget;
+- stopping rule.
+
+Theia may vary under that contract:
+- hook execution;
+- title/thumbnail artifact;
 - duration;
 - narrator;
-- visual style;
-- format genome;
+- visual grammar;
 - scene density;
-- character;
-- posting surface;
-- posting window;
-- CTA;
-- localization.
+- format genome;
+- localization execution;
+- media packaging.
+
+Theia may also test purely production-local questions such as:
+- renderer A vs renderer B;
+- caption layout;
+- voice timing;
+- scene-component reliability;
+- operator-review burden.
 
 Do not:
+- change multiple causal variables accidentally;
 - overfit tiny samples;
-- call one viral video a winner;
-- kill a property from one weak upload;
-- scale a format before production economics are understood.
+- call one viral artifact a general law;
+- weaken rights/safety/quality to produce cleaner data.
 
-Every experiment should state:
-- hypothesis;
-- budget;
-- sample/batch;
-- success evidence;
-- failure evidence;
-- decision date/point;
-- next action.
+> **LABORATORY OWNS THE EXPERIMENT CONTRACT. THEIA OWNS THE MEDIA VARIANTS AND PRODUCTION EVIDENCE.**
 
 ---
 
-## 20. WINNER DETECTION AND SCALE
+## 20. MEDIA SIGNAL ASSESSMENT — ORACLE / MAGNIFIER INTERFACE
 
-A media winner shows repeatability, not just a spike.
+Theia must understand enough media telemetry to diagnose production and format quality.
 
-Signals:
-- performance across multiple artifacts;
-- returning audience;
-- organic sharing;
-- stable/improving retention;
-- audience requests for more;
-- low enough production burden;
-- derivative formats that also work;
-- search/evergreen persistence;
-- identifiable character/IP affinity;
-- owned-surface migration;
-- localization potential;
-- product/sponsor/licensing intent where relevant.
+Theia may conclude:
+- hook failed;
+- captions harmed readability;
+- scene pacing is weak;
+- character continuity broke;
+- production burden is too high;
+- one format genome materially outperformed another inside a declared media test.
 
-When a winner appears:
+Theia does **not** issue Hyperion's portfolio verdicts such as `WINNER`, `BREAKOUT`, or economic scale authority.
 
-    FREEZE EVIDENCE
-      -> PRESERVE IP
-      -> EXPLAIN WHY
-      -> HARDEN PIPELINE
-      -> INCREASE QUALITY WHERE JUSTIFIED
-      -> TEST ADJACENCIES
-      -> BUILD OWNED SURFACE
-      -> RETURN ECONOMIC EVIDENCE TO HYPERION
+Theia returns:
+- raw/normalized media telemetry;
+- production cost;
+- quality incidents;
+- format findings;
+- character/IP affinity signals;
+- media-side recommendation.
 
-Theia may recommend scale.
-Hyperion allocates economic oxygen.
-Governance retains authority.
+Hyperion Oracle interprets those signals for economic/portfolio meaning.
+Magnifier decides whether a proven signal deserves investment in adjacent markets, localization, formats or IP expansion.
+
+If scale is approved, Theia executes the media/IP production work.
+
+> **THEIA CAN SAY WHAT WORKED AS MEDIA. HYPERION DECIDES WHAT DESERVES MORE OXYGEN.**
 
 ---
 
-## 21. KILL, PIVOT, ARCHIVE
+## 21. STOP / REPAIR / ARCHIVE — PORTFOLIO BOUNDARY
 
-Pause/kill when:
-- repeated bounded tests produce no meaningful signal;
-- production burden exceeds plausible value;
-- rights risk is disproportionate;
-- platform dependence is unacceptable;
-- quality cannot be achieved economically;
-- audience fit is wrong;
-- moderation burden dominates;
-- a stronger experiment deserves resources.
+Theia may stop or quarantine a **production run** when:
+- rights are unclear;
+- policy/disclosure is unresolved;
+- quality gates fail;
+- budget ceiling is hit;
+- provider/render failure persists;
+- the artifact is unsafe or factually unsound.
 
-Archive:
-- research;
+Theia may recommend pausing or retiring a **property/format** when:
+- production burden remains disproportionate;
+- media quality cannot be achieved economically;
+- repeated media tests show weak audience response;
+- moderation burden is structurally high.
+
+Hyperion/Portfolio decides whether the economic **bet** is paused, killed, preserved, resurrected or reallocated.
+
+When a bet is killed or paused, Theia archives the media-domain learning:
 - scripts;
-- format genome;
-- production recipe;
-- character assets;
-- prompts;
+- format genomes;
+- production recipes;
+- character/property assets;
+- provenance;
 - cost history;
-- metrics;
-- lessons;
-- reason for kill/pivot.
+- media telemetry;
+- quality lessons.
 
-> **KILL THE BET. KEEP THE LEARNING.**
+> **THEIA MAY STOP UNSAFE WORK. HYPERION KILLS THE ECONOMIC BET. BOTH KEEP THE LEARNING.**
 
 ---
 
