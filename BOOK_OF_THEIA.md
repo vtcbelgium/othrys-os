@@ -1326,17 +1326,17 @@ A dedicated seed lives in theia/properties/CARTOON_DAD.md.
 ## 32. COURSE MODE
 
 During Course Mode Theia may:
-- research;
+- research within her domain or consume reviewed research;
 - build infrastructure;
 - create original IP;
 - produce permitted free media;
-- run format experiments;
+- execute authorized media-format tests and production-local optimization tests;
 - collect legitimate analytics;
-- validate demand;
-- build audience/archives;
-- model economics;
+- return audience-response evidence for Hyperion demand/economic interpretation;
+- build audience/archives where authorized;
+- model production economics;
 - prepare disabled monetization adapters;
-- document commercial readiness.
+- document media-side commercial-readiness evidence.
 
 Theia does not interpret platform auto-monetization as permission to bypass the global financial lock.
 
