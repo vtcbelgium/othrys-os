@@ -100,8 +100,10 @@ The `authority` object is descriptive evidence of upstream authorization and mus
 
 Theia/Opsis derives a Media Production Contract from approved intent.
 
+The contract may request **one or many artifacts**. This is necessary because one primary production may legitimately fan out into native derivatives, localized variants or alternate packages.
+
 ```yaml
-schema: othrys.theia.production-contract.v1
+schema: othrys.theia.production-contract.v2
 run_id: theia-...
 opportunity_id: null
 mission_ref: ""
@@ -109,6 +111,8 @@ mission_ref: ""
 property:
   id: ""
   bible_version: null
+  internal_codename: null
+  public_name_state: UNRESOLVED | WORKING | LOCKED
   format_genome_version: null
 
 source:
@@ -122,12 +126,15 @@ audience:
   language: ""
   locale: null
 
-artifact:
-  class: video
-  format: ""
-  duration_target_seconds: null
-  aspect_ratios: []
-  platform_targets: []
+requested_artifacts:
+  - artifact_key: primary
+    class: video
+    format: ""
+    expression_roles: []   # HELIOS / EOS / SELENE when useful
+    derives_from: null
+    duration_target_seconds: null
+    aspect_ratios: []
+    platform_targets: []
 
 quality:
   factual_sensitivity: NORMAL
@@ -155,6 +162,12 @@ outputs:
   evidence_destination: ""
 ```
 
+Artifact keys are contract-local identifiers, not provider IDs.
+
+`expression_roles` are descriptive Theia roles, not routing authority. An artifact can carry more than one role or none.
+
+`derives_from` makes intended lineage explicit before Opsis builds the graph. Opsis may refine implementation dependencies but may not silently invent a new externally visible deliverable outside the authorized contract.
+
 No field silently upgrades the authority granted by Mission/Work or Trust Canal.
 
 ---
@@ -163,20 +176,23 @@ No field silently upgrades the authority granted by Mission/Work or Trust Canal.
 
 Theia returns production/reality evidence to Hyperion.
 
+The packet aggregates the run while preserving artifact-level receipts.
+
 ```yaml
-schema: othrys.theia.media-evidence.v1
+schema: othrys.theia.media-evidence.v2
 run_id: ""
 opportunity_id: null
 property_ref: ""
+run_receipt_ref: ""
 
 production:
+  graph_version: ""
   recipe_version: ""
   format_genome_version: null
   provider_refs: []
   source_refs: []
   rights_state: ""
   provenance_refs: []
-  final_artifact_refs: []
 
 cost:
   cash: null
@@ -189,24 +205,29 @@ quality:
   corrections: []
   incidents: []
 
-publication:
-  authorized: false
-  platform_refs: []
-  disclosure_state: null
-  published_at: null
-
-telemetry:
-  observation_window: null
-  impressions: null
-  stops_or_clicks: null
-  average_view_duration: null
-  completion_rate: null
-  rewatch_rate: null
-  saves: null
-  shares: null
-  follows: null
-  returning_viewers: null
-  owned_asset_routes: null
+artifacts:
+  - artifact_key: primary
+    artifact_ref: ""
+    artifact_receipt_ref: ""
+    expression_roles: []
+    derives_from: null
+    publication_state: PACKAGED
+    platform_refs: []
+    disclosure_state: null
+    published_at: null
+    artifact_cost: null
+    telemetry:
+      observation_window: null
+      impressions: null
+      stops_or_clicks: null
+      average_view_duration: null
+      completion_rate: null
+      rewatch_rate: null
+      saves: null
+      shares: null
+      follows: null
+      returning_viewers: null
+      owned_asset_routes: null
 
 learning:
   audience_questions: []
@@ -217,6 +238,8 @@ learning:
 ```
 
 Unknown/unavailable metrics remain null. Opsis must never invent a metric because a platform withholds it.
+
+Hyperion should reason from the run aggregate **and** preserve distinctions between artifacts. One successful short does not automatically prove the primary episode or another derivative succeeded.
 
 ---
 
@@ -256,7 +279,8 @@ A property should be portable across Theia implementations.
 
 Minimum portable identity:
 - property ID;
-- canonical name;
+- internal codename/ID where used;
+- public-name state and public name when locked;
 - property bible;
 - visual identity/rig refs;
 - voice rules;
@@ -280,7 +304,7 @@ No provider-specific ID may be the sole identity of a character or property.
 Theia is sufficiently decoupled when:
 
 1. Hyperion can submit an opportunity packet without knowing Theia's internal tools.
-2. Theia can execute an authorized production contract without importing Hyperion's internal state.
+2. Theia can execute an authorized multi-artifact production contract without importing Hyperion's internal state.
 3. Theia can return evidence without deciding commercial action.
 4. Theia can replace providers without changing property identity.
 5. Hyperion can compare Theia against an external media provider using the same economic evidence fields.
