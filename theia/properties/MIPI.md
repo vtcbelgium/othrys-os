@@ -1,6 +1,6 @@
 # MIPI — THEIA STARTER PROPERTY BIBLE
 
-**Status:** ORIGINAL IP STARTER — concept locked at seed level, visual identity and world details still experimental.
+**Status:** ORIGINAL IP STARTER — concept locked at seed level; public brand clearance, audience classification, visual identity and world details remain unresolved.
 
 ## 1. Canonical seed
 
@@ -35,8 +35,15 @@ A funny, warm, original adventure cat explores the world and accidentally learns
 
 Audience hypothesis:
 - family-safe;
-- initial test band roughly primary-school age plus co-viewing adults;
-- exact age targeting remains experimental.
+- likely strong appeal to primary-school-age children and co-viewing adults;
+- **platform/legal audience classification is intentionally unresolved until pilot positioning is chosen.**
+
+Before public launch, Mipi must be classified honestly as:
+- child-directed;
+- general-audience/family-safe;
+- or review-required.
+
+Do not choose "general audience" merely to retain comments, personalized ads, notifications or other features. If Mipi is intentionally directed to children, design the channel and economics around child-directed restrictions from the start.
 
 Value:
 - entertainment first enough to earn attention;
@@ -44,7 +51,25 @@ Value:
 - recurring character attachment;
 - international/localizable subject matter.
 
-## 3. Originality firewall
+## 3. Name and IP clearance
+
+**Mipi remains the canonical internal character name.**
+
+A preliminary web search found:
+- active MIPI Alliance trademarks in technology-related classes;
+- an older published pet-story book using "Mipi" as the name of a puppy.
+
+Neither result by itself proves that a cat entertainment/education brand is blocked. The search is not exhaustive.
+
+Before public brand lock, merchandising, licensing or trademark filing:
+- run EU/Benelux/international trademark clearance for relevant entertainment/publishing/toy/software classes;
+- search character/book/channel/app names;
+- check domains/social handles;
+- document counsel/clearance outcome where value justifies it.
+
+Do not rename Mipi pre-emptively. Treat this as a **clearance gate**, not a rejection.
+
+## 5. Originality firewall
 
 The property may harvest broad adventure mechanics from European comics, children's serials, travel stories and mystery structures.
 
@@ -67,7 +92,7 @@ The useful inheritance is:
 
 > **HARVEST THE ADVENTURE GRAMMAR. MIPI MUST BECOME HIS OWN CAT.**
 
-## 4. Personality
+## 5. Personality
 
 Locked:
 - curious;
@@ -92,7 +117,7 @@ Avoid:
 
 Mipi should sometimes be clever precisely because he conserves effort.
 
-## 5. Story engine
+## 6. Story engine
 
 Baseline:
 
@@ -107,7 +132,7 @@ Baseline:
       -> SMALL EMOTIONAL/COMIC PAYOFF
       -> NEXT POSSIBILITY
 
-## 6. Educational lanes
+## 7. Educational lanes
 
 Strong:
 - everyday-object mysteries;
@@ -128,7 +153,7 @@ Sensitive lanes require stronger review:
 - dangerous DIY;
 - medical claims.
 
-## 7. Mipi + Theia children
+## 8. Mipi + Theia children
 
 **Helios**
 - 3–8 minute fuller adventure/episode;
@@ -147,7 +172,7 @@ Sensitive lanes require stronger review:
 - return behavior;
 - possible calmer/bedtime variants later.
 
-## 8. The nap mechanic
+## 9. The nap mechanic
 
 Potential uses:
 - comic interruption;
@@ -162,7 +187,7 @@ Potential uses:
 Rule:
 Do not repeat the exact "Mipi falls asleep, wakes, solves it" structure mechanically. Platform policies and audience satisfaction both punish interchangeable episodes.
 
-## 9. Visual identity
+## 10. Visual identity
 
 Not locked yet.
 
@@ -181,7 +206,7 @@ Long-term preference:
 
 Do not lock appearance before pilot tests.
 
-## 10. Voice
+## 11. Voice
 
 Test:
 - narrator-led with Mipi reactions;
@@ -192,7 +217,7 @@ Localization should remain possible.
 
 Avoid a celebrity-imitation voice.
 
-## 11. First 20 episode seeds
+## 12. First 20 episode seeds
 
 1. Why do cats' eyes glow at night?
 2. Why do old city streets twist?
@@ -217,7 +242,7 @@ Avoid a celebrity-imitation voice.
 
 The old Vandersteen/Suske-en-Wiske mechanics harvest remains research inventory and is moved under Theia research.
 
-## 12. Long arc
+## 13. Long arc
 
 No mandatory magical artifact is canon yet.
 
@@ -232,7 +257,7 @@ Previous "Lost Atlas" concepts remain optional research, not canon.
 
 This prevents premature lore.
 
-## 13. Business optionality
+## 14. Business optionality
 
 Do not force monetization before audience signal.
 
@@ -250,7 +275,7 @@ Potential later surfaces:
 
 Hyperion evaluates which deserve opening.
 
-## 14. Safety
+## 16. Safety
 
 Because Mipi is likely child/family-facing:
 - no manipulative urgency;
@@ -259,9 +284,13 @@ Because Mipi is likely child/family-facing:
 - no unnecessary personal-data collection;
 - no repetitive fake peril;
 - no frightening thumbnails divorced from content;
-- sponsorship clearly handled.
+- sponsorship clearly handled;
+- no collection of comments/profile data from children as a substitute for unavailable platform analytics;
+- no audience-classification gaming.
 
-## 15. Pilot plan
+If `CHILD_DIRECTED`, assume some platform features and personalized advertising will be unavailable and make that part of Hyperion's economic model rather than a problem for Theia to circumvent.
+
+## 17. Pilot plan
 
 Batch 1:
 - 5–10 shorts with materially different topics;
@@ -276,7 +305,7 @@ Questions:
 - Which educational lane fits best?
 - Can the animation be produced cheaply enough?
 
-## 16. Mipi laws
+## 18. Mipi laws
 
 > **CURIOSITY STARTS THE ADVENTURE. LAZINESS MAKES IT MIPI.**
 
@@ -285,3 +314,7 @@ Questions:
 > **MIPI MAY BE LAZY. THE WRITING MAY NOT BE.**
 
 > **MAKE CHILDREN WANT THE NEXT ADVENTURE, NOT THE NEXT DOPAMINE HIT.**
+
+> **MIPI'S NAME IS CANON; COMMERCIAL CLEARANCE IS A GATE.**
+
+> **AUDIENCE CLASSIFICATION FOLLOWS THE REAL AUDIENCE, NOT THE BETTER REVENUE SETTINGS.**
