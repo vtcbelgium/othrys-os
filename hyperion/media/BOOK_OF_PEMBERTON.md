@@ -2398,3 +2398,44 @@ A future Theia media domain is treated separately as an architectural admission 
 > **FORMULA CREATES RELIABILITY. VARIATION CREATES LIFE.**
 
 > **AUTOMATION SHOULD HELP US REMEMBER WHY PEMBERTON WORKS, NOT MASS-PRODUCE A HOLLOW VERSION OF HIM.**
+
+
+---
+
+# 56. AUDIO / SPEECH DEVELOPMENT CANDIDATE
+
+**Status:** CURRENT DEVELOPMENT HYPOTHESIS — not yet promoted to permanent character canon.
+
+The preferred production experiment is now **visual-first near-mute Pemberton**.
+
+This means:
+- Pemberton never speaks human language aloud;
+- normal performance uses cat vocalizations, breathing, purrs, chirps, hisses and silence;
+- internal translated narration is no longer assumed as the default;
+- Staff may use sparse natural speech;
+- plot comprehension must survive without narration;
+- sophistication should come from staging, timing, props, music, visual irony and recurring behavior.
+
+The existing statement that the audience *may* hear translated internal narration remains technically possible during development, but it should be treated as an **exception candidate**, not required infrastructure.
+
+Before permanent canon change, compare the same pilot scene in two versions:
+
+1. near-mute;
+2. sparse internal narration.
+
+Evaluate:
+- comprehension;
+- humor;
+- charm;
+- sophistication;
+- replay value;
+- international readability;
+- production burden.
+
+Current expectation:
+
+> **NEAR-MUTE SHOULD WIN UNLESS NARRATION CONTRIBUTES MEANING THAT THE VISUAL STORY CANNOT CARRY CLEANLY.**
+
+Reference production doctrine:
+
+`hyperion/media/BOOK_OF_CARTOON_PRODUCTION.md`
