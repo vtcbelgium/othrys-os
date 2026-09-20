@@ -13,6 +13,8 @@ type Options = {
   readonly systemProjection?: () => unknown | Promise<unknown>;
   readonly estateProjection?: () => unknown | Promise<unknown>;
   readonly estateRefresh?: () => unknown | Promise<unknown>;
+  readonly commandEnvelopeDir?: string;
+  readonly commandPlanner?: (missionId: string) => unknown | Promise<unknown>;
 };
 
 function sendJson(response: ServerResponse, status: number, body: unknown): void {
@@ -138,7 +140,7 @@ export async function handleWebControlRequest(
       return true;
     }
 
-    const bridge = new WebControlBridge(options.ledgerPath);
+    const bridge = new WebControlBridge(options.ledgerPath, options.commandEnvelopeDir ?? '');
     if (request.method === 'POST' && isCollection) {
       const contentType = request.headers['content-type'] ?? '';
       if (!/^application\/json(?:\s*;|$)/i.test(String(contentType))) {
@@ -146,11 +148,18 @@ export async function handleWebControlRequest(
         return true;
       }
       const receipt = bridge.admit(await readJson(request));
-      sendJson(response, 202, receipt);
+      const dispatch = options.commandPlanner
+        ? await options.commandPlanner(receipt.correlationId)
+        : null;
+      sendJson(response, 202, dispatch ? { ...receipt, dispatch } : receipt);
       return true;
     }
     if (request.method === 'GET' && missionId !== null) {
-      sendJson(response, 200, bridge.status(missionId));
+      const receipt = bridge.status(missionId);
+      const dispatch = options.commandPlanner
+        ? await options.commandPlanner(receipt.correlationId)
+        : null;
+      sendJson(response, 200, dispatch ? { ...receipt, dispatch } : receipt);
       return true;
     }
     sendJson(response, 405, blocked('METHOD_NOT_ALLOWED'));
