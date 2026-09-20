@@ -11,6 +11,7 @@ type Options = {
   readonly tokenSha256?: string;
   readonly ledgerPath: string;
   readonly systemProjection?: () => unknown | Promise<unknown>;
+  readonly estateProjection?: () => unknown | Promise<unknown>;
 };
 
 function sendJson(response: ServerResponse, status: number, body: unknown): void {
@@ -93,9 +94,10 @@ export async function handleWebControlRequest(
   }
 
   const isSystemRead = request.method === 'GET' && url.pathname === '/v1/system';
+  const isEstateRead = request.method === 'GET' && url.pathname === '/v1/estate';
   const isCollection = url.pathname === '/v1/commands';
   const missionId = decodeMissionId(url.pathname);
-  if (!isSystemRead && !isCollection && missionId === null) return false;
+  if (!isSystemRead && !isEstateRead && !isCollection && missionId === null) return false;
   if (!bearerAuthorized(request.headers.authorization, options.token, options.tokenSha256 ?? '')) {
     sendJson(response, 401, blocked('AUTHENTICATION_REFUSED', 'Authentication refused.'));
     return true;
@@ -113,6 +115,15 @@ export async function handleWebControlRequest(
         return true;
       }
       sendJson(response, 200, await options.systemProjection());
+      return true;
+    }
+
+    if (isEstateRead) {
+      if (!options.estateProjection) {
+        sendJson(response, 503, blocked('ESTATE_PROJECTION_UNAVAILABLE'));
+        return true;
+      }
+      sendJson(response, 200, await options.estateProjection());
       return true;
     }
 
