@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 function present(root,path){ return existsSync(join(root,path)); }
@@ -70,6 +70,19 @@ function resultAt(root,missionId){
   if(!existsSync(path)) return null;
   try{return JSON.parse(readFileSync(path,'utf8'));}catch{return null;}
 }
+function webActivationAt(root,missionId){
+  const dir=join(root,'missions','web-plans');
+  if(!existsSync(dir)) return null;
+  for(const name of readdirSync(dir).filter(x=>x.endsWith('.activation.json'))){
+    try{
+      const value=JSON.parse(readFileSync(join(dir,name),'utf8'));
+      if(value.schema==='othrys.os.web-command-activation-scope.v1'&&value.canonicalMissionId===missionId){
+        return {path:`missions/web-plans/${name}`,value};
+      }
+    }catch{}
+  }
+  return null;
+}
 
 export function projectMissionWork(root,state,missionId){
   if(!missionId) return null;
@@ -77,15 +90,22 @@ export function projectMissionWork(root,state,missionId){
   if(!existsSync(missionPath)) return null;
   const mission=JSON.parse(readFileSync(missionPath,'utf8'));
   const result=resultAt(root,missionId),verdict=String(result?.verdict??result?.status??'');
-  const unactivated=mission.status==='CANONICAL_UNACTIVATED';
+  const activation=webActivationAt(root,missionId);
+  const unactivated=mission.status==='CANONICAL_UNACTIVATED'&&!activation;
   const noChange=unactivated&&verdict==='PASS'&&result?.closeout==='NO_CHANGE_JUSTIFIED';
+  const canonicalShip=verdict==='PASS'
+    &&/^[0-9a-f]{40}$/.test(String(result?.canonical_apply_commit??''))
+    &&result?.independent_verification==='PASS'
+    &&Array.isArray(result?.changed_files)
+    &&result.changed_files.length>0;
   const phases=[
     {id:'PLAN',status:'COMPLETE',basis:unactivated?'canonical envelope allocated':'mission envelope exists'},
     {id:'BUILD',status:noChange?'COMPLETE':unactivated?'PENDING':result?'COMPLETE':'ACTIVE',basis:noChange?'no change required':unactivated?'activation required':result?'result recorded':'result absent'},
     {id:'REVIEW',status:verdict==='PASS'?'COMPLETE':'PENDING',basis:verdict==='PASS'?'PASS result':'independent evidence required'},
-    {id:'SHIP',status:noChange||missionId===state.active_mission?.mission_id&&state.active_mission?.status==='COMPLETE'?'COMPLETE':'PENDING',basis:noChange?'governed no-change closeout':'closeout distinct from candidate PASS'}
+    {id:'SHIP',status:noChange||canonicalShip||missionId===state.active_mission?.mission_id&&state.active_mission?.status==='COMPLETE'?'COMPLETE':'PENDING',basis:noChange?'governed no-change closeout':canonicalShip?'canonical apply independently verified':'closeout distinct from candidate PASS'}
   ];
   const artifacts=artifactsFor(root,missionId,mission);
+  if(activation) artifacts.push(artifact(root,'web-activation',activation.path));
   const slices=(Array.isArray(mission.slices)?mission.slices:[]).map(slice=>{
     const refs=Array.isArray(slice.artifacts)?slice.artifacts:[];
     const evidence=refs.map(id=>artifacts.find(a=>a.id===id)??(typeof id==='string'&&existsSync(join(root,id))?{id,path:id,present:true}:{id,path:null,present:false}));
@@ -96,6 +116,6 @@ export function projectMissionWork(root,state,missionId){
     schema:'othrys.os.work-state.v1',missionId:mission.mission_id,title:mission.title??mission.mission_id,
     goal:mission.goal??mission.objective??'',laws:Array.isArray(mission.laws)?mission.laws:[],slices,phase,phases,
     owner:'Legion',verifier:'T590',approval:unactivated?'ACTIVATION_REQUIRED':'NOT_REQUIRED',evidence:'REQUIRED',
-    authorityGranted:false,status:noChange?'COMPLETE_NO_CHANGE':unactivated?'UNACTIVATED':missionId===state.active_mission?.mission_id?state.active_mission?.status:'BUILD',artifacts
+    authorityGranted:false,status:noChange?'COMPLETE_NO_CHANGE':canonicalShip?'COMPLETE':unactivated?'UNACTIVATED':missionId===state.active_mission?.mission_id?state.active_mission?.status:'BUILD',artifacts
   });
 }
