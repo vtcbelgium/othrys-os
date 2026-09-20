@@ -1,4 +1,4 @@
-import { timingSafeEqual } from 'node:crypto';
+import { createHash, timingSafeEqual } from 'node:crypto';
 import {
   AdmissionLedger,
   MissionConflictError,
@@ -42,13 +42,25 @@ export class WebControlBridgeError extends Error {
 export function bearerAuthorized(
   header: string | string[] | undefined,
   expectedToken: string,
+  expectedTokenSha256 = '',
 ): boolean {
-  if (!expectedToken || typeof header !== 'string') return false;
-  if (!header.startsWith('Bearer ')) return false;
+  if (typeof header !== 'string' || !header.startsWith('Bearer ')) return false;
   const supplied = header.slice(7);
-  const a = Buffer.from(supplied, 'utf8');
-  const b = Buffer.from(expectedToken, 'utf8');
-  return a.length === b.length && timingSafeEqual(a, b);
+
+  if (expectedToken) {
+    const a = Buffer.from(supplied, 'utf8');
+    const b = Buffer.from(expectedToken, 'utf8');
+    if (a.length === b.length && timingSafeEqual(a, b)) return true;
+  }
+
+  if (/^[a-f0-9]{64}$/i.test(expectedTokenSha256)) {
+    const suppliedDigest = createHash('sha256').update(supplied, 'utf8').digest();
+    const expectedDigest = Buffer.from(expectedTokenSha256, 'hex');
+    return suppliedDigest.length === expectedDigest.length
+      && timingSafeEqual(suppliedDigest, expectedDigest);
+  }
+
+  return false;
 }
 
 function receipt(result: AdmissionResult): WebCommandReceipt {
