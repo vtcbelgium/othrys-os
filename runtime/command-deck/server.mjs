@@ -141,8 +141,9 @@ export function switchyardPreviewFor(capability='engineering.build',minimumTier=
   return {...result,policy:projectManifest.modelPolicy.policy,preference:pref,reason};
 }
 export function switchyardPreview(preference='auto'){return switchyardPreviewFor('engineering.build','STANDARD',preference);}
-export function builderInspector(){
+export function builderInspector(missionId=null){
   const selection=switchyardPreview('auto');
+  const workerTransport=latestWorkerTransport(missionId);
   const intervention=resolveInterventionPolicy(projectManifest.work?.interventionDefault??'CHECKPOINTS');
   const selected=selection.selected??selection.approvalCandidate??null;
   return Object.freeze({
@@ -165,7 +166,7 @@ export function builderInspector(){
       handoffSafe:true
     }),
     authorityGranted:false,
-    executionStarted:false
+    executionStarted:workerTransport?.executionStarted===true
   });
 }
 export function missionProposalEnvelope(proposalIntent,promotionIntent=null){
@@ -201,6 +202,15 @@ export function latestWorkerAcceptance(){
   const dir=join(root,'missions');if(!existsSync(dir))return null;
   const files=readdirSync(dir).filter(n=>/^V2-\d{3}[A-Z]\.worker-result\.json$/.test(n)).sort().reverse();
   for(const name of files){try{const worker=JSON.parse(readFileSync(join(dir,name),'utf8')),missionId=name.replace('.worker-result.json',''),job=String(worker.job_id??'');if(!/^JOB-[0-9a-f]{24}$/.test(job))continue;const dispatch=join(dir,'dispatch-tickets',`DISPATCH-${job.slice(4)}.json`),verify=join(dir,`${missionId}.verification.json`);return acceptWorkerResult(dispatch,join(dir,name),verify);}catch{}}return null;
+}
+export function latestWorkerTransport(missionId=null){
+  const dir=join(root,'missions');if(!existsSync(dir))return null;
+  const files=missionId?[`${missionId}.worker-transport.json`]:readdirSync(dir).filter(n=>/^V2-\d{3}[A-Z]\.worker-transport\.json$/.test(n)).sort((a,b)=>b.localeCompare(a,undefined,{numeric:true}));
+  for(const name of files){
+    const path=join(dir,name);if(!existsSync(path))continue;
+    try{const value=JSON.parse(readFileSync(path,'utf8'));if(value.schema==='othrys.os.worker-transport.v1'&&value.executionStarted===true)return value;}catch{}
+  }
+  return null;
 }
 export function buildPackagePathForMission(missionId){
   const dir=join(root,'missions','build-packages');if(!existsSync(dir))return null;
@@ -269,9 +279,9 @@ export async function buildStatus(){
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
     activeMission:state.active_mission,activeMissionReconciliation:activeReconciliation.reconciliation,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
-    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(executionAuthIntent?.canonicalTargetMissionId??buildIntent?.canonicalTargetMissionId??null),missionExecutionAuthRequest:executionAuthIntent,workerAcceptance:latestWorkerAcceptance(),executionLease:latestExecutionLease(launchIntent?.canonicalTargetMissionId??executionAuthIntent?.canonicalTargetMissionId??null),missionWorkerLaunchRequest:launchIntent,latestGovernedApply:latestGovernedApply(),
+    recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(executionAuthIntent?.canonicalTargetMissionId??buildIntent?.canonicalTargetMissionId??null),missionExecutionAuthRequest:executionAuthIntent,workerTransport:latestWorkerTransport(missionId),workerAcceptance:latestWorkerAcceptance(),executionLease:latestExecutionLease(launchIntent?.canonicalTargetMissionId??executionAuthIntent?.canonicalTargetMissionId??null),missionWorkerLaunchRequest:launchIntent,latestGovernedApply:latestGovernedApply(),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
-    osSurface,operatingMode:operatingModeProjection(projectManifest,process.env.OTHRYS_OS_MODE??null),builderInspector:builderInspector(),workState,durableWork,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
+    osSurface,operatingMode:operatingModeProjection(projectManifest,process.env.OTHRYS_OS_MODE??null),builderInspector:builderInspector(missionId),workState,durableWork,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };
 }
 
