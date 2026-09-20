@@ -26,7 +26,7 @@ test('historical gaps are not backfilled',()=>{
 });
 
 test('proven legacy mission sidecars do not consume or block the primary sequence',()=>{
-  withDir(['V2-008Y.json','V2-008Z.json','V2-008Z.patch.json','V2-008Z.acceptance.json','V2-008Z.apply-verification.json'],d=>assert.equal(nextPrimaryMissionId(d),'V2-009A'));
+  withDir(['V2-008Y.json','V2-008Z.json','V2-008Z.patch.json','V2-008Z.acceptance.json','V2-008Z.apply-verification.json','V2-008Z.worker-transport.json'],d=>assert.equal(nextPrimaryMissionId(d),'V2-009A'));
 });
 
 test('ambiguous primary-looking filenames fail closed',()=>{

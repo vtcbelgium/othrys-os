@@ -9,7 +9,7 @@ export class MissionIdPolicyError extends Error {
 const PRIMARY=/^V2-(\d{3})([A-Z])\.json$/;
 const PRIMARY_LIKE=/^V2-\d{3}[A-Z].*\.json$/;
 const REVISION=/^V2-\d{3}[A-Z]\.[A-Z0-9]+\.json$/;
-const LEGACY_SIDECAR=/^V2-\d{3}[A-Z]\.(?:preflight|patch|verification|worker-result|acceptance|apply-verification)\.json$/;
+const LEGACY_SIDECAR=/^V2-\d{3}[A-Z]\.(?:preflight|patch|verification|worker-result|worker-transport|acceptance|apply-verification)\.json$/;
 
 export function nextPrimaryMissionId(missionsDir:string):string {
   const names=readdirSync(missionsDir).filter(n=>n.endsWith('.json')&&!n.endsWith('.result.json'));
