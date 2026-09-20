@@ -219,6 +219,20 @@ export function latestGovernedApply(){
   return null;
 }
 
+export function latestWebMissionId(){
+  const dir=join(root,'missions','web-plans');
+  if(!existsSync(dir)) return null;
+  const ids=[];
+  for(const name of readdirSync(dir).filter(n=>n.endsWith('.json')&&!n.endsWith('.activation.json'))){
+    try{
+      const plan=JSON.parse(readFileSync(join(dir,name),'utf8'));
+      const id=String(plan.canonicalMissionId??'');
+      if(/^V2-\d+[A-Z]$/.test(id)&&existsSync(join(root,'missions',id+'.json'))) ids.push(id);
+    }catch{}
+  }
+  return ids.sort((a,b)=>b.localeCompare(a,undefined,{numeric:true}))[0]??null;
+}
+
 export async function buildStatus(){
   const state=json('GPT_STATE.json');
   const activeReconciliation=reconcileActiveMission(root,state.active_mission??null);
@@ -231,7 +245,11 @@ export async function buildStatus(){
   try{ node=(await (await fetch('http://127.0.0.1:8765/health',{signal:AbortSignal.timeout(1200)})).json()).node; }catch{}
   const missionResults=existsSync(join(root,'missions'))?readFileSync(join(root,'V2_BUILD_BACKLOG.md'),'utf8').match(/\| COMPLETE \|/g)?.length??0:0;
   const nextMissionId=String(state.next_legal_action??'').match(/\bV2-\d+[A-Z]\b/)?.[0]??null;
-  const missionId=state.active_mission?.status==='COMPLETE'&&nextMissionId&&existsSync(join(root,'missions',`${nextMissionId}.json`))?nextMissionId:state.active_mission?.mission_id;
+  const activeEffectivelyComplete=state.active_mission?.status==='COMPLETE'||activeReconciliation.reconciliation?.toStatus==='COMPLETE';
+  const latestWebMission=activeEffectivelyComplete?latestWebMissionId():null;
+  const missionId=latestWebMission
+    ??(state.active_mission?.status==='COMPLETE'&&nextMissionId&&existsSync(join(root,'missions',`${nextMissionId}.json`))?nextMissionId:null)
+    ??state.active_mission?.mission_id;
   const workState=projectMissionWork(root,state,missionId);
   const osSurface=projectOsProjection(root,state,missionResults);
   const durableWork=missionId?readWorkRecord(root,missionId):null;
