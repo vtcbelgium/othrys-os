@@ -167,3 +167,13 @@ def test_failed_recent_local_candidates_remain_non_executable():
     for builder_id in ["local.granite4.2-8b","local.north-mini-code-1.0","local.gpt-oss-20b"]:
         assert by[builder_id]["executionAllowed"] is False
     assert by["local.muse-glimmer-30b"]["executionAllowed"] is True
+
+
+def test_worker_result_keeps_route_builder_separate_from_forge_model():
+    text=Path(__file__).with_name("legion_qwen_worker_v01.py").read_text(encoding="utf-8")
+    assert '"mission_id": mission_id' in text
+    assert '"builder_id": route_builder_id' in text
+    assert '"route_builder": route_builder_id' in text
+    assert '"selected_builder": forge_builder_id' in text
+    assert 'mission_id=str(metadata.get("mission_id") or "")' in text
+    assert 'route_builder_id=str(metadata.get("builder_id") or "qwen3-builder")' in text

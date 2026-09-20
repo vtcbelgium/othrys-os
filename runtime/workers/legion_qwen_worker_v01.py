@@ -340,6 +340,8 @@ def run_job(req: dict[str, Any]) -> dict[str, Any]:
     tool_call_diagnostics: list[dict[str, Any]] = []
     dirty_before = _dirty_snapshot(workspace)
     metadata=req.get("metadata") or {}
+    mission_id=str(metadata.get("mission_id") or "")
+    route_builder_id=str(metadata.get("builder_id") or "qwen3-builder")
     forge_builder_id=str(metadata.get("forge_builder_id") or "local.qwen3-8b")
     if forge_builder_id not in FORGE_LOCAL_MODELS:
         raise ValueError(f"FORGE_LOCAL_BUILDER_UNSUPPORTED:{forge_builder_id}")
@@ -390,15 +392,22 @@ def run_job(req: dict[str, Any]) -> dict[str, Any]:
     completed = time.time()
     return {
         "schema_version": "othrys.worker-result.v0.1",
+        "mission_id": mission_id,
         "job_id": req["job_id"], "node_id": "legion", "capability": CAPABILITY,
-        "worker_id": WORKER_ID, "builder_id": forge_builder_id,
+        "worker_id": WORKER_ID, "builder_id": route_builder_id,
         "ok": bool(eng.ok) and not outside and bool(changed),
         "reason": (f"out_of_scope_changes: {outside}" if outside else (eng.reason or "" if changed else "NO_ATTEMPT_MUTATION")),
         "started_at": started, "completed_at": completed, "duration_sec": completed - started,
         "allowed_paths": allowed, "changed_files": changed, "out_of_scope_changes": outside,
         "diff": _scoped_workspace_diff(workspace, allowed), "git_status": "\n".join(changed), "summary": eng.summary,
         "runtime_evidence": {"observed_diff": _scoped_workspace_diff(workspace, allowed), "git_status": "\n".join(changed), "tool_trace": list(eng.tool_trace or [])[:40], "tool_call_diagnostics": tool_call_diagnostics[:20]},
-        "capability_selection": {"policy": "hephaestus_forge_local_qualification" if metadata.get("forge_qualification") is True else "v2_direct_low_level_loop", "selected_builder": forge_builder_id, "model": FORGE_LOCAL_MODELS[forge_builder_id], "cost_model": "local"},
+        "capability_selection": {
+            "policy": "hephaestus_forge_local_qualification" if metadata.get("forge_qualification") is True else "v2_direct_low_level_loop",
+            "route_builder": route_builder_id,
+            "selected_builder": forge_builder_id,
+            "model": FORGE_LOCAL_MODELS[forge_builder_id],
+            "cost_model": "local",
+        },
         "node_before": before, "node_after": _node_snapshot(),
     }
 
@@ -421,11 +430,12 @@ def main() -> int:
     except Exception as exc:
         payload = {
             "schema_version": "othrys.worker-result.v0.1",
+            "mission_id": str((req.get("metadata") or {}).get("mission_id") or ""),
             "job_id": req.get("job_id", "UNKNOWN"),
             "node_id": req.get("node_id", "legion"),
             "capability": req.get("capability", "UNKNOWN"),
             "worker_id": WORKER_ID,
-            "builder_id": "qwen3-builder",
+            "builder_id": str((req.get("metadata") or {}).get("builder_id") or "qwen3-builder"),
             "ok": False,
             "reason": repr(exc),
             "traceback": traceback.format_exc(),
