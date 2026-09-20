@@ -5,14 +5,18 @@ import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
+import { createHash } from 'node:crypto';
 
 const dir = dirname(fileURLToPath(import.meta.url));
 
-async function startServer(port: number, ledger: string) {
+async function startServer(port: number, ledger: string, auth: 'token' | 'verifier' = 'token') {
   const env = {
     ...process.env,
     OTHRYS_DECK_TOKEN: 'read-token',
-    OTHRYS_DECK_CONTROL_TOKEN: 'web-control-token',
+    OTHRYS_DECK_CONTROL_TOKEN: auth === 'token' ? 'web-control-token' : '',
+    OTHRYS_DECK_CONTROL_TOKEN_SHA256: auth === 'verifier'
+      ? createHash('sha256').update('web-control-token', 'utf8').digest('hex')
+      : '',
     OTHRYS_DECK_ADMISSION_LEDGER: ledger,
     OTHRYS_DECK_BIND: '127.0.0.1',
     OTHRYS_DECK_PORT: String(port),
@@ -139,6 +143,38 @@ test('SPEC-031 bridge never grants execution authority', async () => {
     assert.equal(stored.actor.role, 'ceo');
     assert.equal(stored.actor.channel, 'othrys-web');
     assert.equal(stored.state, 'ADMITTED');
+  } finally {
+    child.kill();
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+
+test('SPEC-031 Web bridge accepts a one-way bearer verifier without storing the plaintext token', async () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'othrys-web-bridge-verifier-'));
+  const ledger = join(tmp, 'admission.jsonl');
+  const port = 18823;
+  const child = await startServer(port, ledger, 'verifier');
+  try {
+    let response = await fetch('http://127.0.0.1:' + port + '/readyz');
+    assert.equal(response.status, 200);
+
+    response = await fetch('http://127.0.0.1:' + port + '/v1/commands', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer web-control-token',
+      },
+      body: JSON.stringify(command('WEB-TEST-VERIFIER')),
+    });
+    assert.equal(response.status, 202);
+    const body = await response.json();
+    assert.equal(body.status, 'accepted');
+
+    response = await fetch('http://127.0.0.1:' + port + '/v1/commands/WEB-TEST-VERIFIER', {
+      headers: { Authorization: 'Bearer wrong-token' },
+    });
+    assert.equal(response.status, 401);
   } finally {
     child.kill();
     rmSync(tmp, { recursive: true, force: true });

@@ -27,6 +27,7 @@ const token=process.env.OTHRYS_DECK_TOKEN ?? '';
 const port=Number(process.env.OTHRYS_DECK_PORT ?? 8780);
 const bind=process.env.OTHRYS_DECK_BIND ?? '127.0.0.1';
 const controlToken=process.env.OTHRYS_DECK_CONTROL_TOKEN ?? '';
+const controlTokenSha256=process.env.OTHRYS_DECK_CONTROL_TOKEN_SHA256 ?? '';
 const intentFile=process.env.OTHRYS_DECK_INTENT_FILE ?? '';
 const admissionLedger=process.env.OTHRYS_DECK_ADMISSION_LEDGER ?? '';
 const projectManifest=loadProjectManifest(root);
@@ -309,7 +310,7 @@ function serveStatic(pathname,res){
   send(res,200,readFileSync(file),types[extname(file)]??'application/octet-stream');
 }
 export async function handle(req,res){
-  if(await handleWebControlRequest(req,res,{token:controlToken,ledgerPath:admissionLedger})) return;
+  if(await handleWebControlRequest(req,res,{token:controlToken,tokenSha256:controlTokenSha256,ledgerPath:admissionLedger})) return;
   const url=new URL(req.url??'/',`http://${req.headers.host??'localhost'}`);
   if(req.method==='POST'&&url.pathname==='/api/chat'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
