@@ -22,6 +22,7 @@ import { answerFrontDoor, classifyFrontDoorIntent } from '../os/front_door.mjs';
 import { handleWebControlRequest } from './web_control_http.ts';
 import { readEstateProjection, syncEstateToDisk } from '../estate/local_git_estate.mjs';
 import { planWebCommand } from './web_command_planner.ts';
+import { activateWebCommand } from './web_command_activation.ts';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -34,6 +35,7 @@ const controlTokenSha256=process.env.OTHRYS_DECK_CONTROL_TOKEN_SHA256 ?? '';
 const intentFile=process.env.OTHRYS_DECK_INTENT_FILE ?? '';
 const admissionLedger=process.env.OTHRYS_DECK_ADMISSION_LEDGER ?? '';
 const webCommandEnvelopeDir=process.env.OTHRYS_WEB_COMMAND_DIR ?? join(root,'missions','web-commands');
+const legionWorkspace=process.env.OTHRYS_LEGION_WORKSPACE ?? '';
 const projectManifest=loadProjectManifest(root);
 function activeOperatingMode(){ return resolveOperatingMode(projectManifest,process.env.OTHRYS_OS_MODE??null); }
 
@@ -354,6 +356,20 @@ export async function handle(req,res){
       if(!existsSync(envelope)) return null;
       const active=json('GPT_STATE.json').active_mission??null;
       return planWebCommand({root,webCommandId:missionId,envelopeDir:webCommandEnvelopeDir,intentFile,ledgerPath:admissionLedger,activeMission:active});
+    },
+    commandActivator:(missionId,body)=>{
+      const active=json('GPT_STATE.json').active_mission??null;
+      return activateWebCommand({
+        root,
+        webCommandId:missionId,
+        allowedWritePaths:body?.allowedWritePaths,
+        timeoutSec:body?.timeoutSec,
+        workspace:legionWorkspace,
+        intentFile,
+        ledgerPath:admissionLedger,
+        selection:switchyardPreview('auto'),
+        activeMission:active
+      });
     }
   })) return;
   const url=new URL(req.url??'/',`http://${req.headers.host??'localhost'}`);
