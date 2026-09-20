@@ -8,6 +8,7 @@ import {
 
 type Options = {
   readonly token: string;
+  readonly tokenSha256?: string;
   readonly ledgerPath: string;
 };
 
@@ -77,7 +78,7 @@ export async function handleWebControlRequest(
   }
 
   if (request.method === 'GET' && url.pathname === '/readyz') {
-    if (!options.token || !options.ledgerPath) {
+    if ((!options.token && !options.tokenSha256) || !options.ledgerPath) {
       sendJson(response, 503, { status: 'not_ready', error: 'CONTROL_BOUNDARY_NOT_CONFIGURED' });
       return true;
     }
@@ -93,7 +94,7 @@ export async function handleWebControlRequest(
   const isCollection = url.pathname === '/v1/commands';
   const missionId = decodeMissionId(url.pathname);
   if (!isCollection && missionId === null) return false;
-  if (!bearerAuthorized(request.headers.authorization, options.token)) {
+  if (!bearerAuthorized(request.headers.authorization, options.token, options.tokenSha256 ?? '')) {
     sendJson(response, 401, blocked('AUTHENTICATION_REFUSED', 'Authentication refused.'));
     return true;
   }
