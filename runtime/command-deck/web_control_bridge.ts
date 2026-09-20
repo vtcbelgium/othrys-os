@@ -1,4 +1,6 @@
 import { createHash, timingSafeEqual } from 'node:crypto';
+import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
 import {
   AdmissionLedger,
   MissionConflictError,
@@ -8,7 +10,7 @@ import {
   AuthorityRejectedError,
   TrustCanalAdmission,
 } from '../trust-canal/admission.ts';
-import { BoundaryValidationError } from '../trust-canal/validation.ts';
+import { BoundaryValidationError, parseAdmissionInput } from '../trust-canal/validation.ts';
 
 export type WebCommandReceipt = {
   readonly text: string;
@@ -38,6 +40,51 @@ export class WebControlBridgeError extends Error {
     this.name = 'WebControlBridgeError';
   }
 }
+export type WebCommandEnvelope = {
+  readonly schema: 'othrys.os.web-command.v1';
+  readonly missionId: string;
+  readonly correlationId: string;
+  readonly command: string;
+  readonly context: string;
+  readonly actor: { readonly role: string; readonly channel: string };
+  readonly promptDigest: string;
+  readonly admittedAt: string;
+  readonly state: 'ADMITTED_AWAITING_PLANNING';
+  readonly authorityGranted: false;
+  readonly executionStarted: false;
+};
+
+function writeEnvelope(directory: string, raw: unknown, result: AdmissionResult): string | null {
+  if (!directory.trim()) return null;
+  const parsed = parseAdmissionInput(raw);
+  const record = result.record;
+  if (parsed.missionId !== record.missionId) throw new WebControlBridgeError('ENVELOPE_ID_MISMATCH', 500);
+  const envelope: WebCommandEnvelope = Object.freeze({
+    schema: 'othrys.os.web-command.v1',
+    missionId: record.missionId,
+    correlationId: record.correlationId,
+    command: parsed.command,
+    context: parsed.context,
+    actor: parsed.actor,
+    promptDigest: record.promptDigest,
+    admittedAt: record.admittedAt,
+    state: 'ADMITTED_AWAITING_PLANNING',
+    authorityGranted: false,
+    executionStarted: false,
+  });
+  mkdirSync(directory, { recursive: true });
+  const target = join(directory, `${record.missionId}.json`);
+  const text = JSON.stringify(envelope, null, 2) + '\n';
+  if (existsSync(target)) {
+    if (readFileSync(target, 'utf8') !== text) throw new WebControlBridgeError('ENVELOPE_CONFLICT', 409);
+    return target;
+  }
+  const temp = target + '.tmp-' + process.pid;
+  writeFileSync(temp, text, { encoding: 'utf8', mode: 0o600 });
+  renameSync(temp, target);
+  return target;
+}
+
 
 export function bearerAuthorized(
   header: string | string[] | undefined,
@@ -90,12 +137,14 @@ function receipt(result: AdmissionResult): WebCommandReceipt {
 export class WebControlBridge {
   private readonly ledger: AdmissionLedger;
   private readonly canal: TrustCanalAdmission;
+  private readonly envelopeDir: string;
 
-  constructor(ledgerPath: string) {
+  constructor(ledgerPath: string, envelopeDir = '') {
     if (!ledgerPath.trim()) {
       throw new WebControlBridgeError('ADMISSION_LEDGER_REQUIRED', 503);
     }
     this.ledger = new AdmissionLedger({ path: ledgerPath });
+    this.envelopeDir = envelopeDir;
     this.canal = new TrustCanalAdmission(this.ledger, [
       { role: 'ceo', channel: 'othrys-web' },
     ]);
@@ -103,7 +152,9 @@ export class WebControlBridge {
 
   admit(raw: unknown): WebCommandReceipt {
     try {
-      return receipt(this.canal.admit(raw));
+      const result = this.canal.admit(raw);
+      writeEnvelope(this.envelopeDir, raw, result);
+      return receipt(result);
     } catch (error) {
       if (error instanceof BoundaryValidationError) {
         throw new WebControlBridgeError(error.code, 400);

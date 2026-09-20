@@ -21,6 +21,7 @@ import { MODEL_REQUEST_SCHEMA, selectSwitchyardRoute } from '../os/switchyard.mj
 import { answerFrontDoor, classifyFrontDoorIntent } from '../os/front_door.mjs';
 import { handleWebControlRequest } from './web_control_http.ts';
 import { readEstateProjection, syncEstateToDisk } from '../estate/local_git_estate.mjs';
+import { planWebCommand } from './web_command_planner.ts';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -32,6 +33,7 @@ const controlToken=process.env.OTHRYS_DECK_CONTROL_TOKEN ?? '';
 const controlTokenSha256=process.env.OTHRYS_DECK_CONTROL_TOKEN_SHA256 ?? '';
 const intentFile=process.env.OTHRYS_DECK_INTENT_FILE ?? '';
 const admissionLedger=process.env.OTHRYS_DECK_ADMISSION_LEDGER ?? '';
+const webCommandEnvelopeDir=process.env.OTHRYS_WEB_COMMAND_DIR ?? join(root,'missions','web-commands');
 const projectManifest=loadProjectManifest(root);
 function activeOperatingMode(){ return resolveOperatingMode(projectManifest,process.env.OTHRYS_OS_MODE??null); }
 
@@ -339,7 +341,21 @@ function serveStatic(pathname,res){
   send(res,200,readFileSync(file),types[extname(file)]??'application/octet-stream');
 }
 export async function handle(req,res){
-  if(await handleWebControlRequest(req,res,{token:controlToken,tokenSha256:controlTokenSha256,ledgerPath:admissionLedger,systemProjection:buildStatus,estateProjection:()=>readEstateProjection(),estateRefresh:()=>syncEstateToDisk()})) return;
+  if(await handleWebControlRequest(req,res,{
+    token:controlToken,
+    tokenSha256:controlTokenSha256,
+    ledgerPath:admissionLedger,
+    systemProjection:buildStatus,
+    estateProjection:()=>readEstateProjection(),
+    estateRefresh:()=>syncEstateToDisk(),
+    commandEnvelopeDir:webCommandEnvelopeDir,
+    commandPlanner:(missionId)=>{
+      const envelope=join(webCommandEnvelopeDir,missionId+'.json');
+      if(!existsSync(envelope)) return null;
+      const active=json('GPT_STATE.json').active_mission??null;
+      return planWebCommand({root,webCommandId:missionId,envelopeDir:webCommandEnvelopeDir,intentFile,ledgerPath:admissionLedger,activeMission:active});
+    }
+  })) return;
   const url=new URL(req.url??'/',`http://${req.headers.host??'localhost'}`);
   if(req.method==='POST'&&url.pathname==='/api/chat'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
