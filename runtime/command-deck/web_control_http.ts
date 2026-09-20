@@ -12,6 +12,7 @@ type Options = {
   readonly ledgerPath: string;
   readonly systemProjection?: () => unknown | Promise<unknown>;
   readonly estateProjection?: () => unknown | Promise<unknown>;
+  readonly estateRefresh?: () => unknown | Promise<unknown>;
 };
 
 function sendJson(response: ServerResponse, status: number, body: unknown): void {
@@ -95,9 +96,10 @@ export async function handleWebControlRequest(
 
   const isSystemRead = request.method === 'GET' && url.pathname === '/v1/system';
   const isEstateRead = request.method === 'GET' && url.pathname === '/v1/estate';
+  const isEstateRefresh = request.method === 'POST' && url.pathname === '/v1/estate/refresh';
   const isCollection = url.pathname === '/v1/commands';
   const missionId = decodeMissionId(url.pathname);
-  if (!isSystemRead && !isEstateRead && !isCollection && missionId === null) return false;
+  if (!isSystemRead && !isEstateRead && !isEstateRefresh && !isCollection && missionId === null) return false;
   if (!bearerAuthorized(request.headers.authorization, options.token, options.tokenSha256 ?? '')) {
     sendJson(response, 401, blocked('AUTHENTICATION_REFUSED', 'Authentication refused.'));
     return true;
@@ -124,6 +126,15 @@ export async function handleWebControlRequest(
         return true;
       }
       sendJson(response, 200, await options.estateProjection());
+      return true;
+    }
+
+    if (isEstateRefresh) {
+      if (!options.estateRefresh) {
+        sendJson(response, 503, blocked('ESTATE_REFRESH_UNAVAILABLE'));
+        return true;
+      }
+      sendJson(response, 200, await options.estateRefresh());
       return true;
     }
 
