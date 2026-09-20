@@ -1,0 +1,146 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { spawn } from 'node:child_process';
+
+const dir = dirname(fileURLToPath(import.meta.url));
+
+async function startServer(port: number, ledger: string) {
+  const env = {
+    ...process.env,
+    OTHRYS_DECK_TOKEN: 'read-token',
+    OTHRYS_DECK_CONTROL_TOKEN: 'web-control-token',
+    OTHRYS_DECK_ADMISSION_LEDGER: ledger,
+    OTHRYS_DECK_BIND: '127.0.0.1',
+    OTHRYS_DECK_PORT: String(port),
+  };
+  const child = spawn(process.execPath, [join(dir, 'server.mjs')], {
+    env,
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+  await new Promise<void>((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error('server timeout')), 4000);
+    child.stdout.on('data', (data) => {
+      if (String(data).includes('"ready":true')) {
+        clearTimeout(timer);
+        resolve();
+      }
+    });
+    child.on('exit', (code) => reject(new Error('server exited ' + code)));
+  });
+  return child;
+}
+
+function command(missionId: string, text = 'Inspect current OTHRYS state.') {
+  return {
+    missionId,
+    command: text,
+    actor: { role: 'ceo', channel: 'othrys-web' },
+    context: 'Web command contract test.',
+  };
+}
+
+test('SPEC-031 Web bridge admits durably and returns Web-compatible status', async () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'othrys-web-bridge-'));
+  const ledger = join(tmp, 'admission.jsonl');
+  const port = 18821;
+  let child = await startServer(port, ledger);
+  try {
+    let response = await fetch('http://127.0.0.1:' + port + '/healthz');
+    assert.equal(response.status, 200);
+
+    response = await fetch('http://127.0.0.1:' + port + '/v1/commands', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(command('WEB-TEST-001')),
+    });
+    assert.equal(response.status, 401);
+
+    response = await fetch('http://127.0.0.1:' + port + '/v1/commands', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer web-control-token',
+      },
+      body: JSON.stringify(command('WEB-TEST-001')),
+    });
+    assert.equal(response.status, 202);
+    const admitted = await response.json();
+    assert.equal(admitted.status, 'accepted');
+    assert.equal(admitted.state, 'ADMITTED');
+    assert.equal(admitted.canonical, true);
+    assert.equal(admitted.stage, 'Awaiting governed planning');
+    assert.match(admitted.promptDigest, /^[a-f0-9]{64}$/);
+    assert.equal(admitted.evidence[0].type, 'command.admitted');
+
+    response = await fetch('http://127.0.0.1:' + port + '/v1/commands', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer web-control-token',
+      },
+      body: JSON.stringify(command('WEB-TEST-001')),
+    });
+    assert.equal(response.status, 202);
+    assert.equal(readFileSync(ledger, 'utf8').trim().split(/\r?\n/).length, 1);
+
+    child.kill();
+    await new Promise((resolve) => child.once('exit', resolve));
+    child = await startServer(port, ledger);
+
+    response = await fetch(
+      'http://127.0.0.1:' + port + '/v1/commands/WEB-TEST-001',
+      { headers: { Authorization: 'Bearer web-control-token' } },
+    );
+    assert.equal(response.status, 200);
+    const restored = await response.json();
+    assert.equal(restored.promptDigest, admitted.promptDigest);
+    assert.equal(restored.admittedAt, admitted.admittedAt);
+
+    response = await fetch('http://127.0.0.1:' + port + '/v1/commands', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer web-control-token',
+      },
+      body: JSON.stringify(command('WEB-TEST-001', 'Different command.')),
+    });
+    assert.equal(response.status, 409);
+    const conflict = await response.json();
+    assert.equal(conflict.error, 'MISSION_ID_CONFLICT');
+  } finally {
+    child.kill();
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+test('SPEC-031 bridge never grants execution authority', async () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'othrys-web-bridge-auth-'));
+  const ledger = join(tmp, 'admission.jsonl');
+  const port = 18822;
+  const child = await startServer(port, ledger);
+  try {
+    const response = await fetch('http://127.0.0.1:' + port + '/v1/commands', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer web-control-token',
+      },
+      body: JSON.stringify(command('WEB-TEST-002')),
+    });
+    const body = await response.json();
+    assert.equal(response.status, 202);
+    assert.equal('executionStarted' in body, false);
+    assert.equal('authorityGranted' in body, false);
+    const stored = JSON.parse(readFileSync(ledger, 'utf8').trim());
+    assert.equal(stored.actor.role, 'ceo');
+    assert.equal(stored.actor.channel, 'othrys-web');
+    assert.equal(stored.state, 'ADMITTED');
+  } finally {
+    child.kill();
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});
