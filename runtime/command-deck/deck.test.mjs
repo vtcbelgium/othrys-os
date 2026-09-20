@@ -136,6 +136,18 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.deepEqual(data.osSurface.titans.map(t=>t.id),['hephaestus','talos']);
   assert.equal(data.operatingMode.active.mode,'SUPERVISED_EXECUTE');
   assert.equal(data.operatingMode.active.authorityGranted,false);
+  assert.equal(data.builderInspector.schema,'othrys.os.builder-inspector.v1');
+  assert.equal(data.builderInspector.authority,'hephaestus');
+  assert.equal(data.builderInspector.selectedBuilder.id,'qwen3-builder');
+  assert.equal(data.builderInspector.selectedBuilder.locality,'LOCAL');
+  assert.equal(data.builderInspector.selectedBuilder.costClass,'ZERO');
+  assert.equal(data.builderInspector.selectedBuilder.certification,'CERTIFIED');
+  assert.equal(data.builderInspector.node,'legion');
+  assert.equal(data.builderInspector.interventionPolicy.id,'CHECKPOINTS');
+  assert.equal(data.builderInspector.attemptBudget.defaultAttempts,3);
+  assert.equal(data.builderInspector.attemptBudget.hardCeiling,5);
+  assert.equal(data.builderInspector.contextPolicy.externalChatUsageObservable,false);
+  assert.equal(data.builderInspector.authorityGranted,false);
   assert.ok(Array.isArray(data.canonicalMissions));
   assert.ok(data.canonicalMissions.length>0);
   assert.ok(data.canonicalMissions.every(m=>/^V2-/.test(m.missionId)&&typeof m.verdict==='string'));
