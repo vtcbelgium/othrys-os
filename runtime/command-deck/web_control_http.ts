@@ -43,6 +43,13 @@ function blocked(error: string, text = 'OTHRYS OS command boundary refused the r
   };
 }
 
+function planningErrorCode(error: unknown): string {
+  if (error && typeof error === 'object' && typeof (error as { code?: unknown }).code === 'string') {
+    return String((error as { code: string }).code);
+  }
+  return 'PLANNING_FAILURE';
+}
+
 async function readJson(request: IncomingMessage): Promise<unknown> {
   let raw = '';
   let bytes = 0;
@@ -173,18 +180,38 @@ export async function handleWebControlRequest(
         return true;
       }
       const receipt = bridge.admit(await readJson(request));
-      const dispatch = options.commandPlanner
-        ? await options.commandPlanner(receipt.correlationId)
-        : null;
-      sendJson(response, 202, dispatch ? { ...receipt, dispatch } : receipt);
+      if (!options.commandPlanner) {
+        sendJson(response, 202, receipt);
+        return true;
+      }
+      try {
+        const dispatch = await options.commandPlanner(receipt.correlationId);
+        sendJson(response, 202, dispatch ? { ...receipt, dispatch } : receipt);
+      } catch (error) {
+        sendJson(response, 202, {
+          ...receipt,
+          planningDeferred: true,
+          planningError: planningErrorCode(error),
+        });
+      }
       return true;
     }
     if (request.method === 'GET' && missionId !== null) {
       const receipt = bridge.status(missionId);
-      const dispatch = options.commandPlanner
-        ? await options.commandPlanner(receipt.correlationId)
-        : null;
-      sendJson(response, 200, dispatch ? { ...receipt, dispatch } : receipt);
+      if (!options.commandPlanner) {
+        sendJson(response, 200, receipt);
+        return true;
+      }
+      try {
+        const dispatch = await options.commandPlanner(receipt.correlationId);
+        sendJson(response, 200, dispatch ? { ...receipt, dispatch } : receipt);
+      } catch (error) {
+        sendJson(response, 200, {
+          ...receipt,
+          planningDeferred: true,
+          planningError: planningErrorCode(error),
+        });
+      }
       return true;
     }
     sendJson(response, 405, blocked('METHOD_NOT_ALLOWED'));
