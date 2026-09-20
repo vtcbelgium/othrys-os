@@ -220,9 +220,8 @@ export function latestGovernedApply(){
 }
 
 export async function buildStatus(){
-  const rawState=json('GPT_STATE.json');
-  const activeReconciliation=reconcileActiveMission(root,rawState.active_mission??null);
-  const state={...rawState,active_mission:activeReconciliation.activeMission};
+  const state=json('GPT_STATE.json');
+  const activeReconciliation=reconcileActiveMission(root,state.active_mission??null);
   let factory=null;
   if(existsSync(join(root,'missions','V2-005A.result.json'))){
     const f=json('missions/V2-005A.result.json');
