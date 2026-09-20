@@ -19,6 +19,7 @@ import { buildAtlasProjection } from '../os/atlas_projection.mjs';
 import { MODEL_REQUEST_SCHEMA, selectSwitchyardRoute } from '../os/switchyard.mjs';
 import { answerFrontDoor, classifyFrontDoorIntent } from '../os/front_door.mjs';
 import { handleWebControlRequest } from './web_control_http.ts';
+import { readEstateProjection } from '../estate/local_git_estate.mjs';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -310,7 +311,7 @@ function serveStatic(pathname,res){
   send(res,200,readFileSync(file),types[extname(file)]??'application/octet-stream');
 }
 export async function handle(req,res){
-  if(await handleWebControlRequest(req,res,{token:controlToken,tokenSha256:controlTokenSha256,ledgerPath:admissionLedger,systemProjection:buildStatus})) return;
+  if(await handleWebControlRequest(req,res,{token:controlToken,tokenSha256:controlTokenSha256,ledgerPath:admissionLedger,systemProjection:buildStatus,estateProjection:()=>readEstateProjection()})) return;
   const url=new URL(req.url??'/',`http://${req.headers.host??'localhost'}`);
   if(req.method==='POST'&&url.pathname==='/api/chat'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
