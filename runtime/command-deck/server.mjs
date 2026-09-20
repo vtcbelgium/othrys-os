@@ -14,6 +14,7 @@ import { projectOsProjection } from '../os/os_projection.mjs';
 import { readWorkRecord } from '../os/work_record.mjs';
 import { loadProjectManifest } from '../os/project_manifest.mjs';
 import { resolveOperatingMode, authorizeOperatingModeAction, operatingModeProjection } from '../os/operating_mode.mjs';
+import { resolveInterventionPolicy } from '../os/intervention_policy.mjs';
 import { exportKnowledge, searchKnowledge } from '../os/mnemosyne.mjs';
 import { buildAtlasProjection } from '../os/atlas_projection.mjs';
 import { MODEL_REQUEST_SCHEMA, selectSwitchyardRoute } from '../os/switchyard.mjs';
@@ -133,6 +134,33 @@ export function switchyardPreviewFor(capability='engineering.build',minimumTier=
   return {...result,policy:projectManifest.modelPolicy.policy,preference:pref,reason};
 }
 export function switchyardPreview(preference='auto'){return switchyardPreviewFor('engineering.build','STANDARD',preference);}
+export function builderInspector(){
+  const selection=switchyardPreview('auto');
+  const intervention=resolveInterventionPolicy(projectManifest.work?.interventionDefault??'CHECKPOINTS');
+  const selected=selection.selected??selection.approvalCandidate??null;
+  return Object.freeze({
+    schema:'othrys.os.builder-inspector.v1',
+    authority:'hephaestus',
+    role:'Engineering authority',
+    selection,
+    selectedBuilder:selected,
+    node:selected?.locality==='LOCAL'?'legion':selected?.locality==='REMOTE'?'remote':null,
+    routingPolicy:projectManifest.modelPolicy.policy,
+    operatingMode:operatingModeProjection(projectManifest,process.env.OTHRYS_OS_MODE??null),
+    interventionPolicy:intervention,
+    attemptBudget:Object.freeze({defaultAttempts:3,hardCeiling:5,source:'factory-plan + hephaestus-authority'}),
+    contextPolicy:Object.freeze({
+      externalChatUsageObservable:false,
+      exactTokenPressureObservable:false,
+      sessionTimeIsHeuristicOnly:true,
+      contextTransport:'bounded evidence capsules',
+      canonicalStateSurvivesChat:true,
+      handoffSafe:true
+    }),
+    authorityGranted:false,
+    executionStarted:false
+  });
+}
 export function missionProposalEnvelope(proposalIntent,promotionIntent=null){
   if(!proposalIntent||proposalIntent.action!=='MISSION_PROPOSAL'||!proposalIntent.missionId) return null;
   const projectContext=String(proposalIntent.projectContext??'').trim(),objective=String(proposalIntent.objective??'').trim();
@@ -217,7 +245,7 @@ export async function buildStatus(){
     activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
     recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(executionAuthIntent?.canonicalTargetMissionId??buildIntent?.canonicalTargetMissionId??null),missionExecutionAuthRequest:executionAuthIntent,workerAcceptance:latestWorkerAcceptance(),executionLease:latestExecutionLease(launchIntent?.canonicalTargetMissionId??executionAuthIntent?.canonicalTargetMissionId??null),missionWorkerLaunchRequest:launchIntent,latestGovernedApply:latestGovernedApply(),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
-    osSurface,operatingMode:operatingModeProjection(projectManifest,process.env.OTHRYS_OS_MODE??null),workState,durableWork,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
+    osSurface,operatingMode:operatingModeProjection(projectManifest,process.env.OTHRYS_OS_MODE??null),builderInspector:builderInspector(),workState,durableWork,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
   };
 }
 
