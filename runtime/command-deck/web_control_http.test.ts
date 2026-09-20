@@ -18,6 +18,7 @@ async function startServer(port: number, ledger: string, auth: 'token' | 'verifi
       ? createHash('sha256').update('web-control-token', 'utf8').digest('hex')
       : '',
     OTHRYS_DECK_ADMISSION_LEDGER: ledger,
+    OTHRYS_LEGION_WORKSPACE: 'C:/Users/othry/Projects/othrys-os',
     OTHRYS_DECK_BIND: '127.0.0.1',
     OTHRYS_DECK_PORT: String(port),
   };
@@ -202,6 +203,38 @@ test('SPEC-031 Web bridge exposes the live system projection read-only', async (
     assert.ok('workState' in body);
     assert.ok('osSurface' in body);
     assert.ok('operatingMode' in body);
+  } finally {
+    child.kill();
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+
+test('Web Builder activation is authenticated and fails closed without governed planning', async () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'othrys-web-activation-http-'));
+  const ledger = join(tmp, 'admission.jsonl');
+  const port = 18826;
+  const child = await startServer(port, ledger, 'verifier');
+  try {
+    let response = await fetch('http://127.0.0.1:' + port + '/v1/commands/WEB-NOT-PLANNED/activate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ allowedWritePaths: ['docs/proof.md'] }),
+    });
+    assert.equal(response.status, 401);
+
+    response = await fetch('http://127.0.0.1:' + port + '/v1/commands/WEB-NOT-PLANNED/activate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer web-control-token',
+      },
+      body: JSON.stringify({ allowedWritePaths: ['docs/proof.md'] }),
+    });
+    assert.equal(response.status, 409);
+    const body = await response.json();
+    assert.equal(body.error, 'GOVERNED_PLAN_REQUIRED');
+    assert.equal(body.canonical, false);
   } finally {
     child.kill();
     rmSync(tmp, { recursive: true, force: true });
