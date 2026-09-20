@@ -15,6 +15,7 @@ type Options = {
   readonly estateRefresh?: () => unknown | Promise<unknown>;
   readonly commandEnvelopeDir?: string;
   readonly commandPlanner?: (missionId: string) => unknown | Promise<unknown>;
+  readonly commandActivator?: (missionId: string, body: unknown) => unknown | Promise<unknown>;
 };
 
 function sendJson(response: ServerResponse, status: number, body: unknown): void {
@@ -70,6 +71,19 @@ function decodeMissionId(pathname: string): string | null {
     return null;
   }
 }
+
+function decodeMissionActivationId(pathname: string): string | null {
+  const prefix = '/v1/commands/';
+  const suffix = '/activate';
+  if (!pathname.startsWith(prefix) || !pathname.endsWith(suffix)) return null;
+  const rest = pathname.slice(prefix.length, -suffix.length);
+  if (!rest || rest.includes('/')) return null;
+  try {
+    return decodeURIComponent(rest);
+  } catch {
+    return null;
+  }
+}
 export async function handleWebControlRequest(
   request: IncomingMessage,
   response: ServerResponse,
@@ -101,7 +115,8 @@ export async function handleWebControlRequest(
   const isEstateRefresh = request.method === 'POST' && url.pathname === '/v1/estate/refresh';
   const isCollection = url.pathname === '/v1/commands';
   const missionId = decodeMissionId(url.pathname);
-  if (!isSystemRead && !isEstateRead && !isEstateRefresh && !isCollection && missionId === null) return false;
+  const activationMissionId = request.method === 'POST' ? decodeMissionActivationId(url.pathname) : null;
+  if (!isSystemRead && !isEstateRead && !isEstateRefresh && !isCollection && missionId === null && activationMissionId === null) return false;
   if (!bearerAuthorized(request.headers.authorization, options.token, options.tokenSha256 ?? '')) {
     sendJson(response, 401, blocked('AUTHENTICATION_REFUSED', 'Authentication refused.'));
     return true;
@@ -140,6 +155,16 @@ export async function handleWebControlRequest(
       return true;
     }
 
+    if (request.method === 'POST' && activationMissionId !== null) {
+      if (!options.commandActivator) {
+        sendJson(response, 503, blocked('COMMAND_ACTIVATOR_UNAVAILABLE'));
+        return true;
+      }
+      const result = await options.commandActivator(activationMissionId, await readJson(request));
+      sendJson(response, 200, result);
+      return true;
+    }
+
     const bridge = new WebControlBridge(options.ledgerPath, options.commandEnvelopeDir ?? '');
     if (request.method === 'POST' && isCollection) {
       const contentType = request.headers['content-type'] ?? '';
@@ -167,6 +192,19 @@ export async function handleWebControlRequest(
   } catch (error) {
     if (error instanceof WebControlBridgeError) {
       sendJson(response, error.status, blocked(error.code));
+      return true;
+    }
+    if (
+      error &&
+      typeof error === 'object' &&
+      typeof (error as { code?: unknown }).code === 'string' &&
+      Number.isInteger((error as { status?: unknown }).status)
+    ) {
+      sendJson(
+        response,
+        Number((error as { status: number }).status),
+        blocked(String((error as { code: string }).code)),
+      );
       return true;
     }
     sendJson(response, 503, blocked('CONTROL_BOUNDARY_FAILURE'));
