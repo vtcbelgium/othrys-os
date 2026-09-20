@@ -180,3 +180,30 @@ test('SPEC-031 Web bridge accepts a one-way bearer verifier without storing the 
     rmSync(tmp, { recursive: true, force: true });
   }
 });
+
+
+test('SPEC-031 Web bridge exposes the live system projection read-only', async () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'othrys-web-system-read-'));
+  const ledger = join(tmp, 'admission.jsonl');
+  const port = 18824;
+  const child = await startServer(port, ledger, 'verifier');
+  try {
+    let response = await fetch('http://127.0.0.1:' + port + '/v1/system');
+    assert.equal(response.status, 401);
+
+    response = await fetch('http://127.0.0.1:' + port + '/v1/system', {
+      headers: { Authorization: 'Bearer web-control-token' },
+    });
+    assert.equal(response.status, 200);
+    const body = await response.json();
+    assert.equal(body.schema, 'othrys.command-deck.status.v1');
+    assert.equal(body.authorityGranted, false);
+    assert.equal(body.controlsEnabled, false);
+    assert.ok('workState' in body);
+    assert.ok('osSurface' in body);
+    assert.ok('operatingMode' in body);
+  } finally {
+    child.kill();
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});

@@ -10,6 +10,7 @@ type Options = {
   readonly token: string;
   readonly tokenSha256?: string;
   readonly ledgerPath: string;
+  readonly systemProjection?: () => unknown | Promise<unknown>;
 };
 
 function sendJson(response: ServerResponse, status: number, body: unknown): void {
@@ -91,9 +92,10 @@ export async function handleWebControlRequest(
     return true;
   }
 
+  const isSystemRead = request.method === 'GET' && url.pathname === '/v1/system';
   const isCollection = url.pathname === '/v1/commands';
   const missionId = decodeMissionId(url.pathname);
-  if (!isCollection && missionId === null) return false;
+  if (!isSystemRead && !isCollection && missionId === null) return false;
   if (!bearerAuthorized(request.headers.authorization, options.token, options.tokenSha256 ?? '')) {
     sendJson(response, 401, blocked('AUTHENTICATION_REFUSED', 'Authentication refused.'));
     return true;
@@ -105,6 +107,15 @@ export async function handleWebControlRequest(
   }
 
   try {
+    if (isSystemRead) {
+      if (!options.systemProjection) {
+        sendJson(response, 503, blocked('SYSTEM_PROJECTION_UNAVAILABLE'));
+        return true;
+      }
+      sendJson(response, 200, await options.systemProjection());
+      return true;
+    }
+
     const bridge = new WebControlBridge(options.ledgerPath);
     if (request.method === 'POST' && isCollection) {
       const contentType = request.headers['content-type'] ?? '';

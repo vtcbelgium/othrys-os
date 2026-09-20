@@ -310,7 +310,7 @@ function serveStatic(pathname,res){
   send(res,200,readFileSync(file),types[extname(file)]??'application/octet-stream');
 }
 export async function handle(req,res){
-  if(await handleWebControlRequest(req,res,{token:controlToken,tokenSha256:controlTokenSha256,ledgerPath:admissionLedger})) return;
+  if(await handleWebControlRequest(req,res,{token:controlToken,tokenSha256:controlTokenSha256,ledgerPath:admissionLedger,systemProjection:buildStatus})) return;
   const url=new URL(req.url??'/',`http://${req.headers.host??'localhost'}`);
   if(req.method==='POST'&&url.pathname==='/api/chat'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
