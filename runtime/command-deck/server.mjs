@@ -15,6 +15,7 @@ import { readWorkRecord } from '../os/work_record.mjs';
 import { loadProjectManifest } from '../os/project_manifest.mjs';
 import { resolveOperatingMode, authorizeOperatingModeAction, operatingModeProjection } from '../os/operating_mode.mjs';
 import { resolveInterventionPolicy } from '../os/intervention_policy.mjs';
+import { reconcileActiveMission } from '../os/mission_state_reconcile.mjs';
 import { exportKnowledge, searchKnowledge } from '../os/mnemosyne.mjs';
 import { buildAtlasProjection } from '../os/atlas_projection.mjs';
 import { MODEL_REQUEST_SCHEMA, selectSwitchyardRoute } from '../os/switchyard.mjs';
@@ -219,7 +220,9 @@ export function latestGovernedApply(){
 }
 
 export async function buildStatus(){
-  const state=json('GPT_STATE.json');
+  const rawState=json('GPT_STATE.json');
+  const activeReconciliation=reconcileActiveMission(root,rawState.active_mission??null);
+  const state={...rawState,active_mission:activeReconciliation.activeMission};
   let factory=null;
   if(existsSync(join(root,'missions','V2-005A.result.json'))){
     const f=json('missions/V2-005A.result.json');
@@ -246,7 +249,7 @@ export async function buildStatus(){
   const missionPreflight=readMissionPreflight(missionCandidate?.canonicalMissionId);
   return {
     schema:DECK_SCHEMA,generatedAt:new Date().toISOString(),head:gitHead(),controlGate:state.control_gate,
-    activeMission:state.active_mission,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
+    activeMission:state.active_mission,activeMissionReconciliation:activeReconciliation.reconciliation,nextAction:state.next_legal_action,lastDecision:state.last_control_decision,
     recentMissions:recent(state.mission_history),canonicalMissions:canonicalMissionTrail(),factory,legionNode:readLegionTelemetry(),controlIntent,missionProposal:missionProposalEnvelope(proposalIntent,promotionIntent),missionCandidate,missionAllocationRequest:allocationIntent,missionActivationRequest:activationIntent,missionPreflight,missionNoChangeCloseRequest:noChangeCloseIntent,missionBuildRequest:buildIntent,buildPackage:latestBuildPackage(executionAuthIntent?.canonicalTargetMissionId??buildIntent?.canonicalTargetMissionId??null),missionExecutionAuthRequest:executionAuthIntent,workerAcceptance:latestWorkerAcceptance(),executionLease:latestExecutionLease(launchIntent?.canonicalTargetMissionId??executionAuthIntent?.canonicalTargetMissionId??null),missionWorkerLaunchRequest:launchIntent,latestGovernedApply:latestGovernedApply(),
     localNode:node?{id:node.node_id,health:node.health,advertised:node.advertised,capabilities:node.capabilities}:null,
     osSurface,operatingMode:operatingModeProjection(projectManifest,process.env.OTHRYS_OS_MODE??null),builderInspector:builderInspector(),workState,durableWork,missionEvidence:missionEvidence(missionId),authorityGranted:false,controlsEnabled:false
@@ -354,11 +357,13 @@ export async function handle(req,res){
     commandPlanner:(missionId)=>{
       const envelope=join(webCommandEnvelopeDir,missionId+'.json');
       if(!existsSync(envelope)) return null;
-      const active=json('GPT_STATE.json').active_mission??null;
+      const rawActive=json('GPT_STATE.json').active_mission??null;
+      const active=reconcileActiveMission(root,rawActive).activeMission;
       return planWebCommand({root,webCommandId:missionId,envelopeDir:webCommandEnvelopeDir,intentFile,ledgerPath:admissionLedger,activeMission:active});
     },
     commandActivator:(missionId,body)=>{
-      const active=json('GPT_STATE.json').active_mission??null;
+      const rawActive=json('GPT_STATE.json').active_mission??null;
+      const active=reconcileActiveMission(root,rawActive).activeMission;
       return activateWebCommand({
         root,
         webCommandId:missionId,
