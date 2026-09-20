@@ -84,7 +84,24 @@ export function planWebCommand(options: {
 }): WebPlanningResult {
   const { root, webCommandId, envelopeDir, intentFile, ledgerPath, activeMission } = options;
   const existing = readWebCommandPlan(root, webCommandId);
-  if (existing) return existing;
+  if (existing) {
+    if (existing.status === 'NO_MISSION_REQUIRED' || !existing.canonicalMissionId) return existing;
+    const activeMissionId =
+      activeMission?.status && activeMission.status !== 'COMPLETE'
+        ? String(activeMission.mission_id ?? '') || null
+        : null;
+    const blocked = activeMissionId !== null && activeMissionId !== existing.canonicalMissionId;
+    return Object.freeze({
+      ...existing,
+      status: blocked ? 'QUEUED_ACTIVE_MISSION' : 'PLANNED_AWAITING_ACTIVATION',
+      stage: blocked
+        ? 'Governed planning complete · queued behind active Mission ' + activeMissionId
+        : 'Governed planning complete · awaiting explicit activation',
+      progress: blocked ? 40 : 50,
+      activeMissionId,
+      blocker: blocked ? 'ONE_MISSION_RULE' : null,
+    });
+  }
 
   const envelope = readEnvelope(join(envelopeDir, webCommandId + '.json'));
   const intent = classifyFrontDoorIntent(envelope.command);

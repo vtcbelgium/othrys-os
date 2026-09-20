@@ -65,6 +65,38 @@ test('admitted Web build becomes a canonical Mission and durable Work record', (
   }
 });
 
+test('queued Web plan becomes activatable when the blocking Mission completes', () => {
+  const f = fixture({ mission_id: 'V2-011K', status: 'RUNNING' });
+  try {
+    const queued = planWebCommand({
+      root: f.root,
+      webCommandId: f.webCommandId,
+      envelopeDir: f.envelopeDir,
+      intentFile: f.intentFile,
+      ledgerPath: f.ledgerPath,
+      activeMission: { mission_id: 'V2-011K', status: 'RUNNING' },
+    });
+    assert.equal(queued.status, 'QUEUED_ACTIVE_MISSION');
+    assert.equal(queued.blocker, 'ONE_MISSION_RULE');
+
+    const ready = planWebCommand({
+      root: f.root,
+      webCommandId: f.webCommandId,
+      envelopeDir: f.envelopeDir,
+      intentFile: f.intentFile,
+      ledgerPath: f.ledgerPath,
+      activeMission: { mission_id: 'V2-011K', status: 'COMPLETE' },
+    });
+    assert.equal(ready.status, 'PLANNED_AWAITING_ACTIVATION');
+    assert.equal(ready.blocker, null);
+    assert.equal(ready.activeMissionId, null);
+    assert.equal(ready.progress, 50);
+    assert.match(ready.stage, /awaiting explicit activation/);
+  } finally {
+    rmSync(f.root, { recursive: true, force: true });
+  }
+});
+
 test('One Mission Rule queues the planned Web Mission behind a running Mission', () => {
   const f = fixture();
   try {
