@@ -64,11 +64,11 @@ function fixture(activeMission: any = null) {
   return { root, webCommandId, intentFile, ledgerPath, plan };
 }
 
-test('planned Web build advances through existing governed gates to dispatch-ready', () => {
+test('planned Web build advances through existing governed gates to dispatch-ready', async () => {
   const f = fixture(null);
   try {
     assert.equal(f.plan.status, 'PLANNED_AWAITING_ACTIVATION');
-    const out = activateWebCommand({
+    const out = await activateWebCommand({
       root: f.root,
       webCommandId: f.webCommandId,
       allowedWritePaths: ['docs/BUILDER-SMOKE-TEST.md'],
@@ -96,7 +96,7 @@ test('planned Web build advances through existing governed gates to dispatch-rea
     assert.deepEqual(worker.allowed_paths, ['docs/BUILDER-SMOKE-TEST.md']);
     assert.equal(worker.workspace, 'C:/Users/othry/Projects/othrys-os');
 
-    const replay = activateWebCommand({
+    const replay = await activateWebCommand({
       root: f.root,
       webCommandId: f.webCommandId,
       allowedWritePaths: ['docs/BUILDER-SMOKE-TEST.md'],
@@ -113,12 +113,12 @@ test('planned Web build advances through existing governed gates to dispatch-rea
   }
 });
 
-test('One Mission Rule blocks Web activation before scope or dispatch is materialized', () => {
+test('One Mission Rule blocks Web activation before scope or dispatch is materialized', async () => {
   const f = fixture({ mission_id: 'V2-011K', status: 'RUNNING' });
   try {
     assert.equal(f.plan.status, 'QUEUED_ACTIVE_MISSION');
-    assert.throws(
-      () => activateWebCommand({
+    await assert.rejects(
+      activateWebCommand({
         root: f.root,
         webCommandId: f.webCommandId,
         allowedWritePaths: ['docs/BUILDER-SMOKE-TEST.md'],
@@ -138,12 +138,12 @@ test('One Mission Rule blocks Web activation before scope or dispatch is materia
   }
 });
 
-test('activation scope rejects traversal and absolute paths', () => {
+test('activation scope rejects traversal and absolute paths', async () => {
   const f = fixture(null);
   try {
     for (const unsafe of ['../oops.md', '/tmp/oops.md', 'C:/oops.md']) {
-      assert.throws(
-        () => activateWebCommand({
+      await assert.rejects(
+        activateWebCommand({
           root: f.root,
           webCommandId: f.webCommandId,
           allowedWritePaths: [unsafe],

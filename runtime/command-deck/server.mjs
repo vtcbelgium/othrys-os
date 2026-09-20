@@ -37,6 +37,8 @@ const intentFile=process.env.OTHRYS_DECK_INTENT_FILE ?? '';
 const admissionLedger=process.env.OTHRYS_DECK_ADMISSION_LEDGER ?? '';
 const webCommandEnvelopeDir=process.env.OTHRYS_WEB_COMMAND_DIR ?? join(root,'missions','web-commands');
 const legionWorkspace=process.env.OTHRYS_LEGION_WORKSPACE ?? '';
+const legionWorkerBridgeUrl=process.env.OTHRYS_LEGION_WORKER_URL ?? '';
+const legionWorkerBridgeToken=process.env.OTHRYS_ENGINEERING_TOKEN ?? '';
 const projectManifest=loadProjectManifest(root);
 function activeOperatingMode(){ return resolveOperatingMode(projectManifest,process.env.OTHRYS_OS_MODE??null); }
 
@@ -390,7 +392,9 @@ export async function handle(req,res){
         intentFile,
         ledgerPath:admissionLedger,
         selection:switchyardPreview('auto'),
-        activeMission:active
+        activeMission:active,
+        workerBridgeUrl:legionWorkerBridgeUrl,
+        workerBridgeToken:legionWorkerBridgeToken
       });
     }
   })) return;

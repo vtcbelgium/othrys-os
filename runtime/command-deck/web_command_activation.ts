@@ -12,6 +12,7 @@ import { validateWorkerLaunchCandidate } from './worker_launch.ts';
 import { materializeLaunchPermit } from './launch_permit.ts';
 import { materializeWorkerRequest } from './worker_request.ts';
 import { consumePermitForDispatch } from './dispatch_ticket.ts';
+import { RemoteWorkerTransportError, transportWorkerJob } from './remote_worker_transport.mjs';
 
 type ActiveMission = { mission_id?: string; status?: string } | null | undefined;
 
@@ -30,18 +31,20 @@ export type WebCommandActivationResult = {
   readonly schema: 'othrys.os.web-command-activation.v1';
   readonly webCommandId: string;
   readonly canonicalMissionId: string;
-  readonly status: 'DISPATCH_READY';
+  readonly status: 'DISPATCH_READY' | 'WORKER_COMPLETED' | 'WORKER_FAILED';
   readonly stage: string;
-  readonly progress: 70;
+  readonly progress: 70 | 82;
   readonly builderId: string;
   readonly jobId: string;
   readonly workspace: string;
   readonly allowedWritePaths: readonly string[];
   readonly dispatchTicketId: string;
   readonly evidence: readonly string[];
+  readonly workerResultPath?: string;
+  readonly changedFiles?: readonly string[];
   readonly authorityGranted: false;
   readonly dispatchAuthorityGranted: true;
-  readonly executionStarted: false;
+  readonly executionStarted: boolean;
 };
 
 function safeRelativePath(value: string) {
@@ -132,7 +135,41 @@ export function readWebCommandActivation(root: string, webCommandId: string): We
   return JSON.parse(readFileSync(path, 'utf8')) as WebCommandActivationResult;
 }
 
-export function activateWebCommand(options: {
+async function transportActivation(
+  root: string,
+  activation: WebCommandActivationResult,
+  workerBridgeUrl?: string,
+  workerBridgeToken?: string,
+): Promise<WebCommandActivationResult> {
+  if (!workerBridgeUrl || !workerBridgeToken || activation.executionStarted) return activation;
+  try {
+    const transport = await transportWorkerJob({
+      root,
+      requestPath: join(root, 'missions', 'worker-requests', activation.jobId + '.json'),
+      dispatchPath: join(root, 'missions', 'dispatch-tickets', activation.dispatchTicketId + '.json'),
+      baseUrl: workerBridgeUrl,
+      token: workerBridgeToken,
+    });
+    return Object.freeze({
+      ...activation,
+      status: transport.status,
+      stage: transport.status === 'WORKER_COMPLETED'
+        ? 'Legion worker completed · awaiting independent verification'
+        : 'Legion worker returned failure evidence',
+      progress: 82,
+      workerResultPath: transport.workerResultPath,
+      changedFiles: Object.freeze(transport.changedFiles),
+      executionStarted: true,
+    });
+  } catch (error) {
+    if (error instanceof RemoteWorkerTransportError) {
+      throw new WebCommandActivationError(error.code, 503);
+    }
+    throw error;
+  }
+}
+
+export async function activateWebCommand(options: {
   root: string;
   webCommandId: string;
   allowedWritePaths: unknown;
@@ -143,7 +180,9 @@ export function activateWebCommand(options: {
   activeMission?: ActiveMission;
   nowIso?: string;
   timeoutSec?: number;
-}): WebCommandActivationResult {
+  workerBridgeUrl?: string;
+  workerBridgeToken?: string;
+}): Promise<WebCommandActivationResult> {
   const {
     root,
     webCommandId,
@@ -153,10 +192,12 @@ export function activateWebCommand(options: {
     ledgerPath,
     selection,
     activeMission,
+    workerBridgeUrl,
+    workerBridgeToken,
   } = options;
 
   const replay = readWebCommandActivation(root, webCommandId);
-  if (replay) return replay;
+  if (replay) return transportActivation(root, replay, workerBridgeUrl, workerBridgeToken);
 
   if (!intentFile || !ledgerPath) throw new WebCommandActivationError('NATIVE_EVIDENCE_PATH_REQUIRED', 503);
   const normalizedWorkspace = String(workspace ?? '').trim();
@@ -328,12 +369,12 @@ export function activateWebCommand(options: {
     dispatch.ticketPath.replace(root + '/', ''),
   ]);
 
-  return writeResultOnce(root, webCommandId, Object.freeze({
+  const activation = writeResultOnce(root, webCommandId, Object.freeze({
     schema: 'othrys.os.web-command-activation.v1',
     webCommandId,
     canonicalMissionId: plan.canonicalMissionId,
     status: 'DISPATCH_READY',
-    stage: 'Governed build dispatch is ready for GPT/Remote Commander',
+    stage: 'Governed build dispatch is ready for Legion transport',
     progress: 70,
     builderId: route.selected.id,
     jobId: worker.request.job_id,
@@ -345,4 +386,5 @@ export function activateWebCommand(options: {
     dispatchAuthorityGranted: true,
     executionStarted: false,
   }));
+  return transportActivation(root, activation, workerBridgeUrl, workerBridgeToken);
 }
