@@ -1,0 +1,25 @@
+{
+  "id": "theia.video.moneyprinterturbo",
+  "name": "Theia MoneyPrinterTurbo Adapter",
+  "provider": "moneyprinterturbo",
+  "category": "media-render",
+  "features": [
+    "audio",
+    "captions",
+    "local-materials",
+    "render",
+    "task-recovery",
+    "video"
+  ],
+  "freeTier": true,
+  "credentialEnv": "MPT_API_KEY",
+  "maxCost": 0,
+  "readiness": "READY",
+  "health": "HEALTHY",
+  "lifecycle": "ACTIVE",
+  "asOf": "2026-09-23T23:08:24+02:00",
+  "sourceRefs": [
+    "https://github.com/harry0703/MoneyPrinterTurbo"
+  ],
+  "lastVerifiedAt": "2026-09-23T23:08:24+02:00"
+}

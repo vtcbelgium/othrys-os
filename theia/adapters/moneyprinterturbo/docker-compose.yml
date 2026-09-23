@@ -1,0 +1,31 @@
+services:
+  api:
+    image: ghcr.io/harry0703/moneyprinterturbo:latest
+    container_name: theia-moneyprinterturbo-api
+    ports:
+      - "127.0.0.1:${MPT_API_PORT:-8080}:8080"
+    command: ["python3", "main.py"]
+    volumes:
+      - "${MPT_CONFIG_PATH}:/MoneyPrinterTurbo/config.toml:ro"
+      - "${MPT_STORAGE_PATH}:/MoneyPrinterTurbo/storage"
+    restart: unless-stopped
+
+  webui:
+    image: ghcr.io/harry0703/moneyprinterturbo:latest
+    container_name: theia-moneyprinterturbo-webui
+    ports:
+      - "127.0.0.1:${MPT_WEBUI_PORT:-8501}:8501"
+    command:
+      - streamlit
+      - run
+      - ./webui/Main.py
+      - --server.address=0.0.0.0
+      - --server.port=8501
+      - --browser.serverAddress=127.0.0.1
+      - --server.enableCORS=True
+      - --browser.gatherUsageStats=False
+      - --client.toolbarMode=minimal
+    volumes:
+      - "${MPT_CONFIG_PATH}:/MoneyPrinterTurbo/config.toml:ro"
+      - "${MPT_STORAGE_PATH}:/MoneyPrinterTurbo/storage"
+    restart: unless-stopped
