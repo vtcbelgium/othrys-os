@@ -17,6 +17,9 @@
     "materialInventory": "PASS (2 files)",
     "musicInventory": "PASS (29 files)",
     "standaloneSubtitle": "PASS (cc454965-16df-4265-92a0-63936f8138b0)",
+    "standaloneAudioLifecycle": "PASS (6e4ab262-19af-4c9c-8279-326019b570f0; completed, listed, deleted)",
+    "protectedApiWithoutKey": "PASS (401)",
+    "diagnosticWebUi": "PASS (200)",
     "adapterUnitTestsCount": "9/9",
     "paidProviderDefaultGate": "PASS"
   },
