@@ -2,7 +2,7 @@
 
 **Titan of Visual & Audiovisual Media, Video Production, Creative Media Systems, Character/IP Media, and Media Automation**
 
-**Status:** CANONICAL STRATEGIC TITAN — doctrine and boundaries are active; runtime implementation is intentionally incomplete.
+**Status:** CANONICAL STRATEGIC TITAN — doctrine and boundaries are active; runtime implementation is intentionally incomplete, with the MoneyPrinterTurbo execution appendix now verified.
 
 Canonical structural topology and layer/admission rules live in `theia/ARCHITECTURE.md`. This Book owns doctrine and boundaries; it should not become a duplicate runtime specification.
 
@@ -1467,3 +1467,11 @@ Theia now has a dedicated scripted-animation production doctrine:
 Pemberton is the first detailed animation benchmark. This expands Theia's strategic doctrine; it does **not** by itself change Theia/Opsis runtime admission status.
 
 > **THEIA OWNS THE MEDIA MACHINE. CARTOON PRODUCTION IS ONE SPECIALIZED PRODUCTION GRAMMAR INSIDE IT.**
+
+---
+
+## APPENDIX A — MONEYPRINTERTURBO EXECUTION APPENDIX
+
+The verified MoneyPrinterTurbo execution appendix is specified in `theia/appendices/MONEYPRINTERTURBO.md`.
+
+Its implementation lives in `theia/adapters/moneyprinterturbo/`. The appendix may satisfy bounded media-production nodes for Opsis, but it does not acquire Theia's creative/domain authority, property ownership, publication authority, or global OTHRYS authority.

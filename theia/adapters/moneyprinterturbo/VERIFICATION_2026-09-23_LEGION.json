@@ -1,0 +1,46 @@
+{
+  "schema": "othrys.theia.adapter-verification.v1",
+  "adapter": "theia.video.moneyprinterturbo",
+  "verifiedAt": "2026-09-23T23:40:37+02:00",
+  "runtimeHost": "Jeroen-Legion",
+  "runtimeBoundary": "Windows Theia -> localhost -> WSL2 Docker MPT",
+  "runtimeBaseUrl": "http://127.0.0.1:18080",
+  "diagnosticsUrl": "http://127.0.0.1:18501",
+  "imageDigest": "ghcr.io/harry0703/moneyprinterturbo@sha256:524cd29303fdfaae3279f7d3c8a15cb74dec50d46bcdd13b72fe5b40d30e84a5",
+  "checks": {
+    "adapterUnitTests": "PASS",
+    "windowsToWslHealth": "PASS",
+    "localImageUpload": "PASS",
+    "stillToVideoPreprocess": "PASS",
+    "localRender": "PASS",
+    "authenticatedArtifactDownload": "PASS",
+    "materialInventory": "PASS (2 files)",
+    "musicInventory": "PASS (29 files)",
+    "standaloneSubtitle": "PASS (cc454965-16df-4265-92a0-63936f8138b0)",
+    "adapterUnitTestsCount": "9/9",
+    "paidProviderDefaultGate": "PASS"
+  },
+  "smokeTask": {
+    "taskId": "39a95d81-e732-437d-a892-96da1cd1bf0f",
+    "state": 1,
+    "progress": 100,
+    "finalArtifact": "/tasks/39a95d81-e732-437d-a892-96da1cd1bf0f/final-1.mp4",
+    "sha256": "1ae1d3bfd465ade55cad0a58e3fc47aaf4dd8e7548d9890b5e4b8bc952ee82af",
+    "bytes": 142650,
+    "durationSeconds": 4.867,
+    "video": {"codec": "h264", "width": 1080, "height": 1920},
+    "audioCodec": "aac"
+  },
+  "security": {
+    "bindScope": "localhost-only",
+    "apiKeyConfigured": true,
+    "secretValuesRecorded": false,
+    "publicationAutoUpload": false,
+    "defaultVideoSource": "local",
+    "remoteAiTasksDefault": "blocked"
+  },
+  "hostRole": {
+    "legion": "PRIMARY_EXECUTION_HOST",
+    "t590": "VERIFIED_FALLBACK"
+  }
+}

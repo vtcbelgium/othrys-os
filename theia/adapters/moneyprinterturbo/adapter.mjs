@@ -6,7 +6,7 @@ export const MPT_COMPLETE = 1;
 export const MPT_FAILED = -1;
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-const normalizeBaseUrl = value => String(value || 'http://127.0.0.1:8080').replace(/\/+$/, '');
+const normalizeBaseUrl = value => String(value || 'http://127.0.0.1:18080').replace(/\/+$/, '');
 
 function unwrapResponse(payload) {
   if (!payload || typeof payload !== 'object') throw new Error('MPT_INVALID_RESPONSE');
@@ -24,7 +24,15 @@ export function createMoneyPrinterTurboAdapter(options = {}) {
   const apiKey = options.apiKey ?? process.env.MPT_API_KEY ?? '';
   const fetchImpl = options.fetchImpl ?? globalThis.fetch;
   const allowedVideoSources = new Set(options.allowedVideoSources ?? ['local']);
+  const allowAiTasks = options.allowAiTasks === true;
   if (typeof fetchImpl !== 'function') throw new Error('MPT_FETCH_REQUIRED');
+
+  function requireAiTasks() {
+    if (allowAiTasks) return;
+    const error = new Error('MPT_AI_TASK_NOT_ADMITTED');
+    error.code = 'MPT_AI_TASK_NOT_ADMITTED';
+    throw error;
+  }
 
   async function request(path, init = {}) {
     const headers = new Headers(init.headers || {});
@@ -63,6 +71,27 @@ export function createMoneyPrinterTurboAdapter(options = {}) {
     const payload = await request('/api/v1/video_materials', { method: 'POST', body: form });
     return unwrapResponse(payload);
   }
+
+  async function listMaterials() {
+    const payload = await request('/api/v1/video_materials');
+    const data = unwrapResponse(payload);
+    return Array.isArray(data?.files) ? data.files : [];
+  }
+
+  async function listMusics() {
+    const payload = await request('/api/v1/musics');
+    const data = unwrapResponse(payload);
+    return Array.isArray(data?.files) ? data.files : [];
+  }
+
+  async function uploadMusic(filePath) {
+    const bytes = await readFile(filePath);
+    const form = new FormData();
+    form.set('file', new Blob([bytes]), basename(filePath));
+    const payload = await request('/api/v1/musics', { method: 'POST', body: form });
+    return unwrapResponse(payload);
+  }
+
   async function createAudio(input) {
     const payload = await request('/api/v1/audio', {
       method: 'POST',
@@ -77,6 +106,55 @@ export function createMoneyPrinterTurboAdapter(options = {}) {
         bgm_volume: 0,
         video_source: 'local',
       }),
+    });
+    return unwrapResponse(payload);
+  }
+
+  async function createSubtitle(input) {
+    const payload = await request('/api/v1/subtitle', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        video_script: input.script,
+        video_language: input.language || '',
+        voice_name: input.voiceName || 'no-voice',
+        voice_volume: input.voiceVolume ?? 1,
+        voice_rate: input.voiceRate ?? 1,
+        bgm_type: '',
+        bgm_volume: 0,
+        video_source: 'local',
+        subtitle_enabled: input.enabled !== false,
+        subtitle_position: input.position || 'bottom',
+        subtitle_display_mode: input.displayMode || 'sentence',
+        subtitle_animation: input.animation || 'none',
+      }),
+    });
+    return unwrapResponse(payload);
+  }
+
+  async function createScript(input) {
+    requireAiTasks();
+    const payload = await request('/api/v1/scripts', {
+      method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ video_subject: input.subject, video_language: input.language || '', paragraph_number: input.paragraphs ?? 1, video_script_prompt: input.prompt || '', custom_system_prompt: input.systemPrompt || '' }),
+    });
+    return unwrapResponse(payload);
+  }
+
+  async function createTerms(input) {
+    requireAiTasks();
+    const payload = await request('/api/v1/terms', {
+      method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ video_subject: input.subject || '', video_script: input.script || '', amount: input.amount ?? 5, match_materials_to_script: input.matchMaterials === true }),
+    });
+    return unwrapResponse(payload);
+  }
+
+  async function createSocialMetadata(input) {
+    requireAiTasks();
+    const payload = await request('/api/v1/social-metadata', {
+      method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ video_subject: input.subject || '', video_script: input.script || '', language: input.language || 'auto', platform: input.platform || 'tiktok' }),
     });
     return unwrapResponse(payload);
   }
@@ -184,7 +262,14 @@ export function createMoneyPrinterTurboAdapter(options = {}) {
     baseUrl,
     health,
     uploadMaterial,
+    listMaterials,
+    listMusics,
+    uploadMusic,
     createAudio,
+    createSubtitle,
+    createScript,
+    createTerms,
+    createSocialMetadata,
     createVideo,
     listTasks,
     getTask,

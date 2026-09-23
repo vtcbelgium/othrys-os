@@ -1,0 +1,21 @@
+{
+  "schema": "othrys.system-manager.execution-appendix.v1",
+  "documentPath": "theia/appendices/MONEYPRINTERTURBO.md",
+  "capabilityId": "theia.video.moneyprinterturbo",
+  "runtime": "Legion · WSL2 Docker",
+  "localHealthUrl": "http://127.0.0.1:18080/ping",
+  "localDiagnosticsUrl": "http://127.0.0.1:18501",
+  "statusCommand": "node theia/adapters/moneyprinterturbo/status.mjs",
+  "actions": [
+    {
+      "id": "mpt-status",
+      "label": "Check MPT",
+      "prompt": "Check Theia's MoneyPrinterTurbo execution appendix health and current verification evidence. Do not mutate anything. Report runtime host, health, latest task evidence and any blocker."
+    },
+    {
+      "id": "quick-video",
+      "label": "Quick video",
+      "prompt": "Use Theia's MoneyPrinterTurbo execution appendix for a bounded local-media video render. Keep paid AI media providers and publishing disabled. Plan the required script/assets, render through the admitted adapter, verify the artifact, and return the task ID plus artifact evidence."
+    }
+  ]
+}

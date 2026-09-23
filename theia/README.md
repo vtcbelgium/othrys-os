@@ -12,7 +12,8 @@ Canonical entry: ../BOOK_OF_THEIA.md
 - arms/BOOK_OF_CLIPPING.md — clipping/repurposing.
 - arms/BOOK_OF_EXPLAINER.md — animated/instructional explainers.
 - arms/BOOK_OF_STORY_FORGE.md — story, character and original IP.
-- adapters/moneyprinterturbo/ — admitted-candidate execution adapter for video/audio/subtitle/render tasks.
+- adapters/moneyprinterturbo/ — verified MoneyPrinterTurbo execution adapter for bounded media tasks.
+- appendices/MONEYPRINTERTURBO.md — Appendix A: runtime, capabilities, evidence, System Manager and absorption rules.
 - properties/PEMBERTON.md — first original character/IP starter; canonical Book of Pemberton.
 - properties/CARTOON_DAD.md — first utility-first explainer property.
 - research/MEDIA_AUTOMATION_STUDY_2026-09-18.md — dated clipping/explainer automation, platform and monetization study.

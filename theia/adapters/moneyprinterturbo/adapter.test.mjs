@@ -89,3 +89,51 @@ test('unadmitted media providers fail closed before any paid request', async () 
   );
   assert.equal(calls, 0);
 });
+
+test('standalone subtitle generation stays on the local no-cost path', async () => {
+  let seen;
+  const adapter=createMoneyPrinterTurboAdapter({
+    fetchImpl: async (url,init) => {
+      seen={url,body:JSON.parse(init.body)};
+      return new Response(JSON.stringify({status:200,data:{task_id:'subtitle-1'}}),{status:200,headers:{'content-type':'application/json'}});
+    },
+  });
+  const result=await adapter.createSubtitle({script:'Hello Theia'});
+  assert.equal(result.task_id,'subtitle-1');
+  assert.equal(seen.url,'http://127.0.0.1:18080/api/v1/subtitle');
+  assert.equal(seen.body.voice_name,'no-voice');
+  assert.equal(seen.body.video_source,'local');
+  assert.equal(seen.body.bgm_volume,0);
+});
+
+test('AI-backed script, term and social metadata tasks are gated by default', async () => {
+  let calls=0;
+  const adapter=createMoneyPrinterTurboAdapter({fetchImpl:async()=>{calls+=1;throw new Error('should not be called');}});
+  await assert.rejects(()=>adapter.createScript({subject:'SSH'}),/MPT_AI_TASK_NOT_ADMITTED/);
+  await assert.rejects(()=>adapter.createTerms({script:'SSH'}),/MPT_AI_TASK_NOT_ADMITTED/);
+  await assert.rejects(()=>adapter.createSocialMetadata({script:'SSH'}),/MPT_AI_TASK_NOT_ADMITTED/);
+  assert.equal(calls,0);
+});
+
+test('AI-backed endpoints become available only after explicit admission', async () => {
+  const urls=[];
+  const adapter=createMoneyPrinterTurboAdapter({
+    allowAiTasks:true,
+    fetchImpl:async(url)=>{urls.push(url);return new Response(JSON.stringify({status:200,data:{ok:true}}),{status:200,headers:{'content-type':'application/json'}});},
+  });
+  await adapter.createScript({subject:'SSH'});
+  await adapter.createTerms({script:'SSH'});
+  await adapter.createSocialMetadata({script:'SSH'});
+  assert.deepEqual(urls.map(x=>new URL(x).pathname),['/api/v1/scripts','/api/v1/terms','/api/v1/social-metadata']);
+});
+
+test('media inventories normalize upstream file envelopes to arrays', async () => {
+  const adapter=createMoneyPrinterTurboAdapter({
+    fetchImpl:async(url)=>{
+      const name=String(url).includes('video_materials')?'clip.mp4':'song.mp3';
+      return new Response(JSON.stringify({status:200,data:{files:[{name,file:name,size:42}]}}),{status:200,headers:{'content-type':'application/json'}});
+    },
+  });
+  assert.deepEqual(await adapter.listMaterials(),[{name:'clip.mp4',file:'clip.mp4',size:42}]);
+  assert.deepEqual(await adapter.listMusics(),[{name:'song.mp3',file:'song.mp3',size:42}]);
+});

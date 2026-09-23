@@ -26,23 +26,27 @@ It must not become:
 The supplied Compose definition binds API and diagnostic WebUI to localhost only.
 The real runtime config and storage live outside Git under `~/.othrys/theia/moneyprinterturbo/`.
 The adapter reads:
-- `MPT_BASE_URL` (default `http://127.0.0.1:8080`);
+- `MPT_BASE_URL` (default `http://127.0.0.1:18080`);
 - `MPT_API_KEY` for authenticated API calls.
 
 The runtime config contains the same API key but is never committed.
 
 ## Capability
 
-Registry candidate: `theia.video.moneyprinterturbo`.
+Active registry capability: `theia.video.moneyprinterturbo`.
 
-Initial admitted operations:
+Default admitted operations:
 1. health check;
-2. upload local material;
-3. audio task;
-4. video task;
-5. task list/status/polling;
-6. authenticated artifact download;
-7. task deletion.
+2. local material upload/list;
+3. local BGM upload/list;
+4. standalone audio;
+5. standalone subtitles;
+6. local video composition/render;
+7. task list/status/polling;
+8. authenticated artifact download;
+9. task deletion.
+
+AI-backed script, search-term and social-metadata endpoints are exposed by the adapter but fail closed until `allowAiTasks: true` is explicitly supplied.
 
 The adapter admits only the local video source by default. Other MPT media providers must be explicitly admitted through adapter configuration after cost/credential review; this prevents an ordinary render request from silently reaching a paid generator.
 
@@ -66,3 +70,5 @@ node theia/adapters/moneyprinterturbo/status.mjs
 ```
 
 The status probe is secret-free and reports certified readiness separately from live provider health.
+
+See `../../appendices/MONEYPRINTERTURBO.md` for the canonical Theia appendix, Legion/T590 host roles, System Manager integration and absorption strategy.

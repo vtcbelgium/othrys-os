@@ -7,7 +7,10 @@
     "audio",
     "captions",
     "local-materials",
+    "material-inventory",
+    "music-inventory",
     "render",
+    "standalone-subtitles",
     "task-recovery",
     "video"
   ],
@@ -17,9 +20,7 @@
   "readiness": "READY",
   "health": "HEALTHY",
   "lifecycle": "ACTIVE",
-  "asOf": "2026-09-23T23:08:24+02:00",
-  "sourceRefs": [
-    "https://github.com/harry0703/MoneyPrinterTurbo"
-  ],
-  "lastVerifiedAt": "2026-09-23T23:08:24+02:00"
+  "asOf": "2026-09-23T23:40:37+02:00",
+  "sourceRefs": ["https://github.com/harry0703/MoneyPrinterTurbo"],
+  "lastVerifiedAt": "2026-09-23T23:40:37+02:00"
 }
