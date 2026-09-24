@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 export const JEV_OPENROUTER_DECISIONS_URL='https://openrouter.ai/api/alpha/decisions';
 export const JEV_OPENROUTER_MAX_USD_PER_CALL=0.00005;
 export const JEV_OPENROUTER_INPUT_USD_PER_TOKEN=0.000000042;
+export const JEV_OPENROUTER_TOKEN_SAFETY_FACTOR=1.35;
 
 const sha=value=>createHash('sha256').update(JSON.stringify(value),'utf8').digest('hex');
 
@@ -28,11 +29,14 @@ export function estimateOpenRouterJevCost({
     throw new Error('JEV_OPENROUTER_QUESTIONS_REQUIRED');
   }
   const serialized=JSON.stringify({state:stateText,questions});
-  const estimatedInputTokens=Math.ceil(serialized.length/3);
+  const rawTokenEstimate=Math.ceil(serialized.length/3);
+  const estimatedInputTokens=Math.ceil(rawTokenEstimate*JEV_OPENROUTER_TOKEN_SAFETY_FACTOR);
   const estimatedUsd=estimatedInputTokens*JEV_OPENROUTER_INPUT_USD_PER_TOKEN;
   const allowed=estimatedUsd<=maxUsd;
   return Object.freeze({
     schema:'othrys.os.jev-openrouter-cost-guard.v1',
+    rawTokenEstimate,
+    safetyFactor:JEV_OPENROUTER_TOKEN_SAFETY_FACTOR,
     estimatedInputTokens,
     estimatedUsd,
     maxUsd,
@@ -82,6 +86,17 @@ export async function evaluateJevViaOpenRouter({
     throw new Error('JEV_OPENROUTER_TYPED_ANSWERS_REQUIRED');
   }
 
+  const actualCostUsd=typeof payload?.usage?.cost==='number'
+    ? payload.usage.cost
+    : Number.isFinite(Number(payload?.usage?.cost))
+      ? Number(payload.usage.cost)
+      : null;
+  const postflightBudgetStatus=actualCostUsd===null
+    ? 'UNKNOWN'
+    : actualCostUsd<=maxUsd
+      ? 'WITHIN_CAP'
+      : 'BREACHED';
+
   const body={
     schema:'othrys.os.jev-openrouter-observation.v1',
     provider:'OPENROUTER',
@@ -90,6 +105,8 @@ export async function evaluateJevViaOpenRouter({
     answers:Object.freeze({...payload.answers}),
     usage:payload.usage&&typeof payload.usage==='object'?Object.freeze({...payload.usage}):null,
     costGuard:guard,
+    actualCostUsd,
+    postflightBudgetStatus,
     authorityGranted:false,
     actionApplied:false,
     executionStarted:false,
