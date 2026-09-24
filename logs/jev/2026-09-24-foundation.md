@@ -107,3 +107,43 @@ Verification environment:
 
 Foundation verification status: **GREEN at OS runtime level**.
 Live Jev model reliability remains **UNMEASURED** until provider credentials are configured and the benchmark corpus is executed.
+
+
+### 2026-09-24 — free-route investigation
+
+Searched official provider documentation and current Jev integrations.
+
+Result:
+- Vercel is the strongest immediate route because OTHRYS Web already deploys there and Vercel supports automatic deployment OIDC authentication for AI Gateway.
+- Cloudflare exposes Jev and offers 10,000 free Workers AI neurons/day.
+- Netlify exposes Jev with zero provider-key setup and a hard-limited $0 free plan.
+- OpenRouter Jev is not free, though it remains extremely cheap.
+- No permanent public TypeSafe-direct free tier was established from reviewed documentation.
+
+Machine credential-name checks on T590 and Legion found no existing TypeSafe, AI Gateway, OpenRouter, Cloudflare, Netlify, or Vercel token values. No secret values were read or printed.
+
+Decision: adapt the Web broker to use Vercel's platform-managed `VERCEL_OIDC_TOKEN` before asking the operator to create any secret.
+
+
+### 2026-09-24 — local challenger benchmark
+
+Two legitimate open System-One challengers were installed in isolated Legion labs and evaluated against the same 10-case OTHRYS Router synthetic seed (50 decisions).
+
+Laya:
+- Node ONNX base model ran locally; single smoke case misrouted build work as research.
+- Official Python `typed-decisions` checkpoint was then used for the full seed.
+- result: 29/50 = **58%**.
+- package emitted an out-of-range temperature/calibration warning.
+- disposition: NOT QUALIFIED.
+
+Von 1.2:
+- Windows uv-managed Python 3.12 was blocked by existing Windows Application Control at `_ctypes`; security policy was not weakened.
+- WSL Ubuntu 24.04 was used instead with CUDA-enabled Torch on the Legion RTX 5070.
+- result: 31/50 = **62%**.
+- warm GPU calls were generally ~130-180 ms after initialization.
+- it still missed repository/web/execution signals and could be confident on wrong task labels.
+- disposition: NOT QUALIFIED.
+
+Detailed evidence is preserved in `books/book-of-jev/CHALLENGERS.md`.
+
+This is useful negative evidence: free/local does not imply trustworthy. Neither challenger is wired into the JEV Cortex runtime. Hosted Jev through the free Vercel OIDC lane remains the next model to run on the identical seed.
