@@ -137,3 +137,77 @@ export function createJevBridgeReceipt({
   };
   return Object.freeze({...body,receiptDigest:sha(body)});
 }
+
+
+export function adaptWebJevRouterObservation({observation}={}){
+  if(!observation||observation.schema!=='othrys.web.jev-training-observation.v1'){
+    throw new Error('JEV_WEB_OBSERVATION_REQUIRED');
+  }
+  if(observation.mode!=='TRAINING'||observation.circuitId!=='router'){
+    throw new Error('JEV_WEB_ROUTER_OBSERVATION_REQUIRED');
+  }
+  if(
+    observation.authorityGranted!==false||
+    observation.actionApplied!==false||
+    observation.executionStarted!==false
+  ){
+    throw new Error('JEV_WEB_OBSERVATION_AUTHORITY_INVALID');
+  }
+  if(!observation.answers||typeof observation.answers!=='object'||Array.isArray(observation.answers)){
+    throw new Error('JEV_WEB_OBSERVATION_ANSWERS_REQUIRED');
+  }
+
+  const runId=requiredText(observation.runId,'JEV_WEB_RUN_ID_REQUIRED');
+  const provider=requiredText(observation.provider,'JEV_WEB_PROVIDER_REQUIRED');
+  const questionSetId=requiredText(observation.questionSetId,'JEV_WEB_QUESTION_SET_REQUIRED');
+  const requestedModel=requiredText(observation.requestedModel,'JEV_WEB_MODEL_REQUIRED');
+  const resolvedModel=requiredText(observation.resolvedModel,'JEV_WEB_RESOLVED_MODEL_REQUIRED');
+
+  const runDigest=sha({
+    source:'othrys-web',
+    runId,
+    provider,
+    questionSetId,
+    requestedModel,
+    resolvedModel,
+  });
+
+  const body={
+    schema:'othrys.os.jev-observation.v1',
+    mode:'TRAINING',
+    runDigest,
+    circuitId:'router',
+    provider,
+    requestedModel,
+    resolvedModel,
+    questionSetId,
+    answers:Object.freeze({...observation.answers}),
+    usage:observation.usage&&typeof observation.usage==='object'
+      ? Object.freeze({...observation.usage})
+      : null,
+    source:Object.freeze({
+      system:'othrys-web',
+      schema:observation.schema,
+      runId,
+      observedAt:typeof observation.observedAt==='string'?observation.observedAt:null,
+    }),
+    authorityGranted:false,
+    actionApplied:false,
+    executionStarted:false,
+  };
+
+  return Object.freeze({...body,observationDigest:sha(body)});
+}
+
+export function planFromWebJevRouterObservation({
+  observation,
+  interfaceId='othrys-web',
+  bridgeId='othrys-bridge',
+}={}){
+  const adapted=adaptWebJevRouterObservation({observation});
+  return planFromJevRouterObservation({
+    observation:adapted,
+    interfaceId,
+    bridgeId,
+  });
+}
