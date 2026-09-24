@@ -27,7 +27,7 @@
         },
         "needs_execution": {
           "type": "noul",
-          "instructions": "The request asks for an external action or system change rather than advice only."
+          "instructions": "Correctly handling this request requires a persistent side effect or mutation to a repository, account, deployment, file, external system, or other durable state. Read-only inspection, listing, searching, status checks, explanation, and other non-mutating queries are false."
         },
         "risk": {
           "type": "score",
