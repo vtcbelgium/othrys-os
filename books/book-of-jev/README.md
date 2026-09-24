@@ -73,3 +73,50 @@ OTHRYS should consume legitimate no-cost capacity before any paid fallback:
 4. **OpenRouter / TypeSafe direct** — paid comparison lanes only, even though Jev's per-call cost is extremely small.
 
 No route may silently cross from a free allocation into paid spend. Paid fallback requires explicit future policy/authorization.
+
+
+## Free-access strategy — 2026-09-24
+
+OTHRYS prefers the least-secret, least-cost path that preserves provider observability and does not change Jev's authority posture.
+
+### Preferred lane: Vercel AI Gateway via deployment OIDC
+
+For the deployed OTHRYS Web application, Vercel OIDC is the preferred Jev training credential.
+
+Reasons:
+- no long-lived Jev/TypeSafe secret needs to be created or stored;
+- Vercel documents OIDC authentication for Jev through AI Gateway;
+- the current Vercel Jev launch promotion is free through 2026-09-25;
+- Vercel AI Gateway also documents a $5/month free allowance for eligible free-tier teams that have not transitioned to paid credits;
+- OTHRYS Web is already deployed on Vercel, so this adds no second hosting control plane.
+
+The Web broker accepts `VERCEL_OIDC_TOKEN` for the Vercel Gateway lane and never exposes it to the browser.
+
+### Secondary lane: Netlify AI Gateway
+
+Netlify documents Jev as zero-configuration inside Netlify Functions: no provider API key or TypeSafe account is required. Netlify's Free credit-based plan includes 300 credits/month.
+
+OTHRYS does not currently adopt this lane because it would introduce a second deployment platform solely for inference. It remains a fallback/research option rather than installed infrastructure.
+
+### Secondary lane: Cloudflare Workers AI
+
+Cloudflare Workers AI provides a free allocation of 10,000 neurons/day on the Workers Free plan. Jev is an ecosystem integration candidate, but OTHRYS currently has no authenticated Cloudflare Workers AI control path.
+
+Do not create a Cloudflare account solely to duplicate a working Vercel OIDC lane without a measured reliability or availability reason.
+
+### OpenRouter
+
+OpenRouter's Free plan offers free general-purpose models and a free-model router, but Jev itself is not a permanent free model there. OpenRouter therefore remains useful for comparator/fallback experiments, not the primary free Jev path.
+
+### Credential-farming prohibition
+
+OTHRYS must not create duplicate provider accounts, rotate identities, or otherwise abuse promotional/free-credit programs. Free lanes are used under ordinary provider terms only.
+
+### Current operational conclusion
+
+Use:
+`OTHRYS Web -> Vercel deployment OIDC -> Vercel AI Gateway -> typesafe-ai/jev`
+
+before requesting a standalone TypeSafe key.
+
+This changes cost/credential routing only. JEV Cortex remains TRAINING with authority 0.
