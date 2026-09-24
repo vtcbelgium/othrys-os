@@ -16,7 +16,7 @@ import { loadProjectManifest } from '../os/project_manifest.mjs';
 import { resolveOperatingMode, authorizeOperatingModeAction, operatingModeProjection } from '../os/operating_mode.mjs';
 import { resolveInterventionPolicy } from '../os/intervention_policy.mjs';
 import { reconcileActiveMission } from '../os/mission_state_reconcile.mjs';
-import { exportKnowledge, searchKnowledge } from '../os/mnemosyne.mjs';
+import { assembleKnowledgeContext, exportKnowledge, searchKnowledge } from '../os/mnemosyne.mjs';
 import { buildAtlasProjection } from '../os/atlas_projection.mjs';
 import { MODEL_REQUEST_SCHEMA, selectSwitchyardRoute } from '../os/switchyard.mjs';
 import { answerFrontDoor, classifyFrontDoorIntent } from '../os/front_door.mjs';
@@ -28,6 +28,7 @@ import { evaluateJevViaLegionBridge } from '../os/jev_remote_router.mjs';
 import { createBrainDecision, createFallbackBrainDecision } from '../os/brain_orchestrator.mjs';
 import { createNoMissionBrainResult } from '../os/brain_no_mission_result.mjs';
 import { persistWebBrainResult, readWebBrainResult } from '../os/brain_result_store.mjs';
+import { executeLightSpecialist, warmLocalAdvisory } from '../os/brain_light_executor.mjs';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -186,6 +187,27 @@ export async function brainDecisionForWebCommand(webCommandId){
 }
 
 
+
+function boundedLightRepoContext(command){
+  const parts=[];
+  const status=spawnSync('git',['-C',root,'status','--short','--branch'],{encoding:'utf8',timeout:3000});
+  if(status.status===0&&status.stdout.trim()) parts.push('GIT STATUS\n'+status.stdout.trim().slice(0,3000));
+  const log=spawnSync('git',['-C',root,'log','-5','--oneline','--decorate'],{encoding:'utf8',timeout:3000});
+  if(log.status===0&&log.stdout.trim()) parts.push('RECENT COMMITS\n'+log.stdout.trim().slice(0,3000));
+  try{
+    const capsule=assembleKnowledgeContext(root,projectManifest,command,{limit:6,state:json('GPT_STATE.json')});
+    const compact=(capsule.transportCapsule?.items??[]).slice(0,8).map(item=>({
+      id:item.id,
+      grounding:item.grounding,
+      transport:item.transport,
+      payload:item.payload??null,
+      artifactRef:item.artifactRef??null,
+    }));
+    if(compact.length) parts.push('MNEMOSYNE CONTEXT\n'+JSON.stringify(compact).slice(0,7000));
+  }catch{}
+  return parts.join('\n\n').slice(0,13000);
+}
+
 export async function brainResultForWebCommand(webCommandId,plan,brainDecision){
   if(!plan||plan.status!=='NO_MISSION_REQUIRED'||!brainDecision) return null;
   const existing=readWebBrainResult(root,webCommandId,{decision:brainDecision});
@@ -221,6 +243,14 @@ export async function brainResultForWebCommand(webCommandId,plan,brainDecision){
       return turn.answer;
     },
     specialistRoute,
+    specialistExecutor:({decision,command,specialistRoute})=>executeLightSpecialist({
+      decision,
+      command,
+      specialistRoute,
+      legionBridgeUrl:legionWorkerBridgeUrl,
+      legionBridgeToken:legionWorkerBridgeToken,
+      contextText:decision.needsRepo===true?boundedLightRepoContext(command):'',
+    }),
   });
   return persistWebBrainResult(root,webCommandId,result,{decision:brainDecision}).result;
 }
@@ -576,7 +606,14 @@ export async function handle(req,res){
 export function startServer(){
   if(!token) throw new Error('OTHRYS_DECK_TOKEN_REQUIRED');
   const server=http.createServer((req,res)=>{handle(req,res).catch(()=>send(res,500,JSON.stringify({ok:false,error:'INTERNAL'})));});
-  server.listen(port,bind,()=>console.log(JSON.stringify({ready:true,bind,port,readOnly:true})));
+  server.listen(port,bind,()=>{
+    console.log(JSON.stringify({ready:true,bind,port,readOnly:true}));
+    if(process.env.OTHRYS_LIGHT_WARMUP!=='0'){
+      void warmLocalAdvisory().then(result=>{
+        console.log(JSON.stringify({brainLightWarmup:result.ok,model:result.model,latencyMs:result.latencyMs}));
+      }).catch(()=>{});
+    }
+  });
   return server;
 }
 

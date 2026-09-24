@@ -55,7 +55,7 @@ test('FAST status performs bounded read-only work and verifies deterministic evi
   verifyNoMissionBrainResult(result,{decision});
 });
 
-test('LIGHT creates an explicit specialist handoff instead of pretending completion',async()=>{
+test('LIGHT completes when bounded specialist returns validated read-only evidence',async()=>{
   const command='Research current Jev pricing.';
   const decision=createBrainDecision({
     command,
@@ -67,15 +67,48 @@ test('LIGHT creates an explicit specialist handoff instead of pretending complet
     command,
     specialistRoute:{
       outcome:'SELECTED',
-      selected:{id:'local-small',label:'Local Small',locality:'LOCAL',costClass:'ZERO',certification:'UNTESTED'},
+      selected:{id:'llama3.2-advisory',label:'Local Small',locality:'LOCAL',costClass:'ZERO',certification:'UNTESTED'},
     },
+    specialistExecutor:async()=>({
+      schema:'othrys.os.brain-light-result.v1',
+      specialist:'prometheus.research',
+      kind:'RESEARCH_EVIDENCE',
+      text:'Official Jev pricing — https://example.com/pricing',
+      sources:[{title:'Official Jev pricing',url:'https://example.com/pricing'}],
+      model:null,
+      local:false,
+      costClass:'ZERO_OR_FREE_CREDIT',
+      verification:{status:'SOURCE_EVIDENCE_PASS'},
+      readOnlyWorkPerformed:true,
+      authorityGranted:false,
+      actionApplied:false,
+      executionStarted:false,
+    }),
+  });
+  assert.equal(result.status,'COMPLETED');
+  assert.equal(result.output.kind,'SPECIALIST_RESULT');
+  assert.equal(result.output.specialist,'prometheus.research');
+  assert.equal(result.recommendationOnly,false);
+  assert.equal(result.readOnlyWorkPerformed,true);
+  assert.equal(result.verification.status,'SOURCE_EVIDENCE_PASS');
+  assert.equal(result.executionStarted,false);
+});
+
+test('LIGHT remains an explicit handoff if no specialist executor is connected',async()=>{
+  const command='Research current Jev pricing.';
+  const decision=createBrainDecision({
+    command,
+    observation:observation('research',{needsWeb:0.9}),
+    sharedStateRef:'web:research-handoff',
+  });
+  const result=await createNoMissionBrainResult({
+    decision,
+    command,
+    specialistRoute:{outcome:'SELECTED',selected:{id:'llama3.2-advisory',label:'Local Small',locality:'LOCAL',costClass:'ZERO',certification:'UNTESTED'}},
   });
   assert.equal(result.status,'HANDOFF_READY');
   assert.equal(result.output.kind,'SPECIALIST_HANDOFF');
-  assert.equal(result.output.specialist,'prometheus.research');
   assert.equal(result.recommendationOnly,true);
-  assert.equal(result.readOnlyWorkPerformed,false);
-  assert.equal(result.executionStarted,false);
 });
 
 test('no-mission result refuses governed decisions',async()=>{

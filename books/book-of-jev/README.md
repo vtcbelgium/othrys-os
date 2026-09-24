@@ -189,3 +189,81 @@ The exact production retest routes read-only service status to:
 - execution: false
 
 Full production evidence: `logs/jev/2026-09-24-brain-production-proof.md`.
+
+
+## Brain completion proof — 2026-09-24
+
+The OTHRYS brain now has a complete bounded execution spine behind the real Web/System Manager front door.
+
+Canonical behavior:
+
+`admit -> Jev Router -> brain decision -> FAST / LIGHT / DEEP -> bounded executor or governed Mission -> verification evidence -> persisted brain result -> System Manager`
+
+### FAST
+- deterministic, read-only execution;
+- no Mission required;
+- current examples: system/status inspection and direct deterministic answers;
+- completed result is persisted and returned to Web;
+- authority and execution grants remain false.
+
+### LIGHT
+LIGHT is no longer only a handoff.
+
+Fresh-web research:
+- executor owner: Prometheus;
+- runs through the Legion brain bridge;
+- Keymaster supplies sealed `TAVILY_API_KEY`;
+- Tavily basic search only;
+- generated provider answers and raw content are disabled;
+- returns source-backed findings;
+- no write authority.
+
+Repository/read-only analysis:
+- bounded repo evidence capsule is assembled on the T590 from git state, recent commits and Mnemosyne matches;
+- evidence is sent through the authenticated Legion brain bridge;
+- adviser: `qwen3-fast:latest`;
+- local cost class: ZERO;
+- adviser has no repository/tool/write authority;
+- missing repo context fails closed instead of pretending completion.
+
+Non-repo lightweight explanation may use the T590 `llama3.2` advisory fallback. It is not trusted as the factual repo-analysis model.
+
+Measured local-model behavior:
+- T590 llama3.2 cold load: ~21.8 s; warm: ~2.4 s;
+- Legion qwen3-fast cold observation during qualification: ~12.1 s;
+- exact completed worker warm proof: **1.304 s**;
+- exact warm proof stayed within the supplied evidence and did not infer completion from the branch name.
+
+### DEEP
+- remains inside the canonical Mission lifecycle;
+- deterministic danger floor keeps BUILD, ADMIN and risk >= 2 in DEEP;
+- Jev cannot downgrade this floor;
+- Themis / Trust Canal / Switchyard / worker launch / verification boundaries remain authoritative.
+
+### Verification and honesty rules
+- Jev remains TRAINING / authority 0;
+- a semantic routing observation is evidence, never permission;
+- LIGHT completion requires validated read-only specialist output;
+- repo LIGHT requires actual bounded repo context;
+- specialist verification is not labeled independent unless an independent verifier really ran;
+- if a specialist is unavailable, the result remains `HANDOFF_READY` or records an explicit brain-result error rather than inventing completion.
+
+### Test evidence
+Focused final OS regression:
+- **61/61 Node tests passed** across brain orchestration, Jev, Switchyard, Web planning/control, persistence and execution lanes;
+- **8/8 Legion bridge tests passed**;
+- real front-door integration test proves Web admission -> Jev observation -> FAST execution -> persisted result -> status restore;
+- live Prometheus/Tavily research worker returned 3 findings using 1 basic credit with authority/execution false;
+- live Legion repo advisory returned an evidence-bound answer with authority/execution false.
+
+System Manager is expected to surface completed FAST/LIGHT brain text directly and keep the GPT handoff closed. DEEP/unresolved work retains the governed handoff path.
+
+Primary completion evidence:
+- `runtime/os/brain_light_executor.mjs`
+- `runtime/os/brain_no_mission_result.mjs`
+- `runtime/workers/legion_brain_advisory.mjs`
+- `runtime/workers/legion_brain_research.mjs`
+- `runtime/workers/legion_worker_bridge.py`
+- `runtime/command-deck/server.mjs`
+- `runtime/command-deck/web_control_http.test.ts`
+- `logs/jev/2026-09-24-brain-completion.md`
