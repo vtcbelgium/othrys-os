@@ -167,3 +167,18 @@ test('Web adapter fails closed if upstream observation claims authority',()=>{
     /AUTHORITY_INVALID/,
   );
 });
+
+
+test('danger floor never allows FAST or LIGHT for admin, build, or risk >= 2',()=>{
+  const cases=[
+    {taskType:'admin',needsExecution:true,riskScore:0},
+    {taskType:'admin',needsExecution:false,riskScore:0},
+    {taskType:'build',needsExecution:true,riskScore:1},
+    {taskType:'build',needsExecution:false,riskScore:0},
+    {taskType:'status',needsExecution:false,riskScore:2},
+    {taskType:'discussion',needsExecution:false,riskScore:3},
+  ];
+  for(const item of cases){
+    assert.equal(recommendExecutionLane(item).id,'DEEP');
+  }
+});
