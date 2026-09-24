@@ -18,7 +18,7 @@ It is not a Titan, not an execution authority and not a replacement for GPT, Cla
 
 ## Research source ledger
 
-External evidence and community experiments are recorded in `books/book-of-jev/SOURCES.md`. Official sources define product/API facts; community projects only inspire test hypotheses.
+External evidence and community experiments are recorded in `books/book-of-jev/SOURCES.md`. Local open System-One challenger results are recorded in `books/book-of-jev/CHALLENGERS.md`. Official sources define product/API facts; community projects only inspire test hypotheses.
 
 ## Current house law
 
