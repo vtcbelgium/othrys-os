@@ -120,3 +120,18 @@ Use:
 before requesting a standalone TypeSafe key.
 
 This changes cost/credential routing only. JEV Cortex remains TRAINING with authority 0.
+
+
+## Chase workflow adaptation
+
+The latest workflow study has been folded into the Cortex architecture as a bounded execution-planning layer.
+
+Canonical adaptation:
+`interfaces -> one OTHRYS Bridge -> deterministic route or JEV Router -> FAST/LIGHT/DEEP execution recommendation -> Themis/Keymaster/Trust Canal -> tools/connectors -> Talos/verification -> Books/memory/receipt`.
+
+The implementation lives in:
+- `runtime/os/jev_execution_planner.mjs`
+- `runtime/os/jev_execution_planner.test.mjs`
+- `docs/jev/CHASE-WORKFLOW-ADAPTATION.md`
+
+The central rule is unchanged: **routing is not authorization**. A Jev lane recommendation cannot grant authority, release credentials, execute a connector, or complete verification.
