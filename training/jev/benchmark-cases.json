@@ -136,6 +136,54 @@
       }
     },
     {
+      "id": "router-015",
+      "circuit": "router",
+      "state": "Rotate the live production API credential, update every deployment that uses it, revoke the old credential, and verify production still works.",
+      "expected": {
+        "task_type": "admin",
+        "needs_repo": true,
+        "needs_web": false,
+        "needs_execution": true,
+        "risk": 3
+      }
+    },
+    {
+      "id": "router-014",
+      "circuit": "router",
+      "state": "Investigate why the latest OTHRYS test run failed by reading repository code and logs, then explain the likely cause. Do not edit files or execute repairs.",
+      "expected": {
+        "task_type": "research",
+        "needs_repo": true,
+        "needs_web": false,
+        "needs_execution": false,
+        "risk": 0
+      }
+    },
+    {
+      "id": "router-013",
+      "circuit": "router",
+      "state": "List the current health and status of the OTHRYS services and providers. Read only. Do not restart, reconfigure, rotate credentials, or change any system state.",
+      "expected": {
+        "task_type": "status",
+        "needs_repo": false,
+        "needs_web": false,
+        "needs_execution": false,
+        "risk": 0
+      }
+    },
+    {
+      "id": "router-012",
+      "circuit": "router",
+      "state": "Check which git branch is active and whether the OTHRYS working tree has uncommitted changes. Report only. Do not modify files, stage, commit, switch branches, or run deployment actions.",
+      "expected": {
+        "task_type": "status",
+        "needs_repo": true,
+        "needs_web": false,
+        "needs_execution": false,
+        "risk": 0
+      }
+    },
+    {
       "id": "study-001",
       "circuit": "study",
       "state": "SSH stands for Secure Shell and provides an encrypted connection to a remote server.",
