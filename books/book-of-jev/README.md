@@ -171,3 +171,21 @@ Primary evidence:
 - `logs/jev/2026-09-24-brain-e2e.md`
 
 Live E2E and broad regression evidence are recorded in the log above. The integration remains TRAINING / authority 0.
+
+
+### Production proof — 2026-09-24
+
+The integrated OTHRYS brain is live on the T590 Command Deck and Legion brain bridge.
+
+Production smoke exposed and fixed one legacy deterministic false positive: a negated phrase such as `Do not deploy` could previously trigger BUILD because the old front-door regex ignored negation. The front door and brain mission floor are now negation-aware while retaining governed treatment for positive mutation verbs.
+
+The exact production retest routes read-only service status to:
+- source: `JEV_CORTEX`
+- lane: `FAST`
+- executor: `deterministic.status`
+- mission required: false
+- Mission delta: 0
+- authority: false
+- execution: false
+
+Full production evidence: `logs/jev/2026-09-24-brain-production-proof.md`.
