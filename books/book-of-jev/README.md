@@ -61,3 +61,15 @@ The JEV Cortex can never make its own benchmark result authoritative. Talos/huma
 OTHRYS Head presents the current Core/deliberative side and the experimental JEV Cortex side. During training, real work stays on the existing path while Jev results are compared and logged. Switchyard may later consume a qualified Router signal, but only after explicit promotion evidence.
 
 This Book is institutional memory, not execution authority.
+
+
+## Free-first route order
+
+OTHRYS should consume legitimate no-cost capacity before any paid fallback:
+
+1. **Vercel AI Gateway via deployment OIDC** — preferred for OTHRYS Web because the deployment already lives on Vercel, requires no stored gateway key, includes $5/month free AI Gateway credit, and Jev is additionally free through 2026-09-25.
+2. **Cloudflare Workers AI** — free allocation of 10,000 neurons/day if/when a Cloudflare account is connected.
+3. **Netlify AI Gateway** — zero provider-key setup with a hard-limited free credit plan if a Netlify deployment is intentionally introduced.
+4. **OpenRouter / TypeSafe direct** — paid comparison lanes only, even though Jev's per-call cost is extremely small.
+
+No route may silently cross from a free allocation into paid spend. Paid fallback requires explicit future policy/authorization.
