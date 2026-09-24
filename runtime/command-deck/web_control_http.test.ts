@@ -6,10 +6,11 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
+import http from 'node:http';
 
 const dir = dirname(fileURLToPath(import.meta.url));
 
-async function startServer(port: number, ledger: string, auth: 'token' | 'verifier' = 'token') {
+async function startServer(port: number, ledger: string, auth: 'token' | 'verifier' = 'token', brainUrl = '') {
   const env = {
     ...process.env,
     OTHRYS_DECK_TOKEN: 'read-token',
@@ -22,6 +23,11 @@ async function startServer(port: number, ledger: string, auth: 'token' | 'verifi
     OTHRYS_LEGION_WORKSPACE: 'C:/Users/othry/Projects/othrys-os',
     OTHRYS_DECK_BIND: '127.0.0.1',
     OTHRYS_DECK_PORT: String(port),
+    OTHRYS_LIGHT_WARMUP: '0',
+    ...(brainUrl ? {
+      OTHRYS_LEGION_WORKER_URL: brainUrl,
+      OTHRYS_ENGINEERING_TOKEN: 'brain-test-token',
+    } : {}),
   };
   const child = spawn(process.execPath, [join(dir, 'server.mjs')], {
     env,
@@ -38,6 +44,62 @@ async function startServer(port: number, ledger: string, auth: 'token' | 'verifi
     child.on('exit', (code) => reject(new Error('server exited ' + code)));
   });
   return child;
+}
+
+
+
+async function startBrainStub(port: number) {
+  const server = http.createServer(async (req, res) => {
+    if (req.method !== 'POST' || req.url !== '/brain/router') {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: 'NOT_FOUND' }));
+      return;
+    }
+    let raw = '';
+    for await (const chunk of req) raw += String(chunk);
+    const body = JSON.parse(raw);
+    if (body.token !== 'brain-test-token') {
+      res.writeHead(401, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: 'BRAIN_UNAUTHORIZED' }));
+      return;
+    }
+    const observation = {
+      schema: 'othrys.os.jev-observation.v1',
+      mode: 'TRAINING',
+      runDigest: 'a'.repeat(64),
+      observationDigest: 'b'.repeat(64),
+      circuitId: 'router',
+      provider: 'OPENROUTER',
+      requestedModel: 'jev-1.13.0',
+      resolvedModel: 'typesafe/jev-1.13-20260917',
+      questionSetId: 'router.v1',
+      answers: {
+        task_type: { type: 'choice', choice: 'status' },
+        needs_repo: { type: 'noul', noul: 0.8 },
+        needs_web: { type: 'noul', noul: 0.1 },
+        needs_execution: { type: 'noul', noul: 0.03 },
+        risk: { type: 'score', score: 0 },
+      },
+      usage: { input_tokens: 100, output_tokens: 20, cost: 0.0000042 },
+      authorityGranted: false,
+      actionApplied: false,
+      executionStarted: false,
+    };
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+      ok: true,
+      brain: {
+        schema: 'othrys.legion.brain-response.v1',
+        observation,
+        transport: { provider: 'OPENROUTER', latencyMs: 250, actualCostUsd: 0.0000042 },
+        authorityGranted: false,
+        actionApplied: false,
+        executionStarted: false,
+      },
+    }));
+  });
+  await new Promise<void>((resolve) => server.listen(port, '127.0.0.1', resolve));
+  return server;
 }
 
 function command(missionId: string, text = 'Inspect current OTHRYS state.') {
@@ -238,6 +300,50 @@ test('Web Builder activation is authenticated and fails closed without governed 
     assert.equal(body.canonical, false);
   } finally {
     child.kill();
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+
+test('full front door uses Jev brain, completes FAST read-only work, and returns persisted result', async () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'othrys-brain-e2e-'));
+  const ledger = join(tmp, 'admission.jsonl');
+  const deckPort = 18827;
+  const brainPort = 18828;
+  const brain = await startBrainStub(brainPort);
+  const child = await startServer(deckPort, ledger, 'token', 'http://127.0.0.1:' + brainPort);
+  try {
+    const response = await fetch('http://127.0.0.1:' + deckPort + '/v1/commands', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer web-control-token',
+      },
+      body: JSON.stringify(command('WEB-BRAIN-E2E', 'Inspect current OTHRYS status. Read only.')),
+    });
+    assert.equal(response.status, 202);
+    const body = await response.json();
+    assert.equal(body.dispatch.schema, 'othrys.os.web-command-plan.v1');
+    assert.equal(body.dispatch.status, 'NO_MISSION_REQUIRED');
+    assert.equal(body.dispatch.brainSource, 'JEV_CORTEX');
+    assert.equal(body.dispatch.brainLane, 'FAST');
+    assert.equal(body.dispatch.brainExecutor, 'deterministic.status');
+    assert.equal(body.dispatch.brainResult.schema, 'othrys.os.brain-result.v1');
+    assert.equal(body.dispatch.brainResult.status, 'COMPLETED');
+    assert.equal(body.dispatch.brainResult.output.kind, 'SYSTEM_STATUS');
+    assert.equal(body.dispatch.brainResult.readOnlyWorkPerformed, true);
+    assert.equal(body.dispatch.brainResult.authorityGranted, false);
+    assert.equal(body.dispatch.brainResult.executionStarted, false);
+
+    const restored = await fetch('http://127.0.0.1:' + deckPort + '/v1/commands/WEB-BRAIN-E2E', {
+      headers: { Authorization: 'Bearer web-control-token' },
+    });
+    const restoredBody = await restored.json();
+    assert.equal(restoredBody.dispatch.brainResult.resultDigest, body.dispatch.brainResult.resultDigest);
+    assert.equal(restoredBody.dispatch.brainDecisionDigest, body.dispatch.brainDecisionDigest);
+  } finally {
+    child.kill();
+    brain.close();
     rmSync(tmp, { recursive: true, force: true });
   }
 });

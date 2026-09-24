@@ -14,6 +14,7 @@ from typing import Any
 SERVICE = "othrys-legion-worker-bridge"
 MAX_BODY_BYTES = 128_000
 BRAIN_REQUEST_SCHEMA = "othrys.legion.brain-request.v1"
+RESEARCH_REQUEST_SCHEMA = "othrys.legion.research-request.v1"
 
 
 class BridgeError(ValueError):
@@ -84,6 +85,62 @@ def run_brain_router(
     if not isinstance(observation, dict) or observation.get("schema") != "othrys.os.jev-observation.v1":
         raise BridgeError("BRAIN_OBSERVATION_INVALID")
     return brain
+
+
+
+
+def validate_research_payload(payload: dict[str, Any], expected_token: str) -> dict[str, Any]:
+    if set(payload) != {"token", "query", "maxResults"}:
+        raise BridgeError("RESEARCH_FIELDS_INVALID")
+    supplied = str(payload.get("token") or "")
+    if not expected_token or not hmac.compare_digest(supplied, expected_token):
+        raise BridgeError("RESEARCH_UNAUTHORIZED")
+    query = str(payload.get("query") or "").strip()
+    max_results = payload.get("maxResults")
+    if not query or len(query) > 1000:
+        raise BridgeError("RESEARCH_QUERY_INVALID")
+    if not isinstance(max_results, int) or max_results < 1 or max_results > 5:
+        raise BridgeError("RESEARCH_MAX_RESULTS_INVALID")
+    return {"schema": RESEARCH_REQUEST_SCHEMA, "query": query, "maxResults": max_results}
+
+
+def run_brain_research(
+    payload: dict[str, Any],
+    *,
+    expected_token: str,
+    research_runner: Path,
+    node_bin: str = "node",
+) -> dict[str, Any]:
+    request = validate_research_payload(payload, expected_token)
+    if not research_runner.exists():
+        raise BridgeError("BRAIN_RESEARCH_NOT_FOUND")
+    try:
+        proc = subprocess.run(
+            [node_bin, str(research_runner)],
+            input=json.dumps(request),
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            capture_output=True,
+            timeout=20,
+            cwd=str(research_runner.parent.parent.parent),
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise BridgeError("BRAIN_RESEARCH_TIMEOUT") from exc
+    if proc.returncode != 0:
+        error = (proc.stderr or "").strip()
+        raise BridgeError(error[:160] or "BRAIN_RESEARCH_FAILED")
+    research = _load_json(proc.stdout, "RESEARCH_RESPONSE_INVALID")
+    if (
+        research.get("schema") != "othrys.legion.research-response.v1"
+        or research.get("authorityGranted") is not False
+        or research.get("executionStarted") is not False
+    ):
+        raise BridgeError("RESEARCH_RESPONSE_INVALID")
+    findings = research.get("findings")
+    if not isinstance(findings, list):
+        raise BridgeError("RESEARCH_RESPONSE_INVALID")
+    return research
 
 
 def validate_job_payload(payload: dict[str, Any], expected_token: str, expected_workspace: str) -> tuple[dict[str, Any], dict[str, Any], str]:
@@ -197,6 +254,7 @@ def make_handler(
     launcher: Path,
     brain_token: str | None = None,
     brain_router: Path | None = None,
+    brain_research: Path | None = None,
     node_bin: str = "node",
 ):
     class Handler(BaseHTTPRequestHandler):
@@ -217,12 +275,12 @@ def make_handler(
                 "ok": True,
                 "service": SERVICE,
                 "node_id": "legion",
-                "capabilities": ["engineering.patch", "brain.router"],
+                "capabilities": ["engineering.patch", "brain.router", "brain.research"],
                 "authorityGranted": False,
             })
 
         def do_POST(self) -> None:
-            if self.path not in {"/jobs", "/brain/router"}:
+            if self.path not in {"/jobs", "/brain/router", "/brain/research"}:
                 self._json(404, {"ok": False, "error": "NOT_FOUND"})
                 return
             try:
@@ -232,6 +290,17 @@ def make_handler(
                 payload = json.loads(self.rfile.read(size).decode("utf-8"))
                 if not isinstance(payload, dict):
                     raise BridgeError("BODY_INVALID")
+                if self.path == "/brain/research":
+                    if brain_research is None:
+                        raise BridgeError("BRAIN_RESEARCH_NOT_CONFIGURED")
+                    research = run_brain_research(
+                        payload,
+                        expected_token=brain_token or expected_token,
+                        research_runner=brain_research,
+                        node_bin=node_bin,
+                    )
+                    self._json(200, {"ok": True, "research": research})
+                    return
                 if self.path == "/brain/router":
                     if brain_router is None:
                         raise BridgeError("BRAIN_ROUTER_NOT_CONFIGURED")
@@ -275,10 +344,13 @@ def main() -> int:
     root = Path(__file__).resolve().parents[2]
     launcher = root / "runtime" / "workers" / "launch_worker.py"
     brain_router = root / "runtime" / "workers" / "legion_brain_router.mjs"
+    brain_research = root / "runtime" / "workers" / "legion_brain_research.mjs"
     if not launcher.exists():
         raise SystemExit("OTHRYS_WORKER_LAUNCHER_NOT_FOUND")
     if not brain_router.exists():
         raise SystemExit("OTHRYS_BRAIN_ROUTER_NOT_FOUND")
+    if not brain_research.exists():
+        raise SystemExit("OTHRYS_BRAIN_RESEARCH_NOT_FOUND")
     state_dir = Path(
         os.environ.get("OTHRYS_ENGINEERING_BRIDGE_DIR", str(Path.home() / ".othrys" / "worker-bridge"))
     ).expanduser()
@@ -292,6 +364,7 @@ def main() -> int:
             launcher,
             brain_token=brain_token,
             brain_router=brain_router,
+            brain_research=brain_research,
             node_bin=os.environ.get("OTHRYS_NODE_BIN", "node"),
         ),
     )

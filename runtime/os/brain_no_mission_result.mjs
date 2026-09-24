@@ -36,6 +36,7 @@ export async function createNoMissionBrainResult({
   statusProjection,
   directAnswer,
   specialistRoute=null,
+  specialistExecutor=null,
 }={}){
   const verified=verifyBrainDecision(decision,{command});
   if(verified.missionRequired!==false) throw new Error('BRAIN_RESULT_MISSION_REQUIRED');
@@ -75,23 +76,54 @@ export async function createNoMissionBrainResult({
     verification=output.text?'BOUNDED_SOURCE_PASS':'PENDING';
     readOnlyWorkPerformed=Boolean(output.text);
   }else if(verified.lane==='LIGHT'){
-    output=Object.freeze({
-      kind:'SPECIALIST_HANDOFF',
-      specialist:verified.executor?.id??null,
-      route:specialistRoute&&typeof specialistRoute==='object'
-        ? Object.freeze({
-            outcome:specialistRoute.outcome??null,
-            selected:specialistRoute.selected?Object.freeze({
-              id:specialistRoute.selected.id??null,
-              label:specialistRoute.selected.label??null,
-              locality:specialistRoute.selected.locality??null,
-              costClass:specialistRoute.selected.costClass??null,
-              certification:specialistRoute.selected.certification??null,
-            }):null,
-          })
-        : null,
-      instruction:'Specialist organ owns execution; brain grants no authority.',
-    });
+    if(typeof specialistExecutor==='function'){
+      const specialist=await specialistExecutor({
+        decision:verified,
+        command,
+        specialistRoute,
+      });
+      if(
+        !specialist||
+        specialist.schema!=='othrys.os.brain-light-result.v1'||
+        specialist.authorityGranted!==false||
+        specialist.actionApplied!==false||
+        specialist.executionStarted!==false||
+        specialist.readOnlyWorkPerformed!==true||
+        typeof specialist.text!=='string'||
+        !specialist.text.trim()
+      ) throw new Error('BRAIN_LIGHT_RESULT_INVALID');
+      output=Object.freeze({
+        kind:'SPECIALIST_RESULT',
+        specialist:specialist.specialist??verified.executor?.id??null,
+        resultKind:specialist.kind??null,
+        text:specialist.text.trim(),
+        sources:Array.isArray(specialist.sources)?Object.freeze([...specialist.sources]):Object.freeze([]),
+        model:specialist.model??null,
+        local:specialist.local===true,
+        costClass:specialist.costClass??null,
+      });
+      status='COMPLETED';
+      verification=String(specialist.verification?.status??'BOUNDED_READONLY_SPECIALIST_PASS');
+      readOnlyWorkPerformed=true;
+    }else{
+      output=Object.freeze({
+        kind:'SPECIALIST_HANDOFF',
+        specialist:verified.executor?.id??null,
+        route:specialistRoute&&typeof specialistRoute==='object'
+          ? Object.freeze({
+              outcome:specialistRoute.outcome??null,
+              selected:specialistRoute.selected?Object.freeze({
+                id:specialistRoute.selected.id??null,
+                label:specialistRoute.selected.label??null,
+                locality:specialistRoute.selected.locality??null,
+                costClass:specialistRoute.selected.costClass??null,
+                certification:specialistRoute.selected.certification??null,
+              }):null,
+            })
+          : null,
+        instruction:'Specialist organ owns execution; brain grants no authority.',
+      });
+    }
   }else{
     throw new Error('BRAIN_RESULT_EXECUTOR_UNSUPPORTED');
   }
