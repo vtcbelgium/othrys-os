@@ -374,6 +374,21 @@
       "boundary": "Constellation observes and manages; it does not become the Oros. Block is not Star.",
       "path": "books/book-of-constellations/README.md",
       "status": "CURRENT_OS_EDITION"
+    },
+    {
+      "id": "jev",
+      "title": "The Book of Jev",
+      "role": "Experimental System One decision cortex and qualification laboratory.",
+      "evidence": [
+        "runtime/os/jev_cortex.mjs",
+        "runtime/os/jev_cortex.test.mjs",
+        "training/jev/**",
+        "logs/jev/2026-09-24-foundation.md"
+      ],
+      "legacy": [],
+      "boundary": "The JEV Cortex observes, scores and recommends in training; it is non-authoritative, cannot execute, cannot self-promote and cannot bypass deterministic OTHRYS authority.",
+      "path": "books/book-of-jev/README.md",
+      "status": "CURRENT_OS_EDITION"
     }
   ],
   "authorityGranted": false,
