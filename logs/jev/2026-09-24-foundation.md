@@ -107,3 +107,19 @@ Verification environment:
 
 Foundation verification status: **GREEN at OS runtime level**.
 Live Jev model reliability remains **UNMEASURED** until provider credentials are configured and the benchmark corpus is executed.
+
+
+### 2026-09-24 — free-route investigation
+
+Searched official provider documentation and current Jev integrations.
+
+Result:
+- Vercel is the strongest immediate route because OTHRYS Web already deploys there and Vercel supports automatic deployment OIDC authentication for AI Gateway.
+- Cloudflare exposes Jev and offers 10,000 free Workers AI neurons/day.
+- Netlify exposes Jev with zero provider-key setup and a hard-limited $0 free plan.
+- OpenRouter Jev is not free, though it remains extremely cheap.
+- No permanent public TypeSafe-direct free tier was established from reviewed documentation.
+
+Machine credential-name checks on T590 and Legion found no existing TypeSafe, AI Gateway, OpenRouter, Cloudflare, Netlify, or Vercel token values. No secret values were read or printed.
+
+Decision: adapt the Web broker to use Vercel's platform-managed `VERCEL_OIDC_TOKEN` before asking the operator to create any secret.
