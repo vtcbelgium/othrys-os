@@ -67,7 +67,7 @@ test('admitted Web build becomes a canonical Mission and durable Work record', (
 });
 
 test('queued Web plan becomes activatable when the blocking Mission completes', () => {
-  const f = fixture({ mission_id: 'V2-011K', status: 'RUNNING' });
+  const f = fixture();
   try {
     const queued = planWebCommand({
       root: f.root,
