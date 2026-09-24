@@ -63,3 +63,40 @@ This file separates official product evidence from community experiments. Commun
 - Community measurements generate benchmark hypotheses only.
 - No external benchmark result is copied into the OTHRYS trust score.
 - OTHRYS trust is earned only from versioned OTHRYS-specific evidence.
+
+
+## Free-access route study — 2026-09-24
+
+### Vercel AI Gateway
+- URL: https://vercel.com/docs/ai-gateway/pricing
+- Finding: every Vercel team gets $5/month of included AI Gateway credit on the free tier; no commitment.
+- URL: https://vercel.com/docs/ai-gateway/authentication-and-byok
+- Finding: Vercel deployments receive `VERCEL_OIDC_TOKEN` automatically and may use it instead of storing an AI Gateway API key.
+- URL: https://vercel.com/blog/ai-gateway-jev-model-launch
+- Finding: Jev is free on AI Gateway through 2026-09-25.
+- OTHRYS consequence: Vercel deployment OIDC is the preferred zero-secret first live lane.
+
+### Cloudflare Workers AI
+- URL: https://developers.cloudflare.com/ai/models/typesafe/jev/
+- Finding: `typesafe/jev` is available in Workers AI.
+- URL: https://developers.cloudflare.com/workers-ai/platform/pricing/
+- Finding: Workers Free includes 10,000 neurons/day; requests stop rather than bill when the free allocation is exhausted unless the account is on a paid Workers plan.
+- OTHRYS consequence: viable free fallback if a Cloudflare account/token is later available. Exact Jev neuron pricing remains dashboard-surfaced rather than fully public in the model page.
+
+### Netlify AI Gateway
+- URL: https://www.netlify.com/changelog/typesafe-jev-ai-gateway/
+- Finding: Jev is available with zero provider-key setup inside Netlify Functions.
+- URL: https://www.netlify.com/pricing/
+- Finding: Netlify Free is $0 with a hard 300-credit monthly limit; free plans cannot auto-charge beyond the limit.
+- URL: https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/pricing-for-ai-features/
+- Finding: AI inference consumes 180 Netlify credits per $1 of model usage.
+- OTHRYS consequence: valid free sandbox lane, but moving OTHRYS execution merely to obtain this lane would add unnecessary infrastructure today.
+
+### OpenRouter
+- URL: https://openrouter.ai/typesafe/jev-1.13/
+- Finding: Jev is currently $0.042/M input tokens and $0 output. OpenRouter has many free generative models, but Jev itself is not a free model.
+- OTHRYS consequence: keep as a very-low-cost comparison/fallback lane, not a free primary lane.
+
+### TypeSafe direct
+- Public documentation reviewed did not expose a permanent documented free tier or no-key route for direct TypeSafe Jev.
+- OTHRYS consequence: do not assume promotional/direct credits exist; direct access remains separately credentialed.
