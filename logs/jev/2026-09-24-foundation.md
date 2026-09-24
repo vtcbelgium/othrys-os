@@ -61,3 +61,32 @@ This log intentionally records the reasoning and implementation boundaries behin
 6. Only after enough evidence, consider one circuit for SHADOW review.
 
 Authority granted: **false**.
+
+
+## Verification log
+
+### 2026-09-24 — focused foundation suite
+
+Ran in an isolated T590 Git worktree from the feature branch so the canonical checkout and its untracked mission evidence were not modified.
+
+Result: 8/8 passed.
+
+Covered:
+- house Book coverage and non-authority invariants;
+- all JEV Cortex circuits remain TRAINING;
+- candidate version trust starts at zero;
+- training runs and observations cannot apply actions;
+- passing metrics cannot self-promote;
+- Risk refuses shadow eligibility after any critical false negative.
+
+### 2026-09-24 — full runtime/os suite, first pass
+
+Result: 355 passed / 1 failed out of 356.
+
+Failure: `component contract shelf exactly matches current Book registry`.
+
+Cause: The Book of Jev was registered as a current Book before an explicit component contract existed. Existing OTHRYS law correctly refused that mismatch.
+
+Resolution: added `contracts/components/jev.md` with a strict `NO_SELF_GRANT` contract. The test was not weakened or bypassed.
+
+This failure is retained in the log because it is useful architectural evidence: a new Book must carry an operational boundary even when the component is experimental and non-authoritative.
