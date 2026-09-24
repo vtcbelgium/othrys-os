@@ -90,3 +90,20 @@ Cause: The Book of Jev was registered as a current Book before an explicit compo
 Resolution: added `contracts/components/jev.md` with a strict `NO_SELF_GRANT` contract. The test was not weakened or bypassed.
 
 This failure is retained in the log because it is useful architectural evidence: a new Book must carry an operational boundary even when the component is experimental and non-authoritative.
+
+
+### 2026-09-24 — full runtime/os suite, second pass
+
+Result: **356/356 passed**.
+
+The new Jev component contract restored the exact Book/component shelf invariant without changing the invariant itself. No existing runtime test was relaxed, skipped or rewritten.
+
+Verification environment:
+- device: VTC-t590;
+- isolated Git worktree under `/tmp`;
+- source: `origin/jev-cortex-foundation`;
+- canonical `/home/jeroen/othrys-os` checkout left on `main`;
+- existing untracked mission/runtime evidence in the canonical checkout left untouched.
+
+Foundation verification status: **GREEN at OS runtime level**.
+Live Jev model reliability remains **UNMEASURED** until provider credentials are configured and the benchmark corpus is executed.
