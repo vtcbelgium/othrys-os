@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   JEV_OPENROUTER_DECISIONS_URL,
   JEV_OPENROUTER_MAX_USD_PER_CALL,
+  JEV_OPENROUTER_TOKEN_SAFETY_FACTOR,
   estimateOpenRouterJevCost,
   evaluateJevViaOpenRouter,
   mapOpenRouterJevModel,
@@ -36,6 +37,8 @@ test('cost guard blocks calls beyond the hard per-call budget',()=>{
   });
   assert.equal(small.allowed,true);
   assert.equal(small.maxUsd,JEV_OPENROUTER_MAX_USD_PER_CALL);
+  assert.equal(small.safetyFactor,JEV_OPENROUTER_TOKEN_SAFETY_FACTOR);
+  assert.ok(small.estimatedInputTokens>small.rawTokenEstimate);
 
   const huge=estimateOpenRouterJevCost({
     state:'x'.repeat(100000),
@@ -75,6 +78,8 @@ test('adapter uses Decisions API and preserves native Jev answers',async()=>{
   assert.equal(result.authorityGranted,false);
   assert.equal(result.executionStarted,false);
   assert.equal(result.costGuard.allowed,true);
+  assert.equal(result.actualCostUsd,0.0000126);
+  assert.equal(result.postflightBudgetStatus,'WITHIN_CAP');
 });
 
 test('budget refusal happens before fetch',async()=>{
@@ -90,4 +95,29 @@ test('budget refusal happens before fetch',async()=>{
     /BUDGET_EXCEEDED/,
   );
   assert.equal(called,false);
+});
+
+
+test('records a postflight budget breach without granting authority',async()=>{
+  const fetchImpl=async()=>new Response(JSON.stringify({
+    model:'typesafe/jev-1.13-20260917',
+    answers:{
+      task_type:{type:'choice',choice:'status',probabilities:{status:1},confidence:1},
+      needs_execution:{type:'noul',noul:0},
+    },
+    usage:{input_tokens:100,output_tokens:10,cost:0.00006},
+  }),{status:200,headers:{'content-type':'application/json'}});
+
+  const result=await evaluateJevViaOpenRouter({
+    sealedCredential:sealed,
+    model:'jev-1.13.0',
+    state:'Inspect status.',
+    questions,
+    fetchImpl,
+  });
+
+  assert.equal(result.postflightBudgetStatus,'BREACHED');
+  assert.equal(result.actualCostUsd,0.00006);
+  assert.equal(result.authorityGranted,false);
+  assert.equal(result.executionStarted,false);
 });
