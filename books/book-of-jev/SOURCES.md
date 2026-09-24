@@ -100,3 +100,48 @@ This file separates official product evidence from community experiments. Commun
 ### TypeSafe direct
 - Public documentation reviewed did not expose a permanent documented free tier or no-key route for direct TypeSafe Jev.
 - OTHRYS consequence: do not assume promotional/direct credits exist; direct access remains separately credentialed.
+
+
+## Free-access and credential-routing evidence — 2026-09-24
+
+### Vercel AI Gateway authentication and BYOK
+- URL: https://vercel.com/docs/ai-gateway/authentication-and-byok
+- Used for: API key vs automatic Vercel OIDC authentication.
+- OTHRYS consequence: deployed OTHRYS Web should prefer OIDC over a new long-lived AI Gateway secret.
+
+### Vercel AI Gateway pricing
+- URL: https://vercel.com/docs/ai-gateway/pricing
+- Used for: documented $5/month free allowance for eligible free-tier teams and all-model access.
+- OTHRYS consequence: use the existing Vercel deployment before adding another inference platform.
+
+### Vercel — 6 ways to integrate Jev
+- URL: https://vercel.com/i/jev-integrations
+- Used for: explicit confirmation that Jev through Vercel Gateway supports `AI_GATEWAY_API_KEY` or `VERCEL_OIDC_TOKEN`, including the TypeSafe-compatible HTTP path.
+- OTHRYS consequence: the existing `/typesafe/v1/systemone` broker path can authenticate without a stored Gateway key on Vercel.
+
+### Vercel Jev launch promotion
+- URL: https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway
+- Used for: Jev promotional free access through 2026-09-25.
+- OTHRYS consequence: initial live qualification should preferentially use this window.
+
+### Netlify Jev AI Gateway
+- URL: https://www.netlify.com/changelog/typesafe-jev-ai-gateway/
+- Used for: zero-configuration Jev in Netlify Functions with no provider API key.
+- OTHRYS consequence: retain as a fallback option, but do not add a second hosting plane without evidence that it is needed.
+
+### Netlify pricing
+- URL: https://www.netlify.com/pricing/
+- Used for: Free plan includes 300 credits/month and AI model access.
+- OTHRYS consequence: potential no-cost secondary benchmark lane if a future Netlify deployment is justified.
+
+### Cloudflare Workers AI pricing
+- URL: https://developers.cloudflare.com/workers-ai/platform/pricing/
+- Used for: 10,000 free neurons/day on Workers Free.
+- OTHRYS consequence: free comparator infrastructure exists, but no account/adapter should be created solely for duplication.
+
+### OpenRouter pricing and free router
+- URLs:
+  - https://openrouter.ai/pricing
+  - https://openrouter.ai/openrouter/free/
+- Used for: free plan limits and zero-cost general-model router.
+- OTHRYS consequence: OpenRouter is a free comparator for general models, not a permanent free Jev lane.
