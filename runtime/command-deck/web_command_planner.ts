@@ -1,6 +1,7 @@
 import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { classifyFrontDoorIntent } from '../os/front_door.mjs';
+import { verifyBrainDecision } from '../os/brain_orchestrator.mjs';
 import { materializeWorkRecord } from '../os/work_record.mjs';
 import { admitDeckIntent } from './intent_bridge.ts';
 import { materializeMissionCandidate } from './mission_candidate.ts';
@@ -19,6 +20,10 @@ export type WebPlanningResult = {
   readonly activeMissionId: string | null;
   readonly blocker: string | null;
   readonly evidence: readonly string[];
+  readonly brainDecisionDigest?: string | null;
+  readonly brainSource?: string | null;
+  readonly brainLane?: string | null;
+  readonly brainExecutor?: string | null;
   readonly authorityGranted: false;
   readonly executionStarted: false;
 };
@@ -55,6 +60,29 @@ function planPath(root: string, webCommandId: string) {
   return join(root, 'missions', 'web-plans', webCommandId + '.json');
 }
 
+function brainPath(root: string, webCommandId: string) {
+  return join(root, 'missions', 'web-plans', webCommandId + '.brain.json');
+}
+
+export function readWebBrainDecision(root: string, webCommandId: string): any | null {
+  const path = brainPath(root, webCommandId);
+  if (!existsSync(path)) return null;
+  return JSON.parse(readFileSync(path, 'utf8'));
+}
+
+function writeBrainDecision(root: string, webCommandId: string, command: string, decision: any) {
+  const verified = verifyBrainDecision(decision, { command });
+  const path = brainPath(root, webCommandId);
+  mkdirSync(join(root, 'missions', 'web-plans'), { recursive: true });
+  const text = JSON.stringify(verified, null, 2) + '\n';
+  if (existsSync(path)) {
+    if (readFileSync(path, 'utf8') !== text) throw new Error('WEB_BRAIN_DECISION_CONFLICT');
+    return { path, decision: verified, created: false };
+  }
+  writeFileSync(path, text, { encoding: 'utf8', mode: 0o600 });
+  return { path, decision: verified, created: true };
+}
+
 function writePlan(root: string, result: WebPlanningResult) {
   const path = planPath(root, result.webCommandId);
   mkdirSync(join(root, 'missions', 'web-plans'), { recursive: true });
@@ -81,8 +109,9 @@ export function planWebCommand(options: {
   intentFile: string;
   ledgerPath: string;
   activeMission?: ActiveMission;
+  brainDecision?: any;
 }): WebPlanningResult {
-  const { root, webCommandId, envelopeDir, intentFile, ledgerPath, activeMission } = options;
+  const { root, webCommandId, envelopeDir, intentFile, ledgerPath, activeMission, brainDecision } = options;
   const existing = readWebCommandPlan(root, webCommandId);
   if (existing) {
     if (existing.status === 'NO_MISSION_REQUIRED' || !existing.canonicalMissionId) return existing;
@@ -105,22 +134,34 @@ export function planWebCommand(options: {
 
   const envelope = readEnvelope(join(envelopeDir, webCommandId + '.json'));
   const intent = classifyFrontDoorIntent(envelope.command);
+  const brainEvidence = brainDecision
+    ? writeBrainDecision(root, webCommandId, envelope.command, brainDecision)
+    : null;
+  const brain = brainEvidence?.decision ?? null;
+  const missionRequired = brain ? brain.missionRequired === true : ['PLAN', 'BUILD'].includes(intent);
 
-  if (!['PLAN', 'BUILD'].includes(intent)) {
+  if (!missionRequired) {
     const result: WebPlanningResult = Object.freeze({
       schema: 'othrys.os.web-command-plan.v1',
       webCommandId,
       intent,
       status: 'NO_MISSION_REQUIRED',
-      stage: 'No governed Mission required for this request',
+      stage: brain
+        ? 'Brain route ' + brain.lane + ' · ' + brain.executor.id + ' · no governed Mission required'
+        : 'No governed Mission required for this request',
       progress: 100,
       canonicalMissionId: null,
       activeMissionId: activeMission?.mission_id ?? null,
       blocker: null,
       evidence: Object.freeze([
         'missions/web-commands/' + webCommandId + '.json',
+        ...(brain ? ['missions/web-plans/' + webCommandId + '.brain.json'] : []),
         'runtime/os/front_door.mjs',
       ]),
+      brainDecisionDigest: brain?.decisionDigest ?? null,
+      brainSource: brain?.source ?? null,
+      brainLane: brain?.lane ?? null,
+      brainExecutor: brain?.executor?.id ?? null,
       authorityGranted: false,
       executionStarted: false,
     });
@@ -196,8 +237,8 @@ export function planWebCommand(options: {
     intent,
     status: blocked ? 'QUEUED_ACTIVE_MISSION' : 'PLANNED_AWAITING_ACTIVATION',
     stage: blocked
-      ? 'Governed planning complete · queued behind active Mission ' + activeMissionId
-      : 'Governed planning complete · awaiting explicit activation',
+      ? (brain ? 'Brain route ' + brain.lane + ' · governed planning complete · queued behind active Mission ' + activeMissionId : 'Governed planning complete · queued behind active Mission ' + activeMissionId)
+      : (brain ? 'Brain route ' + brain.lane + ' · governed planning complete · awaiting explicit activation' : 'Governed planning complete · awaiting explicit activation'),
     progress: blocked ? 40 : 50,
     canonicalMissionId: canonical.mission.mission_id,
     activeMissionId,
@@ -205,11 +246,16 @@ export function planWebCommand(options: {
     evidence: Object.freeze([
       'missions/web-commands/' + webCommandId + '.json',
       'missions/web-plans/' + webCommandId + '.json',
+      ...(brain ? ['missions/web-plans/' + webCommandId + '.brain.json'] : []),
       'missions/candidates/' + candidate.candidate.candidateId + '.json',
       'missions/candidates/' + candidate.candidate.candidateId + '.allocation.json',
       'missions/' + canonical.mission.mission_id + '.json',
       '.othrys/work/' + canonical.mission.mission_id + '.work.json',
     ]),
+    brainDecisionDigest: brain?.decisionDigest ?? null,
+    brainSource: brain?.source ?? null,
+    brainLane: brain?.lane ?? null,
+    brainExecutor: brain?.executor?.id ?? null,
     authorityGranted: false,
     executionStarted: false,
   });
