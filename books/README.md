@@ -19,6 +19,7 @@ A Book is institutional memory, not execution authority. Current code/tests/miss
 - **The Book of Blocks** — `books/book-of-blocks/README.md` — Admitted reusable capability units composed under exact identity and proof.
 - **The Book of Oroi and Projects** — `books/book-of-oroi-projects/README.md` — Project-local OTHRYS OS objects composed from proven roles, capabilities, knowledge and integrations.
 - **The Book of Models and Labor** — `books/book-of-models/README.md` — Replaceable model labor exposed through current project model policy.
+- **The Book of Jev** — `books/book-of-jev/README.md` — Experimental System One decision cortex and qualification laboratory; training-only and non-authoritative.
 
 ## Admission rule
 A new Book target enters this shelf only when the corresponding house surface already exists in repo truth. Planned Titans/services remain quarry or roadmap until separately admitted.
