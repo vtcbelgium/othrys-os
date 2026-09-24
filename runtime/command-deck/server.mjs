@@ -22,8 +22,10 @@ import { MODEL_REQUEST_SCHEMA, selectSwitchyardRoute } from '../os/switchyard.mj
 import { answerFrontDoor, classifyFrontDoorIntent } from '../os/front_door.mjs';
 import { handleWebControlRequest } from './web_control_http.ts';
 import { readEstateProjection, syncEstateToDisk } from '../estate/local_git_estate.mjs';
-import { planWebCommand } from './web_command_planner.ts';
+import { planWebCommand, readWebBrainDecision } from './web_command_planner.ts';
 import { activateWebCommand } from './web_command_activation.ts';
+import { evaluateJevViaLegionBridge } from '../os/jev_remote_router.mjs';
+import { createBrainDecision, createFallbackBrainDecision } from '../os/brain_orchestrator.mjs';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -141,6 +143,45 @@ export function switchyardPreviewFor(capability='engineering.build',minimumTier=
   return {...result,policy:projectManifest.modelPolicy.policy,preference:pref,reason};
 }
 export function switchyardPreview(preference='auto'){return switchyardPreviewFor('engineering.build','STANDARD',preference);}
+
+export async function brainDecisionForWebCommand(webCommandId){
+  const existing=readWebBrainDecision(root,webCommandId);
+  if(existing) return existing;
+  const envelopePath=join(webCommandEnvelopeDir,webCommandId+'.json');
+  if(!existsSync(envelopePath)) throw new Error('WEB_COMMAND_ENVELOPE_NOT_FOUND');
+  const envelope=JSON.parse(readFileSync(envelopePath,'utf8'));
+  const command=String(envelope?.command??'').trim();
+  if(!command) throw new Error('WEB_COMMAND_ENVELOPE_INVALID');
+  const sharedStateRef='web:'+webCommandId;
+
+  if(!legionWorkerBridgeUrl||!legionWorkerBridgeToken){
+    return createFallbackBrainDecision({
+      command,
+      sharedStateRef,
+      reason:'BRAIN_BRIDGE_NOT_CONFIGURED',
+    });
+  }
+
+  try{
+    const remote=await evaluateJevViaLegionBridge({
+      baseUrl:legionWorkerBridgeUrl,
+      token:legionWorkerBridgeToken,
+      state:command,
+      model:'jev-1.13.0',
+    });
+    return createBrainDecision({
+      command,
+      observation:remote.observation,
+      sharedStateRef,
+    });
+  }catch(error){
+    return createFallbackBrainDecision({
+      command,
+      sharedStateRef,
+      reason:String(error?.code??error?.message??'BRAIN_UNAVAILABLE'),
+    });
+  }
+}
 export function builderInspector(missionId=null){
   const selection=switchyardPreview('auto');
   const workerTransport=latestWorkerTransport(missionId);
@@ -383,12 +424,21 @@ export async function handle(req,res){
     estateProjection:()=>readEstateProjection(),
     estateRefresh:()=>syncEstateToDisk(),
     commandEnvelopeDir:webCommandEnvelopeDir,
-    commandPlanner:(missionId)=>{
+    commandPlanner:async(missionId)=>{
       const envelope=join(webCommandEnvelopeDir,missionId+'.json');
       if(!existsSync(envelope)) return null;
       const rawActive=json('GPT_STATE.json').active_mission??null;
       const active=reconcileActiveMission(root,rawActive).activeMission;
-      return planWebCommand({root,webCommandId:missionId,envelopeDir:webCommandEnvelopeDir,intentFile,ledgerPath:admissionLedger,activeMission:active});
+      const brainDecision=await brainDecisionForWebCommand(missionId);
+      return planWebCommand({
+        root,
+        webCommandId:missionId,
+        envelopeDir:webCommandEnvelopeDir,
+        intentFile,
+        ledgerPath:admissionLedger,
+        activeMission:active,
+        brainDecision,
+      });
     },
     commandActivator:(missionId,body)=>{
       const rawActive=json('GPT_STATE.json').active_mission??null;

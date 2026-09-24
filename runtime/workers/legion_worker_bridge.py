@@ -13,6 +13,7 @@ from typing import Any
 
 SERVICE = "othrys-legion-worker-bridge"
 MAX_BODY_BYTES = 128_000
+BRAIN_REQUEST_SCHEMA = "othrys.legion.brain-request.v1"
 
 
 class BridgeError(ValueError):
@@ -31,6 +32,60 @@ def _load_json(raw: str, code: str) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise BridgeError(code)
     return value
+def validate_brain_payload(payload: dict[str, Any], expected_token: str) -> dict[str, Any]:
+    if set(payload) != {"token", "state", "model"}:
+        raise BridgeError("BRAIN_FIELDS_INVALID")
+    supplied = str(payload.get("token") or "")
+    if not expected_token or not hmac.compare_digest(supplied, expected_token):
+        raise BridgeError("BRAIN_UNAUTHORIZED")
+    state = str(payload.get("state") or "").strip()
+    model = str(payload.get("model") or "jev-1.13.0").strip()
+    if not state or len(state) > 2000:
+        raise BridgeError("BRAIN_STATE_INVALID")
+    if model not in {"jev-1.13.0", "jev-latest"}:
+        raise BridgeError("BRAIN_MODEL_NOT_ADMITTED")
+    return {"schema": BRAIN_REQUEST_SCHEMA, "state": state, "model": model}
+
+
+def run_brain_router(
+    payload: dict[str, Any],
+    *,
+    expected_token: str,
+    router: Path,
+    node_bin: str = "node",
+) -> dict[str, Any]:
+    request = validate_brain_payload(payload, expected_token)
+    if not router.exists():
+        raise BridgeError("BRAIN_ROUTER_NOT_FOUND")
+    try:
+        proc = subprocess.run(
+            [node_bin, str(router)],
+            input=json.dumps(request),
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            capture_output=True,
+            timeout=25,
+            cwd=str(router.parent.parent.parent),
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise BridgeError("BRAIN_ROUTER_TIMEOUT") from exc
+    if proc.returncode != 0:
+        error = (proc.stderr or "").strip()
+        raise BridgeError(error[:160] or "BRAIN_ROUTER_FAILED")
+    brain = _load_json(proc.stdout, "BRAIN_RESPONSE_INVALID")
+    if (
+        brain.get("schema") != "othrys.legion.brain-response.v1"
+        or brain.get("authorityGranted") is not False
+        or brain.get("executionStarted") is not False
+    ):
+        raise BridgeError("BRAIN_RESPONSE_INVALID")
+    observation = brain.get("observation")
+    if not isinstance(observation, dict) or observation.get("schema") != "othrys.os.jev-observation.v1":
+        raise BridgeError("BRAIN_OBSERVATION_INVALID")
+    return brain
+
+
 def validate_job_payload(payload: dict[str, Any], expected_token: str, expected_workspace: str) -> tuple[dict[str, Any], dict[str, Any], str]:
     if set(payload) != {"token", "dispatchRaw", "requestRaw"}:
         raise BridgeError("JOB_FIELDS_INVALID")
@@ -135,7 +190,15 @@ def run_authorized_job(payload: dict[str, Any], *, expected_token: str, expected
             lock_path.unlink()
         except FileNotFoundError:
             pass
-def make_handler(expected_token: str, expected_workspace: str, state_dir: Path, launcher: Path):
+def make_handler(
+    expected_token: str,
+    expected_workspace: str,
+    state_dir: Path,
+    launcher: Path,
+    brain_token: str | None = None,
+    brain_router: Path | None = None,
+    node_bin: str = "node",
+):
     class Handler(BaseHTTPRequestHandler):
         def _json(self, code: int, body: dict[str, Any]) -> None:
             raw = json.dumps(body, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
@@ -154,12 +217,12 @@ def make_handler(expected_token: str, expected_workspace: str, state_dir: Path, 
                 "ok": True,
                 "service": SERVICE,
                 "node_id": "legion",
-                "capability": "engineering.patch",
+                "capabilities": ["engineering.patch", "brain.router"],
                 "authorityGranted": False,
             })
 
         def do_POST(self) -> None:
-            if self.path != "/jobs":
+            if self.path not in {"/jobs", "/brain/router"}:
                 self._json(404, {"ok": False, "error": "NOT_FOUND"})
                 return
             try:
@@ -169,6 +232,17 @@ def make_handler(expected_token: str, expected_workspace: str, state_dir: Path, 
                 payload = json.loads(self.rfile.read(size).decode("utf-8"))
                 if not isinstance(payload, dict):
                     raise BridgeError("BODY_INVALID")
+                if self.path == "/brain/router":
+                    if brain_router is None:
+                        raise BridgeError("BRAIN_ROUTER_NOT_CONFIGURED")
+                    brain = run_brain_router(
+                        payload,
+                        expected_token=brain_token or expected_token,
+                        router=brain_router,
+                        node_bin=node_bin,
+                    )
+                    self._json(200, {"ok": True, "brain": brain})
+                    return
                 result = run_authorized_job(
                     payload,
                     expected_token=expected_token,
@@ -193,21 +267,33 @@ def main() -> int:
     parser.add_argument("--port", type=int, default=8766)
     args = parser.parse_args()
     token = os.environ.get("OTHRYS_ENGINEERING_TOKEN", "")
+    brain_token = os.environ.get("OTHRYS_BRAIN_TOKEN", "") or token
     workspace = os.environ.get("OTHRYS_ENGINEERING_WORKSPACE", "")
     if not token or not workspace:
         raise SystemExit("OTHRYS_ENGINEERING_TOKEN_AND_WORKSPACE_REQUIRED")
 
     root = Path(__file__).resolve().parents[2]
     launcher = root / "runtime" / "workers" / "launch_worker.py"
+    brain_router = root / "runtime" / "workers" / "legion_brain_router.mjs"
     if not launcher.exists():
         raise SystemExit("OTHRYS_WORKER_LAUNCHER_NOT_FOUND")
+    if not brain_router.exists():
+        raise SystemExit("OTHRYS_BRAIN_ROUTER_NOT_FOUND")
     state_dir = Path(
         os.environ.get("OTHRYS_ENGINEERING_BRIDGE_DIR", str(Path.home() / ".othrys" / "worker-bridge"))
     ).expanduser()
 
     server = ThreadingHTTPServer(
         (args.bind, args.port),
-        make_handler(token, workspace, state_dir, launcher),
+        make_handler(
+            token,
+            workspace,
+            state_dir,
+            launcher,
+            brain_token=brain_token,
+            brain_router=brain_router,
+            node_bin=os.environ.get("OTHRYS_NODE_BIN", "node"),
+        ),
     )
     print(json.dumps({"ready": True, "service": SERVICE, "bind": args.bind, "port": args.port}), flush=True)
     server.serve_forever()

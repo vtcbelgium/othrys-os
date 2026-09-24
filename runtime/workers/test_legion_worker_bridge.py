@@ -6,7 +6,13 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
-from legion_worker_bridge import BridgeError, run_authorized_job, validate_job_payload
+from legion_worker_bridge import (
+    BridgeError,
+    run_authorized_job,
+    run_brain_router,
+    validate_brain_payload,
+    validate_job_payload,
+)
 
 
 def fixture(workspace: str):
@@ -64,6 +70,93 @@ class LegionWorkerBridgeTests(unittest.TestCase):
                 validate_job_payload(broken, "secret", root)
             with self.assertRaisesRegex(BridgeError, "WORKSPACE_NOT_AUTHORIZED"):
                 validate_job_payload(payload, "secret", other)
+
+    def test_brain_payload_and_router_are_read_only(self):
+        payload = {
+            "token": "secret",
+            "state": "Inspect repository status only.",
+            "model": "jev-1.13.0",
+        }
+        request = validate_brain_payload(payload, "secret")
+        self.assertEqual(request["schema"], "othrys.legion.brain-request.v1")
+        self.assertEqual(request["state"], payload["state"])
+
+        with self.assertRaisesRegex(BridgeError, "BRAIN_UNAUTHORIZED"):
+            validate_brain_payload(payload, "different")
+
+        with TemporaryDirectory() as root:
+            router = Path(root, "runtime", "workers", "legion_brain_router.mjs")
+            router.parent.mkdir(parents=True)
+            router.write_text("// fixture\n", encoding="utf-8")
+            brain = {
+                "schema": "othrys.legion.brain-response.v1",
+                "observation": {
+                    "schema": "othrys.os.jev-observation.v1",
+                    "mode": "TRAINING",
+                    "circuitId": "router",
+                    "answers": {},
+                    "authorityGranted": False,
+                    "actionApplied": False,
+                    "executionStarted": False,
+                },
+                "transport": {"provider": "OPENROUTER"},
+                "authorityGranted": False,
+                "actionApplied": False,
+                "executionStarted": False,
+            }
+
+            with patch(
+                "legion_worker_bridge.subprocess.run",
+                return_value=subprocess.CompletedProcess(
+                    ["node", str(router)],
+                    0,
+                    json.dumps(brain),
+                    "",
+                ),
+            ) as mocked:
+                result = run_brain_router(
+                    payload,
+                    expected_token="secret",
+                    router=router,
+                )
+
+            self.assertEqual(result["schema"], "othrys.legion.brain-response.v1")
+            self.assertFalse(result["authorityGranted"])
+            mocked.assert_called_once()
+
+    def test_brain_router_rejects_authority_claims(self):
+        payload = {
+            "token": "secret",
+            "state": "Inspect status.",
+            "model": "jev-1.13.0",
+        }
+        with TemporaryDirectory() as root:
+            router = Path(root, "runtime", "workers", "legion_brain_router.mjs")
+            router.parent.mkdir(parents=True)
+            router.write_text("// fixture\n", encoding="utf-8")
+            brain = {
+                "schema": "othrys.legion.brain-response.v1",
+                "observation": {
+                    "schema": "othrys.os.jev-observation.v1",
+                },
+                "authorityGranted": True,
+                "executionStarted": False,
+            }
+            with patch(
+                "legion_worker_bridge.subprocess.run",
+                return_value=subprocess.CompletedProcess(
+                    ["node", str(router)],
+                    0,
+                    json.dumps(brain),
+                    "",
+                ),
+            ):
+                with self.assertRaisesRegex(BridgeError, "BRAIN_RESPONSE_INVALID"):
+                    run_brain_router(
+                        payload,
+                        expected_token="secret",
+                        router=router,
+                    )
 
     def test_authorized_job_launches_existing_bounded_worker(self):
         with TemporaryDirectory() as root:
