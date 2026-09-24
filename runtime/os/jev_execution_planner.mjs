@@ -54,10 +54,10 @@ export function recommendExecutionLane({
   const risk=Number.isFinite(riskScore)?Number(riskScore):0;
   const executes=Boolean(needsExecution);
 
+  if(['build','admin'].includes(type)||risk>=2) return JEV_EXECUTION_LANES.DEEP;
   if(!executes&&['discussion','status'].includes(type)) return JEV_EXECUTION_LANES.FAST;
   if(type==='study'&&risk<2) return JEV_EXECUTION_LANES.LIGHT;
   if(type==='research'&&!executes&&risk<2) return JEV_EXECUTION_LANES.LIGHT;
-  if(['build','admin'].includes(type)||risk>=2) return JEV_EXECUTION_LANES.DEEP;
   return executes?JEV_EXECUTION_LANES.LIGHT:JEV_EXECUTION_LANES.FAST;
 }
 
