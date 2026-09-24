@@ -4,6 +4,7 @@ import { homedir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import util from 'node:util';
+import { discoverSecureVault, inventorySecureVault, resolveSealedSecureCredential } from './keymaster_secure_reader.mjs';
 
 export const SEALED_MARKER='[KEYMASTER_SEALED]';
 const sha=v=>createHash('sha256').update(String(v),'utf8').digest('hex');
@@ -52,4 +53,40 @@ export function resolveSealedEnvCredential(source,name,context={}){
   const raw=findRaw(readFileSync(source.path,'utf8'),key); if(!raw)return Object.freeze({ok:false,reason:'SECRET_ABSENT',audit:{envVar:key,outcome:'denied'}});
   const sealed={reference:`env:${key}`,applyToEnv(env,target=key){return {...env,[target]:raw};},applyToHeader(headers,header='authorization',prefix='Bearer '){return {...headers,[header]:`${prefix}${raw}`};},toString:()=>SEALED_MARKER,toJSON:()=>SEALED_MARKER,[util.inspect.custom]:()=>SEALED_MARKER};
   return Object.freeze({ok:true,value:Object.freeze(sealed),audit:Object.freeze({envVar:key,outcome:'allowed',consumer:context.consumer.trim(),secretExposed:false})});
+}
+
+
+export function discoverKeymasterCredentialSource({
+  home=homedir(),
+  override=process.env.OTHRYS_KEYMASTER_ENV_FILE,
+  os=process.platform,
+}={}){
+  if(override&&existsSync(override)){
+    return Object.freeze({
+      schema:'othrys.os.keymaster-credential-source.v1',
+      sourceId:'explicit-env-override',
+      sourceType:'env-file',
+      available:true,
+      path:override,
+      pathDigest:sha(override),
+      readOnly:true,
+      authorityGranted:false,
+      executionStarted:false,
+    });
+  }
+  const secure=discoverSecureVault({home,platform:os});
+  if(secure.available) return secure;
+  return discoverKeymasterEnvSource({home,override:null});
+}
+
+export function inventoryKeymasterCredentials(source=discoverKeymasterCredentialSource()){
+  if(source?.sourceType==='secure-dpapi-vault') return inventorySecureVault(source);
+  return inventoryKeymasterEnv(source);
+}
+
+export function resolveSealedKeymasterCredential(source,name,context={}){
+  if(source?.sourceType==='secure-dpapi-vault'){
+    return resolveSealedSecureCredential(name,context,source);
+  }
+  return resolveSealedEnvCredential(source,name,context);
 }
