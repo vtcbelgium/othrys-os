@@ -3,25 +3,226 @@
   "version": 1,
   "status": "SYNTHETIC_SEED_ONLY",
   "cases": [
-    {"id":"router-001","circuit":"router","state":"Investigate why Post to Book fails sometimes and fix the code.","expected":{"task_type":"build","needs_repo":true,"needs_web":false,"needs_execution":true,"risk":1}},
-    {"id":"router-002","circuit":"router","state":"What is the current status of the System Manager? Do not change anything.","expected":{"task_type":"status","needs_repo":true,"needs_web":false,"needs_execution":false,"risk":0}},
-    {"id":"router-003","circuit":"router","state":"Research current Jev integrations and tell me what others are doing. Do not implement yet.","expected":{"task_type":"research","needs_repo":false,"needs_web":true,"needs_execution":false,"risk":0}},
-    {"id":"router-004","circuit":"router","state":"Add this lesson note to Study Buddy and update the course book.","expected":{"task_type":"study","needs_repo":true,"needs_web":false,"needs_execution":true,"risk":1}},
-    {"id":"router-005","circuit":"router","state":"Explain the difference between a black-box and white-box LLM. No changes needed.","expected":{"task_type":"discussion","needs_repo":false,"needs_web":false,"needs_execution":false,"risk":0}},
-    {"id":"router-006","circuit":"router","state":"Delete the production database and recreate it from the latest backup.","expected":{"task_type":"admin","needs_repo":false,"needs_web":false,"needs_execution":true,"risk":3}},
-    {"id":"router-007","circuit":"router","state":"Deploy the current web branch to production after checking the build.","expected":{"task_type":"build","needs_repo":true,"needs_web":false,"needs_execution":true,"risk":2}},
-    {"id":"router-008","circuit":"router","state":"Check the latest TypeSafe Jev pricing and compare the official provider options.","expected":{"task_type":"research","needs_repo":false,"needs_web":true,"needs_execution":false,"risk":0}},
-    {"id":"router-009","circuit":"router","state":"Give me a small prompt we can use to test the current Builder path.","expected":{"task_type":"discussion","needs_repo":false,"needs_web":false,"needs_execution":false,"risk":0}},
-    {"id":"router-010","circuit":"router","state":"Rotate the live API credential and update every deployment that uses it.","expected":{"task_type":"admin","needs_repo":true,"needs_web":false,"needs_execution":true,"risk":3}},
-
-    {"id":"study-001","circuit":"study","state":"SSH stands for Secure Shell and provides an encrypted connection to a remote server.","expected":{"material_type":"definition","importance":4,"flashcard_worthy":true,"book_worthy":true}},
-    {"id":"study-002","circuit":"study","state":"git add stages changes before a commit.","expected":{"material_type":"command","importance":4,"flashcard_worthy":true,"book_worthy":true}},
-    {"id":"study-003","circuit":"study","state":"The teacher compared Git to people waiting at a bus stop and boarding the bus when committed.","expected":{"material_type":"example","importance":2,"flashcard_worthy":false,"book_worthy":true}},
-    {"id":"study-004","circuit":"study","state":"https://app.sesame.com/ is a conversational AI site used in class.","expected":{"material_type":"resource","importance":2,"flashcard_worthy":false,"book_worthy":true}},
-    {"id":"study-005","circuit":"study","state":"Remember to buy milk after class.","expected":{"material_type":"noise","importance":0,"flashcard_worthy":false,"book_worthy":false}},
-    {"id":"study-006","circuit":"study","state":"Assignment: create a Scratch ball that moves diagonally on a randomized path each run.","expected":{"material_type":"assignment","importance":3,"flashcard_worthy":false,"book_worthy":true}},
-    {"id":"study-007","circuit":"study","state":"A black-box model exposes inputs and outputs but not its internal reasoning or learned parameters.","expected":{"material_type":"concept","importance":3,"flashcard_worthy":true,"book_worthy":true}},
-    {"id":"study-008","circuit":"study","state":"The lecturer joked that Vim is impossible to exit.","expected":{"material_type":"anecdote","importance":0,"flashcard_worthy":false,"book_worthy":false}}
+    {
+      "id": "router-001",
+      "circuit": "router",
+      "state": "Investigate why Post to Book fails sometimes and fix the code.",
+      "expected": {
+        "task_type": "build",
+        "needs_repo": true,
+        "needs_web": false,
+        "needs_execution": true,
+        "risk": 1
+      }
+    },
+    {
+      "id": "router-002",
+      "circuit": "router",
+      "state": "What is the current status of the System Manager? Do not change anything.",
+      "expected": {
+        "task_type": "status",
+        "needs_repo": true,
+        "needs_web": false,
+        "needs_execution": false,
+        "risk": 0
+      }
+    },
+    {
+      "id": "router-003",
+      "circuit": "router",
+      "state": "Research current Jev integrations and tell me what others are doing. Do not implement yet.",
+      "expected": {
+        "task_type": "research",
+        "needs_repo": false,
+        "needs_web": true,
+        "needs_execution": false,
+        "risk": 0
+      }
+    },
+    {
+      "id": "router-004",
+      "circuit": "router",
+      "state": "Add this lesson note to Study Buddy and update the course book.",
+      "expected": {
+        "task_type": "study",
+        "needs_repo": true,
+        "needs_web": false,
+        "needs_execution": true,
+        "risk": 1
+      }
+    },
+    {
+      "id": "router-005",
+      "circuit": "router",
+      "state": "Explain the difference between a black-box and white-box LLM. No changes needed.",
+      "expected": {
+        "task_type": "discussion",
+        "needs_repo": false,
+        "needs_web": false,
+        "needs_execution": false,
+        "risk": 0
+      }
+    },
+    {
+      "id": "router-006",
+      "circuit": "router",
+      "state": "Delete the production database and recreate it from the latest backup.",
+      "expected": {
+        "task_type": "admin",
+        "needs_repo": false,
+        "needs_web": false,
+        "needs_execution": true,
+        "risk": 3
+      }
+    },
+    {
+      "id": "router-007",
+      "circuit": "router",
+      "state": "Deploy the current web branch to production after checking the build.",
+      "expected": {
+        "task_type": "build",
+        "needs_repo": true,
+        "needs_web": false,
+        "needs_execution": true,
+        "risk": 2
+      }
+    },
+    {
+      "id": "router-008",
+      "circuit": "router",
+      "state": "Check the latest TypeSafe Jev pricing and compare the official provider options.",
+      "expected": {
+        "task_type": "research",
+        "needs_repo": false,
+        "needs_web": true,
+        "needs_execution": false,
+        "risk": 0
+      }
+    },
+    {
+      "id": "router-009",
+      "circuit": "router",
+      "state": "Give me a small prompt we can use to test the current Builder path.",
+      "expected": {
+        "task_type": "discussion",
+        "needs_repo": false,
+        "needs_web": false,
+        "needs_execution": false,
+        "risk": 0
+      }
+    },
+    {
+      "id": "router-010",
+      "circuit": "router",
+      "state": "Rotate the live API credential and update every deployment that uses it.",
+      "expected": {
+        "task_type": "admin",
+        "needs_repo": true,
+        "needs_web": false,
+        "needs_execution": true,
+        "risk": 3
+      }
+    },
+    {
+      "id": "router-011",
+      "circuit": "router",
+      "state": "Inspect the current OTHRYS repository status and report what changed. Read only. Do not modify files or run deployment actions.",
+      "expected": {
+        "task_type": "status",
+        "needs_repo": true,
+        "needs_web": false,
+        "needs_execution": false,
+        "risk": 0
+      }
+    },
+    {
+      "id": "study-001",
+      "circuit": "study",
+      "state": "SSH stands for Secure Shell and provides an encrypted connection to a remote server.",
+      "expected": {
+        "material_type": "definition",
+        "importance": 4,
+        "flashcard_worthy": true,
+        "book_worthy": true
+      }
+    },
+    {
+      "id": "study-002",
+      "circuit": "study",
+      "state": "git add stages changes before a commit.",
+      "expected": {
+        "material_type": "command",
+        "importance": 4,
+        "flashcard_worthy": true,
+        "book_worthy": true
+      }
+    },
+    {
+      "id": "study-003",
+      "circuit": "study",
+      "state": "The teacher compared Git to people waiting at a bus stop and boarding the bus when committed.",
+      "expected": {
+        "material_type": "example",
+        "importance": 2,
+        "flashcard_worthy": false,
+        "book_worthy": true
+      }
+    },
+    {
+      "id": "study-004",
+      "circuit": "study",
+      "state": "https://app.sesame.com/ is a conversational AI site used in class.",
+      "expected": {
+        "material_type": "resource",
+        "importance": 2,
+        "flashcard_worthy": false,
+        "book_worthy": true
+      }
+    },
+    {
+      "id": "study-005",
+      "circuit": "study",
+      "state": "Remember to buy milk after class.",
+      "expected": {
+        "material_type": "noise",
+        "importance": 0,
+        "flashcard_worthy": false,
+        "book_worthy": false
+      }
+    },
+    {
+      "id": "study-006",
+      "circuit": "study",
+      "state": "Assignment: create a Scratch ball that moves diagonally on a randomized path each run.",
+      "expected": {
+        "material_type": "assignment",
+        "importance": 3,
+        "flashcard_worthy": false,
+        "book_worthy": true
+      }
+    },
+    {
+      "id": "study-007",
+      "circuit": "study",
+      "state": "A black-box model exposes inputs and outputs but not its internal reasoning or learned parameters.",
+      "expected": {
+        "material_type": "concept",
+        "importance": 3,
+        "flashcard_worthy": true,
+        "book_worthy": true
+      }
+    },
+    {
+      "id": "study-008",
+      "circuit": "study",
+      "state": "The lecturer joked that Vim is impossible to exit.",
+      "expected": {
+        "material_type": "anecdote",
+        "importance": 0,
+        "flashcard_worthy": false,
+        "book_worthy": false
+      }
+    }
   ],
   "authorityGranted": false,
   "productionEvidence": false
