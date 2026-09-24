@@ -1,0 +1,85 @@
+{
+  "schema": "othrys.os.jev-question-sets.v1",
+  "language": "en",
+  "questionSets": {
+    "router.v1": {
+      "circuit": "router",
+      "questions": {
+        "task_type": {
+          "type": "choice",
+          "instructions": "What is the primary operational intent of this request?",
+          "criteria": {
+            "build": "Create, modify or fix implementation code or configuration.",
+            "research": "Investigate external or internal information before deciding what to do.",
+            "status": "Inspect current state, health, progress or evidence without changing it.",
+            "admin": "Perform organizational, account, scheduling or operational administration.",
+            "study": "Capture, classify, explain or transform course and learning material.",
+            "discussion": "Discuss, brainstorm or explain without requesting execution."
+          }
+        },
+        "needs_repo": {
+          "type": "noul",
+          "instructions": "Correctly handling this request requires reading or changing repository content."
+        },
+        "needs_web": {
+          "type": "noul",
+          "instructions": "Correctly handling this request requires fresh public web information."
+        },
+        "needs_execution": {
+          "type": "noul",
+          "instructions": "The request asks for an external action or system change rather than advice only."
+        },
+        "risk": {
+          "type": "score",
+          "instructions": "Rate the consequence level of the requested action.",
+          "criteria": [
+            "Read-only or discussion; no persistent change.",
+            "Ordinary reversible change in a bounded development surface.",
+            "Structural, production-facing or externally visible change requiring verification.",
+            "Destructive, credential-sensitive, irreversible or high-impact action."
+          ]
+        }
+      }
+    },
+    "study.v1": {
+      "circuit": "study",
+      "questions": {
+        "material_type": {
+          "type": "choice",
+          "instructions": "What kind of learning material is this primarily?",
+          "criteria": {
+            "concept": "An idea, principle or mental model to understand.",
+            "definition": "A term and its meaning.",
+            "command": "A concrete command, syntax form or executable instruction.",
+            "example": "An illustration, analogy or worked example.",
+            "assignment": "A task the learner is expected to perform.",
+            "resource": "A site, tool, document or reference worth keeping.",
+            "anecdote": "Incidental story or contextual remark.",
+            "noise": "Content with little durable learning value."
+          }
+        },
+        "importance": {
+          "type": "score",
+          "instructions": "How important is this for durable course knowledge?",
+          "criteria": [
+            "Discardable.",
+            "Minor context.",
+            "Useful supporting knowledge.",
+            "Important core knowledge.",
+            "Essential foundational knowledge."
+          ]
+        },
+        "flashcard_worthy": {
+          "type": "noul",
+          "instructions": "This material can usefully become a retrieval-practice flashcard."
+        },
+        "book_worthy": {
+          "type": "noul",
+          "instructions": "This material belongs in the durable course book after normal review."
+        }
+      }
+    }
+  },
+  "authorityGranted": false,
+  "automaticPromotion": false
+}
