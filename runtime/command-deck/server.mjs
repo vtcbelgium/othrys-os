@@ -26,6 +26,8 @@ import { planWebCommand, readWebBrainDecision } from './web_command_planner.ts';
 import { activateWebCommand } from './web_command_activation.ts';
 import { evaluateJevViaLegionBridge } from '../os/jev_remote_router.mjs';
 import { createBrainDecision, createFallbackBrainDecision } from '../os/brain_orchestrator.mjs';
+import { createNoMissionBrainResult } from '../os/brain_no_mission_result.mjs';
+import { persistWebBrainResult, readWebBrainResult } from '../os/brain_result_store.mjs';
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
@@ -181,6 +183,46 @@ export async function brainDecisionForWebCommand(webCommandId){
       reason:String(error?.code??error?.message??'BRAIN_UNAVAILABLE'),
     });
   }
+}
+
+
+export async function brainResultForWebCommand(webCommandId,plan,brainDecision){
+  if(!plan||plan.status!=='NO_MISSION_REQUIRED'||!brainDecision) return null;
+  const existing=readWebBrainResult(root,webCommandId,{decision:brainDecision});
+  if(existing) return existing;
+
+  const envelopePath=join(webCommandEnvelopeDir,webCommandId+'.json');
+  if(!existsSync(envelopePath)) throw new Error('WEB_COMMAND_ENVELOPE_NOT_FOUND');
+  const envelope=JSON.parse(readFileSync(envelopePath,'utf8'));
+  const command=String(envelope?.command??'').trim();
+  if(!command) throw new Error('WEB_COMMAND_ENVELOPE_INVALID');
+
+  let specialistRoute=null;
+  if(brainDecision.lane==='LIGHT'){
+    specialistRoute=switchyardPreviewFor('analysis.summarize','LIGHT','auto');
+  }
+
+  const result=await createNoMissionBrainResult({
+    decision:brainDecision,
+    command,
+    statusProjection:buildStatus,
+    directAnswer:async(input)=>{
+      const status=await buildStatus();
+      const quarry=json('docs/V2-011J/FINAL_QUARRY_CENSUS.json');
+      const turn=answerFrontDoor(input,{
+        status:{
+          activeMission:status.activeMission,
+          quarryClosed:quarry?.status==='CLOSED',
+          bodyStatus:status.controlGate==='CLEAN_SYNCED'?'CONTROL_PLANE_HEALTHY':'ATTENTION',
+          deepProof:'use Deep/Whole diagnostics for current proof',
+        },
+        modelSelection:null,
+      });
+      return turn.answer;
+    },
+    specialistRoute,
+  });
+  return persistWebBrainResult(root,webCommandId,result,{decision:brainDecision}).result;
 }
 export function builderInspector(missionId=null){
   const selection=switchyardPreview('auto');
@@ -430,7 +472,7 @@ export async function handle(req,res){
       const rawActive=json('GPT_STATE.json').active_mission??null;
       const active=reconcileActiveMission(root,rawActive).activeMission;
       const brainDecision=await brainDecisionForWebCommand(missionId);
-      return planWebCommand({
+      const plan=planWebCommand({
         root,
         webCommandId:missionId,
         envelopeDir:webCommandEnvelopeDir,
@@ -439,6 +481,20 @@ export async function handle(req,res){
         activeMission:active,
         brainDecision,
       });
+      let brainResult=null;
+      let brainResultError=null;
+      if(plan.status==='NO_MISSION_REQUIRED'){
+        try{
+          brainResult=await brainResultForWebCommand(missionId,plan,brainDecision);
+        }catch(error){
+          brainResultError=String(error?.code??error?.message??'BRAIN_RESULT_FAILURE');
+        }
+      }
+      return {
+        ...plan,
+        brainResult,
+        brainResultError,
+      };
     },
     commandActivator:(missionId,body)=>{
       const rawActive=json('GPT_STATE.json').active_mission??null;
