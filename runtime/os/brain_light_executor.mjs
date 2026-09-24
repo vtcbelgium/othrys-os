@@ -36,6 +36,7 @@ export async function executeLightSpecialist({
   ollamaModel='llama3.2:latest',
   fetchImpl=fetch,
   timeoutMs=35000,
+  contextText='',
 }={}){
   const d=assertDecision(decision);
   const input=text(command,'BRAIN_LIGHT_COMMAND_REQUIRED',2000);
@@ -78,16 +79,66 @@ export async function executeLightSpecialist({
     });
   }
 
+  const context=typeof contextText==='string'?contextText.trim().slice(0,14000):'';
+
+  if(d.needsRepo===true){
+    if(!context) throw new Error('BRAIN_LIGHT_REPO_CONTEXT_REQUIRED');
+    const base=text(legionBridgeUrl,'BRAIN_ADVISORY_BRIDGE_REQUIRED',1000).replace(/\/$/,'');
+    const token=text(legionBridgeToken,'BRAIN_ADVISORY_TOKEN_REQUIRED',1000);
+    let response;
+    try{
+      response=await fetchImpl(base+'/brain/advisory',{
+        method:'POST',
+        headers:{'content-type':'application/json'},
+        body:JSON.stringify({token,prompt:input,context}),
+        signal:AbortSignal.timeout(timeoutMs),
+      });
+    }catch(error){
+      throw new Error(error?.name==='TimeoutError'?'BRAIN_ADVISORY_TIMEOUT':'BRAIN_ADVISORY_UNREACHABLE');
+    }
+    let payload;
+    try{payload=await response.json();}catch{throw new Error('BRAIN_ADVISORY_RESPONSE_INVALID');}
+    if(!response.ok||payload?.ok!==true||!payload?.advisory) throw new Error(String(payload?.error??'BRAIN_ADVISORY_REFUSED'));
+    const advisory=payload.advisory;
+    if(
+      advisory.schema!=='othrys.legion.advisory-response.v1'||
+      advisory.authorityGranted!==false||
+      advisory.executionStarted!==false||
+      typeof advisory.text!=='string'||
+      !advisory.text.trim()
+    ) throw new Error('BRAIN_ADVISORY_RESPONSE_INVALID');
+    return Object.freeze({
+      schema:BRAIN_LIGHT_RESULT_SCHEMA,
+      specialist:d.executor?.id??'specialist.light',
+      kind:'REPO_ADVISORY',
+      text:advisory.text.trim().slice(0,4000),
+      sources:Object.freeze([]),
+      model:String(advisory.model??'qwen3-fast:latest'),
+      local:true,
+      node:'legion',
+      costClass:'ZERO',
+      verification:Object.freeze({status:'BOUNDED_REPO_EVIDENCE_PASS',sourceCount:0,independent:false}),
+      readOnlyWorkPerformed:true,
+      authorityGranted:false,
+      actionApplied:false,
+      executionStarted:false,
+    });
+  }
+
   if(!specialistRoute||specialistRoute.outcome!=='SELECTED'||specialistRoute.selected?.id!=='llama3.2-advisory'){
     throw new Error('BRAIN_LIGHT_ROUTE_UNAVAILABLE');
   }
   const prompt=[
     'You are the OTHRYS read-only LIGHT advisory specialist.',
     'You may analyze and explain, but you have no authority to change files, repositories, accounts, deployments, credentials, policy, or external systems.',
-    'Do not claim that you executed changes. Give a concise useful answer based only on the request.',
+    'Do not claim that you executed changes. Use only explicit facts in the bounded evidence capsule. Do not infer system state from names, labels, branch names, or filenames. If evidence is insufficient, say so. Answer in at most four short sentences.',
     '',
+    'REQUEST:',
     input,
-  ].join('\n');
+    context?'':'',
+    context?'BOUNDED OTHRYS EVIDENCE:':'',
+    context||'',
+  ].filter(Boolean).join('\n');
 
   let response;
   try{
@@ -99,7 +150,7 @@ export async function executeLightSpecialist({
         prompt,
         stream:false,
         keep_alive:'2h',
-        options:{temperature:0.1,num_predict:192},
+        options:{temperature:0.05,num_predict:96},
       }),
       signal:AbortSignal.timeout(timeoutMs),
     });

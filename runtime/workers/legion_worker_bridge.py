@@ -15,6 +15,7 @@ SERVICE = "othrys-legion-worker-bridge"
 MAX_BODY_BYTES = 128_000
 BRAIN_REQUEST_SCHEMA = "othrys.legion.brain-request.v1"
 RESEARCH_REQUEST_SCHEMA = "othrys.legion.research-request.v1"
+ADVISORY_REQUEST_SCHEMA = "othrys.legion.advisory-request.v1"
 
 
 class BridgeError(ValueError):
@@ -87,6 +88,60 @@ def run_brain_router(
     return brain
 
 
+
+
+
+
+def validate_advisory_payload(payload: dict[str, Any], expected_token: str) -> dict[str, Any]:
+    if set(payload) != {"token", "prompt", "context"}:
+        raise BridgeError("ADVISORY_FIELDS_INVALID")
+    supplied = str(payload.get("token") or "")
+    if not expected_token or not hmac.compare_digest(supplied, expected_token):
+        raise BridgeError("ADVISORY_UNAUTHORIZED")
+    prompt = str(payload.get("prompt") or "").strip()
+    context = str(payload.get("context") or "").strip()
+    if not prompt or len(prompt) > 2000:
+        raise BridgeError("ADVISORY_PROMPT_INVALID")
+    if not context or len(context) > 14000:
+        raise BridgeError("ADVISORY_CONTEXT_INVALID")
+    return {"schema": ADVISORY_REQUEST_SCHEMA, "prompt": prompt, "context": context}
+
+
+def run_brain_advisory(
+    payload: dict[str, Any],
+    *,
+    expected_token: str,
+    advisory_runner: Path,
+    node_bin: str = "node",
+) -> dict[str, Any]:
+    request = validate_advisory_payload(payload, expected_token)
+    if not advisory_runner.exists():
+        raise BridgeError("BRAIN_ADVISORY_NOT_FOUND")
+    try:
+        proc = subprocess.run(
+            [node_bin, str(advisory_runner)],
+            input=json.dumps(request),
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            capture_output=True,
+            timeout=40,
+            cwd=str(advisory_runner.parent.parent.parent),
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise BridgeError("BRAIN_ADVISORY_TIMEOUT") from exc
+    if proc.returncode != 0:
+        error = (proc.stderr or "").strip()
+        raise BridgeError(error[:160] or "BRAIN_ADVISORY_FAILED")
+    advisory = _load_json(proc.stdout, "ADVISORY_RESPONSE_INVALID")
+    if (
+        advisory.get("schema") != "othrys.legion.advisory-response.v1"
+        or advisory.get("authorityGranted") is not False
+        or advisory.get("executionStarted") is not False
+        or not str(advisory.get("text") or "").strip()
+    ):
+        raise BridgeError("ADVISORY_RESPONSE_INVALID")
+    return advisory
 
 
 def validate_research_payload(payload: dict[str, Any], expected_token: str) -> dict[str, Any]:
@@ -255,6 +310,7 @@ def make_handler(
     brain_token: str | None = None,
     brain_router: Path | None = None,
     brain_research: Path | None = None,
+    brain_advisory: Path | None = None,
     node_bin: str = "node",
 ):
     class Handler(BaseHTTPRequestHandler):
@@ -275,12 +331,12 @@ def make_handler(
                 "ok": True,
                 "service": SERVICE,
                 "node_id": "legion",
-                "capabilities": ["engineering.patch", "brain.router", "brain.research"],
+                "capabilities": ["engineering.patch", "brain.router", "brain.research", "brain.advisory"],
                 "authorityGranted": False,
             })
 
         def do_POST(self) -> None:
-            if self.path not in {"/jobs", "/brain/router", "/brain/research"}:
+            if self.path not in {"/jobs", "/brain/router", "/brain/research", "/brain/advisory"}:
                 self._json(404, {"ok": False, "error": "NOT_FOUND"})
                 return
             try:
@@ -290,6 +346,17 @@ def make_handler(
                 payload = json.loads(self.rfile.read(size).decode("utf-8"))
                 if not isinstance(payload, dict):
                     raise BridgeError("BODY_INVALID")
+                if self.path == "/brain/advisory":
+                    if brain_advisory is None:
+                        raise BridgeError("BRAIN_ADVISORY_NOT_CONFIGURED")
+                    advisory = run_brain_advisory(
+                        payload,
+                        expected_token=brain_token or expected_token,
+                        advisory_runner=brain_advisory,
+                        node_bin=node_bin,
+                    )
+                    self._json(200, {"ok": True, "advisory": advisory})
+                    return
                 if self.path == "/brain/research":
                     if brain_research is None:
                         raise BridgeError("BRAIN_RESEARCH_NOT_CONFIGURED")
@@ -345,12 +412,15 @@ def main() -> int:
     launcher = root / "runtime" / "workers" / "launch_worker.py"
     brain_router = root / "runtime" / "workers" / "legion_brain_router.mjs"
     brain_research = root / "runtime" / "workers" / "legion_brain_research.mjs"
+    brain_advisory = root / "runtime" / "workers" / "legion_brain_advisory.mjs"
     if not launcher.exists():
         raise SystemExit("OTHRYS_WORKER_LAUNCHER_NOT_FOUND")
     if not brain_router.exists():
         raise SystemExit("OTHRYS_BRAIN_ROUTER_NOT_FOUND")
     if not brain_research.exists():
         raise SystemExit("OTHRYS_BRAIN_RESEARCH_NOT_FOUND")
+    if not brain_advisory.exists():
+        raise SystemExit("OTHRYS_BRAIN_ADVISORY_NOT_FOUND")
     state_dir = Path(
         os.environ.get("OTHRYS_ENGINEERING_BRIDGE_DIR", str(Path.home() / ".othrys" / "worker-bridge"))
     ).expanduser()
@@ -365,6 +435,7 @@ def main() -> int:
             brain_token=brain_token,
             brain_router=brain_router,
             brain_research=brain_research,
+            brain_advisory=brain_advisory,
             node_bin=os.environ.get("OTHRYS_NODE_BIN", "node"),
         ),
     )

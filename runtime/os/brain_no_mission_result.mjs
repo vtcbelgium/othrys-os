@@ -47,6 +47,7 @@ export async function createNoMissionBrainResult({
   let status='HANDOFF_READY';
   let output=null;
   let verification='PENDING';
+  let verificationIndependent=false;
   let readOnlyWorkPerformed=false;
 
   if(verified.executor?.id==='deterministic.status'){
@@ -104,6 +105,7 @@ export async function createNoMissionBrainResult({
       });
       status='COMPLETED';
       verification=String(specialist.verification?.status??'BOUNDED_READONLY_SPECIALIST_PASS');
+      verificationIndependent=specialist.verification?.independent===true;
       readOnlyWorkPerformed=true;
     }else{
       output=Object.freeze({
@@ -138,7 +140,7 @@ export async function createNoMissionBrainResult({
     output,
     verification:Object.freeze({
       status:verification,
-      independent:verified.lane==='LIGHT',
+      independent:verificationIndependent,
     }),
     readOnlyWorkPerformed,
     recommendationOnly:status!=='COMPLETED',

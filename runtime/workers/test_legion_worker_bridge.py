@@ -11,8 +11,10 @@ from legion_worker_bridge import (
     run_authorized_job,
     run_brain_router,
     run_brain_research,
+    run_brain_advisory,
     validate_brain_payload,
     validate_research_payload,
+    validate_advisory_payload,
     validate_job_payload,
 )
 
@@ -159,6 +161,36 @@ class LegionWorkerBridgeTests(unittest.TestCase):
                         expected_token="secret",
                         router=router,
                     )
+
+    def test_advisory_payload_and_runner_are_read_only(self):
+        payload = {"token": "secret", "prompt": "Explain evidence.", "context": "git status clean"}
+        request = validate_advisory_payload(payload, "secret")
+        self.assertEqual(request["schema"], "othrys.legion.advisory-request.v1")
+        with self.assertRaisesRegex(BridgeError, "ADVISORY_UNAUTHORIZED"):
+            validate_advisory_payload(payload, "different")
+
+        with TemporaryDirectory() as root:
+            runner = Path(root, "runtime", "workers", "legion_brain_advisory.mjs")
+            runner.parent.mkdir(parents=True)
+            runner.write_text("// fixture\n", encoding="utf-8")
+            advisory = {
+                "schema": "othrys.legion.advisory-response.v1",
+                "model": "qwen3-fast:latest",
+                "text": "The evidence says the working tree is clean.",
+                "local": True,
+                "costClass": "ZERO",
+                "authorityGranted": False,
+                "actionApplied": False,
+                "executionStarted": False,
+            }
+            with patch(
+                "legion_worker_bridge.subprocess.run",
+                return_value=subprocess.CompletedProcess(["node", str(runner)], 0, json.dumps(advisory), ""),
+            ):
+                result = run_brain_advisory(payload, expected_token="secret", advisory_runner=runner)
+            self.assertEqual(result["schema"], "othrys.legion.advisory-response.v1")
+            self.assertFalse(result["authorityGranted"])
+            self.assertEqual(result["model"], "qwen3-fast:latest")
 
     def test_research_payload_and_runner_are_read_only(self):
         payload = {

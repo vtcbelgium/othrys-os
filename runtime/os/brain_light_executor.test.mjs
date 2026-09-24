@@ -23,6 +23,7 @@ test('local LIGHT advisory performs bounded zero-cost read-only work',async()=>{
     decision:decision({needsWeb:false}),
     command:'Explain the likely cause from these logs.',
     specialistRoute:route,
+    contextText:'git status: clean\nlog: timeout in test runner',
     fetchImpl:async(url,init)=>{
       seen={url,body:JSON.parse(init.body)};
       return new Response(JSON.stringify({model:'llama3.2:latest',response:'The timeout is the likely cause.'}),{status:200});
@@ -30,6 +31,7 @@ test('local LIGHT advisory performs bounded zero-cost read-only work',async()=>{
   });
   assert.match(seen.url,/127\.0\.0\.1:11434\/api\/generate$/);
   assert.equal(seen.body.model,'llama3.2:latest');
+  assert.equal(seen.body.options.num_predict,96);
   assert.match(seen.body.prompt,/no authority/i);
   assert.equal(out.kind,'LOCAL_ADVISORY');
   assert.equal(out.local,true);
@@ -95,4 +97,53 @@ test('warmup is authority-free and keeps model loaded',async()=>{
   assert.equal(body.options.num_predict,1);
   assert.equal(out.authorityGranted,false);
   assert.equal(out.executionStarted,false);
+});
+
+
+test('repo LIGHT refuses completion without bounded context',async()=>{
+  await assert.rejects(
+    ()=>executeLightSpecialist({
+      decision:decision({needsWeb:false,needsRepo:true}),
+      command:'Investigate the repository failure.',
+      specialistRoute:route,
+      fetchImpl:async()=>{throw new Error('must-not-run');},
+    }),
+    /REPO_CONTEXT_REQUIRED/,
+  );
+});
+
+
+test('repo LIGHT uses Legion qwen advisory bridge with bounded context',async()=>{
+  const out=await executeLightSpecialist({
+    decision:decision({needsWeb:false,needsRepo:true}),
+    command:'Explain the failing test from the evidence.',
+    specialistRoute:route,
+    contextText:'TEST LOG: expected 200, got 500',
+    legionBridgeUrl:'http://legion:8766',
+    legionBridgeToken:'bridge-token',
+    fetchImpl:async(url,init)=>{
+      assert.equal(url,'http://legion:8766/brain/advisory');
+      const body=JSON.parse(init.body);
+      assert.equal(body.token,'bridge-token');
+      assert.match(body.context,/expected 200/);
+      return new Response(JSON.stringify({
+        ok:true,
+        advisory:{
+          schema:'othrys.legion.advisory-response.v1',
+          model:'qwen3-fast:latest',
+          text:'The evidence shows the test expected HTTP 200 but received HTTP 500.',
+          local:true,
+          costClass:'ZERO',
+          authorityGranted:false,
+          actionApplied:false,
+          executionStarted:false,
+        },
+      }),{status:200});
+    },
+  });
+  assert.equal(out.kind,'REPO_ADVISORY');
+  assert.equal(out.model,'qwen3-fast:latest');
+  assert.equal(out.node,'legion');
+  assert.equal(out.costClass,'ZERO');
+  assert.equal(out.authorityGranted,false);
 });
