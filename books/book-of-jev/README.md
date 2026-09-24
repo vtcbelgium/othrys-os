@@ -135,3 +135,39 @@ The implementation lives in:
 - `docs/jev/CHASE-WORKFLOW-ADAPTATION.md`
 
 The central rule is unchanged: **routing is not authorization**. A Jev lane recommendation cannot grant authority, release credentials, execute a connector, or complete verification.
+
+
+## OTHRYS brain integration
+
+The Cortex is now wired into the real OTHRYS Web command front door.
+
+Canonical runtime flow:
+
+`Web/System Manager -> /v1/commands -> T590 Command Deck -> Legion /brain/router -> Keymaster -> OpenRouter Jev -> brain decision -> FAST/LIGHT/DEEP -> existing governed lifecycle`.
+
+The Cortex runs on Legion so provider credentials remain inside the Windows DPAPI Keymaster vault. Only typed observations cross back to the T590.
+
+Every new Web command gets at most one provider evaluation. The resulting brain decision is persisted beside the Web plan and reused for status polling.
+
+Decision sources:
+- `JEV_CORTEX`: live semantic Router evidence;
+- `DETERMINISTIC_FALLBACK`: explicit degraded mode when the Cortex cannot be reached.
+
+Safety law:
+- the Cortex cannot grant authority;
+- deterministic BUILD/PLAN classification can never be downgraded by Jev;
+- admin/build/risk >= 2 remain DEEP;
+- DEEP enters the existing canonical Mission lifecycle;
+- execution remains behind Themis / Trust Canal / Switchyard / launch permits;
+- Talos verification remains independent.
+
+Primary evidence:
+- `runtime/os/brain_orchestrator.mjs`
+- `runtime/os/jev_remote_router.mjs`
+- `runtime/workers/legion_brain_router.mjs`
+- `runtime/workers/legion_worker_bridge.py`
+- `runtime/command-deck/web_command_planner.ts`
+- `runtime/command-deck/server.mjs`
+- `logs/jev/2026-09-24-brain-e2e.md`
+
+Live E2E and broad regression evidence are recorded in the log above. The integration remains TRAINING / authority 0.
