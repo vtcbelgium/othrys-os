@@ -22,3 +22,12 @@ The current local `.env` source is read-only. Keymaster may resolve from it, but
 
 ## Partnership maxim
 **Prometheus discovers. Keymaster evaluates/custodies. Talos qualifies. The operator approves acquisition.** Missing credentials are search prompts, not automatic rejection; deliberate disablement is not a gap.
+
+
+## Inventory coverage limitation — 2026-09-24
+
+The current default inventory discovers one canonical bootstrap env source. The live estate currently uses multiple read-only env sources and several application-managed standalone secret files, so an unavailable `keymaster.env` must not be interpreted as proof that the estate has zero credentials.
+
+Cross-node evidence: `logs/keymaster/2026-09-24-cross-node-audit.md`.
+
+Until a metadata-only federated source registry exists, whole-estate credential audits must enumerate known sources explicitly through the existing sealed Keymaster access boundary. Secret values must not be copied merely to make inventory easier.
