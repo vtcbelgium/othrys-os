@@ -1,13 +1,55 @@
 const INTENTS=Object.freeze(['QUESTION','RESEARCH','PLAN','BUILD','OPERATION']);
 const clean=v=>String(v??'').trim();
+
+const OPERATION_RE=/\b(status|health|active mission|current mission|which builder|which model|quarry|heartbeat)\b/;
+const BUILD_RE=/\b(build|implement|code|create|make|fix|repair|deploy|ship|restart|reconfigure|rotate|revoke|delete|drop|update|change|write|edit|remove|install|uninstall|apply|commit|push|merge|restore|migrate|publish)\b/;
+const PLAN_RE=/\b(plan|design|architect|roadmap|spec|blueprint)\b/;
+const RESEARCH_RE=/\b(research|investigate|compare|search|find out|look up|study)\b/;
+const EXPLANATION_PREFIX_RE=/^(?:please\s+)?(?:what\b|why\b|how\b|explain\b|describe\b|tell me\b|discuss\b)/;
+const NEGATION_START_RE=/^(?:please\s+)?(?:do\s+not|don't|dont|never)\b/;
+const CONTRAST_RE=/\b(?:but|however|instead|then|just)\b\s*(.+)$/;
+
+function positiveIntentSurface(input){
+  const source=clean(input).toLowerCase();
+  if(!source||source.length>2000) throw new Error('FRONT_DOOR_INPUT_INVALID');
+  const kept=[];
+  for(const raw of source.split(/[.!?;\n]+/)){
+    let part=raw.trim();
+    if(!part) continue;
+
+    if(NEGATION_START_RE.test(part)){
+      const contrast=part.match(CONTRAST_RE);
+      if(contrast?.[1]) kept.push(contrast[1].trim());
+      continue;
+    }
+
+    part=part.replace(/\bwithout\b.*$/,' ').trim();
+    part=part.replace(/\b(?:do\s+not|don't|dont|never)\b.*$/,' ').trim();
+    if(!part) continue;
+    if(/^(?:read[- ]only|report only|inspect only|no changes?\b)/.test(part)) continue;
+    kept.push(part);
+  }
+  return kept.join(' ').trim();
+}
+
 export function classifyFrontDoorIntent(input){
-  const q=clean(input).toLowerCase(); if(!q||q.length>2000) throw new Error('FRONT_DOOR_INPUT_INVALID');
-  if(/\b(build|implement|code|create|make|fix|repair|deploy|ship)\b/.test(q)) return 'BUILD';
-  if(/\b(plan|design|architect|roadmap|spec|blueprint)\b/.test(q)) return 'PLAN';
-  if(/\b(research|investigate|compare|search|find out|look up|study)\b/.test(q)) return 'RESEARCH';
-  if(/\b(status|health|active mission|current mission|which builder|which model|quarry|heartbeat)\b/.test(q)) return 'OPERATION';
+  const q=positiveIntentSurface(input);
+  if(!q) return 'QUESTION';
+  if(OPERATION_RE.test(q)) return 'OPERATION';
+  if(EXPLANATION_PREFIX_RE.test(q)) return 'QUESTION';
+  if(BUILD_RE.test(q)) return 'BUILD';
+  if(PLAN_RE.test(q)) return 'PLAN';
+  if(RESEARCH_RE.test(q)) return 'RESEARCH';
   return 'QUESTION';
 }
+
+export function frontDoorRequiresGovernedMission(input){
+  const q=positiveIntentSurface(input);
+  if(!q) return false;
+  if(EXPLANATION_PREFIX_RE.test(q)&&!OPERATION_RE.test(q)) return false;
+  return BUILD_RE.test(q)||PLAN_RE.test(q);
+}
+
 export function frontDoorDispatch(intent){
   if(!INTENTS.includes(intent)) throw new Error('FRONT_DOOR_INTENT_INVALID');
   const map={QUESTION:{organs:['MNEMOSYNE'],planner:null,needsModel:false},RESEARCH:{organs:['PROMETHEUS','MNEMOSYNE'],planner:'PROMETHEUS',needsModel:true},PLAN:{organs:['PROMETHEUS','MNEMOSYNE','HEPHAESTUS'],planner:'HEPHAESTUS',needsModel:true},BUILD:{organs:['MNEMOSYNE','HEPHAESTUS','TALOS','SWITCHYARD'],planner:'HEPHAESTUS',needsModel:true},OPERATION:{organs:['KRONOS','RHEA','TALOS','MNEMOSYNE'],planner:null,needsModel:false}};

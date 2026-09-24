@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { classifyFrontDoorIntent } from './front_door.mjs';
+import { classifyFrontDoorIntent, frontDoorRequiresGovernedMission } from './front_door.mjs';
 import {
   createJevBridgeReceipt,
   planFromJevRouterObservation,
@@ -44,7 +44,7 @@ function verificationFor(plan){
 
 function finalize({command,plan,source,sharedStateRef,degradedReason=null}){
   const deterministicIntent=classifyFrontDoorIntent(command);
-  const deterministicMissionFloor=['PLAN','BUILD'].includes(deterministicIntent);
+  const deterministicMissionFloor=frontDoorRequiresGovernedMission(command);
   const semanticMissionFloor=
     plan.lane.id==='DEEP'||
     plan.needsExecution===true||

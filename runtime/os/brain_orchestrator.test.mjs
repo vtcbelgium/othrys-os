@@ -90,3 +90,33 @@ test('fallback keeps OTHRYS alive while clearly degraded',()=>{
   assert.equal(d.authorityGranted,false);
   verifyBrainDecision(d,{command:'Research current Jev provider options.'});
 });
+
+test('negated deploy language cannot force a false mission',()=>{
+  const command='Inspect OTHRYS service status. Read only. Do not restart, reconfigure, deploy, or change anything.';
+  const d=createBrainDecision({
+    command,
+    observation:observation({
+      task_type:{type:'choice',choice:'status'},
+      needs_repo:{type:'noul',noul:0.1},
+      needs_execution:{type:'noul',noul:0.05},
+      risk:{type:'score',score:0},
+    }),
+    sharedStateRef:'web:negation',
+  });
+  assert.equal(d.deterministicIntent,'OPERATION');
+  assert.equal(d.deterministicMissionFloor,false);
+  assert.equal(d.lane,'FAST');
+  assert.equal(d.missionRequired,false);
+});
+
+test('fallback keeps positive credential mutation governed',()=>{
+  const d=createFallbackBrainDecision({
+    command:'Rotate the live API credential and revoke the old credential.',
+    sharedStateRef:'web:fallback-admin',
+    reason:'REMOTE_BRAIN_UNREACHABLE',
+  });
+  assert.equal(d.deterministicMissionFloor,true);
+  assert.equal(d.lane,'DEEP');
+  assert.equal(d.missionRequired,true);
+  assert.equal(d.authorization.granted,false);
+});
