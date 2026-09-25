@@ -299,3 +299,19 @@ Full evidence and live verification are recorded in:
 - `logs/jev/2026-09-25-pollinations-integration.md`;
 - `runtime/os/pollinations_transport.mjs`;
 - `runtime/os/pollinations_transport.test.mjs`.
+
+## Free arsenal qualification state — 2026-09-26
+
+The Pollinations key is now intentionally broader than the ACTIVE model set. Authenticated discovery currently exposes 18 zero-Pollen text models.
+
+ACTIVE smoke-qualified:
+- Cohere North Mini Code;
+- Kilo Auto.
+
+RESERVE/QUARANTINE examples from the current smoke:
+- GT Agent v1 — HTTP 400 on current adapter;
+- GLM 5.3 Flash FREE — HTTP 400 on current adapter.
+
+The Jev Pollinations transport enforces strict-zero pricing in code. No positive-price Pollinations model is eligible for this lane. Full regression: 425/425 PASS.
+
+Cross-system custody and qualification evidence: `logs/keymaster/2026-09-26-pollinations-free-arsenal.md`.

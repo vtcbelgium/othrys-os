@@ -84,3 +84,19 @@ V2 clean; local HEAD == origin/main == expected base; remote binding matches; ex
 
 Canonical campaign ledger: `docs/V2-HUB-QUAL-001/EVIDENCE.jsonl`
 Current campaign state: `docs/V2-HUB-QUAL-001/STATUS.md`
+
+## A7 — Pollinations strict-free remote model pool — ACTIVE ACCESS / PARTIAL QUALIFICATION
+
+Status: ACCESS ACTIVE; ROUTING PARTIALLY QUALIFIED.
+
+Current authenticated visibility: 18 text models, all strict-zero Pollen under OTHRYS normalization. The adapter refuses any positive numeric Pollen price and any paid-only model.
+
+Live smoke-qualified:
+- Cohere North Mini Code — PASS / ZERO;
+- Kilo Auto — PASS / ZERO.
+
+Accessible but not ACTIVE after current smoke:
+- GT Agent v1 — HTTP 400;
+- GLM 5.3 Flash FREE — HTTP 400.
+
+Additional selected free models may be hidden by Pollinations when health filtering marks them unavailable. Access never grants mutation authority and does not bypass Talos/Switchyard qualification.

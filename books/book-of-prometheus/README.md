@@ -21,3 +21,9 @@ Freshness is not fitness. Evidence grade is not authority. A recommendation is e
 
 ## Book rule
 This Book may expand only from inspectable implementation, tests, mission results, receipts, ADRs, or reviewed Mnemosyne evidence. It grants no authority; contradictions and source drift are recorded instead of silently rewritten.
+
+## Pollinations free-capacity harvest — 2026-09-26
+
+Prometheus may discover newly available Pollinations community models as capability opportunities, but discovery does not grant use. The intake target is strict-zero Pollen only.
+
+Prometheus should report new free candidates and price/health drift; Keymaster owns credential custody, Talos owns qualification, and Switchyard owns deterministic selection over already-qualified labor. Any model whose pricing changes above zero is immediately refused by the Pollinations lane until re-evaluated.

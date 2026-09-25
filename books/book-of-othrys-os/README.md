@@ -28,3 +28,8 @@ No subsystem may silently become an Oros, grant itself authority, or redefine th
 
 ## Current house law
 This Book is a map of current evidence and **grants no authority**. Runtime code, accepted law, Mission/Trust gates and Talos evidence remain authoritative within their declared boundaries.
+## Free remote labor pool — 2026-09-26
+
+OTHRYS OS now has a Pollinations-backed free remote advisory pool integrated behind Jev LIGHT. The pool is governed as renewable labor rather than authority: one Keymaster credential can expose many community models, while Jev enforces strict-zero pricing and Switchyard/Talos determine which models are actually fit to route.
+
+Live state at admission: 18 authenticated zero-Pollen text models visible; Cohere North Mini Code and Kilo Auto passed live smoke; positive-price models are refused by code.

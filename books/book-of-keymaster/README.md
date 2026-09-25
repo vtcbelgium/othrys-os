@@ -22,3 +22,11 @@ The current local `.env` source is read-only. Keymaster may resolve from it, but
 
 ## Partnership maxim
 **Prometheus discovers. Keymaster evaluates/custodies. Talos qualifies. The operator approves acquisition.** Missing credentials are search prompts, not automatic rejection; deliberate disablement is not a gap.
+
+## Pollinations free-arsenal custody — 2026-09-26
+
+Keymaster now owns the Pollinations provider credential through the encrypted Windows vault. Repository state contains only the credential name and sanitized provider metadata; the value itself is never written to Books, logs, reports or model inventory.
+
+The Pollinations key is configured as a free-only model whitelist. Authenticated discovery currently exposes 18 available text models, all normalized by OTHRYS to zero Pollen from blank community pricing. Jev refuses any positive numeric price and any paid-only model.
+
+A provider-side 1 Pollen cap remains as an emergency outer ceiling; normal OTHRYS policy permits only strict-zero Pollinations calls.

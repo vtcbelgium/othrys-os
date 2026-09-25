@@ -116,3 +116,16 @@ Live chat smoke:
 - GLM 5.3 Flash FREE: HTTP 400 on the current chat adapter, keep RESERVE/QUARANTINE until qualified.
 
 This demonstrates why key access and Switchyard admission remain separate: free access is broad, active routing still requires a passing runtime smoke/qualification.
+
+## Cross-system logging — 2026-09-26
+
+The strict-free Pollinations state is also recorded in:
+- Book of Keymaster — custody and zero-price enforcement boundary;
+- Book of Models — ACTIVE / RESERVE / QUARANTINE / REFUSED taxonomy;
+- Book of Switchyard — access is not admission;
+- Book of Prometheus — free-capacity discovery and price-drift responsibility;
+- Book of Talos — live qualification result;
+- Book of OTHRYS OS — system-level free remote labor pool;
+- V2-011J Blood Loop — intake lifecycle;
+- V2 Remote Arsenal — remote capability status;
+- `logs/keymaster/2026-09-26-pollinations-free-arsenal.md` — dedicated custody/arsenal evidence.

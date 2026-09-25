@@ -30,3 +30,9 @@ This Book may be expanded only from inspectable implementation, tests, mission r
 During V2 bring-up, bounded diagnostics and self-honing runs automatically append secret-free operational events to Mnemosyne's local archive under `.othrys/knowledge/archive/operations/`. PASS, DEGRADED and FAIL observations are retained with actor, job, evidence summary and lesson. FAIL events are marked review-recommended but are not silently promoted into canonical knowledge.
 
 This operational archive is deliberately reconstructible, local and non-authoritative. It exists so troubleshooting history is not lost while the Pentarchy learns how to build and verify itself. Canonical promotion still requires the normal Mnemosyne review law.
+
+## Pollinations arsenal memory — 2026-09-26
+
+The canonical Pollinations free-arsenal evidence is preserved in Git through the Jev integration log, the dedicated Keymaster arsenal log, and the owning Books. Future model-health or pricing observations must be treated as time-bounded evidence rather than silently replacing this historical state.
+
+Canonical current record: `logs/keymaster/2026-09-26-pollinations-free-arsenal.md`.

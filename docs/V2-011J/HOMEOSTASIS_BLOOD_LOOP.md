@@ -46,3 +46,13 @@ The first real OS daily pulse then completed from a Kronos heartbeat; a second i
 
 ## Self-honing loop
 `node tools/penta/self-hone.mjs` is the canonical non-UI self-hone entrypoint. Kronos opens a bounded cycle; independent organ jobs run in parallel; Talos performs whole-body/status/fault verification; Prometheus gets its daily due gate; Keymaster measures the shared arsenal; Mnemosyne automatically archives every PASS/DEGRADED/FAIL observation. FAIL history is retained for review but never silently promoted. Current Legion proof: whole-body PASS, 100/100 quick soak, 100/100 blood soak, 20k-round benchmarks; only non-mandatory Keymaster resource health remains DEGRADED because Fireworks/Together are unhealthy.
+
+## Pollinations free-arsenal intake — 2026-09-26
+
+The Blood Loop now has a concrete free-capacity intake example:
+
+Prometheus discovery -> operator whitelist -> Keymaster custody -> Jev strict-free filter -> Talos/runtime smoke -> Switchyard ACTIVE/RESERVE/QUARANTINE.
+
+The current Pollinations key exposes 18 available text models through authenticated discovery, all normalized to zero Pollen from blank community pricing. Jev refuses every positive numeric price and every paid-only model. Cohere North Mini Code and Kilo Auto passed live zero-cost smoke; GT Agent v1 and GLM 5.3 Flash FREE remain unqualified on the current chat adapter.
+
+This widens the renewable labor pool without widening authority.
