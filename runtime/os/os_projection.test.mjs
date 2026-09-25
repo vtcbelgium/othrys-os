@@ -34,7 +34,10 @@ test('OS projection maps manifest to proven V2 surfaces',()=>{
   assert.deepEqual(os.titans.map(x=>x.id),['hephaestus','talos']);
   assert.equal(os.models[0].id,'qwen3-builder');
   assert.equal(os.models[1].status,'ADVISORY ONLY');
-  assert.equal(os.models[2].available,false);
+  assert.equal(os.models[2].id,'pollinations-advisory');
+  assert.equal(os.models[2].available,true);
+  assert.equal(os.models[3].id,'remote-escalation');
+  assert.equal(os.models[3].available,false);
   assert.ok(os.apps.every(x=>x.actionable===false));
   assert.ok(os.knowledge.some(x=>x.id==='north-star'&&x.present));
   assert.ok(os.templates.some(x=>x.id==='oros-software'&&x.kind==='OROS'));

@@ -2,12 +2,13 @@ import { spawnSync } from 'node:child_process';
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 const root=new URL('../../',import.meta.url).pathname.replace(/^\/(.:\/)/,'$1');
+const pythonCmd=process.platform==='win32'?'python':'python3';
 const buildTests=['runtime/hephaestus','runtime/factory','runtime/talos-kernel'].flatMap(d=>readdirSync(join(root,d)).filter(n=>n.endsWith('.test.ts')).map(n=>`${d}/${n}`));
 const suites=[
   ['os-deep',process.execPath,['tools/penta/run-diagnostics.mjs','deep']],
   ['build-core',process.execPath,['--test',...buildTests]],
-  ['mycelium','python',['-m','pytest','-q','runtime/mycelium']],
-  ['workers','python',['-m','pytest','-q','runtime/workers']]
+  ['mycelium',pythonCmd,['tools/penta/run-python-tests.py','runtime/mycelium']],
+  ['workers',pythonCmd,['tools/penta/run-python-tests.py','runtime/workers']]
 ];
 const rows=[]; let total=0,passed=0,failed=0;
 for(const [id,cmd,args] of suites){

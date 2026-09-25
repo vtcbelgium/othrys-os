@@ -4,18 +4,21 @@ import { readFileSync } from 'node:fs';
 
 const json=(p)=>JSON.parse(readFileSync(p,'utf8').replace(/^\uFEFF/,''));
 
-test('Level 3.5 HubToWeb stays locked after Level 3 campaign completion until the seal/transition',()=>{
+test('Level 3.5 HubToWeb is sealed while Level 4 remains separately locked',()=>{
   const m=json('docs/training/TRAINING_MANIFEST.json');
   const p=json('docs/training/LEVEL_3_5_HUB_TO_WEB_PLAN.json');
   assert.equal(m.currentLevel,3);
   assert.equal(m.levels.find(x=>x.level===3).status,'COMPLETE');
   assert.equal(m.level3.completedJobs,24);
   assert.equal(m.levels.find(x=>x.level===4).status,'LOCKED');
-  assert.equal(m.level3_5Consolidation.status,'PLANNED_LOCKED');
+  assert.equal(m.level3_5Consolidation.status,'SEALED');
   assert.equal(m.level3_5Consolidation.requiredBeforeLevel4,true);
-  assert.equal(p.status,'PLANNED_LOCKED');
+  assert.equal(p.status,'SEALED');
   assert.equal(p.executionStarted,false);
   assert.equal(p.authorityGranted,false);
+  assert.equal(p.laws.level4UnlockAllowed,false);
+  assert.equal(p.laws.automaticAdvance,false);
+  assert.equal(p.sealReceipts.length,2);
 });
 
 test('HubToWeb preserves OS authority and requires parity before extinction',()=>{

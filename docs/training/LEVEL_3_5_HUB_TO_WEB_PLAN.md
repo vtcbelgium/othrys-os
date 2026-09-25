@@ -1,7 +1,7 @@
 # OTHRYS Training Mode — Level 3.5 HubToWeb
 
 **Level:** 3.5 — HubToWeb  
-**State:** PLANNED / LOCKED  
+**State:** SEALED / COMPLETE
 **Entry gate:** Level 3 COMPLETE + explicit operator transition  
 **Level 4:** remains LOCKED until Level 3.5 is sealed and separately advanced
 
@@ -35,7 +35,7 @@ The current Deck exposes nine retained API families plus its shell. Every row mu
 9. `/api/chat` + `/api/intent` -> Web control ingress — merge while preserving non-executing/authenticated semantics.
 10. `othrys-command-deck.service` -> `othrys-os-gateway.service` only after UI extinction and T590 rollback proof.
 
-## Seven phases
+## Eight phases
 
 **3.5-A Inventory and freeze.** Enumerate every Deck surface, endpoint, caller, service and existing Web counterpart. Freeze the parity matrix.
 
@@ -49,6 +49,8 @@ The current Deck exposes nine retained API families plus its shell. Every row mu
 **3.5-F Extinction.** Remove old Deck UI read paths, retire Hub/Deck interface naming, and prove no live caller depends on them. Preserve provenance only.
 
 **3.5-G Seal.** Fresh-clone OS/Web verification, T590 gateway service proof, rollback drill, whole-body tests and final extinction receipt.
+
+**3.5-H Intelligence seal.** Talos synthesizes migration evidence, emits bounded cross-organ adaptations, and re-verifies at least one observable downstream decision change without granting authority.
 
 ## Non-negotiable laws
 
@@ -71,3 +73,6 @@ HubToWeb may not become a mechanical migration. Talos is the central verificatio
 A phase is not considered learned merely because its receipt exists. Talos must synthesize the evidence and produce a bounded downstream adaptation for Hephaestus, Switchyard, Kronos, Rhea, Mnemosyne, Prometheus, Mycelium or its own oracle coverage. At least one observable future decision must change because of verified evidence before the Level 3.5 seal can pass.
 
 Authority, admission, paid usage, Trust Canal policy and level progression remain operator-gated. Intelligence changes preference and diagnosis; it does not create permission.
+## Seal result
+
+Level 3.5 is SEALED. The 3.5-G extinction receipt and 3.5-H intelligence receipt jointly satisfy the migration, reproducibility and verified-learning exit gates. Level 4 remains LOCKED and requires a separate explicit operator command.

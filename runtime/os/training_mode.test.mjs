@@ -13,7 +13,7 @@ test('Level 3 campaign completes without authority or Level 4 advance',()=>{
   assert.ok(m.level3.jobs.every(x=>x.status==='COMPLETE'&&x.authorityGranted===false&&x.executionStarted===false));
   assert.equal(m.levels.find(x=>x.level===3).status,'COMPLETE');
   assert.equal(m.levels.find(x=>x.level===4).status,'LOCKED');
-  assert.equal(m.level3_5Consolidation.status,'PLANNED_LOCKED');
+  assert.equal(m.level3_5Consolidation.status,'SEALED');
   assert.equal(m.automaticAdmission,false);
   assert.equal(m.automaticLevelAdvance,false);
   assert.equal(m.authorityGranted,false);
