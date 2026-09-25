@@ -9,6 +9,7 @@ const dir=import.meta.dirname;
 const projectManifest=JSON.parse(readFileSync(join(dir,'../../.othrys/project.json'),'utf8'));
 
 test('Deck UI read path is extinct and Web is the canonical human interface',async t=>{
+  for(const retired of ['index.html','atlas.html','manifest.webmanifest','sw.js']) assert.equal(existsSync(join(dir,'public',retired)),false,`${retired} must stay extinct`);
   const env={...process.env,OTHRYS_DECK_TOKEN:'retired-ui-read',OTHRYS_DECK_BIND:'127.0.0.1',OTHRYS_DECK_PORT:'18779',OTHRYS_DECK_NO_START:'0'};
   const child=spawn(process.execPath,[join(dir,'server.mjs')],{env,stdio:['ignore','pipe','pipe']});t.after(()=>child.kill());
   await new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(new Error('server timeout')),4000);child.stdout.on('data',x=>{if(String(x).includes('"ready":true')){clearTimeout(timer);resolve();}});});

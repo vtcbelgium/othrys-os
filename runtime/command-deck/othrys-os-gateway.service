@@ -1,6 +1,6 @@
 [Unit]
 Description=OTHRYS OS gateway service
-After=network-online.target othrys-mycelium.service
+After=network-online.target othrys-mycelium-node.service
 Conflicts=othrys-command-deck.service
 
 [Service]

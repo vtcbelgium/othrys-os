@@ -1,6 +1,6 @@
 [Unit]
 Description=OTHRYS Command Deck read-only LAN surface
-After=network-online.target othrys-mycelium.service
+After=network-online.target othrys-mycelium-node.service
 
 [Service]
 Type=simple

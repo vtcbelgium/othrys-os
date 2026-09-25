@@ -9,6 +9,8 @@ test('Level 3.5 canonical gateway service replaces the active Deck service name'
   const gateway = readFileSync(resolve(root, 'runtime/command-deck/othrys-os-gateway.service'), 'utf8');
   assert.match(gateway, /Description=OTHRYS OS gateway service/);
   assert.match(gateway, /ExecStart=.*runtime\/command-deck\/server\.mjs/);
+  assert.match(gateway, /After=network-online\.target othrys-mycelium-node\.service/);
+  assert.doesNotMatch(gateway, /othrys-mycelium\.service/);
   assert.match(gateway, /Conflicts=othrys-command-deck\.service/);
   assert.doesNotMatch(gateway, /worker|apply-permit|authority-grant/i);
 });
