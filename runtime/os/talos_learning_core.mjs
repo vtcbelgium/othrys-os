@@ -68,6 +68,43 @@ export function deriveTalosAdaptations(learning){
   return freeze({...body,adaptationDigest:digest(body)});
 }
 
+export function synthesizeOperationalLearning(events,{level=3.5}={}){
+  if(!Array.isArray(events)||events.length===0)throw new Error('TALOS_OPERATIONAL_EVIDENCE_REQUIRED');
+  const rows=events.filter(e=>e?.schema==='othrys.os.mnemosyne-operational-event.v1');
+  if(!rows.length)throw new Error('TALOS_OPERATIONAL_EVIDENCE_INVALID');
+  const checks=new Map(), families=new Map(), builders=new Map();
+  let finalPass=0, totalAttempts=0;
+  for(const e of rows){
+    const family=e.evidence?.family??e.evidence?.phase??'operational';
+    const f=families.get(family)??{jobs:0,recoveries:0,finalPass:0};
+    f.jobs++; if(e.status==='PASS'){finalPass++;f.finalPass++;} families.set(family,f);
+    for(const observation of e.evidence?.observations??[]){
+      const name=String(observation), x=checks.get(name)??{observed:0,finalPass:0};
+      x.observed++; if(e.status==='PASS')x.finalPass++; checks.set(name,x);
+    }
+    const be=e.evidence?.builderEvidence;
+    if(be?.id){
+      const b=builders.get(be.id)??{jobs:0,firstPass:0,recovery:0,attempts:0,attemptFailures:0,latencies:[]};
+      b.jobs++; if(be.firstPass===true)b.firstPass++; if(be.recovery===true)b.recovery++;
+      const attempts=Number.isFinite(be.attempts)?Math.max(0,be.attempts):1; b.attempts+=attempts; totalAttempts+=attempts;
+      if(be.attemptFailure===true)b.attemptFailures++;
+      if(Number.isFinite(be.latencyMs))b.latencies.push(be.latencyMs);
+      builders.set(be.id,b);
+    }
+  }
+  const builderEvidence=Object.fromEntries([...builders].map(([id,b])=>[id,{jobs:b.jobs,firstPassRate:ratio(b.firstPass,b.jobs),recoveryRate:ratio(b.recovery,b.jobs),attemptFailureRate:ratio(b.attemptFailures,b.attempts),timeoutRate:0,noMutationRate:0,medianLatencyMs:median(b.latencies)}]));
+  const checkEvidence=Object.fromEntries([...checks].map(([k,v])=>[k,{...v,finalPassRate:ratio(v.finalPass,v.observed)}]));
+  const familyEvidence=Object.fromEntries([...families].map(([k,v])=>[k,{...v,recoveryRate:0,finalPassRate:ratio(v.finalPass,v.jobs)}]));
+  const body={schema:'othrys.talos.learning-core.v1',level,jobs:rows.length,finalPassRate:ratio(finalPass,rows.length),operatorRecoveryRate:0,totalAttempts,builderEvidence,checkEvidence,familyEvidence};
+  return freeze({...body,evidenceDigest:digest(body),authorityGranted:false,automaticAdmission:false,automaticLevelAdvance:false});
+}
+
+export function buildTalosOperationalIntelligence(events,{level=3.5}={}){
+  const learning=synthesizeOperationalLearning(events,{level});
+  const adaptations=deriveTalosAdaptations(learning);
+  return freeze({schema:'othrys.talos.operational-intelligence.v1',learning,adaptations,authorityGranted:false});
+}
+
 export function buildTalosIntelligence(root=process.cwd(),level=3){
   const learning=synthesizeTalosLearning(collectTrainingEvidence(root,level),{level});
   const adaptations=deriveTalosAdaptations(learning);
