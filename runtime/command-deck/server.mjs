@@ -41,6 +41,7 @@ const controlTokenSha256=process.env.OTHRYS_DECK_CONTROL_TOKEN_SHA256 ?? '';
 const intentFile=process.env.OTHRYS_DECK_INTENT_FILE ?? '';
 const admissionLedger=process.env.OTHRYS_DECK_ADMISSION_LEDGER ?? '';
 const webCommandEnvelopeDir=process.env.OTHRYS_WEB_COMMAND_DIR ?? join(root,'missions','web-commands');
+const webStateRoot=process.env.OTHRYS_WEB_STATE_ROOT?resolve(process.env.OTHRYS_WEB_STATE_ROOT):root;
 const legionWorkspace=process.env.OTHRYS_LEGION_WORKSPACE ?? '';
 const legionWorkerBridgeUrl=process.env.OTHRYS_LEGION_WORKER_URL ?? '';
 const legionWorkerBridgeToken=process.env.OTHRYS_ENGINEERING_TOKEN ?? '';
@@ -150,7 +151,7 @@ export function switchyardPreviewFor(capability='engineering.build',minimumTier=
 export function switchyardPreview(preference='auto'){return switchyardPreviewFor('engineering.build','STANDARD',preference);}
 
 export async function brainDecisionForWebCommand(webCommandId){
-  const existing=readWebBrainDecision(root,webCommandId);
+  const existing=readWebBrainDecision(webStateRoot,webCommandId);
   if(existing) return existing;
   const envelopePath=join(webCommandEnvelopeDir,webCommandId+'.json');
   if(!existsSync(envelopePath)) throw new Error('WEB_COMMAND_ENVELOPE_NOT_FOUND');
@@ -212,7 +213,7 @@ function boundedLightRepoContext(command){
 
 export async function brainResultForWebCommand(webCommandId,plan,brainDecision){
   if(!plan||plan.status!=='NO_MISSION_REQUIRED'||!brainDecision) return null;
-  const existing=readWebBrainResult(root,webCommandId,{decision:brainDecision});
+  const existing=readWebBrainResult(webStateRoot,webCommandId,{decision:brainDecision});
   if(existing) return existing;
 
   const envelopePath=join(webCommandEnvelopeDir,webCommandId+'.json');
@@ -254,7 +255,7 @@ export async function brainResultForWebCommand(webCommandId,plan,brainDecision){
       contextText:decision.needsRepo===true?boundedLightRepoContext(command):'',
     }),
   });
-  return persistWebBrainResult(root,webCommandId,result,{decision:brainDecision}).result;
+  return persistWebBrainResult(webStateRoot,webCommandId,result,{decision:brainDecision}).result;
 }
 export function builderInspector(missionId=null){
   const selection=switchyardPreview('auto');
@@ -497,7 +498,7 @@ export async function handle(req,res){
       const active=reconcileActiveMission(root,rawActive).activeMission;
       const brainDecision=await brainDecisionForWebCommand(missionId);
       const plan=planWebCommand({
-        root,
+        root:webStateRoot,
         webCommandId:missionId,
         envelopeDir:webCommandEnvelopeDir,
         intentFile,
@@ -524,7 +525,7 @@ export async function handle(req,res){
       const rawActive=json('GPT_STATE.json').active_mission??null;
       const active=reconcileActiveMission(root,rawActive).activeMission;
       return activateWebCommand({
-        root,
+        root:webStateRoot,
         webCommandId:missionId,
         allowedWritePaths:body?.allowedWritePaths,
         timeoutSec:body?.timeoutSec,
