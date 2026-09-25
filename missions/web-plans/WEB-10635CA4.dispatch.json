@@ -1,0 +1,26 @@
+{
+  "schema": "othrys.os.web-command-activation.v1",
+  "webCommandId": "WEB-10635CA4",
+  "canonicalMissionId": "V2-011R",
+  "status": "DISPATCH_READY",
+  "stage": "Governed build dispatch is ready for Legion transport",
+  "progress": 70,
+  "builderId": "qwen3-builder",
+  "jobId": "JOB-0b31ba0c4aea57a34dc4a0ba",
+  "workspace": "C:/Users/othry/Projects/othrys-os",
+  "allowedWritePaths": [
+    "docs/BUILDER-SMOKE-TEST.md"
+  ],
+  "dispatchTicketId": "DISPATCH-0b31ba0c4aea57a34dc4a0ba",
+  "evidence": [
+    "missions/web-plans/WEB-10635CA4.activation.json",
+    "missions/build-packages/DECK-BUILD-1eb969fc3badb4aa08a0cab6.json",
+    "missions/execution-leases/LEASE-697301603636d03bc59bece9.json",
+    "missions/launch-permits/PERMIT-0b31ba0c4aea57a34dc4a0ba.json",
+    "missions/worker-requests/JOB-0b31ba0c4aea57a34dc4a0ba.json",
+    "missions/dispatch-tickets/DISPATCH-0b31ba0c4aea57a34dc4a0ba.json"
+  ],
+  "authorityGranted": false,
+  "dispatchAuthorityGranted": true,
+  "executionStarted": false
+}

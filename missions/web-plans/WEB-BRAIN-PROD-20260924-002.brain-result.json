@@ -1,0 +1,43 @@
+{
+  "schema": "othrys.os.brain-result.v1",
+  "mode": "TRAINING",
+  "decisionDigest": "495ae01b3c780de4b2d65976cee4c656bf4604fa258298972abf83f210196f28",
+  "lane": "FAST",
+  "executor": "deterministic.status",
+  "status": "COMPLETED",
+  "output": {
+    "kind": "SYSTEM_STATUS",
+    "snapshot": {
+      "controlGate": "CLEAN_SYNCED",
+      "activeMission": {
+        "missionId": "V2-011K",
+        "status": "RUNNING"
+      },
+      "operatingMode": null,
+      "legionNode": {
+        "id": "legion",
+        "stale": true,
+        "gpuUtilPercent": 0,
+        "gpuTempC": 44,
+        "qwenLoaded": false
+      },
+      "selectedBuilder": {
+        "id": "qwen3-builder",
+        "locality": "LOCAL",
+        "providerHealth": "HEALTHY",
+        "certification": "CERTIFIED"
+      }
+    },
+    "text": "OTHRYS status · control=CLEAN_SYNCED · mission=V2-011K:RUNNING · legion=STALE"
+  },
+  "verification": {
+    "status": "DETERMINISTIC_EVIDENCE_PASS",
+    "independent": false
+  },
+  "readOnlyWorkPerformed": true,
+  "recommendationOnly": false,
+  "authorityGranted": false,
+  "actionApplied": false,
+  "executionStarted": false,
+  "resultDigest": "ec4ca5a4242f22facb9351a6745efcb5cfc914f12a88834c7220ecf2f305fcd6"
+}

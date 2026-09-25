@@ -1,0 +1,111 @@
+{
+  "schema_version": "othrys.worker-result.v0.1",
+  "mission_id": "V2-011P",
+  "job_id": "JOB-4ff0186291d2ce149a944a60",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "worker_id": "worker.legion.qwen3-builder.v0.1",
+  "builder_id": "qwen3-builder",
+  "ok": true,
+  "reason": "",
+  "started_at": 1789933410.9249828,
+  "completed_at": 1789933412.7594106,
+  "duration_sec": 1.834427833557129,
+  "allowed_paths": [
+    "docs/WEB-SMOKE.md"
+  ],
+  "changed_files": [
+    "docs/WEB-SMOKE.md"
+  ],
+  "out_of_scope_changes": [],
+  "diff": "--- a/docs/WEB-SMOKE.md\n+++ b/docs/WEB-SMOKE.md\n@@ -0,0 +1 @@\n+OTHRYS web builder smoke test passed.",
+  "git_status": "docs/WEB-SMOKE.md",
+  "summary": "Created docs/WEB-SMOKE.md with the required content.",
+  "runtime_evidence": {
+    "observed_diff": "--- a/docs/WEB-SMOKE.md\n+++ b/docs/WEB-SMOKE.md\n@@ -0,0 +1 @@\n+OTHRYS web builder smoke test passed.",
+    "git_status": "docs/WEB-SMOKE.md",
+    "tool_trace": [
+      "write_file: wrote 37 chars to docs/WEB-SMOKE.md",
+      "read_file: OTHRYS web builder smoke test passed.",
+      "finish: Created docs/WEB-SMOKE.md with the required content."
+    ],
+    "tool_call_diagnostics": [
+      {
+        "name": "write_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"docs/WEB-SMOKE.md\", \"content\": \"OTHRYS web builder smoke test passed.\"}",
+        "raw_suffix": "{\"path\": \"docs/WEB-SMOKE.md\", \"content\": \"OTHRYS web builder smoke test passed.\"}",
+        "raw_length": 81,
+        "parsed_keys": [
+          "content",
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 37
+      },
+      {
+        "name": "read_file",
+        "argument_type": "dict",
+        "raw_prefix": "{\"path\": \"docs/WEB-SMOKE.md\"}",
+        "raw_suffix": "{\"path\": \"docs/WEB-SMOKE.md\"}",
+        "raw_length": 29,
+        "parsed_keys": [
+          "path"
+        ],
+        "has_path": true,
+        "content_length": 0
+      },
+      {
+        "name": "finish",
+        "argument_type": "dict",
+        "raw_prefix": "{\"summary\": \"Created docs/WEB-SMOKE.md with the required content.\"}",
+        "raw_suffix": "{\"summary\": \"Created docs/WEB-SMOKE.md with the required content.\"}",
+        "raw_length": 67,
+        "parsed_keys": [
+          "summary"
+        ],
+        "has_path": false,
+        "content_length": 0
+      }
+    ]
+  },
+  "capability_selection": {
+    "policy": "v2_direct_low_level_loop",
+    "route_builder": "qwen3-builder",
+    "selected_builder": "local.qwen3-8b",
+    "model": "qwen3:8b",
+    "cost_model": "local"
+  },
+  "node_before": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "5446",
+      "utilization_pct": "13",
+      "temperature_c": "39",
+      "power_w": "5.62"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    5.3 GB    100% GPU     4096       15 minutes from now"
+  },
+  "node_after": {
+    "node_id": "legion",
+    "hostname": "Jeroen-Legion",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 32,
+    "gpu": {
+      "available": true,
+      "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "memory_total_mb": "8151",
+      "memory_used_mb": "5446",
+      "utilization_pct": "97",
+      "temperature_c": "51",
+      "power_w": "97.74"
+    },
+    "ollama_ps": "NAME        ID              SIZE      PROCESSOR    CONTEXT    UNTIL               \nqwen3:8b    500a1f067a9f    5.3 GB    100% GPU     4096       29 minutes from now"
+  }
+}

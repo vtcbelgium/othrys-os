@@ -1,0 +1,21 @@
+{
+  "schema_version": "othrys.worker-request.v0.1",
+  "job_id": "JOB-0b31ba0c4aea57a34dc4a0ba",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "workspace": "C:/Users/othry/Projects/othrys-os",
+  "task": "Take this objective into governed OTHRYS Work State. Use the existing mission lifecycle, Builder/Talos separation and evidence gates: Create a file docs/SM-DISPATCH-TEST.md containing only: System Manager automatic dispatch works.",
+  "allowed_paths": [
+    "docs/BUILDER-SMOKE-TEST.md"
+  ],
+  "deny_paths": [],
+  "timeout_sec": 180,
+  "metadata": {
+    "mission_id": "V2-011R",
+    "builder_id": "qwen3-builder",
+    "permit_id": "PERMIT-0b31ba0c4aea57a34dc4a0ba",
+    "permit_digest": "7d9443d0e890a3d5ae56c74c982ab10d277db8e6ab5721d6c3922602f71e567e",
+    "launch_request_id": "DECK-LAUNCH-0b31ba0c4aea57a34dc4a0ba",
+    "status": "READY_FOR_DISPATCH"
+  }
+}

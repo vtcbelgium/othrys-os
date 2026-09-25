@@ -1,0 +1,16 @@
+{
+  "schema": "othrys.os.web-command.v1",
+  "missionId": "WEB-BUILDER-SMOKE-20260920-2",
+  "correlationId": "WEB-BUILDER-SMOKE-20260920-2",
+  "command": "Run a real governed OTHRYS Builder smoke test.\n\nGoal:\nCreate one harmless documentation artifact in the othrys-os repository:\n\ndocs/BUILDER-SMOKE-TEST.md\n\nBefore changing anything:\n1. Inspect the current repository and live OTHRYS state.\n2. Show which Builder Switchyard selects for this task and why.\n3. Show the node, model tier, cost class, certification, measured trust, operating mode and intervention policy.\n4. Create or use a canonical Work State for this objective.\n\nScope:\n- You may create or modify ONLY docs/BUILDER-SMOKE-TEST.md.\n- Do not modify runtime code, configuration, missions, package files or any other file.\n- Do not weaken any Trust Canal or Talos gate.\n\nThe document must contain:\n- Title: OTHRYS Builder Smoke Test\n- Purpose of the test\n- Mission ID\n- Selected Builder\n- Builder node\n- Switchyard routing reason\n- Operating mode\n- Intervention policy\n- A short explanation that chat is not canonical state\n- A verification checklist\n\nAcceptance:\n- The file exists at exactly docs/BUILDER-SMOKE-TEST.md\n- Valid readable Markdown\n- No files outside the allowed scope changed\n- Talos independently verifies the result\n- Report the evidence rather than merely claiming success\n\nUse the normal governed lifecycle:\nPLAN → BUILD → REVIEW → SHIP\n\nAt completion report:\n- Mission ID\n- selected Builder and selection reason\n- attempts used / attempt budget\n- files changed\n- Talos verdict\n- evidence produced\n- canonical commit, if one was created\n- final Work State\n\nIf any required authority, route, worker or verification step is unavailable, stop at that gate and report exactly what blocked execution instead of bypassing it.",
+  "context": "System Manager Builder smoke test",
+  "actor": {
+    "role": "ceo",
+    "channel": "othrys-web"
+  },
+  "promptDigest": "ead05d60c5bcf7c4f7df60bc914608f2c3c7356b1b015671b4990d36863b4a78",
+  "admittedAt": "2026-09-20T18:15:16.370Z",
+  "state": "ADMITTED_AWAITING_PLANNING",
+  "authorityGranted": false,
+  "executionStarted": false
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "othrys.os.worker-transport.v1",
+  "missionId": "V2-011P",
+  "jobId": "JOB-4ff0186291d2ce149a944a60",
+  "builderId": "qwen3-builder",
+  "nodeId": "legion",
+  "status": "WORKER_COMPLETED",
+  "changedFiles": [
+    "docs/WEB-SMOKE.md"
+  ],
+  "workerResultPath": "missions/V2-011P.worker-result.json",
+  "authorityGranted": false,
+  "executionStarted": true
+}

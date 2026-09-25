@@ -1,0 +1,19 @@
+{
+  "schema": "othrys.os.change-apply-permit.v1",
+  "permitId": "APPLY-PERMIT-ed6b906ff744ec57fd47e5de",
+  "candidateId": "CHANGE-de7d9b47af284dec08ddf075",
+  "missionId": "V2-011O",
+  "patchDigest": "de7d9b47af284dec08ddf075965ab64ad504a623bd001d71018259902e51d201",
+  "targetSha": "951380e58ede94422d31c20b0a3a6c4b4a6aded8",
+  "changedFiles": [
+    "docs/BUILDER-SMOKE-TEST.md"
+  ],
+  "applyRequestId": "DECK-APPLY-ed6b906ff744ec57fd47e5de",
+  "oneShot": true,
+  "consumed": true,
+  "status": "APPLY_CONSUMED",
+  "authorityGranted": true,
+  "applied": true,
+  "consumedAt": "2026-09-20T19:02:02.215Z",
+  "appliedAt": "2026-09-20T19:02:02.215Z"
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "othrys.os.web-command.v1",
+  "missionId": "WEB-SMOKE-BUILD-20260920",
+  "correlationId": "WEB-SMOKE-BUILD-20260920",
+  "command": "Create docs/BUILDER-SMOKE-TEST.md as a bounded OTHRYS Builder smoke-test document. Modify only that file. Include the title OTHRYS Builder Smoke Test, a short purpose section, a note that chat is not canonical state, and a verification checklist. Keep it concise.",
+  "context": "Real bounded System Manager Builder smoke test.",
+  "actor": {
+    "role": "ceo",
+    "channel": "othrys-web"
+  },
+  "promptDigest": "5115853c50791fdabf33a9b843f1d9d209f7e5ef9d4ad8ee35af0f3e6980e36f",
+  "admittedAt": "2026-09-20T18:54:24.770Z",
+  "state": "ADMITTED_AWAITING_PLANNING",
+  "authorityGranted": false,
+  "executionStarted": false
+}

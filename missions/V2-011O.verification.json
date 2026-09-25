@@ -1,0 +1,25 @@
+{
+  "schema": "othrys.os.independent-verification.v1",
+  "missionId": "V2-011O",
+  "jobId": "JOB-fd1b810b597c8f9ba5e9aa4b",
+  "verifier": "T590",
+  "verdict": "PASS",
+  "checks": {
+    "dispatchIdentity": true,
+    "workerSucceeded": true,
+    "exactScope": true,
+    "title": true,
+    "purpose": true,
+    "chatStateBoundary": true,
+    "verificationChecklist": true
+  },
+  "evidence": {
+    "dispatchTicket": "missions/dispatch-tickets/DISPATCH-fd1b810b597c8f9ba5e9aa4b.json",
+    "workerResult": "missions/V2-011O.worker-result.json",
+    "changedFiles": [
+      "docs/BUILDER-SMOKE-TEST.md"
+    ]
+  },
+  "authorityGranted": false,
+  "executionStarted": false
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "othrys.worker-request.v0.1",
+  "job_id": "JOB-4ff0186291d2ce149a944a60",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "workspace": "C:/Users/othry/Projects/othrys-os",
+  "task": "Take this objective into governed OTHRYS Work State. Use the existing mission lifecycle, Builder/Talos separation and evidence gates: Create a file called docs/WEB-SMOKE.md containing exactly one line: OTHRYS web builder smoke test passed.",
+  "allowed_paths": [
+    "docs/WEB-SMOKE.md"
+  ],
+  "deny_paths": [],
+  "timeout_sec": 180,
+  "metadata": {
+    "mission_id": "V2-011P",
+    "builder_id": "qwen3-builder",
+    "permit_id": "PERMIT-4ff0186291d2ce149a944a60",
+    "permit_digest": "f2ad66e7162062bde4064482256f30a5be3136da4664635c752457d4071c27d2",
+    "launch_request_id": "DECK-LAUNCH-4ff0186291d2ce149a944a60",
+    "status": "READY_FOR_DISPATCH"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "mission_id": "V2-011O",
+  "verdict": "PASS",
+  "web_command_id": "WEB-SMOKE-BUILD-20260920",
+  "builder_id": "qwen3-builder",
+  "selected_model": "qwen3:8b",
+  "builder_node": "legion",
+  "worker_job_id": "JOB-fd1b810b597c8f9ba5e9aa4b",
+  "worker_duration_sec": 5.855212450027466,
+  "attempts_used": 1,
+  "attempt_budget": {
+    "default": 3,
+    "hard_ceiling": 5
+  },
+  "canonical_apply_commit": "5df81b1855849340998e178a75127a516b518c91",
+  "changed_files": [
+    "docs/BUILDER-SMOKE-TEST.md"
+  ],
+  "apply_request_id": "DECK-APPLY-ed6b906ff744ec57fd47e5de",
+  "candidate_id": "CHANGE-de7d9b47af284dec08ddf075",
+  "base_sha": "951380e58ede94422d31c20b0a3a6c4b4a6aded8",
+  "independent_verification": "PASS",
+  "apply_verification": "missions/V2-011O.apply-verification.json",
+  "out_of_scope_changes": [],
+  "authorityGranted": false,
+  "executionStarted": true,
+  "closeout": "CANONICAL_APPLY_VERIFIED"
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "othrys.os.worker-patch-evidence.v1",
+  "missionId": "V2-011O",
+  "jobId": "JOB-fd1b810b597c8f9ba5e9aa4b",
+  "builderId": "qwen3-builder",
+  "baseSha": "951380e58ede94422d31c20b0a3a6c4b4a6aded8",
+  "sourceWorkerBaseSha": "f98202ad1963624112ddfdca78979deec9e91cd7",
+  "revalidatedOn": "T590_CURRENT_HEAD",
+  "workspaceClass": "T590_REVALIDATED_WORKER_PATCH",
+  "changedFiles": [
+    "docs/BUILDER-SMOKE-TEST.md"
+  ],
+  "diff": "diff --git a/docs/BUILDER-SMOKE-TEST.md b/docs/BUILDER-SMOKE-TEST.md\nnew file mode 100644\nindex 0000000..ec57bf2\n--- /dev/null\n+++ b/docs/BUILDER-SMOKE-TEST.md\n@@ -0,0 +1,13 @@\n+# OTHRYS Builder Smoke Test\n+\n+## Purpose\n+This document outlines a basic smoke test to verify the core functionality of the OTHRYS Builder environment.\n+\n+## Notes\n+- Chat interactions are not considered canonical state and should not be relied upon for accurate results.\n+\n+## Verification Checklist\n+- [ ] Confirm that the builder can create and modify files within the workspace.\n+- [ ] Verify that the builder can execute basic commands and scripts.\n+- [ ] Ensure that the builder can access and use the provided tools correctly.\n+- [ ] Check that the builder can read and write files without errors.\n\\ No newline at end of file\n",
+  "authorityGranted": false,
+  "applied": false
+}

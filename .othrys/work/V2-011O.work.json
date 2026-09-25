@@ -1,0 +1,17 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-011O",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-011O",
+  "title": "Tablet mission: Govern admitted OTHRYS Web Builder request WEB-SMOKE-BUILD-20260920. Full operat",
+  "objective": "Govern admitted OTHRYS Web Builder request WEB-SMOKE-BUILD-20260920. Full operator objective and context are preserved in missions/web-commands/WEB-SMOKE-BUILD-20260920.json.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "c70386444a53cdd92e8ebeb332fc1967e43d37080526a5ec4f101ac0e33488ee"
+}

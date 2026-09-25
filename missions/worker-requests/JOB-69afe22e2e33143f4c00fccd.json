@@ -1,0 +1,21 @@
+{
+  "schema_version": "othrys.worker-request.v0.1",
+  "job_id": "JOB-69afe22e2e33143f4c00fccd",
+  "node_id": "legion",
+  "capability": "engineering.patch",
+  "workspace": "C:/Users/othry/Projects/othrys-os",
+  "task": "Take this objective into governed OTHRYS Work State. Use the existing mission lifecycle, Builder/Talos separation and evidence gates: Create a file called docs/WEB-SMOKE-2.md containing exactly one line: OTHRYS automatic Legion transport passed.",
+  "allowed_paths": [
+    "docs/WEB-SMOKE-2.md"
+  ],
+  "deny_paths": [],
+  "timeout_sec": 180,
+  "metadata": {
+    "mission_id": "V2-011Q",
+    "builder_id": "qwen3-builder",
+    "permit_id": "PERMIT-69afe22e2e33143f4c00fccd",
+    "permit_digest": "f1d67f96a18d62dc528234e981210b96794b22f8591fe3f55d2e5f587eee9a90",
+    "launch_request_id": "DECK-LAUNCH-69afe22e2e33143f4c00fccd",
+    "status": "READY_FOR_DISPATCH"
+  }
+}

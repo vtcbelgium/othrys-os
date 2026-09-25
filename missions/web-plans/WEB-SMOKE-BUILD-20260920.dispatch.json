@@ -1,0 +1,26 @@
+{
+  "schema": "othrys.os.web-command-activation.v1",
+  "webCommandId": "WEB-SMOKE-BUILD-20260920",
+  "canonicalMissionId": "V2-011O",
+  "status": "DISPATCH_READY",
+  "stage": "Governed build dispatch is ready for GPT/Remote Commander",
+  "progress": 70,
+  "builderId": "qwen3-builder",
+  "jobId": "JOB-fd1b810b597c8f9ba5e9aa4b",
+  "workspace": "C:/Users/othry/Projects/othrys-os",
+  "allowedWritePaths": [
+    "docs/BUILDER-SMOKE-TEST.md"
+  ],
+  "dispatchTicketId": "DISPATCH-fd1b810b597c8f9ba5e9aa4b",
+  "evidence": [
+    "missions/web-plans/WEB-SMOKE-BUILD-20260920.activation.json",
+    "missions/build-packages/DECK-BUILD-56f153710838fbaedfb8c3b2.json",
+    "missions/execution-leases/LEASE-7c494c93f0432986ec2c9a90.json",
+    "missions/launch-permits/PERMIT-fd1b810b597c8f9ba5e9aa4b.json",
+    "missions/worker-requests/JOB-fd1b810b597c8f9ba5e9aa4b.json",
+    "missions/dispatch-tickets/DISPATCH-fd1b810b597c8f9ba5e9aa4b.json"
+  ],
+  "authorityGranted": false,
+  "dispatchAuthorityGranted": true,
+  "executionStarted": false
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "othrys.os.launch-permit.v1",
+  "permitId": "PERMIT-69afe22e2e33143f4c00fccd",
+  "missionId": "V2-011Q",
+  "builderId": "qwen3-builder",
+  "leaseId": "LEASE-286f2f160ef025cf3f3b3517",
+  "leaseDigest": "63be8ee575b224dc5b66e47ec5a076b0cf0273b0a340027e897436e204421b6d",
+  "launchRequestId": "DECK-LAUNCH-69afe22e2e33143f4c00fccd",
+  "issuedAt": "2026-09-20T20:03:09.021Z",
+  "expiresAt": "2026-09-20T20:05:09.021Z",
+  "oneShot": true,
+  "consumed": true,
+  "status": "PERMIT_CONSUMED_FOR_DISPATCH",
+  "authorityGranted": false,
+  "executionStarted": false,
+  "consumedAt": "2026-09-20T20:03:09.023Z"
+}

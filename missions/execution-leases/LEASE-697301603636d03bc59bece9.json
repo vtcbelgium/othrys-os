@@ -1,0 +1,15 @@
+{
+  "schema": "othrys.os.execution-lease.v1",
+  "leaseId": "LEASE-697301603636d03bc59bece9",
+  "missionId": "V2-011R",
+  "builderId": "qwen3-builder",
+  "buildRequestId": "DECK-BUILD-1eb969fc3badb4aa08a0cab6",
+  "executionAuthId": "DECK-EXEC-697301603636d03bc59bece9",
+  "packageDigest": "017bfa5bcac7de26f3f34c3338d8a43164abb160acfb93ed78cb9db127fd6c6c",
+  "issuedAt": "2026-09-21T12:51:49.456Z",
+  "expiresAt": "2026-09-21T13:01:49.456Z",
+  "status": "LEASE_READY_NOT_STARTED",
+  "launchEligible": true,
+  "authorityGranted": false,
+  "executionStarted": false
+}

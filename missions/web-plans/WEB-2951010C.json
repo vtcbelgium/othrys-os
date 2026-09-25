@@ -1,0 +1,21 @@
+{
+  "schema": "othrys.os.web-command-plan.v1",
+  "webCommandId": "WEB-2951010C",
+  "intent": "BUILD",
+  "status": "PLANNED_AWAITING_ACTIVATION",
+  "stage": "Governed planning complete · awaiting explicit activation",
+  "progress": 50,
+  "canonicalMissionId": "V2-011P",
+  "activeMissionId": null,
+  "blocker": null,
+  "evidence": [
+    "missions/web-commands/WEB-2951010C.json",
+    "missions/web-plans/WEB-2951010C.json",
+    "missions/candidates/CANDIDATE-ccd0160edb03a1c0b2d85bee.json",
+    "missions/candidates/CANDIDATE-ccd0160edb03a1c0b2d85bee.allocation.json",
+    "missions/V2-011P.json",
+    ".othrys/work/V2-011P.work.json"
+  ],
+  "authorityGranted": false,
+  "executionStarted": false
+}

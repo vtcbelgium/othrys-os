@@ -1,0 +1,40 @@
+{
+  "schema": "othrys.os.brain-decision.v1",
+  "mode": "TRAINING",
+  "source": "JEV_CORTEX",
+  "degraded": false,
+  "degradedReason": null,
+  "commandDigest": "482a6ffa12531d0f3f1d45712dc8fd14f97b8725b53ebb4f1a6d303255734783",
+  "deterministicIntent": "OPERATION",
+  "lane": "FAST",
+  "taskType": "status",
+  "needsRepo": false,
+  "needsWeb": false,
+  "needsExecution": false,
+  "riskScore": 0,
+  "executor": {
+    "id": "deterministic.status",
+    "class": "DETERMINISTIC",
+    "owner": "KRONOS_RHEA_MNEMOSYNE"
+  },
+  "missionRequired": false,
+  "deterministicMissionFloor": false,
+  "semanticMissionFloor": false,
+  "authorization": {
+    "required": false,
+    "owner": null,
+    "granted": false
+  },
+  "verification": {
+    "required": false,
+    "profile": "BOUNDED_EVIDENCE"
+  },
+  "routerObservationDigest": "d5a32d7ad65d89453c9b9a2e02a30d678b5931c343a49fa265dca6b87d5f9ef5",
+  "plannerDigest": "51a8edb2b0b42514b8c018495a3beb9b6b9aa0ae944542e23951c4ffcc20503b",
+  "bridgeReceiptDigest": "83f12559072293a7cf810380bc258cf72186a4bb1b6bd6bd21d1d4c0742c196a",
+  "recommendationOnly": true,
+  "authorityGranted": false,
+  "actionApplied": false,
+  "executionStarted": false,
+  "decisionDigest": "495ae01b3c780de4b2d65976cee4c656bf4604fa258298972abf83f210196f28"
+}

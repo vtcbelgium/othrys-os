@@ -1,0 +1,24 @@
+{
+  "schema": "othrys.os.apply-verification.v1",
+  "missionId": "V2-011O",
+  "verifier": "T590",
+  "checks": {
+    "base_sha": true,
+    "scope": true,
+    "bytes": true,
+    "sha256": true,
+    "candidate_digest": true,
+    "permit_consumed": true
+  },
+  "expectedSha256": "f482e908b77f50e0424639e65b637fcca417253e5a6804466611a9226b0ba4c8",
+  "observed": {
+    "head": "951380e58ede94422d31c20b0a3a6c4b4a6aded8",
+    "status": "?? docs/BUILDER-SMOKE-TEST.md",
+    "sha256": "f482e908b77f50e0424639e65b637fcca417253e5a6804466611a9226b0ba4c8",
+    "bytes": 593,
+    "candidateId": "CHANGE-de7d9b47af284dec08ddf075",
+    "permitId": "APPLY-PERMIT-ed6b906ff744ec57fd47e5de"
+  },
+  "verdict": "PASS",
+  "authorityGranted": false
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "othrys.os.web-command-activation-scope.v1",
+  "webCommandId": "WEB-2951010C",
+  "canonicalMissionId": "V2-011P",
+  "allowedWritePaths": [
+    "docs/WEB-SMOKE.md"
+  ],
+  "workspace": "C:/Users/othry/Projects/othrys-os",
+  "authorizedAt": "2026-09-20T19:25:36.051Z",
+  "actor": {
+    "role": "ceo",
+    "channel": "othrys-web"
+  },
+  "authorityGranted": false,
+  "executionStarted": false
+}

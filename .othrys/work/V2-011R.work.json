@@ -1,0 +1,17 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-011R",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-011R",
+  "title": "Tablet mission: Govern admitted OTHRYS Web Builder request WEB-10635CA4. Full operator objective",
+  "objective": "Govern admitted OTHRYS Web Builder request WEB-10635CA4. Full operator objective and context are preserved in missions/web-commands/WEB-10635CA4.json.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "5adcfbf24bf6d69d015f57929d07574c03be59823ee8df7e7b283d907ee28e6a"
+}

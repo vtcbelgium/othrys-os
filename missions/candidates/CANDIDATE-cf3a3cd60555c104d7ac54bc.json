@@ -1,0 +1,16 @@
+{
+  "schema": "othrys.os.mission-candidate.v1",
+  "candidateId": "CANDIDATE-cf3a3cd60555c104d7ac54bc",
+  "proposalId": "DECK-MISSION-cf3a3cd60555c104d7ac54bc",
+  "promotionId": "DECK-PROMOTE-29558d9a386daadb20e7145c",
+  "projectContext": "othrys-web",
+  "objective": "Govern admitted OTHRYS Web Builder request WEB-SMOKE-BUILD-20260920. Full operator objective and context are preserved in missions/web-commands/WEB-SMOKE-BUILD-20260920.json.",
+  "proposalReceivedAt": "2026-09-20T18:54:24.771Z",
+  "promotionReceivedAt": "2026-09-20T18:54:24.772Z",
+  "proposalAdmission": "ADMITTED",
+  "promotionAdmission": "ADMITTED",
+  "canonicalMissionId": null,
+  "authorityGranted": false,
+  "executionStarted": false,
+  "status": "CANDIDATE"
+}

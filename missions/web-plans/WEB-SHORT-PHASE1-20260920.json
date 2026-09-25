@@ -1,0 +1,21 @@
+{
+  "schema": "othrys.os.web-command-plan.v1",
+  "webCommandId": "WEB-SHORT-PHASE1-20260920",
+  "intent": "BUILD",
+  "status": "QUEUED_ACTIVE_MISSION",
+  "stage": "Governed planning complete · queued behind active Mission V2-011K",
+  "progress": 40,
+  "canonicalMissionId": "V2-011N",
+  "activeMissionId": "V2-011K",
+  "blocker": "ONE_MISSION_RULE",
+  "evidence": [
+    "missions/web-commands/WEB-SHORT-PHASE1-20260920.json",
+    "missions/web-plans/WEB-SHORT-PHASE1-20260920.json",
+    "missions/candidates/CANDIDATE-fd0d11ffecfe4ab3d39c0345.json",
+    "missions/candidates/CANDIDATE-fd0d11ffecfe4ab3d39c0345.allocation.json",
+    "missions/V2-011N.json",
+    ".othrys/work/V2-011N.work.json"
+  ],
+  "authorityGranted": false,
+  "executionStarted": false
+}

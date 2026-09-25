@@ -1,0 +1,21 @@
+{
+  "schema": "othrys.os.web-command-plan.v1",
+  "webCommandId": "WEB-PROD-SMOKE-002",
+  "intent": "BUILD",
+  "status": "QUEUED_ACTIVE_MISSION",
+  "stage": "Governed planning complete · queued behind active Mission V2-011K",
+  "progress": 40,
+  "canonicalMissionId": "V2-011L",
+  "activeMissionId": "V2-011K",
+  "blocker": "ONE_MISSION_RULE",
+  "evidence": [
+    "missions/web-commands/WEB-PROD-SMOKE-002.json",
+    "missions/web-plans/WEB-PROD-SMOKE-002.json",
+    "missions/candidates/CANDIDATE-e79783032196b6b35f0b54d6.json",
+    "missions/candidates/CANDIDATE-e79783032196b6b35f0b54d6.allocation.json",
+    "missions/V2-011L.json",
+    ".othrys/work/V2-011L.work.json"
+  ],
+  "authorityGranted": false,
+  "executionStarted": false
+}

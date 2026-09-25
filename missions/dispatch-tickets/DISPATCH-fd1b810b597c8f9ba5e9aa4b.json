@@ -1,0 +1,14 @@
+{
+  "schema": "othrys.os.dispatch-ticket.v1",
+  "ticketId": "DISPATCH-fd1b810b597c8f9ba5e9aa4b",
+  "jobId": "JOB-fd1b810b597c8f9ba5e9aa4b",
+  "missionId": "V2-011O",
+  "builderId": "qwen3-builder",
+  "permitId": "PERMIT-fd1b810b597c8f9ba5e9aa4b",
+  "originalPermitDigest": "6f5bb03b516278ed45b15c4c174733efda4d664773e90877dd59e682358d5338",
+  "requestDigest": "d221df97075729f994c296806473f7f957fda0c34eec465af14deb8f81656b2e",
+  "consumedAt": "2026-09-20T18:54:24.852Z",
+  "status": "DISPATCH_AUTHORIZED",
+  "authorityGranted": true,
+  "executionStarted": false
+}

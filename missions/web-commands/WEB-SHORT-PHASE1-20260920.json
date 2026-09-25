@@ -1,0 +1,16 @@
+{
+  "schema": "othrys.os.web-command.v1",
+  "missionId": "WEB-SHORT-PHASE1-20260920",
+  "correlationId": "WEB-SHORT-PHASE1-20260920",
+  "command": "PLAN ONLY. Prepare a governed OTHRYS Builder smoke test to create docs/BUILDER-SMOKE-TEST.md. Do not activate, build, execute, dispatch a worker, or modify the target documentation file yet.",
+  "context": "Short-phase System Manager test: planning boundary only.",
+  "actor": {
+    "role": "ceo",
+    "channel": "othrys-web"
+  },
+  "promptDigest": "a443daa650683164443a74bb50846c2fba1eeced0d785a8a562e858a421d3762",
+  "admittedAt": "2026-09-20T18:48:28.047Z",
+  "state": "ADMITTED_AWAITING_PLANNING",
+  "authorityGranted": false,
+  "executionStarted": false
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "othrys.os.web-command.v1",
+  "missionId": "WEB-PROD-SMOKE-002",
+  "correlationId": "WEB-PROD-SMOKE-002",
+  "command": "Run a real governed OTHRYS Builder smoke test.\n\nGoal:\nCreate one harmless documentation artifact in the othrys-os repository:\n\ndocs/BUILDER-SMOKE-TEST.md\n\nBefore changing anything:\n1. Inspect the current repository and live OTHRYS state.\n2. Show which Builder Switchyard selects for this task and why.\n3. Show the node, model tier, cost class, certification, measured trust, operating mode and intervention policy.\n4. Create or use a canonical Work State for this objective.\n\nScope:\n- You may create or modify ONLY docs/BUILDER-SMOKE-TEST.md.\n- Do not modify runtime code, configuration, missions, package files or any other file.\n- Do not weaken any Trust Canal or Talos gate.\n\nAcceptance:\n- The file exists at exactly docs/BUILDER-SMOKE-TEST.md\n- Valid readable Markdown\n- No files outside the allowed scope changed\n- Talos independently verifies the result\n- Report the evidence rather than merely claiming success\n\nUse the normal governed lifecycle:\nPLAN -> BUILD -> REVIEW -> SHIP\n\nIf any required authority, route, worker or verification step is unavailable, stop at that gate and report exactly what blocked execution instead of bypassing it.",
+  "context": "Production System Manager smoke test after native Web planning bridge deployment.",
+  "actor": {
+    "role": "ceo",
+    "channel": "othrys-web"
+  },
+  "promptDigest": "7aea11aff8f46a33014e4bbefeaa20e099ad0c94dda522a4987de18ad89062b8",
+  "admittedAt": "2026-09-20T17:50:18.904Z",
+  "state": "ADMITTED_AWAITING_PLANNING",
+  "authorityGranted": false,
+  "executionStarted": false
+}

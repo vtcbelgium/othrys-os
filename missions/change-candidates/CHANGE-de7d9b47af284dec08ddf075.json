@@ -1,0 +1,17 @@
+{
+  "schema": "othrys.os.change-candidate.v1",
+  "candidateId": "CHANGE-de7d9b47af284dec08ddf075",
+  "missionId": "V2-011O",
+  "jobId": "JOB-fd1b810b597c8f9ba5e9aa4b",
+  "builderId": "qwen3-builder",
+  "baseSha": "951380e58ede94422d31c20b0a3a6c4b4a6aded8",
+  "changedFiles": [
+    "docs/BUILDER-SMOKE-TEST.md"
+  ],
+  "patchDigest": "de7d9b47af284dec08ddf075965ab64ad504a623bd001d71018259902e51d201",
+  "workspaceClass": "T590_REVALIDATED_WORKER_PATCH",
+  "status": "VERIFIED_CHANGE_CANDIDATE",
+  "applyEligible": false,
+  "authorityGranted": false,
+  "applied": false
+}

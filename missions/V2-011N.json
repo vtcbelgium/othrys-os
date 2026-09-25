@@ -1,0 +1,46 @@
+{
+  "mission_id": "V2-011N",
+  "title": "Tablet mission: Govern admitted OTHRYS Web Builder request WEB-SHORT-PHASE1-20260920. Full opera",
+  "objective": "Govern admitted OTHRYS Web Builder request WEB-SHORT-PHASE1-20260920. Full operator objective and context are preserved in missions/web-commands/WEB-SHORT-PHASE1-20260920.json.",
+  "non_goals": [
+    "No execution",
+    "No automatic activation",
+    "No mutation outside a later admitted mission"
+  ],
+  "actor": "UNASSIGNED",
+  "delegate": "UNASSIGNED",
+  "execution_environment": "UNASSIGNED",
+  "allowed_read_paths": [],
+  "allowed_write_paths": [],
+  "allowed_tools": [],
+  "network_policy": "DENY",
+  "secret_config_refs": [],
+  "budgets": {
+    "max_turns": 0,
+    "max_time_seconds": 0,
+    "max_mutations": 0,
+    "max_retries": 0
+  },
+  "required_evidence": [
+    "Explicit activation admission",
+    "Independent verification"
+  ],
+  "terminal_success_condition": "Canonical mission envelope exists and remains non-executing.",
+  "terminal_failure_conditions": [
+    "Missing provenance",
+    "Authority ambiguity",
+    "Evidence mismatch",
+    "Target collision"
+  ],
+  "next_state": "WAIT_GPT",
+  "status": "CANONICAL_UNACTIVATED",
+  "provenance": {
+    "candidateId": "CANDIDATE-fd0d11ffecfe4ab3d39c0345",
+    "proposalId": "DECK-MISSION-fd0d11ffecfe4ab3d39c0345",
+    "promotionId": "DECK-PROMOTE-fdcb802232d23d15141bd362",
+    "allocationId": "DECK-ALLOCATE-0fb0776d560d8df286ad2a0b",
+    "projectContext": "othrys-web"
+  },
+  "authorityGranted": false,
+  "executionStarted": false
+}

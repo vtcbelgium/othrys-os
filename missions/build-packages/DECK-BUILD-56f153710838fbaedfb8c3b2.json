@@ -1,0 +1,12 @@
+{
+  "schema": "othrys.os.build-package.v1",
+  "missionId": "V2-011O",
+  "objective": "Govern admitted OTHRYS Web Builder request WEB-SMOKE-BUILD-20260920. Full operator objective and context are preserved in missions/web-commands/WEB-SMOKE-BUILD-20260920.json.",
+  "builderId": "qwen3-builder",
+  "routeDigest": "b72e83882e78e73f09079b578fc6925ccafec7d0da31a3b87ff8e143d984a628",
+  "buildRequestId": "DECK-BUILD-56f153710838fbaedfb8c3b2",
+  "preflightClass": "MISSING_WORK",
+  "status": "READY_NOT_EXECUTING",
+  "authorityGranted": false,
+  "executionStarted": false
+}

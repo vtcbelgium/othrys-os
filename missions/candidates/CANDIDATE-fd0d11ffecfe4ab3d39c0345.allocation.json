@@ -1,0 +1,9 @@
+{
+  "schema": "othrys.os.mission-allocation.v1",
+  "candidateId": "CANDIDATE-fd0d11ffecfe4ab3d39c0345",
+  "missionId": "V2-011N",
+  "allocationId": "DECK-ALLOCATE-0fb0776d560d8df286ad2a0b",
+  "status": "ALLOCATED_UNACTIVATED",
+  "authorityGranted": false,
+  "executionStarted": false
+}

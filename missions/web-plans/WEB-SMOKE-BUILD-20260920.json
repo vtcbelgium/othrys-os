@@ -1,0 +1,21 @@
+{
+  "schema": "othrys.os.web-command-plan.v1",
+  "webCommandId": "WEB-SMOKE-BUILD-20260920",
+  "intent": "BUILD",
+  "status": "PLANNED_AWAITING_ACTIVATION",
+  "stage": "Governed planning complete · awaiting explicit activation",
+  "progress": 50,
+  "canonicalMissionId": "V2-011O",
+  "activeMissionId": null,
+  "blocker": null,
+  "evidence": [
+    "missions/web-commands/WEB-SMOKE-BUILD-20260920.json",
+    "missions/web-plans/WEB-SMOKE-BUILD-20260920.json",
+    "missions/candidates/CANDIDATE-cf3a3cd60555c104d7ac54bc.json",
+    "missions/candidates/CANDIDATE-cf3a3cd60555c104d7ac54bc.allocation.json",
+    "missions/V2-011O.json",
+    ".othrys/work/V2-011O.work.json"
+  ],
+  "authorityGranted": false,
+  "executionStarted": false
+}

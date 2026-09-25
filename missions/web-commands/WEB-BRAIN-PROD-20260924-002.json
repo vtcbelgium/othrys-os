@@ -1,0 +1,16 @@
+{
+  "schema": "othrys.os.web-command.v1",
+  "missionId": "WEB-BRAIN-PROD-20260924-002",
+  "correlationId": "WEB-BRAIN-PROD-20260924-002",
+  "command": "Inspect OTHRYS service status. Read only. Do not restart, reconfigure, deploy, or change anything.",
+  "context": "Production brain negation regression proof",
+  "actor": {
+    "role": "ceo",
+    "channel": "othrys-web"
+  },
+  "promptDigest": "482a6ffa12531d0f3f1d45712dc8fd14f97b8725b53ebb4f1a6d303255734783",
+  "admittedAt": "2026-09-24T17:09:09.165Z",
+  "state": "ADMITTED_AWAITING_PLANNING",
+  "authorityGranted": false,
+  "executionStarted": false
+}

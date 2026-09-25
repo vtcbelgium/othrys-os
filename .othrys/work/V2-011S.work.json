@@ -1,0 +1,17 @@
+{
+  "schema": "othrys.os.work.v1",
+  "workId": "WORK-V2-011S",
+  "projectId": "othrys-v2",
+  "sourceMissionId": "V2-011S",
+  "title": "Tablet mission: Govern admitted OTHRYS Web Builder request WEB-BRAIN-PROD-20260924-001. Full ope",
+  "objective": "Govern admitted OTHRYS Web Builder request WEB-BRAIN-PROD-20260924-001. Full operator objective and context are preserved in missions/web-commands/WEB-BRAIN-PROD-20260924-001.json.",
+  "scale": "STANDARD",
+  "problem": "",
+  "outOfScope": [],
+  "risks": [],
+  "laws": [],
+  "slices": [],
+  "authorityGranted": false,
+  "executionStarted": false,
+  "definitionDigest": "6ee4606bc93c205796a057b123edce1730f3b9d83507a89ed31c9a77b4f0953a"
+}

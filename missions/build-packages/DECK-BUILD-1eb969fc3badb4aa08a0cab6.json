@@ -1,0 +1,12 @@
+{
+  "schema": "othrys.os.build-package.v1",
+  "missionId": "V2-011R",
+  "objective": "Govern admitted OTHRYS Web Builder request WEB-10635CA4. Full operator objective and context are preserved in missions/web-commands/WEB-10635CA4.json.",
+  "builderId": "qwen3-builder",
+  "routeDigest": "09f5f440e45a5e2615c1146568f25cbdc5fafec1820a3103460fe9db1e748628",
+  "buildRequestId": "DECK-BUILD-1eb969fc3badb4aa08a0cab6",
+  "preflightClass": "MISSING_WORK",
+  "status": "READY_NOT_EXECUTING",
+  "authorityGranted": false,
+  "executionStarted": false
+}

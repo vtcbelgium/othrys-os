@@ -1,0 +1,22 @@
+{
+  "schema": "othrys.os.web-command-plan.v1",
+  "webCommandId": "WEB-BRAIN-PROD-20260924-002",
+  "intent": "OPERATION",
+  "status": "NO_MISSION_REQUIRED",
+  "stage": "Brain route FAST · deterministic.status · no governed Mission required",
+  "progress": 100,
+  "canonicalMissionId": null,
+  "activeMissionId": "V2-011K",
+  "blocker": null,
+  "evidence": [
+    "missions/web-commands/WEB-BRAIN-PROD-20260924-002.json",
+    "missions/web-plans/WEB-BRAIN-PROD-20260924-002.brain.json",
+    "runtime/os/front_door.mjs"
+  ],
+  "brainDecisionDigest": "495ae01b3c780de4b2d65976cee4c656bf4604fa258298972abf83f210196f28",
+  "brainSource": "JEV_CORTEX",
+  "brainLane": "FAST",
+  "brainExecutor": "deterministic.status",
+  "authorityGranted": false,
+  "executionStarted": false
+}
