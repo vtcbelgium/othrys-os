@@ -3,6 +3,7 @@ const SAFE_PROBES=Object.freeze({
   OPENROUTER_API_KEY:{providerId:'openrouter',url:'https://openrouter.ai/api/v1/models'},
   NVIDIA_API_KEY:{providerId:'nvidia',url:'https://integrate.api.nvidia.com/v1/models'},
   OPENAI_API_KEY:{providerId:'openai',url:'https://api.openai.com/v1/models'},
+  POLLINATIONS_API_KEY:{providerId:'pollinations',url:'https://gen.pollinations.ai/v1/models'},
   GOOGLE_API_KEY:{providerId:'google',url:'https://generativelanguage.googleapis.com/v1beta/models',header:'x-goog-api-key',prefix:''},
   CEREBRAS_API_KEY:{providerId:'cerebras',url:'https://api.cerebras.ai/v1/models'},
   MISTRAL_API_KEY:{providerId:'mistral',url:'https://api.mistral.ai/v1/models'},

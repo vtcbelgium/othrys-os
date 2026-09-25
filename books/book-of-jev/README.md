@@ -267,3 +267,34 @@ Primary completion evidence:
 - `runtime/command-deck/server.mjs`
 - `runtime/command-deck/web_control_http.test.ts`
 - `logs/jev/2026-09-24-brain-completion.md`
+
+## Pollinations provider lane — 2026-09-25
+
+Pollinations is now an admitted **LIGHT advisory provider** behind the OTHRYS brain, not a replacement for the native Jev Router.
+
+Canonical provider posture for bounded repo advisory is:
+
+`local Legion Ollama` by default; `Pollinations` requires explicit provider selection or explicit remote-fallback opt-in.
+
+The local model remains first because it is zero-cost and keeps bounded repository evidence local. OTHRYS does not silently send repository evidence to Pollinations when the local model fails.
+
+Keymaster owns `POLLINATIONS_API_KEY`; the secret is applied only at the final Authorization-header boundary.
+
+The provider adapter:
+- discovers only models visible to the current key;
+- prefers a zero-price text model when one is actually available;
+- otherwise chooses the lowest-priced text model with known pricing;
+- refuses unknown pricing;
+- enforces a `0.001 Pollen` estimated per-call ceiling;
+- strips provider reasoning envelopes before returning advisory text;
+- records provider/model/cost class without recording the secret;
+- remains read-only and authority-free.
+
+The live key currently exposes one model, `community/AkshayCoder48/v3`, with non-zero Pollen pricing. Therefore the active Pollinations lane is honestly classified `BOUNDED_POLLEN`, not free.
+
+The core Router remains on the typed TypeSafe/OpenRouter Jev lane. Generic Pollinations chat output is not allowed to masquerade as native Jev decision evidence.
+
+Full evidence and live verification are recorded in:
+- `logs/jev/2026-09-25-pollinations-integration.md`;
+- `runtime/os/pollinations_transport.mjs`;
+- `runtime/os/pollinations_transport.test.mjs`.

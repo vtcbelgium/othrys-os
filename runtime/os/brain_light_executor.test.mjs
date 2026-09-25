@@ -147,3 +147,33 @@ test('repo LIGHT uses Legion qwen advisory bridge with bounded context',async()=
   assert.equal(out.costClass,'ZERO');
   assert.equal(out.authorityGranted,false);
 });
+
+test('repo LIGHT preserves bounded Pollinations fallback metadata',async()=>{
+  const out=await executeLightSpecialist({
+    decision:decision({needsWeb:false,needsRepo:true}),
+    command:'Explain the failing test from the evidence.',
+    specialistRoute:route,
+    contextText:'TEST LOG: expected 200, got 500',
+    legionBridgeUrl:'http://legion:8766',
+    legionBridgeToken:'bridge-token',
+    fetchImpl:async()=>new Response(JSON.stringify({
+      ok:true,
+      advisory:{
+        schema:'othrys.legion.advisory-response.v1',
+        provider:'POLLINATIONS',
+        model:'fc/v3',
+        text:'The bounded evidence shows an HTTP 500 response.',
+        local:false,
+        costClass:'BOUNDED_POLLEN',
+        estimatedMaxPollen:0.0002,
+        authorityGranted:false,
+        actionApplied:false,
+        executionStarted:false,
+      },
+    }),{status:200}),
+  });
+  assert.equal(out.provider,'POLLINATIONS');
+  assert.equal(out.local,false);
+  assert.equal(out.costClass,'BOUNDED_POLLEN');
+  assert.equal(out.estimatedMaxPollen,0.0002);
+});
