@@ -282,15 +282,16 @@ Keymaster owns `POLLINATIONS_API_KEY`; the secret is applied only at the final A
 
 The provider adapter:
 - discovers only models visible to the current key;
-- prefers a zero-price text model when one is actually available;
-- otherwise chooses the lowest-priced text model with known pricing;
-- refuses unknown pricing;
-- enforces a `0.001 Pollen` estimated per-call ceiling;
+- treats blank pricing as free only for community models;
+- allows explicit zero pricing;
+- refuses every model with any positive numeric Pollen price;
+- refuses `paid_only=true`;
+- keeps the `0.001 Pollen` guard as a defensive ceiling even though admitted calls estimate zero;
 - strips provider reasoning envelopes before returning advisory text;
 - records provider/model/cost class without recording the secret;
 - remains read-only and authority-free.
 
-The live key currently exposes one model, `community/AkshayCoder48/v3`, with non-zero Pollen pricing. Therefore the active Pollinations lane is honestly classified `BOUNDED_POLLEN`, not free.
+The live key is now a strict free-only Pollinations arsenal. Authenticated discovery currently exposes **18 available zero-Pollen text models**; additional selected free models can remain hidden when Pollinations health filtering marks them unavailable. The Pollinations lane is therefore classified `ZERO`, with no paid fallback.
 
 The core Router remains on the typed TypeSafe/OpenRouter Jev lane. Generic Pollinations chat output is not allowed to masquerade as native Jev decision evidence.
 

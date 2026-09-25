@@ -24,22 +24,24 @@ Routing is still not authorization. Pollinations cannot grant authority, mutate 
 
 Authenticated model discovery was executed against `https://gen.pollinations.ai/v1/models`.
 
-The current key exposes exactly one text model:
+After the key was expanded into a strict free-only arsenal, authenticated discovery exposes **18 currently available text models**.
 
-- `community/AkshayCoder48/v3`;
-- alias: `AkshayCoder48/v3`;
-- prompt price: `0.0000001 Pollen/token`;
-- completion price: `0.0000003 Pollen/token`.
+Every returned model currently has:
+- community model identity;
+- no positive numeric Pollen price;
+- blank community pricing, which Pollinations defines as free;
+- secret exposure: false.
 
-Therefore this current lane is **not zero-cost**. It is classified `BOUNDED_POLLEN`.
+The dashboard contains additional free models that may be absent from authenticated discovery while Pollinations health filtering marks them down or unavailable.
 
-The earlier candidate DeepSeek/Qwen model names selected in the dashboard were not visible to this key when verified through the authenticated model endpoint. OTHRYS therefore does not hard-code those names or pretend they are available.
+Model selection is now strict:
+1. blank-priced community models are normalized to zero Pollen;
+2. explicitly zero-priced models are allowed;
+3. any positive numeric Pollen price is refused;
+4. `paid_only=true` is refused;
+5. an optional preferred model must still be visible and strict-free.
 
-Model selection is dynamic from the key-visible catalogue:
-1. free/zero-price text model first, if present;
-2. otherwise the lowest-priced known text model;
-3. unknown pricing fails closed;
-4. optional preferred model must actually be visible to the key.
+There is no paid fallback inside the Pollinations lane.
 ## Cost guard
 
 Every advisory call estimates a worst-case Pollen cost before inference.
@@ -69,14 +71,14 @@ A live bounded advisory measured:
 Set `OTHRYS_BRAIN_POLLINATIONS_FALLBACK=1` to allow remote fallback. Without that flag, repository evidence stays local when Ollama fails.
 ## Verification
 
-Focused provider/brain unit suite:
-- 18 passed / 0 failed.
+Focused provider/brain unit suite after strict-free normalization:
+- 19 passed / 0 failed.
 
 Expanded Jev + brain suite:
 - 49 passed / 0 failed.
 
-Full runtime OS + Command Deck regression after rebasing onto current `origin/main`:
-- **424 passed / 0 failed**.
+Full runtime OS + Command Deck regression after strict-free normalization:
+- **425 passed / 0 failed**.
 
 Legion bridge Python suite:
 - **8 passed / 0 failed**.
@@ -98,3 +100,19 @@ Live proofs:
 - `runtime/workers/legion_brain_advisory.mjs`
 - `runtime/os/brain_light_executor.mjs`
 - `runtime/os/brain_light_executor.test.mjs`
+
+## Free-arsenal smoke update — 2026-09-26
+
+Authenticated Keymaster discovery after the expanded dashboard whitelist:
+- visible text models: 18;
+- all 18 normalize to strict zero-Pollen community pricing;
+- positive-price models visible: 0;
+- secret exposed: false.
+
+Live chat smoke:
+- Cohere North Mini Code: PASS, costClass ZERO, estimatedMaxPollen 0;
+- Kilo Auto: PASS, costClass ZERO, estimatedMaxPollen 0;
+- GT Agent v1: HTTP 400 on the current chat adapter, keep RESERVE/QUARANTINE until qualified;
+- GLM 5.3 Flash FREE: HTTP 400 on the current chat adapter, keep RESERVE/QUARANTINE until qualified.
+
+This demonstrates why key access and Switchyard admission remain separate: free access is broad, active routing still requires a passing runtime smoke/qualification.

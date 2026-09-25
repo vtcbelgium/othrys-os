@@ -19,11 +19,22 @@ function assertSealedCredential(value){
   return value;
 }
 
-function sanitizePricing(raw={}){
+function sanitizePricing(raw={},{community=false,paidOnly=false}={}){
+  const numeric=Object.entries(raw)
+    .filter(([key,value])=>key!=='currency'&&value!==null&&value!==''&&Number.isFinite(Number(value)))
+    .map(([key,value])=>Object.freeze({key,value:Number(value)}));
+  const hasPositiveValue=numeric.some(row=>row.value>0);
+  const allDeclaredZero=numeric.length>0&&numeric.every(row=>row.value===0);
+  const blankCommunityFree=community&&!paidOnly&&numeric.length===0;
   return Object.freeze({
     currency:clean(raw.currency)||'pollen',
     promptTextTokens:num(raw.promptTextTokens),
     completionTextTokens:num(raw.completionTextTokens),
+    declaredNumericCount:numeric.length,
+    hasPositiveValue,
+    allDeclaredZero,
+    blankCommunityFree,
+    strictFree:!paidOnly&&!hasPositiveValue&&(blankCommunityFree||allDeclaredZero),
   });
 }
 function sanitizeModel(raw){
@@ -32,12 +43,16 @@ function sanitizeModel(raw){
   const aliases=Array.isArray(raw?.aliases)
     ? raw.aliases.map(clean).filter(Boolean).slice(0,20)
     : [];
+  const community=raw?.community===true||id.startsWith('community/');
+  const paidOnly=raw?.paid_only===true;
   return Object.freeze({
     id,
     aliases:Object.freeze(aliases),
     category:clean(raw?.category)||'text',
     ownedBy:clean(raw?.owned_by)||null,
-    pricing:sanitizePricing(raw?.pricing),
+    community,
+    paidOnly,
+    pricing:sanitizePricing(raw?.pricing,{community,paidOnly}),
   });
 }
 
@@ -50,7 +65,12 @@ function hasKnownPricing(model){
     model.pricing.completionTextTokens!==null;
 }
 
+function isStrictFreeModel(model){
+  return model?.pricing?.strictFree===true;
+}
+
 function unitCost(model){
+  if(isStrictFreeModel(model)) return 0;
   if(!hasKnownPricing(model)) return Number.POSITIVE_INFINITY;
   return model.pricing.promptTextTokens+model.pricing.completionTextTokens;
 }
@@ -59,22 +79,17 @@ export function selectPollinationsAdvisoryModel(models,{preferredModel=null}={})
   if(!Array.isArray(models)||!models.length){
     throw new Error('POLLINATIONS_NO_MODELS_AVAILABLE');
   }
-  const textModels=models.filter(isTextModel).filter(hasKnownPricing);
-  if(!textModels.length) throw new Error('POLLINATIONS_NO_PRICED_TEXT_MODEL');
+  const textModels=models.filter(isTextModel).filter(isStrictFreeModel);
+  if(!textModels.length) throw new Error('POLLINATIONS_NO_FREE_TEXT_MODEL');
   if(preferredModel){
     const wanted=clean(preferredModel);
     const exact=textModels.find(model=>
       model.id===wanted||model.aliases.includes(wanted)
     );
-    if(!exact) throw new Error('POLLINATIONS_PREFERRED_MODEL_UNAVAILABLE');
+    if(!exact) throw new Error('POLLINATIONS_PREFERRED_FREE_MODEL_UNAVAILABLE');
     return exact;
   }
-  const ranked=[...textModels].sort((a,b)=>{
-    const aFree=unitCost(a)===0?0:1;
-    const bFree=unitCost(b)===0?0:1;
-    return aFree-bFree||unitCost(a)-unitCost(b)||a.id.localeCompare(b.id);
-  });
-  return ranked[0];
+  return [...textModels].sort((a,b)=>a.id.localeCompare(b.id))[0];
 }
 
 export function estimatePollinationsPollen({
@@ -82,10 +97,23 @@ export function estimatePollinationsPollen({
   promptChars,
   maxOutputTokens=160,
 }={}){
-  if(!model||!hasKnownPricing(model)) throw new Error('POLLINATIONS_PRICING_REQUIRED');
+  if(!model) throw new Error('POLLINATIONS_PRICING_REQUIRED');
   if(!Number.isInteger(promptChars)||promptChars<0) throw new Error('POLLINATIONS_PROMPT_SIZE_INVALID');
   if(!Number.isInteger(maxOutputTokens)||maxOutputTokens<1) throw new Error('POLLINATIONS_OUTPUT_BUDGET_INVALID');
   const estimatedInputTokens=Math.ceil((promptChars/3)*1.35);
+  if(isStrictFreeModel(model)){
+    return Object.freeze({
+      schema:'othrys.os.pollinations-cost-guard.v1',
+      model:model.id,
+      estimatedInputTokens,
+      maxOutputTokens,
+      estimatedMaxPollen:0,
+      strictFree:true,
+      authorityGranted:false,
+      executionStarted:false,
+    });
+  }
+  if(!hasKnownPricing(model)) throw new Error('POLLINATIONS_PRICING_REQUIRED');
   const estimatedMaxPollen=
     estimatedInputTokens*model.pricing.promptTextTokens+
     maxOutputTokens*model.pricing.completionTextTokens;
