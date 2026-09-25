@@ -1,6 +1,6 @@
 [Unit]
 Description=OTHRYS Trust Canal tablet-intent admission watcher
-After=network-online.target othrys-command-deck.service
+After=network-online.target othrys-os-gateway.service
 
 [Service]
 Type=simple

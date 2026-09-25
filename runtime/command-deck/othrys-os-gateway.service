@@ -1,0 +1,15 @@
+[Unit]
+Description=OTHRYS OS gateway service
+After=network-online.target othrys-mycelium.service
+Conflicts=othrys-command-deck.service
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/othrys/deck.env
+WorkingDirectory=%h/othrys-os
+ExecStart=/usr/bin/node %h/othrys-os/runtime/command-deck/server.mjs
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
