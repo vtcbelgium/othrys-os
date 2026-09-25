@@ -70,8 +70,11 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.equal(data.osSurface.models[0].id,'qwen3-builder');
   assert.equal(data.osSurface.models[0].available,true);
   assert.equal(data.osSurface.models[1].id,'llama3.2-advisory');
+  assert.equal(data.osSurface.models[2].id,'pollinations-advisory');
   assert.equal(data.osSurface.models[1].status,'ADVISORY ONLY');
-  assert.equal(data.osSurface.models[2].available,false);
+  assert.equal(data.osSurface.models[2].available,true);
+  assert.equal(data.osSurface.models[3].id,'remote-escalation');
+  assert.equal(data.osSurface.models[3].available,false);
   assert.equal(data.osSurface.apps.length,4);
   assert.ok(data.osSurface.apps.every(a=>a.actionable===false));
   assert.ok(data.osSurface.apps.some(a=>a.id==='ollama-legion'&&a.status==='PROVEN'));

@@ -74,3 +74,17 @@ test('unknown measured trust stays explicit and falls through to deterministic i
   const r=selectSwitchyardRoute(req(),[candidate('b',{measuredTrust:null}),candidate('a',{measuredTrust:null})]);
   assert.equal(r.selected.id,'a'); assert.equal(r.selected.measuredTrust,null); assert.equal(r.rejections.b,'DETERMINISTIC_ID_TIE_BREAK');
 });
+
+
+test('Pollinations advisory route is legal zero-cost remote LIGHT but local advisory remains default',()=>{
+  const local=candidate('llama3.2-advisory',{capabilities:['analysis.summarize'],tier:'LIGHT',costClass:'ZERO',locality:'LOCAL',providerHealth:'HEALTHY',certification:'UNTESTED',measuredTrust:null});
+  const pollinations=candidate('pollinations-advisory',{capabilities:['analysis.summarize'],tier:'LIGHT',costClass:'ZERO',latencyClass:'NORMAL',locality:'REMOTE',providerHealth:'HEALTHY',certification:'CERTIFIED',measuredTrust:null});
+  const request={schema:MODEL_REQUEST_SCHEMA,capability:'analysis.summarize',minimumTier:'LIGHT',privacy:'PROJECT',locality:'PREFER_LOCAL',maxCostClass:'PAID',maxLatency:'BATCH'};
+  const auto=selectSwitchyardRoute(request,[pollinations,local]);
+  assert.equal(auto.selected.id,'llama3.2-advisory');
+  assert.equal(auto.rejections['pollinations-advisory'],'LOCAL_TIE_BREAK');
+  const remoteOnly=selectSwitchyardRoute({...request,locality:'ANY'},[pollinations]);
+  assert.equal(remoteOnly.selected.id,'pollinations-advisory');
+  assert.equal(remoteOnly.selected.costClass,'ZERO');
+  assert.equal(remoteOnly.authorityGranted,false);
+});

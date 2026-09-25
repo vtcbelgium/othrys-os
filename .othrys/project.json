@@ -191,6 +191,26 @@
         "legal": true
       },
       {
+        "id": "pollinations-advisory",
+        "label": "Pollinations Free Advisory Arsenal",
+        "class": "REMOTE ADVISORY",
+        "status": "QUALIFIED",
+        "available": true,
+        "evidence": "logs/jev/2026-09-25-pollinations-integration.md",
+        "capabilities": [
+          "analysis.summarize"
+        ],
+        "tier": "LIGHT",
+        "costClass": "ZERO",
+        "latencyClass": "NORMAL",
+        "locality": "REMOTE",
+        "providerHealth": "HEALTHY",
+        "certification": "CERTIFIED",
+        "measuredTrust": null,
+        "paidApprovalRequired": false,
+        "legal": true
+      },
+      {
         "id": "remote-escalation",
         "label": "Remote escalation",
         "class": "REMOTE",
