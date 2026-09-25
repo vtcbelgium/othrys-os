@@ -121,6 +121,7 @@ test('SPEC-031 Web bridge admits durably and returns Web-compatible status', asy
   try {
     let response = await fetch('http://127.0.0.1:' + port + '/healthz');
     assert.equal(response.status, 200);
+    assert.equal((await response.json()).service, 'othrys-os-gateway');
 
     response = await fetch('http://127.0.0.1:' + port + '/v1/commands', {
       method: 'POST',

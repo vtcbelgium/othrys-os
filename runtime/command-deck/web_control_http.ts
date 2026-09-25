@@ -99,7 +99,7 @@ export async function handleWebControlRequest(
   const url = new URL(request.url ?? '/', 'http://othrys.local');
 
   if (request.method === 'GET' && url.pathname === '/healthz') {
-    sendJson(response, 200, { status: 'ok', service: 'othrys-os-command-deck' });
+    sendJson(response, 200, { status: 'ok', service: 'othrys-os-gateway' });
     return true;
   }
 

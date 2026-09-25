@@ -18,6 +18,7 @@
 - Web HTTP tests were writing Brain plans into the real checkout. A separate `OTHRYS_WEB_STATE_ROOT` seam now isolates test state while production defaults remain unchanged.
 - Gateway ordering referenced nonexistent `othrys-mycelium.service`; it now targets the active `othrys-mycelium-node.service`.
 - Front-door routing no longer mistakes planned/built `status page/site/dashboard` work for a live system-status operation; PLAN/BUILD and OPERATION remain separately regression-tested.
+- The unauthenticated health probe now identifies the live surface as `othrys-os-gateway`; the historical `othrys.command-deck.status.v1` API schema remains intentionally preserved for compatibility.
 ## Verification
 
 Current-system whole-body verification now covers all tracked runtime Node/TS tests, Blocks tests, Theia tests, Mycelium, workers, and active auxiliary Python/QA/Mnemosyne tests.
