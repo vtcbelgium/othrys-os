@@ -20,6 +20,7 @@ async function startServer(port: number, ledger: string, auth: 'token' | 'verifi
       : '',
     OTHRYS_DECK_ADMISSION_LEDGER: ledger,
     OTHRYS_DECK_INTENT_FILE: join(dirname(ledger), 'intents.jsonl'),
+    OTHRYS_WEB_COMMAND_DIR: join(dirname(ledger), 'web-commands'),
     OTHRYS_LEGION_WORKSPACE: 'C:/Users/othry/Projects/othrys-os',
     OTHRYS_DECK_BIND: '127.0.0.1',
     OTHRYS_DECK_PORT: String(port),
