@@ -1,6 +1,6 @@
 import http from 'node:http';
 import { readFileSync, existsSync, appendFileSync, mkdirSync, readdirSync } from 'node:fs';
-import { join, resolve, extname, dirname } from 'node:path';
+import { join, resolve, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { decideMissionPreflight } from './preflight_decision.ts';
@@ -32,7 +32,6 @@ import { executeLightSpecialist, warmLocalAdvisory } from '../os/brain_light_exe
 
 export const DECK_SCHEMA='othrys.command-deck.status.v1';
 const root=resolve(import.meta.dirname,'../..');
-const publicDir=join(import.meta.dirname,'public');
 const token=process.env.OTHRYS_DECK_TOKEN ?? '';
 const port=Number(process.env.OTHRYS_DECK_PORT ?? 8780);
 const bind=process.env.OTHRYS_DECK_BIND ?? '127.0.0.1';
@@ -479,14 +478,6 @@ function send(res,code,body,type='application/json; charset=utf-8'){
   res.writeHead(code,{'Content-Type':type,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'});
   res.end(body);
 }
-function serveStatic(pathname,res){
-  const rel=pathname==='/'?'index.html':pathname.slice(1);
-  if(rel.includes('..')) return send(res,404,'not found','text/plain');
-  const file=join(publicDir,rel);
-  if(!existsSync(file)) return send(res,404,'not found','text/plain');
-  const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.webmanifest':'application/manifest+json','.svg':'image/svg+xml'};
-  send(res,200,readFileSync(file),types[extname(file)]??'application/octet-stream');
-}
 export async function handle(req,res){
   if(await handleWebControlRequest(req,res,{
     token:controlToken,
@@ -601,7 +592,7 @@ export async function handle(req,res){
     const selection=switchyardPreview(url.searchParams.get('preference')??'auto');
     return send(res,200,JSON.stringify({ok:true,preflight,route:proposeBuildRoute(preflight,selection),controlsEnabled:false}));
   }
-  return serveStatic(url.pathname,res);
+  return send(res,410,JSON.stringify({ok:false,error:'DECK_UI_RETIRED',canonicalInterface:'othrys-web'}));
 }
 export function startServer(){
   if(!token) throw new Error('OTHRYS_DECK_TOKEN_REQUIRED');
