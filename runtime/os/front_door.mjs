@@ -1,7 +1,7 @@
 const INTENTS=Object.freeze(['QUESTION','RESEARCH','PLAN','BUILD','OPERATION']);
 const clean=v=>String(v??'').trim();
 
-const OPERATION_RE=/\b(status|health|active mission|current mission|which builder|which model|quarry|heartbeat)\b/;
+const OPERATION_RE=/\b(status(?!\s+(?:page|site|website|dashboard|component|endpoint)\b)|health|active mission|current mission|which builder|which model|quarry|heartbeat)\b/;
 const BUILD_RE=/\b(build|implement|code|create|make|fix|repair|deploy|ship|restart|reconfigure|rotate|revoke|delete|drop|update|change|write|edit|remove|install|uninstall|apply|commit|push|merge|restore|migrate|publish)\b/;
 const PLAN_RE=/\b(plan|design|architect|roadmap|spec|blueprint)\b/;
 const RESEARCH_RE=/\b(research|investigate|compare|search|find out|look up|study)\b/;

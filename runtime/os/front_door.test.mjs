@@ -7,6 +7,9 @@ test('simple language routes to the correct organs',()=>{
  assert.equal(classifyFrontDoorIntent('What is OTHRYS?'),'QUESTION');assert.deepEqual(frontDoorDispatch('QUESTION').organs,['MNEMOSYNE']);
  assert.deepEqual(frontDoorDispatch(classifyFrontDoorIntent('Research local speech models')).organs,['PROMETHEUS','MNEMOSYNE']);
  assert.equal(frontDoorDispatch(classifyFrontDoorIntent('Plan a tiny website')).planner,'HEPHAESTUS');
+ assert.equal(classifyFrontDoorIntent('Plan a tiny status page'),'PLAN');
+ assert.equal(classifyFrontDoorIntent('Build a status dashboard'),'BUILD');
+ assert.equal(classifyFrontDoorIntent('Check current status'),'OPERATION');
  assert.deepEqual(frontDoorDispatch(classifyFrontDoorIntent('Build a tiny website')).organs,['MNEMOSYNE','HEPHAESTUS','TALOS','SWITCHYARD']);
 });
 test('simple questions answer from project truth and build stays inert',()=>{
