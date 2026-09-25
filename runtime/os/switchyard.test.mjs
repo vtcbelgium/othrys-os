@@ -88,3 +88,18 @@ test('Pollinations advisory route is legal zero-cost remote LIGHT but local advi
   assert.equal(remoteOnly.selected.costClass,'ZERO');
   assert.equal(remoteOnly.authorityGranted,false);
 });
+
+test('Talos route evidence changes only measured trust inside existing Switchyard gates',()=>{
+  const request=req({capability:'analysis.summarize',minimumTier:'LIGHT',locality:'ANY'});
+  const a=candidate('remote-a',{capabilities:['analysis.summarize'],tier:'LIGHT',locality:'REMOTE',measuredTrust:null});
+  const b=candidate('remote-b',{capabilities:['analysis.summarize'],tier:'LIGHT',locality:'REMOTE',measuredTrust:null});
+  const baseline=selectSwitchyardRoute(request,[a,b]);
+  const learned=selectSwitchyardRoute(request,[a,b],{evidence:{'remote-b':{successRate:1},'remote-a':{successRate:.5}}});
+  assert.equal(baseline.selected.id,'remote-a');
+  assert.equal(learned.selected.id,'remote-b');
+  assert.equal(learned.selected.measuredTrust,1);
+  const local=candidate('local-route',{capabilities:['analysis.summarize'],tier:'LIGHT',locality:'LOCAL',measuredTrust:null});
+  const localityProtected=selectSwitchyardRoute(req({capability:'analysis.summarize',minimumTier:'LIGHT'}),[local,b],{evidence:{'remote-b':{successRate:1},'local-route':{successRate:0}}});
+  assert.equal(localityProtected.selected.id,'local-route');
+  assert.equal(localityProtected.authorityGranted,false);
+});

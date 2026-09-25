@@ -1,7 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { collectTrainingEvidence, synthesizeTalosLearning, deriveTalosAdaptations, buildTalosIntelligence, buildTalosOperationalIntelligence } from './talos_learning_core.mjs';
+import { collectTrainingEvidence, collectOperationalEvidence, synthesizeTalosLearning, deriveTalosAdaptations, buildTalosIntelligence, buildTalosOperationalIntelligence } from './talos_learning_core.mjs';
 import { loadForgeRoster, loadForgeSparkEvidence, rankForgeBuilders } from '../hephaestus/forge.mjs';
+import { recordOperationalEvent } from './mnemosyne_operations.mjs';
+import { mkdtempSync, mkdirSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 
 const root=process.cwd();
 
@@ -74,4 +78,26 @@ test('operational Builder evidence changes Hephaestus ranking through the existi
   assert.notEqual(baseline.executable[0].id,adapted.executable[0].id);
   assert.equal(adapted.executable[0].id,'local.qwen3-8b');
   assert.equal(intel.adaptations.authorityGranted,false);
+});
+
+test('operational route outcomes become Switchyard trust evidence without authority',()=>{
+  const events=[{schema:'othrys.os.mnemosyne-operational-event.v1',status:'PASS',evidence:{family:'jev-provider',routeEvidence:{id:'pollinations-advisory',observed:2,successes:2,failures:0}}}];
+  const intel=buildTalosOperationalIntelligence(events,{level:3.5});
+  const ev=intel.adaptations.SWITCHYARD.routeEvidence['pollinations-advisory'];
+  assert.equal(ev.observed,2);
+  assert.equal(ev.successRate,1);
+  assert.equal(ev.failureRate,0);
+  assert.equal(intel.adaptations.authorityGranted,false);
+});
+
+test('collector admits only digest-valid Mnemosyne operational evidence',()=>{
+  const d=mkdtempSync(join(tmpdir(),'talos-ops-'));
+  recordOperationalEvent(d,{at:'2026-09-25T23:30:00Z',actor:'talos',job:'provider-proof',status:'PASS',evidence:{routeEvidence:{id:'pollinations-advisory',observed:2,successes:2,failures:0}},lesson:'verified'});
+  const dir=join(d,'.othrys','knowledge','archive','operations');
+  writeFileSync(join(dir,'2026-09-26.jsonl'),JSON.stringify({schema:'othrys.os.mnemosyne-operational-event.v1',job:'forged',status:'PASS',eventDigest:'0'.repeat(64)})+'\n');
+  const events=collectOperationalEvidence(d);
+  assert.equal(events.length,1);
+  assert.equal(events[0].job,'provider-proof');
+  const intel=buildTalosOperationalIntelligence(events,{level:3.5});
+  assert.equal(intel.adaptations.SWITCHYARD.routeEvidence['pollinations-advisory'].successRate,1);
 });

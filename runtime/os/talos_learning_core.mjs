@@ -1,10 +1,11 @@
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 
 const freeze=(v)=>{if(v&&typeof v==='object'){Object.freeze(v);for(const x of Object.values(v))freeze(x);}return v;};
 const digest=(v)=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
 const safeJson=(p)=>{try{return JSON.parse(readFileSync(p,'utf8').replace(/^\uFEFF/,''));}catch{return null;}};
+const safeJsonLine=(v)=>{try{return JSON.parse(String(v));}catch{return null;}};
 const ratio=(a,b)=>b?Number((a/b).toFixed(4)):0;
 const median=(xs)=>{const a=xs.filter(Number.isFinite).sort((x,y)=>x-y);if(!a.length)return null;const m=Math.floor(a.length/2);return a.length%2?a[m]:(a[m-1]+a[m])/2;};
 
@@ -57,7 +58,7 @@ export function deriveTalosAdaptations(learning){
   const weakChecks=Object.entries(learning.checkEvidence).filter(([,v])=>v.finalPassRate<1).map(([name,v])=>({name,rate:v.finalPassRate}));
   const body={schema:'othrys.talos.adaptation-plan.v1',sourceDigest:learning.evidenceDigest,
     HEPHAESTUS:{forgeEvidence,action:'USE_VERIFIED_FIRST_PASS_AND_LATENCY_EVIDENCE_IN_RANKING'},
-    SWITCHYARD:{routeEvidence:forgeEvidence,action:'PREFER_PROVEN_LOW_RECOVERY_ROUTES_WITHIN_EXISTING_POLICY'},
+    SWITCHYARD:{routeEvidence:Object.keys(learning.routeEvidence??{}).length?learning.routeEvidence:forgeEvidence,action:'PREFER_PROVEN_LOW_RECOVERY_ROUTES_WITHIN_EXISTING_POLICY'},
     KRONOS:{builderTimingHints:kronosHints,action:'ADAPT_BOUNDED_TIMEOUT_RECOMMENDATIONS_ONLY'},
     RHEA:{careSignals,action:'OPEN_DIAGNOSTIC_SIGNAL_ONLY'},
     MNEMOSYNE:{lessonSummary:{jobs:learning.jobs,recoveryRate:learning.operatorRecoveryRate,weakChecks},action:'INDEX_VERIFIED_LESSONS_WITH_PROVENANCE'},
@@ -68,11 +69,27 @@ export function deriveTalosAdaptations(learning){
   return freeze({...body,adaptationDigest:digest(body)});
 }
 
+export function collectOperationalEvidence(root=process.cwd(),{limit=200}={}){
+  const dir=join(root,'.othrys','knowledge','archive','operations');
+  if(!existsSync(dir)) return [];
+  const rows=[];
+  for(const name of readdirSync(dir).filter(x=>/^[0-9]{4}-[0-9]{2}-[0-9]{2}\.jsonl$/.test(x)).sort()){
+    for(const line of readFileSync(join(dir,name),'utf8').split(/\r?\n/).filter(Boolean)){
+      const event=safeJsonLine(line); if(!event)continue;
+      const {eventDigest,...body}=event;
+      if(event?.schema!=='othrys.os.mnemosyne-operational-event.v1'||eventDigest!==digest(body))continue;
+      rows.push(event);
+    }
+  }
+  const n=Math.max(1,Math.min(5000,Number(limit)||200));
+  return rows.slice(-n);
+}
+
 export function synthesizeOperationalLearning(events,{level=3.5}={}){
   if(!Array.isArray(events)||events.length===0)throw new Error('TALOS_OPERATIONAL_EVIDENCE_REQUIRED');
   const rows=events.filter(e=>e?.schema==='othrys.os.mnemosyne-operational-event.v1');
   if(!rows.length)throw new Error('TALOS_OPERATIONAL_EVIDENCE_INVALID');
-  const checks=new Map(), families=new Map(), builders=new Map();
+  const checks=new Map(), families=new Map(), builders=new Map(), routes=new Map();
   let finalPass=0, totalAttempts=0;
   for(const e of rows){
     const family=e.evidence?.family??e.evidence?.phase??'operational';
@@ -91,11 +108,22 @@ export function synthesizeOperationalLearning(events,{level=3.5}={}){
       if(Number.isFinite(be.latencyMs))b.latencies.push(be.latencyMs);
       builders.set(be.id,b);
     }
+    const re=e.evidence?.routeEvidence;
+    if(re?.id){
+      const x=routes.get(re.id)??{observed:0,successes:0,failures:0,latencies:[]};
+      const observed=Number.isFinite(re.observed)?Math.max(0,re.observed):1;
+      const successes=Number.isFinite(re.successes)?Math.max(0,re.successes):(re.success===true?1:0);
+      const failures=Number.isFinite(re.failures)?Math.max(0,re.failures):(re.success===false?1:0);
+      x.observed+=observed; x.successes+=successes; x.failures+=failures;
+      if(Number.isFinite(re.latencyMs))x.latencies.push(re.latencyMs);
+      routes.set(re.id,x);
+    }
   }
+  const routeEvidence=Object.fromEntries([...routes].map(([id,x])=>[id,{observed:x.observed,successRate:ratio(x.successes,x.observed),failureRate:ratio(x.failures,x.observed),medianLatencyMs:median(x.latencies)}]));
   const builderEvidence=Object.fromEntries([...builders].map(([id,b])=>[id,{jobs:b.jobs,firstPassRate:ratio(b.firstPass,b.jobs),recoveryRate:ratio(b.recovery,b.jobs),attemptFailureRate:ratio(b.attemptFailures,b.attempts),timeoutRate:0,noMutationRate:0,medianLatencyMs:median(b.latencies)}]));
   const checkEvidence=Object.fromEntries([...checks].map(([k,v])=>[k,{...v,finalPassRate:ratio(v.finalPass,v.observed)}]));
   const familyEvidence=Object.fromEntries([...families].map(([k,v])=>[k,{...v,recoveryRate:0,finalPassRate:ratio(v.finalPass,v.jobs)}]));
-  const body={schema:'othrys.talos.learning-core.v1',level,jobs:rows.length,finalPassRate:ratio(finalPass,rows.length),operatorRecoveryRate:0,totalAttempts,builderEvidence,checkEvidence,familyEvidence};
+  const body={schema:'othrys.talos.learning-core.v1',level,jobs:rows.length,finalPassRate:ratio(finalPass,rows.length),operatorRecoveryRate:0,totalAttempts,builderEvidence,routeEvidence,checkEvidence,familyEvidence};
   return freeze({...body,evidenceDigest:digest(body),authorityGranted:false,automaticAdmission:false,automaticLevelAdvance:false});
 }
 

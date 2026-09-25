@@ -58,10 +58,15 @@ function rejectionReason(request,c){
   if(LATENCY[c.latencyClass]>LATENCY[request.maxLatency]) return 'LATENCY_ABOVE_MAXIMUM';
   return null;
 }
-export function selectSwitchyardRoute(requestRaw,candidatesRaw){
+export function selectSwitchyardRoute(requestRaw,candidatesRaw,{evidence={}}={}){
   const request=validateModelRequest(requestRaw);
   if(!Array.isArray(candidatesRaw)||candidatesRaw.length===0) throw new Error('SWITCHYARD_CANDIDATES_REQUIRED');
-  const candidates=candidatesRaw.map(validateSwitchyardCandidate);
+  const candidates=candidatesRaw.map(validateSwitchyardCandidate).map(c=>{
+    const ev=evidence?.[c.id];
+    if(!ev||!Number.isFinite(ev.successRate)) return c;
+    const measuredTrust=Math.max(0,Math.min(1,Number(ev.successRate)));
+    return Object.freeze({...c,measuredTrust});
+  });
   if(new Set(candidates.map(x=>x.id)).size!==candidates.length) throw new Error('SWITCHYARD_CANDIDATE_DUPLICATE');
   const rejections={},eligible=[];
   for(const c of candidates){

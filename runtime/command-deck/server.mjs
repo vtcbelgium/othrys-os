@@ -19,6 +19,7 @@ import { reconcileActiveMission } from '../os/mission_state_reconcile.mjs';
 import { assembleKnowledgeContext, exportKnowledge, searchKnowledge } from '../os/mnemosyne.mjs';
 import { buildAtlasProjection } from '../os/atlas_projection.mjs';
 import { MODEL_REQUEST_SCHEMA, selectSwitchyardRoute } from '../os/switchyard.mjs';
+import { collectOperationalEvidence, buildTalosOperationalIntelligence } from '../os/talos_learning_core.mjs';
 import { answerFrontDoor, classifyFrontDoorIntent } from '../os/front_door.mjs';
 import { handleWebControlRequest } from './web_control_http.ts';
 import { readEstateProjection, syncEstateToDisk } from '../estate/local_git_estate.mjs';
@@ -140,7 +141,9 @@ export function switchyardPreviewFor(capability='engineering.build',minimumTier=
   const candidates=pref==='auto'?all:all.filter(x=>x.id===pref);
   if(!candidates.length) return {schema:'othrys.os.switchyard-selection.v1',outcome:'NO_LEGAL_CANDIDATE',request:null,selected:null,eligible:[],rejections:{[pref]:'UNKNOWN_PREFERENCE'},paidApprovalRequired:false,authorityGranted:false,executionStarted:false,policy:projectManifest.modelPolicy.policy,preference:pref,reason:'UNKNOWN_PREFERENCE'};
   const request={schema:MODEL_REQUEST_SCHEMA,capability,minimumTier,privacy:'PROJECT',locality:'PREFER_LOCAL',maxCostClass:'PAID',maxLatency:'BATCH'};
-  const result=selectSwitchyardRoute(request,candidates);
+  const operational=collectOperationalEvidence(root,{limit:200}).filter(e=>e?.evidence?.routeEvidence?.id);
+  const routeEvidence=operational.length?buildTalosOperationalIntelligence(operational,{level:3.5}).adaptations.SWITCHYARD.routeEvidence:{};
+  const result=selectSwitchyardRoute(request,candidates,{evidence:routeEvidence});
   const reason=result.outcome==='SELECTED'?'NATIVE_SWITCHYARD_SELECTED':result.outcome;
   return {...result,policy:projectManifest.modelPolicy.policy,preference:pref,reason};
 }
