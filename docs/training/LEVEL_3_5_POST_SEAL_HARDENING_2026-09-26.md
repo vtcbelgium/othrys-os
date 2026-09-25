@@ -19,6 +19,8 @@
 - Gateway ordering referenced nonexistent `othrys-mycelium.service`; it now targets the active `othrys-mycelium-node.service`.
 - Front-door routing no longer mistakes planned/built `status page/site/dashboard` work for a live system-status operation; PLAN/BUILD and OPERATION remain separately regression-tested.
 - The unauthenticated health probe now identifies the live surface as `othrys-os-gateway`; the historical `othrys.command-deck.status.v1` API schema remains intentionally preserved for compatibility.
+- The canonical runtime initially lacked its declared `../othrys-blocks` ownership sibling, causing two Factory failures only in the deployed checkout. `/home/jeroen/Othrys-Runtime/othrys-blocks` now links to the clean canonical `/home/jeroen/Development/othrys-blocks` checkout; deployed whole-body returned to 1337 / 1337 PASS.
+- Checked-in gateway and rollback service units now use the same canonical `%h/Othrys-Runtime/othrys-os-main` paths as the installed T590 units, eliminating source/deployment path drift.
 ## Verification
 
 Current-system whole-body verification now covers all tracked runtime Node/TS tests, Blocks tests, Theia tests, Mycelium, workers, and active auxiliary Python/QA/Mnemosyne tests.

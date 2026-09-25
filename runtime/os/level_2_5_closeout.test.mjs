@@ -27,13 +27,14 @@ test('Level 2.5 closeout receipt records that it did not unlock Level 3', () => 
 });
 
 test('canonical service templates do not point at retired verify checkout', () => {
-  for (const file of [
-    'runtime/command-deck/othrys-command-deck.service',
-    'runtime/command-deck/othrys-admission-watcher.service',
-  ]) {
+  const expectedRoots = new Map([
+    ['runtime/command-deck/othrys-command-deck.service', /%h\/Othrys-Runtime\/othrys-os-main/],
+    ['runtime/command-deck/othrys-admission-watcher.service', /%h\/othrys-os/],
+  ]);
+  for (const [file, canonicalRoot] of expectedRoots) {
     const text = readFileSync(resolve(root, file), 'utf8');
     assert.doesNotMatch(text, /othrys-v2-verify|othrys-hub|othrys-core/);
-    assert.match(text, /%h\/othrys-os/);
+    assert.match(text, canonicalRoot);
   }
 });
 
