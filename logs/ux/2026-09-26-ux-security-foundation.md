@@ -63,3 +63,20 @@ This is deliberate. The current boundary remains intact until the replacement id
 3. Add the USER information-architecture shell without wiring privileged actions.
 4. Design the account/security settings read model.
 5. Only after those tests exist, plan the Supabase schema migration and Jeroen dogfood USER account.
+
+
+## Implementation batch 2 — normal USER dogfood shell
+
+Implemented in `othrys-web` without changing production account/auth behaviour:
+
+- provider-neutral normal-user information architecture;
+- protected `/control/user-preview` dogfood surface;
+- Mountain-first prompt modal that performs no network/command action;
+- first-class Buddy cards for existing private products;
+- explicit Workspace / Portfolio / Learning distinction;
+- visible privacy boundary and security/data section;
+- `View as USER` switch from Mission Control;
+- sanitised account/security read model for sessions, factors, connected services, API-key metadata, learning and data controls;
+- tests preventing system-control terminology from entering the normal USER model and preventing raw secret fields from entering the account-security projection.
+
+The user preview remains behind the current owner gate until real USER authentication, per-user RLS and session isolation are qualified.
