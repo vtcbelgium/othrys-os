@@ -44,8 +44,14 @@ Every serious run should record quality, latency, token usage, context size, pro
 
 Target-model tokens, judge/JEV tokens and attacker/red-team tokens must remain separate when known. Unknown usage stays unknown; it is never estimated and presented as measured.
 
-## Mnemosyne
+## Storage and Mnemosyne
 
-Canonical run receipts are stored in `.othrys/knowledge/archive/training/`. Each recorded run also emits a compact Mnemosyne operational event so Talos/learning systems can consume proven lessons without treating the training archive as authority.
+Canonical run receipts are evidence and are stored under `.othrys/evidence/training/YYYY-MM-DD.jsonl`.
+
+Each recorded run also emits a compact canonical event to `.othrys/logs/training/training-lab.jsonl` using `othrys.os.event.v1`.
+
+A useful lesson may later be captured into Mnemosyne with source/provenance and normal review. The raw run receipt and raw event do not automatically become knowledge.
+
+Historical training receipts already stored under `.othrys/knowledge/archive/training/` remain readable compatibility evidence; new runs do not extend that location.
 
 No run result grants authority, admission, automatic promotion or automatic level advancement.
