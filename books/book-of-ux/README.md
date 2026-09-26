@@ -763,3 +763,53 @@ Publishing is not equivalent to moving the private source into public storage.
 Unpublish changes the public projection. It does not silently destroy the private source artifact.
 
 Current OTHRYS product catalogue and personal Oro instances remain separate concepts in both UX and authorization.
+
+
+---
+
+## 28. ADMIN directory and support law
+
+The ADMIN account directory exists to operate accounts, not to browse user lives.
+
+Normal ADMIN account projection may contain:
+- opaque user/account id;
+- email/display label required for account support;
+- account state;
+- product access counts/state;
+- workspace counts/state;
+- open support case count;
+- security-event timestamps/status.
+
+Normal ADMIN projection must not contain:
+- prompt history;
+- personal learning contents;
+- private documents/files;
+- Study Buddy lesson/note contents;
+- raw API/provider secrets;
+- private repository contents.
+
+Support follows this order:
+
+```
+ACCOUNT / CASE
+   ->
+SANITISED DIAGNOSTICS
+   ->
+SYSTEM FIX
+   ->
+ONLY IF NECESSARY: BREAK-GLASS REQUEST
+```
+
+A break-glass request is not a grant.
+
+Eligibility requires:
+- ADMIN capability;
+- recent strong re-authentication;
+- specific target user;
+- specific resource for workspace/Oro/Buddy data;
+- meaningful reason;
+- requested duration of 1–15 minutes.
+
+Normal support access should produce user notification after access. Security-incident notification may be delayed when necessary, but the event is never omitted from audit evidence.
+
+The ADMIN UI must not present a generic **View user data** action.
