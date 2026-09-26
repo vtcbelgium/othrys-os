@@ -187,3 +187,20 @@ Added publication contract:
 The USER shell now routes coherently through Oroi, Workspace, Portfolio, Learning and Security & Data.
 
 No workspace/publication backend mutation was enabled.
+
+
+## Implementation batch 8 — ADMIN Accounts / Support
+
+Added to othrys-web:
+- sanitised ADMIN account directory read model;
+- explicit prohibition on routine private-content/prompt/personal-learning browsing;
+- sanitised support diagnostic contract;
+- governed break-glass request eligibility model;
+- strong re-auth requirement;
+- target/resource binding;
+- 1–15 minute request window;
+- protected ADMIN Accounts preview;
+- protected Support + exceptional-access ceremony;
+- progressive navigation from ADMIN overview only to implemented areas.
+
+No account query, mutation or private-content access was enabled.
