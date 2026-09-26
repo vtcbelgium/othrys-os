@@ -94,3 +94,34 @@ Implemented in `othrys-web`:
 - Mission Control dogfood switches for USER, ADMIN and the locked MASTER model.
 
 No runtime role grant, MASTER elevation or user-content privilege was added.
+
+
+## Implementation batch 4 — account and authentication architecture
+
+Live OTHRYS Supabase was inspected read-only before designing the next account layer.
+
+Observed existing foundation:
+- `othrys_accounts`;
+- `othrys_organizations`;
+- `othrys_oroi`;
+- `othrys_access_grants`;
+- one current platform `root_owner` grant;
+- Study Buddy, Money Buddy and Travel Buddy catalogue rows.
+
+Decisions:
+- preserve live authority foundation rather than create a duplicate account system;
+- treat current `othrys_oroi` as compatibility product catalogue;
+- add future workspace-owned Oro instances separately;
+- `root_owner` means ADMIN + MASTER eligibility only;
+- suspended account means inactive / zero capabilities;
+- normal invitation flow cannot grant platform authority;
+- future sessions are host-only USER / ADMIN / MASTER contexts;
+- MASTER has no standalone login and max 15-minute requested elevation.
+
+Security audit findings recorded in othrys-web:
+- live September 25 admin-authority migrations are missing from Git;
+- account tables currently inherit broad anon/authenticated PostgreSQL grants and rely on RLS;
+- legacy Study brother-digest SECURITY DEFINER RPC is advisor-flagged;
+- leaked-password protection is disabled.
+
+No production database or auth mutation was performed.
