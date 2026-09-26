@@ -526,6 +526,7 @@ export async function handle(req,res){
     tokenSha256:controlTokenSha256,
     ledgerPath:admissionLedger,
     systemProjection:buildStatus,
+    trainingProjection:trainingLabProjection,
     estateProjection:()=>readEstateProjection(),
     estateRefresh:()=>syncEstateToDisk(),
     commandEnvelopeDir:webCommandEnvelopeDir,
