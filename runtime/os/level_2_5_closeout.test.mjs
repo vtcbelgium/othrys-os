@@ -26,14 +26,17 @@ test('Level 2.5 closeout receipt records that it did not unlock Level 3', () => 
   assert.match(receipt.nextLevelUnlock, /operator command only/i);
 });
 
-test('canonical service templates do not point at retired verify checkout', () => {
+test('canonical runtime service templates share the deployment checkout', () => {
   const expectedRoots = new Map([
     ['runtime/command-deck/othrys-command-deck.service', /%h\/Othrys-Runtime\/othrys-os-main/],
-    ['runtime/command-deck/othrys-admission-watcher.service', /%h\/othrys-os/],
+    ['runtime/command-deck/othrys-os-gateway.service', /%h\/Othrys-Runtime\/othrys-os-main/],
+    ['runtime/command-deck/othrys-admission-watcher.service', /%h\/Othrys-Runtime\/othrys-os-main/],
+    ['runtime/estate/othrys-estate-sync.service', /%h\/Othrys-Runtime\/othrys-os-main/],
   ]);
   for (const [file, canonicalRoot] of expectedRoots) {
     const text = readFileSync(resolve(root, file), 'utf8');
     assert.doesNotMatch(text, /othrys-v2-verify|othrys-hub|othrys-core/);
+    assert.doesNotMatch(text, /%h\/othrys-os(?:\/|\n)/);
     assert.match(text, canonicalRoot);
   }
 });

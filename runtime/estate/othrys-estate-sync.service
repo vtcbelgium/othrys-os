@@ -4,5 +4,5 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-WorkingDirectory=%h/othrys-os
-ExecStart=/usr/bin/node %h/othrys-os/runtime/estate/local_git_estate.mjs
+WorkingDirectory=%h/Othrys-Runtime/othrys-os-main
+ExecStart=/usr/bin/node %h/Othrys-Runtime/othrys-os-main/runtime/estate/local_git_estate.mjs
