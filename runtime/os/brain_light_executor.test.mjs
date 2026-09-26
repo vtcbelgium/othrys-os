@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { executeLightSpecialist, warmLocalAdvisory } from './brain_light_executor.mjs';
+import { executeLightSpecialist, warmLocalAdvisory, defaultOllamaEndpoint, defaultOllamaModel } from './brain_light_executor.mjs';
 
 const route={outcome:'SELECTED',selected:{id:'llama3.2-advisory',label:'Llama 3.2',locality:'LOCAL',costClass:'ZERO',certification:'UNTESTED'}};
 function decision(over={}){
@@ -23,6 +23,8 @@ test('local LIGHT advisory performs bounded zero-cost read-only work',async()=>{
     decision:decision({needsWeb:false}),
     command:'Explain the likely cause from these logs.',
     specialistRoute:route,
+    ollamaEndpoint:'http://127.0.0.1:11434',
+    ollamaModel:'llama3.2:latest',
     contextText:'git status: clean\nlog: timeout in test runner',
     fetchImpl:async(url,init)=>{
       seen={url,body:JSON.parse(init.body)};
@@ -38,6 +40,24 @@ test('local LIGHT advisory performs bounded zero-cost read-only work',async()=>{
   assert.equal(out.costClass,'ZERO');
   assert.equal(out.authorityGranted,false);
   assert.equal(out.executionStarted,false);
+});
+
+test('Ollama defaults stay local but allow machine-specific environment routing',()=>{
+  const oldEndpoint=process.env.OTHRYS_OLLAMA_ENDPOINT;
+  const oldModel=process.env.OTHRYS_OLLAMA_MODEL;
+  try{
+    delete process.env.OTHRYS_OLLAMA_ENDPOINT;
+    delete process.env.OTHRYS_OLLAMA_MODEL;
+    assert.equal(defaultOllamaEndpoint(),'http://127.0.0.1:11434');
+    assert.equal(defaultOllamaModel(),'llama3.2:latest');
+    process.env.OTHRYS_OLLAMA_ENDPOINT='http://Jeroen-Legion.local:11434/';
+    process.env.OTHRYS_OLLAMA_MODEL='qwen3:4b';
+    assert.equal(defaultOllamaEndpoint(),'http://Jeroen-Legion.local:11434');
+    assert.equal(defaultOllamaModel(),'qwen3:4b');
+  }finally{
+    if(oldEndpoint===undefined) delete process.env.OTHRYS_OLLAMA_ENDPOINT; else process.env.OTHRYS_OLLAMA_ENDPOINT=oldEndpoint;
+    if(oldModel===undefined) delete process.env.OTHRYS_OLLAMA_MODEL; else process.env.OTHRYS_OLLAMA_MODEL=oldModel;
+  }
 });
 
 test('fresh-web LIGHT research uses Legion evidence bridge',async()=>{

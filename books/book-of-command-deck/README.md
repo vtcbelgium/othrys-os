@@ -12,6 +12,7 @@ Presentation may expose authority; presentation never becomes authority.
 - `V2-006E`
 - `V2-009B`
 - `.othrys/project.json#systems/command-deck`
+- `docs/operations/PC_LEGION_LOCAL_INFERENCE_FREEZE_2026-09-26.md` — tested PC Command Deck → Legion local-inference binding.
 
 ## Preserved quarry / provenance
 - `docs/PANDAOS-HARVEST/PANDAOS_V2_HARVEST_REPORT_2026-08-27.md`

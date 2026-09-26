@@ -1,5 +1,14 @@
 export const BRAIN_LIGHT_RESULT_SCHEMA='othrys.os.brain-light-result.v1';
 
+export function defaultOllamaEndpoint(){
+  const configured=typeof process!=='undefined'?process.env?.OTHRYS_OLLAMA_ENDPOINT:'';
+  return String(configured||'http://127.0.0.1:11434').replace(/\/$/,'');
+}
+export function defaultOllamaModel(){
+  const configured=typeof process!=='undefined'?process.env?.OTHRYS_OLLAMA_MODEL:'';
+  return String(configured||'llama3.2:latest');
+}
+
 function text(value,code,max=4000){
   if(typeof value!=='string'||!value.trim()) throw new Error(code);
   const out=value.trim();
@@ -32,8 +41,8 @@ export async function executeLightSpecialist({
   specialistRoute,
   legionBridgeUrl='',
   legionBridgeToken='',
-  ollamaEndpoint='http://127.0.0.1:11434',
-  ollamaModel='llama3.2:latest',
+  ollamaEndpoint=defaultOllamaEndpoint(),
+  ollamaModel=defaultOllamaModel(),
   fetchImpl=fetch,
   timeoutMs=35000,
   contextText='',
@@ -182,8 +191,8 @@ export async function executeLightSpecialist({
 
 
 export async function warmLocalAdvisory({
-  ollamaEndpoint='http://127.0.0.1:11434',
-  ollamaModel='llama3.2:latest',
+  ollamaEndpoint=defaultOllamaEndpoint(),
+  ollamaModel=defaultOllamaModel(),
   fetchImpl=fetch,
   timeoutMs=35000,
 }={}){
