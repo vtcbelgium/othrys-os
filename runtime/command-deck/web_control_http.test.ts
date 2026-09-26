@@ -276,6 +276,32 @@ test('SPEC-031 Web bridge exposes the live system projection read-only', async (
 });
 
 
+test('Training Lab projection is exposed only through the authenticated web control boundary', async () => {
+  const tmp = mkdtempSync(join(tmpdir(), 'othrys-web-training-read-'));
+  const ledger = join(tmp, 'admission.jsonl');
+  const port = 18825;
+  const child = await startServer(port, ledger, 'verifier');
+  try {
+    let response = await fetch('http://127.0.0.1:' + port + '/v1/training-lab');
+    assert.equal(response.status, 401);
+
+    response = await fetch('http://127.0.0.1:' + port + '/v1/training-lab', {
+      headers: { Authorization: 'Bearer web-control-token' },
+    });
+    assert.equal(response.status, 200);
+    const body = await response.json();
+    assert.equal(body.ok, true);
+    assert.equal(body.training.schema, 'othrys.os.training-lab-projection.v1');
+    assert.equal(body.training.authorityGranted, false);
+    assert.equal(body.training.controlsEnabled, false);
+    assert.equal(body.controlsEnabled, false);
+  } finally {
+    child.kill();
+    rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+
 test('Web Builder activation is authenticated and fails closed without governed planning', async () => {
   const tmp = mkdtempSync(join(tmpdir(), 'othrys-web-activation-http-'));
   const ledger = join(tmp, 'admission.jsonl');
