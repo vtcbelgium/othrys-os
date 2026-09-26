@@ -199,3 +199,22 @@ Until the canonical Garden and Mnemosyne are wired into V2:
 The goal is not for GPT to remember everything.
 
 The goal is for GPT to know **where truth lives, what deserves attention, what is only an idea, and what must happen next**.
+
+
+## GROK BOT HANDOFF — IDENTITY / SECURITY ROADMAP
+
+Established 2026-09-27.
+
+The remaining OTHRYS identity, invitation, session, MASTER-elevation, break-glass and adversarial qualification roadmap (ID-05 through ID-10) is now frozen in:
+
+`docs/gpt/GROK_IDENTITY_SECURITY_MISSION_2026-09-27.md`
+
+Ownership is delegated to the existing Grok roster: Dispatcher, Architect, Builder, Sentinel, Scout and Aegis Auditor.
+
+The packet enforces small jobs, inspect-first execution, evidence gates, no silent scope growth, cheap-first model use and explicit human approval for production credentials/secrets, live identity creation, production auth/permission cutovers, MASTER activation, break-glass activation/use, deployment and real external email.
+
+The first queue item is G-01: align the Git invitation-writer migration filename with the live Supabase version `20260926223341` without changing SQL semantics.
+
+A bounded Grok Architect handshake was dispatched through `tools/gpt/cursor_left_hand.py` using `grok-4.7-medium` against clean HEAD `7a6cae4bd62b97f6d82b4e635f16e4820a24805d`. The wrapper completed with return code 0 and no repository mutation, but emitted no textual acknowledgement. Therefore the transport is proven for this handoff, while the committed mission packet—not an invented model response—remains the authoritative work queue.
+
+GPT Control remains reviewer/authority boundary; Grok workers execute the queue and return evidence. Security-critical completion is accepted only after Sentinel/Aegis verification.
