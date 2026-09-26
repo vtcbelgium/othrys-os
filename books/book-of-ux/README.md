@@ -665,3 +665,72 @@ Normal client roles should not retain INSERT/UPDATE/DELETE/TRUNCATE/TRIGGER priv
 Production database migrations must be reproducible from Git before the next multi-user schema mutation.
 
 Public `SECURITY DEFINER` RPCs are exceptional boundaries and require explicit review; they are not a default pattern for account, admin or MASTER operations.
+
+
+---
+
+## 24. Personal learning evidence law
+
+OTHRYS may learn from interaction, but not all interaction has equal evidentiary value.
+
+Evidence order:
+
+1. explicit user statement;
+2. repeated behaviour;
+3. single interaction;
+4. system observation.
+
+Rules:
+
+- one click never becomes a stable personal preference by itself;
+- explicit statements may become stable preferences at high confidence;
+- repeated behaviour may become stable preference only after sufficient repeated evidence;
+- system observations describe system state, not personality;
+- every personal learned fact carries provenance, confidence and time;
+- the user gets **Correct**, **Forget** and **Why?** affordances.
+
+---
+
+## 25. Telemetry purpose separation
+
+Telemetry events declare:
+
+- purpose;
+- data class;
+- consent class;
+- retention;
+- learning destination;
+- sanitizer version when global learning is allowed.
+
+Permanent rules:
+
+- secrets never enter telemetry;
+- raw user content never teaches global OTHRYS;
+- necessary reliability/security telemetry should remain content-free where possible;
+- optional product analytics requires optional consent;
+- global learning requires a named sanitisation step;
+- retention must be bounded;
+- personal learning and product analytics are separate controls.
+
+Normal-user Settings exposes these distinctions plainly.
+
+---
+
+## 26. USER Security & Data surface
+
+A normal user should be able to find in one place:
+
+- passkeys/factors;
+- signed-in sessions/devices;
+- recovery posture;
+- storage choice;
+- connected services;
+- user-supplied API-key status;
+- personal learning;
+- optional analytics;
+- data export;
+- deletion request.
+
+No raw API key or secret may be rendered back to the browser.
+
+Empty states must say **not connected / not available yet**, never invent counts or activity.
