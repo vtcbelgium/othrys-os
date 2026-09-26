@@ -573,3 +573,95 @@ No account architecture is production-ready until OTHRYS can prove:
 And:
 
 > **THE BEST USER-FACING SECURITY FEATURE IS A SYSTEM THAT NEVER GIVES THE USER POWER THEY DID NOT ASK FOR, NEVER TAKES DATA IT DOES NOT NEED, AND CAN EXPLAIN EVERY EXCEPTION.**
+
+
+---
+
+## 20. Account / workspace / product separation
+
+The live OTHRYS database already contains an account-authority foundation. UX law must preserve the distinction between a **product catalogue** and a **user-owned Oro instance**.
+
+Current product catalogue examples:
+- Study Buddy
+- Money Buddy
+- Travel Buddy
+
+A user's own website, code experiment or personal Buddy instance belongs to a workspace-owned Oro-instance layer, not the shared product catalogue.
+
+Target structure:
+
+```
+ACCOUNT
+  |
+  +-- PERSONAL WORKSPACE
+        |
+        +-- ORO INSTANCE
+        +-- ORO INSTANCE
+        +-- BUDDY INSTANCE -> PRODUCT CATALOGUE
+```
+
+Workspace membership is resource authority. Product access is not workspace ownership.
+
+A suspended/archived account is **inactive**, not a downgraded USER. Inactive identities receive zero normal product capabilities until restored.
+
+---
+
+## 21. Platform-role semantics
+
+Existing platform grant names are preserved for compatibility, but their meaning is narrowed:
+
+- `platform_admin` -> ADMIN
+- `root_owner` -> ADMIN + eligibility to request MASTER
+- MASTER -> temporary elevation only
+
+A `root_owner` grant by itself is never evidence of an active MASTER session.
+
+Ordinary invitation/onboarding must never create `platform_admin` or `root_owner`. Platform authority assignment is a separately governed operator action.
+
+---
+
+## 22. Authentication experience law
+
+OTHRYS applies progressive authentication friction:
+
+### USER
+- direct login allowed;
+- passkey-first target;
+- secure email link bootstrap/recovery fallback;
+- early access may remain invite-only.
+
+### ADMIN
+- direct operator login allowed only for an authorized operator identity;
+- stronger/recent authentication required;
+- shorter session than USER;
+- high-impact actions may require reauthentication.
+
+### MASTER
+- **no standalone MASTER login page**;
+- elevation begins from an authenticated eligible ADMIN identity;
+- phishing-resistant/hardware-backed step-up target;
+- explicit reason;
+- 1–15 minute requested lifetime;
+- automatic expiry;
+- audit evidence.
+
+Future USER / ADMIN / MASTER contexts use host-only session cookies and do not inherit each other's authority through a broad `.othrys.be` cookie.
+
+Cross-product convenience must use governed SSO/session exchange rather than ambient root privilege.
+
+---
+
+## 23. Database defense-in-depth law
+
+RLS is necessary but not sufficient.
+
+For security-sensitive account/authority tables, OTHRYS applies both:
+
+1. least-privilege PostgreSQL GRANTs;
+2. resource-specific RLS.
+
+Normal client roles should not retain INSERT/UPDATE/DELETE/TRUNCATE/TRIGGER privileges merely because RLS currently blocks them.
+
+Production database migrations must be reproducible from Git before the next multi-user schema mutation.
+
+Public `SECURITY DEFINER` RPCs are exceptional boundaries and require explicit review; they are not a default pattern for account, admin or MASTER operations.
