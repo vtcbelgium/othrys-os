@@ -125,3 +125,26 @@ Security audit findings recorded in othrys-web:
 - leaked-password protection is disabled.
 
 No production database or auth mutation was performed.
+
+
+## Implementation batch 5 — migration truth recovery and hardening drafts
+
+The live Supabase migration-history table retained the original SQL statement arrays for the two missing 2026-09-25 authority migrations. These were recovered exactly into the othrys-web Git migration directory, closing the migration-source drift without executing production DDL.
+
+Added reviewed, non-production SQL drafts for:
+- least-privilege authority-table grants;
+- active-account enforcement for organization/product-catalog reads;
+- personal/team workspaces;
+- workspace memberships;
+- per-workspace Oro instances;
+- private-by-default Oro visibility.
+
+Static tests keep the drafts read-only to direct clients and prevent public SECURITY DEFINER patterns.
+
+An adversarial identity matrix now tests:
+- Alice vs Bob isolation;
+- viewer read-only;
+- suspended user = zero capabilities;
+- platform_admin != MASTER;
+- root_owner requires elevation;
+- USER/ADMIN/MASTER sessions are not interchangeable.
