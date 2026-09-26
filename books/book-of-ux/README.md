@@ -734,3 +734,32 @@ A normal user should be able to find in one place:
 No raw API key or secret may be rendered back to the browser.
 
 Empty states must say **not connected / not available yet**, never invent counts or activity.
+
+
+---
+
+## 27. Workspace -> Portfolio publication law
+
+Workspace is private source. Portfolio is a smaller public projection.
+
+A workspace artifact may be published only when:
+- the actor owns/is authorized for the artifact;
+- the artifact is marked ready;
+- secret/privacy scan passes;
+- publication is an explicit human action.
+
+Public projection must not include:
+- owner user id;
+- workspace id unless explicitly public-safe;
+- source location;
+- private repository path;
+- environment variables;
+- access tokens;
+- raw prompts/private notes;
+- hidden internal metadata.
+
+Publishing is not equivalent to moving the private source into public storage.
+
+Unpublish changes the public projection. It does not silently destroy the private source artifact.
+
+Current OTHRYS product catalogue and personal Oro instances remain separate concepts in both UX and authorization.
