@@ -45,6 +45,6 @@ Canonical projection home: `.othrys/projections/obsidian/`.
 
 ## Pollinations arsenal memory — 2026-09-26
 
-The canonical Pollinations free-arsenal evidence is preserved in Git through the Jev integration log, the dedicated Keymaster arsenal log, and the owning Books. Future model-health or pricing observations must be treated as time-bounded evidence rather than silently replacing this historical state.
+The Pollinations free-arsenal evidence is preserved in Git through the Jev integration log, the dedicated Keymaster record, and the owning Books. Future model-health or pricing observations must be treated as time-bounded evidence rather than silently replacing this historical state.
 
-Canonical current record: `logs/keymaster/2026-09-26-pollinations-free-arsenal.md`.
+Pre-standard compatibility record: `logs/keymaster/2026-09-26-pollinations-free-arsenal.md`. New operational observations follow the canonical event/evidence paths in `docs/V2-010G/CHRONICLE_AND_LOG_LAW.md`.
