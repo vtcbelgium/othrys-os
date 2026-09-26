@@ -80,3 +80,17 @@ Implemented in `othrys-web` without changing production account/auth behaviour:
 - tests preventing system-control terminology from entering the normal USER model and preventing raw secret fields from entering the account-security projection.
 
 The user preview remains behind the current owner gate until real USER authentication, per-user RLS and session isolation are qualified.
+
+
+## Implementation batch 3 — ADMIN / MASTER separation
+
+Implemented in `othrys-web`:
+
+- typed ADMIN surface limited to accounts/access/products/support/usage/audit/incidents;
+- typed MASTER surface for system/Aegis/Keymaster/Mnemosyne/models/training/policy/infrastructure/root audit;
+- tests preventing MASTER internals from leaking into ADMIN;
+- protected `/control/admin-preview` with no fake accounts/counts and no mutation;
+- protected `/control/master-preview` where every root area is explicitly locked pending elevation;
+- Mission Control dogfood switches for USER, ADMIN and the locked MASTER model.
+
+No runtime role grant, MASTER elevation or user-content privilege was added.
