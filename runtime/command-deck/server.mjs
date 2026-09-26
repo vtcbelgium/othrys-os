@@ -27,6 +27,9 @@ import { planWebCommand, readWebBrainDecision } from './web_command_planner.ts';
 import { activateWebCommand } from './web_command_activation.ts';
 import { evaluateJevViaLegionBridge } from '../os/jev_remote_router.mjs';
 import { createBrainDecision, createFallbackBrainDecision } from '../os/brain_orchestrator.mjs';
+import { loadTrainingLabRegistry } from '../os/training_lab.mjs';
+import { createJevCortexStatus } from '../os/jev_cortex.mjs';
+import { inspectHecatoncheiresPosture } from '../os/hecatoncheires_posture.mjs';
 import { createNoMissionBrainResult } from '../os/brain_no_mission_result.mjs';
 import { persistWebBrainResult, readWebBrainResult } from '../os/brain_result_store.mjs';
 import { executeLightSpecialist, warmLocalAdvisory } from '../os/brain_light_executor.mjs';
@@ -50,6 +53,41 @@ function activeOperatingMode(){ return resolveOperatingMode(projectManifest,proc
 
 
 function json(path){ return JSON.parse(readFileSync(join(root,path),'utf8')); }
+export function trainingLabProjection(){
+  const registry=loadTrainingLabRegistry(root);
+  const manifest=json('docs/training/TRAINING_MANIFEST.json');
+  const runDir=join(root,'.othrys','knowledge','archive','training');
+  const runs=[];
+  if(existsSync(runDir)){
+    for(const file of readdirSync(runDir).filter(x=>x.endsWith('.jsonl')).sort().reverse()){
+      for(const line of readFileSync(join(runDir,file),'utf8').split(/\r?\n/).filter(Boolean).reverse()){
+        try{runs.push(JSON.parse(line));}catch{}
+        if(runs.length>=24) break;
+      }
+      if(runs.length>=24) break;
+    }
+  }
+  return Object.freeze({
+    schema:'othrys.os.training-lab-projection.v1',
+    epoch:registry.epoch,
+    title:registry.title,
+    codeLaw:registry.codeLaw,
+    domains:registry.domains,
+    measurementContract:registry.measurementContract,
+    registrations:registry.registrations,
+    curriculum:{
+      currentLevel:manifest.currentLevel,
+      levels:manifest.levels.map(x=>({level:x.level,name:x.name,goal:x.goal,status:x.status,entryGate:x.entryGate,authorityGranted:x.authorityGranted}))
+    },
+    jev:createJevCortexStatus(),
+    aegis:inspectHecatoncheiresPosture(root),
+    recentRuns:Object.freeze(runs),
+    legacyCorpus:{root:'docs/training',preserved:true},
+    sourceCommit:gitHead(),
+    authorityGranted:false,
+    controlsEnabled:false
+  });
+}
 function gitHead(){
   const p=spawnSync('git',['-C',root,'rev-parse','HEAD'],{encoding:'utf8'});
   return p.status===0?p.stdout.trim():'UNKNOWN';
@@ -558,6 +596,10 @@ export async function handle(req,res){
   if(url.pathname==='/api/operating-mode'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
     return send(res,200,JSON.stringify({ok:true,...operatingModeProjection(projectManifest,process.env.OTHRYS_OS_MODE??null),controlsEnabled:false}));
+  }
+  if(url.pathname==='/api/training-lab'){
+    if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));
+    return send(res,200,JSON.stringify({ok:true,training:trainingLabProjection(),controlsEnabled:false}));
   }
   if(url.pathname==='/api/atlas'){
     if(!authorized(req)) return send(res,401,JSON.stringify({ok:false,error:'UNAUTHORIZED'}));

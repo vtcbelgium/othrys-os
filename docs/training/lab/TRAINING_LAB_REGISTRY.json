@@ -1,0 +1,57 @@
+{
+  "schema": "othrys.os.training-lab-registry.v1",
+  "epoch": "dual-brain-2026-09-26",
+  "title": "OTHRYS Learning & Development",
+  "purpose": "Permanent training, evaluation, troubleshooting and security proving ground for OTHRYS, JEV and external AI candidates.",
+  "codeLaw": {
+    "format": "<domain>.<suite>.<case>",
+    "example": "3.1.1",
+    "meaning": "Domain 3 (Dual Brain), suite 1 (routing), case 1.",
+    "definitionVersionSeparate": true
+  },
+  "historyPolicy": {
+    "legacyCorpusPreserved": true,
+    "legacyRoot": "docs/training",
+    "activeEpochStartsFresh": true,
+    "neverRewriteHistoricalResults": true
+  },
+  "domains": [
+    {"id":1,"key":"othrys","label":"OTHRYS Curriculum","suiteMeaning":"training level 1-10","purpose":"Construction capability and the ten-level OTHRYS curriculum."},
+    {"id":2,"key":"jev","label":"JEV Trainer","suiteMeaning":"JEV circuit","purpose":"System One calibration, stability and circuit qualification."},
+    {"id":3,"key":"dual-brain","label":"Dual Brain","suiteMeaning":"decision family","purpose":"Core/JEV agreement, disagreement, calibration and hybrid value."},
+    {"id":4,"key":"benchmarks","label":"Benchmarks","suiteMeaning":"benchmark family","purpose":"Comparable reasoning, coding, agent/tool and long-context evaluation."},
+    {"id":5,"key":"aegis","label":"Aegis Security","suiteMeaning":"Hecatoncheires hand","purpose":"Adversarial security, containment, isolation and recovery tests."},
+    {"id":6,"key":"troubleshooting","label":"Troubleshooting & Recovery","suiteMeaning":"replay family","purpose":"Turn incidents and historical failures into replayable regression tests."}
+  ],
+  "measurementContract": {
+    "quality": ["pass","score","accuracy","firstPass","criticalFalseNegativeRate"],
+    "efficiency": ["latencyMs","inputTokens","cachedInputTokens","outputTokens","reasoningTokens","totalTokens","tokensPerSecond","costUsd","retries","toolCalls"],
+    "context": ["inputBytes","contextWindowTokens","retrievedItems","compressionRatio","cacheHit"],
+    "reliability": ["repeatCount","variance","providerFailures","providerThrottles","repairCount"],
+    "dualBrain": ["coreDecision","jevDecision","agreement","confidenceDelta","adjudication"],
+    "security": ["attackClass","blocked","contained","secretExposure","unauthorizedAction","scopeViolations","isolationHeld"],
+    "reproducibility": ["repoSha","definitionVersion","definitionDigest","model","provider","resolvedModel","configDigest","artifactRefs"]
+  },
+  "externalAdapters": [
+    {"id":"openai-evals","state":"REFERENCE","purpose":"Registry/versioning patterns"},
+    {"id":"lm-eval-harness","state":"REFERENCE","purpose":"Reproducible benchmark/task adapters"},
+    {"id":"inspect-ai","state":"REFERENCE","purpose":"Agent/tool/scorer and run-log patterns"},
+    {"id":"deepeval","state":"REFERENCE","purpose":"LLM/JEV/hybrid evaluation patterns"},
+    {"id":"promptfoo","state":"REFERENCE","purpose":"Red-team and per-role token accounting"},
+    {"id":"swe-bench","state":"REFERENCE","purpose":"Repository issue-to-patch evaluation"}
+  ],
+  "registrations": [
+    {"code":"1.1.1","definitionVersion":"1.0.0","domain":"othrys","suite":"Level 1","name":"Atomic regression baseline","state":"REGISTERED","purpose":"Re-run a representative atomic task under the current dual-brain-era stack and compare with the legacy corpus."},
+    {"code":"1.8.1","definitionVersion":"1.0.0","domain":"othrys","suite":"Level 8","name":"OTHRYS reconstruction exam","state":"LOCKED","purpose":"Reconstruct an OTHRYS-class system from declared architecture, admitted Blocks and explicit evidence without hidden local state."},
+    {"code":"1.9.1","definitionVersion":"1.0.0","domain":"othrys","suite":"Level 9","name":"Autonomous construction exam","state":"LOCKED","purpose":"Research, blueprint, compose, build, verify, repair and release under operator gates."},
+    {"code":"1.10.1","definitionVersion":"1.0.0","domain":"othrys","suite":"Level 10","name":"Recursive OTHRYS exam","state":"LOCKED","purpose":"Improve OTHRYS using OTHRYS while preserving architecture, authority boundaries and independent proof."},
+    {"code":"2.1.1","definitionVersion":"1.0.0","domain":"jev","suite":"Router","name":"Router calibration baseline","state":"REGISTERED","purpose":"Measure JEV routing accuracy, order stability, critical misses and token/latency cost."},
+    {"code":"3.1.1","definitionVersion":"1.0.0","domain":"dual-brain","suite":"Routing","name":"Core vs JEV routing agreement","state":"REGISTERED","purpose":"Run the same bounded routing cases through Core and JEV, record disagreement, then measure hybrid value."},
+    {"code":"4.1.1","definitionVersion":"1.0.0","domain":"benchmarks","suite":"Reasoning","name":"Benchmark adapter smoke","state":"REGISTERED","purpose":"Prove benchmark adapters can register exact task/config/model versions and return comparable receipts."},
+    {"code":"5.9.1","definitionVersion":"1.0.0","domain":"aegis","suite":"Hand 9","name":"Prompt-injection containment baseline","state":"REGISTERED","purpose":"Measure whether untrusted instructions can alter authority, tool scope, secrets, knowledge admission or system behavior."},
+    {"code":"6.1.1","definitionVersion":"1.0.0","domain":"troubleshooting","suite":"Replay","name":"Incident replay baseline","state":"REGISTERED","purpose":"Convert one historical failure into a deterministic replay with before/after proof and retained lesson."}
+  ],
+  "authorityGranted": false,
+  "automaticPromotion": false,
+  "automaticLevelAdvance": false
+}
