@@ -149,7 +149,7 @@ Regularly review open priorities, blockers, Garden candidates and stale decision
 Unconfirmed ideas should lose retrieval priority over time. Decisions remain active until superseded. Evidence and immutable history remain available.
 
 22. **EVERY CONTROL-RELEVANT CHANGE IS AN EVENT**  
-Mutation, decision, delegation, verification, correction, commit, push and authority change belong in `GPT_LOG.jsonl`. Chronicle records accepted milestones, not tool noise.
+Mutation, decision, delegation, verification, correction, commit, push and authority change belong in the canonical OTHRYS event ledger under `.othrys/logs/` using `othrys.os.event.v1`. GPT/control events use the `system` channel. `GPT_LOG.jsonl` remains readable historical compatibility evidence; new writers must not extend it. Chronicle records accepted milestones, not tool noise.
 
 23. **CONTROL / ACTION / VERIFICATION ARE SEPARATE**  
 GPT freezes intent; a delegate acts; deterministic or independent verification produces evidence. A worker never becomes its own final judge.
@@ -184,17 +184,21 @@ Every delegate mission names exact files, the exact allowed operation, exact pro
 33. **MINIMAL EVIDENCE**
 A failed or stopped mission creates only the required result, receipt and state update. No extra design documents or speculative records unless explicitly requested.
 
-## TEMPORARY MEMORY MAP
+## CANONICAL PERSISTENCE MAP
 
-Until the canonical Garden and Mnemosyne are wired into V2:
+The canonical storage boundary is governed by `docs/V2-010G/CHRONICLE_AND_LOG_LAW.md`:
 
-- `GPT_STATE.json` — current control truth.
-- `GPT_LOG.jsonl` — append-only control events.
-- `V2_CHRONICLE.md` — accepted history and lessons.
+- `.othrys/runtime/` — current state only.
+- `.othrys/logs/` — append-only operational events.
+- `.othrys/knowledge/` — Mnemosyne capture, review, catalogs and reusable knowledge.
+- `.othrys/evidence/` — new project-local proof artifacts and run receipts.
+- `.othrys/work/` — Work objects and transition history.
+- `.othrys/projections/` — human-readable downstream views; Obsidian belongs here and is never authority.
+- `V2_CHRONICLE.md` — accepted institutional history and lessons.
 - `LEGACY_INVENTORY.md` + `inventory/*` — reuse map.
 - `GPT_INBOX.md` — unpromoted ideas/questions/TODO candidates only.
-- `receipts/` — mission evidence.
-- OTHRYS Memory / Obsidian — human-readable knowledge projection, never runtime authority.
+
+Compatibility roots such as `GPT_STATE.json`, `GPT_LOG.jsonl`, root `logs/`, root `receipts/`, and historical `.othrys/runtime/**/*.log` remain readable until dedicated migration missions prove replacement safe. They are not templates for new storage locations.
 
 The goal is not for GPT to remember everything.
 
