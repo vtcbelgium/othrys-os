@@ -148,3 +148,23 @@ An adversarial identity matrix now tests:
 - platform_admin != MASTER;
 - root_owner requires elevation;
 - USER/ADMIN/MASTER sessions are not interchangeable.
+
+
+## Implementation batch 6 — privileged security + privacy learning UX
+
+Added to othrys-web:
+
+- draft-only private tables for MASTER elevations, break-glass grants and append-only security audit evidence;
+- 15-minute max privileged windows;
+- no direct browser role access to privileged tables;
+- telemetry/learning policy code separating security, reliability, product analytics and personalization;
+- secret telemetry refusal;
+- raw-user-content refusal for global learning;
+- optional analytics consent gate;
+- sanitiser requirement before generic lessons reach global learning;
+- single-click evidence prevented from becoming a stable preference;
+- USER Personal Learning preview with Correct / Forget / Why affordances;
+- USER Security & Data preview with passkeys, sessions, storage, connections, API-key custody, learning, analytics, export and deletion;
+- USER shell navigation wired to these surfaces.
+
+No production collection, privileged elevation or user-data mutation was enabled.
