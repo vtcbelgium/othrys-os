@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { appendFileSync, existsSync, mkdirSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { recordOperationalEvent } from './mnemosyne_operations.mjs';
+import { appendEvent } from './event_ledger.mjs';
 
 export const TRAINING_LAB_REGISTRY_SCHEMA='othrys.os.training-lab-registry.v1';
 export const TRAINING_LAB_RUN_SCHEMA='othrys.os.training-lab-run.v1';
@@ -76,16 +76,21 @@ export function createTrainingLabRun(root,input={}){
 
 export function recordTrainingLabRun(root,input={}){
   const run=createTrainingLabRun(root,input);
-  const path=join(root,'.othrys','knowledge','archive','training',run.startedAt.slice(0,10)+'.jsonl');
+  const relativeEvidence=join('.othrys','evidence','training',run.startedAt.slice(0,10)+'.jsonl');
+  const path=join(root,relativeEvidence);
   mkdirSync(dirname(path),{recursive:true});
   appendFileSync(path,JSON.stringify(run)+'\n','utf8');
-  const op=recordOperationalEvent(root,{
-    at:run.completedAt,
-    actor:'training-lab',
-    job:'training:'+run.code,
+  const op=appendEvent(root,{
+    occurredAt:run.completedAt,
+    source:'training-lab',
+    type:'TRAINING_RUN_RECORDED',
     status:run.status,
+    channel:'training',
+    stream:'training-lab',
+    job:'training:'+run.code,
+    evidenceRef:relativeEvidence.replaceAll('\\','/')+'#'+run.runDigest,
     evidence:{epoch:run.epoch,code:run.code,runDigest:run.runDigest,subject:run.subject,usage:run.usage,metrics:run.metrics,artifacts:run.artifacts},
     lesson:run.lesson||('Training run '+run.code+' '+run.status)
   });
-  return Object.freeze({run,path,operationalEvent:op.event});
+  return Object.freeze({run,path,operationalEvent:op.event,operationalEventPath:op.path});
 }
