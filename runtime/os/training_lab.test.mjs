@@ -34,10 +34,12 @@ test('run receipt separates usage categories and never grants authority',()=>{
   assert.match(run.runDigest,/^[a-f0-9]{64}$/);
 });
 
-test('recorded run gets a dedicated Mnemosyne training receipt and operational event',()=>{
+test('recorded run separates durable evidence from the operational event ledger',()=>{
   const root=fixture();
   const out=recordTrainingLabRun(root,{code:'6.1.1',status:'INFO',lesson:'replay registered'});
-  assert.match(out.path,/\.othrys\/knowledge\/archive\/training\//);
+  assert.equal(out.path,join(root,'.othrys','evidence','training',out.run.startedAt.slice(0,10)+'.jsonl'));
+  assert.equal(out.operationalEventPath,join(root,'.othrys','logs','training','training-lab.jsonl'));
+  assert.equal(out.operationalEvent.schema,'othrys.os.event.v1');
   assert.equal(out.operationalEvent.job,'training:6.1.1');
   assert.equal(out.operationalEvent.authorityGranted,false);
 });
