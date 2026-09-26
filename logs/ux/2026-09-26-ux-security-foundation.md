@@ -168,3 +168,22 @@ Added to othrys-web:
 - USER shell navigation wired to these surfaces.
 
 No production collection, privileged elevation or user-data mutation was enabled.
+
+
+## Implementation batch 7 — Oroi / Workspace / Portfolio UX
+
+Added protected USER surfaces for:
+- Oroi: shared OTHRYS products plus future personal/team Oro instances;
+- Workspace: private code/sites/documents/projects;
+- Portfolio: explicit, minimised public projection.
+
+Added publication contract:
+- owner required;
+- artifact must be ready;
+- secret scan must pass;
+- archive cannot publish;
+- public projection strips owner/workspace/source-location data.
+
+The USER shell now routes coherently through Oroi, Workspace, Portfolio, Learning and Security & Data.
+
+No workspace/publication backend mutation was enabled.
