@@ -11,6 +11,7 @@ type Options = {
   readonly tokenSha256?: string;
   readonly ledgerPath: string;
   readonly systemProjection?: () => unknown | Promise<unknown>;
+  readonly trainingProjection?: () => unknown | Promise<unknown>;
   readonly estateProjection?: () => unknown | Promise<unknown>;
   readonly estateRefresh?: () => unknown | Promise<unknown>;
   readonly commandEnvelopeDir?: string;
@@ -118,12 +119,13 @@ export async function handleWebControlRequest(
   }
 
   const isSystemRead = request.method === 'GET' && url.pathname === '/v1/system';
+  const isTrainingRead = request.method === 'GET' && url.pathname === '/v1/training-lab';
   const isEstateRead = request.method === 'GET' && url.pathname === '/v1/estate';
   const isEstateRefresh = request.method === 'POST' && url.pathname === '/v1/estate/refresh';
   const isCollection = url.pathname === '/v1/commands';
   const missionId = decodeMissionId(url.pathname);
   const activationMissionId = request.method === 'POST' ? decodeMissionActivationId(url.pathname) : null;
-  if (!isSystemRead && !isEstateRead && !isEstateRefresh && !isCollection && missionId === null && activationMissionId === null) return false;
+  if (!isSystemRead && !isTrainingRead && !isEstateRead && !isEstateRefresh && !isCollection && missionId === null && activationMissionId === null) return false;
   if (!bearerAuthorized(request.headers.authorization, options.token, options.tokenSha256 ?? '')) {
     sendJson(response, 401, blocked('AUTHENTICATION_REFUSED', 'Authentication refused.'));
     return true;
@@ -141,6 +143,19 @@ export async function handleWebControlRequest(
         return true;
       }
       sendJson(response, 200, await options.systemProjection());
+      return true;
+    }
+
+    if (isTrainingRead) {
+      if (!options.trainingProjection) {
+        sendJson(response, 503, blocked('TRAINING_PROJECTION_UNAVAILABLE'));
+        return true;
+      }
+      sendJson(response, 200, {
+        ok: true,
+        training: await options.trainingProjection(),
+        controlsEnabled: false,
+      });
       return true;
     }
 
