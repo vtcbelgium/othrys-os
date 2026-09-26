@@ -9,7 +9,7 @@ OTHRYS V2 is now product-facing and strategically named **OTHRYS OS**.
 
 OTHRYS OS is the operating surface over the proven V2 machinery, not a new codebase invented beside it. Existing V2 implementation, evidence, receipts and history remain valid and must not be mass-renamed.
 
-The current physical repository/path may remain `othrys-v2` until a dedicated migration proves a rename safe. Historical mission IDs such as `V2-001A` remain immutable provenance.
+The canonical current repository is `vtcbelgium/othrys-os` / local `othrys-os`. Historical `othrys-v2` project identifiers and all `V2-*` mission IDs remain immutable provenance unless a separate compatibility migration explicitly changes an internal identifier.
 
 ## North Star
 Build OTHRYS OS into a coherent AI operating environment that makes OTHRYS understandable, controllable and increasingly autonomous: projects/Oroi, Missions, Titans, Blocks, Mnemosyne, models/routing, Mycelium nodes, Factory, Trust Canal, Talos evidence, Command Deck and Visual Control in one surface.

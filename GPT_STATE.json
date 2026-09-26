@@ -1,14 +1,14 @@
 {
   "schema": "othrys.v2.gpt-state.v1",
-  "sequence": 140,
+  "sequence": 141,
   "state_owner": "GPT_CONTROL",
-  "remote_repo": "vtcbelgium/othrys-v2",
-  "remote_head_at_last_verified_read": "b23d111eb817862b6da3135149a8f84070710a31",
+  "remote_repo": "vtcbelgium/othrys-os",
+  "remote_head_at_last_verified_read": "7a6cae4bd62b97f6d82b4e635f16e4820a24805d",
   "control_gate": "CLEAN_SYNCED",
   "active_mission": {
     "mission_id": "V2-011K",
     "status": "RUNNING",
-    "issued_label": "V2-011K - OTHRYS TRAINING MODE LEVEL 1"
+    "issued_label": "V2-011K - OTHRYS TRAINING MODE; LEVEL 3 COMPLETE; LEVEL 3.5 PLANNED/LOCKED"
   },
   "last_verified_remote_receipt": "00ad97c0937eee629167773bdd52455eb7fc50a8",
   "last_verified_receipt_mission": "V2-006A",
@@ -47,7 +47,7 @@
     "inventory": "LEGACY_INVENTORY.md"
   },
   "memory_boundary": {
-    "othrys_v2_repo": "MACHINE_CONTROL_TRUTH",
+    "othrys_v2_repo": "LEGACY_KEY_NAME; OTHRYS_OS_REPO_IS_MACHINE_CONTROL_TRUTH",
     "othrys_memory": "ACCEPTED_KNOWLEDGE_PROJECTION",
     "memory_pointer": "02 Projects/Othrys/V2/CONTROL-INDEX.md",
     "chat_memory": "NON_AUTHORITATIVE",
@@ -57,16 +57,16 @@
     "DIGEST_CANONICALIZATION_PENDING - the admitted digest procedure hashes working-tree bytes, so both the 0.1.0 and 0.1.1 digests reproduce only on a checkout that materialises line endings identically (CRLF on Windows). Deliberately not solved in V2-001D",
     "qa/block.media.image-prep/digest.test.mjs pins the live tree to the 0.1.0 admission, so 2 of its 3 tests now fail BY DESIGN. Not edited (V2-001D section 7). The active proof is the separate digest-0.1.1.test.mjs",
     "the delegate has no Windows shell and cannot install Chromium (cdn.playwright.dev 403, network allowlist). All browser evidence is HOST_SUPPLIED_TRUSTED",
-    "the delegate has no GitHub egress; only the Windows host can push othrys-v2",
+    "the delegate has no GitHub egress; only the Windows host can push othrys-os",
     "GPT_LOG historical integrity is DEGRADED_RECOVERED; recovery events 4 and 9 preserve the incidents",
     "System32/cmd popup: no V2 cause found; host-side scheduler/registry check still NOT_OBSERVED"
   ],
   "last_control_decision": {
     "mission_id": "V2-011K",
-    "decision": "TRAINING_MODE_LEVEL_1_OPEN",
-    "authority": "Operator activated Level 1 training; jobs remain governed and authority-free until existing mission gates admit work."
+    "decision": "CONTROL_STATE_RECONCILED_TO_LEVEL3_COMPLETE",
+    "authority": "Level 3 activation and campaign receipts prove Level 3 complete. Level 3.5 HubToWeb is planned/locked; Level 4 remains locked."
   },
-  "next_legal_action": "Inventory and Atlas-index Great Library stock, then execute Level 1 jobs strictly in TRAINING_MANIFEST sequence.",
+  "next_legal_action": "Freeze the Level 3.5 HubToWeb parity inventory against live othrys-os/othrys-web evidence, then execute the smallest verified migration slice under explicit operator control; Level 4 remains locked.",
   "mission_history": [
     {
       "mission_id": "V2-HUB-QUAL-001",

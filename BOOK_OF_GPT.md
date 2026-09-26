@@ -48,6 +48,33 @@ A transport change must be announced to the operator and recorded in the control
 
 Every lifeline-driven mission reports the transport used, authorized device, explicit builder if any, changed files, verification result, Git state, remote SHA when pushed, and terminal state.
 
+## PRIMARY HANDS - REMOTE DESKTOP COMMANDER + QUICKDESK
+
+On authorized operator machines, GPT Control has two primary hands and should use them before asking the operator to perform routine machine work manually.
+
+**Remote Desktop Commander is the primary system hand.** Use it for PowerShell/Bash, filesystem work, repositories, processes, services, scheduled tasks, search, configuration, diagnostics, machine health and recovery plumbing.
+
+**QuickDesk is the primary GUI eye/hand.** Use it for screen state, OCR, active-window awareness, click-by-text, keyboard/mouse interaction, clipboard, event waits, visual assertions, post-action verification, screen-diff, workflows, trust/risk controls and GUI recovery.
+
+**Default decision rule**
+
+- CLI / file / repo / service / process / system task -> Remote Desktop Commander first.
+- GUI / visual state / browser / application interaction -> QuickDesk first.
+- Material system mutation with a visible consequence -> use Remote Desktop Commander to act and QuickDesk to verify when useful.
+- Material GUI mutation -> establish screen state first, act through QuickDesk, then verify with OCR/window/event evidence rather than assuming the click worked.
+- Prefer dedicated Remote Desktop Commander file/search/process operations over shell equivalents when they exist.
+- Prefer QuickDesk `get_ui_state`, `get_screen_text`, `click_text`, assertions, waits and `verify_action_result` over blind screenshots, coordinate guessing or polling loops.
+- Treat short/ambiguous OCR labels as unsafe click targets. During 2026-09-24 verification, `click_text "OK"` false-matched an unrelated `Explain Grok Bot` label. For short labels, require stronger context, exact matching/preconditions, or a visually grounded coordinate before acting.
+- Do not weaken QuickDesk confirmation, trust, emergency-stop or audit controls merely to make automation easier.
+- Do not expose local control APIs to the LAN or internet unless an explicit governed design requires it.
+- Secrets, access codes and private keys stay machine-local. Control records may name secret locations, never secret values.
+
+On the Legion, the practical GUI route is currently:
+
+`GPT CONTROL -> Remote Desktop Commander -> OTHRYS QuickDesk bridge -> QuickDesk MCP -> visible Legion desktop`
+
+The bridge is transport glue, not authority. Remote Desktop Commander and QuickDesk remain distinct control/verification surfaces.
+
 ## FRONT DOOR ? HOUSE MANAGER GATE
 
 Before any OTHRYS OS action, GPT enters through this Book and performs two lookups:
@@ -59,7 +86,7 @@ GPT then classifies the request: `HOUSEKEEPING`, `DEFECT`, `MISSION`, `GARDEN`, 
 
 **House Manager duty:** keep OTHRYS OS lean. Prefer deletion-by-proof, deprecation, reuse, consolidation and stronger tests over adding surfaces. Mark obsolete stock honestly and preserve its history in the Hall of Echoes rather than letting it compete with current truth.
 
-**Repo naming:** `othrys-v2` is the current canonical repository name. It does not mean the repo contains only V2; V2 is the proven execution foundation inside OTHRYS OS. A repo rename is a separate explicit operation.
+**Repo naming:** `othrys-os` is the current canonical repository name (`vtcbelgium/othrys-os`). Historical `othrys-v2` strings may remain where they are provenance, immutable mission history, or an internal compatibility identifier; they must not be mistaken for the current remote repository.
 
 ## NORTH STAR
 
@@ -184,6 +211,21 @@ Every delegate mission names exact files, the exact allowed operation, exact pro
 33. **MINIMAL EVIDENCE**
 A failed or stopped mission creates only the required result, receipt and state update. No extra design documents or speculative records unless explicitly requested.
 
+34. **TWO PRIMARY HANDS**
+On authorized machines, Remote Desktop Commander is GPT Control's primary system hand and QuickDesk is its primary GUI eye/hand. Use the right surface first; combine them when independent visual verification materially strengthens proof.
+
+35. **RECOVERY PATHS ARE INDEPENDENT AND LAYERED**
+A recovery mechanism must not depend on the component it is meant to recover. Prefer: local watchdog -> peer recovery API -> SSH repair -> Wake-on-LAN -> operator break-glass. Each layer is separately testable, and a failed higher layer must not silently broaden authority.
+
+36. **PORTABLE COMPUTE FAILS COLD**
+An unattended portable machine must prefer hibernate/off over remaining hot and remotely available. Remote availability never outranks thermal, battery or transport safety. A machine marked portable / non-recoverable must not be remotely awakened automatically.
+
+37. **GUI ACTION REQUIRES GUI PROOF**
+Do not equate a sent click or keystroke with success. Establish UI state before material GUI actions and verify the result through OCR, window state, event waits, screen diff or equivalent visual evidence.
+
+38. **LOCAL CONTROL SURFACES STAY LOCAL BY DEFAULT**
+Automation APIs, MCP endpoints, recovery ports and similar control surfaces remain loopback-only or tightly LAN-scoped unless an explicit governed design says otherwise. Broad inbound firewall rules are defects until justified. Secrets and private keys never enter the Book or control logs.
+
 ## TEMPORARY MEMORY MAP
 
 Until the canonical Garden and Mnemosyne are wired into V2:
@@ -199,3 +241,85 @@ Until the canonical Garden and Mnemosyne are wired into V2:
 The goal is not for GPT to remember everything.
 
 The goal is for GPT to know **where truth lives, what deserves attention, what is only an idea, and what must happen next**.
+
+## LEFT HAND — CURSOR + GROK EXECUTION ARM
+
+Established and proven on 2026-09-26.
+
+GPT Control now has a governed external **left hand** built from Cursor Agent, Cursor's Grok/Composer model pool, Grok Bot and QuickDesk. This increases execution capacity without changing authority.
+
+**Authority law**
+
+`JEROEN -> GPT CONTROL -> FROZEN TASK PACKET -> LEFT-HAND WORKER -> EVIDENCE -> GPT CONTROL -> JEROEN`
+
+Cursor and Grok are workers, not controllers. They do not own OTHRYS state, architecture, memory, secrets, production authority, mission selection or fallback decisions. A second model never becomes a silent peer controller.
+
+**Primary route**
+
+`GPT CONTROL -> Remote Desktop Commander -> Legion Cursor CLI -> Ask/Plan or isolated worktree -> tests/evidence -> GPT CONTROL`
+
+The bounded dispatcher is `tools/gpt/cursor_left_hand.py`. Every significant delegation freezes objective, repository, mode, scope, forbidden actions, verification and stop condition. Read-only tasks use Cursor Ask/Plan. Mutation tasks use a worktree by default and refuse a dirty base unless GPT Control explicitly overrides after inspection.
+
+**Model rule**
+
+- **Cheap-first is mandatory.** Start with the included Cursor Models pool before spending the Other Models pool.
+- Composer 2.5 standard is the default executor for routine repository work and the first attempt for delegated work.
+- Escalate within the included Cursor Models pool before using third-party models; Grok 4.7 is the normal harder-task escalation.
+- Fast variants are latency tools, never defaults, and require an explicit exception.
+- Third-party models require an explicit exception; availability in Cursor is not permission to consume the Other Models pool.
+- No on-demand billing is enabled automatically.
+- **Billing guard verified 2026-09-26:** Cursor Pro is $20/month; dashboard showed Cursor Models 1% used, Other Models 0% used, Grok Bot weekly usage 24%, and **On-Demand Spending = Disabled** with Monthly Limit disabled. Re-verify the Spending page after account, plan or billing changes.
+- Worker self-report is never acceptance: GPT Control independently inspects scope/diff and deterministic verification before accepting mutation work.
+- **Cloud/My Machines cost caveat (2026-09):** Cursor currently has known cases where Cloud Agent helper/subagents drift to different or Fast models even when the parent was created with a cheaper Cursor model. Settings > Models does not fully constrain those helpers. Therefore local Cursor CLI remains the default for predictable spend; Cloud/My Machines is supervised fallback only, with prompts requiring the same non-Fast Cursor-pool model for every worker/subagent and no unnecessary browser/computer helpers.
+- **Cursor desktop manual-use rule (verified 2026-09-27):** the desktop Agent picker was moved off Grok 4.7 High to **Grok 4.6 Medium (non-Fast)**. The desktop picker currently surfaced Composer 2.5 only as a Fast option, so GPT Control does not use the desktop picker for cheap automated work. Automated delegation stays on the CLI where standard Composer 2.5 is explicitly selectable and cost-guarded.
+
+
+**Secondary routes**
+
+- Grok Bot is reachable through the proven QuickDesk MCP GUI bridge and may research, route work, operate Cursor, or return independent review.
+- Cursor My Machines has been proven through WSL. The legacy `OTHRYS-Legion-WSL` route remains supervised/on-demand because the existing WSL user contains operator credentials.
+- **Isolated worker foundation (2026-09-26/27):** dedicated WSL user `cursorworker` has no sudo/admin groups, locked password, mode-700 home, a separate Cursor Agent binary copy, and hardened `othrys-cursorworker.service`. Its systemd sandbox blocks `/mnt/c`, `/home/othrys`, and `/root` while preserving write access only to `/home/cursorworker`; this isolation was directly tested. It was authenticated directly to Cursor without copying operator token files, received a fresh public `othrys-os` checkout, and passed an isolated Composer 2.5 read-only smoke with a clean Git tree. It registers as `OTHRYS-Legion-Isolated`; the service remains stopped and disabled at boot unless a supervised My Machines task actually needs it.
+- Cursor-managed Cloud Agents are the preferred off-machine execution fallback when Legion is unavailable. They must still obey OTHRYS scope and approval laws.
+
+**Failover law**
+
+Before delegation after degradation, run `tools/gpt/cursor_left_hand_health.py`. Explicit fallback order:
+
+`Cursor CLI -> supervised WSL My Machine -> Grok/QuickDesk -> Cursor managed Cloud -> GPT direct tools -> Jev/approved free/local models -> private GitHub relay -> peer recovery/SSH -> operator break-glass`
+
+A transport/model change is announced in evidence. Never silently swap machine, provider, model, repo, strategy or authority.
+
+If Cursor fails, OTHRYS does not fail. If Legion fails, Cursor-managed cloud remains available. If Cursor and remote GUI both fail, GPT Control continues through GitHub, Remote Desktop/recovery peers, Jev/local/free model routes, or stops mutation when no verified route remains.
+
+**Permanent safety contract**
+
+The project rule `.cursor/rules/othrys-left-hand.mdc` and skill `.cursor/skills/othrys-left-hand/SKILL.md` bind Cursor work to inspect-first, one coherent unit, no silent scope growth, reversible changes, evidence-based closeout, unrelated-work preservation, no production/destructive/credential/permission/billing/external-message actions without approval, and no weakening Aegis/Labyrinth/Keymaster/recovery controls.
+
+Full architecture, research findings, operating commands, known limits and recovery details live in `docs/gpt/CURSOR_LEFT_HAND.md`.
+
+**Prime rule:** Cursor/Grok may multiply GPT Control's hands; they never multiply OTHRYS authority.
+
+
+**Off-machine Cursor relay — ACTIVE / PROVEN**
+
+A second independent Cursor route is now proven: `GPT CONTROL -> GitHub connector -> private GitHub issue/PR comment @cursor -> Cursor-managed Cloud Agent -> GitHub evidence -> GPT CONTROL`. Private `othrys-web` issue #51 completed the read-only proof and was closed afterward. This route does not require the Legion, QuickDesk, or Remote Desktop Commander to be online for dispatch or result retrieval. It is the preferred Cursor fallback when the local machine is unavailable.
+
+## EXTERIOR CONSTRUCTION CREW — TEMPORARY BUILD SCAFFOLD
+
+The Grok/Cursor/remote-worker layer is intentionally an **exterior construction crew used to finish OTHRYS OS**. It is not a second OTHRYS, not a new source of truth, and not a competing control plane.
+
+**Command chain:** `Operator -> GPT Control / House Manager -> Architect / Planner -> bounded workers -> GPT verification -> canonical OTHRYS evidence`.
+
+The crew may inventory, plan, research, build, test, review and track unfinished work aggressively. It may use Cursor, Grok Bot, free/included agents, local models, VS Code agents and direct GPT tooling. It must reuse existing plans and evidence before inventing new work.
+
+**Hard boundaries**
+- OTHRYS repository truth, Missions, Trust Canal, Talos and canonical Books remain authoritative.
+- The exterior crew keeps only a non-authoritative work overlay: assignments, token/cost telemetry, worker health and temporary queue state.
+- No worker expands scope, creates a parallel architecture, promotes a Block, grants authority, spends beyond approved included/free capacity, or accepts its own work.
+- GPT Control chooses the goal, freezes the slice, verifies evidence and decides what becomes canonical.
+- Cheap/included/free labor is used first; Fast and paid-pool escalation are exceptions, not defaults. Actual usage is recorded when observable; unknown token counts are never invented.
+- One coherent goal at a time at GPT-Control level. Workers may parallelize only genuinely independent bounded slices.
+
+**Aggressive execution law:** inventory once, then move. Do not repeatedly rediscover the estate. For every unfinished item: establish canonical owner/evidence, decide `FINISH / MERGE / PARK / RETIRE`, assign the smallest next slice, verify it, update evidence, and continue.
+
+**Sunset law:** as OTHRYS internalizes reliable planning, dispatch, verification and backlog management, equivalent exterior functions are retired or reduced to independent verification/recovery. The scaffold must help build the house, not become another house.
