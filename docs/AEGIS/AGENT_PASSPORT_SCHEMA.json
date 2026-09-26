@@ -1,0 +1,41 @@
+{
+  "schema": "othrys.os.agent-passport.v1",
+  "authorityGranted": false,
+  "purpose": "Evidence bundle for agent/workload identity; never sufficient by itself to authorize execution.",
+  "required": [
+    "agentId",
+    "runtimeId",
+    "runtimeHash",
+    "modelId",
+    "modelHash",
+    "sessionId",
+    "missionId",
+    "capabilityId",
+    "issuedAt",
+    "expiresAt"
+  ],
+  "hardEvidence": [
+    "runtimeHash",
+    "modelHash",
+    "sessionBinding",
+    "capabilityBinding"
+  ],
+  "softEvidence": [
+    "behaviorProfileId",
+    "behaviorMatch",
+    "linguisticFingerprint"
+  ],
+  "statusVocabulary": {
+    "runtime": ["VERIFIED", "UNKNOWN", "MISMATCH"],
+    "model": ["VERIFIED", "UNKNOWN", "MISMATCH"],
+    "session": ["VERIFIED", "UNKNOWN", "INVALID", "EXPIRED"],
+    "capability": ["PRESENT", "MISSING", "EXPIRED"],
+    "behavior": ["BASELINE", "DEVIANT", "UNKNOWN"]
+  },
+  "laws": [
+    "Linguistic style is a behavioral biometric, not authentication.",
+    "A copied accent cannot substitute for runtime/session/capability proof.",
+    "Short-lived identity and capability evidence is preferred over permanent agent-wide privilege.",
+    "Passport evidence may cause restriction but cannot manufacture Trust Canal authority."
+  ]
+}

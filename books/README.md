@@ -9,6 +9,7 @@ A Book is institutional memory, not execution authority. Current code/tests/miss
 - **The Book of GPT Control** — `BOOK_OF_GPT.md` — Roadmap/control owner that issues bounded missions and preserves the next legal action.
 - **The Book of Hephaestus** — `books/book-of-hephaestus/README.md` — Engineering authority for bounded construction under mission scope.
 - **The Book of Talos** — `books/book-of-talos/README.md` — Independent verification and evidence authority.
+- **The Book of Aegis** — `books/book-of-aegis/README.md` — Security authority: monotonic observation, restriction, veto and lockdown over existing governed authority.
 - **The Book of Trust Canal** — `books/book-of-trust-canal/README.md` — Admission and authority boundary for intents and execution progression.
 - **The Book of Factory** — `books/book-of-factory/README.md` — Oros/product build and refine surface over proven capabilities.
 - **The Book of Mycelium** — `books/book-of-mycelium/README.md` — Colony and node routing across OTHRYS machines.

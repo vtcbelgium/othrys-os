@@ -14,6 +14,7 @@ export function validateHecatoncheiresPosture(root,posture){
   const issues=[];
   if(posture?.schema!==HECATONCHEIRES_SCHEMA) issues.push('schema');
   if(posture?.authorityGranted!==false) issues.push('authority');
+  if(posture?.securityAuthority!=='aegis') issues.push('security-authority');
   const hands=Array.isArray(posture?.hands)?posture.hands:[];
   const ids=new Set();
   for(const hand of hands){

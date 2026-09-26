@@ -251,6 +251,16 @@ HEPHAESTUS = FORGE AUTHORITY
 
 > **HEPHAESTUS MAKES. TALOS CHECKS.**
 
+## Aegis — ACTIVE AUTHORITY / TITAN-CLASS
+
+**Myth:** the divine protective aegis associated with Zeus and Athena; not genealogically a Titan.
+**OTHRYS:** Titan-class security authority with monotonic negative authority only.
+**Tech:** security control plane, veto/restriction/lock authority, event integrity and defensive coordination.
+
+Architecture outranks genealogy here: Aegis is a software Titan because it owns a permanent bounded authority domain, not because the mythological aegis was a Titan.
+
+> **AEGIS MAY SUBTRACT AUTHORITY. AEGIS MAY NEVER CREATE IT.**
+
 ## Hermes — ACTIVE
 
 **Myth:** messenger, traveler, boundary-crosser, mediator.  
@@ -259,9 +269,11 @@ HEPHAESTUS = FORGE AUTHORITY
 
 ## Hecatoncheires — ACTIVE SUPPORTING
 
-**Myth:** Hundred-Handers; immense bounded force.  
-**OTHRYS:** security posture.  
-**Tech:** broad parallel defensive/security capability.
+**Myth:** Hundred-Handers; immense bounded force and wardens of imprisoned powers.
+**OTHRYS:** Aegis defensive posture and many-handed enforcement family.
+**Tech:** identity, least privilege, integrity, audit, anomaly detection, isolation, prompt quarantine, recovery and lockdown mechanisms.
+
+**Boundary:** Hecatoncheires supplies defensive hands; Aegis owns security doctrine/verdict. Neither grants Trust Canal authority.
 
 ---
 
@@ -722,31 +734,33 @@ Clicking a node should reveal myth, etymology, OTHRYS role, technical translatio
 
 1. **Prometheus discovers; Mnemosyne remembers; Atlas models.**
 2. **Hephaestus builds; Talos verifies.**
-3. **Hermes transports; he does not decide truth or permission.**
-4. **Themis expresses governance; Trust Canal performs concrete admission.**
-5. **Kronos supervises lifecycle; Rhea stewards vitality.**
-6. **Hyperion evaluates economic value, portfolio oxygen and money gates.**
-7. **Theia owns media production, visual systems and media-domain automation.**
-8. **Hyperion owns the bet; Theia owns the media machine.**
-9. **Opsis orchestrates Theia's media domain; it does not replace Mission/Work or Trust Canal.**
-10. **Helios, Eos and Selene are reserved Theia foundations, not current independent Titans.**
-11. **Future Argus observes operational state; Talos still verifies.**
-12. **Future Ariadne traces; she does not authorize.**
-13. **Future Epimetheus learns from outcomes; he does not replace verification.**
-14. **Future Iapetus governs lineage only when capability evolution becomes real.**
-15. **Potential Muses express/interpret governed knowledge; Mnemosyne remains memory authority.**
-16. **Negative archetypes describe hazards; they do not become authorities.**
-17. **A mythological family relationship never automatically creates a software dependency.**
-18. **A software dependency never rewrites mythology.**
-19. **No empty mythological seat creates an architectural requirement.**
+3. **Aegis secures by monotonic restriction; Trust Canal still grants/adjudicates execution authority.**
+4. **Hecatoncheires supplies Aegis defensive hands; it does not become a second security authority.**
+5. **Hermes transports; he does not decide truth or permission.**
+6. **Themis expresses governance; Trust Canal performs concrete admission.**
+7. **Kronos supervises lifecycle; Rhea stewards vitality.**
+8. **Hyperion evaluates economic value, portfolio oxygen and money gates.**
+9. **Theia owns media production, visual systems and media-domain automation.**
+10. **Hyperion owns the bet; Theia owns the media machine.**
+11. **Opsis orchestrates Theia's media domain; it does not replace Mission/Work or Trust Canal.**
+12. **Helios, Eos and Selene are reserved Theia foundations, not current independent Titans.**
+13. **Future Argus observes operational state; Talos still verifies.**
+14. **Future Ariadne traces; she does not authorize.**
+15. **Future Epimetheus learns from outcomes; he does not replace verification.**
+16. **Future Iapetus governs lineage only when capability evolution becomes real.**
+17. **Potential Muses express/interpret governed knowledge; Mnemosyne remains memory authority.**
+18. **Negative archetypes describe hazards; they do not become authorities.**
+19. **A mythological family relationship never automatically creates a software dependency.**
+20. **A software dependency never rewrites mythology.**
+21. **No empty mythological seat creates an architectural requirement.**
 
 # 12. TEACHER TRANSLATION
 
 ### Thirty-second explanation
 
-**Mythological:** OTHRYS is represented as a mountain populated by named Greek mythological roles. Prometheus discovers, Mnemosyne remembers, Atlas maps, Hephaestus builds, Talos verifies, Kronos supervises, Rhea protects vitality, Hermes communicates, Themis represents governance, Hyperion evaluates economic opportunity, and Theia turns approved ideas and source material into governed visual media.
+**Mythological:** OTHRYS is represented as a mountain populated by named Greek mythological roles. Prometheus discovers, Mnemosyne remembers, Atlas maps, Hephaestus builds, Talos verifies, Aegis shields and vetoes danger, the Hecatoncheires provide its many defensive hands, Kronos supervises, Rhea protects vitality, Hermes communicates, Themis represents governance, Hyperion evaluates economic opportunity, and Theia turns approved ideas and source material into governed visual media.
 
-**Technical:** OTHRYS is a modular AI/software control plane separating external research, knowledge management, system modeling, implementation, independent verification, lifecycle supervision, reliability, messaging, governance, media production and business/product intelligence into explicit bounded responsibilities.
+**Technical:** OTHRYS is a modular AI/software control plane separating external research, knowledge management, system modeling, implementation, independent verification, monotonic security restriction, lifecycle supervision, reliability, messaging, governance, media production and business/product intelligence into explicit bounded responsibilities.
 
 The mythology is the mnemonic interface. The second paragraph is the architecture.
 

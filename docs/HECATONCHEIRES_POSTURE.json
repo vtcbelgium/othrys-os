@@ -2,6 +2,7 @@
   "schema": "othrys.os.hecatoncheires-posture.v1",
   "statusVocabulary": ["PRESENT_AND_TESTED", "PARTIAL", "ABSENT"],
   "authorityGranted": false,
+  "securityAuthority": "aegis",
   "legacySource": "othrys-core-mission036-adr/titan/HECATONCHEIRES.md",
   "hands": [
     {

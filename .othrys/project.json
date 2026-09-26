@@ -42,6 +42,20 @@
       "capabilities": [
         "verification.independent"
       ]
+    },
+    {
+      "id": "aegis",
+      "label": "Aegis",
+      "role": "Security authority / monotonic veto",
+      "status": "PROVEN",
+      "statusEvidence": "runtime/os/aegis.test.mjs",
+      "authorityMode": "NEGATIVE_ONLY",
+      "capabilities": [
+        "security.observe",
+        "security.restrict",
+        "security.veto",
+        "security.lock"
+      ]
     }
   ],
   "systems": [
@@ -477,6 +491,22 @@
       "AUTONOMOUS_EXECUTE"
     ],
     "default": "SUPERVISED_EXECUTE",
+    "declarativeGrant": false
+  },
+  "securityPolicy": {
+    "authority": "aegis",
+    "authorityMode": "NEGATIVE_ONLY",
+    "grantAuthority": false,
+    "approvalAuthority": "trust-canal",
+    "evidenceAuthority": "talos",
+    "decisionOrder": [
+      "PASS",
+      "OBSERVE",
+      "WARN",
+      "RESTRICT",
+      "DENY",
+      "LOCK"
+    ],
     "declarativeGrant": false
   },
   "knowledgePolicy": {

@@ -70,6 +70,23 @@
       "status": "CURRENT_OS_EDITION"
     },
     {
+      "id": "aegis",
+      "title": "The Book of Aegis",
+      "role": "Security authority: monotonic observation, restriction, veto and lockdown over existing governed authority.",
+      "evidence": [
+        "runtime/os/aegis.mjs",
+        "runtime/os/aegis.test.mjs",
+        "docs/AEGIS/SECURITY_MODEL.md",
+        ".othrys/project.json#authorities/aegis"
+      ],
+      "legacy": [
+        "docs/HECATONCHEIRES_POSTURE.json"
+      ],
+      "boundary": "Aegis is NEGATIVE_ONLY: it may preserve or reduce existing authority but can never grant, approve, expand or self-certify authority.",
+      "path": "books/book-of-aegis/README.md",
+      "status": "CURRENT_OS_EDITION"
+    },
+    {
       "id": "trust-canal",
       "title": "The Book of Trust Canal",
       "role": "Admission and authority boundary for intents and execution progression.",

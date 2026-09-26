@@ -14,6 +14,7 @@ test('project manifest is declarative and authority-free',()=>{
   assert.equal(p.kind,'CONTROL_PLANE');
   assert.ok(p.authorities.some(x=>x.id==='hephaestus'));
   assert.ok(p.authorities.some(x=>x.id==='talos'));
+  assert.ok(p.authorities.some(x=>x.id==='aegis'&&x.authorityMode==='NEGATIVE_ONLY'));
   assert.ok(p.capabilities.some(x=>x.id==='media.image-prep'));
   assert.equal(p.authorityGranted,undefined);
   assert.equal(p.executionStarted,undefined);
@@ -31,7 +32,8 @@ test('OS projection maps manifest to proven V2 surfaces',()=>{
   const os=projectOsProjection(root,{control_lifeline:{fallback_a:{status:'ACTIVE_PROVEN'}}},73);
   assert.equal(os.schema,'othrys.os.project-projection.v1');
   assert.equal(os.project.id,'othrys-v2');
-  assert.deepEqual(os.titans.map(x=>x.id),['hephaestus','talos']);
+  assert.deepEqual(os.titans.map(x=>x.id),['hephaestus','talos','aegis']);
+  assert.equal(os.titans.find(x=>x.id==='aegis').status,'PROVEN');
   assert.equal(os.models[0].id,'qwen3-builder');
   assert.equal(os.models[1].status,'ADVISORY ONLY');
   assert.equal(os.models[2].id,'pollinations-advisory');
@@ -43,6 +45,9 @@ test('OS projection maps manifest to proven V2 surfaces',()=>{
   assert.ok(os.templates.some(x=>x.id==='oros-software'&&x.kind==='OROS'));
   assert.ok(os.project.roles.some(x=>x.role==='reviewer'&&x.authority==='talos'));
   assert.equal(os.project.operatingModes.default,'SUPERVISED_EXECUTE');
+  assert.equal(os.project.securityPolicy.authority,'aegis');
+  assert.equal(os.project.securityPolicy.authorityMode,'NEGATIVE_ONLY');
+  assert.equal(os.project.securityPolicy.grantAuthority,false);
   assert.equal(os.mnemosyne.service,'mnemosyne');
   assert.equal(os.mnemosyne.opaqueMemory,false);
   assert.equal(os.mnemosyne.writeApiEnabled,false);

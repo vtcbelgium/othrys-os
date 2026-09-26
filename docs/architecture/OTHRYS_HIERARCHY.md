@@ -22,7 +22,7 @@ OTHRYS OS — control plane
             └─ Stars 0..N — managed operational domains
 ```
 
-Blocks/Bridges sit on the **composition axis**, not the authority tree. Missions/Work sit on the **execution axis**. Mnemosyne/Atlas/Great Library sit on the **knowledge axis**. Mycelium/Hermes sit on the **transport/connection axis**. These axes support the hierarchy but do not replace it.
+Blocks/Bridges sit on the **composition axis**, not the authority tree. Missions/Work sit on the **execution axis**. Mnemosyne/Atlas/Great Library sit on the **knowledge axis**. Mycelium/Hermes sit on the **transport/connection axis**. Aegis/Hecatoncheires/Keymaster sit on the **security axis**: Aegis owns monotonic negative security authority, Hecatoncheires supplies bounded defensive hands, and Keymaster owns credential custody. These axes support the hierarchy but do not replace it.
 ## Species table
 | Species | What it is | Owns | Must never become |
 |---|---|---|---|
@@ -86,5 +86,6 @@ The remaining Panda-class gaps are primarily operator UX and real autonomous-ope
 - `books/book-of-blocks/README.md`
 - `books/book-of-constellations/README.md`
 - `books/book-of-factory/README.md`
+- `books/book-of-aegis/README.md`
 
 If another document conflicts with this map, preserve the contradictory source as provenance and reconcile it explicitly; do not silently create a second truth.

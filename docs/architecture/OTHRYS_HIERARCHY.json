@@ -7,6 +7,7 @@
   "executionAxis": ["MISSION", "WORK", "FACTORY", "HEPHAESTUS", "TALOS"],
   "knowledgeAxis": ["MNEMOSYNE", "ATLAS", "GREAT_LIBRARY"],
   "connectionAxis": ["MYCELIUM", "HERMES"],
+  "securityAxis": ["AEGIS", "HECATONCHEIRES", "KEYMASTER"],
   "invariants": {
     "othrysOsIsOros": false,
     "exactlyOneBlueprintPerOros": true,

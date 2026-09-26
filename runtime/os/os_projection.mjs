@@ -38,7 +38,7 @@ export function projectOsProjection(root,state,missionResults=0){
   const keymaster={sourceAvailable:keymasterSource.available,credentialCount:keymasterInventory.credentialCount??0,statuses:(keymasterInventory.credentials??[]).map(x=>({envVar:x.envVar,health:x.health,present:x.present})),secretValuesExposed:false};
   return Object.freeze({
     schema:'othrys.os.project-projection.v1',
-    project:{id:project.projectId,label:project.label,kind:project.kind,work:project.work,roles:project.roleBindings??[],operatingModes:project.operatingModes??null,optimizationPolicy:project.optimizationPolicy??null,knowledgePolicy:project.knowledgePolicy},
+    project:{id:project.projectId,label:project.label,kind:project.kind,work:project.work,roles:project.roleBindings??[],operatingModes:project.operatingModes??null,securityPolicy:project.securityPolicy??null,optimizationPolicy:project.optimizationPolicy??null,knowledgePolicy:project.knowledgePolicy},
     name:project.label,engine:'V2',missionResults,systems,titans,blocks,models,apps,knowledge,keymaster,mnemosyne:knowledgeProjection(root,project),templates:projectTemplates(root),
     authorityGranted:false,executionStarted:false
   });

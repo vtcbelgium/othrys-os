@@ -64,3 +64,17 @@ test("attempt budget is bounded to five", () => {
   const raw = JSON.stringify({ ...JSON.parse(command()), maxAttempts: 6 }); const record = admit(raw);
   assert.throws(() => prepareEngineering(record, raw), (e) => e instanceof HephaestusRejectedError && e.code === "MAX_ATTEMPTS_INVALID");
 });
+
+test("Aegis and control-plane security surfaces are builder-forbidden", () => {
+  for (const protectedPath of [
+    ".othrys/project.json",
+    "runtime/os/aegis.mjs",
+    "docs/AEGIS/SECURITY_MODEL.md",
+    "docs/HECATONCHEIRES_POSTURE.json"
+  ]) {
+    const raw = JSON.stringify({ ...JSON.parse(command()), allowedPaths: [protectedPath] });
+    const record = admit(raw);
+    assert.throws(() => prepareEngineering(record, raw),
+      (e) => e instanceof HephaestusRejectedError && e.code === "FORBIDDEN_SCOPE");
+  }
+});

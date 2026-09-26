@@ -48,8 +48,9 @@ test('Deck API refuses writes and requires token',async t=>{
   assert.ok(Array.isArray(data.workState.laws));
   assert.ok(Array.isArray(data.workState.laws));
   assert.ok(data.workState.artifacts.some(a=>a.id==='surface-data'&&a.present===true));
-  assert.equal(data.osSurface.titans.length,2);
-  assert.deepEqual(data.osSurface.titans.map(t=>t.id),['hephaestus','talos']);
+  assert.equal(data.osSurface.titans.length,3);
+  assert.deepEqual(data.osSurface.titans.map(t=>t.id),['hephaestus','talos','aegis']);
+  assert.equal(data.osSurface.titans.find(t=>t.id==='aegis').status,'PROVEN');
   assert.equal(data.operatingMode.active.mode,'SUPERVISED_EXECUTE');
   assert.equal(data.operatingMode.active.authorityGranted,false);
   assert.equal(data.builderInspector.schema,'othrys.os.builder-inspector.v1');
@@ -100,6 +101,8 @@ test('Deck API refuses writes and requires token',async t=>{
   if(data.durableWork){ assert.equal(data.durableWork.schema,'othrys.os.work.v1'); assert.equal(data.durableWork.sourceMissionId,data.workState.missionId); assert.equal(data.durableWork.authorityGranted,false); } else { assert.equal(data.durableWork,null); }
   assert.ok(data.osSurface.project.roles.some(r=>r.role==='builder'&&r.authority==='hephaestus'));
   assert.equal(data.osSurface.project.operatingModes.declarativeGrant,false);
+  assert.equal(data.osSurface.project.securityPolicy.authority,'aegis');
+  assert.equal(data.osSurface.project.securityPolicy.grantAuthority,false);
   if(data.missionEvidence.missionId===data.activeMission?.mission_id&&data.activeMission?.status==='COMPLETE') assert.equal(data.missionEvidence.resultPresent,true);
 
 });

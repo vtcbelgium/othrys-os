@@ -40,6 +40,17 @@ export function validateProjectManifest(manifest){
   const ap=manifest.atlasPolicy;
   if(!ap||ap.service!=='atlas'||ap.derivedFrom!=='MNEMOSYNE_AND_V2_EVIDENCE'||ap.readOnly!==true||ap.secretFree!==true||ap.deterministicDigest!==true||ap.semanticGates!=='NINE_MUSES'||ap.declarativeGrant!==false) throw new Error('INVALID_ATLAS_POLICY');
   if(manifest.operatingModes?.declarativeGrant!==false) throw new Error('OPERATING_MODES_CANNOT_GRANT_AUTHORITY');
+  const sp=manifest.securityPolicy;
+  if(manifest.kind==='CONTROL_PLANE'){
+    if(!sp||sp.authority!=='aegis'||sp.authorityMode!=='NEGATIVE_ONLY'||sp.grantAuthority!==false||
+      sp.approvalAuthority!=='trust-canal'||sp.evidenceAuthority!=='talos'||sp.declarativeGrant!==false||
+      JSON.stringify(sp.decisionOrder)!==JSON.stringify(['PASS','OBSERVE','WARN','RESTRICT','DENY','LOCK'])) {
+      throw new Error('INVALID_AEGIS_SECURITY_POLICY');
+    }
+    const aegis=manifest.authorities.find(x=>x.id==='aegis');
+    if(!aegis||aegis.authorityMode!=='NEGATIVE_ONLY') throw new Error('AEGIS_AUTHORITY_REQUIRED');
+    if((aegis.capabilities??[]).some(x=>/(grant|allow|approve|execute)/i.test(String(x)))) throw new Error('AEGIS_CANNOT_HAVE_GRANT_CAPABILITY');
+  } else if(sp?.grantAuthority===true||sp?.declarativeGrant===true) throw new Error('SECURITY_POLICY_CANNOT_GRANT_AUTHORITY');
   if(manifest.optimizationPolicy) validateOptimizationPolicy(manifest.optimizationPolicy);
   if(!Array.isArray(manifest.work?.phases)||manifest.work.phases.length<4) throw new Error('INVALID_WORK_PHASES');
   if(manifest.authorityGranted===true||manifest.executionStarted===true) throw new Error('PROJECT_MANIFEST_CANNOT_GRANT_AUTHORITY');

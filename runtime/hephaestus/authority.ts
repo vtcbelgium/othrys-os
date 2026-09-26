@@ -6,7 +6,11 @@ const TOP_KEYS = new Set(["missionId", "title", "goal", "constraints", "workspac
 const ACCEPTANCE_KEYS = new Set(["commands", "criteria"]);
 const PLATFORM_FORBIDDEN = [
   ".git", ".env", "secrets", "GPT_STATE.json", "GPT_LOG.jsonl",
+  ".othrys/project.json",
   "runtime/talos-kernel", "runtime/trust-canal", "runtime/hephaestus",
+  "runtime/os/aegis.mjs", "runtime/os/aegis.test.mjs",
+  "runtime/os/hecatoncheires_posture.mjs", "docs/HECATONCHEIRES_POSTURE.json",
+  "docs/AEGIS", "books/book-of-aegis", "contracts/components/aegis.md",
 ] as const;
 
 export class HephaestusRejectedError extends Error {

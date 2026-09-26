@@ -1,0 +1,79 @@
+{
+  "schema": "othrys.os.aegis-event-contract.v1",
+  "runtimeSchema": "othrys.os.aegis-event.v1",
+  "authorityGranted": false,
+  "required": [
+    "timestamp",
+    "host",
+    "actor",
+    "actorClass",
+    "mission",
+    "action",
+    "target",
+    "source",
+    "result",
+    "correlationId"
+  ],
+  "decisions": [
+    "PASS",
+    "OBSERVE",
+    "WARN",
+    "RESTRICT",
+    "DENY",
+    "LOCK"
+  ],
+  "riskStates": [
+    "GREEN",
+    "AMBER",
+    "ORANGE",
+    "RED",
+    "BLACK"
+  ],
+  "actorClasses": [
+    "HUMAN",
+    "AGENT",
+    "SERVICE",
+    "PROCESS",
+    "SYSTEM",
+    "UNKNOWN"
+  ],
+  "identityStatus": [
+    "VERIFIED",
+    "UNKNOWN",
+    "INVALID"
+  ],
+  "capabilityStatus": [
+    "PRESENT",
+    "MISSING",
+    "NOT_REQUIRED"
+  ],
+  "missionStatus": [
+    "BOUND",
+    "UNBOUND",
+    "MISMATCH"
+  ],
+  "provenanceTrust": [
+    "TRUSTED",
+    "UNTRUSTED",
+    "UNKNOWN"
+  ],
+  "endpointVerdict": [
+    "CLEAR",
+    "SUSPICIOUS",
+    "MALICIOUS",
+    "UNKNOWN"
+  ],
+  "hardBoundaryClasses": [
+    "AEGIS_POLICY_TAMPER",
+    "RECOVERY_BACKUP_DESTRUCTION",
+    "MASTER_SECRET_EXTRACTION",
+    "SECURITY_LOGGING_DISABLE",
+    "SENTINEL_TAKEOVER"
+  ],
+  "digestFields": [
+    "runtimeHash",
+    "modelHash"
+  ],
+  "privacyLaw": "Raw passwords, API keys, bearer tokens, cookies and credential values are forbidden in durable Aegis telemetry.",
+  "authorityLaw": "Aegis PASS never grants authority; Aegis may only preserve or reduce authority granted elsewhere."
+}
